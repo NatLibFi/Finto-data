@@ -1,0 +1,52 @@
+@prefix juho: <http://www.yso.fi/onto/juho/> .
+@prefix juho-meta: <http://www.yso.fi/onto/juho-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+juho: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Valtiokonttori"@fi ,
+        "Statskontoret"@sv ,
+        "State Treasury"@en ;
+
+    dc:title "JUHO - Julkishallinnon ontologia"@en,
+        "JUHO - Julkishallinnon ontologia"@fi,
+        "JUHO - Julkishallinnon ontologia"@sv ;
+
+    dc:description
+
+"""JUHO on julkishallinnon erikoissanasto, joka pohjautuu Valtioneuvoston
+asiasanastoon ja sisältää noin 6300 käsitettä."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/juho/> ;
+    owl:versionInfo "$Id$" .
+
+juho-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "JUHO-käsite"@fi, 
+        "JUHO-begrepp"@sv, 
+        "JUHO Concept"@en .

@@ -1,0 +1,65 @@
+@prefix mero: <http://www.yso.fi/onto/mero/> .
+@prefix mero-meta: <http://www.yso.fi/onto/mero-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+mero: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Liikennevirasto"@fi,
+        "Trafikverket"@sv,
+        "Finnish Transport Agency"@en ;
+
+    dc:title "MERO - Merenkulkualan ontologia"@fi,
+        "MERO - Merenkulkualan ontologia"@en,
+        "MERO - Merenkulkualan ontologia"@sv ;
+
+    dc:description
+
+"""Merenkulkualan ontologia perustuu Merenkulkualan asiasanastoon, jonka
+ovat koonneet Suomen merialan kirjastot. Ontologia sisältää noin 1300
+merenkulkualan käsitettä suomen kielellä. Liikennevirasto on rakentanut
+yhteistyössä Semanttisen laskennan tutkimusryhmän kanssa Merenkulkualan
+ontologiasta ja Yleisestä suomalaisesta ontologiasta (YSO) koostuvan
+yhdistelmäontologian FinnONTO-projektissa. Yhdistelmäontologia on rakennettu
+vertailemalla Merenkulkualan ontologiaa Yleiseen suomalaiseen ontologiaan
+(YSO) yhteisten käsitteiden löytämiseksi sekä muokkaamalla käsitehierarkia
+YSOn yläkäsitteistön ja mallinnusperiaatteiden mukaisesti. Näin on voitu
+selkeyttää käsitteiden yhteneväisyydet ja erot sekä erikoisalan käsitteiden
+liittymäkohdat yleisempään käsitehierarkiaan. Merenkulkualan ontologia on
+tarkoitettu erityisesti merenkulkualan julkaisujen sisällönkuvailuun ja
+tiedonhakuun. Ontologiaa voi selailla ONKI-ontologiakirjastopalvelun avulla
+tai ONKI-palvelu voidaan sisällyttää osaksi toista käytössä olevaa
+järjestelmää indeksointikomponentin avulla."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/mero/> ;
+    owl:versionInfo "$Id$" .
+
+mero-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "MERO-käsite"@fi, 
+        "MERO-begrepp"@sv, 
+        "MERO Concept"@en .

@@ -1,0 +1,76 @@
+@prefix valo: <http://www.yso.fi/onto/valo/> .
+@prefix valo-meta: <http://www.yso.fi/onto/valo-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+valo: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Suomen valokuvataiteen museo"@fi,
+        "Finlands fotografiska museum"@sv,
+        "The Finnish Museum of Photography"@en ;
+
+    dc:title "VALO - Valokuvausalan ontologia"@fi,
+        "VALO - The Finnish Ontology of Photography"@en,
+        "VALO - Fotografiska ontologin"@sv ;
+        
+    dc:description
+
+"""Valokuvausalan ontologia VALO (n. 2 000 käsitettä) perustuu Valokuvan
+asiasanastoon, jota ylläpitää Suomen valokuvataiteen museo. Semanttisen
+laskennan tutkimusryhmä on rakentanut VALOsta ja Yleisestä suomalaisesta
+ontologiasta (YSO) koostuvan yhdistelmäontologian FinnONTO-projektissa
+osallistujaorganisaatioiden tuella. Tärkeimpänä yhteistyökumppanina on ollut
+Suomen valokuvataiteen museo. Yhdistelmäontologia on rakennettu
+vertailemalla valokuvausalan ontologiaa Yleiseen suomalaiseen ontologiaan
+(YSO) yhteisten käsitteiden löytämiseksi sekä muokkaamalla käsitehierarkia
+YSOn yläkäsitteistön ja mallinnusperiaatteiden mukaisesti. Tällä tavalla on
+voitu selkeyttää käsitteiden yhteneväisyydet ja erot sekä erikoisalan
+käsitteiden liittymäkohdat yleisempään käsitehierarkiaan. VALOn ja YSOn
+muodostama yhdistelmäontologia soveltuu erityisesti valokuvausalan
+aineistojen kuvailuun."""@fi ,
+    
+"""The Finnish Ontology of Photography VALO (ca. 2 000) is based on the
+Finnish Photography Thesaurus maintained by the Finnish Museum of
+Photography. The combination of VALO and Finnish General Upper Ontology YSO
+has been created in the FinnONTO project by the Semantic Computing Research
+Group with the support of project partners, especially the Finnish Museum of
+Photography. The ontology was created by aligning the Finnish Ontology of
+Photography VALO with the Finnish General Upper Ontology YSO using the top
+ontology and other modelling principles of YSO. This way the concepts of
+this domain could be explicitly described in relation to equivalent or more
+general concepts of the Finnish General Upper Ontology YSO. This combination
+of aligned ontologies can be used for describing resources especially in the
+domain of photography."""@en ;
+    
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/valo/> ;
+    owl:versionInfo "$Id$" .
+
+valo-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "VALO-käsite"@fi, 
+        "VALO-begrepp"@sv, 
+        "VALO Concept"@en .

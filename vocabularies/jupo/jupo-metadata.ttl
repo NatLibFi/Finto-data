@@ -1,0 +1,73 @@
+@prefix jupo: <http://www.yso.fi/onto/jupo/> .
+@prefix jupo-meta: <http://www.yso.fi/onto/jupo-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+jupo: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "JHS 183 -työryhmä"@fi,
+        "JHS 183 arbetsgruppen"@sv,
+        "JHS 183 working group"@en ;
+
+    dc:title "JUPO - Finnish Ontology for Public Administration Services"@en,
+        "JUPO - Julkisen hallinnon palveluontologia"@fi,
+        "JUPO - Ontologi för den offentliga sektorns tjänster"@sv ;
+    dc:description
+
+"""Julkisen hallinnon palveluontologian tavoitteena on edistää palvelujen
+löytämistä verkosta eri julkisen hallinnon organisaatioiden kotisivuilta.
+Ontologian käsitteiden avulla ohjataan palvelujen tuottajia kuvailemaan
+aineistonsa yhtenäisellä tavalla ja mahdollistetaan ontologian käsitteiden
+käyttö tiedonhaussa.
+
+Ontologian perustana on Yleinen suomalainen ontologia YSO, johon liitetään
+noin 1800 julkisen hallinnon palveluihin liittyvää käsitettä. Varsinaisten
+palveluiden lisäksi ontologia sisältää myös muita, palveluiden kuvailussa
+tarvittavia käsitteitä."""@fi ,
+
+"""Målet med JUPO-ontologin är att underlätta för den som söker efter vilka
+tjänster som de olika organisationerna inom den offentliga sektorn erbjuder
+via sina webbplatser. Basen för ontologin är ”Allmän finsk ontologi YSO”. I
+YSO kommer cirka 1800 begrepp som hänför sig till den offentliga sektorns
+tjänster att tilläggas."""@sv,
+
+"""The JUPO ontology aims to facilitate web searches from the sites of
+different public administration organizations. The ontology will be based on
+the Finnish General Upper Ontology YSO. Some 1,800 concepts related to
+public administration will be incorporated into the YSO."""@en ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.tsk.fi/tsk/fi/julkisen_hallinnon_palveluontologia_jupo-585.html> ;
+    owl:versionInfo "$Id$" .
+
+jupo-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "JUPO-käsite"@fi, 
+        "JUPO-begrepp"@sv, 
+        "JUPO Concept"@en .
+
+jupo-meta:facetLabel a owl:DatatypeProperty ;
+    rdfs:label "facet label"@en, "fasettitermi"@fi .

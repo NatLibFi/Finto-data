@@ -1,0 +1,395 @@
+# baseURI: null
+
+@prefix composite:  <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms:   <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference:  <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual:  <http://topbraid.org/visual#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]    rdf:type forms:Form ;
+      rdfs:label "Class Form" ;
+      forms:numColumns "2"^^xsd:int ;
+      forms:parentOf
+              [ rdf:type forms:Section ;
+                rdfs:label "Tiedot" ;
+                forms:childIndex 0 ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Termit" ;
+                          forms:childIndex 0 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:autoExpand "false"^^xsd:string ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#prefLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/oldLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:autoExpand "true"^^xsd:string ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#altLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#hiddenLabel>
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Käsitteen tiedot" ;
+                          forms:childIndex 1 ;
+                          forms:collapsed "true"^^xsd:boolean ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/developmentComment>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 5 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/allsoSource>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate rdfs:comment
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 6 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-peilaus/2007-03-02/definedConcept>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysaComment>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysaSource>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 4 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysoSource>
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Muut tiedot" ;
+                          forms:childIndex 2 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidgetGroup ;
+                                    forms:childIndex 0 ;
+                                    forms:predicateType owl:AnnotationProperty
+                                  ]
+                        ]
+              ] ;
+      forms:parentOf
+              [ rdf:type forms:Section ;
+                rdfs:label "Suhteet" ;
+                forms:childIndex 1 ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Viittaukset" ;
+                          forms:childIndex 4 ;
+                          forms:collapsed "true"^^xsd:boolean ;
+                          forms:parentOf
+                                  [ rdf:type forms:ReferencesWidgetGroup ;
+                                    forms:childIndex 0
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Käännös" ;
+                          forms:childIndex 3 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:autoExpand "false"^^xsd:string ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-peilaus/2007-03-02/closeMatch> ;
+                                    forms:suppressCreate
+                                            "true"^^xsd:boolean
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:autoExpand "false"^^xsd:string ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-translate/hasStatus> ;
+                                    forms:suppressCreate
+                                            "true"^^xsd:boolean
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:PropertyWidget ;
+                          forms:childIndex 2 ;
+                          forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/hasThematicGroup>
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Muut ominaisuudet" ;
+                          forms:childIndex 6 ;
+                          forms:collapsed "true"^^xsd:boolean ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidgetGroup ;
+                                    forms:childIndex 0 ;
+                                    forms:predicateType rdf:Property
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Muutokset" ;
+                          forms:childIndex 5 ;
+                          forms:collapsed "true"^^xsd:boolean ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/uusiOldLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 7 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/uusiAssociativeRelation>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/uusiPrefLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 10 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/ongelmallinenSuhde>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/poistunutPrefLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/poistunutOldLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 6 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/poistunutAssociativeRelation>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 9 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/ongelmallinen_associativeRelation>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 8 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/ongelmallinen_subClassOf>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 5 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/uusiSubClassOfSuhde>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 4 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-update/poistunutSubClassOfSuhde>
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Separator ;
+                          forms:childIndex 1
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Hierarkia" ;
+                          forms:childIndex 0 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate rdfs:subClassOf
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/associativeRelation>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate owl:equivalentClass
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 4 ;
+                                    forms:predicate rdf:type
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/partOf>
+                                  ]
+                        ]
+              ] ;
+      forms:subjectType <http://www.yso.fi/onto/yso-meta/2007-03-02/Class> .
+
+[]    rdf:type forms:Form ;
+      rdfs:label "Class Form" ;
+      forms:numColumns 2 ;
+      forms:parentOf
+              [ rdf:type forms:Section ;
+                rdfs:label "Tiedot" ;
+                forms:childIndex 0 ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Muut tiedot" ;
+                          forms:childIndex 2 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidgetGroup ;
+                                    forms:childIndex 0 ;
+                                    forms:predicateType owl:AnnotationProperty
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Termit" ;
+                          forms:childIndex 0 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#prefLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/oldLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#altLabel>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.w3.org/2004/02/skos/core#hiddenLabel>
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Käsitteen tiedot" ;
+                          forms:childIndex 1 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 4 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysoSource>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 6 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-peilaus/2007-03-02/definedConcept>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate rdfs:comment
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 5 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/allsoSource>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/developmentComment>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysaComment>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/ysaSource>
+                                  ]
+                        ]
+              ] ;
+      forms:parentOf
+              [ rdf:type forms:Section ;
+                rdfs:label "Suhteet" ;
+                forms:childIndex 1 ;
+                forms:parentOf
+                        [ rdf:type forms:PropertyWidget ;
+                          forms:childIndex 1 ;
+                          forms:predicate rdf:type
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Muut suhteet" ;
+                          forms:childIndex 3 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidgetGroup ;
+                                    forms:childIndex 1 ;
+                                    forms:predicateType rdf:Property
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:ReferencesWidgetGroup ;
+                                    forms:childIndex 0
+                                  ]
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:PropertyWidget ;
+                          forms:childIndex 0 ;
+                          forms:predicate rdfs:subClassOf
+                        ] ;
+                forms:parentOf
+                        [ rdf:type forms:Section ;
+                          rdfs:label "Aikaisemmat suhteet" ;
+                          forms:childIndex 2 ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 1 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedSubClassOf>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 2 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedHasPart>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 3 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedPartOf>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 4 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedAssociativeRelation>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 5 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedReplacedBy>
+                                  ] ;
+                          forms:parentOf
+                                  [ rdf:type forms:PropertyWidget ;
+                                    forms:childIndex 0 ;
+                                    forms:predicate <http://www.yso.fi/onto/yso-meta/2007-03-02/deprecatedSuperClassOf>
+                                  ]
+                        ]
+              ] ;
+      forms:subjectType <http://www.yso.fi/onto/yso-meta/2007-03-02/DeprecatedClass> ;
+      forms:useDomain "true"^^xsd:boolean .

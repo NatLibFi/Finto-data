@@ -1,0 +1,88 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix cn: <http://urn.fi/URN:NBN:fi:au:cn:>.
+@prefix rdaa: <http://rdaregistry.info/Elements/a/> .
+@prefix rdac: <http://rdaregistry.info/Elements/c/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+
+cn: a skos:ConceptScheme ;
+    dc:creator "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:title "Finnish Corporate Names"@en,
+        "Suomalaiset yhteisönimet"@fi,
+        "Finländska samfundsnamn"@sv ;
+    dc:description """Suomalaiset yhteisönimet kattaa Kansalliskirjaston kansallisbibliografian kuvailun yhteydessä tuottamat ohjeelliset nimimuodot suomalaisten julkaisujen tekijä- ja kohdeyhteisöistä. Musiikkiaineiston yhteisönimet eivät ole vielä käytettävissä.
+  
+Tietueissa ovat yhteisön vakiintuneet, julkaisuista otetut nimimuodot ja sen lisäksi mahdolliset erikieliset muodot ja yhteisön muut nimet (esim. lyhenne). Ne voidaan myös linkittää yhteisön edelliseen tai uudempaan nimeen. 
+
+Suomalaisten yhteisönimien tallennuksessa on noudatettu Suomalaisten luettelointisääntöjen Hakutiedot osan sääntöjä ja linjauksia. 
+
+Nimimuotojen päivitykset tehdään silloin, kun sama yhteisö esiintyy eri nimisenä seuraavassa julkaisussa. Lähde-lisätiedosta selviää usein mistä julkaisusta yhteisönimi on otettu tai mistä muusta tiedonlähteestä nimimuoto on tarkistettu.
+
+Suomalaiset yhteisönimet on tarkoitettu käytettäviksi kirjojen, artikkeleiden, elektronisen aineiston ja muiden aineistotyyppien indeksointiin sekä tiedonhakuun. Yhtenäistetyt nimimuodot auttavat tietojen tallentajia ja tiedonhakijoita löytämään juuri oikean yhteisön. Niiden avulla voidaan toisaalta sitoa yhteen yllämainitut nimen eri variantit ja toisaalta erottaa toisistaan samannimiset yhteisöt (esim. Nokian kaupunki ja Nokia yritys).
+
+Lisätietoja yhteisönimistä: fennica-posti@helsinki.fi"""@fi ;
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:subject yso:p3835 ;
+    owl:versionInfo "$Id$" .
+
+rdac:C10005
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Yhteisö"@fi .
+
+rdaa:P50041
+    rdfs:subPropertyOf skos:prefLabel ;
+    rdfs:label "käytettävä nimimuoto"@fi .
+
+rdaa:P50025
+    rdfs:subPropertyOf skos:altLabel ;
+    rdfs:label "vaihtoehtoinen nimimuoto"@fi .
+
+rdaa:p50033
+    rdfs:label "yhteisön ominaisuuksia"@fi .
+
+rdaa:P50218
+    rdfs:subPropertyOf skos:related ;
+    rdfs:label "liittyvä yhteisö"@fi .
+
+rdaa:P50012
+    rdfs:label "edeltäjäyhteisö"@fi .
+
+rdaa:P50016
+    rdfs:label "seuraajayhteisö"@fi .
+
+rdaa:P50008
+    rdfs:subPropertyOf skos:broader ;
+    rdfs:label "kattoyhteisö"@fi .
+
+rdaa:P50023
+    rdfs:subPropertyOf dct:language ;
+    rdfs:label "yhteisön kieli"@fi .
+
+rdaa:P50035
+    rdfs:label "huomautus yhteisön historiasta"@fi .
+
+rdaa:P50031
+    rdfs:label "yhteisön paikka"@fi .
+
+rdaa:P50022
+    rdfs:label "toiminta-ala"@fi .
+
+rdaa:P50023
+    rdfs:label "kieli"@fi .
+    
+rdaa:P50037
+    rdfs:label "perustamisajankohta"@fi .
+
+rdaa:P50038
+    rdfs:label "lopettamisajankohta"@fi .

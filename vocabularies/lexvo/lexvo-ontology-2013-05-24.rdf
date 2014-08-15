@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>                       
+<?xml-stylesheet type="text/xsl" href="ontology.xsl" ?>
+<rdf:RDF
+  xml:base="http://lexvo.org/ontology"
+  xmlns:lvont="http://lexvo.org/ontology"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/" >
+
+<!--
+
+Lexvo.org Ontology Version 0.22 (2013-05-24)
+Gerard de Melo, 2010-2012
+http://www.lexvo.org/
+http://lexvo.org/ontology
+
+Note: The Lexvo.org ontology is still under development and may not be able to address all
+needs. Please also consider using the Lingvoj Ontology and the GOLD ontology, whereever
+appropriate.
+http://www.lingvoj.org/ontology
+http://www.linguistics-ontology.org/gold.html
+
+-->
+
+<owl:Ontology rdf:about="">
+  <rdfs:comment>Lexvo.org Ontology</rdfs:comment>
+  <rdfs:label xml:lang="en">Lexvo.org Ontology</rdfs:label>
+  <owl:versionInfo xml:lang="en">Lexvo.org Ontology Version 0.22 (2013-05-24)</owl:versionInfo>
+  <dcterms:modified rdf:datatype="xsd:date">2013-05-24</dcterms:modified>
+  <foaf:homepage rdf:resource="http://www.lexvo.org/" />
+  <dcterms:creator rdf:resource="http://www.demelo.org/gdm/#GDM" />
+  <dcterms:contributor rdf:resource="http://data.semanticweb.org/person/bernard-vatant" />
+  <rdfs:seeAlso rdf:resource="http://www.lexvo.org/" />
+  <dcterms:subject rdf:resource="http://dbpedia.org/resource/Language" />
+</owl:Ontology>
+
+<owl:Class rdf:about="#Language">
+  <rdfs:comment xml:lang="en">Groups of human language variants that are or were spoken, written, or signed at some point in time.</rdfs:comment>
+  <skos:note xml:lang="en">This definition includes languages, particular language variants (e.g. dialects), and larger groups of language 
+    variants (e.g. macrolanguages and language families), as the distinction between them is largely conventional.</skos:note>
+  <rdfs:label xml:lang="en">language</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+  <lvont:somewhatSameAs rdf:resource="http://www.lingvoj.org/ontology#Lingvo"/>
+  <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Language" />
+</owl:Class>
+
+<owl:Class rdf:about="#Term">
+  <rdfs:comment xml:lang="en">A term in a specific language.</rdfs:comment>
+  <rdfs:label xml:lang="en">term</rdfs:label>
+  <lvont:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+  <lvont:nearlySameAs rdf:resource="http://lexonto.ontoware.org/lmf#FormRepresentation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Character">
+  <rdfs:comment xml:lang="en">An abstract character as defined by the Unicode Standard,
+  Version 5, in Chapter 3.4.</rdfs:comment>
+  <rdfs:label xml:lang="en">character</rdfs:label>
+  <skos:note xml:lang="en">The same abstract character may be rendered in different forms, depending on the language and on typeface characters.</skos:note>
+  <owl:sameAs rdf:resource="http://purl.org/linguistics/gold/Character" />
+</owl:Class>
+
+<owl:Class rdf:about="#CJKRadical">
+  <rdfs:comment xml:lang="en">A CJK character radical.</rdfs:comment>
+  <rdfs:label xml:lang="en">radical</rdfs:label>
+  <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Radical_%28Chinese_character%29" />
+  <skos:note xml:lang="en">CJK radicals are slightly more abstract than characters, because the same radical can be manifested as different
+    characters, e.g. radical 4 can take the form of '丿', '乀', or '乁'.</skos:note>
+</owl:Class>
+
+<owl:Class rdf:about="#Script">
+  <rdfs:comment xml:lang="en">A writing system considered abstractly, i.e. independent
+    of language-specific variations.</rdfs:comment>
+  <rdfs:label xml:lang="en">script</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#GeographicRegion">
+  <rdfs:comment xml:lang="en">Geographic regions on Earth or elsewhere.</rdfs:comment>
+  <rdfs:label xml:lang="en">geographic region</rdfs:label>
+</owl:Class>
+
+<owl:SymmetricProperty rdf:about="#somewhatSameAs">
+  <rdfs:comment xml:lang="en">The property of being at least somewhat the same as something else. For instance,
+    the City of Los Angeles is somewhat the same as the Greater Los Angeles area.</rdfs:comment>
+  <rdfs:label xml:lang="en">somewhat same as</rdfs:label>
+  <lvont:somewhatSameAs rdf:resource="http://www.w3.org/2004/02/skos/core#broadMatch" />
+</owl:SymmetricProperty>
+
+<rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#broadMatch">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#somewhatSameAs" />
+</rdf:Description>
+
+<owl:SymmetricProperty rdf:about="#nearlySameAs">
+  <rdfs:comment xml:lang="en">The property of being at least nearly the same as something else. For instance,
+    the geographical area comprising the island of Malta is nearly the same as the island of Malta.</rdfs:comment>
+  <rdfs:label xml:lang="en">nearly same as</rdfs:label>
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#somewhatSameAs" />
+  <lvont:somewhatSameAs rdf:resource="http://www.w3.org/2002/07/owl#sameAs" />
+</owl:SymmetricProperty>
+
+<rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#nearlySameAs" />
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#nearlySameAs" />
+</rdf:Description>
+
+<owl:SymmetricProperty rdf:about="#strictlySameAs">
+  <rdfs:comment xml:lang="en">The property of genuine identity in the Leibnizian sense.</rdfs:comment>
+  <rdfs:label xml:lang="en">same as</rdfs:label>
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#nearlySameAs" />
+  <owl:sameAs rdf:resource="http://www.w3.org/2002/07/owl#sameAs" />
+</owl:SymmetricProperty>
+
+<owl:ObjectProperty rdf:about="#represents">
+  <rdfs:comment xml:lang="en">the semiotic property of semantically representing something, i.e. a
+    relationship between words and other signs and resources that they represent (or represented) to a considerable number of humans</rdfs:comment>
+  <rdfs:label xml:lang="en">represents</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#representedBy">
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#represents"/>
+  <rdfs:label xml:lang="en">represented by</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#means">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#represents" />
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#label"/>
+  <rdfs:comment xml:lang="en">the semiotic property of a natural language word meaning something, i.e. a
+    relationship between words and resources that they represent (or represented) to a considerable number of humans</rdfs:comment>
+  <rdfs:label xml:lang="en">means</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#label">
+  <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label" />
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#representedBy" />
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#means" />
+  <rdfs:comment xml:lang="en">the semiotic property of possessing a natural language label (as opposed to artificial identifiers), e.g. the city of Paris is lexicalized in Italian using the Italian term "Parigi".</rdfs:comment>
+  <skos:note xml:lang="en">This property is more general than skosxl:prefLabel and skosxl:altLabel, as it does not make any normative claims about which labels are preferred. It merely describes
+    the fact that a certain label can be used to refer to something.</skos:note>
+  <rdfs:label xml:lang="en">has label</rdfs:label>
+  <!-- property chain axiom, given informally as a comment -->
+  <rdfs:comment xml:lang="en">If C lvont:Label L and L skosxl:literalForm V, then X rdfs:label V.</rdfs:comment>
+</owl:ObjectProperty>
+
+<rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#prefLabel">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#label" />
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#altLabel">
+  <rdfs:subPropertyOf rdf:resource="http://lexvo.org/ontology#label" />
+</rdf:Description>
+
+<owl:ObjectProperty rdf:about="#language">
+  <rdfs:comment xml:lang="en">The property of a resource being mainly encoded in a specific language.</rdfs:comment>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Language" />
+  <rdfs:label xml:lang="en">in language</rdfs:label>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/language" />
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/language" />
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#containsCharacter">
+  <rdfs:comment xml:lang="en">The property of a term containing a specific character.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Term" />
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Character" />
+  <rdfs:label xml:lang="en">contains character</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:SymmetricProperty rdf:about="#translation">
+  <rdfs:comment xml:lang="en">translational equivalence between words and other signs
+    and resources that they represent to or represented to a considerable number of humans</rdfs:comment>
+  <rdfs:label xml:lang="en">translation</rdfs:label>
+  <lvont:nearlySameAs rdf:resource="http://purl.org/linguistics/gold/translation" />
+  <skos:note xml:lang="en">Domain and range are usually Term objects, however string literals are acceptable as well for the range.</skos:note>
+</owl:SymmetricProperty>
+
+<owl:ObjectProperty rdf:about="#variant">
+  <rdfs:comment xml:lang="en">The property of being a variant of another resource.</rdfs:comment>
+  <rdfs:label xml:lang="en">variant</rdfs:label>
+  <skos:note xml:lang="en">Especially for terms and characters.</skos:note>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#iso639P1Code">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language" />
+  <rdfs:label xml:lang="en">ISO 639-1 code</rdfs:label>
+  <owl:equivalentProperty rdf:resource="http://www.lingvoj.org/ontology#iso1"/>
+  <owl:equivalentProperty rdf:resource="http://psi.oasis-open.org/iso/639/#code-a2"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#iso6392BCode">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language"/>
+  <rdfs:label xml:lang="en">ISO 639-2 Bibliographical code</rdfs:label>
+  <owl:equivalentProperty rdf:resource="http://www.lingvoj.org/ontology#iso2b"/>
+  <owl:equivalentProperty rdf:resource="http://psi.oasis-open.org/iso/639/#code-a3b"/>
+  <rdfs:seeAlso rdf:resource="http://www.loc.gov/standards/iso639-2/" />
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#iso6392TCode">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language"/>
+  <rdfs:label xml:lang="en">ISO 639-2 Terminological code</rdfs:label>
+  <owl:equivalentProperty rdf:resource="http://www.lingvoj.org/ontology#iso2t"/>
+  <owl:equivalentProperty rdf:resource="http://psi.oasis-open.org/iso/639/#code-a3t"/>
+  <rdfs:seeAlso rdf:resource="http://www.loc.gov/standards/iso639-2/" />
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#iso639P3PCode">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language"/>
+  <rdfs:label xml:lang="en">ISO 639-3 code</rdfs:label>
+  <owl:equivalentProperty rdf:resource="http://www.lingvoj.org/ontology#iso3"/>
+  <rdfs:seeAlso rdf:resource="http://www.sil.org/ISO639-3/" />
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#iso639P5Code">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language"/>
+  <rdfs:label xml:lang="en">ISO 639-5 code</rdfs:label>
+  <rdfs:seeAlso rdf:resource="http://www.loc.gov/standards/iso639-5/" />
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#marcCode">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Language"/>
+  <rdfs:label xml:lang="en">MARC 21 / USMARC code</rdfs:label>
+  <rdfs:seeAlso rdf:resource="http://www.loc.gov/marc/" />
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#iso15924Alphacode">
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Script"/>
+  <rdfs:label xml:lang="en">ISO 15924 alphabetic code</rdfs:label>
+  <rdfs:seeAlso rdf:resource="http://unicode.org/iso15924/" />
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="#inScript">
+  <rdfs:comment xml:lang="en">The property of a document being written in a specific script,
+    or a language being written or having being written in a specific script by a considerable
+    group of language users.</rdfs:comment>
+  <rdfs:label xml:lang="en">in script</rdfs:label>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Script"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesScript">
+  <rdfs:comment xml:lang="en">The property of a language being written or having being written in a specific 
+    script by a considerable group of language users.</rdfs:comment>
+  <rdfs:label xml:lang="en">uses script</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#scriptFor" />
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Script"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#scriptFor">
+  <rdfs:comment xml:lang="en">The property of a script being used for a particular language by
+   a considerable of language users (but not necessarily the majority of all language users).</rdfs:comment>
+  <rdfs:label xml:lang="en">script for</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#usesScript" />
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Script"/>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Language"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usedIn">
+  <rdfs:comment xml:lang="en">The property of a language or writing system
+    being used somewhat extensively in a particular geographical region 
+    at some point in time.</rdfs:comment>
+  <rdfs:label xml:lang="en">used in</rdfs:label>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#GeographicRegion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacterComponent">
+  <rdfs:comment xml:lang="en">The property of a character being composed of another character.</rdfs:comment>
+  <rdfs:label xml:lang="en">character component</rdfs:label>
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Character"/>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#Character"/>
+  <skos:note xml:lang="en">Especially for CJK characters.</skos:note>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#characterRadical">
+  <rdfs:comment xml:lang="en">The property of a CJK character being conventionally
+    associated with a CJK character radical.</rdfs:comment>
+  <rdfs:label xml:lang="en">translation</rdfs:label>
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Character"/>
+  <rdfs:range rdf:resource="http://lexvo.org/ontology#CJKRadical"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#nonRadicalStrokes">
+  <rdfs:comment xml:lang="en">The property of a character conventionally being
+    written with a specific number strokes, excluding the strokes of its radical.</rdfs:comment>
+  <rdfs:label xml:lang="en">non-radical strokes</rdfs:label>
+  <rdfs:domain rdf:resource="http://lexvo.org/ontology#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <skos:note xml:lang="en">Especially for CJK characters.</skos:note>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="#broader">
+  <rdfs:comment xml:lang="en">The property of having a broader, more generic concept.</rdfs:comment>
+  <rdfs:label xml:lang="en">broader</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#narrower"/>
+  <lvont:somewhatSameAs rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+  <skos:note xml:lang="en">Similar to skos:broader but domain and range are not restricted to skos:Concept instances.</skos:note>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#narrower">
+  <rdfs:comment xml:lang="en">The property of having a narrower, less generic concept.</rdfs:comment>
+  <rdfs:label xml:lang="en">narrower</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#broader"/>
+  <lvont:somewhatSameAs rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+  <skos:note xml:lang="en">Similar to skos:narrower but domain and range are not restricted to skos:Concept instances.</skos:note>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#memberOf">
+  <rdfs:comment xml:lang="en">The property of being a member of a group.</rdfs:comment>
+  <rdfs:label xml:lang="en">member of</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#hasMember"/>
+  <skos:note xml:lang="en">For instance for geographic regions.</skos:note>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMember">
+  <rdfs:comment xml:lang="en">The property of having a member.</rdfs:comment>
+  <rdfs:label xml:lang="en">has member</rdfs:label>
+  <owl:inverseOf rdf:resource="http://lexvo.org/ontology#memberOf"/>
+  <skos:note xml:lang="en">For instance for geographic regions.</skos:note>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isFocusOf">
+  <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/focus"/>
+  <rdfs:label xml:lang="en">is focus of</rdfs:label>
+  <skos:note xml:lang="en">The isFocusOf relates an entity to relevant SKOS concepts 
+    that are conceptualizations of the same entity. This is the inverse of the
+    standard foaf:focus property, which connects a SKOS concept to a relevant
+    non-conceptualized entity.</skos:note>
+</owl:ObjectProperty>
+
+</rdf:RDF>

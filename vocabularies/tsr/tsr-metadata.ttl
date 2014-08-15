@@ -1,0 +1,72 @@
+@prefix tsr: <http://www.yso.fi/onto/tsr/> .
+@prefix tsr-meta: <http://www.yso.fi/onto/tsr-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+tsr: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Työsuojelurahasto"@fi,
+        "Arbetarskyddsfonden"@sv,
+        "The Finnish Work Environment Fund"@en ;
+
+    dc:title "TSR-ontologia"@fi,
+        "TSR ontology"@en,
+        "TSR-ontologi"@sv ;
+
+    dc:description
+
+"""TSR-ontologia laadittiin Työsuojelurahaston rahoittamana hankkeena, joka
+toteutettiin alan asiantuntijoista ja Sanastokeskus TSK:n terminologeista
+koostuvassa työryhmässä vuosina 2011–2013. Työhön osallistuivat edustajat
+Sanastokeskus TSK:sta, sosiaali- ja
+terveysministeriöstä, Työsuojelurahastosta, Terveyden ja hyvinvoinnin
+laitoksesta, Työterveyslaitoksesta ja Työturvallisuuskeskuksesta.
+TSR-ontologiaan pyydettiin ja saatiin palautetta myös useilta työryhmän
+ulkopuolisilta asiantuntijoilta.
+
+TSR-ontologia koostuu Työsuojelurahaston asiasanastosta ja
+Työsuojelusanastosta (TSK 35), joiden käsitteet on sijoitettu Yleisen
+suomalaisen ontologian (YSO) mukaiseen hierarkiaan. Ontologiaa laatinut
+työryhmä karsi ja päivitti työn aikana sekä Työsuojelurahaston asiasanaston
+että Työsuojelusanaston käsitteistöä ja lisäsi TSR-ontologiaan tarpeellisina
+pitämiään uusia käsitteitä.
+
+TSR-ontologiaan sisältyy noin 5 100 käsitettä. Ontologiassa on esitetty
+käsitteiden väliset hierarkkiset suhteet sekä assosiatiivisia ja
+koostumussuhteita. Käsitteille on annettu suomenkielinen ensisijainen termi
+sekä mahdollisesti hyväksyttäviä tai hylättäviä synonyymejä. Osalla
+käsitteistä on englanninkieliset vastineet. Työsuojelusanastosta lähtöisin
+olevilla käsitteillä on terminologiset määritelmät, ja työryhmä laati
+määritelmät myös joillekin uusille käsitteille."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe>, <http://lexvo.org/id/iso639-3/eng> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    owl:versionInfo "$Id$" .
+
+tsr-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "TSR-käsite"@fi, 
+        "TSR-begrepp"@sv, 
+        "TSR Concept"@en .

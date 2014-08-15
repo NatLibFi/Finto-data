@@ -1,0 +1,82 @@
+@prefix mao: <http://www.yso.fi/onto/mao/> .
+@prefix mao-meta: <http://www.yso.fi/onto/mao-meta/> .
+@prefix tao: <http://www.yso.fi/onto/tao/> .
+@prefix tao-meta: <http://www.yso.fi/onto/tao-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+tao: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Aalto-yliopisto, Taiteiden ja suunnittelun korkeakoulu"@fi ,
+        "Aalto-universitetet, Högskolan för konst, design och arkitektur"@sv ,
+        "Aalto University School of Arts, Design and Architecture" ,
+
+        "Savonia-ammattikorkeakoulu, Kuopion muotoiluakatemia"@fi ,
+        "Savonia yrkeshögskola, Kuopio designakademi"@sv ,
+        "Savonia University of Applied Sciences, Kuopio Academy of Design"@en ;
+
+    dc:title "MAO/TAO - Ontology for Museum Domain and Applied Arts"@en,
+        "MAO/TAO - Museoalan ja taideteollisuusalan ontologia"@fi,
+        "MAO/TAO - Ontologi för museibranschen och Konstindustriella ontologin"@sv ;
+
+    dc:description
+
+"""Taideteollisuusalan ontologia TAO (n. 3 000 käsitettä) perustuu Muotoilun
+ja viestinnän asiasanastoon, jota ylläpitää Savonia-ammattikorkeakouluun
+kuuluva Kuopion Muotoiluakatemia. Museoalan ontologia MAO (n. 6 800
+käsitettä) puolestaan perustuu Museoalan asiasanastoon, jota ylläpitää
+Museovirasto. Semanttisen laskennan tutkimusryhmä on rakentanut TAOsta,
+MAOsta ja Yleisestä suomalaisesta ontologiasta (YSO) koostuvan
+yhdistelmäontologian FinnONTO-projektissa osallistujaorganisaatioiden
+tuella. Tärkeimpinä yhteistyökumppaneina ovat olleet Taideteollinen
+korkeakoulu ja Museovirasto. Yhdistelmäontologia on rakennettu vertailemalla
+erikoisalojen ontologioita Yleiseen suomalaiseen ontologiaan (YSO) ja
+toisiinsa yhteisten käsitteiden löytämiseksi sekä muokkaamalla
+käsitehierarkiat YSOn yläkäsitteistön ja mallinnusperiaatteiden mukaisesti.
+Tällä tavalla on voitu selkeyttää toisilleen läheisten alojen käsitteiden
+yhteneväisyydet ja erot sekä erikoisalan käsitteiden liittymäkohdat
+yleisempään käsitehierarkiaan. TAOn, MAOn ja YSOn muodostama
+yhdistelmäontologia soveltuu erityisesti taideteollisuusalan ja museoalan
+aineistojen kuvailuun. Ontologiaa voi selailla
+ONKI-ontologiakirjastopalvelun avulla tai ONKI-palvelu voidaan sisällyttää
+osaksi toista käytössä olevaa järjestelmää indeksointikomponentin
+avulla."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/tao/>, <http://www.seco.tkk.fi/ontologies/mao/> ;
+    owl:versionInfo "$Id$" .
+
+mao-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "MAO-käsite"@fi, 
+        "MAO-begrepp"@sv, 
+        "MAO Concept"@en .
+
+tao-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "TAO-käsite"@fi, 
+        "TAO-begrepp"@sv, 
+        "TAO Concept"@en .

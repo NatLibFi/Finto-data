@@ -1,0 +1,480 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wv: <http://vocab.org/waiver/terms/norms> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosmos: <http://purl.org/net/skosmos#> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#>.
+@prefix : <#> .
+
+:afo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "AFO - Viikin kampuskirjaston ontologia"@fi,
+		"AFO - Viikin kampuskirjaston ontologia"@sv,
+		"AFO - Agriculture and Forestry Ontology"@en ;
+	dc:subject :cat_science ;
+	void:uriSpace "http://www.yso.fi/onto/afo/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/afo/afo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/afo/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/afo/> .
+
+:allars a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Allärs - Allmän tesaurus på svenska"@fi,
+	"Allärs - Allmän tesaurus på svenska"@sv,
+	"Allärs - Allmän tesaurus på svenska"@en ;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/allars/";
+	skosmos:language "sv";
+	skosmos:groupClass skos:Collection;
+	void:dataDump <http://dev.finto.fi/download/allars/allars-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/allars/> .
+
+:avoindata-ct a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Avoindata.fi:n ontologia: Sisältötyyppi"@fi,
+	"Ontologi för Avoindata.fi: Innehållstyp"@sv,
+	"Ontology of Avoindata.fi: Content type"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://avoindata.fi/onto/contentType/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:fullAlphabeticalIndex "true";
+	void:dataDump <http://dev.finto.fi/download/avoindata-ct/avoindata-ct-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://avoindata.fi/onto/contentType/> .
+
+:avoindata-topic a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Avoindata.fi:n ontologia: Aihe"@fi,
+	"Ontologi för Avoindata.fi: Tjänst"@sv,
+	"Ontology of Avoindata.fi: Topic"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://avoindata.fi/onto/topic/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:fullAlphabeticalIndex "true";
+	void:dataDump <http://dev.finto.fi/download/avoindata-topic/avoindata-topic-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://avoindata.fi/onto/topic/> .
+
+:cn a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Suomalaiset yhteisönimet"@fi,
+	"Finländska samfundsnamn"@sv,
+	"Finnish Corporate Names"@en ;
+	dc:subject :cat_general ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:cn:";
+	skosmos:language "fi";
+	void:dataDump <http://dev.finto.fi/download/cn/cn-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:cn:> .
+
+:ic a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Iconclass"@fi, "Iconclass"@sv, "Iconclass"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://iconclass.org/";
+	skosmos:language "fi", "en", "fr", "de", "it";
+	skosmos:defaultLanguage "en";
+	void:dataDump <http://dev.finto.fi/download/ic/ic-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://iconclass.org/> .
+
+:iptc-scene a skosmos:Vocabulary, void:Dataset ;
+	dc:title "IPTC NewsCodes: Scene"@fi,
+		"IPTC NewsCodes: Scene"@sv,
+		"IPTC NewsCodes: Scene"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://cv.iptc.org/newscodes/scene/";
+	skosmos:language "en";
+	skosmos:showTopConcepts "true";
+	skosmos:fullAlphabeticalIndex "true";
+	void:dataDump <http://dev.finto.fi/download/iptc-scene/iptc-scene-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://cv.iptc.org/newscodes/scene/> .
+
+:iptc-subjectcode a skosmos:Vocabulary, void:Dataset ;
+	dc:title "IPTC NewsCodes: Subject Code"@fi,
+		"IPTC NewsCodes: Subject Code"@sv,
+		"IPTC NewsCodes: Subject Code"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://cv.iptc.org/newscodes/subjectcode/";
+	skosmos:language "en", "fi";
+	skosmos:showTopConcepts "true";
+	void:dataDump <http://dev.finto.fi/download/iptc-subjectcode/iptc-subjectcode-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://cv.iptc.org/newscodes/subjectcode/> .
+
+:juho a skosmos:Vocabulary, void:Dataset ;
+	dc:title "JUHO - Julkishallinnon ontologia"@fi, "JUHO - Julkishallinnon ontologia"@sv, "JUHO - Julkishallinnon ontologia"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/juho/";
+	skosmos:language "fi";
+	skosmos:defaultLanguage "fi";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	void:dataDump <http://dev.finto.fi/download/juho/juho-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/juho/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/juho/> .
+
+:jupo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "JUPO - Julkisen hallinnon palveluontologia"@fi,
+                "JUPO - Ontologi för den offentliga sektorns tjänster"@sv,
+                "JUPO - Finnish Ontology for Public Administration Services"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/jupo/";
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/jupo/jupo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/jupo/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/jupo/> .
+
+:kassu a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Kassu - Kasvien suomenkieliset nimet"@fi,
+		"Kassu - Finska växtnamn"@sv, 
+		"Kassu - Finnish Names of Plants"@en ;
+	dc:subject :cat_science ;
+	void:uriSpace "http://www.yso.fi/onto/kassu/";
+	skosmos:language "fi";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/kassu/kassu-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/kassu/> .
+
+:kauno a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KAUNO - Kaunokki-ontologia"@fi,
+		"KAUNO - Kaunokki-ontologin"@sv, 
+		"KAUNO - Kaunokki Ontology"@en ;
+	dc:subject :cat_lang ;
+	void:uriSpace "http://www.yso.fi/onto/kauno/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/kauno/kauno-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/kauno/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/kauno/> .
+
+:kito a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KITO - Kirjallisuudentutkimuksen ontologia"@fi,"KITO - Kirjallisuudentutkimuksen ontologia"@sv,"KITO - Kirjallisuudentutkimuksen ontologia"@en ;
+	dc:subject :cat_lang ;
+	void:uriSpace "http://www.yso.fi/onto/kito/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/kito/kito-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/kito/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/kito/> .
+
+:koko a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KOKO-ontologia"@fi,
+		"KOKO-ontologin"@sv,
+		"KOKO Ontology"@en ;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/koko/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	void:dataDump <http://dev.finto.fi/download/koko/koko-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/koko/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/koko/> .
+
+:kto a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KTO - Kielitieteen ontologia"@fi,"KTO - Kielitieteen ontologia"@sv,"KTO - Kielitieteen ontologia"@en ;
+	dc:subject :cat_lang ;
+	void:uriSpace "http://www.yso.fi/onto/kto/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/kto/kto-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/kto/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/kto/> .
+
+:kulo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KULO - Kulttuurien tutkimuksen ontologia"@fi,
+		"KULO - Kulttuurien tutkimuksen ontologia"@sv,
+		"KULO - Kulttuurien tutkimuksen ontologia"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://www.yso.fi/onto/kulo/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/kulo/kulo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/kulo/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/kulo/> .
+
+:lapponica a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Lapponica"@fi, "Lapponica"@sv, "Lapponica"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:lapponica:";
+	skosmos:language "fi";
+	void:dataDump <http://dev.finto.fi/download/lapponica/lapponica-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:lapponica:> .
+
+:liito a skosmos:Vocabulary, void:Dataset ;
+	dc:title "LIITO - Liiketoimintaontologia"@fi,
+		"LIITO - Liiketoimintaontologia"@sv,
+		"LIITO - Liiketoimintaontologia"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/liito/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	void:dataDump <http://dev.finto.fi/download/liito/liito-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/liito/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/liito/> .
+
+:lexvo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Lexvo - ISO 639-3 kielikoodit"@fi,
+		"Lexvo - ISO 639-3 språkkoder"@sv,
+		"Lexvo - ISO 639-3 language codes"@en ;
+	dc:subject :cat_lang ;
+	void:uriSpace "http://lexvo.org/id/iso639-3/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "en";
+	void:dataDump <http://dev.finto.fi/download/lexvo/lexvo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://lexvo.org/id/iso639-3/> .
+
+:maotao a skosmos:Vocabulary, void:Dataset ;
+	dc:title "MAO/TAO - Museoalan ja taideteollisuusalan ontologia"@fi,
+		"MAO/TAO - Ontologi för museibranschen och Konstindustriella ontologin"@sv,
+		"MAO/TAO - Ontology for Museum Domain and Applied Arts"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://www.yso.fi/onto/tao/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/maotao/maotao-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/tao/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/tao/> .
+
+:mero a skosmos:Vocabulary, void:Dataset ;
+	dc:title "MERO - Merenkulkualan ontologia"@fi,
+		"MERO - Merenkulkualan ontologia"@sv,
+		"MERO - Merenkulkualan ontologia"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/mero/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/mero/mero-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/mero/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/mero/> .
+
+:mesh a skosmos:Vocabulary, void:Dataset ;
+	dc:title "MeSH / FinMeSH"@fi , "Medical Subject Headings"@en, "MeSH / SweMeSH"@sv ;
+	dc:subject :cat_science ;
+	void:uriSpace "http://www.yso.fi/onto/mesh/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/mesh/mesh-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/mesh/> .
+
+:musa a skosmos:Vocabulary, void:Dataset ;
+	dc:title "MUSA - Musiikin asiasanasto"@fi,
+	"CILLA - Specialtesaurus för musik"@sv,
+	"MUSA/CILLA - Finnish Music Thesaurus"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://www.yso.fi/onto/musa/";
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/musa/musa-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/musa/> .
+
+:muso a skosmos:Vocabulary, void:Dataset ;
+	dc:title "MUSO - Musiikin ontologia"@fi,
+		"MUSO - Ontologi för musik"@sv,
+		"MUSO - Ontology for Music"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://www.yso.fi/onto/muso/";
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/muso/muso-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/muso/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/muso/> .
+
+:okm-tieteenala a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Korkeakoulujen tutkimustiedonkeruussa käytettävä tieteenalaluokitus"@fi,
+		"Korkeakoulujen tutkimustiedonkeruussa käytettävä tieteenalaluokitus"@sv,
+		"Korkeakoulujen tutkimustiedonkeruussa käytettävä tieteenalaluokitus"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/okm-tieteenala/";
+	skosmos:language "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:fullAlphabeticalIndex "true";
+	void:dataDump <http://dev.finto.fi/download/okm-tieteenala/okm-tieteenala-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/okm-tieteenala/> .
+
+
+:paikat a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Paikannimirekisteri"@fi ;
+	dc:subject :cat_geo ;
+	void:uriSpace "http://www.yso.fi/onto/paikat/";
+	skosmos:language "fi", "sv", "sme", "smn", "sms";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/paikat/paikka-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/paikat/> .
+
+:ponduskategorier a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Pondus-kategoriat"@fi,
+	"Ponduskategorier"@sv,
+	"Pondus categories"@en ;
+	dc:subject :cat_media ;
+	void:uriSpace "http://www.yso.fi/onto/ponduskategorier/";
+	skosmos:language "sv";
+	skosmos:showTopConcepts "true";
+	skosmos:fullAlphabeticalIndex "true";
+	void:dataDump <http://dev.finto.fi/download/ponduskategorier/ponduskategorier-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/ponduskategorier/> .
+
+:puho a skosmos:Vocabulary, void:Dataset ;
+	dc:title "PUHO - Puolustushallinnon ontologia"@fi,
+		"PUHO - Puolustushallinnon ontologia"@sv,
+		"PUHO - Puolustushallinnon ontologia"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/puho/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/puho/puho-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/puho/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/puho/> .
+
+:sapo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "SAPO - Suomen ajallinen paikkaontologia"@fi ;
+	dc:subject :cat_geo ;
+	void:uriSpace "http://www.yso.fi/onto/sapo/";
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/sapo/sapo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/sapo/> .
+
+:tero a skosmos:Vocabulary, void:Dataset ;
+	dc:title "TERO - Terveyden ja hyvinvoinnin ontologia"@fi,
+		"TERO - Ontologi för hälsa och välfärd"@sv,
+		"TERO - Finnish Ontology of Health and Welfare"@en ;
+	dc:subject :cat_science ;
+	void:uriSpace "http://www.yso.fi/onto/tero/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/tero/tero-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/tero/> .
+
+:tsr a skosmos:Vocabulary, void:Dataset ;
+	dc:title "TSR-ontologia"@fi,
+	"TSR-ontologi"@sv,
+	"TSR ontology"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/tsr/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/tsr/tsr-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/tsr/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/tsr/> .
+
+:valo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "VALO - Valokuvausalan ontologia"@fi , 
+		"VALO - Fotografiska ontologin"@sv , 
+		"VALO - The Finnish Ontology of Photography"@en ;
+	dc:subject :cat_culture ;
+	void:uriSpace "http://www.yso.fi/onto/valo/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/valo/valo-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/valo/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/valo/> .
+
+:ysa a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSA - Yleinen suomalainen asiasanasto"@fi,
+		"YSA - Allmän tesaurus på finska"@sv,
+		"YSA - General Finnish thesaurus"@en ;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/ysa/";
+	skosmos:groupClass skos:Collection;
+	skosmos:language "fi";
+	void:dataDump <http://dev.finto.fi/download/ysa/ysa-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/ysa/> .
+
+:yso a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia"@fi,
+		"ALLFO - Allmän finländsk ontologi"@sv,
+		"YSO - General Finnish ontology"@en ;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
+
+
+:categories a skos:ConceptScheme;
+	skos:prefLabel "Vocabulary Categories"@en .
+
+:cat_general a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yleiset"@fi, 
+		"Allmän"@sv,
+		"General"@en .
+
+:cat_society a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yhteiskunta"@fi,
+	"Samhälle"@sv,
+	"Society"@en .
+
+:cat_geo a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Maantiede ja paikkatieto"@fi, 
+		"Geografi och geografisk information"@sv,
+		"Geography and geoinformation"@en .
+
+:cat_science a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
+	"Naturvetenskap och medicin"@sv,
+	"Science and medicine"@en .
+
+:cat_culture a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Taide ja kulttuuri"@fi,
+	"Konst och kultur"@sv,
+	"Art and culture"@en .
+
+:cat_lang a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Kielet ja kirjallisuus"@fi,
+	"Språk och litteratur"@sv,
+	"Languages and literature"@en .
+

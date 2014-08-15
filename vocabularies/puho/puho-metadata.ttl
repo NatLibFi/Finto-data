@@ -1,0 +1,55 @@
+@prefix puho: <http://www.yso.fi/onto/puho/> .
+@prefix puho-meta: <http://www.yso.fi/onto/puho-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+puho: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Puolustusvoimat"@fi ,
+        "Försvarsmakten"@sv ,
+        "The Finnish Defence Forces"@en ;
+
+    dc:title "PUHO - Puolustushallinnon ontologia"@fi,
+        "PUHO - Puolustushallinnon ontologia"@en,
+        "PUHO - Puolustushallinnon ontologia"@sv ;
+
+    dc:description
+
+"""Puolustushallinnon ontologia PUHO on Puolustushallinnon asiasanaston
+pohjalta muodostettu erikoisontologia, joka sisältää maanpuolustukseen
+liittyvää käsitteistöä. Asiasanasto on ollut käytössä vuodesta 2000 ja se on
+ontologisoitu Aalto-yliopistossa vuonna 2011."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/puho/> ;
+    owl:versionInfo "$Id$" .
+
+puho-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "PUHO-käsite"@fi, 
+        "PUHO-begrepp"@sv, 
+        "PUHO Concept"@en .

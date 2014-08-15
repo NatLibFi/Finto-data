@@ -1,0 +1,19 @@
+@prefix sapo:    <http://www.yso.fi/onto/sapo/> .
+@prefix suo:     <http://www.yso.fi/onto/suo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tisc:    <http://observedchange.com/tisc/ns#> .
+@prefix sapometa:  <http://paikannimet.fi/meta/sapo#> .
+
+sapometa:Kuntahistoria a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	rdfs:label "Kuntahistoria"@fi .
+
+sapometa:Kunta a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	rdfs:label "Kunta"@fi .
+
+tisc:unionOf a owl:ObjectProperty ;
+	rdfs:subPropertyOf skos:narrower ;
+	rdfs:label "koostuu ajallisista kunnista"@fi .

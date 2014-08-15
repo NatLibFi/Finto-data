@@ -1,0 +1,58 @@
+@prefix kulo: <http://www.yso.fi/onto/kulo/> .
+@prefix kulo-meta: <http://www.yso.fi/onto/kulo-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+kulo: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Suomalaisen Kirjallisuuden Seura"@fi ,
+        "Finska Litteratursällskapet"@sv ,
+        "Finnish Literature Society"@en ;
+
+    dc:title "KULO - Kulttuurien tutkimuksen ontologia"@fi,
+        "KULO - Kulttuurien tutkimuksen ontologia"@en,
+        "KULO - Kulttuurien tutkimuksen ontologia"@sv ;
+
+    dc:description
+
+"""KULO - Kulttuurien tutkimuksen ontologia on Suomalaisen Kirjallisuuden
+Seuran kirjaston laatiman ja ylläpitämän kaksikielisen (suomi-englanti)
+Kulttuurien tutkimuksen asiasanaston (Kula) pohjalta muodostettu
+erikoisontologia. Asiasanasto on ontologisoitu Aalto-yliopistossa 2010. 
+Ontologiaan on koottu keskeinen terminologia folkloristiikan,
+kulttuuriantropologian, etnomusikologian, uskontotieteen (erityisesti
+kansanuskon tutkimuksen) ja kansatieteen alalta.  Ontologiassa on noin 1500
+varsinaista käsitettä."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin>;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <http://www.seco.tkk.fi/ontologies/kulo/> ;
+    owl:versionInfo "$Id$" .
+
+kulo-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "KULO-käsite"@fi, 
+        "KULO-begrepp"@sv, 
+        "KULO Concept"@en .
