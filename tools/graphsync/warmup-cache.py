@@ -3,10 +3,14 @@
 import json
 import urllib
 import time
+import sys
 
-# TODO make these overridable parameters?
-APIBASE="http://dev.kansalliskirjasto.onki.fi/rest/v1/"
-URLBASE="http://dev.kansalliskirjasto.onki.fi/"
+if len(sys.argv) != 2:
+    print >>sys.stderr, "Usage: %d <urlbase>" % sys.argv[0]
+    sys.exit(1)
+
+URLBASE=sys.argv[1]
+APIBASE=URLBASE + "rest/v1/"
 
 def vocab_ids():
     url = APIBASE + "vocabularies?lang=en"

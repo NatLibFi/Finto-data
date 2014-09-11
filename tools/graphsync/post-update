@@ -4,5 +4,7 @@ SECRET=/etc/graphsync/secret
 echo "purging Varnish cache"
 varnishadm -T :6082 -S $SECRET "ban.url /"
 echo "warming up cache"
-/var/www/Finto-data/tools/svn-post-commit/warmup-cache.py
+./warmup-cache.py `cat /etc/graphsync/urlbase`
+
+
 
