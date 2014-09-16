@@ -1,7 +1,6 @@
-DEBUG: Skosify starting. $Revision: 178 $
+DEBUG: Skosify starting. $Revision: 197 $
 DEBUG: Phase 1: Parsing input files
-DEBUG: Parsing input file prefixes.ttl (format: turtle)
-DEBUG: Parsing input file iconclass.20121019.nt (format: turtle)
+DEBUG: Parsing input file - (format: turtle)
 DEBUG: Phase 2: Performing inferences
 DEBUG: Phase 3: Setting up namespaces
 DEBUG: Phase 4: Transforming concepts, literals and relations
@@ -16,7 +15,7 @@ WARNING: Stripping whitespace from label of http://iconclass.org/46C11213: 'basc
 WARNING: Stripping whitespace from label of http://iconclass.org/49L641: 'papier (support d'écriture); papier à lettres '
 WARNING: Stripping whitespace from label of http://iconclass.org/73E375: 'Cristo distribuisce agli apostoli pane e pesce '
 WARNING: Stripping whitespace from label of http://iconclass.org/85A: 'favole di Esopo : Usare 85(...) '
-WARNING: Unlabeled concept scheme detected. Use --label option to set the concept scheme label.
+WARNING: Concept scheme has no label(s). Use --label option to set the concept scheme label.
 DEBUG: removing aggregate concepts
 DEBUG: Phase 5: Performing SKOS enrichments
 DEBUG: Phase 6: Cleaning up
@@ -97,12 +96,16 @@ INFO: Marking loose concept http://iconclass.org/95B%28TYRO%296 as top concept o
 INFO: Marking loose concept http://iconclass.org/95B%28TYRO%297 as top concept of scheme http://iconclass.org/rdf/2011/09/
 INFO: Marking loose concept http://iconclass.org/95B%28TYRO%298 as top concept of scheme http://iconclass.org/rdf/2011/09/
 DEBUG: Phase 8: Checking concept hierarchy
-DEBUG: check_hierarchy took 6.655965 seconds
+WARNING: Redundant hierarchical relationship http://iconclass.org/11HH skos:broader http://iconclass.org/11 found, but not eliminated because eliminate_redundancy is not set
+WARNING: Redundant hierarchical relationship http://iconclass.org/25GG skos:broader http://iconclass.org/25 found, but not eliminated because eliminate_redundancy is not set
+WARNING: Redundant hierarchical relationship http://iconclass.org/25FF skos:broader http://iconclass.org/25 found, but not eliminated because eliminate_redundancy is not set
+WARNING: Redundant hierarchical relationship http://iconclass.org/82AA skos:broader http://iconclass.org/82 found, but not eliminated because eliminate_redundancy is not set
+DEBUG: check_hierarchy took 15.246130 seconds
 DEBUG: Phase 9: Checking labels
 DEBUG: Phase 10: Writing output
-DEBUG: Writing output file ic-skos.ttl (format: turtle)
-DEBUG: reading input file took  425 seconds
-DEBUG: processing took          103 seconds
-DEBUG: writing output file took 361 seconds
-DEBUG: total time taken:        890 seconds
+DEBUG: Writing output file ic-unstripped.ttl (format: turtle)
+DEBUG: reading input file took  471 seconds
+DEBUG: processing took          117 seconds
+DEBUG: writing output file took 391 seconds
+DEBUG: total time taken:        980 seconds
 DEBUG: Finished Skosify run
