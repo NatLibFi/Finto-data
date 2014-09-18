@@ -10,7 +10,7 @@
 
 {% elseif lang == 'sv' %}
 <h4>Information</h4>
-<p>Finto är en finländsk service för publicering och användning av tesaurusar, ontologier och klassifikationer. Finto erbjuder ett användargränssnitt för direkt användning av vokabulärerna och öppna gränssnitt för användning i andra applikationer.</p>
+<p>Finto är en finländsk service för publicering och användning av tesaurusar, ontologier och klassifikationer. Finto erbjuder ett användargränssnitt för direkt användning av vokabulärerna och<a href="http://api.finto.fi/">öppna grässnitt</a>för användning i andra applikationer.</p>
 <p>Finto utvecklas i ONKI-projektet, som är ett gemensamt projekt mellan Nationalbiblioteket, Undervisnings- och kulturministeriet och Finansministeriet:<a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektets wikisida</a></p>
 
 <p>ONKI-projektet fortsätter det arbete som gjorts i FinnONTO-projektet vid Aalto-universitetet och Helsingfors universitet under åren 2003-2012:<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO</a></p>
@@ -19,7 +19,7 @@
 
 {% elseif lang == 'en' %}
 <h4>About</h4>
-<p>Finto is a Finnish service for the publication and utilization of vocabularies, ontologies and classifications. It provides a user interface for browsing the vocabularies and open interfaces for utilizing them in other applications.</p>
+<p>Finto is a Finnish service for the publication and utilization of vocabularies, ontologies and classifications. It provides a user interface for browsing the vocabularies and<a href="http://api.finto.fi/">open interfaces</a>for utilizing them in other applications.</p>
 <p>Finto is being developed by the ONKI Project as a joint venture between the National Library of Finland, the Ministry of Finance, and the Ministry of Education and Culture.<a href="http://wiki.helsinki.fi/display/ONKI/">See Project Wiki</a></p>
 
 <p>The project is a continuation of the work begun in a joint research project FinnONTO between the Aalto University and the University of Helsinki from 2003 to 2012.<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">See FinnONTO Homepage</a></p>
