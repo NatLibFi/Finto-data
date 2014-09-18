@@ -17,10 +17,6 @@
 
 <p>Ta kontakt med utvecklarna av Finto om du stöter på problem eller om du har utvecklingsidéer gällande servicen. Vi är också mycket intresserade av dina framgångar med användningen av Finto -<a href="../sv/feedback"> dela dina erfarenheter med oss och med andra!</a></p>      
 
-<h4>Länkar</h4>
-<a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektets wikisida</a><br />
-<a href="http://www.seco.tkk.fi/">Forskningsgruppen för semantisk beräkning SeCo</a><br />
-<a href="http://www.kansalliskirjasto.fi/">Nationalbiblioteket</a><br />
 {% elseif lang == 'en' %}
 <h4>About</h4>
 <p>Finto is a Finnish service for the publication and utilization of vocabularies, ontologies and classifications. It provides a user interface for browsing the vocabularies and open interfaces for utilizing them in other applications.</p>
@@ -30,8 +26,4 @@
 
 <p>If you encounter any problems or have improvement ideas, please contact the Finto team. We are also very much interested in your success stories in using Finto -<a href="../en/feedback"> please share your experiences!</a></p>      
 
-<h4>Links</h4>
-<a href="http://wiki.helsinki.fi/display/ONKI/">Project Wiki</a><br />
-<a href="http://www.seco.tkk.fi/">SeCo Website</a><br />
-<a href="http://www.kansalliskirjasto.fi/">The National Library of Finland</a><br />
 {% endif %}
