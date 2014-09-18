@@ -2,9 +2,9 @@
 {% if lang == 'fi' %}
 <h4>Tietoja</h4>
 <p>Finto on suomalainen palvelu sanastojen, ontologioiden ja luokitusten julkaisua ja käyttöä varten. Finto tarjoaa käyttöliittymän sanastojen selailulle, sekä avoimet rajapinnat sanastojen hyödyntämiseen muissa sovelluksissa.</p>
-<p>Fintoa kehitetään Kansalliskirjaston, opetus- ja kulttuuriministeriön ja valtiovarainministeriön yhteisessä <a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektissa.</a></p>
+<p>Fintoa kehitetään Kansalliskirjaston, opetus- ja kulttuuriministeriön ja valtiovarainministeriön yhteisessä<a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektissa.</a></p>
 
-<p>ONKI-projekti jatkaa Aalto-yliopistossa ja Helsingin yliopistossa vuosina 2003 - 2012 toimineen  <a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO-hankkeen työtä.</a></p>
+<p>ONKI-projekti jatkaa Aalto-yliopistossa ja Helsingin yliopistossa vuosina 2003 - 2012 toimineen<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO-hankkeen työtä.</a></p>
 
 <p>Jos kohtaat ongelmia tai sinulla on kehitysideoita palvelun suhteen, ota yhteyttä Finton kehittäjiin. Olemme myös erittäin kiinnostuneita sinun menestystarinoistasi Finton käytössä - <a href="../fi/feedback">jaa kokemuksiasi meille ja muille!</a></p>      
 
@@ -15,7 +15,7 @@
 {% elseif lang == 'sv' %}
 <h4>Information</h4>
 <p>Finto är en finländsk service för publicering och användning av tesaurusar, ontologier och klassifikationer. Finto erbjuder ett användargränssnitt för direkt användning av vokabulärerna och öppna gränssnitt för användning i andra applikationer.</p>
-<p>Finto utvecklas i ONKI-projektet, som är ett gemensamt projekt mellan Nationalbiblioteket, Undervisnings- och kulturministeriet och Finansministeriet: <a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektets wikisida</a></p>
+<p>Finto utvecklas i ONKI-projektet, som är ett gemensamt projekt mellan Nationalbiblioteket, Undervisnings- och kulturministeriet och Finansministeriet:<a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektets wikisida</a></p>
 
 <p>ONKI-projektet fortsätter det arbete som gjorts i FinnONTO-projektet vid Aalto-universitetet och Helsingfors universitet under åren 2003-2012:<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO</a></p>
 
