@@ -8,10 +8,6 @@
 
 <p>Jos kohtaat ongelmia tai sinulla on kehitysideoita palvelun suhteen, ota yhteyttä Finton kehittäjiin. Olemme myös erittäin kiinnostuneita sinun menestystarinoistasi Finton käytössä - <a href="../fi/feedback">jaa kokemuksiasi meille ja muille!</a></p>      
 
-<h4>Linkkejä</h4>
-<a href="http://wiki.helsinki.fi/display/ONKI/">ONKI-projektin Wikisivu.</a><br />
-<a href="http://www.seco.tkk.fi/">Semanttisen laskennan tutkimusryhmä SeCo</a><br />
-<a href="http://www.kansalliskirjasto.fi/">Kansalliskirjasto</a><br />
 {% elseif lang == 'sv' %}
 <h4>Information</h4>
 <p>Finto är en finländsk service för publicering och användning av tesaurusar, ontologier och klassifikationer. Finto erbjuder ett användargränssnitt för direkt användning av vokabulärerna och öppna gränssnitt för användning i andra applikationer.</p>
