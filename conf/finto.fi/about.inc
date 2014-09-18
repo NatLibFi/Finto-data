@@ -20,10 +20,10 @@
 {% elseif lang == 'en' %}
 <h4>About</h4>
 <p>Finto is a Finnish service for the publication and utilization of vocabularies, ontologies and classifications. It provides a user interface for browsing the vocabularies and open interfaces for utilizing them in other applications.</p>
-<p>Finto is being developed as a joint project between the National Library of Finland, the Ministry of Finance, and the Ministry of Education and Culture.<a href="http://wiki.helsinki.fi/display/ONKI/">See Project Wiki</a></p>
+<p>Finto is being developed by the ONKI Project as a joint venture between the National Library of Finland, the Ministry of Finance, and the Ministry of Education and Culture.<a href="http://wiki.helsinki.fi/display/ONKI/">See Project Wiki</a></p>
 
-<p>The current service is based on the FinnONTO research project by the Aalto University and the University of Helsinki between 2003 and 2012.<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">See FinnONTO Homepage</a></p>
+<p>The project is a continuation of the work begun in a joint research project FinnONTO between the Aalto University and the University of Helsinki from 2003 to 2012.<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">See FinnONTO Homepage</a></p>
 
-<p>If you encounter any problems or have improvement ideas, please contact the Finto team. We are also very much interested in your success stories in using Finto-<a href="../en/feedback"> please share your experiences!</a></p>      
+<p>If you encounter any problems or have improvement ideas, please contact the Finto team. We are also very much interested in your success stories in using Finto -<a href="../en/feedback"> please share your experiences!</a></p>      
 
 {% endif %}
