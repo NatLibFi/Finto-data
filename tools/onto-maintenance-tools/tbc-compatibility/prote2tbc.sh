@@ -19,15 +19,15 @@ dir=$4
 ../../ontorip/ontorip.py --old ${4}/${yso}-ontorip.ttl $2 > ${4}/${domain}-ontorip.ttl
 
 # Making the files TBC combatible
-./prote-to-tbc.py ${3}/yso.prop ${4}/${yso}-ontorip.ttl ${4}/${yso}-tbc.ttl
-./prote-to-tbc.py ${3}/${domain}.prop ${4}/${domain}-ontorip.ttl ${4}/${domain}-tbc.ttl
+./ensure_tbc_combatibility.py ${3}/yso.prop ${4}/${yso}-ontorip.ttl ${4}/${yso}-tbc.ttl
+./ensure_tbc_combatibility.py ${3}/${domain}.prop ${4}/${domain}-ontorip.ttl ${4}/${domain}-tbc.ttl
 
 # Adding the baseURI definition that TBC requires
 line=`grep baseuri ${3}/yso.prop`
 baseuri=${line##*=}
 ./add_baseuri.py  ${4}/${yso}-tbc.ttl $baseuri > ${4}/${yso}.ttl
 
-line=`grep baseuri ${3}/yso.prop`
+line=`grep baseuri ${3}/${domain}.prop`
 baseuri=${line##*=}
 ./add_baseuri.py  ${4}/${domain}-tbc.ttl $baseuri > ${4}/${domain}.ttl
 
