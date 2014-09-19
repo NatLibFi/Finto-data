@@ -24,13 +24,9 @@ html, body {
   border-bottom: 1px solid #C7E7E5 !important;
 }
 
-.topbar a.navigation-font:hover {
+.topbar a.navigation-font:hover, .topbar span.navigation-font:hover {
   color: #0078d4 !important;
   text-decoration: none !important;
-}
-
-p.autocomplete-label {
-  color: #00748f !important;
 }
 
 .tt-suggestion.tt-cursor, .ui-menu-item > .ui-state-focus {
@@ -49,7 +45,7 @@ p.autocomplete-label {
   background-color: #75889F !important;
 }
 
-#navi1, #navi3, #navi4 {
+#navi1, #navi2, #navi3, #navi4 {
   padding-left: 26px;
   padding-top: 6px;
   background-position: left center;
@@ -86,12 +82,26 @@ p.autocomplete-label {
 }
 
 #navi1 { background-image: url('../finto-pics/vocabularies.png'); padding-top: 10px; }
-#navi3 { background-image: url('../finto-pics/about.png'); }
-#navi4 { background-image: url('../finto-pics/feedback.png'); }
+#navi2 { background-image: url('../finto-pics/about.png'); }
+#navi3 { background-image: url('../finto-pics/feedback.png'); }
+#navi4 { background-image: url('../finto-pics/help.png'); }
+
+#navi4 > span {
+  border-bottom: 2px dotted #394554;
+  margin: 0;
+}
+#navi4:hover > span {
+  border-bottom: 2px dotted #0078d4 !important;
+  color: #0078d4 !important; 
+}
 
 #navi1:hover { background-image: url('../finto-pics/vocabularies-mouseover.png'); }
-#navi3:hover { background-image: url('../finto-pics/about-mouseover.png'); }
-#navi4:hover { background-image: url('../finto-pics/feedback-mouseover.png'); }
+#navi2:hover { background-image: url('../finto-pics/about-mouseover.png'); }
+#navi3:hover { background-image: url('../finto-pics/feedback-mouseover.png'); }
+#navi4:hover { 
+  background-image: url('../finto-pics/help-mouseover.png'); 
+  color: #0078d4 !important; 
+}
 
 #lang-dropdown-toggle, .headerbar .multiselect {
   background-color: #394554;
@@ -358,7 +368,7 @@ a {
   color: #00748f !important;
 }
 
-.topbar a.navigation-font {
+.topbar a.navigation-font, .topbar span.navigation-font {
   color: #394554 !important;
 }
 
