@@ -20,7 +20,7 @@ def fix_onto_definition(baseuri, onto):
       print("Removed triple: <%s> <%s> <%s>") % (str(s), str(p), str(o))
     
     # Adding the correct baseURI and stating it to be an ontology instance
-    g.add((baseuri, RDF.type, OWL.Ontology))
+  g.add((baseuri, RDF.type, OWL.Ontology))
 
 
 # Replaces the occurances of the old property with the new property and removes
