@@ -24,16 +24,28 @@ html, body {
   border-bottom: 1px solid #C7E7E5 !important;
 }
 
-.topbar a.navigation-font:hover {
+.topbar a.navigation-font:hover, .topbar span.navigation-font:hover {
   color: #0078d4 !important;
   text-decoration: none !important;
+}
+
+.tt-suggestion.tt-cursor, .ui-menu-item > .ui-state-focus {
+  background-color: #EDF4F3 !important;
+}
+
+.tt-suggestion, .ui-menu-item {
+  border-bottom: 1px solid #AFCECC !important
+}
+
+.tt-dropdown-menu, .ui-autocomplete {
+  border: 1px solid #AFCECC !important
 }
 
 .multiselect {
   background-color: #75889F !important;
 }
 
-#navi1, #navi3, #navi4 {
+#navi1, #navi2, #navi3, #navi4 {
   padding-left: 26px;
   padding-top: 6px;
   background-position: left center;
@@ -70,21 +82,52 @@ html, body {
 }
 
 #navi1 { background-image: url('../finto-pics/vocabularies.png'); padding-top: 10px; }
-#navi3 { background-image: url('../finto-pics/about.png'); }
-#navi4 { background-image: url('../finto-pics/feedback.png'); }
+#navi2 { background-image: url('../finto-pics/about.png'); }
+#navi3 { background-image: url('../finto-pics/feedback.png'); }
+#navi4 { background-image: url('../finto-pics/help.png'); }
+
+#navi4 > span {
+  border-bottom: 2px dotted #394554;
+  margin: 0;
+}
+#navi4:hover > span {
+  border-bottom: 2px dotted #0078d4 !important;
+  color: #0078d4 !important; 
+}
 
 #navi1:hover { background-image: url('../finto-pics/vocabularies-mouseover.png'); }
-#navi3:hover { background-image: url('../finto-pics/about-mouseover.png'); }
-#navi4:hover { background-image: url('../finto-pics/feedback-mouseover.png'); }
+#navi2:hover { background-image: url('../finto-pics/about-mouseover.png'); }
+#navi3:hover { background-image: url('../finto-pics/feedback-mouseover.png'); }
+#navi4:hover { 
+  background-image: url('../finto-pics/help-mouseover.png'); 
+  color: #0078d4 !important; 
+}
 
-#lang-dropdown-toggle, .multiselect {
-    background-color: #394554;
-    border: medium none;
-    border-radius: 0 !important;
-    color: #FFFFFF;
-    height: 40px;
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+#lang-dropdown-toggle, .headerbar .multiselect {
+  background-color: #394554;
+  border: medium none;
+  border-radius: 0 !important;
+  color: #FFFFFF;
+  height: 40px;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+.navbar-form > div > div > .dropdown-menu > li > a:hover, .multiselect-container > li.active > a, .multiselect-container > li > a:hover, .multiselect-container > li.active > a:hover, .multiselect-container > li > a:focus {
+  background-color: #75889F !important;
+}
+
+.search-options .mCSB_container > li:hover > a, .search-options .mCSB_container > li:focus > a {
+  text-decoration: none !important;
+}
+
+.search-options .mCSB_container > li:hover, .search-options .mCSB_container > li:focus {
+  background-color: #EDF4F3 !important;
+}
+
+#sidebar .multiselect > span, #sidebar .multiselect > span > b.caret {
+  color: #474b4f !important;
+  border-top-color: #474b4f !important;
 }
 
 /* front page stuff 
@@ -134,7 +177,7 @@ html, body {
 
 /* dark border tops
  ***************************/
-#vocabulary-list, .credits, .concept-info, .feedback-box, .welcome-box, .container, .search-result-listing, .nav-tabs > li.active, .right-box {
+#vocabulary-list, #limit, .credits, .concept-info, .feedback-box, .welcome-box, .container, .search-result-listing, .nav-tabs > li.active, .right-box {
   border-top: 2px solid #394554;
 }
 
@@ -210,6 +253,10 @@ hr {
   background-color: #eaf6f4;
 }
 
+#limit p {
+  background-color: #EAF6F4;
+}
+
 #groups a {
   background-color: #a9dcd7;
 }
@@ -220,7 +267,7 @@ hr {
 
 .search-count:first-child {
   font-weight: 600 !important;
-  margin: -5px 0 0 0 !important;
+  margin: -7px 0 0 0 !important;
   padding-left: 55px;
   height: 42px;
   background: url('../finto-pics/search.gif') no-repeat;
@@ -229,6 +276,15 @@ hr {
 .search-count:first-child p {
   padding-top: 12px;
 }
+
+.search-options > .btn-default {
+  background-color: #CDEAE6;
+}
+
+.search-limited:first-child p {
+  /*padding-top: 2px;*/
+}
+
 
 /*
 .search-result-listing .search-result:hover {
@@ -298,7 +354,7 @@ hr {
 
 .nav-tabs > li.active > a {
   background-color: #eaf6f4 !important;
-  margin-bottom: -2px;
+  height: 38px;
 }
 
 /* Font definitions
@@ -312,7 +368,7 @@ a {
   color: #00748f !important;
 }
 
-.topbar a.navigation-font {
+.topbar a.navigation-font, .topbar span.navigation-font {
   color: #394554 !important;
 }
 
@@ -351,6 +407,14 @@ p {
   body.frontpage-logo {
     background-image: url('../finto-pics/finto.png');
     background-repeat: no-repeat;
+  }
+
+  .nav-tabs > li.active > a {
+    height: 41px;
+  }
+  
+  .nav-tabs > li > a  {
+    height: 43px;
   }
 
   #service-logo {
