@@ -145,14 +145,6 @@ musa:p396 a skos:Concept ;
     skos:prefLabel "serenadit"@fi,
         "serenader"@sv .
 
-musa:p403 a skos:Concept ;
-    skos:altLabel "säveltaide"@fi ;
-    skos:inScheme musa: ;
-    skos:note "Termiä käytetään ei-musiikillisten asiasanojen täsmenteenä, kun tarkempaa termiä ei  voida käyttää, esimerkiksi piratismi : musiikki. Varsinaisten musiikkitermien yhteydessä  ilmaisua ei ole tarkoituksenmukaista käyttää, mistä syystä myös hierarkiasuhteet on jätetty  merkitsemättä."@fi,
-        "Yleisnimitys säveltaiteelle samassa merkityksessä kuin puhutaan kuvataiteista ja  kaunokirjallisuudesta."@fi ;
-    skos:prefLabel "musiikki"@fi,
-        "musik"@sv .
-
 musa:p417 a skos:Concept ;
     skos:inScheme musa: ;
     skos:note "Termiä käytetään vain Adagio-nimisten sävellysten yhteydessä."@fi,
@@ -213,6 +205,13 @@ musa:p525 a skos:Concept ;
         "Termiä käytetään vain sellaisten sävellysten yhteydessä, jotka säveltäjä on nimennyt  burleskeiksi."@fi ;
     skos:prefLabel "burleskit"@fi,
         "burlesker"@sv .
+
+musa:p526 a skos:Concept ;
+    skos:altLabel "bysanttilainen musiikki"@fi ;
+    skos:inScheme musa: ;
+    skos:note "Itä-Rooman eli Bysantin keisarikunnan aikaisen musiikin yleisnimitys."@fi ;
+    skos:prefLabel "musiikki"@fi,
+        "bysantinsk musik"@sv .
 
 musa:p537 a skos:Concept ;
     skos:altLabel "bändärit"@fi ;
@@ -1807,14 +1806,6 @@ musa:p524 a skos:Concept ;
     skos:prefLabel "buzuki"@fi,
         "bouzouki"@sv .
 
-musa:p526 a skos:Concept ;
-    skos:altLabel "bysanttilainen musiikki"@fi ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p66059 ;
-    skos:note "Itä-Rooman eli Bysantin keisarikunnan aikaisen musiikin yleisnimitys."@fi ;
-    skos:prefLabel "musiikki"@fi,
-        "bysantinsk musik"@sv .
-
 musa:p558 a skos:Concept ;
     skos:broader musa:p559 ;
     skos:inScheme musa: ;
@@ -2566,15 +2557,6 @@ musa:p756 a skos:Concept ;
         "Termin tarkoitus on aina ilmaistava täsmentävällä asiasanalla, esimerkiksi intonaatio :  säveljärjestelmät, intonaatio : piano : viritys."@fi ;
     skos:prefLabel "intonaatio"@fi,
         "intonation"@sv .
-
-musa:p762 a skos:Concept ;
-    skos:altLabel "sävelrunot"@fi ;
-    skos:broader musa:p445 ;
-    skos:inScheme musa: ;
-    skos:note "Ohjelmalliseen sisältöön jollain tavalla viittaavan orkesterisävellyksen nimitys."@fi,
-        "Termiä käytetään vain teoksista, jotka säveltäjä tai hakuteokset ovat nimenneet  sinfonisiksi runoiksi. Lisäksi on syytä käyttää myös termiä orkesterimusiikki."@fi ;
-    skos:prefLabel "sinfoniset runot"@fi,
-        "symfoniska dikter"@sv .
 
 musa:p764 a skos:Concept ;
     skos:broader musa:p458 ;
@@ -3673,6 +3655,16 @@ musa:p401 a skos:Concept ;
         "konsertarior"@sv ;
     skos:related musa:p66183 .
 
+musa:p403 a skos:Concept ;
+    skos:altLabel "säveltaide"@fi ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p66059,
+        musa:p714 ;
+    skos:note "Termiä käytetään ei-musiikillisten asiasanojen täsmenteenä, kun tarkempaa termiä ei  voida käyttää, esimerkiksi piratismi : musiikki. Varsinaisten musiikkitermien yhteydessä  ilmaisua ei ole tarkoituksenmukaista käyttää, mistä syystä myös hierarkiasuhteet on jätetty  merkitsemättä."@fi,
+        "Yleisnimitys säveltaiteelle samassa merkityksessä kuin puhutaan kuvataiteista ja  kaunokirjallisuudesta."@fi ;
+    skos:prefLabel "musiikki"@fi,
+        "musik"@sv .
+
 musa:p406 a skos:Concept ;
     skos:altLabel "koraalimotetit"@fi,
         "koralmotetter"@sv ;
@@ -3730,15 +3722,6 @@ musa:p444 a skos:Concept ;
         "motiv"@sv ;
     skos:related musa:p443,
         musa:p446 .
-
-musa:p445 a skos:Concept ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p762 ;
-    skos:note "Koska vain joidenkin sävellysten kohdalla ohjelmallisuus on kiistaton (säveltäjä on itse sen ilmaissut), termiä on syytä käyttää harkiten."@fi,
-        "Sävellys, jonka avulla säveltäjä haluaa synnyttää kuulijoissa ulkomusiikillisia  mielleyhtymiä. Ohjelmallisuus voi perustua teoksen nimeen, osien nimiin tai kuvailuun,  soitinmusiikkiin liitettyyn runoon tai mottoon jne."@fi ;
-    skos:prefLabel "ohjelmamusiikki"@fi,
-        "programmusik"@sv ;
-    skos:related musa:p443 .
 
 musa:p446 a skos:Concept ;
     skos:inScheme musa: ;
@@ -4215,8 +4198,8 @@ musa:p66057 a skos:Concept ;
     skos:related musa:p937 .
 
 musa:p66059 a skos:Concept ;
-    skos:broader musa:p409,
-        musa:p526 ;
+    skos:broader musa:p403,
+        musa:p409 ;
     skos:inScheme musa: ;
     skos:note "Itä-Rooman eli Bysantin keisarikunnassa ortodoksisen kirkon jumalanpalveluksissa  käytetty kreikankielisiin teksteihin liittynyt musiikki."@fi,
         "Termiä ei käytetä nykyajan kirkkomusiikista Kreikassa, se ilmaistaan ketjulla ortodoksinen kirkkomusiikki : Kreikka."@fi ;
@@ -4609,6 +4592,16 @@ musa:p757 a skos:Concept ;
     skos:prefLabel "rekisteröinti"@fi,
         "registrering"@sv ;
     skos:related musa:p468 .
+
+musa:p762 a skos:Concept ;
+    skos:altLabel "sävelrunot"@fi ;
+    skos:broader musa:p445,
+        musa:p713 ;
+    skos:inScheme musa: ;
+    skos:note "Ohjelmalliseen sisältöön jollain tavalla viittaavan orkesterisävellyksen nimitys."@fi,
+        "Termiä käytetään vain teoksista, jotka säveltäjä tai hakuteokset ovat nimenneet  sinfonisiksi runoiksi. Lisäksi on syytä käyttää myös termiä orkesterimusiikki."@fi ;
+    skos:prefLabel "sinfoniset runot"@fi,
+        "symfoniska dikter"@sv .
 
 musa:p767 a skos:Concept ;
     skos:broader musa:p458,
@@ -5387,6 +5380,16 @@ musa:p443 a skos:Concept ;
         musa:p445,
         musa:p446 .
 
+musa:p445 a skos:Concept ;
+    skos:broader musa:p714 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p762 ;
+    skos:note "Koska vain joidenkin sävellysten kohdalla ohjelmallisuus on kiistaton (säveltäjä on itse sen ilmaissut), termiä on syytä käyttää harkiten."@fi,
+        "Sävellys, jonka avulla säveltäjä haluaa synnyttää kuulijoissa ulkomusiikillisia  mielleyhtymiä. Ohjelmallisuus voi perustua teoksen nimeen, osien nimiin tai kuvailuun,  soitinmusiikkiin liitettyyn runoon tai mottoon jne."@fi ;
+    skos:prefLabel "ohjelmamusiikki"@fi,
+        "programmusik"@sv ;
+    skos:related musa:p443 .
+
 musa:p457 a skos:Concept ;
     skos:altLabel "praeambulumit"@fi,
         "preambulumit"@fi,
@@ -5808,16 +5811,6 @@ musa:p702 a skos:Concept ;
     skos:prefLabel "ohjelmat"@fi,
         "program"@sv ;
     skos:related musa:p705 .
-
-musa:p713 a skos:Concept ;
-    skos:broader musa:p714 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p360,
-        musa:p562 ;
-    skos:note "Termiä suositellaan käytettäväksi vain, jos indeksoitavalla musiikilla ei ole  täsmällisempää määritelmää (esimerkiksi konsertot, sarjat, sinfoniat, alkusoitot jne.) Jos  halutaan indeksoida muulle kokoonpanolle kuin sinfoniaorkesterille sävellettyä musiikkia,  käytetään sopivia täsmentäviä termejä, esimerkiksi orkesterimusiikki : kamariorkesterit :  Suomi."@fi,
-        "Yleisnimitys eurooppalaiselle orkesterille sävelletylle taidemusiikille."@fi ;
-    skos:prefLabel "orkesterimusiikki"@fi,
-        "orkestermusik"@sv .
 
 musa:p72260 a skos:Concept ;
     skos:altLabel "minialbumit"@fi,
@@ -6737,6 +6730,17 @@ musa:p711 a skos:Concept ;
         "undervisningsmetoder"@sv ;
     skos:related musa:p710 .
 
+musa:p713 a skos:Concept ;
+    skos:broader musa:p714 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p360,
+        musa:p562,
+        musa:p762 ;
+    skos:note "Termiä suositellaan käytettäväksi vain, jos indeksoitavalla musiikilla ei ole  täsmällisempää määritelmää (esimerkiksi konsertot, sarjat, sinfoniat, alkusoitot jne.) Jos  halutaan indeksoida muulle kokoonpanolle kuin sinfoniaorkesterille sävellettyä musiikkia,  käytetään sopivia täsmentäviä termejä, esimerkiksi orkesterimusiikki : kamariorkesterit :  Suomi."@fi,
+        "Yleisnimitys eurooppalaiselle orkesterille sävelletylle taidemusiikille."@fi ;
+    skos:prefLabel "orkesterimusiikki"@fi,
+        "orkestermusik"@sv .
+
 musa:p784 a skos:Concept ;
     skos:broader musa:p465 ;
     skos:inScheme musa: ;
@@ -7296,19 +7300,6 @@ musa:p677 a skos:Concept ;
     skos:prefLabel "huilusoittimet"@fi,
         "flöjtinstrument"@sv .
 
-musa:p714 a skos:Concept ;
-    skos:altLabel "instrumentaalimusiikki"@fi ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p1113,
-        musa:p304,
-        musa:p370,
-        musa:p456,
-        musa:p713 ;
-    skos:note "Nimitys musiikille, joka ei sisällä ihmisen ääntä."@fi,
-        "Termiä suositellaan käytettäväksi lähinnä kirjallisuudessa indeksoinnissa, ja varsinaisissa  musiikkijulkaisuissa vain silloin, kun kyseessä on sekasisältöinen soitinmusiikkia sisältävä  kokoelma, esimerkiksi soitinmusiikki : renessanssi : Italia : 1300-luku. Termiä ei ole  missään tapauksessa tarkoitus käyttää jokaisen soitinmusiikkijulkaisun yhteydessä."@fi ;
-    skos:prefLabel "soitinmusiikki"@fi,
-        "instrumentalmusik"@sv .
-
 musa:p805 a skos:Concept ;
     skos:altLabel "gramofonit"@fi,
         "grammofoner"@sv ;
@@ -7781,6 +7772,21 @@ musa:p689 a skos:Concept ;
     skos:related musa:p1124,
         musa:p199,
         musa:p204 .
+
+musa:p714 a skos:Concept ;
+    skos:altLabel "instrumentaalimusiikki"@fi ;
+    skos:broader musa:p403 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1113,
+        musa:p304,
+        musa:p370,
+        musa:p445,
+        musa:p456,
+        musa:p713 ;
+    skos:note "Nimitys musiikille, joka ei sisällä ihmisen ääntä."@fi,
+        "Termiä suositellaan käytettäväksi lähinnä kirjallisuudessa indeksoinnissa, ja varsinaisissa  musiikkijulkaisuissa vain silloin, kun kyseessä on sekasisältöinen soitinmusiikkia sisältävä  kokoelma, esimerkiksi soitinmusiikki : renessanssi : Italia : 1300-luku. Termiä ei ole  missään tapauksessa tarkoitus käyttää jokaisen soitinmusiikkijulkaisun yhteydessä."@fi ;
+    skos:prefLabel "soitinmusiikki"@fi,
+        "instrumentalmusik"@sv .
 
 musa:p754 a skos:Concept ;
     skos:broader musa:p435 ;
@@ -8968,7 +8974,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2014-09-17T01:46:20+00:00"^^xsd:dateTime ;
+    dct:modified "2014-09-23T13:15:54+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
