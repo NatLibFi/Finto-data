@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+ # -*- coding: utf-8 -*-
 
 from oaipmh.client import Client
 from oaipmh import metadata
@@ -41,7 +42,7 @@ provider, setname, urins = sys.argv[1:]
 metans = urins[:-1] + "-meta/"
 
 oai = Client(provider, registry)
-#recs = oai.listRecords(metadataPrefix='marc21', set=setname, from_=datetime(2014,9,19))
+#recs = oai.listRecords(metadataPrefix='marc21', set=setname, from_=datetime(2014,10,1))
 recs = oai.listRecords(metadataPrefix='marc21', set=setname)
 
 LANGMAP = {
@@ -53,16 +54,20 @@ LANGMAP = {
 labelmap = {}    # key: prefLabel, val: URIRef
 relationmap = {} # key: prefLabel, val: [ (property, prefLabel), ... ]
 
-RELMAP = { # MARC21 control field w value to RDF property
-    'g': SKOS.broader,
-    'h': SKOS.narrower,
-    'a': DCT.replaces,
-    'b': DCT.isReplacedBy,
-    None: SKOS.related,
+RELMAP = { # MARC21 control field w value to RDF property + inverse
+    'g': (SKOS.broader, SKOS.narrower),
+    'h': (SKOS.narrower, SKOS.broader),
+#    'a': (DCT.replaces, DCT.isReplacedBy),
+#    'b': (DCT.isReplacedBy, DCT.replaces),
+    'a': (SKOS.related, SKOS.related),
+    'b': (SKOS.related, SKOS.related),
+    None: (SKOS.related, SKOS.related),
 }
 
 def combined_label(f):
     label = f['a']
+    if 'x' in f:
+        label += " -- " + f['x']
     if 'z' in f:
         label += " -- " + f['z']
     return label
@@ -88,62 +93,71 @@ def format_timestamp(ts):
 for count, oaipmhrec in enumerate(recs):
     if count % 10 == 0: print >>sys.stderr, "count: %d" % count
     rec = oaipmhrec[1] # MARCXML record
-    uri = URIRef(urins + 'Y' + rec['889']['c'])
+    if '889' in rec: # Melinda
+        uri = URIRef(urins + 'Y' + rec['889']['c'])
+    else: # Fennica / Alma / Viola
+        uri = URIRef(urins + 'Y' + rec['001'].value())
     g.add((uri, RDF.type, SKOS.Concept))
+    g.add((uri, SKOS.inScheme, URIRef(urins)))
     
     lang = LANGMAP[rec['040']['b']]
 
     # created timestamp
     created = rec['008'].value()[:6]
-    g.add((uri, DCT.created, Literal(format_timestamp(created))))
+    #g.add((uri, DCT.created, Literal(format_timestamp(created))))
 
     # modified timestamp
     modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
-    g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
+    #g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
     
     # thematic group (072)
     for f in rec.get_fields('072'):
-        groupid = f['a'][3:]
-        groupuri = URIRef(urins + "G" + groupid)
+        groupid = f['a'][3:].strip()
+        groupuri = URIRef(urins + "ryhma_" + groupid)
         g.add((groupuri, SKOS.member, uri))
     
     # prefLabel (150/151)
     if '150' in rec:
-        prefLabel = rec['150']['a']
+        prefLabel = combined_label(rec['150'])
     else:
         prefLabel = combined_label(rec['151'])
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
     g.add((uri, SKOS.prefLabel, Literal(prefLabel, lang)))
     labelmap[prefLabel] = uri
     
-    # altLabel (450)
-    for f in rec.get_fields('450'):
-        altLabel = f['a']
+    # altLabel (450/451)
+    for f in rec.get_fields('450') + rec.get_fields('451'):
+        altLabel = combined_label(f)
         g.add((uri, SKOS.altLabel, Literal(altLabel, lang)))
     
     relationmap.setdefault(uri, [])
     
     # concept relations (550/551)
     for f in rec.get_fields('550') + rec.get_fields('551'):
-        prop = RELMAP[f['w']]
-        relationmap[uri].append((prop, combined_label(f)))
+        props = RELMAP[f['w']]
+        relationmap[uri].append((props, combined_label(f)))
         
     # source (670)
     for f in rec.get_fields('670'):
         text = f['a']
-        g.add((uri, DC.source, Literal(text, lang)))
+        if text.startswith(u'Lähde: '):
+            text = text.replace(u'Lähde: ', '')
+        g.add((uri, DC.source, Literal(text.strip(), lang)))
     
     # scope note (680)
     for f in rec.get_fields('680'):
-        text = f['i']
-        g.add((uri, SKOS.scopeNote, Literal(text, lang)))
+        text = f['i'] or f['a']
+        #g.add((uri, SKOS.scopeNote, Literal(text, lang)))
+        g.add((uri, SKOS.note, Literal(text.strip(), lang)))
     
 # Pass 2: add concept relations now that URIs are known for all concepts
 for uri, rels in relationmap.iteritems():
-    for prop, prefLabel in rels:
+    for props, prefLabel in rels:
         try:
             target = labelmap[prefLabel]
+            prop, invprop = props
             g.add((uri, prop, target))
+            g.add((target, invprop, uri))
         except KeyError:
             print >>sys.stderr, ("Unknown label '%s'" % prefLabel).encode('UTF-8')
 
