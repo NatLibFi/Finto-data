@@ -1,5 +1,5 @@
 #!/usr/bin/env python
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from oaipmh.client import Client
 from oaipmh import metadata
@@ -97,7 +97,6 @@ for count, oaipmhrec in enumerate(recs):
         uri = URIRef(urins + 'Y' + rec['889']['c'])
     else: # Fennica / Alma / Viola
         uri = URIRef(urins + 'Y' + rec['001'].value())
-    g.add((uri, RDF.type, SKOS.Concept))
     g.add((uri, SKOS.inScheme, URIRef(urins)))
     
     lang = LANGMAP[rec['040']['b']]
@@ -113,12 +112,14 @@ for count, oaipmhrec in enumerate(recs):
     # thematic group (072)
     for f in rec.get_fields('072'):
         groupid = f['a'][3:].strip()
-        groupuri = URIRef(urins + "ryhma_" + groupid)
-        g.add((groupuri, SKOS.member, uri))
+        if groupid != '':
+            groupuri = URIRef(urins + "ryhma_" + groupid)
+            g.add((groupuri, SKOS.member, uri))
     
     # prefLabel (150/151)
     if '150' in rec:
         prefLabel = combined_label(rec['150'])
+        g.add((uri, RDF.type, SKOS.Concept))
     else:
         prefLabel = combined_label(rec['151'])
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
@@ -140,9 +141,10 @@ for count, oaipmhrec in enumerate(recs):
     # source (670)
     for f in rec.get_fields('670'):
         text = f['a']
-        if text.startswith(u'Lähde: '):
-            text = text.replace(u'Lähde: ', '')
-        g.add((uri, DC.source, Literal(text.strip(), lang)))
+        while text.startswith(u'Lähde:'):
+            text = text.replace(u'Lähde:', '').strip()
+        #g.add((uri, DC.source, Literal(text, lang)))
+        g.add((uri, URIRef(metans + "source"), Literal(text, lang)))
     
     # scope note (680)
     for f in rec.get_fields('680'):
@@ -157,7 +159,7 @@ for uri, rels in relationmap.iteritems():
             target = labelmap[prefLabel]
             prop, invprop = props
             g.add((uri, prop, target))
-            g.add((target, invprop, uri))
+            #g.add((target, invprop, uri))
         except KeyError:
             print >>sys.stderr, ("Unknown label '%s'" % prefLabel).encode('UTF-8')
 
