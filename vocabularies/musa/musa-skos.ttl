@@ -429,13 +429,6 @@ musa:p66095 a skos:Concept ;
     skos:prefLabel "transkribering"@fi,
         "transkribointi"@sv .
 
-musa:p66098 a skos:Concept ;
-    skos:inScheme musa: ;
-    skos:note "Termiä käytetään lähinnä kentässä 600 tai 610 lisämääreenä, esimerkiksi Hendrix, Jimi :  tribuutit."@fi,
-        "Äänite- tai nuottikokoelma, joka on valmistettu yksittäisen säveltäjän, laulajan tai muun  artistin kunniaksi."@fi ;
-    skos:prefLabel "tribuutit"@fi,
-        "tributer"@sv .
-
 musa:p66100 a skos:Concept ;
     skos:altLabel "laulutekniikka"@fi ;
     skos:inScheme musa: ;
@@ -706,14 +699,6 @@ musa:p73022 a skos:Concept ;
         "välisoitot"@fi ;
     skos:inScheme musa: ;
     skos:prefLabel "ritornellot"@fi .
-
-musa:p73540 a skos:Concept ;
-    skos:inScheme musa: ;
-    skos:prefLabel "cover-versiot"@fi .
-
-musa:p73541 a skos:Concept ;
-    skos:inScheme musa: ;
-    skos:prefLabel "pelimusiikki"@fi .
 
 musa:p740 a skos:Concept ;
     skos:altLabel "underground rock"@fi ;
@@ -2084,6 +2069,14 @@ musa:p66090 a skos:Concept ;
     skos:prefLabel "trance"@fi,
         "trance"@sv .
 
+musa:p66098 a skos:Concept ;
+    skos:inScheme musa: ;
+    skos:note "Termiä käytetään lähinnä kentässä 600 tai 610 lisämääreenä, esimerkiksi Hendrix, Jimi :  tribuutit."@fi,
+        "Äänite- tai nuottikokoelma, joka on valmistettu yksittäisen säveltäjän, laulajan tai muun  artistin kunniaksi."@fi ;
+    skos:prefLabel "tribuutit"@fi,
+        "tributer"@sv ;
+    skos:related musa:p73540 .
+
 musa:p661 a skos:Concept ;
     skos:broader musa:p571 ;
     skos:inScheme musa: ;
@@ -2479,6 +2472,19 @@ musa:p735 a skos:Concept ;
         "Taiteellisesti kunnianhimoinen rock-tyyli, jolle on luonteenomaista virtuoosimainen  soittimien käsittely ja/tai monipolviset kappalerakenteet sekä mahdolliset vaikutteet jazzista  tai taidemusiikista."@fi ;
     skos:prefLabel "progressiivinen rock"@fi,
         "progressiv rock"@sv .
+
+musa:p73540 a skos:Concept ;
+    skos:altLabel "cover-esitykset"@fi,
+        "cover-levyt"@fi,
+        "cover-levytykset"@fi,
+        "cover-äänitteet"@fi,
+        "coverit"@fi,
+        "koverit"@fi,
+        "lainakappaleet"@fi ;
+    skos:inScheme musa: ;
+    skos:note "ONGELMA"@fi ;
+    skos:prefLabel "cover-versiot"@fi ;
+    skos:related musa:p66098 .
 
 musa:p736 a skos:Concept ;
     skos:altLabel "psykedeelinen musiikki"@fi,
@@ -4528,6 +4534,19 @@ musa:p720 a skos:Concept ;
     skos:prefLabel "hard bop"@fi,
         "hard bop"@sv ;
     skos:related musa:p440 .
+
+musa:p73541 a skos:Concept ;
+    skos:altLabel "digitaalipelimusiikki"@fi,
+        "konsolipelimusiikki"@fi,
+        "mobiilipelimusiikki"@fi,
+        "tietokonepelimusiikki"@fi,
+        "verkkopelimusiikki"@fi,
+        "videopelimusiikki"@fi ;
+    skos:inScheme musa: ;
+    skos:note "ONGELMA"@fi ;
+    skos:prefLabel "pelimusiikki"@fi ;
+    skos:related [ skos:related musa:p73541 ],
+        musa:p165 .
 
 musa:p737 a skos:Concept ;
     skos:broader musa:p571 ;
@@ -7533,7 +7552,7 @@ musa:p72267 a skos:Concept ;
 musa:p723 a skos:Concept ;
     skos:broader musa:p431 ;
     skos:inScheme musa: ;
-    skos:note "Alunperin 1970-luvulla New Yorkissa kehittyneen rytmisen puhelaulun nimitys (lyhenne  sanoista rhytmically accentuated poetry), sittemmin yleisemmin nimitys hip hop -kulttuuriin  liittyvälle musiikille. Alkujaan täysin Yhdysvaltain afroamerikkalaisen väestön omasta  ilmiöstä on tullut kansainvälinen tyyli kansallisine sovelluksineen ja solisteineen."@fi,
+    skos:note "Alun perin 1970-luvulla New Yorkissa kehittyneen rytmisen puhelaulun nimitys (lyhenne  sanoista rhytmically accentuated poetry), sittemmin yleisemmin nimitys hip hop -kulttuuriin  liittyvälle musiikille. Alkujaan täysin Yhdysvaltain afroamerikkalaisen väestön omasta  ilmiöstä on tullut kansainvälinen tyyli kansallisine sovelluksineen ja solisteineen."@fi,
         "Historiallisista ja tyylillisistä syistä termin yhteydessä on syytä aina käyttää täsmentäviä  asiasanoja, esimerkiksi rap : Suomi : 2000-2009."@fi ;
     skos:prefLabel "rap"@fi,
         "rap"@sv ;
@@ -8707,6 +8726,7 @@ musa:p165 a skos:Concept ;
         musa:p66103,
         musa:p66191,
         musa:p699,
+        musa:p73541,
         musa:p814 .
 
 musa:p431 a skos:Concept ;
@@ -8974,7 +8994,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2014-10-13T02:00:54+00:00"^^xsd:dateTime ;
+    dct:modified "2014-10-14T01:51:57+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
