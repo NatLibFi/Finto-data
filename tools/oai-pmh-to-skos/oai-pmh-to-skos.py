@@ -35,7 +35,7 @@ g.namespace_manager.bind('dct', DCT)
 
 
 if len(sys.argv) != 4:
-    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <namespace-URI>" % sys.argv[1]
+    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <namespace-URI>" % sys.argv[0]
     sys.exit(1)
 
 provider, setname, urins = sys.argv[1:]
