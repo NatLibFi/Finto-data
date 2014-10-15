@@ -41,6 +41,8 @@ if len(sys.argv) != 4:
 provider, setname, urins = sys.argv[1:]
 metans = urins[:-1] + "-meta/"
 
+g.namespace_manager.bind(metans.split('/')[-2], Namespace(metans))
+
 oai = Client(provider, registry)
 #recs = oai.listRecords(metadataPrefix='marc21', set=setname, from_=datetime(2014,10,1))
 recs = oai.listRecords(metadataPrefix='marc21', set=setname)
@@ -98,6 +100,7 @@ for count, oaipmhrec in enumerate(recs):
     else: # Fennica / Alma / Viola
         uri = URIRef(urins + 'Y' + rec['001'].value())
     g.add((uri, SKOS.inScheme, URIRef(urins)))
+    g.add((uri, RDF.type, SKOS.Concept))
     
     lang = LANGMAP[rec['040']['b']]
 
@@ -119,7 +122,6 @@ for count, oaipmhrec in enumerate(recs):
     # prefLabel (150/151)
     if '150' in rec:
         prefLabel = combined_label(rec['150'])
-        g.add((uri, RDF.type, SKOS.Concept))
     else:
         prefLabel = combined_label(rec['151'])
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
@@ -140,15 +142,17 @@ for count, oaipmhrec in enumerate(recs):
         
     # source (670)
     for f in rec.get_fields('670'):
-        text = f['a']
+        text = f.format_field()
         while text.startswith(u'Lähde:'):
             text = text.replace(u'Lähde:', '').strip()
+        while text.startswith(u'Källa:'):
+            text = text.replace(u'Källa:', '').strip()
         #g.add((uri, DC.source, Literal(text, lang)))
         g.add((uri, URIRef(metans + "source"), Literal(text, lang)))
     
     # scope note (680)
     for f in rec.get_fields('680'):
-        text = f['i'] or f['a']
+        text = f.format_field()
         #g.add((uri, SKOS.scopeNote, Literal(text, lang)))
         g.add((uri, SKOS.note, Literal(text.strip(), lang)))
     
