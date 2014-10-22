@@ -1,7 +1,7 @@
 #!/bin/sh
 
 pdftotext -f 3 -layout OKM*.pdf
-./okm-toskos.py OKM*.txt >okm-tieteenala.ttl
+./okm-toskos.py OKM*.txt OKM*.csv >okm-tieteenala.ttl
 
 INFILES=okm-tieteenala.ttl
 OUTFILE=okm-tieteenala-skos.ttl

@@ -59,6 +59,29 @@ for line in docs[3:]:
     code = m.group(1)
   else:
     text.append(line)
+
+# add en,sv labels
+import csv
+
+fieldnames = ['tid','tfi','ten','tsv','cid','cfi','cen','csv']
+reader = csv.DictReader(open(sys.argv[2], 'r'), fieldnames=fieldnames)
+for rec in reader:
+  try:
+    tid = int(rec['tid'])
+  except ValueError:
+    continue
   
+  turi = OKM['ta%d' % tid]
+  g.add((turi, SKOS.prefLabel, Literal(rec['ten'].strip(), 'en')))
+  g.add((turi, SKOS.prefLabel, Literal(rec['tsv'].strip(), 'sv')))
+
+  try:
+    cid = int(rec['cid'])
+  except ValueError:
+    continue
+  
+  curi = OKM['ta%d' % cid]
+  g.add((curi, SKOS.prefLabel, Literal(rec['cen'].strip(), 'en')))
+  g.add((curi, SKOS.prefLabel, Literal(rec['csv'].strip(), 'sv')))
 
 g.serialize(format='turtle', destination=sys.stdout)
