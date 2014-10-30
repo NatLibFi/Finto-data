@@ -17,6 +17,7 @@
 
 @prefix : <http://www.yso.fi/onto/metatietosanasto/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#>.
+@prefix mts: <http://metatietosanasto.fi/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
@@ -1048,53 +1049,47 @@ Videolaitteella käytettävät aineistot."""@fi ;
   skos:prefLabel "GTIN-koodista"@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
 .
-rdac:C10001
+mts:C10001
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Teos"@fi ;
+  rdfs:seeAlso rdac:C10001 ;
   skos:definition "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi ;
 .
-rdac:C10001_1
-  rdf:type rdac:C10001 ;
-  skos:prefLabel "Teoksen_instanssi"^^xsd:string ;
-.
-rdac:C10002
+mts:C10002
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Toimija"@fi ;
+  rdfs:seeAlso rdac:C10002 ;
 .
-rdac:C10003
+mts:C10003
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Kappale"@fi ;
+  rdfs:seeAlso rdac:C10003 ;
   skos:definition "Yksittäinen manifestaation toteutuma (esim. yksittäinen CD-äänilevy, kirja kirjaston kokoelmissa)."@fi ;
 .
-rdac:C10003_1
-  rdf:type rdac:C10003 ;
-  skos:prefLabel "Kappaleen_instanssi"^^xsd:string ;
-.
-rdac:C10004
+mts:C10004
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Henkilö"@fi ;
+  rdfs:seeAlso rdac:C10004 ;
 .
-rdac:C10004_1
-  rdf:type rdac:C10004 ;
-  skos:prefLabel "Henkilön_instanssi"^^xsd:string ;
-.
-rdac:C10005
+mts:C10005
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Yhteisö"@fi ;
+  rdfs:seeAlso rdac:C10005 ;
 .
-rdac:C10005_1
-  rdf:type rdac:C10005 ;
-  skos:prefLabel "Yhteisön_instanssi"^^xsd:string ;
-.
-rdac:C10006
+mts:C10006
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Ekspressio"@fi ;
+  rdfs:seeAlso rdac:C10006 ;
   skos:definition "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi ;
 .
-rdac:C10006_1
-  rdf:type rdac:C10006 ;
-  skos:prefLabel "Ekspression_instanssi"^^xsd:string ;
-.
-rdac:C10007
+mts:C10007
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Manifestaatio"@fi ;
+  rdfs:seeAlso rdac:C10007 ;
   skos:definition "Teoksen ekspression saama ilmiasu."@fi ;
 .
-rdac:C10007_1
-  rdf:type rdac:C10007 ;
+mts:C10007_1
+  rdf:type mts:C10007 ;
   rdam:P30001 <http://metatietosanasto.fi/069> ;
   rdam:P30001 <http://metatietosanasto.fi/069_1> ;
   rdam:P30001 <http://metatietosanasto.fi/070> ;
@@ -1303,12 +1298,10 @@ rdac:C10007_1
   rdam:P30214 <http://metatietosanasto.fi/135> ;
   skos:prefLabel "manifestaation_instanssi"@fi ;
 .
-rdac:C10008
+mts:C10008
+  rdf:type isothes:ConceptGroup, skos:Collection ;
   rdfs:label "Suku"@fi ;
-.
-rdac:C10008_1
-  rdf:type rdac:C10008 ;
-  skos:prefLabel "Suvun_instanssi"^^xsd:string ;
+  rdfs:seeAlso rdac:C10008 ;
 .
 rdam:P30001
   rdfs:label "tallennetyyppi"@fi ;
