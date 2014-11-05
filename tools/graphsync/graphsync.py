@@ -54,7 +54,8 @@ class GraphSyncer:
       return sources
     for ds,srcurl in vocgraph.subject_objects(VOID.dataDump):
       graphuri = vocgraph.value(ds, SKOSMOS.sparqlGraph, None)
-      sources[srcurl] = graphuri
+      if srcurl.endswith('.ttl'): # quick fix for problems with multiple dumps
+        sources[srcurl] = graphuri
     self.logger.debug("found %d sources", len(sources))
     return sources
 
