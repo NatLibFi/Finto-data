@@ -67,12 +67,8 @@ RELMAP = { # MARC21 control field w value to RDF property + inverse
 }
 
 def combined_label(f):
-    label = f['a']
-    if 'x' in f:
-        label += " -- " + f['x']
-    if 'z' in f:
-        label += " -- " + f['z']
-    return label
+    labels = f.get_subfields('a', 'x', 'z')
+    return ' -- '.join(labels)
 
 def format_timestamp(ts):
     year = int(ts[0:2])
@@ -93,7 +89,7 @@ def format_timestamp(ts):
 
 # Pass 1: convert to basic SKOS, without concept relations
 for count, oaipmhrec in enumerate(recs):
-    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
+#    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
     rec = oaipmhrec[1] # MARCXML record
     if '889' in rec: # Melinda
         uri = URIRef(urins + 'Y' + rec['889']['c'])
@@ -116,7 +112,8 @@ for count, oaipmhrec in enumerate(recs):
     for f in rec.get_fields('072'):
         groupid = f['a'][3:].strip()
         if groupid != '':
-            groupuri = URIRef(urins + "ryhma_" + groupid)
+            #groupuri = URIRef(urins + "ryhma_" + groupid)
+            groupuri = URIRef("http://www.yso.fi/onto/ysa/" + "ryhma_" + groupid)
             g.add((groupuri, SKOS.member, uri))
     
     # prefLabel (150/151)
@@ -137,8 +134,11 @@ for count, oaipmhrec in enumerate(recs):
     
     # concept relations (550/551)
     for f in rec.get_fields('550') + rec.get_fields('551'):
-        props = RELMAP[f['w']]
-        relationmap[uri].append((props, combined_label(f)))
+        props = RELMAP.get(f['w'], None)
+        if props is None:
+            print >>sys.stderr, "%s: Unknown w subfield value '%s', ignoring field" % (uri, f['w'])
+        else:
+            relationmap[uri].append((props, combined_label(f)))
         
     # source (670)
     for f in rec.get_fields('670'):
@@ -165,6 +165,6 @@ for uri, rels in relationmap.iteritems():
             g.add((uri, prop, target))
             #g.add((target, invprop, uri))
         except KeyError:
-            print >>sys.stderr, ("Unknown label '%s'" % prefLabel).encode('UTF-8')
+            print >>sys.stderr, ("%s: Unknown label '%s'" % (uri, prefLabel)).encode('UTF-8')
 
 g.serialize(format='turtle', destination=sys.stdout)
