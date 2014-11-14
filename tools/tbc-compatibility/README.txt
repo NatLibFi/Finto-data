@@ -3,8 +3,10 @@
 Script for making an owl ontology used in Protege to the form supported by TopBraid Composer (TBC) ontology editor.
 The script splits a combined ontology to the domain ontology and to the general ontology. After this, both of the files are modified for TBC combatibility.
 
+Note: create a new configuration file for the domain ontology. The configuration file for YSO is already done, but you might need to add some properties to it due to the unstandardised FinnONTO namespaces.
+
 Requirements:
-ontorip (Finto-data/tools/ontorip/ontorip.py)
+ontorip (../ontorip/ontorip.py)
 bash
 python 2.7
 
