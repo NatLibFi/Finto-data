@@ -35,10 +35,11 @@ g.namespace_manager.bind('dct', DCT)
 
 
 if len(sys.argv) != 4:
-    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <namespace-URI>" % sys.argv[0]
+    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI>" % sys.argv[0]
     sys.exit(1)
 
-provider, setname, urins = sys.argv[1:]
+provider, setname, concns = sys.argv[1:]
+urins = concns[:-1]
 metans = urins[:-1] + "-meta/"
 
 g.namespace_manager.bind(metans.split('/')[-2], Namespace(metans))
@@ -50,6 +51,11 @@ recs = oai.listRecords(metadataPrefix='marc21', set=setname)
 LANGMAP = {
     'fin': 'fi',
     'swe': 'sv',
+}
+
+LINKLANGMAP = {
+    'Cilla': 'sv',
+    'ysa': 'fi',
 }
 
 # temporary dicts to store label/URI mappings between passes
@@ -92,9 +98,9 @@ for count, oaipmhrec in enumerate(recs):
 #    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
     rec = oaipmhrec[1] # MARCXML record
     if '889' in rec: # Melinda
-        uri = URIRef(urins + 'Y' + rec['889']['c'])
+        uri = URIRef(concns + rec['889']['c'])
     else: # Fennica / Alma / Viola
-        uri = URIRef(urins + 'Y' + rec['001'].value())
+        uri = URIRef(concns + rec['001'].value())
     g.add((uri, SKOS.inScheme, URIRef(urins)))
     g.add((uri, RDF.type, SKOS.Concept))
     
@@ -155,6 +161,14 @@ for count, oaipmhrec in enumerate(recs):
         text = f.format_field()
         #g.add((uri, SKOS.scopeNote, Literal(text, lang)))
         g.add((uri, SKOS.note, Literal(text.strip(), lang)))
+    
+    # links to other authorities (750)
+    for f in rec.get_fields('750'):
+        linklang = LINKLANGMAP.get(f['2'], None)
+        if linklang is None:
+            print >>sys.stderr, ("%s: Unknown target vocabulary '%s' for linked term '%s'" % (uri, f['2'], combined_label(f))).encode('UTF-8')
+        else:
+            g.add((uri, SKOS.prefLabel, Literal(combined_label(f), linklang)))
     
 # Pass 2: add concept relations now that URIs are known for all concepts
 for uri, rels in relationmap.iteritems():
