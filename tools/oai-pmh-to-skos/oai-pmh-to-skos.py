@@ -34,11 +34,21 @@ g.namespace_manager.bind('dc', DC)
 g.namespace_manager.bind('dct', DCT)
 
 
-if len(sys.argv) != 4:
-    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI>" % sys.argv[0]
+if len(sys.argv) not in (4,5,6):
+    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI> [<vocab-id>] [<lang-override>]" % sys.argv[0]
     sys.exit(1)
 
-provider, setname, concns = sys.argv[1:]
+provider, setname, concns = sys.argv[1:4]
+if len(sys.argv) >= 5:
+    vocabid = sys.argv[4]
+else:
+    vocabid = None
+
+if len(sys.argv) == 6:
+    langoverride = sys.argv[5]
+else:
+    langoverride = None
+
 urins = concns[:-1]
 metans = urins[:-1] + "-meta/"
 
@@ -54,13 +64,15 @@ LANGMAP = {
 }
 
 LINKLANGMAP = {
-    'Cilla': 'sv',
+    'cilla': 'sv',
+    'musa': 'fi',
     'ysa': 'fi',
 }
 
 # temporary dicts to store label/URI mappings between passes
 labelmap = {}    # key: prefLabel, val: URIRef
 relationmap = {} # key: prefLabel, val: [ (property, prefLabel), ... ]
+uri_to_label = {} # key: URIRef, val: prefLabel
 
 RELMAP = { # MARC21 control field w value to RDF property + inverse
     'g': (SKOS.broader, SKOS.narrower),
@@ -97,6 +109,12 @@ def format_timestamp(ts):
 for count, oaipmhrec in enumerate(recs):
 #    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
     rec = oaipmhrec[1] # MARCXML record
+
+    if vocabid is not None:
+        if vocabid != rec['040']['f'].lower():
+            # wrong vocab id - skip this record
+            continue
+
     if '889' in rec: # Melinda
         uri = URIRef(concns + rec['889']['c'])
     else: # Fennica / Alma / Viola
@@ -104,7 +122,10 @@ for count, oaipmhrec in enumerate(recs):
     g.add((uri, SKOS.inScheme, URIRef(urins)))
     g.add((uri, RDF.type, SKOS.Concept))
     
-    lang = LANGMAP[rec['040']['b']]
+    if langoverride is not None:
+        lang = langoverride
+    else:
+        lang = LANGMAP[rec['040']['b']]
 
     # created timestamp
     created = rec['008'].value()[:6]
@@ -130,6 +151,7 @@ for count, oaipmhrec in enumerate(recs):
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
     g.add((uri, SKOS.prefLabel, Literal(prefLabel, lang)))
     labelmap[prefLabel] = uri
+    uri_to_label[uri] = prefLabel
     
     # altLabel (450/451)
     for f in rec.get_fields('450') + rec.get_fields('451'):
@@ -142,7 +164,7 @@ for count, oaipmhrec in enumerate(recs):
     for f in rec.get_fields('550') + rec.get_fields('551'):
         props = RELMAP.get(f['w'], None)
         if props is None:
-            print >>sys.stderr, "%s: Unknown w subfield value '%s', ignoring field" % (uri, f['w'])
+            print >>sys.stderr, ("%s '%s': Unknown w subfield value '%s', ignoring field" % (uri, prefLabel, f['w'])).encode('UTF-8')
         else:
             relationmap[uri].append((props, combined_label(f)))
         
@@ -162,11 +184,13 @@ for count, oaipmhrec in enumerate(recs):
         #g.add((uri, SKOS.scopeNote, Literal(text, lang)))
         g.add((uri, SKOS.note, Literal(text.strip(), lang)))
     
-    # links to other authorities (750)
-    for f in rec.get_fields('750'):
-        linklang = LINKLANGMAP.get(f['2'], None)
+    # links to other authorities (750/751)
+    for f in rec.get_fields('750') + rec.get_fields('751'):
+        vid = f['2'] # target vocabulary id
+        if vid is not None: vid = vid.lower()
+        linklang = LINKLANGMAP.get(vid, None)
         if linklang is None:
-            print >>sys.stderr, ("%s: Unknown target vocabulary '%s' for linked term '%s'" % (uri, f['2'], combined_label(f))).encode('UTF-8')
+            print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f))).encode('UTF-8')
         else:
             g.add((uri, SKOS.prefLabel, Literal(combined_label(f), linklang)))
     
@@ -179,6 +203,6 @@ for uri, rels in relationmap.iteritems():
             g.add((uri, prop, target))
             #g.add((target, invprop, uri))
         except KeyError:
-            print >>sys.stderr, ("%s: Unknown label '%s'" % (uri, prefLabel)).encode('UTF-8')
+            print >>sys.stderr, ("%s '%s': Unknown referred term '%s'" % (uri, uri_to_label[uri], prefLabel)).encode('UTF-8')
 
 g.serialize(format='turtle', destination=sys.stdout)
