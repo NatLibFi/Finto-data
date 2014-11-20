@@ -78,10 +78,8 @@ uri_to_label = {} # key: URIRef, val: prefLabel
 RELMAP = { # MARC21 control field w value to RDF property + inverse
     'g': (SKOS.broader, SKOS.narrower),
     'h': (SKOS.narrower, SKOS.broader),
-#    'a': (DCT.replaces, DCT.isReplacedBy),
-#    'b': (DCT.isReplacedBy, DCT.replaces),
-    'a': (SKOS.related, SKOS.related),
-    'b': (SKOS.related, SKOS.related),
+    'a': (DCT.replaces, DCT.isReplacedBy),
+    'b': (DCT.isReplacedBy, DCT.replaces),
     None: (SKOS.related, SKOS.related),
 }
 
@@ -130,18 +128,17 @@ for count, oaipmhrec in enumerate(recs):
 
     # created timestamp
     created = rec['008'].value()[:6]
-    #g.add((uri, DCT.created, Literal(format_timestamp(created))))
+    g.add((uri, DCT.created, Literal(format_timestamp(created))))
 
     # modified timestamp
     modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
-    #g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
+    g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
     
     # thematic group (072)
     for f in rec.get_fields('072'):
         groupid = f['a'][3:].strip()
         if groupid != '':
-            #groupuri = URIRef(urins + "ryhma_" + groupid)
-            groupuri = URIRef("http://www.yso.fi/onto/ysa/" + "ryhma_" + groupid)
+            groupuri = URIRef(urins + "ryhma_" + groupid)
             g.add((groupuri, SKOS.member, uri))
     
     # prefLabel (150/151)
@@ -177,14 +174,12 @@ for count, oaipmhrec in enumerate(recs):
             text = text.replace(u'Lähde:', '').strip()
         while text.startswith(u'Källa:'):
             text = text.replace(u'Källa:', '').strip()
-        #g.add((uri, DC.source, Literal(text, lang)))
-        g.add((uri, URIRef(metans + "source"), Literal(text, lang)))
+        g.add((uri, DC.source, Literal(text, lang)))
     
     # scope note (680)
     for f in rec.get_fields('680'):
         text = f.format_field()
-        #g.add((uri, SKOS.scopeNote, Literal(text, lang)))
-        g.add((uri, SKOS.note, Literal(text.strip(), lang)))
+        g.add((uri, SKOS.scopeNote, Literal(text, lang)))
     
     # links to other authorities (750/751)
     for f in rec.get_fields('750') + rec.get_fields('751'):
