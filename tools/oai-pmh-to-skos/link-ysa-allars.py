@@ -4,8 +4,8 @@
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
 import sys
 
-if len(sys.argv) != 5:
-    print >>sys.stderr, "Usage: %s <ysa.ttl> <allars.ttl> <ysa-linked.ttl> <allars-linked.ttl>" % sys.argv[0]
+if len(sys.argv) != 6:
+    print >>sys.stderr, "Usage: %s <ysa.ttl> <allars.ttl> <yso.ttl> <ysa-linked.ttl> <allars-linked.ttl>" % sys.argv[0]
     sys.exit(1)
 
 ysa = Graph()
@@ -14,6 +14,8 @@ ysa.parse(sys.argv[1], format='turtle')
 allars = Graph()
 allars.parse(sys.argv[2], format='turtle')
 
+OWL=Namespace("http://www.w3.org/2002/07/owl#")
+XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 YSA=Namespace("http://www.yso.fi/onto/ysa/")
 ALLARS=Namespace("http://www.yso.fi/onto/allars/")
@@ -75,10 +77,28 @@ for ysaconc, allarsconcs in ysa_to_allars.items():
             ysa.add((ysaconc, SKOS.narrowMatch, allarsconc))
             allars.add((allarsconc, SKOS.broadMatch, ysaconc))
 
-ysaout = open(sys.argv[3], 'w')
+# add links to YSO
+yso = Graph()
+yso.parse(sys.argv[3], format='turtle')
+
+for s,o in yso.subject_objects(SKOS.closeMatch):
+    if (s, OWL.deprecated, Literal('true', datatype=XSD.boolean)) in yso:
+        continue # ignore deprecated YSO concepts
+    if o.startswith(YSA):
+        if (o, RDF.type, SKOS.Concept) in ysa:
+            ysa.add((o, SKOS.closeMatch, s))
+        else:
+            print >>sys.stderr, "YSO concept %s linked to nonexistent YSA concept %s" % (s,o)
+    elif o.startswith(ALLARS):
+        if (o, RDF.type, SKOS.Concept) in allars:
+            allars.add((o, SKOS.closeMatch, s))
+        else:
+            print >>sys.stderr, "YSO concept %s linked to nonexistent Allars concept %s" % (s,o)
+
+ysaout = open(sys.argv[4], 'w')
 ysa.serialize(destination=ysaout, format='turtle')
 ysaout.close()
 
-allarsout = open(sys.argv[4], 'w')
+allarsout = open(sys.argv[5], 'w')
 allars.serialize(destination=allarsout, format='turtle')
 allarsout.close()
