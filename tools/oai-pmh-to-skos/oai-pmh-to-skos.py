@@ -71,6 +71,7 @@ LINKLANGMAP = {
 
 # temporary dicts to store label/URI mappings between passes
 labelmap = {}    # key: prefLabel, val: URIRef
+altlabelmap = {} # key: altLabel, val: URIRef
 relationmap = {} # key: prefLabel, val: [ (property, prefLabel), ... ]
 uri_to_label = {} # key: URIRef, val: prefLabel
 
@@ -157,6 +158,7 @@ for count, oaipmhrec in enumerate(recs):
     for f in rec.get_fields('450') + rec.get_fields('451'):
         altLabel = combined_label(f)
         g.add((uri, SKOS.altLabel, Literal(altLabel, lang)))
+        altlabelmap[altLabel] = uri
     
     relationmap.setdefault(uri, [])
     
@@ -196,13 +198,17 @@ for count, oaipmhrec in enumerate(recs):
     
 # Pass 2: add concept relations now that URIs are known for all concepts
 for uri, rels in relationmap.iteritems():
-    for props, prefLabel in rels:
-        try:
-            target = labelmap[prefLabel]
-            prop, invprop = props
-            g.add((uri, prop, target))
-            #g.add((target, invprop, uri))
-        except KeyError:
-            print >>sys.stderr, ("%s '%s': Unknown referred term '%s'" % (uri, uri_to_label[uri], prefLabel)).encode('UTF-8')
+    for props, label in rels:
+        if label in labelmap:
+            target = labelmap[label]
+        elif label in altlabelmap:
+            target = altlabelmap[label]
+            print >>sys.stderr, ("%s '%s': Referred term '%s' is an altLabel; should be '%s'" % (uri, uri_to_label[uri], label, uri_to_label[target])).encode('UTF-8')
+        else:
+            print >>sys.stderr, ("%s '%s': Unknown referred term '%s'" % (uri, uri_to_label[uri], label)).encode('UTF-8')
+            continue
+        prop, invprop = props
+        g.add((uri, prop, target))
+        #g.add((target, invprop, uri))
 
 g.serialize(format='turtle', destination=sys.stdout)
