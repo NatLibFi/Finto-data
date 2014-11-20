@@ -11,10 +11,12 @@ from datetime import datetime
 import requests
 import sys
 import codecs
+import pytz
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
+XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 
 class MARCXMLReader(object):
     """Returns the PyMARC record from the OAI structure for MARC XML"""
@@ -87,6 +89,9 @@ def combined_label(f):
     labels = f.get_subfields('a', 'x', 'z')
     return ' -- '.join(labels)
 
+
+helsinki=pytz.timezone('Europe/Helsinki')
+
 def format_timestamp(ts):
     year = int(ts[0:2])
     if year >= 80:
@@ -100,7 +105,11 @@ def format_timestamp(ts):
         m = int(ts[8:10])
         s = int(ts[10:12])
         # TODO which time zone?
-        return "%04d-%02d-%02dT%02d:%02d:%02d" % (year, mon, day, h, m, s)
+        dt = datetime(year, mon, day, h, m, s)
+        tzdt = helsinki.localize(dt)
+        return tzdt.isoformat()
+        
+        # return "%04d-%02d-%02dT%02d:%02d:%02d" % (year, mon, day, h, m, s)
     else:
         return "%04d-%02d-%02d" % (year, mon, day)
 
@@ -128,11 +137,11 @@ for count, oaipmhrec in enumerate(recs):
 
     # created timestamp
     created = rec['008'].value()[:6]
-    g.add((uri, DCT.created, Literal(format_timestamp(created))))
+    g.add((uri, DCT.created, Literal(format_timestamp(created), datatype=XSD.date)))
 
     # modified timestamp
     modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
-    g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
+    g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
     
     # thematic group (072)
     for f in rec.get_fields('072'):
