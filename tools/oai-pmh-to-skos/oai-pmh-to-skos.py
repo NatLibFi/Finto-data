@@ -36,8 +36,8 @@ g.namespace_manager.bind('dc', DC)
 g.namespace_manager.bind('dct', DCT)
 
 
-if len(sys.argv) not in (4,5,6):
-    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI> [<vocab-id>] [<lang-override>]" % sys.argv[0]
+if len(sys.argv) not in (4,5,6,7):
+    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI> [<vocab-id>] [<default-link-vocab>] [<lang-override>]" % sys.argv[0]
     sys.exit(1)
 
 provider, setname, concns = sys.argv[1:4]
@@ -46,8 +46,13 @@ if len(sys.argv) >= 5:
 else:
     vocabid = None
 
-if len(sys.argv) == 6:
-    langoverride = sys.argv[5]
+if len(sys.argv) >= 6:
+    linkvocabid = sys.argv[5]
+else:
+    linkvocabid = None
+
+if len(sys.argv) == 7:
+    langoverride = sys.argv[6]
 else:
     langoverride = None
 
@@ -196,9 +201,13 @@ for count, oaipmhrec in enumerate(recs):
         if vid is not None: vid = vid.lower()
         linklang = LINKLANGMAP.get(vid, None)
         if linklang is None:
-            print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f))).encode('UTF-8')
-        else:
-            g.add((uri, SKOS.prefLabel, Literal(combined_label(f), linklang)))
+            if linkvocabid is not None and linkvocabid in LINKLANGMAP:
+                linklang = LINKLANGMAP[linkvocabid]
+                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f), linkvocabid)).encode('UTF-8')
+            else:
+                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f))).encode('UTF-8')
+                continue
+        g.add((uri, SKOS.prefLabel, Literal(combined_label(f), linklang)))
     
 # Pass 2: add concept relations now that URIs are known for all concepts
 for uri, rels in relationmap.iteritems():
