@@ -213,6 +213,6 @@ for uri, rels in relationmap.iteritems():
             continue
         prop, invprop = props
         g.add((uri, prop, target))
-        #g.add((target, invprop, uri))
+        g.add((target, invprop, uri))
 
 g.serialize(format='turtle', destination=sys.stdout)
