@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="allars-linked.ttl allars-metadata.ttl allars-groups.ttl"
+INFILES="allars-metadata.ttl allars-groups.ttl allars-linked.ttl"
 OUTFILE=allars-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"

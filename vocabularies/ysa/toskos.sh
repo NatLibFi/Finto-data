@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="ysa-linked.ttl ysa-metadata.ttl ysa-groups.ttl"
+INFILES="ysa-metadata.ttl ysa-groups.ttl ysa-linked.ttl"
 OUTFILE=ysa-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
