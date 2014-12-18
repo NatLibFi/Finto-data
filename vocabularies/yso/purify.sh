@@ -1,6 +1,6 @@
 #!/bin/sh
 
-YSOFILE=ysoKehitys.ttl
+YSOFILE=ysoKehitys-purify.ttl
 FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py
