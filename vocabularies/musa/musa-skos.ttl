@@ -1432,25 +1432,6 @@ musa:p1014 a skos:Concept ;
         "tempo"@sv ;
     skos:scopeNote "Sävellyksen nopeus."@fi .
 
-musa:p1016 a skos:Concept ;
-    dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:59+03:00"^^xsd:dateTime ;
-    skos:altLabel "viritykset"@fi ;
-    skos:inScheme musa: ;
-    skos:prefLabel "viritysjärjestelmät"@fi ;
-    skos:related musa:p800 ;
-    skos:scopeNote "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi .
-
-musa:p1017 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
-    skos:broader musa:p69007 ;
-    skos:inScheme musa: ;
-    skos:prefLabel "transkriptiot"@fi,
-        "transkriptioner"@sv ;
-    skos:scopeNote "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
-        "Musiikkiesityksen tarkka nuotinnos."@fi .
-
 musa:p1109 a skos:Concept ;
     dct:created "1997-09-30"^^xsd:date ;
     dct:modified "2014-05-02T15:19:16+03:00"^^xsd:dateTime ;
@@ -1501,6 +1482,15 @@ musa:p1121 a skos:Concept ;
         "ljudlandskap"@sv ;
     skos:related musa:p1115 ;
     skos:scopeNote "Yksilön tai yhteisön ympäristön äänten kokonaisuus ja sen kokeminen."@fi .
+
+musa:p1126 a skos:Concept ;
+    dct:created "1997-10-01"^^xsd:date ;
+    dct:modified "2014-11-28T09:33:48+02:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:prefLabel "säestykset"@fi ;
+    skos:related musa:p613 ;
+    skos:scopeNote "Erikseen julkaistu säestysosuus, jonka avulla harjoitellaan soolo-osuuksia, esimerkiksi  Music-minus-one -tyyppiset julkaisut."@fi,
+        "Termiä käytetään yhdessä sen termin kanssa, jonka säestämisestä on kysymys, esimerkiksi säestykset : yksinlaulut. Termiä ei koskaan käytetä säestettyjen musiikkiesitysten yhteydessä. Lähinnä populaarimusiikin yhteydessä esiintyvistä pelkän  säestyksen ja laulujen sanat sisältävistä julkaisuista käytetään termiä karaoke."@fi .
 
 musa:p1132 a skos:Concept ;
     dct:created "1997-10-01"^^xsd:date ;
@@ -1657,6 +1647,16 @@ musa:p185 a skos:Concept ;
     skos:scopeNote "Nimitys kaikelle ennen 1700-luvun alkua sävelletylle länsimaiselle taidemusiikille  tyylikausien näkökulmasta."@fi,
         "Termiä käytetään, kun tarkempi ilmaus esimerkiksi julkaisun kokoelmaluonteen takia ei  kuvaa sisältöä yksiselitteisesti. Jos julkaisu sisältää vain yhden vanhaan musiikkiin kuuluvan  tyylikauden musiikkia, on ensisijaisesti käytettävä tätä tarkkaa ilmaisua, esimerkiksi vanha  musiikki : soitinmusiikki : Eurooppa mutta messut : renessanssi : Espanja."@fi,
         "Används om västerländsk musik från tiden före senbarocken (ca. 1700-) om närmare tidsangivelse inte är möjlig, tex. ifråga om samlingsvolymer."@sv .
+
+musa:p188 a skos:Concept ;
+    dct:created "1996-02-15"^^xsd:date ;
+    dct:modified "2014-12-09T13:25:47+02:00"^^xsd:dateTime ;
+    skos:broader musa:p613 ;
+    skos:inScheme musa: ;
+    skos:prefLabel "vapaa säestys"@fi,
+        "fritt ackompanjemang"@sv ;
+    skos:scopeNote "Improvisatorinen säestys, joka soitetaan viihteellisten nuottimerkintöjen, esimerkiksi ns.  sointumerkkien mukaan tai kuulonvaraisesti."@fi,
+        "Termi on tarkoitettu kirjallisuuden ja nuottijulkaisujen indeksointiin."@fi .
 
 musa:p1911 a skos:Concept ;
     dct:created "1998-06-22"^^xsd:date ;
@@ -4116,16 +4116,28 @@ musa:p1010 a skos:Concept ;
     skos:related musa:p1003 ;
     skos:scopeNote "Nimitys säveltasorakenteen kirkkosävellajeista eli moodeista peräisin oleville ominaisuuksille."@fi .
 
-musa:p1015 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:15+03:00"^^xsd:dateTime ;
-    skos:altLabel "tyylianalyysi"@fi ;
-    skos:broader musa:p155 ;
+musa:p1016 a skos:Concept ;
+    dct:created "1996-02-15"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:20+03:00"^^xsd:dateTime ;
+    skos:altLabel "viritykset"@fi,
+        "tempererad stämning"@sv ;
     skos:inScheme musa: ;
-    skos:narrower musa:p955 ;
-    skos:prefLabel "musiikkianalyysi"@fi,
-        "musikanalys"@sv ;
-    skos:scopeNote "Musiikinteoreettinen käsite, jolla tarkoitetaan sävelteos teoreettista erittelyä sekä  sävellyksen rakenteen ja ominaisuuksien tutkimista."@fi .
+    skos:prefLabel "viritysjärjestelmät"@fi,
+        "stämning -- musikinstrument"@sv ;
+    skos:related musa:p468,
+        musa:p800 ;
+    skos:scopeNote "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi .
+
+musa:p1017 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
+    skos:broader musa:p69007,
+        musa:p908 ;
+    skos:inScheme musa: ;
+    skos:prefLabel "transkriptiot"@fi,
+        "transkriptioner"@sv ;
+    skos:scopeNote "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
+        "Musiikkiesityksen tarkka nuotinnos."@fi .
 
 musa:p11 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -4303,17 +4315,6 @@ musa:p174 a skos:Concept ;
     skos:related musa:p1112 ;
     skos:scopeNote "Suomen maakuntien epävirallisia nimikkolauluja, joita esitetään usein kansallislaulun  tapaan yhteislauluna juhlatilaisuuksissa."@fi,
         "Termiä voi käyttää myös sellaisista sävellyksistä, jotka on sävelletty ja tekstitetty  maakuntalauluiksi, mutta jotka eivät ole tätä asemaa historiallisesti saaneet. Useimmissa  maakunnissa on yksi kiistaton maakuntalaulu, jonka rinnalla voi esiintyä kilpailevia  sävelmiä."@fi .
-
-musa:p188 a skos:Concept ;
-    dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2014-12-09T13:25:47+02:00"^^xsd:dateTime ;
-    skos:broader musa:p1126,
-        musa:p613 ;
-    skos:inScheme musa: ;
-    skos:prefLabel "vapaa säestys"@fi,
-        "fritt ackompanjemang"@sv ;
-    skos:scopeNote "Improvisatorinen säestys, joka soitetaan viihteellisten nuottimerkintöjen, esimerkiksi ns.  sointumerkkien mukaan tai kuulonvaraisesti."@fi,
-        "Termi on tarkoitettu kirjallisuuden ja nuottijulkaisujen indeksointiin."@fi .
 
 musa:p189 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -5559,6 +5560,20 @@ musa:p709 a skos:Concept ;
         musa:p905 ;
     skos:scopeNote "Konserttisalin ja muita konserttitoiminnassa tarpeellisia tiloja sisältävä rakennus."@fi .
 
+musa:p716 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:12+03:00"^^xsd:dateTime ;
+    skos:altLabel "instrumentaatio"@fi,
+        "orkestraatio"@fi,
+        "orkestrointi"@fi,
+        "orkestrering"@sv ;
+    skos:broader musa:p155 ;
+    skos:inScheme musa: ;
+    skos:prefLabel "soitinnus"@fi,
+        "instrumentation"@sv ;
+    skos:related musa:p908 ;
+    skos:scopeNote "Sävellyksen äänten jakaminen yksittäisille soittimille tai soitinryhmille."@fi .
+
 musa:p718 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
     dct:modified "2014-05-02T15:19:11+03:00"^^xsd:dateTime ;
@@ -5801,11 +5816,9 @@ musa:p8 a skos:Concept ;
 
 musa:p800 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:20+03:00"^^xsd:dateTime ;
-    skos:altLabel "tempererad stämning"@sv ;
+    dct:modified "2014-05-02T15:18:54+03:00"^^xsd:dateTime ;
     skos:inScheme musa: ;
-    skos:prefLabel "viritys"@fi,
-        "stämning -- musikinstrument"@sv ;
+    skos:prefLabel "viritys"@fi ;
     skos:related musa:p1016,
         musa:p468 ;
     skos:scopeNote "Soittimen tuottamien äänten keskinäisten suhteiden säätäminen."@fi,
@@ -6212,16 +6225,6 @@ musa:p95 a skos:Concept ;
     skos:scopeNote "Alkuperältään ranskalainen, kolmijakoinen kansantanssi, joka tuli jo 1600-luvulla  hovikäyttöön, muuntuen 1700-luvulla itsenäiseksi sävellykseksi sekä sarjojen, sinfonioiden  ja muiden laajempien sävellysten vakituiseksi osaksi."@fi,
         "Koska termin käyttöyhteydet ovat moninaiset, termiä tulee aina käyttää yhdessä  täsmentävien asiasanojen kanssa, esimerkiksi menuetit : kamariorkesterit : Itävalta : 1790-luku, perinnemusiikki : menuetit : Ranska."@fi .
 
-musa:p954 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-12-15T09:47:57+02:00"^^xsd:dateTime ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:prefLabel "sointiväri"@fi,
-        "klangfärg"@sv ;
-    skos:related musa:p155 ;
-    skos:scopeNote "(1) Äänentuottamistavan, soivan (värähtelevän) kielen, ilmapatsaan, kalvon tms.  kokonais- ja osavärähtelyjen, resonoivien ja ääntä kaiuttavien (soitin)rakenteiden  yhteissointi, jonka ansiosta pystytään tunnistamaan, millä soittimella tai lauluäänialalla  sävelet on tuotettu. (2) Arnold Schönbergin sointivärimelodiana teoretisoima, mutta vasta  sarjallisuudessa aktiivisesti hyödynnetty, musiikillisen materiaalin organisointiperiaatteena  käytetty muuttuja (parametri)."@fi .
-
 musa:p955 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-12-12T10:00:10+02:00"^^xsd:dateTime ;
@@ -6292,6 +6295,18 @@ musa:p999 a skos:Concept ;
     skos:scopeNote "Lisätermeillä on ilmaistava, kummassa merkityksessä termiä käytetään, esimerkiksi  vokaliisit : Venäjä : 1890-luku."@fi,
         "Sanaton laulaminen ja sanaton laulu sävellyksenä."@fi .
 
+musa:p1015 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:15+03:00"^^xsd:dateTime ;
+    skos:altLabel "tyylianalyysi"@fi ;
+    skos:broader musa:p155,
+        musa:p954 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p955 ;
+    skos:prefLabel "musiikkianalyysi"@fi,
+        "musikanalys"@sv ;
+    skos:scopeNote "Musiikinteoreettinen käsite, jolla tarkoitetaan sävelteos teoreettista erittelyä sekä  sävellyksen rakenteen ja ominaisuuksien tutkimista."@fi .
+
 musa:p1129 a skos:Concept ;
     dct:created "1997-10-01"^^xsd:date ;
     dct:modified "2014-05-02T15:19:12+03:00"^^xsd:dateTime ;
@@ -6323,19 +6338,6 @@ musa:p1138 a skos:Concept ;
         "trummaskin"@sv ;
     skos:related musa:p868,
         musa:p870 .
-
-musa:p120 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-12-12T10:01:44+02:00"^^xsd:dateTime ;
-    skos:altLabel "harmoniaoppi"@fi,
-        "satslära"@sv ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p953,
-        musa:p955 ;
-    skos:prefLabel "sointuoppi"@fi,
-        "harmonilära"@sv ;
-    skos:scopeNote "Nimitys yhtä aikaa soivia ääniä käsittelevälle musiikinteorian osalle (harmonia)."@fi .
 
 musa:p130 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -7178,6 +7180,19 @@ musa:p690 a skos:Concept ;
     skos:scopeNote "Käytännössä käsitteen ulkopuolelle on kirjastomaailmassa rajattu yhdelle soittajalle  tarkoitetut nuottijulkaisut, vaikka ääniä olisi enemmän kuin yksi. Arkikielessä termillä  tarkoitetaan yleensä vain orkesteriteoksen tarkkaa nuotinnosta, mutta asiasanana termiä  käytetään laajemmassa merkityksessä. Termiä ei käytetä jokaisen partituurimuotoisen  julkaisun yhteydessä, vaan pääasiassa kirjallisuuden indeksoinnissa sekä ilmaisemaan  oletuksesta poikkeavaa julkaisumuotoa, esimerkiksi rock : partituurit.  Kaikilla musiikin dokumentoinnissa erityismääreinä käytetyillä erilaisilla partituureilla ei  ole täsmällistä vastinetta Musiikin asiasanastossa. Tarvittaessa ne indeksoidaan soveltuvien  lisätermien avulla, esimerkiksi partituurit : kuorot (kuoropartituuri)."@fi,
         "Nimitys nuottijulkaisulle, joka sisältää päällekkäisinä nuotinnoksina kaikki sävellyksen  soivat äänet (ja mahdollisen tekstin)."@fi .
 
+musa:p69007 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:40:32+03:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1017 ;
+    skos:prefLabel "sovitukset"@fi,
+        "arrangemang -- musik"@sv ;
+    skos:related musa:p908,
+        musa:p959 ;
+    skos:scopeNote "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi alkusoitot : sovitukset : piano."@fi,
+        "Sovittajan työn tuloksena syntynyt uudistettu versio aiemmin sävelletystä teoksesta."@fi,
+        "Sovittaminen + sovitukset = arrangemang :  musik"@sv .
+
 musa:p691 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-12-15T11:10:59+02:00"^^xsd:dateTime ;
@@ -7200,21 +7215,6 @@ musa:p702 a skos:Concept ;
     skos:related musa:p705 ;
     skos:scopeNote "Konsertin, festivaalin tai muun vastaavan esityksen sisällön ilmaiseva julkaisu.  Joukkoviestimien ohjelmista käytetään YSA:n termejä radio-ohjelmat ja televisio-ohjelmat."@fi,
         "Käyttöyhteys on termin monimerkityksisyyden takia aina ilmaistava täsmentävillä  asiasanoilla, esimerkiksi ohjelmat : konsertit : musiikkijuhlat : Helsinki."@fi .
-
-musa:p716 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:12+03:00"^^xsd:dateTime ;
-    skos:altLabel "instrumentaatio"@fi,
-        "orkestraatio"@fi,
-        "orkestrointi"@fi,
-        "orkestrering"@sv ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:prefLabel "soitinnus"@fi,
-        "instrumentation"@sv ;
-    skos:related musa:p69007,
-        musa:p908 ;
-    skos:scopeNote "Sävellyksen äänten jakaminen yksittäisille soittimille tai soitinryhmille."@fi .
 
 musa:p72260 a skos:Concept ;
     dct:created "2012-02-28"^^xsd:date ;
@@ -7383,15 +7383,6 @@ musa:p77 a skos:Concept ;
     skos:related musa:p157,
         musa:p484 ;
     skos:scopeNote "Säveljoukko, joka on järjestetty asteikoksi matalimmasta äänestä korkeimpaan tai toisin  päin. Arkikielessä käytetään usein käsitettä \"skaala\"."@fi .
-
-musa:p781 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:54+03:00"^^xsd:dateTime ;
-    skos:broader musa:p465 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p780 ;
-    skos:prefLabel "kirkkomuusikot"@fi ;
-    skos:related musa:p63 .
 
 musa:p783 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -7627,17 +7618,6 @@ musa:p894 a skos:Concept ;
     skos:scopeNote "Termiä suositellaan käytettäväksi aina yhdistettynä siihen maantieteelliseen tai muuhun  yksikköön, jonka musiikkielämästä on kyse, esimerkiksi musiikkielämä : Turku,  musiikkielämä : opiskelijat."@fi,
         "Yhteisön, kaupungin, maan tms. julkisten musiikkiaktiviteettien (konsertit, kritiikki,  ilmestyvät kirjat, äänitteet ja nuotit jne.) nimitys."@fi .
 
-musa:p908 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:57+03:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:prefLabel "sovittaminen"@fi ;
-    skos:related musa:p69007,
-        musa:p716,
-        musa:p959 ;
-    skos:scopeNote "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
-        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi .
-
 musa:p919 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
     dct:modified "2014-05-02T15:19:15+03:00"^^xsd:dateTime ;
@@ -7708,20 +7688,6 @@ musa:p1003 a skos:Concept ;
     skos:scopeNote "(1) Taidemusiikin teoriassa sävelsuku, (2) mensuraalimusiikin nuottiarvo tai (3) rytminen  kaava 1200-luvun musiikissa."@fi,
         "Jos termiä käytetään muussa merkityksessä kuin sävelsukuna, on käytettävä täsmentäviä  asiasanoja."@fi .
 
-musa:p1126 a skos:Concept ;
-    dct:created "1997-10-01"^^xsd:date ;
-    dct:modified "2014-11-28T09:33:48+02:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p188 ;
-    skos:prefLabel "säestykset"@fi,
-        "ackompanjemang"@sv ;
-    skos:related musa:p468,
-        musa:p606,
-        musa:p613 ;
-    skos:scopeNote "Erikseen julkaistu säestysosuus, jonka avulla harjoitellaan soolo-osuuksia, esimerkiksi  Music-minus-one -tyyppiset julkaisut."@fi,
-        "Termiä käytetään yhdessä sen termin kanssa, jonka säestämisestä on kysymys, esimerkiksi säestykset : yksinlaulut. Termiä ei koskaan käytetä säestettyjen musiikkiesitysten yhteydessä. Lähinnä populaarimusiikin yhteydessä esiintyvistä pelkän  säestyksen ja laulujen sanat sisältävistä julkaisuista käytetään termiä karaoke."@fi,
-        "Säestäminen + säestykset = ackompanjemang"@sv .
-
 musa:p1127 a skos:Concept ;
     dct:created "1997-10-01"^^xsd:date ;
     dct:modified "2014-11-28T08:38:20+02:00"^^xsd:dateTime ;
@@ -7748,6 +7714,20 @@ musa:p1139 a skos:Concept ;
         musa:p621 ;
     skos:scopeNote "Musiikin tms. äänittämisen prosessi, jonka englanninkielinen vastine on \"recording session\"."@fi,
         "Termiä voi käyttää myös konkreettisista äänitysprosessien tuotteista, varsinkin yksittäisen artistin tietylle levymerkille tekemistä äänityksistä koottuja kokoelmia indeksoitaessa, esimerkiksi Complete Sun Recordings. Termiä voi käyttää myös yksittäisestä sävellyksestä  tehtyjä versioita sisältävän kokoomajulkaisun yhteydessä."@fi .
+
+musa:p120 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-12-12T10:01:44+02:00"^^xsd:dateTime ;
+    skos:altLabel "harmoniaoppi"@fi,
+        "satslära"@sv ;
+    skos:broader musa:p155,
+        musa:p954 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p953,
+        musa:p955 ;
+    skos:prefLabel "sointuoppi"@fi,
+        "harmonilära"@sv ;
+    skos:scopeNote "Nimitys yhtä aikaa soivia ääniä käsittelevälle musiikinteorian osalle (harmonia)."@fi .
 
 musa:p148 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -7825,18 +7805,6 @@ musa:p167 a skos:Concept ;
     skos:related musa:p59520 ;
     skos:scopeNote "Koska termillä ei tarkoiteta mitään tarkemmin määriteltävissä olevaa tyyliä tms., on  termiin liitettävä täsmentävä ilmaisu, esimerkiksi juhlamusiikki : syntymäpäivät : säveltäjät."@fi,
         "Yleisesti nimitys kaikille niille musiikinlajeille ja yksittäisille teoksille, joita käytetään  tilaisuuksien juhlistamisessa."@fi .
-
-musa:p178 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:17+03:00"^^xsd:dateTime ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p1013,
-        musa:p1014,
-        musa:p947 ;
-    skos:prefLabel "rytmioppi"@fi,
-        "rytmik"@sv ;
-    skos:scopeNote "Musiikinteorian osa-alue, joka käsittelee rytmiä."@fi .
 
 musa:p246 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
@@ -8171,15 +8139,17 @@ musa:p607 a skos:Concept ;
 
 musa:p613 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:49+03:00"^^xsd:dateTime ;
+    dct:modified "2014-11-27T13:49:23+02:00"^^xsd:dateTime ;
     skos:inScheme musa: ;
     skos:narrower musa:p188 ;
-    skos:prefLabel "säestäminen"@fi ;
+    skos:prefLabel "säestäminen"@fi,
+        "ackompanjemang"@sv ;
     skos:related musa:p1126,
         musa:p468,
         musa:p606 ;
     skos:scopeNote "Solistisen esityksen tukeminen soittamalla tai laulamalla."@fi,
-        "Termiä käytetään vain aihetta koskevan kirjallisuuden ja laulun- ja soitonoppaiden  indeksoinnissa. Musiikkiesitysten tallenteiden yhteydessä käytetään soveltaen termiä  säestykset."@fi .
+        "Termiä käytetään vain aihetta koskevan kirjallisuuden ja laulun- ja soitonoppaiden  indeksoinnissa. Musiikkiesitysten tallenteiden yhteydessä käytetään soveltaen termiä  säestykset."@fi,
+        "Säestäminen + säestykset = ackompanjemang"@sv .
 
 musa:p616 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -8297,13 +8267,12 @@ musa:p66137 a skos:Concept ;
     skos:scopeNote "Elektronisen tanssimusiikin alalaji, joka kehittyi Englannissa 1990-luvun alkupuolella  hardcore-teknosta. Jungle on drum 'n' bassin rinnakkainen ilmiö (enemmän reggaevaikutteinen)  ja molemmat perustuvat nopeisiin polyrytmeihin ja synkopoituun breakbeatiin  sekä matalataajuisiin bassokulkuihin."@fi .
 
 musa:p67523 a skos:Concept ;
-    dct:created "1998-06-25"^^xsd:date ;
+    dct:created "2007-03-28"^^xsd:date ;
     dct:modified "2014-05-02T15:39:57+03:00"^^xsd:dateTime ;
     skos:broader musa:p465 ;
     skos:inScheme musa: ;
     skos:narrower musa:p780 ;
-    skos:prefLabel "kirkkomuusikot"@fi,
-        "kyrkomusiker"@sv ;
+    skos:prefLabel "kirkkomuusikot"@fi ;
     skos:related musa:p63,
         musa:p780 ;
     skos:scopeNote "Kristillisen kirkon piirissä työskentelevä muusikko."@fi,
@@ -8373,18 +8342,16 @@ musa:p713 a skos:Concept ;
     skos:scopeNote "Termiä suositellaan käytettäväksi vain, jos indeksoitavalla musiikilla ei ole  täsmällisempää määritelmää (esimerkiksi konsertot, sarjat, sinfoniat, alkusoitot jne.) Jos  halutaan indeksoida muulle kokoonpanolle kuin sinfoniaorkesterille sävellettyä musiikkia,  käytetään sopivia täsmentäviä termejä, esimerkiksi orkesterimusiikki : kamariorkesterit :  Suomi."@fi,
         "Yleisnimitys eurooppalaiselle orkesterille sävelletylle taidemusiikille."@fi .
 
-musa:p780 a skos:Concept ;
+musa:p781 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-12-15T11:02:59+02:00"^^xsd:dateTime ;
-    skos:altLabel "kanttori-urkurit"@fi ;
-    skos:broader musa:p465,
-        musa:p67523,
-        musa:p781 ;
+    dct:modified "2014-05-02T15:19:14+03:00"^^xsd:dateTime ;
+    skos:broader musa:p465 ;
     skos:inScheme musa: ;
-    skos:prefLabel "kanttorit"@fi,
-        "kantorer"@sv ;
-    skos:related musa:p67523 ;
-    skos:scopeNote "Kristillisen kirkon esilaulaja ja kuoronjohtaja, jolla on protestanttisissa maissa yleensä  myös urkurin tehtäviä."@fi .
+    skos:narrower musa:p780 ;
+    skos:prefLabel "kirkkomuusikot"@fi,
+        "kyrkomusiker"@sv ;
+    skos:related musa:p63,
+        musa:p780 .
 
 musa:p784 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
@@ -8517,18 +8484,6 @@ musa:p904 a skos:Concept ;
     skos:scopeNote "Termiä voi käyttää eri musiikinlajien yhteydessä kertomaan taltioinnin luonteesta,  esimerkiksi rock : konsertit, kamarimusiikki : konsertit."@fi,
         "Yleisesti mikä tahansa yleisölle järjestetty musiikinesitystilaisuus."@fi .
 
-musa:p924 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:14+03:00"^^xsd:dateTime ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p1010,
-        musa:p159,
-        musa:p923 ;
-    skos:prefLabel "säveloppi"@fi,
-        "melodik"@sv ;
-    skos:scopeNote "Sävelten keskinäisiä suhteita käsittelevä musiikinteorian osa-alue."@fi .
-
 musa:p950 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-05-02T15:19:20+03:00"^^xsd:dateTime ;
@@ -8549,12 +8504,12 @@ musa:p953 a skos:Concept ;
         "harmonier"@sv,
         "satslära"@sv ;
     skos:broader musa:p120,
-        musa:p155 ;
+        musa:p954 ;
     skos:inScheme musa: ;
     skos:narrower musa:p506 ;
     skos:prefLabel "soinnutus"@fi,
         "harmonisering"@sv ;
-    skos:related musa:p69007 ;
+    skos:related musa:p908 ;
     skos:scopeNote "Sävellyksen harmoninen kokoonpano sekä tekniikka, jolla sointuja käytetään  sävellyksessä (homofonisessa musiikissa)."@fi .
 
 musa:p961 a skos:Concept ;
@@ -8719,18 +8674,18 @@ musa:p162 a skos:Concept ;
     skos:scopeNote "Termin yhteydessä suositellaan aina käytettäväksi sekä esityskokoonpanon selvittävää  täsmennettä että maantieteellistä määrettä, esimerkiksi kansanlaulut : lauluyhtyeet :  Bulgaria."@fi,
         "Vokaalinen kansanmusiikkiteos esityskokoonpanosta riippumatta."@fi .
 
-musa:p179 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:06+03:00"^^xsd:dateTime ;
-    skos:broader musa:p155 ;
+musa:p178 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:17+03:00"^^xsd:dateTime ;
+    skos:broader musa:p155,
+        musa:p954 ;
     skos:inScheme musa: ;
-    skos:narrower musa:p1005,
-        musa:p1012,
-        musa:p945 ;
-    skos:prefLabel "muoto-oppi"@fi,
-        "formlära"@sv ;
-    skos:related musa:p685 ;
-    skos:scopeNote "Sävelteoksen muotorakenteita käsittelevä oppi ja sen analyyttinen tai tutkimuksellinen  soveltaminen."@fi .
+    skos:narrower musa:p1013,
+        musa:p1014,
+        musa:p947 ;
+    skos:prefLabel "rytmioppi"@fi,
+        "rytmik"@sv ;
+    skos:scopeNote "Musiikinteorian osa-alue, joka käsittelee rytmiä."@fi .
 
 musa:p190 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -9087,21 +9042,19 @@ musa:p677 a skos:Concept ;
     skos:prefLabel "huilusoittimet"@fi,
         "flöjtinstrument"@sv .
 
-musa:p69007 a skos:Concept ;
+musa:p780 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:40:32+03:00"^^xsd:dateTime ;
+    dct:modified "2014-12-15T11:02:59+02:00"^^xsd:dateTime ;
+    skos:altLabel "kanttori-urkurit"@fi ;
+    skos:broader musa:p465,
+        musa:p67523,
+        musa:p781 ;
     skos:inScheme musa: ;
-    skos:narrower musa:p1017 ;
-    skos:prefLabel "sovitukset"@fi,
-        "arrangemang -- musik"@sv ;
-    skos:related musa:p716,
-        musa:p908,
-        musa:p953,
-        musa:p959 ;
-    skos:scopeNote "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi alkusoitot : sovitukset : piano."@fi,
-        "Sovittajan työn tuloksena syntynyt uudistettu versio aiemmin sävelletystä teoksesta."@fi,
-        "Sovittaminen + sovitukset = arrangemang :  musik"@sv,
-        "Sovittaminen + sovitukset = arrangemang : musik"@sv .
+    skos:prefLabel "kanttorit"@fi,
+        "kantorer"@sv ;
+    skos:related musa:p67523,
+        musa:p781 ;
+    skos:scopeNote "Kristillisen kirkon esilaulaja ja kuoronjohtaja, jolla on protestanttisissa maissa yleensä  myös urkurin tehtäviä."@fi .
 
 musa:p805 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -9146,6 +9099,34 @@ musa:p868 a skos:Concept ;
     skos:scopeNote "Digitaalisten soittimien ja laitteiden yhteinen tiedonkoodaus- ja siirtostandardi (Music  Instrument Digital Interface)."@fi,
         "Termiä käytetään vain kirjallisuuden indeksoinnissa, esimerkiksi MIDI : sähkökitara :  oppaat."@fi .
 
+musa:p908 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:01+03:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1017 ;
+    skos:prefLabel "sovittaminen"@fi,
+        "arrangemang -- musik"@sv ;
+    skos:related musa:p69007,
+        musa:p716,
+        musa:p953,
+        musa:p959 ;
+    skos:scopeNote "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
+        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi,
+        "Sovittaminen + sovitukset = arrangemang : musik"@sv .
+
+musa:p924 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:14+03:00"^^xsd:dateTime ;
+    skos:broader musa:p155,
+        musa:p954 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1010,
+        musa:p159,
+        musa:p923 ;
+    skos:prefLabel "säveloppi"@fi,
+        "melodik"@sv ;
+    skos:scopeNote "Sävelten keskinäisiä suhteita käsittelevä musiikinteorian osa-alue."@fi .
+
 musa:p930 a skos:Concept ;
     dct:created "1998-06-23"^^xsd:date ;
     dct:modified "2014-05-02T15:19:04+03:00"^^xsd:dateTime ;
@@ -9188,6 +9169,20 @@ musa:p152 a skos:Concept ;
         musa:p83 ;
     skos:scopeNote "Kristillisten uskontokuntien ei-liturgiseen lauluperinteeseen kuuluva teos."@fi,
         "Muiden kuin kristillisten uskontokuntien kohdalla suositellaan muotoa uskonnot : musiikki : laulut tai tarkemmin, esimerkiksi buddhalaisuus : laulumusiikki."@fi .
+
+musa:p179 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:06+03:00"^^xsd:dateTime ;
+    skos:broader musa:p155,
+        musa:p954 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1005,
+        musa:p1012,
+        musa:p945 ;
+    skos:prefLabel "muoto-oppi"@fi,
+        "formlära"@sv ;
+    skos:related musa:p685 ;
+    skos:scopeNote "Sävelteoksen muotorakenteita käsittelevä oppi ja sen analyyttinen tai tutkimuksellinen  soveltaminen."@fi .
 
 musa:p248 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -9775,46 +9770,21 @@ musa:p603 a skos:Concept ;
     skos:prefLabel "puupuhaltimet"@fi,
         "träblåsinstrument"@sv .
 
-musa:p66148 a skos:Concept ;
-    dct:created "2005-06-17"^^xsd:date ;
-    dct:modified "2014-05-02T15:39:38+03:00"^^xsd:dateTime ;
-    skos:altLabel "musiikin tutkimus"@fi,
-        "musiikki -- tutkimus"@fi,
-        "musiikkitiede"@fi,
-        "musikologia"@fi,
-        "uusi musiikkitiede"@fi,
-        "yleinen musiikkitiede"@fi,
-        "allmän musikvetenskap"@sv,
-        "musikologi"@sv ;
+musa:p606 a skos:Concept ;
+    dct:created "1996-02-07"^^xsd:date ;
+    dct:modified "2014-11-28T10:14:09+02:00"^^xsd:dateTime ;
     skos:inScheme musa: ;
-    skos:narrower musa:p192,
-        musa:p876,
-        musa:p877,
-        musa:p878,
-        musa:p879,
-        musa:p880,
-        musa:p881 ;
-    skos:prefLabel "musiikintutkimus"@fi,
-        "musikforskning"@sv ;
-    skos:related musa:p155 ;
-    skos:scopeNote "Musiikin ja musiikin harjoittamisen systemaattinen tutkiminen niiden kaikissa  ilmenemismuodoissa."@fi,
-        "Termiä käytetään, kun kyse ei ole jostain täsmällisemmästä tutkimussuuntauksesta kuten  etnomusikologia tai kognitiivinen musiikkitiede tai kun tällaista erottelua ei kyetä tekemään."@fi .
-
-musa:p685 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:11+03:00"^^xsd:dateTime ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p684,
-        musa:p686,
-        musa:p71259,
-        musa:p898,
-        musa:p899 ;
-    skos:prefLabel "sävellysoppi"@fi,
-        "kompositionslära"@sv ;
-    skos:related musa:p179,
-        musa:p871 ;
-    skos:scopeNote "Säveltämiseen liittyvien osatekijöiden musiikinteoreettinen käsittelyväline."@fi .
+    skos:prefLabel "esittäminen"@fi,
+        "framförande"@sv ;
+    skos:related musa:p442,
+        musa:p468,
+        musa:p510,
+        musa:p604,
+        musa:p610,
+        musa:p611,
+        musa:p612,
+        musa:p613 ;
+    skos:scopeNote "Nimitys taiteelliselle esittämiselle (laulamista, soittamista, tanssimista)."@fi .
 
 musa:p689 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -9855,6 +9825,24 @@ musa:p1000 a skos:Concept ;
         "ljudupptagningar"@sv ;
     skos:related musa:p1139 ;
     skos:scopeNote "Yleisnimitys tallenteille, joihin on koodattu jollain tekniikalla ääni-informaatiota."@fi .
+
+musa:p155 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-12-10T16:12:40+02:00"^^xsd:dateTime ;
+    skos:altLabel "musiikkioppi"@fi ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1015,
+        musa:p120,
+        musa:p178,
+        musa:p179,
+        musa:p685,
+        musa:p716,
+        musa:p924,
+        musa:p954 ;
+    skos:prefLabel "musiikinteoria"@fi ;
+    skos:related musa:p66148 ;
+    skos:scopeNote "Musiikin rakenteiden tutkimisen ja mallintamisen menetelmä ja esitystapa."@fi,
+        "Termiä ei sovelleta muiden tieteiden menetelmien yhteydessä, sen sijasta käytetään termiä musiikintutkimus."@fi .
 
 musa:p400 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -9981,22 +9969,48 @@ musa:p578 a skos:Concept ;
         musa:p73973 ;
     skos:scopeNote "Elektronisesti tuotettu, klubiympäristöön tarkoitettu tanssittava popmusiikki, jota  luonnehtii yleensä hyvin nopea tempo ja instrumentaalisuus (poikkeuksena teknorap). Tekno  on myös varsin usein hyvin anonyymisti sävellettyä ja esitettyä."@fi .
 
-musa:p606 a skos:Concept ;
-    dct:created "1996-02-07"^^xsd:date ;
-    dct:modified "2014-11-28T10:14:09+02:00"^^xsd:dateTime ;
+musa:p66148 a skos:Concept ;
+    dct:created "2005-06-17"^^xsd:date ;
+    dct:modified "2014-05-02T15:39:38+03:00"^^xsd:dateTime ;
+    skos:altLabel "musiikin tutkimus"@fi,
+        "musiikki -- tutkimus"@fi,
+        "musiikkitiede"@fi,
+        "musikologia"@fi,
+        "uusi musiikkitiede"@fi,
+        "yleinen musiikkitiede"@fi,
+        "allmän musikvetenskap"@sv,
+        "musikologi"@sv ;
     skos:inScheme musa: ;
-    skos:prefLabel "esittäminen"@fi,
-        "framförande"@sv ;
-    skos:related musa:p1126,
-        musa:p442,
-        musa:p468,
-        musa:p510,
-        musa:p604,
-        musa:p610,
-        musa:p611,
-        musa:p612,
-        musa:p613 ;
-    skos:scopeNote "Nimitys taiteelliselle esittämiselle (laulamista, soittamista, tanssimista)."@fi .
+    skos:narrower musa:p192,
+        musa:p876,
+        musa:p877,
+        musa:p878,
+        musa:p879,
+        musa:p880,
+        musa:p881 ;
+    skos:prefLabel "musiikintutkimus"@fi,
+        "musikforskning"@sv ;
+    skos:related musa:p155,
+        musa:p954 ;
+    skos:scopeNote "Musiikin ja musiikin harjoittamisen systemaattinen tutkiminen niiden kaikissa  ilmenemismuodoissa."@fi,
+        "Termiä käytetään, kun kyse ei ole jostain täsmällisemmästä tutkimussuuntauksesta kuten  etnomusikologia tai kognitiivinen musiikkitiede tai kun tällaista erottelua ei kyetä tekemään."@fi .
+
+musa:p685 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:11+03:00"^^xsd:dateTime ;
+    skos:broader musa:p155,
+        musa:p954 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p684,
+        musa:p686,
+        musa:p71259,
+        musa:p898,
+        musa:p899 ;
+    skos:prefLabel "sävellysoppi"@fi,
+        "kompositionslära"@sv ;
+    skos:related musa:p179,
+        musa:p871 ;
+    skos:scopeNote "Säveltämiseen liittyvien osatekijöiden musiikinteoreettinen käsittelyväline."@fi .
 
 musa:p727 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -10070,8 +10084,8 @@ musa:p468 a skos:Concept ;
         musa:p719 ;
     skos:prefLabel "soittaminen"@fi,
         "musicerande"@sv ;
-    skos:related musa:p1124,
-        musa:p1126,
+    skos:related musa:p1016,
+        musa:p1124,
         musa:p455,
         musa:p606,
         musa:p613,
@@ -10163,6 +10177,26 @@ musa:p620 a skos:Concept ;
         musa:p763 ;
     skos:scopeNote "Nimitys prosessille, jossa elävä ääni tallennetaan sähkömagneettisesti tai jollain muulla teknisellä menetelmällä."@fi .
 
+musa:p954 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-12-15T09:47:57+02:00"^^xsd:dateTime ;
+    skos:altLabel "musiklära"@sv,
+        "musikteori"@sv ;
+    skos:broader musa:p155 ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1015,
+        musa:p120,
+        musa:p178,
+        musa:p179,
+        musa:p685,
+        musa:p924,
+        musa:p953 ;
+    skos:prefLabel "sointiväri"@fi,
+        "klangfärg"@sv ;
+    skos:related musa:p66148,
+        musa:p954 ;
+    skos:scopeNote "(1) Äänentuottamistavan, soivan (värähtelevän) kielen, ilmapatsaan, kalvon tms.  kokonais- ja osavärähtelyjen, resonoivien ja ääntä kaiuttavien (soitin)rakenteiden  yhteissointi, jonka ansiosta pystytään tunnistamaan, millä soittimella tai lauluäänialalla  sävelet on tuotettu. (2) Arnold Schönbergin sointivärimelodiana teoretisoima, mutta vasta  sarjallisuudessa aktiivisesti hyödynnetty, musiikillisen materiaalin organisointiperiaatteena  käytetty muuttuja (parametri)."@fi .
+
 musa:p153 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-05-02T15:19:09+03:00"^^xsd:dateTime ;
@@ -10180,28 +10214,6 @@ musa:p153 a skos:Concept ;
         musa:p674 ;
     skos:prefLabel "kosketinsoittimet"@fi,
         "tangentinstrument"@sv .
-
-musa:p155 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-12-12T10:55:41+02:00"^^xsd:dateTime ;
-    skos:altLabel "musiikkioppi"@fi,
-        "musiklära"@sv ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p1015,
-        musa:p120,
-        musa:p178,
-        musa:p179,
-        musa:p685,
-        musa:p716,
-        musa:p924,
-        musa:p953,
-        musa:p954 ;
-    skos:prefLabel "musiikinteoria"@fi,
-        "musikteori"@sv ;
-    skos:related musa:p66148,
-        musa:p954 ;
-    skos:scopeNote "Musiikin rakenteiden tutkimisen ja mallintamisen menetelmä ja esitystapa."@fi,
-        "Termiä ei sovelleta muiden tieteiden menetelmien yhteydessä, sen sijasta käytetään termiä musiikintutkimus."@fi .
 
 musa:p304 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -10984,7 +10996,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2015-01-06T02:26:45+00:00"^^xsd:dateTime ;
+    dct:modified "2015-01-07T02:32:41+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
