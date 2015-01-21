@@ -1,0 +1,24 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+SELECT * {
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/> {
+      ?c a skos:Concept .
+      ?c skos:prefLabel ?l .
+      ?c dct:created ?created .
+      FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
+      FILTER ( ?created < "2014-01-01"^^xsd:date )
+    }
+  }
+  FILTER NOT EXISTS {
+    ?ysoc om:definedConcept ?c .
+    FILTER NOT EXISTS { ?ysoc a yso-meta:DeprecatedConcept }
+  }
+}
+ORDER BY ?created
