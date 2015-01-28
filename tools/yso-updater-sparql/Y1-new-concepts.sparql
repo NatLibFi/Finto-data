@@ -19,22 +19,31 @@ CONSTRUCT {
   ?newc yso-meta:hasThematicGroup ?ysogroup .
 }
 WHERE {
+  {
+    SELECT ?c
+    WHERE {
+      SERVICE <http://api.dev.finto.fi/sparql> {
+        GRAPH <http://www.yso.fi/onto/ysa/> {
+          ?c a skos:Concept .
+          ?c dct:created ?created .
+          FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
+          FILTER ( ?created < "2014-01-01"^^xsd:date )
+        }
+      }
+      FILTER NOT EXISTS {
+        ?ysoc om:definedConcept ?c .
+      }
+    }
+  }
+  BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
   SERVICE <http://api.dev.finto.fi/sparql> {
     GRAPH <http://www.yso.fi/onto/ysa/> {
-      ?c a skos:Concept .
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
       OPTIONAL { ?c skos:scopeNote ?note }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
-      ?c dct:created ?created .
-      FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
-      FILTER ( ?created < "2014-01-01"^^xsd:date )
-      BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
-    }
+    }  
   }
   OPTIONAL { ?ysogroup om:definedConcept ?ysagroup }
-  FILTER NOT EXISTS {
-    ?ysoc om:definedConcept ?c .
-  }
 }
