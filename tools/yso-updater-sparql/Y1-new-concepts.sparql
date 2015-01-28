@@ -30,9 +30,7 @@ WHERE {
       SERVICE <http://api.dev.finto.fi/sparql> {
         GRAPH <http://www.yso.fi/onto/ysa/> {
           ?c a skos:Concept .
-          ?c dct:created ?created .
           FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
-          FILTER ( ?created < "2014-01-01"^^xsd:date )
         }
       }
       FILTER NOT EXISTS {
