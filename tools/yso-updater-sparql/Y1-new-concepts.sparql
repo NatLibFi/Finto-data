@@ -1,5 +1,6 @@
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ysa: <http://www.yso.fi/onto/ysa/>
 PREFIX yso: <http://www.yso.fi/onto/yso/>
 PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
@@ -17,6 +18,10 @@ CONSTRUCT {
   ?newc yso-meta:ysaComment ?note .
   ?newc yso-meta:ysaSource ?source .
   ?newc yso-meta:hasThematicGroup ?ysogroup .
+  ?newc rdfs:subClassOf ?ysobroader .
+  ?ysonarrower rdfs:subClassOf ?newc .
+  ?newc yso-meta:associativeRelationship ?ysorelated .
+  ?ysorelated yso-meta:associativeRelationship ?newc .
 }
 WHERE {
   {
@@ -43,6 +48,25 @@ WHERE {
       OPTIONAL { ?c skos:scopeNote ?note }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
+
+      # broader, narrower, related
+      # NOTE: must check whether an equivalent target concept already exists; if not, use a newly minted URI base on YSA localname
+      OPTIONAL {
+        ?c skos:broader ?broader .
+        OPTIONAL { ?broader skos:closeMatch ?ysob }
+        BIND(IF(BOUND(?ysob), ?ysob, IRI(REPLACE(STR(?broader), STR(ysa:), STR(yso:)))) AS ?ysobroader)
+      }
+      OPTIONAL {
+        ?c skos:narrower ?narrower .
+        OPTIONAL { ?narrower skos:closeMatch ?yson }
+        BIND(IF(BOUND(?yson), ?yson, IRI(REPLACE(STR(?narrower), STR(ysa:), STR(yso:)))) AS ?ysonarrower)
+      }
+      OPTIONAL {
+        ?c skos:related ?related .
+        OPTIONAL { ?related skos:closeMatch ?ysor }
+        BIND(IF(BOUND(?ysor), ?ysor, IRI(REPLACE(STR(?related), STR(ysa:), STR(yso:)))) AS ?ysorelated)
+      }
+
     }  
   }
   OPTIONAL { ?ysogroup om:definedConcept ?ysagroup }
