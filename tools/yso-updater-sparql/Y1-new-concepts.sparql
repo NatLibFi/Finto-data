@@ -31,6 +31,11 @@ WHERE {
         GRAPH <http://www.yso.fi/onto/ysa/> {
           ?c a skos:Concept .
           FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
+          # optimization: don't return concepts which have a match in YSO
+          FILTER NOT EXISTS {
+	    ?c skos:closeMatch ?ysoc
+            FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
+          }
         }
       }
       FILTER NOT EXISTS {
