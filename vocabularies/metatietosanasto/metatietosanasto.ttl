@@ -1079,7 +1079,7 @@ mts:C10006
   rdf:type skos:Collection ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Ekspressio"@fi ;
-  rdfs:seeAlso <http://www.rdaregistry.info/Elements/c/C10006> ;
+  rdfs:seeAlso rdac:C10006 ;
   skos:scopeNote "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi ;
 .
 mts:C10007
@@ -1167,10 +1167,10 @@ mts:P30002
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1004> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1005> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1006> ;
-  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1007> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1008> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1009> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1010> ;
+  skos:member mts:T1007 ;
   skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
 .
 mts:P30004
@@ -1240,7 +1240,7 @@ mts:P30063
   isothes:superGroup mts:C10007 ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "huomautus nimekkeestä"@fi ;
-  rdfs:seeAlso <http://www.rdaregistry.info/Elements/m/P30063> ;
+  rdfs:seeAlso rdam:P30063 ;
   skos:member <http://metatietosanasto.fi/025> ;
   skos:member <http://metatietosanasto.fi/026> ;
   skos:member <http://metatietosanasto.fi/026_1> ;
@@ -1348,7 +1348,7 @@ mts:P30134
   isothes:superGroup mts:C10007 ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "nimekkeet"@fi ;
-  rdfs:seeAlso <http://www.rdaregistry.info/Elements/m/P30134> ;
+  rdfs:seeAlso rdam:P30134 ;
 .
 mts:P30145
   rdf:type isothes:ConceptGroup ;
@@ -1461,6 +1461,40 @@ mts:T1007
   rdfs:seeAlso <http://iflastandards.info/ns/isbd/terms/mediatype/T1007> ;
   skos:prefLabel "video"@fi ;
   skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
+.
+mts:julkaistu_myos_digitoituna
+  rdf:type skos:Concept ;
+  skos:prefLabel "Julkaistu myös digitoituna"@fi ;
+  skos:scopeNote "Viittausta käytetään huomautuksena."@fi ;
+.
+mts:manifestaatioiden_valiset_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaation_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Manifestaatioiden väliset suhteet"@fi ;
+.
+mts:manifestaation_ja_toimijoiden_valiset_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaation_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Manifestaation ja toimijoiden väliset suhteet"@fi ;
+.
+mts:manifestaation_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Manifestaation suhteet"@fi ;
+  skos:scopeNote "Manifestaation suhde tarkoittaa manifestaation ja toisen entiteetin välistä suhdetta."@fi ;
+.
+mts:viittaus_vastaavaan_manifestaatioon
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Viittaus vastaavaan manifestaatioon"@fi ;
+  skos:member mts:julkaistu_myos_digitoituna ;
 .
 rdau:P60050
   :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> ;
