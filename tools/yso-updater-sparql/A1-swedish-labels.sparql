@@ -6,6 +6,7 @@ PREFIX allars: <http://www.yso.fi/onto/allars/>
 PREFIX yso: <http://www.yso.fi/onto/yso/>
 PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/> 
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -18,6 +19,7 @@ CONSTRUCT {
   ?ysoc yso-meta:oldLabel ?alt .
   ?ysoc yso-meta:ysaComment ?note .
   ?ysoc yso-meta:ysaSource ?source .
+  ?ysoc rdfs:subClassOf yso-update:uudetSv .
 }
 WHERE {
   {
