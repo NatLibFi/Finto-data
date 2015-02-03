@@ -18,17 +18,17 @@ qres = g.query(
          {
            # itsessään käsittelemättömät
            ?subject rdfs:subClassOf yso-update:uudet .
-           ?subject rdfs:subClassOf yso-update:uudetDummy .
+           ?subject rdfs:subClassOf yso-update:uudetSv .
          }
          UNION
          {  
            # orvoiksi jäävät, jos käsittelemättömät jätetään pois
            ?subject rdfs:subClassOf+ yso-update:uudet .
-           ?subject rdfs:subClassOf yso-update:uudetDummy .
+           ?subject rdfs:subClassOf yso-update:uudetSv .
            FILTER NOT EXISTS {
              ?subject rdfs:subClassOf ?parent .
              FILTER (?parent != yso-update:uudet)
-             FILTER (?parent != yso-update:uudetDummy)
+             FILTER (?parent != yso-update:uudetSv)
              FILTER NOT EXISTS { ?parent rdfs:subClassOf+ yso-update:uudet }
            }
          }
