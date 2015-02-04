@@ -18,7 +18,9 @@ qres = g.query(
          {
            # itsessään käsittelemättömät
            ?subject rdfs:subClassOf yso-update:uudet .
-           ?subject rdfs:subClassOf yso-update:uudetSv .
+           # uudetSv tagia ei huomioida filtteröinnissä, koska ruots.
+           # lisäyksiä voi tulla matkan varrella mille tahansa käsitteelle
+           # ?subject rdfs:subClassOf yso-update:uudetSv .
          }
          UNION
          {  
