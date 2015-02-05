@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="pto-metadata.ttl paikkatieto-ei45-eiinspire-puritettu.ttl"
+INFILES="pto-metadata.ttl paikkatieto-ei45-eiinspire-puritettu-ylakas-pois.ttl yso-paikkatieto.ttl"
 OUTFILE=pto-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
