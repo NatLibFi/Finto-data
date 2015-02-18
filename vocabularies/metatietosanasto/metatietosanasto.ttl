@@ -1453,6 +1453,27 @@ mts:T1007
   skos:prefLabel "video"@fi ;
   skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
 .
+mts:edeltaja-seuraaja-suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teosten_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Edeltäjä-seuraaja-suhteet"@fi ;
+.
+mts:edeltaja-seuraaja-suhteet_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Edeltäjä-seuraaja-suhteet"@fi ;
+.
+mts:ekpspression_ja_sen_kuvauksen_suhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Ekspression ja sen kuvauksen suhde"@fi ;
+.
 mts:ekspressioiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1464,6 +1485,7 @@ mts:ekspression_ja_toimijoiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:ekspression_suhteet ;
+  isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Ekspression ja toimijoiden väliset suhteet"@fi ;
 .
@@ -1474,15 +1496,45 @@ mts:ekspression_suhteet
   rdfs:label "Ekspression suhteet"@fi ;
   skos:scopeNote "Ekspression suhde tarkoittaa ekspression ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:henkilon_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Henkilön suhteet"@fi ;
+  skos:member mts:julkaistu_myos_digitoituna ;
+.
+mts:johdannaissuhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teosten_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Johdannaissuhteet"@fi ;
+.
+mts:johdannaissuhteet_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Johdannaissuhteet"@fi ;
+.
 mts:julkaistu_myos_digitoituna
   rdf:type skos:Concept ;
   skos:prefLabel "Julkaistu myös digitoituna"@fi ;
   skos:scopeNote "Viittausta käytetään huomautuksena."@fi ;
 .
+mts:kappaleen_ja_kuvauksen_suhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Kappaleen ja sen kuvauksen suhde"@fi ;
+.
 mts:kappaleen_ja_toimijoiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:kappaleen_suhteet ;
+  isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Kappaleen ja toimijoiden väliset suhteet"@fi ;
 .
@@ -1507,12 +1559,27 @@ mts:manifestaatioiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Manifestaatioiden väliset suhteet"@fi ;
 .
+mts:manifestaation_ja_kuvauksen_suhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Manifestaation ja sen kuvauksen suhde"@fi ;
+.
 mts:manifestaation_ja_toimijoiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:manifestaation_suhteet ;
+  isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Manifestaation ja toimijoiden väliset suhteet"@fi ;
+.
+mts:manifestaation_osa-kokonaisuussuhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Osa-kokonaisuussuhde"@fi ;
 .
 mts:manifestaation_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -1521,10 +1588,61 @@ mts:manifestaation_suhteet
   rdfs:label "Manifestaation suhteet"@fi ;
   skos:scopeNote "Manifestaation suhde tarkoittaa manifestaation ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:osa-kokonaisuussuhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teosten_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Osa-kokonaisuussuhde"@fi ;
+.
+mts:osa-kokonaisuussuhde_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Osa-kokonaisuussuhde"@fi ;
+.
+mts:osa-kokonaisuussuhde_k
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Osa-kokonaisuussuhde"@fi ;
+.
+mts:suvun_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Suvun suhteet"@fi ;
+  skos:member mts:julkaistu_myos_digitoituna ;
+.
+mts:taydennysssuhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teosten_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Täydennyssuhteet"@fi ;
+.
+mts:taydennysssuhteet_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Täydennyssuhteet"@fi ;
+.
+mts:teoksen_ja_sen_kuvauksen_suhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teosten_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Teoksen ja sen kuvauksen suhde"@fi ;
+.
 mts:teoksen_ja_toimijoiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:teoksen_suhteet ;
+  isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Teoksen ja toimijoiden väliset suhteet"@fi ;
 .
@@ -1549,12 +1667,48 @@ mts:toimijoiden_suhteet
   rdfs:label "Toimijoiden suhteet"@fi ;
   skos:scopeNote "Toimijoiden suhteet tarkoittavat tomijan (henkilö, suku, yhteisö) ja toisen entiteetin välistä suhdetta."@fi ;
 .
-mts:viittaus_vastaavaan_manifestaatioon
+mts:toimijoiden_valiset_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:toimijoiden_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Toimijoiden väliset suhteet"@fi ;
+.
+mts:vastaava_kappale
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Vastaava kappale"@fi ;
+.
+mts:vastaava_manifestaatio
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
-  rdfs:label "Viittaus vastaavaan manifestaatioon"@fi ;
+  rdfs:label "Vastaava manifestaatio"@fi ;
+  skos:member mts:julkaistu_myos_digitoituna ;
+.
+mts:yhdessa_ilmestyneet_manifestaatiot
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Yhdessä ilmestyneet manifestaatiot"@fi ;
+.
+mts:yhdessa_sailytettavat_kappaleet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Yhdessä säilytettävät kappaleet"@fi ;
+.
+mts:yhteison_suhteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "Yhteisön suhteet"@fi ;
   skos:member mts:julkaistu_myos_digitoituna ;
 .
 rdau:P60050
