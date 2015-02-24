@@ -1,6 +1,12 @@
 #!/bin/sh
 
-INFILES="pto-metadata.ttl paikkatieto-ei45-eiinspire-puritettu-ylakas-pois.ttl yso-paikkatieto.ttl"
+JENAHOME="$HOME/sw/apache-jena"
+INFILE="paikkatieto-ei45-eiinspire-puritettu-ylakas-pois.ttl"
+MERGEHIER="../../tools/merge-hierarchy/merge-hierarchy.sparql"
+
+$JENAHOME/bin/arq --data=$INFILE --data=yso-paikkatieto.ttl --query=$MERGEHIER --results=NT >pto-hierarchy.nt
+
+INFILES="pto-metadata.ttl pto-hierarchy.nt $INFILE yso-paikkatieto.ttl"
 OUTFILE=pto-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
