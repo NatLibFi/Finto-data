@@ -147,7 +147,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/016>
   rdf:type skos:Concept ;
-  rdfs:label "DVD-asema"@fi ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD-asema"@fi ;
 .
 <http://metatietosanasto.fi/017>
@@ -157,13 +157,13 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/018>
   rdf:type skos:Concept ;
-  rdfs:label "Lukulaite"@fi ;
+  rdfs:comment "ISBD-termi"@fi ;
   skos:prefLabel "Lukulaite"@fi ;
   skos:scopeNote "Lukulaite = lukemislaite. Mikrofilmin lukulaite. Sähkökirjan lukulaite (Kielitoimiston sanakirja)"@fi ;
 .
 <http://metatietosanasto.fi/019>
   rdf:type skos:Concept ;
-  rdfs:label "DAISY-lukulaite"@fi ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/018> ;
   skos:prefLabel "DAISY-lukulaite"@fi ;
 .
@@ -513,13 +513,12 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/083>
   rdf:type skos:Concept ;
-  rdfs:label "DVD-levy"@fi ;
-  skos:broader <http://rdvocab.info/termList/RDACarrierType/1013> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD-levy"@fi ;
 .
 <http://metatietosanasto.fi/084>
   rdf:type skos:Concept ;
-  rdfs:label "DVD-ROM-levy"@fi ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/083> ;
   skos:prefLabel "DVD-ROM-levy"@fi ;
 .
@@ -530,8 +529,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/086>
   rdf:type skos:Concept ;
-  rdfs:label "DVD-videolevy"@fi ;
-  skos:broader <http://rdvocab.info/termList/RDACarrierType/1060> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD-videolevy"@fi ;
 .
 <http://metatietosanasto.fi/087>
@@ -552,8 +550,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/090>
   rdf:type skos:Concept ;
-  rdfs:label "DVD-äänilevy"@fi ;
-  skos:broader <http://rdvocab.info/termList/RDACarrierType/1004> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD-äänilevy"@fi ;
   skos:scopeNote "Pääosin audiodataa sisältävä DVD-levy"@fi ;
 .
@@ -629,8 +626,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/104>
   rdf:type skos:Concept ;
-  rdfs:label "DAT-kasetti"@fi ;
-  skos:broader <http://rdvocab.info/termList/RDACarrierType/1007> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DAT-kasetti"@fi ;
 .
 <http://metatietosanasto.fi/106>
@@ -810,14 +806,12 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/137>
   rdf:type skos:Concept ;
-  rdfs:label "DAISY"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1001> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DAISY"@fi ;
 .
 <http://metatietosanasto.fi/138>
   rdf:type skos:Concept ;
-  rdfs:label "DVD audio"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1001> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD audio"@fi ;
 .
 <http://metatietosanasto.fi/139>
@@ -841,8 +835,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/142>
   rdf:type skos:Concept ;
-  rdfs:label "EPUB"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "EPUB"@fi ;
 .
 <http://metatietosanasto.fi/143>
@@ -888,8 +881,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/150>
   rdf:type skos:Concept ;
-  rdfs:label "DVD video"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "DVD video"@fi ;
 .
 <http://metatietosanasto.fi/151>
@@ -1446,6 +1438,20 @@ mts:aanilevy
   rdfs:seeAlso <http://rdaregistry.info/termList/RDACarrierType/1004> ;
   skos:prefLabel "Äänilevy"@fi ;
 .
+mts:aineiston_kasittely
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:label "aineiston käsittelyyn liittyvä termit"@fi ;
+.
+mts:arvonimi
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10004 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "arvonimi"@fi ;
+  rdfs:seeAlso rdaa:P50110 ;
+.
 mts:edeltaja-seuraaja-suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1489,13 +1495,28 @@ mts:ekspression_suhteet
   rdfs:label "Ekspression suhteet"@fi ;
   skos:scopeNote "Ekspression suhde tarkoittaa ekspression ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:genre_muoto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "teoksen muoto"@fi ;
+  rdfs:seeAlso rdaw:P10004 ;
+.
+mts:hankintalahde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "hankintalähde"@fi ;
+  rdfs:seeAlso rdai:P40050 ;
+.
 mts:henkilon_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:toimijoiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Henkilön suhteet"@fi ;
-  skos:member mts:julkaistu_myos_digitoituna ;
 .
 mts:johdannaissuhteet
   rdf:type isothes:ConceptGroup ;
@@ -1511,10 +1532,25 @@ mts:johdannaissuhteet_e
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Johdannaissuhteet"@fi ;
 .
+mts:julkaistu_eripainoksena
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:manifestaation_osa-kokonaisuussuhde ;
+  rdfs:comment "RDA-termi ; RDA-termi"@fi ;
+  rdfs:label "Julkaistu myös eripainoksena"@fi ;
+.
 mts:julkaistu_myos_digitoituna
   rdf:type skos:Concept ;
   skos:prefLabel "Julkaistu myös digitoituna"@fi ;
   skos:scopeNote "Viittausta käytetään huomautuksena."@fi ;
+.
+mts:kappaleen_erityispiirteet
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "kappaleeseen sisältyvät erityispiirteet"@fi ;
+  rdfs:seeAlso rdai:P40003 ;
 .
 mts:kappaleen_ja_kuvauksen_suhde
   rdf:type isothes:ConceptGroup ;
@@ -1544,6 +1580,37 @@ mts:kappaleiden_valiset_suhteet
   isothes:superGroup mts:kappaleen_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Kappaleiden väliset suhteet"@fi ;
+.
+mts:kayttoehdot_kappale
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "aineiston käyttöehdot"@fi ;
+  rdfs:seeAlso rdai:P40048 ;
+.
+mts:kielihuomautus
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10006 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "huomautus kielestä"@fi ;
+.
+mts:kohderyhma
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "kohderyhmä"@fi ;
+  rdfs:seeAlso rdaw:P10217 ;
+.
+mts:kuvitus
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10006 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "kuvitus"@fi ;
+  rdfs:seeAlso rdae:P20207 ;
 .
 mts:manifestaatioiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -1581,6 +1648,21 @@ mts:manifestaation_suhteet
   rdfs:label "Manifestaation suhteet"@fi ;
   skos:scopeNote "Manifestaation suhde tarkoittaa manifestaation ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:muu_opinnayte
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "muu opinnäyte"@fi ;
+.
+mts:omistushistoria
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "omistushistoria"@fi ;
+  rdfs:seeAlso rdai:P40026 ;
+.
 mts:osa-kokonaisuussuhde
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1602,13 +1684,36 @@ mts:osa-kokonaisuussuhde_k
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Osa-kokonaisuussuhde"@fi ;
 .
+mts:palkinnot
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10006 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "palkinnot"@fi ;
+  rdfs:seeAlso rdae:P20005 ;
+.
+mts:saatavuudenrajoitukset_kappale
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10003 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "aineiston saatavuuden rajoitukset"@fi ;
+  rdfs:seeAlso rdai:P40047 ;
+.
+mts:sisaltotyyppi
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10006 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "sisältötyyppi"@fi ;
+  rdfs:seeAlso rdae:P20001 ;
+.
 mts:suvun_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:toimijoiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Suvun suhteet"@fi ;
-  skos:member mts:julkaistu_myos_digitoituna ;
 .
 mts:taydennysssuhteet
   rdf:type isothes:ConceptGroup ;
@@ -1667,6 +1772,14 @@ mts:toimijoiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Toimijoiden väliset suhteet"@fi ;
 .
+mts:vaitoskirjat
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "väitöskirja tai akateeminen muu opinnäyte"@fi ;
+  rdfs:seeAlso rdaw:P10209 ;
+.
 mts:vastaava_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1702,7 +1815,14 @@ mts:yhteison_suhteet
   isothes:superGroup mts:toimijoiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Yhteisön suhteet"@fi ;
-  skos:member mts:julkaistu_myos_digitoituna ;
+.
+mts:yhteison_tyyppi
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:C10005 ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "yhteisöntyyppi"@fi ;
+  rdfs:seeAlso rdaa:P50237 ;
 .
 rdau:P60050
   :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> ;
