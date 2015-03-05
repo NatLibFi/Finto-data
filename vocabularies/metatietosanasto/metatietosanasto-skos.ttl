@@ -20,47 +20,69 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://metatietosanasto.fi/161> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "kustantajan nimi"@fi ;
+    skos:scopeNote "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi .
+
+<http://metatietosanasto.fi/162> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "Jakajan  nimi"@fi ;
+    skos:scopeNote "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi .
+
+<http://metatietosanasto.fi/163> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "Valmistajan  nimi"@fi ;
+    skos:scopeNote "julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi .
+
+<http://metatietosanasto.fi/164> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "copyright-vuosi"@fi ;
+    skos:scopeNote "aika, joka liittyy copyright-säädösten tai vastaavien säädösten alaiseen copyright-suojaukseen. Copyright-vuosiin sisältyvät P-ajat (phonogram) (äänitteiden copyright-suojaukseen liittyvät ajat)."@fi .
+
 mts:C10001 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10001 ;
-    skos:definition "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi ;
-    skos:prefLabel "Teos"@fi .
-
-mts:C10002 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdac:C10002 ;
-    skos:prefLabel "Toimija"@fi .
+    skos:prefLabel "Teos"@fi ;
+    skos:scopeNote "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi .
 
 mts:C10003 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10003 ;
-    skos:definition "Yksittäinen manifestaation toteutuma (esim. yksittäinen CD-äänilevy, kirja kirjaston kokoelmissa)."@fi ;
-    skos:prefLabel "Kappale"@fi .
+    skos:prefLabel "Kappale"@fi ;
+    skos:scopeNote "Yksittäinen manifestaation toteutuma (esim. yksittäinen CD-äänilevy, kirja kirjaston kokoelmissa)."@fi .
 
 mts:C10004 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10004 ;
     skos:prefLabel "Henkilö"@fi .
 
 mts:C10005 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10005 ;
     skos:prefLabel "Yhteisö"@fi .
 
 mts:C10006 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10006 ;
-    skos:definition "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi ;
-    skos:prefLabel "Ekspressio"@fi .
+    skos:prefLabel "Ekspressio"@fi ;
+    skos:scopeNote "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi .
 
 mts:C10008 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10008 ;
     skos:prefLabel "Suku"@fi .
 
 mts:P30001 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30001 ;
     skos:member <http://metatietosanasto.fi/069>,
         <http://metatietosanasto.fi/069_1>,
@@ -116,6 +138,7 @@ mts:P30001 a isothes:ConceptGroup,
 mts:P30002 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "ISBD-termi"@fi ;
     rdfs:seeAlso rdam:P30002 ;
     skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1001>,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1002>,
@@ -123,18 +146,17 @@ mts:P30002 a isothes:ConceptGroup,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1004>,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1005>,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1006>,
-        <http://iflastandards.info/ns/isbd/terms/mediatype/T1007>,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1008>,
         <http://iflastandards.info/ns/isbd/terms/mediatype/T1009>,
-        <http://iflastandards.info/ns/isbd/terms/mediatype/T1010> ;
-    skos:prefLabel "mediatyyppi"@fi .
+        <http://iflastandards.info/ns/isbd/terms/mediatype/T1010>,
+        mts:T1007 ;
+    skos:prefLabel "mediatyyppi"@fi ;
+    skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi .
 
 mts:P30004 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
-    rdfs:comment """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.\r
-Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.\r
-Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot."""@fi ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30004 ;
     skos:member <http://metatietosanasto.fi/165>,
         <http://metatietosanasto.fi/166>,
@@ -145,17 +167,23 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
         <http://metatietosanasto.fi/171>,
         <http://metatietosanasto.fi/172>,
         <http://metatietosanasto.fi/173> ;
-    skos:prefLabel "manifestaation tunniste"@fi .
+    skos:prefLabel "manifestaation tunniste"@fi ;
+    skos:scopeNote """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.\r
+Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.\r
+Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi .
 
 mts:P30007 a isothes:ConceptGroup,
         skos:Collection ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30007 ;
     skos:prefLabel "copyright-vuosi"@fi .
 
 mts:P30018 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30007 ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30018 ;
     skos:member <http://metatietosanasto.fi/136>,
         <http://metatietosanasto.fi/137>,
         <http://metatietosanasto.fi/138>,
@@ -183,37 +211,10 @@ mts:P30018 a isothes:ConceptGroup,
         <http://rdvocab.info/termList/fileType/1006> ;
     skos:prefLabel "tiedostomuoto"@fi .
 
-mts:P30052 a isothes:ConceptGroup,
-        skos:Collection ;
-    isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30052 ;
-    skos:member <http://metatietosanasto.fi/162> ;
-    skos:prefLabel "huomautus jakelutiedoista"@fi .
-
-mts:P30053 a isothes:ConceptGroup,
-        skos:Collection ;
-    isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30053 ;
-    skos:member <http://metatietosanasto.fi/163> ;
-    skos:prefLabel "huomautus valmistustiedoista"@fi .
-
-mts:P30055 a isothes:ConceptGroup,
-        skos:Collection ;
-    isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30055 ;
-    skos:member <http://metatietosanasto.fi/161> ;
-    skos:prefLabel "huomautus kustannustiedoista"@fi .
-
-mts:P30059 a isothes:ConceptGroup,
-        skos:Collection ;
-    isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30059 ;
-    skos:member <http://metatietosanasto.fi/164> ;
-    skos:prefLabel "huomautus copyright-vuodesta"@fi .
-
 mts:P30063 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30063 ;
     skos:member <http://metatietosanasto.fi/025>,
         <http://metatietosanasto.fi/026>,
@@ -261,70 +262,44 @@ mts:P30063 a isothes:ConceptGroup,
         <http://metatietosanasto.fi/067> ;
     skos:prefLabel "huomautus nimekkeestä"@fi .
 
-mts:P30064 a isothes:ConceptGroup,
-        skos:Collection ;
-    isothes:superGroup mts:C10007 ;
-    rdfs:seeAlso rdam:P30064 ;
-    skos:member <http://metatietosanasto.fi/157>,
-        <http://metatietosanasto.fi/158>,
-        <http://metatietosanasto.fi/159>,
-        <http://metatietosanasto.fi/160> ;
-    skos:prefLabel "huomautus painostiedoista"@fi .
-
 mts:P30080 a isothes:ConceptGroup,
         skos:Collection ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30080 ;
     skos:prefLabel "jakaja"@fi .
 
 mts:P30082 a isothes:ConceptGroup,
         skos:Collection ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30082 ;
     skos:prefLabel "valmistaja"@fi .
 
 mts:P30083 a isothes:ConceptGroup,
         skos:Collection ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30083 ;
     skos:prefLabel "kustantaja"@fi .
 
 mts:P30096 a isothes:ConceptGroup,
         skos:Collection ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30096 ;
     skos:prefLabel "koodaamismuoto"@fi .
 
 mts:P30107 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30107 ;
     skos:member <http://metatietosanasto.fi/157>,
         <http://metatietosanasto.fi/158>,
         <http://metatietosanasto.fi/159>,
         <http://metatietosanasto.fi/160> ;
     skos:prefLabel "painostiedot"@fi .
-
-mts:P30108 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30108 ;
-    skos:prefLabel "jakajatiedot"@fi .
-
-mts:P30109 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30109 ;
-    skos:prefLabel "valmistustiedot"@fi .
-
-mts:P30110 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30110 ;
-    skos:prefLabel "tuotantotiedot"@fi .
-
-mts:P30111 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30111 ;
-    skos:prefLabel "kustannustiedot"@fi .
-
-mts:P30128 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "Päänimekkeestä poikkeava nimekkeen muoto."@fi ;
-    rdfs:seeAlso rdam:P30128 .
 
 mts:P30134 a isothes:ConceptGroup,
         skos:Collection ;
@@ -340,18 +315,15 @@ mts:P30134 a isothes:ConceptGroup,
         "vaihtoehtoinen nimeke"@fi,
         "yhteisnimeke"@fi,
         "ylänimeke"@fi ;
-    rdfs:seeAlso rdam:P300134 ;
+    isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30134 ;
     skos:prefLabel "nimekkeet"@fi .
-
-mts:P30142 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "Sana, ilmaisu tai merkkiryhmä, joka esiintyy julkaisun päänimekkeen yhteydessä ja sille alisteisena. Muu nimeketieto määrittelee, selittää tai täydentää nimekettä, johon se kuuluu."@fi ;
-    rdfs:seeAlso rdam:P30142 ;
-    skos:prefLabel "muu nimeketieto"@fi .
 
 mts:P30145 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30145 ;
     skos:member <http://metatietosanasto.fi/001>,
         <http://metatietosanasto.fi/002>,
@@ -360,27 +332,22 @@ mts:P30145 a isothes:ConceptGroup,
         <http://metatietosanasto.fi/005>,
         <http://metatietosanasto.fi/006>,
         <http://metatietosanasto.fi/007>,
-        <http://metatietosanasto.fi/008>,
-        <http://metatietosanasto.fi/009>,
         <http://metatietosanasto.fi/010> ;
     skos:prefLabel "aineiston saatavuuden rajoitukset"@fi .
 
 mts:P30146 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30146 ;
-    skos:definition "Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia."@fi ;
     skos:member <http://metatietosanasto.fi/011> ;
-    skos:prefLabel "aineiston käyttöehdot"@fi .
-
-mts:P30156 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30156 ;
-    skos:prefLabel "päänimeke"@fi .
+    skos:prefLabel "aineiston käyttöehdot"@fi ;
+    skos:scopeNote "Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia."@fi .
 
 mts:P30162 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30162 ;
     skos:member <http://metatietosanasto.fi/012>,
         <http://metatietosanasto.fi/013>,
@@ -397,48 +364,19 @@ mts:P30162 a isothes:ConceptGroup,
         <http://metatietosanasto.fi/024> ;
     skos:prefLabel "laitteisto- tai järjestelmävaatimukset"@fi .
 
-mts:P30173 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30173 ;
-    skos:prefLabel "jakajan nimi"@fi .
-
-mts:P30174 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30174 ;
-    skos:prefLabel "tuottajan nimi"@fi .
-
-mts:P30175 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30175 ;
-    skos:prefLabel "valmistajan nimi"@fi .
-
-mts:P30176 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30176 ;
-    skos:prefLabel "kustantajan nimi"@fi .
-
 mts:P30199 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30199 ;
     skos:member <http://rdvocab.info/termList/fontSize/1001>,
         <http://rdvocab.info/termList/fontSize/1002> ;
     skos:prefLabel "kirjasinkoko"@fi .
 
-mts:P30203 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdam:P30203 ;
-    skos:prefLabel "rinnakkaisnimeke"@fi .
-
-mts:P30209 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy ISSN-tunnukseen erottamattomasti."@fi ;
-    rdfs:seeAlso rdam:P30209 ;
-    skos:prefLabel "avainnimeke"@fi .
-
 mts:P30214 a isothes:ConceptGroup,
         skos:Collection ;
     isothes:superGroup mts:C10007 ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30214 ;
     skos:member <http://metatietosanasto.fi/068>,
         <http://metatietosanasto.fi/106>,
@@ -472,6 +410,164 @@ mts:P30214 a isothes:ConceptGroup,
         <http://metatietosanasto.fi/134>,
         <http://metatietosanasto.fi/135> ;
     skos:prefLabel "Huomautus tallenteesta"@fi .
+
+mts:edeltaja-seuraaja-suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teosten_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Edeltäjä-seuraaja-suhteet"@fi .
+
+mts:edeltaja-seuraaja-suhteet_e a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Edeltäjä-seuraaja-suhteet"@fi .
+
+mts:ekpspression_ja_sen_kuvauksen_suhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Ekspression ja sen kuvauksen suhde"@fi .
+
+mts:ekspression_ja_toimijoiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspression_suhteet,
+        mts:toimijoiden_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Ekspression ja toimijoiden väliset suhteet"@fi .
+
+mts:henkilon_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:julkaistu_myos_digitoituna ;
+    skos:prefLabel "Henkilön suhteet"@fi .
+
+mts:johdannaissuhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teosten_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Johdannaissuhteet"@fi .
+
+mts:johdannaissuhteet_e a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Johdannaissuhteet"@fi .
+
+mts:kappaleen_ja_kuvauksen_suhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Kappaleen ja sen kuvauksen suhde"@fi .
+
+mts:kappaleen_ja_toimijoiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleen_suhteet,
+        mts:toimijoiden_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Kappaleen ja toimijoiden väliset suhteet"@fi .
+
+mts:manifestaation_ja_kuvauksen_suhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Manifestaation ja sen kuvauksen suhde"@fi .
+
+mts:manifestaation_ja_toimijoiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaation_suhteet,
+        mts:toimijoiden_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Manifestaation ja toimijoiden väliset suhteet"@fi .
+
+mts:manifestaation_osa-kokonaisuussuhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Osa-kokonaisuussuhde"@fi .
+
+mts:osa-kokonaisuussuhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teosten_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Osa-kokonaisuussuhde"@fi .
+
+mts:osa-kokonaisuussuhde_e a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Osa-kokonaisuussuhde"@fi .
+
+mts:osa-kokonaisuussuhde_k a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Osa-kokonaisuussuhde"@fi .
+
+mts:suvun_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:julkaistu_myos_digitoituna ;
+    skos:prefLabel "Suvun suhteet"@fi .
+
+mts:taydennysssuhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teosten_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Täydennyssuhteet"@fi .
+
+mts:taydennysssuhteet_e a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Täydennyssuhteet"@fi .
+
+mts:teoksen_ja_sen_kuvauksen_suhde a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teosten_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Teoksen ja sen kuvauksen suhde"@fi .
+
+mts:teoksen_ja_toimijoiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teoksen_suhteet,
+        mts:toimijoiden_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Teoksen ja toimijoiden väliset suhteet"@fi .
+
+mts:vastaava_kappale a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Vastaava kappale"@fi .
+
+mts:vastaava_manifestaatio a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:julkaistu_myos_digitoituna ;
+    skos:prefLabel "Vastaava manifestaatio"@fi .
+
+mts:yhdessa_ilmestyneet_manifestaatiot a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Yhdessä ilmestyneet manifestaatiot"@fi .
+
+mts:yhdessa_sailytettavat_kappaleet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Yhdessä säilytettävät kappaleet"@fi .
+
+mts:yhteison_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:toimijoiden_valiset_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:julkaistu_myos_digitoituna ;
+    skos:prefLabel "Yhteisön suhteet"@fi .
 
 rdam:P30003 a skos:Concept ;
     reg:name "modeOfIssuance"@en ;
@@ -788,6 +884,50 @@ rdam:P30106 a skos:Concept ;
     skos:prefLabel "has series statement"@en ;
     skos:scopeNote "A series statement may also include information identifying one or more subseries to which the resource being described belongs."@en .
 
+rdam:P30108 a skos:Concept ;
+    reg:name "distributionStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60330 ;
+    owl:sameAs rdam:distributionStatement ;
+    skos:definition "Relates a manifestation to a statement identifying the place or places of distribution, distributor or distributors, and date or dates of distribution of a resource in a published form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has distribution statement"@en .
+
+rdam:P30109 a skos:Concept ;
+    reg:name "manufactureStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60331 ;
+    owl:sameAs rdam:manufactureStatement ;
+    skos:definition "Relates a manifestation to a statement identifying the place or places of manufacture, manufacturer or manufacturers, and date or dates of manufacture of a resource in a published form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has manufacture statement"@en .
+
+rdam:P30110 a skos:Concept ;
+    reg:name "productionStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60332 ;
+    owl:sameAs rdam:productionStatement ;
+    skos:definition "Relates a manifestation to a statement identifying the place or places of production, producer or producers, and date or dates of production of a resource in an unpublished form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has production statement"@en .
+
+rdam:P30111 a skos:Concept ;
+    reg:name "publicationStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60333 ;
+    owl:sameAs rdam:publicationStatement ;
+    skos:definition "Relates a manifestation to a statement identifying the place or places of publication, publisher or publishers, and date or dates of publication of a resource."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has publication statement"@en .
+
 rdam:P30112 a skos:Concept ;
     reg:name "parallelStatementOfResponsibilityRelatingToANamedRevisionOfAnEdition"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -1077,6 +1217,50 @@ rdam:P30168 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has frequency"@en .
 
+rdam:P30173 a skos:Concept ;
+    reg:name "distributorsName"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60544 ;
+    owl:sameAs rdam:distributorsName ;
+    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for distributing a resource in a published form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has distributor's name"@en .
+
+rdam:P30174 a skos:Concept ;
+    reg:name "producersName"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60545 ;
+    owl:sameAs rdam:producersName ;
+    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for inscribing, fabricating, constructing, etc., a resource in an unpublished form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has producer's name"@en .
+
+rdam:P30175 a skos:Concept ;
+    reg:name "manufacturersName"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60546 ;
+    owl:sameAs rdam:manufacturersName ;
+    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for printing, duplicating, casting, etc., a resource in a published form."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has manufacturer's name"@en .
+
+rdam:P30176 a skos:Concept ;
+    reg:name "publishersName"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdau:P60547 ;
+    owl:sameAs rdam:publishersName ;
+    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for publishing, releasing, or issuing a resource."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has publisher's name"@en .
+
 rdam:P30186 a skos:Concept ;
     reg:name "mount"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -1240,14 +1424,6 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:inScheme : ;
     skos:prefLabel "Käytettävissä lisenssin hankkineiden organisaatioiden verkossa."@fi .
 
-<http://metatietosanasto.fi/008> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "Access limited to [aineiston nimi] affiliated library networks."@en .
-
-<http://metatietosanasto.fi/009> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "Access restricted to subscribers via a username and password or IP address authentication."@en .
-
 <http://metatietosanasto.fi/010> a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "Restricted to institutions with a subscription."@en .
@@ -1269,6 +1445,7 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:prefLabel "Järjestelmävaatimukset:"@fi .
 
 <http://metatietosanasto.fi/015> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
     skos:inScheme : ;
     skos:prefLabel "Blu-ray-asema"@fi .
 
@@ -1499,6 +1676,27 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:inScheme : ;
     skos:prefLabel "levy"@fi .
 
+<http://metatietosanasto.fi/080> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:inScheme : ;
+    skos:prefLabel "Blu-ray-levy"@fi ;
+    skos:scopeNote "Korkeatarkkuuksinen optinen levy. Blu-ray on Philipsin ja Sonyn UDO- (Ultra Density Optical) ja Pioneerin DVDR Blue -tutkimusprojektien yhteistyössä syntynyt levyformaatti(Wikipedia, 27.9.2011)"@fi .
+
+<http://metatietosanasto.fi/085> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:inScheme : ;
+    skos:prefLabel "CD-DVD-levy"@fi .
+
+<http://metatietosanasto.fi/087> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:inScheme : ;
+    skos:prefLabel "Blue-ray-videolevy"@fi .
+
+<http://metatietosanasto.fi/088> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:inScheme : ;
+    skos:prefLabel "Blue-ray-äänilevy"@fi .
+
 <http://metatietosanasto.fi/093> a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "opetuskuva"@fi .
@@ -1522,6 +1720,11 @@ Videolaitteella käytettävät aineistot."""@fi .
 <http://metatietosanasto.fi/101> a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "USB-muisti"@fi .
+
+<http://metatietosanasto.fi/103> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:inScheme : ;
+    skos:prefLabel "C-kasetti"@fi .
 
 <http://metatietosanasto.fi/106> a skos:Concept ;
     skos:inScheme : ;
@@ -1663,25 +1866,35 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:inScheme : ;
     skos:prefLabel "Varustettu reunahakemistolla."@fi .
 
-<http://metatietosanasto.fi/161> a skos:Concept ;
+<http://metatietosanasto.fi/136> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
     skos:inScheme : ;
-    skos:prefLabel "kustantajan nimi"@fi ;
-    skos:scopeNote "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi .
+    skos:prefLabel "CD audio"@fi .
 
-<http://metatietosanasto.fi/162> a skos:Concept ;
+<http://metatietosanasto.fi/149> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
     skos:inScheme : ;
-    skos:prefLabel "Jakajan  nimi"@fi ;
-    skos:scopeNote "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi .
+    skos:prefLabel "Blu-ray"@fi .
 
-<http://metatietosanasto.fi/163> a skos:Concept ;
+<http://metatietosanasto.fi/157> a skos:Concept ;
     skos:inScheme : ;
-    skos:prefLabel "Valmistajan  nimi"@fi ;
-    skos:scopeNote "julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi .
+    skos:prefLabel "näköispainos"@fi ;
+    skos:scopeNote "Julkaisu, jonka pääteksti on tarkasti jäljennetty aikaisemmasta painoksesta (engl. facsimile edition)"@fi .
 
-<http://metatietosanasto.fi/164> a skos:Concept ;
+<http://metatietosanasto.fi/158> a skos:Concept ;
     skos:inScheme : ;
-    skos:prefLabel "copyright-vuosi"@fi ;
-    skos:scopeNote "aika, joka liittyy copyright-säädösten tai vastaavien säädösten alaiseen copyright-suojaukseen. Copyright-vuosiin sisältyvät P-ajat (phonogram) (äänitteiden copyright-suojaukseen liittyvät ajat)."@fi .
+    skos:prefLabel "painos"@fi ;
+    skos:scopeNote "Kaikki julkaisun peruskappaleesta painamalla tai muulla menetelmällä tuotetut kappaleet, jotka sama kustantaja, yhteisö tai henkilö on julkaissut. (Kuvailusäännöt) (engl. edition)"@fi .
+
+<http://metatietosanasto.fi/159> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "uudistettu painos"@fi ;
+    skos:scopeNote "Sisältö on tarkistettu ja uudistettu. Esim. tilastotietoja päivitetty tai kartan maan rajat muuttuneet ja painos siltä osin uudistettu. Onix-termi. (engl.:revised edition)"@fi .
+
+<http://metatietosanasto.fi/160> a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "uusi  painos"@fi ;
+    skos:scopeNote "Saman sisältöinen kuin aikaisempi painos. Pieniä muutoksia saatettu tehdä, esim. kirjoitusvirheitä korjattu. Onix-termi. (engl.: new edition)"@fi .
 
 <http://metatietosanasto.fi/165> a skos:Concept ;
     skos:inScheme : ;
@@ -1728,6 +1941,20 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:prefLabel "GTIN-koodista"@fi ;
     skos:scopeNote "manifestaation tunnisteen lisäys"@fi .
 
+mts:T1007 a skos:Concept ;
+    rdfs:comment "ISBD-termi"@fi ;
+    rdfs:seeAlso <http://iflastandards.info/ns/isbd/terms/mediatype/T1007> ;
+    skos:inScheme : ;
+    skos:prefLabel "video"@fi ;
+    skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi .
+
+mts:aanilevy a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    rdfs:seeAlso <http://rdaregistry.info/termList/RDACarrierType/1004> ;
+    skos:inScheme : ;
+    skos:narrower <http://metatietosanasto.fi/089> ;
+    skos:prefLabel "Äänilevy"@fi .
+
 rdam:P30001 a skos:Concept ;
     reg:name "carrierType"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -1762,17 +1989,16 @@ rdam:P30006 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has regional encoding"@en .
 
-rdam:P30018 a skos:Concept ;
-    reg:name "fileType"@en ;
+rdam:P30007 a skos:Concept ;
+    reg:name "copyrightDate"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10007 ;
     rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30124,
-        rdau:P60093 ;
-    owl:sameAs rdam:fileType ;
-    skos:definition "Relates a manifestation to a general type of data content encoded in a computer file."@en ;
+    rdfs:subPropertyOf rdau:P60069 ;
+    owl:sameAs rdam:copyrightDate ;
+    skos:definition "Relates a manifestation to a date associated with a claim of protection under copyright or a similar regime."@en ;
     skos:inScheme : ;
-    skos:prefLabel "has file type"@en .
+    skos:prefLabel "has copyright date"@en .
 
 rdam:P30032 a skos:Concept ;
     reg:name "analysisOfManifestation"@en ;
@@ -1863,6 +2089,30 @@ rdam:P30051 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has note on changes in carrier characteristics"@en .
 
+rdam:P30052 a skos:Concept ;
+    reg:name "noteOnDistributionStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30137,
+        rdau:P60125 ;
+    owl:sameAs rdam:noteOnDistributionStatement ;
+    skos:definition "Relates a manifestation to a note providing details on place of distribution, distributor, or date of distribution, or information on changes in the place of distribution, distributor, or distributor’s name."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has note on distribution statement"@en .
+
+rdam:P30053 a skos:Concept ;
+    reg:name "noteOnManufactureStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30137,
+        rdau:P60126 ;
+    owl:sameAs rdam:noteOnManufactureStatement ;
+    skos:definition "Relates a manifestation to a note providing details on place of manufacture, manufacturer, or date of manufacture, or information on changes in the place of manufacture, manufacturer, or manufacturer’s name."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has note on manufacture statement"@en .
+
 rdam:P30054 a skos:Concept ;
     reg:name "noteOnProductionStatement"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -1874,6 +2124,18 @@ rdam:P30054 a skos:Concept ;
     skos:definition "Relates a manifestation to a note providing details on place of production, producer, or date of production, or information on changes in the place of production, producer, or producer’s name."@en ;
     skos:inScheme : ;
     skos:prefLabel "has note on production statement"@en .
+
+rdam:P30055 a skos:Concept ;
+    reg:name "noteOnPublicationStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30137,
+        rdau:P60128 ;
+    owl:sameAs rdam:noteOnPublicationStatement ;
+    skos:definition "Relates a manifestation to a note providing details on place of publication, publisher, or date of publication, information on changes in the place of publication, publisher, or publisher’s name, or on suspension of publication."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has note on publication statement"@en .
 
 rdam:P30056 a skos:Concept ;
     reg:name "noteOnFrequency"@en ;
@@ -1911,6 +2173,18 @@ rdam:P30058 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has note on series statement"@en .
 
+rdam:P30059 a skos:Concept ;
+    reg:name "noteOnCopyrightDate"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30137,
+        rdau:P60132 ;
+    owl:sameAs rdam:noteOnCopyrightDate ;
+    skos:definition "Relates a manifestation to a note providing information on copyright dates not recorded as part of the copyright date element."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has note on copyright date"@en .
+
 rdam:P30062 a skos:Concept ;
     reg:name "noteOnNumberingOfSerials"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -1922,6 +2196,18 @@ rdam:P30062 a skos:Concept ;
     skos:definition "Relates a manifestation to a note providing information on the numbering of the first and/or last issue or part, on complex or irregular numbering (including numbering errors), or on the period covered by a volume, issue, part, etc."@en ;
     skos:inScheme : ;
     skos:prefLabel "has note on numbering of serials"@en .
+
+rdam:P30064 a skos:Concept ;
+    reg:name "noteOnEditionStatement"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30137,
+        rdau:P60137 ;
+    owl:sameAs rdam:noteOnEditionStatement ;
+    skos:definition "Relates a manifestation to a note providing information on the source of an edition statement, on edition statements relating to issues, parts, etc., on changes in edition statements, or other information relating to an edition statement."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has note on edition statement"@en .
 
 rdam:P30065 a skos:Concept ;
     reg:name "publishersNumberForMusic"@en ;
@@ -2223,50 +2509,6 @@ rdam:P30107 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has edition statement"@en .
 
-rdam:P30108 a skos:Concept ;
-    reg:name "distributionStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60330 ;
-    owl:sameAs rdam:distributionStatement ;
-    skos:definition "Relates a manifestation to a statement identifying the place or places of distribution, distributor or distributors, and date or dates of distribution of a resource in a published form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has distribution statement"@en .
-
-rdam:P30109 a skos:Concept ;
-    reg:name "manufactureStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60331 ;
-    owl:sameAs rdam:manufactureStatement ;
-    skos:definition "Relates a manifestation to a statement identifying the place or places of manufacture, manufacturer or manufacturers, and date or dates of manufacture of a resource in a published form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has manufacture statement"@en .
-
-rdam:P30110 a skos:Concept ;
-    reg:name "productionStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60332 ;
-    owl:sameAs rdam:productionStatement ;
-    skos:definition "Relates a manifestation to a statement identifying the place or places of production, producer or producers, and date or dates of production of a resource in an unpublished form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has production statement"@en .
-
-rdam:P30111 a skos:Concept ;
-    reg:name "publicationStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60333 ;
-    owl:sameAs rdam:publicationStatement ;
-    skos:definition "Relates a manifestation to a statement identifying the place or places of publication, publisher or publishers, and date or dates of publication of a resource."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has publication statement"@en .
-
 rdam:P30116 a skos:Concept ;
     reg:name "parallelStatementOfResponsibilityRelatingToTitleProper"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -2302,6 +2544,18 @@ rdam:P30123 a skos:Concept ;
     skos:definition "Relates a manifestation to a system used to format a video resource for television broadcast."@en ;
     skos:inScheme : ;
     skos:prefLabel "has broadcast standard"@en .
+
+rdam:P30128 a skos:Concept ;
+    reg:name "variantTitle"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30134,
+        rdau:P60355 ;
+    owl:sameAs rdam:variantTitle ;
+    skos:definition "Relates a manifestation to a title associated with a resource that differs from a title recorded as the title proper, a parallel title proper, other title information, parallel other title information, earlier title proper, later title proper, key title, or abbreviated title."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has variant title"@en .
 
 rdam:P30129 a skos:Concept ;
     reg:name "laterTitleProper"@en ;
@@ -2350,6 +2604,18 @@ rdam:P30138 a skos:Concept ;
     skos:definition "Relates a manifestation to an equalization system, noise reduction system, etc., used in making an audio recording."@en ;
     skos:inScheme : ;
     skos:prefLabel "has special playback characteristic"@en .
+
+rdam:P30142 a skos:Concept ;
+    reg:name "otherTitleInformation"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30134,
+        rdau:P60493 ;
+    owl:sameAs rdam:otherTitleInformation ;
+    skos:definition "Relates a manifestation to information that appears in conjunction with, and is subordinate to, the title proper of a resource."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has other title information"@en .
 
 rdam:P30145 a skos:Concept ;
     reg:name "restrictionsOnAccess"@en ;
@@ -2432,6 +2698,18 @@ rdam:P30151 a skos:Concept ;
     skos:definition "Relates a manifestation to other title information in a language and/or script that differs from that recorded in the other title information element."@en ;
     skos:inScheme : ;
     skos:prefLabel "has parallel other title information"@en .
+
+rdam:P30156 a skos:Concept ;
+    reg:name "titleProper"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30134,
+        rdau:P60515 ;
+    owl:sameAs rdam:titleProper ;
+    skos:definition "Relates a manifestation to the chief name of a resource (i.e., the title normally used when citing the resource)."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has title proper"@en .
 
 rdam:P30159 a skos:Concept ;
     reg:name "resolution"@en ;
@@ -2527,50 +2805,6 @@ rdam:P30172 a skos:Concept ;
     skos:definition "Relates a manifestation to the method used to encode audio content for playback (e.g., analog or digital)."@en ;
     skos:inScheme : ;
     skos:prefLabel "has type of recording"@en .
-
-rdam:P30173 a skos:Concept ;
-    reg:name "distributorsName"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60544 ;
-    owl:sameAs rdam:distributorsName ;
-    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for distributing a resource in a published form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has distributor's name"@en .
-
-rdam:P30174 a skos:Concept ;
-    reg:name "producersName"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60545 ;
-    owl:sameAs rdam:producersName ;
-    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for inscribing, fabricating, constructing, etc., a resource in an unpublished form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has producer's name"@en .
-
-rdam:P30175 a skos:Concept ;
-    reg:name "manufacturersName"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60546 ;
-    owl:sameAs rdam:manufacturersName ;
-    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for printing, duplicating, casting, etc., a resource in a published form."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has manufacturer's name"@en .
-
-rdam:P30176 a skos:Concept ;
-    reg:name "publishersName"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60547 ;
-    owl:sameAs rdam:publishersName ;
-    skos:definition "Relates a manifestation to the name of a person, family, or corporate body responsible for publishing, releasing, or issuing a resource."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has publisher's name"@en .
 
 rdam:P30177 a skos:Concept ;
     reg:name "extentOfCartographicResource"@en ;
@@ -2798,6 +3032,18 @@ rdam:P30202 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has encoded bitrate"@en .
 
+rdam:P30203 a skos:Concept ;
+    reg:name "parallelTitleProper"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30134,
+        rdau:P60589 ;
+    owl:sameAs rdam:parallelTitleProper ;
+    skos:definition "Relates a manifestation to the title proper in another language and/or script."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has parallel title proper"@en .
+
 rdam:P30206 a skos:Concept ;
     reg:name "recordingMedium"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -2833,6 +3079,18 @@ rdam:P30208 a skos:Concept ;
     skos:definition "Relates a manifestation to the underlying physical material of a resource."@en ;
     skos:inScheme : ;
     skos:prefLabel "has base material"@en .
+
+rdam:P30209 a skos:Concept ;
+    reg:name "keyTitle"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30134,
+        rdau:P60597 ;
+    owl:sameAs rdam:keyTitle ;
+    skos:definition "Relates a manifestation to the unique name assigned to a resource by an issn registration agency."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has key title"@en .
 
 rdam:P30210 a skos:Concept ;
     reg:hasSubproperty rdam:P30027 ;
@@ -2927,13 +3185,15 @@ rdau:P60050 :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> .
     skos:prefLabel "toimintakortti"@fi ;
     skos:scopeNote "Kortti, johon on painettu sanoja, numeroita, tai/ja kuvia, ja jota käytetään tietyn toiminnan toteuttamisessa (engl. activity card)"@fi .
 
-<http://metatietosanasto.fi/080> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1013> ;
+<http://metatietosanasto.fi/081> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
     skos:inScheme : ;
-    skos:prefLabel "Blu-ray-levy"@fi ;
-    skos:scopeNote "Korkeatarkkuuksinen optinen levy. Blu-ray on Philipsin ja Sonyn UDO- (Ultra Density Optical) ja Pioneerin DVDR Blue -tutkimusprojektien yhteistyössä syntynyt levyformaatti(Wikipedia, 27.9.2011)"@fi .
+    skos:narrower <http://metatietosanasto.fi/082> ;
+    skos:prefLabel "CD-levy"@fi ;
+    skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi .
 
 <http://metatietosanasto.fi/082> a skos:Concept ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
     skos:broader <http://metatietosanasto.fi/081> ;
     skos:inScheme : ;
     skos:prefLabel "CD-ROM-levy"@fi .
@@ -2943,28 +3203,14 @@ rdau:P60050 :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> .
     skos:inScheme : ;
     skos:prefLabel "DVD-ROM-levy"@fi .
 
-<http://metatietosanasto.fi/085> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1013> ;
-    skos:inScheme : ;
-    skos:prefLabel "CD-DVD-levy"@fi .
-
 <http://metatietosanasto.fi/086> a skos:Concept ;
     skos:broader <http://rdvocab.info/termList/RDACarrierType/1060> ;
     skos:inScheme : ;
     skos:prefLabel "DVD-videolevy"@fi .
 
-<http://metatietosanasto.fi/087> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1060> ;
-    skos:inScheme : ;
-    skos:prefLabel "Blue-ray-videolevy"@fi .
-
-<http://metatietosanasto.fi/088> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1004> ;
-    skos:inScheme : ;
-    skos:prefLabel "Blue-ray-äänilevy"@fi .
-
 <http://metatietosanasto.fi/089> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1004> ;
+    rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+    skos:broader mts:aanilevy ;
     skos:inScheme : ;
     skos:prefLabel "CD-äänilevy"@fi .
 
@@ -2999,20 +3245,10 @@ rdau:P60050 :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> .
     skos:inScheme : ;
     skos:prefLabel "verkkojulkaisu"@fi .
 
-<http://metatietosanasto.fi/103> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1007> ;
-    skos:inScheme : ;
-    skos:prefLabel "C-kasetti"@fi .
-
 <http://metatietosanasto.fi/104> a skos:Concept ;
     skos:broader <http://rdvocab.info/termList/RDACarrierType/1007> ;
     skos:inScheme : ;
     skos:prefLabel "DAT-kasetti"@fi .
-
-<http://metatietosanasto.fi/136> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/fileType/1001> ;
-    skos:inScheme : ;
-    skos:prefLabel "CD audio"@fi .
 
 <http://metatietosanasto.fi/137> a skos:Concept ;
     skos:broader <http://rdvocab.info/termList/fileType/1001> ;
@@ -3075,11 +3311,6 @@ rdau:P60050 :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> .
     skos:inScheme : ;
     skos:prefLabel "XML"@fi .
 
-<http://metatietosanasto.fi/149> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/fileType/1006> ;
-    skos:inScheme : ;
-    skos:prefLabel "Blu-ray"@fi .
-
 <http://metatietosanasto.fi/150> a skos:Concept ;
     skos:broader <http://rdvocab.info/termList/fileType/1006> ;
     skos:inScheme : ;
@@ -3110,36 +3341,29 @@ rdau:P60050 :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> .
     skos:inScheme : ;
     skos:prefLabel "JPEG2000"@fi .
 
-<http://metatietosanasto.fi/157> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "näköispainos"@fi ;
-    skos:scopeNote "Julkaisu, jonka pääteksti on tarkasti jäljennetty aikaisemmasta painoksesta (engl. facsimile edition)"@fi .
+mts:ekspression_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Ekspression suhteet"@fi ;
+    skos:scopeNote "Ekspression suhde tarkoittaa ekspression ja toisen entiteetin välistä suhdetta."@fi .
 
-<http://metatietosanasto.fi/158> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "painos"@fi ;
-    skos:scopeNote "Kaikki julkaisun peruskappaleesta painamalla tai muulla menetelmällä tuotetut kappaleet, jotka sama kustantaja, yhteisö tai henkilö on julkaissut. (Kuvailusäännöt) (engl. edition)"@fi .
+mts:kappaleen_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Kappaleen suhteet"@fi ;
+    skos:scopeNote "Kappaleen suhde tarkoittaa teoksen ja toisen entiteetin välistä suhdetta."@fi .
 
-<http://metatietosanasto.fi/159> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "uudistettu painos"@fi ;
-    skos:scopeNote "Sisältö on tarkistettu ja uudistettu. Esim. tilastotietoja päivitetty tai kartan maan rajat muuttuneet ja painos siltä osin uudistettu. Onix-termi. (engl.:revised edition)"@fi .
+mts:manifestaation_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Manifestaation suhteet"@fi ;
+    skos:scopeNote "Manifestaation suhde tarkoittaa manifestaation ja toisen entiteetin välistä suhdetta."@fi .
 
-<http://metatietosanasto.fi/160> a skos:Concept ;
-    skos:inScheme : ;
-    skos:prefLabel "uusi  painos"@fi ;
-    skos:scopeNote "Saman sisältöinen kuin aikaisempi painos. Pieniä muutoksia saatettu tehdä, esim. kirjoitusvirheitä korjattu. Onix-termi. (engl.: new edition)"@fi .
-
-rdam:P30007 a skos:Concept ;
-    reg:name "copyrightDate"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdau:P60069 ;
-    owl:sameAs rdam:copyrightDate ;
-    skos:definition "Relates a manifestation to a date associated with a claim of protection under copyright or a similar regime."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has copyright date"@en .
+mts:teoksen_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Teoksen suhteet"@fi ;
+    skos:scopeNote "Teoksen suhde tarkoittaa teoksen ja toisen entiteetin välistä suhdetta."@fi .
 
 rdam:P30016 a skos:Concept ;
     reg:name "electronicReproduction"@en ;
@@ -3154,6 +3378,18 @@ rdam:P30016 a skos:Concept ;
     skos:definition "Relates a manifestation to a digital manifestation resulting from the reproduction of an analog manifestation."@en ;
     skos:inScheme : ;
     skos:prefLabel "is electronic reproduction"@en .
+
+rdam:P30018 a skos:Concept ;
+    reg:name "fileType"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10007 ;
+    rdfs:isDefinedBy rdam: ;
+    rdfs:subPropertyOf rdam:P30124,
+        rdau:P60093 ;
+    owl:sameAs rdam:fileType ;
+    skos:definition "Relates a manifestation to a general type of data content encoded in a computer file."@en ;
+    skos:inScheme : ;
+    skos:prefLabel "has file type"@en .
 
 rdam:P30019 a skos:Concept ;
     reg:name "facsimileContainedIn"@en ;
@@ -3352,54 +3588,6 @@ rdam:P30046 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "is facsimile container of"@en .
 
-rdam:P30052 a skos:Concept ;
-    reg:name "noteOnDistributionStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30137,
-        rdau:P60125 ;
-    owl:sameAs rdam:noteOnDistributionStatement ;
-    skos:definition "Relates a manifestation to a note providing details on place of distribution, distributor, or date of distribution, or information on changes in the place of distribution, distributor, or distributor’s name."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has note on distribution statement"@en .
-
-rdam:P30053 a skos:Concept ;
-    reg:name "noteOnManufactureStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30137,
-        rdau:P60126 ;
-    owl:sameAs rdam:noteOnManufactureStatement ;
-    skos:definition "Relates a manifestation to a note providing details on place of manufacture, manufacturer, or date of manufacture, or information on changes in the place of manufacture, manufacturer, or manufacturer’s name."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has note on manufacture statement"@en .
-
-rdam:P30055 a skos:Concept ;
-    reg:name "noteOnPublicationStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30137,
-        rdau:P60128 ;
-    owl:sameAs rdam:noteOnPublicationStatement ;
-    skos:definition "Relates a manifestation to a note providing details on place of publication, publisher, or date of publication, information on changes in the place of publication, publisher, or publisher’s name, or on suspension of publication."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has note on publication statement"@en .
-
-rdam:P30059 a skos:Concept ;
-    reg:name "noteOnCopyrightDate"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30137,
-        rdau:P60132 ;
-    owl:sameAs rdam:noteOnCopyrightDate ;
-    skos:definition "Relates a manifestation to a note providing information on copyright dates not recorded as part of the copyright date element."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has note on copyright date"@en .
-
 rdam:P30063 a skos:Concept ;
     reg:name "noteOnTitle"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -3411,18 +3599,6 @@ rdam:P30063 a skos:Concept ;
     skos:definition "Relates a manifestation to a note providing information on the source from which a title was taken, the date the title was viewed, variations in titles, inaccuracies, deletions, etc., or other information relating to a title."@en ;
     skos:inScheme : ;
     skos:prefLabel "has note on title"@en .
-
-rdam:P30064 a skos:Concept ;
-    reg:name "noteOnEditionStatement"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30137,
-        rdau:P60137 ;
-    owl:sameAs rdam:noteOnEditionStatement ;
-    skos:definition "Relates a manifestation to a note providing information on the source of an edition statement, on edition statements relating to issues, parts, etc., on changes in edition statements, or other information relating to an edition statement."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has note on edition statement"@en .
 
 rdam:P30080 a skos:Concept ;
     reg:hasSubproperty rdam:P30068 ;
@@ -3531,18 +3707,6 @@ rdam:P30127 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has projection characteristic of motion picture film"@en .
 
-rdam:P30128 a skos:Concept ;
-    reg:name "variantTitle"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30134,
-        rdau:P60355 ;
-    owl:sameAs rdam:variantTitle ;
-    skos:definition "Relates a manifestation to a title associated with a resource that differs from a title recorded as the title proper, a parallel title proper, other title information, parallel other title information, earlier title proper, later title proper, key title, or abbreviated title."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has variant title"@en .
-
 rdam:P30136 a skos:Concept ;
     reg:name "electronicReproductionOfManifestation"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
@@ -3556,30 +3720,6 @@ rdam:P30136 a skos:Concept ;
     skos:definition "Relates a manifestation to an analog manifestation used as the basis for an electronic reproduction."@en ;
     skos:inScheme : ;
     skos:prefLabel "is electronic reproduction of (manifestation)"@en .
-
-rdam:P30142 a skos:Concept ;
-    reg:name "otherTitleInformation"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30134,
-        rdau:P60493 ;
-    owl:sameAs rdam:otherTitleInformation ;
-    skos:definition "Relates a manifestation to information that appears in conjunction with, and is subordinate to, the title proper of a resource."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has other title information"@en .
-
-rdam:P30156 a skos:Concept ;
-    reg:name "titleProper"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30134,
-        rdau:P60515 ;
-    owl:sameAs rdam:titleProper ;
-    skos:definition "Relates a manifestation to the chief name of a resource (i.e., the title normally used when citing the resource)."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has title proper"@en .
 
 rdam:P30169 a skos:Concept ;
     reg:hasSubproperty rdam:P30170,
@@ -3606,30 +3746,6 @@ rdam:P30187 a skos:Concept ;
     skos:definition "Relates a manifestation to the process used to produce a resource."@en ;
     skos:inScheme : ;
     skos:prefLabel "has production method"@en .
-
-rdam:P30203 a skos:Concept ;
-    reg:name "parallelTitleProper"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30134,
-        rdau:P60589 ;
-    owl:sameAs rdam:parallelTitleProper ;
-    skos:definition "Relates a manifestation to the title proper in another language and/or script."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has parallel title proper"@en .
-
-rdam:P30209 a skos:Concept ;
-    reg:name "keyTitle"@en ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:domain rdac:C10007 ;
-    rdfs:isDefinedBy rdam: ;
-    rdfs:subPropertyOf rdam:P30134,
-        rdau:P60597 ;
-    owl:sameAs rdam:keyTitle ;
-    skos:definition "Relates a manifestation to the unique name assigned to a resource by an issn registration agency."@en ;
-    skos:inScheme : ;
-    skos:prefLabel "has key title"@en .
 
 rdam:P30211 a skos:Concept ;
     reg:hasSubproperty rdam:P30023 ;
@@ -3659,8 +3775,17 @@ rdam:P30213 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has whole-part manifestation relationship with"@en .
 
+<http://rdvocab.info/termList/RDACarrierType/1007> skos:narrower <http://metatietosanasto.fi/104> ;
+    skos:prefLabel "äänikasetti"@fi .
+
+<http://rdvocab.info/termList/RDACarrierType/1013> skos:narrower <http://metatietosanasto.fi/083> ;
+    skos:prefLabel "tietolevy"@fi .
+
 <http://rdvocab.info/termList/RDACarrierType/1018> skos:narrower <http://metatietosanasto.fi/102> ;
     skos:prefLabel "verkkoaineisto"@fi .
+
+<http://rdvocab.info/termList/RDACarrierType/1060> skos:narrower <http://metatietosanasto.fi/086> ;
+    skos:prefLabel "videolevy"@fi .
 
 <http://rdvocab.info/termList/fileType/1004> skos:narrower <http://metatietosanasto.fi/153> ;
     skos:prefLabel "kuvatiedostomuoto"@fi .
@@ -3671,13 +3796,6 @@ rdam:P30213 a skos:Concept ;
         <http://metatietosanasto.fi/031> ;
     skos:prefLabel "muu nimeketieto"@fi ;
     skos:scopeNote "Sana, ilmaisu tai merkkiryhmä, joka esiintyy julkaisun päänimekkeen yhteydessä ja sille alisteisena. Muu nimeketieto määrittelee, selittää tai täydentää nimekettä, johon se kuuluu."@fi .
-
-<http://metatietosanasto.fi/081> a skos:Concept ;
-    skos:broader <http://rdvocab.info/termList/RDACarrierType/1013> ;
-    skos:inScheme : ;
-    skos:narrower <http://metatietosanasto.fi/082> ;
-    skos:prefLabel "CD-levy"@fi ;
-    skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi .
 
 <http://metatietosanasto.fi/083> a skos:Concept ;
     skos:broader <http://rdvocab.info/termList/RDACarrierType/1013> ;
@@ -3696,6 +3814,12 @@ rdam:P30213 a skos:Concept ;
         <http://rdvocab.info/termList/fileType/1006> ;
     skos:inScheme : ;
     skos:prefLabel "TIFF"@fi .
+
+mts:toimijoiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:toimijoiden_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Toimijoiden väliset suhteet"@fi .
 
 rdam:P30004 a skos:Concept ;
     reg:hasSubproperty rdam:P30065,
@@ -3770,14 +3894,6 @@ rdam:P30212 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has equivalent manifestation relationship with"@en .
 
-<http://rdvocab.info/termList/RDACarrierType/1007> skos:narrower <http://metatietosanasto.fi/103>,
-        <http://metatietosanasto.fi/104> ;
-    skos:prefLabel "äänikasetti"@fi .
-
-<http://rdvocab.info/termList/RDACarrierType/1060> skos:narrower <http://metatietosanasto.fi/086>,
-        <http://metatietosanasto.fi/087> ;
-    skos:prefLabel "videolevy"@fi .
-
 <http://metatietosanasto.fi/018> a skos:Concept ;
     skos:inScheme : ;
     skos:narrower <http://metatietosanasto.fi/019>,
@@ -3785,6 +3901,23 @@ rdam:P30212 a skos:Concept ;
         <http://metatietosanasto.fi/021> ;
     skos:prefLabel "Lukulaite"@fi ;
     skos:scopeNote "Lukulaite = lukemislaite. Mikrofilmin lukulaite. Sähkökirjan lukulaite (Kielitoimiston sanakirja)"@fi .
+
+mts:julkaistu_myos_digitoituna a skos:Concept ;
+    skos:inScheme : ;
+    skos:prefLabel "Julkaistu myös digitoituna"@fi ;
+    skos:scopeNote "Viittausta käytetään huomautuksena."@fi .
+
+mts:kappaleiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:kappaleen_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Kappaleiden väliset suhteet"@fi .
+
+mts:manifestaatioiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:manifestaation_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Manifestaatioiden väliset suhteet"@fi .
 
 rdam:P30033 a skos:Concept ;
     reg:hasSubproperty rdam:P30022,
@@ -3835,6 +3968,29 @@ rdam:P30048 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "has related manifestation"@en .
 
+<http://rdvocab.info/termList/RDACarrierType/1004> skos:narrower <http://metatietosanasto.fi/090>,
+        <http://metatietosanasto.fi/091>,
+        <http://metatietosanasto.fi/092> ;
+    skos:prefLabel "äänilevy"@fi .
+
+mts:ekspressioiden_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:ekspression_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Ekspressioiden väliset suhteet"@fi .
+
+mts:teosten_valiset_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    isothes:superGroup mts:teoksen_suhteet ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Teosten väliset suhteet"@fi .
+
+mts:toimijoiden_suhteet a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Toimijoiden suhteet"@fi ;
+    skos:scopeNote "Toimijoiden suhteet tarkoittavat tomijan (henkilö, suku, yhteisö) ja toisen entiteetin välistä suhdetta."@fi .
+
 rdam:P30020 a skos:Concept ;
     reg:hasSubproperty rdam:P30019,
         rdam:P30025,
@@ -3883,12 +4039,6 @@ rdam:P30191 a skos:Concept ;
     skos:definition "Relates a manifestation to the relationship between an original carrier and the carrier of a reproduction made from the original (e.g., a first generation camera master, a second generation printing master)."@en ;
     skos:inScheme : ;
     skos:prefLabel "has generation"@en .
-
-<http://rdvocab.info/termList/RDACarrierType/1013> skos:narrower <http://metatietosanasto.fi/080>,
-        <http://metatietosanasto.fi/081>,
-        <http://metatietosanasto.fi/083>,
-        <http://metatietosanasto.fi/085> ;
-    skos:prefLabel "tietolevy"@fi .
 
 <http://rdvocab.info/termList/RDACarrierType/1045> skos:narrower <http://metatietosanasto.fi/071>,
         <http://metatietosanasto.fi/072>,
@@ -3969,12 +4119,12 @@ rdam:P30043 a skos:Concept ;
     skos:inScheme : ;
     skos:prefLabel "is reproduction of (manifestation)"@en .
 
-<http://rdvocab.info/termList/RDACarrierType/1004> skos:narrower <http://metatietosanasto.fi/088>,
-        <http://metatietosanasto.fi/089>,
-        <http://metatietosanasto.fi/090>,
-        <http://metatietosanasto.fi/091>,
-        <http://metatietosanasto.fi/092> ;
-    skos:prefLabel "äänilevy"@fi .
+<http://rdvocab.info/termList/fileType/1001> skos:narrower <http://metatietosanasto.fi/137>,
+        <http://metatietosanasto.fi/138>,
+        <http://metatietosanasto.fi/139>,
+        <http://metatietosanasto.fi/140>,
+        <http://metatietosanasto.fi/141> ;
+    skos:prefLabel "äänitiedostomuoto"@fi .
 
 rdam:P30124 a skos:Concept ;
     reg:hasSubproperty rdam:P30006,
@@ -3993,14 +4143,6 @@ rdam:P30124 a skos:Concept ;
     skos:definition "Relates a manifestation to a technical specification relating to the digital encoding of text, image, audio, video, and other types of data in a resource."@en ;
     skos:inScheme : ;
     skos:prefLabel "has digital file characteristic"@en .
-
-<http://rdvocab.info/termList/fileType/1001> skos:narrower <http://metatietosanasto.fi/136>,
-        <http://metatietosanasto.fi/137>,
-        <http://metatietosanasto.fi/138>,
-        <http://metatietosanasto.fi/139>,
-        <http://metatietosanasto.fi/140>,
-        <http://metatietosanasto.fi/141> ;
-    skos:prefLabel "äänitiedostomuoto"@fi .
 
 rdam:P30125 a skos:Concept ;
     reg:hasSubproperty rdam:P30138,
@@ -4049,6 +4191,15 @@ rdam:P30165 a skos:Concept ;
         <http://metatietosanasto.fi/148> ;
     skos:prefLabel "tekstitiedostomuoto"@fi .
 
+<http://rdvocab.info/termList/fileType/1006> skos:narrower <http://metatietosanasto.fi/150>,
+        <http://metatietosanasto.fi/151>,
+        <http://metatietosanasto.fi/152>,
+        <http://metatietosanasto.fi/153>,
+        <http://metatietosanasto.fi/154>,
+        <http://metatietosanasto.fi/155>,
+        <http://metatietosanasto.fi/156> ;
+    skos:prefLabel "videotiedostomuoto"@fi .
+
 rdam:P30134 a skos:Concept ;
     reg:hasSubproperty rdam:P30128,
         rdam:P30129,
@@ -4068,16 +4219,6 @@ rdam:P30134 a skos:Concept ;
     skos:definition "Relates a manifestation to a word, character, or group of words and/or characters that names a resource or a work contained in it."@en ;
     skos:inScheme : ;
     skos:prefLabel "has title"@en .
-
-<http://rdvocab.info/termList/fileType/1006> skos:narrower <http://metatietosanasto.fi/149>,
-        <http://metatietosanasto.fi/150>,
-        <http://metatietosanasto.fi/151>,
-        <http://metatietosanasto.fi/152>,
-        <http://metatietosanasto.fi/153>,
-        <http://metatietosanasto.fi/154>,
-        <http://metatietosanasto.fi/155>,
-        <http://metatietosanasto.fi/156> ;
-    skos:prefLabel "videotiedostomuoto"@fi .
 
 rdam:P30082 a skos:Concept ;
     reg:hasSubproperty rdam:P30069,
@@ -4128,9 +4269,10 @@ rdam:P30137 a skos:Concept ;
 
 mts:C10007 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdac:C10007 ;
-    skos:definition "Teoksen ekspression saama ilmiasu."@fi ;
-    skos:prefLabel "Manifestaatio"@fi .
+    skos:prefLabel "Manifestaatio"@fi ;
+    skos:scopeNote "Teoksen ekspression saama ilmiasu."@fi .
 
 <http://metadataregistry.org/uri/RegStatus/1001> a skos:Concept ;
     skos:inScheme : ;
@@ -4140,6 +4282,6 @@ rdam: dc:title "RDA Manifestation properties"@en ;
     skos:note "Properties derived from RDA elements and relationship designators with the domain of RDA Manifestation."@en .
 
 : a skos:ConceptScheme ;
-    dct:modified "2014-10-30T12:27:42+00:00"^^xsd:dateTime ;
+    dct:modified "2015-02-24T13:57:35+00:00"^^xsd:dateTime ;
     owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
 

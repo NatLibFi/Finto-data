@@ -1,0 +1,21 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX allars-meta: <http://www.yso.fi/onto/allars-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+# TODO: which property should be used for the label in YSO?
+
+CONSTRUCT {
+  ?ysoc yso-meta:allarsPrefLabel ?allarslabel .
+}
+WHERE {
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/allars/> {
+      ?allarsc a skos:Concept .
+      ?allarsc skos:prefLabel ?allarslabel .
+      FILTER NOT EXISTS { ?allarsc a allars-meta:GeographicalConcept }
+    }
+  }
+  FILTER NOT EXISTS { ?anyysoc ?anyprop ?allarslabel }
+  ?ysoc om:definedConcept ?allarsc .
+}

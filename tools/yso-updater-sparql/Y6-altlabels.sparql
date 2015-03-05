@@ -1,0 +1,25 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+CONSTRUCT {
+  ?ysoc yso-meta:oldLabel ?ysalabel .
+}
+WHERE {
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/> {
+      ?ysac a skos:Concept .
+      ?ysac skos:altLabel ?ysalabel .
+      FILTER NOT EXISTS { ?ysac a ysa-meta:GeographicalConcept }
+    }
+  }
+  ?ysoc om:definedConcept ?ysac .
+  FILTER NOT EXISTS { ?anyysoc ?anyprop ?ysalabel }
+  FILTER NOT EXISTS {
+    ?ysoc2 om:definedConcept ?ysac .
+    FILTER (?ysoc != ?ysoc2)
+    FILTER NOT EXISTS { ?ysoc2 a yso-meta:DeprecatedConcept }
+  }
+  FILTER NOT EXISTS { ?ysoc a yso-meta:DeprecatedConcept }
+}

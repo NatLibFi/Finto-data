@@ -1,0 +1,21 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+# TODO: which property should be used for the label in YSO?
+
+CONSTRUCT {
+  ?ysoc yso-meta:ysaPrefLabel ?ysalabel .
+}
+WHERE {
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/> {
+      ?ysac a skos:Concept .
+      ?ysac skos:prefLabel ?ysalabel .
+      FILTER NOT EXISTS { ?ysac a ysa-meta:GeographicalConcept }
+    }
+  }
+  FILTER NOT EXISTS { ?anyysoc ?anyprop ?ysalabel }
+  ?ysoc om:definedConcept ?ysac .
+}

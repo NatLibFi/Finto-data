@@ -1,0 +1,25 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX allars-meta: <http://www.yso.fi/onto/allars-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+CONSTRUCT {
+  ?ysoc yso-meta:oldLabel ?allarslabel .
+}
+WHERE {
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/allars/> {
+      ?allarsc a skos:Concept .
+      ?allarsc skos:altLabel ?allarslabel .
+      FILTER NOT EXISTS { ?allarsc a allars-meta:GeographicalConcept }
+    }
+  }
+  ?ysoc om:definedConcept ?allarsc .
+  FILTER NOT EXISTS { ?anyysoc ?anyprop ?allarslabel }
+  FILTER NOT EXISTS {
+    ?ysoc2 om:definedConcept ?allarsc .
+    FILTER (?ysoc != ?ysoc2)
+    FILTER NOT EXISTS { ?ysoc2 a yso-meta:DeprecatedConcept }
+  }
+  FILTER NOT EXISTS { ?ysoc a yso-meta:DeprecatedConcept }
+}

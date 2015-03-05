@@ -1,0 +1,74 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX yso: <http://www.yso.fi/onto/yso/>
+PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/> 
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+
+CONSTRUCT {
+  ?newc om:definedConcept ?c .
+  ?newc a yso-meta:Concept .
+  ?newc skos:prefLabel ?pref .
+  ?newc yso-meta:oldLabel ?alt .
+  ?newc yso-meta:ysaComment ?note .
+  ?newc yso-meta:ysaSource ?source .
+  ?newc yso-meta:hasThematicGroup ?ysogroup .
+  ?newc rdfs:subClassOf ?ysobroader .
+  ?newc rdfs:subClassOf yso-update:uudet .
+  ?ysonarrower rdfs:subClassOf ?newc .
+  ?newc yso-meta:associativeRelation ?ysorelated .
+  ?ysorelated yso-meta:associativeRelation ?newc .
+}
+WHERE {
+  {
+    SELECT ?c
+    WHERE {
+      SERVICE <http://api.dev.finto.fi/sparql> {
+        GRAPH <http://www.yso.fi/onto/ysa/> {
+          ?c a skos:Concept .
+          FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
+          # optimization: don't return concepts which have a match in YSO
+          FILTER NOT EXISTS {
+	    ?c skos:closeMatch ?ysoc
+            FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
+          }
+        }
+      }
+      FILTER NOT EXISTS {
+        ?ysoc om:definedConcept ?c .
+      }
+    }
+  }
+  BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/> {
+      ?c skos:prefLabel ?pref .
+      OPTIONAL { ?c skos:altLabel ?alt }
+      OPTIONAL { ?c skos:scopeNote ?note }
+      OPTIONAL { ?c dc:source ?source }
+      OPTIONAL { ?ysagroup skos:member ?c }
+
+      # broader, narrower, related
+      OPTIONAL { ?c skos:broader ?ysab }
+      BIND(IF(BOUND(?ysab), ?ysab, '') AS ?broader)
+      OPTIONAL { ?c skos:narrower ?ysan }
+      BIND(IF(BOUND(?ysan), ?ysan, '') AS ?narrower)
+      OPTIONAL { ?c skos:related ?ysar }
+      BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
+    }  
+  }
+  OPTIONAL { ?ysogroup om:definedConcept ?ysagroup }
+  # must check whether an equivalent target concept already exists; if not, use a newly minted URI base on YSA localname
+  OPTIONAL { ?ysob om:definedConcept ?broader }
+  BIND(IF(BOUND(?ysob), ?ysob, IF(isIRI(?broader), IRI(REPLACE(STR(?broader), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
+  OPTIONAL { ?yson om:definedConcept ?narrower }
+  BIND(IF(BOUND(?yson), ?yson, IF(isIRI(?narrower), IRI(REPLACE(STR(?narrower), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
+  OPTIONAL { ?ysor om:definedConcept ?related }
+  BIND(IF(BOUND(?ysor), ?ysor, IF(isIRI(?related), IRI(REPLACE(STR(?related), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
+}
