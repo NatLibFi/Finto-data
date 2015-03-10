@@ -15,7 +15,11 @@ WHERE {
     }
   }
   ?ysoc om:definedConcept ?allarsc .
-  ?ysoc skos:prefLabel ?ysolabel .
-  FILTER (lang(?ysolabel) = 'fi')
   FILTER NOT EXISTS { ?anyysoc ?anyprop ?allarslabel }
+  FILTER NOT EXISTS {
+    ?ysoc2 om:definedConcept ?allarsc .
+    FILTER (?ysoc != ?ysoc2)
+    FILTER NOT EXISTS { ?ysoc2 a yso-meta:DeprecatedConcept }
+  }
+  FILTER NOT EXISTS { ?ysoc a yso-meta:DeprecatedConcept }
 }

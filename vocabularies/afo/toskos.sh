@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="afo-metadata.ttl afo.owl"
+INFILES="afo-metadata.ttl afoKehitys.ttl"
 OUTFILE=afo-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
