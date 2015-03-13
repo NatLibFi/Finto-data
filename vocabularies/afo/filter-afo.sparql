@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX afo-meta: <http://www.yso.fi/onto/afo-meta/>
+PREFIX afo: <http://www.yso.fi/onto/afo/>
+
+CONSTRUCT {
+  ?c a yso-meta:StructuringClass .
+} WHERE {
+  ?c a afo-meta:AFOConcept .
+  FILTER NOT EXISTS { ?c rdfs:subClassOf afo:p10 }
+}
