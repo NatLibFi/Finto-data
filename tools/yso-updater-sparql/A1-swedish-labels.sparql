@@ -13,7 +13,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 
 CONSTRUCT {
-  ?ysoc a yso-meta:Concept .
   ?ysoc om:definedConcept ?ac .
   ?ysoc skos:prefLabel ?pref .
   ?ysoc yso-meta:oldLabel ?alt .
@@ -25,7 +24,6 @@ WHERE {
   {
     SELECT ?ysoc ?ysac
     WHERE {
-      ?ysoc a yso-meta:Concept .
       ?ysoc om:definedConcept ?ysac .
       FILTER(STRSTARTS(STR(?ysac), STR(ysa:)))
       FILTER NOT EXISTS {
