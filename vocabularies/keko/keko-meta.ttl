@@ -1,0 +1,84 @@
+﻿@prefix keko: <http://www.yso.fi/onto/keko/> .
+@prefix keko-meta: <http://www.yso.fi/onto/keko-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+keko: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en,
+
+        "Pääkaupunkiseudun Kierrätyskeskus Oy"@fi,
+        "Huvudstadsregionens Återanvändningscentral Ab"@sv,
+        "Helsinki Metropolitan Area Reuse Centre Ltd"@en,
+
+        "Suomen Kulttuuriperintökasvatuksen seura ry"@fi,
+        "Föreningen för kulturarvsfostran i Finland"@sv,
+        "Association of Cultural Heritage Education in Finland"@en,
+
+        "MAPPA-materiaalipankkihanke / Suomen luonto- ja ympäristökoulujen liitto ry"@fi,
+        "MAPPA-materiaalipankkihanke / Finlands natur- och miljöskolförbund rf"@sv,
+        "MAPPA-materiaalipankkihanke / The Finnish Association of Nature and Environment Schools"@en ;
+
+    dc:title "KEKO - Kestävän kehityksen kasvatuksen ontologia"@fi,
+        "KEKO - Ontology for Education for Sustainable Development"@en,
+        "KEKO - Ontologi för fostran i hållbar utveckling"@sv ;
+
+    dc:description
+
+"""Kestävän kehityksen kasvatuksen ontologia (KEKO) laadittiin 
+ympäristöministeriön rahoittamassa Yhteinen käsitys 2 -hankkeessa vuosina 
+2014–2015. Hankkeen tavoitteena oli tukea kestävän kehityksen kasvatuksen 
+toimijoiden yhteisen kielen muodostumista. Työhön osallistuivat edustajat 
+Pääkaupunkiseudun Kierrätyskeskuksesta, Suomen Kulttuuriperintökasvatuksen 
+seurasta, MAPPA-materiaalipankkihankkeesta ja Sanastokeskus TSK:sta.
+
+Aiemmissa hankkeissa asiantuntijayhteistyönä kootut kestävän kehityksen 
+kasvatuksen käsitteet koottiin yhteen, hierarkisoitiin ja niiden määritelmät 
+tarkastettiin. Tuloksena syntyi Kestävän kehityksen kasvatuksen ontologia, joka 
+julkaistaan Finto-palvelussa vapaaseen käyttöön sekä edelleen parannettavaksi ja 
+laajennettavaksi.
+
+Kestävän kehityksen kasvatuksen ontologia koostuu kahdesta vuosina 2012 ja 2013 
+julkaistusta sanastosta: Suomen Kulttuuriperintökasvatuksen seurassa tehdystä 
+Kulttuurisesti kestävän kehityksen käsitteiden koonti -julkaisusta sekä 
+Pääkaupunkiseudun Kierrätyskeskuksen Yhteinen käsitys – Kestävän kehityksen 
+kasvatuksen ja koulutuksen sanastosta. Näiden sanastojen käsitteet on sijoitettu 
+Yleisen suomalaisen ontologian (YSO) mukaiseen hierarkiaan. KEKO-ontologiaa 
+laatinut työryhmä karsi ja päivitti työn aikana molempien sanastojen 
+käsitteistöä ja lisäsi KEKO-ontologiaan tarpeellisina pitämiään uusia 
+käsitteitä.
+
+Kestävän kehityksen kasvatuksen ontologiaan sisältyy 255 käsitettä. Ontologiassa 
+on esitetty käsitteiden väliset hierarkkiset suhteet sekä assosiatiivisia 
+suhteita. Käsitteille on annettu suomenkielinen ensisijainen termi sekä 
+mahdollisesti hyväksyttäviä synonyymejä. Käsitteet on määritelty."""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe>, <http://lexvo.org/id/iso639-3/eng> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    owl:versionInfo "$Id$" .
+
+keko-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "KEKO-käsite"@fi, 
+        "KEKO-begrepp"@sv, 
+        "KEKO Concept"@en .
