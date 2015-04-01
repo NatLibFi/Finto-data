@@ -2,7 +2,7 @@
 
 JENAHOME="$HOME/sw/apache-jena"
 INFILE="juho.ttl"
-YSOFILE="yso-juho.ttl"
+YSOFILE="../yso/ysoKehitys.rdf"
 HIERFILE="juho-hierarchy.nt"
 MERGEHIER="../../tools/merge-hierarchy/merge-hierarchy.sparql"
 
@@ -14,6 +14,6 @@ OUTFILE=juho-skos.ttl
 SKOSIFYHOME="../../tools/skosify"
 CONFFILE=$SKOSIFYHOME/finnonto.cfg
 LOGFILE=skosify.log
-OPTS="-l fi -f turtle"
+OPTS="-l fi"
 
 $SKOSIFYHOME/skosify.py $OPTS -c $CONFFILE -o $OUTFILE $INFILES 2>$LOGFILE
