@@ -198,10 +198,10 @@ for count, oaipmhrec in enumerate(recs):
             text = text.replace(u'Källa:', '').strip()
         g.add((uri, DC.source, Literal(text, lang)))
     
-    # scope note (680)
+    # note (680)
     for f in rec.get_fields('680'):
         text = f.format_field()
-        g.add((uri, SKOS.scopeNote, Literal(text, lang)))
+        g.add((uri, SKOS.note, Literal(text, lang)))
     
     # links to other authorities (750/751)
     for f in rec.get_fields('750') + rec.get_fields('751'):
