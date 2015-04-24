@@ -92,7 +92,11 @@ RELMAP = { # MARC21 control field w value to RDF property + inverse
 
 def combined_label(f):
     labels = f.get_subfields('a', 'x', 'z')
-    return ' -- '.join(labels)
+    label = ' -- '.join(labels)
+    hiddenlabel = ' '.join(labels)
+    if hiddenlabel == label:
+        hiddenlabel = None
+    return (label, hiddenlabel)
 
 
 helsinki=pytz.timezone('Europe/Helsinki')
@@ -157,18 +161,22 @@ for count, oaipmhrec in enumerate(recs):
     
     # prefLabel (150/151)
     if '150' in rec:
-        prefLabel = combined_label(rec['150'])
+        prefLabel, hiddenLabel = combined_label(rec['150'])
     else:
-        prefLabel = combined_label(rec['151'])
+        prefLabel, hiddenLabel = combined_label(rec['151'])
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
     g.add((uri, SKOS.prefLabel, Literal(prefLabel, lang)))
+    if hiddenLabel is not None:
+        g.add((uri, SKOS.hiddenLabel, Literal(hiddenLabel, lang)))
     labelmap[prefLabel] = uri
     uri_to_label[uri] = prefLabel
     
     # altLabel (450/451)
     for f in rec.get_fields('450') + rec.get_fields('451'):
-        altLabel = combined_label(f)
+        altLabel, hiddenLabel = combined_label(f)
         g.add((uri, SKOS.altLabel, Literal(altLabel, lang)))
+        if hiddenLabel is not None:
+            g.add((uri, SKOS.hiddenLabel, Literal(hiddenLabel, lang)))
         altlabelmap[altLabel] = uri
     
     relationmap.setdefault(uri, [])
@@ -179,7 +187,7 @@ for count, oaipmhrec in enumerate(recs):
         if props is None:
             print >>sys.stderr, ("%s '%s': Unknown w subfield value '%s', ignoring field" % (uri, prefLabel, f['w'])).encode('UTF-8')
         else:
-            relationmap[uri].append((props, combined_label(f)))
+            relationmap[uri].append((props, combined_label(f)[0]))
         
     # source (670)
     for f in rec.get_fields('670'):
@@ -203,11 +211,11 @@ for count, oaipmhrec in enumerate(recs):
         if linklang is None:
             if linkvocabid is not None and linkvocabid in LINKLANGMAP:
                 linklang = LINKLANGMAP[linkvocabid]
-                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f), linkvocabid)).encode('UTF-8')
+                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0], linkvocabid)).encode('UTF-8')
             else:
-                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f))).encode('UTF-8')
+                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0])).encode('UTF-8')
                 continue
-        g.add((uri, SKOS.prefLabel, Literal(combined_label(f), linklang)))
+        g.add((uri, SKOS.prefLabel, Literal(combined_label(f)[0], linklang)))
     
 # Pass 2: add concept relations now that URIs are known for all concepts
 for uri, rels in relationmap.iteritems():
