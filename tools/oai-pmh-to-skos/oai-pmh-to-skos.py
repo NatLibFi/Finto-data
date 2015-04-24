@@ -17,6 +17,7 @@ SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
+RDAU=Namespace("http://rdaregistry.info/Elements/u/")
 
 class MARCXMLReader(object):
     """Returns the PyMARC record from the OAI structure for MARC XML"""
@@ -34,6 +35,7 @@ g = Graph()
 g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('dc', DC)
 g.namespace_manager.bind('dct', DCT)
+g.namespace_manager.bind('rdau', RDAU)
 
 
 if len(sys.argv) not in (4,5,6,7):
@@ -85,8 +87,8 @@ uri_to_label = {} # key: URIRef, val: prefLabel
 RELMAP = { # MARC21 control field w value to RDF property + inverse
     'g': (SKOS.broader, SKOS.narrower),
     'h': (SKOS.narrower, SKOS.broader),
-    'a': (DCT.replaces, DCT.isReplacedBy),
-    'b': (DCT.isReplacedBy, DCT.replaces),
+    'a': (RDAU.P60683, RDAU.P60686), # predecessor, successor
+    'b': (RDAU.P60686, RDAU.P60683), # successor, predecessor
     None: (SKOS.related, SKOS.related),
 }
 
