@@ -3,10 +3,12 @@
 @prefix allars: <http://www.yso.fi/onto/allars/> .
 @prefix allars-meta: <http://www.yso.fi/onto/allars-meta/> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
 
 allars: a skos:ConceptScheme ;
     dc:creator "National Library of Finland"@en,
@@ -36,3 +38,9 @@ allars-meta:GeographicalConcept
     a owl:Class ;
     rdfs:label "Geografisk plats"@sv, "Geographical location"@en, "Maantieteellinen paikka"@fi ;
     rdfs:subClassOf skos:Concept .
+
+rdau:P60683 a rdf:Property ;
+    rdfs:label "edeltäjä"@fi, "föregångare"@sv, "has predecessor"@en .
+
+rdau:P60686 a rdf:Property ;
+    rdfs:label "seuraaja"@fi, "efterföljare"@sv, "has successor"@en .
