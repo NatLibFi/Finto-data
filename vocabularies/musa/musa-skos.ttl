@@ -1516,15 +1516,14 @@ musa:p1014 a skos:Concept ;
     skos:prefLabel "tempo"@fi,
         "tempo"@sv .
 
-musa:p1017 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
-    skos:broader musa:p69007 ;
+musa:p1016 a skos:Concept ;
+    dct:created "1996-02-15"^^xsd:date ;
+    dct:modified "2014-05-02T15:18:59+03:00"^^xsd:dateTime ;
+    skos:altLabel "viritykset"@fi ;
     skos:inScheme musa: ;
-    skos:note "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
-        "Musiikkiesityksen tarkka nuotinnos."@fi ;
-    skos:prefLabel "transkriptiot"@fi,
-        "transkriptioner"@sv .
+    skos:note "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi ;
+    skos:prefLabel "viritysjärjestelmät"@fi ;
+    skos:related musa:p800 .
 
 musa:p1109 a skos:Concept ;
     dct:created "1997-09-30"^^xsd:date ;
@@ -4213,18 +4212,16 @@ musa:p1015 a skos:Concept ;
     skos:prefLabel "musiikkianalyysi"@fi,
         "musikanalys"@sv .
 
-musa:p1016 a skos:Concept ;
-    dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:20+03:00"^^xsd:dateTime ;
-    skos:altLabel "viritykset"@fi,
-        "tempererad stämning"@sv ;
-    skos:hiddenLabel "stämning musikinstrument"@sv ;
+musa:p1017 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
+    skos:broader musa:p69007,
+        musa:p908 ;
     skos:inScheme musa: ;
-    skos:note "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi ;
-    skos:prefLabel "viritysjärjestelmät"@fi,
-        "stämning -- musikinstrument"@sv ;
-    skos:related musa:p468,
-        musa:p800 .
+    skos:note "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
+        "Musiikkiesityksen tarkka nuotinnos."@fi ;
+    skos:prefLabel "transkriptiot"@fi,
+        "transkriptioner"@sv .
 
 musa:p11 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -5909,11 +5906,14 @@ musa:p8 a skos:Concept ;
 
 musa:p800 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:54+03:00"^^xsd:dateTime ;
+    dct:modified "2014-05-02T15:19:20+03:00"^^xsd:dateTime ;
+    skos:altLabel "tempererad stämning"@sv ;
+    skos:hiddenLabel "stämning musikinstrument"@sv ;
     skos:inScheme musa: ;
     skos:note "Soittimen tuottamien äänten keskinäisten suhteiden säätäminen."@fi,
         "Termillä tarkoitetaan musiikillisten soittimien virittämistä, ei esimerkiksi elektronisten  laitteiden säätämistä."@fi ;
-    skos:prefLabel "viritys"@fi ;
+    skos:prefLabel "viritys"@fi,
+        "stämning -- musikinstrument"@sv ;
     skos:related musa:p1016,
         musa:p468 .
 
@@ -7733,17 +7733,6 @@ musa:p894 a skos:Concept ;
         musa:p637,
         musa:p904 .
 
-musa:p908 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:57+03:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
-        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi ;
-    skos:prefLabel "sovittaminen"@fi ;
-    skos:related musa:p69007,
-        musa:p716,
-        musa:p959 .
-
 musa:p919 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
     dct:modified "2014-05-02T15:19:15+03:00"^^xsd:dateTime ;
@@ -8622,6 +8611,21 @@ musa:p904 a skos:Concept ;
     skos:related musa:p703,
         musa:p894 .
 
+musa:p908 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:18:58+03:00"^^xsd:dateTime ;
+    skos:hiddenLabel "arrangemang musik"@sv ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1017 ;
+    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
+        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi,
+        "Sovittaminen + sovitukset = arrangemang :  musik"@sv ;
+    skos:prefLabel "sovittaminen"@fi,
+        "arrangemang -- musik"@sv ;
+    skos:related musa:p69007,
+        musa:p716,
+        musa:p959 .
+
 musa:p924 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-05-02T15:19:14+03:00"^^xsd:dateTime ;
@@ -9196,14 +9200,13 @@ musa:p677 a skos:Concept ;
         "flöjtinstrument"@sv .
 
 musa:p69007 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
+    dct:created "1998-06-22"^^xsd:date ;
     dct:modified "2014-05-02T15:40:32+03:00"^^xsd:dateTime ;
     skos:hiddenLabel "arrangemang musik"@sv ;
     skos:inScheme musa: ;
     skos:narrower musa:p1017 ;
     skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi alkusoitot : sovitukset : piano."@fi,
         "Sovittajan työn tuloksena syntynyt uudistettu versio aiemmin sävelletystä teoksesta."@fi,
-        "Sovittaminen + sovitukset = arrangemang :  musik"@sv,
         "Sovittaminen + sovitukset = arrangemang : musik"@sv ;
     skos:prefLabel "sovitukset"@fi,
         "arrangemang -- musik"@sv ;
@@ -10188,6 +10191,25 @@ musa:p434 a skos:Concept ;
     skos:related musa:p423,
         musa:p438 .
 
+musa:p468 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:02+03:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p467,
+        musa:p66109,
+        musa:p719 ;
+    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi,
+        "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
+    skos:prefLabel "soittaminen"@fi,
+        "musicerande"@sv ;
+    skos:related musa:p1124,
+        musa:p1126,
+        musa:p455,
+        musa:p606,
+        musa:p613,
+        musa:p757,
+        musa:p800 .
+
 musa:p471 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
     dct:modified "2014-05-02T15:19:02+03:00"^^xsd:dateTime ;
@@ -10310,26 +10332,6 @@ musa:p155 a skos:Concept ;
         "musikteori"@sv ;
     skos:related musa:p66148,
         musa:p954 .
-
-musa:p468 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:02+03:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p467,
-        musa:p66109,
-        musa:p719 ;
-    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi,
-        "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
-    skos:prefLabel "soittaminen"@fi,
-        "musicerande"@sv ;
-    skos:related musa:p1016,
-        musa:p1124,
-        musa:p1126,
-        musa:p455,
-        musa:p606,
-        musa:p613,
-        musa:p757,
-        musa:p800 .
 
 musa:p304 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -11113,7 +11115,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2015-05-20T01:41:54+00:00"^^xsd:dateTime ;
+    dct:modified "2015-05-21T01:37:35+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
