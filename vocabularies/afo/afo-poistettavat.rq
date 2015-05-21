@@ -1,0 +1,66 @@
+SELECT ?concept ?uri ?created ?equiv ?equri
+  (GROUP_CONCAT(DISTINCT ?alt; separator='; ') as ?altlabels)
+  (GROUP_CONCAT(DISTINCT ?labelen; separator='; ') as ?engpref)
+  (GROUP_CONCAT(DISTINCT ?alten; separator='; ') as ?engalt)
+  (GROUP_CONCAT(DISTINCT ?sci; separator='; ') as ?sciname)
+  (GROUP_CONCAT(DISTINCT ?parentlabel; separator='; ') as ?parents)
+  (GROUP_CONCAT(DISTINCT ?relatedlabel; separator='; ') as ?relateds)
+  (GROUP_CONCAT(DISTINCT ?grouplabel; separator='; ') as ?groups)
+  (GROUP_CONCAT(DISTINCT ?match; separator='; ') as ?agrovoc)
+  (GROUP_CONCAT(DISTINCT ?note; separator='; ') as ?notes)
+  (GROUP_CONCAT(DISTINCT ?ednote; separator='; ') as ?ednotes)
+WHERE {
+    ?concept a afo-meta:AFOConcept .
+FILTER NOT EXISTS { ?concept rdfs:subClassOf afo:p10 }
+BIND(STR(?concept) as ?uri)
+  OPTIONAL {
+    ?concept dct:created ?created .
+  }
+  OPTIONAL {
+    ?concept owl:equivalentClass ?equiv .
+    BIND(STR(?equiv) as ?equri)
+  }
+  OPTIONAL {
+    ?concept skos:altLabel ?alt .
+    FILTER (LANG(?alt)='fi')
+  }
+  OPTIONAL {
+    ?concept skos:altLabel ?alten .
+    FILTER (LANG(?alten)='en')
+  }
+  OPTIONAL {
+    ?concept rdfs:subClassOf ?parent
+    FILTER(?parent != afo:p6028)
+    FILTER NOT EXISTS { ?parent a afo-meta:ThematicGroup }
+    ?parent skos:prefLabel ?parentlabel .
+    FILTER(LANG(?parentlabel) = 'fi')
+
+  }
+  OPTIONAL {
+    ?concept skos:related ?related .
+    ?related skos:prefLabel ?relatedlabel .
+    FILTER(LANG(?relatedlabel) = 'fi')
+  }
+  OPTIONAL {
+    ?concept skos:prefLabel ?labelen .
+    FILTER(LANG(?labelen)='en')
+  }
+  OPTIONAL {
+    ?concept afo-meta:scientificName ?sci .
+  }
+
+  OPTIONAL {
+    ?concept afo-meta:hasThematicGroup ?group .
+    ?group rdfs:label ?grouplabel .
+  }
+  OPTIONAL {
+    ?concept skos:closeMatch ?match .
+  }
+  OPTIONAL {
+    ?concept skos:note ?note .
+  }
+  OPTIONAL {
+    ?concept skos:editorialNote ?ednote .
+  }
+}
+GROUP BY ?concept ?uri ?created ?equiv ?equri
