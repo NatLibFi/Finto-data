@@ -129,3 +129,25 @@ function createObjectsFromNarrowers(narrowerResponse) {
 
 </script>
 <!-- end YSO concepts with different color -->
+
+<!-- survey popup -->
+<script type="text/javascript">
+$(document).ready(function() {
+    var msg = '<div class="banner" style="background-color: #ffdea1; text-align: center; padding: 5px 0; z-index: 9001;"><h2 style="margin: 0px; padding-top 5px;">';
+    if (lang === 'fi')
+    msg += 'Vastaa <a target="_blank" class="popup-close" href="https://my.surveypal.com/Finto-kayttajakysely">Finto-käyttäjäkyselyyn</a> 5.6. mennessä! (vie noin 5 minuuttia)</h2><span class="popup-close versal clear-search" style="top: 0px; color: #474b4f !important;">×</span></div>' 
+    else if (lang === 'sv') 
+    msg += 'Besvara <a target="_blank" class="popup-close" href="https://my.surveypal.com/Finto-anvandarenkat">Fintos användarenkät</a> fram till 5.6.! (tar ca 5 minuter)</h2><span class="versal clear-search popup-close" style="top: 0px; color: #474b4f !important;">×</span></div>' 
+    else return;
+    if(localStorage.getItem('skosmosPopup') !== 'shown'){
+      $(".topbar").before(msg);
+    }
+
+    $('.popup-close').click(function(e) // You are clicking the close button
+      {
+        localStorage.setItem('skosmosPopup','shown')
+        $('.banner').fadeOut(); // Now the pop up is hiden.
+    });
+});
+</script>
+<!-- end survey popup -->
