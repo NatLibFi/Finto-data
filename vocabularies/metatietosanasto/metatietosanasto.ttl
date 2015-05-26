@@ -1,6 +1,7 @@
 # baseURI: http://www.yso.fi/onto/metatietosanasto/
 # imports: http://metadataregistry.org/concept/show/id/1211.rdf
 # imports: http://metadataregistry.org/vocabulary/show/id/114.rdf
+# imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/iso25964/skos-thes#
 # imports: http://rdaregistry.info/Elements/a.ttl
 # imports: http://rdaregistry.info/Elements/c.ttl
@@ -15,6 +16,7 @@
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix : <http://www.yso.fi/onto/metatietosanasto/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mts: <http://metatietosanasto.fi/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -556,9 +558,10 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/108>
   rdf:type skos:Concept ;
-  rdfs:label "katselukirja"@fi ;
+  dc:source "Onix-termi"@fi ;
   skos:prefLabel "katselukirja"@fi ;
-  skos:scopeNote "Usein tekstitön lastenkirja jossa pääpaino on kuvituksella.Onix-termi. (engl. picture book)"@fi ;
+  skos:prefLabel "picture book"@en ;
+  skos:scopeNote "Usein tekstitön lastenkirja jossa pääpaino on kuvituksella."@fi ;
 .
 <http://metatietosanasto.fi/109>
   rdf:type skos:Concept ;
@@ -1899,6 +1902,7 @@ rdaw:P10217
   rdf:type owl:Ontology ;
   owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf> ;
   owl:imports <http://metadataregistry.org/vocabulary/show/id/114.rdf> ;
+  owl:imports dc: ;
   owl:imports isothes: ;
   owl:imports <http://rdaregistry.info/Elements/a.ttl> ;
   owl:imports <http://rdaregistry.info/Elements/c.ttl> ;
