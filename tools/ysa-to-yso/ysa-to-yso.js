@@ -102,7 +102,7 @@ function refreshUpdateQuery() {
                 var vals = $.map(vars, function(varname) {
                         return node_to_value(row[varname]);
                 });
-                return vals.join(" ");
+                return "( " + vals.join(" ") + " )";
         });
         var newquery = query.replace(valuesRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
         console.log(newquery);
