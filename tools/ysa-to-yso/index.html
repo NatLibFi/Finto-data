@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YSA&rarr;YSO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link
+  href='http://cdn.jsdelivr.net/g/yasqe@2.5.2(yasqe.min.css),yasr@2.5.5(yasr.min.css)'
+  rel='stylesheet' type='text/css'/>
+
+<script>
+// configuration
+
+var endpoint = 'http://sparql.dev.finto.fi/skos-history/sparql';
+
+</script>
+
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 17em;
+  padding: 1em;
+  background-color: #cccccc;
+}
+
+#main {
+  margin-left: 20em;
+}
+
+#queries, #queries li {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#query {
+  width: 60%;
+}
+
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+<h1>YSA&rarr;YSO</h1>
+Vertailtavat versiot:
+<select id="versions">
+</select>
+
+<ul id="queries">
+<li><a href="#">Uudet käsitteet</a></li>
+<li><a href="#">Poistuneet käsitteet</a></li>
+<li><a href="#">Uudet assosiatiiviset suhteet</a></li>
+<li><a href="#" onclick="changeQuery('added_related.rq', 'added_related_update.rq')">Poistuneet assosiatiiviset suhteet</a></li>
+</ul>
+
+
+</div>
+
+<div id="main">
+<div id="yasqe"></div>
+
+<div id="yasr"></div>
+
+<div id="genquery">
+<h2>YSO-päivityskysely</h2>
+<textarea id="query" cols="80" rows="10"></textarea>
+</div>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src='http://cdn.jsdelivr.net/yasr/2.5.5/yasr.bundled.min.js'></script>
+<script src='http://cdn.jsdelivr.net/yasqe/2.5.2/yasqe.bundled.min.js'></script>
+<script src="ysa-to-yso.js"></script>
+
+</body>
+</html>
