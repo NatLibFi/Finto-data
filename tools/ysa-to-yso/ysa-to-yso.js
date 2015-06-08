@@ -54,7 +54,7 @@ var selectedRows = {};
 // 2: variables e.g. "?var1 ?var2"
 // 3: content of the block (everything within {})
 // 4: closing "}"
-var valuesRegExp = /(VALUES\s+\(([^)]+)\)\s+{)([^}]*)(})/i;
+var valuesRegExp = /(VALUES\s+\(([^)]+)\)\s+{)([^}]*?)([ \t]*})/i;
 
 function changeQuery(selectQuery, updateQuery) {
 	// load select query
@@ -77,12 +77,34 @@ function changeQuery(selectQuery, updateQuery) {
 	});
 }
 
+function node_to_value(node) {
+        switch(node.type) {
+                case 'uri':
+                        return '<' + node.value + '>';
+                case 'literal':
+                        if ('xml:lang' in node) {
+                                return '"' + node.value + '"@' + node['xml:lang'];
+                        } else if ('datatype' in node) {
+                                return '"' + node.value + '"^^<' + node.datatype + ">";
+                        } else {
+                                return '"' + node.value + '"'
+                        }
+                default:
+                        return 'undef'; // will be used for blank nodes - is this a problem?
+        }
+}
+
 function refreshUpdateQuery() {
         var query = $('#query').text();
         var matches = valuesRegExp.exec(query);
-        var vars = matches[2].match(/\S+/g);
-        // TODO: create value groups based on vars and selectedRows
-        var newquery = query.replace(valuesRegExp, matches[1] + "foobar" + matches[4]);
+        var vars = matches[2].match(/\w+/g);
+        var values = $.map(selectedRows, function(row) {
+                var vals = $.map(vars, function(varname) {
+                        return node_to_value(row[varname]);
+                });
+                return vals.join(" ");
+        });
+        var newquery = query.replace(valuesRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
         console.log(newquery);
         $('#query').text(newquery);
 }

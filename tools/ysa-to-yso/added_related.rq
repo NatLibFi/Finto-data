@@ -11,8 +11,7 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 # Added related relations to already existing concepts
 # (newly introduced related concepts flagged)
 #
-SELECT DISTINCT ?concept (str(?conceptPrefLabel) AS ?conceptLabel)
-(?relatedConcept AS ?addedrelatedConcept) (str(?relatedConceptPrefLabel) as ?addedrelatedConceptLabel)
+SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel
 ?new
 #SELECT (count(?concept) AS ?ccount)
 WHERE {
@@ -54,9 +53,9 @@ WHERE {
   # restrict to ?conceptType
   GRAPH ?newVersionGraph {
 #    ?concept a ?conceptType .
-      ?concept skos:prefLabel ?conceptPrefLabel .
+      ?concept skos:prefLabel ?conceptLabel .
 #    ?relatedConcept a ?conceptType .
-      ?relatedConcept skos:prefLabel ?relatedConceptPrefLabel .
+      ?relatedConcept skos:prefLabel ?relatedConceptLabel .
   }
 
   # flag related concepts which were newly introduced
@@ -68,7 +67,6 @@ WHERE {
       }
     }
   }
-  FILTER (lang(?conceptPrefLabel) = ?language && lang(?relatedConceptPrefLabel) = ?language)
+  FILTER (lang(?conceptLabel) = ?language && lang(?relatedConceptLabel) = ?language)
 }
-ORDER BY ?conceptPrefLabel ?relatedConceptPrefLabel
-
+ORDER BY ?conceptLabel ?relatedConceptLabel
