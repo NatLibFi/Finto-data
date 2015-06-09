@@ -13,15 +13,18 @@
 @prefix : <#> .
 
 :afo a skosmos:Vocabulary, void:Dataset ;
-	dc:title "AFO - Viikin kampuskirjaston ontologia"@fi,
-		"AFO - Viikin kampuskirjaston ontologia"@sv,
-		"AFO - Agriculture and Forestry Ontology"@en ;
+	dc:title "AFO - Luonnonvara- ja ympäristöontologia"@fi,
+		"AFO - Naturresurs- och miljöontologi"@sv,
+		"AFO - Natural resource and environment ontology"@en ;
 	skosmos:shortName "AFO";
 	dc:subject :cat_science ;
 	void:uriSpace "http://www.yso.fi/onto/afo/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:indexShowClass <http://www.yso.fi/onto/afo-meta/Concept>;
+	skosmos:indexShowClass <http://www.yso.fi/onto/luke-meta/Concept>;
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
 	void:dataDump <http://dev.finto.fi/download/afo/afo-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/afo/afo-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
