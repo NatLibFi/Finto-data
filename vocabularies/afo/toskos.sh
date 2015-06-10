@@ -1,7 +1,13 @@
 #!/bin/sh
 
-INFILES="afo-metadata.ttl afoKehitys.ttl yso-afo.ttl"
+INFILE="afoKehitys.ttl"
+FILTEREDFILE="afo-filtered.ttl"
+INFILES="afo-metadata.ttl yso-afo.ttl $FILTEREDFILE"
 OUTFILE=afo-skos.ttl
+
+JENAHOME="$HOME/sw/apache-jena"
+
+$JENAHOME/bin/arq --data=$INFILE --query=filter-afo.sparql >$FILTEREDFILE
 
 SKOSIFYHOME="../../../Skosify/"
 CONFFILE=$SKOSIFYHOME/finnonto.cfg
