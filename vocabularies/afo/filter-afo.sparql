@@ -1,11 +1,14 @@
 PREFIX afo-meta: <http://www.yso.fi/onto/afo-meta/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 CONSTRUCT {
   ?s ?p ?o .
 } WHERE {
   ?s ?p ?o .
+  FILTER (?p != owl:imports)
+  FILTER (?o != owl:Ontology)
   FILTER (?p != dct:created)
   FILTER (?p != skos:closeMatch)
   FILTER (?p != skos:editorialNote)
