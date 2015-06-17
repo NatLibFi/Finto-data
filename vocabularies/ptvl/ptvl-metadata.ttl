@@ -1,0 +1,92 @@
+@prefix afo: <http://www.yso.fi/onto/afo/> .
+@prefix afo-meta: <http://www.yso.fi/onto/afo-meta/> .
+@prefix luke-meta: <http://www.yso.fi/onto/luke-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix ptvl: <http://urn.fi/URN:NBN:fi:au:ptvl:> .
+
+ptvl: a skos:ConceptScheme ;
+    dc:publisher
+        "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+
+    dc:creator 
+        "JUPO-työryhmä"@fi,
+        "JUPO-arbetsgruppen"@sv,
+        "JUPO working group"@en ;
+
+    dc:title "Julkisten palvelujen luokitus"@en,
+        "Julkisten palvelujen luokitus"@fi,
+        "Julkisten palvelujen luokitus"@sv ;
+
+    dc:description
+"""
+Julkisten palvelujen yleinen päätasoluokitus koostuu 27 päätason ja noin 180 alatason luokasta. Luokkien otsikoinnissa käytetyt termit kuvaavat julkisten palvelujen käyttötapauksia ja –tilanteita.
+
+Luokitus on tarkoitettu erityisesti kansalaisille ja yrityksille palveluja tarjoaviin ja niitä kokoaviin verkkopalveluihin ja muihin palvelutietoja sisältäviin järjestelmiin.  Verkkopalvelujen esityskerroksessa luokkia voi yhdistellä, tyypillisesti navigointi- ja ryhmittelytarkoituksiin. Tällaisissa yhdistelmäluokissa luokituksen termit säilyvät ennallaan.
+
+Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai teeman verkkopalveluissa aina kun aihepiiri antaa tähän edellytyksiä.
+"""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> .
+
+ptvl:P a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
+
+    dc:title "Julkisten palvelujen yleinen päätasojen luokitus"@en,
+        "Julkisten palvelujen yleinen päätasojen luokitus"@fi,
+        "Julkisten palvelujen yleinen päätasojen luokitus"@sv ;
+
+    dc:description
+"""
+Julkisten palvelujen yleinen päätasoluokitus koostuu 27 päätason ja noin 180 alatason luokasta. Luokkien otsikoinnissa käytetyt termit kuvaavat julkisten palvelujen käyttötapauksia ja –tilanteita.
+
+Luokitus on tarkoitettu erityisesti kansalaisille ja yrityksille palveluja tarjoaviin ja niitä kokoaviin verkkopalveluihin ja muihin palvelutietoja sisältäviin järjestelmiin.  Verkkopalvelujen esityskerroksessa luokkia voi yhdistellä, tyypillisesti navigointi- ja ryhmittelytarkoituksiin. Tällaisissa yhdistelmäluokissa luokituksen termit säilyvät ennallaan.
+
+Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai teeman verkkopalveluissa aina kun aihepiiri antaa tähän edellytyksiä.
+"""@fi .
+
+ptvl:K a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
+
+    dc:title "Julkisten palvelujen kohderyhmäluokat"@fi ;
+
+    dc:description
+"""Luokituksessa on eritelty kansalaisten ja yritysmaailman ryhmiä, jotka
+ovat julkisten palvelujen keskeisiä käyttäjiä, joille erityisesti tuotetaan
+palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset."""@fi .
+
+ptvl:KE a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
+
+    dc:title "Kansalaisille suunnattujen julkisten palvelujen elämäntilanneluokat"@fi ;
+
+    dc:description
+"""Luokituksessa on eritelty kansalaisten elämäntilanteita, joihin julkisia
+palveluja voidaan kohdentaa. Elämäntilanteella tarkoitetaan tässä yhteydessä
+akuuttia, usein henkilön elämänmuutokseen liittyvää tilannetta, jonka
+yhteyteen eri toimijat tuottavat palveluja."""@fi .
+
+ptvl:TT a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
+
+    dc:title "Julkisten palvelujen tuottajatyyppiluokat"@fi ;
+
+    dc:description
+"""Luokituksessa on eritelty organisaatiotyypit, jotka tuottavat palveluja
+kansalaisille, yrityksille ja yhteisöille."""@fi .
+
+ptvl:TTP a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
+
+    dc:title "Julkisten palvelujen tuotantotapaluokat"@fi ;
+
+    dc:description
+"""Luokituksessa on eritelty ylätasoisesti eri tavat, joilla julkisia
+palveluja voidaan tuottaa asiakkaille."""@fi .
