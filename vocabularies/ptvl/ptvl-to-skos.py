@@ -25,8 +25,8 @@ def add_concept(cell):
     g.add((uri, SKOS.notation, Literal(notation)))
     g.add((uri, SKOS.prefLabel, Literal(label, 'fi')))
     m = re.search('^\D+', notation)
-    schemeuri = PTVL[m.group(0)]
-    g.add((uri, SKOS.inScheme, schemeuri))
+    groupuri = PTVL[m.group(0)]
+    g.add((groupuri, SKOS.member, uri))
 
     if '.' in notation:
         parent = notation.rsplit('.', 1)[0]
@@ -34,8 +34,8 @@ def add_concept(cell):
         g.add((uri, SKOS.broader, parenturi))
         g.add((parenturi, SKOS.narrower, uri))
     else:
-        g.add((uri, SKOS.topConceptOf, schemeuri))
-        g.add((schemeuri, SKOS.hasTopConcept, uri))
+        g.add((uri, SKOS.topConceptOf, PTVL['']))
+        g.add((PTVL[''], SKOS.hasTopConcept, uri))
 
 
 with open(csvfile, 'rb') as cf:
