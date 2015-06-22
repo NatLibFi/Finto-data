@@ -16,20 +16,12 @@ SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel
 #SELECT (count(?concept) AS ?ccount)
 WHERE {
   # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?language ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508"  "fi" )
+  VALUES ( ?versionHistoryGraph ?versionDelta ?conceptType ?language ) {
+    ( <http://www.yso.fi/onto/ysa/version> <http://www.yso.fi/onto/ysa/version/20150408/delta/20150507> skos:Concept "fi" )
   }
   GRAPH ?versionHistoryGraph {
-    # get the current and the previous version as default versions
-    ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
-    ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
-    # select the versions to actually use
-    BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
-    BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
     # get the delta and via that the relevant graphs
-    ?delta a sh:SchemeDelta ;
-      sh:deltaFrom/dc:identifier ?oldVersionSelected ;
-      sh:deltaTo/dc:identifier ?newVersionSelected ;
+    ?versionDelta a sh:SchemeDelta ;
       sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
       sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
       dcterms:hasPart ?insertions ;

@@ -54,7 +54,87 @@ var selectedRows = {};
 // 2: variables e.g. "?var1 ?var2"
 // 3: content of the block (everything within {})
 // 4: closing "}"
-var valuesRegExp = /(VALUES\s+\(([^)]+)\)\s+{)([^}]*?)([ \t]*})/i;
+var valuesBlockRegExp = /(VALUES\s+\(([^)]+)\)\s+{)([^}]*?)([ \t]*})/i;
+
+// This regular expression matches SPARQL variable names from the
+// variable list of a VALUES clause.
+// e.g. ["var1", "var2"], no question marks
+var variableNamesRegExp = /\w+/g;
+
+// This regular expression matches a single row of a VALUES clause,
+// i.e. a set of values enclosed in parentheses. Match groups:
+// 1: the content of the row (i.e. what is within the parentheses)
+var valueRowRegExp = /\(\s+([^\)]*\s+)/;
+// Same as above, but with the global flag, so matches several rows.
+var valueRowRegExp_all = /\(\s+([^\)]*\s+)/g;
+
+// This regular expression matches all individual values from a VALUES row: 
+// either URI tokens (full URI or qname), or literals in quotation marks.
+var individualValueRegExp = /(?:[^\s"]+|"[^"]*")+/g;
+
+
+function getVariables(query) {
+        var matches = valuesBlockRegExp.exec(query);
+        var variables = matches[2].match(variableNamesRegExp);
+        return variables;
+}
+
+function getDefaultValues(query) {
+        var matches = valuesBlockRegExp.exec(query);
+        var valueRows = matches[3].match(valueRowRegExp_all);
+        var defaultValueRow = valueRows[0].match(valueRowRegExp)[1];
+        var originalValues = defaultValueRow.match(individualValueRegExp);
+        
+        var variables = getVariables(query);
+        var defaultValues = {};
+        for (var i = 0; i < variables.length; ++i) {
+                defaultValues[variables[i]] = originalValues[i];
+        }
+        return defaultValues;
+}
+
+function replaceQueryValues(query, newValues) {
+        var values = getDefaultValues(query);
+        $.each(newValues, function(key, value) {
+                // need to determine proper quoting for the values
+                if (!values.hasOwnProperty(key) || values[key][0] == '"') {
+                        // a literal value - make sure it's quoted
+                        if (value[0] != '"') {
+                                values[key] = JSON.stringify(value);
+                        } else { // already in quotes
+                                values[key] = value;
+                        }
+                } else {
+                        // a resource value, either full URI or qname
+                        if (value.indexOf('http') == 0) {
+                                // make sure full URIs are enclosed in angle brackets
+                                values[key] = "<" + value + ">";
+                        } else {
+                                values[key] = value;
+                        }
+                }
+        });
+        console.log(values);
+
+        var variables = getVariables(query);
+
+        var vals = $.map(variables, function(varname) {
+                return values[varname];
+        });
+        var valueString = "( " + vals.join(" ") + " )";
+        console.log(valueString);
+        var matches = valuesBlockRegExp.exec(query);
+        var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + valueString + "\n" + matches[4]);
+        
+        return newquery;
+}
+
+function modifyQueryValues() {
+        var versionDelta = $("#versions option:selected").val();
+        var query = yasqe.getValue();
+        var newquery = replaceQueryValues(query, {'versionDelta': versionDelta});
+        yasqe.setValue(newquery);
+}
 
 function changeQuery(selectQuery, updateQuery) {
 	// load select query
@@ -62,6 +142,7 @@ function changeQuery(selectQuery, updateQuery) {
 		url: selectQuery
 	}).done(function(data) {
 		yasqe.setValue(data);
+		modifyQueryValues(); // plug in VALUES
 		yasqe.query();
 	});
 
@@ -70,7 +151,7 @@ function changeQuery(selectQuery, updateQuery) {
 		url: updateQuery
 	}).done(function(data) {
 		$('#query').text(data);
-		var matches = valuesRegExp.exec(data);
+		var matches = valuesBlockRegExp.exec(data);
 		console.log(matches);
 		var vars = matches[2].match(/\S+/g);
 		console.log(vars);
@@ -96,15 +177,15 @@ function node_to_value(node) {
 
 function refreshUpdateQuery() {
         var query = $('#query').text();
-        var matches = valuesRegExp.exec(query);
-        var vars = matches[2].match(/\w+/g);
+        var matches = valuesBlockRegExp.exec(query);
+        var vars = matches[2].match(variableNamesRegExp);
         var values = $.map(selectedRows, function(row) {
                 var vals = $.map(vars, function(varname) {
                         return node_to_value(row[varname]);
                 });
                 return "( " + vals.join(" ") + " )";
         });
-        var newquery = query.replace(valuesRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
+        var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
         console.log(newquery);
         $('#query').text(newquery);
 }
@@ -127,6 +208,11 @@ function loadVersions() {
 			var label = row.fromId.value + " &rarr; " + row.toId.value;
 			$('#versions').append($('<option>', { value: row.sd.value }).html(label));
 		});
+	});
+	// set event handler for choosing version
+	$('#versions').on("change", function() {
+	        modifyQueryValues();
+	        yasqe.query();
 	});
 }
 
