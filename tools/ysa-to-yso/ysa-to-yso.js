@@ -126,7 +126,7 @@ function replaceQueryValues(query, newValues) {
         return newquery;
 }
 
-function modifyQueryValues() {
+function modifyQueryValues(extraParams) {
         var versionHistory = $("#vocabularies option:selected").val();
         var versionData = JSON.parse($("#versions option:selected").val());
         var fromId = JSON.stringify(versionData[0]);
@@ -138,20 +138,23 @@ function modifyQueryValues() {
                 'newVersion': toId,
                 'language': 'fi' // FIXME: 'sv' for Allärs?
         }
+        console.log(extraParams);
+        params = $.extend(params, extraParams);
+        console.log(params);
         
-        var newquery = replaceQueryValues(query, {'versionHistoryGraph': versionHistory, 'oldVersion': fromId, 'newVersion': toId, 'language': 'fi'});
+        var newquery = replaceQueryValues(query, params);
         yasqe.setValue(newquery);
 }
 
 var baseurl = 'sparql/';
 
-function changeQuery(selectQuery, updateQuery) {
+function changeQuery(selectQuery, updateQuery, extraParams) {
 	// load select query
 	$.ajax({
 		url: baseurl + selectQuery
 	}).done(function(data) {
 		yasqe.setValue(data);
-		modifyQueryValues(); // plug in VALUES
+		modifyQueryValues(extraParams);
 		yasqe.query();
 	});
 	
