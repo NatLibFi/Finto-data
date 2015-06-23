@@ -5,7 +5,7 @@ var yasqe = YASQE(document.getElementById("yasqe"), {
 		endpoint: endpoint
 	},
 	persistent: null,
-	value: '# Valitse ensin kysely vasemmalta'
+	value: '# Valitse ensin listaus vasemmalta'
 });
 YASR.plugins.table.defaults.fetchTitlesFromPreflabel = false;
 YASR.plugins.table.defaults.mergeLabelsWithUris = true;
@@ -257,4 +257,8 @@ $(document).ready(function() {
         loadVocabularies();
         loadVersions();
         $('#genquery').hide();
+        $('#yasqe').hide();
+        $('#queryhdr a').on("click", function() {
+                $('#yasqe').slideToggle();
+        });
 });
