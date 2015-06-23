@@ -136,10 +136,12 @@ function modifyQueryValues() {
         yasqe.setValue(newquery);
 }
 
+var baseurl = 'sparql/';
+
 function changeQuery(selectQuery, updateQuery) {
 	// load select query
 	$.ajax({
-		url: selectQuery
+		url: baseurl + selectQuery
 	}).done(function(data) {
 		yasqe.setValue(data);
 		modifyQueryValues(); // plug in VALUES
@@ -148,7 +150,7 @@ function changeQuery(selectQuery, updateQuery) {
 
 	// load update query
 	$.ajax({
-		url: updateQuery
+		url: baseurl + updateQuery
 	}).done(function(data) {
 		$('#query').text(data);
 		var matches = valuesBlockRegExp.exec(data);
