@@ -1,0 +1,59 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dsv:  <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX sd:   <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sh:   <http://purl.org/skos-history/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX xhv:  <http://www.w3.org/1999/xhtml/vocab#>
+#
+# identify concepts deleted with a certain version
+#
+# (In published vocabularies, the deletion of concepts should be regarded
+# as bad practice, because they still may be referenced elsewhere.
+# Cosider using owl:deprecated instead)
+#
+SELECT distinct (?concept AS ?deletedConcept) (str(?prefLabel) AS ?deletedConceptLabel)
+WHERE {
+  # parameters
+  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?language ) {
+    ( <http://zbw.eu/stw/version> undef undef "en" )
+  }
+  GRAPH ?versionHistoryGraph {
+    # get the current and the previous version as default versions
+    ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
+    ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
+    # select the versions to actually use
+    BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
+    BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
+    # get the delta and via that the relevant graphs
+    ?delta a sh:SchemeDelta ;
+      sh:deltaFrom/dc:identifier ?oldVersionSelected ;
+      sh:deltaTo/dc:identifier ?newVersionSelected ;
+      sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
+      sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
+      dcterms:hasPart ?insertions ;
+      dcterms:hasPart ?deletions .
+    ?insertions a sh:SchemeDeltaInsertions ;
+      sh:usingNamedGraph/sd:name ?insertionsGraph .
+    ?deletions a sh:SchemeDeltaDeletions ;
+      sh:usingNamedGraph/sd:name ?deletionsGraph .
+  }
+  # for each deleted concept, a deleted prefLabel must exist ...
+  GRAPH ?deletionsGraph {
+    ?concept skosxl:prefLabel | skos:prefLabel []
+  }
+  # ... without anything remaining for this concept in the current version
+  FILTER NOT EXISTS {
+    GRAPH ?newVersionGraph {
+      ?concept ?p []
+    }
+  }
+  # get the label
+  GRAPH ?oldVersionGraph {
+    ?concept skos:prefLabel ?prefLabel
+  }
+  # restrict output to a certain language
+  #FILTER (lang(?prefLabel) = ?language)
+}
+ORDER BY ?concept
