@@ -170,6 +170,8 @@ function changeQuery(selectQuery, updateQuery, extraParams) {
                 $('#query').text('');
                 $('#genquery').hide();
         }
+        $('#main').show();
+        return false; // prevent default action i.e. scroll to top of page
 }
 
 function node_to_value(node) {
@@ -256,9 +258,11 @@ function loadVersions() {
 $(document).ready(function() {
         loadVocabularies();
         loadVersions();
+        $('#main').hide();
         $('#genquery').hide();
         $('#yasqe').hide();
         $('#queryhdr a').on("click", function() {
                 $('#yasqe').slideToggle();
+                return false;
         });
 });
