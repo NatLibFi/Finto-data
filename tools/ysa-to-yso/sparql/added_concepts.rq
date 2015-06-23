@@ -1,23 +1,19 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
 PREFIX sh: <http://purl.org/skos-history/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
 PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
-PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 #
-# Added related relations to already existing concepts
-# (newly introduced related concepts flagged)
+# identify concepts inserted with a certain version
 #
-SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel
-?new
-#SELECT (count(?concept) AS ?ccount)
+SELECT distinct (?concept AS ?addedConcept) (str(?prefLabel) AS ?addedConceptLabel)
 WHERE {
   # parameters
-  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ?language ) {
-    ( <http://www.yso.fi/onto/ysa/version> undef undef skos:Concept "fi" )
+  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?language ) {
+      ( <http://zbw.eu/stw/version> undef undef "en" )
   }
   GRAPH ?versionHistoryGraph {
     # get the current and the previous version as default versions
@@ -39,34 +35,17 @@ WHERE {
     ?deletions a sh:SchemeDeltaDeletions ;
       sh:usingNamedGraph/sd:name ?deletionsGraph .
   }
-  
-  # newly inserted related relations
+  # for each inserted concept, a newly inserted prefLabel must exist ...
   GRAPH ?insertionsGraph {
-    ?concept skos:related ?relatedConcept .
+    ?concept skosxl:prefLabel/skosxl:literalForm | skos:prefLabel ?prefLabel
   }
-  # ... for already existing concepts
-  FILTER exists {
+  # ... and the concept must not exist in the old version
+  FILTER NOT EXISTS {
     GRAPH ?oldVersionGraph {
       ?concept ?p []
     }
   }
-  # restrict to ?conceptType
-  GRAPH ?newVersionGraph {
-#    ?concept a ?conceptType .
-      ?concept skos:prefLabel ?conceptLabel .
-#    ?relatedConcept a ?conceptType .
-      ?relatedConcept skos:prefLabel ?relatedConceptLabel .
-  }
-
-  # flag related concepts which were newly introduced
-  OPTIONAL {
-    BIND ('X' AS ?new)
-    FILTER not exists {
-      GRAPH ?oldVersionGraph {
-        ?relatedConcept ?p [] .
-      }
-    }
-  }
-  FILTER (lang(?conceptLabel) = ?language && lang(?relatedConceptLabel) = ?language)
+  # restrict output to a certain language
+  FILTER ( lang(?prefLabel) = ?language )
 }
-ORDER BY ?conceptLabel ?relatedConceptLabel
+ORDER BY ?prefLabel

@@ -21,7 +21,6 @@ YASR.plugins.table.defaults.callbacks.onCellClick = function(td, event) {
                 $(tr).addClass('selected');
                 selectedRows[index] = row;
         }
-        console.log(selectedRows);
         refreshUpdateQuery();
         
 //        console.log(event);
@@ -114,7 +113,6 @@ function replaceQueryValues(query, newValues) {
                         }
                 }
         });
-        console.log(values);
 
         var variables = getVariables(query);
 
@@ -122,7 +120,6 @@ function replaceQueryValues(query, newValues) {
                 return values[varname];
         });
         var valueString = "( " + vals.join(" ") + " )";
-        console.log(valueString);
         var matches = valuesBlockRegExp.exec(query);
         var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + valueString + "\n" + matches[4]);
         
@@ -130,9 +127,19 @@ function replaceQueryValues(query, newValues) {
 }
 
 function modifyQueryValues() {
-        var versionDelta = $("#versions option:selected").val();
+        var versionHistory = $("#vocabularies option:selected").val();
+        var versionData = JSON.parse($("#versions option:selected").val());
+        var fromId = JSON.stringify(versionData[0]);
+        var toId = JSON.stringify(versionData[1]);
         var query = yasqe.getValue();
-        var newquery = replaceQueryValues(query, {'versionDelta': versionDelta});
+        var params = {
+                'versionHistoryGraph': versionHistory,
+                'oldVersion': fromId,
+                'newVersion': toId,
+                'language': 'fi' // FIXME: 'sv' for Allärs?
+        }
+        
+        var newquery = replaceQueryValues(query, {'versionHistoryGraph': versionHistory, 'oldVersion': fromId, 'newVersion': toId, 'language': 'fi'});
         yasqe.setValue(newquery);
 }
 
@@ -147,17 +154,19 @@ function changeQuery(selectQuery, updateQuery) {
 		modifyQueryValues(); // plug in VALUES
 		yasqe.query();
 	});
-
-	// load update query
-	$.ajax({
-		url: baseurl + updateQuery
-	}).done(function(data) {
-		$('#query').text(data);
-		var matches = valuesBlockRegExp.exec(data);
-		console.log(matches);
-		var vars = matches[2].match(/\S+/g);
-		console.log(vars);
-	});
+	
+	if (updateQuery != null) {
+                // load update query
+                $.ajax({
+                        url: baseurl + updateQuery
+                }).done(function(data) {
+                        $('#query').text(data);
+                        $('#genquery').show();
+                });
+        } else {
+                $('#query').text('');
+                $('#genquery').hide();
+        }
 }
 
 function node_to_value(node) {
@@ -188,8 +197,29 @@ function refreshUpdateQuery() {
                 return "( " + vals.join(" ") + " )";
         });
         var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
-        console.log(newquery);
         $('#query').text(newquery);
+}
+
+function loadVocabularies() {
+	var vocabQuery = "PREFIX sh: <http://purl.org/skos-history/>\
+	SELECT * {\
+		?vhs sh:isVersionHistoryOf ?voc .\
+		}";
+        
+	$.ajax({
+		url: endpoint,
+		data: { query: vocabQuery }
+	}).done(function(data) {
+		$.each(data.results.bindings, function(index, row) {
+			$('#vocabularies').append($('<option>', { value: row.vhs.value }).html(row.voc.value));
+		});
+	});
+	// set event handler for choosing version
+	$('#vocabularies').on("change", function() {
+	        modifyQueryValues();
+	        yasqe.query();
+	});
+
 }
 
 function loadVersions() {
@@ -208,7 +238,8 @@ function loadVersions() {
 	}).done(function(data) {
 		$.each(data.results.bindings, function(index, row) {
 			var label = row.fromId.value + " &rarr; " + row.toId.value;
-			$('#versions').append($('<option>', { value: row.sd.value }).html(label));
+			var from_to = JSON.stringify([row.fromId.value, row.toId.value]);
+			$('#versions').append($('<option>', { value: from_to }).html(label));
 		});
 	});
 	// set event handler for choosing version
@@ -220,5 +251,7 @@ function loadVersions() {
 
 // initialize page after DOM has loaded
 $(document).ready(function() {
+        loadVocabularies();
         loadVersions();
+        $('#genquery').hide();
 });
