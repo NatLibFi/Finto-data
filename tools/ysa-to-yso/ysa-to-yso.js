@@ -22,10 +22,6 @@ YASR.plugins.table.defaults.callbacks.onCellClick = function(td, event) {
                 selectedRows[index] = row;
         }
         refreshUpdateQuery();
-        
-//        console.log(event);
-//        console.log(yasr.results.getVariables());
-//        console.log(yasr.results.getBindings());
 };
 
 var yasr = YASR(document.getElementById("yasr"), {
@@ -138,9 +134,7 @@ function modifyQueryValues(extraParams) {
                 'newVersion': toId,
                 'language': 'fi' // FIXME: 'sv' for Allärs?
         }
-        console.log(extraParams);
         params = $.extend(params, extraParams);
-        console.log(params);
         
         var newquery = replaceQueryValues(query, params);
         yasqe.setValue(newquery);
