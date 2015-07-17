@@ -460,7 +460,7 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/089>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:broader mts:aanilevy ;
   skos:prefLabel "CD-äänilevy"@fi ;
 .
@@ -869,9 +869,9 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/162>
   rdf:type skos:Concept ;
-  rdfs:label "Jakajan  nimi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  skos:definition "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi ;
   skos:prefLabel "Jakajan  nimi"@fi ;
-  skos:scopeNote "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi ;
 .
 <http://metatietosanasto.fi/163>
   rdf:type skos:Concept ;
@@ -962,10 +962,10 @@ mts:C10006
 mts:C10007
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   rdfs:label "Manifestaatio"@fi ;
   rdfs:seeAlso rdac:C10007 ;
-  skos:scopeNote "Teoksen ekspression saama ilmiasu."@fi ;
+  skos:definition "Teoksen ekspression saama ilmiasu."@fi ;
 .
 mts:C10008
   rdf:type isothes:ConceptGroup ;
@@ -977,8 +977,8 @@ mts:C10008
 mts:P30001
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "tallennetyyppi"@fi ;
   rdfs:seeAlso rdam:P30001 ;
   skos:member <http://metatietosanasto.fi/099> ;
@@ -1093,10 +1093,11 @@ mts:P30063
 mts:P30080
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "jakaja"@fi ;
   rdfs:seeAlso rdam:P30080 ;
+  skos:member <http://metatietosanasto.fi/162> ;
 .
 mts:P30082
   rdf:type isothes:ConceptGroup ;
@@ -1125,14 +1126,15 @@ mts:P30096
 mts:P30107
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "painostiedot"@fi ;
   rdfs:seeAlso rdam:P30107 ;
   skos:member <http://metatietosanasto.fi/157> ;
   skos:member <http://metatietosanasto.fi/158> ;
   skos:member <http://metatietosanasto.fi/159> ;
   skos:member <http://metatietosanasto.fi/160> ;
+  skos:member mts:uusintapainos ;
 .
 mts:P30134
   rdf:type isothes:ConceptGroup ;
@@ -1247,9 +1249,10 @@ mts:T1007
 .
 mts:aanilevy
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1004> ;
-  skos:prefLabel "Äänilevy"@fi ;
+  skos:prefLabel "ljudskiva"@sv ;
+  skos:prefLabel "äänilevy"@fi ;
 .
 mts:aineiston_kasittely
   rdf:type isothes:ConceptGroup ;
@@ -1727,6 +1730,12 @@ mts:toimijoiden_valiset_suhteet
   isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Toimijoiden väliset suhteet"@fi ;
+.
+mts:uusintapainos
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  skos:prefLabel "nytryck"@sv ;
+  skos:prefLabel "uusintapainos"@fi ;
 .
 mts:vaihtoehtoinen_nimeke
   rdf:type isothes:ConceptGroup ;
