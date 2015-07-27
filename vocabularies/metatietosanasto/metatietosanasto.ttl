@@ -33,7 +33,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://iflastandards.info/ns/isbd/terms/mediatype/T1001>
-  skos:prefLabel "audio"@fi ;
   skos:scopeNote """Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot.
 
 Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen."""@fi ;
@@ -82,895 +81,1317 @@ Videolaitteella käytettävät aineistot."""@fi ;
 .
 <http://iflastandards.info/ns/isbd/terms/mediatype/maarittelematon_valittava_laite>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1009> ;
   skos:prefLabel "määrittelemätön välittävä laite"@fi ;
+  skos:prefLabel "ospecificerad medietyp"@sv ;
+  skos:scopeNote "Ifall ingen av medietyperna är lämplig, anges termen \"ospecificerad medietyp\"."@sv ;
   skos:scopeNote "Jos mikään mediatyypeistä ei sovellu, tehdään merkintö ”määrittelemätön välittävä laite”."@fi ;
 .
 <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Aineistot, joihin liittyy vähintään kolme eri mediatyyppiä."@fi ;
+  skos:definition "Resurser som anknyter till minst tre olika medietyper."@sv ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1008> ;
+  skos:prefLabel "flera medietyper"@sv ;
   skos:prefLabel "useita välittäviä laitteita"@fi ;
-  skos:scopeNote "Aineistot, joihin liittyy vähintään kolme eri mediatyyppiä."@fi ;
+.
+<http://metatietosanasto.fi//audio_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1001> ;
+  skos:prefLabel "audio"@fi ;
+  skos:prefLabel "audio"@sv ;
+  skos:scopeNote """Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot.
+
+Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen."""@fi ;
+  skos:scopeNote "Resurser som används för avlyssning genom ett avlyssningsredskap. Ljudupptagningen avlyssnas med hjälp av t.ex. skivspelare, kasettbandspelare, CD-spelare, MP3-spelare eller annan uppspelningsanordning. Audio omfattar både analogt och digitalt lagrat ljud."@sv ;
+.
+<http://metatietosanasto.fi//elektroninen_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1002> ;
+  skos:prefLabel "elektroninen"@fi ;
+  skos:prefLabel "elektronisk"@sv ;
+  skos:scopeNote "Termen elektronisk avser både fjärr- och direktanvändbara resurser såsom datorband och -skivor.                                                                          Datoranvändbara resurser och dokument."@sv ;
+  skos:scopeNote """Termi elektroninen liittyy sekä etä- että suorakäyttöisiin aineistoihin kuten tietokonenauhoihin ja -levyihin.
+
+Tietokoneella käytettävät aineistot. Tietokoneella käytettävät tiedostot."""@fi ;
+.
+<http://metatietosanasto.fi//heijastettava_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1005> ;
+  skos:prefLabel "heijastettava"@fi ;
+  skos:prefLabel "projicerbar"@sv ;
+  skos:scopeNote "Termen projicerbar anknyter till både två- och tredimensionella bilder. Material som används med hjälp av projektor. Rörlig bild eller stillbilder, som man ser på med hjälp av filmprojektor, diaprojektor eller overheadprojektor."@sv ;
+  skos:scopeNote """Termi heijastettava liittyy sekä kaksiulotteisiin että kolmiulotteisiin kuviin.
+Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita katsotaan filmiprojektorin, diaprojektorin tai piirtoheittimen avulla."""@fi ;
+.
+<http://metatietosanasto.fi//mikromuoto_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1003> ;
+  skos:prefLabel "mikroform"@sv ;
+  skos:prefLabel "mikromuoto"@fi ;
+  skos:scopeNote "Förminskade bilder, som inte går att betrakta med ögat utan med hjälp av mikrofilm- eller mikrokortläsare. Resurser i mikroform kan antingen vara genomskinligt eller ogenomskinligt. Resurser som förutsätter mikroläsare."@sv ;
+  skos:scopeNote """Pienennetyt kuvat, jotka eivät ole silmin luettavissa vaan käytettävissä mikrofilmin tai mikrokortin lukulaitteen avulla. Mikromuotoinen aineisto voi olla joko läpinäkyvää tai läpinäkymätöntä.
+Mikrolukulaitteella käytettävät aineistot."""@fi ;
+.
+<http://metatietosanasto.fi//mikroskooppinen_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1004> ;
+  skos:prefLabel "mikroskooppinen"@fi ;
+  skos:prefLabel "mikroskopisk"@sv ;
+  skos:scopeNote """Hyvin pienet kohteet, joiden yksityiskohtia voi tarkastella mikroskooppilaitteella, ei paljaalla silmällä.
+Mikroskooppilaitteella käytettävät aineistot."""@fi ;
+  skos:scopeNote "Mycket små objekt vars detaljer observeras med hjälp av ett mikroskop och inte med blotta ögat. Resurser som används med mikroskop."@sv ;
 .
 <http://metatietosanasto.fi/001>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Lukuoikeus painetun version tilaajalla."@fi ;
+  skos:prefLabel "Läsrätt innehas av den tryckta versionens prenumerant."@sv ;
+  skos:scopeNote "Verkkojulkaisun kuvailun yhteydessä annetaan tieto siitä, että painetun version tilaajalla on lukuoikeus verkkoversioon."@fi ;
+  skos:scopeNote "Vid beskrivning av webbpublikation ges information om att den tryckta versionens prenumerant innehar läsrätt på webbversionen."@sv ;
 .
 <http://metatietosanasto.fi/002>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Avgiftsbelagd databas; användaravtal och -namn obligatoriskt."@sv ;
   skos:prefLabel "Maksullinen tietokanta; sopimus ja käyttäjätunnus pakollinen."@fi ;
 .
 <http://metatietosanasto.fi/003>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Saatavana maksullisena myös verkossa."@fi ;
+  skos:prefLabel "Tillgänglig även som avgiftsbelagd webbpublikation."@sv ;
   skos:scopeNote "Painetun julkaisun kuvailun yhteydessä annetaan tieto saatavuudesta verkossa, mutta saatavuus verkon kautta on  maksullista."@fi ;
+  skos:scopeNote "Vid beskrivning av tryckt publikation ges information om webbtillgänglighet, men tillgång via webben är avgiftsbelagd."@sv ;
 .
 <http://metatietosanasto.fi/004>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Hemlighålles till slutet av år 20XX (Lag om offentlighet i myndigheternas verksamhet 621/1999 24 §)."@sv ;
   skos:prefLabel "Salassa pidettävä vuoden 20XX loppuun (JulkL 621/1999 24 §)."@fi ;
 .
 <http://metatietosanasto.fi/005>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Edellyttää käyttäjätunnuksen."@fi ;
+  skos:prefLabel "Förutsätter användarnamn."@sv ;
 .
 <http://metatietosanasto.fi/006>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Lainataan käyttöoikeuden hankkineiden kirjastojen asiakkaille."@fi ;
+  skos:prefLabel "Utlånas till bibliotekskunder med användningsrätt."@sv ;
 .
 <http://metatietosanasto.fi/007>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Käytettävissä lisenssin hankkineiden organisaatioiden verkossa."@fi ;
-.
-<http://metatietosanasto.fi/010>
-  rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
-  skos:prefLabel "Restricted to institutions with a subscription."@en ;
+  skos:prefLabel "Tillgänglig i licensberättigade institutioners nätverk."@sv ;
 .
 <http://metatietosanasto.fi/011>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Begränsningar i användning och kopiering."@sv ;
   skos:prefLabel "Käyttöön ja kopiointiin liittyy rajoituksia."@fi ;
 .
 <http://metatietosanasto.fi/012>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Laitteisto- ja järjestelmävaatimukset"@fi ;
+  skos:prefLabel "Maskinvaru- och systemkrav"@sv ;
 .
 <http://metatietosanasto.fi/013>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Laitteistovaatimukset"@fi ;
+  skos:prefLabel "Maskinvarukrav"@sv ;
 .
 <http://metatietosanasto.fi/014>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Järjestelmävaatimukset:"@fi ;
+  skos:prefLabel "Systemkrav:"@sv ;
+  skos:scopeNote "Esimerkki: Järjestelmävaatimukset: Adobe Reader"@fi ;
+  skos:scopeNote "Exempel: Systemkrav: Adobe Reader"@sv ;
 .
 <http://metatietosanasto.fi/015>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Blu-ray-asema"@fi ;
+  skos:prefLabel "Blu-ray-enhet"@sv ;
 .
 <http://metatietosanasto.fi/016>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DVD-asema"@fi ;
+  skos:prefLabel "DVD-enhet"@sv ;
 .
 <http://metatietosanasto.fi/017>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Internet-yhteys"@fi ;
+  skos:prefLabel "Internetanslutning"@sv ;
 .
 <http://metatietosanasto.fi/018>
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi ; RDA-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Lukulaite"@fi ;
+  skos:prefLabel "Läsapparat"@sv ;
   skos:scopeNote "Lukulaite = lukemislaite. Mikrofilmin lukulaite. Sähkökirjan lukulaite (Kielitoimiston sanakirja)"@fi ;
+  skos:scopeNote "Läsapparat = avläsare. Mikrofilmsläsare. Läsapparat för e-bok"@sv ;
 .
 <http://metatietosanasto.fi/019>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/018> ;
   skos:prefLabel "DAISY-lukulaite"@fi ;
+  skos:prefLabel "DAISY-läsapparat"@sv ;
+  skos:scopeNote "DAISY-äänitiedostolle"@fi ;
+  skos:scopeNote "För DAISY-ljudfiler"@sv ;
 .
 <http://metatietosanasto.fi/020>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/018> ;
   skos:prefLabel "e-kirjan lukulaite"@fi ;
+  skos:prefLabel "läsapparat för e-bok"@sv ;
 .
 <http://metatietosanasto.fi/021>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/018> ;
   skos:prefLabel "mikrofilmin lukulaite"@fi ;
+  skos:prefLabel "mikrofilmsläsare"@sv ;
 .
 <http://metatietosanasto.fi/022>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mobiililaitteiksi kutsutaan laitteita, jotka on suunniteltu mukana kannettaviksi ja jotka soveltuvat tiedon käsittelyyn tai langattomaan tiedonsiirtoon (lähettämiseen ja vastaanottamiseen). Mobiililaitteita ovat esimerkiksi taskutietokoneet, matkapuhelimet, langattoman tiedonsiirron mahdollistavat kannettavat tietokoneet ja sykemittarit, joihin on integroitu tietokone. Lähde: Tietotekniikan termitalkoot, 2005-05-20"@fi ;
+  skos:definition "Mobila apparater är ämnade för bärbart bruk och anpassade till informationshantering eller trådlös dataöverföring (sändning och mottagning). Exempel på mobila apparater: handdatorer, mobiltelefoner, bärbara datorer med trådlös dataöverföring och pulsmätare med inbyggd dator."@sv ;
   skos:prefLabel "mobiililaite"@fi ;
-  skos:scopeNote "Mobiililaitteiksi kutsutaan laitteita, jotka on suunniteltu mukana kannettaviksi ja jotka soveltuvat tiedon käsittelyyn tai langattomaan tiedonsiirtoon (lähettämiseen ja vastaanottamiseen). Mobiililaitteita ovat esimerkiksi taskutietokoneet, matkapuhelimet, langattoman tiedonsiirron mahdollistavat kannettavat tietokoneet ja sykemittarit, joihin on integroitu tietokone. Lähde: Tietotekniikan termitalkoot, 2005-05-20"@fi ;
+  skos:prefLabel "mobil apparat"@sv ;
 .
 <http://metatietosanasto.fi/023>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Apparat som återger MP3-filer"@sv ;
   skos:prefLabel "MP3-tiedostoja toistava laite"@fi ;
+  skos:scopeNote "För MP3-ljudfil"@sv ;
+  skos:scopeNote "MP3-äänitiedostolle"@fi ;
 .
 <http://metatietosanasto.fi/024>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "USB-port"@sv ;
   skos:prefLabel "USB-portti"@fi ;
+  skos:scopeNote "För USB-minne"@sv ;
   skos:scopeNote "USB-muistille"@fi ;
 .
 <http://metatietosanasto.fi/040>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "alanimeke kannessa:"@fi ;
+  skos:prefLabel "undertitel på pärmen:"@sv ;
 .
 <http://metatietosanasto.fi/041>
   rdf:type skos:Concept ;
-  rdfs:label "alanimeke selässä:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "alanimeke selässä:"@fi ;
+  skos:prefLabel "undertitel på ryggen:"@sv ;
 .
 <http://metatietosanasto.fi/042>
   rdf:type skos:Concept ;
-  rdfs:label "alanimeke esiössä:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "alanimeke esiössä:"@fi ;
+  skos:prefLabel "undertitel på förtextsidan:"@sv ;
 .
 <http://metatietosanasto.fi/043>
   rdf:type skos:Concept ;
-  rdfs:label "ylänimeke kannessa:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "titelrubrik på pärmen:"@sv ;
   skos:prefLabel "ylänimeke kannessa:"@fi ;
 .
 <http://metatietosanasto.fi/044>
   rdf:type skos:Concept ;
-  rdfs:label "ylänimeke selässä:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "titelrubrik på ryggen:"@sv ;
   skos:prefLabel "ylänimeke selässä:"@fi ;
 .
 <http://metatietosanasto.fi/045>
   rdf:type skos:Concept ;
-  rdfs:label "ylänimeke esiössä:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "titelrubrik på förtextsidan:"@sv ;
   skos:prefLabel "ylänimeke esiössä:"@fi ;
 .
 <http://metatietosanasto.fi/046>
   rdf:type skos:Concept ;
-  rdfs:label "lyhenne avattuna kannessa:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "förkortning utskriven på pärmen:"@sv ;
   skos:prefLabel "lyhenne avattuna kannessa:"@fi ;
 .
 <http://metatietosanasto.fi/047>
   rdf:type skos:Concept ;
-  rdfs:label "nimekkeen lähde:"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimekkeen lähde:"@fi ;
+  skos:prefLabel "titelns källa:"@sv ;
+  skos:scopeNote "Esim. Nimekkeen lähde: A list of maps of America / P.L. Phillips, s. 502."@fi ;
+  skos:scopeNote "Ex. Titelns källa:  A list of maps of America / P.L. Phillips, s. 502."@sv ;
 .
 <http://metatietosanasto.fi/048>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke ensimmäiseltä nuottisivulta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke ensimmäiseltä nuottisivulta"@fi ;
+  skos:prefLabel "titel från första notsidan"@sv ;
 .
 <http://metatietosanasto.fi/049>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke etusivulta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke etusivulta"@fi ;
+  skos:prefLabel "titel från framsidan"@sv ;
 .
 <http://metatietosanasto.fi/050>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke esiöstä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke esiöstä"@fi ;
+  skos:prefLabel "titel från förtextsidan"@sv ;
 .
 <http://metatietosanasto.fi/051>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke irtopäällyksestä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke irtopäällyksestä"@fi ;
+  skos:prefLabel "titel från skyddsomslaget"@sv ;
 .
 <http://metatietosanasto.fi/052>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke kannesta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke kannesta"@fi ;
+  skos:prefLabel "titel från pärmen"@sv ;
 .
 <http://metatietosanasto.fi/053>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke kannen kääntöpuolelta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke kannen kääntöpuolelta"@fi ;
+  skos:prefLabel "titel från pärmens baksida"@sv ;
 .
 <http://metatietosanasto.fi/054>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke kotelosta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke kotelosta"@fi ;
+  skos:prefLabel "titel från fodralet"@sv ;
 .
 <http://metatietosanasto.fi/055>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke kuvailulehdeltä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke kuvailulehdeltä"@fi ;
+  skos:prefLabel "titel från presentationsbladet"@sv ;
 .
 <http://metatietosanasto.fi/056>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke levystä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke levystä"@fi ;
+  skos:prefLabel "titel från skivan"@sv ;
 .
 <http://metatietosanasto.fi/057>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke alkuteksteistä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke alkuteksteistä"@fi ;
+  skos:prefLabel "titel från originaltexterna"@sv ;
 .
 <http://metatietosanasto.fi/058>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke lopputeksteistä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke lopputeksteistä"@fi ;
 .
 <http://metatietosanasto.fi/059>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke nimiönäytöltä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke nimiönäytöltä"@fi ;
+  skos:prefLabel "titel från titelskärmen"@sv ;
 .
 <http://metatietosanasto.fi/060>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke nimiösivun kääntöpuolelta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke nimiösivun kääntöpuolelta"@fi ;
+  skos:prefLabel "titel från titelsidans baksida"@sv ;
 .
 <http://metatietosanasto.fi/061>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke ohjekirjasta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke ohjekirjasta"@fi ;
+  skos:prefLabel "titel från instruktionsboken"@sv ;
 .
 <http://metatietosanasto.fi/062>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke pakkauksesta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke pakkauksesta"@fi ;
+  skos:prefLabel "titel från förpackningen"@sv ;
 .
 <http://metatietosanasto.fi/063>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke selästä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke selästä"@fi ;
+  skos:prefLabel "titel från ryggen"@sv ;
 .
 <http://metatietosanasto.fi/064>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke sähköpostin aiheriviltä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke sähköpostin aiheriviltä"@fi ;
+  skos:prefLabel "titel från e-postens ämnesrad"@sv ;
 .
 <http://metatietosanasto.fi/065>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke  tekstin alusta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke  tekstin alusta"@fi ;
+  skos:prefLabel "titel från början av texten"@sv ;
 .
 <http://metatietosanasto.fi/066>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke  tekstiliitteestä"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke  tekstiliitteestä"@fi ;
+  skos:prefLabel "titel från textbilagan"@sv ;
 .
 <http://metatietosanasto.fi/067>
   rdf:type skos:Concept ;
-  rdfs:label "nimeke  toimitustiedoista/ toimitustietolaatikosta"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nimeke  toimitustiedoista/ toimitustietolaatikosta"@fi ;
+  skos:prefLabel "titel från leveransuppgifter/ redaktionsruta"@sv ;
+  skos:scopeNote "Redaktionsruta avser det fält i periodiska publikationer som innehåller leveransuppgifter och impressum."@sv ;
+  skos:scopeNote "Toimitustietolaatikko tarkoittaa kausijulkaisuissa toimituksellisia tietoja sekä julkaisutietoja sisältävää aluetta"@fi ;
 .
 <http://metatietosanasto.fi/068>
   rdf:type skos:Concept ;
-  rdfs:label "aukkokirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok med olika slags inklippta hål."@sv ;
+  skos:definition "Kirja, johon on leikattu erilaisia reikiä."@fi ;
   skos:prefLabel "aukkokirja"@fi ;
+  skos:prefLabel "gluggbok"@sv ;
 .
 <http://metatietosanasto.fi/069>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  skos:prefLabel "affisch"@sv ;
   skos:prefLabel "juliste"@fi ;
   skos:scopeNote "Jstak tiedottava, jtak mainostava t. propagoiva (suurikokoinen) tav. kuvallinen painotuote; seinällä pidettävä suuri painokuva (Kielitoimiston sanakirja) (engl. poster)"@fi ;
 .
 <http://metatietosanasto.fi/070>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kartbilaga"@sv ;
   skos:prefLabel "karttaliite"@fi ;
 .
 <http://metatietosanasto.fi/071>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "bildkort"@sv ;
   skos:prefLabel "kuvakortti"@fi ;
 .
 <http://metatietosanasto.fi/072>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "frågekort"@sv ;
   skos:prefLabel "kysymyskortti"@fi ;
 .
 <http://metatietosanasto.fi/073>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "postikortti"@fi ;
+  skos:prefLabel "postkort"@sv ;
 .
 <http://metatietosanasto.fi/074>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kort med tryckta ord, siffror och/eller bilder som används för att förverkliga en särskild aktivitet. (eng. activity card)"@sv ;
+  skos:definition "Kortti, johon on painettu sanoja, numeroita, tai/ja kuvia, ja jota käytetään tietyn toiminnan toteuttamisessa (engl. activity card)"@fi ;
+  skos:prefLabel "aktivitetskort"@sv ;
   skos:prefLabel "toimintakortti"@fi ;
-  skos:scopeNote "Kortti, johon on painettu sanoja, numeroita, tai/ja kuvia, ja jota käytetään tietyn toiminnan toteuttamisessa (engl. activity card)"@fi ;
 .
 <http://metatietosanasto.fi/075>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Fodral, som innehåller t.ex. grafikblad, bildkort el. dyl."@sv ;
+  skos:definition "Kotelo, joka sisältää esim. grafiikanlehtiä, kuvakortteja tms. (Kuvailusäännöt)"@fi ;
+  skos:prefLabel "bildportfölj"@sv ;
   skos:prefLabel "kuvasalkku"@fi ;
-  skos:scopeNote "Kotelo, joka sisältää esim. grafiikanlehtiä, kuvakortteja tms. (Kuvailusäännöt)"@fi ;
 .
 <http://metatietosanasto.fi/076>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "bildtavla"@sv ;
   skos:prefLabel "kuvataulu"@fi ;
 .
 <http://metatietosanasto.fi/077>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "leksak"@sv ;
   skos:prefLabel "lelu"@fi ;
 .
 <http://metatietosanasto.fi/078>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "levy"@fi ;
+  skos:prefLabel "skiva"@sv ;
 .
 <http://metatietosanasto.fi/080>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Blu-ray-levy"@fi ;
+  skos:prefLabel "Blu-ray-skiva"@sv ;
+  skos:scopeNote "Högupplöst optisk skiva. Blu-ray är ett skivformat som bildats i samarbete med Philips och Sonys UDO- samt Pioneers DVDR Blue-forskningsprojekt."@sv ;
   skos:scopeNote "Korkeatarkkuuksinen optinen levy. Blu-ray on Philipsin ja Sonyn UDO- (Ultra Density Optical) ja Pioneerin DVDR Blue -tutkimusprojektien yhteistyössä syntynyt levyformaatti(Wikipedia, 27.9.2011)"@fi ;
 .
 <http://metatietosanasto.fi/081>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "CD-levy"@fi ;
+  skos:prefLabel "CD-skiva"@sv ;
+  skos:scopeNote "(CD compact disc) optiskt lagringsmedium. Information (ljud, bild och text) lagras på en sida i ett lager. Olika sorters CD-skivor, vars användningssätt avviker från varandra, har varsin term. CD-ljudksivor och CD-ROM-skivor (CD-datorskivor) kan endast återges, CD-R-skivor kan spelas in en gång och CD-RW-skivor flera gånger."@sv ;
   skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi ;
 .
 <http://metatietosanasto.fi/082>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/081> ;
   skos:prefLabel "CD-ROM-levy"@fi ;
+  skos:prefLabel "CD-ROM-skiva"@sv ;
 .
 <http://metatietosanasto.fi/083>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DVD-levy"@fi ;
+  skos:prefLabel "DVD-skiva"@sv ;
+  skos:scopeNote "(DVD Digital Versatile Disc tai Digital Video Disc) tiedontallennukseen käytettävä optisesti luettava levy, DVD:n yleisimmät käyttötavat ovat videokuvan ja tiedon tallennus (Tietotekniikan termitalkoot, Wikipedia 15.1.2013)"@fi ;
 .
 <http://metatietosanasto.fi/084>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/083> ;
   skos:prefLabel "DVD-ROM-levy"@fi ;
+  skos:prefLabel "DVD-ROM-skiva"@sv ;
 .
 <http://metatietosanasto.fi/085>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "CD-DVD-levy"@fi ;
+  skos:prefLabel "CD-DVD-skiva"@sv ;
+  skos:scopeNote "Optiskt lagringsmedium. Ena sidan av skivan använder en CD-skivas lagringsteknik och den andra sidan en DVD:s. CD-DVD-skivans CD-sida är främst avsedd för lagring av ljud och DVD-sidan för lagring av bild. DualDisc-skivor är exempel på CD-DVD-skivor."@sv ;
+  skos:scopeNote "Tiedontallennukseen käytettävä optisesti luettava levy, jonka toisella puolella käytetään CD-levyn ja toisella puolella DVD-levyn tallennustekniikkaa. CD-DVD-levyn CD-puoli on tarkoitettu ensisijaisesti äänen ja DVD-puoli kuvan tallennukseen. Esimerkiksi DualDisc-levyt ovat CD-DVD-levyjä. (Tietotekniikan termitalkoot, 15.1.2013)"@fi ;
 .
 <http://metatietosanasto.fi/086>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DVD-videolevy"@fi ;
+  skos:prefLabel "DVD-videoskiva"@sv ;
 .
 <http://metatietosanasto.fi/087>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Blu-ray-videoskiva"@sv ;
   skos:prefLabel "Blue-ray-videolevy"@fi ;
 .
 <http://metatietosanasto.fi/088>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Blu-ray-ljudskiva"@sv ;
   skos:prefLabel "Blue-ray-äänilevy"@fi ;
 .
 <http://metatietosanasto.fi/089>
   rdf:type skos:Concept ;
-  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader mts:aanilevy ;
+  skos:prefLabel "CD-ljudskiva"@sv ;
   skos:prefLabel "CD-äänilevy"@fi ;
+  skos:scopeNote "eng. Audio CD"@sv ;
+  skos:scopeNote "engl. Audio CD"@fi ;
 .
 <http://metatietosanasto.fi/090>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "DVD-skiva som i huvudsak innehåller audiodata."@sv ;
+  skos:definition "Pääosin audiodataa sisältävä DVD-levy"@fi ;
+  skos:prefLabel "DVD-ljudskiva"@sv ;
   skos:prefLabel "DVD-äänilevy"@fi ;
-  skos:scopeNote "Pääosin audiodataa sisältävä DVD-levy"@fi ;
 .
 <http://metatietosanasto.fi/091>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "MD-ljudskiva"@sv ;
   skos:prefLabel "MD-äänilevy"@fi ;
+  skos:scopeNote "MiniDisc"@fi ;
+  skos:scopeNote "MiniDisc"@sv ;
 .
 <http://metatietosanasto.fi/092>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "SACD-ljudskiva"@sv ;
   skos:prefLabel "SACD-äänilevy"@fi ;
 .
 <http://metatietosanasto.fi/093>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "opetuskuva"@fi ;
+  skos:prefLabel "undervisningsbild"@sv ;
 .
 <http://metatietosanasto.fi/094>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "opetustaulu"@fi ;
+  skos:prefLabel "undervisningstavla"@sv ;
 .
 <http://metatietosanasto.fi/095>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "painokuva"@fi ;
+  skos:prefLabel "tryckt bild"@sv ;
 .
 <http://metatietosanasto.fi/096>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "peli"@fi ;
+  skos:prefLabel "spel"@sv ;
 .
 <http://metatietosanasto.fi/097>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/096> ;
+  skos:prefLabel "brädspel"@sv ;
   skos:prefLabel "lautapeli"@fi ;
 .
 <http://metatietosanasto.fi/098>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:broader <http://metatietosanasto.fi/096> ;
   skos:prefLabel "palapeli"@fi ;
+  skos:prefLabel "pussel"@sv ;
 .
 <http://metatietosanasto.fi/099>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1039> ;
   skos:prefLabel "piirtoheitinkalvo"@fi ;
+  skos:prefLabel "transparang"@sv ;
 .
 <http://metatietosanasto.fi/100>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "piirtoheitinkalvopohja"@fi ;
 .
 <http://metatietosanasto.fi/101>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "USB-minne"@sv ;
   skos:prefLabel "USB-muisti"@fi ;
 .
 <http://metatietosanasto.fi/102>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1018> ;
   skos:prefLabel "verkkoaineisto"@fi ;
+  skos:prefLabel "webbmaterial"@sv ;
 .
 <http://metatietosanasto.fi/103>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "C-kasetti"@fi ;
+  skos:prefLabel "Kassettband"@sv ;
 .
 <http://metatietosanasto.fi/104>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DAT-kasetti"@fi ;
+  skos:prefLabel "DAT-kassett"@sv ;
 .
 <http://metatietosanasto.fi/106>
   rdf:type skos:Concept ;
-  rdfs:label "haitarikirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, vars sidor är vikta i dragspelsform (eng. fold-out book or chart)"@sv ;
+  skos:definition "Kirja, jonka sivut on taitettu haitarimuotoon (engl. fold-out book or chart)"@fi ;
+  skos:prefLabel "dragspelsbok"@sv ;
   skos:prefLabel "haitarikirja"@fi ;
-  skos:scopeNote "Kirja, jonka sivut on taitettu haitarimuotoon.Onix-termi. (engl. fold-out book or chart)"@fi ;
 .
 <http://metatietosanasto.fi/107>
   rdf:type skos:Concept ;
-  rdfs:label "kangaskirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, vars alla sidor är tryckta på textil. (eng. rag book)"@sv ;
+  skos:definition "Kirja, jonka kaikki sivut on painettu tekstiilille."@fi ;
   skos:prefLabel "kangaskirja"@fi ;
-  skos:scopeNote "Kirja, jonka kaikki sivut on painettu tekstiilille. Onix-termi. (engl. rag book)"@fi ;
+  skos:prefLabel "tygbok"@sv ;
 .
 <http://metatietosanasto.fi/108>
   rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
   dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Oftast en textlös barnbok med tyngdpunkt på illustrationen."@sv ;
+  skos:definition "Usein tekstitön lastenkirja jossa pääpaino on kuvituksella."@fi ;
   skos:prefLabel "katselukirja"@fi ;
-  skos:prefLabel "picture book"@en ;
-  skos:scopeNote "Usein tekstitön lastenkirja jossa pääpaino on kuvituksella."@fi ;
+  skos:prefLabel "pekbok"@sv ;
 .
 <http://metatietosanasto.fi/109>
   rdf:type skos:Concept ;
-  rdfs:label "koskettelukirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bilderbok som innehåller färgranna och vidrörbara bilder, avsedd för ett blint eller svagsynt barn. Bokens text kan vara skriven med punktskrift, stor stil eller vanliga bokstäver. Boken kan även innehålla en ljudupptagning. Berättelserna är konsturerade av upphovsmännen eller är bearbetningar av välkända sagor, ramsor eller dikter."@sv ;
+  skos:definition "Värikkäitä, tunnusteltavia kuvia sisältävä kuvakirja, joka on tarkoitettu sokealle tai heikkonäköiselle lapselle. Kirjan teksti voi olla pistekirjoituksella, isokirjoituksella tai tavallisin kirjaimin. Kirjassa voi olla mukana myös äänite. Tarinat ovat tekijöiden sepittämiä tai sovituksia tutuista saduista, loruista tai runoista. Wikipedia, 23.1.2013."@fi ;
   skos:prefLabel "koskettelukirja"@fi ;
-  skos:scopeNote "Värikkäitä, tunnusteltavia kuvia sisältävä kuvakirja, joka on tarkoitettu sokealle tai heikkonäköiselle lapselle. Kirjan teksti voi olla pistekirjoituksella, isokirjoituksella tai tavallisin kirjaimin. Kirjassa voi olla mukana myös äänite. Tarinat ovat tekijöiden sepittämiä tai sovituksia tutuista saduista, loruista tai runoista. Wikipedia, 23.1.2013."@fi ;
+  skos:prefLabel "taktil bilderbok"@sv ;
 .
 <http://metatietosanasto.fi/110>
   rdf:type skos:Concept ;
-  rdfs:label "kurkistuskirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, vars sidor har luckor som kan öppnas."@sv ;
+  skos:definition "Kirja, jonka sivuilla on avattavia luukkuja. (engl. lift-the-flap book)"@fi ;
   skos:prefLabel "kurkistuskirja"@fi ;
-  skos:scopeNote "Kirja, jonka sivuilla on avattavia luukkuja.Onix-termi. (engl. lift-the-flap book)"@fi ;
+  skos:prefLabel "titt-ut-bok"@sv ;
 .
 <http://metatietosanasto.fi/111>
   rdf:type skos:Concept ;
-  rdfs:label "kuvatehostekirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok med olika slags bildeffekter, t.ex. hologrambilder eller rörliga bilder."@sv ;
+  skos:definition "Kirja, jossa on erilaisia kuvatehosteita, esim. hologrammikuvia tai liikuteltavia kuvia."@fi ;
+  skos:prefLabel "bildeffektsbok"@sv ;
   skos:prefLabel "kuvatehostekirja"@fi ;
-  skos:scopeNote "Kirja, jossa on erilaisia kuvatehosteita, esim. hologrammikuvia tai liikuteltavia kuvia. Kaunokki-termi"@fi ;
 .
 <http://metatietosanasto.fi/112>
   rdf:type skos:Concept ;
-  rdfs:label "kääntökirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Julkaisu, jonka teksti ja sivunumerointi alkavat vastakkaisilta puolilta. Yleensä kyseessä on kaksikielinen julkaisu. (engl. turn-around book)"@fi ;
+  skos:definition "Publikation vars text och sidnumrering börjar i motsatta ändor. I allmänhet är det fråga om en tvåspråkig publikation (eng. turn-around book)."@sv ;
   skos:prefLabel "kääntökirja"@fi ;
-  skos:scopeNote "Julkaisu, jonka teksti ja sivunumerointi alkavat vastakkaisilta puolilta. Yleensä kyseessä on kaksikielinen julkaisu. Onix-termi. (engl. turn-around book)"@fi ;
+  skos:prefLabel "vändbok"@sv ;
 .
 <http://metatietosanasto.fi/113>
   rdf:type skos:Concept ;
-  rdfs:label "lelukirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok som även fungerar som leksak, eller en bok med en leksak som tillbehör. (eng. book-as-toy)"@sv ;
+  skos:definition "Kirja, joka toimii myös leluna, tai kirja, jonka osana on lelu. (engl. book-as-toy)"@fi ;
+  skos:prefLabel "leksaksbok"@sv ;
   skos:prefLabel "lelukirja"@fi ;
-  skos:scopeNote "Kirja, joka toimii myös leluna, tai kirja, jonka osana on lelu. Onix-termi. (engl. book-as-toy)"@fi ;
 .
 <http://metatietosanasto.fi/114>
   rdf:type skos:Concept ;
-  rdfs:label "lippakirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Minitaskukirja (8 x 12 cm), jonka teksti on painettu horisontaalisesti. (eng. flipback)"@fi ;
   skos:prefLabel "lippakirja"@fi ;
-  skos:scopeNote "Minitaskukirja (8 x 12 cm), jonka teksti on painettu horisontaalisesti. Onix-termi.(eng. flipback)"@fi ;
 .
 <http://metatietosanasto.fi/115>
   rdf:type skos:Concept ;
-  rdfs:label "liuskakirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, vars sidor är klippta i flikar. Genom att kombinera flikarna kan figurers delar bytas ut. (eng. flap book)"@sv ;
+  skos:definition "Kirja, jossa sivut on leikattu liuskoiksi niin, että liuskoja yhdistelemällä voidaan vaihtaa esim. hahmojen osat toisiksi. (engl. flap book)"@fi ;
+  skos:prefLabel "flikbok"@sv ;
   skos:prefLabel "liuskakirja"@fi ;
-  skos:scopeNote "Kirja, jossa sivut on leikattu liuskoiksi niin, että liuskoja yhdistelemällä voidaan vaihtaa esim. hahmojen osat toisiksi. Kaunokki-termi.(engl. flap book)"@fi ;
 .
 <http://metatietosanasto.fi/116>
   rdf:type skos:Concept ;
-  rdfs:label "magneettikirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok som kan fästas på metallunderlag med hjälp av tillhörande magnet. (eng. magnet book)"@sv ;
+  skos:definition "Kirja, joka voidaan siinä olevan magneetin avulla kiinnittää metallialustaan. (engl. magnet book)"@fi ;
   skos:prefLabel "magneettikirja"@fi ;
-  skos:scopeNote "Kirja, joka voidaan siinä olevan magneetin avulla kiinnittää metallialustaan. Kaunokki-termi. (engl. magnet book)"@fi ;
+  skos:prefLabel "magnetbok"@sv ;
 .
 <http://metatietosanasto.fi/117>
   rdf:type skos:Concept ;
-  rdfs:label "muotoonleikattu kirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok som skurits i annat format än det traditionella fyrkantiga. (eng. die-cut book)"@sv ;
+  skos:definition "Muuhun kuin perinteiseen nelikulmaiseen muotoon leikattu kirja. (engl. die-cut book)"@fi ;
+  skos:prefLabel "formskuren bok"@sv ;
   skos:prefLabel "muotoonleikattu kirja"@fi ;
-  skos:scopeNote "KMuuhun kuin perinteiseen nelikulmaiseen muotoon leikattu kirja. Onix-termi. (engl. die-cut book)"@fi ;
 .
 <http://metatietosanasto.fi/118>
   rdf:type skos:Concept ;
-  rdfs:label "paksulehtinen kirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, vars sidor är tjocka för att underlätta gripbarhet. Alla sidor i publikationen är tryckta på exempelvis papp."@sv ;
+  skos:definition "Kirja, jonka sivut ovat paksut niihin tarttumisen helpottamiseksi. Julkaisun kaikki sivut on painettu esimerkiksi pahville."@fi ;
   skos:prefLabel "paksulehtinen kirja"@fi ;
-  skos:scopeNote "Kirja, jonka sivut ovat paksut niihin tarttumisen helpottamiseksi. Julkaisun kaikki sivut on painettu esimerkiksi pahville. Kaunokki-termi."@fi ;
+  skos:prefLabel "tjockbladig bok"@sv ;
 .
 <http://metatietosanasto.fi/119>
   rdf:type skos:Concept ;
-  rdfs:label "palapelikirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Kaunokki-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok med tillhörande pusselbitar. (eng. puzzle / jigsaw book)"@sv ;
+  skos:definition "Kirja, jossa on mukana palapelin palasia. (engl. puzzle / jigsaw book)"@fi ;
   skos:prefLabel "palapelikirja"@fi ;
-  skos:scopeNote "Kirja, jossa on mukana palapelin palasia. Kaunokki-termi.   (engl. puzzle / jigsaw book)"@fi ;
+  skos:prefLabel "pusselbok"@sv ;
 .
 <http://metatietosanasto.fi/120>
   rdf:type skos:Concept ;
-  rdfs:label "pienoiskokoinen kirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Liten bok, t.ex. under 12 cm i höjd. (eng. miniature book)"@sv ;
+  skos:definition "Pienikokoinen, esimerkiksi korkeudeltaan alle 12 cm oleva kirja. (engl. miniature book)"@fi ;
+  skos:prefLabel "miniatyrbok"@sv ;
   skos:prefLabel "pienoiskokoinen kirja"@fi ;
-  skos:scopeNote "Pienikokoinen, esimerkiksi korkeudeltaan alle 12 cm oleva kirja. Onix-termi. (engl. miniature book)"@fi ;
 .
 <http://metatietosanasto.fi/121>
   rdf:type skos:Concept ;
-  rdfs:label "pop-up-kirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok med bilder som vecklar ut sig på bokens sidor. (eng. pop-up book)"@sv ;
+  skos:definition "Näyttämö- tai ponnahduskirja, jonka sivuilla on esiin taittuvia kuvia. (engl. pop-up book)"@fi ;
+  skos:prefLabel "pop-up-bok"@sv ;
   skos:prefLabel "pop-up-kirja"@fi ;
-  skos:scopeNote "Näyttämö- tai ponnahduskirja, jonka sivuilla on esiin taittuvia kuvia. Onix-termi. (engl. pop-up book)"@fi ;
 .
 <http://metatietosanasto.fi/122>
   rdf:type skos:Concept ;
-  rdfs:label "siirtotarrakirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kirja, jossa on mukana sen sivuille liimattaviksi tarkoitettuja tarroja. Tarrat materiaalista, joita voi liimata useaan kertaan. (engl. transfer sticker book)"@fi ;
   skos:prefLabel "siirtotarrakirja"@fi ;
-  skos:scopeNote "Kirja, jossa on mukana sen sivuille liimattaviksi tarkoitettuja tarroja. Tarrat materiaalista, joita voi liimata useaan kertaan. (engl. transfer sticker book)"@fi ;
 .
 <http://metatietosanasto.fi/123>
   rdf:type skos:Concept ;
-  rdfs:label "tarrakirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok med tillhörande dekaler som ska limmas permanent på bokens sidor. (eng. sticker-book)"@sv ;
+  skos:definition "Kirja, jossa on mukana sen sivuille pysyvästi liimattaviksi tarkoitettuja tarroja. (engl. sticker-book)"@fi ;
+  skos:prefLabel "dekalbok"@sv ;
   skos:prefLabel "tarrakirja"@fi ;
-  skos:scopeNote "Kirja, jossa on mukana sen sivuille pysyvästi liimattaviksi tarkoitettuja tarroja.Onix-termi. (engl. sticker-book)"@fi ;
 .
 <http://metatietosanasto.fi/124>
   rdf:type skos:Concept ;
-  rdfs:label "tunnustelukirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok, med olika slags beröringsytor i olika material."@sv ;
+  skos:definition "Kirja, jossa on erilaisia koskettelupintoja eri materiaaleista. (engl touch-and-feel book )"@fi ;
+  skos:prefLabel "taktil bok"@sv ;
   skos:prefLabel "tunnustelukirja"@fi ;
-  skos:scopeNote "Kirja, jossa on erilaisia koskettelupintoja eri materiaaleista. Onix-termi. (engl touch-and-feel book )"@fi ;
 .
 <http://metatietosanasto.fi/125>
   rdf:type skos:Concept ;
-  rdfs:label "äänitehostekirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Bok som innehåller ljudeffekter eller musik. (eng. Sound story / 'noisy' book )"@sv ;
+  skos:definition "Kirja, joka sisältää ääniefektejä tai musiikkia. (engl. Sound story / 'noisy' book )"@fi ;
+  skos:prefLabel "ljudeffektsbok"@sv ;
   skos:prefLabel "äänitehostekirja"@fi ;
-  skos:scopeNote "Kirja, joka sisältää ääniefektejä tai musiikkia. Onix-termi. (engl. Sound story / 'noisy' book )"@fi ;
 .
 <http://metatietosanasto.fi/126>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa rengaskierteen peittävä selkä."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa rengaskierteen peittävä selkä."@fi ;
+  skos:prefLabel "Publikationen har spiralbunden rygg."@sv ;
 .
 <http://metatietosanasto.fi/127>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa irrotettavia paloja."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa irrotettavia paloja."@fi ;
+  skos:prefLabel "Publikationen innehåller löstagbara delar."@sv ;
 .
 <http://metatietosanasto.fi/128>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa liikuteltavia/irrotettavia/vaihtuvia kuvia."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa liikuteltavia/irrotettavia/vaihtuvia kuvia."@fi ;
+  skos:prefLabel "Publikationen innehåller rörliga/löstagbara/ombytliga bilder."@sv ;
 .
 <http://metatietosanasto.fi/129>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa pyöritettäviä kiekkoja."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa pyöritettäviä kiekkoja."@fi ;
+  skos:prefLabel "Publikationen innehåller roterbara skivor."@sv ;
 .
 <http://metatietosanasto.fi/130>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa sapluunoita."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa sapluunoita."@fi ;
+  skos:prefLabel "Publikationen innehåller schabloner."@sv ;
 .
 <http://metatietosanasto.fi/131>
   rdf:type skos:Concept ;
-  rdfs:label "Julkaisussa avattavia luukkuja."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Julkaisussa avattavia luukkuja."@fi ;
+  skos:prefLabel "Publikationen innehåller luckor som kan öppnas."@sv ;
 .
 <http://metatietosanasto.fi/132>
   rdf:type skos:Concept ;
-  rdfs:label "Takakannen/etukannen sisäpuolelle kiinnitetyssä kotelossa/taskussa xxx. (esim. kynä)"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Takakannen/etukannen sisäpuolelle kiinnitetyssä kotelossa/taskussa xxx. (esim. kynä)"@fi ;
+  skos:prefLabel "xxx (t.ex. penna) i fodral/ficka på bakpärmens/frampärmens insida."@sv ;
 .
 <http://metatietosanasto.fi/133>
   rdf:type skos:Concept ;
-  rdfs:label "Varustettu kantokahvalla."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Försedd med bärhandtag."@sv ;
   skos:prefLabel "Varustettu kantokahvalla."@fi ;
 .
 <http://metatietosanasto.fi/134>
   rdf:type skos:Concept ;
-  rdfs:label "Varustettu lukolla."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Försedd med lås."@sv ;
   skos:prefLabel "Varustettu lukolla."@fi ;
 .
 <http://metatietosanasto.fi/135>
   rdf:type skos:Concept ;
-  rdfs:label "Varustettu reunahakemistolla."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Varustettu reunahakemistolla."@fi ;
 .
 <http://metatietosanasto.fi/136>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "CD audio"@fi ;
+  skos:prefLabel "CD audio"@sv ;
 .
 <http://metatietosanasto.fi/137>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DAISY"@fi ;
+  skos:prefLabel "DAISY"@sv ;
 .
 <http://metatietosanasto.fi/138>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DVD audio"@fi ;
+  skos:prefLabel "DVD audio"@sv ;
 .
 <http://metatietosanasto.fi/139>
   rdf:type skos:Concept ;
-  rdfs:label "MP3"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1001> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "MP3"@fi ;
+  skos:prefLabel "MP3"@sv ;
 .
 <http://metatietosanasto.fi/140>
   rdf:type skos:Concept ;
-  rdfs:label "SACD"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1001> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "SACD"@fi ;
+  skos:prefLabel "SACD"@sv ;
 .
 <http://metatietosanasto.fi/141>
   rdf:type skos:Concept ;
-  rdfs:label "WAV"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1001> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "WAV"@fi ;
+  skos:prefLabel "WAV"@sv ;
   skos:scopeNote "Waveform Audio File"@fi ;
+  skos:scopeNote "Waveform Audio File"@sv ;
 .
 <http://metatietosanasto.fi/142>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "EPUB"@fi ;
+  skos:prefLabel "EPUB"@sv ;
 .
 <http://metatietosanasto.fi/143>
   rdf:type skos:Concept ;
-  rdfs:label "HTML"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "HTML"@fi ;
+  skos:prefLabel "HTML"@sv ;
 .
 <http://metatietosanasto.fi/144>
   rdf:type skos:Concept ;
-  rdfs:label "MS Word"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "MS Word"@fi ;
+  skos:prefLabel "MS Word"@sv ;
 .
 <http://metatietosanasto.fi/145>
   rdf:type skos:Concept ;
-  rdfs:label "PDF"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "PDF"@fi ;
+  skos:prefLabel "PDF"@sv ;
 .
 <http://metatietosanasto.fi/146>
   rdf:type skos:Concept ;
-  rdfs:label "RTF"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "RTF"@fi ;
+  skos:prefLabel "RTF"@sv ;
 .
 <http://metatietosanasto.fi/147>
   rdf:type skos:Concept ;
-  rdfs:label "WordPerfect"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "WordPerfect"@fi ;
+  skos:prefLabel "WordPerfect"@sv ;
 .
 <http://metatietosanasto.fi/148>
   rdf:type skos:Concept ;
-  rdfs:label "XML"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1002> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "XML"@fi ;
+  skos:prefLabel "XML"@sv ;
 .
 <http://metatietosanasto.fi/149>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Blu-ray"@fi ;
+  skos:prefLabel "Blu-ray"@sv ;
 .
 <http://metatietosanasto.fi/150>
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "DVD video"@fi ;
+  skos:prefLabel "DVD video"@sv ;
 .
 <http://metatietosanasto.fi/151>
   rdf:type skos:Concept ;
-  rdfs:label "MPEG-4"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "MPEG-4"@fi ;
+  skos:prefLabel "MPEG-4"@sv ;
 .
 <http://metatietosanasto.fi/152>
   rdf:type skos:Concept ;
-  rdfs:label "Windows Media"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "Windows Media"@fi ;
+  skos:prefLabel "Windows Media"@sv ;
 .
 <http://metatietosanasto.fi/153>
   rdf:type skos:Concept ;
-  rdfs:label "TIFF"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1004> ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "TIFF"@fi ;
+  skos:prefLabel "TIFF"@sv ;
 .
 <http://metatietosanasto.fi/154>
   rdf:type skos:Concept ;
-  rdfs:label "GIF"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "GIF"@fi ;
+  skos:prefLabel "GIF"@sv ;
 .
 <http://metatietosanasto.fi/155>
   rdf:type skos:Concept ;
-  rdfs:label "JPEG"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "JPEG"@fi ;
+  skos:prefLabel "JPEG"@sv ;
 .
 <http://metatietosanasto.fi/156>
   rdf:type skos:Concept ;
-  rdfs:label "JPEG2000"@fi ;
-  skos:broader <http://rdvocab.info/termList/fileType/1006> ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "JPEG2000"@fi ;
+  skos:prefLabel "JPEG2000"@sv ;
 .
 <http://metatietosanasto.fi/157>
   rdf:type skos:Concept ;
-  rdfs:label "näköispainos"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Julkaisu, jonka pääteksti on tarkasti jäljennetty aikaisemmasta painoksesta (engl. facsimile edition)"@fi ;
+  skos:definition "Publikation vars huvudtext är en exakt kopia av en tidigare upplaga. (eng. facsimile edition )"@sv ;
+  skos:prefLabel "faksimilupplaga"@sv ;
   skos:prefLabel "näköispainos"@fi ;
-  skos:scopeNote "Julkaisu, jonka pääteksti on tarkasti jäljennetty aikaisemmasta painoksesta (engl. facsimile edition)"@fi ;
 .
 <http://metatietosanasto.fi/158>
   rdf:type skos:Concept ;
-  rdfs:label "painos"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Alla delar i en publikation som tryckts eller på annat sätt framställts på basis av
+samma originalverk och som har publicerats av samma förlag, institution eller
+person (Katalogiseringsregler). (eng. edition)"""@sv ;
+  skos:definition "Kaikki julkaisun peruskappaleesta painamalla tai muulla menetelmällä tuotetut kappaleet, jotka sama kustantaja, yhteisö tai henkilö on julkaissut. (Kuvailusäännöt) (engl. edition)"@fi ;
   skos:prefLabel "painos"@fi ;
-  skos:scopeNote "Kaikki julkaisun peruskappaleesta painamalla tai muulla menetelmällä tuotetut kappaleet, jotka sama kustantaja, yhteisö tai henkilö on julkaissut. (Kuvailusäännöt) (engl. edition)"@fi ;
+  skos:prefLabel "upplaga"@sv ;
 .
 <http://metatietosanasto.fi/159>
   rdf:type skos:Concept ;
-  rdfs:label "uudistettu painos"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Innehållet är granskat och förnyat. Upplagan är förnyad t.ex. på grund av uppdaterade statistikuppgifter eller en kartas förändrade landgränser. (eng. revised edition)"@sv ;
+  skos:definition "Sisältö on tarkistettu ja uudistettu. Esim. tilastotietoja päivitetty tai kartan maan rajat muuttuneet ja painos siltä osin uudistettu. (engl.:revised edition)"@fi ;
+  skos:prefLabel "reviderad upplaga"@sv ;
   skos:prefLabel "uudistettu painos"@fi ;
-  skos:scopeNote "Sisältö on tarkistettu ja uudistettu. Esim. tilastotietoja päivitetty tai kartan maan rajat muuttuneet ja painos siltä osin uudistettu. Onix-termi. (engl.:revised edition)"@fi ;
 .
 <http://metatietosanasto.fi/160>
   rdf:type skos:Concept ;
-  rdfs:label "uusi  painos"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Saman sisältöinen kuin aikaisempi painos. Pieniä muutoksia saatettu tehdä, esim. kirjoitusvirheitä korjattu. (engl.: new edition)"@fi ;
+  skos:definition "Upplaga med samma innehåll som en tidigare upplaga. Små förändringar kan ha gjorts, t.ex. rättade stavfel. (eng. new edition)"@sv ;
+  skos:prefLabel "ny upplaga"@sv ;
   skos:prefLabel "uusi  painos"@fi ;
-  skos:scopeNote "Saman sisältöinen kuin aikaisempi painos. Pieniä muutoksia saatettu tehdä, esim. kirjoitusvirheitä korjattu. Onix-termi. (engl.: new edition)"@fi ;
 .
 <http://metatietosanasto.fi/161>
   rdf:type skos:Concept ;
-  rdfs:label "kustantajan nimi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi ;
+  skos:definition "namnet på den person, släkt eller institution som är ansvarig för ett verks förläggning, publikation och utgivning. Förläggare avser även boktryckare och bokhandlare som givit ut gamla tryckta verk."@sv ;
+  skos:prefLabel "förläggarens namn"@sv ;
   skos:prefLabel "kustantajan nimi"@fi ;
-  skos:scopeNote "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi ;
 .
 <http://metatietosanasto.fi/162>
   rdf:type skos:Concept ;
-  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:definition "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi ;
-  skos:prefLabel "Jakajan  nimi"@fi ;
+  skos:definition "namnet på den person, släkt eller institution som är ansvarig för distributionen av ett publicerat material."@sv ;
+  skos:prefLabel "Distributörens namn"@sv ;
+  skos:prefLabel "Jakajan nimi"@fi ;
 .
 <http://metatietosanasto.fi/163>
   rdf:type skos:Concept ;
-  rdfs:label "Valmistajan  nimi"@fi ;
-  skos:prefLabel "Valmistajan  nimi"@fi ;
-  skos:scopeNote "julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi ;
+  skos:definition "namnet på den person, släkt eller institution som är ansvarig för ett verks tryckning, kopiering, framställning av typsnitt osv."@sv ;
+  skos:prefLabel "Tillverkarens namn"@sv ;
+  skos:prefLabel "Valmistajan nimi"@fi ;
 .
 <http://metatietosanasto.fi/164>
   rdf:type skos:Concept ;
-  rdfs:label "copyright-vuosi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "copyright-vuosi"@fi ;
+  skos:prefLabel "copyright-år"@sv ;
   skos:scopeNote "aika, joka liittyy copyright-säädösten tai vastaavien säädösten alaiseen copyright-suojaukseen. Copyright-vuosiin sisältyvät P-ajat (phonogram) (äänitteiden copyright-suojaukseen liittyvät ajat)."@fi ;
+  skos:scopeNote "tid med anknytning till copyright-skyddet som faller under copyright-stadgarna eller motsvarande stadgar. I copyright-åren ingår P-tider (phonogram) (tider kopplade till copyright-skydd för ljudinspelningar)"@sv ;
 .
 <http://metatietosanasto.fi/165>
   rdf:type skos:Concept ;
-  rdfs:label "sid."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "inb."@sv ;
   skos:prefLabel "sid."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys kovakantiselle kirjalle"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv ;
 .
 <http://metatietosanasto.fi/166>
   rdf:type skos:Concept ;
-  rdfs:label "nid."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "hft."@sv ;
   skos:prefLabel "nid."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys pehmeäkantiselle kirjalle"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator för en bok med mjuka pärmar"@sv ;
 .
 <http://metatietosanasto.fi/167>
   rdf:type skos:Concept ;
-  rdfs:label "rengaskirja"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "rengaskirja"@fi ;
+  skos:prefLabel "ringpärm"@sv ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
 <http://metatietosanasto.fi/171>
   rdf:type skos:Concept ;
-  rdfs:label "virh."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "fel."@sv ;
   skos:prefLabel "virh."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
 <http://metatietosanasto.fi/172>
   rdf:type skos:Concept ;
-  rdfs:label "korj."@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "korj."@fi ;
+  skos:prefLabel "korr."@sv ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
 <http://metatietosanasto.fi/173>
   rdf:type skos:Concept ;
-  rdfs:label "GTIN-koodista"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Från GTIN-koden"@sv ;
   skos:prefLabel "GTIN-koodista"@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
 mts:C10001
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   rdfs:label "Teos"@fi ;
+  rdfs:label "Verk"@sv ;
   rdfs:seeAlso rdac:C10001 ;
-  skos:scopeNote "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi ;
+  skos:definition "Ett självständigt intellektuellt eller konstnärligt innehåll."@sv ;
+  skos:definition "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi ;
 .
 mts:C10003
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  rdfs:label "Exemplar"@sv ;
   rdfs:label "Kappale"@fi ;
   rdfs:seeAlso rdac:C10003 ;
-  skos:scopeNote "Yksittäinen manifestaation toteutuma (esim. yksittäinen CD-äänilevy, kirja kirjaston kokoelmissa)."@fi ;
+  skos:definition "Ett enskilt förverkligande av en manifestation (t.ex. enskild CD-ljudksiva, en bok i ett biblioteks samlingar)"@sv ;
+  skos:definition "Yksittäinen manifestaation toteutuma (esim. yksittäinen CD-äänilevy, kirja kirjaston kokoelmissa)."@fi ;
 .
 mts:C10004
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   rdfs:label "Henkilö"@fi ;
+  rdfs:label "Person"@sv ;
   rdfs:seeAlso rdac:C10004 ;
 .
 mts:C10005
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  rdfs:label "Institution"@sv ;
   rdfs:label "Yhteisö"@fi ;
   rdfs:seeAlso rdac:C10005 ;
 .
 mts:C10006
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   rdfs:label "Ekspressio"@fi ;
+  rdfs:label "Uttryck"@sv ;
   rdfs:seeAlso rdac:C10006 ;
-  skos:scopeNote "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi ;
+  skos:definition "Det intellektuella eller konstnärliga förverkligandet av ett verk i form av ljud, bild, rörelse, bokstäver, musiknotation osv."@sv ;
+  skos:definition "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi ;
 .
 mts:C10007
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
   rdfs:label "Manifestaatio"@fi ;
+  rdfs:label "Manifestation"@sv ;
   rdfs:seeAlso rdac:C10007 ;
+  skos:definition "Den fysiska gestaltningen av ett uttryck för ett verk."@sv ;
   skos:definition "Teoksen ekspression saama ilmiasu."@fi ;
 .
 mts:C10008
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  rdfs:comment "RDA-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   rdfs:label "Suku"@fi ;
   rdfs:seeAlso rdac:C10008 ;
 .
@@ -979,6 +1400,7 @@ mts:P30001
   rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
+  rdfs:label "bärartyp"@sv ;
   rdfs:label "tallennetyyppi"@fi ;
   rdfs:seeAlso rdam:P30001 ;
   skos:member <http://metatietosanasto.fi/099> ;
@@ -988,20 +1410,30 @@ mts:P30001
 mts:P30002
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "ISBD-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "ISBD-termi"@fi ;
   rdfs:label "mediatyyppi"@fi ;
-  rdfs:seeAlso rdam:P30002 ;
+  rdfs:label "medietyp"@sv ;
+  rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1003> ;
+  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1006> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/maarittelematon_valittava_laite> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita> ;
+  skos:member <http://metatietosanasto.fi//audio_isbd> ;
+  skos:member <http://metatietosanasto.fi//elektroninen_isbd> ;
+  skos:member <http://metatietosanasto.fi//heijastettava_isbd> ;
+  skos:member <http://metatietosanasto.fi//mikromuoto_isbd> ;
+  skos:member <http://metatietosanasto.fi//mikroskooppinen_isbd> ;
+  skos:member mts:T1007 ;
+  skos:member mts:ei_valittavaa_laitetta_isbd ;
   skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
 .
 mts:P30004
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "manifestaation tunniste"@fi ;
+  rdfs:label "manifestationens identifikator"@sv ;
   rdfs:seeAlso rdam:P30004 ;
   skos:member <http://metatietosanasto.fi/165> ;
   skos:member <http://metatietosanasto.fi/166> ;
@@ -1009,23 +1441,29 @@ mts:P30004
   skos:member <http://metatietosanasto.fi/171> ;
   skos:member <http://metatietosanasto.fi/172> ;
   skos:member <http://metatietosanasto.fi/173> ;
+  skos:member mts:irtolehtia ;
+  skos:member mts:kansio ;
+  skos:member mts:kotelo ;
   skos:scopeNote """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.
 Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.
 Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi ;
+  skos:scopeNote "Manifestationens identifikator är en teckensträng med anknytning till manifestationen och som skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv el.dyl. och som följer scheman ämnade för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer. Till identifikatorerna hör individualiserande tillägg."@sv ;
 .
 mts:P30007
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "copyright-vuosi"@fi ;
+  rdfs:label "copyright-år"@sv ;
   rdfs:seeAlso rdam:P30007 ;
 .
 mts:P30018
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "filtyp"@sv ;
   rdfs:label "tiedostomuoto"@fi ;
   rdfs:seeAlso rdam:P30018 ;
   skos:member <http://metatietosanasto.fi/136> ;
@@ -1057,8 +1495,8 @@ mts:P30018
 mts:P30063
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "huomautus nimekkeestä"@fi ;
   rdfs:seeAlso rdam:P30063 ;
   skos:member <http://metatietosanasto.fi/040> ;
@@ -1095,6 +1533,7 @@ mts:P30080
   rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
+  rdfs:label "distributör"@sv ;
   rdfs:label "jakaja"@fi ;
   rdfs:seeAlso rdam:P30080 ;
   skos:member <http://metatietosanasto.fi/162> ;
@@ -1102,24 +1541,29 @@ mts:P30080
 mts:P30082
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "tillverkare"@sv ;
   rdfs:label "valmistaja"@fi ;
   rdfs:seeAlso rdam:P30082 ;
+  skos:member <http://metatietosanasto.fi/163> ;
 .
 mts:P30083
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "förläggare"@sv ;
   rdfs:label "kustantaja"@fi ;
   rdfs:seeAlso rdam:P30083 ;
+  skos:member <http://metatietosanasto.fi/161> ;
 .
 mts:P30096
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "kodningsformat"@sv ;
   rdfs:label "koodaamismuoto"@fi ;
   rdfs:seeAlso rdam:P30096 ;
 .
@@ -1129,6 +1573,7 @@ mts:P30107
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
   rdfs:label "painostiedot"@fi ;
+  rdfs:label "upplageuppgifter"@sv ;
   rdfs:seeAlso rdam:P30107 ;
   skos:member <http://metatietosanasto.fi/157> ;
   skos:member <http://metatietosanasto.fi/158> ;
@@ -1139,16 +1584,25 @@ mts:P30107
 mts:P30134
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "nimekkeet"@fi ;
+  rdfs:label "titel"@sv ;
   rdfs:seeAlso rdam:P30134 ;
+.
+mts:P30134_1
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:label "teoksen nimeke"@fi ;
+  rdfs:seeAlso rdaw:P10088 ;
 .
 mts:P30145
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "aineiston saatavuuden rajoitukset"@fi ;
   rdfs:seeAlso rdam:P30145 ;
   skos:member <http://metatietosanasto.fi/001> ;
@@ -1158,13 +1612,12 @@ mts:P30145
   skos:member <http://metatietosanasto.fi/005> ;
   skos:member <http://metatietosanasto.fi/006> ;
   skos:member <http://metatietosanasto.fi/007> ;
-  skos:member <http://metatietosanasto.fi/010> ;
 .
 mts:P30146
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "aineiston käyttöehdot"@fi ;
   rdfs:seeAlso rdam:P30146 ;
   skos:member <http://metatietosanasto.fi/011> ;
@@ -1173,9 +1626,10 @@ mts:P30146
 mts:P30162
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "laitteisto- tai järjestelmävaatimukset"@fi ;
+  rdfs:label "maskinvaru- eller systemkrav"@sv ;
   rdfs:seeAlso rdam:P30162 ;
   skos:member <http://metatietosanasto.fi/012> ;
   skos:member <http://metatietosanasto.fi/013> ;
@@ -1194,9 +1648,10 @@ mts:P30162
 mts:P30199
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "kirjasinkoko"@fi ;
+  rdfs:label "teckengrad"@sv ;
   rdfs:seeAlso rdam:P30199 ;
   skos:member <http://rdvocab.info/termList/fontSize/1001> ;
   skos:member <http://rdvocab.info/termList/fontSize/1002> ;
@@ -1204,8 +1659,8 @@ mts:P30199
 mts:P30214
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Huomautus tallenteesta"@fi ;
   rdfs:seeAlso rdam:P30214 ;
   skos:member <http://metatietosanasto.fi/068> ;
@@ -1242,17 +1697,29 @@ mts:P30214
 .
 mts:T1007
   rdf:type skos:Concept ;
-  rdfs:comment "ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Mediet innehåller rörlig bild eller stillbilder, som betraktas med hjälp av en bildåtergivande apparat, såsom en videobandspelare eller DVD-spelare. Termen anknyter till medier som innehåller både digitalt kodad och analog bild."@sv ;
+  skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1007> ;
   skos:prefLabel "video"@fi ;
-  skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
+  skos:prefLabel "video"@sv ;
 .
 mts:aanilevy
   rdf:type skos:Concept ;
-  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1004> ;
   skos:prefLabel "ljudskiva"@sv ;
   skos:prefLabel "äänilevy"@fi ;
+.
+mts:aiempi_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "aiempi päänimeke"@fi ;
+  rdfs:label "tidigare huvudtitel"@sv ;
+  rdfs:seeAlso rdam:P30130 ;
 .
 mts:aineiston_kasittely
   rdf:type isothes:ConceptGroup ;
@@ -1263,24 +1730,104 @@ mts:aineiston_kasittely
 mts:alanimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "alanimeke"@fi ;
+  rdfs:label "undertitel"@sv ;
+  rdfs:seeAlso rdam:P30142 ;
+.
+mts:alasarjan_muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "alasarjan muu nimeketieto"@fi ;
+  rdfs:label "underseriens övriga titelinformation"@sv ;
+  rdfs:seeAlso rdam:P30144 ;
+.
+mts:alasarjan_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "alasarjan päänimeke"@fi ;
+  rdfs:label "underseriens huvudtitel"@sv ;
+  rdfs:seeAlso rdam:P30158 ;
+.
+mts:alasarjan_rinnakkainen_muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "alasarjan rinnakkainen muu nimeketieto"@fi ;
+  rdfs:label "underseriens parallella övriga titelinformation"@sv ;
+  rdfs:seeAlso rdam:P30153 ;
+.
+mts:alayhteiso
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:yhteison_suhteet ;
+  rdfs:label "alayhteisö"@fi ;
+  rdfs:seeAlso rdaa:P50010 ;
+  skos:scopeNote "Esim. yhteisö: Tuokko yhtiöt ; alayhteisö: Tuokko tilintarkastus"@fi ;
+.
+mts:alkuperaisidean_luoja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:teoksen_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "alkuperäisidean luoja"@fi ;
+  skos:definition "teoksen hahmot yms. perustuvat henkilön tai yhteisön aikaisempaan luontiin."@fi ;
+.
+mts:aluelehdet
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "aluelehdet"@fi ;
+  skos:prefLabel "regiontidningar"@sv ;
+  skos:scopeNote "Jatkuvien julkaisujen genre-termi"@fi ;
+.
+mts:animaattori
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "animaattori"@fi ;
+  rdfs:seeAlso rdae:P20028 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu elokuvan tai tietokoneohjelman ekspression tekemiseen animoimalla esineitä tai piirroksia. Animoitavien piirrosten tekijästä katso taiteilija"@fi ;
 .
 mts:arvonimi
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10004 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "arvonimi"@fi ;
   rdfs:seeAlso rdaa:P50110 ;
+.
+mts:audio_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Viestin sisältää tallennettua ääntä, ja se on suunniteltu käytettäväksi soittolaitteella kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella. Käsittää sekä digitaalisesti koodattua että analogisesti tallennettua ääntä sisältävät viestimet."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1001> ;
+  skos:prefLabel "audio"@fi ;
 .
 mts:avainnimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "avainnimeke"@fi ;
+  rdfs:label "nyckeltitel"@sv ;
+  rdfs:seeAlso rdam:P30209 ;
+.
+mts:digitoituna
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:jaljenteena ;
+  rdfs:label "digitoituna"@fi ;
+  rdfs:seeAlso rdam:P30016 ;
 .
 mts:edeltaja-seuraaja-suhteet
   rdf:type isothes:ConceptGroup ;
@@ -1295,6 +1842,13 @@ mts:edeltaja-seuraaja-suhteet_e
   isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Edeltäjä-seuraaja-suhteet"@fi ;
+.
+mts:ei_valittavaa_laitetta_isbd
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1010> ;
+  skos:prefLabel "ei välittävää laitetta"@fi ;
+  skos:scopeNote "Aineiston käyttöön ei tarvita välinettä."@fi ;
 .
 mts:ekpspression_ja_sen_kuvauksen_suhde
   rdf:type isothes:ConceptGroup ;
@@ -1325,39 +1879,59 @@ mts:ekspression_suhteet
   rdfs:label "Ekspression suhteet"@fi ;
   skos:scopeNote "Ekspression suhde tarkoittaa ekspression ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:elokuva_perustuu_teokseen
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teoksen_perustana ;
+  rdfs:label "elokuva perustuu teokseen"@fi ;
+.
+mts:elokuvaversion_perustana_teos
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:teoksen_perustana ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "elokuvaversion perustana (teos)"@fi ;
+  rdfs:seeAlso rdaw:P10129 ;
+.
 mts:epaitsenainen_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "epäitsenäinen nimeke"@fi ;
+  rdfs:label "osjälvständig titel"@sv ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:erottuva_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "erottuva nimeke"@fi ;
+  rdfs:seeAlso rdaw:P10086 ;
 .
 mts:genre
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:genre_muoto ;
   rdfs:label "Genre"@fi ;
+  rdfs:label "Genre"@sv ;
+  skos:member mts:aluelehdet ;
 .
 mts:genre_muoto
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10001 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "teoksen muoto"@fi ;
   rdfs:seeAlso rdaw:P10004 ;
 .
 mts:hankintalahde
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10003 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "hankintalähde"@fi ;
   rdfs:seeAlso rdai:P40050 ;
 .
@@ -1370,8 +1944,17 @@ mts:henkilon_suhteet
 .
 mts:irtolehtia
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "irtolehtiä"@fi ;
+  skos:prefLabel "lösblad"@sv ;
+.
+mts:jaljenteena
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:vastaava_manifestaatio ;
+  rdfs:label "jäljenteenä"@fi ;
+  rdfs:seeAlso rdam:P30039 ;
 .
 mts:johdannaissuhteet
   rdf:type isothes:ConceptGroup ;
@@ -1390,34 +1973,46 @@ mts:johdannaissuhteet_e
 mts:julkaistu_eripainoksena
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:manifestaation_osa-kokonaisuussuhde ;
-  rdfs:comment "RDA-termi ; RDA-termi"@fi ;
   rdfs:label "Julkaistu myös eripainoksena"@fi ;
+.
+mts:julkaistu_myos
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:vastaava_manifestaatio ;
+  rdfs:label "julkaistu myös"@fi ;
 .
 mts:juokseva_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "juokseva nimeke"@fi ;
+  rdfs:label "kolumntitel"@sv ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:kansinimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "kansinimeke"@fi ;
+  rdfs:label "pärmtitel"@sv ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:kansio
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "kansio"@fi ;
+  skos:prefLabel "mapp"@sv ;
 .
 mts:kappaleen_erityispiirteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10003 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "kappaleeseen sisältyvät erityispiirteet"@fi ;
   rdfs:seeAlso rdai:P40003 ;
 .
@@ -1452,50 +2047,56 @@ mts:kappaleiden_valiset_suhteet
 .
 mts:karttalehti
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kartblad"@sv ;
   skos:prefLabel "karttalehti"@fi ;
 .
 mts:kayttoehdot_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10003 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "aineiston käyttöehdot"@fi ;
   rdfs:seeAlso rdai:P40048 ;
 .
 mts:kielihuomautus
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "huomautus kielestä"@fi ;
 .
 mts:kohderyhma
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10001 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "kohderyhmä"@fi ;
+  rdfs:label "målgrupp"@sv ;
   rdfs:seeAlso rdaw:P10217 ;
 .
 mts:kotelo
   rdf:type skos:Concept ;
-  rdfs:comment "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "fodral"@sv ;
   skos:prefLabel "kotelo"@fi ;
 .
 mts:kuvitus
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "illustration"@sv ;
   rdfs:label "kuvitus"@fi ;
   rdfs:seeAlso rdae:P20207 ;
 .
 mts:laajuuden_yksikko
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Laajuuden yksikkö"@fi ;
   rdfs:seeAlso rdam:P30182 ;
   skos:member <http://metatietosanasto.fi/069> ;
@@ -1531,15 +2132,12 @@ mts:laajuuden_yksikko
   skos:member <http://metatietosanasto.fi/101> ;
   skos:member <http://metatietosanasto.fi/103> ;
   skos:member <http://metatietosanasto.fi/104> ;
-  skos:member mts:T1007 ;
-  skos:member mts:irtolehtia ;
-  skos:member mts:kansio ;
   skos:member mts:karttalehti ;
-  skos:member mts:kotelo ;
 .
 mts:lajityyppi
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:genre_muoto ;
   rdfs:label "Lajityyppi"@fi ;
 .
@@ -1579,18 +2177,38 @@ mts:manifestaation_suhteet
   rdfs:label "Manifestaation suhteet"@fi ;
   skos:scopeNote "Manifestaation suhde tarkoittaa manifestaation ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:mediatyyppi_rda
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "mediatyyppi"@fi ;
+  rdfs:label "medietyp"@sv ;
+  rdfs:seeAlso rdam:P30002 ;
+  skos:definition "Jaottelu, joka ilmaisee aineiston sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitteen tyyppiä."@fi ;
+  skos:member mts:audio_rda ;
+.
+mts:muu_julkaisumuoto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:vastaava_manifestaatio ;
+  rdfs:label "muu julkaisumuoto"@fi ;
+  rdfs:seeAlso rdam:P30026 ;
+.
 mts:muu_opinnayte
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10001 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "annat lärdomsprov"@sv ;
   rdfs:label "muu opinnäyte"@fi ;
 .
 mts:omistushistoria
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10003 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "omistushistoria"@fi ;
   rdfs:seeAlso rdai:P40026 ;
 .
@@ -1618,52 +2236,78 @@ mts:osa-kokonaisuussuhde_k
 mts:osan_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
-  rdfs:label "osan_nimeke"@fi ;
+  rdfs:label "delens titel"@sv ;
+  rdfs:label "osan nimeke"@fi ;
 .
 mts:otsikkonimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "otsikkonimeke"@fi ;
+  rdfs:label "rubriktitel"@sv ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:palkinnot
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "palkinnot"@fi ;
+  rdfs:label "utmärkelser"@sv ;
   rdfs:seeAlso rdae:P20005 ;
+.
+mts:perustaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:henkilon_suhteet ;
+  rdfs:label "perustaja"@fi ;
+  rdfs:seeAlso rdaa:P50029 ;
+  skos:scopeNote "Viitataan yhteisön perustajaan (henkilö/t). Esim. yhteisö: Aldred Kordelinin yleinen edistys- ja sivistysrahasto ; perustaja: Kordelin, Alfred"@fi ;
+.
+mts:perustuu_teokseen
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdannaissuhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "perustuu teokseen"@fi ;
+  rdfs:seeAlso rdaw:P10190 ;
 .
 mts:saatavuudenrajoitukset_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10003 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "aineiston saatavuuden rajoitukset"@fi ;
   rdfs:seeAlso rdai:P40047 ;
 .
 mts:selkanimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "ryggtitel"@sv ;
   rdfs:label "selkänimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:sepitetty_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "konstruerad titel"@sv ;
   rdfs:label "sepitetty nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:sisaltotyyppi
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "innehållstyp"@sv ;
   rdfs:label "sisältötyyppi"@fi ;
   rdfs:seeAlso rdae:P20001 ;
 .
@@ -1703,6 +2347,14 @@ mts:teoksen_ja_toimijoiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Teoksen ja toimijoiden väliset suhteet"@fi ;
 .
+mts:teoksen_perustana
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdannaissuhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "teoksen perustana"@fi ;
+  rdfs:seeAlso rdaw:P10148 ;
+.
 mts:teoksen_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1733,59 +2385,70 @@ mts:toimijoiden_valiset_suhteet
 .
 mts:uusintapainos
   rdf:type skos:Concept ;
-  dc:source "RDA-termi ; ISBD-termi"@fi ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
   skos:prefLabel "nytryck"@sv ;
   skos:prefLabel "uusintapainos"@fi ;
 .
 mts:vaihtoehtoinen_nimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
-  rdfs:label "vaihtoehtoinen_nimeke"@fi ;
+  rdfs:label "alternativ titel"@sv ;
+  rdfs:label "vaihtoehtoinen nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:vaitoskirjat
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10001 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "väitöskirja tai akateeminen muu opinnäyte"@fi ;
   rdfs:seeAlso rdaw:P10209 ;
 .
 mts:vastaava_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:kappaleiden_valiset_suhteet ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Vastaava kappale"@fi ;
 .
 mts:vastaava_manifestaatio
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Vastaava manifestaatio"@fi ;
+.
+mts:video_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "video"@fi ;
+  skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
 .
 mts:yhdessa_ilmestyneet_manifestaatiot
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:manifestaatioiden_valiset_suhteet ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Yhdessä ilmestyneet manifestaatiot"@fi ;
 .
 mts:yhdessa_sailytettavat_kappaleet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:kappaleiden_valiset_suhteet ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Yhdessä säilytettävät kappaleet"@fi ;
 .
 mts:yhteisnimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "samlingstitel"@sv ;
   rdfs:label "yhteisnimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:yhteison_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -1797,17 +2460,19 @@ mts:yhteison_suhteet
 mts:yhteison_tyyppi
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10005 ;
-  rdfs:comment "RDA-termi"@fi ;
   rdfs:label "yhteisöntyyppi"@fi ;
   rdfs:seeAlso rdaa:P50237 ;
 .
 mts:ylanimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:P30134 ;
-  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "titelrubrik"@sv ;
   rdfs:label "ylänimeke"@fi ;
+  rdfs:seeAlso rdam:P30142 ;
 .
 rdau:P60050
   :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> ;
