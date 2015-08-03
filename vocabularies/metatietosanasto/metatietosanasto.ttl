@@ -79,15 +79,6 @@ Videolaitteella käytettävät aineistot."""@fi ;
   skos:prefLabel "ei välittävää laitetta"@fi ;
   skos:scopeNote "Aineiston käyttöön ei tarvita välinettä."@fi ;
 .
-<http://iflastandards.info/ns/isbd/terms/mediatype/maarittelematon_valittava_laite>
-  rdf:type skos:Concept ;
-  dc:source "ISBD-termi"@fi ;
-  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1009> ;
-  skos:prefLabel "määrittelemätön välittävä laite"@fi ;
-  skos:prefLabel "ospecificerad medietyp"@sv ;
-  skos:scopeNote "Ifall ingen av medietyperna är lämplig, anges termen \"ospecificerad medietyp\"."@sv ;
-  skos:scopeNote "Jos mikään mediatyypeistä ei sovellu, tehdään merkintö ”määrittelemätön välittävä laite”."@fi ;
-.
 <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -124,10 +115,19 @@ Tietokoneella käytettävät aineistot. Tietokoneella käytettävät tiedostot."
   dc:source "ISBD-termi"@fi ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1005> ;
   skos:prefLabel "heijastettava"@fi ;
-  skos:prefLabel "projicerbar"@sv ;
+  skos:prefLabel "projicerad"@sv ;
   skos:scopeNote "Termen projicerbar anknyter till både två- och tredimensionella bilder. Material som används med hjälp av projektor. Rörlig bild eller stillbilder, som man ser på med hjälp av filmprojektor, diaprojektor eller overheadprojektor."@sv ;
   skos:scopeNote """Termi heijastettava liittyy sekä kaksiulotteisiin että kolmiulotteisiin kuviin.
 Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita katsotaan filmiprojektorin, diaprojektorin tai piirtoheittimen avulla."""@fi ;
+.
+<http://metatietosanasto.fi//maarittelematon_valittava_laite_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1009> ;
+  skos:prefLabel "määrittelemätön välittävä laite"@fi ;
+  skos:prefLabel "ospecificerad medietyp"@sv ;
+  skos:scopeNote "Ifall ingen av medietyperna är lämplig, anges termen \"ospecificerad medietyp\"."@sv ;
+  skos:scopeNote "Jos mikään mediatyypeistä ei sovellu, tehdään merkintö ”määrittelemätön välittävä laite”."@fi ;
 .
 <http://metatietosanasto.fi//mikromuoto_isbd>
   rdf:type skos:Concept ;
@@ -148,6 +148,16 @@ Mikrolukulaitteella käytettävät aineistot."""@fi ;
   skos:scopeNote """Hyvin pienet kohteet, joiden yksityiskohtia voi tarkastella mikroskooppilaitteella, ei paljaalla silmällä.
 Mikroskooppilaitteella käytettävät aineistot."""@fi ;
   skos:scopeNote "Mycket små objekt vars detaljer observeras med hjälp av ett mikroskop och inte med blotta ögat. Resurser som används med mikroskop."@sv ;
+.
+<http://metatietosanasto.fi//stereografinen_isbd>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1006> ;
+  skos:prefLabel "stereografinen"@fi ;
+  skos:prefLabel "stereografisk"@sv ;
+  skos:scopeNote "Ett stillbildspar som betraktas i tredimensionell form genom en stereoskopisk eller stereografisk apparat. Resurser som används med hjälp av en stereografisk apparat."@sv ;
+  skos:scopeNote """Stillkuvaparit, joita voi katsoa kolmiulotteisesti stereokooppisella tai stereografisella laitteella.
+Stereografisella laitteella käytettävät aineistot."""@fi ;
 .
 <http://metatietosanasto.fi/001>
   rdf:type skos:Concept ;
@@ -1415,14 +1425,14 @@ mts:P30002
   rdfs:label "mediatyyppi"@fi ;
   rdfs:label "medietyp"@sv ;
   rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1003> ;
-  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/T1006> ;
-  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/maarittelematon_valittava_laite> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita> ;
   skos:member <http://metatietosanasto.fi//audio_isbd> ;
   skos:member <http://metatietosanasto.fi//elektroninen_isbd> ;
   skos:member <http://metatietosanasto.fi//heijastettava_isbd> ;
+  skos:member <http://metatietosanasto.fi//maarittelematon_valittava_laite_isbd> ;
   skos:member <http://metatietosanasto.fi//mikromuoto_isbd> ;
   skos:member <http://metatietosanasto.fi//mikroskooppinen_isbd> ;
+  skos:member <http://metatietosanasto.fi//stereografinen_isbd> ;
   skos:member mts:T1007 ;
   skos:member mts:ei_valittavaa_laitetta_isbd ;
   skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
@@ -1808,9 +1818,11 @@ mts:arvonimi
 mts:audio_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller lagrat ljud och används med hjälp av en uppspelsningsapparat såsom skivspelare, kasettbandspelare, CD-spelare, MP3-spelare. Omfattar medier som innehåller både digitalt kodat och analogt lagrat ljud."@sv ;
   skos:definition "Viestin sisältää tallennettua ääntä, ja se on suunniteltu käytettäväksi soittolaitteella kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella. Käsittää sekä digitaalisesti koodattua että analogisesti tallennettua ääntä sisältävät viestimet."@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1001> ;
   skos:prefLabel "audio"@fi ;
+  skos:prefLabel "audio"@sv ;
 .
 mts:avainnimeke
   rdf:type isothes:ConceptGroup ;
@@ -1935,6 +1947,15 @@ mts:hankintalahde
   rdfs:label "hankintalähde"@fi ;
   rdfs:seeAlso rdai:P40050 ;
 .
+mts:heijastettava_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller rörliga bilder eller stillbilder och används med hjälp av projektor, såsom filmprojektor, diaprojektor eller overheadprojektor. Omfattar medier som används för att projicera både två- och tredimensionella bilder."@sv ;
+  skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on tarkoitettu käytettäväksi projektorilla kuten filmiprojektorilla, diaprojektorilla tai piirtoheittimellä. Käsittää viestimet, jotka on tarkoitettu heijastamaan sekä kaksiulotteisia että kolmiulotteisia kuvia."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1005> ;
+  skos:prefLabel "heijastettava"@fi ;
+  skos:prefLabel "projicerad"@sv ;
+.
 mts:henkilon_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2051,6 +2072,13 @@ mts:karttalehti
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "kartblad"@sv ;
   skos:prefLabel "karttalehti"@fi ;
+.
+mts:kaytettavissa_ilman_laitetta_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Viestimen sisältö havaitaan ihmisaistein ilman välittävää laitetta. Käsittää viestimet, jotka sisältävät visuaalista ja/tai pistekirjoitukseen perustuvaa sisältöä ja jotka on tuotettu menetelmillä kuten painamalla, kaivertamalla, kivipainolla jne., kohotyönä, kutomalla jne., tai käsin kirjoittamalla, piirtämällä, maalamalla jne. Käsittää myös kolmiulotteisia muotoja ilmaisevat viestimet, kuten veistokset, pienoismallit jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1007> ;
+  skos:prefLabel "käytettävissä ilman laitetta"@fi ;
 .
 mts:kayttoehdot_kappale
   rdf:type isothes:ConceptGroup ;
@@ -2187,6 +2215,29 @@ mts:mediatyyppi_rda
   rdfs:seeAlso rdam:P30002 ;
   skos:definition "Jaottelu, joka ilmaisee aineiston sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitteen tyyppiä."@fi ;
   skos:member mts:audio_rda ;
+  skos:member mts:heijastettava_rda ;
+  skos:member mts:kaytettavissa_ilman_laitetta_rda ;
+  skos:member mts:mikromuoto_rda ;
+  skos:member mts:mikroskooppinen_rda ;
+  skos:member mts:tietokonekayttoinen_rda ;
+.
+mts:mikromuoto_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller förminskade bilder som inte är läsbara utan redskap. Mikrofilmer eller mikrokort används med hjälp av läsapparat. Omfattar ett mikroformat medium som är både geomskinligt och ogenomskinligt"@sv ;
+  skos:definition "Viestin sisältää pienennettyjä kuvia jotka eivät ole luettavissa ilman apuvälinettä. Mikrofilmit tai mikrokortit ovat suunniteltu käytettäväksi lukulaitteen avulla. Käsittää sekä läpinäkyvän että läpinäkymättömän mikromuotoisen viestimen."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1002> ;
+  skos:prefLabel "mikroform"@sv ;
+  skos:prefLabel "mikromuoto"@fi ;
+.
+mts:mikroskooppinen_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller mycket små objekt och används med hjälp av en apparat såsom ett mikroskop, som visar detaljer som inte går att ses med blotta ögat."@sv ;
+  skos:definition "Viestin sisältää hyvin pieniä objekteja, ja se on suunniteltu käytettäväksi laitteella kuten mikroskoopilla, joka paljastaa yksityiskohtia joita ei voi nähdä paljaalla silmällä."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1004> ;
+  skos:prefLabel "mikroskooppinen"@fi ;
+  skos:prefLabel "mikroskopisk"@sv ;
 .
 mts:muu_julkaisumuoto
   rdf:type isothes:ConceptGroup ;
@@ -2368,6 +2419,15 @@ mts:teosten_valiset_suhteet
   isothes:superGroup mts:teoksen_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Teosten väliset suhteet"@fi ;
+.
+mts:tietokonekayttoinen_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller elektroniska filer och är avsett för datoranvändning. Omfattar både fjärranvändbara medier som används via dokumentservrar och direktanvändbara medier såsom datorband och -skivor."@sv ;
+  skos:definition "Viestin sisältää elektronisia tiedostoja ja on tarkoitettu käytettäväksi tietokoneella. Käsittää sekä tiedostopalvelimien kautta käytettävät etäkäyttöiset viestimet että suorakäyttöiset viestimet kuten tietokonenauhat ja -levyt."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1003> ;
+  skos:prefLabel "datoranvändbar"@sv ;
+  skos:prefLabel "tietokonekäyttöinen"@fi ;
 .
 mts:toimijoiden_suhteet
   rdf:type isothes:ConceptGroup ;
