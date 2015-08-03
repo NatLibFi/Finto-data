@@ -1833,6 +1833,15 @@ mts:avainnimeke
   rdfs:label "nyckeltitel"@sv ;
   rdfs:seeAlso rdam:P30209 ;
 .
+mts:digitaalinen_data
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Tietokoneen käsiteltäväksi tarkoitettu digitaalinen sisältö. Esimerkiksi numeerinen data, ympäristödata jne., jota käytetään keskiarvojen, korrelaatioiden jne. laskemiseen tai mallien tms. tuottamiseen, mutta jota tavallisesti ei esitetä sellaisenaan raakamateriaalina. 
+Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen muoto, kolmiulotteinen liikkuva kuva, kaksiulotteinen liikkuva kuva, esitetty musiikki, ääni, puhe, kartografinen data."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1007> ;
+  skos:prefLabel "dataset"@sv ;
+  skos:prefLabel "digitaalinen data"@fi ;
+.
 mts:digitoituna
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2066,6 +2075,56 @@ mts:kappaleiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Kappaleiden väliset suhteet"@fi ;
 .
+mts:kartografinen_data
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Digitaalisesti koodattuna datana esitetty kartografinen sisältö, joka on tarkoitettu tietokoneen käsiteltäväksi.
+Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen taktiili kuva, kartografinen taktiili kolmiulotteinen muoto tai kartografinen kolmiulotteinen muoto."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1001> ;
+  skos:prefLabel "kartografinen data"@fi ;
+  skos:prefLabel "kartografiskt dataset"@sv ;
+.
+mts:kartografinen_kolmiulotteinen_muoto
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Muotona tai muotoina esitetty kartografinen sisältö, joka on tarkoitettu katsottavaksi kolmiulotteisena.
+Esimerkiksi karttapallot, pienoismallit jne."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1006> ;
+  skos:prefLabel "kartografinen kolmiulotteinen muoto"@fi ;
+  skos:prefLabel "kartografisk tredimensionell form"@sv ;
+.
+mts:kartografinen_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Viivana, muotona, varjostuksena tms. esitetty kartografinen sisältö, joka on tarkoitettu katsottavaksi kaksiulotteisena stillkuvana tai -kuvina. Esimerkiksi kartat, näkymäkartat, kartastot, kaukokartoituskuvat jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1002> ;
+  skos:prefLabel "kartografinen kuva"@fi ;
+  skos:prefLabel "kartografisk bild"@sv ;
+.
+mts:kartografinen_liikkuva_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kaksiulotteisena liikkuvana kuvana esitetty kartografinen sisältö. Esimerkiksi liikkuvat satelliittikuvat maasta tai muista taivaankappaleista."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1003> ;
+  skos:prefLabel "kartografinen liikkuva kuva"@fi ;
+  skos:prefLabel "kartografisk rörlig bild"@sv ;
+.
+mts:kartografinen_taktiili_kolmiulotteinen_muoto_
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Muotona tai muotoina esitetty kartografinen sisältö, joka on tarkoitettu kosketeltavaksi kolmiulotteiseksi muodoksi."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1005> ;
+  skos:prefLabel "kartografinen taktiili kolmiulotteinen muoto"@fi ;
+  skos:prefLabel "kartografisk taktil tredimensionell form"@sv ;
+.
+mts:kartografinen_taktiili_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Viivoina, muotoina tms. esitetty kartografinen sisältö, joka on tarkoitettu kosketeltavaksi kaksiulotteisena stillkuvana tai -kuvina."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1004> ;
+  skos:prefLabel "kartografinen taktiili kuva"@fi ;
+  skos:prefLabel "kartografisk taktil bild"@sv ;
+.
 mts:karttalehti
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2169,6 +2228,23 @@ mts:lajityyppi
   isothes:superGroup mts:genre_muoto ;
   rdfs:label "Lajityyppi"@fi ;
 .
+mts:liikenotaatio
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Liikettä kuvailevan merkkijärjestelmän avulla esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat liikenotaatiot.
+Katso myös taktiili liikenotaatio."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1009> ;
+  skos:prefLabel "liikenotaatio"@fi ;
+  skos:prefLabel "rörelsenotation"@sv ;
+.
+mts:maarittelematon_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "määrittelemätön"@fi ;
+  skos:prefLabel "ospecificerad"@sv ;
+  skos:scopeNote "Då medietypen eller -typerna, som passar in på den beskrivna resursen, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv ;
+  skos:scopeNote "Jos mediatyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon, ei voida helposti todentaa merkitään määrittelemätön."@fi ;
+.
 mts:manifestaatioiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2217,9 +2293,13 @@ mts:mediatyyppi_rda
   skos:member mts:audio_rda ;
   skos:member mts:heijastettava_rda ;
   skos:member mts:kaytettavissa_ilman_laitetta_rda ;
+  skos:member mts:maarittelematon_rda ;
   skos:member mts:mikromuoto_rda ;
   skos:member mts:mikroskooppinen_rda ;
+  skos:member mts:muu_rda ;
+  skos:member mts:stereografinen_rda ;
   skos:member mts:tietokonekayttoinen_rda ;
+  skos:member mts:video_rda ;
 .
 mts:mikromuoto_rda
   rdf:type skos:Concept ;
@@ -2254,6 +2334,14 @@ mts:muu_opinnayte
   isothes:superGroup mts:C10001 ;
   rdfs:label "annat lärdomsprov"@sv ;
   rdfs:label "muu opinnäyte"@fi ;
+.
+mts:muu_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "annan"@sv ;
+  skos:prefLabel "muu"@fi ;
+  skos:scopeNote "Då ingen RDA-term i kapitel 3.1 passar in på den inspelning som beskrivs, anges termen annan."@sv ;
+  skos:scopeNote "Jos mikään RDA luvun 3.1 taulukossa luetelluista termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi ;
 .
 mts:omistushistoria
   rdf:type isothes:ConceptGroup ;
@@ -2361,6 +2449,24 @@ mts:sisaltotyyppi
   rdfs:label "innehållstyp"@sv ;
   rdfs:label "sisältötyyppi"@fi ;
   rdfs:seeAlso rdae:P20001 ;
+  skos:member mts:digitaalinen_data ;
+  skos:member mts:kartografinen_data ;
+  skos:member mts:kartografinen_kolmiulotteinen_muoto ;
+  skos:member mts:kartografinen_kuva ;
+  skos:member mts:kartografinen_liikkuva_kuva ;
+  skos:member mts:kartografinen_taktiili_kolmiulotteinen_muoto_ ;
+  skos:member mts:kartografinen_taktiili_kuva ;
+  skos:member mts:liikenotaatio ;
+  skos:member mts:tietokoneohjelma ;
+.
+mts:stereografinen_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller stillbildspar och används med hjälp av en stereoskopisk eller -grafisk apparat för att uppnå en tredimensionell effekt."@sv ;
+  skos:definition "Viestin sisältää stillkuvapareja ja on tarkoitettu käytettäväksi stereoskooppisella tai stereografisella laitteella kolmiulotteisen vaikutelman saamiseksi."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1006> ;
+  skos:prefLabel "stereografinen"@fi ;
+  skos:prefLabel "stereografisk"@sv ;
 .
 mts:suvun_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -2426,8 +2532,16 @@ mts:tietokonekayttoinen_rda
   skos:definition "Mediet innehåller elektroniska filer och är avsett för datoranvändning. Omfattar både fjärranvändbara medier som används via dokumentservrar och direktanvändbara medier såsom datorband och -skivor."@sv ;
   skos:definition "Viestin sisältää elektronisia tiedostoja ja on tarkoitettu käytettäväksi tietokoneella. Käsittää sekä tiedostopalvelimien kautta käytettävät etäkäyttöiset viestimet että suorakäyttöiset viestimet kuten tietokonenauhat ja -levyt."@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1003> ;
-  skos:prefLabel "datoranvändbar"@sv ;
+  skos:prefLabel "dator"@sv ;
   skos:prefLabel "tietokonekäyttöinen"@fi ;
+.
+mts:tietokoneohjelma
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Tietokoneen käsiteltäväksi ja suoritettavaksi tarkoitettu (digitaalisesti koodattu) ohjelma. Esimerkiksi käyttöjärjestelmät, sovellusohjelmat jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1008> ;
+  skos:prefLabel "datorprogram"@sv ;
+  skos:prefLabel "tietokoneohjelma"@fi ;
 .
 mts:toimijoiden_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -2484,8 +2598,11 @@ mts:vastaava_manifestaatio
 mts:video_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
+  skos:definition "Mediet innehåller rörliga bilder eller stillbilder och används med hjälp av en uppspelningsapparat, såsom videobandspelare eller DVD-spelare. Omfattar medier som innehåller både digitalt kodad och analog bild."@sv ;
+  skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1008> ;
   skos:prefLabel "video"@fi ;
-  skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi ;
+  skos:prefLabel "video"@sv ;
 .
 mts:yhdessa_ilmestyneet_manifestaatiot
   rdf:type isothes:ConceptGroup ;
