@@ -1437,6 +1437,26 @@ mts:P30002
   skos:member mts:ei_valittavaa_laitetta_isbd ;
   skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
 .
+mts:P30002_1
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "ISBD-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "mediatyyppi"@fi ;
+  rdfs:label "medietyp"@sv ;
+  rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1003> ;
+  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita> ;
+  skos:member <http://metatietosanasto.fi//audio_isbd> ;
+  skos:member <http://metatietosanasto.fi//elektroninen_isbd> ;
+  skos:member <http://metatietosanasto.fi//heijastettava_isbd> ;
+  skos:member <http://metatietosanasto.fi//maarittelematon_valittava_laite_isbd> ;
+  skos:member <http://metatietosanasto.fi//mikromuoto_isbd> ;
+  skos:member <http://metatietosanasto.fi//mikroskooppinen_isbd> ;
+  skos:member <http://metatietosanasto.fi//stereografinen_isbd> ;
+  skos:member mts:T1007 ;
+  skos:member mts:ei_valittavaa_laitetta_isbd ;
+  skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
+.
 mts:P30004
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -1833,6 +1853,14 @@ mts:avainnimeke
   rdfs:label "nyckeltitel"@sv ;
   rdfs:seeAlso rdam:P30209 ;
 .
+mts:data
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition """Digitaalisesti tallennettu ja tietokoneen prosessoitavaksi tarkoitettu data. Esimerkiksi numeerinen data, ympäristödata jne., data, jota käytetään keskiarvojen, korrelaatioiden jne. laskemiseen tai mallien yms. tuottamiseen. 
+Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäytteistä [ks. puhe], äänistä [ks. ääni], tietokoneella tuotetuista kuvista [ks. kuva] tai tekstistä [ks teksti]."""@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1001> ;
+  skos:prefLabel "data"@fi ;
+.
 mts:digitaalinen_data
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -1931,6 +1959,21 @@ mts:erottuva_nimeke
   rdfs:label "erottuva nimeke"@fi ;
   rdfs:seeAlso rdaw:P10086 ;
 .
+mts:esine
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Kolmiulotteinen aineisto, joko luonnollinen entiteetti tai artefakti. Esimerkkejä artefakteista ovat veistos, malli, peli, palapeli, kolikko, lelu, rakennus, välineistö, vaatetus, kulttuurikohde. Esimerkkejä luonnonkohteista ovat fossiilit, kivet, hyönteiset, biologinen näyte jne. Kartografisia esineitä ovat karttapallot, korkeuseromallit ja kolmiulotteiset poikkileikkauskuvat."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1005> ;
+  skos:prefLabel "esine"@fi ;
+.
+mts:esitetty_musiikki
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kuunneltavaksi tarkoitettu musiikki. Sisältää esim. musiikkiesitysten tallennukset, tietokoneella tuotetun musiikin jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1011> ;
+  skos:prefLabel "esitetty musiikki"@fi ;
+  skos:prefLabel "framförd musik"@sv ;
+.
 mts:genre
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2021,6 +2064,15 @@ mts:juokseva_nimeke
   rdfs:label "juokseva nimeke"@fi ;
   rdfs:label "kolumntitel"@sv ;
   rdfs:seeAlso rdam:P30128 ;
+.
+mts:kaksiulotteinen_liikkuva_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Kaksiulotteisena liikkuvana kuvana esitetty sisältö. Esimerkiksi kaksiulotteiset elokuvat (näytellyt tai piirretyt), esitysten ja tapahtumien jne. filmi- ja videotallenteet. Liikkuvaan kuvaan voi liittyä ääntä.
+Katso myös kartografinen liikkuva kuva."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1023> ;
+  skos:prefLabel "kaksiulotteinen liikkuva kuva"@fi ;
+  skos:prefLabel "tvådimensionell rörlig bild"@sv ;
 .
 mts:kansinimeke
   rdf:type isothes:ConceptGroup ;
@@ -2163,12 +2215,36 @@ mts:kohderyhma
   rdfs:label "målgrupp"@sv ;
   rdfs:seeAlso rdaw:P10217 ;
 .
+mts:kolmiulotteinen_liikkuva_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kolmiulotteisena liikkuvana kuvana esitetty sisältö. Esimerkiksi 3D-elokuvat (näytellyt, animaatiot, 3D-videopelit jne. Kolmiulotteiseen liikkuvaan kuvaan voi liittyä ääntä."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1022> ;
+  skos:prefLabel "kolmiulotteinen liikkuva kuva"@fi ;
+  skos:prefLabel "tredimensionell rörlig bild"@sv ;
+.
+mts:kolmiulotteinen_muoto
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Muotona tai muotoina esitetty sisältö, joka on tarkoitettu katsottavaksi kolmiulotteisena. Esimerkiksi veistokset, mallit, luonnonesineet, hologrammit jne. 
+Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1021> ;
+  skos:prefLabel "kolmiulotteinen muoto"@fi ;
+  skos:prefLabel "tredimensionell form"@sv ;
+.
 mts:kotelo
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "fodral"@sv ;
   skos:prefLabel "kotelo"@fi ;
+.
+mts:kuva
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Katsottavaksi tarkoitettu viiva, muoto, varjostus jne. Kuva voi olla stillkuva tai liikkuva kuva, kaksi- tai kolmiulotteinen. Esimerkiksi taidejäljenteet, kartat, valokuvat, kaukokartoituskuvat, stereokuvat, elokuvat ja litografiat."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1002> ;
+  skos:prefLabel "kuva"@fi ;
 .
 mts:kuvitus
   rdf:type isothes:ConceptGroup ;
@@ -2228,6 +2304,14 @@ mts:lajityyppi
   isothes:superGroup mts:genre_muoto ;
   rdfs:label "Lajityyppi"@fi ;
 .
+mts:liike
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition """Toiminta tai prosessi, joka muuttaa esineiden tai henkilöiden sijaintia. Esimerkiksi tanssinotaatio, näyttämölle pano tai koreografia. 
+Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva]."""@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1003> ;
+  skos:prefLabel "liike"@fi ;
+.
 mts:liikenotaatio
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2244,6 +2328,13 @@ mts:maarittelematon_rda
   skos:prefLabel "ospecificerad"@sv ;
   skos:scopeNote "Då medietypen eller -typerna, som passar in på den beskrivna resursen, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv ;
   skos:scopeNote "Jos mediatyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon, ei voida helposti todentaa merkitään määrittelemätön."@fi ;
+.
+mts:maarittelematon_sisaltotyyppi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1011> ;
+  skos:prefLabel "määrittelemätön sisältötyyppi"@fi ;
+  skos:scopeNote "Jos mikään edellä olevista sisältötyypeistä ei kuvaa julkaisua, tehdään merkintö ”määrittelemätön sisältötyyppi”."@fi ;
 .
 mts:manifestaatioiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -2319,6 +2410,13 @@ mts:mikroskooppinen_rda
   skos:prefLabel "mikroskooppinen"@fi ;
   skos:prefLabel "mikroskopisk"@sv ;
 .
+mts:musiikki
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Sisältö, joka on ilmaistu järjestetyin sävelin tai äänin, jotka peräkkäisinä, yhtäaikaisina ja ajallisesti suhteutettuina muodostavat sävellyksen. Musiikki voi olla kirjoitettuja (notaatio), esitettyjä tai analogisesti/digitaalisesti tallennettuja ääniä, jotka on laulettu, soitettu tai mekaanisesti tuotettu ja jotka ovat rytmisiä, melodisia tai harmonisia. Esimerkiksi kirjoitettu musiikki, kuten partituurit ja stemmat, ja äänitetty musiikki, kuten konsertti-, ooppera- ja studiotallenteet."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1004> ;
+  skos:prefLabel "musiikki"@fi ;
+.
 mts:muu_julkaisumuoto
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2342,6 +2440,15 @@ mts:muu_rda
   skos:prefLabel "muu"@fi ;
   skos:scopeNote "Då ingen RDA-term i kapitel 3.1 passar in på den inspelning som beskrivs, anges termen annan."@sv ;
   skos:scopeNote "Jos mikään RDA luvun 3.1 taulukossa luetelluista termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi ;
+.
+mts:nuottikirjoitus
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Musiikkinotaationa esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat musiikkinotaatiot.
+Katso myös kosketeltava musiikkinotaatio."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1010> ;
+  skos:prefLabel "musiknotation"@sv ;
+  skos:prefLabel "nuottikirjoitus"@fi ;
 .
 mts:omistushistoria
   rdf:type isothes:ConceptGroup ;
@@ -2415,6 +2522,21 @@ mts:perustuu_teokseen
   rdfs:label "perustuu teokseen"@fi ;
   rdfs:seeAlso rdaw:P10190 ;
 .
+mts:puhe
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kuunneltavaksi tarkoitettu kielellinen sisältö. Sisältää esim. puheäänitteet, runonlausunnat, puheet, haastattelut, suulliset tarinat, tietokoneella tuotetun puheen jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1013> ;
+  skos:prefLabel "puhe"@fi ;
+  skos:prefLabel "tal"@sv ;
+.
+mts:puhe_isbd
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Ihmisen puheääni. Esimerkiksi analogisessa tai digitaalisessa muodossa olevat äänikirjat, radion puheohjelmat, historialliset puheäänitteet ja kuunnelmat."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1008> ;
+  skos:prefLabel "puhe"@fi ;
+.
 mts:saatavuudenrajoitukset_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2450,14 +2572,46 @@ mts:sisaltotyyppi
   rdfs:label "sisältötyyppi"@fi ;
   rdfs:seeAlso rdae:P20001 ;
   skos:member mts:digitaalinen_data ;
+  skos:member mts:esitetty_musiikki ;
+  skos:member mts:kaksiulotteinen_liikkuva_kuva ;
   skos:member mts:kartografinen_data ;
   skos:member mts:kartografinen_kolmiulotteinen_muoto ;
   skos:member mts:kartografinen_kuva ;
   skos:member mts:kartografinen_liikkuva_kuva ;
   skos:member mts:kartografinen_taktiili_kolmiulotteinen_muoto_ ;
   skos:member mts:kartografinen_taktiili_kuva ;
+  skos:member mts:kolmiulotteinen_liikkuva_kuva ;
+  skos:member mts:kolmiulotteinen_muoto ;
   skos:member mts:liikenotaatio ;
+  skos:member mts:nuottikirjoitus ;
+  skos:member mts:puhe ;
+  skos:member mts:stillkuva ;
+  skos:member mts:taktiili_kolmiulotteinen_muoto ;
+  skos:member mts:taktiili_kuva ;
+  skos:member mts:taktiili_liikenotaatio ;
+  skos:member mts:taktiili_nuottikirjoitus ;
+  skos:member mts:taktiili_teksti ;
+  skos:member mts:teksti ;
   skos:member mts:tietokoneohjelma ;
+  skos:member mts:ääni ;
+.
+mts:sisaltotyyppi_isbd
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "ISBD-termi"@fi ;
+  isothes:superGroup mts:C10006 ;
+  rdfs:label "innehållstyp"@sv ;
+  rdfs:label "sisältötyyppi"@fi ;
+  rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1001> ;
+  skos:member mts:data ;
+  skos:member mts:esine ;
+  skos:member mts:kuva ;
+  skos:member mts:liike ;
+  skos:member mts:maarittelematon_sisaltotyyppi ;
+  skos:member mts:musiikki ;
+  skos:member mts:puhe_isbd ;
+  skos:member mts:teksti_isbd ;
+  skos:scopeNote "Sisältötyyppi kertoo julkaisun sisällön perusmuodon."@fi ;
 .
 mts:stereografinen_rda
   rdf:type skos:Concept ;
@@ -2468,12 +2622,61 @@ mts:stereografinen_rda
   skos:prefLabel "stereografinen"@fi ;
   skos:prefLabel "stereografisk"@sv ;
 .
+mts:stillkuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Viivoina, muotoina, varjostuksina jne. esitetty sisältö, joka on tarkoitettu katsottavaksi kaksiulotteisena stillkuvana tai -kuvina. Esimerkiksi piirrokset, maalaukset, diagrammit, valokuvat jne.
+Katso myös kartografinen kuva, taktiili kuva."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1014> ;
+  skos:prefLabel "stillbild"@sv ;
+  skos:prefLabel "stillkuva"@fi ;
+.
 mts:suvun_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   isothes:superGroup mts:toimijoiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Suvun suhteet"@fi ;
+.
+mts:taktiili_kolmiulotteinen_muoto
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Muotona tai muotoina esitetty sisältö, joka on tarkoitettu kosketeltavaksi kolmiulotteiseksi muodoksi."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1019> ;
+  skos:prefLabel "taktiili kolmiulotteinen muoto"@fi ;
+  skos:prefLabel "taktil tredimensionell form"@sv ;
+.
+mts:taktiili_kuva
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Viivoina, muotoina jne. esitetty sisältö, joka on tarkoitettu kosketeltavaksi kaksiulotteiseksi stillkuvaksi tai -kuviksi."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1015> ;
+  skos:prefLabel "taktiili kuva"@fi ;
+  skos:prefLabel "taktil bild"@sv ;
+.
+mts:taktiili_liikenotaatio
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Liikettä kuvailevan merkkijärjestelmän avulla esitetty sisältö, joka on tarkoitettu kosketeltavaksi."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1017> ;
+  skos:prefLabel "taktiili liikenotaatio"@fi ;
+  skos:prefLabel "taktil rörelsenotation"@sv ;
+.
+mts:taktiili_nuottikirjoitus
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Musiikkinotaationa esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistenuottikirjoitus ja muut taktiilit nuottikirjoitukset."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1016> ;
+  skos:prefLabel "taktiili nuottikirjoitus"@fi ;
+  skos:prefLabel "taktil musiknotation"@sv ;
+.
+mts:taktiili_teksti
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kielen merkkijärjestelmällä esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistekirjoitus ja muut taktiilit tekstinkirjoitusmuodot."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1018> ;
+  skos:prefLabel "taktiili teksti"@fi ;
+  skos:prefLabel "taktil text"@sv ;
 .
 mts:taydennysssuhteet
   rdf:type isothes:ConceptGroup ;
@@ -2488,6 +2691,22 @@ mts:taydennysssuhteet_e
   isothes:superGroup mts:ekspressioiden_valiset_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Täydennyssuhteet"@fi ;
+.
+mts:teksti
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition """Kielen merkkijärjestelmällä esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kielen merkkijärjestelmät, paitsi kosketeltavaksi tarkoitetun tekstin.
+Katso myös taktiili teksti."""@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1020> ;
+  skos:prefLabel "teksti"@fi ;
+  skos:prefLabel "text"@sv ;
+.
+mts:teksti_isbd
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Kirjoitetut sanat, symbolit ja numerot. Esimerkiksi painetut tai elektroniset kirjat, kirjeenvaihto, lehtitietokannat ja mikrofilmatut sanomalehdet."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1009> ;
+  skos:prefLabel "teksti"@fi ;
 .
 mts:teoksen_ja_sen_kuvauksen_suhde
   rdf:type isothes:ConceptGroup ;
@@ -2650,6 +2869,14 @@ mts:ylanimeke
   rdfs:label "titelrubrik"@sv ;
   rdfs:label "ylänimeke"@fi ;
   rdfs:seeAlso rdam:P30142 ;
+.
+mts:ääni
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kuunneltavaksi tarkoitettu muu äänisisältö kuin puhe tai musiikki. Sisältää esim. luonnonäänet, keinotekoisesti tuotetut äänet jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1012> ;
+  skos:prefLabel "ljud"@sv ;
+  skos:prefLabel "ääni"@fi ;
 .
 rdau:P60050
   :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> ;
