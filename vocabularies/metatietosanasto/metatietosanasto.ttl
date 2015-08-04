@@ -1415,29 +1415,16 @@ mts:P30001
   rdfs:seeAlso rdam:P30001 ;
   skos:member <http://metatietosanasto.fi/099> ;
   skos:member <http://metatietosanasto.fi/102> ;
+  skos:member mts:aanikasetti ;
+  skos:member mts:aanikela ;
   skos:member mts:aanilevy ;
+  skos:member mts:aanilierio ;
+  skos:member mts:aaniraitakela ;
+  skos:member mts:aanisilmukkakasetti ;
+  skos:member mts:muistikortti ;
+  skos:member mts:pianorulla ;
 .
 mts:P30002
-  rdf:type isothes:ConceptGroup ;
-  rdf:type skos:Collection ;
-  dc:source "ISBD-termi"@fi ;
-  isothes:superGroup mts:C10007 ;
-  rdfs:label "mediatyyppi"@fi ;
-  rdfs:label "medietyp"@sv ;
-  rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1003> ;
-  skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita> ;
-  skos:member <http://metatietosanasto.fi//audio_isbd> ;
-  skos:member <http://metatietosanasto.fi//elektroninen_isbd> ;
-  skos:member <http://metatietosanasto.fi//heijastettava_isbd> ;
-  skos:member <http://metatietosanasto.fi//maarittelematon_valittava_laite_isbd> ;
-  skos:member <http://metatietosanasto.fi//mikromuoto_isbd> ;
-  skos:member <http://metatietosanasto.fi//mikroskooppinen_isbd> ;
-  skos:member <http://metatietosanasto.fi//stereografinen_isbd> ;
-  skos:member mts:T1007 ;
-  skos:member mts:ei_valittavaa_laitetta_isbd ;
-  skos:scopeNote "Mediatyyppi kertoo, minkä tallennetyypin/tallennetyyppien kautta aineiston sisältö on välitettävissä. Mediatyyppikategoriat heijastavat sekä tallenteen tallennusvälinettä että sisällön esittämiseen, katselemiseen, suorittamiseen jne. tarvittavan laitteen tyyppiä."@fi ;
-.
-mts:P30002_1
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
   dc:source "ISBD-termi"@fi ;
@@ -1557,6 +1544,19 @@ mts:P30063
   skos:member <http://metatietosanasto.fi/065> ;
   skos:member <http://metatietosanasto.fi/066> ;
   skos:member <http://metatietosanasto.fi/067> ;
+  skos:member mts:nimeke_irtopaallyksessa ;
+  skos:member mts:nimeke_julkaisijan_kotisivulta ;
+  skos:member mts:nimeke_julkaisuarkistosta ;
+  skos:member mts:nimeke_julkaisuluettelosta ;
+  skos:member mts:nimeke_kannessa_ja_selassa ;
+  skos:member mts:nimeke_karttalehdillä ;
+  skos:member mts:nimeke_linkista ;
+  skos:member mts:nimeke_lisatylla_nimiosivulla ;
+  skos:member mts:nimeke_marginaalissa ;
+  skos:member mts:nimeke_ohjekirjassa ;
+  skos:member mts:nimeke_otsikkopalkissa ;
+  skos:member mts:nimeke_toisella_nimionaytolla ;
+  skos:member mts:paanimeke_translitteroituna ;
 .
 mts:P30080
   rdf:type isothes:ConceptGroup ;
@@ -1684,8 +1684,8 @@ mts:P30199
   rdfs:label "kirjasinkoko"@fi ;
   rdfs:label "teckengrad"@sv ;
   rdfs:seeAlso rdam:P30199 ;
-  skos:member <http://rdvocab.info/termList/fontSize/1001> ;
-  skos:member <http://rdvocab.info/termList/fontSize/1002> ;
+  skos:member mts:erittain_suuri_teksti ;
+  skos:member mts:isotekstinen ;
 .
 mts:P30214
   rdf:type isothes:ConceptGroup ;
@@ -1751,6 +1751,22 @@ mts:aani_rda
   skos:prefLabel "ljud"@sv ;
   skos:prefLabel "ääni"@fi ;
 .
+mts:aanikasetti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1007> ;
+  skos:prefLabel "ljudkassett"@sv ;
+  skos:prefLabel "äänikasetti"@fi ;
+.
+mts:aanikela
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1008> ;
+  skos:prefLabel "ljudspole"@sv ;
+  skos:prefLabel "äänikela"@fi ;
+.
 mts:aanilevy
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -1758,6 +1774,30 @@ mts:aanilevy
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1004> ;
   skos:prefLabel "ljudskiva"@sv ;
   skos:prefLabel "äänilevy"@fi ;
+.
+mts:aanilierio
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1003> ;
+  skos:prefLabel "ljudcylinder"@sv ;
+  skos:prefLabel "äänilieriö"@fi ;
+.
+mts:aaniraitakela
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1005> ;
+  skos:prefLabel "filmljudspole"@sv ;
+  skos:prefLabel "ääniraitakela"@fi ;
+.
+mts:aanisilmukkakasetti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1002> ;
+  skos:prefLabel "ljudmagasin"@sv ;
+  skos:prefLabel "äänisilmukkakasetti"@fi ;
 .
 mts:aiempi_paanimeke
   rdf:type isothes:ConceptGroup ;
@@ -1931,7 +1971,9 @@ mts:ei_valittavaa_laitetta_isbd
   dc:source "ISBD-termi"@fi ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/mediatype/T1010> ;
   skos:prefLabel "ei välittävää laitetta"@fi ;
+  skos:prefLabel "ingen medietyp"@sv ;
   skos:scopeNote "Aineiston käyttöön ei tarvita välinettä."@fi ;
+  skos:scopeNote "Inget redskap behövs för användning av resursen."@sv ;
 .
 mts:ekpspression_ja_sen_kuvauksen_suhde
   rdf:type isothes:ConceptGroup ;
@@ -1984,6 +2026,15 @@ mts:epaitsenainen_nimeke
   rdfs:label "epäitsenäinen nimeke"@fi ;
   rdfs:label "osjälvständig titel"@sv ;
   rdfs:seeAlso rdam:P30128 ;
+.
+mts:erittain_suuri_teksti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Näkövammaisille tarkoitettu kirjasinkoko"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/fontSize/1001> ;
+  skos:prefLabel "erittäin suuri teksti"@fi ;
+  skos:prefLabel "mycket stor text"@sv ;
 .
 mts:erottuva_nimeke
   rdf:type isothes:ConceptGroup ;
@@ -2054,6 +2105,14 @@ mts:irtolehtia
   dc:source "RDA-termi ; ISBD-termi"@fi ;
   skos:prefLabel "irtolehtiä"@fi ;
   skos:prefLabel "lösblad"@sv ;
+.
+mts:isotekstinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "Onix-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/fontSize/1002> ;
+  skos:prefLabel "isotekstinen"@fi ;
 .
 mts:jaljenteena
   rdf:type isothes:ConceptGroup ;
@@ -2470,6 +2529,14 @@ mts:mikroskooppinen_rda
   skos:prefLabel "mikroskooppinen"@fi ;
   skos:prefLabel "mikroskopisk"@sv ;
 .
+mts:muistikortti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1011> ;
+  skos:prefLabel "datorkort"@sv ;
+  skos:prefLabel "muistikortti"@fi ;
+.
 mts:musiikki
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2518,6 +2585,89 @@ mts:myohempi_paanimeke
   rdfs:label "myöhempi päänimeke"@fi ;
   rdfs:label "senare huvudtitel"@sv ;
   rdfs:seeAlso rdam:P30129 ;
+.
+mts:nimeke_irtopaallyksessa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke irtopäällyksessä"@fi ;
+  skos:prefLabel "titel på skyddsomslaget"@sv ;
+.
+mts:nimeke_julkaisijan_kotisivulta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke julkaisijan kotisivulta"@fi ;
+  skos:prefLabel "titel från utgivarens hemsida"@sv ;
+.
+mts:nimeke_julkaisuarkistosta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke julkaisuarkistosta"@fi ;
+  skos:prefLabel "titel från publikationsarkivet"@sv ;
+.
+mts:nimeke_julkaisuluettelosta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke julkaisuluettelosta"@fi ;
+  skos:prefLabel "titel från utgivningskatalogen"@sv ;
+.
+mts:nimeke_kannessa_ja_selassa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke kannessa ja selässä"@fi ;
+  skos:prefLabel "titel på pärmen och ryggen"@sv ;
+.
+mts:nimeke_karttalehdillä
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke karttalehdillä"@fi ;
+  skos:prefLabel "titel på kartbladen"@sv ;
+.
+mts:nimeke_linkista
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke linkistä"@fi ;
+  skos:prefLabel "titel från länken"@sv ;
+.
+mts:nimeke_lisatylla_nimiosivulla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke lisätyllä nimiösivulla"@fi ;
+  skos:prefLabel "titel på tillsatt titelsida"@sv ;
+.
+mts:nimeke_marginaalissa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke marginaalissa"@fi ;
+  skos:prefLabel "titel i marginalen"@sv ;
+.
+mts:nimeke_ohjekirjassa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke ohjekirjassa"@fi ;
+  skos:prefLabel "titel i instruktionsboken"@sv ;
+.
+mts:nimeke_otsikkopalkissa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke otsikkopalkissa"@fi ;
+  skos:prefLabel "titel i instruktionsboken"@sv ;
+.
+mts:nimeke_toisella_nimionaytolla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nimeke toisella nimiönäytöllä"@fi ;
 .
 mts:nuottikirjoitus
   rdf:type skos:Concept ;
@@ -2583,6 +2733,13 @@ mts:paanimeke
   rdfs:label "päänimeke"@fi ;
   rdfs:seeAlso rdam:P30156 ;
 .
+mts:paanimeke_translitteroituna
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "päänimeke translitteroituna"@fi ;
+  skos:prefLabel "translittererad huvudtitel"@sv ;
+.
 mts:palkinnot
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2608,6 +2765,13 @@ mts:perustuu_teokseen
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "perustuu teokseen"@fi ;
   rdfs:seeAlso rdaw:P10190 ;
+.
+mts:pianorulla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1006> ;
+  skos:prefLabel "pianorulla"@fi ;
 .
 mts:puhe
   rdf:type skos:Concept ;
