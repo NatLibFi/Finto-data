@@ -1626,6 +1626,7 @@ mts:P30134_1
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10001 ;
   rdfs:label "teoksen nimeke"@fi ;
+  rdfs:label "verkets titel"@sv ;
   rdfs:seeAlso rdaw:P10088 ;
 .
 mts:P30145
@@ -1734,6 +1735,22 @@ mts:T1007
   skos:prefLabel "video"@fi ;
   skos:prefLabel "video"@sv ;
 .
+mts:aani_isbd
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition """Luonnonäänet tai digitaalisesti/analogisesti tuotetut äänet. Esimerkiksi linnunlaulun ja eläinten ääntelyn äänitykset, äänimaisemat ja ääniefektit. 
+Ei käytetä äänitetystä musiikista [ks. musiikki] tai äänitetystä ihmisen puheesta [ks. puhe]."""@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1007> ;
+  skos:prefLabel "ääni"@fi ;
+.
+mts:aani_rda
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Kuunneltavaksi tarkoitettu muu äänisisältö kuin puhe tai musiikki. Sisältää esim. luonnonäänet, keinotekoisesti tuotetut äänet jne."@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1012> ;
+  skos:prefLabel "ljud"@sv ;
+  skos:prefLabel "ääni"@fi ;
+.
 mts:aanilevy
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -1792,6 +1809,15 @@ mts:alasarjan_rinnakkainen_muu_nimeketieto
   rdfs:label "alasarjan rinnakkainen muu nimeketieto"@fi ;
   rdfs:label "underseriens parallella övriga titelinformation"@sv ;
   rdfs:seeAlso rdam:P30153 ;
+.
+mts:alasarjan_rinnakkainen_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "alasarjan rinnakkainen päänimeke"@fi ;
+  rdfs:label "underseriens parallella huvudtitel"@sv ;
+  rdfs:seeAlso rdam:P30205 ;
 .
 mts:alayhteiso
   rdf:type isothes:ConceptGroup ;
@@ -1852,6 +1878,14 @@ mts:avainnimeke
   rdfs:label "avainnimeke"@fi ;
   rdfs:label "nyckeltitel"@sv ;
   rdfs:seeAlso rdam:P30209 ;
+.
+mts:avattu_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "avattu nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:data
   rdf:type skos:Concept ;
@@ -2215,6 +2249,14 @@ mts:kohderyhma
   rdfs:label "målgrupp"@sv ;
   rdfs:seeAlso rdaw:P10217 ;
 .
+mts:kokoava_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "kokoava nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
+.
 mts:kolmiulotteinen_liikkuva_kuva
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2321,6 +2363,24 @@ Katso myös taktiili liikenotaatio."""@fi ;
   skos:prefLabel "liikenotaatio"@fi ;
   skos:prefLabel "rörelsenotation"@sv ;
 .
+mts:lohkosarjan_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "delseriens titel"@sv ;
+  rdfs:label "lohkosarjan nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
+.
+mts:lyhennetty_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "förkortad titel"@sv ;
+  rdfs:label "lyhennetty nimeke"@fi ;
+  rdfs:seeAlso rdam:P30131 ;
+.
 mts:maarittelematon_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2425,6 +2485,15 @@ mts:muu_julkaisumuoto
   rdfs:label "muu julkaisumuoto"@fi ;
   rdfs:seeAlso rdam:P30026 ;
 .
+mts:muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "muu nimeketieto"@fi ;
+  rdfs:label "övrig titelinformation"@sv ;
+  rdfs:seeAlso rdam:P30142 ;
+.
 mts:muu_opinnayte
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2440,6 +2509,15 @@ mts:muu_rda
   skos:prefLabel "muu"@fi ;
   skos:scopeNote "Då ingen RDA-term i kapitel 3.1 passar in på den inspelning som beskrivs, anges termen annan."@sv ;
   skos:scopeNote "Jos mikään RDA luvun 3.1 taulukossa luetelluista termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi ;
+.
+mts:myohempi_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "myöhempi päänimeke"@fi ;
+  rdfs:label "senare huvudtitel"@sv ;
+  rdfs:seeAlso rdam:P30129 ;
 .
 mts:nuottikirjoitus
   rdf:type skos:Concept ;
@@ -2496,6 +2574,15 @@ mts:otsikkonimeke
   rdfs:label "rubriktitel"@sv ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "huvudtitel"@sv ;
+  rdfs:label "päänimeke"@fi ;
+  rdfs:seeAlso rdam:P30156 ;
+.
 mts:palkinnot
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2537,6 +2624,33 @@ mts:puhe_isbd
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1008> ;
   skos:prefLabel "puhe"@fi ;
 .
+mts:rinnakkainen_muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "parallell övrig titelinformation"@sv ;
+  rdfs:label "rinnakkainen muu nimeketieto"@fi ;
+  rdfs:seeAlso rdam:P30151 ;
+.
+mts:rinnakkainen_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "parallell huvudtitel"@sv ;
+  rdfs:label "rinnakkainen päänimeke"@fi ;
+  rdfs:seeAlso rdam:P30203 ;
+.
+mts:rinnakkaisnimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "parallelltitel"@sv ;
+  rdfs:label "rinnakkaisnimeke"@fi ;
+  rdfs:seeAlso rdam:P30151 ;
+.
 mts:saatavuudenrajoitukset_kappale
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2544,6 +2658,33 @@ mts:saatavuudenrajoitukset_kappale
   isothes:superGroup mts:C10003 ;
   rdfs:label "aineiston saatavuuden rajoitukset"@fi ;
   rdfs:seeAlso rdai:P40047 ;
+.
+mts:sarjan_muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "sarjan muu nimeketieto"@fi ;
+  rdfs:label "seriens övriga titelinformation"@sv ;
+  rdfs:seeAlso rdam:P30143 ;
+.
+mts:sarjan_paanimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "sarjan päänimeke"@fi ;
+  rdfs:label "seriens huvudtitel"@sv ;
+  rdfs:seeAlso rdam:P30157 ;
+.
+mts:sarjan_rinnakkainen_muu_nimeketieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "sarjan rinnakkainen muu nimeketieto"@fi ;
+  rdfs:label "seriens parallella övriga titelinformation"@sv ;
+  rdfs:seeAlso rdam:P30152 ;
 .
 mts:selkanimeke
   rdf:type isothes:ConceptGroup ;
@@ -2571,6 +2712,7 @@ mts:sisaltotyyppi
   rdfs:label "innehållstyp"@sv ;
   rdfs:label "sisältötyyppi"@fi ;
   rdfs:seeAlso rdae:P20001 ;
+  skos:member mts:aani_rda ;
   skos:member mts:digitaalinen_data ;
   skos:member mts:esitetty_musiikki ;
   skos:member mts:kaksiulotteinen_liikkuva_kuva ;
@@ -2593,7 +2735,6 @@ mts:sisaltotyyppi
   skos:member mts:taktiili_teksti ;
   skos:member mts:teksti ;
   skos:member mts:tietokoneohjelma ;
-  skos:member mts:ääni ;
 .
 mts:sisaltotyyppi_isbd
   rdf:type isothes:ConceptGroup ;
@@ -2603,6 +2744,7 @@ mts:sisaltotyyppi_isbd
   rdfs:label "innehållstyp"@sv ;
   rdfs:label "sisältötyyppi"@fi ;
   rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1001> ;
+  skos:member mts:aani_isbd ;
   skos:member mts:data ;
   skos:member mts:esine ;
   skos:member mts:kuva ;
@@ -2611,6 +2753,8 @@ mts:sisaltotyyppi_isbd
   skos:member mts:musiikki ;
   skos:member mts:puhe_isbd ;
   skos:member mts:teksti_isbd ;
+  skos:member mts:tietokoneohjelma_isbd ;
+  skos:member mts:useita_sisaltotyypeja ;
   skos:scopeNote "Sisältötyyppi kertoo julkaisun sisällön perusmuodon."@fi ;
 .
 mts:stereografinen_rda
@@ -2708,6 +2852,15 @@ mts:teksti_isbd
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1009> ;
   skos:prefLabel "teksti"@fi ;
 .
+mts:teoksen_ensisijainen_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:label "teoksen ensisijainen nimeke"@fi ;
+  rdfs:label "verkets primära titel"@sv ;
+  rdfs:seeAlso rdaw:P10223 ;
+.
 mts:teoksen_ja_sen_kuvauksen_suhde
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2738,6 +2891,15 @@ mts:teoksen_suhteet
   rdfs:label "Teoksen suhteet"@fi ;
   skos:scopeNote "Teoksen suhde tarkoittaa teoksen ja toisen entiteetin välistä suhdetta."@fi ;
 .
+mts:teoksen_varianttinimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10001 ;
+  rdfs:label "teoksen varianttinimeke"@fi ;
+  rdfs:label "verkets varianttitel"@sv ;
+  rdfs:seeAlso rdaw:P10086 ;
+.
 mts:teosten_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2762,6 +2924,13 @@ mts:tietokoneohjelma
   skos:prefLabel "datorprogram"@sv ;
   skos:prefLabel "tietokoneohjelma"@fi ;
 .
+mts:tietokoneohjelma_isbd
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1006> ;
+  skos:prefLabel "tietokoneohjelma"@fi ;
+  skos:scopeNote "Esimerkiksi käyttöjärjestelmät, sovellusohjelmat jne."@fi ;
+.
 mts:toimijoiden_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2775,6 +2944,13 @@ mts:toimijoiden_valiset_suhteet
   isothes:superGroup mts:toimijoiden_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Toimijoiden väliset suhteet"@fi ;
+.
+mts:useita_sisaltotyypeja
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:definition "Kolmen tai useamman sisältötyypin julkaisu."@fi ;
+  skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1010> ;
+  skos:prefLabel "useita sisältötyyppejä"@fi ;
 .
 mts:uusintapainos
   rdf:type skos:Concept ;
@@ -2799,6 +2975,23 @@ mts:vaitoskirjat
   isothes:superGroup mts:C10001 ;
   rdfs:label "väitöskirja tai akateeminen muu opinnäyte"@fi ;
   rdfs:seeAlso rdaw:P10209 ;
+.
+mts:vakiintunut_kokoava_nimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "vakiintunut kokoava nimeke"@fi ;
+  rdfs:seeAlso rdam:P30128 ;
+.
+mts:varianttinimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "varianttinimeke"@fi ;
+  rdfs:label "varianttitel"@sv ;
+  rdfs:seeAlso rdam:P30128 ;
 .
 mts:vastaava_kappale
   rdf:type isothes:ConceptGroup ;
@@ -2870,13 +3063,13 @@ mts:ylanimeke
   rdfs:label "ylänimeke"@fi ;
   rdfs:seeAlso rdam:P30142 ;
 .
-mts:ääni
-  rdf:type skos:Concept ;
+mts:yleisnimeke
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
-  skos:definition "Kuunneltavaksi tarkoitettu muu äänisisältö kuin puhe tai musiikki. Sisältää esim. luonnonäänet, keinotekoisesti tuotetut äänet jne."@fi ;
-  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1012> ;
-  skos:prefLabel "ljud"@sv ;
-  skos:prefLabel "ääni"@fi ;
+  isothes:superGroup mts:P30134 ;
+  rdfs:label "allmän titel"@sv ;
+  rdfs:label "yleisnimeke"@fi ;
 .
 rdau:P60050
   :vakioidutTermit <http://rdvocab.info/termList/RDAMediaType/1001> ;
