@@ -1431,6 +1431,7 @@ mts:P30001
   skos:member mts:ikkunakortti ;
   skos:member mts:kortti ;
   skos:member mts:lehtiotaulu ;
+  skos:member mts:maarittelematon_tallennetyyppi ;
   skos:member mts:mikrofilmikasetti ;
   skos:member mts:mikrofilmikela ;
   skos:member mts:mikrofilmiliuska ;
@@ -1439,11 +1440,15 @@ mts:P30001
   skos:member mts:mikrokortti ;
   skos:member <http://metatietosanasto.fi/mikrokortti_(lapinakymaton)> ;
   skos:member mts:muistikortti ;
+  skos:member mts:muu_tallennetyyppi ;
+  skos:member mts:nide ;
+  skos:member mts:objekti ;
   skos:member mts:pianorulla ;
   skos:member mts:piirikotelo ;
   skos:member mts:preparaattilasi ;
   skos:member mts:raina ;
   skos:member mts:rainakasetti ;
+  skos:member mts:rulla ;
   skos:member mts:stereografinen_levy ;
   skos:member mts:sterografinen_kortti ;
   skos:member mts:tietokasetti ;
@@ -1451,6 +1456,10 @@ mts:P30001
   skos:member mts:tietolevykotelo ;
   skos:member mts:tietonauhakela ;
   skos:member mts:tietonauhan_silmukkakasetti ;
+  skos:member mts:videokasetti ;
+  skos:member mts:videokela ;
+  skos:member mts:videolevy ;
+  skos:member mts:videosilmukkakasetti ;
 .
 mts:P30002
   rdf:type isothes:ConceptGroup ;
@@ -1979,6 +1988,13 @@ mts:dia
   skos:prefLabel "dia"@fi ;
   skos:prefLabel "diabild"@sv ;
 .
+mts:diagrammi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "diagram"@sv ;
+  skos:prefLabel "diagrammi"@fi ;
+.
 mts:digitaalinen_data
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2192,6 +2208,13 @@ mts:ikkunakortti
   skos:prefLabel "fönsterkort"@sv ;
   skos:prefLabel "ikkunakortti"@fi ;
 .
+mts:ikoni
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "ikon"@sv ;
+  skos:prefLabel "ikoni"@fi ;
+.
 mts:irtolehtia
   rdf:type skos:Concept ;
   dc:source "RDA-termi ; ISBD-termi"@fi ;
@@ -2312,6 +2335,13 @@ mts:kappaleiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Kappaleiden väliset suhteet"@fi ;
 .
+mts:kartasto
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kartasto"@fi ;
+  skos:prefLabel "kartverk"@sv ;
+.
 mts:kartografinen_data
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2362,12 +2392,33 @@ mts:kartografinen_taktiili_kuva
   skos:prefLabel "kartografinen taktiili kuva"@fi ;
   skos:prefLabel "kartografisk taktil bild"@sv ;
 .
+mts:kartta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "karta"@sv ;
+  skos:prefLabel "kartta"@fi ;
+.
 mts:karttalehti
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "kartblad"@sv ;
   skos:prefLabel "karttalehti"@fi ;
+.
+mts:karttapallo
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "jordglob"@sv ;
+  skos:prefLabel "karttapallo"@fi ;
+.
+mts:kaukokartoituskuva
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "fjärranalysbild"@sv ;
+  skos:prefLabel "kaukokartoituskuva"@fi ;
 .
 mts:kaytettavissa_ilman_laitetta_rda
   rdf:type skos:Concept ;
@@ -2408,6 +2459,13 @@ mts:kokoava_nimeke
   rdfs:label "kokoava nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:kollaasi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kollaasi"@fi ;
+  skos:prefLabel "kollage"@sv ;
+.
 mts:kolmiulotteinen_liikkuva_kuva
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2445,6 +2503,13 @@ mts:kuva
   dc:source "ISBD-termi"@fi ;
   skos:definition "Katsottavaksi tarkoitettu viiva, muoto, varjostus jne. Kuva voi olla stillkuva tai liikkuva kuva, kaksi- tai kolmiulotteinen. Esimerkiksi taidejäljenteet, kartat, valokuvat, kaukokartoituskuvat, stereokuvat, elokuvat ja litografiat."@fi ;
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1002> ;
+  skos:prefLabel "kuva"@fi ;
+.
+mts:kuva_laajuuden_yksikko
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "bild"@sv ;
   skos:prefLabel "kuva"@fi ;
 .
 mts:kuvitus
@@ -2496,7 +2561,23 @@ mts:laajuuden_yksikko
   skos:member <http://metatietosanasto.fi/101> ;
   skos:member <http://metatietosanasto.fi/103> ;
   skos:member <http://metatietosanasto.fi/104> ;
+  skos:member mts:diagrammi ;
+  skos:member mts:ikoni ;
+  skos:member mts:kartasto ;
+  skos:member mts:kartta ;
   skos:member mts:karttalehti ;
+  skos:member mts:karttapallo ;
+  skos:member mts:kaukokartoituskuva ;
+  skos:member mts:kollaasi ;
+  skos:member mts:kuva_laajuuden_yksikko ;
+  skos:member mts:maalaus ;
+  skos:member mts:malli ;
+  skos:member mts:nakymakartta ;
+  skos:member mts:opetuskortti ;
+  skos:member mts:piirustus ;
+  skos:member mts:poikkileikkauskartta ;
+  skos:member mts:profiili ;
+  skos:member mts:rontgenkuva ;
 .
 mts:lajityyppi
   rdf:type isothes:ConceptGroup ;
@@ -2548,6 +2629,13 @@ mts:lyhennetty_nimeke
   rdfs:label "lyhennetty nimeke"@fi ;
   rdfs:seeAlso rdam:P30131 ;
 .
+mts:maalaus
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "maalaus"@fi ;
+  skos:prefLabel "målning"@sv ;
+.
 mts:maarittelematon_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2562,6 +2650,22 @@ mts:maarittelematon_sisaltotyyppi
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1011> ;
   skos:prefLabel "määrittelemätön sisältötyyppi"@fi ;
   skos:scopeNote "Jos mikään edellä olevista sisältötyypeistä ei kuvaa julkaisua, tehdään merkintö ”määrittelemätön sisältötyyppi”."@fi ;
+.
+mts:maarittelematon_tallennetyyppi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "määrittelemäton"@fi ;
+  skos:prefLabel "ospecificerad"@sv ;
+  skos:scopeNote "Då bärartypen eller -typerna, som passar in på den resurs som beskrivs, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv ;
+  skos:scopeNote "Jos tallennetyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon ei voida helposti todentaa, merkitään määrittelemätön."@fi ;
+.
+mts:malli
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "malli"@fi ;
+  skos:prefLabel "modell"@sv ;
 .
 mts:manifestaatioiden_valiset_suhteet
   rdf:type isothes:ConceptGroup ;
@@ -2741,6 +2845,15 @@ mts:muu_rda
   skos:scopeNote "Då ingen RDA-term i kapitel 3.1 passar in på den inspelning som beskrivs, anges termen annan."@sv ;
   skos:scopeNote "Jos mikään RDA luvun 3.1 taulukossa luetelluista termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi ;
 .
+mts:muu_tallennetyyppi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "annan"@sv ;
+  skos:prefLabel "muu"@fi ;
+  skos:scopeNote "Då ingen av ovanstående termer passar in på den bärare eller de bärare som beskrivs, anges termen annan."@sv ;
+  skos:scopeNote "Jos mikään yllä olevista termeistä ei sovellu kuvailtavan kohteen tallenteeseen tai tallenteisiin, merkitään muu."@fi ;
+.
 mts:myohempi_paanimeke
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2749,6 +2862,21 @@ mts:myohempi_paanimeke
   rdfs:label "myöhempi päänimeke"@fi ;
   rdfs:label "senare huvudtitel"@sv ;
   rdfs:seeAlso rdam:P30129 ;
+.
+mts:nakymakartta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "näkymäkartta"@fi ;
+  skos:prefLabel "perspektivbild"@sv ;
+.
+mts:nide
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1049> ;
+  skos:prefLabel "nide"@fi ;
+  skos:prefLabel "volym"@sv ;
 .
 mts:nimeke_irtopaallyksessa
   rdf:type skos:Concept ;
@@ -2842,6 +2970,14 @@ Katso myös kosketeltava musiikkinotaatio."""@fi ;
   skos:prefLabel "musiknotation"@sv ;
   skos:prefLabel "nuottikirjoitus"@fi ;
 .
+mts:objekti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1059> ;
+  skos:prefLabel "föremål"@sv ;
+  skos:prefLabel "objekti"@fi ;
+.
 mts:omistushistoria
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2849,6 +2985,13 @@ mts:omistushistoria
   isothes:superGroup mts:C10003 ;
   rdfs:label "omistushistoria"@fi ;
   rdfs:seeAlso rdai:P40026 ;
+.
+mts:opetuskortti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "opetuskortti"@fi ;
+  skos:prefLabel "undervisningskort"@sv ;
 .
 mts:osa-kokonaisuussuhde
   rdf:type isothes:ConceptGroup ;
@@ -2945,6 +3088,20 @@ mts:piirikotelo
   skos:prefLabel "datorminnesmodul"@sv ;
   skos:prefLabel "piirikotelo"@fi ;
 .
+mts:piirustus
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "piirustus"@fi ;
+  skos:prefLabel "teckning"@sv ;
+.
+mts:poikkileikkauskartta
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "poikkileikkauskartta"@fi ;
+  skos:prefLabel "tvärsnittskarta"@sv ;
+.
 mts:preparaattilasi
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2952,6 +3109,13 @@ mts:preparaattilasi
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1030> ;
   skos:prefLabel "mikroskoperingspreparat"@sv ;
   skos:prefLabel "preparaattilasi"@fi ;
+.
+mts:profiili
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "profiili"@fi ;
+  skos:prefLabel "profil"@sv ;
 .
 mts:puhe
   rdf:type skos:Concept ;
@@ -3010,6 +3174,21 @@ mts:rinnakkaisnimeke
   rdfs:label "parallelltitel"@sv ;
   rdfs:label "rinnakkaisnimeke"@fi ;
   rdfs:seeAlso rdam:P30151 ;
+.
+mts:rontgenkuva
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "röntgenfoto"@sv ;
+  skos:prefLabel "röntgenkuva"@fi ;
+.
+mts:rulla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1047> ;
+  skos:prefLabel "rulla"@fi ;
+  skos:prefLabel "rulle"@sv ;
 .
 mts:saatavuudenrajoitukset_kappale
   rdf:type isothes:ConceptGroup ;
@@ -3431,6 +3610,38 @@ mts:video_rda
   skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1008> ;
   skos:prefLabel "video"@fi ;
   skos:prefLabel "video"@sv ;
+.
+mts:videokasetti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1052> ;
+  skos:prefLabel "videokasetti"@fi ;
+  skos:prefLabel "videokassett"@sv ;
+.
+mts:videokela
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1053> ;
+  skos:prefLabel "videokela"@fi ;
+  skos:prefLabel "videospole"@sv ;
+.
+mts:videolevy
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1060> ;
+  skos:prefLabel "videolevy"@fi ;
+  skos:prefLabel "videoskiva"@sv ;
+.
+mts:videosilmukkakasetti
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1051> ;
+  skos:prefLabel "videomagasin"@sv ;
+  skos:prefLabel "videosilmukkakasetti"@fi ;
 .
 mts:yhdessa_ilmestyneet_manifestaatiot
   rdf:type isothes:ConceptGroup ;
