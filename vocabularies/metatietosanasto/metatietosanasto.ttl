@@ -1037,6 +1037,13 @@ Stereografisella laitteella käytettävät aineistot."""@fi ;
   skos:prefLabel "Julkaisussa pyöritettäviä kiekkoja."@fi ;
   skos:prefLabel "Publikationen innehåller roterbara skivor."@sv ;
 .
+<http://metatietosanasto.fi/12o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1004> ;
+  skos:prefLabel "12:o"@fi ;
+.
 <http://metatietosanasto.fi/130>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -1329,6 +1336,13 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
   skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
+<http://metatietosanasto.fi/16o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1005> ;
+  skos:prefLabel "16:o"@fi ;
+.
 <http://metatietosanasto.fi/171>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -1355,6 +1369,55 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
   skos:prefLabel "GTIN-koodista"@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
   skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
+.
+<http://metatietosanasto.fi/24o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1006> ;
+  skos:prefLabel "24:o"@fi ;
+.
+<http://metatietosanasto.fi/2o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1001> ;
+  skos:prefLabel "2:o"@fi ;
+.
+<http://metatietosanasto.fi/32o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1007> ;
+  skos:prefLabel "32:o"@fi ;
+.
+<http://metatietosanasto.fi/48o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1008> ;
+  skos:prefLabel "48:o"@fi ;
+.
+<http://metatietosanasto.fi/4o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1002> ;
+  skos:prefLabel "4:o"@fi ;
+.
+<http://metatietosanasto.fi/64o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1009> ;
+  skos:prefLabel "64:o"@fi ;
+.
+<http://metatietosanasto.fi/8o>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/bookFormat/1003> ;
+  skos:prefLabel "8:o"@fi ;
 .
 mts:C10001
   rdf:type isothes:ConceptGroup ;
@@ -1736,6 +1799,7 @@ mts:P30199
   rdfs:label "teckengrad"@sv ;
   rdfs:seeAlso rdam:P30199 ;
   skos:member mts:erittain_suuri_teksti ;
+  skos:member mts:isopistekirjoitus ;
   skos:member mts:isotekstinen ;
 .
 mts:P30214
@@ -1865,6 +1929,31 @@ mts:aineiston_kasittely
   isothes:superGroup mts:C10003 ;
   rdfs:label "aineiston käsittelyyn liittyvä termit"@fi ;
 .
+mts:aineiston_layout
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "Aineiston layout"@fi ;
+  rdfs:seeAlso rdam:P30155 ;
+  skos:member mts:avoin_partituuri ;
+  skos:member mts:harvennettu_rivivali ;
+  skos:member mts:jaksot_perakkain ;
+  skos:member mts:kaantopuolilla ;
+  skos:member mts:kaksipuolinen ;
+  skos:member mts:kappaleittain ;
+  skos:member mts:luonnos ;
+  skos:member mts:melody_chord_system ;
+  skos:member mts:molemmilla_puolilla ;
+  skos:member mts:nuottiviivat_paallekkain ;
+  skos:member mts:nuottiviivat_perakkain ;
+  skos:member mts:short_form_scoring ;
+  skos:member mts:tahdit_paallekkain ;
+  skos:member mts:tahdit_perakkain ;
+  skos:member mts:vertikaalinen_partituuri ;
+  skos:member mts:yksipuolinen ;
+  skos:member mts:yksittainen_nuottiviiva ;
+.
 mts:aitio
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -1949,6 +2038,14 @@ mts:aluelehdet
   skos:prefLabel "regiontidningar"@sv ;
   skos:scopeNote "Jatkuvien julkaisujen genre-termi"@fi ;
 .
+mts:analoginen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/typeRec/1001> ;
+  skos:prefLabel "analog"@sv ;
+  skos:prefLabel "analoginen"@fi ;
+.
 mts:animaattori
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2008,6 +2105,12 @@ mts:avattu_nimeke
   rdfs:label "avattu nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:avoin_partituuri
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "avoin partituuri"@fi ;
+.
 mts:bristol-paperi
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2059,6 +2162,14 @@ mts:diatso
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "diatso"@fi ;
   skos:prefLabel "diazo"@sv ;
+.
+mts:digitaalinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/typeRec/1002> ;
+  skos:prefLabel "digitaalinen"@fi ;
+  skos:prefLabel "digital"@sv ;
 .
 mts:digitaalinen_data
   rdf:type skos:Concept ;
@@ -2149,6 +2260,13 @@ mts:elokuvaversion_perustana_teos
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "elokuvaversion perustana (teos)"@fi ;
   rdfs:seeAlso rdaw:P10129 ;
+.
+mts:ensimmainen_sukupolvi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "ensimmäinen sukupolvi"@fi ;
+  skos:prefLabel "första generation"@sv ;
 .
 mts:epaitsenainen_nimeke
   rdf:type isothes:ConceptGroup ;
@@ -2277,6 +2395,13 @@ mts:hankintalahde
   rdfs:label "hankintalähde"@fi ;
   rdfs:seeAlso rdai:P40050 ;
 .
+mts:harvennettu_rivivali
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "harvennettu riviväli"@fi ;
+  skos:prefLabel "utökat radavstånd"@svi ;
+.
 mts:heijastettava_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -2307,6 +2432,14 @@ mts:hopeahalidi
   skos:prefLabel "hopeahalidi"@fi ;
   skos:prefLabel "silverhalid"@sv ;
 .
+mts:hyvin_voimakas_pienennys
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAReductionRatio/1005> ;
+  skos:prefLabel "hyvin voimakas pienennys"@fi ;
+  skos:prefLabel "mycket stark förminskning"@sv ;
+.
 mts:ikkunakortti
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2335,6 +2468,14 @@ mts:irtolehtia
   skos:prefLabel "isiö (äitiön negatiivi)"@fi ;
   skos:prefLabel "pressmatris (modermatrisens negativ)"@sv ;
 .
+mts:isopistekirjoitus
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/fontSize/1003> ;
+  skos:prefLabel "isopistekirjoitus"@fi ;
+  skos:prefLabel "jumbo punktskrift"@sv ;
+.
 mts:isotekstinen
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2342,6 +2483,12 @@ mts:isotekstinen
   dc:source "RDA-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/fontSize/1002> ;
   skos:prefLabel "isotekstinen"@fi ;
+.
+mts:jaksot_perakkain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "jaksot peräkkäin"@fi ;
 .
 mts:jaljenteena
   rdf:type isothes:ConceptGroup ;
@@ -2393,12 +2540,26 @@ mts:juokseva_nimeke
   rdfs:label "kolumntitel"@sv ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:kaantopuolilla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kääntöpuolilla"@fi ;
+  skos:prefLabel "på baksidorna"@sv ;
+.
 mts:kaiverrus
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "gravering"@sv ;
   skos:prefLabel "kaiverrus"@fi ;
+.
+mts:kaksipuolinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "dubbelsidigt"@sv ;
+  skos:prefLabel "kaksipuolinen"@fi ;
 .
 mts:kaksiulotteinen_liikkuva_kuva
   rdf:type skos:Concept ;
@@ -2468,6 +2629,12 @@ mts:kappaleiden_valiset_suhteet
   isothes:superGroup mts:kappaleen_suhteet ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Kappaleiden väliset suhteet"@fi ;
+.
+mts:kappaleittain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kappaleittain"@fi ;
 .
 mts:kartasto
   rdf:type skos:Concept ;
@@ -2553,6 +2720,13 @@ mts:kasikirjoitus
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "käsikirjoitus"@fi ;
 .
+mts:katselukopio
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "brukskopia"@sv ;
+  skos:prefLabel "katselukopio"@fi ;
+.
 mts:kaukokartoituskuva
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2574,6 +2748,13 @@ mts:kayttoehdot_kappale
   isothes:superGroup mts:C10003 ;
   rdfs:label "aineiston käyttöehdot"@fi ;
   rdfs:seeAlso rdai:P40048 ;
+.
+mts:kayttokopio
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "brukskopia"@sv ;
+  skos:prefLabel "käyttökopio"@fi ;
 .
 mts:keramiikka
   rdf:type skos:Concept ;
@@ -2597,6 +2778,23 @@ mts:kipsi
   skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1013> ;
   skos:prefLabel "gips"@sv ;
   skos:prefLabel "kipsi"@fi ;
+.
+mts:kirjan_bibliografinen_koko
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "Kirjan bibliografinen koko"@fi ;
+  rdfs:seeAlso rdam:P30197 ;
+  skos:member <http://metatietosanasto.fi/12o> ;
+  skos:member <http://metatietosanasto.fi/16o> ;
+  skos:member <http://metatietosanasto.fi/24o> ;
+  skos:member <http://metatietosanasto.fi/2o> ;
+  skos:member <http://metatietosanasto.fi/32o> ;
+  skos:member <http://metatietosanasto.fi/48o> ;
+  skos:member <http://metatietosanasto.fi/4o> ;
+  skos:member <http://metatietosanasto.fi/64o> ;
+  skos:member <http://metatietosanasto.fi/8o> ;
 .
 mts:kivi
   rdf:type skos:Concept ;
@@ -2629,6 +2827,13 @@ mts:kohokuvioitu
   skos:exactMatch <http://rdaregistry.info/termList/prodTactile/1001> ;
   skos:prefLabel "kohokuvioitu"@fi ;
   skos:prefLabel "reliefmönstrad"@sv ;
+.
+mts:kohtalainen_pienennys
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAReductionRatio/1003> ;
+  skos:prefLabel "kohtalainen pienennys"@fi ;
 .
 mts:kokoava_nimeke
   rdf:type isothes:ConceptGroup ;
@@ -2676,6 +2881,13 @@ mts:konsolipeli
   skos:broader <http://metatietosanasto.fi/096> ;
   skos:prefLabel "konsolipeli"@fi ;
   skos:prefLabel "konsolspel"@sv ;
+.
+mts:kopio
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kopia"@sv ;
+  skos:prefLabel "kopio"@fi ;
 .
 mts:kopiomasternauha
   rdf:type skos:Concept ;
@@ -2853,6 +3065,14 @@ mts:lehtiotaulu
   skos:prefLabel "blädderblock"@sv ;
   skos:prefLabel "lehtiötaulu"@fi ;
 .
+mts:levea_ura
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/grooveWidth/1001> ;
+  skos:prefLabel "grovt spår"@sv ;
+  skos:prefLabel "leveä ura"@fi ;
+.
 mts:liike
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2892,6 +3112,12 @@ mts:lohkosarjan_nimeke
   rdfs:label "delseriens titel"@sv ;
   rdfs:label "lohkosarjan nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
+.
+mts:luonnos
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "luonnos"@fi ;
 .
 mts:lyhennetty_nimeke
   rdf:type isothes:ConceptGroup ;
@@ -2933,12 +3159,28 @@ mts:maarittelematon_tallennetyyppi
   skos:scopeNote "Då bärartypen eller -typerna, som passar in på den resurs som beskrivs, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv ;
   skos:scopeNote "Jos tallennetyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon ei voida helposti todentaa, merkitään määrittelemätön."@fi ;
 .
+mts:magneettinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/recMedium/1001> ;
+  skos:prefLabel "magneettinen"@fi ;
+  skos:prefLabel "magnetisk"@sv ;
+.
 mts:magneettiset_partikkelit
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "magneettiset partikkelit"@fi ;
   skos:prefLabel "magnetiska partiklar"@sv ;
+.
+mts:magneto-optinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/recMedium/1002> ;
+  skos:prefLabel "magneto-optinen"@fi ;
+  skos:prefLabel "magneto-optisk"@sv ;
 .
 mts:malli
   rdf:type skos:Concept ;
@@ -3050,6 +3292,12 @@ mts:mediatyyppi_rda
   skos:member mts:tietokonekayttoinen_rda ;
   skos:member mts:video_rda ;
 .
+mts:melody_chord_system
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "melody chord system"@fi ;
+.
 mts:metalli
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -3150,6 +3398,13 @@ mts:mikroskooppinen_rda
   skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1004> ;
   skos:prefLabel "mikroskooppinen"@fi ;
   skos:prefLabel "mikroskopisk"@sv ;
+.
+mts:molemmilla_puolilla
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "molemmilla puolilla"@fi ;
+  skos:prefLabel "på båda sidorna"@sv ;
 .
 mts:muistikortti
   rdf:type skos:Concept ;
@@ -3261,6 +3516,14 @@ mts:nayttelyesine
   skos:prefLabel "näyttelyesine"@fi ;
   skos:prefLabel "utställningsföremål"@sv ;
 .
+mts:negatiivi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAPolarity/1002> ;
+  skos:prefLabel "negatiivi"@fi ;
+  skos:prefLabel "negativ"@sv ;
+.
 mts:nide
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -3360,6 +3623,14 @@ mts:nitraatti
   skos:prefLabel "nitraatti"@fi ;
   skos:prefLabel "nitrat"@sv ;
 .
+mts:normaali_pienennys
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAReductionRatio/1002> ;
+  skos:prefLabel "normaali pienennys"@fi ;
+  skos:prefLabel "normal förminskning"@sv ;
+.
 mts:norsunluu
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -3376,6 +3647,18 @@ Katso myös kosketeltava musiikkinotaatio."""@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1010> ;
   skos:prefLabel "musiknotation"@sv ;
   skos:prefLabel "nuottikirjoitus"@fi ;
+.
+mts:nuottiviivat_paallekkain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nuottiviivat päällekkäin"@fi ;
+.
+mts:nuottiviivat_perakkain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "nuottiviivat peräkkäin"@fi ;
 .
 mts:objekti
   rdf:type skos:Concept ;
@@ -3412,6 +3695,14 @@ mts:opetuskortti
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "opetuskortti"@fi ;
   skos:prefLabel "undervisningskort"@sv ;
+.
+mts:optinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/recMedium/1003> ;
+  skos:prefLabel "optinen"@fi ;
+  skos:prefLabel "optisk"@sv ;
 .
 mts:orginaalilevy
   rdf:type skos:Concept ;
@@ -3489,6 +3780,13 @@ mts:pahvi
   skos:prefLabel "pahvi"@fi ;
   skos:prefLabel "papp"@sv ;
 .
+mts:painomaster
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "painomaster"@fi ;
+  skos:prefLabel "tryckmaster"@sv ;
+.
 mts:palkinnot
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -3544,6 +3842,20 @@ mts:pianorulla
   dc:source "RDA-termi"@fi ;
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1006> ;
   skos:prefLabel "pianorulla"@fi ;
+.
+mts:pienennyssuhde
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "förminskningsgrad"@sv ;
+  rdfs:label "pienennyssuhde"@fi ;
+  rdfs:seeAlso rdam:P30198 ;
+  skos:member mts:hyvin_voimakas_pienennys ;
+  skos:member mts:kohtalainen_pienennys ;
+  skos:member mts:normaali_pienennys ;
+  skos:member mts:vahainen_pienennys ;
+  skos:member mts:voimakas_pienennys ;
 .
 mts:pienoismalli
   rdf:type skos:Concept ;
@@ -3612,6 +3924,25 @@ mts:poikkileikkauskartta
   skos:prefLabel "poikkileikkauskartta"@fi ;
   skos:prefLabel "tvärsnittskarta"@sv ;
 .
+mts:polariteettien_yhdistelma
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAPolarity/1003> ;
+  skos:prefLabel "kombination av polariteter"@sv ;
+  skos:prefLabel "polariteettien yhdistelmä"@fi ;
+.
+mts:polariteettitieto
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "polariteettitieto"@fi ;
+  rdfs:seeAlso rdam:P30196 ;
+  skos:member mts:negatiivi ;
+  skos:member mts:polariteettien_yhdistelma ;
+  skos:member mts:positiivi ;
+.
 mts:polyesteri
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -3619,6 +3950,14 @@ mts:polyesteri
   skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1029> ;
   skos:prefLabel "polyester"@sv ;
   skos:prefLabel "polyesteri"@fi ;
+.
+mts:positiivi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAPolarity/1001> ;
+  skos:prefLabel "positiivi"@fi ;
+  skos:prefLabel "positiv"@sv ;
 .
 mts:posliini
   rdf:type skos:Concept ;
@@ -3792,6 +4131,12 @@ mts:sepitetty_nimeke
   rdfs:label "sepitetty nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:short_form_scoring
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "short form scoring"@fi ;
+.
 mts:sinikopio
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -3894,6 +4239,13 @@ Katso myös kartografinen kuva, taktiili kuva."""@fi ;
   skos:prefLabel "stillbild"@sv ;
   skos:prefLabel "stillkuva"@fi ;
 .
+mts:sukupolvien_yhdistelma
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "kombination av generationer"@sv ;
+  skos:prefLabel "sukupolvien yhdistelmä"@fi ;
+.
 mts:suvun_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -3915,6 +4267,18 @@ mts:syvapaino
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "djuptryck"@sv ;
   skos:prefLabel "syväpaino"@fi ;
+.
+mts:tahdit_paallekkain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "tahdit päällekkäin"@fi ;
+.
+mts:tahdit_perakkain
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "tahdit peräkkäin"@fi ;
 .
 mts:taktiili_kolmiulotteinen_muoto
   rdf:type skos:Concept ;
@@ -4164,6 +4528,27 @@ mts:toimijoiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Toimijoiden väliset suhteet"@fi ;
 .
+<http://metatietosanasto.fi/toinen_sukupolvi,_esityskopio>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "andra generation, brukskopia"@sv ;
+  skos:prefLabel "toinen sukupolvi, esityskopio"@fi ;
+.
+<http://metatietosanasto.fi/toinen_sukupolvi,_masterkopio>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "andra generation, masterkopia"@sv ;
+  skos:prefLabel "toinen sukupolvi, masterkopio"@fi ;
+.
+<http://metatietosanasto.fi/toinen_sukupolvi,_masterkopio_1>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "andra generation, masterkopia"@sv ;
+  skos:prefLabel "toinen sukupolvi, masterkopio"@fi ;
+.
 mts:triasetaatti
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -4200,6 +4585,14 @@ mts:vaha
   skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1023> ;
   skos:prefLabel "vaha"@fi ;
   skos:prefLabel "vax"@sv ;
+.
+mts:vahainen_pienennys
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAReductionRatio/1001> ;
+  skos:prefLabel "låg förminskning"@sv ;
+  skos:prefLabel "vähäinen pienennys"@fi ;
 .
 mts:vaihtoehtoinen_nimeke
   rdf:type isothes:ConceptGroup ;
@@ -4349,6 +4742,19 @@ mts:veliini
   skos:prefLabel "veliini"@fi ;
   skos:prefLabel "veläng"@sv ;
 .
+mts:vertailukopio
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "referensexemplar"@sv ;
+  skos:prefLabel "vertailukopio"@fi ;
+.
+mts:vertikaalinen_partituuri
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "vertikaalinen partituuri"@fi ;
+.
 mts:vesikulaari
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -4412,6 +4818,14 @@ mts:vinyyli
   skos:prefLabel "vinyl"@sv ;
   skos:prefLabel "vinyyli"@fi ;
 .
+mts:voimakas_pienennys
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAReductionRatio/1004> ;
+  skos:prefLabel "stark förminskning"@sv ;
+  skos:prefLabel "voimakas pienennys"@fi ;
+.
 mts:vuota
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -4426,6 +4840,13 @@ mts:white_print
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "white print"@fi ;
   skos:prefLabel "white print"@sv ;
+.
+<http://metatietosanasto.fi/xx_kierr./min>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "xx kierr./min"@fi ;
+  skos:prefLabel "xx varv/min"@sv ;
 .
 mts:yhdessa_ilmestyneet_manifestaatiot
   rdf:type isothes:ConceptGroup ;
@@ -4471,6 +4892,19 @@ mts:yhteison_tyyppi
   isothes:superGroup mts:C10005 ;
   rdfs:label "yhteisöntyyppi"@fi ;
   rdfs:seeAlso rdaa:P50237 ;
+.
+mts:yksipuolinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "enkelsidigt"@sv ;
+  skos:prefLabel "yksipuolinen"@fi ;
+.
+mts:yksittainen_nuottiviiva
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "yksittäinen nuottiviiva"@fi ;
 .
 mts:ylanimeke
   rdf:type isothes:ConceptGroup ;
