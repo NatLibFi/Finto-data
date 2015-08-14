@@ -3,7 +3,6 @@
 from rdflib import Graph, Namespace, RDF
 import requests
 import sys
-import random
 import csv
 import re
 
@@ -52,12 +51,9 @@ def singular(label, lang):
 g = Graph()
 g.parse(sys.argv[1], format='turtle')
 
-concepts = list(g.subjects(SKOS.inScheme, YSO['']))
-random.seed(0)
-random.shuffle(concepts)
+concepts = sorted(g.subjects(SKOS.inScheme, YSO['']))
 
 writer = csv.writer(sys.stdout)
-i = 0
 
 stats = {} # key: lang, val: dict with keys 'pref' and 'alt'
 
@@ -117,8 +113,6 @@ for conc in concepts:
     rows = concept_singulars(conc)
     for row in rows:
         writer.writerow([s.encode('UTF-8') for s in row])
-    i += 1
-    if i >= 1000: break
 
 for lang, vals in stats.items():
     print >>sys.stderr, "%s: %d preferred, %d alternate" % (lang, vals['pref'], vals['alt'])
