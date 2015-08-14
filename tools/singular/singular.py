@@ -59,14 +59,19 @@ random.shuffle(concepts)
 writer = csv.writer(sys.stdout)
 i = 0
 
+stats = {} # key: lang, val: dict with keys 'pref' and 'alt'
+
 def concept_singulars(conc):
     vals = [conc]
     for lang in PLURAL_SUFFIXES.keys():
+        stats.setdefault(lang, {})
         try:
             prefLabel = g.preferredLabel(conc, lang=lang)[0][1]
             labelSingular, must_check = singular(unicode(prefLabel), lang)
             if labelSingular.lower() == prefLabel.lower():
                 labelSingular = '' # did not change
+            stats[lang].setdefault('pref', 0)
+            stats[lang]['pref'] += 1
         except:
             prefLabel = labelSingular = ''
             must_check = set()
@@ -90,6 +95,8 @@ def concept_singulars(conc):
             for lang in PLURAL_SUFFIXES.keys():
                 try:
                     result = alt_baseforms[lang][i]
+                    stats[lang].setdefault('alt', 0)
+                    stats[lang]['alt'] += 1
                 except:
                     result = ('','','')
                 vals += result
@@ -112,3 +119,6 @@ for conc in concepts:
         writer.writerow([s.encode('UTF-8') for s in row])
     i += 1
     if i >= 1000: break
+
+for lang, vals in stats.items():
+    print >>sys.stderr, "%s: %d preferred, %d alternate" % (lang, vals['pref'], vals['alt'])
