@@ -59,23 +59,32 @@ random.shuffle(concepts)
 writer = csv.writer(sys.stdout)
 i = 0
 
-for conc in concepts:
+def concept_singulars(conc):
     vals = [conc]
+    for lang in PLURAL_SUFFIXES.keys():
+        try:
+            prefLabel = g.preferredLabel(conc, lang=lang)[0][1]
+            labelSingular, must_check = singular(unicode(prefLabel), lang)
+            if labelSingular.lower() == prefLabel.lower():
+                labelSingular = '' # did not change
+        except:
+            prefLabel = labelSingular = ''
+            must_check = set()
+        vals += [prefLabel.encode('UTF-8'), labelSingular.encode('UTF-8'), ', '.join(must_check).encode('UTF-8')]
+    return vals
+
+for conc in concepts:
     is_plural = False
     for lang,pl_suffix in PLURAL_SUFFIXES.items():
         try:
             label = g.preferredLabel(conc, lang=lang)[0][1]
             if label.endswith(pl_suffix):
                 is_plural = True
-            labelSingular, must_check = singular(unicode(label), lang)
-            if labelSingular.lower() == label.lower():
-                labelSingular = '' # did not change
         except:
-            label = labelSingular = ''
-            must_check = set()
-        vals += [label.encode('UTF-8'), labelSingular.encode('UTF-8'), ', '.join(must_check).encode('UTF-8')]
+            pass
     if not is_plural:
         continue
+    vals = concept_singulars(conc)
     writer.writerow(vals)
     i += 1
     if i >= 1000: break
