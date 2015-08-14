@@ -72,6 +72,7 @@ for conc in concepts:
                 labelSingular = '' # did not change
         except:
             label = labelSingular = ''
+            must_check = set()
         vals += [label.encode('UTF-8'), labelSingular.encode('UTF-8'), ', '.join(must_check).encode('UTF-8')]
     if not is_plural:
         continue
