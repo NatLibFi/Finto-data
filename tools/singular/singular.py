@@ -71,7 +71,8 @@ def concept_singulars(conc):
             prefLabel = labelSingular = ''
             must_check = set()
         vals += [prefLabel.encode('UTF-8'), labelSingular.encode('UTF-8'), ', '.join(must_check).encode('UTF-8')]
-    return vals
+    rows = [vals]
+    return rows
 
 for conc in concepts:
     is_plural = False
@@ -84,7 +85,8 @@ for conc in concepts:
             pass
     if not is_plural:
         continue
-    vals = concept_singulars(conc)
-    writer.writerow(vals)
+    rows = concept_singulars(conc)
+    for row in rows:
+        writer.writerow(row)
     i += 1
     if i >= 1000: break
