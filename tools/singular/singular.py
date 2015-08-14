@@ -70,8 +70,30 @@ def concept_singulars(conc):
         except:
             prefLabel = labelSingular = ''
             must_check = set()
-        vals += [prefLabel.encode('UTF-8'), labelSingular.encode('UTF-8'), ', '.join(must_check).encode('UTF-8')]
+        vals += [prefLabel, labelSingular, ', '.join(must_check)]
     rows = [vals]
+    # base forms for altLabels
+    alt_baseforms = {} # key: lang, val: list of tuples (label, baseform, must_check))
+    for altLabel in g.objects(conc, SKOS.altLabel):
+        label = unicode(altLabel)
+        lang = altLabel.language
+        alt_baseforms.setdefault(lang, [])
+        labelSingular, must_check = singular(label, lang)
+        if labelSingular.lower() == label.lower():
+            labelSingular = '' # did not change
+        result = (label, labelSingular, ', '.join(must_check))
+        alt_baseforms[lang].append(result)
+    if len(alt_baseforms) > 0:
+        max_altlabels = max([len(v) for lang,v in alt_baseforms.items()])
+        for i in range(max_altlabels):
+            vals = ['']
+            for lang in PLURAL_SUFFIXES.keys():
+                try:
+                    result = alt_baseforms[lang][i]
+                except:
+                    result = ('','','')
+                vals += result
+            rows.append(vals)
     return rows
 
 for conc in concepts:
@@ -87,6 +109,6 @@ for conc in concepts:
         continue
     rows = concept_singulars(conc)
     for row in rows:
-        writer.writerow(row)
+        writer.writerow([s.encode('UTF-8') for s in row])
     i += 1
     if i >= 1000: break
