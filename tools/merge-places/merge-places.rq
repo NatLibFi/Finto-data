@@ -1,0 +1,39 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
+PREFIX allarsmeta: <http://www.yso.fi/onto/allars-meta/>
+PREFIX pl: <http://urn.fi/URN:NBN:fi:au:pl:>
+
+CONSTRUCT {
+  ?plc ?ysaprop ?newval .
+  ?plc skos:prefLabel ?allarspref .
+  ?plc skos:altLabel ?allarsalt .
+  ?plc skos:hiddenLabel ?allarshidden .
+  ?plc skos:note ?allarsnote .
+  ?plc skos:exactMatch ?ysac .
+  ?plc skos:exactMatch ?allarsc .
+} WHERE {
+  ?ysac a ysameta:GeographicalConcept .
+  ?ysac ?ysaprop ?ysaval .
+  BIND(IRI(REPLACE(STR(?ysac), STR(ysa:), STR(pl:))) as ?plc)
+  BIND(IF(isIRI(?ysaval), IRI(REPLACE(STR(?ysaval), STR(ysa:), STR(pl:))), ?ysaval) AS ?newval)
+  FILTER (?ysaprop != skos:inScheme)
+  FILTER (?ysaprop != skos:exactMatch)
+  FILTER (?ysaprop != skos:broadMatch)
+  FILTER (?ysaprop != skos:narrowMatch)
+  FILTER (?ysaprop != dct:created)
+  FILTER (?ysaprop != dct:modified)
+
+  OPTIONAL {
+    ?ysac skos:exactMatch ?allarsc .
+    ?allarsc a allarsmeta:GeographicalConcept .
+    ?allarsc skos:prefLabel ?allarspref .
+    OPTIONAL { ?allarsc skos:altLabel ?allarsalt . }
+    OPTIONAL { ?allarsc skos:hiddenLabel ?allarshidden . }
+    OPTIONAL { ?allarsc skos:note ?allarsnote . }
+    
+  }
+}
+
