@@ -3,7 +3,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX pnrs: <http://ldf.fi/pnr-schema/>
+PREFIX pnrs: <http://ldf.fi/pnr-schema#>
 
 CONSTRUCT {
   <http://ldf.fi/pnr/> a owl:Ontology .
@@ -13,6 +13,7 @@ CONSTRUCT {
 } WHERE {
   ?p a ?type .
   ?p skos:prefLabel ?label .
+  ?p skos:prefLabel "Abessinianniittu"@fi .
   OPTIONAL { ?p crm:P89_falls_within ?parent }
   # Exlude uninteresting types
   FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
