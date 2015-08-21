@@ -13,7 +13,6 @@ CONSTRUCT {
 } WHERE {
   ?p a ?type .
   ?p skos:prefLabel ?label .
-  ?p skos:prefLabel "Abessinianniittu"@fi .
   OPTIONAL { ?p crm:P89_falls_within ?parent }
   # Exlude uninteresting types
   FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
