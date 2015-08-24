@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX pnrs: <http://ldf.fi/pnr-schema#>
+
+CONSTRUCT {
+  ?p a ?type .
+  ?p pnrs:mapScale ?scale .
+  ?scale skos:prefLabel ?scalelabel .
+  ?type rdfs:label ?typelabel .
+  ?type a owl:Class .
+  ?p skos:prefLabel ?label .
+  ?p skos:broader ?parent .
+#  ?p geo:lat ?lat .
+#  ?p geo:long ?long .
+} WHERE {
+  ?p a ?type .
+  ?p skos:prefLabel ?label .
+  OPTIONAL {
+    ?p pnrs:mapScale ?scale .
+    ?scale skos:prefLabel ?scalelabel .
+  }
+#  OPTIONAL {
+#    ?p geo:lat ?lat .
+#    ?p geo:long ?long .
+#  }
+  OPTIONAL { ?type skos:prefLabel ?typelabel }
+  OPTIONAL { ?p crm:P89_falls_within ?parent }
+  FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
+  FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
+  FILTER NOT EXISTS { ?p a pnrs:place_type_500 } # Rakennus
+  FILTER NOT EXISTS { ?p a pnrs:place_type_305 } # Kivi
+} 
