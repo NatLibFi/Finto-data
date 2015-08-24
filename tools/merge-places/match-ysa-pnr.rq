@@ -138,6 +138,9 @@ WHERE {
         ?place skos:broader/skos:prefLabel ?parentLabel .
         FILTER(LANG(?parentLabel)='fi')
       }
+      OPTIONAL { # fallback: any language
+        ?place skos:broader/skos:prefLabel ?parentLabel .
+      }
       OPTIONAL {
         ?place geo:lat ?lat .
         ?place geo:long ?long .
