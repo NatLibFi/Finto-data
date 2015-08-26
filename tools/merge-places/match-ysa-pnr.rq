@@ -5,7 +5,7 @@ PREFIX pnrs: <http://ldf.fi/pnr-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 SELECT ?ysac ?labelFi ?labelSv 
-(CONCAT(GROUP_CONCAT(?noteFi; separator='; '), '\n', GROUP_CONCAT(?noteSv; separator='; ')) AS ?note)
+(REPLACE(CONCAT(GROUP_CONCAT(?noteFi; separator='; '), '\n', GROUP_CONCAT(?noteSv; separator='; ')), '\\s$', '') AS ?note)
 (GROUP_CONCAT(?bt; separator='; ') AS ?broader)
 ?method ?place 
 (GROUP_CONCAT(DISTINCT ?pnrLabelFi; separator='; ') AS ?pnrFi)
@@ -29,13 +29,15 @@ WHERE {
         }
         BIND(IF(BOUND(?lSv), ?lSv, '') AS ?labelSv)
         OPTIONAL {
-          ?s skos:note ?noteFi .
-          FILTER(LANG(?noteFi)='fi')
+          ?s skos:note ?nFi .
+          FILTER(LANG(?nFi)='fi')
         }
+        BIND(IF(BOUND(?nFi), ?nFi, '') AS ?noteFi)
         OPTIONAL {
-          ?s skos:note ?noteSv .
-          FILTER(LANG(?noteSv)='sv')
+          ?s skos:note ?nSv .
+          FILTER(LANG(?nSv)='sv')
         }
+        BIND(IF(BOUND(?nSv), ?nSv, '') AS ?noteSv)
         OPTIONAL {
           ?s skos:broader/skos:prefLabel ?bt .
           FILTER(LANG(?bt)='fi')
@@ -149,4 +151,5 @@ WHERE {
   }
 } 
 GROUP BY ?ysac ?labelFi ?labelSv ?method ?place ?mapScale ?placetype ?lat ?long
+#ORDER BY ?broader ?labelFi DESC(?mapScale) ?parents
 ORDER BY ?labelFi DESC(?mapScale) ?placetype
