@@ -14,8 +14,6 @@ CONSTRUCT {
   ?type a owl:Class .
   ?p skos:prefLabel ?label .
   ?p skos:broader ?parent .
-#  ?p geo:lat ?lat .
-#  ?p geo:long ?long .
 } WHERE {
   ?p a ?type .
   ?p skos:prefLabel ?label .
@@ -23,14 +21,6 @@ CONSTRUCT {
     ?p pnrs:mapScale ?scale .
     ?scale skos:prefLabel ?scalelabel .
   }
-#  OPTIONAL {
-#    ?p geo:lat ?lat .
-#    ?p geo:long ?long .
-#  }
   OPTIONAL { ?type skos:prefLabel ?typelabel }
   OPTIONAL { ?p crm:P89_falls_within ?parent }
-  FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
-  FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
-  FILTER NOT EXISTS { ?p a pnrs:place_type_500 } # Rakennus
-  FILTER NOT EXISTS { ?p a pnrs:place_type_305 } # Kivi
 } 
