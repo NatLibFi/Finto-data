@@ -1,0 +1,214 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pnrs: <http://ldf.fi/pnr-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX sapo: <http://www.yso.fi/onto/sapo/>
+
+SELECT DISTINCT ?ysac ?labelFi ?labelSv
+(CONCAT(GROUP_CONCAT(DISTINCT ?noteFi; separator='; '), '\n', GROUP_CONCAT(DISTINCT ?noteSv; separator='; ')) AS ?note)
+(GROUP_CONCAT(DISTINCT ?bt; separator='; ') AS ?broader)
+?method 
+?ednote
+?place 
+(GROUP_CONCAT(DISTINCT ?pnrLabelFi; separator='; ') AS ?pnrFi)
+(GROUP_CONCAT(DISTINCT ?pnrLabelSv; separator='; ') AS ?pnrSv)
+?mapScale ?placetype 
+(GROUP_CONCAT(DISTINCT ?parentLabel; separator='; ') AS ?parents)
+(IRI(CONCAT('https://www.google.com/maps/@', STR(?lat), ',', STR(?long),',14z')) AS ?mapurl)
+WHERE {
+  {
+    SELECT ?s ?ysac ?labelFi ?labelSv ?noteFi ?noteSv ?bt ?ednote
+    WHERE {
+      GRAPH <http://www.yso.fi/onto/ysa/> {
+        ?s skos:exactMatch ?ysac .
+        FILTER(STRSTARTS(STR(?ysac), 'http://www.yso.fi/onto/ysa/'))
+        FILTER NOT EXISTS { ?ysac ysameta:isForeign true }
+        FILTER NOT EXISTS { ?ysac skos:closeMatch ?match }
+        ?s a skos:Concept .
+        ?s skos:prefLabel ?labelFi .
+        FILTER (LANG(?labelFi)='fi')
+        OPTIONAL { 
+          ?s skos:prefLabel ?lSv .
+          FILTER (LANG(?lSv)='sv')
+        }
+        BIND(IF(BOUND(?lSv), ?lSv, '') AS ?labelSv)
+        OPTIONAL {
+          ?s skos:note ?nFi .
+          FILTER(LANG(?nFi)='fi')
+        }
+        BIND(IF(BOUND(?nFi), ?nFi, '') as ?noteFi)
+        OPTIONAL {
+          ?s skos:note ?nSv .
+          FILTER(LANG(?nSv)='sv')
+        }
+        BIND(IF(BOUND(?nSv), ?nSv, '') as ?noteSv)
+        OPTIONAL {
+          ?s skos:broader/skos:prefLabel ?bt .
+          FILTER(LANG(?bt)='fi')
+        }
+        OPTIONAL {
+          ?ysac skos:editorialNote ?ednote . 
+        }
+      }
+    }
+    LIMIT 8000
+  }
+
+  GRAPH <http://ldf.fi/pnr/> {
+    # identical prefLabel in Finnish
+    OPTIONAL {
+      ?p skos:prefLabel ?labelFi .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
+      BIND('label fi' as ?method)
+    }
+    # identical prefLabel in Swedish
+    OPTIONAL {
+      ?p skos:prefLabel ?labelSv .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
+      BIND('label sv' as ?method)
+      GRAPH <http://www.yso.fi/onto/sapo/> {
+        OPTIONAL { ?p rdfs:label ?sapolabel }  
+      }
+    }
+    # altLabel matches in Finnish
+    OPTIONAL {
+      ?s skos:altLabel ?altFi .
+      FILTER(LANG(?altFi)='fi')
+      ?p skos:prefLabel ?altFi .
+      BIND('altlabel fi' as ?method)
+    }
+    # altLabel matches in Swedish
+    OPTIONAL {
+      ?s skos:altLabel ?altSv .
+      FILTER(LANG(?altSv)='sv')
+      ?p skos:prefLabel ?altSv .
+      BIND('altlabel sv' as ?method)
+    }
+    # "Sastamala -- Kukkuri" case: parent + child match (fi)
+    OPTIONAL {
+      BIND(STRBEFORE(?labelFi, " -- ") as ?parentLabelFi)
+      BIND(STRAFTER(?labelFi, " -- ") as ?childLabelFi)
+      ?p skos:prefLabel ?childLabelFi .
+      ?parent skos:prefLabel ?parentLabelFi .
+      ?p skos:broader+ ?parent .
+      BIND('parent+child fi' as ?method)
+    }
+    # "Raseborg -- Fiskars" case: parent + child match (sv)
+    OPTIONAL {
+      BIND(STRBEFORE(?labelSv, " -- ") as ?parentLabelSv)
+      BIND(STRAFTER(?labelSv, " -- ") as ?childLabelSv)
+      ?p skos:prefLabel ?childLabelSv .
+      ?p skos:broader+ ?parent .
+      ?parent skos:prefLabel ?parentLabelSv .
+      BIND('parent+child sv' as ?method)
+    }
+    # "Lylyjärvi -- Etelä-Savo" case: child + parent match (fi)
+    OPTIONAL {
+      BIND(STRAFTER(?labelFi, " -- ") as ?parentLabelFi)
+      BIND(STRBEFORE(?labelFi, " -- ") as ?childLabelFi)
+      ?p skos:prefLabel ?childLabelFi .
+      ?parent skos:prefLabel ?parentLabelFi .
+      ?p skos:broader+ ?parent .
+      BIND('child+parent fi' as ?method)
+    }
+    # "XXX - YYY" case: child + parent match (sv)
+    OPTIONAL {
+      BIND(STRAFTER(?labelSv, " -- ") as ?parentLabelSv)
+      BIND(STRBEFORE(?labelSv, " -- ") as ?childLabelSv)
+      ?p skos:prefLabel ?childLabelSv .
+      ?parent skos:prefLabel ?parentLabelSv .
+      ?p skos:broader+ ?parent .
+      BIND('child+parent sv' as ?method)
+    }
+    # "Kiikka -- Haapaniemi" case: parent matches via successor (fi)
+    OPTIONAL {
+      GRAPH <http://www.yso.fi/onto/sapo/> {
+        BIND(IF(CONTAINS(?labelFi, " -- "), STRBEFORE(STR(?labelFi), " -- "), STR(?labelFi)) as ?label)
+        ?worm rdfs:label ?label .
+        ?worm sapo:unionof ?tplace .
+        ?tplace (^sapo:before/sapo:after)+ ?tplace2 .
+        ?worm2 sapo:unionof ?tplace2 .
+        ?worm2 rdfs:label ?successorLabel .
+        # fix SAPO labels that may contain underscores
+        BIND(IF(CONTAINS(?successorLabel, '_'), STRBEFORE(?successorLabel, '_'), ?successorLabel) as ?successor)
+      }
+      BIND(STRAFTER(?labelFi, " -- ") as ?childLabelFi)
+      BIND(STRLANG(?successor, 'fi') as ?successorFi)
+      ?p skos:prefLabel ?childLabelFi .
+      ?parent skos:prefLabel ?successorFi .
+      ?p skos:broader ?parent .
+      BIND(CONCAT('sapo ', ?successorFi, ' fi') as ?method)
+    }
+    # "Tammisaari -- Dragsvik" case: parent matches via successor (sv)
+    OPTIONAL {
+      GRAPH <http://www.yso.fi/onto/sapo/> {
+        BIND(IF(CONTAINS(?labelFi, " -- "), STRBEFORE(STR(?labelFi), " -- "), STR(?labelFi)) as ?label)
+        ?worm rdfs:label ?label .
+        ?worm sapo:unionof ?tplace .
+        ?tplace (^sapo:before/sapo:after)+ ?tplace2 .
+        ?worm2 sapo:unionof ?tplace2 .
+        ?worm2 rdfs:label ?successorLabel .
+        # fix SAPO labels that may contain underscores
+        BIND(IF(CONTAINS(?successorLabel, '_'), STRBEFORE(?successorLabel, '_'), ?successorLabel) as ?successor)
+      }
+      BIND(STRAFTER(?labelSv, " -- ") as ?childLabelSv)
+      BIND(STRLANG(?successor, 'fi') as ?successorFi)
+      ?p skos:prefLabel ?childLabelSv .
+      ?parent skos:prefLabel ?successorFi .
+      ?p skos:broader ?parent .
+      BIND(CONCAT('sapo ', ?successorFi, ' sv') as ?method)
+    }
+    
+    # "Kalvola -- Taljala" case: only the child part matches (fi)
+    OPTIONAL {
+      BIND(STRAFTER(?labelFi, " -- ") as ?childLabelFi)
+      ?p skos:prefLabel ?childLabelFi .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
+      BIND('child-only fi' as ?method)
+    }
+    # "Dragsfjärd -- Vänö" case: only the child part matches (sv)
+    OPTIONAL {
+      BIND(STRAFTER(?labelSv, " -- ") as ?childLabelSv)
+      ?p skos:prefLabel ?childLabelSv .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
+      BIND('child-only sv' as ?method)
+    }
+    
+    BIND(IF(BOUND(?p), ?p, '') AS ?place)
+    OPTIONAL {
+      OPTIONAL {
+        ?place pnrs:mapScale ?scale .
+        BIND(STRDT(REPLACE(STR(?scale), STR(pnrs:map_scale_), ''), xsd:integer) AS ?mapScale)
+      }
+      ?place rdf:type/rdfs:label ?placetype .
+      FILTER(LANG(?placetype)='fi')
+      OPTIONAL {
+        ?place skos:prefLabel ?pnrLabelFi .
+        FILTER(LANG(?pnrLabelFi)='fi')
+      }
+      OPTIONAL {
+        ?place skos:prefLabel ?pnrLabelSv .
+        FILTER(LANG(?pnrLabelSv)='sv')
+      }
+      OPTIONAL {
+        ?place skos:broader/skos:prefLabel ?parentLabel .
+        FILTER(LANG(?parentLabel)='fi')
+      }
+      OPTIONAL {
+        ?place geo:lat ?lat .
+        ?place geo:long ?long .
+      }
+    }
+  }
+  FILTER NOT EXISTS {
+    GRAPH <http://www.yso.fi/onto/ysa/> {
+      ?ysac ysameta:nonMatch ?place .
+    }
+  }
+} 
+GROUP BY ?ysac ?labelFi ?labelSv ?method ?ednote ?place ?mapScale ?placetype ?lat ?long
+ORDER BY ?labelFi DESC(?mapScale) ?placetype
+

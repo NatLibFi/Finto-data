@@ -3,7 +3,7 @@
 INFILES="metatietosanasto.ttl rdam.ttl"
 OUTFILE=metatietosanasto-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../../Skosify/skosify/"
 LOGFILE=skosify.log
 OPTS="-c metatietosanasto.cfg -f turtle"
 
