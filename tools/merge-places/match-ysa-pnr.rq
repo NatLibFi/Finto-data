@@ -61,17 +61,16 @@ WHERE {
     # identical prefLabel in Finnish
     OPTIONAL {
       ?p skos:prefLabel ?labelFi .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
       FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
       BIND('label fi' as ?method)
     }
     # identical prefLabel in Swedish
     OPTIONAL {
       ?p skos:prefLabel ?labelSv .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
       FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
       BIND('label sv' as ?method)
-      GRAPH <http://www.yso.fi/onto/sapo/> {
-        OPTIONAL { ?p rdfs:label ?sapolabel }  
-      }
     }
     # altLabel matches in Finnish
     OPTIONAL {
@@ -166,6 +165,7 @@ WHERE {
     OPTIONAL {
       BIND(STRAFTER(?labelFi, " -- ") as ?childLabelFi)
       ?p skos:prefLabel ?childLabelFi .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
       FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
       BIND('child-only fi' as ?method)
     }
@@ -173,6 +173,7 @@ WHERE {
     OPTIONAL {
       BIND(STRAFTER(?labelSv, " -- ") as ?childLabelSv)
       ?p skos:prefLabel ?childLabelSv .
+      FILTER NOT EXISTS { ?p a pnrs:place_type_320 } # Pelto tai niitty
       FILTER NOT EXISTS { ?p a pnrs:place_type_570 } # Talo
       BIND('child-only sv' as ?method)
     }
