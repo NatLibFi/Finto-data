@@ -3551,6 +3551,7 @@ mts:elektroninen_populaarimusiikki
 mts:elokuva_perustuu_teokseen
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
+  isothes:superGroup mts:mukaelman_perustana_teos ;
   rdfs:label "elokuva perustuu teokseen"@fi ;
 .
 mts:elokuvafilmin_sukupolvi
@@ -6049,6 +6050,15 @@ mts:katselukopio
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "brukskopia"@sv ;
   skos:prefLabel "katselukopio"@fi ;
+.
+mts:kattoyhteiso
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:yhteison_suhteet ;
+  rdfs:label "kattoyhteisö"@fi ;
+  rdfs:seeAlso rdaa:P50008 ;
+  skos:scopeNote "Esim. yhteisö: Tuokko tilintarkastus ; kattoyhteisö: Tuokko yhtiöt"@fi ;
 .
 mts:katumusiikki
   rdf:type skos:Concept ;
@@ -9400,14 +9410,14 @@ mts:perustaja
 mts:perustuu_elokuvaan
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  isothes:superGroup mts:perustuu_teokseen ;
+  isothes:superGroup mts:teoksen_perustana ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "perustuu elokuvaan"@fi ;
 .
 mts:perustuu_televisiosarjaan
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  isothes:superGroup mts:perustuu_teokseen ;
+  isothes:superGroup mts:teoksen_perustana ;
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "perustuu televisiosarjaan"@fi ;
 .
@@ -9416,7 +9426,7 @@ mts:perustuu_teokseen
   rdf:type skos:Collection ;
   isothes:superGroup mts:johdannaissuhteet ;
   rdfs:comment "RDA-termi"@fi ;
-  rdfs:label "perustuu teokseen"@fi ;
+  rdfs:label "johdettu teos"@fi ;
   rdfs:seeAlso rdaw:P10148 ;
 .
 mts:pianorulla
