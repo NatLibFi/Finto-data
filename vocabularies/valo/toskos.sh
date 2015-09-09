@@ -1,10 +1,10 @@
 #!/bin/sh
 
-INFILES="valo-metadata.ttl valoyso.owl"
+INFILES="valo-metadata.ttl valo.ttl yso-valo.ttl"
 OUTFILE=valo-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../../Skosify/"
 CONFFILE=$SKOSIFYHOME/finnonto.cfg
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
