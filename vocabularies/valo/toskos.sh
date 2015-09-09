@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="valo-metadata.ttl valo.ttl yso-valo.ttl"
+INFILES="valo-metadata.ttl valo.ttl ../yso/ysoKehitys.rdf"
 OUTFILE=valo-skos.ttl
 
 SKOSIFYHOME="../../../Skosify/"
