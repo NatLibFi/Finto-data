@@ -49,3 +49,8 @@ define("SERVICE_LOGO", "./resource/pics/logo.png");
 
 // customize the css by adding your own stylesheet
 define("CUSTOM_CSS", "resource/css/finto.css");
+
+// fix HTTPS connections coming in via Pound
+if(isset($_SERVER['HTTP_X_SSL_CIPHER'])) {         
+  define('BASE_HREF', 'https://finto.fi/');
+}
