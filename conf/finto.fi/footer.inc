@@ -92,7 +92,7 @@ function vocabRoot(topConcepts) {
     var conceptData = topConcepts[i];
     var childObject = {
       text: conceptData.label, 
-      a_attr : { "href" : conceptData.uri },
+      a_attr : { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptData.uri) },
       uri: conceptData.uri,
       children: [],
       state: { opened: false } 
@@ -113,7 +113,7 @@ function createObjectsFromNarrowers(narrowerResponse) {
     var hasChildren = conceptObject.hasChildren; 
     var childObject = {
       text : conceptObject.prefLabel, 
-      a_attr : { "href" : conceptObject.uri },
+      a_attr : { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptObject.uri) },
       uri: conceptObject.uri,
       parents: narrowerResponse.uri,
       state: { opened: false, disabled: false, selected: false }
