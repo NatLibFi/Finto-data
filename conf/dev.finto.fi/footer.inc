@@ -1,5 +1,4 @@
 <script type="text/javascript">
-
 function createConceptObject(conceptUri, conceptData) {
   var prefLabel = conceptData.prefLabel; // the json narrower response has a different structure.
   newNode = { 
@@ -90,6 +89,8 @@ function createObjectsFromNarrowers(narrowerResponse) {
     // adding a css class for separating the yso concepts from the special domain ontology concepts
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
       childObject.a_attr['class'] = 'yso-concept';
+    if (conceptObject.notation)
+      childObject.text = '<span class="tree-notation">' + conceptObject.notation + '</span> ' + childObject.text;
     if (hasChildren) {
       childObject.children = true;
       childObject.state.opened = false;
@@ -99,5 +100,4 @@ function createObjectsFromNarrowers(narrowerResponse) {
   }
   return childArray;
 }
-
 </script>
