@@ -3,6 +3,7 @@
 
 from oaipmh.client import Client
 from oaipmh import metadata
+from lxml import etree
 from lxml.etree import tostring
 from pymarc import marcxml
 from cStringIO import StringIO
@@ -63,8 +64,16 @@ metans = urins[:-1] + "-meta/"
 
 g.namespace_manager.bind(metans.split('/')[-2], Namespace(metans))
 
-oai = Client(provider, registry)
-#recs = oai.listRecords(metadataPrefix='marc21', set=setname, from_=datetime(2014,10,1))
+
+class HugeTreeClient (Client):
+    """A variation of oaipmh.Client that uses the huge_tree option in lxml
+       that allows larger amounts of XML data to be parsed without errors."""
+    def parse(self, xml):
+        parser = etree.XMLParser(huge_tree=True)
+        return etree.XML(xml, parser=parser)
+
+oai = HugeTreeClient(provider, registry)
+#recs = oai.listRecords(metadataPrefix='marc21', set=setname, from_=datetime(2012,12,3), until=datetime(2015,9,26))
 recs = oai.listRecords(metadataPrefix='marc21', set=setname)
 
 LANGMAP = {
