@@ -9,7 +9,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 @prefix ptvl: <http://urn.fi/URN:NBN:fi:au:ptvl:> .
-@prefix isothes: <http://purl.org/iso25964/skos-thes#>.
 
 ptvl: a skos:ConceptScheme ;
     dc:publisher
@@ -37,9 +36,8 @@ Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai
 
     dct:language <http://lexvo.org/id/iso639-3/fin> .
 
-ptvl:P a isothes:ConceptGroup, skos:Collection ;
-    isothes:microThesaurusOf ptvl: ;
-    skos:inScheme ptvl: ;
+ptvl:P a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
 
     skos:prefLabel "Julkisten palvelujen yleinen päätasojen luokitus"@fi ;
 
@@ -52,9 +50,8 @@ Luokitus on tarkoitettu erityisesti kansalaisille ja yrityksille palveluja tarjo
 Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai teeman verkkopalveluissa aina kun aihepiiri antaa tähän edellytyksiä.
 """@fi .
 
-ptvl:K a isothes:ConceptGroup, skos:Collection ;
-    isothes:microThesaurusOf ptvl: ;
-    skos:inScheme ptvl: ;
+ptvl:K a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
 
     skos:prefLabel "Julkisten palvelujen kohderyhmäluokat"@fi ;
 
@@ -63,9 +60,8 @@ ptvl:K a isothes:ConceptGroup, skos:Collection ;
 ovat julkisten palvelujen keskeisiä käyttäjiä, joille erityisesti tuotetaan
 palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset."""@fi .
 
-ptvl:KE a isothes:ConceptGroup, skos:Collection ;
-    isothes:microThesaurusOf ptvl: ;
-    skos:inScheme ptvl: ;
+ptvl:KE a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
 
     skos:prefLabel "Kansalaisille suunnattujen julkisten palvelujen elämäntilanneluokat"@fi ;
 
@@ -75,9 +71,8 @@ palveluja voidaan kohdentaa. Elämäntilanteella tarkoitetaan tässä yhteydess�
 akuuttia, usein henkilön elämänmuutokseen liittyvää tilannetta, jonka
 yhteyteen eri toimijat tuottavat palveluja."""@fi .
 
-ptvl:TT a isothes:ConceptGroup, skos:Collection ;
-    isothes:microThesaurusOf ptvl: ;
-    skos:inScheme ptvl: ;
+ptvl:TT a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
 
     skos:prefLabel "Julkisten palvelujen tuottajatyyppiluokat"@fi ;
 
@@ -85,9 +80,8 @@ ptvl:TT a isothes:ConceptGroup, skos:Collection ;
 """Luokituksessa on eritelty organisaatiotyypit, jotka tuottavat palveluja
 kansalaisille, yrityksille ja yhteisöille."""@fi .
 
-ptvl:TTP a isothes:ConceptGroup, skos:Collection ;
-    isothes:microThesaurusOf ptvl: ;
-    skos:inScheme ptvl: ;
+ptvl:TTP a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
 
     skos:prefLabel "Julkisten palvelujen tuotantotapaluokat"@fi ;
 

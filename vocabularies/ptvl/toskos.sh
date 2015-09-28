@@ -12,6 +12,6 @@ done
 
 SKOSIFYHOME="../../../Skosify/"
 LOGFILE=skosify.log
-OPTS=""
+OPTS="--set-modified"
 
 $SKOSIFYHOME/skosify/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
