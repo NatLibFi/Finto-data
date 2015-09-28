@@ -1496,6 +1496,13 @@ mts:C10008
   rdfs:label "Suku"@fi ;
   rdfs:seeAlso rdac:C10008 ;
 .
+mts:DJ-miksaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:miksaaja ;
+  rdfs:label "DJ-miksaaja"@fi ;
+  skos:definition "henkilö tai yhteisö, joka henkilö tai yhteisö, joka luo äänitekokonaisuuden (ns. mix album, mix tape, mix CD tmv.) erillisistä levytyksistä tai niiden osista yhdistämällä ne (yleensä) tauottomaksi jatkumoksi ja muokkaamalla usein myös levytysten pituutta ja/tai audiokuvaa esim. efektilaitteiden ja/tai taajuuskorjaimien avulla"@fi ;
+.
 mts:P30001
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -2047,6 +2054,15 @@ mts:aanisilmukkakasetti
   skos:prefLabel "ljudmagasin"@sv ;
   skos:prefLabel "äänisilmukkakasetti"@fi ;
 .
+mts:aanisuunnittelija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "äänisuunnittelija"@fi ;
+  rdfs:seeAlso rdae:P20276 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen suunnittelemalla ja luomalla äänielementtejä"@fi ;
+.
 mts:aanitaide
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -2055,12 +2071,30 @@ mts:aanitaide
   skos:prefLabel "äänitaide"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:aaniteknikko
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "ääniteknikko"@fi ;
+  rdfs:seeAlso rdae:P20050 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen valvomalla ääni- tai videotallennuksen teknistä toteutusta"@fi ;
+.
 mts:aanitiedosto
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "ljudfil"@sv ;
   skos:prefLabel "äänitiedosto"@fi ;
+.
+mts:aanittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "äänittäjä"@fi ;
+  rdfs:seeAlso rdae:P20052 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen käyttämällä tallennuslaitetta äänen taltioimiseen tallennustilanteessa, mukaan lukien luonnonäänten, folklorististen tapahtumien, musiikin jne. kenttätallennukset"@fi ;
 .
 mts:aanitteen_sukupolvi
   rdf:type isothes:ConceptGroup ;
@@ -3500,6 +3534,14 @@ mts:ekspression_ja_toimijoiden_valiset_suhteet
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Ekspression ja toimijoiden väliset suhteet"@fi ;
 .
+mts:ekspression_perustana
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdannaissuhteet_e ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "ekspression perustana"@fi ;
+  rdfs:seeAlso rdae:P20204 ;
+.
 mts:ekspression_suhteet
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -3720,6 +3762,15 @@ mts:esine
   skos:exactMatch <http://iflastandards.info/ns/isbd/terms/contentform/T1005> ;
   skos:prefLabel "esine"@fi ;
 .
+mts:esipuheen_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:oheistekstin_kirjoittaja ;
+  rdfs:label "esipuheen kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20275 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen kirjoittamalla esipuheen alkuteokseen"@fi ;
+.
 mts:esitetty_musiikki
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -3736,6 +3787,15 @@ mts:esittaja
   rdfs:label "esittäjä"@fi ;
   rdfs:seeAlso rdae:P20039 ;
   skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen esittämällä musiikkia, näyttelemällä, tanssimalla, puhumalla jne. usein musiikki- tai näytelmäesityksessä tms."@fi ;
+.
+mts:esittamisesta_vastaava
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "esittämisestä vastaava"@fi ;
+  rdfs:seeAlso rdae:P20054 ;
+  skos:definition "henkilö tai yhteisö, joka mainitaan elokuvan tms. alku- tai lopputeksteissä ja joka on vastuussa tuotannosta, rahoituksesta tai jakelusta tavalla tai toisella"@fi ;
 .
 mts:esitysformaatti
   rdf:type isothes:ConceptGroup ;
@@ -4718,6 +4778,15 @@ mts:haastateltava
   rdfs:seeAlso rdaw:P10059 ;
   skos:definition "henkilö tai yhteisö, joka vastaamalla haastattelijan, tavallisesti toimittajan, mielipidetutkijan tms. kysymyksiin osallistuu teoksen luomiseen"@fi ;
 .
+mts:haastateltava_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "haastateltava"@fi ;
+  rdfs:seeAlso rdae:P20047 ;
+  skos:definition "henkilö tai yhteisö joka osallistuu ekspression tekemiseen vastaamalla haastattelijan, tavallisesti toimittajan, mielipidetutkijan tms. kysymyksiin"@fi ;
+.
 mts:haastattelija
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -4726,6 +4795,15 @@ mts:haastattelija
   rdfs:label "haastattelija"@fi ;
   rdfs:seeAlso rdaw:P10057 ;
   skos:definition "henkilö tai yhteisö, joka toimimalla haastattelijana, toimittajana, mielipidetutkijana tms. osallistuu teoksen luomiseen"@fi ;
+.
+mts:haastattelija_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "haastattelija"@fi ;
+  rdfs:seeAlso rdae:P20032 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen toimimalla haastattelijana, toimittajana, mielipidetutkijana tms."@fi ;
 .
 mts:haastattelut
   rdf:type skos:Concept ;
@@ -5474,6 +5552,31 @@ mts:johdannaissuhteet_e
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "Johdannaissuhteet"@fi ;
 .
+mts:johdannon_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:oheistekstin_kirjoittaja ;
+  rdfs:label "johdannon kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20045 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen kirjoittamalla johdannon alkuteokseen"@fi ;
+.
+mts:johdettu_ekspressio
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdannaissuhteet_e ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "johdettu ekspressio"@fi ;
+  rdfs:seeAlso rdae:P20203 ;
+.
+mts:johdettu_teos
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdannaissuhteet ;
+  rdfs:comment "RDA-termi"@fi ;
+  rdfs:label "johdettu teos"@fi ;
+  rdfs:seeAlso rdaw:P10148 ;
+.
 mts:johtaja
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -5606,6 +5709,15 @@ mts:kaanonit
   skos:prefLabel "kanon"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:kaantaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "kääntäjä"@fi ;
+  rdfs:seeAlso rdae:P20037 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen kääntämällä alkuperäisen tekstin toiselle kielelle"@fi ;
+.
 mts:kaantopuolilla
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -5689,6 +5801,13 @@ mts:kamarioopperat
   skos:prefLabel "kamarioopperat"@fi ;
   skos:prefLabel "kammaroperor"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:kameraoperaattori
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "kameraoperaattori"@fi ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen käyttämällä tallennuslaitetta videokuvan taltioimiseen tallennustilanteessa"@fi ;
 .
 mts:kandidaatintutkielma
   rdf:type skos:Concept ;
@@ -5872,6 +5991,15 @@ mts:kartantekija
   rdfs:label "kartantekijä"@fi ;
   rdfs:seeAlso rdaw:P10052 ;
   skos:definition "henkilö tai yhteisö, joka on vastuussa kartan, kartaston, karttapallon tai muun karttateoksen luomisesta"@fi ;
+.
+mts:kartantekija_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "kartantekijä"@fi ;
+  rdfs:seeAlso rdae:P20042 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen täydentämällä teosta kartta-aineistolla tai muokkaamalla aiempaa karttateosta"@fi ;
 .
 mts:kartasto
   rdf:type skos:Concept ;
@@ -6527,6 +6655,13 @@ mts:kokoava_nimeke
   rdfs:label "kokoava nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
 .
+mts:kokoomateoksen_toimittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "kokoomateoksen toimittaja"@fi ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu kokoomateoksen ekspression tekemiseen valitsemalla ja kokoamalla yhden tai useamman tekijän teoksia tai niiden osia jotka julkaistaan yhdessä. Kokoomateoksen toimittaja voi myös selkeyttää kokoomateoksen sisältöä, esim. lisäämällä johdannon, huomautuksia tai muuta kriittistä sisältöä. Henkilöstä jne. joka luo uuden teoksen kokoamalla tietoja tms. katso kokoaja"@fi ;
+.
 mts:kokousjulkaisut
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -6710,6 +6845,15 @@ mts:koreografi
   rdfs:label "koreografi"@fi ;
   rdfs:seeAlso rdaw:P10060 ;
   skos:definition "henkilö tai yhteisö joka on vastuussa koreografisen teoksen luomisesta"@fi ;
+.
+mts:koreografi_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "koreografi"@fi ;
+  rdfs:seeAlso rdae:P20043 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen täydentämällä teosta koreografialla tai muokkaamalla aiempaa koreografista teosta."@fi ;
 .
 mts:korjausoppaat
   rdf:type skos:Concept ;
@@ -6962,6 +7106,15 @@ mts:kuvatiedosto
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "bildfil"@sv ;
   skos:prefLabel "kuvatiedosto"@fi ;
+.
+mts:kuvittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "kuvittaja"@fi ;
+  rdfs:seeAlso rdae:P20051 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen täydentämällä pääasiallista sisältöä piirroksilla, valokuvilla, kaavioilla jne. Jos piirrokset tms. muodostavat teoksen pääsisällön katso taiteilija tai valokuvaaja"@fi ;
 .
 mts:kuvitus
   rdf:type isothes:ConceptGroup ;
@@ -7222,7 +7375,7 @@ mts:lastenmusiikki
 mts:lastenversio_teoksesta
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  isothes:superGroup mts:perustuu_teokseen ;
+  isothes:superGroup mts:johdettu_teos ;
   rdfs:label "lastenversio teoksesta"@fi ;
 .
 mts:latin_rock
@@ -7339,6 +7492,15 @@ mts:lausunnot
   skos:prefLabel "utlåtanden"@sv ;
   skos:scopeNote "Monografioiden genre-termi"@fi ;
 .
+mts:lavastaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "lavastaja"@fi ;
+  rdfs:seeAlso rdae:P20038 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen valvomalla elokuvan lavasteiden tuottamista"@fi ;
+.
 mts:lehtiotaulu
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -7346,6 +7508,15 @@ mts:lehtiotaulu
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1046> ;
   skos:prefLabel "blädderblock"@sv ;
   skos:prefLabel "lehtiötaulu"@fi ;
+.
+mts:leikkaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "leikkaaja"@fi ;
+  rdfs:seeAlso rdae:P20055 ;
+  skos:definition "henkilö tai yhteisö, joka vastaa elokuvan, videoteoksen tms. kokoamisesta, järjestämisestä ja leikkauksesta sekä kuvan että äänen osalta"@fi ;
 .
 mts:levea_ura
   rdf:type skos:Concept ;
@@ -7418,6 +7589,24 @@ mts:linkki
   isothes:superGroup mts:muu_julkaisumuoto ;
   rdfs:label "linkki"@fi ;
 .
+mts:lisatyn_sanoituksen_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:lisatyn_tekstin_kirjoittaja ;
+  rdfs:label "lisätyn sanoituksen kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20068 ;
+  skos:definition "musiikkiteoksen ekspressioon lisättyjen sanojen kirjoittaja. Sanoituksesta, joka on tehty yhteistyössä säveltäjän kanssa alkuperäiseen teokseen,katso sanoittaja"@fi ;
+.
+mts:lisatyn_tekstin_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:oheistekstin_kirjoittaja ;
+  rdfs:label "lisätyn tekstin kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20030 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen tuottamalla tekstiä alkuaan pääasiassa tekstittömään teokseen (esim. kuvatekstejä valokuviin, karttojen kuvauksia)"@fi ;
+.
 mts:lisensiaatintyo
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -7447,6 +7636,14 @@ mts:lohkosarjan_nimeke
   rdfs:label "delseriens titel"@sv ;
   rdfs:label "lohkosarjan nimeke"@fi ;
   rdfs:seeAlso rdam:P30128 ;
+.
+mts:loppusanojen_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:oheistekstin_kirjoittaja ;
+  rdfs:label "loppusanojen kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20237 ;
 .
 mts:lopputyo
   rdf:type skos:Concept ;
@@ -7506,6 +7703,15 @@ mts:lyhennetty_nimeke
   rdfs:label "lyhennetty nimeke"@fi ;
   rdfs:seeAlso rdam:P30131 ;
 .
+mts:lyhentaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "lyhentäjä"@fi ;
+  rdfs:seeAlso rdae:P20049 ;
+  skos:definition "henkilö tai yhteisö joka osallistuu ekspression tekemiseen lyhentämällä tai tiivistämällä alkuteosta niin että teoksen sisältö ja luonne eivät olennaisesti muutu. Jos muutokset ovat huomattavia ja niiden seurauksena syntyy uusi teos, katso kirjoittaja"@fi ;
+.
 mts:m-ii
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -7550,6 +7756,13 @@ mts:maalaus
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "maalaus"@fi ;
   skos:prefLabel "målning"@sv ;
+.
+mts:maanmittari
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "maanmittari"@fi ;
+  skos:definition "henkilö tai yhteisö joka osallistuu karttateoksen ekspression tekemiseen tarjoamalla esitetyn maantieteellisen alueen mitat tai mittasuhteet"@fi ;
 .
 mts:maanpuolustuslehdet
   rdf:type skos:Concept ;
@@ -8136,6 +8349,13 @@ mts:mikroura
   skos:prefLabel "mikrospår"@sv ;
   skos:prefLabel "mikroura"@fi ;
 .
+mts:miksaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "miksaaja"@fi ;
+  skos:definition "Äänitallenteen ”primäärimiksaaja”. Henkilö, joka äänitteen alkuperäisessä studiotuotantoprosessissa yhdistää (miksaa) moniraitatallenteen eri raitojen audioinformaation (yleensä) kahden stereoraidan muodostamaksi ns. studiomasteriksi"@fi ;
+.
 mts:mississippi-blues
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -8220,7 +8440,7 @@ mts:muistikortti
 mts:mukaelma
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  isothes:superGroup mts:perustuu_teokseen ;
+  isothes:superGroup mts:johdettu_teos ;
   rdfs:label "mukaelma"@fi ;
   rdfs:seeAlso rdaw:P10155 ;
   skos:altLabel "mukaelma teoksesta"@fi ;
@@ -8297,6 +8517,15 @@ mts:musiikki_elokuvaan
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "musiikki elokuvaan"@fi ;
   skos:altLabel "musiikki elokuvasta"@fi ;
+.
+mts:musiikkijohtaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "musiikkijohtaja"@fi ;
+  rdfs:seeAlso rdae:P20035 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen koordinoimalla säveltäjän, äänileikkaajan ja äänimiksaajien toimintaa elokuvatuotannossa tai musiikki- tai näytelmäesityksessä"@fi ;
 .
 mts:musiikkilehdet
   rdf:type skos:Concept ;
@@ -8458,6 +8687,15 @@ mts:nayte
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "näyte"@fi ;
   skos:prefLabel "prov"@sv ;
+.
+mts:nayttamo-ohjaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "näyttämöohjaaja"@fi ;
+  rdfs:seeAlso rdae:P20031 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu näyttämöteoksen ekspression tekemiseen johtamalla tai valvomalla esitystä"@fi ;
 .
 mts:nayttamokirja
   rdf:type skos:Concept ;
@@ -8774,6 +9012,15 @@ mts:offertoriumit
   skos:prefLabel "offertoriumit"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:oheistekstin_kirjoittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "oheistekstin kirjoittaja"@fi ;
+  rdfs:seeAlso rdae:P20046 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen tuottamalla alkuteosta täydentävää tekstiä (esim. johdannon, esipuheen)"@fi ;
+.
 mts:ohjaaja
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -8917,6 +9164,15 @@ mts:operetit
   skos:prefLabel "operetit"@fi ;
   skos:prefLabel "operetter"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:opettaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "opettaja"@fi ;
+  rdfs:seeAlso rdae:P20015 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen opettamalla tai esittelemällä"@fi ;
 .
 mts:opetuskortti
   rdf:type skos:Concept ;
@@ -9311,6 +9567,15 @@ mts:panavision
   skos:prefLabel "Panavision"@fi ;
   skos:prefLabel "Panavision"@sv ;
 .
+mts:panelisti
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "panelisti"@fi ;
+  rdfs:seeAlso rdae:P20019 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen vierailemalla ohjelmassa, jossa keskustellaan eri aiheista ja johon usein osallistuu näiden aiheiden asiantuntijoita"@fi ;
+.
 mts:pantomiimit
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -9505,14 +9770,6 @@ mts:perustuu_televisiosarjaan
   rdfs:comment "RDA-termi"@fi ;
   rdfs:label "perustuu televisiosarjaan"@fi ;
 .
-mts:perustuu_teokseen
-  rdf:type isothes:ConceptGroup ;
-  rdf:type skos:Collection ;
-  isothes:superGroup mts:johdannaissuhteet ;
-  rdfs:comment "RDA-termi"@fi ;
-  rdfs:label "johdettu teos"@fi ;
-  rdfs:seeAlso rdaw:P10148 ;
-.
 mts:pianorulla
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -9566,6 +9823,15 @@ mts:piirikotelo
   skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1012> ;
   skos:prefLabel "datorminnesmodul"@sv ;
   skos:prefLabel "piirikotelo"@fi ;
+.
+mts:piirtaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "piirtäjä"@fi ;
+  rdfs:seeAlso rdae:P20033 ;
+  skos:definition "henkilö tai yhteisö joka osallistuu arkkitehdin, suunnittelijan tms. teoksen ekspression tekemiseen tuottamalla tarkkoja suunnitelmia tai piirroksia rakennuksista, laivoista, lentokoneista, laitteista, esineistä jne."@fi ;
 .
 mts:piirustus
   rdf:type skos:Concept ;
@@ -9757,6 +10023,15 @@ mts:potilaslehdet
   skos:prefLabel "potilaslehdet"@fi ;
   skos:scopeNote "Jatkuvien julkaisujen genre-termi"@fi ;
 .
+mts:poytakirjan_laatija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "pöytäkirjan laatija"@fi ;
+  rdfs:seeAlso rdae:P20058 ;
+  skos:definition "henkilö, suku tai yhteisö, jonka tehtävänä on laatia kokouksen pöytäkirja"@fi ;
+.
 mts:preeses
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -9873,6 +10148,15 @@ mts:puheet
   skos:prefLabel "tal (föredrag)"@sv ;
   skos:scopeNote "Monografioiden genre-termi"@fi ;
 .
+mts:puhuja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "puhuja"@fi ;
+  rdfs:seeAlso rdae:P20024 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen puhumalla, esim. luennoimalla tai pitämällä puheen"@fi ;
+.
 mts:punk_rock
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -9934,6 +10218,15 @@ mts:puutarhalehdet
   skos:prefLabel "puutarhalehdet"@fi ;
   skos:prefLabel "trädgårdstidningar"@sv ;
   skos:scopeNote "Jatkuvien julkaisujen genre-termi"@fi ;
+.
+mts:puvustaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "puvustaja"@fi ;
+  rdfs:seeAlso rdae:P20036 ;
+  skos:definition "henkilö tai yhteisö joka osallistuu ekspression tekemiseen suunnittelemalla elokuvan tai musiikki- tai näytelmäesityksen puvustuksen"@fi ;
 .
 mts:pyha
   rdf:type skos:Concept ;
@@ -10660,6 +10953,15 @@ mts:saveltaja
   rdfs:seeAlso rdaw:P10053 ;
   skos:definition "henkilö tai yhteisö, joka on vastuussa musiikkiteoksen luomisesta. Käytetään myös henkilöistä jne., jotka ovat toista teosta muokkaamalla luoneet erottuvan musiikillisen muunnoksen (esim. vapaa transkriptio), mukailleet olemassa olevaa teosta tai luoneet toisen säveltäjän tyyliä muistuttavan uuden teoksen, tai luoneet teoksen joka perustuu toisen säveltäjän musiikkiin (esim. muunnelmia teemasta)"@fi ;
 .
+mts:saveltaja_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "säveltäjä"@fi ;
+  rdfs:seeAlso rdae:P20026 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen lisäämällä musiikkia teokseen, johon ei aikaisemmin sisältynyt musiikkia tai säveltämällä uutta musiikkia korvaamaan teoksen aikaisemman musiikin tai täydentämään olemassa olevaa musiikkia"@fi ;
+.
 mts:saveltajien_teosluettelot
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -10746,6 +11048,13 @@ mts:sellakka
   skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1016> ;
   skos:prefLabel "schellack"@sv ;
   skos:prefLabel "sellakka"@fi ;
+.
+mts:selostaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "selostaja"@fi ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen selostamalla, esim. urheiluselostaja"@fi ;
 .
 mts:sensaatiolehdet
   rdf:type skos:Concept ;
@@ -11007,6 +11316,15 @@ mts:soitonoppaat
   skos:scopeNote "Monografioiden genre-termi"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:soittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "soittaja"@fi ;
+  rdfs:seeAlso rdae:P20020 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen soittamalla soitinta"@fi ;
+.
 mts:solid_dot_-painatus_
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -11094,6 +11412,15 @@ mts:soulblues
   skos:prefLabel "soulblues"@fi ;
   skos:prefLabel "soulblues"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:sovittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "sovittaja"@fi ;
+  rdfs:seeAlso rdae:P20029 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu musiikkiteoksen ekspression tekemiseen muokkaamalla sävellyksen alkuperäisteoksesta poikkeavalle esityskokoonpanolle. Sovittaja voi myös muokata teosta samalle esityskokoonpanolle tms. säilyttäen alkuperäisen sävellyksen musiikillisen sisällön olennaisilta osin muuttumattomana. Laajasta muokkaamisesta, joka johtaa käytännössä uuden musiikkiteoksen luontiin, katso säveltäjä"@fi ;
 .
 mts:sovitukset
   rdf:type skos:Concept ;
@@ -11482,6 +11809,15 @@ mts:tangot
   skos:prefLabel "tangot"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:tanssija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "tanssija"@fi ;
+  rdfs:seeAlso rdae:P20014 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen tanssimalla musiikki- tai näytelmäesityksessä jne."@fi ;
+.
 mts:tanssilehdet
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -11536,6 +11872,15 @@ mts:tarantellat
   skos:prefLabel "tarantella"@sv ;
   skos:prefLabel "tarantellat"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:tarinankertoja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:esittaja ;
+  rdfs:label "tarinankertoja"@fi ;
+  rdfs:seeAlso rdae:P20023 ;
+  skos:definition "esittäjä, joka osallistuu ekspression tekemiseen tanssimalla musiikki- tai näytelmäesityksessä jne."@fi ;
 .
 mts:tarkoitettu_aikuisopiskeluun
   rdf:type skos:Concept ;
@@ -11661,6 +12006,15 @@ mts:teknorock
   skos:prefLabel "technorock"@sv ;
   skos:prefLabel "teknorock"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:tekstaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:kuvittaja ;
+  rdfs:label "tekstaaja"@fi ;
+  rdfs:seeAlso rdae:P20259 ;
+  skos:definition "kuvittaja, joka osallistuu sarjakuvan ekspression tekemiseen tekstaamalla puhetekstin ja graafiset äänitehostemerkinnät"@fi ;
 .
 mts:teksti
   rdf:type skos:Concept ;
@@ -12098,6 +12452,15 @@ mts:toimisto
   skos:prefLabel "toimisto"@fi ;
   skos:scopeNote "Esimerkki: Helsingin yliopiston tiedotus (toimisto)"@fi ;
 .
+mts:toimittaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "toimittaja"@fi ;
+  rdfs:seeAlso rdae:P20048 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen tarkistamalla tai selkeyttämällä sisältöä, esim. lisäämällä johdannon, huomautuksia tai muuta kriittistä sisältöä. Toimittaja voi myös valmistella teoksen ekspression tuotantoa, julkaisemista tai jakelua varten. Suurista muutoksista, muokkaamisesta jne. joka merkittävästi muuttaa alkuteoksen sisältöä ja luonnetta niin että syntyy uusi teos katso tekijä/kirjoittaja"@fi ;
+.
 <http://metatietosanasto.fi/toinen_sukupolvi,_esityskopio>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -12135,6 +12498,15 @@ mts:traditionaalinen_jazz
   skos:prefLabel "traditionaalinen jazz"@fi ;
   skos:prefLabel "traditionell jazz"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:transkriboija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "transkriboija"@fi ;
+  rdfs:seeAlso rdae:P20034 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen kirjoittamalla tai nuotintamalla aiemmin kirjoittamattomia tai nuotintamattomia sisältöjä tai muuttamalla sen merkintäjärjestelmästä toiseen. Eri soittimelle tai eri esityskokoonpanolle transkriboidusta teoksesta, katso sovittaja"@fi ;
 .
 mts:transkriptiot
   rdf:type skos:Concept ;
@@ -12201,6 +12573,15 @@ mts:tuomari
   rdfs:seeAlso rdaw:P10044 ;
   skos:definition "henkilö, jolla yksin tai yhdessä tuomioistuimen muiden jäsenten kanssa on oikeus käyttää tuomiovaltaa"@fi ;
 .
+mts:tuomioistuimen_kirjuri
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "tuomioistuimen kirjuri"@fi ;
+  rdfs:seeAlso rdae:P20040 ;
+  skos:definition "henkilö tai yhteisö joka osallistuu ekspression tekemiseen valmistelemalla tuomarien perustelut ja eriävät mielipiteet julkaistavaksi"@fi ;
+.
 mts:tuomioistuimessa_voimassa
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
@@ -12217,6 +12598,15 @@ mts:tuomioistuin
   skos:definition "Valtion viranomainen ja oikeudenhoitoelin, jonka päätehtävänä on käyttää tuomiovaltaa riita-, rikos- ja hallintoasioissa, oikeus (Kielitoimiston sanakirja)."@fi ;
   skos:prefLabel "tuomioistuin"@fi ;
   skos:scopeNote "Esimerkki: Markkinaoikeus (tuomioistuin)"@fi ;
+.
+mts:tuotantosuunnittelija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "tuotantosuunnittelija"@fi ;
+  rdfs:seeAlso rdae:P20056 ;
+  skos:definition "henkilö tai yhteisö, joka vastaa elokuvan tms. visuaalisen ilmeen suunnittelusta"@fi ;
 .
 mts:tuotantoyhtio
   rdf:type isothes:ConceptGroup ;
@@ -12235,6 +12625,13 @@ mts:tuottaja
   rdfs:label "tuottaja"@fi ;
   rdfs:seeAlso rdaw:P10064 ;
   skos:definition "henkilö tai yhteisö, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Tuottaja vastaa tyypillisesti rahoituksen hankkimisesta, tuotannon johdosta, avainhenkilöstön palkkaamisesta, jakelun järjestämisestä jne."@fi ;
+.
+mts:tuottaja_e
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "tuottaja"@fi ;
+  skos:definition "henkilö tai yhteisö, joka on vastuussa ekspression taiteellisen sisällön tuottamisesta (esim. äänitteen tuottaja)."@fi ;
 .
 mts:turvallisuusmaaraykset
   rdf:type skos:Concept ;
@@ -12381,6 +12778,39 @@ mts:uskonnolliset_lehdet
   skos:prefLabel "uskonnolliset lehdet"@fi ;
   skos:scopeNote "Jatkuvien julkaisujen genre-termi"@fi ;
 .
+mts:uudelleenmiksaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:miksaaja ;
+  rdfs:label "uudelleenmiksaaja"@fi ;
+  skos:definition "ns. taiteellinen uudelleenmiksaaja, joka luo alkuperäislevytyksestä äänikuvaltaan poikkeavan uuden miksausversion lisäämällä uusia (tai muokkaamalla alkuperäisiä) musiikillisia elementtejä. Luonteeltaan lähellä sovittamista ja tuottamista"@fi ;
+.
+mts:uudistettu_laitos_teoksesta
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdettu_ekspressio ;
+  rdfs:label "uudistettu laitos teoksesta"@fi ;
+.
+mts:uudistettu_painos_teoksesta
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdettu_ekspressio ;
+  rdfs:label "uudistettu painos teoksesta"@fi ;
+.
+mts:uudistettu_versio
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:johdettu_ekspressio ;
+  rdfs:label "uudistettu versio"@fi ;
+  rdfs:seeAlso rdae:P20211 ;
+.
+mts:uudistettu_versio_teoksesta
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  isothes:superGroup mts:johdettu_ekspressio ;
+  rdfs:label "uudistettu versio teoksesta"@fi ;
+.
 mts:uusi_aalto
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -12399,7 +12829,7 @@ mts:uusi_painos
 mts:uusi_versio_teoksesta
   rdf:type isothes:ConceptGroup ;
   rdf:type skos:Collection ;
-  isothes:superGroup mts:perustuu_teokseen ;
+  isothes:superGroup mts:johdettu_teos ;
   rdfs:label "uusi versio teoksesta"@fi ;
 .
 mts:uusintapainos
@@ -12579,6 +13009,15 @@ mts:valopaino
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "ljustryck"@sv ;
   skos:prefLabel "valopaino"@fi ;
+.
+mts:valosuunnittelija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "valosuunnittelija"@fi ;
+  rdfs:seeAlso rdae:P20277 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen suunnittelemalla ja luomalla valoelementit"@fi ;
 .
 mts:valssit
   rdf:type skos:Concept ;
@@ -12937,6 +13376,15 @@ mts:videosilmukkakasetti
   skos:prefLabel "videomagasin"@sv ;
   skos:prefLabel "videosilmukkakasetti"@fi ;
 .
+mts:videoteknikko
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "videoteknikko"@fi ;
+  rdfs:seeAlso rdae:P20050 ;
+  skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen valvomalla ääni- tai videotallennuksen teknistä toteutusta"@fi ;
+.
 mts:videotiedosto
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -13007,6 +13455,15 @@ mts:virsikirjat
   skos:prefLabel "psalmböcker"@sv ;
   skos:prefLabel "virsikirjat"@fi ;
   skos:scopeNote "Monografioiden genre-termi"@fi ;
+.
+mts:visuaalisten_tehosteiden_tekija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "visuaalisten tehosteiden tekijä"@fi ;
+  rdfs:seeAlso rdae:P20257 ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu liikkuvaa kuvaa sisältävän ekspression tekemiseen suunnittelemalla ja luomalla visuaaliset tehosteet jälkituotantovaiheessa"@fi ;
 .
 mts:vitsit
   rdf:type skos:Concept ;
