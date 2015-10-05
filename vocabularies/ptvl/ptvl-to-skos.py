@@ -25,7 +25,11 @@ def add_concept(cell):
     g.add((uri, SKOS.notation, Literal(notation)))
     g.add((uri, SKOS.prefLabel, Literal(label, 'fi')))
     m = re.search('^\D+', notation)
-    schemeuri = PTVL[m.group(0)]
+    schemeid = m.group(0)
+    if schemeid != 'P':
+        schemeuri = PTVL[schemeid]
+    else:
+        schemeuri = PTVL['']
     g.add((uri, SKOS.inScheme, schemeuri))
 
     if '.' in notation:
