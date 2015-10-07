@@ -134,8 +134,7 @@ function modifyQueryValues(extraParams) {
         var params = {
                 'versionHistoryGraph': versionHistory,
                 'oldVersion': fromId,
-                'newVersion': toId,
-                'language': 'fi' // FIXME: 'sv' for Allärs?
+                'newVersion': toId
         }
         params = $.extend(params, extraParams);
         

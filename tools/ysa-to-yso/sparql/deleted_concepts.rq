@@ -16,8 +16,8 @@ PREFIX xhv:  <http://www.w3.org/1999/xhtml/vocab#>
 SELECT distinct (?concept AS ?deletedConcept) (str(?prefLabel) AS ?deletedConceptLabel)
 WHERE {
   # parameters
-  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?language ) {
-    ( <http://zbw.eu/stw/version> undef undef "en" )
+  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ) {
+    ( <http://zbw.eu/stw/version> undef undef )
   }
   GRAPH ?versionHistoryGraph {
     # get the current and the previous version as default versions
@@ -53,7 +53,5 @@ WHERE {
   GRAPH ?oldVersionGraph {
     ?concept skos:prefLabel ?prefLabel
   }
-  # restrict output to a certain language
-  #FILTER (lang(?prefLabel) = ?language)
 }
 ORDER BY ?concept

@@ -14,8 +14,8 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 SELECT DISTINCT ?concept (str(?conceptPrefLabel) AS ?conceptLabel) ?altLabel
 WHERE {
   # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?language ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508"  "fi" )
+  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508" )
   }
   GRAPH ?versionHistoryGraph {
     # get the current and the previous version as default versions
@@ -54,8 +54,5 @@ WHERE {
       ?concept skos:prefLabel ?conceptPrefLabel .
   }
 
-
-  FILTER (lang(?conceptPrefLabel) = ?language)
-  FILTER (lang(?altLabel) = ?language)
 }
 ORDER BY ?conceptPrefLabel

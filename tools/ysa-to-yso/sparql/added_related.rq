@@ -16,8 +16,8 @@ SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel
 #SELECT (count(?concept) AS ?ccount)
 WHERE {
   # parameters
-  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ?language ) {
-    ( <http://www.yso.fi/onto/ysa/version> undef undef skos:Concept "fi" )
+  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ) {
+    ( <http://www.yso.fi/onto/ysa/version> undef undef skos:Concept )
   }
   GRAPH ?versionHistoryGraph {
     # get the current and the previous version as default versions
@@ -67,6 +67,5 @@ WHERE {
       }
     }
   }
-  FILTER (lang(?conceptLabel) = ?language && lang(?relatedConceptLabel) = ?language)
 }
 ORDER BY ?conceptLabel ?relatedConceptLabel
