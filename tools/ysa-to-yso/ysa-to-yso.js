@@ -70,12 +70,14 @@ var individualValueRegExp = /(?:[^\s"]+|"[^"]*")+/g;
 
 function getVariables(query) {
         var matches = valuesBlockRegExp.exec(query);
+        if (matches == null) return [];
         var variables = matches[2].match(variableNamesRegExp);
         return variables;
 }
 
 function getDefaultValues(query) {
         var matches = valuesBlockRegExp.exec(query);
+        if (matches == null) return {};
         var valueRows = matches[3].match(valueRowRegExp_all);
         var defaultValueRow = valueRows[0].match(valueRowRegExp)[1];
         var originalValues = defaultValueRow.match(individualValueRegExp);
@@ -117,6 +119,7 @@ function replaceQueryValues(query, newValues) {
         });
         var valueString = "( " + vals.join(" ") + " )";
         var matches = valuesBlockRegExp.exec(query);
+        if (matches == null) return query;
         var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + valueString + "\n" + matches[4]);
         
         return newquery;
@@ -188,6 +191,7 @@ function node_to_value(node) {
 function refreshUpdateQuery() {
         var query = $('#query').text();
         var matches = valuesBlockRegExp.exec(query);
+        if (matches == null) return;
         var vars = matches[2].match(variableNamesRegExp);
         var values = $.map(selectedRows, function(row) {
                 var vals = $.map(vars, function(varname) {
@@ -209,32 +213,41 @@ function loadVocabularies() {
 		url: endpoint,
 		data: { query: vocabQuery }
 	}).done(function(data) {
+	        $('#vocabularies').empty();
 		$.each(data.results.bindings, function(index, row) {
 			$('#vocabularies').append($('<option>', { value: row.vhs.value }).html(row.voc.value));
 		});
+		// load versions for the default selection
+		var versionHistory = $("#vocabularies option:selected").val();
+		loadVersions(versionHistory);
+
 	});
 	// set event handler for choosing version
 	$('#vocabularies').on("change", function() {
-	        modifyQueryValues();
-	        yasqe.query();
+	        loadVersions($(this).val());
 	});
 
 }
 
-function loadVersions() {
+function loadVersions(vhs) {
 	var versionQuery = "PREFIX sh: <http://purl.org/skos-history/>\
 	PREFIX sc: <http://purl.org/science/owl/sciencecommons/>\
 	PREFIX dc: <http://purl.org/dc/elements/1.1/>\
-	SELECT * {\
+	PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>\
+	SELECT DISTINCT ?fromId ?toId {\
+	        ?vhr dsv:hasVersionHistorySet <" + vhs + "> .\
+	        ?vhr sh:hasDelta ?sd .\
 		?sd a sh:SchemeDelta .\
 		?sd sh:deltaFrom/dc:identifier ?fromId .\
 		?sd sh:deltaTo/dc:identifier ?toId .\
-		}";
+        }\
+        ORDER BY ?fromId ?toId";
 
 	$.ajax({
 		url: endpoint,
 		data: { query: versionQuery }
 	}).done(function(data) {
+	        $('#versions').empty();
 		$.each(data.results.bindings, function(index, row) {
 			var label = row.fromId.value + " &rarr; " + row.toId.value;
 			var from_to = JSON.stringify([row.fromId.value, row.toId.value]);
@@ -251,7 +264,6 @@ function loadVersions() {
 // initialize page after DOM has loaded
 $(document).ready(function() {
         loadVocabularies();
-        loadVersions();
         $('#main').hide();
         $('#genquery').hide();
         $('#yasqe').hide();
