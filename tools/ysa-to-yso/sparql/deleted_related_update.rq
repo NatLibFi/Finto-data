@@ -1,0 +1,10 @@
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+
+DELETE {
+  ?ysoConcept yso-meta:associativeRelation ?ysoRelatedConcept .
+  ?ysoRelatedConcept yso-meta:associativeRelation ?ysoConcept .
+} WHERE {
+  VALUES (?ysoConcept ?ysoRelatedConcept) {
+
+  }
+}
