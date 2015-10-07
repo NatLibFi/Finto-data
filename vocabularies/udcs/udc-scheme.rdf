@@ -1,0 +1,31 @@
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#" 
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<owl:Ontology rdf:about="http://udcdata.info/udc-schema">
+  <dc:title>The UDC Classification Schema (RDF)</dc:title>
+  <dc:description>This is the RDF Schema for the UDC classification scheme</dc:description>
+</owl:Ontology>
+
+<skos:ConceptScheme rdf:about="http://udcdata.info/udc-schema">
+  <dcterms:title>UDC Summary</dcterms:title>
+  <skos:note/>
+</skos:ConceptScheme>
+
+<rdf:Property rdf:about="http://udcdata.info/udc-schema#applicationNote">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+  <rdfs:label>applicationNote</rdfs:label>
+  <rdfs:comment>Instructions for number building.</rdfs:comment>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://udcdata.info/udc-schema#includingNote">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+  <rdfs:label>includingNote</rdfs:label>
+  <rdfs:comment>Extends the caption with concepts that are not listed in the subdivisions.</rdfs:comment>
+</rdf:Property>
+
+</rdf:RDF>
