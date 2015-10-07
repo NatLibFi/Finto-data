@@ -11,7 +11,7 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 # Added related relations to already existing concepts
 # (newly introduced related concepts flagged)
 #
-SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel ?newRelationship
+SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel ?newRelationship ?ysoConcept ?ysoConceptLabel ?ysoRelatedConcept ?ysoRelatedConceptLabel ?ysoRelationship
 WHERE {
   # parameters
   VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ) {
@@ -61,6 +61,25 @@ WHERE {
   OPTIONAL {
     GRAPH ?newVersionGraph {
       ?concept ?newRelationship ?relatedConcept .
+    }
+  }
+
+  # current relationship in YSO
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    OPTIONAL {
+      GRAPH <http://www.yso.fi/onto/yso/> {
+        ?ysoConcept skos:closeMatch ?concept .
+        FILTER NOT EXISTS { ?ysoConcept owl:deprecated true }
+        ?ysoConcept skos:prefLabel ?ysoConceptLabel .
+        FILTER(LANG(?conceptLabel)=LANG(?ysoConceptLabel))
+        ?ysoRelatedConcept skos:closeMatch ?relatedConcept .
+        FILTER NOT EXISTS { ?ysoRelatedConcept owl:deprecated true }
+        ?ysoRelatedConcept skos:prefLabel ?ysoRelatedConceptLabel .
+        FILTER(LANG(?relatedConceptLabel)=LANG(?ysoRelatedConceptLabel))
+        OPTIONAL {
+          ?ysoConcept ?ysoRelationship ?ysoRelatedConcept .
+        }
+      }      
     }
   }
 
