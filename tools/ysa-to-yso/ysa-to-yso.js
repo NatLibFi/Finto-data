@@ -171,6 +171,7 @@ function changeQuery(selectQuery, updateQuery, extraParams) {
 }
 
 function node_to_value(node) {
+        if (node == null) return 'undef';
         switch(node.type) {
                 case 'uri':
                         return '<' + node.value + '>';
@@ -196,6 +197,10 @@ function refreshUpdateQuery() {
                 var vals = $.map(vars, function(varname) {
                         return node_to_value(row[varname]);
                 });
+                // check that there are no "undef" values - if there are, return an empty values row instead
+                for (var i = 0; i < vals.length; ++i) {
+                  if (vals[i] == 'undef') return "";
+                } 
                 return "( " + vals.join(" ") + " )";
         });
         var newquery = query.replace(valuesBlockRegExp, matches[1] + "\n" + values.join("\n") + "\n" + matches[4]);
