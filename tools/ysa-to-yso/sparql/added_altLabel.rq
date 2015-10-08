@@ -11,7 +11,7 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 # Added related relations to already existing concepts
 # (newly introduced related concepts flagged)
 #
-SELECT DISTINCT ?concept (str(?conceptPrefLabel) AS ?conceptLabel) ?altLabel
+SELECT DISTINCT ?concept ?conceptLabel ?altLabel ?ysoConcept ?ysoConceptLabel ?ysoLabelType
 WHERE {
   # parameters
   VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
@@ -50,8 +50,25 @@ WHERE {
   }
   
   GRAPH ?newVersionGraph {
-      ?concept skos:prefLabel ?conceptPrefLabel .
+      ?concept skos:prefLabel ?conceptLabel .
   }
+
+  # current label type in YSO
+  SERVICE <http://api.dev.finto.fi/sparql> {
+    OPTIONAL {
+      GRAPH <http://www.yso.fi/onto/yso/> {
+        ?ysoConcept skos:closeMatch ?concept .
+        FILTER NOT EXISTS { ?ysoConcept owl:deprecated true }
+        ?ysoConcept skos:prefLabel ?ysoConceptLabel .
+        FILTER(LANG(?conceptLabel)=LANG(?ysoConceptLabel))
+        OPTIONAL {
+          ?ysoConcept ?ysoLabelType ?altLabel .
+        }
+      }      
+    }
+  }
+
+
 
 }
 ORDER BY ?conceptPrefLabel
