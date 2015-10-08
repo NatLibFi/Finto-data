@@ -10,7 +10,7 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 #
 # Added notes to already existing concepts
 #
-SELECT DISTINCT ?concept ?conceptLabel ?oldNote ?newNote ?ysoConcept ?ysoConceptLabel ?ysoNote
+SELECT DISTINCT ?concept ?conceptLabel ?oldNote ?newNote ?found ?ysoConcept ?ysoConceptLabel ?ysoNote
 WHERE {
   # parameters
   VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
@@ -73,6 +73,7 @@ WHERE {
         FILTER NOT EXISTS { ?ysoConcept owl:deprecated true }
         ?ysoConcept skos:prefLabel ?ysoConceptLabel .
         FILTER(LANG(?conceptLabel)=LANG(?ysoConceptLabel))
+        BIND("yso" AS ?found)
         OPTIONAL {
           ?ysoConcept skos:note ?ysoNote .
           FILTER(LANG(?ysoNote) = LANG(?ysoConceptLabel))
