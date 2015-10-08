@@ -52,7 +52,7 @@ WHERE {
   }
   
   FILTER (BOUND(?newNote) || BOUND(?oldNote))
-  FILTER (?newNote != ?oldNote)
+  FILTER (!(BOUND(?newNote) && BOUND(?oldNote) && ?newNote = ?oldNote))
   
   # ... for already existing concepts
   FILTER exists {
