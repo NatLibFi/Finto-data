@@ -68,6 +68,8 @@ function vocabRoot(topConcepts) {
     // adding a css class for separating the yso concepts from the special domain ontology concepts
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
       childObject.a_attr['class'] = 'yso-concept';
+    if (conceptData.hasChildren)
+      childObject.children = true;
     setNode(childObject);
     topArray.push(childObject);
   }
