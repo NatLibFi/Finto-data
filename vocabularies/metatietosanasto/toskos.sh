@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="metatietosanasto.ttl rdam.ttl"
+INFILES="metatietosanasto.ttl"
 OUTFILE=metatietosanasto-skos.ttl
 
 SKOSIFYHOME="../../../Skosify/skosify/"
