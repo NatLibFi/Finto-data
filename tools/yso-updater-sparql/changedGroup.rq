@@ -1,0 +1,86 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
+PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
+#
+# Changed notes for already existing concepts
+#
+CONSTRUCT {
+  ?ysoConcept yso-update:newGroup ?ysoNewGroup .
+  ?ysoConcept yso-update:removedGroup ?ysoOldGroup .
+}
+WHERE {
+  # parameters
+  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2015-10-01" )
+  }
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    GRAPH ?versionHistoryGraph {
+      # get the current and the previous version as default versions
+      ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
+      ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
+      # select the versions to actually use
+      BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
+      BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
+      # get the delta and via that the relevant graphs
+      ?delta a sh:SchemeDelta ;
+        sh:deltaFrom/dc:identifier ?oldVersionSelected ;
+        sh:deltaTo/dc:identifier ?newVersionSelected ;
+        sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
+        sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
+        dcterms:hasPart ?insertions ;
+        dcterms:hasPart ?deletions .
+      ?deletions a sh:SchemeDeltaDeletions ;
+        sh:usingNamedGraph/sd:name ?deletionsGraph .
+      ?insertions a sh:SchemeDeltaInsertions ;
+        sh:usingNamedGraph/sd:name ?insertionsGraph .
+    }
+    
+    OPTIONAL {
+      # newly inserted notes
+      GRAPH ?insertionsGraph {
+        ?newGroup skos:member ?concept .
+      }
+    }
+
+    OPTIONAL {
+      # deleted notes
+      GRAPH ?deletionsGraph {
+        ?oldGroup skos:member ?concept .
+      }
+    }
+    
+    FILTER (BOUND(?newGroup) || BOUND(?oldGroup))
+    FILTER (!(BOUND(?newGroup) && BOUND(?oldGroup) && ?newGroup = ?oldGroup))
+    
+    # ... for already existing concepts
+    FILTER exists {
+      GRAPH ?oldVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+  }
+
+  # equivalent YSO concept to target
+  ?ysoConcept om:definedConcept ?concept .
+  OPTIONAL {
+    BIND(IF(BOUND(?newGroup), ?newGroup, '') AS ?ysaNewGroup)
+    ?ysoNewGroup om:definedConcept ?ysaNewGroup 
+  }
+  OPTIONAL {
+    BIND(IF(BOUND(?oldGroup), ?oldGroup, '') AS ?ysaOldGroup)
+    ?ysoOldGroup om:definedConcept ?ysaOldGroup
+  }
+
+}
