@@ -2,13 +2,20 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX allars-meta: <http://www.yso.fi/onto/allars-meta/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
 
 CONSTRUCT {
   ?ysoc yso-meta:oldLabel ?allarslabel .
 }
 WHERE {
-  SERVICE <http://api.dev.finto.fi/sparql> {
-    GRAPH <http://www.yso.fi/onto/allars/> {
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    GRAPH <http://www.yso.fi/onto/allars/version> {
+      # find the graph URI of the latest available version of Allärs
+      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?allarsNewVersionGraph .
+    }
+    GRAPH ?allarsNewVersionGraph {
       ?allarsc a skos:Concept .
       ?allarsc skos:altLabel ?allarslabel .
       FILTER NOT EXISTS { ?allarsc a allars-meta:GeographicalConcept }

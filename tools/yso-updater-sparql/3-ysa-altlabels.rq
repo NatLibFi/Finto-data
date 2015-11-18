@@ -2,13 +2,20 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
 
 CONSTRUCT {
   ?ysoc yso-meta:oldLabel ?ysalabel .
 }
 WHERE {
-  SERVICE <http://api.dev.finto.fi/sparql> {
-    GRAPH <http://www.yso.fi/onto/ysa/> {
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/version> {
+      # find the graph URI of the latest available version of YSA
+      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?ysaNewVersionGraph .
+    }
+    GRAPH ?ysaNewVersionGraph {
       ?ysac a skos:Concept .
       ?ysac skos:altLabel ?ysalabel .
       FILTER NOT EXISTS { ?ysac a ysa-meta:GeographicalConcept }
