@@ -21,7 +21,7 @@ CONSTRUCT {
   ?newc a yso-meta:Concept .
   ?newc skos:prefLabel ?pref .
   ?newc yso-meta:oldLabel ?alt .
-  ?newc yso-meta:ysaComment ?note .
+  ?newc skos:note ?note .
   ?newc yso-meta:ysaSource ?source .
   ?newc yso-meta:hasThematicGroup ?ysogroup .
   ?newc rdfs:subClassOf ?ysobroader .
@@ -79,7 +79,7 @@ WHERE {
     GRAPH ?newVersionGraph {
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
-      OPTIONAL { ?c skos:scopeNote ?note }
+      OPTIONAL { ?c skos:scopeNote|skos:note ?note }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
 
