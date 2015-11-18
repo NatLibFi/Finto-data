@@ -1,0 +1,42 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ysa-meta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?c1 ?l1 ?yc1 ?yl1 ?c2 ?l2 ?yc2 ?yl2 {
+  GRAPH <http://www.yso.fi/onto/ysa/> {
+    ?c1 a skos:Concept .
+    ?c1 skos:prefLabel ?l1 .
+    ?c1 skos:closeMatch ?yc1 .
+    FILTER NOT EXISTS { ?c1 skos:closeMatch ?yc1a . FILTER (?yc1 != ?yc1a) }
+    ?c2 a skos:Concept .
+    ?c2 skos:prefLabel ?l2 .
+    ?c2 skos:closeMatch ?yc2 .
+    FILTER NOT EXISTS { ?c2 skos:closeMatch ?yc2a . FILTER (?yc2 != ?yc2a) }
+    ?c1 skos:related ?c2 .
+    FILTER (STR(?c1) < STR(?c2))
+    FILTER NOT EXISTS {
+      GRAPH <http://www.yso.fi/onto/yso/> {
+        ?yc3 skos:closeMatch ?c1 .
+        ?yc4 skos:closeMatch ?c2 .
+        {
+          { ?yc3 ?rel2 ?yc4 }
+          UNION
+          { ?yc4 ?rel2 ?yc3 }
+          UNION
+          { ?yc3 skos:broader+ ?yc4 }
+          UNION
+          { ?yc3 skos:narrower+ ?yc4 }
+          UNION
+          { ?yc3 skos:broader ?parent . ?yc4 skos:broader ?parent }
+        }
+      }
+    }
+  }
+  ?yc1 skos:prefLabel ?yl1 .
+  ?yc2 skos:prefLabel ?yl2 .
+  FILTER (LANG(?yl1)='fi')
+  FILTER (LANG(?yl2)='fi')
+}
+ORDER BY LCASE(STR(?l1))
