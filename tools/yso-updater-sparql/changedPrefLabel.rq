@@ -10,12 +10,14 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
 #
-# Changed sources for already existing concepts
+# Changed prefLabels for already existing concepts
 #
 CONSTRUCT {
-  ?ysoConcept yso-update:newSource ?newSource .
-  ?ysoConcept yso-update:removedSource ?oldSource .
+  ?ysoConcept yso-update:newPrefLabel ?newLabel .
+  ?ysoConcept yso-update:removedPrefLabel ?oldLabel .
 }
 WHERE {
   # parameters
@@ -48,23 +50,18 @@ WHERE {
     OPTIONAL {
       # newly inserted notes
       GRAPH ?insertionsGraph {
-        ?concept dc:source ?newSourceRaw .
-        # strip prefix, if any
-        BIND(REPLACE(?newSourceRaw, 'Lähde: ', '') AS ?newSource)
+        ?concept skos:prefLabel ?newLabel .
       }
     }
 
     OPTIONAL {
       # deleted notes
       GRAPH ?deletionsGraph {
-        ?concept dc:source ?oldSourceRaw .
-        # strip prefix, if any
-        BIND(REPLACE(?oldSourceRaw, 'Lähde: ', '') AS ?oldSource)
+        ?concept skos:prefLabel ?oldLabel .
       }
     }
     
-    FILTER (BOUND(?newSource) || BOUND(?oldSource))
-    FILTER (!(BOUND(?newSource) && BOUND(?oldSource) && ?newSource = ?oldSource))
+    FILTER (BOUND(?newLabel) || BOUND(?oldLabel))
     
     # ... for already existing concepts
     FILTER exists {

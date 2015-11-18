@@ -10,18 +10,19 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
 #
-# Changed sources for already existing concepts
+# Changed skos:related for already existing concepts
 #
 CONSTRUCT {
-  ?ysoConcept yso-update:newSource ?newSource .
-  ?ysoConcept yso-update:removedSource ?oldSource .
+  ?ysoConcept yso-update:newRelated ?ysoNewRelated .
+  ?ysoConcept yso-update:removedRelated ?ysoOldRelated .
 }
 WHERE {
   # parameters
   VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
     ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2015-11-01" )
-    ( <http://www.yso.fi/onto/allars/version> skos:Concept  "2014-04-10" "2015-11-01" )
   }
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
@@ -48,23 +49,19 @@ WHERE {
     OPTIONAL {
       # newly inserted notes
       GRAPH ?insertionsGraph {
-        ?concept dc:source ?newSourceRaw .
-        # strip prefix, if any
-        BIND(REPLACE(?newSourceRaw, 'Lähde: ', '') AS ?newSource)
+        ?concept skos:related ?newRelated .
       }
     }
 
     OPTIONAL {
       # deleted notes
       GRAPH ?deletionsGraph {
-        ?concept dc:source ?oldSourceRaw .
-        # strip prefix, if any
-        BIND(REPLACE(?oldSourceRaw, 'Lähde: ', '') AS ?oldSource)
+        ?concept skos:related ?oldRelated .
       }
     }
     
-    FILTER (BOUND(?newSource) || BOUND(?oldSource))
-    FILTER (!(BOUND(?newSource) && BOUND(?oldSource) && ?newSource = ?oldSource))
+    FILTER (BOUND(?newRelated) || BOUND(?oldRelated))
+    FILTER (!(BOUND(?newRelated) && BOUND(?oldRelated) && ?newRelated = ?oldRelated))
     
     # ... for already existing concepts
     FILTER exists {
@@ -77,5 +74,15 @@ WHERE {
 
   # equivalent YSO concept to target
   ?ysoConcept om:definedConcept ?concept .
+
+  OPTIONAL {
+    BIND(IF(BOUND(?newRelated), ?newRelated, '') AS ?ysaNewRelated)
+    ?ysoNewRelated om:definedConcept ?ysaNewRelated 
+  }
+  OPTIONAL {
+    BIND(IF(BOUND(?oldRelated), ?oldRelated, '') AS ?ysaOldRelated)
+    ?ysoOldRelated om:definedConcept ?ysaOldRelated
+  }
+
 
 }
