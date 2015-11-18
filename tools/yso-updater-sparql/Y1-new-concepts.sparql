@@ -63,7 +63,10 @@ WHERE {
       BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
     }  
   }
-  OPTIONAL { ?ysogroup om:definedConcept ?ysagroup }
+  OPTIONAL { 
+    BIND(IF(BOUND(?ysagroup), ?ysagroup, '') AS ?realysagroup)
+    ?ysogroup om:definedConcept ?realysagroup
+  }
   # must check whether an equivalent target concept already exists; if not, use a newly minted URI base on YSA localname
   OPTIONAL { ?ysob om:definedConcept ?broader }
   BIND(IF(BOUND(?ysob), ?ysob, IF(isIRI(?broader), IRI(REPLACE(STR(?broader), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
