@@ -11,10 +11,8 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
-PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
 PREFIX sh: <http://purl.org/skos-history/>
 PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
 
 CONSTRUCT {
   ?newc om:definedConcept ?c .
@@ -34,30 +32,10 @@ WHERE {
   {
     SELECT ?c ?newVersionGraph
     WHERE {
-      # parameters
-      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2015-11-01" )
-      }
       SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
-        GRAPH ?versionHistoryGraph {
-          # get the current and the previous version as default versions
-          ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
-          ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
-          # select the versions to actually use
-          BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
-          BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
-          # get the delta and via that the relevant graphs
-          ?delta a sh:SchemeDelta ;
-            sh:deltaFrom/dc:identifier ?oldVersionSelected ;
-            sh:deltaTo/dc:identifier ?newVersionSelected ;
-            sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
-            sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
-            dcterms:hasPart ?insertions ;
-            dcterms:hasPart ?deletions .
-          ?deletions a sh:SchemeDeltaDeletions ;
-            sh:usingNamedGraph/sd:name ?deletionsGraph .
-          ?insertions a sh:SchemeDeltaInsertions ;
-            sh:usingNamedGraph/sd:name ?insertionsGraph .
+        GRAPH <http://www.yso.fi/onto/ysa/version> {
+          # find the graph URI of the latest available version of YSA
+          ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
         }
         GRAPH ?newVersionGraph {
           ?c a skos:Concept .
