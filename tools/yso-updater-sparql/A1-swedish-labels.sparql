@@ -11,12 +11,15 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
 
 CONSTRUCT {
   ?ysoc om:definedConcept ?ac .
   ?ysoc skos:prefLabel ?pref .
   ?ysoc yso-meta:oldLabel ?alt .
-  ?ysoc yso-meta:ysaComment ?note .
+  ?ysoc skos:note ?note .
   ?ysoc yso-meta:ysaSource ?source .
   ?ysoc rdfs:subClassOf yso-update:uudetSv .
 }
@@ -32,15 +35,23 @@ WHERE {
       }
     }
   }
-  SERVICE <http://api.dev.finto.fi/sparql> {
-    GRAPH <http://www.yso.fi/onto/ysa/> {
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    GRAPH <http://www.yso.fi/onto/ysa/version> {
+      # find the graph URI of the latest available version of YSA
+      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?ysaNewVersionGraph .
+    }
+    GRAPH <http://www.yso.fi/onto/allars/version> {
+      # find the graph URI of the latest available version of Allärs
+      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?allarsNewVersionGraph .
+    }
+    GRAPH ?ysaNewVersionGraph {
       ?ysac skos:exactMatch ?ac .
       FILTER(STRSTARTS(STR(?ac), STR(allars:)))
     }
-    GRAPH <http://www.yso.fi/onto/allars/> {
+    GRAPH ?allarsNewVersionGraph {
       ?ac skos:prefLabel ?pref .
       OPTIONAL { ?ac skos:altLabel ?alt }
-      OPTIONAL { ?ac skos:scopeNote ?note }
+      OPTIONAL { ?ac skos:scopeNote|skos:note ?note }
       OPTIONAL { ?ac dc:source ?source }
     }
   }
