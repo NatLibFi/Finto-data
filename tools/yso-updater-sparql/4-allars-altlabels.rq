@@ -17,11 +17,15 @@ WHERE {
     }
     GRAPH ?allarsNewVersionGraph {
       ?allarsc a skos:Concept .
-      ?allarsc skos:altLabel ?allarslabel .
+      ?allarsc skos:altLabel ?svlabel .
+      # avoid returning lang-tagged results from subquery
+      # because sdbquery doesn't understand RDF 1.1 langStrings
+      BIND(STR(?svlabel) AS ?label)
       FILTER NOT EXISTS { ?allarsc a allars-meta:GeographicalConcept }
     }
   }
   ?ysoc om:definedConcept ?allarsc .
+  BIND(STRLANG(?label, 'sv') AS ?allarslabel)
   FILTER NOT EXISTS { ?anyysoc ?anyprop ?allarslabel }
   FILTER NOT EXISTS {
     ?ysoc2 om:definedConcept ?allarsc .
