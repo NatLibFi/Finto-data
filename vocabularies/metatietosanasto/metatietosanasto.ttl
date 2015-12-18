@@ -1581,8 +1581,8 @@ mts:P30002
   rdf:type skos:Collection ;
   dc:source "ISBD-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:label "mediatyyppi"@fi ;
-  rdfs:label "medietyp"@sv ;
+  rdfs:label "mediatyyppi (ISBD)"@fi ;
+  rdfs:label "medietyp (ISBD)"@sv ;
   rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1003> ;
   skos:member <http://iflastandards.info/ns/isbd/terms/mediatype/useitavalittavialaitteita> ;
   skos:member <http://metatietosanasto.fi//audio_isbd> ;
@@ -1678,6 +1678,7 @@ mts:P30018
   skos:member mts:lotus ;
   skos:member mts:megadots ;
   skos:member mts:mid_mif ;
+  skos:member mts:mobi ;
   skos:member mts:png ;
   skos:member mts:quicktime ;
   skos:member mts:realaudio ;
@@ -3379,6 +3380,14 @@ mts:dixieland
   skos:prefLabel "dixieland"@fi ;
   skos:prefLabel "dixieland"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:djmiksaaja
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "Kansallinen termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "DJ-miksaaja"@fi ;
+  skos:definition "henkilö tai yhteisö, joka henkilö tai yhteisö, joka luo äänitekokonaisuuden (ns. mix album, mix tape, mix CD tmv.) erillisistä levytyksistä tai niiden osista yhdistämällä ne (yleensä) tauottomaksi jatkumoksi ja muokkaamalla usein myös levytysten pituutta ja/tai audiokuvaa esim. efektilaitteiden ja/tai taajuuskorjaimien avulla"@fi ;
 .
 mts:dolby
   rdf:type skos:Concept ;
@@ -7797,6 +7806,16 @@ mts:maaraykset
   skos:prefLabel "määräykset"@fi ;
   skos:scopeNote "Monografioiden genre-termi"@fi ;
 .
+mts:maarittelematon
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Jos kuvailtavan aineiston sisältötyyppiä ei voida helposti varmistaa,merkitään määrittelemätön."@fi ;
+  skos:definition "{@sv}"^^xsd:string ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1005> ;
+  skos:prefLabel "määrittelemätön"@fi ;
+  skos:prefLabel "projicerad"@sv ;
+  skos:scopeNote "MARC 21 koodi zzz"@fi ;
+.
 mts:maarittelematon_rda
   rdf:type skos:Concept ;
   dc:source "RDA-termi"@fi ;
@@ -8099,8 +8118,8 @@ mts:mediatyyppi_rda
   rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10007 ;
-  rdfs:label "mediatyyppi"@fi ;
-  rdfs:label "medietyp"@sv ;
+  rdfs:label "mediatyyppi  (RDA)"@fi ;
+  rdfs:label "medietyp (RDA)"@sv ;
   rdfs:seeAlso rdam:P30002 ;
   skos:definition "Jaottelu, joka ilmaisee aineiston sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitteen tyyppiä."@fi ;
   skos:member mts:audio_rda ;
@@ -8381,6 +8400,13 @@ mts:mississippi-blues
   skos:prefLabel "Mississippi-blues"@sv ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
 .
+mts:mobi
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "MOBI"@fi ;
+  skos:prefLabel "MOBI"@sv ;
+.
 mts:molemmilla_puolilla
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -8582,6 +8608,15 @@ mts:muste
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "bläck"@sv ;
   skos:prefLabel "muste"@fi ;
+.
+mts:muu
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:definition "Jos mikään edellä mainituista sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1011> ;
+  skos:prefLabel "annan"@sv ;
+  skos:prefLabel "muu"@fi ;
+  skos:scopeNote "MARC 21 sisältötyypin koodi xxx"@fi ;
 .
 mts:muu_julkaisumuoto
   rdf:type isothes:ConceptGroup ;
@@ -11201,8 +11236,8 @@ mts:sisaltotyyppi
   rdf:type skos:Collection ;
   dc:source "RDA-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:label "innehållstyp"@sv ;
-  rdfs:label "sisältötyyppi"@fi ;
+  rdfs:label "innehållstyp (RDA)"@sv ;
+  rdfs:label "sisältötyyppi (RDA)"@fi ;
   rdfs:seeAlso rdae:P20001 ;
   skos:member mts:aani_rda ;
   skos:member mts:digitaalinen_data ;
@@ -11217,6 +11252,8 @@ mts:sisaltotyyppi
   skos:member mts:kolmiulotteinen_liikkuva_kuva ;
   skos:member mts:kolmiulotteinen_muoto ;
   skos:member mts:liikenotaatio ;
+  skos:member mts:maarittelematon ;
+  skos:member mts:muu ;
   skos:member mts:nuottikirjoitus ;
   skos:member mts:puhe ;
   skos:member mts:stillkuva ;
@@ -11233,8 +11270,8 @@ mts:sisaltotyyppi_isbd
   rdf:type skos:Collection ;
   dc:source "ISBD-termi"@fi ;
   isothes:superGroup mts:C10006 ;
-  rdfs:label "innehållstyp"@sv ;
-  rdfs:label "sisältötyyppi"@fi ;
+  rdfs:label "innehållstyp (ISBD)"@sv ;
+  rdfs:label "sisältötyyppi (ISBD)"@fi ;
   rdfs:seeAlso <http://iflastandards.info/ns/isbd/elements/P1001> ;
   skos:member mts:aani_isbd ;
   skos:member mts:data ;
@@ -11389,6 +11426,14 @@ mts:sormiharjoitukset
   skos:prefLabel "fingerövningar"@sv ;
   skos:prefLabel "sormiharjoitukset"@fi ;
   skos:scopeNote "Musiikin genre-termi"@fi ;
+.
+mts:sormituksen_tekija
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "Kansallinen termi"@fi ;
+  isothes:superGroup mts:ekspression_ja_toimijoiden_valiset_suhteet ;
+  rdfs:label "sormituksen tekijä"@fi ;
+  skos:definition "henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen lisäämällä sormitukset notatoituun musiikkiin"@fi ;
 .
 mts:sosiaalioppaat
   rdf:type skos:Concept ;
