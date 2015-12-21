@@ -849,8 +849,8 @@ Stereografisella laitteella käytettävät aineistot."""@fi ;
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
-  skos:definition "Bilderbok som innehåller färgranna och vidrörbara bilder, avsedd för ett blint eller svagsynt barn. Bokens text kan vara skriven med punktskrift, stor stil eller vanliga bokstäver. Boken kan även innehålla en ljudupptagning. Berättelserna är konsturerade av upphovsmännen eller är bearbetningar av välkända sagor, ramsor eller dikter."@sv ;
-  skos:definition "Värikkäitä, tunnusteltavia kuvia sisältävä kuvakirja, joka on tarkoitettu sokealle tai heikkonäköiselle lapselle. Kirjan teksti voi olla pistekirjoituksella, isokirjoituksella tai tavallisin kirjaimin. Kirjassa voi olla mukana myös äänite. Tarinat ovat tekijöiden sepittämiä tai sovituksia tutuista saduista, loruista tai runoista. Wikipedia, 23.1.2013."@fi ;
+  skos:definition "Käytetään teoksista, jotka on tarkoitettu kosketeltaviksi"@fi ;
+  skos:definition "Taktil"@sv ;
   skos:prefLabel "koskettelukirja"@fi ;
   skos:prefLabel "taktil bilderbok"@sv ;
 .
@@ -988,16 +988,6 @@ Stereografisella laitteella käytettävät aineistot."""@fi ;
   skos:definition "Kirja, jossa on mukana sen sivuille pysyvästi liimattaviksi tarkoitettuja tarroja. (engl. sticker-book)"@fi ;
   skos:prefLabel "dekalbok"@sv ;
   skos:prefLabel "tarrakirja"@fi ;
-.
-<http://metatietosanasto.fi/124>
-  rdf:type skos:Concept ;
-  dc:source "ISBD-termi"@fi ;
-  dc:source "Onix-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
-  skos:definition "Bok, med olika slags beröringsytor i olika material."@sv ;
-  skos:definition "Kirja, jossa on erilaisia koskettelupintoja eri materiaaleista. (engl touch-and-feel book )"@fi ;
-  skos:prefLabel "taktil bok"@sv ;
-  skos:prefLabel "tunnustelukirja"@fi ;
 .
 <http://metatietosanasto.fi/125>
   rdf:type skos:Concept ;
@@ -1312,7 +1302,6 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
 <http://metatietosanasto.fi/165>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
   skos:prefLabel "inb."@sv ;
   skos:prefLabel "sid."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys kovakantiselle kirjalle"@fi ;
@@ -1321,7 +1310,6 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
 <http://metatietosanasto.fi/166>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
   skos:prefLabel "hft."@sv ;
   skos:prefLabel "nid."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys pehmeäkantiselle kirjalle"@fi ;
@@ -1346,7 +1334,6 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
 <http://metatietosanasto.fi/171>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
   skos:prefLabel "fel."@sv ;
   skos:prefLabel "virh."@fi ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
@@ -1355,7 +1342,6 @@ person (Katalogiseringsregler). (eng. edition)"""@sv ;
 <http://metatietosanasto.fi/172>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
   skos:prefLabel "korj."@fi ;
   skos:prefLabel "korr."@sv ;
   skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
@@ -1610,13 +1596,17 @@ mts:P30004
   skos:member <http://metatietosanasto.fi/171> ;
   skos:member <http://metatietosanasto.fi/172> ;
   skos:member <http://metatietosanasto.fi/173> ;
-  skos:member mts:avoselkainen_sidos ;
   skos:member mts:irtolehtia ;
   skos:member mts:kansio ;
   skos:member mts:koko_teos ;
   skos:member mts:kotelo ;
   skos:member mts:pakkaus ;
   skos:member <http://metatietosanasto.fi/sid.,_pehmeakantinen> ;
+  skos:member :korjattu ;
+  skos:member :nidottu ;
+  skos:member :sidottu ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/sidottu,pehmeakantinen> ;
+  skos:member :virheellinen ;
   skos:scopeNote """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.
 Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.
 Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi ;
@@ -1898,7 +1888,6 @@ mts:P30214
   skos:member <http://metatietosanasto.fi/121> ;
   skos:member <http://metatietosanasto.fi/122> ;
   skos:member <http://metatietosanasto.fi/123> ;
-  skos:member <http://metatietosanasto.fi/124> ;
   skos:member <http://metatietosanasto.fi/125> ;
   skos:member <http://metatietosanasto.fi/126> ;
   skos:member <http://metatietosanasto.fi/127> ;
@@ -1923,6 +1912,8 @@ mts:P30214
   skos:member mts:tuoksukirja ;
   skos:member mts:varustettu_aanilaitteella ;
   skos:member mts:varustettu_ripustimella ;
+  skos:member :Liitetakakannensisapuolellekiinnitetyssataskussa ;
+  skos:member :avoselkainensidos ;
 .
 mts:T1007
   rdf:type skos:Concept ;
@@ -1962,6 +1953,13 @@ mts:aanen_toistonopeus
   rdfs:label "äänen toistonopeus"@fi ;
   rdfs:seeAlso rdam:P30201 ;
   skos:member <http://metatietosanasto.fi/xx_kierr./min> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/1,4m/s_> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/120kierr./min> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/15tuumaa/s> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/160kierr./min> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/331/3kierr./min_> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/45kierr./min> ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/8kierr./min_> ;
 .
 mts:aanentoiston_erityisominaisuudet
   rdf:type isothes:ConceptGroup ;
@@ -2725,13 +2723,6 @@ mts:avoin_partituuri
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "avoin partituuri"@fi ;
-.
-mts:avoselkainen_sidos
-  rdf:type skos:Concept ;
-  dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
-  skos:definition "Sidottu kirja, jonka selkä on päällystämättä ja (lanka)sidos on näkyvissä."@fi ;
-  skos:prefLabel "avoselkäinen sidos"@fi ;
 .
 mts:bagatellit
   rdf:type skos:Concept ;
@@ -11181,7 +11172,6 @@ mts:short_form_scoring
 <http://metatietosanasto.fi/sid.,_pehmeakantinen>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
-  dc:source "RDA-termi"@fi ;
   skos:prefLabel "inb., med mjuka pärmar"@sv ;
   skos:prefLabel "sid., pehmeäkantinen"@fi ;
 .
@@ -14051,6 +14041,20 @@ rdaw:P10217
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
+<http://www.yso.fi/onto/metatietosanasto/1,4m/s_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "1,4 m/s"@fi ;
+  skos:prefLabel "1,4 m/s"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/120kierr./min>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "120 kierr./min"@fi ;
+  skos:prefLabel "120 varv/min"@sv ;
+.
 <http://www.yso.fi/onto/metatietosanasto/12raitaa>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
@@ -14058,12 +14062,61 @@ rdaw:P10217
   skos:prefLabel "12 ljudspår"@sv ;
   skos:prefLabel "12 raitaa"@fi ;
 .
+<http://www.yso.fi/onto/metatietosanasto/15/16tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "15/16 tum/s"@sv ;
+  skos:prefLabel "15/16 tuumaa/s"@fi ;
+.
+<http://www.yso.fi/onto/metatietosanasto/15tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "15 tum/s"@sv ;
+  skos:prefLabel "15 tuumaa/s"@fi ;
+.
+<http://www.yso.fi/onto/metatietosanasto/160_kierr./min_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "160 kierr./min"@fi ;
+  skos:prefLabel "160 varv/min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/160kierr./min>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "160 kierr./min"@fi ;
+  skos:prefLabel "160 varv/min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/160kierr./min_1>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "160 kierr./min"@fi ;
+  skos:prefLabel "160 varv/min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/16kierr./min_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "16 kierr./min"@fi ;
+  skos:prefLabel "16 varv/min"@sv ;
+.
 <http://www.yso.fi/onto/metatietosanasto/16raitaa>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "16 ljudspår"@sv ;
   skos:prefLabel "16 raitaa"@fi ;
+.
+<http://www.yso.fi/onto/metatietosanasto/1_7/8tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "1 7/8 tum/s"@sv ;
+  skos:prefLabel "1 7/8 tuumaa/s"@fi ;
 .
 <http://www.yso.fi/onto/metatietosanasto/1raita>
   rdf:type skos:Concept ;
@@ -14079,12 +14132,47 @@ rdaw:P10217
   skos:prefLabel "2 ljudspår"@sv ;
   skos:prefLabel "2 raitaa"@fi ;
 .
+<http://www.yso.fi/onto/metatietosanasto/30tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "30 tum/s"@fi ;
+  skos:prefLabel "30 tuumaa/s"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/331/3kierr./min_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "33 1/3 kierr./min"@fi ;
+  skos:prefLabel "33 1/3 varv/min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/3_3/4tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "3_3/4 tum/s"@sv ;
+  skos:prefLabel "3_3/4 tuumaa/s"@fi ;
+.
 <http://www.yso.fi/onto/metatietosanasto/3raitaa>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "3 ljudspår"@sv ;
   skos:prefLabel "3 raitaa"@fi ;
+.
+<http://www.yso.fi/onto/metatietosanasto/45kierr./min>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "45 kierr./min"@fi ;
+  skos:prefLabel "45 varv./min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/45kierr./min_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "45 kierr./min"@fi ;
+  skos:prefLabel "45 varv/min"@sv ;
 .
 <http://www.yso.fi/onto/metatietosanasto/4raitaa>
   rdf:type skos:Concept ;
@@ -14093,12 +14181,125 @@ rdaw:P10217
   skos:prefLabel "4 ljudspår"@sv ;
   skos:prefLabel "4 raitaa"@fi ;
 .
+<http://www.yso.fi/onto/metatietosanasto/78kierr./min>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "78 kierr./min"@fi ;
+  skos:prefLabel "78 varv/min"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/7_1/2tuumaa/s>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "7 1/2 tum/s"@sv ;
+  skos:prefLabel "7 1/2 tuumaa/s"@fi ;
+.
+<http://www.yso.fi/onto/metatietosanasto/8kierr./min_>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "8 kierr./min"@fi ;
+  skos:prefLabel "8 varv/min"@sv ;
+.
 <http://www.yso.fi/onto/metatietosanasto/8raitaa>
   rdf:type skos:Concept ;
   dc:source "ISBD-termi"@fi ;
   dc:source "RDA-termi"@fi ;
   skos:prefLabel "8 ljudspår"@sv ;
   skos:prefLabel "8 raitaa"@fi ;
+.
+:Ilmestymistiheys
+  rdf:type isothes:ConceptGroup ;
+  rdf:type skos:Collection ;
+  dc:source "RDA-termi"@fi ;
+  isothes:superGroup mts:C10007 ;
+  rdfs:label "Ilmestymistiheys"@fi ;
+  rdfs:label "{@sv}"^^xsd:string ;
+  rdfs:seeAlso rdam:P30004 ;
+  skos:member <http://metatietosanasto.fi/165> ;
+  skos:member <http://metatietosanasto.fi/166> ;
+  skos:member <http://metatietosanasto.fi/167> ;
+  skos:member <http://metatietosanasto.fi/171> ;
+  skos:member <http://metatietosanasto.fi/172> ;
+  skos:member <http://metatietosanasto.fi/173> ;
+  skos:member mts:irtolehtia ;
+  skos:member mts:kansio ;
+  skos:member mts:koko_teos ;
+  skos:member mts:kotelo ;
+  skos:member mts:pakkaus ;
+  skos:member <http://metatietosanasto.fi/sid.,_pehmeakantinen> ;
+  skos:member :korjattu ;
+  skos:member :nidottu ;
+  skos:member :sidottu ;
+  skos:member <http://www.yso.fi/onto/metatietosanasto/sidottu,pehmeakantinen> ;
+  skos:member :virheellinen ;
+  skos:scopeNote """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.
+Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.
+Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi ;
+  skos:scopeNote "Manifestationens identifikator är en teckensträng med anknytning till manifestationen och som skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv el.dyl. och som följer scheman ämnade för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer. Till identifikatorerna hör individualiserande tillägg."@sv ;
+.
+:Kerranvuodessa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Kerran vuodessa:"@fi ;
+.
+:Kolmekertaavuodessa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Kolme kertaa vuodessa"@fi ;
+.
+:Liitetakakannensisapuolellekiinnitetyssataskussa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Liite takakannen sisäpuolelle kiinnitetyssä taskussa."@fi ;
+  skos:prefLabel "{@sv}"^^xsd:string ;
+.
+:Yksi-kaksikertaavuodessa
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "Yksi-kaksi kertaa vuodessa:"@fi ;
+.
+:avoselkainensidos
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "avoselkäinen sidos"@fi ;
+  skos:prefLabel "bokband med öppen rygg"@sv ;
+.
+:korjattu
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "korjattu"@fi ;
+  skos:prefLabel "korrigerad"@sv ;
+  skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
+.
+:nidottu
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "hftad"@sv ;
+  skos:prefLabel "nidottu"@fi ;
+  skos:scopeNote "manifestaation tunnisteen lisäys pehmeäkantiselle kirjalle"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator för en bok med mjuka pärmar"@sv ;
+.
+:sidottu
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "inbunden"@sv ;
+  skos:prefLabel "sidottu"@fi ;
+  skos:scopeNote "manifestaation tunnisteen lisäys kovakantiselle kirjalle"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv ;
+.
+<http://www.yso.fi/onto/metatietosanasto/sidottu,pehmeakantinen>
+  rdf:type skos:Concept ;
+  dc:source "RDA-termi"@fi ;
+  skos:prefLabel "inbunden, med mjuka pärmar"@sv ;
+  skos:prefLabel "sidottu, pehmeäkantinen"@fi ;
 .
 :vakioidutFraasit
   rdf:type owl:AnnotationProperty ;
@@ -14107,4 +14308,12 @@ rdaw:P10217
 :vakioidutTermit
   rdf:type owl:AnnotationProperty ;
   skos:prefLabel "vakioidutTermitTESTI"@fi ;
+.
+:virheellinen
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  skos:prefLabel "felaktig"@sv ;
+  skos:prefLabel "virheellinen"@fi ;
+  skos:scopeNote "manifestaation tunnisteen lisäys"@fi ;
+  skos:scopeNote "tillägg till manifestationens identifikator"@sv ;
 .
