@@ -27,6 +27,7 @@ CONSTRUCT {
   ?ysonarrower rdfs:subClassOf ?newc .
   ?newc yso-meta:associativeRelation ?ysorelated .
   ?ysorelated yso-meta:associativeRelation ?newc .
+  ?newc dct:created ?created .
 }
 WHERE {
   {
@@ -60,6 +61,7 @@ WHERE {
       OPTIONAL { ?c skos:scopeNote|skos:note ?note }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
+      OPTIONAL { ?c dct:created ?created }
 
       # broader, narrower, related
       OPTIONAL { ?c skos:broader ?ysab }
