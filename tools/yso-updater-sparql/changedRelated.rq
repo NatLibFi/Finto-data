@@ -1,3 +1,4 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
@@ -18,11 +19,12 @@ PREFIX allars: <http://www.yso.fi/onto/allars/>
 CONSTRUCT {
   ?ysoConcept yso-update:newRelated ?ysoNewRelated .
   ?ysoConcept yso-update:removedRelated ?ysoOldRelated .
+  ?ysoConcept rdfs:subClassOf yso-update:muuttuneet .
 }
 WHERE {
   # parameters
   VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2015-11-01" )
+    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2016-01-01" )
   }
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
