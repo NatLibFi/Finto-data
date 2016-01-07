@@ -38,11 +38,11 @@ WHERE {
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH <http://www.yso.fi/onto/ysa/version> {
       # find the graph URI of the latest available version of YSA
-      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?ysaNewVersionGraph .
+      ?ysaversionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?ysaNewVersionGraph .
     }
     GRAPH <http://www.yso.fi/onto/allars/version> {
       # find the graph URI of the latest available version of Allärs
-      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?allarsNewVersionGraph .
+      ?allarsversionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?allarsNewVersionGraph .
     }
     GRAPH ?ysaNewVersionGraph {
       ?ysac skos:exactMatch ?ac .
