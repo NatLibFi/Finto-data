@@ -31,26 +31,18 @@ CONSTRUCT {
 }
 WHERE {
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
-    {
-      SELECT ?c ?newVersionGraph
-      WHERE {
-        GRAPH <http://www.yso.fi/onto/ysa/version> {
-          # find the graph URI of the latest available version of YSA
-          ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
-        }
-        GRAPH ?newVersionGraph {
-          ?c a skos:Concept .
-          FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
-          # optimization: don't return concepts which have a match in YSO
-          FILTER NOT EXISTS {
-	    ?c skos:closeMatch ?ysoc
-            FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
-          }
-        }
-      }
+    GRAPH <http://www.yso.fi/onto/ysa/version> {
+      # find the graph URI of the latest available version of YSA
+      ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
     }
-    BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
     GRAPH ?newVersionGraph {
+      ?c a skos:Concept .
+      FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
+      # optimization: don't return concepts which have a match in YSO
+      FILTER NOT EXISTS {
+        ?c skos:closeMatch ?ysoc .
+        FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
+      }
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
       OPTIONAL { ?c skos:scopeNote|skos:note ?note }
@@ -67,8 +59,9 @@ WHERE {
       BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
     }  
   }
+  BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
   FILTER NOT EXISTS {
-    ?ysoc om:definedConcept ?c .
+    [] om:definedConcept ?c .
   }
   OPTIONAL { 
     BIND(IF(BOUND(?ysagroup), ?ysagroup, '') AS ?realysagroup)
