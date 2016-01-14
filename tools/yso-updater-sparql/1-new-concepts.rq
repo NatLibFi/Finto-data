@@ -30,10 +30,10 @@ CONSTRUCT {
   ?newc dct:created ?created .
 }
 WHERE {
-  {
-    SELECT ?c ?newVersionGraph
-    WHERE {
-      SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    {
+      SELECT ?c ?newVersionGraph
+      WHERE {
         GRAPH <http://www.yso.fi/onto/ysa/version> {
           # find the graph URI of the latest available version of YSA
           ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
@@ -48,13 +48,8 @@ WHERE {
           }
         }
       }
-      FILTER NOT EXISTS {
-        ?ysoc om:definedConcept ?c .
-      }
     }
-  }
-  BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
-  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
     GRAPH ?newVersionGraph {
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
@@ -71,6 +66,9 @@ WHERE {
       OPTIONAL { ?c skos:related ?ysar }
       BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
     }  
+  }
+  FILTER NOT EXISTS {
+    ?ysoc om:definedConcept ?c .
   }
   OPTIONAL { 
     BIND(IF(BOUND(?ysagroup), ?ysagroup, '') AS ?realysagroup)
