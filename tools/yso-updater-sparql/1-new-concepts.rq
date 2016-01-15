@@ -36,6 +36,7 @@ WHERE {
       ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
     }
     GRAPH ?newVersionGraph {
+      #VALUES ?c { ysa:Y206515 ysa:Y201205 }
       ?c a skos:Concept .
       FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
       # optimization: don't return concepts which have a match in YSO
@@ -48,12 +49,16 @@ WHERE {
       OPTIONAL { ?c skos:scopeNote|skos:note ?note }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
+      BIND(IF(BOUND(?ysagroup), ?ysagroup, 'g') AS ?realysagroup)
       OPTIONAL { ?c dct:created ?created }
 
       # broader, narrower, related
       OPTIONAL { ?c skos:broader ?ysab }
+      BIND(IF(BOUND(?ysab), ?ysab, 'b') AS ?broader)
       OPTIONAL { ?c skos:narrower ?ysan }
+      BIND(IF(BOUND(?ysan), ?ysan, 'n') AS ?narrower)
       OPTIONAL { ?c skos:related ?ysar }
+      BIND(IF(BOUND(?ysar), ?ysar, 'r') AS ?related)
     }  
   }
   BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
@@ -61,25 +66,21 @@ WHERE {
     [] om:definedConcept ?c .
   }
   OPTIONAL { 
-    BIND(IF(BOUND(?ysagroup), ?ysagroup, '') AS ?realysagroup)
     ?ysogroup om:definedConcept ?realysagroup
   }
 
   # must check whether an equivalent target concept already exists; if not, use a newly minted URI base on YSA localname
   OPTIONAL {
-    BIND(IF(BOUND(?ysab), ?ysab, '') AS ?broader)
     ?ysob om:definedConcept ?broader
   }
   BIND(IF(BOUND(?ysob), ?ysob, IF(BOUND(?ysab), IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
 
   OPTIONAL {
-    BIND(IF(BOUND(?ysan), ?ysan, '') AS ?narrower)
     ?yson om:definedConcept ?narrower
   }
   BIND(IF(BOUND(?yson), ?yson, IF(BOUND(?ysan), IRI(REPLACE(STR(?ysan), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
 
   OPTIONAL {
-    BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
     ?ysor om:definedConcept ?related
   }
   BIND(IF(BOUND(?ysor), ?ysor, IF(BOUND(?ysar), IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
