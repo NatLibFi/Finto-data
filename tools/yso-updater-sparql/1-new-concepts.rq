@@ -66,15 +66,21 @@ WHERE {
   }
 
   # must check whether an equivalent target concept already exists; if not, use a newly minted URI base on YSA localname
-  BIND(IF(BOUND(?ysab), ?ysab, '') AS ?broader)
-  OPTIONAL { ?ysob om:definedConcept ?broader }
-  BIND(IF(BOUND(?ysob), ?ysob, IF(isIRI(?broader), IRI(REPLACE(STR(?broader), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
+  OPTIONAL {
+    BIND(IF(BOUND(?ysab), ?ysab, '') AS ?broader)
+    ?ysob om:definedConcept ?broader
+  }
+  BIND(IF(BOUND(?ysob), ?ysob, IF(BOUND(?ysab), IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
 
-  BIND(IF(BOUND(?ysan), ?ysan, '') AS ?narrower)
-  OPTIONAL { ?yson om:definedConcept ?narrower }
-  BIND(IF(BOUND(?yson), ?yson, IF(isIRI(?narrower), IRI(REPLACE(STR(?narrower), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
+  OPTIONAL {
+    BIND(IF(BOUND(?ysan), ?ysan, '') AS ?narrower)
+    ?yson om:definedConcept ?narrower
+  }
+  BIND(IF(BOUND(?yson), ?yson, IF(BOUND(?ysan), IRI(REPLACE(STR(?ysan), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
 
-  BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
-  OPTIONAL { ?ysor om:definedConcept ?related }
-  BIND(IF(BOUND(?ysor), ?ysor, IF(isIRI(?related), IRI(REPLACE(STR(?related), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
+  OPTIONAL {
+    BIND(IF(BOUND(?ysar), ?ysar, '') AS ?related)
+    ?ysor om:definedConcept ?related
+  }
+  BIND(IF(BOUND(?ysor), ?ysor, IF(BOUND(?ysar), IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
 }
