@@ -1,9 +1,27 @@
 # baseURI: http://urn.fi/URN:NBN:fi:mts:
+# imports: file:///C:/HY-Data/VILKKIER/documents/TBCFreeWorkspace/TopBraid/Common/foaf.ttl.tbc
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://purl.org/goodrelations/v1
+# imports: http://purl.org/rss/1.0/schema
+# imports: http://rdfs.org/ns/void
+# imports: http://www.geonames.org/ontology
+# imports: http://www.w3.org/2000/01/rdf-schema
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2005/01/wf/flow
+# imports: http://www.w3.org/2006/vcard/ns
+# imports: http://www.w3.org/ns/hydra/core#
+# imports: http://www.w3.org/ns/sparql-service-description
+# imports: http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1
+# imports: http://xmlns.com/foaf/0.1/
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix flow: <http://www.w3.org/2005/01/wf/flow#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mts: <http://urn.fi/URN:NBN:fi:au:mts:> .
+@prefix ns: <http://www.w3.org/2006/vcard/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
@@ -14357,5 +14375,41 @@ Esimerkiksi karttapallot, pienoismallit jne."""@fi ;
 .
 <http://urn.fi/URN:NBN:fi:mts:>
   rdf:type owl:Ontology ;
+  dc:creator "Kansalliskirjasto"@fi ;
+  dc:creator "Nationalbiblioteket i Finland"@sv ;
+  dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja samalla yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.
+
+Metatietosanaston rakenteellinen hierarkia perustuu FRBR (Functional Requirements for Bibliographic Description) -käsitemallin mukaisiin kategorioihin: teos, ekspressio, manifestaatio, kappale, henkilö, yhteisö, suku sekä niiden väliset suhteet.
+Termi teos viittaa itsenäiseen tiedolliseen tai taiteelliseen sisältöön.
+Termi ekspressio viittaa teoksen tiedolliseen tai taiteelliseen toteutukseen, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne.
+Termi manifestaatio viittaa teoksen ekspression saamaan ilmiasuun (esim. CD-äänilevy, kirja, karttalehti, PDF-tiedosto)
+Termi kappale viittaa yksittäiseen manifestaation toteutumaan (esim. yksittäinen kirja, CD-äänilevy kirjaston kokoelmissa)
+Termi henkilö viittaa yksilöön tai yksilön (yksin tai yhdessä yhden tai useamman muun yksilön kanssa) luomaan identiteettiin.
+Termi yhteisö viittaa organisaatioon tai ryhmään henkilöitä ja/tai organisaatioita, jotka tunnetaan tietyllä nimellä, ja jotka toimivat tai voivat toimia yhtenä kokonaisuutena.
+Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema, tai jotka muuten esiintyvät perheenä
+
+Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.
+
+Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit."""@fi ;
+  dc:title "Metadataordlista"@sv ;
+  dc:title "Metatietosanasto"@fi ;
+  dct:language <http://lexvo.org/id/iso639-3/fin> ;
+  dct:language <http://lexvo.org/id/iso639-3/swe> ;
+  dct:license <http://creativecommons.org/licences/by/3.0/> ;
+  owl:imports <file:///C:/HY-Data/VILKKIER/documents/TBCFreeWorkspace/TopBraid/Common/foaf.ttl.tbc> ;
+  owl:imports dc: ;
+  owl:imports dct: ;
+  owl:imports <http://purl.org/goodrelations/v1> ;
+  owl:imports <http://purl.org/rss/1.0/schema> ;
+  owl:imports <http://rdfs.org/ns/void> ;
+  owl:imports <http://www.geonames.org/ontology> ;
+  owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/2005/01/wf/flow> ;
+  owl:imports <http://www.w3.org/2006/vcard/ns> ;
+  owl:imports <http://www.w3.org/ns/hydra/core#> ;
+  owl:imports <http://www.w3.org/ns/sparql-service-description> ;
+  owl:imports <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1> ;
+  owl:imports <http://xmlns.com/foaf/0.1/> ;
 .
