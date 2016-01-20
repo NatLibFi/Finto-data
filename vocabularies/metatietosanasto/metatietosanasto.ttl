@@ -1,6 +1,19 @@
 # baseURI: http://urn.fi/URN:NBN:fi:au:mts:
+# imports: http://metadataregistry.org/concept/show/id/1211.rdf
+# imports: http://metadataregistry.org/vocabulary/show/id/114.rdf
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
+# imports: http://purl.org/iso25964/skos-thes#
+# imports: http://rdaregistry.info/Elements/a.ttl
+# imports: http://rdaregistry.info/Elements/c.ttl
+# imports: http://rdaregistry.info/Elements/e.ttl
+# imports: http://rdaregistry.info/Elements/i.ttl
+# imports: http://rdaregistry.info/Elements/m.ttl
+# imports: http://rdaregistry.info/Elements/u.ttl
+# imports: http://rdaregistry.info/Elements/w.ttl
+# imports: http://rdvocab.info/termList/RDACarrierType.rdf
+# imports: http://rdvocab.info/termList/RDAMediaType.rdf
+# imports: http://rdvocab.info/termList/fontSize.rdf
 # imports: http://www.w3.org/2000/01/rdf-schema
 # imports: http://www.w3.org/2004/02/skos/core
 
@@ -179,15 +192,22 @@ rdaw:P10217
   rdf:type owl:Ontology ;
   dc:creator "Kansalliskirjasto"@fi ;
   dc:creator "Nationalbiblioteket i Finland"@sv ;
-  dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja samalla yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.
+  dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja  yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.
 
 Metatietosanaston rakenteellinen hierarkia perustuu FRBR (Functional Requirements for Bibliographic Description) -käsitemallin mukaisiin kategorioihin: teos, ekspressio, manifestaatio, kappale, henkilö, yhteisö, suku sekä niiden väliset suhteet.
+
 Termi teos viittaa itsenäiseen tiedolliseen tai taiteelliseen sisältöön.
+
 Termi ekspressio viittaa teoksen tiedolliseen tai taiteelliseen toteutukseen, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne.
+
 Termi manifestaatio viittaa teoksen ekspression saamaan ilmiasuun (esim. CD-äänilevy, kirja, karttalehti, PDF-tiedosto)
+
 Termi kappale viittaa yksittäiseen manifestaation toteutumaan (esim. yksittäinen kirja, CD-äänilevy kirjaston kokoelmissa)
+
 Termi henkilö viittaa yksilöön tai yksilön (yksin tai yhdessä yhden tai useamman muun yksilön kanssa) luomaan identiteettiin.
+
 Termi yhteisö viittaa organisaatioon tai ryhmään henkilöitä ja/tai organisaatioita, jotka tunnetaan tietyllä nimellä, ja jotka toimivat tai voivat toimia yhtenä kokonaisuutena.
+
 Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema, tai jotka muuten esiintyvät perheenä
 
 Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.
@@ -201,6 +221,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
   owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf> ;
   owl:imports <http://metadataregistry.org/vocabulary/show/id/114.rdf> ;
   owl:imports dc: ;
+  owl:imports dct: ;
   owl:imports isothes: ;
   owl:imports <http://rdaregistry.info/Elements/a.ttl> ;
   owl:imports <http://rdaregistry.info/Elements/c.ttl> ;
@@ -212,9 +233,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
   owl:imports <http://rdvocab.info/termList/RDACarrierType.rdf> ;
   owl:imports <http://rdvocab.info/termList/RDAMediaType.rdf> ;
   owl:imports <http://rdvocab.info/termList/fontSize.rdf> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports dct: ;
   owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.
+<http://urn.fi/URN:NBN:fi:au:mts:kerranviikossa>
+  rdf:type skos:Concept ;
+  dc:source "ISBD-termi"@fi ;
+  dc:source "RDA-termi"@fi ;
+  skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
+  skos:prefLabel "En gång i veckan"@sv ;
+  skos:prefLabel "Kerran viikossa"@fi ;
 .
 <http://urn.fi/URN:NBN:fi:au:mts:kymmenennumeroavuodessa>
   rdf:type skos:Concept ;
