@@ -631,8 +631,6 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 
 <http://rdaregistry.info/termList/fontSize/1003> skos:exactMatch mts:m10 .
 
-<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:m1332 .
-
 <http://rdaregistry.info/termList/frequency/1011> skos:exactMatch mts:m1049 .
 
 <http://rdaregistry.info/termList/frequency/1013> skos:exactMatch mts:m430 .
@@ -676,6 +674,14 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 <http://rdvocab.info/termList/fileType/1004> skos:prefLabel "kuvatiedostomuoto"@fi .
 
 <http://rdvocab.info/termList/fileType/1006> skos:prefLabel "videotiedostomuoto"@fi .
+
+mts:kerranviikossa a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kerran viikossa"@fi,
+        "En gång i veckan"@sv .
 
 mts:kymmenennumeroavuodessa a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -1181,9 +1187,9 @@ mts:m1069 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Lukuoikeus painetun version tilaajalla."@fi,
-        "Läsrätt innehas av den tryckta versionens prenumerant."@sv ;
+        "Prenumeranter av den tryckta versionen har tillgång till nätpublikationen."@sv ;
     skos:scopeNote "Verkkojulkaisun kuvailun yhteydessä annetaan tieto siitä, että painetun version tilaajalla on lukuoikeus verkkoversioon."@fi,
-        "Vid beskrivning av webbpublikation ges information om att den tryckta versionens prenumerant innehar läsrätt på webbversionen."@sv .
+        "Vid beskrivning av en nätbpublikation uppger man att prenumeranten har tillgång till nätversionen."@sv .
 
 mts:m107 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12528,6 +12534,9 @@ mts:m999 a isothes:ConceptGroup,
 <http://rdaregistry.info/termList/RDAMediaType/1005> skos:exactMatch mts:m1219,
         mts:m502 .
 
+<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:kerranviikossa,
+        mts:m1332 .
+
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -14323,15 +14332,22 @@ mts:m407 a skos:Concept ;
 mts: a skos:ConceptScheme ;
     dc:creator "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja samalla yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.\r
+    dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja  yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.\r
 \r
 Metatietosanaston rakenteellinen hierarkia perustuu FRBR (Functional Requirements for Bibliographic Description) -käsitemallin mukaisiin kategorioihin: teos, ekspressio, manifestaatio, kappale, henkilö, yhteisö, suku sekä niiden väliset suhteet.\r
+\r
 Termi teos viittaa itsenäiseen tiedolliseen tai taiteelliseen sisältöön.\r
+\r
 Termi ekspressio viittaa teoksen tiedolliseen tai taiteelliseen toteutukseen, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne.\r
+\r
 Termi manifestaatio viittaa teoksen ekspression saamaan ilmiasuun (esim. CD-äänilevy, kirja, karttalehti, PDF-tiedosto)\r
+\r
 Termi kappale viittaa yksittäiseen manifestaation toteutumaan (esim. yksittäinen kirja, CD-äänilevy kirjaston kokoelmissa)\r
+\r
 Termi henkilö viittaa yksilöön tai yksilön (yksin tai yhdessä yhden tai useamman muun yksilön kanssa) luomaan identiteettiin.\r
+\r
 Termi yhteisö viittaa organisaatioon tai ryhmään henkilöitä ja/tai organisaatioita, jotka tunnetaan tietyllä nimellä, ja jotka toimivat tai voivat toimia yhtenä kokonaisuutena.\r
+\r
 Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema, tai jotka muuten esiintyvät perheenä\r
 \r
 Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.\r
@@ -14342,5 +14358,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licences/by/3.0/> ;
-    dct:modified "2016-01-19T13:40:52+00:00"^^xsd:dateTime .
+    dct:modified "2016-01-20T13:42:00+00:00"^^xsd:dateTime .
 
