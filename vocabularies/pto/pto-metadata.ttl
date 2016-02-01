@@ -1,4 +1,5 @@
 ﻿@prefix pto: <http://paikkatiedot.fi/def/1001000/> .
+@prefix inspire-meta: <http://www.yso.fi/onto/inspire-meta/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -20,26 +21,28 @@ pto: a skos:ConceptScheme ;
 
         "Sanastokeskus TSK"@fi ,
         "Terminologicentralen TSK"@sv ,
-        "Finnish Terminology Centre TSK"@en ,
+        "The Finnish Terminology Centre TSK"@en ,
 
         "Paikkatietoverkosto"@fi,
         "Nätverket för geografisk information"@sv,
-        "National Spatial Data Network of Finland"@en ;
+        "The National Spatial Data Network of Finland"@en ;
 
     dc:title "PTO - Finnish Geospatial Domain Ontology"@en,
         "PTO - Paikkatieto-ontologia"@fi,
         "PTO - Ontologi för geografisk information"@sv ;
     dc:description
 
-"""Paikkatieto-ontologian (PTO) ensimmäisessä versiossa Yleistä suomalaista ontologiaa (YSO) on täydennetty noin 650 paikkatietokäsitteellä. Näistä käsitteistä noin 220 on peräisin Geoinformatiikan sanaston 2. laitoksesta ja noin 430 Paikkatietohakemiston hakusanastosta.
+"""Paikkatieto-ontologian (PTO) toinen versio muodostuu Yleisestä suomalaisesta ontologiasta (YSO) ja sitä täydentävistä noin 1020 paikkatietokäsitteestä. Paikkatietokäsitteet ovat peräisin Geoinformatiikan sanaston 2. laitoksesta, Paikkatietohakemiston hakusanastosta ja Euroopan komission antamista paikkatietoaineistojen ja -palvelujen yhteentoimivuutta koskevista asetuksista 1089/2010 ja 1253/2013. Viimeksi mainitut käsitteet ovat INSPIRE-direktiivin mukaisia paikkatietokohdetyyppejä.
 
-Ontologian laatineessa työryhmässä on ollut paikkatiedon asiantuntijoita mm. Maanmittauslaitoksesta, Geodeettisesta laitoksesta, Geologian tutkimuskeskuksesta ja Aalto-yliopiston insinööritieteiden korkeakoulusta. Ontologiatyön asiantuntijoina ovat toimineet Sanastokeskus TSK:n terminologit.
+Paikkatieto-ontologian paikkatietokäsitteet on ripustettu YSOn mukaiseen hierarkiaan. Ontologiassa on esitetty käsitteiden väliset hierarkkiset suhteet sekä assosiatiivisia suhteita. Lisäksi INSPIRE-paikkatietokohdetyypeille on merkitty niitä vastaavat reaalimaailman käsitteet tai näiden reaalimaailman käsitteiden yläkäsitteet YSOsta, Paikkatietohakemiston hakusanastosta tai Geoinformatiikan sanastosta. Kullekin INSPIRE-paikkatietokohdetyypille on merkitty myös tietomallin mukainen ylityyppi.
 
-Paikkatieto-ontologia on yhdistelmä paikkatietokäsitteitä ja Yleisen suomalaisen ontologian (YSO) käsitteitä. Paikkatieto-ontologiaa rakennettaessa on selvitetty, mitkä paikkatietokäsitteet ovat samoja kuin YSOon sisältyvät käsitteet, ja tästä on tehty merkintä käsitteiden kohdalle. YSOsta puuttuville paikkatietokäsitteille on puolestaan etsitty paikka YSOn käsitehierarkiasta.
+Paikkatieto-ontologian paikkatietokäsitteille on annettu termit suomeksi. Geoinformatiikan sanastosta peräisin olevilla käsitteillä sekä INSPIRE-paikkatietokohdetyypeillä termit on lisäksi ruotsiksi ja englanniksi. Geoinformatiikan sanaston käsitteille on myös annettu määritelmät ja niitä täydentäviä huomautuksia suomeksi. INSPIRE-paikkatietokohdetyypeillä on komission em. asetuksista peräisin olevat käsitekuvaukset englanniksi, suomeksi ja ruotsiksi.
 
-Paikkatieto-ontologiassa paikkatietokäsitteille on annettu termit suomeksi. Geoinformatiikan sanastosta peräisin olevilla käsitteillä termit on lisäksi ruotsiksi ja englanniksi. Geoinformatiikan sanaston käsitteille on lisäksi annettu määritelmät ja niitä täydentäviä huomautuksia suomeksi.
+Paikkatieto-ontologia on tarkoitettu sisällönkuvailuun ja tiedonhakuun.
 
-Paikkatieto-ontologia on tarkoitettu sisällönkuvailuun ja tiedonhakuun. Ontologian ylläpidosta vastaa Maanmittauslaitos osana säädöksiin kirjattuja paikkatietoinfrastruktuurin tukipalvelun tehtäviä. Käytännössä ylläpitotyö on verkostoitunutta ja tukeutuu Sanastokeskus TSK:n terminologien asiantuntemukseen.
+Ontologian kahta ensimmäistä versiota on työstetty vuosina 2012–2015. Työryhmässä on ollut paikkatiedon asiantuntijoita mm. Maanmittauslaitoksesta, Geodeettisesta laitoksesta, Geologian tutkimuskeskuksesta ja Aalto-yliopiston insinööritieteiden korkeakoulusta. Ontologiatyön asiantuntijoina ovat toimineet Sanastokeskus TSK:n terminologit.
+
+Ontologian ylläpidosta vastaa Maanmittauslaitos osana säädöksiin kirjattuja paikkatietoinfrastruktuurin tukipalvelun tehtäviä. Käytännössä ylläpitotyö on verkostoitunutta ja tukeutuu Sanastokeskus TSK:n terminologien asiantuntemukseen.
 """@fi ;
 
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
@@ -55,8 +58,57 @@ pto:TskConcept a owl:Class ;
       rdfs:label "Geoinformatiikan sanaston 2.laitoksen käsite"@fi ;
       rdfs:subClassOf skos:Concept .
 
+pto:InspireConcept a owl:Class ;
+      rdfs:label "INSPIRE-paikkatietokohdetyyppi"@fi ;
+      rdfs:subClassOf skos:Concept .
+
+pto:InspireThematicGroup a owl:Class ;
+      rdfs:label "INSPIRE-ryhmäkäsite"@fi ;
+      rdfs:subClassOf skos:Concept .
+
+
+
 pto:deprecatedLabel a owl:AnnotationProperty,
             rdf:Property;
-      rdfs:domain pto:TskConcept, pto:PaikhakConcept ;
+      rdfs:domain pto:TskConcept, pto:PaikhakConcept, pto:InspireConcept ;
       rdfs:label "hylättävä termi"@fi, "deprecated term"@en, "avrådd term"@sv ;
       rdfs:range xsd:string .
+
+inspire-meta:definition a owl:AnnotationProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:label "Inspire-määritelmä"@fi, "Inspire definition"@en, "Inspire-definition"@sv ;
+      rdfs:range xsd:string .
+
+inspire-meta:note a owl:AnnotationProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:label "Inspire-huomautus"@fi, "Inspire note"@en, "Inspire-anmärkning"@sv ;
+      rdfs:range xsd:string .
+
+inspire-meta:umlname a owl:AnnotationProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:range xsd:string .
+
+
+pto:weakAssociativeRelation a owl:ObjectProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:label "superordinate concept of the concept corresponding to the spatial object type in real world"@en ,
+                 "paikkatietokohdetyyppiä reaalimaailmassa vastaavan käsitteen yläkäsite"@fi ;
+      rdfs:range pto:TskConcept , pto:PaikhakConcept , pto:InspireConcept , skos:Concept .
+
+pto:strongAssociativeRelation a owl:ObjectProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:label "concept corresponding to the spatial object type in real world"@en, 
+                 "paikkatietokohdetyyppiä vastaava reaalimaailman käsite"@fi ;
+      rdfs:range pto:TskConcept , pto:PaikhakConcept , pto:InspireConcept , skos:Concept .
+
+pto:subTypeOf a owl:ObjectProperty,
+            rdf:Property;
+      rdfs:domain pto:InspireConcept ;
+      rdfs:label "supertype in data model"@en , 
+                 "ylityyppi tietomallissa"@fi ;
+      rdfs:range pto:InspireConcept .
