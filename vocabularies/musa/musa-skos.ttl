@@ -1553,16 +1553,6 @@ musa:p1016 a skos:Concept ;
     skos:prefLabel "viritysjärjestelmät"@fi ;
     skos:related musa:p800 .
 
-musa:p1017 a skos:Concept ;
-    dct:created "1996-02-09"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
-    skos:broader musa:p69007 ;
-    skos:inScheme musa: ;
-    skos:note "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
-        "Musiikkiesityksen tarkka nuotinnos."@fi ;
-    skos:prefLabel "transkriptiot"@fi,
-        "transkriptioner"@sv .
-
 musa:p1109 a skos:Concept ;
     dct:created "1997-09-30"^^xsd:date ;
     dct:modified "2014-05-02T15:19:16+03:00"^^xsd:dateTime ;
@@ -4268,6 +4258,17 @@ musa:p1015 a skos:Concept ;
     skos:prefLabel "musiikkianalyysi"@fi,
         "musikanalys"@sv .
 
+musa:p1017 a skos:Concept ;
+    dct:created "1996-02-09"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:03+03:00"^^xsd:dateTime ;
+    skos:broader musa:p69007,
+        musa:p908 ;
+    skos:inScheme musa: ;
+    skos:note "Jos kyse on sovitustranskriptiosta, käytetään termiä sovitukset soveltuvin täsmentein,  esimerkiksi rock : konsertit : transkriptiot, mutta rock : sovitukset : huilu : piano."@fi,
+        "Musiikkiesityksen tarkka nuotinnos."@fi ;
+    skos:prefLabel "transkriptiot"@fi,
+        "transkriptioner"@sv .
+
 musa:p11 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-05-02T15:19:22+03:00"^^xsd:dateTime ;
@@ -5697,6 +5698,20 @@ musa:p709 a skos:Concept ;
         "konserthus"@sv ;
     skos:related musa:p708,
         musa:p905 .
+
+musa:p716 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2014-05-02T15:19:12+03:00"^^xsd:dateTime ;
+    skos:altLabel "instrumentaatio"@fi,
+        "orkestraatio"@fi,
+        "orkestrointi"@fi,
+        "orkestrering"@sv ;
+    skos:broader musa:p155 ;
+    skos:inScheme musa: ;
+    skos:note "Sävellyksen äänten jakaminen yksittäisille soittimille tai soitinryhmille."@fi ;
+    skos:prefLabel "soitinnus"@fi,
+        "instrumentation"@sv ;
+    skos:related musa:p908 .
 
 musa:p718 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -7343,6 +7358,17 @@ musa:p690 a skos:Concept ;
     skos:prefLabel "partituurit"@fi,
         "partitur"@sv .
 
+musa:p69007 a skos:Concept ;
+    dct:created "2008-11-03"^^xsd:date ;
+    dct:modified "2014-05-02T15:40:32+03:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1017 ;
+    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi alkusoitot : sovitukset : piano."@fi,
+        "Sovittajan työn tuloksena syntynyt uudistettu versio aiemmin sävelletystä teoksesta."@fi ;
+    skos:prefLabel "sovitukset"@fi ;
+    skos:related musa:p908,
+        musa:p959 .
+
 musa:p691 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-12-15T11:10:59+02:00"^^xsd:dateTime ;
@@ -7365,21 +7391,6 @@ musa:p702 a skos:Concept ;
     skos:prefLabel "ohjelmat"@fi,
         "program"@sv ;
     skos:related musa:p705 .
-
-musa:p716 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:19:12+03:00"^^xsd:dateTime ;
-    skos:altLabel "instrumentaatio"@fi,
-        "orkestraatio"@fi,
-        "orkestrointi"@fi,
-        "orkestrering"@sv ;
-    skos:broader musa:p155 ;
-    skos:inScheme musa: ;
-    skos:note "Sävellyksen äänten jakaminen yksittäisille soittimille tai soitinryhmille."@fi ;
-    skos:prefLabel "soitinnus"@fi,
-        "instrumentation"@sv ;
-    skos:related musa:p69007,
-        musa:p908 .
 
 musa:p72260 a skos:Concept ;
     dct:created "2012-02-28"^^xsd:date ;
@@ -7802,17 +7813,6 @@ musa:p894 a skos:Concept ;
     skos:related musa:p1184,
         musa:p637,
         musa:p904 .
-
-musa:p908 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2014-05-02T15:18:57+03:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
-        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi ;
-    skos:prefLabel "sovittaminen"@fi ;
-    skos:related musa:p69007,
-        musa:p716,
-        musa:p959 .
 
 musa:p919 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
@@ -8720,7 +8720,7 @@ musa:p953 a skos:Concept ;
     skos:note "Sävellyksen harmoninen kokoonpano sekä tekniikka, jolla sointuja käytetään  sävellyksessä (homofonisessa musiikissa)."@fi ;
     skos:prefLabel "soinnutus"@fi,
         "harmonisering"@sv ;
-    skos:related musa:p69007 .
+    skos:related musa:p908 .
 
 musa:p961 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -9255,23 +9255,6 @@ musa:p677 a skos:Concept ;
     skos:prefLabel "huilusoittimet"@fi,
         "flöjtinstrument"@sv .
 
-musa:p69007 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2015-10-19T11:05:25+03:00"^^xsd:dateTime ;
-    skos:hiddenLabel "arrangemang musik"@sv ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p1017 ;
-    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi alkusoitot : sovitukset : piano."@fi,
-        "Sovittajan työn tuloksena syntynyt uudistettu versio aiemmin sävelletystä teoksesta."@fi,
-        "Sovittaminen + sovitukset = arrangemang :  musik"@sv,
-        "Sovittaminen + sovitukset = arrangemang : musik"@sv ;
-    skos:prefLabel "sovitukset"@fi,
-        "arrangemang -- musik"@sv ;
-    skos:related musa:p716,
-        musa:p908,
-        musa:p953,
-        musa:p959 .
-
 musa:p805 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2014-05-02T15:19:10+03:00"^^xsd:dateTime ;
@@ -9314,6 +9297,23 @@ musa:p868 a skos:Concept ;
         musa:p592,
         musa:p66071,
         musa:p870 .
+
+musa:p908 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2015-10-19T11:05:25+03:00"^^xsd:dateTime ;
+    skos:hiddenLabel "arrangemang musik"@sv ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p1017 ;
+    skos:note "Koska termillä on arkikielessä myös muita kuin musiikillisia merkityksiä, sitä on aina  käytettävä yhdessä jonkin musiikkitermin kanssa, esimerkiksi sovittaminen : oopperat :  alkusoitot."@fi,
+        "Sävellyksen muokkaaminen esitettäväksi toisella kokoonpanolla tai toisen musiikkityylin  mukaisesti. Kuulonvaraisesti siirtyvän perinnemusiikin tulkitsemista ei yleensä pidetä  sovittamisena."@fi,
+        "Sovittaminen + sovitukset = arrangemang :  musik"@sv,
+        "Sovittaminen + sovitukset = arrangemang : musik"@sv ;
+    skos:prefLabel "sovittaminen"@fi,
+        "arrangemang -- musik"@sv ;
+    skos:related musa:p69007,
+        musa:p716,
+        musa:p953,
+        musa:p959 .
 
 musa:p930 a skos:Concept ;
     dct:created "1998-06-23"^^xsd:date ;
@@ -11159,7 +11159,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2016-01-31T03:37:51+00:00"^^xsd:dateTime ;
+    dct:modified "2016-02-01T03:28:05+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
