@@ -8,16 +8,15 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
 PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 #
-# Added related relations to already existing concepts
-# (newly introduced related concepts flagged)
+# Added altLabels to already existing concepts
 #
 SELECT DISTINCT ?concept ?conceptLabel ?altLabel ?ysoConcept ?ysoConceptLabel ?ysoLabelType
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508" )
-  }
   GRAPH ?versionHistoryGraph {
+    # parameters
+    VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+      ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508" )
+    }
     # get the current and the previous version as default versions
     ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
     ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .

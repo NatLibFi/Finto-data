@@ -15,11 +15,11 @@ SELECT DISTINCT ?concept (str(?conceptPrefLabel) AS ?conceptLabel) ?changedPrope
  (str(?otherConceptPrefLabel) as ?otherConceptLabel)
 ?newObject
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changedProperty ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508"  skos:related )
-  }
   GRAPH ?versionHistoryGraph {
+    # parameters
+    VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changedProperty ) {
+      ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508"  skos:related )
+    }
     # get the current and the previous version as default versions
     ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
     ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
