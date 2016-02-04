@@ -1,5 +1,3 @@
-package koko;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -25,7 +23,6 @@ import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
-import common.JenaHelpers;
 
 
 
@@ -133,7 +130,7 @@ public class Kokoaja2 {
 			this.lisaaResurssiKokoon(ysoSubj, ysoSubj, true);
 		}
 		
-		// kaivetaan KOKOon viel‰ isReplacedBy-tyyppiset suhteet
+		// kaivetaan KOKOon viel√§ isReplacedBy-tyyppiset suhteet
 		StmtIterator iter = this.onto.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
@@ -146,7 +143,7 @@ public class Kokoaja2 {
 		Resource skosConcept = this.onto.createResource(this.skosNs + "Concept");
 		
 		Resource ysoConcept = this.koko.createResource(ysoMetaNs + "Concept");
-		Literal fiLabel = this.koko.createLiteral("YSO-k‰site", "fi");
+		Literal fiLabel = this.koko.createLiteral("YSO-k√§site", "fi");
 		Literal enLabel = this.koko.createLiteral("YSO Concept", "en");
 		Literal svLabel = this.koko.createLiteral("Allfo-begrepp", "sv");
 		this.koko.add(ysoConcept, RDF.type, OWL.Class);
@@ -298,7 +295,7 @@ public class Kokoaja2 {
 				}
 			}
 		}
-		// kaivetaan KOKOon viel‰ isReplacedBy-tyyppiset suhteet
+		// kaivetaan KOKOon viel√§ isReplacedBy-tyyppiset suhteet
 		iter = this.onto.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
@@ -463,7 +460,7 @@ public class Kokoaja2 {
 		while (resIter.hasNext()) {
 			uudenKokonResurssit.remove(resIter.nextResource());
 		}
-		System.out.println("Uudessa KOKOssa on " + uudenKokonResurssit.size() + " uutta k‰sitett‰.");
+		System.out.println("Uudessa KOKOssa on " + uudenKokonResurssit.size() + " uutta k√§sitett√§.");
 	}
 	
 	public void lisaaExactMatchitAiemmassaKokossaOlleisiin(String aiemmanKokonpolku) {
@@ -535,13 +532,13 @@ public class Kokoaja2 {
 			if (!loytyiVastine) {
 				i++;
 				if (aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.containsKey(subj)) {
-					System.out.println(i + ". ongelma: Edellisess‰ KOKOssa oli k‰site, jolle ei lˆytynyt vastinetta uuteen KOKOon: " + aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.get(subj) + " -- " + subj.getURI());
+					System.out.println(i + ". ongelma: Edellisess√§ KOKOssa oli k√§site, jolle ei l√∂ytynyt vastinetta uuteen KOKOon: " + aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.get(subj) + " -- " + subj.getURI());
 				} else {
-					System.out.println(i + ". ongelma: Edellisess‰ KOKOssa oli k‰site, jolle ei lˆytynyt vastinetta uuteen KOKOon: " + subj.getURI());
+					System.out.println(i + ". ongelma: Edellisess√§ KOKOssa oli k√§site, jolle ei l√∂ytynyt vastinetta uuteen KOKOon: " + subj.getURI());
 				}
 			}
 		}
-		// Poistetaan itseens‰ osoittavat replacedByt, sek‰ ne, jotka tulisivat nyky-KOKOssa ihan varsinaisina k‰sittein‰ olevista
+		// Poistetaan itseens√§ osoittavat replacedByt, sek√§ ne, jotka tulisivat nyky-KOKOssa ihan varsinaisina k√§sittein√§ olevista
 		HashSet<Statement> poistettavat = new HashSet<Statement>();
 		StmtIterator iter = this.koko.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
 		while (iter.hasNext()) {
@@ -605,7 +602,7 @@ public class Kokoaja2 {
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
-		System.out.println("Labelin perusteella romautettiin " + this.labelinPerusteellaYsoonYhdistyneet + " k‰sitett‰ YSOn ja erikoisontologian v‰lill‰ ja " + this.labelinPerusteellaMuuhunKuinYsoonYhdistyneet + " k‰sitett‰ erikoisontologioiden v‰lill‰.");
+		System.out.println("Labelin perusteella romautettiin " + this.labelinPerusteellaYsoonYhdistyneet + " k√§sitett√§ YSOn ja erikoisontologian v√§lill√§ ja " + this.labelinPerusteellaMuuhunKuinYsoonYhdistyneet + " k√§sitett√§ erikoisontologioiden v√§lill√§.");
 	}
 	
 	public void kirjoitaKoko(String kokonPolku) {

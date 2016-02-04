@@ -1,5 +1,3 @@
-package common;
-
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,7 +23,7 @@ import com.hp.hpl.jena.vocabulary.RDF;
 public class JenaHelpers {
 
 	public static Model lueMalliModeliksi(String polku) {
-		System.out.println("luetaan malli sis‰‰n.");
+		System.out.println("luetaan malli sis√§√§n.");
 		Model malli = ModelFactory.createDefaultModel();
 		InputStream in = FileManager.get().open(polku);
 		if (in == null) {
@@ -38,12 +36,12 @@ public class JenaHelpers {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("malli luettu sis‰‰n.");
+		System.out.println("malli luettu sis√§√§n.");
 		return malli;
 	}
 	
 	public static OntModel lueMalli(String polku, boolean onTtl) {
-		System.out.println("luetaan malli sis‰‰n.");
+		System.out.println("luetaan malli sis√§√§n.");
 		OntModel malli = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		InputStream in = FileManager.get().open(polku);
 		if (in == null) {
@@ -57,7 +55,7 @@ public class JenaHelpers {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("malli luettu sis‰‰n.");
+		System.out.println("malli luettu sis√§√§n.");
 		return malli;
 	}
 	
