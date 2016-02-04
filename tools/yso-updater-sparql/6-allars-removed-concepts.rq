@@ -23,7 +23,7 @@ WHERE {
   FILTER NOT EXISTS { ?ysoc a yso-meta:DeprecatedConcept }
   FILTER(STRSTARTS(STR(?allarsc), STR(allars:)))
 
-  FILTER NOT EXISTS {
+  MINUS {
     SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
       GRAPH <http://www.yso.fi/onto/allars/version> {
         # find the graph URI of the latest available version of Allärs
