@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ONTOFILE=metatietosanasto.ttl
+ONTOFILE=metatietosanasto-purify.ttl
 FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py
