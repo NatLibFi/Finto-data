@@ -15,11 +15,11 @@ PREFIX skosext: <http://purl.org/finnonto/schema/skosext#>
 #
 SELECT DISTINCT ?concept ?conceptLabel ?relatedConcept ?relatedConceptLabel ?newRelationship ?ysoConcept ?ysoConceptLabel ?ysoRelatedConcept ?ysoRelatedConceptLabel ?ysoRelationship
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ) {
-    ( <http://www.yso.fi/onto/ysa/version> undef undef skos:Concept )
-  }
   GRAPH ?versionHistoryGraph {
+    # parameters
+    VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?conceptType ) {
+      ( <http://www.yso.fi/onto/ysa/version> undef undef skos:Concept )
+    }
     # get the current and the previous version as default versions
     ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
     ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
