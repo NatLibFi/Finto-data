@@ -22,12 +22,12 @@ CONSTRUCT {
   ?ysoConcept rdfs:subClassOf yso-update:muuttuneet .
 }
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2016-01-01" )
-  }
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
+      # parameters
+      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2016-02-01" )
+      }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
       ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
@@ -64,6 +64,8 @@ WHERE {
     
     FILTER (BOUND(?newRelated) || BOUND(?oldRelated))
     FILTER (!(BOUND(?newRelated) && BOUND(?oldRelated) && ?newRelated = ?oldRelated))
+    BIND(IF(BOUND(?newRelated), ?newRelated, '') AS ?ysaNewRelated)
+    BIND(IF(BOUND(?oldRelated), ?oldRelated, '') AS ?ysaOldRelated)
     
     # ... for already existing concepts
     FILTER exists {
@@ -78,11 +80,9 @@ WHERE {
   ?ysoConcept om:definedConcept ?concept .
 
   OPTIONAL {
-    BIND(IF(BOUND(?newRelated), ?newRelated, '') AS ?ysaNewRelated)
     ?ysoNewRelated om:definedConcept ?ysaNewRelated 
   }
   OPTIONAL {
-    BIND(IF(BOUND(?oldRelated), ?oldRelated, '') AS ?ysaOldRelated)
     ?ysoOldRelated om:definedConcept ?ysaOldRelated
   }
 
