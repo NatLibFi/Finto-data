@@ -172,14 +172,6 @@ mts:m154 a isothes:ConceptGroup,
     skos:prefLabel "Toimijoiden suhteet"@fi ;
     skos:scopeNote "Toimijoiden suhteet tarkoittavat tomijan (henkilö, suku, yhteisö) ja toisen entiteetin välistä suhdetta."@fi .
 
-mts:m1597_1 a skos:Concept ;
-    dc:source "RDA-termi"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "määrittelemätön sisältötyyppi"@fi,
-        "ospecificerad innehållstyp"@sv ;
-    skos:scopeNote "Jos mediatyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon, ei voida helposti todentaa merkitään määrittelemätön."@fi,
-        "Då medietypen eller -typerna, som passar in på den beskrivna resursen, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv .
-
 mts:m1614 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -193,6 +185,14 @@ mts:m1626 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
     skos:prefLabel "16 kierr./min"@fi,
         "16 varv/min"@sv .
+
+mts:m1656 a skos:Concept ;
+    dc:source "RDA-termi"@fi ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
+    skos:prefLabel "määrittelemätön sisältötyyppi"@fi,
+        "ospecificerad innehållstyp"@sv ;
+    skos:scopeNote "Jos mediatyyppiä tai -tyyppejä, jotka soveltuvat kuvailtavaan aineistoon, ei voida helposti todentaa merkitään määrittelemätön."@fi,
+        "Då medietypen eller -typerna, som passar in på den beskrivna resursen, inte kan fastställas på ett enkelt sätt, anges termen ospecificerad."@sv .
 
 mts:m234 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -674,21 +674,6 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 <http://rdvocab.info/termList/fileType/1004> skos:prefLabel "kuvatiedostomuoto"@fi .
 
 <http://rdvocab.info/termList/fileType/1006> skos:prefLabel "videotiedostomuoto"@fi .
-
-mts:kerranviikossa a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "Kerran viikossa"@fi,
-        "En gång i veckan"@sv .
-
-mts:kymmenennumeroavuodessa a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "Kymmenen numeroa vuodessa"@fi,
-        "Tio nummer om året"@se .
 
 mts:m0 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5905,6 +5890,21 @@ mts:m1655 a skos:Concept ;
     skos:prefLabel "paavi"@fi,
         "påve"@sv .
 
+mts:m1657 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
+    skos:prefLabel "Kymmenen numeroa vuodessa"@fi,
+        "Tio nummer om året"@se .
+
+mts:m1658 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
+    skos:prefLabel "Kerran viikossa"@fi,
+        "En gång i veckan"@sv .
+
 mts:m166 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -6988,12 +6988,12 @@ mts:m291 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30056,
         rdam:P30168 ;
-    skos:member mts:kymmenennumeroavuodessa,
-        mts:m1049,
+    skos:member mts:m1049,
         mts:m1332,
         mts:m1463,
         mts:m1625,
         mts:m1645,
+        mts:m1657,
         mts:m282,
         mts:m430,
         mts:m915 ;
@@ -12534,8 +12534,8 @@ mts:m999 a isothes:ConceptGroup,
 <http://rdaregistry.info/termList/RDAMediaType/1005> skos:exactMatch mts:m1219,
         mts:m502 .
 
-<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:kerranviikossa,
-        mts:m1332 .
+<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:m1332,
+        mts:m1658 .
 
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14358,5 +14358,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licences/by/3.0/> ;
-    dct:modified "2016-02-04T12:14:16+00:00"^^xsd:dateTime .
+    dct:modified "2016-02-05T03:12:33+00:00"^^xsd:dateTime .
 
