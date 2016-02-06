@@ -96,13 +96,6 @@ mts:m1253 a skos:Concept ;
     skos:prefLabel "160 kierr./min"@fi,
         "160 varv/min"@sv .
 
-mts:m1353 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "Kerran viikossa"@fi,
-        "En gång i veckan"@se .
-
 mts:m138 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -630,6 +623,8 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 <http://rdaregistry.info/termList/fontSize/1002> skos:exactMatch mts:m982 .
 
 <http://rdaregistry.info/termList/fontSize/1003> skos:exactMatch mts:m10 .
+
+<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:m1332 .
 
 <http://rdaregistry.info/termList/frequency/1011> skos:exactMatch mts:m1049 .
 
@@ -5900,10 +5895,17 @@ mts:m1657 a skos:Concept ;
 mts:m1658 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
     skos:prefLabel "Kerran viikossa"@fi,
         "En gång i veckan"@sv .
+
+mts:m1659 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
+    skos:prefLabel "sanastot"@fi,
+        "ordlistor"@sv ;
+    skos:scopeNote "Monografioiden genre-termi"@fi .
 
 mts:m166 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5911,6 +5913,14 @@ mts:m166 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
     skos:prefLabel "33 1/3 kierr./min"@fi,
         "33 1/3 varv/min"@sv .
+
+mts:m1660 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
+    skos:prefLabel "lukemistot"@fi,
+        "läseböcker (textsamlingar)"@sv ;
+    skos:scopeNote "Monografioiden genre-termi"@fi .
 
 mts:m168 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6994,6 +7004,7 @@ mts:m291 a isothes:ConceptGroup,
         mts:m1625,
         mts:m1645,
         mts:m1657,
+        mts:m1658,
         mts:m282,
         mts:m430,
         mts:m915 ;
@@ -7042,7 +7053,7 @@ mts:m297 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "järjestohistoriikit"@fi,
+    skos:prefLabel "järjestöhistoriikit"@fi,
         "organisationshistoriker"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
 
@@ -12454,6 +12465,8 @@ mts:m99 a skos:Concept ;
 mts:m990 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
+    skos:member mts:m1659,
+        mts:m1660 ;
     skos:prefLabel "Lajityyppi"@fi .
 
 mts:m991 a isothes:ConceptGroup,
@@ -12533,9 +12546,6 @@ mts:m999 a isothes:ConceptGroup,
 
 <http://rdaregistry.info/termList/RDAMediaType/1005> skos:exactMatch mts:m1219,
         mts:m502 .
-
-<http://rdaregistry.info/termList/frequency/1008> skos:exactMatch mts:m1332,
-        mts:m1658 .
 
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14002,7 +14012,8 @@ mts:m87 a skos:Concept ;
     skos:definition "Viestimen sisältö havaitaan ihmisaistein ilman välittävää laitetta. Käsittää viestimet, jotka sisältävät visuaalista ja/tai pistekirjoitukseen perustuvaa sisältöä ja jotka on tuotettu menetelmillä kuten painamalla, kaivertamalla, kivipainolla jne., kohotyönä, kutomalla jne., tai käsin kirjoittamalla, piirtämällä, maalamalla jne. Käsittää myös kolmiulotteisia muotoja ilmaisevat viestimet, kuten veistokset, pienoismallit jne."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1007> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:/> ;
-    skos:prefLabel "käytettävissä ilman laitetta"@fi .
+    skos:prefLabel "käytettävissä ilman laitetta"@fi,
+        "oförmedlad"@sv .
 
 mts:m888 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14358,5 +14369,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licences/by/3.0/> ;
-    dct:modified "2016-02-05T03:12:33+00:00"^^xsd:dateTime .
+    dct:modified "2016-02-06T03:13:23+00:00"^^xsd:dateTime .
 
