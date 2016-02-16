@@ -14,7 +14,7 @@ PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 PREFIX ysa: <http://www.yso.fi/onto/ysa/>
 PREFIX allars: <http://www.yso.fi/onto/allars/>
 #
-# Changed notes for already existing concepts
+# Changed groups for already existing concepts
 #
 CONSTRUCT {
   ?ysoConcept yso-update:newGroup ?ysoNewGroup .
@@ -22,12 +22,12 @@ CONSTRUCT {
   ?ysoConcept rdfs:subClassOf yso-update:muuttuneet .
 }
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2016-01-01" )
-  }
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
+      # parameters
+      VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ) {
+        ( <http://www.yso.fi/onto/ysa/version> "2014-04-10" "2016-02-01" )
+      }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
       ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
@@ -64,6 +64,8 @@ WHERE {
     
     FILTER (BOUND(?newGroup) || BOUND(?oldGroup))
     FILTER (!(BOUND(?newGroup) && BOUND(?oldGroup) && ?newGroup = ?oldGroup))
+    BIND(IF(BOUND(?newGroup), ?newGroup, '') AS ?ysaNewGroup)
+    BIND(IF(BOUND(?oldGroup), ?oldGroup, '') AS ?ysaOldGroup)
     
     # ... for already existing concepts
     FILTER exists {
@@ -77,11 +79,9 @@ WHERE {
   # equivalent YSO concept to target
   ?ysoConcept om:definedConcept ?concept .
   OPTIONAL {
-    BIND(IF(BOUND(?newGroup), ?newGroup, '') AS ?ysaNewGroup)
     ?ysoNewGroup om:definedConcept ?ysaNewGroup 
   }
   OPTIONAL {
-    BIND(IF(BOUND(?oldGroup), ?oldGroup, '') AS ?ysaOldGroup)
     ?ysoOldGroup om:definedConcept ?ysaOldGroup
   }
 

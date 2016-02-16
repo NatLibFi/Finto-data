@@ -1,0 +1,165 @@
+@prefix : <http://iow.csc.fi/skos/eos#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix eos: <http://iow.csc.fi/skos/eos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://iow.csc.fi/skos/eos> a owl:Ontology ;
+    owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+eos:Ilmoittautuminen a skos:Collection ;
+    skos:member eos:tmpOKSAID496,
+        eos:tmpOKSAID497 ;
+    skos:prefLabel "toiminta opetukseen tai koulutukseen pääsemiseksi"@fi .
+
+eos:Koulutusaste a skos:Collection ;
+    skos:member eos:tmpOKSAID161 .
+
+eos:tmpOKSAID162 a skos:Concept ;
+    skos:altLabel "college"@en ;
+    skos:broader eos:tmpOKSAID161 ;
+    skos:definition "koulutusorganisaatio, jonka tehtävänä on edistää vapaata tutkimusta ja tieteellistä ja taiteellista sivistystä sekä antaa tutkimukseen perustuvaa korkeinta opetusta"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "university"@en,
+        "yliopisto"@fi,
+        "universitet"@sv .
+
+eos:tmpOKSAID163 a skos:Concept ;
+    rdfs:comment """Ammattikorkeakoulujen tehtävänä on harjoittaa työelämää ja aluekehitystä tukevaa ja alueen elinkeinorakenteen huomioon ottavaa soveltavaa tutkimus- ja kehitystyötä sekä taiteellista toimintaa.\r
+Suomen koulutusjärjestelmän ammattikorkeakouluja ovat opetus- ja kulttuuriministeriön hallinnonalaan kuuluvat ammattikorkeakoulut, joilla on valtioneuvoston myöntämä toimilupa, ja sisäministeriön alaisuudessa toimiva Poliisiammattikorkeakoulu. Ahvenanmaalla toimii ammattikorkeakoulu Högskolan på Åland.\r
+Ammattikorkeakoulujen toimiluvat myöntää valtioneuvosto."""@fi ;
+    skos:altLabel "polytechnic"@en ;
+    skos:broader eos:tmpOKSAID161 ;
+    skos:definition "koulutusorganisaatio, jonka tehtävänä on tarjota työelämän vaatimuksiin sekä tutkimukseen, taiteellisiin ja sivistyksellisiin lähtökohtiin perustuvaa opetusta, joka tähtää ammatillisiin asiantuntijatehtäviin"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "university of applied sciences"@en,
+        "ammattikorkeakoulu"@fi,
+        "yrkeshögskola"@sv .
+
+eos:tmpOKSAID123 a skos:Concept ;
+    skos:definition "koulutustoimijan organisoima, tiettyyn aikaan ja paikkaan sijoittuva koulutus"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "learning opportunity instance"@en,
+        "koulutuksen toteutus"@fi,
+        "utbildning"@sv ;
+    skos:related eos:tmpOKSAID121 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID147 a skos:Concept ;
+    rdfs:comment """Esimerkkejä koulutusorganisaatioista ovat päiväkodit (esiopetuksen osalta), peruskoulu, lukio, ammatillinen oppilaitos, ammattikorkeakoulu, yliopisto ja kansanopisto.\r
+Termiä oppilaitos käytetään usein termin koulutusorganisaatio synonyymina, mutta sillä viitataan yleensä vain muihin koulutusorganisaatioihin kuin korkeakouluihin.\r
+Yksi koulutuksen järjestäjä voi organisoida toimintansa usean koulutusorganisaation kautta (esim. kunta usean koulun kautta)."""^^xsd:string ;
+    skos:altLabel "educational institution"@en,
+        "oppilaitos"@fi,
+        "läroanstalt"@sv ;
+    skos:definition "organisaatio tai hallinnollinen yksikkö, jossa annetaan opetusta ja jolla on rehtori tai muu johtaja"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:narrower eos:tmpOKSAID161 ;
+    skos:prefLabel "educational establishment"@en,
+        "koulutusorganisaatio"@fi,
+        "utbildningsorganisation"@sv ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID311 a skos:Concept ;
+    rdfs:comment "Vrt. JHS 175 -sanastotyöprosessin ydinsanastoryhmän hallinnonalojenvälinen määritelmä käsitteelle \"hakija\": \"henkilö tai oikeushenkilö, joka on pannut asian vireille hakemuksella\"."@fi ;
+    skos:altLabel "koulutukseen hakija"@fi ;
+    skos:definition "henkilö, joka on jättänyt hakemuksen koulutuksen toteutukseen tai opetukseen"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "enapplicant"@en,
+        "hakija"@fi,
+        "sökande"@sv ;
+    skos:related eos:tmpOKSAID496 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID630 a skos:Concept ;
+    skos:definition "koulutuksesta lukukautta kohti perittävä maksu"^^xsd:string ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "tuition fee"@en,
+        "lukukausimaksu"@fi,
+        "terminsavgift"@sv ;
+    skos:related eos:tmpOKSAID121 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID121 a skos:Concept ;
+    rdfs:comment """Koulutus on laaja ja varsin abstrakti käsite. Esimerkki termin koulutus käytöstä: "Tutkintokoulutuksen ohella Suomen koulutusjärjestelmä tarjoaa runsaasti aikuisille suunniteltua koulutusta."\r
+Englannin käsite education on laajempi kuin suomen koulutus; education kattaa koulutuksen lisäksi opetuksen ja kasvatuksen."""@fi ;
+    skos:definition "organisoitu toiminta, jonka tavoitteena on tuottaa opetukseen perustuvaa osaamista"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "education"@en,
+        "koulutus"@fi,
+        "utbildning"@sv ;
+    skos:related eos:tmpOKSAID123,
+        eos:tmpOKSAID630 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID227 a skos:Concept ;
+    rdfs:comment """Opiskelijoita ovat esimerkiksi lukiossa, toisen asteen ammatillisessa koulutuksessa, korkeakoulussa ja vapaan sivistystyön piirissä opiskelevat henkilöt.\r
+Myös perusopetuksen piirissä opiskelevia aikuisia kutsutaan opiskelijoiksi.\r
+Ruotsin sana student viittaa korkeakouluopiskelijaan, mutta sitä käytetään myös muista opiskelijoista yhdyssanoissa."""@fi ;
+    skos:definition "henkilö, joka opiskelee muun kuin esi- tai perusopetuksen piirissä"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "student"@en,
+        "opiskelija"@fi,
+        "studerande"@sv ;
+    skos:related eos:tmpOKSAID496,
+        eos:tmpOKSAID497 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID497 a skos:Concept ;
+    rdfs:comment "Lukukausi-ilmoittautuminen voi kohdistua korkeakouluun tai tiettyyn opiskeluoikeuteen."@fi ;
+    skos:definition "toimenpide, jolla opiskelija ilmoittaa olevansa läsnä tai poissa tietyn lukukauden tai lukuvuoden ajan"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "registration for the academic term"@en,
+        "lukukausi-ilmoittautuminen"@fi,
+        "terminsanmälan"@sv ;
+    skos:related eos:tmpOKSAID227 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:tmpOKSAID161 a skos:Concept ;
+    skos:broader eos:tmpOKSAID147 ;
+    skos:definition "ammattikorkeakoulu tai yliopisto"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:narrower eos:tmpOKSAID162,
+        eos:tmpOKSAID163 ;
+    skos:prefLabel "higher education institution"@en,
+        "korkeakoulu"@fi,
+        "svhögskola"@sv ;
+    skos:related eos:tmpOKSAID496 .
+
+eos:tmpOKSAID496 a skos:Concept ;
+    rdfs:comment """Opiskelijaksi ilmoittautuminen tehdään vain, kun henkilö saa uuden opiskeluoikeuden.\r
+Opiskelijaksi ilmoittautuminen on hakijan toimenpide; vrt. sen tuloksena syntyvä kirjoilletulo, joka on korkeakoulun toimenpide.\r
+Opiskelijaksi ilmoittautumisen lisäksi korkeakouluopiskelijan on tehtävä lukukausi-ilmoittautuminen."""@fi ;
+    skos:altLabel "kirjoittautuminen"@fi,
+        "inskrivning"@sv ;
+    skos:definition "toimenpide, jolla opiskelupaikan vastaanottanut hakija ilmaisee korkeakoululle aloittavansa opiskelun, minkä jälkeen hänet merkitään korkeakoulun opiskelijarekisteriin opiskelijaksi"@fi ;
+    skos:inScheme eos:sanasto ;
+    skos:prefLabel "opiskelijaksi ilmoittautuminen"@fi,
+        "svanmälning"@sv ;
+    skos:related eos:tmpOKSAID161,
+        eos:tmpOKSAID227,
+        eos:tmpOKSAID311 ;
+    skos:topConceptOf eos:sanasto .
+
+eos:sanasto a skos:ConceptScheme ;
+    dc:creator "CSC - Tieteen tietotekniikan keskus"@fi ;
+    dc:description """EOS - Elinikäisen oppimisen sanasto on CSC:n tuottama esimerkkitoteutus OKSA - Opetus- ja koulutussanastosta SKOS muodossa.\r\r
+  Sanaston avulla on tarkoitus testata koneluettavan sanaston kehittämis- ja julkaisuprosessia ja sanastojen hyödyntämistä tietoarkkitehtuuin kehittämisessä."""@fi ;
+    dc:title "Vocabulary of Lifelong Learning"@en,
+        "Elinikäisen oppimisen sanasto"@fi ;
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:modified "2016-02-03T07:07:23.135000+00:00"^^xsd:dateTime ;
+    skos:hasTopConcept eos:tmpOKSAID121,
+        eos:tmpOKSAID123,
+        eos:tmpOKSAID147,
+        eos:tmpOKSAID227,
+        eos:tmpOKSAID311,
+        eos:tmpOKSAID496,
+        eos:tmpOKSAID497,
+        eos:tmpOKSAID630 .
+

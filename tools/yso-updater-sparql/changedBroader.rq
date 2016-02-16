@@ -18,20 +18,16 @@ PREFIX allars: <http://www.yso.fi/onto/allars/>
 #
 CONSTRUCT {
   ?ysoConcept yso-update:newBroader ?ysoNewBroader .
-  ?ysoNewBroader yso-update:newNarrower ?ysoConcept .
   ?ysoConcept yso-update:removedBroader ?ysoOldBroader .
-  ?ysoOldBroader yso-update:removedNarrower ?ysoConcept .
   ?ysoConcept rdfs:subClassOf yso-update:muuttuneet .
-  ?ysoNewBroader rdfs:subClassOf yso-update:muuttuneet .
-  ?ysoOldBroader rdfs:subClassOf yso-update:muuttuneet .
 }
 WHERE {
-  # parameters
-  VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-    ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" "2016-01-01" )
-  }
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
+      # parameters
+      VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ) {
+        ( <http://www.yso.fi/onto/ysa/version> "2014-04-10" "2016-02-01" )
+      }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
       ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
@@ -68,6 +64,8 @@ WHERE {
     
     FILTER (BOUND(?newBroader) || BOUND(?oldBroader))
     FILTER (!(BOUND(?newBroader) && BOUND(?oldBroader) && ?newBroader = ?oldBroader))
+    BIND(IF(BOUND(?newBroader), ?newBroader, '') AS ?ysaNewBroader)
+    BIND(IF(BOUND(?oldBroader), ?oldBroader, '') AS ?ysaOldBroader)
     
     # ... for already existing concepts
     FILTER exists {
@@ -82,11 +80,9 @@ WHERE {
   ?ysoConcept om:definedConcept ?concept .
 
   OPTIONAL {
-    BIND(IF(BOUND(?newBroader), ?newBroader, '') AS ?ysaNewBroader)
     ?ysoNewBroader om:definedConcept ?ysaNewBroader 
   }
   OPTIONAL {
-    BIND(IF(BOUND(?oldBroader), ?oldBroader, '') AS ?ysaOldBroader)
     ?ysoOldBroader om:definedConcept ?ysaOldBroader
   }
 
