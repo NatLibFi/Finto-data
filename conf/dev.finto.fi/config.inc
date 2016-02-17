@@ -4,7 +4,7 @@
 define("VOCABULARIES_FILE", "vocabularies.ttl");
 
 // HTTP client configuration
-define("HTTP_TIMEOUT", 3); // external HTTP request timeout in seconds
+define("HTTP_TIMEOUT", 5); // external HTTP request timeout in seconds
 
 // interface languages available, and the corresponding system locales
 $LANGUAGES = array(
