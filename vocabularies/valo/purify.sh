@@ -5,7 +5,7 @@ FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py
 VALONS=http://www.yso.fi/onto/valo/
-PURICHAR=ph
+PURICHAR=p
 VALOPURIBASE="${VALONS}${PURICHAR}"
 CONTEXT=$VALOPURIBASE
 OUTFILE="${VALOFILE}.new"
