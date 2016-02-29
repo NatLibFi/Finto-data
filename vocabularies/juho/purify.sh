@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ONTOFILE=juhoKehitys.ttl
+ONTOFILE=juho.ttl
 FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py
