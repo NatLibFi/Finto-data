@@ -21,6 +21,7 @@ DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 RDAA=Namespace("http://rdaregistry.info/Elements/a/")
 RDAC=Namespace("http://rdaregistry.info/Elements/c/")
+XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 
 LAS_IDENTIFY_URL="http://demo.seco.tkk.fi/las/identify"
 
@@ -156,11 +157,11 @@ for count, oaipmhrec in enumerate(recs):
 
   # created timestamp
   created = rec['008'].value()[:6]
-  g.add((uri, DCT.created, Literal(format_timestamp(created))))
+  g.add((uri, DCT.created, Literal(format_timestamp(created), datatype=XSD.date)))
 
   # modified timestamp
   modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
-  g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
+  g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
   
   if '046' in rec:
     fld = rec['046']
