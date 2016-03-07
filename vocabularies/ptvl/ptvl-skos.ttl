@@ -13,13 +13,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 
-ptvl:K a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty kansalaisten ja yritysmaailman ryhmiä, jotka
-ovat julkisten palvelujen keskeisiä käyttäjiä, joille erityisesti tuotetaan
-palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset."""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:prefLabel "Julkisten palvelujen kohderyhmäluokat"@fi .
-
 ptvl:KE1.1 a skos:Concept ;
     skos:broader ptvl:KE1 ;
     skos:inScheme ptvl:KE ;
@@ -1766,13 +1759,15 @@ ptvl:P3 a skos:Concept ;
     skos:topConceptOf ptvl: .
 
 ptvl:KK a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
     skos:hasTopConcept ptvl:KK1,
         ptvl:KK2,
         ptvl:KK3,
         ptvl:KK4,
         ptvl:KK5,
         ptvl:KK6,
-        ptvl:KK7 .
+        ptvl:KK7 ;
+    skos:prefLabel "Julkisten palvelujen yrityskohderyhmäluokat"@fi .
 
 ptvl:P4 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -1796,6 +1791,7 @@ ptvl:P4 a skos:Concept ;
     skos:topConceptOf ptvl: .
 
 ptvl:YK a skos:ConceptScheme ;
+    dct:isPartOf ptvl: ;
     skos:hasTopConcept ptvl:YK1,
         ptvl:YK2,
         ptvl:YK3,
@@ -1803,7 +1799,8 @@ ptvl:YK a skos:ConceptScheme ;
         ptvl:YK5,
         ptvl:YK6,
         ptvl:YK7,
-        ptvl:YK8 .
+        ptvl:YK8 ;
+    skos:prefLabel "Julkisten palvelujen kansalaiskohderyhmäluokat"@fi .
 
 ptvl:P6 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -1893,7 +1890,7 @@ Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai
         "Julkisten palvelujen luokitus"@fi,
         "Julkisten palvelujen luokitus"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:modified "2016-03-07T11:47:23+00:00"^^xsd:dateTime ;
+    dct:modified "2016-03-07T12:17:59+00:00"^^xsd:dateTime ;
     skos:hasTopConcept ptvl:P1,
         ptvl:P10,
         ptvl:P11,
