@@ -157,18 +157,6 @@ ptvl:KK7 a skos:Concept ;
     skos:prefLabel "Yhdistykset ja yhteisöt"@fi ;
     skos:topConceptOf ptvl:KK .
 
-ptvl:P.10.1 a skos:Concept ;
-    skos:broader ptvl:P.10 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:ptvl:P.> ;
-    skos:notation "P.10.1" ;
-    skos:prefLabel "Työnhaku ja työpaikat"@fi .
-
-ptvl:P.10.2 a skos:Concept ;
-    skos:broader ptvl:P.10 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:ptvl:P.> ;
-    skos:notation "P.10.2" ;
-    skos:prefLabel "Ammatinvalinta ja urasuunnittelu"@fi .
-
 ptvl:P1.1 a skos:Concept ;
     skos:broader ptvl:P1 ;
     skos:inScheme ptvl: ;
@@ -204,6 +192,18 @@ ptvl:P1.6 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:notation "P1.6" ;
     skos:prefLabel "Muuttaminen Suomen sisällä ja väestötiedot"@fi .
+
+ptvl:P10.1 a skos:Concept ;
+    skos:broader ptvl:P10 ;
+    skos:inScheme ptvl: ;
+    skos:notation "P10.1" ;
+    skos:prefLabel "Työnhaku ja työpaika"@fi .
+
+ptvl:P10.2 a skos:Concept ;
+    skos:broader ptvl:P10 ;
+    skos:inScheme ptvl: ;
+    skos:notation "P10.2" ;
+    skos:prefLabel "Ammatinvalinta ja urasuunnittelu"@fi .
 
 ptvl:P10.3 a skos:Concept ;
     skos:broader ptvl:P10 ;
@@ -1424,11 +1424,6 @@ ptvl:KE1 a skos:Concept ;
     skos:prefLabel "Lapsen saaminen"@fi ;
     skos:topConceptOf ptvl:KE .
 
-<http://urn.fi/URN:NBN:fi:au:ptvl:P.> a skos:ConceptScheme .
-
-ptvl:P.10 skos:narrower ptvl:P.10.1,
-        ptvl:P.10.2 .
-
 ptvl:P18 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:narrower ptvl:P18.1,
@@ -1584,18 +1579,6 @@ ptvl:P1 a skos:Concept ;
     skos:prefLabel "Asuminen"@fi ;
     skos:topConceptOf ptvl: .
 
-ptvl:P10 a skos:Concept ;
-    skos:inScheme ptvl: ;
-    skos:narrower ptvl:P10.3,
-        ptvl:P10.4,
-        ptvl:P10.5,
-        ptvl:P10.6,
-        ptvl:P10.7,
-        ptvl:P10.8 ;
-    skos:notation "P10" ;
-    skos:prefLabel "Työ ja työttömyys"@fi ;
-    skos:topConceptOf ptvl: .
-
 ptvl:P24 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:narrower ptvl:P24.1,
@@ -1657,6 +1640,20 @@ ptvl:P25 a skos:Concept ;
         ptvl:P25.7 ;
     skos:notation "P25" ;
     skos:prefLabel "Kulttuuri"@fi ;
+    skos:topConceptOf ptvl: .
+
+ptvl:P10 a skos:Concept ;
+    skos:inScheme ptvl: ;
+    skos:narrower ptvl:P10.1,
+        ptvl:P10.2,
+        ptvl:P10.3,
+        ptvl:P10.4,
+        ptvl:P10.5,
+        ptvl:P10.6,
+        ptvl:P10.7,
+        ptvl:P10.8 ;
+    skos:notation "P10" ;
+    skos:prefLabel "Työ ja työttömyys"@fi ;
     skos:topConceptOf ptvl: .
 
 ptvl:TT a skos:ConceptScheme ;
@@ -1890,7 +1887,7 @@ Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai
         "Julkisten palvelujen luokitus"@fi,
         "Julkisten palvelujen luokitus"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:modified "2016-03-08T10:23:37+00:00"^^xsd:dateTime ;
+    dct:modified "2016-03-10T08:13:51+00:00"^^xsd:dateTime ;
     skos:hasTopConcept ptvl:P1,
         ptvl:P10,
         ptvl:P11,
