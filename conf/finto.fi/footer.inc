@@ -1,41 +1,10 @@
-<!-- Piwik -->
 <script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["trackPageView"]);
-  _paq.push(["enableLinkTracking"]);
-
-  (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.finto.fi/";
-    _paq.push(["setTrackerUrl", u+"piwik.php"]);
-    _paq.push(["setSiteId", "1"]);
-    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->
-
-<!-- Browser Update -->
-<script type="text/javascript">
-var $buoop = {reminder: 24, l:'{{ lang }}'}; 
-$buoop.ol = window.onload;
-window.onload=function(){ 
- try {if ($buoop.ol) $buoop.ol();}catch (e) {}
- var e = document.createElement("script");    
- e.setAttribute("type", "text/javascript");
- e.setAttribute("src", "//browser-update.org/update.js");
- document.body.appendChild(e); 
-} 
-</script>
-<!-- End Browser Update -->
-
-<!-- YSO concepts with different color -->
-<script type="text/javascript">
-
 function createConceptObject(conceptUri, conceptData) {
   var prefLabel = conceptData.prefLabel; // the json narrower response has a different structure.
-  newNode = { 
+  var page = conceptUri.indexOf(uriSpace) !== -1 ? conceptUri.substr(uriSpace.length) : '?uri=' + encodeURIComponent(conceptUri); 
+  var newNode = { 
     text: prefLabel, 
-    a_attr: { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptUri) },
+    a_attr: { "href" : vocab + '/' + lang + '/page/' + page},
     uri: conceptUri,
     parents: conceptData.broader,
     state: { opened: true },
@@ -58,9 +27,10 @@ function createConceptObject(conceptUri, conceptData) {
     for (var child in conceptData.narrower) {
       var conceptObject = conceptData.narrower[child];
       var hasChildren = conceptObject.hasChildren; 
+      var childPage = conceptObject.uri.indexOf(uriSpace) !== -1 ? conceptObject.uri.substr(uriSpace.length) : '?uri=' + encodeURIComponent(conceptObject.uri); 
       var childObject = {
         text: conceptObject.label, 
-        a_attr: { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptData.narrower[child].uri) },
+        a_attr: { "href" : vocab + '/' + lang + '/page/' + childPage },
         uri: conceptData.narrower[child].uri,
         parents: conceptUri,
         state: { opened: true }
@@ -90,9 +60,10 @@ function vocabRoot(topConcepts) {
   var topArray = [];
   for (var i = 0; i < topConcepts.length; i++) {
     var conceptData = topConcepts[i];
+    var schemePage = conceptData.uri.indexOf(uriSpace) !== -1 ? conceptData.uri.substr(uriSpace.length) : '?uri=' + encodeURIComponent(conceptData.uri); 
     var childObject = {
       text: conceptData.label, 
-      a_attr : { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptData.uri) },
+      a_attr : { "href" : vocab + '/' + lang + '/page/' + schemePage },
       uri: conceptData.uri,
       children: [],
       state: { opened: false } 
@@ -102,6 +73,8 @@ function vocabRoot(topConcepts) {
       childObject.a_attr['class'] = 'yso-concept';
     if (conceptData.hasChildren)
       childObject.children = true;
+    if (conceptData.notation)
+      childObject.text = '<span class="tree-notation">' + conceptData.notation + '</span> ' + childObject.text;
     setNode(childObject);
     topArray.push(childObject);
   }
@@ -113,9 +86,10 @@ function createObjectsFromNarrowers(narrowerResponse) {
   for (var child in narrowerResponse.narrower) {
     var conceptObject = narrowerResponse.narrower[child];
     var hasChildren = conceptObject.hasChildren; 
+    var childPage = conceptObject.uri.indexOf(uriSpace) !== -1 ? conceptObject.uri.substr(uriSpace.length) : '?uri=' + encodeURIComponent(conceptObject.uri); 
     var childObject = {
       text : conceptObject.prefLabel, 
-      a_attr : { "href" : vocab + '/' + lang + '/page/?uri=' + encodeURIComponent(conceptObject.uri) },
+      a_attr : { "href" : vocab + '/' + lang + '/page/' + childPage },
       uri: conceptObject.uri,
       parents: narrowerResponse.uri,
       state: { opened: false, disabled: false, selected: false }
@@ -134,7 +108,4 @@ function createObjectsFromNarrowers(narrowerResponse) {
   }
   return childArray;
 }
-
 </script>
-<!-- end YSO concepts with different color -->
-

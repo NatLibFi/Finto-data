@@ -73,6 +73,8 @@ function vocabRoot(topConcepts) {
       childObject.a_attr['class'] = 'yso-concept';
     if (conceptData.hasChildren)
       childObject.children = true;
+    if (conceptData.notation)
+      childObject.text = '<span class="tree-notation">' + conceptData.notation + '</span> ' + childObject.text;
     setNode(childObject);
     topArray.push(childObject);
   }
