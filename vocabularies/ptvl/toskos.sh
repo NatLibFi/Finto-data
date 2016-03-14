@@ -2,7 +2,7 @@
 
 ./ptvl-from-docs.py
 
-DATAFILES="palveluluokat.ttl kansalaiskohderyhmat.ttl yrityskohderyhmat.ttl elamantilanteet.ttl tuottajatyypit.ttl toteutustavat.ttl"
+DATAFILES="palveluluokat.ttl kohderyhmat.ttl elamantilanteet.ttl tuottajatyypit.ttl toteutustavat.ttl"
 INFILES="ptvl-metadata.ttl $DATAFILES"
 OUTFILE=ptvl-skos.ttl
 

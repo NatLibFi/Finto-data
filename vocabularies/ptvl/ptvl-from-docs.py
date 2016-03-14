@@ -4,7 +4,7 @@ import csv, urllib, sys, codecs, requests
 from urllib.parse import urlencode
 
 file_id = '1QhBpqiwg9u0nGWmBfWGwlvZzuCumLuK14fl0UjW5NZs'
-gids = {'palveluluokat.csv': 0,'kansalaiskohderyhmat.csv': 1079968119,'yrityskohderyhmat.csv': 874436624,'elamantilanteet.csv': 1305536407,'tuottajatyypit.csv': 15595321,'toteutustavat.csv': 1819670788}
+gids = {'palveluluokat.csv': 0,'kohderyhmat.csv': 1079968119,'elamantilanteet.csv': 1305536407,'tuottajatyypit.csv': 15595321,'toteutustavat.csv': 1819670788}
 
 def loadSheet(file_id, filename, sheet_gid):
   params = urlencode({'exportFormat': 'csv', 'gid': sheet_gid})
