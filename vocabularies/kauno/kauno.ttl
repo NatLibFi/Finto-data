@@ -1,4 +1,6 @@
-# baseURI: file:/home/henriyli/TBCFreeWorkspace/kauno/kauno.ttl
+# baseURI: http://www.yso.fi/onto/kauno/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf
 
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix kauno:   <http://www.yso.fi/onto/kauno/> .
@@ -63,7 +65,8 @@ kaunometa:source
 
 kauno:
       rdf:type owl:Ontology ;
-      owl:imports yso: , <http://www.w3.org/2004/02/skos/core> .
+      owl:imports <http://www.w3.org/2004/02/skos/core>,
+        <https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf> .
 
 kauno:p0
       rdf:type kaunometa:Concept ;
