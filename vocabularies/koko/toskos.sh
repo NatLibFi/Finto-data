@@ -3,8 +3,8 @@
 INFILES="koko-metadata.ttl koko.ttl"
 OUTFILE=koko-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../../Skosify/"
 LOGFILE=skosify.log
-OPTS="-l fi --break-cycles --eliminate-redundancy --namespace=http://www.yso.fi/onto/koko/"
+OPTS="-l fi --set-modified --no-enrich-mappings --break-cycles --eliminate-redundancy --namespace=http://www.yso.fi/onto/koko/"
 
-$SKOSIFYHOME/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
