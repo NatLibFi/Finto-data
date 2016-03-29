@@ -17,7 +17,7 @@ $LANGUAGES = array(
 define("DEFAULT_ENDPOINT", "http://api.finto.fi/sparql");
 
 // how many items (maximum) to retrieve in search methods by default
-define("DEFAULT_SEARCH_LIMIT", 100);
+define("DEFAULT_SEARCH_LIMIT", 40);
 
 // how many items (maximum) to retrieve in transitive property queries
 define("DEFAULT_TRANSITIVE_LIMIT", 1000);

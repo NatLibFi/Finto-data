@@ -5,7 +5,7 @@ var yasqe = YASQE(document.getElementById("yasqe"), {
 		endpoint: endpoint
 	},
 	persistent: null,
-	value: '# Valitse ensin listaus vasemmalta'
+	value: '# Select a change category'
 });
 YASR.plugins.table.defaults.fetchTitlesFromPreflabel = false;
 YASR.plugins.table.defaults.mergeLabelsWithUris = true;

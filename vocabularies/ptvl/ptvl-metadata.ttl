@@ -26,8 +26,7 @@ ptvl: a skos:ConceptScheme ;
         "Julkisten palvelujen luokitus"@sv ;
 
     dc:description
-"""
-Julkisten palvelujen yleinen päätasoluokitus koostuu 27 päätason ja noin 180 alatason luokasta. Luokkien otsikoinnissa käytetyt termit kuvaavat julkisten palvelujen käyttötapauksia ja –tilanteita.
+"""Julkisten palvelujen yleinen päätasoluokitus koostuu 27 päätason ja noin 180 alatason luokasta. Luokkien otsikoinnissa käytetyt termit kuvaavat julkisten palvelujen käyttötapauksia ja –tilanteita.
 
 Luokitus on tarkoitettu erityisesti kansalaisille ja yrityksille palveluja tarjoaviin ja niitä kokoaviin verkkopalveluihin ja muihin palvelutietoja sisältäviin järjestelmiin.  Verkkopalvelujen esityskerroksessa luokkia voi yhdistellä, tyypillisesti navigointi- ja ryhmittelytarkoituksiin. Tällaisissa yhdistelmäluokissa luokituksen termit säilyvät ennallaan.
 
@@ -36,15 +35,16 @@ Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai
 
     dct:language <http://lexvo.org/id/iso639-3/fin> .
 
-ptvl:K a skos:ConceptScheme ;
+ptvl:KR a skos:ConceptScheme ;
     dct:isPartOf ptvl: ;
-
-    skos:prefLabel "Julkisten palvelujen kohderyhmäluokat"@fi ;
 
     dc:description
 """Luokituksessa on eritelty kansalaisten ja yritysmaailman ryhmiä, jotka
 ovat julkisten palvelujen keskeisiä käyttäjiä, joille erityisesti tuotetaan
-palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset."""@fi .
+palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset.
+"""@fi ;
+
+    skos:prefLabel "Julkisten palvelujen kohderyhmäluokat"@fi .
 
 ptvl:KE a skos:ConceptScheme ;
     dct:isPartOf ptvl: ;
@@ -74,3 +74,15 @@ ptvl:TTP a skos:ConceptScheme ;
     dc:description
 """Luokituksessa on eritelty ylätasoisesti eri tavat, joilla julkisia
 palveluja voidaan tuottaa asiakkaille."""@fi .
+
+ptvl:KR1 skos:scopeNote
+"""Palvelutietovarantoon kuvattavalle palvelulle valitaan Kansalaiset-kohderyhmä, kun palvelun halutaan näkyvän kansalaisen palvelunäkymässä. Saman palvelun voi kytkeä myös Yritykset- ja/tai Viranomaiset-kohderyhmään, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa.
+"""@fi .
+
+ptvl:KR2 skos:scopeNote
+"""Palvelutietovarantoon kuvattavalle palvelulle valitaan Yritykset-kohderyhmä, kun palvelun halutaan näkyvän yrityksen palvelunäkymässä. Saman palvelun voi kytkeä myös Kansalaiset- ja/tai Viranomaiset-kohderyhmään, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa.
+"""@fi .
+
+ptvl:KR3 skos:scopeNote
+"""Palvelutietovarantoon kuvattavalle palvelulle valitaan Viranomaiset-kohderyhmä, kun palvelun halutaan näkyvän viranomaisen palvelunäkymässä. Saman palvelun voi kytkeä myös Kansalaiset- ja/tai Yritykset-kohderyhmiin, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa.
+"""@fi .

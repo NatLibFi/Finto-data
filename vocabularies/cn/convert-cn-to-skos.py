@@ -12,6 +12,7 @@ from datetime import datetime
 import requests
 import sys
 import codecs
+import os.path
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 OWL=Namespace("http://www.w3.org/2002/07/owl#")
@@ -20,6 +21,7 @@ DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 RDAA=Namespace("http://rdaregistry.info/Elements/a/")
 RDAC=Namespace("http://rdaregistry.info/Elements/c/")
+XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 
 LAS_IDENTIFY_URL="http://demo.seco.tkk.fi/las/identify"
 
@@ -66,27 +68,39 @@ g.namespace_manager.bind('rdac', RDAC)
 
 oai = Client('https://fennica.linneanet.fi/cgi-bin/oai-pmh-fennica-asteri-aut.cgi', registry)
 
-#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2013,1,1))
+#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2016,2,10))
 recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames')
 
 lang_cache = {}
-lcf = codecs.open(LANG_CACHE_FILE, 'r', 'utf-8')
-for line in lcf:
-  lang, text = line.rstrip("\r\n").split("\t")
-  if lang == '': lang = None
-  lang_cache[text] = lang
-lcf.close()  
+if os.path.exists(LANG_CACHE_FILE):
+  lcf = codecs.open(LANG_CACHE_FILE, 'r', 'utf-8')
+  for line in lcf:
+    lang, text = line.rstrip("\r\n").split("\t")
+    if lang == '': lang = None
+    lang_cache[text] = lang
+  lcf.close()  
 
 label_to_uri = {}
 
 def guess_language(text):
   """return the most likely language for the given unicode text string"""
   if text not in lang_cache:
-    r = requests.get(LAS_IDENTIFY_URL, params={'text': text})
-    r.raise_for_status()
-    lang = r.json()['locale']
-    certainty = r.json()['certainty']
-    #print >>sys.stderr, lang, certainty, text.encode('UTF-8')
+    retries = 0
+    lang = None
+    certainty = None
+    while retries < 10:
+      r = requests.get(LAS_IDENTIFY_URL, params={'text': text})
+      if r.status_code == 200 and len(r.text) > 0:
+        lang = r.json()['locale']
+        certainty = r.json()['certainty']
+        break
+      retries += 1
+      print >>sys.stderr, "Request to LAS failed (status code %d, response length %d)" % (r.status_code, len(r.text))
+      print >>sys.stderr, "- retrying %d, url: '%s'" % (retries, r.url)
+
+    if certainty is None:
+      print >>sys.stderr, "Giving up LAS identify request for text '%s' for uri <%s>" % (text.encode('UTF-8'), uri)
+
     if lang in ('fi','sv','en') or certainty >= 0.5:
       lang_cache[text] = lang
     else:
@@ -143,11 +157,11 @@ for count, oaipmhrec in enumerate(recs):
 
   # created timestamp
   created = rec['008'].value()[:6]
-  g.add((uri, DCT.created, Literal(format_timestamp(created))))
+  g.add((uri, DCT.created, Literal(format_timestamp(created), datatype=XSD.date)))
 
   # modified timestamp
   modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
-  g.add((uri, DCT.modified, Literal(format_timestamp(modified))))
+  g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
   
   if '046' in rec:
     fld = rec['046']
@@ -174,6 +188,9 @@ for count, oaipmhrec in enumerate(recs):
 
   for f in rec.get_fields('410'):
     varname = format_ab(f)
+    if varname is None:
+      print >>sys.stderr, "Empty 410 value for <%s>, skipping" % uri
+      continue
     if len(varname) < 5 or ('w' in f and f['w'] == 'd'): # is very short, or an acronym
       varlit = Literal(varname) # no language tag for acronyms (too hard!)
     else:
@@ -191,7 +208,7 @@ for count, oaipmhrec in enumerate(recs):
       elif f['w'] == 't':
         rdarel = hierarchicalSuperior
       else:
-        print >>sys.stderr, "unknown 510 $w value:", f['w']
+        print >>sys.stderr, "unknown 510 $w value for <%s>:" % uri, f['w']
 
     targetname = format_ab(f)
     if targetname is not None:
@@ -213,7 +230,7 @@ for prop in (relatedCorporateBody, predecessor, successor, hierarchicalSuperior)
       g.remove((s,prop,o)) # remove original
       res = label_to_uri.get(u"%s" % o, None)
       if res is None:
-        print >>sys.stderr, ("no resource found for '%s'" % o).encode('UTF-8')
+        print >>sys.stderr, ("no resource found for '%s' (subject <%s>)" % (o, s)).encode('UTF-8')
       else:
         g.add((s,prop,res))
         if prop == hierarchicalSuperior:

@@ -19,7 +19,9 @@ g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('ptvl', PTVL)
 
 def add_concept(cell):
-    notation, label = cell.split(". ", 1)
+    notation, label = cell.split(" ", 1)
+    if (notation.endswith('.')):
+        notation = notation[:-1]
     uri = PTVL[notation]
     g.add((uri, RDF.type, SKOS.Concept))
     g.add((uri, SKOS.notation, Literal(notation)))

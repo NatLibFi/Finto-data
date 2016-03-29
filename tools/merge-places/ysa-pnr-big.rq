@@ -1,0 +1,100 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pnrs: <http://ldf.fi/pnr-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX sapo: <http://www.yso.fi/onto/sapo/>
+SELECT DISTINCT ?ysac ?labelFi ?labelSv
+(CONCAT(GROUP_CONCAT(DISTINCT ?noteFi;
+      separator='; '), '\n', GROUP_CONCAT(DISTINCT ?noteSv;
+      separator='; ')) AS ?note)
+(GROUP_CONCAT(DISTINCT ?bt;
+    separator='; ') AS ?broader)
+?ednote
+?place 
+(GROUP_CONCAT(DISTINCT ?pnrLabelFi;
+    separator='; ') AS ?pnrFi)
+(GROUP_CONCAT(DISTINCT ?pnrLabelSv;
+    separator='; ') AS ?pnrSv)
+?placetype 
+(GROUP_CONCAT(DISTINCT ?parentLabel;
+    separator='; ') AS ?pnrParents)
+(GROUP_CONCAT(DISTINCT ?ysaNewBT;
+    separator='; ') AS ?ysaNewBTs)
+(IRI(CONCAT('https://www.google.com/maps/@', STR(?lat), ',', STR(?long),',14z')) AS ?mapurl)
+WHERE {
+  GRAPH <http://www.yso.fi/onto/ysa/> {
+    ?s skos:exactMatch ?ysac .
+    FILTER(STRSTARTS(STR(?ysac), 'http://www.yso.fi/onto/ysa/'))
+    FILTER NOT EXISTS {
+      ?ysac ysameta:isForeign true 
+    }
+    ?s a skos:Concept .
+    ?s skos:prefLabel ?labelFi .
+    FILTER (LANG(?labelFi)='fi')
+    OPTIONAL {
+      ?s skos:prefLabel ?lSv .
+      FILTER (LANG(?lSv)='sv')
+    }
+    BIND(IF(BOUND(?lSv), ?lSv, '') AS ?labelSv)
+    OPTIONAL {
+      ?s skos:note ?nFi .
+      FILTER(LANG(?nFi)='fi')
+    }
+    BIND(IF(BOUND(?nFi), ?nFi, '') as ?noteFi)
+    OPTIONAL {
+      ?s skos:note ?nSv .
+      FILTER(LANG(?nSv)='sv')
+    }
+    BIND(IF(BOUND(?nSv), ?nSv, '') as ?noteSv)
+    OPTIONAL {
+      ?s skos:broader/skos:prefLabel ?bt .
+      FILTER(LANG(?bt)='fi')
+    }
+    OPTIONAL {
+      ?ysac skos:editorialNote ?ednote .
+    }
+    #        FILTER(STRSTARTS(STR(?labelFi), 'Kisko --'))
+    OPTIONAL {
+      ?ysac skos:closeMatch ?place .
+      GRAPH <http://ldf.fi/pnr/> {
+        #          OPTIONAL {
+        #            ?place pnrs:mapScale ?scale .
+        #            BIND(STRDT(REPLACE(STR(?scale), STR(pnrs:map_scale_), ''), xsd:integer) AS ?mapScale)
+        #          }
+        ?place rdf:type/rdfs:label ?placetype .
+        FILTER(LANG(?placetype)='fi')
+        OPTIONAL {
+          ?place skos:prefLabel ?pnrLabelFi .
+          FILTER(LANG(?pnrLabelFi)='fi')
+        }
+        OPTIONAL {
+          ?place skos:prefLabel ?pnrLabelSv .
+          FILTER(LANG(?pnrLabelSv)='sv')
+        }
+        OPTIONAL {
+          ?place skos:broader ?parent .
+          ?parent skos:prefLabel ?parentLabel .
+          FILTER(LANG(?parentLabel)='fi')
+          OPTIONAL {
+            GRAPH <http://www.yso.fi/onto/ysa/> {
+              ?ysaparent skos:closeMatch ?parent .
+              ?plparent skos:exactMatch ?ysaparent .
+              ?plparent skos:prefLabel ?ysaNewBT .
+              FILTER(LANG(?ysaNewBT)='fi')
+            } 
+          }
+        }
+        OPTIONAL {
+          ?place geo:lat ?lat .
+          ?place geo:long ?long .
+        }
+        #        } 
+      }
+    }
+  }
+} 
+GROUP BY ?ysac ?labelFi ?labelSv ?ednote ?place ?placetype ?lat ?long
+ORDER BY ?labelFi

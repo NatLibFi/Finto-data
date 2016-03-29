@@ -121,6 +121,8 @@ public class Kokoaja2 {
 		
 		// luodaan YSOConcept-tyyppiluokka
 		this.luoYSOConceptTyyppiLuokkaKokoon();
+		String ysoMetaNs = "http://www.yso.fi/onto/yso-meta/";
+		Resource ysoConcept = this.koko.createResource(ysoMetaNs + "Concept");
 		
 		Property skosInScheme = this.koko.createProperty(this.skosNs + "inScheme");
 		Resource ysoConceptScheme = this.koko.createResource("http://www.yso.fi/onto/yso/");
@@ -128,6 +130,7 @@ public class Kokoaja2 {
 		while (resIter.hasNext()) {
 			Resource ysoSubj = resIter.nextResource();
 			this.lisaaResurssiKokoon(ysoSubj, ysoSubj, true);
+			this.koko.add(ysoSubj, RDF.type, ysoConcept);
 		}
 		
 		// kaivetaan KOKOon vielä isReplacedBy-tyyppiset suhteet
@@ -135,6 +138,7 @@ public class Kokoaja2 {
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
 			this.koko.add(stmt);
+			this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(stmt.getSubject(), stmt.getSubject());
 		}
 	}
 	
@@ -310,6 +314,10 @@ public class Kokoaja2 {
 	}
 			
 	public void muutaUritKokoUreiksi() {
+		// DEBUG
+		//this.kirjoitaKoko("C:/HY-Data/MIFROSTE/Temp/koko/koko-2016-02-11ilmanKokoUreja.ttl");
+		// /DEBUG
+		
 		HashSet<Resource> kokonSubjektit = new HashSet<Resource>();
 		HashSet<Resource> kokossaOlevatKokoUritTaiOikeamminResurssit = new HashSet<Resource>();
 		Resource skosConcept = this.koko.createResource(this.skosNs + "Concept");
@@ -461,6 +469,9 @@ public class Kokoaja2 {
 			uudenKokonResurssit.remove(resIter.nextResource());
 		}
 		System.out.println("Uudessa KOKOssa on " + uudenKokonResurssit.size() + " uutta käsitettä.");
+		for (Resource uusi:uudenKokonResurssit) {
+			System.out.println(uusi.getURI());
+		}
 	}
 	
 	public void lisaaExactMatchitAiemmassaKokossaOlleisiin(String aiemmanKokonpolku) {
