@@ -3,7 +3,7 @@
 pdftotext -f 3 -layout OKM*.pdf
 ./okm-toskos.py OKM*.txt OKM*.csv >okm-tieteenala.ttl
 
-INFILES=okm-tieteenala.ttl
+INFILES="okm-tieteenala.ttl okm-tieteenala-metadata.ttl"
 OUTFILE=okm-tieteenala-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
