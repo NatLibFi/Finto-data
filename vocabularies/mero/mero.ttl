@@ -1,3 +1,7 @@
+# baseURI: http://www.yso.fi/onto/mero/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.yso.fi/onto/yso/
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix mero: <http://www.yso.fi/onto/mero/> .
 @prefix om: <http://www.yso.fi/onto/yso/peilaus/2007-03-02/> .
@@ -8,6 +12,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
+
+mero:
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf> .
 
 skos:altLabel rdfs:domain mero:m9591 .
 
