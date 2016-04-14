@@ -30,7 +30,7 @@ define("DEFAULT_SPARQL_DIALECT", "JenaText");
 #define("DEFAULT_SPARQL_DIALECT", "Generic");
 
 // default email address to send the feedback
-define("FEEDBACK_ADDRESS", "onki-posti@helsinki.fi");
+define("FEEDBACK_ADDRESS", "finto-posti@helsinki.fi");
 
 // whether or not to log caught exceptions
 define ("LOG_CAUGHT_EXCEPTIONS", FALSE);

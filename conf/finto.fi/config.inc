@@ -30,7 +30,7 @@ define("DEFAULT_SPARQL_DIALECT", "JenaText");
 #define("DEFAULT_SPARQL_DIALECT", "Generic");
 
 // default email address to send the feedback
-define("FEEDBACK_ADDRESS", "onki-posti@helsinki.fi");
+define("FEEDBACK_ADDRESS", "finto-posti@helsinki.fi");
 
 // email address to set as the envelope sender for feedback messages
 define("FEEDBACK_ENVELOPE_SENDER", "");
