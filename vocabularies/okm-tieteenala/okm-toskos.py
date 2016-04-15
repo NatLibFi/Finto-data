@@ -28,8 +28,8 @@ g.add((cs, RDFS.label, Literal(defs[1], 'fi')))
 for line in defs[3:]:
   tk, okm = re.split('\s{3,}', line)
   m = re.match('(\d+(?:,\d)?) (.*)', okm)
-  code = m.group(1)
-  uri = OKM["ta" + code.replace(',','')]
+  code = m.group(1).replace(',','')
+  uri = OKM["ta" + code]
   label = m.group(2)
   g.add((uri, RDF.type, SKOS.Concept))
   g.add((uri, SKOS.notation, Literal(code)))
