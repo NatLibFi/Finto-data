@@ -4,9 +4,9 @@
 gitdir=$1
 vocabfile=$2 # relative to git root
 tsfile=$3
+earliest=$4
 
 # date range
-earliest="2014-08-16"
 latest=`date '+%Y-%m-%d'`
 
 echo "Loading $vocabfile snapshots ($earliest to $latest) from $gitdir"
