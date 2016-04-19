@@ -1,13 +1,10 @@
 #!/bin/sh
 
-INFILE=ysoKehitys.rdf
-TTLFILE=ysoKehitys.ttl
+INFILES="yso-metadata.ttl ysoKehitys.rdf"
 OUTFILE=yso-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
-CONFFILE=$SKOSIFYHOME/finnonto.cfg
-TAGLOGFILE=removed-recent.log
+CONFFILE="../../conf/skosify/finnonto.cfg"
 LOGFILE=skosify.log
 
-./tag-recently-added.py $INFILE >$TTLFILE 2>$TAGLOGFILE
-$SKOSIFYHOME/skosify.py -c $CONFFILE $TTLFILE -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
