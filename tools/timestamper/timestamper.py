@@ -83,19 +83,17 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
             # the concept is new, update timestamp
             new_timestamps[concept] = (hash, timestamp)
 
-# create a Turtle file of the new timestamps
-stamps = Graph() # for storing timestamps
-stamps.namespace_manager.bind('dct', DCT)
-
-for concept, cdata in new_timestamps.items():
-    hash, mtime = cdata
-    if mtime != '-':
-        stamps.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
-
-stamps.serialize(destination=sys.stdout, format='turtle')
-
 # store the new timestamps in the timestamp data file
 with open(tsfile, 'w') as f:
     for concept, cdata in new_timestamps.items():
         hash, mtime = cdata
         print >>f, "\t".join((concept, hash, mtime))
+
+# Add the new timestamps to the graph
+
+for concept, cdata in new_timestamps.items():
+    hash, mtime = cdata
+    if mtime != '-':
+        g.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
+
+g.serialize(destination=sys.stdout, format='turtle')
