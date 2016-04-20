@@ -85,7 +85,7 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
 
 # store the new timestamps in the timestamp data file
 with open(tsfile, 'w') as f:
-    for concept, cdata in new_timestamps.items():
+    for concept, cdata in sorted(new_timestamps.items()):
         hash, mtime = cdata
         print >>f, "\t".join((concept, hash, mtime))
 
