@@ -22,6 +22,7 @@ from rdflib import Graph, Namespace, URIRef, Literal, RDF, XSD
 import sys
 import datetime
 import hashlib
+import os.path
 
 SKOS = Namespace('http://www.w3.org/2004/02/skos/core#')
 DCT = Namespace('http://purl.org/dc/terms/')
@@ -38,10 +39,11 @@ else:
 
 # load existing timestamps
 old_timestamps = {}
-with open(tsfile, 'r') as f:
-    for line in f:
-        uri, hash, mtime = line.strip().split()
-        old_timestamps[URIRef(uri)] = (hash, mtime)
+if os.path.exists(tsfile):
+    with open(tsfile, 'r') as f:
+        for line in f:
+            uri, hash, mtime = line.strip().split()
+            old_timestamps[URIRef(uri)] = (hash, mtime)
 
 # load SKOS file
 g = Graph()
@@ -74,8 +76,12 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
             # hash has changed, update timestamp
             new_timestamps[concept] = (hash, timestamp)
     else:
-        # the concept is new, no timestamp
-        new_timestamps[concept] = (hash, '-')
+        if len(old_timestamps) == 0:
+            # we don't know anything about history, no timestamp
+            new_timestamps[concept] = (hash, '-')
+        else:
+            # the concept is new, update timestamp
+            new_timestamps[concept] = (hash, timestamp)
 
 # create a Turtle file of the new timestamps
 stamps = Graph() # for storing timestamps
