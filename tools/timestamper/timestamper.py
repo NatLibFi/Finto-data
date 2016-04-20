@@ -38,7 +38,7 @@ else:
 
 # load existing timestamps
 old_timestamps = {}
-with open(tsfile, 'a+') as f:
+with open(tsfile, 'r') as f:
     for line in f:
         uri, hash, mtime = line.strip().split()
         old_timestamps[URIRef(uri)] = (hash, mtime)
@@ -55,7 +55,7 @@ def concept_hash(concept):
     for triple in g.triples((None, None, concept)):
         cgraph.add(triple)
     nt = cgraph.serialize(destination=None, format='nt')
-    sorted_nt = '\n'.join(sorted(nt.split('\n')))
+    sorted_nt = ''.join(sorted(nt.splitlines(True)))
     md5 = hashlib.md5()
     md5.update(sorted_nt)
     return md5.hexdigest()
