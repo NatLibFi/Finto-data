@@ -22,6 +22,7 @@ from rdflib import Graph, Namespace, URIRef, Literal, RDF, XSD
 import sys
 import datetime
 import hashlib
+import os.path
 
 SKOS = Namespace('http://www.w3.org/2004/02/skos/core#')
 DCT = Namespace('http://purl.org/dc/terms/')
@@ -38,10 +39,11 @@ else:
 
 # load existing timestamps
 old_timestamps = {}
-with open(tsfile, 'a+') as f:
-    for line in f:
-        uri, hash, mtime = line.strip().split()
-        old_timestamps[URIRef(uri)] = (hash, mtime)
+if os.path.exists(tsfile):
+    with open(tsfile, 'r') as f:
+        for line in f:
+            uri, hash, mtime = line.strip().split()
+            old_timestamps[URIRef(uri)] = (hash, mtime)
 
 # load SKOS file
 g = Graph()
@@ -55,7 +57,7 @@ def concept_hash(concept):
     for triple in g.triples((None, None, concept)):
         cgraph.add(triple)
     nt = cgraph.serialize(destination=None, format='nt')
-    sorted_nt = '\n'.join(sorted(nt.split('\n')))
+    sorted_nt = ''.join(sorted(nt.splitlines(True)))
     md5 = hashlib.md5()
     md5.update(sorted_nt)
     return md5.hexdigest()
@@ -74,22 +76,24 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
             # hash has changed, update timestamp
             new_timestamps[concept] = (hash, timestamp)
     else:
-        # the concept is new, no timestamp
-        new_timestamps[concept] = (hash, '-')
+        if len(old_timestamps) == 0:
+            # we don't know anything about history, no timestamp
+            new_timestamps[concept] = (hash, '-')
+        else:
+            # the concept is new, update timestamp
+            new_timestamps[concept] = (hash, timestamp)
 
-# create a Turtle file of the new timestamps
-stamps = Graph() # for storing timestamps
-stamps.namespace_manager.bind('dct', DCT)
+# store the new timestamps in the timestamp data file
+with open(tsfile, 'w') as f:
+    for concept, cdata in sorted(new_timestamps.items()):
+        hash, mtime = cdata
+        print >>f, "\t".join((concept, hash, mtime))
+
+# Add the new timestamps to the graph
 
 for concept, cdata in new_timestamps.items():
     hash, mtime = cdata
     if mtime != '-':
-        stamps.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
+        g.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
 
-stamps.serialize(destination=sys.stdout, format='turtle')
-
-# store the new timestamps in the timestamp data file
-with open(tsfile, 'w') as f:
-    for concept, cdata in new_timestamps.items():
-        hash, mtime = cdata
-        print >>f, "\t".join((concept, hash, mtime))
+g.serialize(destination=sys.stdout, format='turtle')
