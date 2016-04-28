@@ -1,4 +1,3 @@
-package koko;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -27,7 +26,6 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-import common.JenaHelpers;
 
 
 
@@ -408,7 +406,7 @@ public class Kokoaja2 {
 		for (Statement stmt:lisattavat) this.koko.add(stmt);
 	}
 	
-	// palautetaan paras prefLabel joukosta kandidaatteja - ensimm‰inen kriteeri on sulkutarkenteet (jos on, hyv‰), toinen pituus (lyhyempi parempi), kolmas aakkosj‰rjestys
+	// palautetaan paras prefLabel joukosta kandidaatteja - ensimm√§inen kriteeri on sulkutarkenteet (jos on, hyv√§), toinen pituus (lyhyempi parempi), kolmas aakkosj√§rjestys
 	public String palautaPrefLabeliksiSopivin(HashSet<String> kandidaatitSet) {
 		String paras = null;
 		for (String kandidaatti:kandidaatitSet) {
