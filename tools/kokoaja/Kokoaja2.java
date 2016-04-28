@@ -187,6 +187,8 @@ public class Kokoaja2 {
 		propertytJoitaEiHalutaKokoon.add(this.onto.createProperty(this.skosNs + "inScheme"));
 		propertytJoitaEiHalutaKokoon.add(this.onto.createProperty(this.skosNs + "topConceptOf"));
 		propertytJoitaEiHalutaKokoon.add(this.onto.createProperty(this.skosNs + "narrower"));
+		propertytJoitaEiHalutaKokoon.add(DCTerms.modified);
+		propertytJoitaEiHalutaKokoon.add(DCTerms.created);
 		
 		this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(ontoSubj, kokoSubj);
 		//this.kokoFiLabelitResurssitMap.put(this.ontoFiResurssitLabelitMap.get(ontoSubj), kokoSubj);
@@ -734,6 +736,41 @@ public class Kokoaja2 {
 		for (Statement stmt:lisattavat) this.koko.add(stmt);
 	}
 	
+	public void tulostaPrefLabelMuutoksetEdelliseenVerrattuna(Model aiempiKoko, String lang) {
+		System.out.println("KOKOn prefLabel muutokset edelliseen versioon verrattuna kielella " + lang + ":");
+		Property skosPrefLabel = aiempiKoko.createProperty(this.skosNs + "prefLabel");
+		int i = 0;
+		
+		HashMap<Resource, String> nykyKokonPrefLabelitMap = new HashMap<Resource, String>();
+		StmtIterator iter = this.koko.listStatements((Resource)null, skosPrefLabel, (RDFNode)null);
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			if (stmt.getLanguage().equals(lang)) {
+				String fiLabelString = ((Literal)stmt.getObject()).getLexicalForm();
+				nykyKokonPrefLabelitMap.put(stmt.getSubject(), fiLabelString);
+			}
+		}
+		
+		iter = aiempiKoko.listStatements((Resource)null, skosPrefLabel, (RDFNode)null);
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			if (stmt.getLanguage().equals(lang)) {
+				String fiLabelString = ((Literal)stmt.getObject()).getLexicalForm();
+				if (nykyKokonPrefLabelitMap.containsKey(stmt.getSubject())) {
+					String nykyFiLabelString = nykyKokonPrefLabelitMap.get(stmt.getSubject());
+					String nykyFiLabelStringIlmanSulkutarkenteita = nykyFiLabelString;
+					if (nykyFiLabelString.contains("(")) nykyFiLabelStringIlmanSulkutarkenteita = nykyFiLabelString.substring(0, nykyFiLabelString.indexOf("(")).trim();
+					String fiLabelStringIlmanSulkutarkenteita = fiLabelString;
+					if (fiLabelString.contains("(")) fiLabelStringIlmanSulkutarkenteita = fiLabelString.substring(0, fiLabelString.indexOf("(")).trim();
+					if (!(nykyFiLabelStringIlmanSulkutarkenteita.equals(fiLabelStringIlmanSulkutarkenteita))) {
+						i++;
+						System.out.println(i + ". " + stmt.getSubject().getURI() + " -- " + fiLabelString + " => " + nykyFiLabelString);
+					}
+				}
+			}
+		}
+	}
+	
 	public void tulostaMuutoksetEdelliseenVerrattuna(String aiemmanKokonpolku) {
 		System.out.println("Tulostetaan prefLabel-muutokset edelliseen KOKOon verrattuna.");		
 		int i = 0;
@@ -750,24 +787,10 @@ public class Kokoaja2 {
 				nykyKokonPrefLabelitMap.put(stmt.getSubject(), fiLabelString);
 			}
 		}
-		iter = aiempiKoko.listStatements((Resource)null, skosPrefLabel, (RDFNode)null);
-		while (iter.hasNext()) {
-			Statement stmt = iter.nextStatement();
-			if (stmt.getLanguage().equals("fi")) {
-				String fiLabelString = ((Literal)stmt.getObject()).getLexicalForm();
-				if (nykyKokonPrefLabelitMap.containsKey(stmt.getSubject())) {
-					String nykyFiLabelString = nykyKokonPrefLabelitMap.get(stmt.getSubject());
-					String nykyFiLabelStringIlmanSulkutarkenteita = nykyFiLabelString;
-					if (nykyFiLabelString.contains("(")) nykyFiLabelStringIlmanSulkutarkenteita = nykyFiLabelString.substring(0, nykyFiLabelString.indexOf("(")).trim();
-					String fiLabelStringIlmanSulkutarkenteita = fiLabelString;
-					if (fiLabelString.contains("(")) fiLabelStringIlmanSulkutarkenteita = fiLabelString.substring(0, fiLabelString.indexOf("(")).trim();
-					if (!(nykyFiLabelStringIlmanSulkutarkenteita.equals(fiLabelStringIlmanSulkutarkenteita))) {
-						i++;
-						System.out.println(i + ". " + stmt.getSubject().getURI() + " -- " + fiLabelString + " => " + nykyFiLabelString);
-					}
-				}
-			}
-		}
+		
+		this.tulostaPrefLabelMuutoksetEdelliseenVerrattuna(aiempiKoko, "fi");
+		this.tulostaPrefLabelMuutoksetEdelliseenVerrattuna(aiempiKoko, "sv");
+		
 		Resource skosConcept = this.koko.createResource(this.skosNs + "Concept");
 		HashSet<Resource> uudenKokonResurssit = new HashSet<Resource>();
 		ResIterator resIter = this.koko.listSubjectsWithProperty(RDF.type, skosConcept);
