@@ -1,3 +1,4 @@
+package koko;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,6 +27,7 @@ import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+import common.JenaHelpers;
 
 
 
@@ -406,7 +408,7 @@ public class Kokoaja2 {
 		for (Statement stmt:lisattavat) this.koko.add(stmt);
 	}
 	
-	// palautetaan paras prefLabel joukosta kandidaatteja - ensimm√§inen kriteeri on sulkutarkenteet (jos on, hyv√§), toinen pituus (lyhyempi parempi), kolmas aakkosj√§rjestys
+	// palautetaan paras prefLabel joukosta kandidaatteja - ensimm‰inen kriteeri on sulkutarkenteet (jos on, hyv‰), toinen pituus (lyhyempi parempi), kolmas aakkosj‰rjestys
 	public String palautaPrefLabeliksiSopivin(HashSet<String> kandidaatitSet) {
 		String paras = null;
 		for (String kandidaatti:kandidaatitSet) {
@@ -475,7 +477,9 @@ public class Kokoaja2 {
 					}
 					romautettuMap.put(broaderitString, romautettuRes);
 				}
-				if (romautettuMap.size() > 1) this.lisaaSulkutarkenteet(romautettuMap);
+				if (romautettuMap.size() > 1) {
+					this.lisaaSulkutarkenteet(romautettuMap);
+				}
 			}
 		}
 	}
@@ -544,8 +548,8 @@ public class Kokoaja2 {
 	
 	private void lisaaSulkutarkenteet(HashMap<String, Resource> tarkenteetResurssitMap) {
 		Property skosPrefLabel = this.onto.createProperty(skosNs + "prefLabel");
-		Statement lisattava = null;
-		Statement poistettava = null;
+		HashSet<Statement> lisattavat = new HashSet<>();
+		HashSet<Statement> poistettavat = new HashSet<>();
 		for (String tarkenne:tarkenteetResurssitMap.keySet()) {
 			Resource subj = tarkenteetResurssitMap.get(tarkenne);
 			StmtIterator iter = this.koko.listStatements(subj, skosPrefLabel, (RDFNode)null);
@@ -553,14 +557,14 @@ public class Kokoaja2 {
 				Statement stmt = iter.nextStatement();
 				if (stmt.getLanguage().equals("fi")) {
 					String prefLabelString = ((Literal)stmt.getObject()).getLexicalForm();
-					poistettava = stmt;
+					poistettavat.add(stmt);
 					prefLabelString += " (" + tarkenne + ")";
-					lisattava = this.koko.createStatement(subj, skosPrefLabel, this.koko.createLiteral(prefLabelString, "fi"));
+					lisattavat.add(this.koko.createStatement(subj, skosPrefLabel, this.koko.createLiteral(prefLabelString, "fi")));
 				}
 			}
 		}
-		if (poistettava != null) this.koko.remove(poistettava);
-		if (lisattava != null) this.koko.add(lisattava);
+		for (Statement s:poistettavat) this.koko.remove(s);
+		for (Statement s:lisattavat) this.koko.add(s);
 	}
 	
 	public HashMap<String, HashSet<Resource>> tuotaPrefLabelKokoSubjektitMap(String lang) {
