@@ -38,7 +38,7 @@ writer = XMLWriter(sys.stdout)
 
 
 def format_language(langcode):
-    return '<LNG>' + LANGUAGES.get(langcode, default=PRIMARYLANG)
+    return '<LNG>' + LANGUAGES.get(langcode, PRIMARYLANG)
     
 def preflabel_of(conc):
     labels = g.preferredLabel(conc, lang=PRIMARYLANG)
