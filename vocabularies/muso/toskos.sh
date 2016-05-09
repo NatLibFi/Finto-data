@@ -1,6 +1,7 @@
 #!/bin/sh
 
-INFILES="muso-metadata.ttl muso.ttl"
+YSOFILE="../yso/ysoKehitys.rdf"
+INFILES="muso-metadata.ttl muso.ttl $YSOFILE"
 OUTFILE=muso-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
