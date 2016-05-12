@@ -18,15 +18,14 @@ CONSTRUCT {
   ?newc om:definedConcept ?c .
   ?newc a yso-meta:Concept .
   ?newc skos:prefLabel ?pref .
-  ?newc yso-meta:oldLabel ?alt .
+  ?newc skos:altLabel ?alt .
   ?newc skos:note ?note .
   ?newc yso-meta:ysaSource ?source .
   ?newc yso-meta:hasThematicGroup ?ysogroup .
   ?newc rdfs:subClassOf ?ysobroader .
   ?newc rdfs:subClassOf yso-update:uudet .
-  ?ysonarrower rdfs:subClassOf ?newc .
-  ?newc yso-meta:associativeRelation ?ysorelated .
-  ?ysorelated yso-meta:associativeRelation ?newc .
+  ?newc skos:related ?ysorelated .
+  ?ysorelated skos:related ?newc .
   ?newc dct:created ?created .
 }
 WHERE {
@@ -52,11 +51,9 @@ WHERE {
       BIND(IF(BOUND(?ysagroup), ?ysagroup, 'g') AS ?realysagroup)
       OPTIONAL { ?c dct:created ?created }
 
-      # broader, narrower, related
+      # broader, related
       OPTIONAL { ?c skos:broader ?ysab }
       BIND(IF(BOUND(?ysab), ?ysab, 'b') AS ?broader)
-      OPTIONAL { ?c skos:narrower ?ysan }
-      BIND(IF(BOUND(?ysan), ?ysan, 'n') AS ?narrower)
       OPTIONAL { ?c skos:related ?ysar }
       BIND(IF(BOUND(?ysar), ?ysar, 'r') AS ?related)
     }  
@@ -74,11 +71,6 @@ WHERE {
     ?ysob om:definedConcept ?broader
   }
   BIND(IF(BOUND(?ysob), ?ysob, IF(BOUND(?ysab), IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
-
-  OPTIONAL {
-    ?yson om:definedConcept ?narrower
-  }
-  BIND(IF(BOUND(?yson), ?yson, IF(BOUND(?ysan), IRI(REPLACE(STR(?ysan), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
 
   OPTIONAL {
     ?ysor om:definedConcept ?related
