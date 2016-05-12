@@ -17,15 +17,15 @@ PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 CONSTRUCT {
   ?ysoConcept yso-update:newNote ?newNote .
   ?ysoConcept yso-update:removedNote ?oldNote .
-  ?ysoConcept rdfs:subClassOf yso-update:muuttuneet .
+  ?ysoConcept rdfs:subClassOf ?changeCategory .
 }
 WHERE {
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
       # parameters
-      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2016-02-01" "2016-05-01" )
-        ( <http://www.yso.fi/onto/allars/version> skos:Concept  "2016-02-01" "2016-05-01" )
+      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changeCategory ) {
+        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2016-02-01" "2016-05-01" yso-update:muuttuneet )
+        ( <http://www.yso.fi/onto/allars/version> skos:Concept  "2016-02-01" "2016-05-01" yso-update:muuttuneetSv )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
