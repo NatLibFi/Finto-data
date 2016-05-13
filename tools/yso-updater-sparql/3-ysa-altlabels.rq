@@ -22,7 +22,16 @@ WHERE {
     }
   }
   ?ysoc om:definedConcept ?ysac .
-  FILTER NOT EXISTS { ?anyysoc ?anyprop ?ysalabel }
+  FILTER NOT EXISTS {
+    ?anyysoc ?anylabel ?ysalabel .
+    # Special case: it's okay to add an altLabel that is identical
+    # to a prefLabel of the same concept; this happens when the YSA prefLabel
+    # has been changed and the old YSA prefLabel has become an altLabel.
+    # Most likely the same change will be soon made in YSO too.
+    # Skosify will drop altLabels that are identical to prefLabels from the
+    # published version of YSO.
+    FILTER (!(?anyysoc = ?ysoc && ?anylabel = skos:prefLabel))
+  }
   FILTER NOT EXISTS {
     ?ysoc2 om:definedConcept ?ysac .
     FILTER (?ysoc != ?ysoc2)
