@@ -35,7 +35,7 @@ WHERE {
       ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
     }
     GRAPH ?newVersionGraph {
-      #VALUES ?c { ysa:Y206515 ysa:Y201205 }
+#      VALUES ?c { ysa:Y206889 ysa:Y202985 }
       ?c a skos:Concept .
       FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
       # optimization: don't return concepts which have a match in YSO
@@ -70,10 +70,34 @@ WHERE {
   OPTIONAL {
     ?ysob om:definedConcept ?broader
   }
-  BIND(IF(BOUND(?ysob), ?ysob, IF(BOUND(?ysab), IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
+  BIND(
+    IF(BOUND(?ysob),
+      IF(EXISTS { ?ysob a yso-meta:DeprecatedConcept } || EXISTS { ?ysob a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysob
+      ), 
+      IF(BOUND(?ysab),
+        IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysobroader
+  )
 
   OPTIONAL {
     ?ysor om:definedConcept ?related
   }
-  BIND(IF(BOUND(?ysor), ?ysor, IF(BOUND(?ysar), IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
+  BIND(
+    IF(BOUND(?ysor),
+      IF(EXISTS { ?ysor a yso-meta:DeprecatedConcept } || EXISTS { ?ysor a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysor
+      ), 
+      IF(BOUND(?ysar),
+        IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysorelated
+  )
 }
