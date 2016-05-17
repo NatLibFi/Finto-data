@@ -18,15 +18,14 @@ CONSTRUCT {
   ?newc om:definedConcept ?c .
   ?newc a yso-meta:Concept .
   ?newc skos:prefLabel ?pref .
-  ?newc yso-meta:oldLabel ?alt .
+  ?newc skos:altLabel ?alt .
   ?newc skos:note ?note .
   ?newc yso-meta:ysaSource ?source .
   ?newc yso-meta:hasThematicGroup ?ysogroup .
   ?newc rdfs:subClassOf ?ysobroader .
   ?newc rdfs:subClassOf yso-update:uudet .
-  ?ysonarrower rdfs:subClassOf ?newc .
-  ?newc yso-meta:associativeRelation ?ysorelated .
-  ?ysorelated yso-meta:associativeRelation ?newc .
+  ?newc skos:related ?ysorelated .
+  ?ysorelated skos:related ?newc .
   ?newc dct:created ?created .
 }
 WHERE {
@@ -36,7 +35,7 @@ WHERE {
       ?versionset dsv:currentVersionRecord/sh:usingNamedGraph/sd:name ?newVersionGraph .
     }
     GRAPH ?newVersionGraph {
-      #VALUES ?c { ysa:Y206515 ysa:Y201205 }
+#      VALUES ?c { ysa:Y206889 ysa:Y202985 }
       ?c a skos:Concept .
       FILTER NOT EXISTS { ?c a ysa-meta:GeographicalConcept }
       # optimization: don't return concepts which have a match in YSO
@@ -52,11 +51,9 @@ WHERE {
       BIND(IF(BOUND(?ysagroup), ?ysagroup, 'g') AS ?realysagroup)
       OPTIONAL { ?c dct:created ?created }
 
-      # broader, narrower, related
+      # broader, related
       OPTIONAL { ?c skos:broader ?ysab }
       BIND(IF(BOUND(?ysab), ?ysab, 'b') AS ?broader)
-      OPTIONAL { ?c skos:narrower ?ysan }
-      BIND(IF(BOUND(?ysan), ?ysan, 'n') AS ?narrower)
       OPTIONAL { ?c skos:related ?ysar }
       BIND(IF(BOUND(?ysar), ?ysar, 'r') AS ?related)
     }  
@@ -73,15 +70,34 @@ WHERE {
   OPTIONAL {
     ?ysob om:definedConcept ?broader
   }
-  BIND(IF(BOUND(?ysob), ?ysob, IF(BOUND(?ysab), IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysobroader)
-
-  OPTIONAL {
-    ?yson om:definedConcept ?narrower
-  }
-  BIND(IF(BOUND(?yson), ?yson, IF(BOUND(?ysan), IRI(REPLACE(STR(?ysan), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysonarrower)
+  BIND(
+    IF(BOUND(?ysob),
+      IF(EXISTS { ?ysob a yso-meta:DeprecatedConcept } || EXISTS { ?ysob a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysob
+      ), 
+      IF(BOUND(?ysab),
+        IRI(REPLACE(STR(?ysab), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysobroader
+  )
 
   OPTIONAL {
     ?ysor om:definedConcept ?related
   }
-  BIND(IF(BOUND(?ysor), ?ysor, IF(BOUND(?ysar), IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))), ?unbound)) AS ?ysorelated)
+  BIND(
+    IF(BOUND(?ysor),
+      IF(EXISTS { ?ysor a yso-meta:DeprecatedConcept } || EXISTS { ?ysor a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysor
+      ), 
+      IF(BOUND(?ysar),
+        IRI(REPLACE(STR(?ysar), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysorelated
+  )
 }
