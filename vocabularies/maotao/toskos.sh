@@ -1,10 +1,10 @@
 #!/bin/sh
 
-INFILES="maotao-metadata.ttl maotaoyso.owl"
+INFILES="maotao-metadata.ttl maotao.ttl yso-maotao.ttl"
 OUTFILE=maotao-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
-CONFFILE=$SKOSIFYHOME/finnonto.cfg
+SKOSIFYHOME="../../../Skosify/"
+CONFFILE=../../conf/skosify/finnonto.cfg
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
