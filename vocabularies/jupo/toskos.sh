@@ -1,10 +1,11 @@
 #!/bin/sh
 
-INFILES="jupo-metadata.ttl jupo.owl"
+INFILES="jupo.ttl jupo-metadata.ttl yso-jupo.ttl"
 OUTFILE=jupo-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="/home/terminologi/ontology/SKOSIFY/"
 CONFFILE=$SKOSIFYHOME/finnonto.cfg
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+
