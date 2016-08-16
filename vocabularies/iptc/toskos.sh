@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="iptc-scene-metadata.ttl iptc-subjectcode-metadata.ttl iptc-subjectcode-fi.ttl scene-cptall-en-GB.rdf subjectcode-cptall-en-GB.rdf"
+INFILES="iptc-metadata.ttl iptc-subjectcode-fi.ttl scene-cptall-en-GB.rdf subjectcode-cptall-en-GB.rdf"
 OUTFILE=iptc-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
