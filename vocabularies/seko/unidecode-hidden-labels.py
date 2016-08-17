@@ -15,6 +15,10 @@ for s,p,o in graph.triples( (None, rdflib.RDF.type, SKOS.Concept) ):
         label = result[-1][-1].value
         stripped = unidecode(label)
         if label != stripped and 'ä'.decode('utf-8') not in label and 'ö'.decode('utf-8') not in label:
-          graph.add((s, SKOS.hiddenLabel, Literal(stripped)))
+            graph.add((s, SKOS.hiddenLabel, Literal(stripped)))
+    for alt in graph.objects(s, SKOS.altLabel):
+        stripped = unidecode(alt.value)
+        if stripped != alt.value and 'ä'.decode('utf-8') not in label and 'ö'.decode('utf-8') not in label:
+            graph.add((s, SKOS.hiddenLabel, Literal(stripped)))
 
 graph.serialize(format='turtle', destination=sys.stdout)
