@@ -13,6 +13,9 @@ import requests
 import sys
 import codecs
 import pytz
+import urllib
+import urllib2
+import json 
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
@@ -133,6 +136,18 @@ def format_timestamp(ts):
     else:
         return "%04d-%02d-%02d" % (year, mon, day)
 
+# see if a concept exists in lcmpt 
+# returns the uri or false if the there is no such label
+def lookup(label):
+  params = urllib.urlencode({'label': label.encode('utf-8'), 'format': 'application/json', 'lang': 'en'})
+  api = 'http://skosmos.dev.finto.fi/rest/v1/lcmpt/lookup?' 
+  url = api + params 
+  try:
+    response = json.load(urllib2.urlopen(url))
+    return response['result'][0]['uri']
+  except:
+    return False
+
 # Pass 1: convert to basic SKOS, without concept relations
 for count, oaipmhrec in enumerate(recs):
 #    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
@@ -145,11 +160,16 @@ for count, oaipmhrec in enumerate(recs):
 
     if '889' in rec: # Melinda
         uri = URIRef(concns + rec['889']['c'])
+    elif '024' in rec and vocabid == 'seko':
+        if 76316 <= int(rec['001'].value()) <= 77539:
+            continue
+        uri = URIRef(rec['024']['a'])
     else: # Fennica / Alma / Viola
         uri = URIRef(concns + rec['001'].value())
+
     g.add((uri, SKOS.inScheme, URIRef(urins)))
     g.add((uri, RDF.type, SKOS.Concept))
-    
+
     if langoverride is not None:
         lang = langoverride
     else:
@@ -170,9 +190,11 @@ for count, oaipmhrec in enumerate(recs):
             groupuri = URIRef(urins + "ryhma_" + groupid)
             g.add((groupuri, SKOS.member, uri))
     
-    # prefLabel (150/151)
+    # prefLabel (150/151/162)
     if '150' in rec:
         prefLabel, hiddenLabel = combined_label(rec['150'])
+    elif '162' in rec:
+        prefLabel, hiddenLabel = combined_label(rec['162']) 
     else:
         prefLabel, hiddenLabel = combined_label(rec['151'])
         g.add((uri, RDF.type, URIRef(metans + "GeographicalConcept")))
@@ -182,8 +204,8 @@ for count, oaipmhrec in enumerate(recs):
     labelmap[prefLabel] = uri
     uri_to_label[uri] = prefLabel
     
-    # altLabel (450/451)
-    for f in rec.get_fields('450') + rec.get_fields('451'):
+    # altLabel (450/451/462)
+    for f in rec.get_fields('450') + rec.get_fields('451') + rec.get_fields('462'):
         altLabel, hiddenLabel = combined_label(f)
         g.add((uri, SKOS.altLabel, Literal(altLabel, lang)))
         if hiddenLabel is not None:
@@ -192,8 +214,8 @@ for count, oaipmhrec in enumerate(recs):
     
     relationmap.setdefault(uri, [])
     
-    # concept relations (550/551)
-    for f in rec.get_fields('550') + rec.get_fields('551'):
+    # concept relations (550/551/562)
+    for f in rec.get_fields('550') + rec.get_fields('551') + rec.get_fields('562'):
         props = RELMAP.get(f['w'], None)
         if props is None:
             print >>sys.stderr, ("%s '%s': Unknown w subfield value '%s', ignoring field" % (uri, prefLabel, f['w'])).encode('UTF-8')
@@ -214,8 +236,8 @@ for count, oaipmhrec in enumerate(recs):
         text = f.format_field()
         g.add((uri, SKOS.note, Literal(text, lang)))
     
-    # links to other authorities (750/751)
-    for f in rec.get_fields('750') + rec.get_fields('751'):
+    # links to other authorities (750/751/762)
+    for f in rec.get_fields('750') + rec.get_fields('751') + rec.get_fields('762'):
         vid = f['2'] # target vocabulary id
         if vid is not None: vid = vid.lower()
         linklang = LINKLANGMAP.get(vid, None)
@@ -223,6 +245,16 @@ for count, oaipmhrec in enumerate(recs):
             if linkvocabid is not None and linkvocabid in LINKLANGMAP:
                 linklang = LINKLANGMAP[linkvocabid]
                 print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0], linkvocabid)).encode('UTF-8')
+            elif vid == 'lcmpt': #TODO: FIXDIS
+                target_uri = lookup(combined_label(f)[0])
+                if target_uri:
+                    if f['w'] == 'na':
+                        g.add((uri, SKOS.exactMatch, URIRef(target_uri)))
+                    elif f['w'] == 'nb':
+                        g.add((uri, SKOS.closeMatch, URIRef(target_uri)))
+                else:
+                    print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0])).encode('UTF-8')
+                continue
             else:
                 print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0])).encode('UTF-8')
                 continue
