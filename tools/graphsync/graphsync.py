@@ -61,7 +61,7 @@ class GraphSyncer:
 
   def get_newer(self, srcurl, graphuri):
     # find out timestamp of source URL by doing a streaming GET request (only get the headers)
-    with closing(requests.get(srcurl, stream=True, headers={'Pragma:': 'no-cache'})) as response:
+    with closing(requests.get(srcurl, stream=True, headers={'Pragma': 'no-cache'})) as response:
       try:
         response.raise_for_status()
         lastmodhdr = response.headers['Last-Modified']
