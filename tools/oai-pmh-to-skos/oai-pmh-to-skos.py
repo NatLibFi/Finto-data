@@ -245,7 +245,7 @@ for count, oaipmhrec in enumerate(recs):
             if linkvocabid is not None and linkvocabid in LINKLANGMAP:
                 linklang = LINKLANGMAP[linkvocabid]
                 print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0], linkvocabid)).encode('UTF-8')
-            elif vid == 'lcmpt': #TODO: FIXDIS
+            elif vid == 'lcmpt':
                 target_uri = lookup(combined_label(f)[0])
                 if target_uri:
                     if f['w'] == 'na':
