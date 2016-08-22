@@ -16,8 +16,6 @@ import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-import common.JenaHelpers;
-
 public class GeneralDeprecator {
 
 	private Model onto;
@@ -165,6 +163,8 @@ public class GeneralDeprecator {
 				}
 			}
 		}
+		for (Statement s:poistettavat) this.onto.remove(s);
+		for (Statement s:lisattavat) this.onto.add(s);
 	}
 	
 	private void deprekoiEiTransitiivisetPropertyt(Resource deprekoitava) {
@@ -186,6 +186,8 @@ public class GeneralDeprecator {
 				else lisattavat.add(this.onto.createStatement(deprekoitava, deprProp, stmt.getSubject()));
 			}
 		}
+		for (Statement s:poistettavat) this.onto.remove(s);
+		for (Statement s:lisattavat) this.onto.add(s);
 	}
 	
 	public void tulostaDeprekoidut() {
