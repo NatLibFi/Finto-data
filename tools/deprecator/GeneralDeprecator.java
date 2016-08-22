@@ -153,13 +153,13 @@ public class GeneralDeprecator {
 			while (iter.hasNext()) {
 				Statement stmt = iter.nextStatement();
 				poistettavat.add(stmt);
-				lisattavat.add(this.onto.createStatement(deprekoitava, deprProp, stmt.getSubject()));
+				lisattavat.add(this.onto.createStatement(deprekoitava, deprProp, stmt.getObject()));
 				StmtIterator iter2 = this.onto.listStatements((Resource)null, prop, deprekoitava);
 				while (iter2.hasNext()) {
 					Statement stmt2 = iter2.nextStatement();
 					poistettavat.add(stmt2);
-					if (this.deprAsObjectMap.containsKey(prop)) lisattavat.add(this.onto.createStatement(stmt2.getSubject(), this.deprAsObjectMap.get(prop), stmt.getObject()));
-					else lisattavat.add(this.onto.createStatement(stmt2.getSubject(), prop, stmt2.getObject()));
+					lisattavat.add(this.onto.createStatement(stmt2.getSubject(), prop, stmt.getObject()));
+					if (this.deprAsObjectMap.containsKey(deprProp)) lisattavat.add(this.onto.createStatement(deprekoitava, this.deprAsObjectMap.get(deprProp), stmt2.getSubject()));
 				}
 			}
 		}
@@ -182,7 +182,7 @@ public class GeneralDeprecator {
 			while (iter.hasNext()) {
 				Statement stmt = iter.nextStatement();
 				poistettavat.add(stmt);
-				if (this.deprAsObjectMap.containsKey(prop)) lisattavat.add(this.onto.createStatement(stmt.getSubject(), this.deprAsObjectMap.get(prop), stmt.getObject()));
+				if (this.deprAsObjectMap.containsKey(deprProp)) lisattavat.add(this.onto.createStatement(deprekoitava, this.deprAsObjectMap.get(deprProp), stmt.getSubject()));
 				else lisattavat.add(this.onto.createStatement(deprekoitava, deprProp, stmt.getSubject()));
 			}
 		}
