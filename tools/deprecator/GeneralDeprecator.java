@@ -159,7 +159,7 @@ public class GeneralDeprecator {
 					Statement stmt2 = iter2.nextStatement();
 					poistettavat.add(stmt2);
 					if (this.deprAsObjectMap.containsKey(prop)) lisattavat.add(this.onto.createStatement(stmt2.getSubject(), this.deprAsObjectMap.get(prop), stmt.getObject()));
-					else lisattavat.add(this.onto.createStatement(stmt2.getSubject(), prop, stmt.getObject()));
+					else lisattavat.add(this.onto.createStatement(stmt2.getSubject(), prop, stmt2.getObject()));
 				}
 			}
 		}
