@@ -176,7 +176,7 @@ for count, oaipmhrec in enumerate(recs):
         try:
             lang = LANGMAP[rec['040']['b']]
         except KeyError:
-            print >>sys.stderr, "Unknown 040b value for concept <%s>, skipping record' % uri
+            print >>sys.stderr, "Unknown 040b value for concept <%s>, skipping record" % uri
             continue
 
     # created timestamp
