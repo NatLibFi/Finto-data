@@ -173,7 +173,11 @@ for count, oaipmhrec in enumerate(recs):
     if langoverride is not None:
         lang = langoverride
     else:
-        lang = LANGMAP[rec['040']['b']]
+        try:
+            lang = LANGMAP[rec['040']['b']]
+        except KeyError:
+            print >>sys.stderr, "Unknown 040b value for concept <%s>, skipping record" % uri
+            continue
 
     # created timestamp
     created = rec['008'].value()[:6]
