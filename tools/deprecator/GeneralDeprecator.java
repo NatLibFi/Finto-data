@@ -1,11 +1,14 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Vector;
 
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -15,6 +18,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
+import common.JenaHelpers;
 
 public class GeneralDeprecator {
 
@@ -29,6 +33,8 @@ public class GeneralDeprecator {
 	private Property replacedBy;
 	private Property replacedByDefault;
 	private HashSet<Resource> deprekoidutSet;
+	private HashSet<Statement> epailyttavatUudetStatementit;
+	private Vector<String> emailSet;
 	
 	public GeneralDeprecator(String deprekoitavanPolku, String deprConfinPolku) {
 		this.onto = JenaHelpers.lueMalliModeliksi(deprekoitavanPolku);
@@ -36,7 +42,10 @@ public class GeneralDeprecator {
 		this.transitiveDeprekoimisMap = new HashMap<Property, Property>();
 		this.deprAsObjectMap = new HashMap<Property, Property>();
 		this.laskuri = 0;
+		this.labelProp = null;
 		this.deprekoitavienTyypit = new HashSet<Resource>();
+		this.epailyttavatUudetStatementit = new HashSet<Statement>();
+		this.emailSet = new Vector<String>();
 		this.lueDeprPropertytTiedostosta(deprConfinPolku);
 	}
 	
@@ -79,6 +88,8 @@ public class GeneralDeprecator {
 						this.replacedBy = this.onto.createProperty(riviSplit[1]);
 						this.replacedByDefault = this.onto.createProperty(riviSplit[2]);
 						break;
+					case "emailForAnomalies":
+						this.emailSet.add(riviSplit[1]);
 					}
 				}
 				rivi = br.readLine();
@@ -92,7 +103,7 @@ public class GeneralDeprecator {
 		}
 	}
 	
-	private void deprekoi() {
+	private void deprekoi(String spostiFilename) {
 		HashSet<Resource> deprekoitavatAll = new HashSet<Resource>();
 		for (Resource deprekoitavanTyyppi:this.deprekoitavienTyypit) {
 			StmtIterator iter = this.onto.listStatements((Resource)null, RDF.type, deprekoitavanTyyppi);
@@ -120,6 +131,7 @@ public class GeneralDeprecator {
 			this.deprekoiTransitiivisetPropertyt(deprekoitava);
 		}
 		if (this.labelProp != null) this.tulostaDeprekoidut();
+		if (this.emailSet != null) this.kirjoitaSposti(spostiFilename);
 		else System.out.println("Deprekoitiin " + this.laskuri + " kasitetta.");
 	}
 	
@@ -158,7 +170,9 @@ public class GeneralDeprecator {
 				while (iter2.hasNext()) {
 					Statement stmt2 = iter2.nextStatement();
 					poistettavat.add(stmt2);
-					lisattavat.add(this.onto.createStatement(stmt2.getSubject(), prop, stmt.getObject()));
+					Statement uusiStmt = this.onto.createStatement(stmt2.getSubject(), prop, stmt.getObject()); 
+					lisattavat.add(uusiStmt);
+					this.epailyttavatUudetStatementit.add(uusiStmt);
 					if (this.deprAsObjectMap.containsKey(deprProp)) lisattavat.add(this.onto.createStatement(deprekoitava, this.deprAsObjectMap.get(deprProp), stmt2.getSubject()));
 				}
 			}
@@ -190,20 +204,82 @@ public class GeneralDeprecator {
 		for (Statement s:lisattavat) this.onto.add(s);
 	}
 	
-	public void tulostaDeprekoidut() {
-		System.out.println("Deprekoitiin seuraavat:");
-		this.laskuri = 0;
-		for (Resource deprekoitu:this.deprekoidutSet) {
-			StmtIterator iter = this.onto.listStatements(deprekoitu, this.labelProp, (RDFNode)null);
-			String labelString = "ei labelia";
+	private String haeLabel(Resource haettava) {
+		String labelString = haettava.getURI();
+		if (this.labelProp != null) {
+			StmtIterator iter = this.onto.listStatements(haettava, this.labelProp, (RDFNode)null);
 			while (iter.hasNext()) {
 				Statement stmt = iter.nextStatement();
 				if (stmt.getLanguage().equals("fi")) {
 					labelString = ((Literal)(stmt.getObject())).getLexicalForm();
 				}
 			}
+		}
+		return labelString;
+	}
+	
+	public void tulostaDeprekoidut() {
+		System.out.println("Deprekoitiin seuraavat:");
+		this.laskuri = 0;
+		for (Resource deprekoitu:this.deprekoidutSet) {
+			String labelString = this.haeLabel(deprekoitu);
 			this.laskuri++;
 			System.out.println(this.laskuri + ". " + labelString);
+		}
+	}
+	
+	public void kirjoitaSposti(String filename) {
+		String osoite = "To: ";
+		for (int i = 0; i < this.emailSet.size(); i++) {
+			osoite += this.emailSet.get(i);
+			if (i != this.emailSet.size()-1) osoite += "; "; 
+		}
+		String otsikko = "Subject: General Deprecatorilla on asiaa";
+		String viesti = "Seuraavat deprekoinnin muodostamat suhteet kannattanee tarkistaa:\n\n";
+		int i = 0;
+		for (Statement s:epailyttavatUudetStatementit) {
+			if (this.labelProp != null) {
+				String subjLabel = this.haeLabel(s.getSubject());
+				String objLabel = this.haeLabel((Resource)(s.getObject()));
+				i++;
+				viesti += i + ". " + subjLabel + "\n   " + s.getPredicate().getLocalName() + "\n   " + objLabel + "\n";
+			}
+			viesti += "  " + s + "\n\n";
+		}
+		
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		String deprPvm = sdf.format(date);
+		
+		viesti += "Deprekoinnissa " + deprPvm + " deprekoitiin seuraavat:\n";
+		this.laskuri = 0;
+		for (Resource deprekoitu:this.deprekoidutSet) {
+			String labelString = this.haeLabel(deprekoitu);
+			this.laskuri++;
+			viesti += this.laskuri + ". " + labelString + "\n";
+		}
+		
+		BufferedWriter writer = null;
+		try
+		{
+		    writer = new BufferedWriter( new FileWriter(filename));
+		    writer.write(osoite + "\n");
+		    writer.write(otsikko + "\n\n");
+		    writer.write(viesti);
+		}
+		catch ( IOException e)
+		{
+		}
+		finally
+		{
+		    try
+		    {
+		        if ( writer != null)
+		        writer.close( );
+		    }
+		    catch ( IOException e)
+		    {
+		    }
 		}
 	}
 	
@@ -217,10 +293,11 @@ public class GeneralDeprecator {
 	 * args[0] = deprekoitavanPolku
 	 * args[1] = deprConfinPolku
 	 * args[2] = outputFile
+	 * args[3] = email outputFile
 	 */
 	public static void main(String[] args) {
 		GeneralDeprecator gd = new GeneralDeprecator(args[0], args[1]);
-		gd.deprekoi();
+		gd.deprekoi(args[3]);
 		gd.kirjoitaUusiMalli(args[2]);
 	}
 	
