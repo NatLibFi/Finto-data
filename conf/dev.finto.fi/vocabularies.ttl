@@ -698,6 +698,25 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/ysa/> .
 
+:ysapaikat a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSA + paikkarikastukset"@fi,
+		"YSA + platser"@sv,
+		"YSA + places"@en ;
+	skosmos:shortName "YSApaikat";
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/ysa/";
+	skosmos:groupClass skos:Collection;
+	skosmos:language "fi";
+	skosmos:showPropertyInSearch skos:exactMatch, 
+    skos:broadMatch, 
+    skos:narrowMatch;
+	skosmos:showChangeList "true" ;
+	skosmos:feedbackRecipient "vesa-posti@helsinki.fi" ;
+	skosmos:usePlugin "finna" ;
+	void:dataDump <http://dev.finto.fi/download/ysa/ysa-paikat-skos.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/ysa-paikat/> .
+
 :yse a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSAn ja YSOn käsite-ehdotukset"@fi,
 		"YSAn ja YSOn käsite-ehdotukset"@sv,

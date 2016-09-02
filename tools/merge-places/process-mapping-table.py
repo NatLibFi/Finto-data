@@ -6,7 +6,8 @@ import urllib2
 from rdflib import Graph, URIRef, Literal, Namespace
 
 DOCIDS=('1-bryYIkkP2vd7Vgcf2IAOAr5azZpDRjcBJaEPYG3xcc',
-        '1XCQm83XDzc0v0BseKanGSi8HeDt6iSCDQtjyC0akWBM')
+        '1XCQm83XDzc0v0BseKanGSi8HeDt6iSCDQtjyC0akWBM',
+        '1Bm1RyYbwrAwAuqsbwL0yiXrvH8yyBtsmfHbIvQk-k7c')
 
 g = Graph()
 PNR = Namespace('http://ldf.fi/pnr/')
