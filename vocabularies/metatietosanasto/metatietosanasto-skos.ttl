@@ -69,9 +69,6 @@
 <http://rdvocab.info/termList/RDAMediaType/1008> skos:prefLabel "video"@fi ;
     skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi .
 
-<http://rdvocab.info/termList/fontSize/1001> skos:prefLabel "erittäin suuri teksti"@fi ;
-    skos:scopeNote "Näkövammaisille tarkoitettu kirjasinkoko."@fi .
-
 <http://rdvocab.info/termList/fontSize/1002> skos:prefLabel "isotekstinen"@fi .
 
 mts:m1091 a skos:Concept ;
@@ -1577,7 +1574,8 @@ mts:m1107 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30151 ;
     skos:prefLabel "Rinnakkainen muu nimeketieto"@fi,
-        "Parallell övrig titelinformation"@sv .
+        "Övrig parallell titelinformation"@sv ;
+    skos:scopeNote "Muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m1109 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -2076,6 +2074,7 @@ mts:m118 a skos:Concept ;
 mts:m1180 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Titelrubrik på förtextsidorna:"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "Ylänimeke esiössä:"@fi,
         "Titelrubrik på förtextsidan:"@sv .
@@ -3049,7 +3048,8 @@ mts:m1231 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30143 ;
     skos:prefLabel "Sarjan muu nimeketieto"@fi,
-        "Seriens övriga titelinformation"@sv .
+        "Övrig titelinformation till serien"@sv ;
+    skos:scopeNote "Sarjan päänimekkeen kanssa ja sille alisteisena esiintyvää tietoa."@fi .
 
 mts:m1232 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4065,7 +4065,8 @@ mts:m1374 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Vakiintunut kokoava nimeke"@fi,
-        "Etablerad samlade titel"@sv .
+        "Etablerad samlade titel"@sv ;
+    skos:scopeNote "Nimeke, jota käytetään ensisijaisena nimekkeenä kokoelmasta, joka sisältää kahden tai useamman teoksen tai kahden tai useamman osan teoksesta (esim. Teokset, Runot, Valikoima)."@fi .
 
 mts:m1375 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4307,11 +4308,11 @@ mts:m1408 a skos:Concept ;
 
 mts:m1409 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "ISBD-termi"@fi ;
     rdfs:seeAlso rdam:P30151 ;
     skos:prefLabel "Rinnakkaisnimeke"@fi,
-        "Parallelltitel"@sv .
+        "Parallelltitel"@sv ;
+    skos:scopeNote "Nimeke, joka on päänimekkeen erikielinen käännös sovitussa tiedonlähteessä. Se on myös ilman kokoomanimekettä olevan julkaisun yksittäisen osan nimeke."@fi .
 
 mts:m141 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4776,7 +4777,8 @@ mts:m1475 a isothes:ConceptGroup,
         "ISBD-termi"@sv ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Varianttinimeke"@fi,
-        "Varianttitel"@sv .
+        "Varianttitel"@sv ;
+    skos:scopeNote "Aineistoon liittyvä nimeke, joka eroaa kuvailuun merkitystä päänimekkeestä, rinnakkaisesta päänimekkeestä, muusta nimeketiedosta, rinnakkaisesta muusta nimeketiedosta, aiemmasta päänimekkeestä, myöhemmästä päänimekkeestä, avainnimekkeestä ja lyhennetystä nimekkeestä."@fi .
 
 mts:m1476 a isothes:ConceptGroup,
         skos:Collection ;
@@ -5091,7 +5093,9 @@ mts:m1521 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Vaihtoehtoinen nimeke"@fi,
-        "Alternativ titel"@sv .
+        "Alternativ titel"@sv ;
+    skos:scopeNote "Jälkimmäinen osa päänimekkeestä, joka muodostuu kahdesta itsenäisestä nimekkeestä. Nimekkeitä yhdistää ”tai”, ”eli” tai vastaava muunkielinen sana, esim. Moby Dick, eli, Valkoinen valas."@fi,
+        "Den senare delen i en huvudtitel som består av två självständiga titlar. Titlarna förenas av ord såsom \"eller\", \"alltså\" eller motsvarande ord på något språk. T.ex. Moby Dick, eller, Den vita valen."@sv .
 
 mts:m1522 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5395,8 +5399,9 @@ mts:m1565 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30152 ;
-    skos:prefLabel "sarjan rinnakkainen muu nimeketieto"@fi,
-        "seriens parallella övriga titelinformation"@sv .
+    skos:prefLabel "Sarjan rinnakkainen muu nimeketieto"@fi,
+        "Övrig parallell titelinformation till serien"@sv ;
+    skos:scopeNote "Sarjan muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m1566 a isothes:ConceptGroup,
         skos:Collection ;
@@ -5416,7 +5421,8 @@ mts:m1568 a isothes:ConceptGroup,
     rdfs:seeAlso rdaw:P10088 ;
     skos:member mts:m1149 ;
     skos:prefLabel "Teoksen nimeke"@fi,
-        "Verkets titel"@sv .
+        "Verkets titel"@sv ;
+    skos:scopeNote "Sana, merkki tai sana- ja merkkiyhdistelmä, jolla teos tunnetaan."@fi .
 
 mts:m1569 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5500,11 +5506,11 @@ mts:m1580 a isothes:ConceptGroup,
 
 mts:m1581 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Sepitetty nimeke"@fi,
-        "Konstruerad titel"@sv .
+        "Konstruerad titel"@sv ;
+    skos:scopeNote "Kuvailevan yhteisön muodostama nimeke silloin kun aineistossa ei ole nimekettä, eikä sellaista voida löytää myöskään muista lähteistä (liiteaineisto, aineiston julkaistu kuvailu, tietolähteet)."@fi .
 
 mts:m1582 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5798,7 +5804,8 @@ mts:m1628 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10223 ;
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
-        "Verkets primära titel"@sv .
+        "Verkets primära titel"@sv ;
+    skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
 
 mts:m1629 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5965,7 +5972,7 @@ mts:m1648 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Nimeke julkaisijan kotisivulta."@fi,
-        "Titel från utgivarens hemsida."@sv .
+        "Titel från utgivarens webbplats."@sv .
 
 mts:m1649 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6103,9 +6110,9 @@ mts:m1681 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Nimeke toimitustietolaatikosta."@fi,
-        "Titel från redaktionsruta."@sv ;
+        "Titel från redaktionsrutan."@sv ;
     skos:scopeNote "Toimitustietolaatikko tarkoittaa kausijulkaisuissa toimituksellisia tietoja sekä julkaisutietoja sisältävää aluetta."@fi,
-        "Redaktionsruta avser det fält i periodiska publikationer som innehåller leveransuppgifter och impressum."@sv .
+        "Redaktionsruta avser det fält i periodiska publikationer som innehåller uppgifter om redaktion och utgivning."@sv .
 
 mts:m1682 a isothes:ConceptGroup,
         skos:Collection ;
@@ -6764,14 +6771,17 @@ mts:m208 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30142 ;
     skos:prefLabel "Muu nimeketieto"@fi,
-        "Övrig titelinformation"@sv .
+        "Övrig titelinformation"@sv ;
+    skos:scopeNote "Sana, ilmaisu tai merkkiryhmä, joka esiintyy julkaisun päänimekkeen yhteydessä ja sille alisteisena. Muu nimeketieto määrittelee, selittää tai täydentää nimekettä, johon se kuuluu."@fi,
+        "Ord, uttryck eller kombination av tecken som förekommer i samband med publikationens huvudtitel och har underordnad betydelse. Övrig titelinformation definierar, förklarar eller kompletterar den titel informationen gäller."@sv .
 
 mts:m209 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30129 ;
     skos:prefLabel "Myöhempi päänimeke"@fi,
-        "Senare huvudtitel"@sv .
+        "Senare huvudtitel"@sv ;
+    skos:scopeNote "Moniosaisen monografian tai sarja-aineiston myöhemmässä osassa esiintyvä päänimeke, joka eroaa ensimmäisessä tai aiemmassa osassa esiintyneestä päänimekkeestä."@fi .
 
 mts:m21 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6853,7 +6863,8 @@ mts:m220 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30203 ;
     skos:prefLabel "Rinnakkainen päänimeke"@fi,
-        "Parallell huvudtitel"@sv .
+        "Parallell huvudtitel"@sv ;
+    skos:scopeNote "Päänimeke toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m221 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6940,7 +6951,9 @@ mts:m233 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Juokseva nimeke"@fi,
-        "Kolumntitel"@sv .
+        "Kolumntitel"@sv ;
+    skos:scopeNote "Nimeke on painettu jokaisen sivun ylä- tai alamarginaaliin."@fi,
+        "Titeln är tryckt i den övre eller nedre marginalen på varje sida."@sv .
 
 mts:m235 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7143,7 +7156,9 @@ mts:m263 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30209 ;
     skos:prefLabel "Avainnimeke"@fi,
-        "Nyckeltitel"@sv .
+        "Nyckeltitel"@sv ;
+    skos:scopeNote "Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy erottamattomasti ISSN-tunnukseen. (engl. key title)"@fi,
+        "Unik titel för fortlöpande publikation, fastställd av ISSN-centralen och oskiljaktigt kopplad till ISSN-numret."@sv .
 
 mts:m264 a isothes:ConceptGroup,
         skos:Collection ;
@@ -7829,7 +7844,9 @@ mts:m345 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Epäitsenäinen nimeke"@fi,
-        "Osjälvständig titel"@sv .
+        "Osjälvständig titel"@sv ;
+    skos:scopeNote "imeke, joka itsessään on riittämätön julkaisun tunnistamiseen ja joka vaatii lisäkseen yhteisnimekkeen tai pääjulkaisun tai pääsarjan nimekkeen. Tällaisia nimekkeitä voivat olla esim. moniosaisen teoksen osamerkinnöt, lohkosarjan nimekkeet sekä eräät suplementtien ja alasarjojen nimekkeet. (engl. dependent title)"@fi,
+        "Titel som i sig är ofullständig för identifikationen av en publikation och som därtill kräver samlingstitel, huvudpublikationens titel eller huvudseriens titel. Exempel på dylika titlar är delbeteckningar i flerbandsverk, delseriers titlar samt titlar på en del supplement och underserier. (eng. dependent title)"@sv .
 
 mts:m346 a isothes:ConceptGroup,
         skos:Collection ;
@@ -8215,7 +8232,9 @@ mts:m393 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "Yleisnimeke"@fi,
-        "Allmän titel"@sv .
+        "Allmän titel"@sv ;
+    skos:scopeNote "Yleistermi, joka osoittaa julkaisun lajin ja/tai jaksottaisuuden. Esim. julkaisu, raportti, tutkimuksia, selvityksiä, kuukausitilasto. Musiikkiaineistossa termi ilmaisee musiikin muotoa tai lajia, esim. konsertto, muunnelma, sinfonia tai messu."@fi,
+        "Allmän term som betecknar en publikations art och/eller periodicitet. T.ex. publikation, rapport, undersökning, utredning, månadsstatistik. I musikmaterial uttrycker termen musikens form eller genre, t.ex. konsert, omarbetning, symfoni eller mässa."@sv .
 
 mts:m394 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8556,7 +8575,8 @@ mts:m437 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10086 ;
     skos:prefLabel "Teoksen varianttinimeke"@fi,
-        "Verkets varianttitel"@sv .
+        "Verkets varianttitel"@sv ;
+    skos:scopeNote "Nimeke tai nimekkeen muoto, jolla teos tunnetaan ja joka poikkeaa teoksen ensisijaisesta nimekkeestä."@fi .
 
 mts:m438 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8863,7 +8883,7 @@ mts:m475 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "Osan nimeke"@fi,
-        "Delens titel"@sv .
+        "Deltitel"@sv .
 
 mts:m476 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9178,7 +9198,8 @@ mts:m519 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30131 ;
     skos:prefLabel "Lyhennetty nimeke"@fi,
-        "Förkortad titel"@sv .
+        "Förkortad titel"@sv ;
+    skos:scopeNote "Indeksointia tai tunnistamista varten lyhennetty nimeke."@fi .
 
 mts:m52 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9217,7 +9238,9 @@ mts:m523 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Yhteisnimeke"@fi,
-        "Samlingstitel"@sv .
+        "Samlingstitel"@sv ;
+    skos:scopeNote "Se osa nimekettä, joka ryhmällä yhteenkuuluvia julkaisuja on yhteinen niiden omien nimekkeiden lisäksi. Yhteisnimeke osoittaa tämän yhteenkuuluvuuden. Sen ja osan nimekkeen avulla julakisu tunnistetaan. Yhteisnimeke voi merkitä myös pääjulkaisun ja sen suplementin sekä pääsarjan ja sen alasarjojen nimekkeiden yhteistä osaa, kun suplementilla tai alasarjoilla on epäitsenäinen nimeke. (engl. common title)"@fi,
+        "Del av titel som är gemensam för en grupp samhörande publikationer utöver deras egna titlar. Samlingstiteln påvisar denna samhörighet. Med hjälp av samlingstiteln och deltiteln kan publikationen igenkännas. Samlingstiteln kan även påvisa samband mellan huvudtitel och dess supplement, samt gemensamma delar i huvudserien och dess underserie, då supplement eller underserier har en osjälvständig titel."@sv .
 
 mts:m524 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9359,10 +9382,12 @@ mts:m54 a skos:Concept ;
 
 mts:m540 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "RDA-termi"@fi ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30142 ;
     skos:prefLabel "Ylänimeke"@fi,
-        "Titelrubrik"@sv .
+        "Titelrubrik"@sv ;
+    skos:scopeNote "Muu nimeketieto, joka on johdantona päänimekkeeseen ja esiintyy julkaisun päänimekkeen yläpuolella nimeke- ja vastuullisuusalueen tiedonlähteessä."@fi .
 
 mts:m541 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10096,7 +10121,9 @@ mts:m632 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Otsikkonimeke"@fi,
-        "Rubriktite:"@sv .
+        "Rubriktite:"@sv ;
+    skos:scopeNote "Nimeke, joka esiintyy julkaisussa tekstin ensimmäisen sivun alussa."@fi,
+        "Titel, som finns i början av den första textsidan i publikationen."@sv .
 
 mts:m633 a isothes:ConceptGroup,
         skos:Collection ;
@@ -10195,7 +10222,8 @@ mts:m646 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30156 ;
     skos:prefLabel "Päänimeke"@fi,
-        "Huvudtitel"@sv .
+        "Huvudtitel"@sv ;
+    skos:scopeNote "Aineiston pääasiallinen nimi (nimeke jota yleensä käytetään viitattaessa aineistoon)."@fi .
 
 mts:m647 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10423,7 +10451,9 @@ mts:m677 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Lohkosarjan nimeke"@fi,
-        "Delseriens titel"@sv .
+        "Delseriens titel"@sv ;
+    skos:scopeNote "Lohkosarjan nimeke erottaa sen toisiinsa liittyvien yhteisnimekkeellisten sarjojen ryhmästä. Lohkosarjan itsenäinen tai epäitsenäinen nimeke on aina sidoksissa siihen päänimekkeeseen, joka identifioi julkaisun."@fi,
+        "Delseriens egen titel, som skiljer den från övriga grupper av serier med gemensam titel. Delseriens självständiga eller osjälvständiga titel är alltid bunden till den huvudtitel, med vilken publikationen kan identifieras."@sv .
 
 mts:m678 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12396,7 +12426,8 @@ mts:m928 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Kokoava nimeke"@fi,
-        "Grupptitel"@sv .
+        "Grupptitel"@sv ;
+    skos:scopeNote "*Kattava nimeke, jota käytetään joko useasta osakohteesta koostuvan aineiston päänimekkeenä tai useasta teoksesta koostuvan kokoelman päänimekkeenä. Vrt. vakiintunut kokoava nimeke."@fi .
 
 mts:m929 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12538,7 +12569,8 @@ mts:m95 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Kansinimeke"@fi,
-        "Pärmtitel"@sv .
+        "Pärmtitel"@sv ;
+    skos:scopeNote "Nimeke, joka on painettu julkaisun alkuperäiseen etukanteen, (engl. cover title)"@fi .
 
 mts:m950 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13126,7 +13158,9 @@ mts:m1149 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10086 ;
     skos:prefLabel "Erottuva nimeke"@fi,
-        "Titelvariant"@sv .
+        "Titelvariant"@sv ;
+    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella."@fi,
+        "Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna."@sv .
 
 mts:m115 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14533,8 +14567,8 @@ mts:m96 a skos:Concept ;
     skos:definition "Näkövammaisille tarkoitettu kirjasinkoko"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/fontSize/1001> ;
     skos:inScheme mts: ;
-    skos:prefLabel "erittäin suuri teksti"@fi,
-        "mycket stor text"@sv .
+    skos:prefLabel "Erittäin suuri teksti."@fi,
+        "Mycket stor stil."@sv .
 
 mts:m964 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14772,5 +14806,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2016-09-02T03:50:14+00:00"^^xsd:dateTime .
+    dct:modified "2016-09-03T03:18:21+00:00"^^xsd:dateTime .
 
