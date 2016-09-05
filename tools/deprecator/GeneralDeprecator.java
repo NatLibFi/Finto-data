@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -18,7 +19,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
-import common.JenaHelpers;
 
 public class GeneralDeprecator {
 
@@ -220,31 +220,55 @@ public class GeneralDeprecator {
 	
 	public void tulostaDeprekoidut() {
 		System.out.println("Deprekoitiin seuraavat:");
-		this.laskuri = 0;
+		String viesti = "";
+		
+		Vector<String> stringVektori = new Vector<String>();
+		
 		for (Resource deprekoitu:this.deprekoidutSet) {
 			String labelString = this.haeLabel(deprekoitu);
-			this.laskuri++;
-			System.out.println(this.laskuri + ". " + labelString);
+			stringVektori.add(labelString + "\n");
 		}
+		Collections.sort(stringVektori);
+		
+		this.laskuri = 0;
+		for (String teksti:stringVektori) {
+			this.laskuri++;
+			viesti += this.laskuri + ". " + teksti;
+		}
+		System.out.println(viesti);
 	}
 	
 	public void kirjoitaSposti(String filename) {
 		String osoite = "To: ";
 		for (int i = 0; i < this.emailSet.size(); i++) {
 			osoite += this.emailSet.get(i);
-			if (i != this.emailSet.size()-1) osoite += "; "; 
+			if (i != this.emailSet.size()-1) osoite += ", "; 
 		}
 		String otsikko = "Subject: General Deprecatorilla on asiaa";
 		String viesti = "Seuraavat deprekoinnin muodostamat suhteet kannattanee tarkistaa:\n\n";
-		int i = 0;
+		HashMap<String, String> stringMap = new HashMap<String, String>();
 		for (Statement s:epailyttavatUudetStatementit) {
 			if (this.labelProp != null) {
 				String subjLabel = this.haeLabel(s.getSubject());
 				String objLabel = this.haeLabel((Resource)(s.getObject()));
-				i++;
-				viesti += i + ". " + subjLabel + "\n   " + s.getPredicate().getLocalName() + "\n   " + objLabel + "\n";
+				String teksti = subjLabel + "\n   " + s.getPredicate().getLocalName() + "\n   " + objLabel + "\n";
+				stringMap.put(teksti, "  " + s + "\n\n");	
+			} else {
+				stringMap.put("Ei labelPropertya", "  " + s + "\n\n");
 			}
-			viesti += "  " + s + "\n\n";
+		}
+		
+		Vector<String> avaimet = new Vector<String>(); 
+		for (String avain:stringMap.keySet()) {
+			avaimet.add(avain);
+		}
+		Collections.sort(avaimet);
+		
+		this.laskuri = 0;
+		for (String teksti:avaimet) {
+			this.laskuri++;
+			viesti += this.laskuri + ". " + teksti;
+			viesti += stringMap.get(teksti);
 		}
 		
 		Date date = new Date();
@@ -252,11 +276,19 @@ public class GeneralDeprecator {
 		String deprPvm = sdf.format(date);
 		
 		viesti += "Deprekoinnissa " + deprPvm + " deprekoitiin seuraavat:\n";
-		this.laskuri = 0;
+		
+		Vector<String> stringVektori = new Vector<String>();
+				
 		for (Resource deprekoitu:this.deprekoidutSet) {
 			String labelString = this.haeLabel(deprekoitu);
+			stringVektori.add(labelString + "\n");
+		}
+		Collections.sort(stringVektori);
+		
+		this.laskuri = 0;
+		for (String teksti:stringVektori) {
 			this.laskuri++;
-			viesti += this.laskuri + ". " + labelString + "\n";
+			viesti += this.laskuri + ". " + teksti;
 		}
 		
 		BufferedWriter writer = null;
