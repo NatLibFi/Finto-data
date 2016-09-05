@@ -239,80 +239,87 @@ public class GeneralDeprecator {
 	}
 	
 	public void kirjoitaSposti(String filename) {
-		String osoite = "To: ";
-		for (int i = 0; i < this.emailSet.size(); i++) {
-			osoite += this.emailSet.get(i);
-			if (i != this.emailSet.size()-1) osoite += ", "; 
-		}
-		String otsikko = "Subject: General Deprecatorilla on asiaa";
-		String viesti = "Seuraavat deprekoinnin muodostamat suhteet kannattanee tarkistaa:\n\n";
-		HashMap<String, String> stringMap = new HashMap<String, String>();
-		for (Statement s:epailyttavatUudetStatementit) {
-			if (this.labelProp != null) {
-				String subjLabel = this.haeLabel(s.getSubject());
-				String objLabel = this.haeLabel((Resource)(s.getObject()));
-				String teksti = subjLabel + "\n   " + s.getPredicate().getLocalName() + "\n   " + objLabel + "\n";
-				stringMap.put(teksti, "  " + s + "\n\n");	
-			} else {
-				stringMap.put("Ei labelPropertya", "  " + s + "\n\n");
+		if (this.epailyttavatUudetStatementit.size() > 0) {
+			String osoite = "To: ";
+			for (int i = 0; i < this.emailSet.size(); i++) {
+				osoite += this.emailSet.get(i);
+				if (i != this.emailSet.size()-1) osoite += ", "; 
+			}
+			String otsikko = "Subject: General Deprecatorilla on asiaa";
+			String viesti = "Seuraavat deprekoinnin muodostamat suhteet kannattanee tarkistaa:\n\n";
+			HashMap<String, String> stringMap = new HashMap<String, String>();
+			for (Statement s:epailyttavatUudetStatementit) {
+				if (this.labelProp != null) {
+					String subjLabel = this.haeLabel(s.getSubject());
+					String objLabel = this.haeLabel((Resource)(s.getObject()));
+					String teksti = subjLabel + "\n   " + s.getPredicate().getLocalName() + "\n   " + objLabel + "\n";
+					stringMap.put(teksti, "  " + s + "\n\n");	
+				} else {
+					stringMap.put("Ei labelPropertya", "  " + s + "\n\n");
+				}
+			}
+
+			Vector<String> avaimet = new Vector<String>(); 
+			for (String avain:stringMap.keySet()) {
+				avaimet.add(avain);
+			}
+			Collections.sort(avaimet);
+
+			this.laskuri = 0;
+			for (String teksti:avaimet) {
+				this.laskuri++;
+				viesti += this.laskuri + ". " + teksti;
+				viesti += stringMap.get(teksti);
+			}
+
+			Date date = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+			String deprPvm = sdf.format(date);
+
+			viesti += "Deprekoinnissa " + deprPvm + " deprekoitiin seuraavat:\n";
+
+			Vector<String> stringVektori = new Vector<String>();
+
+			for (Resource deprekoitu:this.deprekoidutSet) {
+				String labelString = this.haeLabel(deprekoitu);
+				stringVektori.add(labelString + "\n");
+			}
+			Collections.sort(stringVektori);
+
+			this.laskuri = 0;
+			for (String teksti:stringVektori) {
+				this.laskuri++;
+				viesti += this.laskuri + ". " + teksti;
+			}
+
+			BufferedWriter writer = null;
+			try
+			{
+				writer = new BufferedWriter( new FileWriter(filename));
+				writer.write(osoite + "\n");
+				writer.write(otsikko + "\n\n");
+				writer.write(viesti);
+			}
+			catch ( IOException e)
+			{
+			}
+			finally
+			{
+				try
+				{
+					if ( writer != null)
+						writer.close( );
+				}
+				catch ( IOException e)
+				{
+				}
 			}
 		}
-		
-		Vector<String> avaimet = new Vector<String>(); 
-		for (String avain:stringMap.keySet()) {
-			avaimet.add(avain);
-		}
-		Collections.sort(avaimet);
-		
-		this.laskuri = 0;
-		for (String teksti:avaimet) {
-			this.laskuri++;
-			viesti += this.laskuri + ". " + teksti;
-			viesti += stringMap.get(teksti);
-		}
-		
-		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-		String deprPvm = sdf.format(date);
-		
-		viesti += "Deprekoinnissa " + deprPvm + " deprekoitiin seuraavat:\n";
-		
-		Vector<String> stringVektori = new Vector<String>();
-				
-		for (Resource deprekoitu:this.deprekoidutSet) {
-			String labelString = this.haeLabel(deprekoitu);
-			stringVektori.add(labelString + "\n");
-		}
-		Collections.sort(stringVektori);
-		
-		this.laskuri = 0;
-		for (String teksti:stringVektori) {
-			this.laskuri++;
-			viesti += this.laskuri + ". " + teksti;
-		}
-		
-		BufferedWriter writer = null;
-		try
-		{
-		    writer = new BufferedWriter( new FileWriter(filename));
-		    writer.write(osoite + "\n");
-		    writer.write(otsikko + "\n\n");
-		    writer.write(viesti);
-		}
-		catch ( IOException e)
-		{
-		}
-		finally
-		{
-		    try
-		    {
-		        if ( writer != null)
-		        writer.close( );
-		    }
-		    catch ( IOException e)
-		    {
-		    }
-		}
+	}
+	
+	public int olikoEpailyttavia() {
+		if (this.epailyttavatUudetStatementit.size() > 0) return 1;
+		else return 0;
 	}
 	
 	public void kirjoitaUusiMalli(String uudenPolku) {
@@ -331,6 +338,7 @@ public class GeneralDeprecator {
 		GeneralDeprecator gd = new GeneralDeprecator(args[0], args[1]);
 		gd.deprekoi(args[3]);
 		gd.kirjoitaUusiMalli(args[2]);
+		System.exit(gd.olikoEpailyttavia());
 	}
 	
 }
