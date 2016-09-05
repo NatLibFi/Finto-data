@@ -35,8 +35,10 @@ public class GeneralDeprecator {
 	private HashSet<Resource> deprekoidutSet;
 	private HashSet<Statement> epailyttavatUudetStatementit;
 	private Vector<String> emailSet;
+	private boolean loytyiDeprekoitavaa;
 	
 	public GeneralDeprecator(String deprekoitavanPolku, String deprConfinPolku) {
+		this.loytyiDeprekoitavaa = false;
 		this.onto = JenaHelpers.lueMalliModeliksi(deprekoitavanPolku);
 		this.nonTransitiveDeprekoimisMap = new HashMap<Property, Property>();
 		this.transitiveDeprekoimisMap = new HashMap<Property, Property>();
@@ -123,9 +125,10 @@ public class GeneralDeprecator {
 			
 		}
 		this.deprekoidutSet = new HashSet<Resource>(deprekoitavat);
+		if (deprekoitavat.size() > 0) this.loytyiDeprekoitavaa = true;
 		for (Resource deprekoitava:deprekoitavat) {
 			this.laskuri++;
-			this.merkitseDateJaTarkistaReplaced(deprekoitava);
+			this.merkitseDate(deprekoitava);
 			if (this.replacedBy != null) this.tarkistaReplacedBy(deprekoitava);
 			this.deprekoiEiTransitiivisetPropertyt(deprekoitava);
 			this.deprekoiTransitiivisetPropertyt(deprekoitava);
@@ -135,7 +138,7 @@ public class GeneralDeprecator {
 		else System.out.println("Deprekoitiin " + this.laskuri + " kasitetta.");
 	}
 	
-	private void merkitseDateJaTarkistaReplaced(Resource deprekoitava) {
+	private void merkitseDate(Resource deprekoitava) {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		String deprPvm = sdf.format(date);
@@ -318,7 +321,10 @@ public class GeneralDeprecator {
 	}
 	
 	public int olikoEpailyttavia() {
-		if (this.epailyttavatUudetStatementit.size() > 0) return 1;
+		if (this.loytyiDeprekoitavaa) {
+			if (this.epailyttavatUudetStatementit.size() > 0) return 2;
+			else return 1;
+		}
 		else return 0;
 	}
 	
@@ -333,6 +339,10 @@ public class GeneralDeprecator {
 	 * args[1] = deprConfinPolku
 	 * args[2] = outputFile
 	 * args[3] = email outputFile
+	 * 
+	 * Exit status 0: ei tarvinnut tehda mitaan
+	 * Exit status 1: deprekoitiin, mutta mailia ei tarvitse lahettaa
+	 * Exit status 2: deprekoitiin ja maili pitaisi lahettaa
 	 */
 	public static void main(String[] args) {
 		GeneralDeprecator gd = new GeneralDeprecator(args[0], args[1]);
