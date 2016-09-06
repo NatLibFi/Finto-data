@@ -69,9 +69,6 @@
 <http://rdvocab.info/termList/RDAMediaType/1008> skos:prefLabel "video"@fi ;
     skos:scopeNote "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi .
 
-<http://rdvocab.info/termList/fontSize/1001> skos:prefLabel "erittäin suuri teksti"@fi ;
-    skos:scopeNote "Näkövammaisille tarkoitettu kirjasinkoko."@fi .
-
 <http://rdvocab.info/termList/fontSize/1002> skos:prefLabel "isotekstinen"@fi .
 
 mts:m1091 a skos:Concept ;
@@ -1060,7 +1057,7 @@ mts:m1034 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "USB-muisti"@fi,
-        "USB-minne"@sv .
+        "usb-minne"@sv .
 
 mts:m1036 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -1577,7 +1574,8 @@ mts:m1107 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30151 ;
     skos:prefLabel "Rinnakkainen muu nimeketieto"@fi,
-        "Parallell övrig titelinformation"@sv .
+        "Övrig parallell titelinformation"@sv ;
+    skos:scopeNote "Muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m1109 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -2076,6 +2074,7 @@ mts:m118 a skos:Concept ;
 mts:m1180 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Titelrubrik på förtextsidorna:"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "Ylänimeke esiössä:"@fi,
         "Titelrubrik på förtextsidan:"@sv .
@@ -3006,7 +3005,8 @@ mts:m1226 a isothes:ConceptGroup,
     skos:member mts:m1035,
         mts:m1190,
         mts:m955 ;
-    skos:prefLabel "äänen tallennusmedian tyyppi"@fi .
+    skos:prefLabel "Äänen tallennusmedian tyyppi"@fi,
+        "Typ av lagringsmedium för ljud"@sv .
 
 mts:m1227 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3049,7 +3049,8 @@ mts:m1231 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30143 ;
     skos:prefLabel "Sarjan muu nimeketieto"@fi,
-        "Seriens övriga titelinformation"@sv .
+        "Övrig titelinformation till serien"@sv ;
+    skos:scopeNote "Sarjan päänimekkeen kanssa ja sille alisteisena esiintyvää tietoa."@fi .
 
 mts:m1232 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3101,8 +3102,10 @@ mts:m1239 a isothes:ConceptGroup,
     skos:member mts:m10,
         mts:m96,
         mts:m982 ;
-    skos:prefLabel "kirjasinkoko"@fi,
-        "teckengrad"@sv .
+    skos:prefLabel "Kirjasinkoko"@fi,
+        "Teckenstorlek"@sv ;
+    skos:scopeNote "Jos aineiston kirjasinkoko on tarkoitettu näkövammaisille, merkitään kirjasinkoko käyttämällä soveltuvaa termiä seuraavasta luettelosta:"@fi,
+        "Om resursens teckenstorlek är avsedd för synskadade, anges denna genom att använda en lämplig term från följande lista:"@sv .
 
 mts:m124 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3509,7 +3512,8 @@ mts:m1296 a isothes:ConceptGroup,
     skos:member mts:m1430,
         mts:m1525,
         mts:m845 ;
-    skos:prefLabel "Videonauhan sukupolvi"@fi .
+    skos:prefLabel "Videonauhan sukupolvi"@fi,
+        "Enheter för videobands generation"@sv .
 
 mts:m1297 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -3688,7 +3692,8 @@ mts:m1318 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "luonnos"@fi .
+    skos:prefLabel "luonnos"@fi,
+        "utkast"@sv .
 
 mts:m1319 a isothes:ConceptGroup,
         skos:Collection ;
@@ -3996,7 +4001,8 @@ mts:m1366 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "johdannaismaster"@fi .
+    skos:prefLabel "johdannaismaster"@fi,
+        "derivativ master"@sv .
 
 mts:m1367 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4065,7 +4071,8 @@ mts:m1374 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Vakiintunut kokoava nimeke"@fi,
-        "Etablerad samlade titel"@sv .
+        "Etablerad samlade titel"@sv ;
+    skos:scopeNote "Nimeke, jota käytetään ensisijaisena nimekkeenä kokoelmasta, joka sisältää kahden tai useamman teoksen tai kahden tai useamman osan teoksesta (esim. Teokset, Runot, Valikoima)."@fi .
 
 mts:m1375 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4307,11 +4314,11 @@ mts:m1408 a skos:Concept ;
 
 mts:m1409 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "ISBD-termi"@fi ;
     rdfs:seeAlso rdam:P30151 ;
     skos:prefLabel "Rinnakkaisnimeke"@fi,
-        "Parallelltitel"@sv .
+        "Parallelltitel"@sv ;
+    skos:scopeNote "Nimeke, joka on päänimekkeen erikielinen käännös sovitussa tiedonlähteessä. Se on myös ilman kokoomanimekettä olevan julkaisun yksittäisen osan nimeke."@fi .
 
 mts:m141 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4473,7 +4480,7 @@ mts:m1430 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "toinen sukupolvi, esityskopio"@fi,
-        "andra generation, brukskopia"@sv .
+        "andra generationen, brukskopia"@sv .
 
 mts:m1431 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4489,7 +4496,8 @@ mts:m1432 a isothes:ConceptGroup,
     skos:member mts:m1140,
         mts:m214,
         mts:m888 ;
-    skos:prefLabel "ääniraidan asemointi"@fi .
+    skos:prefLabel "Ääniraidan asemointi"@fi,
+        "Ljudspårets placering"@sv .
 
 mts:m1433 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4594,7 +4602,9 @@ mts:m1449 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "tahdit peräkkäin"@fi .
+    skos:prefLabel "tahdit peräkkäin"@fi,
+        "takter efter varandra"@sv ;
+    skos:scopeNote "Bar by bar"@sv .
 
 mts:m145 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4776,7 +4786,8 @@ mts:m1475 a isothes:ConceptGroup,
         "ISBD-termi"@sv ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Varianttinimeke"@fi,
-        "Varianttitel"@sv .
+        "Varianttitel"@sv ;
+    skos:scopeNote "Aineistoon liittyvä nimeke, joka eroaa kuvailuun merkitystä päänimekkeestä, rinnakkaisesta päänimekkeestä, muusta nimeketiedosta, rinnakkaisesta muusta nimeketiedosta, aiemmasta päänimekkeestä, myöhemmästä päänimekkeestä, avainnimekkeestä ja lyhennetystä nimekkeestä."@fi .
 
 mts:m1476 a isothes:ConceptGroup,
         skos:Collection ;
@@ -5025,7 +5036,8 @@ mts:m1512 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "vertikaalinen partituuri"@fi .
+    skos:prefLabel "vertikaalinen partituuri"@fi,
+        "vertikalt partitur"@sv .
 
 mts:m1513 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5046,7 +5058,8 @@ mts:m1516 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "avoin partituuri"@fi .
+    skos:prefLabel "avoin partituuri"@fi,
+        "open score"@sv .
 
 mts:m1517 a isothes:ConceptGroup,
         skos:Collection ;
@@ -5091,7 +5104,9 @@ mts:m1521 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Vaihtoehtoinen nimeke"@fi,
-        "Alternativ titel"@sv .
+        "Alternativ titel"@sv ;
+    skos:scopeNote "Jälkimmäinen osa päänimekkeestä, joka muodostuu kahdesta itsenäisestä nimekkeestä. Nimekkeitä yhdistää ”tai”, ”eli” tai vastaava muunkielinen sana, esim. Moby Dick, eli, Valkoinen valas."@fi,
+        "Den senare delen i en huvudtitel som består av två självständiga titlar. Titlarna förenas av ord såsom \"eller\", \"alltså\" eller motsvarande ord på något språk. T.ex. Moby Dick, eller, Den vita valen."@sv .
 
 mts:m1522 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5120,7 +5135,7 @@ mts:m1525 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "toinen sukupolvi, masterkopio"@fi,
-        "andra generation, masterkopia"@sv .
+        "andra generationen, masterkopia"@sv .
 
 mts:m1526 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5395,8 +5410,9 @@ mts:m1565 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30152 ;
-    skos:prefLabel "sarjan rinnakkainen muu nimeketieto"@fi,
-        "seriens parallella övriga titelinformation"@sv .
+    skos:prefLabel "Sarjan rinnakkainen muu nimeketieto"@fi,
+        "Övrig parallell titelinformation till serien"@sv ;
+    skos:scopeNote "Sarjan muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m1566 a isothes:ConceptGroup,
         skos:Collection ;
@@ -5416,7 +5432,8 @@ mts:m1568 a isothes:ConceptGroup,
     rdfs:seeAlso rdaw:P10088 ;
     skos:member mts:m1149 ;
     skos:prefLabel "Teoksen nimeke"@fi,
-        "Verkets titel"@sv .
+        "Verkets titel"@sv ;
+    skos:scopeNote "Sana, merkki tai sana- ja merkkiyhdistelmä, jolla teos tunnetaan."@fi .
 
 mts:m1569 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5500,11 +5517,11 @@ mts:m1580 a isothes:ConceptGroup,
 
 mts:m1581 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Sepitetty nimeke"@fi,
-        "Konstruerad titel"@sv .
+        "Konstruerad titel"@sv ;
+    skos:scopeNote "Kuvailevan yhteisön muodostama nimeke silloin kun aineistossa ei ole nimekettä, eikä sellaista voida löytää myöskään muista lähteistä (liiteaineisto, aineiston julkaistu kuvailu, tietolähteet)."@fi .
 
 mts:m1582 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5664,7 +5681,8 @@ mts:m1606 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "melody chord system"@fi .
+    skos:prefLabel "melody chord system"@fi,
+        "ackordsystem"@sv .
 
 mts:m1607 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5798,7 +5816,8 @@ mts:m1628 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10223 ;
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
-        "Verkets primära titel"@sv .
+        "Verkets primära titel"@sv ;
+    skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
 
 mts:m1629 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5880,7 +5899,8 @@ mts:m1638 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "kappaleittain"@fi .
+    skos:prefLabel "kappaleittain"@fi,
+        "styckevis"@sv .
 
 mts:m1639 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5965,7 +5985,7 @@ mts:m1648 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Nimeke julkaisijan kotisivulta."@fi,
-        "Titel från utgivarens hemsida."@sv .
+        "Titel från utgivarens webbplats."@sv .
 
 mts:m1649 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6103,9 +6123,9 @@ mts:m1681 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Nimeke toimitustietolaatikosta."@fi,
-        "Titel från redaktionsruta."@sv ;
+        "Titel från redaktionsrutan."@sv ;
     skos:scopeNote "Toimitustietolaatikko tarkoittaa kausijulkaisuissa toimituksellisia tietoja sekä julkaisutietoja sisältävää aluetta."@fi,
-        "Redaktionsruta avser det fält i periodiska publikationer som innehåller leveransuppgifter och impressum."@sv .
+        "Redaktionsruta avser det fält i periodiska publikationer som innehåller uppgifter om redaktion och utgivning."@sv .
 
 mts:m1682 a isothes:ConceptGroup,
         skos:Collection ;
@@ -6195,7 +6215,8 @@ mts:m169 a isothes:ConceptGroup,
         mts:m643,
         mts:m711,
         mts:m89 ;
-    skos:prefLabel "esitysformaatti"@fi .
+    skos:prefLabel "Esitysformaatti"@fi,
+        "Presentationsformat"@sv .
 
 mts:m1690 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6490,7 +6511,8 @@ mts:m182 a isothes:ConceptGroup,
         mts:m30,
         mts:m304,
         mts:m494 ;
-    skos:prefLabel "Äänitteen sukupolvi"@fi .
+    skos:prefLabel "Äänitteen sukupolvi"@fi,
+        "Ljudfilens generation"@sv .
 
 mts:m183 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6569,7 +6591,8 @@ mts:m191 a isothes:ConceptGroup,
         mts:m424,
         mts:m591,
         mts:m596 ;
-    skos:prefLabel "videoformaatti"@fi .
+    skos:prefLabel "Videoformaatti"@fi,
+        "Videoformat"@sv .
 
 mts:m192 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6764,14 +6787,17 @@ mts:m208 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30142 ;
     skos:prefLabel "Muu nimeketieto"@fi,
-        "Övrig titelinformation"@sv .
+        "Övrig titelinformation"@sv ;
+    skos:scopeNote "Sana, ilmaisu tai merkkiryhmä, joka esiintyy julkaisun päänimekkeen yhteydessä ja sille alisteisena. Muu nimeketieto määrittelee, selittää tai täydentää nimekettä, johon se kuuluu."@fi,
+        "Ord, uttryck eller kombination av tecken som förekommer i samband med publikationens huvudtitel och har underordnad betydelse. Övrig titelinformation definierar, förklarar eller kompletterar den titel informationen gäller."@sv .
 
 mts:m209 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30129 ;
     skos:prefLabel "Myöhempi päänimeke"@fi,
-        "Senare huvudtitel"@sv .
+        "Senare huvudtitel"@sv ;
+    skos:scopeNote "Moniosaisen monografian tai sarja-aineiston myöhemmässä osassa esiintyvä päänimeke, joka eroaa ensimmäisessä tai aiemmassa osassa esiintyneestä päänimekkeestä."@fi .
 
 mts:m21 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6853,7 +6879,8 @@ mts:m220 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30203 ;
     skos:prefLabel "Rinnakkainen päänimeke"@fi,
-        "Parallell huvudtitel"@sv .
+        "Parallell huvudtitel"@sv ;
+    skos:scopeNote "Päänimeke toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
 
 mts:m221 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6940,7 +6967,9 @@ mts:m233 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Juokseva nimeke"@fi,
-        "Kolumntitel"@sv .
+        "Kolumntitel"@sv ;
+    skos:scopeNote "Nimeke on painettu jokaisen sivun ylä- tai alamarginaaliin."@fi,
+        "Titeln är tryckt i den övre eller nedre marginalen på varje sida."@sv .
 
 mts:m235 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7027,7 +7056,8 @@ mts:m245 a isothes:ConceptGroup,
         mts:m856,
         mts:m933,
         mts:m996 ;
-    skos:prefLabel "Elokuvafilmin sukupolvi"@fi .
+    skos:prefLabel "Elokuvafilmin sukupolvi"@fi,
+        "Enheter för spelfilmers generation"@sv .
 
 mts:m247 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7143,7 +7173,9 @@ mts:m263 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30209 ;
     skos:prefLabel "Avainnimeke"@fi,
-        "Nyckeltitel"@sv .
+        "Nyckeltitel"@sv ;
+    skos:scopeNote "Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy erottamattomasti ISSN-tunnukseen. (engl. key title)"@fi,
+        "Unik titel för fortlöpande publikation, fastställd av ISSN-centralen och oskiljaktigt kopplad till ISSN-numret."@sv .
 
 mts:m264 a isothes:ConceptGroup,
         skos:Collection ;
@@ -7528,7 +7560,7 @@ mts:m307 a skos:Concept ;
         "Kaunokki-termi"@fi,
         "RDA-termi"@fi ;
     skos:definition "Kirja, jossa on muovilla tms. peitetty aukko, \"ikkuna\"."@fi,
-        "Bok med en glugg eller \"fönster\", övertäckt med plast el. dyl."@sv ;
+        "BBok med en glugg eller ett titthål, övertäckt med plast el. dyl."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "Ikkunakirja"@fi,
         "Fönsterbok"@sv .
@@ -7567,7 +7599,7 @@ mts:m311 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "vesiväri"@fi,
-        "akvarellfärg"@sv .
+        "vattenfärg"@sv .
 
 mts:m312 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7602,7 +7634,8 @@ mts:m315 a isothes:ConceptGroup,
         mts:m487,
         mts:m666,
         mts:m951 ;
-    skos:prefLabel "äänentoiston erityisominaisuudet"@fi .
+    skos:prefLabel "Äänentoiston erityisominaisuudet"@fi,
+        "Ljudåtergivningens specialegenskaper"@sv .
 
 mts:m316 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7829,7 +7862,9 @@ mts:m345 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Epäitsenäinen nimeke"@fi,
-        "Osjälvständig titel"@sv .
+        "Osjälvständig titel"@sv ;
+    skos:scopeNote "imeke, joka itsessään on riittämätön julkaisun tunnistamiseen ja joka vaatii lisäkseen yhteisnimekkeen tai pääjulkaisun tai pääsarjan nimekkeen. Tällaisia nimekkeitä voivat olla esim. moniosaisen teoksen osamerkinnöt, lohkosarjan nimekkeet sekä eräät suplementtien ja alasarjojen nimekkeet. (engl. dependent title)"@fi,
+        "Titel som i sig är ofullständig för identifikationen av en publikation och som därtill kräver samlingstitel, huvudpublikationens titel eller huvudseriens titel. Exempel på dylika titlar är delbeteckningar i flerbandsverk, delseriers titlar samt titlar på en del supplement och underserier. (eng. dependent title)"@sv .
 
 mts:m346 a isothes:ConceptGroup,
         skos:Collection ;
@@ -8215,7 +8250,9 @@ mts:m393 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "Yleisnimeke"@fi,
-        "Allmän titel"@sv .
+        "Allmän titel"@sv ;
+    skos:scopeNote "Yleistermi, joka osoittaa julkaisun lajin ja/tai jaksottaisuuden. Esim. julkaisu, raportti, tutkimuksia, selvityksiä, kuukausitilasto. Musiikkiaineistossa termi ilmaisee musiikin muotoa tai lajia, esim. konsertto, muunnelma, sinfonia tai messu."@fi,
+        "Allmän term som betecknar en publikations art och/eller periodicitet. T.ex. publikation, rapport, undersökning, utredning, månadsstatistik. I musikmaterial uttrycker termen musikens form eller genre, t.ex. konsert, omarbetning, symfoni eller mässa."@sv .
 
 mts:m394 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8284,7 +8321,8 @@ mts:m4 a isothes:ConceptGroup,
         mts:m885,
         mts:m919,
         mts:m975 ;
-    skos:prefLabel "äänen toistonopeus"@fi .
+    skos:prefLabel "Äänen toistonopeus"@fi,
+        "Ljudets återgivningshastighet"@sv .
 
 mts:m40 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8424,7 +8462,8 @@ mts:m417 a isothes:ConceptGroup,
         mts:m656,
         mts:m876,
         mts:m944 ;
-    skos:prefLabel "Valmistusmenetelmä"@fi .
+    skos:prefLabel "Valmistusmenetelmä"@fi,
+        "Tillverkningssätt"@sv .
 
 mts:m418 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8464,7 +8503,8 @@ mts:m421 a isothes:ConceptGroup,
         mts:m1563,
         mts:m422,
         mts:m848 ;
-    skos:prefLabel "Mikrofilmin ja mikrokortin emulsio"@fi .
+    skos:prefLabel "Mikrofilmin ja mikrokortin emulsio"@fi,
+        "Mikrofilm- och mikrokortemulsion"@sv .
 
 mts:m422 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8509,7 +8549,7 @@ mts:m429 a skos:Concept ;
         "Onix-termi"@fi,
         "RDA-termi"@fi ;
     skos:definition "Kirja, joka sisältää ääniefektejä tai musiikkia. (engl. Sound story / 'noisy' book )"@fi,
-        "Bok som innehåller ljudeffekter eller musik. (eng. Sound story / 'noisy' book )"@sv ;
+        "Bok med ljudeffekter eller musik.. (eng. Sound story / 'noisy' book )"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "Äänitehostekirja"@fi,
         "Ljudeffektsbok"@sv .
@@ -8526,7 +8566,8 @@ mts:m43 a isothes:ConceptGroup,
         mts:m808,
         mts:m850,
         mts:m920 ;
-    skos:prefLabel "uran ominaisuus"@fi .
+    skos:prefLabel "Uran ominaisuus"@fi,
+        "Spårets egenskap"@sv .
 
 mts:m431 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8556,7 +8597,8 @@ mts:m437 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10086 ;
     skos:prefLabel "Teoksen varianttinimeke"@fi,
-        "Verkets varianttitel"@sv .
+        "Verkets varianttitel"@sv ;
+    skos:scopeNote "Nimeke tai nimekkeen muoto, jolla teos tunnetaan ja joka poikkeaa teoksen ensisijaisesta nimekkeestä."@fi .
 
 mts:m438 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8742,7 +8784,8 @@ mts:m46 a isothes:ConceptGroup,
         mts:m403,
         mts:m845,
         mts:m922 ;
-    skos:prefLabel "Mikromuotoisen tallenteen sukupolvi"@fi .
+    skos:prefLabel "Mikromuotoisen tallenteen sukupolvi"@fi,
+        "Enheter för mikroformade bärares generation"@sv .
 
 mts:m460 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8775,7 +8818,7 @@ mts:m463 a skos:Concept ;
     skos:prefLabel "muu"@fi,
         "annan"@sv ;
     skos:scopeNote "Jos mikään yllä olevista termeistä ei sovellu kuvailtavan kohteen tallenteeseen tai tallenteisiin, merkitään muu."@fi,
-        "Då ingen av ovanstående termer passar in på den bärare eller de bärare som beskrivs, anges termen annan."@sv .
+        "Då ingen av ovanstående termer passar in på den eller de bärare som beskrivs, anges termen övrig."@sv .
 
 mts:m464 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8863,7 +8906,7 @@ mts:m475 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "Osan nimeke"@fi,
-        "Delens titel"@sv .
+        "Deltitel"@sv .
 
 mts:m476 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9055,7 +9098,10 @@ mts:m50 a isothes:ConceptGroup,
         mts:m37,
         mts:m51,
         mts:m637 ;
-    skos:prefLabel "Kirjan bibliografinen koko"@fi .
+    skos:prefLabel "Kirjan bibliografinen koko"@fi,
+        "Bokens bibliografiska storlek"@sv ;
+    skos:scopeNote "Vanhojen painettujen aineistojen bibliografinen koko merkitään käyttämällä soveltuvaa termiä seuraavasta luettelosta:"@fi,
+        "Den bibliografiska storleken på gamla tryckta resurser anges genom att använda en lämplig term ur följande lista:"@sv .
 
 mts:m500 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9178,7 +9224,8 @@ mts:m519 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30131 ;
     skos:prefLabel "Lyhennetty nimeke"@fi,
-        "Förkortad titel"@sv .
+        "Förkortad titel"@sv ;
+    skos:scopeNote "Indeksointia tai tunnistamista varten lyhennetty nimeke."@fi .
 
 mts:m52 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9187,7 +9234,8 @@ mts:m52 a isothes:ConceptGroup,
     skos:member mts:m1366,
         mts:m53,
         mts:m704 ;
-    skos:prefLabel "Digitaalisen aineiston sukupolvi"@fi .
+    skos:prefLabel "Digitaalisen aineiston sukupolvi"@fi,
+        "Enheter för digitala resursers generation"@sv .
 
 mts:m520 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9217,7 +9265,9 @@ mts:m523 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Yhteisnimeke"@fi,
-        "Samlingstitel"@sv .
+        "Samlingstitel"@sv ;
+    skos:scopeNote "Se osa nimekettä, joka ryhmällä yhteenkuuluvia julkaisuja on yhteinen niiden omien nimekkeiden lisäksi. Yhteisnimeke osoittaa tämän yhteenkuuluvuuden. Sen ja osan nimekkeen avulla julakisu tunnistetaan. Yhteisnimeke voi merkitä myös pääjulkaisun ja sen suplementin sekä pääsarjan ja sen alasarjojen nimekkeiden yhteistä osaa, kun suplementilla tai alasarjoilla on epäitsenäinen nimeke. (engl. common title)"@fi,
+        "Del av titel som är gemensam för en grupp samhörande publikationer utöver deras egna titlar. Samlingstiteln påvisar denna samhörighet. Med hjälp av samlingstiteln och deltiteln kan publikationen igenkännas. Samlingstiteln kan även påvisa samband mellan huvudtitel och dess supplement, samt gemensamma delar i huvudserien och dess underserie, då supplement eller underserier har en osjälvständig titel."@sv .
 
 mts:m524 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9319,7 +9369,8 @@ mts:m536 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "nuottiviivat peräkkäin"@fi .
+    skos:prefLabel "nuottiviivat peräkkäin"@fi,
+        "notlinjer efter varandra Term D: Line over line"@sv .
 
 mts:m537 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9331,7 +9382,8 @@ mts:m537 a isothes:ConceptGroup,
         mts:m27,
         mts:m381,
         mts:m967 ;
-    skos:prefLabel "tiedostotyyppi"@fi .
+    skos:prefLabel "Tiedostotyyppi"@fi,
+        "Filtyp"@sv .
 
 mts:m538 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9359,10 +9411,12 @@ mts:m54 a skos:Concept ;
 
 mts:m540 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "RDA-termi"@fi ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30142 ;
     skos:prefLabel "Ylänimeke"@fi,
-        "Titelrubrik"@sv .
+        "Titelrubrik"@sv ;
+    skos:scopeNote "Muu nimeketieto, joka on johdantona päänimekkeeseen ja esiintyy julkaisun päänimekkeen yläpuolella nimeke- ja vastuullisuusalueen tiedonlähteessä."@fi .
 
 mts:m541 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9465,7 +9519,7 @@ mts:m557 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD audio"@fi,
-        "DVD audio"@sv .
+        "dvd audio"@sv .
 
 mts:m558 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9474,7 +9528,10 @@ mts:m558 a isothes:ConceptGroup,
     skos:member mts:m1483,
         mts:m1488,
         mts:m269 ;
-    skos:prefLabel "polariteettitieto"@fi .
+    skos:prefLabel "Polariteettitieto"@fi,
+        "Polaritet"@sv ;
+    skos:scopeNote "Tieto siitä, onko valokuva, elokuvafilmi tai mikrotallenne positiivi vai negatiivi merkitään, jos sitä pidetään tärkeänä tunnistamisen ja valinnan kannalta. Käytetään soveltuvaa termiä seuraavasta luettelosta:"@fi,
+        "Information om huruvida ett fotografi, en spelfilm eller mikrolagring är positiv eller negativ anges ifall den anses viktig för identifikation och urval. En lämplig term från följande lista:"@sv .
 
 mts:m559 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9648,8 +9705,10 @@ mts:m573 a isothes:ConceptGroup,
         mts:m1360,
         mts:m503,
         mts:m574 ;
-    skos:prefLabel "pienennyssuhde"@fi,
-        "förminskningsgrad"@sv .
+    skos:prefLabel "Pienennyssuhde"@fi,
+        "Förminskningsgrad"@sv ;
+    skos:scopeNote "Mikrotallenteen kuvan pienennyssuhde merkitään, jos sitä pidetään tärkeänä tunnistamisen tai valinnan kannalta. Käytetään yhtä tai useampaa soveltuvaa termiä seuraavasta luettelosta:"@fi,
+        "Förminskningsgraden för en mikrolagrad bild anges ifall den anses viktig för identifikation eller urval. En eller flera lämpliga termer från följande lista används:"@sv .
 
 mts:m575 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9700,7 +9759,10 @@ mts:m58 a isothes:ConceptGroup,
         mts:m786,
         mts:m828,
         mts:m85 ;
-    skos:prefLabel "Aineiston layout"@fi .
+    skos:prefLabel "Aineiston layout"@fi,
+        "Resursens layout"@sv ;
+    skos:scopeNote "Aineiston layout merkitään, jos sitä pidetään tärkeänä tunnistamisen tai valinnan kannalta. Käytetään yhtä tai useampaa soveltuvaa termiä seuraavasta luettelosta:"@fi,
+        "Resursens layout anges ifall den anses viktig för identifikation och urval. En eller flera lämpliga termer från följande lista används:"@sv .
 
 mts:m580 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9794,7 +9856,8 @@ mts:m59 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "jaksot peräkkäin"@fi .
+    skos:prefLabel "jaksot peräkkäin"@fi,
+        "stycke efter stycke"@sv .
 
 mts:m590 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9966,7 +10029,8 @@ mts:m612 a isothes:ConceptGroup,
         mts:m1274,
         mts:m1604,
         mts:m203 ;
-    skos:prefLabel "Käsikirjoitusaineiston valmistusmenetelmä"@fi .
+    skos:prefLabel "Käsikirjoitusaineiston valmistusmenetelmä"@fi,
+        "Framställningsmetod  för handskriftsmaterial"@sv .
 
 mts:m613 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9990,7 +10054,7 @@ mts:m617 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "kollaasi"@fi,
-        "kollage"@sv .
+        "collage"@sv .
 
 mts:m618 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10004,7 +10068,8 @@ mts:m619 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "monikangas"@fi .
+    skos:prefLabel "monikangas"@fi,
+        "multiduk"@sv .
 
 mts:m62 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10096,7 +10161,9 @@ mts:m632 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Otsikkonimeke"@fi,
-        "Rubriktite:"@sv .
+        "Rubriktite:"@sv ;
+    skos:scopeNote "Nimeke, joka esiintyy julkaisussa tekstin ensimmäisen sivun alussa."@fi,
+        "Titel, som finns i början av den första textsidan i publikationen."@sv .
 
 mts:m633 a isothes:ConceptGroup,
         skos:Collection ;
@@ -10168,13 +10235,15 @@ mts:m642 a isothes:ConceptGroup,
         mts:m41,
         mts:m634,
         mts:m876 ;
-    skos:prefLabel "Taktiiliaineiston valmistusmenetelmä"@fi .
+    skos:prefLabel "Taktiiliaineiston valmistusmenetelmä"@fi,
+        "Enheter för tillverkningssätt av taktila resurser"@sv .
 
 mts:m643 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "moniprojektori"@fi .
+    skos:prefLabel "moniprojektori"@fi,
+        "multiprojektor"@sv .
 
 mts:m644 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10186,16 +10255,18 @@ mts:m645 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30172 ;
+    skos:altLabel "Ljudets lagringsteknik {@sv"@fi ;
     skos:member mts:m480,
         mts:m702 ;
-    skos:prefLabel "äänen tallentamisen tapa"@fi .
+    skos:prefLabel "Äänen tallentamisen tapa"@fi .
 
 mts:m646 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30156 ;
     skos:prefLabel "Päänimeke"@fi,
-        "Huvudtitel"@sv .
+        "Huvudtitel"@sv ;
+    skos:scopeNote "Aineiston pääasiallinen nimi (nimeke jota yleensä käytetään viitattaessa aineistoon)."@fi .
 
 mts:m647 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10256,7 +10327,10 @@ mts:m654 a isothes:ConceptGroup,
         mts:m772,
         mts:m869,
         mts:m899 ;
-    skos:prefLabel "Materiaali"@fi .
+    skos:prefLabel "Materiaali"@fi,
+        "Material"@sv ;
+    skos:scopeNote "Merkitään jos sitä pidetään tärkeänä tunnistamisen tai valinnan kannalta. Käytetään yhtä tai useampaa soveltuvaa termiä ao. luettelosta."@fi,
+        "Anges ifall det anses viktigt för identifikation eller urval. En eller flera lämpliga termer från nedanstående lista används."@sv .
 
 mts:m655 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10384,7 +10458,7 @@ mts:m670 a skos:Concept ;
         "Bok, vars text är avstavad."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "Tavukirja"@fi,
-        "Avstavningsbok"@sv .
+        "Avstavad bok"@sv .
 
 mts:m672 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10423,7 +10497,9 @@ mts:m677 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Lohkosarjan nimeke"@fi,
-        "Delseriens titel"@sv .
+        "Delseriens titel"@sv ;
+    skos:scopeNote "Lohkosarjan nimeke erottaa sen toisiinsa liittyvien yhteisnimekkeellisten sarjojen ryhmästä. Lohkosarjan itsenäinen tai epäitsenäinen nimeke on aina sidoksissa siihen päänimekkeeseen, joka identifioi julkaisun."@fi,
+        "Delseriens egen titel, som skiljer den från övriga grupper av serier med gemensam titel. Delseriens självständiga eller osjälvständiga titel är alltid bunden till den huvudtitel, med vilken publikationen kan identifieras."@sv .
 
 mts:m678 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10437,7 +10513,9 @@ mts:m679 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "tahdit päällekkäin"@fi .
+    skos:prefLabel "tahdit päällekkäin"@fi,
+        "akter på varandra"@sv ;
+    skos:scopeNote "Bar over bar"@sv .
 
 mts:m68 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10533,7 +10611,8 @@ mts:m692 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "short form scoring"@fi .
+    skos:prefLabel "short form scoring"@fi,
+        "short form scoring"@sv .
 
 mts:m693 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11260,7 +11339,7 @@ mts:m786 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "kääntöpuolilla"@fi,
-        "på baksidorna"@sv .
+        "på baksidan"@sv .
 
 mts:m787 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11637,7 +11716,8 @@ mts:m828 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "yksittäinen nuottiviiva"@fi .
+    skos:prefLabel "yksittäinen nuottiviiva"@fi,
+        "enkel notlinje"@sv .
 
 mts:m829 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11780,8 +11860,9 @@ mts:m849 a skos:Concept ;
 mts:m85 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "nuottiviivat päällekkäin"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "nuottiviivat päällekkäin"@fi .
+    skos:prefLabel "notlinjer på varandra"@fi .
 
 mts:m853 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11812,7 +11893,7 @@ mts:m856 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "vertailukopio"@fi,
-        "referensexemplar"@sv .
+        "referenskopia"@sv .
 
 mts:m857 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11840,7 +11921,7 @@ mts:m86 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD video"@fi,
-        "DVD video"@sv .
+        "dvd video"@sv .
 
 mts:m860 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12396,7 +12477,8 @@ mts:m928 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Kokoava nimeke"@fi,
-        "Grupptitel"@sv .
+        "Grupptitel"@sv ;
+    skos:scopeNote "*Kattava nimeke, jota käytetään joko useasta osakohteesta koostuvan aineiston päänimekkeenä tai useasta teoksesta koostuvan kokoelman päänimekkeenä. Vrt. vakiintunut kokoava nimeke."@fi .
 
 mts:m929 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12538,14 +12620,15 @@ mts:m95 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30128 ;
     skos:prefLabel "Kansinimeke"@fi,
-        "Pärmtitel"@sv .
+        "Pärmtitel"@sv ;
+    skos:scopeNote "Nimeke, joka on painettu julkaisun alkuperäiseen etukanteen, (engl. cover title)"@fi .
 
 mts:m950 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Julkaisussa rengaskierteen peittävä selkä."@fi,
-        "Publikationen har spiralbunden rygg."@sv .
+        "Publikationen har spiralbunden rygg samt kartongomslag."@sv .
 
 mts:m951 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12702,7 +12785,8 @@ mts:m97 a isothes:ConceptGroup,
         mts:m932,
         mts:m98,
         mts:m984 ;
-    skos:prefLabel "Pohjamateriaali"@fi .
+    skos:prefLabel "Pohjamateriaali"@fi,
+        "Bottenmaterial"@sv .
 
 mts:m970 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12956,7 +13040,7 @@ mts:m1010 a skos:Concept ;
 mts:m1012 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Viestin sisältää pienennettyjä kuvia jotka eivät ole luettavissa ilman apuvälinettä. Mikrofilmit tai mikrokortit ovat suunniteltu käytettäväksi lukulaitteen avulla. Käsittää sekä läpinäkyvän että läpinäkymättömän mikromuotoisen viestimen."@fi,
-        "Mediet innehåller förminskade bilder som inte är läsbara utan redskap. Mikrofilmer eller mikrokort används med hjälp av läsapparat. Omfattar ett mikroformat medium som är både geomskinligt och ogenomskinligt"@sv ;
+        "Förminskade bilder som inte går att betrakta med blotta ögat utan behöver mikrofilms- eller mikrokortläsare. Material i mikroform kan antingen vara genomskinligt eller ogenomskinligt. Material som förutsätter mikroläsare."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikromuoto"@fi,
@@ -13030,7 +13114,7 @@ mts:m106 a skos:Concept ;
 mts:m1062 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi,
-        "Mediet innehåller rörliga bilder eller stillbilder och används med hjälp av en uppspelningsapparat, såsom videobandspelare eller DVD-spelare. Omfattar medier som innehåller både digitalt kodad och analog bild."@sv ;
+        "Rörlig bild eller stillbilder som betraktas med hjälp av en bildåtergivande apparat, såsom en videobandspelare eller dvd-spelare. Termen video anknyter till både digitalt och analogt material. Resurser som används med hjälp av videoapparat."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "video"@fi,
@@ -13057,8 +13141,8 @@ mts:m1078 a skos:Concept ;
     skos:definition "Kielen merkkijärjestelmällä esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistekirjoitus ja muut taktiilit tekstinkirjoitusmuodot."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1018> ;
     skos:inScheme mts: ;
-    skos:prefLabel "taktiili teksti"@fi,
-        "taktil text"@sv .
+    skos:prefLabel "Taktiili teksti"@fi,
+        "Taktil text"@sv .
 
 mts:m1083 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13108,7 +13192,7 @@ mts:m1134 a skos:Concept ;
     skos:scopeNote """Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot.\r\r
 \r\r
 Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen."""@fi,
-        "Resurser som används för avlyssning genom ett avlyssningsredskap. Ljudupptagningen avlyssnas med hjälp av t.ex. skivspelare, kasettbandspelare, CD-spelare, MP3-spelare eller annan uppspelningsanordning. Audio omfattar både analogt och digitalt lagrat ljud."@sv .
+        "Resurser som lyssnas på med hjälp av mediaspelare. Ljudupptagningen lyssnas på med hjälp av t.ex. skivspelare, kassettbandspelare, cd-spelare, mp3-spelare eller annan mediaspelare. Audio omfattar både analogt och digitalt lagrat ljud."@sv .
 
 mts:m1142 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13118,7 +13202,7 @@ mts:m1142 a skos:Concept ;
         "DVD-skiva som i huvudsak innehåller audiodata."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-äänilevy"@fi,
-        "DVD-ljudskiva"@sv .
+        "dvd-ljudskiva"@sv .
 
 mts:m1149 a isothes:ConceptGroup,
         skos:Collection ;
@@ -13126,14 +13210,17 @@ mts:m1149 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10086 ;
     skos:prefLabel "Erottuva nimeke"@fi,
-        "Titelvariant"@sv .
+        "Titelvariant"@sv ;
+    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella."@fi,
+        "Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna."@sv .
 
 mts:m115 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1001> ;
     skos:inScheme mts: ;
-    skos:prefLabel "Bristol-paperi"@fi .
+    skos:prefLabel "Bristol-paperi"@fi,
+        "bristolpapper"@sv .
 
 mts:m1153 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13209,9 +13296,9 @@ mts:m1223 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "stereografinen"@fi,
         "stereografisk"@sv ;
-    skos:scopeNote """Stillkuvaparit, joita voi katsoa kolmiulotteisesti stereokooppisella tai stereografisella laitteella.\r\r
+    skos:scopeNote """Stillkuvaparit, joita voi katsoa kolmiulotteisesti stereokooppisella tai stereografisella laitteella.\r
 Stereografisella laitteella käytettävät aineistot."""@fi,
-        "Ett stillbildspar som betraktas i tredimensionell form genom en stereoskopisk eller stereografisk apparat. Resurser som används med hjälp av en stereografisk apparat."@sv .
+        "Stillbildspar som betraktas i tredimensionell form genom en stereoskopisk eller stereografisk apparat. Resurser som används med hjälp av en stereografisk apparat.."@sv .
 
 mts:m1224 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13227,7 +13314,7 @@ mts:m1236 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietonauhan silmukkakasetti"@fi,
-        "databandmagasin"@sv .
+        "datorbandmagasin"@sv .
 
 mts:m125 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13359,7 +13446,7 @@ mts:m1365 a skos:Concept ;
     skos:broader mts:m407 ;
     skos:inScheme mts: ;
     skos:prefLabel "CD-äänilevy"@fi,
-        "CD-ljudskiva"@sv ;
+        "cd-ljudskiva"@sv ;
     skos:scopeNote "engl. Audio CD"@fi,
         "eng. Audio CD"@sv .
 
@@ -13443,7 +13530,7 @@ mts:m1457 a skos:Concept ;
     skos:scopeNote """Termi elektroninen liittyy sekä etä- että suorakäyttöisiin aineistoihin kuten tietokonenauhoihin ja -levyihin.\r\r
 \r\r
 Tietokoneella käytettävät aineistot. Tietokoneella käytettävät tiedostot."""@fi,
-        "Termen elektronisk avser både fjärr- och direktanvändbara resurser såsom datorband och -skivor.                                                                          Datoranvändbara resurser och dokument."@sv .
+        "Termen elektronisk avser både fjärr- och direktanvändbart material såsom datorband och -skivor. Material/resurser och filer som används med hjälp av dator."@sv .
 
 mts:m1464 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -13613,7 +13700,8 @@ mts:m1604 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "käsikirjoitus"@fi .
+    skos:prefLabel "käsikirjoitus"@fi,
+        "handskrift"@sv .
 
 mts:m1620 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -13707,7 +13795,8 @@ mts:m203 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "omakätinen käsikirjoitus"@fi .
+    skos:prefLabel "omakätinen käsikirjoitus"@fi,
+        "egenhändig handskrift"@sv .
 
 mts:m214 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14066,7 +14155,7 @@ mts:m512 a skos:Concept ;
     skos:broader mts:m1045 ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-videolevy"@fi,
-        "DVD-videoskiva"@sv .
+        "dvd-videoskiva"@sv .
 
 mts:m53 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14078,7 +14167,7 @@ mts:m53 a skos:Concept ;
 mts:m545 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Viestin sisältää elektronisia tiedostoja ja on tarkoitettu käytettäväksi tietokoneella. Käsittää sekä tiedostopalvelimien kautta käytettävät etäkäyttöiset viestimet että suorakäyttöiset viestimet kuten tietokonenauhat ja -levyt."@fi,
-        "Mediet innehåller elektroniska filer och är avsett för datoranvändning. Omfattar både fjärranvändbara medier som används via dokumentservrar och direktanvändbara medier såsom datorband och -skivor."@sv ;
+        "Mediet innehåller elektroniska filer och är avsett för att användas i dator. Omfattar både fjärranvändbara medier som används via dokumentservrar och direktanvändbara medier såsom"@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMediaType/1003> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietokonekäyttöinen"@fi,
@@ -14131,15 +14220,15 @@ mts:m577 a skos:Concept ;
     skos:prefLabel "ei välittävää laitetta"@fi,
         "ingen medietyp"@sv ;
     skos:scopeNote "Aineiston käyttöön ei tarvita välinettä."@fi,
-        "Inget redskap behövs för användning av resursen."@sv .
+        "Ingen apparatur behövs för att använda resursen."@sv .
 
 mts:m586 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Musiikkinotaationa esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistenuottikirjoitus ja muut taktiilit nuottikirjoitukset."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1016> ;
     skos:inScheme mts: ;
-    skos:prefLabel "taktiili nuottikirjoitus"@fi,
-        "taktil musiknotation"@sv .
+    skos:prefLabel "Taktiili nuottikirjoitus"@fi,
+        "Taktil musiknotation"@sv .
 
 mts:m614 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14171,7 +14260,7 @@ mts:m631 a skos:Concept ;
     skos:broader mts:m1303 ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-ROM-levy"@fi,
-        "DVD-ROM-skiva"@sv .
+        "dvd-rom-skiva"@sv .
 
 mts:m637 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14200,7 +14289,8 @@ mts:m659 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAbaseMaterial/1007> ;
     skos:inScheme mts: ;
-    skos:prefLabel "kuvituskartonki"@fi .
+    skos:prefLabel "kuvituskartonki"@fi,
+        "illustrationskartong"@sv .
 
 mts:m671 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14240,9 +14330,9 @@ mts:m686 a skos:Concept ;
     skos:broader mts:m232 ;
     skos:inScheme mts: ;
     skos:prefLabel "CD-DVD-levy"@fi,
-        "CD-DVD-skiva"@sv ;
+        "cd-dvd-skiva"@sv ;
     skos:scopeNote "Tiedontallennukseen käytettävä optisesti luettava levy, jonka toisella puolella käytetään CD-levyn ja toisella puolella DVD-levyn tallennustekniikkaa. CD-DVD-levyn CD-puoli on tarkoitettu ensisijaisesti äänen ja DVD-puoli kuvan tallennukseen. Esimerkiksi DualDisc-levyt ovat CD-DVD-levyjä. (Tietotekniikan termitalkoot, 15.1.2013)"@fi,
-        "Optiskt lagringsmedium. Ena sidan av skivan använder en CD-skivas lagringsteknik och den andra sidan en DVD:s. CD-DVD-skivans CD-sida är främst avsedd för lagring av ljud och DVD-sidan för lagring av bild. DualDisc-skivor är exempel på CD-DVD-skivor."@sv .
+        "Optiskt lagringsmedium. Ena sidan av skivan använder en cd-skivas lagringsteknik och den andra sidan en dvd:s. Cd-dvd-skivans cd-sida är främst avsedd för lagring av ljud och dvd-sidan för lagring av bild. DualDisc-skivor är exempel på cd-dvd-skivor."@sv .
 
 mts:m702 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14312,7 +14402,7 @@ mts:m795 a skos:Concept ;
     skos:broader mts:m1528 ;
     skos:inScheme mts: ;
     skos:prefLabel "CD-ROM-levy"@fi,
-        "CD-ROM-skiva"@sv .
+        "cd-rom-skiva"@sv .
 
 mts:m798 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14328,7 +14418,8 @@ mts:m801 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1011> ;
     skos:inScheme mts: ;
     skos:prefLabel "muistikortti"@fi,
-        "datorkort"@sv .
+        "datorkort"@sv ;
+    skos:scopeNote "minneskort."@sv .
 
 mts:m808 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14336,7 +14427,7 @@ mts:m808 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/grooveWidth/1001> ;
     skos:inScheme mts: ;
     skos:prefLabel "leveä ura"@fi,
-        "grovt spår"@sv .
+        "brett spår"@sv .
 
 mts:m815 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -14364,7 +14455,7 @@ mts:m826 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1017> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietonauhakela"@fi,
-        "databandspole"@sv .
+        "datorbandspole"@sv .
 
 mts:m842 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14386,7 +14477,7 @@ mts:m845 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "ensimmäinen sukupolvi"@fi,
-        "första generation"@sv .
+        "första generationen"@sv .
 
 mts:m850 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14402,7 +14493,7 @@ mts:m851 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1030> ;
     skos:inScheme mts: ;
     skos:prefLabel "preparaattilasi"@fi,
-        "mikroskoperingspreparat"@sv .
+        "objektglas"@sv .
 
 mts:m852 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -14447,12 +14538,11 @@ Esimerkiksi karttapallot, pienoismallit jne."""@fi ;
         "kartografisk tredimensionell form"@sv .
 
 mts:m906 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "RDA-termi"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1045> ;
     skos:inScheme mts: ;
     skos:prefLabel "kortti"@fi,
-        "bildkort"@sv .
+        "kort"@sv .
 
 mts:m912 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -14533,8 +14623,8 @@ mts:m96 a skos:Concept ;
     skos:definition "Näkövammaisille tarkoitettu kirjasinkoko"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/fontSize/1001> ;
     skos:inScheme mts: ;
-    skos:prefLabel "erittäin suuri teksti"@fi,
-        "mycket stor text"@sv .
+    skos:prefLabel "erittäin suuri teksti."@fi,
+        "mycket stor stil."@sv .
 
 mts:m964 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14557,7 +14647,8 @@ mts:m982 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/fontSize/1002> ;
     skos:inScheme mts: ;
-    skos:prefLabel "isotekstinen"@fi .
+    skos:prefLabel "isotekstinen"@fi,
+        "storstil"@sv .
 
 mts:m984 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14589,7 +14680,7 @@ mts:m1303 a skos:Concept ;
     skos:inScheme mts: ;
     skos:narrower mts:m631 ;
     skos:prefLabel "DVD-levy"@fi,
-        "DVD-skiva"@sv ;
+        "dvd-skiva"@sv ;
     skos:scopeNote "(DVD Digital Versatile Disc tai Digital Video Disc) tiedontallennukseen käytettävä optisesti luettava levy, DVD:n yleisimmät käyttötavat ovat videokuvan ja tiedon tallennus (Tietotekniikan termitalkoot, Wikipedia 15.1.2013)"@fi .
 
 mts:m1528 a skos:Concept ;
@@ -14599,9 +14690,9 @@ mts:m1528 a skos:Concept ;
     skos:inScheme mts: ;
     skos:narrower mts:m795 ;
     skos:prefLabel "CD-levy"@fi,
-        "CD-skiva"@sv ;
+        "cd-skiva"@sv ;
     skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi,
-        "(CD compact disc) optiskt lagringsmedium. Information (ljud, bild och text) lagras på en sida i ett lager. Olika sorters CD-skivor, vars användningssätt avviker från varandra, har varsin term. CD-ljudksivor och CD-ROM-skivor (CD-datorskivor) kan endast återges, CD-R-skivor kan spelas in en gång och CD-RW-skivor flera gånger."@sv .
+        "(CD compact disc) optiskt lagringsmedium. Information (ljud, bild och text) lagras på en sida i ett lager. Olika typer av cd-skivor, vars användningssätt avviker från varandra, har varsin term. Cd-ljudskivor och cd-rom-skivor (cd-datorskivor) kan endast återges, cd-r-skivor kan spelas in en gång och cd-rw-skivor flera gånger."@sv .
 
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14633,7 +14724,7 @@ mts:m634 a skos:Concept ;
     skos:exactMatch <http://rdaregistry.info/termList/prodTactile/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "solid dot -painatus"@fi,
-        "solid dot -tryckning"@sv .
+        "solid dot-tryckning"@sv .
 
 mts:m77 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14772,5 +14863,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2016-09-02T03:50:14+00:00"^^xsd:dateTime .
+    dct:modified "2016-09-06T03:20:25+00:00"^^xsd:dateTime .
 
