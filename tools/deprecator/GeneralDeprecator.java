@@ -18,6 +18,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.vocabulary.OWL2;
 import com.hp.hpl.jena.vocabulary.RDF;
 
 public class GeneralDeprecator {
@@ -36,6 +37,7 @@ public class GeneralDeprecator {
 	private HashSet<Statement> epailyttavatUudetStatementit;
 	private Vector<String> emailSet;
 	private boolean loytyiDeprekoitavaa;
+	private HashMap<Property, RDFNode> kaikilleLisattava;
 	
 	public GeneralDeprecator(String deprekoitavanPolku, String deprConfinPolku) {
 		this.loytyiDeprekoitavaa = false;
@@ -48,6 +50,7 @@ public class GeneralDeprecator {
 		this.deprekoitavienTyypit = new HashSet<Resource>();
 		this.epailyttavatUudetStatementit = new HashSet<Statement>();
 		this.emailSet = new Vector<String>();
+		this.kaikilleLisattava = new HashMap<Property, RDFNode>();
 		this.lueDeprPropertytTiedostosta(deprConfinPolku);
 	}
 	
@@ -92,7 +95,10 @@ public class GeneralDeprecator {
 						break;
 					case "emailForAnomalies":
 						this.emailSet.add(riviSplit[1]);
-					}
+						break;
+					case "tripleForAllDeprecatedConcepts":
+						this.kaikilleLisattava.put(this.onto.createProperty(riviSplit[1]), this.onto.createResource(riviSplit[2]));
+					}	
 				}
 				rivi = br.readLine();
 			}
@@ -132,6 +138,7 @@ public class GeneralDeprecator {
 			if (this.replacedBy != null) this.tarkistaReplacedBy(deprekoitava);
 			this.deprekoiEiTransitiivisetPropertyt(deprekoitava);
 			this.deprekoiTransitiivisetPropertyt(deprekoitava);
+			this.lisaaKaikilleLisattavat(deprekoitava);
 		}
 		if (this.labelProp != null) this.tulostaDeprekoidut();
 		if (this.emailSet != null) this.kirjoitaSposti(spostiFilename);
@@ -143,6 +150,13 @@ public class GeneralDeprecator {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		String deprPvm = sdf.format(date);
 		this.onto.add(deprekoitava, this.dateProp, this.onto.createLiteral("deprecated on " + deprPvm));
+	}
+	
+	private void lisaaKaikilleLisattavat(Resource deprekoitava) {
+		this.onto.add(deprekoitava, OWL2.deprecated, this.onto.createTypedLiteral(true));
+		for (Property prop:this.kaikilleLisattava.keySet()) {
+			this.onto.add(deprekoitava, prop, this.kaikilleLisattava.get(prop));
+		}
 	}
 	
 	private void tarkistaReplacedBy(Resource deprekoitava) {
@@ -329,9 +343,11 @@ public class GeneralDeprecator {
 	}
 	
 	public void kirjoitaUusiMalli(String uudenPolku) {
-		boolean onTtl = false;
-		if (uudenPolku.endsWith(".ttl")) onTtl = true;
-		JenaHelpers.kirjoitaMalli(this.onto, uudenPolku, onTtl);
+		if (this.loytyiDeprekoitavaa) {
+			boolean onTtl = false;
+			if (uudenPolku.endsWith(".ttl")) onTtl = true;
+			JenaHelpers.kirjoitaMalli(this.onto, uudenPolku, onTtl);
+		}
 	}
 	
 	/*
