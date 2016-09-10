@@ -1620,7 +1620,7 @@ mts:m1113 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "oppaat"@fi,
+    skos:prefLabel "oppaat (teokset)"@fi,
         "handböcker"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
 
@@ -6130,13 +6130,6 @@ mts:m1681 a skos:Concept ;
     skos:scopeNote "Toimitustietolaatikko tarkoittaa kausijulkaisuissa toimituksellisia tietoja sekä julkaisutietoja sisältävää aluetta."@fi,
         "Redaktionsruta avser det fält i periodiska publikationer som innehåller uppgifter om redaktion och utgivning."@sv .
 
-mts:m1682 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "Kansallinen termi"@fi ;
-    skos:definition "henkilö tai yhteisö, joka osallistuu sarjakuvan ekspression tekemiseen värittämällä sarjakuviin liittyviä kuvia"@fi ;
-    skos:prefLabel "värittäjä"@fi,
-        "färgläggare"@sv .
-
 mts:m1684 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "Kansallinen termi"@fi ;
@@ -6419,8 +6412,9 @@ mts:m179 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdae:P20051 ;
-    skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen täydentämällä pääasiallista sisältöä piirroksilla, valokuvilla, kaavioilla jne. Jos piirrokset tms. muodostavat teoksen pääsisällön katso taiteilija tai valokuvaaja"@fi ;
-    skos:member mts:m158 ;
+    skos:definition "Henkilö tai yhteisö, joka osallistuu ekspression tekemiseen täydentämällä pääasiallista sisältöä piirroksilla, valokuvilla, kaavioilla jne. Jos piirrokset tms. muodostavat teoksen pääsisällön katso taiteilija tai valokuvaaja"@fi ;
+    skos:member mts:m158,
+        mts:m1682 ;
     skos:prefLabel "kuvittaja"@fi .
 
 mts:m18 a isothes:ConceptGroup,
@@ -13757,6 +13751,13 @@ mts:m167 a skos:Concept ;
     skos:prefLabel "mikrofilmikasetti"@fi,
         "mikrofilmskassett"@sv .
 
+mts:m1682 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "henkilö tai yhteisö, joka osallistuu sarjakuvan ekspression tekemiseen värittämällä sarjakuviin liittyviä kuvia"@fi ;
+    skos:prefLabel "värittäjä"@fi,
+        "färgläggare"@sv .
+
 mts:m1699 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Jos mikään edellä mainituista tietokonetallenteiden tallennetyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu tietokonetallenne"@fi ;
@@ -14876,5 +14877,5 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2016-09-09T03:26:30+00:00"^^xsd:dateTime .
+    dct:modified "2016-09-10T03:47:00+00:00"^^xsd:dateTime .
 
