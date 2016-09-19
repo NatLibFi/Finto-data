@@ -8,6 +8,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ysa: <http://www.yso.fi/onto/ysa/> .
+@prefix ysa-meta: <http://www.yso.fi/onto/ysa-meta/> .
 @prefix yse: <http://www.yso.fi/onto/yse/> .
 @prefix yse-meta: <http://www.yso.fi/onto/yse-meta/> .
 
@@ -1277,7 +1278,10 @@ ysa:ryhma_11 a isothes:ConceptGroup ;
         ysa:Y403046,
         ysa:Y407150,
         ysa:Y504500,
-        ysa:Y504501 ;
+        ysa:Y504501,
+        ysa:Y504572,
+        ysa:Y504574,
+        ysa:Y504575 ;
     skos:prefLabel "11 Maantiede. Kartografia. Kartoitus. Geodesia. Geologia. Paleontologia"@fi .
 
 ysa:ryhma_13 a isothes:ConceptGroup ;
@@ -4206,7 +4210,8 @@ ysa:ryhma_61 a isothes:ConceptGroup ;
         ysa:Y400945,
         ysa:Y403071,
         ysa:Y404053,
-        ysa:Y405759 ;
+        ysa:Y405759,
+        ysa:Y504569 ;
     skos:prefLabel "61 Väestötiede. Demografia"@fi .
 
 ysa:ryhma_62 a isothes:ConceptGroup ;
@@ -5990,7 +5995,8 @@ ysa:ryhma_85 a isothes:ConceptGroup ;
         ysa:Y504454,
         ysa:Y504521,
         ysa:Y504553,
-        ysa:Y504560 ;
+        ysa:Y504560,
+        ysa:Y504571 ;
     skos:prefLabel "85 Kielitiede"@fi .
 
 ysa:ryhma_87 a isothes:ConceptGroup ;
@@ -6163,7 +6169,8 @@ ysa:ryhma_89 a isothes:ConceptGroup ;
         ysa:Y404073,
         ysa:Y407074,
         ysa:Y407152,
-        ysa:Y407159 ;
+        ysa:Y407159,
+        ysa:Y504573 ;
     skos:prefLabel "89 Musiikki"@fi .
 
 ysa:ryhma_90 a isothes:ConceptGroup ;
@@ -34624,6 +34631,60 @@ ysa:Y504568 a skos:Concept,
     skos:prefLabel "arvokisat"@fi ;
     foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4568> .
 
+ysa:Y504569 a skos:Concept,
+        yse-meta:Concept ;
+    dc:created "2016-09-15"^^xsd:date ;
+    skos:altLabel "yhdysvaltainkiinalaiset"@fi ;
+    skos:broadMatch <http://www.yso.fi/onto/yso/p19668> ;
+    skos:note "[Toinen LT-käsite: yhdysvaltalaiset.] Termillä kuvaillaan Yhdysvaltain kiinalaistaustaista väestöä koskevaa aineistoa."@fi ;
+    skos:prefLabel "Chinese Americans"@en,
+        "amerikankiinalaiset"@fi,
+        "amerikakineser"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4569> .
+
+ysa:Y504571 a skos:Concept,
+        yse-meta:Concept ;
+    dc:created "2016-09-15"^^xsd:date ;
+    skos:altLabel "retoromaani"@fi ;
+    skos:broadMatch <http://www.yso.fi/onto/yso/p2888> ;
+    skos:prefLabel "Raeto-Romance language; Romansh; Romansh language"@en,
+        "retoromaanin kieli"@fi,
+        "rätoromanska"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4571> .
+
+ysa:Y504572 a skos:Concept,
+        ysa-meta:GeographicalConcept,
+        yse-meta:Concept ;
+    dc:created "2016-09-16"^^xsd:date ;
+    skos:altLabel "Halle (Saale)"@fi ;
+    skos:note <http://finto.fi/yse/fi/page/Y504572>,
+        "**Ehdottajan nimi:** Jaakko Tuohiniemi"@fi,
+        "**Ehdottajan organisaatio:** Helsingin yliopiston kirjasto"@fi,
+        "Pelkkä käsite \"Halle\" ei käy, koska on useita samannimisiä paikkakuntia, myös Saksassa. RDA:n §16.2.2.4 ja 16.2.2.13 mukainen nimenmuoto olisi \"Halle an der Saale (Saksa)\" tai \"Halle (Saksi-Anhalt, Saksa)\", jos an der Saale -nimitystä ei valita osaksi nimenmuotoa."@fi ;
+    skos:prefLabel "Halle an der Saale"@fi,
+        "Halle an der Saale"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4572> .
+
+ysa:Y504574 a skos:Concept,
+        ysa-meta:GeographicalConcept,
+        yse-meta:Concept ;
+    dc:created "2016-09-16"^^xsd:date ;
+    skos:note "Useita samannimisiä paikkakunta, joten vaatii täsmenteen, RDA:n mukainen muoto olisi \"Augsburg (Saksa)\""@fi ;
+    skos:prefLabel "Augsburg"@en,
+        "Augsburg"@fi,
+        "Augsburg"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4574> .
+
+ysa:Y504575 a skos:Concept,
+        ysa-meta:GeographicalConcept,
+        yse-meta:Concept ;
+    dc:created "2016-09-16"^^xsd:date ;
+    skos:note "Vaatii täsmenteen, jotta viittaa itävaltalaiseen Salzburgin osavaltion pääkaupunkiin eikä muihin (ks. esim. https://en.wikipedia.org/wiki/Salzburg_%28disambiguation%29), RDA:n mukaan siis \"Salzburg (Itävalta)\"."@fi ;
+    skos:prefLabel "Salzburg"@en,
+        "Salzburg"@fi,
+        "Salzburg"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4575> .
+
 ysa:Y313811 a skos:Concept,
         yse-meta:Concept ;
     dc:created "1998-04-21"^^xsd:date ;
@@ -42999,6 +43060,14 @@ ysa:Y504556 a skos:Concept,
         "litium"@fi,
         "litium"@sv ;
     foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4556> .
+
+ysa:Y504573 a skos:Concept,
+        yse-meta:Concept ;
+    dc:created "2016-09-16"^^xsd:date ;
+    skos:note "\"A dramatic cantata, normally celebratory or eulogistic, for two or more singers with orchestra. The name alludes to the fact that performance often took place by artificial light outdoors at night.\" (Grove Music Online)"@fi ;
+    skos:prefLabel "serenatas"@en,
+        "serenatat"@fi ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/4573> .
 
 ysa:Y313877 a skos:Concept,
         yse-meta:Concept ;
