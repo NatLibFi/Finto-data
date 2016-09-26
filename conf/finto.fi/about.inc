@@ -10,7 +10,7 @@
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
 <p>Finto är en finländsk service för publicering och användning av tesaurusar, ontologier och klassifikationer. Finto erbjuder ett användargränssnitt för direkt användning av vokabulärerna och<a href="http://api.finto.fi/">öppna grässnitt</a>för användning i andra applikationer.</p>
-<p>Finto utvecklas i ONKI-projektet, som är ett gemensamt projekt mellan Nationalbiblioteket, Undervisnings- och kulturministeriet och Finansministeriet:<a href="https://www.kiwi.fi/pages/viewpage.action?pageId=44237306">Fintos wikisida</a></p>
+<p>Finto utvecklas inom det för Nationalbiblioteket, undervisnings- och kulturministeriet och finansministeriet gemensamma <a href="https://www.kiwi.fi/pages/viewpage.action?pageId=44237306">Finto-projektet</a>.</p>
 
 <p>ONKI-projektet fortsätter det arbete som gjorts i FinnONTO-projektet vid Aalto-universitetet och Helsingfors universitet under åren 2003-2012:<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO</a></p>
 
