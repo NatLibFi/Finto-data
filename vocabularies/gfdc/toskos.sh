@@ -3,7 +3,7 @@
 ./gfdc-from-docs.py
 
 INFILES="gfdc-metadata.ttl gfdc.ttl"
-OUTFILE=ptvl-skos.ttl
+OUTFILE=gfdc-skos.ttl
 
 ./gfdc-to-skos.py classes.csv >gfdc.ttl
 
