@@ -15,15 +15,14 @@
 
 <!-- Browser Update -->
 <script type="text/javascript">
-var $buoop = {reminder: 24, l:'{{ lang }}'}; 
-$buoop.ol = window.onload;
-window.onload=function(){ 
- try {if ($buoop.ol) $buoop.ol();}catch (e) {}
- var e = document.createElement("script");    
- e.setAttribute("type", "text/javascript");
- e.setAttribute("src", "//browser-update.org/update.js");
- document.body.appendChild(e); 
-} 
+var $buoop = {vs:{i:10,f:-4,o:-4,s:7,c:-4},c:4}; 
+function $buo_f(){ 
+ var e = document.createElement("script"); 
+ e.src = "//browser-update.org/update.min.js"; 
+ document.body.appendChild(e);
+};
+try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+catch(e){window.attachEvent("onload", $buo_f)}
 </script>
 <!-- End Browser Update -->
 
