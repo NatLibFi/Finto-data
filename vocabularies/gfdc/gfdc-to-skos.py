@@ -18,8 +18,11 @@ g = Graph()
 g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('gfdc', GFDC)
 
+def class_uri(notation):
+    return GFDC['C' + notation]
+
 def add_class(notation, labelEn, labelFi, labelDe, labelFr):
-    uri = GFDC[notation]
+    uri = class_uri(notation)
     g.add((uri, RDF.type, SKOS.Concept))
     g.add((uri, SKOS.notation, Literal(notation)))
     if labelEn != '' and labelEn != 'MISSING_VALUE':
@@ -35,9 +38,8 @@ def add_class(notation, labelEn, labelFi, labelDe, labelFr):
     if parent.endswith('.'):
         parent = parent[:-1]
     if parent != '':
-        parenturi = GFDC[parent]
-        g.add((uri, SKOS.broader, parenturi))
-        g.add((parenturi, SKOS.narrower, uri))
+        g.add((uri, SKOS.broader, class_uri(parent)))
+        g.add((class_uri(parent), SKOS.narrower, uri))
     else:
         g.add((uri, SKOS.topConceptOf, GFDC['']))
         g.add((GFDC[''], SKOS.hasTopConcept, uri))
