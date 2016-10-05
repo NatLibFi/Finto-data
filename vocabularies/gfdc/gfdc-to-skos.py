@@ -5,12 +5,15 @@ import csv
 import sys
 import re
 
-if len(sys.argv) != 2:
-    print >>sys.stderr, "Usage: %s <csvfile>" % sys.argv[0]
+if len(sys.argv) != 4:
+    print >>sys.stderr, "Usage: %s <classes.csv> <glossary.csv> <metadata.csv>" % sys.argv[0]
     sys.exit(1)
 
-csvfile = sys.argv[1]
+classes_file = sys.argv[1]
+glossary_file = sys.argv[2]
+metadata_file = sys.argv[3]
 
+DC = Namespace("http://purl.org/dc/elements/1.1/")
 GFDC = Namespace("http://urn.fi/URN:NBN:fi:au:gfdc:")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
@@ -18,11 +21,13 @@ SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 LANGMAP = {
     'eng': 'en',
     'fin': 'fi',
+    'swe': 'sv',
     'ger': 'de',
     'fre': 'fr'
 }
 
 g = Graph()
+g.namespace_manager.bind('dc', DC)
 g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('gfdc', GFDC)
 
@@ -51,8 +56,17 @@ def add_class(notation, labels, includingNotes, scopeNotes):
         g.add((uri, SKOS.topConceptOf, GFDC['']))
         g.add((GFDC[''], SKOS.hasTopConcept, uri))
 
+def add_metadata(field, values):
+    prefix, ln = field.split(':')
+    namespaces = dict(g.namespace_manager.namespaces())
+    ns = namespaces[prefix]
+    fielduri = URIRef(ns + ln)
+    for lang3, lang2 in LANGMAP.items():
+        if values[lang3] != '':
+            for val in values[lang3].splitlines():
+                g.add((GFDC[''], fielduri, Literal(val, lang2)))
 
-with open(csvfile, 'rb') as cf:
+with open(classes_file, 'rb') as cf:
     reader = csv.DictReader(cf)
     for row in reader:
         labels = {}
@@ -63,5 +77,14 @@ with open(csvfile, 'rb') as cf:
             includingNotes[lang] = row['includingNote-%s' % lang].strip()
             scopeNotes[lang] = row['scopeNote-%s' % lang].strip()
         add_class(row['fdcNumber'].strip(), labels, includingNotes, scopeNotes)
+
+with open(metadata_file, 'rb') as mf:
+    reader = csv.DictReader(mf)
+    for row in reader:
+        values = {}
+        for lang in LANGMAP.keys():
+            values[lang] = row['Value-%s' % lang].strip()
+        add_metadata(row['Field'].strip(), values)
+
 
 g.serialize(destination=sys.stdout, format='turtle')
