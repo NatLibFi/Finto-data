@@ -4,7 +4,8 @@ import csv, urllib, sys, codecs, requests
 from urllib.parse import urlencode
 
 file_ids = {'classes.csv': '1rhHmuR6SpJc-hRbVyge2mlHobGHiWuv6yH8TxXnu-Ds',
-            'indexterms.csv': '1ldnNZjhGb_e3XztUiUh7kPt_PUg9lwbEUdDV4bHfTxY'}
+            'glossary.csv': '1ldnNZjhGb_e3XztUiUh7kPt_PUg9lwbEUdDV4bHfTxY',
+            'metadata.csv': '1zjZw8Oa6KCSbRR9nk4rwprt-2JGNUzJitCtKMrb_K7A'}
 
 def loadSheet(file_id, filename):
   params = urlencode({'exportFormat': 'csv'})

@@ -5,7 +5,7 @@
 INFILES="gfdc-metadata.ttl gfdc.ttl"
 OUTFILE=gfdc-skos.ttl
 
-./gfdc-to-skos.py classes.csv >gfdc.ttl
+./gfdc-to-skos.py classes.csv glossary.csv metadata.csv >gfdc.ttl
 
 SKOSIFYHOME="../../../Skosify/"
 LOGFILE=skosify.log
