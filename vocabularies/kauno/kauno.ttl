@@ -3,6 +3,7 @@
 # imports: https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf
 
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix kauno: <http://www.yso.fi/onto/kauno/> .
 @prefix kaunokki: <http://www.yso.fi/onto/kaunokki#> .
 @prefix kaunometa: <http://www.yso.fi/onto/kauno-meta/> .
@@ -59699,7 +59700,8 @@ kauno:p3599 a kaunometa:Concept ;
 owl:DeprecatedClass skos:member kauno:p1568,
         kauno:p862 .
 
-kaunometa:section_2 a skos:Collection ;
+kaunometa:section_2 a skos:Collection,
+    isothes:ConceptGroup, kaunometa:ConceptGroup;
     skos:member kauno:p104,
         kauno:p1051,
         kauno:p1052,
@@ -60197,7 +60199,8 @@ kaunometa:section_2 a skos:Collection ;
     skos:prefLabel "Paikka, miljöö"@fi,
         "Miljö, plats"@sv .
 
-kaunometa:section_3 a skos:Collection ;
+kaunometa:section_3 a skos:Collection,
+    isothes:ConceptGroup, kaunometa:ConceptGroup;
     skos:member kauno:p1000,
         kauno:p1016,
         kauno:p1017,
@@ -60885,7 +60888,8 @@ kaunometa:section_3 a skos:Collection ;
     skos:prefLabel "Genre, laji, tyyli"@fi,
         "Genre, art, stil"@sv .
 
-kaunometa:section_6 a skos:Collection ;
+kaunometa:section_6 a skos:Collection,
+    isothes:ConceptGroup, kaunometa:ConceptGroup;
     skos:member kauno:p1,
         kauno:p1002,
         kauno:p1005,
@@ -62033,7 +62037,8 @@ kaunometa:section_6 a skos:Collection ;
     skos:prefLabel "Henkilö, toimija"@fi,
         "Person, aktör"@sv .
 
-kaunometa:section_1 a skos:Collection ;
+kaunometa:section_1 a skos:Collection,
+    isothes:ConceptGroup, kaunometa:ConceptGroup;
     skos:member kauno:p0,
         kauno:p10,
         kauno:p100,
@@ -65615,4 +65620,8 @@ kaunometa:section_1 a skos:Collection ;
 
 kaunometa:Concept a owl:Class ;
     rdfs:subClassOf owl:Class .
+
+kaunometa:ConceptGroup a owl:Class ;
+    rdfs:subClassOf skos:Collection,
+        isothes:ConceptGroup .
 
