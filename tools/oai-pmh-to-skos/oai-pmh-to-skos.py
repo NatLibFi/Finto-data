@@ -160,8 +160,8 @@ for count, oaipmhrec in enumerate(recs):
 
     if '889' in rec: # Melinda
         uri = URIRef(concns + rec['889']['c'])
-    elif '024' in rec and vocabid == 'seko':
-        if 76316 <= int(rec['001'].value()) <= 77539:
+    elif '024' in rec: # Seko / Fennica (proposed concepts with allocated URI)
+        if vocabid == 'seko' and 76316 <= int(rec['001'].value()) <= 77539:
             continue
         uri = URIRef(rec['024']['a'])
     else: # Fennica / Alma / Viola
