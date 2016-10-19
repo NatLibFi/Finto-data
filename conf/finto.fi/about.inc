@@ -1,7 +1,7 @@
 {% if request.lang == 'fi' %}
 <h4>Tietoja</h4>
 <p>Finto on suomalainen palvelu sanastojen, ontologioiden ja luokitusten julkaisua ja käyttöä varten. Finto tarjoaa käyttöliittymän sanastojen selailulle, sekä <a href="http://api.finto.fi/">avoimet rajapinnat</a>sanastojen hyödyntämiseen muissa sovelluksissa.</p>
-<p>Fintoa kehitetään Kansalliskirjaston, opetus- ja kulttuuriministeriön ja valtiovarainministeriön yhteisessä Finto-projektissa. Lisätietoa löydät<a href="https://www.kiwi.fi/display/Finto/">Finto-palvelun asiakaswikistä</a>sekä<a href="https://www.kiwi.fi/display/Asiasanastotjaontologiat/">Asiasanastot ja ontologiat -asiakaswikistä.</a></p>
+<p>Fintoa kehitetään Kansalliskirjaston, opetus- ja kulttuuriministeriön ja valtiovarainministeriön yhteisessä projektissa. Lisätietoa löydät<a href="https://www.kiwi.fi/display/Finto/">Finto-palvelun asiakaswikistä</a>sekä<a href="https://www.kiwi.fi/display/Asiasanastotjaontologiat/">Asiasanastot ja ontologiat -asiakaswikistä.</a></p>
 
 <p>Kansalliskirjasto jatkaa Aalto-yliopistossa ja Helsingin yliopistossa vuosina 2003 - 2012 toimineen<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO-hankkeen työtä.</a></p>
 
@@ -19,7 +19,7 @@
 {% elseif request.lang == 'en' %}
 <h4>About</h4>
 <p>Finto is a Finnish service for the publication and utilization of vocabularies, ontologies and classifications. It provides a user interface for browsing the vocabularies and<a href="http://api.finto.fi/">open interfaces</a>for utilizing them in other applications.</p>
-<p>Finto is being developed by the ONKI Project as a joint venture between the National Library of Finland, the Ministry of Finance, and the Ministry of Education and Culture.<a href="https://www.kiwi.fi/display/Finto/In+English">See Project Wiki</a></p>
+<p>The service is being developed as a joint venture between the National Library of Finland, the Ministry of Finance, and the Ministry of Education and Culture. For more information, please visit <a href="https://www.kiwi.fi/display/Finto/In+English">the customer wiki of the Finto service</a> and <a href="https://www.kiwi.fi/display/Asiasanastotjaontologiat/In+English">the customer wiki of thesauri and ontologies</a>.</p>
 
 <p>The project is a continuation of the work begun in a joint research project FinnONTO between the Aalto University and the University of Helsinki from 2003 to 2012.<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">See FinnONTO Homepage</a></p>
 
