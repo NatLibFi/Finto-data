@@ -34,6 +34,9 @@ g.namespace_manager.bind('gfdc', GFDC)
 def class_uri(notation):
     return GFDC['C' + notation]
 
+def concept_uri(conceptid):
+    return GFDC['G%04d' % int(conceptid)]
+
 def add_class(notation, labels, includingNotes, scopeNotes):
     uri = class_uri(notation)
     g.add((uri, RDF.type, SKOS.Concept))
@@ -55,6 +58,20 @@ def add_class(notation, labels, includingNotes, scopeNotes):
     else:
         g.add((uri, SKOS.topConceptOf, GFDC['']))
         g.add((GFDC[''], SKOS.hasTopConcept, uri))
+    g.add((uri, SKOS.inScheme, GFDC['']))
+
+def add_concept(conceptid, clnum, labels):
+    uri = concept_uri(conceptid)
+    g.add((uri, RDF.type, SKOS.Concept))
+    for lang, label in labels.items():
+        if labels[lang] != '':
+            g.add((uri, SKOS.prefLabel, Literal(labels[lang], lang)))
+    
+    # link to class
+    cluri = class_uri(clnum)
+    g.add((uri, SKOS.broadMatch, cluri))
+    g.add((cluri, SKOS.narrowMatch, uri))
+    g.add((uri, SKOS.inScheme, GFDC['G']))
 
 def add_metadata(field, values):
     prefix, ln = field.split(':')
@@ -77,6 +94,14 @@ with open(classes_file, 'rb') as cf:
             includingNotes[lang] = row['includingNote-%s' % lang].strip()
             scopeNotes[lang] = row['scopeNote-%s' % lang].strip()
         add_class(row['fdcNumber'].strip(), labels, includingNotes, scopeNotes)
+
+with open(glossary_file, 'rb') as gf:
+    reader = csv.DictReader(gf)
+    for row in reader:
+        values = {}
+        for lang in LANGMAP.values():
+            values[lang] = row['indexTerm-%s' % lang].strip()
+        add_concept(row['conceptId'].strip(), row['fdcNumber'].strip(), values)
 
 with open(metadata_file, 'rb') as mf:
     reader = csv.DictReader(mf)
