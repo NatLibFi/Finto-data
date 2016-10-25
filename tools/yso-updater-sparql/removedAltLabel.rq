@@ -12,11 +12,10 @@ PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 #
-# Changed notes for already existing concepts
+# removed altLabels for already existing concepts
 #
 CONSTRUCT {
-  ?ysoConcept yso-update:newNote ?newNote .
-  ?ysoConcept yso-update:removedNote ?oldNote .
+  ?ysoConcept yso-update:removedAltLabel ?oldAltLabel .
   ?ysoConcept rdfs:subClassOf ?changeCategory .
 }
 WHERE {
@@ -47,22 +46,10 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-    OPTIONAL {
-      # newly inserted notes
-      GRAPH ?insertionsGraph {
-        ?concept skos:note|skos:scopeNote ?newNote .
-      }
+    # deleted altLabels
+    GRAPH ?deletionsGraph {
+      ?concept skos:altLabel ?oldAltLabel .
     }
-
-    OPTIONAL {
-      # deleted notes
-      GRAPH ?deletionsGraph {
-        ?concept skos:note|skos:scopeNote ?oldNote .
-      }
-    }
-    
-    FILTER (BOUND(?newNote) || BOUND(?oldNote))
-    FILTER (!(BOUND(?newNote) && BOUND(?oldNote) && ?newNote = ?oldNote))
     
     # ... for already existing concepts
     FILTER exists {
