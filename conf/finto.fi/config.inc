@@ -51,6 +51,12 @@ define("SERVICE_LOGO", "./resource/pics/logo.png");
 define("CUSTOM_CSS", "resource/css/finto.css");
 
 // fix HTTPS connections coming in via Pound
-if(isset($_SERVER['HTTP_X_SSL_CIPHER'])) {         
-  define('BASE_HREF', 'https://finto.fi/');
+// as well as api.finto.fi base URIs
+if(isset($_SERVER['HTTP_X_SSL_CIPHER'])) {
+  if($_SERVER['HTTP_HOST'] == 'api.finto.fi')
+    define('BASE_HREF', 'https://api.finto.fi/');
+  else
+    define('BASE_HREF', 'https://finto.fi/');
+} elseif ($_SERVER['HTTP_HOST'] == 'api.finto.fi') {
+  define('BASE_HREF', 'http://api.finto.fi/');
 }
