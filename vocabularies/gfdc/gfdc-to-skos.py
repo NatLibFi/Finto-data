@@ -70,7 +70,7 @@ def add_concept(conceptid, clnum, labels):
     # link to class
     cluri = class_uri(clnum)
     g.add((uri, SKOS.broadMatch, cluri))
-    g.add((cluri, SKOS.narrowMatch, uri))
+    g.add((cluri, SKOS.relatedMatch, uri))
     g.add((uri, SKOS.inScheme, GFDC['G']))
 
 def add_metadata(field, values):
