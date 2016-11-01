@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="tsr-metadata.ttl tsr.owl"
+INFILES="tsr-metadata.ttl tsr.ttl"
 OUTFILE=tsr-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
