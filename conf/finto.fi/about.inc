@@ -6,6 +6,7 @@
 <p>Kansalliskirjasto jatkaa Aalto-yliopistossa ja Helsingin yliopistossa vuosina 2003 - 2012 toimineen<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO-hankkeen työtä.</a></p>
 
 <p>Jos kohtaat ongelmia tai sinulla on kehitysideoita palvelun suhteen, ota yhteyttä Finton kehittäjiin. Olemme myös erittäin kiinnostuneita sinun menestystarinoistasi Finton käytössä - <a href="../fi/feedback">jaa kokemuksiasi meille ja muille!</a></p>      
+<p>Voit ehdottaa uusia käsitteitä ja muutoksia YSAan ja YSOon oheisen<a href="//ehdotus.finto.fi/">lomakkeen avulla.</a>Käsittelyssä olevia käsite-ehdotuksia voit selata<a href="../YSE/fi">myös Fintossa.</a></p>      
 
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
