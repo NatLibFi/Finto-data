@@ -6,7 +6,7 @@
 <p>Kansalliskirjasto jatkaa Aalto-yliopistossa ja Helsingin yliopistossa vuosina 2003 - 2012 toimineen<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO-hankkeen työtä.</a></p>
 
 <p>Jos kohtaat ongelmia tai sinulla on kehitysideoita palvelun suhteen, ota yhteyttä Finton kehittäjiin. Olemme myös erittäin kiinnostuneita sinun menestystarinoistasi Finton käytössä - <a href="../fi/feedback">jaa kokemuksiasi meille ja muille!</a></p>      
-<p>Voit ehdottaa uusia käsitteitä ja muutoksia YSAan ja YSOon oheisen<a href="//ehdotus.finto.fi/">lomakkeen avulla.</a>Käsittelyssä olevia käsite-ehdotuksia voit selata<a href="../YSE/fi">myös Fintossa.</a></p>      
+<p>Voit ehdottaa uusia käsitteitä ja muutoksia YSAan ja YSOon oheisen<a href="//ehdotus.finto.fi/">lomakkeen avulla.</a>Käsittelyssä olevia käsite-ehdotuksia voit selata<a href="../yse/fi">myös Fintossa.</a></p>      
 
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
@@ -17,7 +17,7 @@ information finns i <a href="https://www.kiwi.fi/pages/viewpage.action?pageId=44
 <p>Projektet fortsätter det arbete som gjorts i FinnONTO-projektet vid Aalto-universitetet och Helsingfors universitet under åren 2003-2012:<a href="http://www.seco.tkk.fi/projects/finnonto/index.fi.php/">FinnONTO</a></p>
 
 <p>Ta kontakt med utvecklarna av Finto om du stöter på problem eller om du har utvecklingsidéer gällande servicen. Vi är också mycket intresserade av dina framgångar med användningen av Finto -<a href="../sv/feedback"> dela dina erfarenheter med oss och med andra!</a></p>      
-<p>Du kan föreslå nya begrepp och ändringar till Allärs och ALLFO med<a href="//ehdotus.finto.fi/">denna blankett.</a>Begreppsförslag som är under behandling kan du också söka<a href="../YSE/sv">i Finto.</a></p>      
+<p>Du kan föreslå nya begrepp och ändringar till Allärs och ALLFO med<a href="//ehdotus.finto.fi/">denna blankett.</a>Begreppsförslag som är under behandling kan du också söka<a href="../yse/sv">i Finto.</a></p>      
 
 {% elseif request.lang == 'en' %}
 <h4>About</h4>
