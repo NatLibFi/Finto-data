@@ -49,22 +49,20 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-    OPTIONAL {
+    {
+      # deleted successors
+      GRAPH ?deletionsGraph {
+        ?concept rdau:P60686 ?oldSuccessor .
+      }
+    }
+    UNION
+    {
       # newly inserted successors
       GRAPH ?insertionsGraph {
         ?concept rdau:P60686 ?newSuccessor .
       }
     }
 
-    OPTIONAL {
-      # deleted successors
-      GRAPH ?deletionsGraph {
-        ?concept rdau:P60686 ?oldSuccessor .
-      }
-    }
-    
-    FILTER (BOUND(?newSuccessor) || BOUND(?oldSuccessor))
-    FILTER (!(BOUND(?newSuccessor) && BOUND(?oldSuccessor) && ?newSuccessor = ?oldSuccessor))
     BIND(IF(BOUND(?newSuccessor), ?newSuccessor, '') AS ?ysaNewSuccessor)
     BIND(IF(BOUND(?oldSuccessor), ?oldSuccessor, '') AS ?ysaOldSuccessor)
     

@@ -26,7 +26,7 @@ WHERE {
     GRAPH ?versionHistoryGraph {
       # parameters
       VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" undef )
+        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  undef undef )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -48,21 +48,19 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-    OPTIONAL {
+    {
       # deleted related
       GRAPH ?deletionsGraph {
         ?concept skos:related ?oldRelated .
       }
     }
-    
-    OPTIONAL {
+    UNION
+    {
       # newly inserted related
       GRAPH ?insertionsGraph {
         ?concept skos:related ?newRelated .
       }
     }
-
-    FILTER (!BOUND(?newRelated))
 
     BIND(IF(BOUND(?newRelated), ?newRelated, '') AS ?ysaNewRelated)
     BIND(IF(BOUND(?oldRelated), ?oldRelated, '') AS ?ysaOldRelated)

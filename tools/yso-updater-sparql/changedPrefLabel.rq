@@ -26,8 +26,8 @@ WHERE {
     GRAPH ?versionHistoryGraph {
       # parameters
       VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?changeCategory ) {
-        ( <http://www.yso.fi/onto/ysa/version> "2014-04-10" undef yso-update:muuttuneet)
-        ( <http://www.yso.fi/onto/allars/version> "2014-04-10" undef yso-update:muuttuneetSv)
+        ( <http://www.yso.fi/onto/ysa/version> undef undef yso-update:muuttuneet)
+        ( <http://www.yso.fi/onto/allars/version> undef undef yso-update:muuttuneetSv)
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -49,22 +49,20 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-    OPTIONAL {
-      # deleted notes
+    {
+      # deleted prefLabels
       GRAPH ?deletionsGraph {
         ?concept skos:prefLabel ?oldLabel .
       }
     }
-    
-    OPTIONAL {
-      # newly inserted notes
+    UNION
+    {
+      # newly inserted prefLabels
       GRAPH ?insertionsGraph {
         ?concept skos:prefLabel ?newLabel .
       }
     }
 
-    FILTER (!BOUND(?newLabel))
-    
     # ... for already existing concepts
     FILTER exists {
       GRAPH ?oldVersionGraph {
