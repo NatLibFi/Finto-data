@@ -24,8 +24,8 @@ WHERE {
     GRAPH ?versionHistoryGraph {
       # parameters
       VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changeCategory ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  undef undef yso-update:muuttuneet )
-        ( <http://www.yso.fi/onto/allars/version> skos:Concept  undef undef yso-update:muuttuneetSv )
+        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "2014-04-10" undef yso-update:muuttuneet )
+        ( <http://www.yso.fi/onto/allars/version> skos:Concept  "2014-04-10" undef yso-update:muuttuneetSv )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -48,25 +48,31 @@ WHERE {
     }
     
     OPTIONAL {
-      # newly inserted notes
-      GRAPH ?insertionsGraph {
-        ?concept skos:note|skos:scopeNote ?newNote .
-      }
-    }
-
-    OPTIONAL {
       # deleted notes
       GRAPH ?deletionsGraph {
         ?concept skos:note|skos:scopeNote ?oldNote .
       }
     }
     
-    FILTER (BOUND(?newNote) || BOUND(?oldNote))
-    FILTER (!(BOUND(?newNote) && BOUND(?oldNote) && ?newNote = ?oldNote))
+    OPTIONAL {
+      # newly inserted notes
+      GRAPH ?insertionsGraph {
+        ?concept skos:note|skos:scopeNote ?newNote .
+      }
+    }
+
+    FILTER (!BOUND(?newNote))
     
     # ... for already existing concepts
     FILTER exists {
       GRAPH ?oldVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+    # ... that still remain
+    FILTER exists {
+      GRAPH ?newVersionGraph {
         ?concept ?p []
       }
     }

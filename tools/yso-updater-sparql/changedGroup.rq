@@ -26,7 +26,7 @@ WHERE {
     GRAPH ?versionHistoryGraph {
       # parameters
       VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ) {
-        ( <http://www.yso.fi/onto/ysa/version> undef undef )
+        ( <http://www.yso.fi/onto/ysa/version> "2014-04-10" undef )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -49,27 +49,34 @@ WHERE {
     }
     
     OPTIONAL {
-      # newly inserted notes
-      GRAPH ?insertionsGraph {
-        ?newGroup skos:member ?concept .
-      }
-    }
-
-    OPTIONAL {
       # deleted notes
       GRAPH ?deletionsGraph {
         ?oldGroup skos:member ?concept .
       }
     }
     
-    FILTER (BOUND(?newGroup) || BOUND(?oldGroup))
-    FILTER (!(BOUND(?newGroup) && BOUND(?oldGroup) && ?newGroup = ?oldGroup))
+    OPTIONAL {
+      # newly inserted notes
+      GRAPH ?insertionsGraph {
+        ?newGroup skos:member ?concept .
+      }
+    }
+
+    FILTER (!BOUND(?newGroup))
+
     BIND(IF(BOUND(?newGroup), ?newGroup, '') AS ?ysaNewGroup)
     BIND(IF(BOUND(?oldGroup), ?oldGroup, '') AS ?ysaOldGroup)
     
     # ... for already existing concepts
     FILTER exists {
       GRAPH ?oldVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+    # ... that still remain
+    FILTER exists {
+      GRAPH ?newVersionGraph {
         ?concept ?p []
       }
     }

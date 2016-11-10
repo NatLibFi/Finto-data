@@ -75,6 +75,13 @@ WHERE {
       }
     }
     
+    # ... that still remain
+    FILTER exists {
+      GRAPH ?newVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
   }
 
   # equivalent YSO concept to target

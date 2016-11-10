@@ -24,8 +24,8 @@ WHERE {
     GRAPH ?versionHistoryGraph {
       # parameters
       VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?changeCategory ) {
-        ( <http://www.yso.fi/onto/ysa/version> undef undef yso-update:muuttuneet )
-        ( <http://www.yso.fi/onto/allars/version> undef undef yso-update:muuttuneetSv )
+        ( <http://www.yso.fi/onto/ysa/version> "2014-04-10" undef yso-update:muuttuneet )
+        ( <http://www.yso.fi/onto/allars/version> "2014-04-10" undef yso-update:muuttuneetSv )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -48,15 +48,6 @@ WHERE {
     }
     
     OPTIONAL {
-      # newly inserted notes
-      GRAPH ?insertionsGraph {
-        ?concept dc:source ?newSourceRaw .
-        # strip prefix, if any
-        BIND(REPLACE(?newSourceRaw, 'Lähde: ', '') AS ?newSource)
-      }
-    }
-
-    OPTIONAL {
       # deleted notes
       GRAPH ?deletionsGraph {
         ?concept dc:source ?oldSourceRaw .
@@ -65,12 +56,27 @@ WHERE {
       }
     }
     
-    FILTER (BOUND(?newSource) || BOUND(?oldSource))
-    FILTER (!(BOUND(?newSource) && BOUND(?oldSource) && ?newSource = ?oldSource))
+    OPTIONAL {
+      # newly inserted notes
+      GRAPH ?insertionsGraph {
+        ?concept dc:source ?newSourceRaw .
+        # strip prefix, if any
+        BIND(REPLACE(?newSourceRaw, 'Lähde: ', '') AS ?newSource)
+      }
+    }
+
+    FILTER (!BOUND(?newSource))
     
     # ... for already existing concepts
     FILTER exists {
       GRAPH ?oldVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+    # ... that still remain
+    FILTER exists {
+      GRAPH ?newVersionGraph {
         ?concept ?p []
       }
     }
