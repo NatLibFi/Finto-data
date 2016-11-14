@@ -5,11 +5,7 @@ import csv
 import sys
 import re
 
-if len(sys.argv) != 2:
-    print >>sys.stderr, "Usage: %s <csvfile>" % sys.argv[0]
-    sys.exit(1)
-
-csvfile = sys.argv[1]
+filenames = {'palveluluokat-fi.csv': 'palveluluokat-fi.ttl','palveluluokat-en.csv': 'palveluluokat-en.ttl', 'kohderyhmat-fi.csv': 'kohderyhmat-fi.ttl', 'kohderyhmat-en.csv': 'kohderyhmat-en.ttl','elamantilanteet-fi.csv': 'elamantilanteet-fi.ttl', 'elamantilanteet-en.csv': 'elamantilanteet-en.ttl', 'tuottajatyypit-fi.csv': 'tuottajatyypit-fi.ttl','toteutustavat-fi.csv': 'toteutustavat-fi.ttl'}
 
 PTVL = Namespace("http://urn.fi/URN:NBN:fi:au:ptvl:")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -18,6 +14,14 @@ g = Graph()
 g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('ptvl', PTVL)
 
+uris = []
+
+def get_uri(cell):
+    notation, label = cell.split(" ", 1)
+    if (notation.endswith('.')):
+        notation = notation[:-1]
+    return PTVL[notation]
+
 def add_concept(cell):
     notation, label = cell.split(" ", 1)
     if (notation.endswith('.')):
@@ -25,7 +29,7 @@ def add_concept(cell):
     uri = PTVL[notation]
     g.add((uri, RDF.type, SKOS.Concept))
     g.add((uri, SKOS.notation, Literal(notation)))
-    g.add((uri, SKOS.prefLabel, Literal(label, 'fi')))
+    g.add((uri, SKOS.prefLabel, Literal(label, language)))
     m = re.search('^\D+', notation)
     schemeid = m.group(0)
     if schemeid != 'P':
@@ -43,12 +47,27 @@ def add_concept(cell):
         g.add((uri, SKOS.topConceptOf, schemeuri))
         g.add((schemeuri, SKOS.hasTopConcept, uri))
 
+def add_description(cell, uri, language):
+    g.add((uri, SKOS.note, Literal(cell, lang=language)))
 
-with open(csvfile, 'rb') as cf:
-    reader = csv.reader(cf)
-    for row in reader:
-        for cell in row:
-            if cell.strip() != '':
-                add_concept(cell.strip())
+def hasNumbers(string):
+    return bool(re.search(r'\d', string))
 
-g.serialize(destination=sys.stdout, format='turtle')
+for csvfile in filenames:
+    language = csvfile[-6:-4]
+    with open(csvfile, 'rb') as cf:
+        reader = csv.reader(cf)
+        prev_row = []
+        for row in reader:
+            cell_num = 0
+            for cell in row:
+                if cell.strip() != '':
+                    if hasNumbers(cell[0:5]):
+                        add_concept(cell.strip())
+                    else:
+                        lang = csvfile.split("-")[1].replace('.csv', '') 
+                        add_description(cell.strip(), get_uri(prev_row[cell_num]), lang)
+                cell_num += 1 
+            prev_row = row
+
+g.serialize(destination='ptvl.ttl', format='turtle')

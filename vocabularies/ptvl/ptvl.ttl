@@ -1,17 +1,9 @@
-@prefix afo: <http://www.yso.fi/onto/afo/> .
-@prefix afo-meta: <http://www.yso.fi/onto/afo-meta/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix luke-meta: <http://www.yso.fi/onto/luke-meta/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ptvl: <http://urn.fi/URN:NBN:fi:au:ptvl:> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix yso: <http://www.yso.fi/onto/yso/> .
 
 ptvl:KE1.1 a skos:Concept ;
     skos:broader ptvl:KE1 ;
@@ -242,7 +234,6 @@ ptvl:KR3 a skos:Concept ;
     skos:notation "KR3" ;
     skos:prefLabel "Authorities"@en,
         "Viranomaiset"@fi ;
-    skos:scopeNote "Palvelutietovarantoon kuvattavalle palvelulle valitaan Viranomaiset-kohderyhmä, kun palvelun halutaan näkyvän viranomaisen palvelunäkymässä. Saman palvelun voi kytkeä myös Kansalaiset- ja/tai Yritykset-kohderyhmiin, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa."@fi ;
     skos:topConceptOf ptvl:KR .
 
 ptvl:P1.1.Rental a skos:Concept ;
@@ -2155,14 +2146,9 @@ ptvl:P27 a skos:Concept ;
         "Liikunta ja ulkoilu"@fi ;
     skos:topConceptOf ptvl: .
 
-ptvl:TTP a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty ylätasoisesti eri tavat, joilla julkisia
-palveluja voidaan tuottaa asiakkaille."""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:hasTopConcept ptvl:TTP1,
+ptvl:TTP skos:hasTopConcept ptvl:TTP1,
         ptvl:TTP2,
-        ptvl:TTP3 ;
-    skos:prefLabel "Julkisten palvelujen tuotantotapaluokat"@fi .
+        ptvl:TTP3 .
 
 ptvl:P23 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -2206,7 +2192,6 @@ ptvl:KR1 a skos:Concept ;
     skos:notation "KR1" ;
     skos:prefLabel "Citizens"@en,
         "Kansalaiset"@fi ;
-    skos:scopeNote "Palvelutietovarantoon kuvattavalle palvelulle valitaan Kansalaiset-kohderyhmä, kun palvelun halutaan näkyvän kansalaisen palvelunäkymässä. Saman palvelun voi kytkeä myös Yritykset- ja/tai Viranomaiset-kohderyhmään, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa."@fi ;
     skos:topConceptOf ptvl:KR .
 
 ptvl:P19 a skos:Concept ;
@@ -2254,7 +2239,6 @@ ptvl:KR2 a skos:Concept ;
     skos:notation "KR2" ;
     skos:prefLabel "Businesses"@en,
         "Yritykset"@fi ;
-    skos:scopeNote "Palvelutietovarantoon kuvattavalle palvelulle valitaan Yritykset-kohderyhmä, kun palvelun halutaan näkyvän yrityksen palvelunäkymässä. Saman palvelun voi kytkeä myös Kansalaiset- ja/tai Viranomaiset-kohderyhmään, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa."@fi ;
     skos:topConceptOf ptvl:KR .
 
 ptvl:P10 a skos:Concept ;
@@ -2274,13 +2258,8 @@ ptvl:P10 a skos:Concept ;
         "Työ ja työttömyys"@fi ;
     skos:topConceptOf ptvl: .
 
-ptvl:TT a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty organisaatiotyypit, jotka tuottavat palveluja
-kansalaisille, yrityksille ja yhteisöille."""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:hasTopConcept ptvl:TT1,
-        ptvl:TT2 ;
-    skos:prefLabel "Julkisten palvelujen tuottajatyyppiluokat"@fi .
+ptvl:TT skos:hasTopConcept ptvl:TT1,
+        ptvl:TT2 .
 
 ptvl:P11 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -2437,16 +2416,9 @@ ptvl:P6 a skos:Concept ;
         "Koulutus"@fi ;
     skos:topConceptOf ptvl: .
 
-ptvl:KR a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty kansalaisten ja yritysmaailman ryhmiä, jotka
-ovat julkisten palvelujen keskeisiä käyttäjiä, joille erityisesti tuotetaan
-palveluja. Lisäksi omana kohderyhmäalaluokkanaan ovat viranomaiset.
-"""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:hasTopConcept ptvl:KR1,
+ptvl:KR skos:hasTopConcept ptvl:KR1,
         ptvl:KR2,
-        ptvl:KR3 ;
-    skos:prefLabel "Julkisten palvelujen kohderyhmäluokat"@fi .
+        ptvl:KR3 .
 
 ptvl:P5 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -2478,13 +2450,7 @@ ptvl:P5 a skos:Concept ;
         "Terveydenhuolto, sairaanhoito ja ravitsemus"@fi ;
     skos:topConceptOf ptvl: .
 
-ptvl:KE a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty kansalaisten elämäntilanteita, joihin julkisia
-palveluja voidaan kohdentaa. Elämäntilanteella tarkoitetaan tässä yhteydessä
-akuuttia, usein henkilön elämänmuutokseen liittyvää tilannetta, jonka
-yhteyteen eri toimijat tuottavat palveluja."""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:hasTopConcept ptvl:KE1,
+ptvl:KE skos:hasTopConcept ptvl:KE1,
         ptvl:KE10,
         ptvl:KE11,
         ptvl:KE12,
@@ -2497,28 +2463,9 @@ yhteyteen eri toimijat tuottavat palveluja."""@fi ;
         ptvl:KE6,
         ptvl:KE7,
         ptvl:KE8,
-        ptvl:KE9 ;
-    skos:prefLabel "Kansalaisille suunnattujen julkisten palvelujen elämäntilanneluokat"@fi .
+        ptvl:KE9 .
 
-ptvl: a skos:ConceptScheme ;
-    dc:creator "JUPO working group"@en,
-        "JUPO-työryhmä"@fi,
-        "JUPO-arbetsgruppen"@sv ;
-    dc:description """Julkisten palvelujen yleinen päätasoluokitus koostuu 27 päätason ja noin 180 alatason luokasta. Luokkien otsikoinnissa käytetyt termit kuvaavat julkisten palvelujen käyttötapauksia ja –tilanteita.
-
-Luokitus on tarkoitettu erityisesti kansalaisille ja yrityksille palveluja tarjoaviin ja niitä kokoaviin verkkopalveluihin ja muihin palvelutietoja sisältäviin järjestelmiin.  Verkkopalvelujen esityskerroksessa luokkia voi yhdistellä, tyypillisesti navigointi- ja ryhmittelytarkoituksiin. Tällaisissa yhdistelmäluokissa luokituksen termit säilyvät ennallaan.
-
-Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai teeman verkkopalveluissa aina kun aihepiiri antaa tähän edellytyksiä.
-"""@fi ;
-    dc:publisher "National Library of Finland"@en,
-        "Kansalliskirjasto"@fi,
-        "Nationalbiblioteket i Finland"@sv ;
-    dc:title "Julkisten palvelujen luokitus"@en,
-        "Julkisten palvelujen luokitus"@fi,
-        "Julkisten palvelujen luokitus"@sv ;
-    dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:modified "2016-11-14T09:08:09+00:00"^^xsd:dateTime ;
-    skos:hasTopConcept ptvl:P1,
+ptvl: skos:hasTopConcept ptvl:P1,
         ptvl:P10,
         ptvl:P11,
         ptvl:P12,
