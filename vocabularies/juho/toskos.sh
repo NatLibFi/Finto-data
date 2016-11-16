@@ -1,9 +1,9 @@
 #!/bin/sh
 
-INFILE="juho.ttl"
-YSOFILE="../yso/ysoKehitys.rdf"
+cp ../yso/ysoKehitys.rdf yso-import.rdf
 
-INFILES="juho-metadata.ttl $INFILE $YSOFILE"
+INFILE="juho.ttl"
+INFILES="juho-metadata.ttl yso-import.rdf $INFILE"
 OUTFILE=juho-skos.ttl
 
 SKOSIFYHOME="../../../Skosify"
