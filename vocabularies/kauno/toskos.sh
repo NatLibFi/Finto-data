@@ -1,7 +1,7 @@
 #!/bin/sh
 
-YSOFILE="../yso/ysoKehitys.rdf"
-INFILES="kauno-metadata.ttl kauno.ttl $YSOFILE"
+cp ../yso/ysoKehitys.rdf yso-import.rdf
+INFILES="kauno-metadata.ttl kauno.ttl yso-import.rdf"
 OUTFILE=kauno-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
