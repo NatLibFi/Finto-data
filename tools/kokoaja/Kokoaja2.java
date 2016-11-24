@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -25,9 +24,6 @@ import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
-
-
-
 
 public class Kokoaja2 {
 
@@ -823,21 +819,21 @@ public class Kokoaja2 {
 			nykyKokonResurssit.add(subj);
 		}
 		
-		HashSet<Resource> aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatResurssit = new HashSet<Resource>();
+		HashSet<Resource> aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatSkosConceptit = new HashSet<Resource>();
 		resIter = aiempiKoko.listResourcesWithProperty(RDF.type, skosConcept);
 		while (resIter.hasNext()) {
 			Resource subj = resIter.nextResource();
 			if (!nykyKokonResurssit.contains(subj)) {
-				aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatResurssit.add(subj);
+				aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatSkosConceptit.add(subj);
 			}
 		}
 		
 		//System.out.println(aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatResurssit.size());
-		HashMap<Resource, String> aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap = this.haeTietynTyyppistenResurssienLabelitMappiin(aiempiKoko, skosPrefLabel, aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatResurssit, "fi");
+		HashMap<Resource, String> aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap = this.haeTietynTyyppistenResurssienLabelitMappiin(aiempiKoko, skosPrefLabel, aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatSkosConceptit, "fi");
 		//System.out.println(aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.size());
 		
 		Property skosExactMatch = this.koko.createProperty(skosNs + "exactMatch");
-		for (Resource subj:aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatResurssit) {
+		for (Resource subj:aiemmassaKokossaOlleetMuttaNykyKokostaPuuttuvatSkosConceptit) {
 			boolean loytyiVastine = false;
 			HashSet<Resource> subjinAiemmassaKokossaOlevatExactMatchit = new HashSet<Resource>();
 			StmtIterator iter = aiempiKoko.listStatements(subj, skosExactMatch, (RDFNode)null);
@@ -897,7 +893,97 @@ public class Kokoaja2 {
 		}
 		for (Statement s:poistettavat) this.koko.remove(s);
 		
+		HashSet<Statement> lisattavat = new HashSet<Statement>();
+		HashSet<Resource> nykyKokonAivanKaikkiResurssitSet = new HashSet<Resource>();
+		iter = this.koko.listStatements();
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			nykyKokonAivanKaikkiResurssitSet.add(stmt.getSubject());
+		}
+		//HashSet<Resource> aiemmanKokonReplacedBytJotkaPuuttuvatUudesta = new HashSet<Resource>();
+		iter = aiempiKoko.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
+		i = 0;
+		int j = 0;
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			if (!nykyKokonAivanKaikkiResurssitSet.contains(stmt.getSubject())) {
+				Resource obj = (Resource)stmt.getObject();
+				if (nykyKokonAivanKaikkiResurssitSet.contains(obj)) {
+					lisattavat.add(stmt);
+					j++;
+				} else {
+					i++;
+					System.out.println(i + ". vanhassa KOKOssa oli replaced-by-triple, jota ei voitu toisintaa uuteen KOKOon: " + stmt.toString());
+				}
+			}
+		}
+		for (Statement s:lisattavat) this.koko.add(s);
+		System.out.println("Lisattiin " + j + " replacedByta aiemmasta KOKOsta.");
 		//JenaHelpers.testaaMallinLabelienKielet(aiempiKoko, skosPrefLabel);
+	}
+	
+	public void tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut() {
+		System.out.println("Tarkistetaan ettei korvattuihin mene suhteita ja puretaan mahdolliset korvaavuusketjut.");
+		HashSet<Statement> lisattavat = new HashSet<Statement>();
+		HashSet<Statement> poistettavat = new HashSet<Statement>();
+				
+		HashMap<Resource, Resource> korvaavuusMap = new HashMap<Resource, Resource>();
+		StmtIterator iter = this.koko.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			HashSet<Resource> korvattavat = new HashSet<Resource>();
+			Resource korvattava = stmt.getSubject();
+			Resource korvaava = (Resource)(stmt.getObject());
+			korvattavat.add(korvattava);
+			poistettavat.add(stmt);
+			boolean jatka = true;
+			while (jatka) {
+				StmtIterator iter2 = this.koko.listStatements(korvaava, DCTerms.isReplacedBy, (RDFNode)null);
+				if (iter2.hasNext()) {
+					Statement stmt2 = iter2.nextStatement();
+					poistettavat.add(stmt2);
+					korvattavat.add(korvaava);
+					korvaava = (Resource)(stmt2.getObject());
+				} else jatka = false;
+			}
+			for (Resource r:korvattavat) {
+				korvaavuusMap.put(r, korvaava);
+				lisattavat.add(this.koko.createStatement(r, DCTerms.isReplacedBy, korvaava));
+			}
+			korvaavuusMap.put(stmt.getSubject(), (Resource)(stmt.getObject()));
+		}
+		
+		for (Statement s:poistettavat) this.koko.remove(s);
+		for (Statement s:lisattavat) this.koko.add(s);
+		
+		System.out.println("poistettiin:");
+		for (Statement s:poistettavat) this.koko.remove(s);
+		System.out.println("lisattiin:");
+		for (Statement s:lisattavat) this.koko.add(s);
+		
+		
+		lisattavat = new HashSet<Statement>();
+		poistettavat = new HashSet<Statement>();
+		iter = this.koko.listStatements();
+		while (iter.hasNext()) {
+			Statement stmt = iter.nextStatement();
+			Resource obj = null;
+			if (stmt.getObject().isURIResource()) obj = (Resource)stmt.getObject(); 
+			if (korvaavuusMap.containsKey(obj)) {
+				poistettavat.add(stmt);
+				lisattavat.add(this.koko.createStatement(stmt.getSubject(), stmt.getPredicate(), korvaavuusMap.get(obj)));
+			}
+		}
+		for (Statement s:poistettavat) this.koko.remove(s);
+		for (Statement s:lisattavat) this.koko.add(s);
+		
+		System.out.println("triplet korvattuihin muutettu");
+		System.out.println("poistettiin:");
+		for (Statement s:poistettavat) this.koko.remove(s);
+		System.out.println("lisattiin:");
+		for (Statement s:lisattavat) this.koko.add(s);
+				
+		System.out.println("Tarkistettu.");
 	}
 	
 	public void lueMustaLista(String mustanListanPolku) {
@@ -948,6 +1034,7 @@ public class Kokoaja2 {
 		this.muutaUritKokoUreiksi();
 		this.korjaaLopuksiObjectit();
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
+		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
@@ -968,6 +1055,7 @@ public class Kokoaja2 {
 		this.muutaUritKokoUreiksi();
 		this.korjaaLopuksiObjectit();
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
+		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
