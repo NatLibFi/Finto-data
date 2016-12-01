@@ -211,6 +211,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:aikaisempiomistaja">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <skos:prefLabel xml:lang="fi">aikaisempi omistaja:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">tidigare ägare</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka on aikaisemmin laillisesti omistanut kappaleen</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som tidigare varit den lagliga ägaren till ett exemplar (d.v.s. en viss kopia av ett material)</skos:scopeNote>
+  </skos:Concept>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvanjakelija">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">elokuvan jakelija</rdfs:label>
+    <rdfs:label xml:lang="sv">filmdistributör</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu elokuvan tms. manifestaation jakamiseen elokuvateattereille tai muille jakelukanaville</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i distributionen av en manifestation av filmer el. dyl. till biografer eller övriga distributionskanale</skos:scopeNote>
+  </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:etsaaja">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
@@ -229,6 +247,33 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen vastaamalla kirjan graafisesta suunnittelusta, taitosta, materiaalien valinnasta ja käytetyistä valmistusmenetelmistä</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att ansvara för grafisk formgivning, ombrytning, val av material och tillverkningsmetoder. Se även grafiker.</skos:scopeNote>
   </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kaivertaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">gravör</rdfs:label>
+    <rdfs:label xml:lang="fi">kaivertaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen kaivertamalla kirjaimia, kuvioita tms. esim. puu- tai metallipinnalle</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att gravera bokstäver, mönster el. dyl. t.ex. på en trä- eller metallyta</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kirjanpainaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">boktryckare</rdfs:label>
+    <rdfs:label xml:lang="fi">kirjanpainaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu painetun tekstin, nuottijulkaisun tms. manifestaation valmistamiseen painolaatalta tai -levyltä, esim. kirjan, sanomalehden, aikakauslehden, julisteen, partituurin tms. painaja</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av manifestationen för en tryckt text, musikalie el. dyl. från en tryckplåt. Avser t.ex. tryckare av bok, dagstidning, tidskrift, affisch, partitur o.s.v.</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kollotypianvalmistaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">framställare av ljustryck</rdfs:label>
+    <rdfs:label xml:lang="fi">kollotypian valmistaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen tekemällävedoksia suoraan kovettuneelta gelatiinifilmiltä tai muulta materiaalilta, jossa on mustetta imeviä ja hylkiviä pintoja</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att göra en råkopia av film eller annat material med ytor som suger upp och avstöter bläck</skos:scopeNote>
+  </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kommentaarinkirjoittaja">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m337"/>
@@ -236,6 +281,33 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:label xml:lang="fi">kommentaarin kirjoittaja</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20030"/>
     <skos:definition xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen tuottamalla teoksesta tulkinnan tai kriittisen selityksen</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuvalaatanvalmistaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">klichétillverkare</rdfs:label>
+    <rdfs:label xml:lang="fi">kuvalaatan valmistaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen valmistamalla kohokuvan, syväpainon tai laakapainon painopinnan</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att framställa tryckytan för en relief, ett djup- eller plantryck</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lahetyksestavastaava">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">lähetyksestä vastaava</rdfs:label>
+    <rdfs:label xml:lang="sv">sändningsansvarig</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation lähettämiseen yleisölle radiossa, televisiossa, suoratoistolähetyksenä tms.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i sändningen av en manifestation i radio, TV, direktsändning o.s.v.l</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:litografi">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">litograf</rdfs:label>
+    <rdfs:label xml:lang="fi">litografi</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen valmistamalla litografiassa käytetyn kivi- tai muun painolaatan; myös grafiikkataiteilijasta joka valmistaa kuvan suoraan painolaatalle</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att tillverka en stenplatta eller annan tryckplåt inom litografin; även om grafiker som framställer en bild direkt på en tryckplåt</skos:scopeNote>
   </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -4644,12 +4716,6 @@ Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäyt
     <skos:prefLabel xml:lang="fi">sidottu</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">manifestaation tunnisteen lisäys kovakantiselle kirjalle</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator för bok med hårda pärmar</skos:scopeNote>
-  </skos:Concept>
-  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1478">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <skos:prefLabel xml:lang="fi">Aiempi omistaja:</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Tidigare ägare</skos:prefLabel>
   </skos:Concept>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1479">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
@@ -10496,7 +10562,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="fi">Omistushistoria</rdfs:label>
     <rdfs:label xml:lang="sv">Ägarhistorik</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40026"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1478"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aikaisempiomistaja"/>
   </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m600">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -13867,5 +13933,39 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:painolaatanvalmistaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">painolaatan valmistaja</rdfs:label>
+    <rdfs:label xml:lang="sv">tryckplåtstillverkare</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen valmistamalla painettujen kuvien ja/tai tekstin valmistuksessa käytettäviä painolaattoja tai -levyjä</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att tillverka tryckplåtar som används vid framställning av tryckta bilder och/eller text</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:paperinvalmistaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">paperin valmistaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">Henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen valmistamalla paperia</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:pistekirjoituksenvalmistaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">pistekirjoituksen valmistaja</rdfs:label>
+    <rdfs:label xml:lang="sv">punktskriftspräglare</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen tuottamalla pistekirjoitusmerkkejä piirtimen, tulostimen tai muun laitteen avulla</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att producera punktskriftstecken med hjälp av ritstift, skrivare eller annan apparat</skos:scopeNote>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:valaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">gjutare</rdfs:label>
+    <rdfs:label xml:lang="fi">valaja</rdfs:label>
+    <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen muovaamalla sulatettua tai nestemäistä ainetta muotin avulla</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">person eller institution som deltar i framställningen av en manifestation genom att forma smält eller flytande massa med hjälp av en gjutform</skos:scopeNote>
   </isothes:ConceptGroup>
 </rdf:RDF>
