@@ -49,13 +49,13 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-#    {
-#      # deleted altLabels
-#      GRAPH ?deletionsGraph {
-#        ?concept skos:altLabel ?oldLabel .
-#      }
-#    }
-#    UNION
+    {
+      # deleted altLabels
+      GRAPH ?deletionsGraph {
+        ?concept skos:altLabel ?oldLabel .
+      }
+    }
+    UNION
     {
       # newly inserted altLabels
       GRAPH ?insertionsGraph {
