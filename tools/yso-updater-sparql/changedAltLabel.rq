@@ -11,20 +11,23 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
 #
-# removed altLabels for already existing concepts
+# Changed altLabels for already existing concepts
 #
 CONSTRUCT {
-  ?ysoConcept yso-update:removedAltLabel ?oldAltLabel .
+  ?ysoConcept yso-update:newAltLabel ?newLabel .
+  ?ysoConcept yso-update:removedAltLabel ?oldLabel .
   ?ysoConcept rdfs:subClassOf ?changeCategory .
 }
 WHERE {
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
       # parameters
-      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changeCategory ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  undef undef yso-update:muuttuneet )
-        ( <http://www.yso.fi/onto/allars/version> skos:Concept  undef undef yso-update:muuttuneetSv )
+      VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?changeCategory ) {
+        ( <http://www.yso.fi/onto/ysa/version> undef undef yso-update:muuttuneet)
+        ( <http://www.yso.fi/onto/allars/version> undef undef yso-update:muuttuneetSv)
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -46,11 +49,20 @@ WHERE {
         sh:usingNamedGraph/sd:name ?insertionsGraph .
     }
     
-    # deleted altLabels
-    GRAPH ?deletionsGraph {
-      ?concept skos:altLabel ?oldAltLabel .
+#    {
+#      # deleted altLabels
+#      GRAPH ?deletionsGraph {
+#        ?concept skos:altLabel ?oldLabel .
+#      }
+#    }
+#    UNION
+    {
+      # newly inserted altLabels
+      GRAPH ?insertionsGraph {
+        ?concept skos:altLabel ?newLabel .
+      }
     }
-    
+
     # ... for already existing concepts
     FILTER exists {
       GRAPH ?oldVersionGraph {
