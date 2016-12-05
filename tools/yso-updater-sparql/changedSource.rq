@@ -84,4 +84,9 @@ WHERE {
   # equivalent YSO concept to target
   ?ysoConcept om:definedConcept ?concept .
 
+  # check that the YSO concept is not deprecated
+  FILTER NOT EXISTS {
+    ?ysoConcept a yso-meta:DeprecatedConcept .
+  }
+
 }

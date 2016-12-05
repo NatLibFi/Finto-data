@@ -97,5 +97,10 @@ WHERE {
     ?ysoOldRelated om:definedConcept ?ysaOldRelated
   }
 
+  # check that the YSO concept is not deprecated
+  FILTER NOT EXISTS {
+    ?ysoConcept a yso-meta:DeprecatedConcept .
+  }
+
 
 }
