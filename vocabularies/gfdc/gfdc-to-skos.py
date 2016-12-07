@@ -73,12 +73,20 @@ def add_class(notation, labels, includingNotes, scopeNotes, BT, seeAlsos):
         g.add((GFDC[''], SKOS.hasTopConcept, uri))
     g.add((uri, SKOS.inScheme, GFDC['']))
 
-def add_concept(conceptid, clnum, labels):
+def add_concept(conceptid, clnum, labels, altLabels, hiddenLabels):
     uri = concept_uri(conceptid)
     g.add((uri, RDF.type, SKOS.Concept))
     for lang, label in labels.items():
         if labels[lang] != '':
             g.add((uri, SKOS.prefLabel, Literal(labels[lang], lang)))
+    for lang, altlabels in altLabels.items():
+        for altlabel in altlabels:
+            if altlabel != '':
+                g.add((uri, SKOS.altLabel, Literal(altlabel, lang)))
+    for lang, hiddenlabels in hiddenLabels.items():
+        for hiddenlabel in hiddenlabels:
+            if hiddenlabel != '':
+                g.add((uri, SKOS.hiddenLabel, Literal(hiddenlabel, lang)))
     
     # link to class
     cluri = class_uri(clnum)
@@ -114,9 +122,13 @@ with open(glossary_file, 'rb') as gf:
     reader = csv.DictReader(gf)
     for row in reader:
         values = {}
+        altLabels = {}
+        hiddenLabels = {}
         for lang in LANGMAP.values():
             values[lang] = row['indexTerm-%s' % lang].strip()
-        add_concept(row['conceptId'].strip(), row['fdcNumber'].strip(), values)
+            altLabels[lang] = row['altLabel-%s' % lang].strip().split('|')
+            hiddenLabels[lang] = row['hiddenLabel-%s' % lang].strip().split('|')
+        add_concept(row['conceptId'].strip(), row['fdcNumber'].strip(), values, altLabels, hiddenLabels)
 
 with open(metadata_file, 'rb') as mf:
     reader = csv.DictReader(mf)
