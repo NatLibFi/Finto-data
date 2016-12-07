@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import csv, urllib, sys, codecs, requests
-from urllib.parse import urlencode
+from urllib import urlencode
 
 file_id = '1QhBpqiwg9u0nGWmBfWGwlvZzuCumLuK14fl0UjW5NZs'
 gids = {'palveluluokat-fi.csv': 0,'palveluluokat-en.csv': 116734621, 'kohderyhmat-fi.csv': 1079968119, 'kohderyhmat-en.csv': 961559206,'elamantilanteet-fi.csv': 1305536407, 'elamantilanteet-en.csv': 817313259, 'tuottajatyypit-fi.csv': 15595321,'toteutustavat-fi.csv': 1819670788}
