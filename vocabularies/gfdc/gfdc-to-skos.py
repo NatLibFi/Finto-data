@@ -37,7 +37,7 @@ def class_uri(notation):
 def concept_uri(conceptid):
     return GFDC['G%04d' % int(conceptid)]
 
-def add_class(notation, labels, includingNotes, scopeNotes):
+def add_class(notation, labels, includingNotes, scopeNotes, seeAlsos):
     uri = class_uri(notation)
     g.add((uri, RDF.type, SKOS.Concept))
     g.add((uri, SKOS.notation, Literal(notation)))
@@ -48,6 +48,13 @@ def add_class(notation, labels, includingNotes, scopeNotes):
             g.add((uri, SKOS.scopeNote, Literal(includingNotes[lang3], lang2)))
         if scopeNotes[lang3] != '':
             g.add((uri, SKOS.scopeNote, Literal(scopeNotes[lang3], lang2)))
+    for seeAlso in seeAlsos:
+        if ' ' in seeAlso:
+            print >>sys.stderr, "Skipping bad seeAlso value '%s'" % seeAlso
+            continue
+        other = class_uri(seeAlso)
+        g.add((uri, SKOS.related, other))
+        g.add((other, SKOS.related, uri))
     
     parent = notation[:-1]
     if parent.endswith('.'):
@@ -89,11 +96,12 @@ with open(classes_file, 'rb') as cf:
         labels = {}
         includingNotes = {}
         scopeNotes = {}
+        seeAlsos = row['seeAlso'].split('|')
         for lang in LANGMAP.keys():
             labels[lang] = row['prefLabel-%s' % lang].strip()
             includingNotes[lang] = row['includingNote-%s' % lang].strip()
             scopeNotes[lang] = row['scopeNote-%s' % lang].strip()
-        add_class(row['fdcNumber'].strip(), labels, includingNotes, scopeNotes)
+        add_class(row['fdcNumber'].strip(), labels, includingNotes, scopeNotes, seeAlsos)
 
 with open(glossary_file, 'rb') as gf:
     reader = csv.DictReader(gf)
