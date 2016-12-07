@@ -37,6 +37,13 @@ def class_uri(notation):
 def concept_uri(conceptid):
     return GFDC['G%04d' % int(conceptid)]
 
+def cleanup_note(note):
+    if note.startswith('[') or note.startswith('('):
+        note = note[1:]
+    if note.endswith(']') or note.endswith(')'):
+        note = note[:-1]
+    return note
+
 def add_class(notation, labels, includingNotes, scopeNotes, BT, seeAlsos):
     uri = class_uri(notation)
     g.add((uri, RDF.type, SKOS.Concept))
@@ -45,9 +52,9 @@ def add_class(notation, labels, includingNotes, scopeNotes, BT, seeAlsos):
         if labels[lang3] != '' and labels[lang3] != 'MISSING_VALUE':
             g.add((uri, SKOS.prefLabel, Literal(labels[lang3], lang2)))
         if includingNotes[lang3] != '':
-            g.add((uri, SKOS.scopeNote, Literal(includingNotes[lang3], lang2)))
+            g.add((uri, SKOS.scopeNote, Literal(cleanup_note(includingNotes[lang3]), lang2)))
         if scopeNotes[lang3] != '':
-            g.add((uri, SKOS.scopeNote, Literal(scopeNotes[lang3], lang2)))
+            g.add((uri, SKOS.scopeNote, Literal(cleanup_note(scopeNotes[lang3]), lang2)))
     for seeAlso in seeAlsos:
         if ' ' in seeAlso:
             print >>sys.stderr, "Skipping bad seeAlso value '%s'" % seeAlso
