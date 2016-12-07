@@ -32,7 +32,7 @@ g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('gfdc', GFDC)
 
 def class_uri(notation):
-    return GFDC['C' + notation]
+    return GFDC['C' + notation.replace(' ','')]
 
 def concept_uri(conceptid):
     return GFDC['G%04d' % int(conceptid)]
