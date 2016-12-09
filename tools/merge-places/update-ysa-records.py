@@ -19,6 +19,8 @@ SKOS=Namespace('http://www.w3.org/2004/02/skos/core#')
 YSA=Namespace('http://www.yso.fi/onto/ysa/')
 LDFPNR=Namespace('http://ldf.fi/pnr/')
 MMLPNR=Namespace('http://paikkatiedot.fi/so/1000772/')
+PNR=Namespace('http://paikkatiedot.fi/def/1001010/pnr#')
+SUBREG=Namespace('http://paikkatiedot.fi/def/1001010/Seutukunta#')
 
 # load PNR ontology (type definitions etc.)
 pnront = Graph()
@@ -29,7 +31,13 @@ mappings = Graph()
 mappings.parse(sys.argv[2], format='turtle')
 
 def ldf_to_pnr_uri(ldf_uri):
-    return URIRef(ldf_uri.replace(LDFPNR + 'P_',MMLPNR))
+    if LDFPNR['P_'] in ldf_uri:
+        return URIRef(ldf_uri.replace(LDFPNR + 'P_',MMLPNR))
+    elif LDFPNR['subregion_'] in ldf_uri:
+        return URIRef(ldf_uri.replace(LDFPNR + 'subregion_',SUBREG))
+    else:
+        print >>sys.stderr, "Cannot convert LDF URI '%s' to MML equivalent" % ldf_uri
+        return None
 
 def ysa_uri(recid):
     return YSA['Y'+recid]
@@ -50,7 +58,7 @@ with open(sys.argv[1], 'rb') as fh:
             for pnrtype in pnrdata.objects(pnruri, RDF.type):
                 print >>sys.stderr, "type:", pnrtype
                 typelabel = pnront.preferredLabel(pnrtype, lang='fi')[0][1]
-                print >>sys.stderr, "type label:", typelabel
+                print >>sys.stderr, "type label:", typelabel.encode('UTF-8')
                 rec.add_field(
                     Field(
                         tag='670',
@@ -60,6 +68,12 @@ with open(sys.argv[1], 'rb') as fh:
                             'b', 'tyyppitieto: %s' % typelabel,
                             'u', pnruri
                         ]))
+                if pnrtype in (PNR.MunicipalityRuralArea, PNR.MunicipalityUrbanArea):
+                    print >>sys.stderr, "this is a municipality; need to add subregion as BT"
+                elif pnrtype in (PNR.Region, PNR.Province):
+                    print >>sys.stderr, "this is a region or province; need to add Finland as BT"
+                else:
+                    print >>sys.stderr, "need to add municipality as BT"
                 changed = True
         if changed:
             sys.stdout.write(rec.as_marc())
