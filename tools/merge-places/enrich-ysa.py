@@ -144,6 +144,9 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
             if pnrtype in (PNR.SeaLakeOrPond, PNR.Watercourse, PNR.PartOfSeaLakeOrPond):
                 scale = scaleuri_to_value(pnrdata.value(pnruri, PNR.mittakaavarelevanssi, None))
                 logging.info("scale: %d", scale)
+                if scale >= 2000000:
+                    logging.info("not adding municipality as BT")
+                    continue
             municipality = pnrdata.value(pnruri, PNR.inMunicipalityRuralArea, None)
             if municipality is None:
                 municipality = pnrdata.value(pnruri, PNR.inMunicipalityUrbanArea, None)
