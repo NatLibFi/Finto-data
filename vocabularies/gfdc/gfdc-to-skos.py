@@ -38,15 +38,17 @@ def concept_uri(conceptid):
     return GFDC['G%04d' % int(conceptid)]
 
 def cleanup_note(note):
+    note = note.strip()
     if note.startswith('[') or note.startswith('('):
         note = note[1:]
     if note.endswith(']') or note.endswith(')'):
         note = note[:-1]
-    return note
+    return note.strip()
 
 def add_class(notation, labels, includingNotes, scopeNotes, BT, seeAlsos):
     uri = class_uri(notation)
     g.add((uri, RDF.type, SKOS.Concept))
+    g.add((uri, RDF.type, GFDC.Class))
     g.add((uri, SKOS.notation, Literal(notation)))
     for lang3, lang2 in LANGMAP.items():
         if labels[lang3] != '' and labels[lang3] != 'MISSING_VALUE':
@@ -76,6 +78,7 @@ def add_class(notation, labels, includingNotes, scopeNotes, BT, seeAlsos):
 def add_concept(conceptid, clnum, labels, altLabels, hiddenLabels):
     uri = concept_uri(conceptid)
     g.add((uri, RDF.type, SKOS.Concept))
+    g.add((uri, RDF.type, GFDC.GlossaryConcept))
     for lang, label in labels.items():
         if labels[lang] != '':
             g.add((uri, SKOS.prefLabel, Literal(labels[lang], lang)))
