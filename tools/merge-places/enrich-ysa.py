@@ -23,6 +23,7 @@ MMLPNR=Namespace('http://paikkatiedot.fi/so/1000772/')
 PNR=Namespace('http://paikkatiedot.fi/def/1001010/pnr#')
 SUBREG=Namespace('http://paikkatiedot.fi/def/1001010/Seutukunta#')
 REGION=Namespace('http://paikkatiedot.fi/def/1001010/Suuralue#')
+SCALE=Namespace('http://paikkatiedot.fi/def/1001010/Mittakaavarelevanssi#')
 
 finland = YSA.Y94426
 
@@ -68,6 +69,8 @@ def pnr_to_ldf_uri(pnr_uri):
         logging.critical("Cannot convert PNR URI <%s> to LDF equivalent", pnr_uri)
         return None
         
+def scaleuri_to_value(scaleuri):
+    return int(scaleuri.replace(SCALE['c'], ''))
 
 logging.info("Adding PNR mappings and hierarchy...")
 count = 0
@@ -138,6 +141,9 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
         elif pnrtype == URIRef('http://paikkatiedot.fi/def/1001010/Seutukunta'):
             logging.info("Not adding BT for subregion.")
         else:
+            if pnrtype in (PNR.SeaLakeOrPond, PNR.Watercourse, PNR.PartOfSeaLakeOrPond):
+                scale = scaleuri_to_value(pnrdata.value(pnruri, PNR.mittakaavarelevanssi, None))
+                logging.info("scale: %d", scale)
             municipality = pnrdata.value(pnruri, PNR.inMunicipalityRuralArea, None)
             if municipality is None:
                 municipality = pnrdata.value(pnruri, PNR.inMunicipalityUrbanArea, None)
