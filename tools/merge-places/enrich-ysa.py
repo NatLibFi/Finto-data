@@ -108,7 +108,8 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
         except IndexError: # it's not in the ontology - try the original data (regions)
             typelabel = pnrdata.preferredLabel(pnrtype, lang='fi')[0][1]
         logging.info("type: <%s> '%s'", pnrtype, typelabel)
-        out.add((ysauri, RDF.type, pnrtype))
+        out.add((ysauri, RDF.type, pnrtype)) # give type to YSA concept...
+        out.add((pnruri, RDF.type, pnrtype)) # ...but also the the PNR concept for better accuracy
         out.add((pnrtype, RDFS.label, Literal(typelabel, 'fi')))
         out.add((ysauri, SKOS.closeMatch, pnruri))
         if pnrtype in (PNR.MunicipalityRuralArea, PNR.MunicipalityUrbanArea):
