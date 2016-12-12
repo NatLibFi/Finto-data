@@ -49,6 +49,9 @@ out = Graph()
 out.bind('skos', SKOS)
 out.bind('ysa', YSA)
 
+# add "Suomi" label to assist MARC record updating
+out.add((finland, SKOS.prefLabel, Literal("Suomi", "fi")))
+
 def ldf_to_pnr_uri(ldf_uri):
     if LDFPNR['P_'] in ldf_uri:
         return URIRef(ldf_uri.replace(LDFPNR['P_'],MMLPNR))
@@ -110,18 +113,16 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
         out.add((ysauri, SKOS.closeMatch, pnruri))
         if pnrtype in (PNR.MunicipalityRuralArea, PNR.MunicipalityUrbanArea):
             subregion = pnrdata.value(pnruri, PNR.seutukunta, None)
-            logging.info("adding subregion <%s> as BT", subregion)
+            logging.info("adding subregion <%s> as RT", subregion)
             ysa_subregion = mappings.value(None, SKOS.closeMatch, pnr_to_ldf_uri(subregion))
             if ysa_subregion is not None:
                 ysa_subreg_label = ysa.preferredLabel(ysa_subregion)[0][1]
                 logging.info("YSA subregion: <%s> '%s'", ysa_subregion, ysa_subreg_label)
-                out.add((ysauri, SKOS.broader, ysa_subregion))
-                out.add((ysa_subregion, SKOS.narrower, ysauri))
+                out.add((ysauri, SKOS.related, ysa_subregion))
+                out.add((ysa_subregion, SKOS.related, ysauri))
                 out.add((ysa_subregion, SKOS.prefLabel, Literal(ysa_subreg_label, 'fi')))
-                regionmember = ysa_subregion
             else:
                 logging.warning("No equivalent subregion for <%s> found in YSA, skipping", subregion)
-                regionmember = ysauri
 
             region = pnrdata.value(pnruri, PNR.inRegion, None)
             logging.info("adding region <%s> as BT", region)
@@ -131,8 +132,12 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
                 continue
             ysa_region_label = ysa.preferredLabel(ysa_region)[0][1]
             logging.info("YSA region: <%s> '%s'", ysa_region, ysa_region_label)
-            out.add((regionmember, SKOS.broader, ysa_region))
-            out.add((ysa_region, SKOS.narrower, regionmember))
+            out.add((ysauri, SKOS.broader, ysa_region))
+            out.add((ysa_region, SKOS.narrower, ysauri))
+            if ysa_subregion is not None:
+                logging.info("adding YSA subregion <%s> as NT to YSA region <%s>", ysa_subregion, ysa_region)
+                out.add((ysa_subregion, SKOS.broader, ysa_region))
+                out.add((ysa_region, SKOS.narrower, ysa_subregion))
             out.add((ysa_region, SKOS.prefLabel, Literal(ysa_region_label, 'fi')))
         elif pnrtype in (PNR.Region, PNR.Province, URIRef('http://paikkatiedot.fi/def/1001010/Suuralue')):
             logging.info("adding Suomi as BT")
