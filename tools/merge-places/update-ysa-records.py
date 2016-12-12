@@ -37,6 +37,12 @@ enriched.parse(sys.argv[2], format='turtle')
 def ysa_uri(recid):
     return YSA['Y'+recid]
 
+def remove_existing_551(rec, label):
+    for fld in rec.get_fields('551'):
+        if fld['a'] == unicode(label):
+            logging.info("Removing existing 551 '%s'", fld.format_field())
+            rec.remove_field(fld)
+
 with open(sys.argv[1], 'rb') as fh:
     reader = MARCReader(fh)
     for rec in reader:
@@ -48,6 +54,7 @@ with open(sys.argv[1], 'rb') as fh:
         # check for BT relationships and add
         for broader in enriched.objects(uri, SKOS.broader):
             btlabel = enriched.preferredLabel(broader, lang='fi')[0][1]
+            remove_existing_551(rec, btlabel)
             logging.info("BT: <%s> '%s'", broader, btlabel)
             rec.add_ordered_field(
                 Field(
@@ -62,6 +69,7 @@ with open(sys.argv[1], 'rb') as fh:
         # check for NT relationships and add
         for narrower in enriched.objects(uri, SKOS.narrower):
             ntlabel = enriched.preferredLabel(narrower, lang='fi')[0][1]
+            remove_existing_551(rec, ntlabel)
             logging.info("NT: <%s> '%s'", narrower, ntlabel)
             rec.add_ordered_field(
                 Field(
@@ -76,6 +84,7 @@ with open(sys.argv[1], 'rb') as fh:
         # check for RT relationships and add
         for related in enriched.objects(uri, SKOS.related):
             rtlabel = enriched.preferredLabel(related, lang='fi')[0][1]
+            remove_existing_551(rec, rtlabel)
             logging.info("RT: <%s> '%s'", related, rtlabel)
             rec.add_ordered_field(
                 Field(
