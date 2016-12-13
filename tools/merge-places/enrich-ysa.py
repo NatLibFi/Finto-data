@@ -160,6 +160,9 @@ for ysauri, target in mappings.subject_objects(SKOS.closeMatch):
             ysa_municipality = mappings.value(None, SKOS.closeMatch, pnr_to_ldf_uri(municipality))
             ysa_munic_label = ysa.preferredLabel(ysa_municipality)[0][1]
             logging.info("YSA municipality: <%s> '%s'", ysa_municipality, ysa_munic_label)
+            if ysa_municipality == ysauri:
+                logging.warning("YSA municipality is same as current concept. Aborting BT/NT addition to avoid cycle.")
+                continue
             out.add((ysauri, SKOS.broader, ysa_municipality))
             out.add((ysa_municipality, SKOS.narrower, ysauri))
             out.add((ysa_municipality, SKOS.prefLabel, Literal(ysa_munic_label, 'fi')))
