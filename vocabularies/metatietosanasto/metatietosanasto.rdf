@@ -211,6 +211,51 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:entisoija">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">entisöijä</rdfs:label>
+    <rdfs:label xml:lang="sv">restaurering</rdfs:label>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, joka vastaa toimenpiteistä, joiden tarkoitus on palauttaa kappale mahdollisimman lähelle sen alkuperäistä tilaa tai kuntoa</skos:definition>
+    <skos:definition xml:lang="sv">person eller institution som ansvarar för de åtgärder vars syfte är att återställa ett exemplar så nära som möjligt dess ursprungliga tillstånd eller skick</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:huomautustentekija">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">författare till annotation</rdfs:label>
+    <rdfs:label xml:lang="fi">huomautusten tekijä</rdfs:label>
+    <skos:definition xml:lang="fi">henkilö, joka on tehnyt omakätisesti huomautuksia kappaleeseen</skos:definition>
+    <skos:definition xml:lang="sv">person som egenhändigt gjort anmärkningar i ett exemplar</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:illuminoinnintekija">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">illuminator</rdfs:label>
+    <rdfs:label xml:lang="fi">illuminoinnin tekijä</rdfs:label>
+    <skos:definition xml:lang="fi">henkilö, joka on illuminoinut kappaleen käyttäen jalometalleja tai värejä, usein taidokkailla kuvioilla tai aiheilla</skos:definition>
+    <skos:definition xml:lang="sv">person som har illuminerat ett exemplar genom att använda ädelmetaller eller färger, ofta med konstfulla mönster eller motiv</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kappaleomistettu">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">exemplar tillägnat</rdfs:label>
+    <rdfs:label xml:lang="fi">kappale omistettu</rdfs:label>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, jolle kappale on omistettu</skos:definition>
+    <skos:definition xml:lang="sv">person eller institution som tillägnats ett exemplar</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lahjoittaja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">donator</rdfs:label>
+    <rdfs:label xml:lang="fi">lahjoittaja</rdfs:label>
+    <skos:definition xml:lang="sv">ett exemplars tidigare ägare som har donerat det åt en annan</skos:definition>
+    <skos:definition xml:lang="fi">kappaleen aikaisempi omistaja, joka on lahjoittanut sen toiselle</skos:definition>
+  </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -6561,15 +6606,16 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="fi">paperin valmistaja</rdfs:label>
     <skos:scopeNote xml:lang="fi">Henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen valmistamalla paperia</skos:scopeNote>
   </isothes:ConceptGroup>
-  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1743">
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1743">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <skos:prefLabel xml:lang="fi">aikaisempi omistaja:</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">tidigare ägare</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">henkilö, suku tai yhteisö, joka on aikaisemmin laillisesti omistanut kappaleen</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">person eller institution som tidigare varit den lagliga ägaren till ett exemplar (d.v.s. en viss kopia av ett material)</skos:scopeNote>
-  </skos:Concept>
+  </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1744">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m491"/>
@@ -13957,5 +14003,14 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:myyja">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">försäljare</rdfs:label>
+    <rdfs:label xml:lang="fi">myyjä</rdfs:label>
+    <skos:definition xml:lang="sv">ett exemplars tidigare ägare som har sålt det åt en annan</skos:definition>
+    <skos:definition xml:lang="fi">kappaleen aikaisempi omistaja, joka on myynyt sen toiselle</skos:definition>
   </isothes:ConceptGroup>
 </rdf:RDF>
