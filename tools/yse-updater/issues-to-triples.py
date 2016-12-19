@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # coding=utf-8
+import ghsecrets
 import csv, urllib, sys, pickle, rdflib, json
 import requests, time, calendar, datetime
 from urllib import urlencode
@@ -24,7 +25,7 @@ newtriples.bind('foaf', foaf)
 newtriples.bind('ysa', ysa)
 newtriples.bind('ysa-meta', ysameta)
 
-#g = Github("USERNAME", "PASSWORD")
+g = Github(ghsecrets.username, ghsecrets.password)
 repo = g.get_user('Finto-ehdotus').get_repo('YSE')
 newlab = repo.get_label('uusi')
 accept_lab = repo.get_label('vastaanotettu')
