@@ -25,7 +25,17 @@ newtriples.bind('foaf', foaf)
 newtriples.bind('ysa', ysa)
 newtriples.bind('ysa-meta', ysameta)
 
-g = Github(ghsecrets.username, ghsecrets.password)
+edit_issues = True
+secrets = None
+for arg in sys.argv:
+    if arg == 'debug':
+        edit_issues = False
+    elif 'issues-to-triples' not in arg:
+        print arg
+        with open(arg) as json_file:
+          secrets = json.load(json_file)
+        
+g = Github(secrets['username'], secrets['password'])
 repo = g.get_user('Finto-ehdotus').get_repo('YSE')
 newlab = repo.get_label('uusi')
 accept_lab = repo.get_label('vastaanotettu')
@@ -35,10 +45,6 @@ timeframe = datetime.datetime.now() - datetime.timedelta(days=2)
 new_issues = repo.get_issues(labels=[accept_lab], since=timeframe, state='open')
 
 yse_skos = Graph().parse('yse-skos.ttl', format='turtle')
-
-edit_issues = True
-if len(sys.argv) > 1 and 'debug' in sys.argv:
-    edit_issues = False
 
 def headingToProperty(block):
     propHeading = block.split('\n', 1)[0].strip()
