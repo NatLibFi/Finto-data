@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # coding=utf-8
-import ghsecrets
 import csv, urllib, sys, pickle, rdflib, json
 import requests, time, calendar, datetime
 from urllib import urlencode
@@ -24,6 +23,10 @@ newtriples.bind('isothes', isothes)
 newtriples.bind('foaf', foaf)
 newtriples.bind('ysa', ysa)
 newtriples.bind('ysa-meta', ysameta)
+
+if len(sys.argv) < 2:
+    print >>sys.stderr, "Usage: %s GitHub-credentials-file" % sys.argv[0]
+    sys.exit()
 
 edit_issues = True
 secrets = None
