@@ -5,7 +5,7 @@ import csv
 import sys
 import re
 
-filenames = {'palveluluokat-fi.csv': 'palveluluokat-fi.ttl','palveluluokat-en.csv': 'palveluluokat-en.ttl', 'kohderyhmat-fi.csv': 'kohderyhmat-fi.ttl', 'kohderyhmat-en.csv': 'kohderyhmat-en.ttl','elamantilanteet-fi.csv': 'elamantilanteet-fi.ttl', 'elamantilanteet-en.csv': 'elamantilanteet-en.ttl', 'tuottajatyypit-fi.csv': 'tuottajatyypit-fi.ttl','toteutustavat-fi.csv': 'toteutustavat-fi.ttl'}
+filenames = {'palveluluokat-fi.csv': 'palveluluokat-fi.ttl','palveluluokat-en.csv': 'palveluluokat-en.ttl','palveluluokat-sv.csv': 'palveluluokat-sv.ttl', 'kohderyhmat-fi.csv': 'kohderyhmat-fi.ttl', 'kohderyhmat-en.csv': 'kohderyhmat-en.ttl', 'kohderyhmat-sv.csv': 'kohderyhmat-sv.ttl','elamantilanteet-fi.csv': 'elamantilanteet-fi.ttl', 'elamantilanteet-en.csv': 'elamantilanteet-en.ttl','elamantilanteet-sv.csv': 'elamantilanteet-sv.ttl', 'tuottajatyypit-fi.csv': 'tuottajatyypit-fi.ttl', 'tuottajatyypit-en.csv': 'tuottajatyypit-en.ttl', 'tuottajatyypit-sv.csv': 'tuottajatyypit-sv.ttl','toteutustavat-fi.csv': 'toteutustavat-fi.ttl','toteutustavat-en.csv': 'toteutustavat-en.ttl','toteutustavat-sv.csv': 'toteutustavat-sv.ttl'}
 
 PTVL = Namespace("http://urn.fi/URN:NBN:fi:au:ptvl:")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
