@@ -43,7 +43,7 @@ repo = g.get_user('Finto-ehdotus').get_repo('YSE')
 newlab = repo.get_label('uusi')
 accept_lab = repo.get_label('vastaanotettu')
 
-timeframe = datetime.datetime.now() - datetime.timedelta(days=2)
+timeframe = datetime.datetime.now() - datetime.timedelta(days=8)
 
 new_issues = repo.get_issues(labels=[accept_lab], since=timeframe, state='open')
 
