@@ -1,10 +1,28 @@
-http://www.yso.fi/onto/musa/p418 'acid jazz': Unknown referred term 'hiphop'
-http://www.yso.fi/onto/musa/p71260 'musiikkiteknologia': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p72262 'singlet': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p72261 'EP:t': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p72260 'albumit': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p1139 'äänitykset': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p919 'äänikasetit': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p1120 'historialliset äänitteet': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p842 'äänilevyt': Unknown referred term 'äänitteet'
-http://www.yso.fi/onto/musa/p1009 'ääninauhat': Unknown referred term 'äänitteet'
+Traceback (most recent call last):
+  File "tools/oai-pmh-to-skos/oai-pmh-to-skos.py", line 80, in <module>
+    recs = oai.listRecords(metadataPrefix='marc21', set=setname)
+  File "/usr/lib/python2.6/site-packages/oaipmh/common.py", line 115, in method
+    return obj(self, **kw)
+  File "/usr/lib/python2.6/site-packages/oaipmh/common.py", line 110, in __call__
+    return bound_self.handleVerb(self._verb, kw)
+  File "/usr/lib/python2.6/site-packages/oaipmh/client.py", line 65, in handleVerb
+    kw, self.makeRequestErrorHandling(verb=verb, **kw))    
+  File "/usr/lib/python2.6/site-packages/oaipmh/client.py", line 269, in makeRequestErrorHandling
+    xml = self.makeRequest(**kw)
+  File "/usr/lib/python2.6/site-packages/oaipmh/client.py", line 316, in makeRequest
+    return retrieveFromUrlWaiting(request)
+  File "/usr/lib/python2.6/site-packages/oaipmh/client.py", line 343, in retrieveFromUrlWaiting
+    f = urllib2.urlopen(request)
+  File "/usr/lib64/python2.6/urllib2.py", line 126, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/usr/lib64/python2.6/urllib2.py", line 397, in open
+    response = meth(req, response)
+  File "/usr/lib64/python2.6/urllib2.py", line 510, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/usr/lib64/python2.6/urllib2.py", line 435, in error
+    return self._call_chain(*args)
+  File "/usr/lib64/python2.6/urllib2.py", line 369, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python2.6/urllib2.py", line 518, in http_error_default
+    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
+urllib2.HTTPError: HTTP Error 500: Internal Server Error
