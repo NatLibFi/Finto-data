@@ -211,6 +211,36 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Konservoitavana.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="sv">Konserveras.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Konservoitavana.</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Kuntokartoitettu.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="sv">Konditionsgranskad.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kuntokartoitettu.</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Nayttelylainassa.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="fi">Näyttelylainassa.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Utlånad till utställning.</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Sidoskorjattu.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="sv">Reparerat bokband.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Sidos korjattu.</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Sidottavana.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="sv">För inbindning.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Sidottavana.</skos:prefLabel>
+  </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -242,7 +272,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">aineiston käyttöehdot</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m516"/>
     <skos:scopeNote xml:lang="fi">Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia.</skos:scopeNote>
@@ -5276,7 +5306,8 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1566">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">uusi versio teoksesta</rdfs:label>
+    <rdfs:label xml:lang="fi">Uusintaproduktion perustana (teos):</rdfs:label>
+    <skos:scopeNote>Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos)</skos:scopeNote>
   </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1567">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -5612,7 +5643,13 @@ Katso myös taktiili liikenotaatio.</skos:definition>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1613">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m61"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">aineiston käsittelyyn liittyvä termit</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käsittelyyn liittyvä termit ja fraasit</rdfs:label>
+    <rdfs:label xml:lang="sv">Termer/fraser angående hantering av resursen</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Konservoitavana."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Kuntokartoitettu."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Nayttelylainassa."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Sidoskorjattu."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Sidottavana."/>
   </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1614">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -9567,7 +9604,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m61"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">aineiston saatavuuden rajoitukset</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston saatavuuden rajoitukset</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40047"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1415"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1523"/>
@@ -12448,7 +12485,7 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m61"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">aineiston käyttöehdot</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40048"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m118"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1278"/>
