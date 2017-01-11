@@ -1,0 +1,8 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+CONSTRUCT {
+  ?s ?prop ?val .
+} WHERE {
+  VALUES ?prop { skos:prefLabel skos:altLabel skos:note }
+  ?s ?prop ?val .
+  FILTER(LANG(?val) = 'en' || LANG(?val) = 'sv')
+}
