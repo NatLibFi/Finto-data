@@ -393,9 +393,7 @@ mts:m83 a isothes:ConceptGroup,
     skos:definition "Itsenäinen tiedollinen tai taiteellinen sisältö."@fi,
         "Ett självständigt intellektuellt eller konstnärligt innehåll."@sv ;
     skos:member mts:m1568,
-        mts:m1628,
         mts:m176,
-        mts:m437,
         mts:m605,
         mts:m91,
         mts:m991 ;
@@ -1882,6 +1880,16 @@ mts:m1148 a skos:Concept ;
     skos:prefLabel "bibliografiat"@fi,
         "bibliografier"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
+
+mts:m1149 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10086 ;
+    skos:prefLabel "Erottuva nimeke"@fi,
+        "Titelvariant"@sv ;
+    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella."@fi,
+        "Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna."@sv .
 
 mts:m1150 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4560,8 +4568,8 @@ mts:m1426 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30157 ;
-    skos:prefLabel "sarjan päänimeke"@fi,
-        "seriens huvudtitel"@sv .
+    skos:prefLabel "Sarjan päänimeke"@fi,
+        "Seriens huvudtitel"@sv .
 
 mts:m1427 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5576,7 +5584,8 @@ mts:m1568 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10088 ;
-    skos:member mts:m1149 ;
+    skos:member mts:m1628,
+        mts:m437 ;
     skos:prefLabel "Teoksen nimeke"@fi,
         "Verkets titel"@sv ;
     skos:scopeNote "Sana, merkki tai sana- ja merkkiyhdistelmä, jolla teos tunnetaan."@fi .
@@ -5987,6 +5996,7 @@ mts:m1628 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10223 ;
+    skos:member mts:m1800 ;
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
         "Verkets primära titel"@sv ;
     skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
@@ -7205,6 +7215,12 @@ mts:m180 a isothes:ConceptGroup,
     skos:prefLabel "Tallennetyyppi"@fi,
         "Bärartyp"@sv .
 
+mts:m1800 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:prefLabel "Sävellystyyppien nimet"@fi ;
+    skos:scopeNote "Muoto-, laji- tai yleistermi, jota eri säveltäjät ovat yleisesti käyttäneet\""@fi .
+
 mts:m181 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:inScheme mts: ;
@@ -7921,7 +7937,8 @@ mts:m263 a isothes:ConceptGroup,
 
 mts:m264 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "RDA-termi"@fi ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30134 ;
     skos:member mts:m1021,
         mts:m1107,
@@ -7957,7 +7974,7 @@ mts:m264 a isothes:ConceptGroup,
         mts:m677,
         mts:m928,
         mts:m95 ;
-    skos:prefLabel "Nimekkeet"@fi,
+    skos:prefLabel "Nimeke"@fi,
         "Titel"@sv .
 
 mts:m265 a skos:Concept ;
@@ -14174,16 +14191,6 @@ mts:m1142 a skos:Concept ;
     skos:prefLabel "DVD-äänilevy"@fi,
         "dvd-ljudskiva"@sv .
 
-mts:m1149 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10086 ;
-    skos:prefLabel "Erottuva nimeke"@fi,
-        "Titelvariant"@sv ;
-    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella."@fi,
-        "Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna."@sv .
-
 mts:m115 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -15938,11 +15945,16 @@ Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisu
 \r
 Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.\r
 \r
-Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit."""@fi ;
+Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit."""@fi,
+        "Metadataordlistan"@sv ;
     dc:title "Metatietosanasto"@fi,
-        "Metadataordlista"@sv ;
+        """Metadataordlistan innehåller väsentliga termer och uttryck för beskrivning av material. Ordlistan lämpar sig även vid val av rubriker som visas i användargränssnitt.\r
+Ordlistan har utformats enligt den entitet-samband-struktur som fastställts för RDA-text och FRBR-begreppsmodellen.\r
+Genom användning av termerna i tesaurusen etableras terminologin för beskrivande metadata, och samtidigt förenhetligas beskrivningsarbetet för att främja effektiviteten vid informationssökning. Syftet med tesaurusen är också att underlätta produktion av metadata genom att samla terminologi och uttryck som behövs vid beskrivningsarbete samt att förtydliga därtill anknytande begrepp.\r
+Metadataordlistan innehåller termer och uttryck enligt både ISBD- och RDA-beskrivningsreglerna. De termer och uttryck som används endast i ettdera regelverket är separat utmärkta.\r
+Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.ex. ämnesord."""@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-01-11T03:15:08+00:00"^^xsd:dateTime .
+    dct:modified "2017-01-12T04:05:34+00:00"^^xsd:dateTime .
 
