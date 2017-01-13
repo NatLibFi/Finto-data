@@ -118,10 +118,10 @@ mts:m138 a isothes:ConceptGroup,
         mts:m1685,
         mts:m169,
         mts:m180,
+        mts:m1803,
         mts:m182,
         mts:m191,
         mts:m245,
-        mts:m264,
         mts:m291,
         mts:m315,
         mts:m333,
@@ -7221,6 +7221,66 @@ mts:m1800 a isothes:ConceptGroup,
     skos:prefLabel "Sävellystyyppien nimet"@fi ;
     skos:scopeNote "Muoto-, laji- tai yleistermi, jota eri säveltäjät ovat yleisesti käyttäneet\""@fi .
 
+mts:m1801 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:prefLabel "kollega"@fi ;
+    skos:scopeNote "Samaan ammattikuntaan, henkilöstöön tai tiedekuntaan/tieteenalaan kuuluva henkilö."@fi .
+
+mts:m1802 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:prefLabel "opettaja"@fi ;
+    skos:scopeNote "Henkilö, joka opettaa toista henkilöä."@fi .
+
+mts:m1803 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30134 ;
+    skos:member mts:m1021,
+        mts:m1107,
+        mts:m1149,
+        mts:m1200,
+        mts:m1213,
+        mts:m1231,
+        mts:m1319,
+        mts:m1374,
+        mts:m1409,
+        mts:m1426,
+        mts:m1475,
+        mts:m1521,
+        mts:m1565,
+        mts:m1581,
+        mts:m172,
+        mts:m208,
+        mts:m209,
+        mts:m220,
+        mts:m233,
+        mts:m263,
+        mts:m345,
+        mts:m372,
+        mts:m393,
+        mts:m456,
+        mts:m469,
+        mts:m475,
+        mts:m519,
+        mts:m523,
+        mts:m540,
+        mts:m632,
+        mts:m646,
+        mts:m677,
+        mts:m928,
+        mts:m95 ;
+    skos:prefLabel "Nimeke"@fi,
+        "Titel"@sv .
+
+mts:m1804 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:m1801 ;
+    skos:prefLabel "Henkilöiden väliset suhteet"@fi .
+
 mts:m181 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:inScheme mts: ;
@@ -7934,48 +7994,6 @@ mts:m263 a isothes:ConceptGroup,
         "Nyckeltitel"@sv ;
     skos:scopeNote "Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy erottamattomasti ISSN-tunnukseen. (engl. key title)"@fi,
         "Unik titel för fortlöpande publikation, fastställd av ISSN-centralen och oskiljaktigt kopplad till ISSN-numret."@sv .
-
-mts:m264 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30134 ;
-    skos:member mts:m1021,
-        mts:m1107,
-        mts:m1149,
-        mts:m1200,
-        mts:m1213,
-        mts:m1231,
-        mts:m1319,
-        mts:m1374,
-        mts:m1409,
-        mts:m1426,
-        mts:m1475,
-        mts:m1521,
-        mts:m1565,
-        mts:m1581,
-        mts:m172,
-        mts:m208,
-        mts:m209,
-        mts:m220,
-        mts:m233,
-        mts:m263,
-        mts:m345,
-        mts:m372,
-        mts:m393,
-        mts:m456,
-        mts:m469,
-        mts:m475,
-        mts:m519,
-        mts:m523,
-        mts:m540,
-        mts:m632,
-        mts:m646,
-        mts:m677,
-        mts:m928,
-        mts:m95 ;
-    skos:prefLabel "Nimeke"@fi,
-        "Titel"@sv .
 
 mts:m265 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11956,6 +11974,7 @@ mts:m747 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
     skos:member mts:m1499,
+        mts:m1802,
         mts:m746,
         mts:m908 ;
     skos:prefLabel "Henkilöiden ja yhteisöjen väliset suhteet"@fi .
@@ -12995,6 +13014,7 @@ mts:m875 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
     skos:member mts:m1776,
+        mts:m1804,
         mts:m697,
         mts:m747 ;
     skos:prefLabel "Toimijoiden väliset suhteet"@fi .
@@ -15956,5 +15976,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-01-12T04:05:34+00:00"^^xsd:dateTime .
+    dct:modified "2017-01-13T03:44:25+00:00"^^xsd:dateTime .
 
