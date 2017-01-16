@@ -53,12 +53,25 @@ def label_to_subfields(label):
     else:
         return ['a', label]
 
+def field_sort_key(f):
+    if f.tag == '551':
+        if 'w' in f:
+            w = f['w']
+        else:
+            w = 'z' # after g and h
+        return [w] + f.get_subfields('a','z')
+    else:
+        return f.format_field()
+
 with open(sys.argv[1], 'rb') as fh:
     reader = MARCReader(fh)
     for rec in reader:
-        changed = False
+        changed_fields = set()
         recid = rec['001'].value()
         uri = ysa_uri(recid) # FIXME check 024
+        # Virojoki (joki), Itämeri, Joensuu, Joroinen -- Kolma
+        if uri not in (YSA['Y107962'], YSA['Y105038'], YSA['Y94166'], YSA['Y112746']):
+            continue
         logging.info("YSA URI: <%s>", uri)
         
         # check for BT relationships and add
@@ -72,7 +85,7 @@ with open(sys.argv[1], 'rb') as fh:
                     indicators = [' ', ' '],
                     subfields = ['w', 'g'] + label_to_subfields(btlabel)
                     ))
-            changed = True            
+            changed_fields.add('551')
         
         # check for NT relationships and add
         for narrower in enriched.objects(uri, SKOS.narrower):
@@ -85,7 +98,7 @@ with open(sys.argv[1], 'rb') as fh:
                     indicators = [' ', ' '],
                     subfields = ['w', 'h'] + label_to_subfields(ntlabel)
                     ))
-            changed = True            
+            changed_fields.add('551')
         
         # check for RT relationships and add
         for related in enriched.objects(uri, SKOS.related):
@@ -98,7 +111,7 @@ with open(sys.argv[1], 'rb') as fh:
                     indicators = [' ', ' '],
                     subfields = label_to_subfields(rtlabel)
                     ))
-            changed = True            
+            changed_fields.add('551')
         
         # check for editorial notes and add
         for ednote in enriched.objects(uri, SKOS.editorialNote):
@@ -110,7 +123,7 @@ with open(sys.argv[1], 'rb') as fh:
                     subfields = [
                         'a', u'PNR-linkitystä koskeva huomautus: %s' % ednote
                     ]))
-            changed = True
+            changed_fields.add('667')
         
         # check for mappings and add
         for pnruri in enriched.objects(uri, SKOS.closeMatch):
@@ -128,6 +141,15 @@ with open(sys.argv[1], 'rb') as fh:
                             'b', 'tyyppitieto: %s' % typelabel,
                             'u', str(pnruri)
                         ]))
-                changed = True
-        if changed:
+                changed_fields.add('670')
+        if len(changed_fields) > 0:
+            # sort fields by content
+            for tag in changed_fields:
+                logging.info('Sorting field %s', tag)
+                fields = rec.get_fields(tag)
+                rec.remove_fields(tag)
+                fields.sort(key=field_sort_key)
+                for f in fields:
+                    logging.info('field value: %s', f.format_field())
+                    rec.add_field(f)
             sys.stdout.write(rec.as_marc())
