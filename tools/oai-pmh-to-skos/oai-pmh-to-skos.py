@@ -228,7 +228,11 @@ for count, oaipmhrec in enumerate(recs):
         
     # source (670)
     for f in rec.get_fields('670'):
-        text = f.format_field()
+        if 'u' in f: # URI link
+            text = '; '.join(f.get_subfields('a','b'))
+            g.add((uri, SKOS.closeMatch, URIRef(f['u'])))
+        else:
+            text = f.format_field()
         while text.startswith(u'Lähde:'):
             text = text.replace(u'Lähde:', '').strip()
         while text.startswith(u'Källa:'):
