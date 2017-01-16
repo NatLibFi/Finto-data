@@ -39,9 +39,19 @@ def ysa_uri(recid):
 
 def remove_existing_551(rec, label):
     for fld in rec.get_fields('551'):
-        if fld['a'] == unicode(label):
+        oldlabel = fld['a']
+        if 'z' in fld:
+            oldlabel += " -- " + fld['z']
+        if oldlabel == unicode(label):
             logging.info("Removing existing 551 '%s'", fld.format_field())
             rec.remove_field(fld)
+
+def label_to_subfields(label):
+    if ' -- ' in label:
+        a,z = label.split(' -- ')
+        return ['a', a, 'z', z]
+    else:
+        return ['a', label]
 
 with open(sys.argv[1], 'rb') as fh:
     reader = MARCReader(fh)
@@ -60,10 +70,8 @@ with open(sys.argv[1], 'rb') as fh:
                 Field(
                     tag='551',
                     indicators = [' ', ' '],
-                    subfields = [
-                        'w', 'g',
-                        'a', btlabel
-                    ]))
+                    subfields = ['w', 'g'] + label_to_subfields(btlabel)
+                    ))
             changed = True            
         
         # check for NT relationships and add
@@ -75,10 +83,8 @@ with open(sys.argv[1], 'rb') as fh:
                 Field(
                     tag='551',
                     indicators = [' ', ' '],
-                    subfields = [
-                        'w', 'h',
-                        'a', ntlabel
-                    ]))
+                    subfields = ['w', 'h'] + label_to_subfields(ntlabel)
+                    ))
             changed = True            
         
         # check for RT relationships and add
@@ -90,9 +96,8 @@ with open(sys.argv[1], 'rb') as fh:
                 Field(
                     tag='551',
                     indicators = [' ', ' '],
-                    subfields = [
-                        'a', rtlabel
-                    ]))
+                    subfields = label_to_subfields(rtlabel)
+                    ))
             changed = True            
         
         # check for editorial notes and add
