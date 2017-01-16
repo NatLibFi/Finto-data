@@ -63,6 +63,13 @@ def field_sort_key(f):
     else:
         return f.format_field()
 
+def rec_670_uris(rec):
+    uris = set()
+    for f in rec.get_fields('670'):
+        if 'u' in f:
+            uris.add(URIRef(f['u']))
+    return uris
+
 with open(sys.argv[1], 'rb') as fh:
     reader = MARCReader(fh)
     for rec in reader:
@@ -127,6 +134,9 @@ with open(sys.argv[1], 'rb') as fh:
         
         # check for mappings and add
         for pnruri in enriched.objects(uri, SKOS.closeMatch):
+            if pnruri in rec_670_uris(rec):
+                logging.info("PNR mapping <%s> already exists, not adding another 670", pnruri)
+                continue
             logging.info("PNR mapping: <%s>", pnruri)
             for pnrtype in enriched.objects(pnruri, RDF.type):
                 logging.info("PNR type: <%s>", pnrtype)
