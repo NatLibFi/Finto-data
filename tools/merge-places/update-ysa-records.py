@@ -51,7 +51,7 @@ def label_to_subfields(label):
         a,z = label.split(' -- ')
         return ['a', a, 'z', z]
     else:
-        return ['a', label]
+        return ['a', unicode(label)]
 
 def field_sort_key(f):
     if f.tag == '551':
@@ -59,7 +59,10 @@ def field_sort_key(f):
             w = f['w']
         else:
             w = 'z' # after g and h
-        return [w] + f.get_subfields('a','z')
+        az = f.get_subfields('a','z')
+        if len(az) == 1:
+            az.append('')
+        return [w] + az
     else:
         return f.format_field()
 
@@ -160,6 +163,6 @@ with open(sys.argv[1], 'rb') as fh:
                 rec.remove_fields(tag)
                 fields.sort(key=field_sort_key)
                 for f in fields:
-                    logging.info('field value: %s', f.format_field())
-                    rec.add_field(f)
+                    logging.info('field key: %s value: %s', unicode(field_sort_key(f)), f.format_field())
+                    rec.add_ordered_field(f)
             sys.stdout.write(rec.as_marc())
