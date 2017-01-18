@@ -47,3 +47,4 @@ define("SERVICE_LOGO", "resource/finto-pics/finto.png");
 // customize the css
 define("CUSTOM_CSS", "resource/css/finto.css");
 
+define("GLOBAL_PLUGINS", "yse");
