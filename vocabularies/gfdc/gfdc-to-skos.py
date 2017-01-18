@@ -23,7 +23,8 @@ LANGMAP = {
     'fin': 'fi',
     'swe': 'sv',
     'ger': 'de',
-    'fre': 'fr'
+    'fre': 'fr',
+    'slv': 'sl'
 }
 
 g = Graph()
