@@ -60,3 +60,5 @@ if(isset($_SERVER['HTTP_X_SSL_CIPHER'])) {
 } elseif ($_SERVER['HTTP_HOST'] == 'api.finto.fi') {
   define('BASE_HREF', 'http://api.finto.fi/');
 }
+
+define("GLOBAL_PLUGINS", "yse");
