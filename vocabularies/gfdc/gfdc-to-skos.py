@@ -143,4 +143,21 @@ with open(metadata_file, 'rb') as mf:
         add_metadata(row['Field'].strip(), values)
 
 
+# enrich scope notes with hyperlinks
+def concept_link(match):
+    code = match.group(0)
+    uri = class_uri(code)
+    if (uri, RDF.type, SKOS.Concept) in g:
+        # concept exists - make it a hyperlink
+        return '<a href="%s">%s</a>' % (uri, code)
+    else:
+        # no such concept, use just a plain code
+        return code
+
+for conc,note in g.subject_objects(SKOS.scopeNote):
+    newnote = re.sub('\d+(\.\d+)*(/\.\d+)?', concept_link, note)
+    if newnote != unicode(note):
+        g.remove((conc, SKOS.scopeNote, note))
+        g.add((conc, SKOS.scopeNote, Literal(newnote, note.language)))
+
 g.serialize(destination=sys.stdout, format='turtle')
