@@ -239,6 +239,11 @@ for count, oaipmhrec in enumerate(recs):
             text = text.replace(u'Källa:', '').strip()
         g.add((uri, DC.source, Literal(text, lang)))
     
+    # definition (677)
+    for f in rec.get_fields('677'):
+        text = f.format_field()
+        g.add((uri, SKOS.definition, Literal(text, lang)))
+
     # note (680)
     for f in rec.get_fields('680'):
         text = f.format_field()
