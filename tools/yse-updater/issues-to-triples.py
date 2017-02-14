@@ -59,8 +59,8 @@ def headingToProperty(block):
     'Ehdotettu yläkäsite YSOssa (LT)': 'broadMatch',
     'Tarkoitusta täsmentävä selite': 'note',
     'Vaihtoehtoiset termit ja ilmaisut': 'altLabel',
-    'Alakäsitteet (RT)': 'narrowMatch',
-    'Assosiatiiviset (ST)': 'relatedMatch',
+    'Alakäsitteet (ST)': 'narrowMatch',
+    'Assosiatiiviset (RT)': 'relatedMatch',
     }
     if propHeading in headToProp:
         return headToProp[propHeading]
