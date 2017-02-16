@@ -5,7 +5,7 @@ OUTFILE=iptc-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
 LOGFILE=skosify.log
-OPTS=""
+OPTS="--no-enrich-mappings"
 
 ./csv-to-skos.py iptc_v2_1.csv >iptc-subjectcode-fi.ttl
 $SKOSIFYHOME/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
