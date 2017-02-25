@@ -1160,15 +1160,6 @@ musa:p1014 a skos:Concept ;
     skos:prefLabel "tempo"@fi,
         "tempo"@sv .
 
-musa:p1016 a skos:Concept ;
-    dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2016-03-29T15:24:39+03:00"^^xsd:dateTime ;
-    skos:altLabel "viritykset"@fi ;
-    skos:inScheme musa: ;
-    skos:note "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi ;
-    skos:prefLabel "viritysjärjestelmät"@fi ;
-    skos:related musa:p800 .
-
 musa:p1109 a skos:Concept ;
     dct:created "1997-09-30"^^xsd:date ;
     dct:modified "2016-03-29T15:24:53+03:00"^^xsd:dateTime ;
@@ -3925,6 +3916,19 @@ musa:p1015 a skos:Concept ;
     skos:prefLabel "musiikkianalyysi"@fi,
         "musikanalys"@sv .
 
+musa:p1016 a skos:Concept ;
+    dct:created "1996-02-15"^^xsd:date ;
+    dct:modified "2016-03-29T15:24:56+03:00"^^xsd:dateTime ;
+    skos:altLabel "viritykset"@fi,
+        "tempererad stämning"@sv ;
+    skos:hiddenLabel "stämning musikinstrument"@sv ;
+    skos:inScheme musa: ;
+    skos:note "Yleisnimitys eri tavoille, joilla yksittäiset soittimet ja soitinryhmät viritetään halutulla  tavalla. Länsimaisessa taide- ja populaarimusiikissa käytetään yleensä tasavireistä  viritysjärjestelmää."@fi ;
+    skos:prefLabel "viritysjärjestelmät"@fi,
+        "stämning -- musikinstrument"@sv ;
+    skos:related musa:p468,
+        musa:p800 .
+
 musa:p1017 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
     dct:modified "2016-03-29T15:24:43+03:00"^^xsd:dateTime ;
@@ -5725,14 +5729,11 @@ musa:p8 a skos:Concept ;
 
 musa:p800 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2016-03-29T15:24:56+03:00"^^xsd:dateTime ;
-    skos:altLabel "tempererad stämning"@sv ;
-    skos:hiddenLabel "stämning musikinstrument"@sv ;
+    dct:modified "2016-03-29T15:24:34+03:00"^^xsd:dateTime ;
     skos:inScheme musa: ;
     skos:note "Soittimen tuottamien äänten keskinäisten suhteiden säätäminen."@fi,
         "Termillä tarkoitetaan musiikillisten soittimien virittämistä, ei esimerkiksi elektronisten  laitteiden säätämistä."@fi ;
-    skos:prefLabel "viritys"@fi,
-        "stämning -- musikinstrument"@sv ;
+    skos:prefLabel "viritys"@fi ;
     skos:related musa:p1016,
         musa:p468 .
 
@@ -9947,25 +9948,6 @@ musa:p434 a skos:Concept ;
     skos:related musa:p423,
         musa:p438 .
 
-musa:p468 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2016-03-29T15:24:42+03:00"^^xsd:dateTime ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p467,
-        musa:p66109,
-        musa:p719 ;
-    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi,
-        "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
-    skos:prefLabel "soittaminen"@fi,
-        "musicerande"@sv ;
-    skos:related musa:p1124,
-        musa:p1126,
-        musa:p455,
-        musa:p606,
-        musa:p613,
-        musa:p757,
-        musa:p800 .
-
 musa:p471 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
     dct:modified "2016-03-29T15:24:42+03:00"^^xsd:dateTime ;
@@ -10171,6 +10153,26 @@ musa:p420 a skos:Concept ;
         musa:p72267,
         musa:p723,
         musa:p73973 .
+
+musa:p468 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2016-03-29T15:24:42+03:00"^^xsd:dateTime ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p467,
+        musa:p66109,
+        musa:p719 ;
+    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi,
+        "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
+    skos:prefLabel "soittaminen"@fi,
+        "musicerande"@sv ;
+    skos:related musa:p1016,
+        musa:p1124,
+        musa:p1126,
+        musa:p455,
+        musa:p606,
+        musa:p613,
+        musa:p757,
+        musa:p800 .
 
 musa:p576 a skos:Concept ;
     dct:created "1996-02-07"^^xsd:date ;
@@ -11005,7 +11007,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-02-24T03:28:38+00:00"^^xsd:dateTime ;
+    dct:modified "2017-02-25T04:11:49+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
