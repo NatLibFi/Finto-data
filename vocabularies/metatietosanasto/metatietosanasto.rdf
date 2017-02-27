@@ -312,6 +312,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Nuottiaineiston muoto</rdfs:label>
     <skos:definition xml:lang="fi">Aineistoon sisältyvän nuottikirjoituksen musiikillinen tai fyysinen taitto.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:johtostemma"/>
   </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Nuottikirjoituksentyyppi">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -319,6 +320,15 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Nuottikirjoituksen tyyppi</rdfs:label>
     <skos:definition xml:lang="fi">Joukko merkkejä tai symboleja, joita käytetään aineiston musiikillisen sisällön ilmaisemiseen.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Graafinennuottikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Kirjainnuottikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Mensuraalinuottikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Neumikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Numeronuottikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Solmisaatio"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:TONICSOL-FA"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Tabulatuuri"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Viivastonuottikirjoitus"/>
   </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Solmisaatio">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -330,6 +340,12 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="fi">Stepanov-tanssinotaatio</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:TONICSOL-FA">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:definition xml:lang="fi">Englantilaisten Sarah Ann Gloverin ja John Curwenin kehittämään solmisaatiometodiin perustuva nuottikirjoitus. Do on sävellajin toonika ja sävelkorkeudet merkitään solfatavuja (esim. do, re, mi, fa, sol, la, ti, do) tai niiden lyhenteitä (d, r, m, f, s, l, t, d) käyttäen. (Lähde: englanninkielinen Wikipedia.)</skos:definition>
+    <skos:prefLabel xml:lang="fi">TONIC SOL-FA</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Tabulatuuri">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -366,10 +382,26 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="fi">full screen</skos:prefLabel>
   </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:johtostemma">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:definition xml:lang="fi">Pienehköissä orkestereissa yleisesti käytetty tärkeimpien äänien tiivistelmä, jota myös instrumenttia soittava orkesterin johtaja voi käyttää parituurin sijasta. Katso myös pianojohtostemma ja viulujohtostemma.</skos:definition>
+    <skos:prefLabel xml:lang="de">Dirigierpartitur</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">conductor score</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">johtostemma</skos:prefLabel>
+  </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kohokuva">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="fi">kohokuva</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuoropartituuri">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:definition xml:lang="fi">Kuoron harjoituskäyttöön tarkoitettu, kuorolle ja soittimille, mahdollisesti myös solistisille lauluäänille sävelletyn teoksen partituuri, jossa kuoroäänet on merkitty omille viivastoilleen, ja josta soitinsäestys on joko jätetty kokonaan pois tai sisällytetty osittain ja pelkistetysti kosketinsoittimelle tai muille sointusoittimille sovitettuna. Jos soitinsäestys on merkitty täydellisenä, käytetään termiä partituuri. Jos teos on alun perin sävelletty säestyksettömälle kuorolle, käytetään termiä partituuri.</skos:definition>
+    <skos:prefLabel xml:lang="de">Chorpartitur</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">chorus score</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kuoropartituuri</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -1519,9 +1551,9 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1143">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:example xml:lang="fi">Osa lehden numeroista ruotsiksi.</skos:example>
     <skos:prefLabel xml:lang="sv">Del av seriens nummer på</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Osa lehden numeroista</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Esimerkiksi: Osa lehden numeroista ruotsiksi.</skos:scopeNote>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1144">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -3370,9 +3402,9 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1295">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:example xml:lang="fi">Esityskieli: englanti.</skos:example>
     <skos:prefLabel xml:lang="fi">Esityskieli:</skos:prefLabel>
-    <skos:prefLabel>Framförande på  {@sv</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Esimerkiksi: Esityskieli: englanti.</skos:scopeNote>
+    <skos:prefLabel xml:lang="sv">Framförande på</skos:prefLabel>
   </skos:Concept>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1296">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -5201,7 +5233,7 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1533">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <skos:example xml:lang="fi">Esimerkiksi: Osa sarja osista ruotsiksi.</skos:example>
+    <skos:example xml:lang="fi">Osa sarja osista ruotsiksi.</skos:example>
     <skos:prefLabel xml:lang="sv">Några av seriens delar på</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Osa sarjan osista</skos:prefLabel>
   </skos:Concept>
@@ -9416,6 +9448,12 @@ Luettelon ylläpidosta vastaa Luumu-ryhmä.</skos:scopeNote>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="fi">Benesh-liikenotaatio</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m275_2">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:prefLabel xml:lang="sv">musiknoter</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">nuotteja</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m276">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
