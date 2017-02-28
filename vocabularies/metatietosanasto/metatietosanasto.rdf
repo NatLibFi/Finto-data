@@ -216,6 +216,19 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Kielimerkinnatkannesta">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:prefLabel xml:lang="fi">Kielimerkinnät kannesta.</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Huomautus kielimerkintöjen tiedonlähteestä.</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Osittainselkokielinen">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:prefLabel xml:lang="fi">Osittain selkokielinen</skos:prefLabel>
+  </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Selkokielinen">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -223,6 +236,20 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <skos:definition xml:lang="fi">Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)</skos:definition>
     <skos:prefLabel xml:lang="fi">Selkokielinen</skos:prefLabel>
   </skos:Concept>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:dramaturgi(ekspressio)">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m153"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">dramaturg (uttryck)</rdfs:label>
+    <rdfs:label xml:lang="fi">dramaturgi (ekspressio)</rdfs:label>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, joka osallistuu ekspression tekemiseen sovittamalla draamallisen teoksen esitykseksi.</skos:definition>
+  </isothes:ConceptGroup>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kielentarkastaja">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m153"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">kielentarkastaja</rdfs:label>
+  </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuorokirja">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -230,6 +257,13 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     <skos:prefLabel xml:lang="en">choir book</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kuorokirja</skos:prefLabel>
   </skos:Concept>
+  <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuvatoimittaja">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m153"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">kuvatoimittaja</rdfs:label>
+    <skos:definition xml:lang="fi">lehtien toimituksissa tai kustantamoissa työskentelevä kuvituksesta ja kuvien hankinnasta vastaava toimittaja; kuvatoimistossa työskentelevä kuvien hankkija. (Lähde: Kielitoimiston sanakirja)</skos:definition>
+  </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laulunopas">
     <dc:source xml:lang="fi">Kansallinen termi</dc:source>
     <skos:definition xml:lang="fi">Laulunopetusaineistoa sisältävä nuottiaineisto.</skos:definition>
@@ -1450,6 +1484,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="sv">Titelrubrik på pärmen:</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Ylänimeke kannessa:</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Kansi on kirjan, vihkon, pakkauksen tms. päällysosa.</skos:scopeNote>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1152">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -3126,6 +3161,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Anmärkning om språk</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus kielestä</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Osittainselkokielinen"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Selkokielinen"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1016"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1143"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1295"/>
@@ -6991,7 +7028,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Julkaistu vain verkkoaineistona vuodesta...</rdfs:label>
     <rdfs:label xml:lang="sv">Utkommit enbart som onlineresurs från år ...</rdfs:label>
-    <skos:scopeNote xml:lang="fi">Esimerkiksi lehden ilmestyminen siirtyy verkkoon. Esimerkki: Julkaistu vain verkkojulkaisuna vuodesta 2004-</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Esimerkiksi lehden ilmestyminen siirtyy verkkoon. Esimerkki: Julkaistu vain verkkoaineistona vuodesta 2004-</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Till exempel utgivning av tidning som flyttats till webben. Exempel: Utgiven enbart som onlineresurs från och med 2004-</skos:scopeNote>
   </isothes:ConceptGroup>
   <isothes:ConceptGroup rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1785">
@@ -7989,6 +8026,7 @@ Luettelon ylläpidosta vastaa Luumu-ryhmä.</skos:scopeNote>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <skos:prefLabel xml:lang="fi">Alanimeke kannessa:</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Undertitel på pärmen:</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Kansi on kirjan, vihkon, pakkauksen tms. päällysosa.</skos:scopeNote>
   </skos:Concept>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m190">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -9447,7 +9485,7 @@ Luettelon ylläpidosta vastaa Luumu-ryhmä.</skos:scopeNote>
     <rdfs:label xml:lang="fi">Avainnimeke</rdfs:label>
     <rdfs:label xml:lang="sv">Nyckeltitel</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30209"/>
-    <skos:scopeNote xml:lang="fi">Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy erottamattomasti ISSN-tunnukseen. (engl. key title)</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">ISSN-rekisteröintiyksikön aineistolle antama yksilöllinen nimi. (engl. key title)</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Unik titel för fortlöpande publikation, fastställd av ISSN-centralen och oskiljaktigt kopplad till ISSN-numret.</skos:scopeNote>
   </isothes:ConceptGroup>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m265">
