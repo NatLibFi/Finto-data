@@ -83,7 +83,8 @@ mts:m1151 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Ylänimeke kannessa:"@fi,
-        "Titelrubrik på pärmen:"@sv .
+        "Titelrubrik på pärmen:"@sv ;
+    skos:scopeNote "Kansi on kirjan, vihkon, pakkauksen tms. päällysosa."@fi .
 
 mts:m1158 a isothes:ConceptGroup,
         skos:Collection ;
@@ -266,15 +267,6 @@ mts:m1992 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "pistenuottikirjoitus"@fi .
-
-mts:m1999 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Kuoron harjoituskäyttöön tarkoitettu, kuorolle ja soittimille, mahdollisesti myös solistisille lauluäänille sävelletyn teoksen partituuri, jossa kuoroäänet on merkitty omille viivastoilleen, ja josta soitinsäestys on joko jätetty kokonaan pois tai sisällytetty osittain ja pelkistetysti kosketinsoittimelle tai muille sointusoittimille sovitettuna. Jos soitinsäestys on merkitty täydellisenä, käytetään termiä partituuri. Jos teos on alun perin sävelletty säestyksettömälle kuorolle, käytetään termiä partituuri."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Chorpartitur"@de,
-        "chorus score"@en,
-        "kuoropartituuri"@fi .
 
 mts:m2000 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -589,8 +581,6 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 <http://rdaregistry.info/termList/RDACarrierType/1035> skos:exactMatch mts:m936 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1036> skos:exactMatch mts:m1207 .
-
-<http://rdaregistry.info/termList/RDACarrierType/1037> skos:exactMatch mts:m798 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1039> skos:exactMatch mts:m1007 .
 
@@ -3292,8 +3282,8 @@ mts:m1246 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "DAISY"@fi,
-        "DAISY"@sv .
+    skos:prefLabel "Daisy"@fi,
+        "Daisy"@sv .
 
 mts:m1247 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3556,6 +3546,8 @@ mts:m1282 a isothes:ConceptGroup,
         mts:m1727,
         mts:m1734,
         mts:m1976,
+        mts:m2028,
+        mts:m2033,
         mts:m387,
         mts:m548,
         mts:m611,
@@ -7166,7 +7158,7 @@ mts:m1784 a isothes:ConceptGroup,
         skos:Collection ;
     skos:prefLabel "Julkaistu vain verkkoaineistona vuodesta..."@fi,
         "Utkommit enbart som onlineresurs från år ..."@sv ;
-    skos:scopeNote "Esimerkiksi lehden ilmestyminen siirtyy verkkoon. Esimerkki: Julkaistu vain verkkojulkaisuna vuodesta 2004-"@fi,
+    skos:scopeNote "Esimerkiksi lehden ilmestyminen siirtyy verkkoon. Esimerkki: Julkaistu vain verkkoaineistona vuodesta 2004-"@fi,
         "Till exempel utgivning av tidning som flyttats till webben. Exempel: Utgiven enbart som onlineresurs från och med 2004-"@sv .
 
 mts:m1785 a isothes:ConceptGroup,
@@ -8269,7 +8261,8 @@ mts:m19 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Alanimeke kannessa:"@fi,
-        "Undertitel på pärmen:"@sv .
+        "Undertitel på pärmen:"@sv ;
+    skos:scopeNote "Kansi on kirjan, vihkon, pakkauksen tms. päällysosa."@fi .
 
 mts:m190 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9018,15 +9011,6 @@ mts:m1982 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Viivastonuottikirjoitus"@fi .
 
-mts:m1985 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Pienehköissä orkestereissa yleisesti käytetty tärkeimpien äänien tiivistelmä, jota myös instrumenttia soittava orkesterin johtaja voi käyttää parituurin sijasta. Katso myös pianojohtostemma ja viulujohtostemma."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Dirigierpartitur"@de,
-        "conductor score"@en,
-        "johtostemma"@fi .
-
 mts:m1986 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9156,7 +9140,20 @@ mts:m2002 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Aineistoon sisältyvän nuottikirjoituksen musiikillinen tai fyysinen taitto."@fi ;
-    skos:member mts:m1985 ;
+    skos:member mts:m1985,
+        mts:m1999,
+        mts:m2019,
+        mts:m2020,
+        mts:m2021,
+        mts:m2023,
+        mts:m2024,
+        mts:m2025,
+        mts:m2027,
+        mts:m2029,
+        mts:m2032,
+        mts:m2034,
+        mts:m2036,
+        mts:m2037 ;
     skos:prefLabel "Nuottiaineiston muoto"@fi .
 
 mts:m2003 a isothes:ConceptGroup,
@@ -9227,6 +9224,56 @@ mts:m202 a skos:Concept ;
     skos:prefLabel "CAD"@fi,
         "CAD"@sv .
 
+mts:m2022 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Soitonopetusaineistoa sisältävä nuottiaineisto."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "soitonopas"@fi ;
+    skos:scopeNote "Soitonoppaan kaltaiset aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona."@fi .
+
+mts:m2026 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kielimerkinnät kannesta."@fi ;
+    skos:scopeNote "Huomautus kielimerkintöjen tiedonlähteestä."@fi .
+
+mts:m2030 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen sovittamalla draamallisen teoksen esitykseksi."@fi ;
+    skos:prefLabel "dramaturgi (ekspressio)"@fi,
+        "dramaturg (uttryck)"@sv .
+
+mts:m2031 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Musiikinteorian opetusaineistoa sisältävä nuottiaineisto."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teorianopas"@fi ;
+    skos:scopeNote "Musiikinteorian aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona."@fi .
+
+mts:m2035 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "lehtien toimituksissa tai kustantamoissa työskentelevä kuvituksesta ja kuvien hankinnasta vastaava toimittaja; kuvatoimistossa työskentelevä kuvien hankkija. (Lähde: Kielitoimiston sanakirja)"@fi ;
+    skos:prefLabel "kuvatoimittaja"@fi .
+
+mts:m2038 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää mikrokortteja."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1037> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mikrokorttikasetti"@fi ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
+
+mts:m2039 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Populaarimusiikin nuottiaineisto, joka koostuu sävelmänuoteista eli vokaali- ja/tai soitinteosten yksinkertaistetuista nuotinnoksista (sisältävät yleensä pelkästään melodian ja sointumerkit tai melodian yksinkertaistetulla pianosäestyksellä)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sävelmäkokoelma"@fi .
+
 mts:m204 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9234,6 +9281,18 @@ mts:m204 a skos:Concept ;
     skos:prefLabel "luontolehdet"@fi,
         "naturtidningar"@sv ;
     skos:scopeNote "Jatkuvien julkaisujen (ISBD) genre-termi. Sarja-aineistojen (RDA) genre-termi"@fi .
+
+mts:m2040 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:prefLabel "kielentarkastaja"@fi .
+
+mts:m2041 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Laulunopetusaineistoa sisältävä nuottiaineisto."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "laulunopas"@fi ;
+    skos:scopeNote "Laulunoppaan kaltaiset aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona."@fi .
 
 mts:m205 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9680,7 +9739,7 @@ mts:m263 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30209 ;
     skos:prefLabel "Avainnimeke"@fi,
         "Nyckeltitel"@sv ;
-    skos:scopeNote "Jatkuvan julkaisun ainutkertainen nimi, jonka määrittää ISSN-verkosto ja joka liittyy erottamattomasti ISSN-tunnukseen. (engl. key title)"@fi,
+    skos:scopeNote "ISSN-rekisteröintiyksikön aineistolle antama yksilöllinen nimi. (engl. key title)"@fi,
         "Unik titel för fortlöpande publikation, fastställd av ISSN-centralen och oskiljaktigt kopplad till ISSN-numret."@sv .
 
 mts:m265 a skos:Concept ;
@@ -14116,6 +14175,24 @@ mts:m8 a isothes:ConceptGroup,
         mts:m1599,
         mts:m1635,
         mts:m178,
+        mts:m1985,
+        mts:m1999,
+        mts:m2019,
+        mts:m2020,
+        mts:m2021,
+        mts:m2022,
+        mts:m2023,
+        mts:m2024,
+        mts:m2025,
+        mts:m2027,
+        mts:m2029,
+        mts:m2031,
+        mts:m2032,
+        mts:m2034,
+        mts:m2036,
+        mts:m2037,
+        mts:m2039,
+        mts:m2041,
         mts:m349,
         mts:m368,
         mts:m370,
@@ -15681,6 +15758,9 @@ mts:m999 a isothes:ConceptGroup,
     skos:prefLabel "useita välittäviä laitteita"@fi,
         "flera medietyper"@sv .
 
+<http://rdaregistry.info/termList/RDACarrierType/1037> skos:exactMatch mts:m2038,
+        mts:m798 .
+
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
 
@@ -15701,10 +15781,12 @@ mts:m10 a skos:Concept ;
 mts:m1007 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kuvia tai tekstiä sisältävä läpinäkyvä arkki, joka voi olla kehyksissä, ja joka on suunniteltu käytettäväksi piirtoheittimellä; yksittäisellä kalvolla voi olla päällekkäiskalvoja."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1039> ;
     skos:inScheme mts: ;
     skos:prefLabel "piirtoheitinkalvo"@fi,
-        "transparang"@sv .
+        "transparang"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m1010 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15851,10 +15933,12 @@ mts:m1122 a skos:Concept ;
 mts:m1125 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Avokela, jossa on ääninauha. Käytetään kelanauhurilaitteistolla."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "äänikela"@fi,
-        "ljudspole"@sv .
+        "ljudspole"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m1131 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -15904,10 +15988,12 @@ mts:m1153 a skos:Concept ;
 mts:m1155 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kolmiulotteinen artefakti (tai artefaktin jäljennös) tai luonnollinen objekti."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1059> ;
     skos:inScheme mts: ;
     skos:prefLabel "objekti"@fi,
-        "föremål"@sv .
+        "föremål"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
 
 mts:m1157 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15938,18 +16024,22 @@ mts:m1190 a skos:Concept ;
 mts:m1202 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää silmukkamaisen elokuvafilmin."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1032> ;
     skos:inScheme mts: ;
     skos:prefLabel "filmisilmukkakasetti"@fi,
-        "filmmagasin"@sv .
+        "filmmagasin"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m1207 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Filmirulla, joka koostuu sarjasta kuvia, jotka esitetään yksitellen. Voi sisältää myös ääntä."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1036> ;
     skos:inScheme mts: ;
     skos:prefLabel "raina"@fi,
-        "bildband"@sv .
+        "bildband"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m1209 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15990,18 +16080,22 @@ Stereografisella laitteella käytettävät aineistot."""@fi,
 mts:m1224 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Videonauhan sisältävä avokela, jota käytetään videokelanauhurilla."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1053> ;
     skos:inScheme mts: ;
     skos:prefLabel "videokela"@fi,
-        "videospole"@sv .
+        "videospole"@sv ;
+    skos:scopeNote "videotallenne"@fi .
 
 mts:m1236 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Silmukkamaisen tietonauhan sisältävä kasetti."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietonauhan silmukkakasetti"@fi,
-        "datorbandmagasin"@sv .
+        "datorbandmagasin"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m125 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16054,18 +16148,22 @@ mts:m1279 a skos:Concept ;
 mts:m1285 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Rullalle kääritty aineisto (paperia, filmiä, nauhaa tms.)."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1047> ;
     skos:inScheme mts: ;
     skos:prefLabel "rulla"@fi,
-        "rulle"@sv .
+        "rulle"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
 
 mts:m1289 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Avokela, jossa on mikrofilmin lukijalla katsottava mikrofilmi."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1026> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrofilmikela"@fi,
-        "mikrofilmsspole"@sv .
+        "mikrofilmsspole"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m1290 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16126,10 +16224,12 @@ mts:m1360 a skos:Concept ;
 mts:m1361 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kotelo joka sisältää mikropiirin puolijohtavalla piilevyllä."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1012> ;
     skos:inScheme mts: ;
     skos:prefLabel "piirikotelo"@fi,
-        "datorminnesmodul"@sv .
+        "datorminnesmodul"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m1365 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16176,10 +16276,12 @@ mts:m1411 a skos:Concept ;
 mts:m1421 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kotelo, joka sisältää yhden tai useita tietolevyjä."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1014> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietolevykotelo"@fi,
-        "datorskivmagasin"@sv .
+        "datorskivmagasin"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m1437 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -16331,6 +16433,9 @@ mts:m153 a isothes:ConceptGroup,
         mts:m1761,
         mts:m179,
         mts:m1979,
+        mts:m2030,
+        mts:m2035,
+        mts:m2040,
         mts:m211,
         mts:m23,
         mts:m240,
@@ -16362,10 +16467,12 @@ mts:m1534 a skos:Concept ;
 mts:m1549 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Avokelalla oleva rullattu filmi, jolle ääni on tallennettu."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1005> ;
     skos:inScheme mts: ;
     skos:prefLabel "ääniraitakela"@fi,
-        "filmljudspole"@sv .
+        "filmljudspole"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m1578 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16427,10 +16534,12 @@ mts:m1625 a skos:Concept ;
 mts:m165 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Mikrofilmirullasta leikattu lyhyt osa."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1027> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrofilmiliuska"@fi,
-        "mikrofilmsremsa"@sv .
+        "mikrofilmsremsa"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m1652 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16443,10 +16552,12 @@ mts:m1652 a skos:Concept ;
 mts:m167 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää mikrofilmin."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1025> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrofilmikasetti"@fi,
-        "mikrofilmskassett"@sv .
+        "mikrofilmskassett"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m1682 a isothes:ConceptGroup,
         skos:Collection ;
@@ -16467,16 +16578,20 @@ mts:m1699 a skos:Concept ;
 mts:m1704 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Silmukanmuotoinen joustava muovi- tai magneettikalvo, jolle äänisignaaleja tallennetaan mekaanisesti. Tunnetaan yleisesti tuotenimellä Dictabelt."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1070> ;
     skos:inScheme mts: ;
-    skos:prefLabel "äänihihna"@fi .
+    skos:prefLabel "äänihihna"@fi ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m1710 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kelalla tai rullalla oleva teräksinen tai ruostumatonta terästä oleva lanka, jolle äänisignaaleja tallennetaan magneettisesti."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1071> ;
     skos:inScheme mts: ;
-    skos:prefLabel "äänilankakela"@fi .
+    skos:prefLabel "äänilankakela"@fi ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m1727 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16489,10 +16604,12 @@ mts:m1727 a skos:Concept ;
 mts:m173 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää videonauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1052> ;
     skos:inScheme mts: ;
     skos:prefLabel "videokasetti"@fi,
-        "videokassett"@sv .
+        "videokassett"@sv ;
+    skos:scopeNote "videotallenne"@fi .
 
 mts:m1735 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -16545,6 +16662,16 @@ mts:m1976 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Tekstitys:"@fi .
 
+mts:m1999 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "vokaalipartituuri"@fi ;
+    skos:definition "Kuoron harjoituskäyttöön tarkoitettu, kuorolle ja soittimille, mahdollisesti myös solistisille lauluäänille sävelletyn teoksen partituuri, jossa kuoroäänet on merkitty omille viivastoilleen, ja josta soitinsäestys on joko jätetty kokonaan pois tai sisällytetty osittain ja pelkistetysti kosketinsoittimelle tai muille sointusoittimille sovitettuna. Jos soitinsäestys on merkitty täydellisenä, käytetään termiä partituuri. Jos teos on alun perin sävelletty säestyksettömälle kuorolle, käytetään termiä partituuri."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Chorpartitur"@de,
+        "chorus score"@en,
+        "kuoropartituuri"@fi .
+
 mts:m201 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Viivana, muotona, varjostuksena tms. esitetty kartografinen sisältö, joka on tarkoitettu katsottavaksi kaksiulotteisena stillkuvana tai -kuvina. Esimerkiksi kartat, näkymäkartat, kartastot, kaukokartoituskuvat jne."@fi ;
@@ -16553,12 +16680,104 @@ mts:m201 a skos:Concept ;
     skos:prefLabel "kartografinen kuva"@fi,
         "kartografisk bild"@sv .
 
+mts:m2019 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m2037 ;
+    skos:altLabel "ääni"@fi ;
+    skos:definition "Sellaisen nuottiaineiston muoto, joka sisältää nuotit yhdelle tai useammalle, mutta ei kaikille esittäjille (esimerkiksi viulukonserton viulustemma tai orkesteriteoksen harppustemma)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Stimme"@de,
+        "part"@en,
+        "stemma"@fi .
+
+mts:m2020 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Sellaisen nuottiaineiston muoto, joka koostuu graafisesta, symbolisesta tai sanallisesta nuottikirjoituksesta, ja johon sisältyy kokoonpanon kaikkien stemmojen sisältö. Nuottiaineistosta, joka edustaa teosta yhdelle soittimelle tai yhdelle soittajalle, käytetään termiä soolonuotti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "(full) score"@en,
+        "partituuri"@fi .
+
+mts:m2021 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Partituuri, jossa nuottiviivastojen määrä on rajattu kahteen tai muutamaan, yleensä soitinryhmittäin järjestettynä ja usein sisältäen viittauksia yksittäisiin ääniin."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "condensed score"@en,
+        "partituurin tiivistelmä"@fi .
+
+mts:m2024 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "sävelmänuotinnos"@fi ;
+    skos:definition "Populaarimusiikin nuottiaineisto, joka sisältää vokaali- ja/tai soitinteoksen yksinkertaistetun nuotinnoksen (sisältää yleensä pelkästään melodian ja sointumerkit tai melodian yksinkertaistetulla pianosäestyksellä)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sävelmänuotti"@fi .
+
+mts:m2025 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "compressed score"@en,
+        "short score"@en ;
+    skos:definition "Muutamalle (2–5) viivastolle pelkistetty yhtye- tai orkesteriteoksen partituuri, jota käytetään esimerkiksi sävellys- ja sovitustyössä ennen varsinaisen partituurin kirjoittamista. Termiä on syytä käyttää vain silloin, kun se esiintyy itse julkaisussa."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "close score"@en,
+        "partiselli"@fi .
+
+mts:m2027 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Suuri, kuoron eteen telineelle asetettava nuottikirja. Jokainen ääni on nuotinnettu erikseen yleensä noudattaen asetelmaa, jossa avoinna olevassa kirjassa lehden kääntöpuolella ovat sopraano- ja tenoriäänet ja seuraavan lehden etupuolella altto- ja bassoäänet."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "choir book"@en,
+        "kuorokirja"@fi .
+
+mts:m2028 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Osittain selkokielinen"@fi .
+
+mts:m2029 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "vokaalipartituuri"@fi ;
+    skos:definition "Ensisijaisesti harjoituskäyttöön tarkoitettu, soololauluäänille/kuorolle ja/tai solistisille soittimille ja orkesterille sävelletyn teoksen pelkistys versioksi, jossa laulu- ja soolosoitinäänet ovat partituurimuodossa ja koko teoksen orkesterisäestys on sovitettu kosketinsoittimelle. Kuoron harjoituskäyttöön tarkoitetusta partituurista käytetään termiä kuoropartituuri. Termiä vokaalipartituuri ei käytetä nuottiaineiston muodon merkitsemisessä"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Klavierauszug"@de,
+        "pianopartituuri"@fi .
+
 mts:m203 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "omakätinen käsikirjoitus"@fi,
         "egenhändig handskrift"@sv .
+
+mts:m2032 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Nuottikirja, joka on tehty asetettavaksi pöydälle ja näytettäväksi siten, että esittäjät voivat lukea stemmansa istuessaan tai seistessään pöydän ympärillä. Jokainen stemma nuotinnetaan erikseen ja asetellaan yleensä siten, että kirjan ollessa auki eri stemmat esitetään käännetyssä ja/tai kohtisuorassa asennossa."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "table book"@fi .
+
+mts:m2033 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Selkokielinen"@fi .
+
+mts:m2034 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Pienennetyssä muodossa julkaistu partituuri, ei tarkoitettu ensisijaisesti esityskäyttöön. Aineistossa esiintyy tavallisesti kuvaileva ilmaus, kuten \"pienoispartituuri\", \"Miniature score\", \"Taschenpartitur\", \"Partition de poche\" tms."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "study score"@en,
+        "pienoispartituuri"@fi .
 
 mts:m214 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16571,10 +16790,12 @@ mts:m214 a skos:Concept ;
 mts:m215 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Rullamainen esine, jonka pintaan on kaiverrettu tai uurrettu äänisignaaleja yhtenäiseksi kiertäväksi uraksi. Esim. vahasylinterit yms."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1003> ;
     skos:inScheme mts: ;
     skos:prefLabel "äänilieriö"@fi,
-        "ljudcylinder"@sv .
+        "ljudcylinder"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m223 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16586,18 +16807,22 @@ mts:m223 a skos:Concept ;
 mts:m228 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää elokuvafilmin."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1033> ;
     skos:inScheme mts: ;
     skos:prefLabel "filmikasetti"@fi,
-        "filmkassett"@sv .
+        "filmkassett"@sv ;
+    skos:scopeNote "heijastava kuvatallenne"@fi .
 
 mts:m238 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
     skos:inScheme mts: ;
     skos:prefLabel "arkki"@fi,
-        "ark"@sv .
+        "ark"@sv ;
+    skos:scopeNote "ilman laitettava käytettävä tallenne"@fi .
 
 mts:m246 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16617,18 +16842,22 @@ mts:m269 a skos:Concept ;
 mts:m289 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Tietonauhan sisältävä kasetti."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1016> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietokasetti"@fi,
-        "datorkassett"@sv .
+        "datorkassett"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m302 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Filmiarkki, jolla on mikrovalokuvia."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1022> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrokortti"@fi,
-        "mikrofiche"@sv .
+        "mikrofiche"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m321 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16650,10 +16879,10 @@ mts:m331 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:broader mts:m599 ;
     skos:inScheme mts: ;
-    skos:prefLabel "DAISY-lukulaite"@fi,
-        "DAISY-spelare"@sv ;
-    skos:scopeNote "DAISY-äänitiedostolle"@fi,
-        "För DAISY-ljudfiler"@sv .
+    skos:prefLabel "Daisy-lukulaite"@fi,
+        "Daisy-spelare"@sv ;
+    skos:scopeNote "Daisy-äänitiedostolle"@fi,
+        "För Daisy-ljudfiler"@sv .
 
 mts:m332 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16727,10 +16956,12 @@ mts:m34 a isothes:ConceptGroup,
 mts:m348 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Rullattu filmi."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1069> ;
     skos:inScheme mts: ;
     skos:prefLabel "filmirulla"@fi,
-        "filmrulle"@sv .
+        "filmrulle"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m355 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -16810,10 +17041,12 @@ mts:m415 a skos:Concept ;
 mts:m425 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää silmukkamaisen mikrofilminauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1024> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrofilmisilmukkakasetti"@fi,
-        "mikrofilmsmagasin"@sv .
+        "mikrofilmsmagasin"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m428 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16852,10 +17085,12 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
 mts:m466 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kortti, jolla on stereografisia kuvia."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1042> ;
     skos:inScheme mts: ;
-    skos:prefLabel "sterografinen kortti"@fi,
-        "stereografiskt kort"@sv .
+    skos:prefLabel "stereografinen kortti"@fi,
+        "stereografiskt kort"@sv ;
+    skos:scopeNote "stereografinen tallenne"@fi .
 
 mts:m473 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16884,10 +17119,12 @@ mts:m480 a skos:Concept ;
 mts:m486 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Elokuvafilmin sisältävä avoin kela, jota käytetään elokuvaprojektorissa."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1034> ;
     skos:inScheme mts: ;
     skos:prefLabel "filmikela"@fi,
-        "filmspole"@sv .
+        "filmspole"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m491 a isothes:ConceptGroup,
         skos:Collection ;
@@ -16982,10 +17219,12 @@ mts:m549 a skos:Concept ;
 mts:m553 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Ripustettava yhden tai useamman sivun sisältävä paperilehtiö, jota käytetään jalustalla."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1046> ;
     skos:inScheme mts: ;
     skos:prefLabel "lehtiötaulu"@fi,
-        "blädderblock"@sv .
+        "blädderblock"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
 
 mts:m566 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17031,10 +17270,12 @@ mts:m614 a skos:Concept ;
 mts:m624 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää silmukkamaisen ääninauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "äänisilmukkakasetti"@fi,
-        "ljudmagasin"@sv .
+        "ljudmagasin"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m630 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17072,7 +17313,9 @@ mts:m650 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1006> ;
     skos:inScheme mts: ;
-    skos:prefLabel "pianorulla"@fi .
+    skos:prefLabel "audio roll"@en,
+        "pianorulla"@fi ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m659 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17085,10 +17328,12 @@ mts:m659 a skos:Concept ;
 mts:m671 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Rullalla oleva mikrofilmi."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1056> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrofilmirulla"@fi,
-        "mikrofilmsrulle"@sv .
+        "mikrofilmsrulle"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m675 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17152,10 +17397,12 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva]."""@fi,
 mts:m721 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kehykseen asetettu, projektorin tai diojen katselulaitteen avulla katseltava kaksiulotteinen, läpinäkyvä kuva filmillä."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1040> ;
     skos:inScheme mts: ;
     skos:prefLabel "dia"@fi,
-        "diabild"@sv .
+        "diabild"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m725 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -17178,18 +17425,22 @@ mts:m730 a skos:Concept ;
 mts:m744 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Yksi tai useampia toisiinsa sidottuja tai kiinnitettyjä lehtiä, joista muodostuu erillinen yksikkö."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1049> ;
     skos:inScheme mts: ;
     skos:prefLabel "nide"@fi,
-        "volym"@sv .
+        "volym"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallenne"@fi .
 
 mts:m752 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Levy, jonka ulkoreunalla on aukkoja, joissa on stereografisia stillkuvia. Käytetään stereografisella katselulaitteella (stereoskoopilla)."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1043> ;
     skos:inScheme mts: ;
     skos:prefLabel "stereografinen levy"@fi,
-        "stereografisk skiva"@sv .
+        "stereografisk skiva"@sv ;
+    skos:scopeNote "stereografinen tallenne"@fi .
 
 mts:m795 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17202,19 +17453,23 @@ mts:m795 a skos:Concept ;
 mts:m798 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Rainan sisältävä kasetti."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1037> ;
     skos:inScheme mts: ;
     skos:prefLabel "rainakasetti"@fi,
-        "bildbandsmagasin"@sv .
+        "bildbandsmagasin"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m801 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "minneskort."@sv ;
+    skos:definition "Tietokoneella käytettäväksi tarkoitettu kortti, joka sisältää digitaalisesti koodattua dataa."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1011> ;
     skos:inScheme mts: ;
     skos:prefLabel "muistikortti"@fi,
         "datorkort"@sv ;
-    skos:scopeNote "minneskort."@sv .
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m808 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17247,18 +17502,22 @@ Mikrolukulaitteella käytettävät aineistot."""@fi,
 mts:m826 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Tietokoneen nauha-asemassa käytettävä avoin kela, joka sisältää tietonauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1017> ;
     skos:inScheme mts: ;
     skos:prefLabel "tietonauhakela"@fi,
-        "datorbandspole"@sv .
+        "datorbandspole"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m842 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää silmukkamaisen videonauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1051> ;
     skos:inScheme mts: ;
     skos:prefLabel "videosilmukkakasetti"@fi,
-        "videomagasin"@sv .
+        "videomagasin"@sv ;
+    skos:scopeNote "videotallenne"@fi .
 
 mts:m843 a skos:Concept ;
     dc:source "RDA-termi ; ISBD-termi"@fi ;
@@ -17285,10 +17544,12 @@ mts:m850 a skos:Concept ;
 mts:m851 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Pieni läpikuultavasta materiaalista tehty liuska (jossa voi olla suojaava aluslasi), jolla on hyvin pieniä objekteja ja joka on suunniteltu käytettäväksi laitteella kuten mikroskoopilla."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1030> ;
     skos:inScheme mts: ;
     skos:prefLabel "preparaattilasi"@fi,
-        "objektglas"@sv .
+        "objektglas"@sv ;
+    skos:scopeNote "mikroskooppinen tallenne"@fi .
 
 mts:m852 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -17336,10 +17597,12 @@ Esimerkiksi karttapallot, pienoismallit jne."""@fi ;
 
 mts:m906 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
+    skos:definition "Pieni arkki jäykkää paperia, ohutta pahvia tms. läpinäkymätöntä materiaalia."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1045> ;
     skos:inScheme mts: ;
     skos:prefLabel "kortti"@fi,
-        "kort"@sv .
+        "kort"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
 
 mts:m912 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -17369,10 +17632,12 @@ mts:m932 a skos:Concept ;
 mts:m936 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Lyhyt filmiliuska, yleensä jäykkä, ei rullattu."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1035> ;
     skos:inScheme mts: ;
     skos:prefLabel "filmiliuska"@fi,
-        "filmremsa"@sv .
+        "filmremsa"@sv ;
+    skos:scopeNote "heijastettava kuvatallenne"@fi .
 
 mts:m938 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -17385,10 +17650,12 @@ mts:m938 a skos:Concept ;
 mts:m940 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kortti, jossa on yksi tai useampi aukko mikrofilmikuvaa varten."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1021> ;
     skos:inScheme mts: ;
     skos:prefLabel "ikkunakortti"@fi,
-        "fönsterkort"@sv .
+        "fönsterkort"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m948 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -17401,10 +17668,12 @@ mts:m948 a skos:Concept ;
 mts:m953 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Läpinäkymätöntä materiaali oleva kortti, jolla on mikrovalokuvia."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1028> ;
     skos:inScheme mts: ;
     skos:prefLabel "mikrokortti (läpinäkymätön)"@fi,
-        "mikrokort"@sv .
+        "mikrokort"@sv ;
+    skos:scopeNote "mikromuotoinen tallenne"@fi .
 
 mts:m955 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17458,10 +17727,12 @@ mts:m984 a skos:Concept ;
 
 mts:m1051 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
+    skos:definition "Digitaalinen aineisto, joka on saatavana laitteisto- ja ohjelmistoyhteydellä tietoverkosta."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1018> ;
     skos:inScheme mts: ;
     skos:prefLabel "verkkoaineisto"@fi,
-        "onlineresurs"@sv .
+        "onlineresurs"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
 
 mts:m108 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17491,6 +17762,23 @@ mts:m1528 a skos:Concept ;
         "cd-skiva"@sv ;
     skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi,
         "(CD compact disc) optiskt lagringsmedium. Information (ljud, bild och text) lagras på en sida i ett lager. Olika typer av cd-skivor, vars användningssätt avviker från varandra, har varsin term. Cd-ljudskivor och cd-rom-skivor (cd-datorskivor) kan endast återges, cd-r-skivor kan spelas in en gång och cd-rw-skivor flera gånger."@sv .
+
+mts:m2023 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m1985,
+        mts:m2036 ;
+    skos:definition "Yhtyeen tai orkesterin viulistin esitysstemma, jossa on viitteitä muihin soittimiin, jotta stemman soittaja voi myös johtaa yhtyettä. Katso myös johtostemma ja pianojohtostemma."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "violin conductor part"@en,
+        "viulujohtostemma"@fi .
+
+mts:m2037 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Nuottiaineisto, joka sisältää yhdelle soittimelle tai yhdelle esittäjälle tarkoitetun musiikkiteoksen nuotinnoksen (esimerkiksi Beethovenin Für Elise (pianolle), Messiaenin Le banquet céleste (uruille), Xenakiksen Pléïades (lyömäsoittimille) ja Debussyn Syrinx (huilulle))"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "soolonuotti"@fi .
 
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17560,12 +17848,35 @@ mts:m92 a skos:Concept ;
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Levy, jolle tallennetaan videosignaaleja, sisältäen ääntä tai ilman ääntä."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1060> ;
     skos:inScheme mts: ;
     skos:narrower mts:m512,
         mts:m685 ;
     skos:prefLabel "videolevy"@fi,
-        "videoskiva"@sv .
+        "videoskiva"@sv ;
+    skos:scopeNote "videotallenne"@fi .
+
+mts:m1985 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m2023,
+        mts:m2036 ;
+    skos:altLabel "johtoääni"@fi ;
+    skos:definition "Pienehköissä orkestereissa yleisesti käytetty tärkeimpien äänien tiivistelmä, jota myös instrumenttia soittava orkesterin johtaja voi käyttää parituurin sijasta. Katso myös pianojohtostemma ja viulujohtostemma."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Dirigierpartitur"@de,
+        "conductor score"@en,
+        "johtostemma"@fi .
+
+mts:m2036 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m1985 ;
+    skos:definition "Yhtyeen tai orkesterin pianistin esitysstemma, jossa on viitteitä muihin soittimiin, jotta stemman soittaja voi myös johtaa yhtyettä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "piano conductor part"@en,
+        "pianojohtostemma"@fi .
 
 mts:m599 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17582,12 +17893,14 @@ mts:m599 a skos:Concept ;
 mts:m649 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Kasetti, joka sisältää ääninauhan."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1007> ;
     skos:inScheme mts: ;
     skos:narrower mts:m1411,
         mts:m648 ;
     skos:prefLabel "äänikasetti"@fi,
-        "ljudkassett"@sv .
+        "ljudkassett"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m434 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17603,6 +17916,7 @@ mts:m434 a skos:Concept ;
 mts:m232 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:definition "Levy joka sisältää tietoa digitaalisessa muodossa optisesti tai magneettisesti tallennettuna."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1013> ;
     skos:inScheme mts: ;
     skos:narrower mts:m1053,
@@ -17610,7 +17924,23 @@ mts:m232 a skos:Concept ;
         mts:m1528,
         mts:m686 ;
     skos:prefLabel "tietolevy"@fi,
-        "datorskiva"@sv .
+        "datorskiva"@sv ;
+    skos:scopeNote "tietokonetallenne"@fi .
+
+mts:m407 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Levy, jolle on kaiverrettu tai uurrettu modulaatioiksi tai pulsseiksi tallennettuja äänisignaaleja yhtenäiseksi spiraalimaiseksi uraksi."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1004> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1142,
+        mts:m1365,
+        mts:m406,
+        mts:m473,
+        mts:m890 ;
+    skos:prefLabel "äänilevy"@fi,
+        "ljudskiva"@sv ;
+    skos:scopeNote "äänitallenne"@fi .
 
 mts:m611 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17621,22 +17951,12 @@ mts:m611 a skos:Concept ;
     skos:narrower mts:m1016,
         mts:m1727,
         mts:m1976,
+        mts:m2026,
+        mts:m2028,
+        mts:m2033,
         mts:m387,
         mts:m730 ;
     skos:prefLabel "Teksti"@fi .
-
-mts:m407 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1004> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1142,
-        mts:m1365,
-        mts:m406,
-        mts:m473,
-        mts:m890 ;
-    skos:prefLabel "äänilevy"@fi,
-        "ljudskiva"@sv .
 
 mts: a skos:ConceptScheme ;
     dc:creator "Kansalliskirjasto"@fi,
@@ -17672,5 +17992,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-02-28T03:34:40+00:00"^^xsd:dateTime .
+    dct:modified "2017-03-01T03:44:45+00:00"^^xsd:dateTime .
 
