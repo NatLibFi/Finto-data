@@ -79,9 +79,9 @@ def guess_language(text):
       lang_cache[text] = None # too hard to know
   return lang_cache[text]
 
-def format_ab(fld, skip_last=False):
-  """return the subfields a and b of a pymarc Field, concatenated"""
-  subfields = fld.get_subfields('a','b')
+def format_label(fld, skip_last=False):
+  """return a label consisting of subfields in a Field, properly formatted"""
+  subfields = fld.get_subfields('a','b','n','d','c')
   
   if len(subfields) > 0:
     if skip_last:
@@ -116,15 +116,15 @@ def convert_record(oaipmhrec):
   g.add((uri, RDF.type, SKOS.Concept))
   g.add((uri, RDF.type, CorporateBody))
   if '110' in rec:
-    label = format_ab(rec['110'])
+    label = format_label(rec['110'])
   else:
-    label = format_ab(rec['111'])
+    label = format_label(rec['111'])
   label_to_uri[label] = uri
   literal = Literal(label, lang='fi') # prefLabel is always Finnish
   g.add((uri, SKOS.prefLabel, literal))
   g.add((uri, preferredNameForTheCorporateBody, literal))
   if '110' in rec and rec['110']['a'] != label:
-    superior = format_ab(rec['110'], skip_last=True)
+    superior = format_label(rec['110'], skip_last=True)
     if superior.endswith('.'): superior = superior[:-1] # strip final period
     g.add((uri, hierarchicalSuperior, Literal(superior)))
 
@@ -160,7 +160,7 @@ def convert_record(oaipmhrec):
       g.add((uri, languageOfTheCorporateBody, Literal(f['a'])))
 
   for f in rec.get_fields('410') + rec.get_fields('411'):
-    varname = format_ab(f)
+    varname = format_label(f)
     if varname is None:
       print >>sys.stderr, "Empty 410/411 value for <%s>, skipping" % uri
       return
@@ -183,7 +183,7 @@ def convert_record(oaipmhrec):
       else:
         print >>sys.stderr, "unknown 510/511 $w value for <%s>:" % uri, f['w']
 
-    targetname = format_ab(f)
+    targetname = format_label(f)
     if targetname is not None:
       # target is now a Literal, it will be converted to resource in Pass 2
       g.add((uri, rdarel, Literal(targetname)))
