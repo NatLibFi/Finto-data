@@ -53,34 +53,6 @@ class MARCXMLReader(object):
     marcxml.parse_xml(StringIO(tostring(element[0], encoding='UTF-8')), handler)
     return handler.records[0]
 
-marcxml_reader = MARCXMLReader()
-registry = metadata.MetadataRegistry()
-registry.registerReader('marc21', marcxml_reader)
-
-g = Graph()
-g.namespace_manager.bind('skos', SKOS)
-g.namespace_manager.bind('cn', CN)
-g.namespace_manager.bind('dc', DC)
-g.namespace_manager.bind('dct', DCT)
-g.namespace_manager.bind('rdaa', RDAA)
-g.namespace_manager.bind('rdac', RDAC)
-
-
-oai = Client('https://fennica.linneanet.fi/cgi-bin/oai-pmh-fennica-asteri-aut.cgi', registry)
-
-#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2016,2,10))
-recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames')
-
-lang_cache = {}
-if os.path.exists(LANG_CACHE_FILE):
-  lcf = codecs.open(LANG_CACHE_FILE, 'r', 'utf-8')
-  for line in lcf:
-    lang, text = line.rstrip("\r\n").split("\t")
-    if lang == '': lang = None
-    lang_cache[text] = lang
-  lcf.close()  
-
-label_to_uri = {}
 
 def guess_language(text):
   """return the most likely language for the given unicode text string"""
@@ -135,22 +107,23 @@ def format_timestamp(ts):
   else:
     return "%04d-%02d-%02d" % (year, mon, day)
 
-# pass 1: convert MARC data to basic RDF
-
-for count, oaipmhrec in enumerate(recs):
+def convert_record(oaipmhrec):
   id = oaipmhrec[0].identifier().split(':')[-1]
   rec = oaipmhrec[1] # MARCXML record
-  if '110' not in rec: continue # empty record (deleted?)
+  if '110' not in rec and '111' not in rec: return # empty record (deleted?)
   
   uri = CN[id]
   g.add((uri, RDF.type, SKOS.Concept))
   g.add((uri, RDF.type, CorporateBody))
-  label = format_ab(rec['110'])
+  if '110' in rec:
+    label = format_ab(rec['110'])
+  else:
+    label = format_ab(rec['111'])
   label_to_uri[label] = uri
   literal = Literal(label, lang='fi') # prefLabel is always Finnish
   g.add((uri, SKOS.prefLabel, literal))
   g.add((uri, preferredNameForTheCorporateBody, literal))
-  if rec['110']['a'] != label:
+  if '110' in rec and rec['110']['a'] != label:
     superior = format_ab(rec['110'], skip_last=True)
     if superior.endswith('.'): superior = superior[:-1] # strip final period
     g.add((uri, hierarchicalSuperior, Literal(superior)))
@@ -186,11 +159,11 @@ for count, oaipmhrec in enumerate(recs):
     if 'a' in f:
       g.add((uri, languageOfTheCorporateBody, Literal(f['a'])))
 
-  for f in rec.get_fields('410'):
+  for f in rec.get_fields('410') + rec.get_fields('411'):
     varname = format_ab(f)
     if varname is None:
-      print >>sys.stderr, "Empty 410 value for <%s>, skipping" % uri
-      continue
+      print >>sys.stderr, "Empty 410/411 value for <%s>, skipping" % uri
+      return
     if len(varname) < 5 or ('w' in f and f['w'] == 'd'): # is very short, or an acronym
       varlit = Literal(varname) # no language tag for acronyms (too hard!)
     else:
@@ -198,7 +171,7 @@ for count, oaipmhrec in enumerate(recs):
     g.add((uri, SKOS.altLabel, varlit))
     g.add((uri, variantNameForTheCorporateBody, varlit))
 
-  for f in rec.get_fields('510'):
+  for f in rec.get_fields('510') + rec.get_fields('511'):
     rdarel = relatedCorporateBody # default relationship
     if 'w' in f:
       if f['w'] == 'a':
@@ -208,7 +181,7 @@ for count, oaipmhrec in enumerate(recs):
       elif f['w'] == 't':
         rdarel = hierarchicalSuperior
       else:
-        print >>sys.stderr, "unknown 510 $w value for <%s>:" % uri, f['w']
+        print >>sys.stderr, "unknown 510/511 $w value for <%s>:" % uri, f['w']
 
     targetname = format_ab(f)
     if targetname is not None:
@@ -221,6 +194,47 @@ for count, oaipmhrec in enumerate(recs):
   for f in rec.get_fields('678'):
     g.add((uri, corporateHistory, Literal(f.format_field(), lang='fi')))
 
+# initialize OAI-PMH and MARC handling
+
+marcxml_reader = MARCXMLReader()
+registry = metadata.MetadataRegistry()
+registry.registerReader('marc21', marcxml_reader)
+
+# initialize output RDF graph
+
+g = Graph()
+g.namespace_manager.bind('skos', SKOS)
+g.namespace_manager.bind('cn', CN)
+g.namespace_manager.bind('dc', DC)
+g.namespace_manager.bind('dct', DCT)
+g.namespace_manager.bind('rdaa', RDAA)
+g.namespace_manager.bind('rdac', RDAC)
+
+# initialize language determination cache
+
+lang_cache = {}
+if os.path.exists(LANG_CACHE_FILE):
+  lcf = codecs.open(LANG_CACHE_FILE, 'r', 'utf-8')
+  for line in lcf:
+    lang, text = line.rstrip("\r\n").split("\t")
+    if lang == '': lang = None
+    lang_cache[text] = lang
+  lcf.close()  
+
+label_to_uri = {}
+
+# pass 1: convert MARC data to basic RDF
+
+oai = Client('https://fennica.linneanet.fi/cgi-bin/oai-pmh-fennica-asteri-aut.cgi', registry)
+
+#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2017,2,1))
+recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames')
+for oaipmhrec in recs:
+  convert_record(oaipmhrec)
+
+recs = oai.listRecords(metadataPrefix='marc21', set='meetingNames')
+for oaipmhrec in recs:
+  convert_record(oaipmhrec)
 
 # pass 2: convert literal values to resources
 
@@ -236,6 +250,8 @@ for prop in (relatedCorporateBody, predecessor, successor, hierarchicalSuperior)
         if prop == hierarchicalSuperior:
           g.add((s,SKOS.broader,res)) # also add skos:broader relationship to make a tree
 
+# store language determination cache
+
 lcf = codecs.open(LANG_CACHE_FILE, 'w', 'utf-8')
 for text in sorted(lang_cache.keys()):
   lang = lang_cache[text]
@@ -243,5 +259,6 @@ for text in sorted(lang_cache.keys()):
   print >>lcf, "%s\t%s" % (lang, text)
 lcf.close()
 
+# serialize output RDF
 
 g.serialize(destination=sys.stdout, format='turtle')
