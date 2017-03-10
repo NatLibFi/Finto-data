@@ -123,6 +123,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m1803,
         mts:m182,
         mts:m191,
+        mts:m2044,
         mts:m245,
         mts:m291,
         mts:m315,
@@ -8965,8 +8966,7 @@ mts:m1977 a skos:Concept ;
 
 mts:m1978 a isothes:ConceptGroup,
         skos:Collection ;
-    dc:source "Kansallinen termi"@fi,
-        "RDA-termi"@fi ;
+    dc:source "Kansallinen termi"@fi ;
     skos:definition "Henkilö tai yhteisö, joka on vastuussa ääniteoksen luomisesta (esim. äänimaisemataide)"@fi ;
     skos:prefLabel "äänitaiteilija"@fi .
 
@@ -9312,6 +9312,20 @@ mts:m2043 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Laudaturtyö"@fi,
         "Laudaturavhandling"@sv .
+
+mts:m2044 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:member mts:m2045 ;
+    skos:prefLabel "Huomautus manifestaation tunnisteesta"@fi .
+
+mts:m2045 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Oikea issn:"@fi ;
+    skos:scopeNote "Manifestaation kuvailussa issn merkitään aineistossa merkityssä muodossa. Jos se on virheellinen, oikeasta issn-numerosta tehdään huomautus."@fi .
 
 mts:m205 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15114,7 +15128,6 @@ mts:m91 a isothes:ConceptGroup,
         mts:m157,
         mts:m1587,
         mts:m2043,
-        mts:m321,
         mts:m65,
         mts:m92,
         mts:m964 ;
@@ -16864,14 +16877,6 @@ mts:m302 a skos:Concept ;
         "mikrofiche"@sv ;
     skos:scopeNote "mikromuotoinen tallenne"@fi .
 
-mts:m321 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m92 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Monografiaväitöskirja"@fi,
-        "Monografiavhandling"@sv .
-
 mts:m327 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -17618,6 +17623,14 @@ mts:m912 a skos:Concept ;
     skos:prefLabel "kolmiulotteinen liikkuva kuva"@fi,
         "tredimensionell rörlig bild"@sv .
 
+mts:m92 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m964 ;
+    skos:prefLabel "Väitöskirja"@fi,
+        "Doktorsavhandling"@sv .
+
 mts:m923 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Viestin sisältää stillkuvapareja ja on tarkoitettu käytettäväksi stereoskooppisella tai stereografisella laitteella kolmiulotteisen vaikutelman saamiseksi."@fi,
@@ -17704,7 +17717,8 @@ mts:m964 a skos:Concept ;
     skos:broader mts:m92 ;
     skos:inScheme mts: ;
     skos:prefLabel "Artikkeliväitöskirja"@fi,
-        "Artikelavhandling"@sv .
+        "Artikelavhandling"@sv ;
+    skos:scopeNote "Yleinen huomautus"@fi .
 
 mts:m98 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17855,15 +17869,6 @@ mts:m899 a skos:Concept ;
     skos:prefLabel "nitraatti"@fi,
         "nitrat"@sv .
 
-mts:m92 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m321,
-        mts:m964 ;
-    skos:prefLabel "Väitöskirja"@fi,
-        "Doktorsavhandling"@sv .
-
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18011,5 +18016,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-03-09T03:33:10+00:00"^^xsd:dateTime .
+    dct:modified "2017-03-10T03:16:46+00:00"^^xsd:dateTime .
 
