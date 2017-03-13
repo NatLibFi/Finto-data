@@ -28,7 +28,9 @@ CONSTRUCT {
     UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Vakaveden osa"@fi }
     UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Virtaveden osa"@fi }
     UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Suo"@fi }
-  }, ?firstpart, ?lastpart), ?origLabel) AS ?label)
+  }, STRLANG(CONCAT(?firstpart, ' (', ?lastpart, ')'), LANG(?origLabel)),
+     STRLANG(CONCAT(?lastpart, ' (', ?firstpart, ')'), LANG(?origLabel))
+  ), ?origLabel) AS ?label)
   ?plc ?prop ?val .
   FILTER (?prop != skos:prefLabel)
   FILTER (?prop != skos:altLabel)
