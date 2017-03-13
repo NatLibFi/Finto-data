@@ -79,9 +79,9 @@ with open(sys.argv[1], 'rb') as fh:
         changed_fields = set()
         recid = rec['001'].value()
         uri = ysa_uri(recid) # FIXME check 024
-        # Virojoki (joki), Itämeri, Joensuu, Joroinen -- Kolma
-        if uri not in (YSA['Y107962'], YSA['Y105038'], YSA['Y94166'], YSA['Y112746']):
-            continue
+#        # Virojoki (joki), Itämeri, Joensuu, Joroinen -- Kolma
+#        if uri not in (YSA['Y107962'], YSA['Y105038'], YSA['Y94166'], YSA['Y112746']):
+#            continue
         logging.info("YSA URI: <%s>", uri)
         
         # check for BT relationships and add
