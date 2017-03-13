@@ -1,3 +1,4 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ysa: <http://www.yso.fi/onto/ysa/>
@@ -7,6 +8,7 @@ PREFIX allarsmeta: <http://www.yso.fi/onto/allars-meta/>
 PREFIX pl: <http://urn.fi/URN:NBN:fi:au:pl:>
 
 CONSTRUCT {
+  ?plc a skos:Concept .
   ?plc ?ysaprop ?newval .
   ?plc skos:prefLabel ?allarspref .
   ?plc skos:altLabel ?allarsalt .
@@ -25,6 +27,7 @@ CONSTRUCT {
   FILTER (?ysaprop != skos:narrowMatch)
   FILTER (?ysaprop != dct:created)
   FILTER (?ysaprop != dct:modified)
+  FILTER (?ysaprop != rdf:type)
 
   OPTIONAL {
     ?ysac skos:exactMatch ?allarsc .

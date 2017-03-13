@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ysa: <http://www.yso.fi/onto/ysa/>
+PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
+PREFIX allars: <http://www.yso.fi/onto/allars/>
+PREFIX allarsmeta: <http://www.yso.fi/onto/allars-meta/>
+PREFIX pl: <http://urn.fi/URN:NBN:fi:au:pl:>
+
+CONSTRUCT {
+  ?plc ?labelprop ?label .
+  ?plc ?prop ?val .
+} WHERE {
+  VALUES ?labelprop { skos:prefLabel skos:altLabel }
+  ?plc ?labelprop ?origLabel .
+  BIND(STRBEFORE(?origLabel, ' -- ') AS ?firstpart)
+  BIND(STRAFTER(?origLabel, ' -- ') AS ?lastpart)
+  BIND(IF(?firstpart != "", IF(EXISTS {
+    {
+      ?plc skos:broader+ ?parentc .
+      ?parentc skos:prefLabel ?lastpart .
+    }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Vakavesi"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Virtavesi"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: vakavesi"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: virtavesi"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Vakaveden osa"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Virtaveden osa"@fi }
+    UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Suo"@fi }
+  }, STRLANG(CONCAT(?firstpart, ' (', ?lastpart, ')'), LANG(?origLabel)),
+     STRLANG(CONCAT(?lastpart, ' (', ?firstpart, ')'), LANG(?origLabel))
+  ), ?origLabel) AS ?label)
+  ?plc ?prop ?val .
+  FILTER (?prop != skos:prefLabel)
+  FILTER (?prop != skos:altLabel)
+  FILTER (?prop != skos:hiddenLabel)
+}
