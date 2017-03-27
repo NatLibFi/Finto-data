@@ -4,7 +4,7 @@ cp ../yso/ysoKehitys.rdf yso-import.rdf
 INFILES="kauno-metadata.ttl kauno.ttl yso-import.rdf"
 OUTFILE=kauno-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../tools/Skosify/skosify"
 CONFFILE="../../conf/skosify/finnonto.cfg"
 LOGFILE=skosify.log
 
