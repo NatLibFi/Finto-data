@@ -42,7 +42,9 @@ WHERE {
       # optimization: don't return concepts which have a match in YSO
       FILTER NOT EXISTS {
         ?c skos:closeMatch ?ysoc .
-        FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
+        # The FILTER below causes performance problems with Fuseki 1.5.0 so we're trusting that there
+        # are no non-YSO closeMatch links
+        # FILTER (STRSTARTS(STR(?ysoc), STR(yso:)))
       }
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
@@ -54,9 +56,15 @@ WHERE {
       OPTIONAL { ?c dct:created ?created }
 
       # broader, related
-      OPTIONAL { ?c skos:broader ?ysab }
+      OPTIONAL {
+        ?c skos:broader ?ysab
+        FILTER NOT EXISTS { ?ysab a ysa-meta:GeographicalConcept }
+      }
       BIND(IF(BOUND(?ysab), ?ysab, 'b') AS ?broader)
-      OPTIONAL { ?c skos:related ?ysar }
+      OPTIONAL {
+	?c skos:related ?ysar
+        FILTER NOT EXISTS { ?ysar a ysa-meta:GeographicalConcept }
+      }
       BIND(IF(BOUND(?ysar), ?ysar, 'r') AS ?related)
     }  
   }
