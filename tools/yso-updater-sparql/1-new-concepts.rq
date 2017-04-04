@@ -20,6 +20,7 @@ CONSTRUCT {
   ?newc skos:prefLabel ?pref .
   ?newc skos:altLabel ?alt .
   ?newc skos:note ?note .
+  ?newc skos:definition ?definition .
   ?newc yso-meta:ysaSource ?source .
   ?newc yso-meta:hasThematicGroup ?ysogroup .
   ?newc rdfs:subClassOf ?ysobroader .
@@ -46,6 +47,7 @@ WHERE {
       ?c skos:prefLabel ?pref .
       OPTIONAL { ?c skos:altLabel ?alt }
       OPTIONAL { ?c skos:scopeNote|skos:note ?note }
+      OPTIONAL { ?c skos:definition ?definition }
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL { ?ysagroup skos:member ?c }
       BIND(IF(BOUND(?ysagroup), ?ysagroup, 'g') AS ?realysagroup)
