@@ -1,0 +1,10 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  ?yso <http://www.yso.fi/onto/yso-peilaus/2007-03-02/definedConcept> ?match .
+}
+WHERE
+{
+  ?yso <http://www.yso.fi/onto/yso-peilaus/2007-03-02/definedConcept> ?match .
+  ?yso skos:exactMatch ?match .
+}
