@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="ptvl.ttl ptvl-metadata.ttl"
+INFILES="ptvl.ttl ptvl-uri-conversion.ttl ptvl-metadata.ttl"
 OUTFILE=ptvl-skos.ttl
 
 SKOSIFYHOME="../../../Skosify/"
