@@ -8,12 +8,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.yso.fi/onto/yso-meta/Hierarchy> a owl:Class ;
-    rdfs:subClassOf skos:Concept ;
-    skos:prefLabel "Hierarchical concept"@en,
-        "Hierarkisoiva käsite"@fi,
-        "Hierarkiserande begrepp"@sv .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 genre:m1 a skos:Concept ;
     skos:broader genre:m603 ;
@@ -4026,6 +4021,12 @@ genre:m867 a skos:Concept ;
         "latinamerikansk musik"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
+yso-meta:Hierarchy a owl:Class ;
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Hierarchical concept"@en,
+        "Hierarkisoiva käsite"@fi,
+        "Hierarkiserande begrepp"@sv .
+
 genre:m1102 a skos:Concept ;
     skos:broader genre:g1 ;
     skos:inScheme genre: ;
@@ -4403,7 +4404,8 @@ genre:m271 a skos:Concept ;
         "sånger"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
-genre:g3 a skos:Concept ;
+genre:g3 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme genre: ;
     skos:narrower genre:m1004,
         genre:m1022,
@@ -4488,7 +4490,8 @@ genre:g3 a skos:Concept ;
     skos:prefLabel "Jatkuvien julkaisujen genretermit"@fi ;
     skos:topConceptOf genre: .
 
-genre:g2 a skos:Concept ;
+genre:g2 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme genre: ;
     skos:narrower genre:m1036,
         genre:m105,
@@ -4578,7 +4581,8 @@ genre:g2 a skos:Concept ;
     skos:prefLabel "Monografioiden genretermit"@fi ;
     skos:topConceptOf genre: .
 
-genre:g1 a skos:Concept ;
+genre:g1 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme genre: ;
     skos:narrower genre:m101,
         genre:m1013,
@@ -4800,11 +4804,9 @@ genre:g1 a skos:Concept ;
 
 genre: a owl:Ontology,
         skos:ConceptScheme ;
-    dct:modified "2017-04-27T10:39:22+00:00"^^xsd:dateTime ;
+    dct:modified "2017-04-27T10:50:20+00:00"^^xsd:dateTime ;
     owl:imports <http://www.w3.org/2004/02/skos/core> ;
     skos:hasTopConcept genre:g1,
         genre:g2,
-        genre:g3 ;
-    skos:prefLabel "Suomalainen lajityyppi- ja muotosanasto"@fi,
-        "Finländsk genre- och fromlista"@sv .
+        genre:g3 .
 
