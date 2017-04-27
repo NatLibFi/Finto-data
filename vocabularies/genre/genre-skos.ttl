@@ -4485,7 +4485,8 @@ genre:g3 a skos:Concept ;
         genre:m961,
         genre:m970,
         genre:m985 ;
-    skos:prefLabel "Jatkuvien julkaisujen genretermit"@fi .
+    skos:prefLabel "Jatkuvien julkaisujen genretermit"@fi ;
+    skos:topConceptOf genre: .
 
 genre:g2 a skos:Concept ;
     skos:inScheme genre: ;
@@ -4574,7 +4575,8 @@ genre:g2 a skos:Concept ;
         genre:m966,
         genre:m974,
         genre:m980 ;
-    skos:prefLabel "Monografioiden genretermit"@fi .
+    skos:prefLabel "Monografioiden genretermit"@fi ;
+    skos:topConceptOf genre: .
 
 genre:g1 a skos:Concept ;
     skos:inScheme genre: ;
@@ -4793,12 +4795,16 @@ genre:g1 a skos:Concept ;
         genre:m978,
         genre:m979,
         genre:m99 ;
-    skos:prefLabel "Musiikin genretermit"@fi .
+    skos:prefLabel "Musiikin genretermit"@fi ;
+    skos:topConceptOf genre: .
 
 genre: a owl:Ontology,
         skos:ConceptScheme ;
-    dct:modified "2017-04-27T08:39:06+00:00"^^xsd:dateTime ;
+    dct:modified "2017-04-27T10:39:22+00:00"^^xsd:dateTime ;
     owl:imports <http://www.w3.org/2004/02/skos/core> ;
+    skos:hasTopConcept genre:g1,
+        genre:g2,
+        genre:g3 ;
     skos:prefLabel "Suomalainen lajityyppi- ja muotosanasto"@fi,
         "Finländsk genre- och fromlista"@sv .
 
