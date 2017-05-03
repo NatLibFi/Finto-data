@@ -1274,9 +1274,7 @@ mts:m1060 a isothes:ConceptGroup,
         mts:m1407,
         mts:m1476,
         mts:m1577,
-        mts:m18,
         mts:m2,
-        mts:m2047,
         mts:m313,
         mts:m448,
         mts:m527,
@@ -3248,6 +3246,7 @@ mts:m1241 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50071 ;
     skos:definition "esittäjä, joka osallistuu ekspression tekemiseen näyttelemällä musiikki- tai näytelmäesityksessä tms."@fi,
         "artist som deltar i förverkligandet av ett uttryck genom att uppträda i ett musikuppförande eller skådespel"@sv ;
+    skos:member mts:m17 ;
     skos:prefLabel "näyttelijä"@fi,
         "skådespelare"@sv .
 
@@ -4487,8 +4486,9 @@ mts:m1406 a skos:Concept ;
 
 mts:m1407 a isothes:ConceptGroup,
         skos:Collection ;
-    skos:definition "esittäjä, joka osallistuu ekspression tekemiseen juontamalla ohjelmaa johon osallistuu vieraita, esiintyjiä jne. (esim. talk-shown juontaja)."@fi,
-        "artist som deltar i förverkligandet av ett uttryck för ett musikverk genom att leda artister (t.ex. orkester, kör, opera) i ett musikuppförande, skådespel el. dyl"@sv ;
+    rdfs:seeAlso rdaa:P50075 ;
+    skos:definition "Esittäjä, joka osallistuu ekspression tekemiseen juontamalla ohjelmaa johon osallistuu vieraita, esiintyjiä tms. (esim. talk show’n juontaja), tai jossa keskustellaan eri aiheista ja johon usein osallistuu näiden aiheiden asiantuntijoita (esim. vaalikeskustelun juontaja)"@fi,
+        "Artist som deltar i förverkligandet av ett uttryck för ett musikverk genom att leda artister (t.ex. orkester, kör, opera) i ett musikuppförande, skådespel el. dyl"@sv ;
     skos:prefLabel "juontaja"@fi,
         "programledare"@sv .
 
@@ -7262,14 +7262,6 @@ mts:m1799 a skos:Concept ;
     skos:prefLabel "Näyttelylainassa."@fi,
         "Utlånad till utställning."@sv .
 
-mts:m18 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "RDA-termi"@fi ;
-    rdfs:seeAlso rdae:P20012 ;
-    skos:definition "esiintyjä, joka osallistuu ekspression tekemiseen näyttelemällä musiikki- tai näytelmäesityksessä tms."@fi ;
-    skos:member mts:m17 ;
-    skos:prefLabel "näyttelijä"@fi .
-
 mts:m180 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -9329,13 +9321,6 @@ mts:m2046 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "Kansallinen termi"@fi ;
     skos:prefLabel "musiikkiohjelmoija"@fi .
-
-mts:m2047 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "RDA-termi"@fi ;
-    rdfs:seeAlso rdaa:P50075 ;
-    skos:definition "Esittäjä, joka osallistuu ekspression tekemiseen juontamalla ohjelmaa johon osallistuu vieraita, esiintyjiä tms. (esim. talk show’n juontaja), tai jossa keskustellaan eri aiheista ja johon usein osallistuu näiden aiheiden asiantuntijoita (esim. vaalikeskustelun juontaja)."@fi ;
-    skos:prefLabel "juontaja"@fi .
 
 mts:m205 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17998,7 +17983,12 @@ mts:m611 a skos:Concept ;
 mts: a skos:ConceptScheme ;
     dc:creator "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    dc:description """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja  yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.\r
+    dc:description """Metadata thesaurus contains terms and expressions required in describing materials. The thesaurus is also suitable for selecting headings displayed in user interfaces.\r
+The thesaurus has been organised according to entity-relationship structure of RDA text and FRBR concept model.\r
+The use of the terms in the thesaurus standardises the vocabulary of descriptive metadata and simultaneously harmonises description in order to promote productiveness. The aim of the thesaurus is also to make it easier to produce metadata by collecting vocabulary and expressions needed in description as well as to clarify concepts related to them.\r
+The thesaurus includes terms complying with both the ISBD and RDA description rules. The terms and expressions used only in one of the rules are indicated separately.\r
+The thesaurus does not contain vocabulary describing the subject matter of the work, such as index terms."""@en,
+        """Metatietosanasto on aineistojen kuvailussa tarvittavien termien ja ilmausten kokonaisuus, joka sisältää sekä ISBD-kuvailusääntöjen että RDA-kuvailuohjeiden mukaista terminologiaa. Sanaston käyttö vakiinnuttaa kuvailevan metatiedon tuottamista ja  yhtenäistää kuvailua tiedonhaun tuloksellisuuden edistämiseksi.\r
 \r
 Metatietosanaston rakenteellinen hierarkia perustuu FRBR (Functional Requirements for Bibliographic Description) -käsitemallin mukaisiin kategorioihin: teos, ekspressio, manifestaatio, kappale, henkilö, yhteisö, suku sekä niiden väliset suhteet.\r
 \r
@@ -18019,15 +18009,16 @@ Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisu
 Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.\r
 \r
 Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit."""@fi,
-        "Metadataordlistan"@sv ;
-    dc:title "Metatietosanasto"@fi,
         """Metadataordlistan innehåller väsentliga termer och uttryck för beskrivning av material. Ordlistan lämpar sig även vid val av rubriker som visas i användargränssnitt.\r
 Ordlistan har utformats enligt den entitet-samband-struktur som fastställts för RDA-text och FRBR-begreppsmodellen.\r
 Genom användning av termerna i tesaurusen etableras terminologin för beskrivande metadata, och samtidigt förenhetligas beskrivningsarbetet för att främja effektiviteten vid informationssökning. Syftet med tesaurusen är också att underlätta produktion av metadata genom att samla terminologi och uttryck som behövs vid beskrivningsarbete samt att förtydliga därtill anknytande begrepp.\r
 Metadataordlistan innehåller termer och uttryck enligt både ISBD- och RDA-beskrivningsreglerna. De termer och uttryck som används endast i ettdera regelverket är separat utmärkta.\r
 Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.ex. ämnesord."""@sv ;
+    dc:title "Metadata thesaurus"@en,
+        "Metadatasanasto"@fi,
+        "Metadataordlistan"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-05-02T02:48:33+00:00"^^xsd:dateTime .
+    dct:modified "2017-05-03T02:42:19+00:00"^^xsd:dateTime .
 
