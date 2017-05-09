@@ -81,19 +81,25 @@ for ysaconc, allarsconcs in ysa_to_allars.items():
 yso = Graph()
 yso.parse(sys.argv[3], format='turtle')
 
-for s,o in yso.subject_objects(SKOS.closeMatch):
+def link_concepts(s, p, o):
     if (s, OWL.deprecated, Literal('true', datatype=XSD.boolean)) in yso:
-        continue # ignore deprecated YSO concepts
+        return # ignore deprecated YSO concepts
     if o.startswith(YSA):
         if (o, RDF.type, SKOS.Concept) in ysa:
-            ysa.add((o, SKOS.closeMatch, s))
+            ysa.add((o, p, s))
         else:
             print >>sys.stderr, "YSO concept %s linked to nonexistent YSA concept %s" % (s,o)
     elif o.startswith(ALLARS):
         if (o, RDF.type, SKOS.Concept) in allars:
-            allars.add((o, SKOS.closeMatch, s))
+            allars.add((o, p, s))
         else:
             print >>sys.stderr, "YSO concept %s linked to nonexistent Allars concept %s" % (s,o)
+
+for s,o in yso.subject_objects(SKOS.closeMatch):
+    link_concepts(s, SKOS.closeMatch, o)
+
+for s,o in yso.subject_objects(SKOS.exactMatch):
+    link_concepts(s, SKOS.exactMatch, o)
 
 ysaout = open(sys.argv[4], 'w')
 ysa.serialize(destination=ysaout, format='turtle')
