@@ -7,10 +7,10 @@ ysometa = Namespace("http://www.yso.fi/onto/yso-meta/2007-03-02/")
 om = Namespace("http://www.yso.fi/onto/yso-peilaus/2007-03-02/")
 
 if len(sys.argv) != 3:
-    print >>sys.stderr, "Usage: %s <yso-input-file> <output-filename.ttl>" % sys.argv[0]
+    print >>sys.stderr, "Usage: %s <yso-input.ttl> <yso-output.ttl>" % sys.argv[0]
     sys.exit(1)
 
-yso = Graph().parse(sys.argv[1])
+yso = Graph().parse(sys.argv[1], format='turtle')
 
 def convert_matches(matches, onto):
     for match in matches:
