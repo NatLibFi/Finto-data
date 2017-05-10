@@ -5,7 +5,7 @@ PREFIX ysa: <http://www.yso.fi/onto/ysa/>
 PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
 PREFIX allars: <http://www.yso.fi/onto/allars/>
 PREFIX allarsmeta: <http://www.yso.fi/onto/allars-meta/>
-PREFIX pl: <http://urn.fi/URN:NBN:fi:au:pl:>
+PREFIX yso: <http://www.yso.fi/onto/yso/>
 
 CONSTRUCT {
   ?plc a skos:Concept .
@@ -19,8 +19,8 @@ CONSTRUCT {
 } WHERE {
   ?ysac a ysameta:GeographicalConcept .
   ?ysac ?ysaprop ?ysaval .
-  BIND(IRI(REPLACE(STR(?ysac), STR(ysa:), STR(pl:))) as ?plc)
-  BIND(IF(isIRI(?ysaval), IRI(REPLACE(STR(?ysaval), STR(ysa:), STR(pl:))), ?ysaval) AS ?newval)
+  BIND(IRI(REPLACE(STR(?ysac), STR(ysa:Y), STR(yso:p))) as ?plc)
+  BIND(IF(isIRI(?ysaval), IRI(REPLACE(STR(?ysaval), STR(ysa:Y), STR(yso:p))), ?ysaval) AS ?newval)
   FILTER (?ysaprop != skos:inScheme)
   FILTER (?ysaprop != skos:exactMatch)
   FILTER (?ysaprop != skos:broadMatch)
