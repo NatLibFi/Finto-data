@@ -20,8 +20,7 @@ def convert_matches(matches, onto):
             onto.add( (conc, skos.exactMatch, match) )
         onto.remove( (conc, om.definedConcept, match) )
 
-
-for conc in yso.subjects(RDF.type, ysometa.Concept):
+def find_matches(conc):
     ysa = []
     allars = []
     for match in yso.objects(conc, om.definedConcept):
@@ -32,6 +31,12 @@ for conc in yso.subjects(RDF.type, ysometa.Concept):
 
     convert_matches(ysa, yso)
     convert_matches(allars, yso)
+
+for conc in yso.subjects(RDF.type, ysometa.Concept):
+    find_matches(conc)
+
+for conc in yso.subjects(RDF.type, ysometa.Individual):
+    find_matches(conc)
 
 yso.serialize(sys.argv[2], format='turtle')
 
