@@ -9,10 +9,10 @@ sparql \
 sparql \
 	--data merged-places-skos.ttl \
 	--query=rename-places.rq -q \
-	>pl.ttl
+	>yso-paikat.ttl
 
-INFILES="pl.ttl"
-OUTFILE=pl-skos.ttl
+INFILES="yso-paikat.ttl"
+OUTFILE=yso-paikat-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
 LOGFILE=skosify.log

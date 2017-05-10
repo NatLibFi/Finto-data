@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 setup() {
-  make -s pl.nt
+  make -s yso-paikat.nt
 }
 
 @test "Hietalahti (Helsinki)" {
