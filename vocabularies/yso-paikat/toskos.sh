@@ -11,7 +11,7 @@ sparql \
 	--query=rename-places.rq -q \
 	>yso-paikat.ttl
 
-INFILES="yso-paikat.ttl"
+INFILES="yso-paikat-metadata.ttl yso-paikat.ttl"
 OUTFILE=yso-paikat-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
