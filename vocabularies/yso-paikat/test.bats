@@ -5,80 +5,80 @@ setup() {
 }
 
 @test "Hietalahti (Helsinki)" {
-  grep "Hietalahti (Helsinki)" pl.nt
-  ! grep "Helsinki (Hietalahti)" pl.nt
+  grep "Hietalahti (Helsinki)" yso-paikat.nt
+  ! grep "Helsinki (Hietalahti)" yso-paikat.nt
 }
 
 @test "Taivallahti (Helsinki)" {
-  grep "Taivallahti (Helsinki)" pl.nt
-  ! grep "Helsinki (Taivallahti)" pl.nt
+  grep "Taivallahti (Helsinki)" yso-paikat.nt
+  ! grep "Helsinki (Taivallahti)" yso-paikat.nt
 }
 
 @test "Töölönlahti (Helsinki)" {
-  grep "Töölönlahti (Helsinki)" pl.nt
-  ! grep "Helsinki (Töölönlahti)" pl.nt
+  grep "Töölönlahti (Helsinki)" yso-paikat.nt
+  ! grep "Helsinki (Töölönlahti)" yso-paikat.nt
 }
 
 @test "Barönsalmi (Inkoo)" {
-  grep "Barönsalmi (Inkoo)" pl.nt
-  ! grep "Inkoo (Barönsalmi)" pl.nt
+  grep "Barönsalmi (Inkoo)" yso-paikat.nt
+  ! grep "Inkoo (Barönsalmi)" yso-paikat.nt
 }
 
 @test "Linnunlahti (Joensuu)" {
-  grep "Linnunlahti (Joensuu)" pl.nt
-  ! grep "Joensuu (Linnunlahti)" pl.nt
+  grep "Linnunlahti (Joensuu)" yso-paikat.nt
+  ! grep "Joensuu (Linnunlahti)" yso-paikat.nt
 }
 
 @test "Kellolahti (Kaavi)" {
-  grep "Kellolahti (Kaavi)" pl.nt
-  ! grep "Kaavi (Kellolahti)" pl.nt
+  grep "Kellolahti (Kaavi)" yso-paikat.nt
+  ! grep "Kaavi (Kellolahti)" yso-paikat.nt
 }
 
 @test "Säynätlahti (Kuhmoinen)" {
-  grep "Säynätlahti (Kuhmoinen)" pl.nt
-  ! grep "Kuhmoinen (Säynätlahti)" pl.nt
+  grep "Säynätlahti (Kuhmoinen)" yso-paikat.nt
+  ! grep "Kuhmoinen (Säynätlahti)" yso-paikat.nt
 }
 
 @test "Kirkkosalmi (Parainen)" {
-  grep "Kirkkosalmi (Parainen)" pl.nt
-  ! grep "Parainen (Kirkkosalmi)" pl.nt
+  grep "Kirkkosalmi (Parainen)" yso-paikat.nt
+  ! grep "Parainen (Kirkkosalmi)" yso-paikat.nt
 }
 
 @test "Sipoonlahti (Sipoo)" {
-  grep "Sipoonlahti (Sipoo)" pl.nt
-  ! grep "Sipoo (Sipoonlahti)" pl.nt
+  grep "Sipoonlahti (Sipoo)" yso-paikat.nt
+  ! grep "Sipoo (Sipoonlahti)" yso-paikat.nt
 }
 
 @test "Sätöslahti (Viinijärvi)" {
-  grep "Sätöslahti (Viinijärvi)" pl.nt
-  ! grep "Viinijärvi (Sätöslahti)" pl.nt
+  grep "Sätöslahti (Viinijärvi)" yso-paikat.nt
+  ! grep "Viinijärvi (Sätöslahti)" yso-paikat.nt
 }
 
 @test "Pitkäkoski (Helsinki)" {
-  grep "Pitkäkoski (Helsinki)" pl.nt
-  ! grep "Helsinki (Pitkäkoski)" pl.nt
+  grep "Pitkäkoski (Helsinki)" yso-paikat.nt
+  ! grep "Helsinki (Pitkäkoski)" yso-paikat.nt
 }
 
 @test "Vaajakoski (Jyväskylän maalaiskunta)" {
-  grep "Vaajakoski (Jyväskylän maalaiskunta)" pl.nt
-  ! grep '"Jyväskylän maalaiskunta (Vaajakoski)"' pl.nt
+  grep "Vaajakoski (Jyväskylän maalaiskunta)" yso-paikat.nt
+  ! grep '"Jyväskylän maalaiskunta (Vaajakoski)"' yso-paikat.nt
 }
 
 @test "Vallinkoski (koski, Imatra)" {
-  grep "Vallinkoski (koski, Imatra)" pl.nt
-  ! grep "Vallinkoski (koski) (Imatra)" pl.nt
+  grep "Vallinkoski (koski, Imatra)" yso-paikat.nt
+  ! grep "Vallinkoski (koski) (Imatra)" yso-paikat.nt
 }
 
 @test "ei Helsinki-alkuisia joissa sulkutarkenne" {
-  ! grep 'Helsinki (' pl.nt
+  ! grep 'Helsinki (' yso-paikat.nt
 }
 
 @test "ei ketjuja labeleissa" {
-  ! grep ' -- ' pl.nt | grep -v 'core#note'
+  ! grep ' -- ' yso-paikat.nt | grep -v 'core#note'
 }
 
 @test "ei samannimisiä paikkoja" {
-  dups="$(grep 'core#prefLabel' pl.nt | cut -d ' ' -f 3- | sort | uniq -d)"
+  dups="$(grep 'core#prefLabel' yso-paikat.nt | cut -d ' ' -f 3- | sort | uniq -d)"
   echo $dups
   [ "$dups" = "" ]
 
