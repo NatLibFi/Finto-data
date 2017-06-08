@@ -1,5 +1,6 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX iso-thes: <http://purl.org/iso25964/skos-thes#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ysa: <http://www.yso.fi/onto/ysa/>
 PREFIX ysameta: <http://www.yso.fi/onto/ysa-meta/>
@@ -10,6 +11,7 @@ PREFIX yso: <http://www.yso.fi/onto/yso/>
 CONSTRUCT {
   ?plc a skos:Concept .
   ?plc ?ysaprop ?newval .
+  ?plc iso-thes:broaderPartitive ?parent .
   ?plc skos:prefLabel ?allarspref .
   ?plc skos:altLabel ?allarsalt .
   ?plc skos:hiddenLabel ?allarshidden .
@@ -28,6 +30,11 @@ CONSTRUCT {
   FILTER (?ysaprop != dct:created)
   FILTER (?ysaprop != dct:modified)
   FILTER (?ysaprop != rdf:type)
+
+  OPTIONAL {
+    ?ysac skos:broader ?ysaparent .
+    BIND(IRI(REPLACE(STR(?ysaparent), STR(ysa:Y), STR(yso:p))) as ?parent)
+  }
 
   OPTIONAL {
     ?ysac skos:exactMatch ?allarsc .
