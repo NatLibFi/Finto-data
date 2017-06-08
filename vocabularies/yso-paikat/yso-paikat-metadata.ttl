@@ -9,6 +9,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
 
 yso:places a skos:ConceptScheme ;
     dc:creator "National Library of Finland"@en,
@@ -35,3 +36,7 @@ Voit ehdottaa uusia käsitteitä ja muutoksia YSAan ja YSOon oheisen <a href="//
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:relation <http://www.yso.fi/onto/ysa/>, <http://www.yso.fi/onto/allars/> ;
     dct:subject yso:p2152 .
+
+
+iso-thes:broaderPartitive rdfs:subPropertyOf skos:broader .
+iso-thes:narrowerPartitive rdfs:subPropertyOf skos:narrower .
