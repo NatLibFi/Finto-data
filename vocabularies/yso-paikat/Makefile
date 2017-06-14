@@ -1,4 +1,4 @@
-yso-paikat.nt:	yso-paikat.ttl
+yso-paikat.nt:	yso-paikat-skos.ttl
 	riot $^ >$@
 	
 all: yso-paikat.nt

@@ -26,7 +26,12 @@ CONSTRUCT {
     UNION { ?plc dc:source "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Suo"@fi }
   }, STRLANG(CONCAT(?firstpart, ' (', ?lastpart, ')'), LANG(?origLabel)),
      STRLANG(CONCAT(?lastpart, ' (', ?firstpart, ')'), LANG(?origLabel))
-  ), ?origLabel) AS ?label)
+  ), ?origLabel) AS ?l)
+  BIND(IF(CONTAINS(?l, ') ('),
+          STRLANG(CONCAT(STRBEFORE(?l, '('), '(', STRBEFORE(STRAFTER(?l, ') ('), ')'), ' : ', STRAFTER(STRBEFORE(?l, ') ('), '('), ')'), LANG(?l)),
+          ?l)
+       AS ?label)
+
   ?plc ?prop ?val .
   FILTER (?prop != skos:prefLabel)
   FILTER (?prop != skos:altLabel)
