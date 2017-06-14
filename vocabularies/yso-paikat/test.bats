@@ -85,7 +85,11 @@ setup() {
 }
 
 @test "ei ketjuja labeleissa" {
-  ! grep 'core#prefLabel.* -- ' yso-paikat.nt | grep -v 'core#note'
+  ! grep 'core#prefLabel.* -- ' yso-paikat.nt
+}
+
+@test "ei ketjuja huomautuksissa" {
+  ! grep 'core#note.* -- ' yso-paikat.nt
 }
 
 @test "ei samannimisiä paikkoja" {

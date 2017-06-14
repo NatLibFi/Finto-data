@@ -8,10 +8,12 @@ PREFIX allarsmeta: <http://www.yso.fi/onto/allars-meta/>
 
 CONSTRUCT {
   ?plc ?labelprop ?label .
+  ?plc skos:hiddenLabel ?origPrefLabel .
   ?plc ?prop ?val .
 } WHERE {
   VALUES ?labelprop { skos:prefLabel skos:altLabel }
   ?plc ?labelprop ?origLabel .
+  BIND(IF(?labelprop = skos:prefLabel, ?origLabel, ?unbound) AS ?origPrefLabel)
   BIND(STRBEFORE(?origLabel, ' -- ') AS ?firstpart)
   BIND(STRAFTER(?origLabel, ' -- ') AS ?lastpart)
   BIND(IF(?firstpart != "", IF(EXISTS {
@@ -27,6 +29,8 @@ CONSTRUCT {
   }, STRLANG(CONCAT(?firstpart, ' (', ?lastpart, ')'), LANG(?origLabel)),
      STRLANG(CONCAT(?lastpart, ' (', ?firstpart, ')'), LANG(?origLabel))
   ), ?origLabel) AS ?l)
+
+  # reformat labels with type specifiers, e.g. "Vallinkoski (koski) (Imatra)" -> "Vallinkoski (Imatra : koski)"
   BIND(IF(CONTAINS(?l, ') ('),
           STRLANG(CONCAT(STRBEFORE(?l, '('), '(', STRBEFORE(STRAFTER(?l, ') ('), ')'), ' : ', STRAFTER(STRBEFORE(?l, ') ('), '('), ')'), LANG(?l)),
           ?l)
