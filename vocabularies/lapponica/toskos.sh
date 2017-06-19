@@ -1,6 +1,8 @@
 #!/bin/sh
 
-INFILES="lapponica-metadata.ttl lapponica.ttl"
+./add-se-labels.py lapponica-labels-se.csv >lapponica-labels-se.ttl
+
+INFILES="lapponica-metadata.ttl lapponica-labels-se.ttl lapponica.ttl"
 OUTFILE=lapponica-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
