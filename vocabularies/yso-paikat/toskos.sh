@@ -15,7 +15,10 @@ sparql \
 
 ./fix-notes.py yso-paikat-disambiguated.ttl >yso-paikat-fixednotes.ttl
 
-INFILES="yso-paikat-metadata.ttl yso-paikat-fixednotes.ttl"
+# fetch mappings from Wikidata and store them in a sorted NT file, so version control works
+rsparql --results NT --service https://query.wikidata.org/sparql --query wikidata-links.rq | sort >wikidata-links.nt
+
+INFILES="yso-paikat-metadata.ttl yso-paikat-fixednotes.ttl wikidata-links.nt"
 OUTFILE=yso-paikat-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
