@@ -84,6 +84,18 @@ setup() {
   ! grep 'Helsinki (' yso-paikat.nt
 }
 
+@test "ei Karjalan tasavalta -alkuisia joissa sulkutarkenne" {
+  ! grep 'Karjalan tasavalta (' yso-paikat.nt
+}
+
+@test "ei Loviisa-alkuisia joissa sulkutarkenne" {
+  ! grep 'Loviisa (' yso-paikat.nt
+}
+
+@test "ei Yhdysvallat-alkuisia joissa sulkutarkenne" {
+  ! grep 'Yhdysvallat (' yso-paikat.nt
+}
+
 @test "ei ketjuja labeleissa" {
   ! grep 'core#prefLabel.* -- ' yso-paikat.nt
 }

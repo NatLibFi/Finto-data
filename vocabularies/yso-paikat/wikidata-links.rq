@@ -1,0 +1,12 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+CONSTRUCT {
+    ?ysoc skos:closeMatch ?item
+}
+WHERE
+{
+    ?item wdt:P2347 ?ysoid .
+    FILTER(STRDT(?ysoid, xsd:integer) > 50000)
+    BIND(IRI(CONCAT('http://www.yso.fi/onto/yso/p', ?ysoid)) AS ?ysoc)
+}
