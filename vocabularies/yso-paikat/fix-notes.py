@@ -26,7 +26,7 @@ for lang in substitutions.keys():
     subst_keys = substitutions[lang].keys()
     subst_keys.sort(key=lambda i:len(i), reverse=True)
     # build language-specific regexes from the substitutions
-    regex_by_lang[lang] = re.compile(r"\b(%s)\b" % "|".join(map(re.escape, subst_keys)))
+    regex_by_lang[lang] = re.compile(r"\b(%s)\b" % "|".join(map(re.escape, subst_keys)), re.UNICODE)
 
 for place, note in g.subject_objects(SKOS.note):
     lang = note.language
