@@ -88,6 +88,10 @@ setup() {
   ! grep 'Karjalan tasavalta (' yso-paikat.nt
 }
 
+@test "ei Kiihtelysvaara-alkuisia joissa sulkutarkenne" {
+  ! grep 'Kiihtelysvaara (' yso-paikat.nt
+}
+
 @test "ei Loviisa-alkuisia joissa sulkutarkenne" {
   ! grep 'Loviisa (' yso-paikat.nt
 }
