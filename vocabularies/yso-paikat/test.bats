@@ -54,9 +54,10 @@ setup() {
   ! grep "Viinijärvi (Sätöslahti)" yso-paikat.nt
 }
 
-@test "Pitkäkoski (Helsinki)" {
-  grep "Pitkäkoski (Helsinki)" yso-paikat.nt
+@test "Pitkäkoski (Vantaa)" {
+  grep "Pitkäkoski (Vantaa)" yso-paikat.nt
   ! grep "Helsinki (Pitkäkoski)" yso-paikat.nt
+  ! grep "Vantaa (Pitkäkoski)" yso-paikat.nt
 }
 
 @test "Vaajakoski (Jyväskylän maalaiskunta)" {
@@ -64,9 +65,19 @@ setup() {
   ! grep '"Jyväskylän maalaiskunta (Vaajakoski)"' yso-paikat.nt
 }
 
-@test "Vallinkoski (koski, Imatra)" {
-  grep "Vallinkoski (koski, Imatra)" yso-paikat.nt
+@test "Vallinkoski (Imatra : koski)" {
+  grep "Vallinkoski (Imatra : koski)" yso-paikat.nt
   ! grep "Vallinkoski (koski) (Imatra)" yso-paikat.nt
+}
+
+@test "Isojärvi (Multia : järvi)" {
+  grep "Isojärvi (Multia : järvi)" yso-paikat.nt
+  ! grep '"Isojärvi (Multia)"@fi' yso-paikat.nt
+}
+
+@test "Isojärvi (Multia : kylä)" {
+  grep "Isojärvi (Multia : kylä)" yso-paikat.nt
+  ! grep '"Isojärvi (Multia)"@fi' yso-paikat.nt
 }
 
 @test "ei Helsinki-alkuisia joissa sulkutarkenne" {
@@ -74,7 +85,11 @@ setup() {
 }
 
 @test "ei ketjuja labeleissa" {
-  ! grep ' -- ' yso-paikat.nt | grep -v 'core#note'
+  ! grep 'core#prefLabel.* -- ' yso-paikat.nt
+}
+
+@test "ei ketjuja huomautuksissa" {
+  ! grep 'core#note.* -- ' yso-paikat.nt
 }
 
 @test "ei samannimisiä paikkoja" {
@@ -82,4 +97,15 @@ setup() {
   echo $dups
   [ "$dups" = "" ]
 
+}
+
+@test "ei pareja, joista vain toisella on tarkenne" {
+  grep 'core#prefLabel' yso-paikat.nt | grep ' : ' | cut -d ' ' -f 3- | sed -e 's/ : [^)]*)/)/' >undisambiguated.txt
+  ! grep -F -f undisambiguated.txt yso-paikat.nt
+}
+
+@test "ei kielikoodittomia labeleita" {
+  nolang="$(grep 'core#prefLabel' yso-paikat.nt | cut -d ' ' -f 3- | grep -v '@')"
+  echo $nolang
+  [ "$nolang" = "" ]
 }

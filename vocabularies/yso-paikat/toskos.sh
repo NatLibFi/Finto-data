@@ -11,7 +11,11 @@ sparql \
 	--query=rename-places.rq -q \
 	>yso-paikat.ttl
 
-INFILES="yso-paikat-metadata.ttl yso-paikat.ttl"
+./disambiguate.py yso-paikat.ttl >yso-paikat-disambiguated.ttl
+
+./fix-notes.py yso-paikat-disambiguated.ttl >yso-paikat-fixednotes.ttl
+
+INFILES="yso-paikat-metadata.ttl yso-paikat-fixednotes.ttl"
 OUTFILE=yso-paikat-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
@@ -19,3 +23,5 @@ LOGFILE=skosify.log
 OPTS="--no-enrich-mappings"
 
 $SKOSIFYHOME/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
+
+bats test.bats
