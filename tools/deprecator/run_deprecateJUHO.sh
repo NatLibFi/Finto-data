@@ -2,7 +2,7 @@
 
 CONF=configs/JUHO-deprecator-config.txt
 INPUT=../../vocabularies/juho/juho.ttl
-OUTPUT=juhoDeprecated.ttl
+OUTPUT=../../vocabularies/juho/juhoDeprecated.ttl
 EMAILOUTPUT=email.txt
 LOG=deprecator.log
 
