@@ -1,0 +1,57 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?lc ?lpref 
+(GROUP_CONCAT(?lalt ; SEPARATOR='; ') AS ?lalts) 
+(GROUP_CONCAT(?lLT ; SEPARATOR='; ') AS ?lLTs)
+?yc ?ypref
+(GROUP_CONCAT(?yLT ; SEPARATOR='; ') AS ?yLTs)
+?tyyppi
+WHERE {
+  GRAPH <http://urn.fi/URN:NBN:fi:au:lapponica:> {
+    ?lc skos:prefLabel ?lpref .
+    FILTER(LANG(?lpref)='fi')
+    OPTIONAL {
+      ?lc skos:altLabel ?lalt .
+    }
+    FILTER NOT EXISTS {
+      [] skos:altLabel ?lpref
+    }
+    OPTIONAL {
+      ?lc skos:broader/skos:prefLabel ?lLT .
+      FILTER(LANG(?lLT)='fi')
+    }
+  }
+  OPTIONAL {
+    GRAPH <http://www.yso.fi/onto/yso/> {
+      {
+        ?yc skos:prefLabel|skos:altLabel ?lpref 
+      }
+      ?yc skos:prefLabel ?ypref .      
+      ?yc skos:inScheme <http://www.yso.fi/onto/yso/> .
+      FILTER(LANG(?ypref)='fi')
+      OPTIONAL {
+        ?yc skos:broader/skos:prefLabel ?yLT .
+        FILTER(LANG(?yLT)='fi')
+      }
+    }
+    BIND('K' AS ?tyyppi)
+  }
+  OPTIONAL {
+    GRAPH <http://www.yso.fi/onto/yso-paikat/> {
+      {
+        ?yc skos:prefLabel|skos:altLabel ?lpref 
+      }
+      ?yc skos:prefLabel ?ypref .
+      FILTER(LANG(?ypref)='fi')
+      OPTIONAL {
+        ?yc skos:broader/skos:prefLabel ?yLT .
+        FILTER(LANG(?yLT)='fi')
+      }
+    }
+    BIND('P' AS ?tyyppi)
+  }
+}
+GROUP BY ?lc ?lpref ?yc ?ypref ?tyyppi
+ORDER BY LCASE(?lpref)
