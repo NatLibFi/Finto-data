@@ -1,0 +1,65 @@
+@prefix oiko: <http://www.yso.fi/onto/oiko/> .
+@prefix oiko-meta: <http://www.yso.fi/onto/oiko-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oiko: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+        
+        "Oikeusministeriö"@fi ,
+        
+        "Sanastokeskus TSK"@fi ,
+        "Terminologicentralen TSK"@sv ,
+        "The Finnish Terminology Centre TSK"@en ,
+		
+        "Tuomioistuinten ja syyttäjälaitoksen edustajat"@fi ,
+        
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+        
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en ;
+
+    dc:title "OIKO - Oikeushallinnon ontologia"@fi ;
+
+    dc:description
+
+"""Oikeushallinnon ontologia on oikeushallinnon Asseri-asiasanaston pohjalta muodostettu erikoisontologia. Oikeushallinnon ontologian tavoitteena on tukea oikeushallinnon organisaatioiden tiedonhallinnan yhtenäistämistä, edistää semanttista ja teknistä yhteentoimivuutta ja helpottaa tiedon hakemista. Oikeushallinnon ontologiassa on noin 1850 käsitettä, jotka on sijoitettu Yleisen suomalaisen ontologian (YSO) mukaiseen hierarkiaan.
+"""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    owl:versionInfo "2017/06/22" .
+
+oiko-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "OIKO-käsite"@fi ,
+        "OIKO-begrepp"@sv, 
+        "OIKO Concept"@en .
+
+oiko-meta:Hierarchy a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+     rdfs:label "Hierarchical OIKO concept"@en, 
+	"Hierarkisoiva OIKO-käsite"@fi, 
+	"Hierarkiserande OIKO-begrepp"@sv .
+
+
+oiko-meta:deprecatedLabel a owl:AnnotationProperty,
+            rdf:Property;
+      rdfs:domain oiko-meta:Concept ;
+      rdfs:label "hylättävä termi"@fi, "deprecated term"@en, "avrådd term"@sv ;
+      rdfs:range xsd:string .
+
