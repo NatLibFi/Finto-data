@@ -92,6 +92,10 @@ setup() {
   ! grep 'Kiihtelysvaara (' yso-paikat.nt
 }
 
+@test "ei Kuhmo-alkuisia joissa sulkutarkenne" {
+  ! grep 'Kuhmo (' yso-paikat.nt
+}
+
 @test "ei Kuhmoinen-alkuisia joissa sulkutarkenne" {
   ! grep 'Kuhmoinen (' yso-paikat.nt
 }
