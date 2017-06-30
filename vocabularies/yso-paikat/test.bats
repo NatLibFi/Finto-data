@@ -80,6 +80,10 @@ setup() {
   ! grep '"Isojärvi (Multia)"@fi' yso-paikat.nt
 }
 
+@test "ei Halikko-alkuisia joissa sulkutarkenne" {
+  ! grep 'Halikko (' yso-paikat.nt
+}
+
 @test "ei Helsinki-alkuisia joissa sulkutarkenne" {
   ! grep 'Helsinki (' yso-paikat.nt
 }
