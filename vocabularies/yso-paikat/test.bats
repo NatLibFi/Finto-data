@@ -104,6 +104,10 @@ setup() {
   ! grep 'Loviisa (' yso-paikat.nt
 }
 
+@test "ei Pelkosenniemi-alkuisia joissa sulkutarkenne" {
+  ! grep 'Pelkosenniemi (' yso-paikat.nt
+}
+
 @test "ei Pohjanmaa-alkuisia joissa sulkutarkenne" {
   ! grep 'Pohjanmaa (' yso-paikat.nt
 }
