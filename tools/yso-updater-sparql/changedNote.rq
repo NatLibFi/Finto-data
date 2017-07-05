@@ -23,9 +23,9 @@ WHERE {
   SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
     GRAPH ?versionHistoryGraph {
       # parameters
-      VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ?changeCategory ) {
-        ( <http://www.yso.fi/onto/ysa/version> skos:Concept  undef undef yso-update:muuttuneet )
-        ( <http://www.yso.fi/onto/allars/version> skos:Concept  undef undef yso-update:muuttuneetSv )
+      VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?changeCategory ) {
+        ( <http://www.yso.fi/onto/ysa/version> '2017-03-01' '2017-07-01' yso-update:muuttuneet )
+        ( <http://www.yso.fi/onto/allars/version> '2017-03-01' '2017-07-01' yso-update:muuttuneetSv )
       }
       # get the current and the previous version as default versions
       ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
@@ -50,14 +50,14 @@ WHERE {
     {
       # deleted notes
       GRAPH ?deletionsGraph {
-        ?concept skos:note|skos:scopeNote ?oldNote .
+        ?concept skos:note ?oldNote .
       }
     }
     UNION
     {
       # newly inserted notes
       GRAPH ?insertionsGraph {
-        ?concept skos:note|skos:scopeNote ?newNote .
+        ?concept skos:note ?newNote .
       }
     }
 
