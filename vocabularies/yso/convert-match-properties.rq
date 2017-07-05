@@ -1,11 +1,11 @@
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 
-DELETE {
-  ?yso om:definedConcept ?match .
-  ?ysomulti om:definedConcept ?multimatch .
-  ?ysomulti om:definedConcept ?multimatch2 .
-}
+#DELETE {
+#  ?yso om:definedConcept ?match .
+#  ?ysomulti om:definedConcept ?multimatch .
+#  ?ysomulti om:definedConcept ?multimatch2 .
+#}
 INSERT {
   ?yso skos:exactMatch ?match .
   ?ysomulti skos:closeMatch ?multimatch .
@@ -16,21 +16,23 @@ WHERE
   {
     ?yso om:definedConcept ?match .
     FILTER (regex(str(?match), "^http://www.yso.fi/onto/ysa/"))
-    FILTER NOT EXISTS {
-      ?yso om:definedConcept ?match2 .
-      FILTER(regex(str(?match2), "^http://www.yso.fi/onto/ysa/"))
-      FILTER(?match != ?match2)
+    OPTIONAL {
+        ?yso om:definedConcept ?match2 .
+        FILTER (regex(str(?match2), "^http://www.yso.fi/onto/ysa/"))
+        FILTER (?match != ?match2)
     }
+    FILTER(!BOUND(?match2))
   } 
   UNION
   {
     ?yso om:definedConcept ?match .
     FILTER(regex(str(?match), "^http://www.yso.fi/onto/allars/"))
-    FILTER NOT EXISTS {
-      ?yso om:definedConcept ?match2 .
-      FILTER(regex(str(?match2), "^http://www.yso.fi/onto/allars/"))
-      FILTER(?match != ?match2)
+    OPTIONAL {
+        ?yso om:definedConcept ?match2 .
+        FILTER (regex(str(?match2), "^http://www.yso.fi/onto/allars/"))
+        FILTER (?match != ?match2)
     }
+    FILTER(!BOUND(?match2))
   }
   UNION
   {

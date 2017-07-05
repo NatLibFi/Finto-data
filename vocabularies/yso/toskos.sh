@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="yso-metadata.ttl ysoKehitys.rdf"
+INFILES="yso-metadata.ttl ysoKehitys.ttl"
 OUTFILE=yso-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"

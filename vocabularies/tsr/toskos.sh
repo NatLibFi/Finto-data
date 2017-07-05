@@ -1,5 +1,5 @@
 #!/bin/sh
-cp ../yso/ysoKehitys.rdf yso-import.rdf
+#cp ../yso/ysoKehitys.rdf yso-import.rdf
 INFILES="tsr-metadata.ttl tsr.ttl yso-import.rdf"
 OUTFILE=tsr-skos.ttl
 
