@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#INFILES="tero-metadata.ttl tero-new.rdf"
-#INFILES="tero-metadata.ttl tero-ysomerged.rdf"
 INFILES="tero-metadata.ttl tero.ttl yso-tero.ttl"
 OUTFILE=tero-skos.ttl
 
