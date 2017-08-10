@@ -2,6 +2,9 @@
 # imports: http://www.w3.org/2004/02/skos/core
 # prefix: hero
 
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix hero: <http://www.yso.fi/onto/hero/> .
 @prefix hero-meta: <http://www.yso.fi/onto/hero-meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,6 +14,87 @@
 @prefix skosext: <http://purl.org/finnonto/schema/skosext#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hero: a skos:ConceptScheme ;
+    dc:publisher "The National Archives of Finland"@en,
+        "Kansallisarkisto"@fi,
+        "Riksarkivet"@sv ;
+    dc:creator """Kansallisarkisto
+Kuvat Tapani Talari"""@fi,
+"""Riksarkivet
+Bilder Tapani Talari"""@sv ,
+"""The National Archives of Finland
+Illustration Tapani Talari"""@en ;
+
+    dc:title "Анталогія геральдыкі"@be,
+        "Ontologia de l'heràldica"@ca,
+        "Ontologie heraldiky"@cs,
+        "Ontologi af heraldik"@da,
+        "Ontologie für Heraldik"@de,
+        "Οντολογία της εραλδικής"@el,
+        "Ontology of Heraldry"@en,
+        "Ontología de la heráldica"@es,
+        "Heraldika ontoloogia"@et,
+        "Heraldiikan ontologia"@fi,
+        "Ontologie héraldique"@fr,
+        "Ontologija heraldike"@hr,
+        "Ontológia a címertan"@hu,
+        "Verufræði fyrir skjaldarmerki"@is,
+        "Ontologia di araldica"@it,
+        "Ontologia heraldica"@la,
+        "Heraldikos ontologija"@lt,
+        "Heraldikas ontoloģija"@lv,
+        "Ontologi av heraldikk"@nb,
+        "Ontologie voor heraldiek"@nl,
+        "Ontologi av heraldikk"@nn,
+        "Ontologia heraldyki"@pl,
+        "Ontologia da heráldica"@pt,
+        "Ontologie heraldică"@ro,
+        "Онтология геральдики"@ru,
+        "Ontológia heraldiky"@sk,
+        "Ontologjia e heraldika"@sq,
+        "Онтологија хералдике"@sr,
+        "Heraldikens ontologi"@sv,
+        "Онтологія геральдики"@uk ;
+
+    dc:description
+
+"""Heraldiikan ontologia HERO sisältää vaakunan tunnuskuvioiden kuvailuun heraldiikassa käytettyjä käsitteitä. Ontologia on monikielinen ja sen on käytettävissä kaikilla kielillä, vaikka käsitteissä ja niiden luokittelussa on tiettyjä eroja kielialueiden välillä. Laajalti käytettyjen käsitteiden lisäksi mukana on joitakin hyvin harvinaisia, jotka esiintyvät kielellisesti ja ajallisesti rajatuilla alueilla. Esimerkiksi monet ontologiassa ominaisuudeksi luokitellut käsitteet eivät kuulu pohjoismaiseen heraldiikkaan.
+ 
+Koko vaakunan tekstimuotoiseen kuvaukseen tarvitaan vaakunaselitys, joka koostuu tiettyjen sääntöjen mukaisesti toisiinsa liittyvistä heraldisista käsitteistä. Nämä säännöt eivät sisälly Heraldiikan ontologian rakenteeseen, mutta siihen liittyvää kehittämistyötä tehdään Kansallisarkistossa. Myös HERO on edelleen kehitysvaiheessa, käännösten tarkistustyö on vasta käynnistynyt ja sisältöä tullaan päivittämään säännöllisesti.
+"""@fi ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/hun>,
+        <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/nld>,
+        <http://lexvo.org/id/iso639-3/deu>,
+        <http://lexvo.org/id/iso639-3/swe>,
+        <http://lexvo.org/id/iso639-3/nob>,
+        <http://lexvo.org/id/iso639-3/nno>,
+        <http://lexvo.org/id/iso639-3/dan>,
+        <http://lexvo.org/id/iso639-3/isl>,
+        <http://lexvo.org/id/iso639-3/lit>,
+        <http://lexvo.org/id/iso639-3/lvs>,
+        <http://lexvo.org/id/iso639-3/sqi>,
+        <http://lexvo.org/id/iso639-3/ell>,
+        <http://lexvo.org/id/iso639-3/lat>,
+        <http://lexvo.org/id/iso639-3/ita>,
+        <http://lexvo.org/id/iso639-3/fra>,
+        <http://lexvo.org/id/iso639-3/spa>,
+        <http://lexvo.org/id/iso639-3/cat>,
+        <http://lexvo.org/id/iso639-3/por>,
+        <http://lexvo.org/id/iso639-3/ron>,
+        <http://lexvo.org/id/iso639-3/pol>,
+        <http://lexvo.org/id/iso639-3/ces>,
+        <http://lexvo.org/id/iso639-3/slk>,
+        <http://lexvo.org/id/iso639-3/hrv>,
+        <http://lexvo.org/id/iso639-3/srp>,
+        <http://lexvo.org/id/iso639-3/rus>,
+        <http://lexvo.org/id/iso639-3/bel>,
+        <http://lexvo.org/id/iso639-3/ukr>,
+        <http://lexvo.org/id/iso639-3/est> ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> .
 
 skosext:partOf
   rdf:type owl:DatatypeProperty ;
@@ -50,15 +134,19 @@ hero:p1
   skosext:partOf hero:p135 ;
   skos:altLabel "arqueada"@es ;
   skos:altLabel "curvo"@es ;
-  skos:broader hero:p1660 ;
+  skos:altLabel "voûté"@fr ;
+  skos:broader hero:p18 ;
+  skos:hiddenLabel "arquée"@fr ;
+  skos:hiddenLabel "voûtée"@fr ;
   skos:prefLabel "kaarikoro"@fi ;
-  hero-meta:wboMatch "0151-166" ;
+  hero-meta:wboMatch "-166"^^xsd:string ;
 .
 hero:p10
   rdf:type skos:Concept ;
   skos:broader hero:p14 ;
+  skos:hiddenLabel "flambée"@fr ;
   skos:prefLabel "liekkikoro"@fi ;
-  hero-meta:wboMatch "0151-181" ;
+  hero-meta:wboMatch "-181"^^xsd:string ;
 .
 hero:p101
   rdf:type skos:Concept ;
@@ -126,13 +214,17 @@ hero:p108
 hero:p1086
   rdf:type skos:Concept ;
   skos:broader hero:p210 ;
+  skos:hiddenLabel "acrupido"@es ;
   skos:prefLabel "istuva, etujalat koholla"@fi ;
 .
 hero:p1087
   rdf:type skos:Concept ;
+  skos:altLabel "aculado"@es ;
   skos:altLabel "affrontant"@en ;
+  skos:altLabel "batalhante"@pt ;
   skos:altLabel "respectant"@en ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "affrontées"@fr ;
   skos:prefLabel "vastakkain"@fi ;
 .
 hero:p1088
@@ -143,6 +235,7 @@ hero:p1088
 .
 hero:p1089
   rdf:type skos:Concept ;
+  skos:altLabel "cuadrifolio"@es ;
   skos:broader hero:p2289 ;
   skos:prefLabel "nelilehtinen"@fi ;
   skos:related hero:p610 ;
@@ -151,6 +244,7 @@ hero:p109
   rdf:type skos:Concept ;
   skos:altLabel "Schildbord"@de ;
   skos:altLabel "Schildrand"@de ;
+  skos:altLabel "zoom"@nl ;
   skos:altLabel "μπορντούρα"@el ;
   skos:broader hero:p1699 ;
   skos:prefLabel "reunus"@fi ;
@@ -172,27 +266,32 @@ hero:p1090
 .
 hero:p11
   rdf:type skos:Concept ;
+  skos:altLabel "flammé"@fr ;
   skos:altLabel "liekkikoro [vanh.]"@fi ;
   skos:altLabel "radiant"@en ;
   skos:altLabel "rayonnant"@en ;
   skos:broader hero:p14 ;
+  skos:hiddenLabel "flammée"@fr ;
+  skos:hiddenLabel "rayonnée"@fr ;
   skos:prefLabel "sädekoro"@fi ;
   skos:related hero:p1504 ;
 .
 hero:p110
   rdf:type skos:Concept ;
-  skos:altLabel "orlatura"@it ;
-  skos:altLabel "orlo"@it ;
+  skos:altLabel "cinta"@it ;
+  skos:altLabel "trescheur"@fr ;
+  skos:altLabel "trécheur"@fr ;
   skos:broader hero:p1699 ;
   skos:hiddenLabel "trecheur"@fr ;
   skos:prefLabel "kehä"@fi ;
 .
 hero:p1102
   rdf:type skos:Concept ;
-  skosext:partOf hero:p2371 ;
+  skos:altLabel "cuerno de la fortuna"@es ;
   skos:broader hero:p1674 ;
   skos:broader hero:p2941 ;
   skos:prefLabel "runsaudensarvi"@fi ;
+  skos:related hero:p2371 ;
 .
 hero:p1104
   rdf:type skos:Concept ;
@@ -218,6 +317,7 @@ hero:p111
   skos:altLabel "quartier"@fr ;
   skos:altLabel "rechte obere Vierung"@de ;
   skos:broader hero:p1699 ;
+  skos:hiddenLabel "franco cuartel"@es ;
   skos:prefLabel "neliö"@fi ;
   hero-meta:wboMatch "0242" ;
 .
@@ -225,6 +325,7 @@ hero:p112
   rdf:type skos:Concept ;
   skos:altLabel "angle"@fr ;
   skos:altLabel "canton"@fr ;
+  skos:altLabel "franco-cantão"@pt ;
   skos:broader hero:p1699 ;
   skos:prefLabel "kolkka"@fi ;
   hero-meta:wboMatch "0248" ;
@@ -276,14 +377,19 @@ hero:p1141
   skos:altLabel "accerchiellata"@it ;
   skos:altLabel "cercelé"@fr ;
   skos:altLabel "recercely"@en ;
-  skos:altLabel "recerclée"@fr ;
+  skos:altLabel "recerclé"@fr ;
   skos:broader hero:p163 ;
+  skos:hiddenLabel "cercelée"@fr ;
+  skos:hiddenLabel "recerclée"@fr ;
   skos:prefLabel "cross recercely (en)"@fi ;
   hero-meta:wboMatch "0364" ;
 .
 hero:p1142
   rdf:type skos:Concept ;
+  skos:altLabel "en croix"@fr ;
+  skos:altLabel "rangés en croix"@fr ;
   skos:broader hero:p2823 ;
+  skos:hiddenLabel "rangées en croix"@fr ;
   skos:prefLabel "ristin tavoin"@fi ;
   skos:related hero:p139 ;
 .
@@ -291,6 +397,14 @@ hero:p1148
   rdf:type skos:Concept ;
   skos:altLabel "Bundschuh"@de ;
   skos:altLabel "abarca"@es ;
+  skos:altLabel "abarca"@pt ;
+  skos:altLabel "alparca"@pt ;
+  skos:altLabel "babucha"@es ;
+  skos:altLabel "borceguí"@es ;
+  skos:altLabel "klomp"@nl ;
+  skos:altLabel "muil"@nl ;
+  skos:altLabel "sandalia"@es ;
+  skos:altLabel "trip"@nl ;
   skos:altLabel "zapato"@es ;
   skos:broader hero:p2286 ;
   skos:prefLabel "kenkä"@fi ;
@@ -363,7 +477,9 @@ hero:p1156
 .
 hero:p1157
   rdf:type skos:Concept ;
+  skos:altLabel "brush"@en ;
   skos:broader hero:p2281 ;
+  skos:hiddenLabel "paint brush"@en ;
   skos:prefLabel "sivellin"@fi ;
 .
 hero:p1158
@@ -395,11 +511,13 @@ hero:p1160
 .
 hero:p1161
   rdf:type skos:Concept ;
+  skos:altLabel "kolom"@nl ;
   skos:altLabel "pelare"@sv ;
   skos:altLabel "pilar"@pt ;
   skos:altLabel "pilari"@fi ;
   skos:altLabel "pillar"@en ;
   skos:altLabel "zule"@en ;
+  skos:altLabel "zulte"@fr ;
   skos:broader hero:p2942 ;
   skos:broader hero:p522 ;
   skos:prefLabel "pylväs"@fi ;
@@ -414,6 +532,7 @@ hero:p1162
 .
 hero:p1163
   rdf:type skos:Concept ;
+  skos:altLabel "malhete"@pt ;
   skos:broader hero:p2943 ;
   skos:broader hero:p574 ;
   skos:prefLabel "puheenjohtajan nuija"@fi ;
@@ -448,7 +567,9 @@ hero:p1169
 .
 hero:p1170
   rdf:type skos:Concept ;
+  skos:altLabel "kolmiraaja"@fi ;
   skos:altLabel "triskele"@et ;
+  skos:altLabel "triskèles"@fr ;
   skos:broader hero:p1673 ;
   skos:prefLabel "triskele"@fi ;
 .
@@ -511,6 +632,7 @@ hero:p118
   skosext:partOf hero:p116 ;
   skosext:partOf hero:p314 ;
   skos:altLabel "macle"@en ;
+  skos:altLabel "macle"@es ;
   skos:altLabel "mâcle"@fr ;
   skos:broader hero:p116 ;
   skos:prefLabel "lävistetty ruutu"@fi ;
@@ -518,6 +640,7 @@ hero:p118
 .
 hero:p1180
   rdf:type skos:Concept ;
+  skos:altLabel "heideplant"@nl ;
   skos:broader hero:p2499 ;
   skos:prefLabel "kanerva"@fi ;
 .
@@ -529,6 +652,7 @@ hero:p1182
 .
 hero:p1183
   rdf:type skos:Concept ;
+  skos:altLabel "gewicht"@nl ;
   skos:broader hero:p2281 ;
   skos:prefLabel "punnus"@fi ;
 .
@@ -555,11 +679,11 @@ hero:p1186
 .
 hero:p1187
   rdf:type skos:Concept ;
-  skos:altLabel "Mittelschild"@de ;
   skos:altLabel "escudo en corazón"@es ;
   skos:altLabel "escutcheon in heart"@en ;
-  skos:altLabel "écu en coeur"@fr ;
-  skos:broader hero:p2256 ;
+  skos:altLabel "écu en cœur"@fr ;
+  skos:broader hero:p36 ;
+  skos:hiddenLabel "escuson"@es ;
   skos:prefLabel "sydänkilpi"@fi ;
   skos:related hero:p2695 ;
   skos:related hero:p488 ;
@@ -575,6 +699,7 @@ hero:p1189
   skos:altLabel "porc"@fr ;
   skos:altLabel "porsas"@fi ;
   skos:altLabel "swine"@en ;
+  skos:altLabel "truie"@fr ;
   skos:broader hero:p2926 ;
   skos:prefLabel "sika"@fi ;
   skos:related hero:p396 ;
@@ -604,7 +729,9 @@ hero:p1191
 .
 hero:p1192
   rdf:type skos:Concept ;
+  skos:altLabel "vixen"@en ;
   skos:broader hero:p2924 ;
+  skos:hiddenLabel "zorra"@es ;
   skos:prefLabel "kettu"@fi ;
 .
 hero:p1193
@@ -657,11 +784,13 @@ hero:p1195
 .
 hero:p1196
   rdf:type skos:Concept ;
+  skos:altLabel "brújula"@es ;
   skos:altLabel "tuuliruusu"@fi ;
   skos:altLabel "windkruis"@nl ;
   skos:altLabel "windrose"@en ;
   skos:broader hero:p2249 ;
   skos:prefLabel "kompassiruusu"@fi ;
+  skos:related hero:p83 ;
   hero-meta:wboMatch "9471" ;
 .
 hero:p1197
@@ -709,6 +838,7 @@ hero:p1203
 hero:p1204
   rdf:type skos:Concept ;
   skos:altLabel "faucille"@en ;
+  skos:altLabel "foucinha"@pt ;
   skos:broader hero:p2598 ;
   skos:prefLabel "sirppi"@fi ;
 .
@@ -790,6 +920,7 @@ hero:p1217
 .
 hero:p1218
   rdf:type skos:Concept ;
+  skos:altLabel "colmeia"@pt ;
   skos:altLabel "ruche"@en ;
   skos:broader hero:p2941 ;
   skos:hiddenLabel "bee-hive"@en ;
@@ -821,8 +952,11 @@ hero:p1220
 .
 hero:p1221
   rdf:type skos:Concept ;
+  skos:altLabel "Seelöwe"@de ;
   skos:altLabel "heraldic sealion"@en ;
   skos:altLabel "heraldinen merileijona"@fi ;
+  skos:altLabel "morse"@en ;
+  skos:altLabel "zeeleeuw"@nl ;
   skos:broader hero:p1664 ;
   skos:broader hero:p1674 ;
   skos:broader hero:p192 ;
@@ -833,12 +967,15 @@ hero:p1222
   rdf:type skos:Concept ;
   skos:altLabel "effeuillé"@fr ;
   skos:altLabel "entlaubt"@de ;
+  skos:altLabel "keloutunut"@fi ;
   skos:altLabel "sec"@fr ;
   skos:altLabel "sfogliato"@it ;
   skos:altLabel "withered"@en ;
-  skos:altLabel "ébranché"@fr ;
   skos:broader hero:p2374 ;
-  skos:prefLabel "keloutunut"@fi ;
+  skos:hiddenLabel "desséchée"@fr ;
+  skos:hiddenLabel "effeuillée"@fr ;
+  skos:hiddenLabel "kelo"@fi ;
+  skos:prefLabel "lehdetön"@fi ;
 .
 hero:p1224
   rdf:type skos:Concept ;
@@ -856,6 +993,8 @@ hero:p1224
 .
 hero:p1225
   rdf:type skos:Concept ;
+  skos:altLabel "costa"@pt ;
+  skos:altLabel "os de jambe"@fr ;
   skos:altLabel "os de mort"@fr ;
   skos:altLabel "shankbone"@en ;
   skos:altLabel "shinbone"@en ;
@@ -912,9 +1051,12 @@ hero:p1232
 .
 hero:p1233
   rdf:type skos:Concept ;
+  skos:altLabel "abnehmend"@de ;
   skos:altLabel "retourné"@fr ;
   skos:altLabel "traversed"@en ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "contournée"@fr ;
+  skos:hiddenLabel "retournée"@fr ;
   skos:prefLabel "vasemmalle kääntynyt"@fi ;
 .
 hero:p1234
@@ -966,6 +1108,7 @@ hero:p1240
 hero:p1241
   rdf:type skos:Concept ;
   skos:altLabel "flor de lis de jardín"@es ;
+  skos:altLabel "lirio de jardín"@es ;
   skos:altLabel "lis"@fr ;
   skos:altLabel "luonnollinen lilja"@fi ;
   skos:altLabel "lys"@fr ;
@@ -1008,6 +1151,7 @@ hero:p1248
   skos:altLabel "mattonato"@it ;
   skos:broader hero:p2253 ;
   skos:hiddenLabel "maconné"@fr ;
+  skos:hiddenLabel "maçonnée"@fr ;
   skos:prefLabel "muurattu"@fi ;
 .
 hero:p1249
@@ -1036,9 +1180,13 @@ hero:p1250
 .
 hero:p1251
   rdf:type skos:Concept ;
+  skos:altLabel "didelta"@es ;
   skos:altLabel "double triangle"@fr ;
   skos:altLabel "heksagrammi"@fi ;
+  skos:altLabel "hexagramme"@fr ;
   skos:altLabel "kuusikanta"@fi ;
+  skos:altLabel "sceau de Salomon"@fr ;
+  skos:altLabel "sello de Salomón"@es ;
   skos:altLabel "étoile de David"@fr ;
   skos:broader hero:p2221 ;
   skos:prefLabel "daavidintähti"@fi ;
@@ -1081,6 +1229,7 @@ hero:p1258
   skos:hiddenLabel "finger-ring"@en ;
   skos:hiddenLabel "gem-ring"@en ;
   skos:prefLabel "sormus"@fi ;
+  skos:related hero:p95 ;
   hero-meta:wboMatch "9780" ;
 .
 hero:p1259
@@ -1100,6 +1249,7 @@ hero:p126
 .
 hero:p1261
   rdf:type skos:Concept ;
+  skos:altLabel "Corinthian helmet"@en ;
   skos:broader hero:p720 ;
   skos:prefLabel "kreikkalainen kypärä"@fi ;
   hero-meta:wboMatch "9607" ;
@@ -1128,6 +1278,7 @@ hero:p1265
   skos:altLabel "jousting helm"@en ;
   skos:altLabel "stickhjälm"@sv ;
   skos:altLabel "suljettu kypärä"@fi ;
+  skos:broader hero:p1987 ;
   skos:broader hero:p720 ;
   skos:prefLabel "pistokypärä"@fi ;
 .
@@ -1150,6 +1301,7 @@ hero:p1268
 .
 hero:p1270
   rdf:type skos:Concept ;
+  skos:altLabel "more"@fr ;
   skos:broader hero:p1662 ;
   skos:prefLabel "murjaani"@fi ;
 .
@@ -1166,6 +1318,7 @@ hero:p1272
   skos:altLabel "pappersrulle"@sv ;
   skos:altLabel "parchment"@en ;
   skos:altLabel "pergamentti"@fi ;
+  skos:altLabel "rollo"@es ;
   skos:altLabel "rouleau de parchemin"@fr ;
   skos:altLabel "scroll"@en ;
   skos:broader hero:p2942 ;
@@ -1244,6 +1397,7 @@ hero:p1285
 .
 hero:p1286
   rdf:type skos:Concept ;
+  skos:altLabel "mi-parti"@fr ;
   skos:altLabel "semipartido y cortado"@es ;
   skos:broader hero:p37 ;
   skos:prefLabel "katkoinen ja yläkenttä halkoinen"@fi ;
@@ -1261,6 +1415,7 @@ hero:p1288
 .
 hero:p1289
   rdf:type skos:Concept ;
+  skos:altLabel "gouge"@en ;
   skos:altLabel "ruuvitaltta"@fi ;
   skos:broader hero:p2281 ;
   skos:prefLabel "taltta"@fi ;
@@ -1280,12 +1435,12 @@ hero:p1292
 .
 hero:p1293
   rdf:type skos:Concept ;
-  skos:altLabel "hovtång"@sv ;
   skos:altLabel "pliers"@en ;
   skos:altLabel "smidestång"@sv ;
   skos:altLabel "smälttång"@sv ;
   skos:broader hero:p2281 ;
   skos:prefLabel "pihdit"@fi ;
+  skos:related hero:p3168 ;
 .
 hero:p1294
   rdf:type skos:Concept ;
@@ -1341,6 +1496,7 @@ hero:p1301
   rdf:type skos:Concept ;
   skos:altLabel "Hängeärmel"@de ;
   skos:altLabel "mal taillée"@fr ;
+  skos:altLabel "mal tallada"@es ;
   skos:altLabel "manche mal taillée"@fr ;
   skos:altLabel "manche"@en ;
   skos:altLabel "sleeve"@en ;
@@ -1380,6 +1536,7 @@ hero:p1307
   rdf:type skos:Concept ;
   skos:broader hero:p2281 ;
   skos:prefLabel "kolmioviivain"@fi ;
+  skos:related hero:p2097 ;
 .
 hero:p1309
   rdf:type skos:Concept ;
@@ -1458,7 +1615,9 @@ hero:p1320
 .
 hero:p1321
   rdf:type skos:Concept ;
+  skos:altLabel "disjoint"@fr ;
   skos:broader hero:p2377 ;
+  skos:broader hero:p664 ;
   skos:prefLabel "fracted (en)"@fi ;
 .
 hero:p1322
@@ -1505,6 +1664,7 @@ hero:p1329
 hero:p133
   rdf:type skos:Concept ;
   skos:altLabel "latticed"@en ;
+  skos:altLabel "treillis"@fr ;
   skos:broader hero:p134 ;
   skos:hiddenLabel "trellised"@en ;
   skos:prefLabel "ristikko"@fi ;
@@ -1707,6 +1867,8 @@ hero:p1352
 .
 hero:p1353
   rdf:type skos:Concept ;
+  skos:altLabel "calmado"@es ;
+  skos:altLabel "calme"@fr ;
   skos:broader hero:p1660 ;
   skos:prefLabel "suora koro"@fi ;
 .
@@ -1722,6 +1884,7 @@ hero:p1356
   skos:altLabel "lune"@fr ;
   skos:altLabel "nymåne"@da ;
   skos:altLabel "nymåne"@sv ;
+  skos:altLabel "tornado"@es ;
   skos:altLabel "uusikuu"@fi ;
   skos:broader hero:p1358 ;
   skos:prefLabel "kasvava kuu"@fi ;
@@ -1729,6 +1892,7 @@ hero:p1356
 hero:p1357
   rdf:type skos:Concept ;
   skos:altLabel "abnehmend Mond"@de ;
+  skos:altLabel "contornado"@es ;
   skos:broader hero:p1358 ;
   skos:prefLabel "vähenevä kuu"@fi ;
 .
@@ -1743,6 +1907,7 @@ hero:p1358
   skos:altLabel "måne"@sv ;
   skos:altLabel "луна"@ru ;
   skos:broader hero:p1670 ;
+  skos:hiddenLabel "creciente"@es ;
   skos:prefLabel "makaava kuu"@fi ;
 .
 hero:p1359
@@ -1755,6 +1920,7 @@ hero:p1360
   skos:altLabel "in splendour"@en ;
   skos:altLabel "visage"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "figurée"@fr ;
   skos:hiddenLabel "splendour"@en ;
   skos:prefLabel "kasvot"@fi ;
 .
@@ -1769,15 +1935,22 @@ hero:p1361
   skos:altLabel "soaring"@en ;
   skos:altLabel "surgerant"@en ;
   skos:broader hero:p2009 ;
+  skos:hiddenLabel "azorada"@es ;
   skos:prefLabel "siivilleen kohoava"@fi ;
 .
 hero:p1362
   rdf:type skos:Concept ;
+  skos:altLabel "attraversante"@it ;
+  skos:altLabel "brochant sur la partition"@fr ;
   skos:altLabel "brochant sur le tout"@en ;
   skos:altLabel "over all"@en ;
+  skos:altLabel "sobre el todo"@es ;
+  skos:altLabel "sur le tout"@fr ;
   skos:altLabel "surtout"@en ;
   skos:broader hero:p298 ;
-  skos:prefLabel "päällikkeenä [3 kuvio jaon päällä]"@fi ;
+  skos:hiddenLabel "brochante sur la partition"@fr ;
+  skos:hiddenLabel "brochante sur le tout"@fr ;
+  skos:prefLabel "päällikkeenä [3 jaon päällä]"@fi ;
   skos:related hero:p2751 ;
 .
 hero:p1363
@@ -1793,6 +1966,7 @@ hero:p1365
 .
 hero:p1367
   rdf:type skos:Concept ;
+  skos:altLabel "mulet"@fr ;
   skos:broader hero:p78 ;
   skos:prefLabel "keltti"@fi ;
 .
@@ -1873,12 +2047,6 @@ hero:p1381
   skos:prefLabel "musketti"@fi ;
   skos:related hero:p1344 ;
 .
-hero:p1382
-  rdf:type skos:Concept ;
-  skos:broader hero:p214 ;
-  skos:prefLabel "metsästyshaukka"@fi ;
-  skos:related hero:p214 ;
-.
 hero:p1384
   rdf:type skos:Concept ;
   skosext:partOf hero:p2459 ;
@@ -1895,6 +2063,7 @@ hero:p1385
   skos:altLabel "grapes"@en ;
   skos:altLabel "grappe de raisin"@en ;
   skos:broader hero:p1416 ;
+  skos:hiddenLabel "racimo"@es ;
   skos:prefLabel "viinirypäleterttu"@fi ;
 .
 hero:p1387
@@ -1914,21 +2083,21 @@ hero:p139
   rdf:type skos:Concept ;
   skosext:partOf hero:p1536 ;
   skosext:partOf hero:p65 ;
-  skos:altLabel "croix alésé"@fr ;
+  skos:altLabel "croix alésée"@fr ;
   skos:altLabel "croix coupée"@fr ;
   skos:altLabel "croix raccourcie"@fr ;
   skos:altLabel "croix recoupée"@fr ;
   skos:broader hero:p1697 ;
-  skos:hiddenLabel "croix alésée"@fr ;
   skos:prefLabel "kreikkalainen risti"@fi ;
   skos:related hero:p155 ;
 .
 hero:p1390
   rdf:type skos:Concept ;
-  skos:altLabel "accolée"@fr ;
+  skos:altLabel "accolé"@fr ;
   skos:altLabel "acolado"@es ;
   skos:broader hero:p2825 ;
   skos:broader hero:p2866 ;
+  skos:hiddenLabel "accolée"@fr ;
   skos:prefLabel "kietoutunut"@fi ;
 .
 hero:p1391
@@ -1989,6 +2158,7 @@ hero:p14
   skos:altLabel "dancetté"@en ;
   skos:altLabel "denché"@en ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "denchée"@fr ;
   skos:prefLabel "hammaskoro"@fi ;
 .
 hero:p140
@@ -2002,6 +2172,7 @@ hero:p140
 .
 hero:p1400
   rdf:type skos:Concept ;
+  skos:altLabel "hijskraan"@nl ;
   skos:broader hero:p2281 ;
   skos:prefLabel "vinssijalusta"@fi ;
 .
@@ -2019,6 +2190,7 @@ hero:p1402
   skos:altLabel "birreme"@es ;
   skos:altLabel "dieeri"@fi ;
   skos:altLabel "galea"@it ;
+  skos:altLabel "galion"@fr ;
   skos:altLabel "lymfadi"@fi ;
   skos:altLabel "lymphad"@en ;
   skos:altLabel "διήρης"@el ;
@@ -2075,7 +2247,7 @@ hero:p141
   skos:altLabel "Gabelkreuz"@de ;
   skos:broader hero:p67 ;
   skos:prefLabel "irtonainen haaruristi"@fi ;
-  hero-meta:wboMatch "0399" ;
+  hero-meta:wboMatch "0399"^^xsd:string ;
 .
 hero:p1410
   rdf:type skos:Concept ;
@@ -2110,8 +2282,12 @@ hero:p1413
 .
 hero:p1414
   rdf:type skos:Concept ;
-  skos:broader hero:p2825 ;
+  skos:altLabel "haaruristin tavoin"@fi ;
+  skos:broader hero:p2823 ;
   skos:prefLabel "kolmihaarana"@fi ;
+  skos:related hero:p1170 ;
+  skos:related hero:p609 ;
+  skos:related hero:p67 ;
 .
 hero:p1415
   rdf:type skos:Concept ;
@@ -2242,6 +2418,8 @@ hero:p1436
 hero:p1437
   rdf:type skos:Concept ;
   skos:altLabel "Vogelfuß"@de ;
+  skos:altLabel "griffe"@fr ;
+  skos:altLabel "membre"@fr ;
   skos:broader hero:p2288 ;
   skos:prefLabel "jalka [lintu]"@fi ;
   skos:related hero:p1249 ;
@@ -2271,6 +2449,7 @@ hero:p1442
   rdf:type skos:Concept ;
   skos:altLabel "calf"@en ;
   skos:altLabel "cattle"@en ;
+  skos:altLabel "ternero"@es ;
   skos:altLabel "vache"@en ;
   skos:altLabel "vasikka"@fi ;
   skos:broader hero:p220 ;
@@ -2279,8 +2458,11 @@ hero:p1442
 .
 hero:p1443
   rdf:type skos:Concept ;
-  skos:broader hero:p1668 ;
-  skos:prefLabel "veneenveistopuristin"@fi ;
+  skos:altLabel "boat building clamp"@en ;
+  skos:altLabel "båtklammer"@nb ;
+  skos:altLabel "veneenveistopuristin"@fi ;
+  skos:broader hero:p2281 ;
+  skos:prefLabel "puristin"@fi ;
 .
 hero:p1444
   rdf:type skos:Concept ;
@@ -2292,7 +2474,7 @@ hero:p1444
 hero:p1445
   rdf:type skos:Concept ;
   skos:altLabel "Prozessionskreuz"@de ;
-  skos:broader hero:p2939 ;
+  skos:broader hero:p143 ;
   skos:broader hero:p738 ;
   skos:prefLabel "ristisauva"@fi ;
   hero-meta:wboMatch "9857" ;
@@ -2416,6 +2598,7 @@ hero:p1467
 .
 hero:p1468
   rdf:type skos:Concept ;
+  skos:altLabel "heining"@nl ;
   skos:broader hero:p374 ;
   skos:prefLabel "riukuaita"@fi ;
 .
@@ -2423,6 +2606,7 @@ hero:p1469
   rdf:type skos:Concept ;
   skos:broader hero:p2986 ;
   skos:prefLabel "tuohitorvi"@fi ;
+  skos:related hero:p357 ;
 .
 hero:p147
   rdf:type skos:Concept ;
@@ -2430,6 +2614,7 @@ hero:p147
   skos:altLabel "béquille St.-Antoine"@fr ;
   skos:altLabel "cross of St. Anthony"@en ;
   skos:altLabel "cruz de santa Tecla"@es ;
+  skos:altLabel "taf"@fr ;
   skos:altLabel "tau"@fr ;
   skos:altLabel "taukors"@sv ;
   skos:altLabel "tauristi"@fi ;
@@ -2462,12 +2647,14 @@ hero:p1473
 .
 hero:p1474
   rdf:type skos:Concept ;
+  skos:altLabel "mi-coupé"@fr ;
   skos:altLabel "semicortado y partido"@es ;
   skos:broader hero:p38 ;
   skos:prefLabel "halkoinen ja oikea kenttä katkoinen"@fi ;
 .
 hero:p1475
   rdf:type skos:Concept ;
+  skos:altLabel "franco-cantão sinistro do chefe"@pt ;
   skos:broader hero:p112 ;
   skos:prefLabel "vasen kolkka"@fi ;
   hero-meta:wboMatch "0249" ;
@@ -2484,6 +2671,7 @@ hero:p1478
   skos:altLabel "harpy"@da ;
   skos:altLabel "harpyija"@fi ;
   skos:altLabel "harpyja"@sv ;
+  skos:altLabel "harpía"@es ;
   skos:broader hero:p1662 ;
   skos:broader hero:p1674 ;
   skos:broader hero:p201 ;
@@ -2493,13 +2681,16 @@ hero:p148
   rdf:type skos:Concept ;
   skos:altLabel "Anch"@de ;
   skos:altLabel "ansata"@it ;
-  skos:altLabel "ansée"@fr ;
+  skos:altLabel "ansé"@fr ;
   skos:altLabel "croce egizia"@it ;
+  skos:altLabel "cruz egipcia"@es ;
   skos:broader hero:p147 ;
+  skos:hiddenLabel "ansée"@fr ;
   skos:prefLabel "egyptiläinen risti"@fi ;
 .
 hero:p1481
   rdf:type skos:Concept ;
+  skos:altLabel "mi-coupé"@fr ;
   skos:altLabel "partido y semicortado"@es ;
   skos:broader hero:p38 ;
   skos:prefLabel "halkoinen ja vasen kenttä katkoinen"@fi ;
@@ -2507,6 +2698,7 @@ hero:p1481
 hero:p1482
   rdf:type skos:Concept ;
   skos:altLabel "cortado y semipartido"@es ;
+  skos:altLabel "mi-parti"@fr ;
   skos:broader hero:p37 ;
   skos:prefLabel "katkoinen ja alakenttä halkoinen"@fi ;
 .
@@ -2518,6 +2710,7 @@ hero:p1483
 hero:p1484
   rdf:type skos:Concept ;
   skos:altLabel "fer de faux"@fr ;
+  skos:altLabel "ranchier"@fr ;
   skos:altLabel "rangier"@fr ;
   skos:broader hero:p70 ;
   skos:prefLabel "viikatteen terä"@fi ;
@@ -2543,8 +2736,9 @@ hero:p1486
   skos:altLabel "floreada"@es ;
   skos:altLabel "gigliata patente"@it ;
   skos:altLabel "patonce"@en ;
-  skos:altLabel "patonnée"@fr ;
+  skos:altLabel "patonné"@fr ;
   skos:broader hero:p157 ;
+  skos:hiddenLabel "patonnée"@fr ;
   skos:prefLabel "cross patonce (en)"@fi ;
   hero-meta:wboMatch "0361" ;
 .
@@ -2555,12 +2749,14 @@ hero:p1487
   skos:altLabel "gorged"@en ;
   skos:altLabel "gorgé"@fr ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "accolée"@fr ;
+  skos:hiddenLabel "colletée"@fr ;
+  skos:hiddenLabel "gorgée"@fr ;
   skos:prefLabel "kaulanauha"@fi ;
 .
 hero:p1488
   rdf:type skos:Concept ;
   skos:altLabel "Zentaur"@de ;
-  skos:altLabel "sagittarius"@en ;
   skos:broader hero:p1662 ;
   skos:broader hero:p1674 ;
   skos:broader hero:p2922 ;
@@ -2624,23 +2820,22 @@ hero:p15
   rdf:type skos:Concept ;
   skos:altLabel "battelly"@en ;
   skos:altLabel "battled"@en ;
-  skos:altLabel "crenelled"@en ;
+  skos:altLabel "gekanteeld"@nl ;
   skos:altLabel "gezinnt"@de ;
-  skos:altLabel "kernelled"@en ;
-  skos:altLabel "krenelerad"@sv ;
-  skos:altLabel "kreneleret"@da ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "crénelée"@fr ;
   skos:prefLabel "sakarakoro"@fi ;
-  hero-meta:wboMatch "0151-117" ;
+  hero-meta:wboMatch "-117"^^xsd:string ;
 .
 hero:p150
   rdf:type skos:Concept ;
-  skos:altLabel "potencée"@fr ;
+  skos:altLabel "potencé"@fr ;
   skos:altLabel "potent"@en ;
   skos:altLabel "potenzada"@es ;
   skos:altLabel "potenziata"@it ;
   skos:altLabel "vasararisti"@fi ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "potencée"@fr ;
   skos:prefLabel "kahvaristi"@fi ;
   hero-meta:wboMatch "0316" ;
 .
@@ -2655,8 +2850,9 @@ hero:p1501
   skos:altLabel "neungeschacht"@de ;
   skos:altLabel "puntos equipolados"@es ;
   skos:altLabel "quarterly of nine"@en ;
-  skos:altLabel "équipolés"@fr ;
+  skos:altLabel "équipolé"@fr ;
   skos:broader hero:p1693 ;
+  skos:hiddenLabel "equipolados"@es ;
   skos:prefLabel "shakkiruutuinen, yhdeksän ruutua"@fi ;
   hero-meta:wboMatch "0232" ;
 .
@@ -2671,7 +2867,7 @@ hero:p1504
 .
 hero:p1505
   rdf:type skos:Concept ;
-  skos:broader hero:p2943 ;
+  skos:broader hero:p2802 ;
   skos:prefLabel "kunniamerkki"@fi ;
 .
 hero:p1506
@@ -2825,6 +3021,7 @@ hero:p1517
   skos:hiddenLabel "de sinople"@fr ;
   skos:hiddenLabel "grön"@sv ;
   skos:hiddenLabel "sinoble"@es ;
+  skos:hiddenLabel "sínople"@es ;
   skos:hiddenLabel "verte"@fr ;
   skos:hiddenLabel "vihreällä"@fi ;
   skos:hiddenLabel "vihreässä"@fi ;
@@ -2851,6 +3048,9 @@ hero:p1518
 hero:p1519
   rdf:type skos:Concept ;
   skos:altLabel "au naturel"@en ;
+  skos:altLabel "natural"@es ;
+  skos:altLabel "naturale"@it ;
+  skos:altLabel "naturel"@fr ;
   skos:broader hero:p2013 ;
   skos:prefLabel "luonnonväri"@fi ;
   hero-meta:wboMatch "0008" ;
@@ -2866,6 +3066,7 @@ hero:p1520
   skos:altLabel "ermellino"@it ;
   skos:altLabel "hermine"@en ;
   skos:broader hero:p2368 ;
+  skos:hiddenLabel "armiños"@es ;
   skos:hiddenLabel "d'hermine"@fr ;
   skos:hiddenLabel "d’hermine"@fr ;
   skos:prefLabel "kärpännahka"@fi ;
@@ -2925,12 +3126,14 @@ hero:p1526
   skos:altLabel "Grau"@de ;
   skos:altLabel "Stahlfarbe"@de ;
   skos:altLabel "acciaio"@it ;
+  skos:altLabel "acero"@es ;
   skos:altLabel "acier"@fr ;
   skos:altLabel "ash [tincture]"@en ;
   skos:altLabel "cenerino"@it ;
   skos:altLabel "cenizo"@es ;
   skos:altLabel "fer"@fr ;
   skos:altLabel "grey"@en ;
+  skos:altLabel "hierro"@es ;
   skos:altLabel "γκρί"@el ;
   skos:broader hero:p2012 ;
   skos:hiddenLabel "cendres"@fr ;
@@ -2979,6 +3182,8 @@ hero:p1533
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:broader hero:p2014 ;
+  skos:hiddenLabel "contraarmiño"@es ;
+  skos:hiddenLabel "contraarmiños"@es ;
   skos:prefLabel "vaihtovärinen kärpännahka"@fi ;
   hero-meta:wboMatch "0012" ;
 .
@@ -3004,7 +3209,8 @@ hero:p1536
   skos:altLabel "alesé"@en ;
   skos:altLabel "couped"@en ;
   skos:broader hero:p2377 ;
-  skos:hiddenLabel "alésé"@fr ;
+  skos:hiddenLabel "alaisée"@fr ;
+  skos:hiddenLabel "alésée"@fr ;
   skos:prefLabel "irtonainen"@fi ;
 .
 hero:p1538
@@ -3015,10 +3221,13 @@ hero:p1538
 .
 hero:p1539
   rdf:type skos:Concept ;
+  skos:altLabel "défaillant"@fr ;
   skos:altLabel "raccourci"@fr ;
   skos:altLabel "retrait"@en ;
   skos:altLabel "ritirato"@it ;
   skos:broader hero:p1536 ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "retiradas"@es ;
   skos:prefLabel "retracted (en)"@fi ;
 .
 hero:p154
@@ -3033,12 +3242,14 @@ hero:p1540
   rdf:type hero-meta:NonFinnishConcept ;
   skos:broader hero:p2253 ;
   skos:hiddenLabel "plumeté"@en ;
+  skos:hiddenLabel "plumetée"@fr ;
   skos:prefLabel "plumetty (en)"@fi ;
 .
 hero:p1542
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:broader hero:p2014 ;
+  skos:hiddenLabel "verados"@es ;
   skos:prefLabel "vairé (fr)"@fi ;
 .
 hero:p1543
@@ -3051,7 +3262,10 @@ hero:p1543
 hero:p1544
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "contraveiros"@pt ;
   skos:broader hero:p2014 ;
+  skos:hiddenLabel "contra-veiros"@pt ;
+  skos:hiddenLabel "contraveros"@es ;
   skos:prefLabel "kaksoisoravannahka"@fi ;
   hero-meta:wboMatch "0035" ;
 .
@@ -3095,6 +3309,7 @@ hero:p155
   skos:altLabel "recrucetada"@es ;
   skos:altLabel "ricrociata"@it ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "recroisetée"@fr ;
   skos:prefLabel "toistoristi"@fi ;
   hero-meta:wboMatch "0314" ;
 .
@@ -3116,21 +3331,26 @@ hero:p1551
 .
 hero:p1552
   rdf:type skos:Concept ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:prefLabel "kaulakoru"@fi ;
 .
 hero:p1553
   rdf:type skos:Concept ;
   skos:altLabel "soutien"@fr ;
   skos:altLabel "tenant"@fr ;
-  skos:broader hero:p2256 ;
+  skos:altLabel "tenente"@pt ;
+  skos:broader hero:p2802 ;
+  skos:hiddenLabel "kilvenkannattajat"@fi ;
+  skos:hiddenLabel "soutiens"@fr ;
+  skos:hiddenLabel "supports"@fr ;
+  skos:hiddenLabel "tenants"@fr ;
   skos:prefLabel "kilvenkannattaja"@fi ;
 .
 hero:p1554
   rdf:type skos:Concept ;
   skos:altLabel "postamentti"@fi ;
   skos:altLabel "έδαφος"@el ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p2802 ;
   skos:prefLabel "jalusta"@fi ;
 .
 hero:p1555
@@ -3220,11 +3440,13 @@ hero:p1568
 hero:p157
   rdf:type skos:Concept ;
   skos:altLabel "cross formy"@en ;
-  skos:altLabel "patada"@es ;
+  skos:altLabel "patado"@es ;
   skos:altLabel "patente"@it ;
   skos:altLabel "patty"@en ;
-  skos:altLabel "pattée"@fr ;
+  skos:altLabel "patté"@fr ;
   skos:broader hero:p1697 ;
+  skos:hiddenLabel "patada"@es ;
+  skos:hiddenLabel "pattée"@fr ;
   skos:prefLabel "mantovanristi"@fi ;
   hero-meta:wboMatch "0355" ;
 .
@@ -3233,6 +3455,7 @@ hero:p1570
   skos:altLabel "Nabel"@de ;
   skos:altLabel "Nabelort"@de ;
   skos:altLabel "napa"@fi ;
+  skos:altLabel "schildnavel"@nl ;
   skos:altLabel "tyvipiste"@fi ;
   skos:broader hero:p2690 ;
   skos:prefLabel "kilven napa"@fi ;
@@ -3267,6 +3490,7 @@ hero:p1576
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "Inbord"@de ;
+  skos:altLabel "orlatura"@it ;
   skos:broader hero:p110 ;
   skos:prefLabel "orle (en)"@fi ;
   skos:related hero:p110 ;
@@ -3275,6 +3499,8 @@ hero:p1576
 hero:p1577
   rdf:type skos:Concept ;
   skos:altLabel "Zwillingsinnenbord"@de ;
+  skos:altLabel "doble-trechor"@es ;
+  skos:altLabel "trêcheur double"@fr ;
   skos:broader hero:p110 ;
   skos:hiddenLabel "essonier"@fr ;
   skos:prefLabel "kaksoiskehä"@fi ;
@@ -3289,6 +3515,8 @@ hero:p1578
   skos:altLabel "nooked"@en ;
   skos:altLabel "tendus"@fr ;
   skos:broader hero:p2011 ;
+  skos:hiddenLabel "ajustée"@fr ;
+  skos:hiddenLabel "encochée"@fr ;
   skos:prefLabel "viritetty"@fi ;
 .
 hero:p1579
@@ -3342,11 +3570,13 @@ hero:p1585
 .
 hero:p1586
   rdf:type skos:Concept ;
+  skos:altLabel "recoupé"@fr ;
   skos:broader hero:p37 ;
   skos:prefLabel "katkoinen ja yläkenttä katkoinen"@fi ;
 .
 hero:p1587
   rdf:type skos:Concept ;
+  skos:altLabel "recoupé"@fr ;
   skos:broader hero:p37 ;
   skos:prefLabel "katkoinen ja alakenttä katkoinen"@fi ;
 .
@@ -3355,6 +3585,8 @@ hero:p1588
   rdf:type hero-meta:NonFinnishConcept ;
   skosext:partOf hero:p50 ;
   skosext:partOf hero:p60 ;
+  skos:altLabel "Fadenbalken"@de ;
+  skos:altLabel "rasgo"@es ;
   skos:broader hero:p50 ;
   skos:prefLabel "filet (fr)"@fi ;
 .
@@ -3375,11 +3607,13 @@ hero:p159
 hero:p16
   rdf:type skos:Concept ;
   skos:altLabel "Astschnitt"@de ;
+  skos:altLabel "ecotada"@es ;
   skos:altLabel "geästet"@de ;
   skos:altLabel "noueux"@fr ;
   skos:altLabel "écoté"@fr ;
   skos:altLabel "řez ostrový"@cs ;
   skos:broader hero:p15 ;
+  skos:hiddenLabel "écot"@fr ;
   skos:prefLabel "oksakoro"@fi ;
 .
 hero:p160
@@ -3432,9 +3666,10 @@ hero:p163
   rdf:type skos:Concept ;
   skos:altLabel "ancorada"@es ;
   skos:altLabel "ancorata"@it ;
-  skos:altLabel "ancrée"@fr ;
+  skos:altLabel "ancré"@fr ;
   skos:altLabel "moline"@en ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "ancrée"@fr ;
   skos:prefLabel "ankkuriristi"@fi ;
   hero-meta:wboMatch "0362" ;
 .
@@ -3448,8 +3683,11 @@ hero:p164
   skos:altLabel "croix fleuronnée"@fr ;
   skos:altLabel "cross fleury"@en ;
   skos:altLabel "cruz florenzada"@es ;
-  skos:altLabel "enhendée"@fr ;
+  skos:altLabel "enhendé"@fr ;
+  skos:altLabel "fleuronné"@fr ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "enhendée"@fr ;
+  skos:hiddenLabel "fleuronnée"@fr ;
   skos:prefLabel "liljaristi"@fi ;
   hero-meta:wboMatch "0378" ;
 .
@@ -3458,12 +3696,14 @@ hero:p165
   skos:altLabel "bottony"@en ;
   skos:altLabel "croce di San Maurizio"@it ;
   skos:altLabel "szent Lázár-kereszt"@hu ;
+  skos:altLabel "tréflé"@fr ;
   skos:broader hero:p139 ;
   skos:broader hero:p1968 ;
   skos:hiddenLabel "botonné"@en ;
   skos:hiddenLabel "cross botonny"@en ;
   skos:hiddenLabel "cross botonné"@en ;
   skos:hiddenLabel "cross bottonnée"@en ;
+  skos:hiddenLabel "tréflée"@fr ;
   skos:prefLabel "apilaristi"@fi ;
   skos:related hero:p90 ;
   hero-meta:wboMatch "0385" ;
@@ -3474,7 +3714,13 @@ hero:p1659
   skos:altLabel "Ehrenstück"@de ;
   skos:altLabel "Heroldsfigur"@de ;
   skos:altLabel "Heroldsstück"@de ;
+  skos:altLabel "carga"@es ;
+  skos:altLabel "carico"@it ;
+  skos:altLabel "charge"@en ;
+  skos:altLabel "charge"@fr ;
+  skos:altLabel "càrrega"@ca ;
   skos:altLabel "honraria"@pt ;
+  skos:altLabel "sköldemärke"@sv ;
   skos:altLabel "äretecken"@sv ;
   skos:prefLabel "airutkuvio"@fi ;
 .
@@ -3488,6 +3734,7 @@ hero:p1660
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:altLabel "line of diversity"@en ;
+  skos:altLabel "trait"@fr ;
   skos:broader hero:p2252 ;
   skos:prefLabel "koro"@fi ;
 .
@@ -3527,14 +3774,17 @@ hero:p1669
 .
 hero:p167
   rdf:type skos:Concept ;
+  skos:altLabel "Knospenkreuz"@de ;
   skos:altLabel "bordonada"@es ;
   skos:altLabel "bordonata"@it ;
-  skos:altLabel "bourdonnée"@fr ;
+  skos:altLabel "bourdonné"@fr ;
   skos:altLabel "cross bourdonny"@en ;
   skos:altLabel "cross pomelly"@en ;
   skos:altLabel "pommy"@en ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "bourdonnée"@fr ;
   skos:prefLabel "kuularisti"@fi ;
+  hero-meta:wboMatch "0372"^^xsd:string ;
 .
 hero:p1670
   rdf:type skos:Concept ;
@@ -3618,6 +3868,7 @@ hero:p1676
 hero:p168
   rdf:type skos:Concept ;
   skos:altLabel "cross swallowtailed"@en ;
+  skos:altLabel "cruz de ocho puntas"@es ;
   skos:broader hero:p139 ;
   skos:prefLabel "pykäläristi"@fi ;
   hero-meta:wboMatch "0344" ;
@@ -3625,9 +3876,10 @@ hero:p168
 hero:p169
   rdf:type skos:Concept ;
   skos:altLabel "cercenada"@es ;
-  skos:altLabel "retranchée"@fr ;
+  skos:altLabel "retranché"@fr ;
   skos:altLabel "ritrinciata"@it ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "retranchée"@fr ;
   skos:prefLabel "ruuturisti"@fi ;
   hero-meta:wboMatch "0337" ;
 .
@@ -3655,6 +3907,7 @@ hero:p1693
 hero:p1694
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "honorable"@fr ;
   skos:altLabel "peça principal"@ca ;
   skos:altLabel "pieza de primer orden"@es ;
   skos:altLabel "pièce de premier ordre"@fr ;
@@ -3693,6 +3946,7 @@ hero:p170
 hero:p1701
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "vivant"@fr ;
   skos:broader hero:p2536 ;
   skos:prefLabel "elollinen"@fi ;
 .
@@ -3762,7 +4016,7 @@ hero:p1710
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:altLabel "sädejako"@fi ;
-  skos:broader hero:p1692 ;
+  skos:broader hero:p1709 ;
   skos:prefLabel "viuhkajakoinen"@fi ;
 .
 hero:p1712
@@ -3796,7 +4050,8 @@ hero:p1715
 hero:p1716
   rdf:type skos:Concept ;
   skos:broader hero:p18 ;
-  skos:prefLabel "crested (en)"@fi ;
+  skos:hiddenLabel "agitée"@fr ;
+  skos:prefLabel "aallonharjakoro"@fi ;
 .
 hero:p1717
   rdf:type skos:Concept ;
@@ -3824,6 +4079,7 @@ hero:p1720
 hero:p1722
   rdf:type skos:Concept ;
   skos:broader hero:p3145 ;
+  skos:hiddenLabel "bretessée"@fr ;
   skos:prefLabel "korot vastakkain"@fi ;
 .
 hero:p1723
@@ -3843,13 +4099,17 @@ hero:p1724
 hero:p1725
   rdf:type skos:Concept ;
   skos:broader hero:p2377 ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "écimée"@fr ;
   skos:prefLabel "viistetty"@fi ;
 .
 hero:p1726
   rdf:type skos:Concept ;
   skos:altLabel "Bälle"@de ;
   skos:altLabel "platado"@es ;
-  skos:altLabel "platte"@fr ;
+  skos:altLabel "plate"@fr ;
+  skos:altLabel "prateado"@pt ;
+  skos:altLabel "roundel argent"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "hopearaha"@fi ;
 .
@@ -3879,6 +4139,7 @@ hero:p173
   skos:altLabel "Balkenspitzkreuz"@de ;
   skos:altLabel "fiché"@fr ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "fichée"@fr ;
   skos:hiddenLabel "fitché"@en ;
   skos:prefLabel "naularisti"@fi ;
 .
@@ -3889,6 +4150,7 @@ hero:p1730
 .
 hero:p1731
   rdf:type skos:Concept ;
+  skos:altLabel "doublet"@fr ;
   skos:broader hero:p2108 ;
   skos:prefLabel "sudenkorento"@fi ;
 .
@@ -3929,6 +4191,7 @@ hero:p1738
 .
 hero:p1739
   rdf:type skos:Concept ;
+  skos:altLabel "cabellado"@es ;
   skos:altLabel "criné"@fr ;
   skos:altLabel "maned"@en ;
   skos:broader hero:p2375 ;
@@ -3941,17 +4204,21 @@ hero:p1739
 hero:p174
   rdf:type skos:Concept ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "fichée"@fr ;
   skos:prefLabel "naulakantainen"@fi ;
 .
 hero:p1740
   rdf:type skos:Concept ;
   skos:broader hero:p2376 ;
+  skos:hiddenLabel "coiffée"@fr ;
   skos:prefLabel "päässä hattu"@fi ;
+  skos:related hero:p2774 ;
 .
 hero:p1741
   rdf:type skos:Concept ;
   skos:altLabel "arraché"@en ;
   skos:altLabel "ausgerissen"@de ;
+  skos:altLabel "com raízes"@pt ;
   skos:broader hero:p2374 ;
   skos:hiddenLabel "arrachée"@fr ;
   skos:prefLabel "juurineen"@fi ;
@@ -3966,7 +4233,7 @@ hero:p1743
   rdf:type skos:Concept ;
   skos:broader hero:p24 ;
   skos:prefLabel "Halbkrückenschnitt (de)"@fi ;
-  hero-meta:wboMatch "0151-125" ;
+  hero-meta:wboMatch "-125"^^xsd:string ;
 .
 hero:p1745
   rdf:type skos:Concept ;
@@ -3976,25 +4243,29 @@ hero:p1745
 hero:p1746
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "acolar"@es ;
   skos:altLabel "impaling"@en ;
   skos:altLabel "quartering"@en ;
   skos:broader hero:p2255 ;
   skos:prefLabel "vaakunoiden yhdistäminen"@fi ;
+  skos:related hero:p2417 ;
 .
 hero:p1747
   rdf:type skos:Concept ;
   skos:broader hero:p2318 ;
   skos:broader hero:p38 ;
   skos:prefLabel "halkoisella kilvellä kumokärki"@fi ;
+  skos:related hero:p2566 ;
 .
 hero:p175
   rdf:type skos:Concept ;
   skos:altLabel "forcata"@it ;
   skos:altLabel "fourchetty"@en ;
-  skos:altLabel "fourchetée"@fr ;
+  skos:altLabel "fourcheté"@fr ;
   skos:altLabel "horquillada"@es ;
   skos:altLabel "vorkkruis"@nl ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "fourchetée"@fr ;
   skos:prefLabel "hankoristi"@fi ;
   skos:related hero:p1344 ;
 .
@@ -4024,7 +4295,7 @@ hero:p1762
   rdf:type skos:Concept ;
   skos:broader hero:p1448 ;
   skos:broader hero:p38 ;
-  skos:prefLabel "halkoinen ja kolmesti katkaistu"@fi ;
+  skos:prefLabel "halkoinen ja kolmesti katkoinen"@fi ;
   hero-meta:wboMatch "0262" ;
 .
 hero:p1764
@@ -4039,7 +4310,7 @@ hero:p1774
   skos:broader hero:p15 ;
   skos:prefLabel "porraspäätykoro"@fi ;
   skos:related hero:p1737 ;
-  hero-meta:wboMatch "0151-108" ;
+  hero-meta:wboMatch "-108"^^xsd:string ;
 .
 hero:p178
   rdf:type skos:Concept ;
@@ -4056,7 +4327,11 @@ hero:p179
 .
 hero:p18
   rdf:type skos:Concept ;
+  skos:altLabel "flotando"@es ;
+  skos:altLabel "flotté"@fr ;
+  skos:altLabel "fluttuoso"@it ;
   skos:altLabel "gewellt"@de ;
+  skos:altLabel "ondeado"@es ;
   skos:altLabel "ondé"@en ;
   skos:altLabel "oundy"@en ;
   skos:altLabel "undy"@en ;
@@ -4064,7 +4339,7 @@ hero:p18
   skos:hiddenLabel "ondy"@en ;
   skos:hiddenLabel "ondée"@fr ;
   skos:prefLabel "aaltokoro"@fi ;
-  hero-meta:wboMatch "0151-159" ;
+  hero-meta:wboMatch "-159"^^xsd:string ;
 .
 hero:p180
   rdf:type skos:Concept ;
@@ -4100,6 +4375,7 @@ hero:p1822
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "Büffel"@de ;
+  skos:altLabel "bezerra"@pt ;
   skos:altLabel "bivaly"@hu ;
   skos:altLabel "bufalo"@it ;
   skos:altLabel "buffalo"@en ;
@@ -4189,15 +4465,17 @@ hero:p1892
   rdf:type skos:Concept ;
   skos:altLabel "accolé"@en ;
   skos:broader hero:p2825 ;
-  skos:hiddenLabel "accolé"@fr ;
   skos:hiddenLabel "accolées"@fr ;
+  skos:hiddenLabel "accolés"@fr ;
   skos:prefLabel "toisissaan kiinni"@fi ;
 .
 hero:p19
   rdf:type skos:Concept ;
   skos:altLabel "Lappenschnitt"@de ;
+  skos:altLabel "acanalada"@es ;
   skos:altLabel "cannelé"@en ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "cannelée"@fr ;
   skos:hiddenLabel "suomukoro"@fi ;
   skos:prefLabel "nyhäkoro"@fi ;
 .
@@ -4242,6 +4520,7 @@ hero:p193
 hero:p1931
   rdf:type skos:Concept ;
   skos:altLabel "chevron inversé"@fr ;
+  skos:altLabel "gestürzter Sparren"@de ;
   skos:broader hero:p57 ;
   skos:prefLabel "kumottu polviorsi"@fi ;
 .
@@ -4269,9 +4548,13 @@ hero:p1934
 hero:p1937
   rdf:type skos:Concept ;
   skos:altLabel "barby"@en ;
+  skos:altLabel "barbé"@fr ;
   skos:altLabel "croix barbée"@fr ;
   skos:altLabel "cross barby"@en ;
+  skos:altLabel "fléché"@fr ;
   skos:broader hero:p139 ;
+  skos:hiddenLabel "barbée"@fr ;
+  skos:hiddenLabel "fléchée"@fr ;
   skos:prefLabel "nuoliristi"@fi ;
   hero-meta:wboMatch "0340" ;
 .
@@ -4374,7 +4657,6 @@ hero:p1952
 .
 hero:p1953
   rdf:type skos:Concept ;
-  skos:altLabel "kahdesti polvijakoinen"@fi ;
   skos:broader hero:p41 ;
   skos:prefLabel "polvijakoisella kilvellä polviorsi"@fi ;
   skos:related hero:p5 ;
@@ -4430,12 +4712,14 @@ hero:p1960
 hero:p1962
   rdf:type skos:Concept ;
   skos:altLabel "clechy"@en ;
-  skos:altLabel "cléchée"@fr ;
+  skos:altLabel "cléché"@fr ;
   skos:broader hero:p157 ;
+  skos:hiddenLabel "cléchée"@fr ;
   skos:prefLabel "cross clechy (en)"@fi ;
 .
 hero:p1963
   rdf:type skos:Concept ;
+  skos:altLabel "omboord"@nl ;
   skos:broader hero:p109 ;
   skos:broader hero:p60 ;
   skos:prefLabel "kavennettu reunus"@fi ;
@@ -4447,10 +4731,12 @@ hero:p1964
 .
 hero:p1965
   rdf:type skos:Concept ;
-  skos:altLabel "diadémée"@fr ;
+  skos:altLabel "diadémé"@fr ;
   skos:altLabel "ensigned"@en ;
   skos:altLabel "kruunupäinen"@fi ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "couronnée"@fr ;
+  skos:hiddenLabel "diadémée"@fr ;
   skos:prefLabel "kruunattu"@fi ;
 .
 hero:p1966
@@ -4473,18 +4759,22 @@ hero:p1966
 hero:p1967
   rdf:type skos:Concept ;
   skos:broader hero:p2374 ;
+  skos:hiddenLabel "fruitée"@fr ;
   skos:prefLabel "hedelmät"@fi ;
 .
 hero:p1968
   rdf:type skos:Concept ;
   skos:altLabel "apilapäinen"@fi ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "tréflée"@fr ;
   skos:prefLabel "apilakärkinen"@fi ;
+  skos:related hero:p2451 ;
 .
 hero:p1969
   rdf:type skos:Concept ;
   skos:altLabel "serpeggiante"@it ;
   skos:broader hero:p2866 ;
+  skos:hiddenLabel "ondulada"@es ;
   skos:prefLabel "luikerteleva"@fi ;
 .
 hero:p197
@@ -4505,28 +4795,39 @@ hero:p1971
   skos:altLabel "onglé"@fr ;
   skos:altLabel "unguled"@en ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "ancornée"@fr ;
+  skos:hiddenLabel "encornée"@fr ;
+  skos:hiddenLabel "marchée"@fr ;
+  skos:hiddenLabel "onglée"@fr ;
   skos:prefLabel "kynnet"@fi ;
 .
 hero:p1972
   rdf:type skos:Concept ;
   skos:altLabel "sellé"@en ;
+  skos:altLabel "sillado"@es ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "sellée"@fr ;
   skos:prefLabel "satuloitu"@fi ;
 .
 hero:p1973
   rdf:type skos:Concept ;
   skos:altLabel "cimado"@es ;
+  skos:altLabel "encumbrada"@es ;
   skos:altLabel "supporté"@fr ;
+  skos:altLabel "sustendo"@pt ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "sommée"@fr ;
+  skos:hiddenLabel "supportée"@fr ;
   skos:prefLabel "jolla"@fi ;
 .
 hero:p1974
   rdf:type skos:Concept ;
-  skos:altLabel "futé"@fr ;
-  skos:altLabel "garni"@fr ;
   skos:altLabel "guarnecida"@es ;
+  skos:altLabel "guarnecido"@pt ;
   skos:altLabel "hampe"@fr ;
+  skos:altLabel "ornado"@pt ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "garni"@fr ;
   skos:note "Aseen kahvan tinktuuri."@fi ;
   skos:prefLabel "kahva [ase]"@fi ;
 .
@@ -4544,11 +4845,14 @@ hero:p1976
   skos:altLabel "getopt"@nl ;
   skos:altLabel "superado"@es ;
   skos:broader hero:p2826 ;
+  skos:hiddenLabel "surmontée"@fr ;
   skos:prefLabel "jonka yläpuolella"@fi ;
 .
 hero:p1977
   rdf:type skos:Concept ;
+  skos:altLabel "rangés en sautoir"@fr ;
   skos:broader hero:p2823 ;
+  skos:hiddenLabel "rangées en sautoir"@fr ;
   skos:hiddenLabel "vinoristin tapaan"@fi ;
   skos:prefLabel "vinoristin tavoin"@fi ;
   skos:related hero:p140 ;
@@ -4572,6 +4876,7 @@ hero:p198
   rdf:type skos:Concept ;
   skos:altLabel "lanciato"@it ;
   skos:broader hero:p2010 ;
+  skos:hiddenLabel "élancée"@fr ;
   skos:prefLabel "loikkaava"@fi ;
   skos:related hero:p719 ;
 .
@@ -4593,7 +4898,9 @@ hero:p1981
 .
 hero:p1982
   rdf:type skos:Concept ;
+  skos:altLabel "futé"@fr ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "futée"@fr ;
   skos:note "Nuolen varren tinktuuri."@fi ;
   skos:prefLabel "shafted (en)"@fi ;
 .
@@ -4617,13 +4924,14 @@ hero:p1986
   skos:related hero:p611 ;
 .
 hero:p1987
-  rdf:type skos:Concept ;
-  skos:altLabel "timbre"@en ;
-  skos:broader hero:p2256 ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2802 ;
   skos:prefLabel "kilven yläpuolella"@fi ;
 .
 hero:p1988
   rdf:type skos:Concept ;
+  skos:altLabel "au 1)"@fr ;
+  skos:altLabel "au premier"@fr ;
   skos:broader hero:p1998 ;
   skos:hiddenLabel "yläkenttä"@fi ;
   skos:hiddenLabel "yläkentässä"@fi ;
@@ -4631,6 +4939,8 @@ hero:p1988
 .
 hero:p1989
   rdf:type skos:Concept ;
+  skos:altLabel "au 2)"@fr ;
+  skos:altLabel "au deuxième"@fr ;
   skos:broader hero:p1998 ;
   skos:hiddenLabel "alakenttä"@fi ;
   skos:hiddenLabel "alakentässä"@fi ;
@@ -4643,11 +4953,15 @@ hero:p199
 .
 hero:p1990
   rdf:type skos:Concept ;
+  skos:altLabel "au 3)"@fr ;
+  skos:altLabel "au troisième"@fr ;
   skos:broader hero:p1998 ;
   skos:prefLabel "3. kenttä"@fi ;
 .
 hero:p1991
   rdf:type skos:Concept ;
+  skos:altLabel "au 4)"@fr ;
+  skos:altLabel "au quatrième"@fr ;
   skos:broader hero:p1998 ;
   skos:prefLabel "4. kenttä"@fi ;
 .
@@ -4676,15 +4990,9 @@ hero:p1996
   skos:broader hero:p1998 ;
   skos:prefLabel "9. kenttä"@fi ;
 .
-hero:p1997
-  rdf:type skos:Concept ;
-  skos:broader hero:p2256 ;
-  skos:prefLabel "kilven alapuolella"@fi ;
-.
 hero:p1998
   rdf:type skos:Concept ;
-  rdf:type hero-meta:UpperConcept ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p36 ;
   skos:hiddenLabel "kentässä"@fi ;
   skos:prefLabel "kenttä"@fi ;
 .
@@ -4696,29 +5004,34 @@ hero:p1999
 hero:p2
   rdf:type skos:Concept ;
   skos:broader hero:p4 ;
+  skos:hiddenLabel "bevillée"@fr ;
   skos:prefLabel "salamakoro"@fi ;
 .
 hero:p20
   rdf:type skos:Concept ;
   skos:altLabel "ausgeschuppt"@de ;
+  skos:altLabel "encrespado"@es ;
+  skos:altLabel "escotada"@es ;
   skos:altLabel "vuolukoro"@fi ;
   skos:altLabel "échancré"@fr ;
   skos:broader hero:p19 ;
   skos:hiddenLabel "engrêlée"@fr ;
   skos:prefLabel "nirhakoro"@fi ;
   skos:related hero:p19 ;
-  hero-meta:wboMatch "0151-171" ;
+  hero-meta:wboMatch "-171"^^xsd:string ;
 .
 hero:p200
   rdf:type skos:Concept ;
   skos:altLabel "debout"@fr ;
   skos:altLabel "en pied"@fr ;
+  skos:altLabel "grimpant"@fr ;
   skos:altLabel "levato"@it ;
   skos:altLabel "levé"@fr ;
   skos:altLabel "pied"@en ;
   skos:altLabel "steigend"@de ;
   skos:altLabel "takajaloillaan seisova"@fi ;
   skos:broader hero:p2010 ;
+  skos:hiddenLabel "levantados"@es ;
   skos:prefLabel "takajaloilleen noussut"@fi ;
   skos:related hero:p97 ;
 .
@@ -4762,6 +5075,9 @@ hero:p2009
 hero:p201
   rdf:type skos:Concept ;
   skos:broader hero:p2082 ;
+  skos:hiddenLabel "aguia"@pt ;
+  skos:hiddenLabel "aguila"@ca ;
+  skos:hiddenLabel "aguila"@es ;
   skos:hiddenLabel "l'aigle"@fr ;
   skos:hiddenLabel "l’aigle"@fr ;
   skos:prefLabel "kotka"@fi ;
@@ -4818,9 +5134,13 @@ hero:p2038
 .
 hero:p2039
   rdf:type skos:Concept ;
-  skos:altLabel "oikealla"@fi ;
+  skos:altLabel "tourné"@fr ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "adextrée"@fr ;
+  skos:hiddenLabel "tournée"@fr ;
   skos:prefLabel "oikealle"@fi ;
+  skos:related hero:p2242 ;
+  skos:related hero:p3208 ;
 .
 hero:p204
   rdf:type skos:Concept ;
@@ -4831,24 +5151,29 @@ hero:p204
   skos:altLabel "spiegato"@it ;
   skos:altLabel "wings expanded"@en ;
   skos:broader hero:p2897 ;
+  skos:hiddenLabel "exployada"@es ;
   skos:hiddenLabel "wings expansed"@en ;
+  skos:hiddenLabel "éployée"@fr ;
   skos:prefLabel "edestäpäin siivet levällään"@fi ;
 .
 hero:p2040
   rdf:type skos:Concept ;
   skosext:partOf hero:p2319 ;
-  skos:altLabel "on the sinister"@en ;
   skos:altLabel "sénestré"@fr ;
   skos:altLabel "to sinister"@en ;
-  skos:altLabel "vasemmalla"@fi ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "senestrée"@fr ;
   skos:prefLabel "vasemmalle"@fi ;
   skos:related hero:p1233 ;
+  skos:related hero:p2243 ;
+  skos:related hero:p3209 ;
 .
 hero:p2041
   rdf:type skos:Concept ;
+  skos:altLabel "de face"@fr ;
   skos:altLabel "edestä katsottuna"@fi ;
   skos:altLabel "in full aspect"@en ;
+  skos:altLabel "vu de front"@fr ;
   skos:broader hero:p2009 ;
   skos:broader hero:p2245 ;
   skos:prefLabel "edestäpäin"@fi ;
@@ -4866,7 +5191,7 @@ hero:p2043
   rdf:type skos:Concept ;
   skos:broader hero:p14 ;
   skos:prefLabel "Sägezahnschnitt (de)"@fi ;
-  hero-meta:wboMatch "0151-143" ;
+  hero-meta:wboMatch "-143"^^xsd:string ;
 .
 hero:p2044
   rdf:type skos:Concept ;
@@ -4878,7 +5203,9 @@ hero:p2045
   skos:altLabel "latvottu"@fi ;
   skos:altLabel "têtard"@fr ;
   skos:altLabel "ébranché"@fr ;
+  skos:altLabel "étêté"@fr ;
   skos:broader hero:p2374 ;
+  skos:hiddenLabel "ebranché"@fr ;
   skos:prefLabel "lehdestetty"@fi ;
 .
 hero:p2046
@@ -4910,7 +5237,11 @@ hero:p2049
 .
 hero:p205
   rdf:type skos:Concept ;
+  skos:altLabel "ouvert"@fr ;
+  skos:altLabel "élevé"@fr ;
   skos:broader hero:p2897 ;
+  skos:hiddenLabel "dressée"@fr ;
+  skos:hiddenLabel "élevée"@fr ;
   skos:prefLabel "siivet koholla"@fi ;
 .
 hero:p2050
@@ -4923,6 +5254,8 @@ hero:p2051
   skos:altLabel "accorné"@en ;
   skos:altLabel "acornado"@es ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "accornée"@fr ;
+  skos:hiddenLabel "astada"@es ;
   skos:prefLabel "sarvet [varukset]"@fi ;
   skos:related hero:p2052 ;
 .
@@ -4931,6 +5264,8 @@ hero:p2052
   skos:altLabel "chevillé"@fr ;
   skos:altLabel "ramé"@en ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "chevillée"@fr ;
+  skos:hiddenLabel "ramée"@fr ;
   skos:prefLabel "sarvet [varukset, hirvieläin]"@fi ;
 .
 hero:p2053
@@ -5005,16 +5340,27 @@ hero:p2065
 .
 hero:p2066
   rdf:type skos:Concept ;
-  skos:altLabel "aboutés"@fr ;
+  skos:altLabel "abouté"@fr ;
   skos:altLabel "appointé"@en ;
+  skos:altLabel "attestato"@it ;
+  skos:altLabel "contrapposto"@it ;
+  skos:altLabel "contrapunteado"@es ;
+  skos:altLabel "contre-appointés"@fr ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "aboutées"@fr ;
+  skos:hiddenLabel "aboutés"@fr ;
+  skos:hiddenLabel "appointées"@fr ;
   skos:hiddenLabel "appointés"@fr ;
+  skos:hiddenLabel "contre-appointées"@fr ;
   skos:prefLabel "kärjet vastakkain"@fi ;
 .
 hero:p2067
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
+  skos:altLabel "cidade"@pt ;
+  skos:altLabel "ciudad"@es ;
   skos:altLabel "town"@en ;
+  skos:altLabel "villa"@es ;
   skos:altLabel "ville"@fr ;
   skos:broader hero:p1667 ;
   skos:prefLabel "maisema"@fi ;
@@ -5062,10 +5408,13 @@ hero:p2075
 .
 hero:p2076
   rdf:type skos:Concept ;
+  skos:altLabel "abouté"@fr ;
   skos:altLabel "moussé"@fr ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "aboutée"@fr ;
   skos:hiddenLabel "emoussée"@fr ;
   skos:hiddenLabel "moussue"@fr ;
+  skos:hiddenLabel "moussée"@fr ;
   skos:prefLabel "pyöristetty"@fi ;
 .
 hero:p2077
@@ -5129,6 +5478,7 @@ hero:p2088
 hero:p209
   rdf:type skos:Concept ;
   skos:broader hero:p2822 ;
+  skos:hiddenLabel "courbée"@fr ;
   skos:prefLabel "hyppäävä"@fi ;
 .
 hero:p2090
@@ -5149,7 +5499,11 @@ hero:p2092
   skos:altLabel "disjointed"@en ;
   skos:altLabel "tronçonné"@fr ;
   skos:broader hero:p2375 ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "dehachée"@fr ;
   skos:hiddenLabel "disjoined"@en ;
+  skos:hiddenLabel "démembrée"@fr ;
+  skos:hiddenLabel "tronçonnée"@fr ;
   skos:prefLabel "paloiteltu"@fi ;
 .
 hero:p2094
@@ -5170,13 +5524,15 @@ hero:p2096
   skos:altLabel "curvo rovesciato"@it ;
   skos:altLabel "eingeschweifte"@de ;
   skos:altLabel "piegato"@it ;
-  skos:altLabel "voûté"@fr ;
-  skos:broader hero:p1 ;
+  skos:broader hero:p18 ;
+  skos:hiddenLabel "affaissée"@fr ;
+  skos:hiddenLabel "ployée"@fr ;
   skos:prefLabel "kovera"@fi ;
   skos:related hero:p1 ;
 .
 hero:p2097
   rdf:type skos:Concept ;
+  skos:altLabel "machinist square"@en ;
   skos:altLabel "suorakulma"@fi ;
   skos:broader hero:p2281 ;
   skos:prefLabel "kulmaviivoitin"@fi ;
@@ -5197,15 +5553,17 @@ hero:p2099
 hero:p21
   rdf:type skos:Concept ;
   skos:altLabel "Wogenschnitt"@de ;
+  skos:altLabel "geënt"@nl ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "nébulée"@fr ;
   skos:prefLabel "pilvikoro"@fi ;
-  hero-meta:wboMatch "0151-164" ;
+  hero-meta:wboMatch "-164"^^xsd:string ;
 .
 hero:p210
   rdf:type skos:Concept ;
   skos:altLabel "assis"@en ;
+  skos:altLabel "encogido"@es ;
   skos:altLabel "sedente"@it ;
-  skos:altLabel "sentado"@es ;
   skos:altLabel "séant"@fr ;
   skos:broader hero:p2010 ;
   skos:prefLabel "istuva"@fi ;
@@ -5233,6 +5591,7 @@ hero:p2104
   skos:altLabel "ensigned with a cross"@en ;
   skos:broader hero:p2907 ;
   skos:broader hero:p2939 ;
+  skos:hiddenLabel "croisée"@fr ;
   skos:prefLabel "ristillä varustettu"@fi ;
 .
 hero:p2105
@@ -5272,6 +5631,8 @@ hero:p211
   rdf:type skos:Concept ;
   skos:altLabel "embarroqué"@fr ;
   skos:broader hero:p2010 ;
+  skos:hiddenLabel "couchée"@fr ;
+  skos:hiddenLabel "embarroquée"@fr ;
   skos:prefLabel "makaava"@fi ;
 .
 hero:p2110
@@ -5306,6 +5667,8 @@ hero:p2115
 .
 hero:p2116
   rdf:type skos:Concept ;
+  skos:altLabel "fiocchi"@fr ;
+  skos:altLabel "gland"@fr ;
   skos:broader hero:p2907 ;
   skos:prefLabel "tupsu"@fi ;
 .
@@ -5384,6 +5747,7 @@ hero:p213
   rdf:type skos:Concept ;
   skos:altLabel "2, 1"@fr ;
   skos:altLabel "2:1"@es ;
+  skos:altLabel "dos y una"@es ;
   skos:broader hero:p609 ;
   skos:prefLabel "2 + 1"@fi ;
 .
@@ -5447,6 +5811,7 @@ hero:p214
   skos:altLabel "gheppio"@it ;
   skos:altLabel "jalohaukka"@fi ;
   skos:altLabel "kestrel"@en ;
+  skos:altLabel "metsästyshaukka"@fi ;
   skos:altLabel "pustułka"@pl ;
   skos:altLabel "vjetruša"@hr ;
   skos:altLabel "vércse"@hu ;
@@ -5499,12 +5864,14 @@ hero:p2146
 .
 hero:p2147
   rdf:type skos:Concept ;
+  skos:altLabel "bun"@nl ;
   skos:broader hero:p2280 ;
   skos:prefLabel "rysä"@fi ;
 .
 hero:p2148
   rdf:type skos:Concept ;
   skos:altLabel "Johannes Kastaja"@fi ;
+  skos:altLabel "Johannisschüssel"@de ;
   skos:broader hero:p506 ;
   skos:prefLabel "Johannes"@fi ;
 .
@@ -5518,6 +5885,7 @@ hero:p2149
 hero:p215
   rdf:type skos:Concept ;
   skos:altLabel "Kauz"@de ;
+  skos:altLabel "buho"@es ;
   skos:altLabel "duc"@fr ;
   skos:altLabel "hibou"@fr ;
   skos:broader hero:p2082 ;
@@ -5548,12 +5916,15 @@ hero:p216
   rdf:type skos:Concept ;
   skos:altLabel "Dogge"@de ;
   skos:altLabel "Hund"@de ;
+  skos:altLabel "alão"@pt ;
+  skos:altLabel "cachorro"@pt ;
   skos:altLabel "hound"@en ;
   skos:broader hero:p2924 ;
   skos:prefLabel "koira"@fi ;
 .
 hero:p2168
   rdf:type skos:Concept ;
+  skos:altLabel "coupé d'un trait et parti de deux"@fr ;
   skos:broader hero:p1449 ;
   skos:broader hero:p37 ;
   skos:prefLabel "katkoinen ja kahdesti halkoinen"@fi ;
@@ -5598,10 +5969,8 @@ hero:p2173
 .
 hero:p2174
   rdf:type skos:Concept ;
-  skos:altLabel "kärryt"@fi ;
-  skos:broader hero:p2338 ;
-  skos:prefLabel "carrarankärry"@fi ;
-  skos:related hero:p1397 ;
+  skos:broader hero:p3167 ;
+  skos:prefLabel "carrarankärryt"@fi ;
 .
 hero:p2175
   rdf:type skos:Concept ;
@@ -5642,7 +6011,7 @@ hero:p22
   rdf:type skos:Concept ;
   skos:broader hero:p21 ;
   skos:prefLabel "painanteinen pilvikoro"@fi ;
-  hero-meta:wboMatch "0151-165" ;
+  hero-meta:wboMatch "-165"^^xsd:string ;
 .
 hero:p220
   rdf:type skos:Concept ;
@@ -5708,15 +6077,21 @@ hero:p221
 hero:p2210
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "armes"@fr ;
   skos:altLabel "armoiries"@fr ;
   skos:altLabel "armorial bearings"@en ;
   skos:altLabel "arms"@en ;
   skos:altLabel "bearings"@en ;
+  skos:altLabel "blasón"@es ;
+  skos:altLabel "cota de armas"@pt ;
+  skos:altLabel "cotte d'armes"@fr ;
   skos:altLabel "εθνόσημο"@el ;
   skos:altLabel "οικοσήμου"@el ;
   skos:broader hero:p2255 ;
+  skos:hiddenLabel "brasão"@pt ;
   skos:hiddenLabel "vapn"@sv ;
   skos:prefLabel "vaakuna"@fi ;
+  skos:related hero:p2256 ;
 .
 hero:p2211
   rdf:type skos:Concept ;
@@ -5764,16 +6139,25 @@ hero:p2216
 .
 hero:p2217
   rdf:type skos:Concept ;
+  skos:altLabel "patience"@fr ;
   skos:broader hero:p1674 ;
   skos:broader hero:p2488 ;
   skos:prefLabel "salamanteri"@fi ;
   hero-meta:wboMatch "3221" ;
+.
+hero:p2218
+  rdf:type skos:Concept ;
+  skos:altLabel "mâcle"@fr ;
+  skos:broader hero:p312 ;
+  skos:hiddenLabel "maclée"@fr ;
+  skos:prefLabel "masculy (en)"@fi ;
 .
 hero:p2219
   rdf:type skos:Concept ;
   skos:altLabel "Pferdebremse"@de ;
   skos:altLabel "morailles"@en ;
   skos:altLabel "pair of barnacles"@en ;
+  skos:altLabel "praam"@nl ;
   skos:broader hero:p2284 ;
   skos:prefLabel "huulipuristin"@fi ;
   hero-meta:wboMatch "9577" ;
@@ -5789,6 +6173,8 @@ hero:p2220
 hero:p2221
   rdf:type skos:Concept ;
   skosext:partOf hero:p370 ;
+  skos:altLabel "lucero"@es ;
+  skos:altLabel "luzeiro"@pt ;
   skos:altLabel "molet"@en ;
   skos:altLabel "star"@en ;
   skos:altLabel "stierna"@sv ;
@@ -5800,7 +6186,7 @@ hero:p2221
 .
 hero:p2222
   rdf:type skos:Concept ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:prefLabel "arvokruunu"@fi ;
 .
 hero:p2224
@@ -5842,6 +6228,7 @@ hero:p2229
 hero:p223
   rdf:type skos:Concept ;
   skos:altLabel "bass"@en ;
+  skos:altLabel "lubina"@es ;
   skos:broader hero:p78 ;
   skos:prefLabel "ahven"@fi ;
   hero-meta:wboMatch "3623" ;
@@ -5890,6 +6277,8 @@ hero:p2235
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:altLabel "blasonering"@sv ;
+  skos:altLabel "blasonointi"@fi ;
+  skos:altLabel "heraldinen selitys"@fi ;
   skos:broader hero:p2255 ;
   skos:prefLabel "vaakunaselitys"@fi ;
 .
@@ -5903,11 +6292,13 @@ hero:p2236
 hero:p2237
   rdf:type skos:Concept ;
   skos:altLabel "amade"@fr ;
+  skos:altLabel "hamaide"@fi ;
   skos:altLabel "hamaide"@fr ;
   skos:altLabel "haméide"@en ;
-  skos:broader hero:p49 ;
+  skos:broader hero:p1714 ;
   skos:hiddenLabel "hamade"@fr ;
   skos:hiddenLabel "hamaïde"@fr ;
+  skos:hiddenLabel "hamède"@fr ;
   skos:hiddenLabel "haméide"@fr ;
   skos:prefLabel "veräjäpuu"@fi ;
   hero-meta:wboMatch "0285" ;
@@ -5943,18 +6334,33 @@ hero:p2241
 .
 hero:p2242
   rdf:type skos:Concept ;
-  skos:broader hero:p2256 ;
+  skos:altLabel "direita"@pt ;
+  skos:altLabel "höger"@sv ;
+  skos:altLabel "høyre"@nb ;
+  skos:altLabel "vorn"@de ;
+  skos:broader hero:p2245 ;
   skos:prefLabel "oikea"@fi ;
 .
 hero:p2243
   rdf:type skos:Concept ;
+  skos:altLabel "esquerda"@pt ;
+  skos:altLabel "hinten"@de ;
   skos:altLabel "sénestre"@fr ;
-  skos:broader hero:p2256 ;
+  skos:altLabel "venstre"@nb ;
+  skos:altLabel "vänster"@sv ;
+  skos:broader hero:p2245 ;
   skos:prefLabel "vasen"@fi ;
 .
 hero:p2244
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "Stellung"@de ;
+  skos:altLabel "actitud"@es ;
+  skos:altLabel "postura"@ca ;
+  skos:altLabel "postura"@it ;
+  skos:altLabel "postura"@pt ;
+  skos:altLabel "posture"@en ;
+  skos:altLabel "posture"@fr ;
   skos:broader hero:p2252 ;
   skos:prefLabel "asento"@fi ;
 .
@@ -5968,7 +6374,7 @@ hero:p2246
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:broader hero:p2252 ;
-  skos:prefLabel "sijainti"@fi ;
+  skos:prefLabel "sijainti tai sijoittelu"@fi ;
 .
 hero:p2247
   rdf:type skos:Concept ;
@@ -5991,6 +6397,7 @@ hero:p2249
 .
 hero:p225
   rdf:type skos:Concept ;
+  skos:altLabel "ged"@en ;
   skos:altLabel "jack"@en ;
   skos:altLabel "pike"@en ;
   skos:broader hero:p78 ;
@@ -6000,7 +6407,10 @@ hero:p225
 hero:p2250
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "Heroldsbild"@de ;
   skos:altLabel "division"@en ;
+  skos:altLabel "heroldsfigur"@nb ;
+  skos:altLabel "häroldsbild"@sv ;
   skos:altLabel "line of partition"@en ;
   skos:prefLabel "jako"@fi ;
 .
@@ -6009,9 +6419,19 @@ hero:p2251
   rdf:type hero-meta:UpperConcept ;
   skos:altLabel "Figur"@de ;
   skos:altLabel "bild"@sv ;
+  skos:altLabel "carga"@es ;
+  skos:altLabel "carico"@it ;
   skos:altLabel "charge"@en ;
+  skos:altLabel "charge"@fr ;
+  skos:altLabel "càrrega"@ca ;
   skos:altLabel "figur"@da ;
   skos:altLabel "figur"@nb ;
+  skos:altLabel "figura"@ca ;
+  skos:altLabel "figura"@es ;
+  skos:altLabel "godła"@pl ;
+  skos:altLabel "mobile charge"@en ;
+  skos:altLabel "peça móvel"@pt ;
+  skos:altLabel "sköldemärke"@sv ;
   skos:prefLabel "yleiskuvio"@fi ;
 .
 hero:p2252
@@ -6040,8 +6460,13 @@ hero:p2255
 hero:p2256
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "armorial achievement"@en ;
+  skos:altLabel "hatchment"@en ;
+  skos:altLabel "heraldic achievement"@en ;
+  skos:altLabel "heraldiskt vapen"@sv ;
   skos:altLabel "täydellinen vaakuna"@fi ;
   skos:prefLabel "vaakunakokonaisuus"@fi ;
+  skos:related hero:p2210 ;
 .
 hero:p2257
   rdf:type skos:Concept ;
@@ -6069,11 +6494,13 @@ hero:p2261
   skos:broader hero:p125 ;
   skos:broader hero:p38 ;
   skos:prefLabel "halkoisella kilvellä kärki"@fi ;
+  skos:related hero:p2565 ;
 .
 hero:p2262
   rdf:type skos:Concept ;
   skos:altLabel "cottices"@en ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "coticée"@fr ;
   skos:hiddenLabel "cotised"@en ;
   skos:prefLabel "sivujuomuinen"@fi ;
 .
@@ -6095,6 +6522,7 @@ hero:p2265
   skos:altLabel "noppa"@fi ;
   skos:altLabel "quina"@ca ;
   skos:altLabel "quina"@es ;
+  skos:altLabel "quinois"@fr ;
   skos:broader hero:p2941 ;
   skos:prefLabel "arpakuutio"@fi ;
 .
@@ -6103,6 +6531,8 @@ hero:p2266
   skosext:partOf hero:p321 ;
   skosext:partOf hero:p706 ;
   skos:altLabel "mosquilla de armiño"@es ;
+  skos:altLabel "pinta de arminho"@pt ;
+  skos:altLabel "ponto de arminho"@pt ;
   skos:broader hero:p321 ;
   skos:prefLabel "kärpänhäntä"@fi ;
   skos:related hero:p1520 ;
@@ -6131,9 +6561,13 @@ hero:p2269
   skos:altLabel "foot"@en ;
   skos:altLabel "gambe"@en ;
   skos:altLabel "jambe"@en ;
+  skos:altLabel "membre"@fr ;
+  skos:altLabel "pierna"@es ;
+  skos:altLabel "voet"@nl ;
   skos:broader hero:p2288 ;
   skos:hiddenLabel "gamb"@en ;
   skos:prefLabel "jalka"@fi ;
+  skos:related hero:p1170 ;
 .
 hero:p227
   rdf:type skos:Concept ;
@@ -6144,6 +6578,7 @@ hero:p227
 hero:p2271
   rdf:type skos:Concept ;
   skos:altLabel "Sittich"@de ;
+  skos:altLabel "papagallo"@es ;
   skos:altLabel "papegay"@en ;
   skos:altLabel "parrot"@en ;
   skos:altLabel "perroquet"@fr ;
@@ -6165,17 +6600,22 @@ hero:p2273
 hero:p2274
   rdf:type skos:Concept ;
   skos:altLabel "Tragjoch"@de ;
+  skos:altLabel "bouge"@fr ;
+  skos:altLabel "cantimplora"@es ;
   skos:altLabel "chantepleure"@fr ;
   skos:altLabel "oge"@en ;
   skos:altLabel "vesileilit"@fi ;
   skos:altLabel "ämmänlänget"@fi ;
   skos:broader hero:p2287 ;
+  skos:hiddenLabel "bougette"@fr ;
   skos:hiddenLabel "water-bouget"@en ;
   skos:prefLabel "kaksoisvesileili"@fi ;
   skos:related hero:p386 ;
 .
 hero:p2275
   rdf:type skos:Concept ;
+  skos:altLabel "alianza"@es ;
+  skos:altLabel "enlazadas"@es ;
   skos:altLabel "trouw"@nl ;
   skos:broader hero:p2820 ;
   skos:broader hero:p2942 ;
@@ -6193,6 +6633,7 @@ hero:p2277
   rdf:type skos:Concept ;
   skos:altLabel "crampet"@en ;
   skos:broader hero:p2276 ;
+  skos:hiddenLabel "crampit"@en ;
   skos:prefLabel "huotran päätehela"@fi ;
 .
 hero:p2278
@@ -6231,6 +6672,7 @@ hero:p2282
 .
 hero:p2283
   rdf:type skos:Concept ;
+  skos:altLabel "manopla"@es ;
   skos:broader hero:p2286 ;
   skos:prefLabel "sotahansikas"@fi ;
 .
@@ -6296,6 +6738,8 @@ hero:p2292
 hero:p2293
   rdf:type skos:Concept ;
   skos:broader hero:p2377 ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "brisée"@fr ;
   skos:prefLabel "kolohuippuinen"@fi ;
 .
 hero:p2294
@@ -6320,6 +6764,8 @@ hero:p2295
 .
 hero:p2296
   rdf:type skos:Concept ;
+  skos:altLabel "muraille"@fr ;
+  skos:altLabel "pan de mur"@fr ;
   skos:broader hero:p522 ;
   skos:prefLabel "siipimuuri"@fi ;
 .
@@ -6345,12 +6791,14 @@ hero:p2298
 hero:p2299
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
-  skos:broader hero:p2255 ;
+  skos:broader hero:p2210 ;
   skos:prefLabel "porvarisvaakuna"@fi ;
 .
 hero:p23
   rdf:type skos:Concept ;
   skos:broader hero:p15 ;
+  skos:hiddenLabel "mortaisée"@fr ;
+  skos:hiddenLabel "zwaluwstaartige"@nl ;
   skos:prefLabel "lohenpyrstökoro"@fi ;
 .
 hero:p230
@@ -6375,7 +6823,7 @@ hero:p2301
   skos:broader hero:p2447 ;
   skos:hiddenLabel "crequer plant"@en ;
   skos:hiddenLabel "créquier"@en ;
-  skos:prefLabel "heraldinen kirsikanoksa"@fi ;
+  skos:prefLabel "heraldinen kirsikkapuu"@fi ;
   hero-meta:wboMatch "2129" ;
 .
 hero:p2302
@@ -6421,6 +6869,12 @@ hero:p2306
 .
 hero:p2307
   rdf:type skos:Concept ;
+  skos:altLabel "galero"@ca ;
+  skos:altLabel "galero"@es ;
+  skos:altLabel "galero"@fi ;
+  skos:altLabel "galero"@fr ;
+  skos:altLabel "galero"@it ;
+  skos:broader hero:p1987 ;
   skos:broader hero:p2666 ;
   skos:broader hero:p2939 ;
   skos:prefLabel "papin hattu"@fi ;
@@ -6446,14 +6900,19 @@ hero:p2310
   skos:altLabel "emuselado"@es ;
   skos:altLabel "muselé"@fr ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "amuselée"@fr ;
+  skos:hiddenLabel "emmuselée"@fr ;
+  skos:hiddenLabel "muselée"@fr ;
   skos:note "Eläimellä, yleensä karhulla, kuonokoppa."@fi ;
   skos:prefLabel "muzzled (en)"@fi ;
+  skos:related hero:p2929 ;
 .
 hero:p2311
   rdf:type skos:Concept ;
   skos:altLabel "allerion"@en ;
   skos:altLabel "avalerion"@en ;
   skos:altLabel "csonkasas"@hu ;
+  skos:altLabel "ilerion"@nl ;
   skos:broader hero:p1674 ;
   skos:broader hero:p201 ;
   skos:hiddenLabel "Alerion"@de ;
@@ -6473,10 +6932,15 @@ hero:p2313
   skos:altLabel "cabré"@en ;
   skos:altLabel "careering"@en ;
   skos:altLabel "encabritado"@es ;
+  skos:altLabel "espantado"@es ;
+  skos:altLabel "espantado"@pt ;
   skos:altLabel "forcené"@fr ;
   skos:altLabel "inalberato"@it ;
   skos:altLabel "rearing"@en ;
   skos:broader hero:p719 ;
+  skos:hiddenLabel "acculée"@fr ;
+  skos:hiddenLabel "cabrée"@fr ;
+  skos:hiddenLabel "forcenée"@fr ;
   skos:prefLabel "ryntäävä [hevonen]"@fi ;
   skos:related hero:p200 ;
   skos:related hero:p719 ;
@@ -6490,6 +6954,7 @@ hero:p2314
 .
 hero:p2315
   rdf:type skos:Concept ;
+  skos:altLabel "fontana"@es ;
   skos:altLabel "proper fountain"@en ;
   skos:broader hero:p522 ;
   skos:prefLabel "suihkulähde"@fi ;
@@ -6502,10 +6967,12 @@ hero:p2316
 .
 hero:p2317
   rdf:type skos:Concept ;
+  skos:altLabel "paavin tiara"@fi ;
   skos:altLabel "triregnum"@fr ;
+  skos:broader hero:p1987 ;
   skos:broader hero:p2666 ;
   skos:broader hero:p2939 ;
-  skos:prefLabel "paavin tiara"@fi ;
+  skos:prefLabel "tiara"@fi ;
   hero-meta:wboMatch "9831" ;
 .
 hero:p2318
@@ -6525,6 +6992,7 @@ hero:p2319
 .
 hero:p232
   rdf:type skos:Concept ;
+  skos:altLabel "bisce"@fr ;
   skos:altLabel "bisse"@fr ;
   skos:altLabel "serpente"@it ;
   skos:altLabel "snake"@en ;
@@ -6604,6 +7072,8 @@ hero:p2329
   skos:altLabel "Neptunus"@en ;
   skos:altLabel "Poseidon"@fi ;
   skos:altLabel "Triton"@en ;
+  skos:altLabel "Triton"@fr ;
+  skos:altLabel "Tritón"@es ;
   skos:broader hero:p1662 ;
   skos:broader hero:p1674 ;
   skos:prefLabel "Ahti"@fi ;
@@ -6621,6 +7091,7 @@ hero:p2330
   rdf:type skos:Concept ;
   skos:altLabel "Hirschkäfer"@de ;
   skos:altLabel "Schröterkäfer"@de ;
+  skos:altLabel "coccinelle"@fr ;
   skos:altLabel "stag beetle"@en ;
   skos:broader hero:p2108 ;
   skos:prefLabel "kovakuoriainen"@fi ;
@@ -6645,6 +7116,7 @@ hero:p2333
 .
 hero:p2334
   rdf:type skos:Concept ;
+  skos:altLabel "horloge"@fr ;
   skos:broader hero:p2281 ;
   skos:prefLabel "kello [clock]"@fi ;
 .
@@ -6706,8 +7178,10 @@ hero:p2339
 hero:p234
   rdf:type skos:Concept ;
   skos:altLabel "Pilgermuschel"@de ;
+  skos:altLabel "huître"@fr ;
   skos:altLabel "jaakopinsimpukka"@fi ;
   skos:altLabel "jakobsmantel"@nl ;
+  skos:altLabel "kamskjell"@nb ;
   skos:altLabel "mussel"@en ;
   skos:altLabel "scallop of st. James"@en ;
   skos:altLabel "scallop shell"@en ;
@@ -6717,18 +7191,25 @@ hero:p234
 .
 hero:p2340
   rdf:type skos:Concept ;
-  skos:altLabel "fiertée [poisson]"@fr ;
+  skos:altLabel "fierté [poisson]"@fr ;
   skos:broader hero:p76 ;
   skos:hiddenLabel "dentée"@fr ;
+  skos:hiddenLabel "fierté"@fr ;
+  skos:hiddenLabel "fiertée"@fr ;
   skos:prefLabel "hampaat"@fi ;
 .
 hero:p2341
   rdf:type skos:Concept ;
   skos:altLabel "allumé"@en ;
+  skos:altLabel "animado"@es ;
   skos:altLabel "animato"@it ;
   skos:altLabel "animé"@fr ;
   skos:altLabel "orbed"@en ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "allumée"@fr ;
+  skos:hiddenLabel "animada"@es ;
+  skos:hiddenLabel "animée"@fr ;
+  skos:hiddenLabel "encendida"@es ;
   skos:prefLabel "silmät"@fi ;
 .
 hero:p2342
@@ -6740,6 +7221,7 @@ hero:p2343
   rdf:type skos:Concept ;
   skos:altLabel "Windspiel"@de ;
   skos:altLabel "galgo"@es ;
+  skos:altLabel "levrette"@fr ;
   skos:altLabel "levron"@fr ;
   skos:broader hero:p2924 ;
   skos:prefLabel "vinttikoira"@fi ;
@@ -6747,6 +7229,7 @@ hero:p2343
 hero:p2344
   rdf:type skos:Concept ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "ferrée"@fr ;
   skos:note "Nuolen tai vastaavan terävän aseen kärki."@fi ;
   skos:prefLabel "kärki [ase]"@fi ;
 .
@@ -6755,6 +7238,7 @@ hero:p2345
   skos:altLabel "barbé"@fr ;
   skos:altLabel "puntada"@es ;
   skos:broader hero:p2374 ;
+  skos:hiddenLabel "pointée"@fr ;
   skos:prefLabel "verhiö"@fi ;
 .
 hero:p2346
@@ -6764,7 +7248,11 @@ hero:p2346
 .
 hero:p2348
   rdf:type skos:Concept ;
+  skos:altLabel "doublure"@fr ;
+  skos:altLabel "fourré"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "doublée"@fr ;
+  skos:hiddenLabel "fourrée"@fr ;
   skos:note "Kypäränpeitteen vuoripuolen tinktuuri."@fi ;
   skos:prefLabel "vuoripuoli"@fi ;
 .
@@ -6787,7 +7275,7 @@ hero:p2350
   rdf:type skos:Concept ;
   skosext:partOf hero:p207 ;
   skosext:partOf hero:p519 ;
-  skos:altLabel "caboché"@fr ;
+  skos:altLabel "caboche"@fr ;
   skos:altLabel "face"@en ;
   skos:altLabel "recontre"@ca ;
   skos:altLabel "recuentro"@es ;
@@ -6795,7 +7283,8 @@ hero:p2350
   skos:altLabel "testuz"@es ;
   skos:altLabel "von vorne"@de ;
   skos:broader hero:p519 ;
-  skos:hiddenLabel "caboshed"@en ;
+  skos:hiddenLabel "caboched"@en ;
+  skos:hiddenLabel "cabossed"@en ;
   skos:prefLabel "naama"@fi ;
   skos:related hero:p1348 ;
 .
@@ -6808,10 +7297,11 @@ hero:p2351
 hero:p2352
   rdf:type skos:Concept ;
   skos:altLabel "apaume"@en ;
+  skos:altLabel "erguido e aberto"@pt ;
   skos:altLabel "paumy"@en ;
   skos:broader hero:p2820 ;
   skos:hiddenLabel "apaumy"@en ;
-  skos:hiddenLabel "appaumés"@fr ;
+  skos:hiddenLabel "appaumées"@fr ;
   skos:prefLabel "kämmenpuoli näkyvissä"@fi ;
 .
 hero:p2353
@@ -6839,6 +7329,7 @@ hero:p2355
 hero:p2356
   rdf:type skos:Concept ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "cordée"@fr ;
   skos:note "Jousen jänteen tinktuuri."@fi ;
   skos:prefLabel "jänne [jousi]"@fi ;
 .
@@ -6852,6 +7343,7 @@ hero:p2359
   skos:altLabel "Molosser"@de ;
   skos:altLabel "Talbot"@de ;
   skos:altLabel "limier"@fr ;
+  skos:altLabel "mâtin"@fr ;
   skos:altLabel "talbot"@fr ;
   skos:broader hero:p2924 ;
   skos:prefLabel "talbot"@fi ;
@@ -6886,6 +7378,7 @@ hero:p2364
 hero:p2365
   rdf:type skos:Concept ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "pommetée"@fr ;
   skos:note "Miekan ponnen tinktuuri."@fi ;
   skos:prefLabel "ponsi"@fi ;
 .
@@ -6921,6 +7414,7 @@ hero:p2369
 hero:p237
   rdf:type skos:Concept ;
   skos:altLabel "monkey"@en ;
+  skos:altLabel "mono"@es ;
   skos:broader hero:p2927 ;
   skos:prefLabel "apina"@fi ;
 .
@@ -6941,8 +7435,10 @@ hero:p2372
   skos:altLabel "Geweihstange"@de ;
   skos:altLabel "andouiller"@fr ;
   skos:altLabel "antler"@en ;
+  skos:altLabel "asta"@es ;
   skos:altLabel "bois de cerf"@fr ;
   skos:altLabel "corne de cerf"@fr ;
+  skos:altLabel "perche"@fr ;
   skos:broader hero:p2373 ;
   skos:prefLabel "sarvi [hirvieläin]"@fi ;
   skos:related hero:p2371 ;
@@ -6985,12 +7481,13 @@ hero:p2377
 hero:p2378
   rdf:type skos:Concept ;
   skos:broader hero:p2907 ;
-  skos:prefLabel "kieli [soitin]"@fi ;
+  skos:prefLabel "kielet"@fi ;
   skos:related hero:p2356 ;
 .
 hero:p2379
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "roundel azure"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "hurt (en)"@fi ;
 .
@@ -7008,6 +7505,7 @@ hero:p238
 hero:p2380
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "roundel gules"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "torteau (en)"@fi ;
 .
@@ -7016,13 +7514,14 @@ hero:p2381
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "pomey"@en ;
   skos:altLabel "pomme"@fr ;
+  skos:altLabel "roundel vert"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "pomme (en)"@fi ;
 .
 hero:p2382
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
-  skos:altLabel "wound"@en ;
+  skos:altLabel "roundel purpure"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "golpe (en)"@fi ;
 .
@@ -7076,6 +7575,7 @@ hero:p2388
 hero:p2389
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "arrebatado"@es ;
   skos:broader hero:p200 ;
   skos:prefLabel "takajaloilleen noussut [susi]"@fi ;
   skos:related hero:p200 ;
@@ -7103,7 +7603,7 @@ hero:p2392
   skos:altLabel "piété"@fr ;
   skos:altLabel "vulning herself"@en ;
   skos:broader hero:p2009 ;
-  skos:prefLabel "poikasiaan ruokkiva"@fi ;
+  skos:prefLabel "pesällään"@fi ;
   skos:related hero:p1179 ;
 .
 hero:p2393
@@ -7119,13 +7619,15 @@ hero:p2394
   skos:altLabel "table d'attente"@fr ;
   skos:broader hero:p2907 ;
   skos:note "Kentän ominaisuus, kun siinä ei ole airut- tai yleiskuviota."@fi ;
-  skos:prefLabel "tyhjä"@fi ;
+  skos:prefLabel "plain (en)"@fi ;
 .
 hero:p2395
   rdf:type skos:Concept ;
-  skos:altLabel "lorré"@fr ;
+  skos:altLabel "loré"@fr ;
   skos:altLabel "pinnato"@it ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "lorrée"@fr ;
+  skos:hiddenLabel "lorée"@fr ;
   skos:prefLabel "evät"@fi ;
 .
 hero:p2396
@@ -7139,19 +7641,24 @@ hero:p2397
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "adumbration"@en ;
+  skos:altLabel "contornado"@pt ;
   skos:altLabel "contorneada"@es ;
+  skos:altLabel "encoberto"@pt ;
   skos:altLabel "entrailed"@en ;
   skos:altLabel "ombre"@en ;
   skos:altLabel "transparency"@en ;
   skos:altLabel "umbration"@en ;
+  skos:altLabel "éclipsé"@fr ;
   skos:broader hero:p2902 ;
   skos:prefLabel "in umbra (en)"@fi ;
+  skos:related hero:p930 ;
 .
 hero:p2398
   rdf:type skos:Concept ;
   skos:altLabel "beschellt"@de ;
   skos:altLabel "grilleté"@en ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "grilletée"@fr ;
   skos:note "Haukan ominaisuus, jalkaan kiinnitetty kulkunen."@fi ;
   skos:prefLabel "grilleté (fr)"@fi ;
   skos:related hero:p214 ;
@@ -7161,6 +7668,7 @@ hero:p2399
   rdf:type skos:Concept ;
   skos:altLabel "vervelled"@en ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "longée"@fr ;
   skos:note "Haukan ominaisuus, jalassa kiinnityshihna."@fi ;
   skos:prefLabel "jessed (en)"@fi ;
   skos:related hero:p214 ;
@@ -7168,17 +7676,20 @@ hero:p2399
 hero:p24
   rdf:type skos:Concept ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "potencée"@fr ;
   skos:prefLabel "kahvakoro"@fi ;
   skos:related hero:p150 ;
-  hero-meta:wboMatch "0151-122" ;
+  hero-meta:wboMatch "-122"^^xsd:string ;
 .
 hero:p2400
   rdf:type skos:Concept ;
   skos:altLabel "capuchonado"@es ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "chaperonnée"@fr ;
   skos:note "Yleensä haukan ominaisuus, hupulla varustettu."@fi ;
   skos:prefLabel "hooded (en)"@fi ;
   skos:related hero:p214 ;
+  skos:related hero:p2947 ;
 .
 hero:p2401
   rdf:type skos:Concept ;
@@ -7220,13 +7731,16 @@ hero:p2404
 hero:p2405
   rdf:type skos:Concept ;
   skos:broader hero:p2758 ;
+  skos:hiddenLabel "fustada"@es ;
   skos:hiddenLabel "futé"@fr ;
+  skos:hiddenLabel "fûtée"@fr ;
   skos:prefLabel "runko"@fi ;
   skos:related hero:p1254 ;
   skos:related hero:p2125 ;
 .
 hero:p2406
   rdf:type skos:Concept ;
+  skos:altLabel "casculho"@pt ;
   skos:altLabel "englandé"@fr ;
   skos:altLabel "englanté"@en ;
   skos:altLabel "glandé"@fr ;
@@ -7241,6 +7755,7 @@ hero:p2407
   skos:altLabel "rostrato"@it ;
   skos:broader hero:p76 ;
   skos:hiddenLabel "becquée"@fr ;
+  skos:hiddenLabel "picada"@es ;
   skos:prefLabel "nokka"@fi ;
 .
 hero:p2408
@@ -7249,6 +7764,7 @@ hero:p2408
   skos:altLabel "cloué"@en ;
   skos:altLabel "genageld"@nl ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "clouée"@fr ;
   skos:prefLabel "naulattu"@fi ;
 .
 hero:p2409
@@ -7304,13 +7820,17 @@ hero:p2414
 .
 hero:p2415
   rdf:type skos:Concept ;
+  skos:altLabel "fasetti"@fi ;
   skos:broader hero:p2377 ;
   skos:broader hero:p2704 ;
+  skos:hiddenLabel "relevée"@fr ;
   skos:prefLabel "viistepintainen"@fi ;
 .
 hero:p2416
   rdf:type skos:Concept ;
   skos:altLabel "hie"@en ;
+  skos:altLabel "pisón"@es ;
+  skos:altLabel "poteau de mer"@fr ;
   skos:broader hero:p2281 ;
   skos:prefLabel "hie (fr)"@fi ;
   hero-meta:wboMatch "9463" ;
@@ -7344,7 +7864,8 @@ hero:p2418
 hero:p2419
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
-  skos:broader hero:p2255 ;
+  skos:altLabel "Briefwappen"@de ;
+  skos:broader hero:p2210 ;
   skos:prefLabel "aatelisvaakuna"@fi ;
 .
 hero:p242
@@ -7356,6 +7877,7 @@ hero:p242
   skos:altLabel "halber Flug"@de ;
   skos:altLabel "halve vlucht"@nl ;
   skos:broader hero:p2894 ;
+  skos:hiddenLabel "medio vuelo"@es ;
   skos:prefLabel "siipi"@fi ;
 .
 hero:p2420
@@ -7387,6 +7909,7 @@ hero:p2424
   skos:altLabel "annelled"@en ;
   skos:altLabel "bucleado"@es ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "bouclée"@fr ;
   skos:prefLabel "nenärengas"@fi ;
 .
 hero:p2425
@@ -7507,29 +8030,33 @@ hero:p244
   skosext:partOf hero:p3040 ;
   skosext:partOf hero:p485 ;
   skos:altLabel "fiordaliso"@it ;
-  skos:altLabel "fleur de lys"@en ;
-  skos:altLabel "fleur de lys"@fr ;
+  skos:altLabel "fleur de lis"@en ;
+  skos:altLabel "fleur de lis"@fr ;
   skos:altLabel "heraldische Lilie"@de ;
+  skos:altLabel "lis"@en ;
   skos:altLabel "lis"@es ;
+  skos:altLabel "lis"@fr ;
   skos:altLabel "lys"@en ;
   skos:altLabel "lys"@fr ;
   skos:broader hero:p3040 ;
+  skos:hiddenLabel "fleur de lys"@en ;
   skos:hiddenLabel "fleur-de-lis"@en ;
   skos:hiddenLabel "fleur-de-lis"@fr ;
-  skos:hiddenLabel "lis"@en ;
-  skos:hiddenLabel "lis"@fr ;
+  skos:hiddenLabel "fleur-de-lys"@fr ;
   skos:prefLabel "lilja"@fi ;
   skos:related hero:p1241 ;
   hero-meta:wboMatch "2712" ;
 .
 hero:p2441
   rdf:type skos:Concept ;
+  skos:altLabel "mi-taillé et tranché"@fr ;
   skos:broader hero:p39 ;
   skos:prefLabel "lohkoinen ja yläkenttä vastalohkoinen"@fi ;
   hero-meta:wboMatch "0597" ;
 .
 hero:p2442
   rdf:type skos:Concept ;
+  skos:altLabel "demi-tranché et taillé"@fr ;
   skos:broader hero:p40 ;
   skos:prefLabel "vastalohkoinen ja yläkenttä lohkoinen"@fi ;
   hero-meta:wboMatch "0596" ;
@@ -7628,11 +8155,13 @@ hero:p2454
 .
 hero:p2455
   rdf:type skos:Concept ;
+  skos:altLabel "loer"@nl ;
   skos:broader hero:p2941 ;
   skos:prefLabel "lure (en)"@fi ;
 .
 hero:p2457
   rdf:type skos:Concept ;
+  skos:altLabel "kussen"@nl ;
   skos:altLabel "oreiller"@fr ;
   skos:altLabel "pillow"@en ;
   skos:broader hero:p2941 ;
@@ -7657,6 +8186,7 @@ hero:p246
   skos:altLabel "Vaasain tunnus"@fi ;
   skos:altLabel "risukimppu"@fi ;
   skos:altLabel "stormvase"@sv ;
+  skos:altLabel "vasa"@en ;
   skos:broader hero:p2289 ;
   skos:prefLabel "rynnäkkörisukimppu"@fi ;
 .
@@ -7733,10 +8263,16 @@ hero:p2470
   skos:altLabel "aspilogia"@la ;
   skos:altLabel "címertan"@hu ;
   skos:altLabel "grboslovlje"@hr ;
-  skos:altLabel "vaakunaoppi"@fi ;
+  skos:altLabel "vaakunatiede"@fi ;
   skos:altLabel "гербазна́ўства"@be ;
   skos:broader hero:p2255 ;
   skos:prefLabel "heraldiikka"@fi ;
+.
+hero:p2471
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "julkinen vaakuna"@fi ;
 .
 hero:p2472
   rdf:type skos:Concept ;
@@ -7755,7 +8291,7 @@ hero:p2474
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
   skos:altLabel "number"@en ;
-  skos:broader hero:p1673 ;
+  skos:broader hero:p2738 ;
   skos:prefLabel "numero"@fi ;
   skos:related hero:p627 ;
 .
@@ -7787,6 +8323,7 @@ hero:p2477
 hero:p2478
   rdf:type skos:Concept ;
   skos:altLabel "canon démonté"@fr ;
+  skos:altLabel "culebrina"@es ;
   skos:broader hero:p566 ;
   skos:prefLabel "tykinputki"@fi ;
   hero-meta:wboMatch "9674" ;
@@ -7801,6 +8338,8 @@ hero:p2479
 hero:p248
   rdf:type skos:Concept ;
   skos:altLabel "Eichenbaum"@de ;
+  skos:altLabel "alcornoque"@es ;
+  skos:altLabel "encina"@es ;
   skos:altLabel "rovere"@it ;
   skos:broader hero:p1254 ;
   skos:prefLabel "tammi"@fi ;
@@ -7812,7 +8351,7 @@ hero:p2480
   skos:altLabel "fyrmörsare"@sv ;
   skos:broader hero:p2285 ;
   skos:prefLabel "mörssäri"@fi ;
-  hero-meta:wboMatch "9675 " ;
+  hero-meta:wboMatch "9675 "^^xsd:string ;
 .
 hero:p2481
   rdf:type skos:Concept ;
@@ -7841,6 +8380,7 @@ hero:p2483
   skosext:partOf hero:p448 ;
   skos:altLabel "Mumblatt"@de ;
   skos:altLabel "feuille de marais"@fr ;
+  skos:altLabel "plompenblad"@nl ;
   skos:altLabel "pompeblêd"@nl ;
   skos:altLabel "waterleaf"@en ;
   skos:altLabel "waterlelieblad"@nl ;
@@ -7855,6 +8395,7 @@ hero:p2484
   skos:altLabel "Wasser"@de ;
   skos:altLabel "eau"@fr ;
   skos:altLabel "ocean"@en ;
+  skos:altLabel "ondes"@fr ;
   skos:altLabel "water"@en ;
   skos:broader hero:p1669 ;
   skos:prefLabel "meri"@fi ;
@@ -7901,6 +8442,7 @@ hero:p249
   skos:altLabel "fura"@sv ;
   skos:altLabel "honka"@fi ;
   skos:altLabel "petäjä"@fi ;
+  skos:altLabel "pin parasol"@fr ;
   skos:broader hero:p2125 ;
   skos:hiddenLabel "pine-tree"@en ;
   skos:prefLabel "mänty"@fi ;
@@ -7977,6 +8519,7 @@ hero:p2498
 hero:p2499
   rdf:type skos:Concept ;
   skos:altLabel "bush"@en ;
+  skos:altLabel "mata"@pt ;
   skos:broader hero:p1666 ;
   skos:prefLabel "pensas"@fi ;
 .
@@ -8006,6 +8549,7 @@ hero:p2500
 hero:p2501
   rdf:type skos:Concept ;
   skos:broader hero:p1254 ;
+  skos:hiddenLabel "alamo"@es ;
   skos:hiddenLabel "poplar-tree"@en ;
   skos:prefLabel "poppeli"@fi ;
   skos:related hero:p356 ;
@@ -8023,7 +8567,9 @@ hero:p2503
 .
 hero:p2504
   rdf:type skos:Concept ;
+  skos:altLabel "Stabkreuz"@de ;
   skos:altLabel "filet en croix"@fr ;
+  skos:altLabel "streepkruis"@nl ;
   skos:broader hero:p60 ;
   skos:broader hero:p65 ;
   skos:prefLabel "kavennettu risti"@fi ;
@@ -8033,6 +8579,7 @@ hero:p2505
   skos:altLabel "nowed"@en ;
   skos:broader hero:p2820 ;
   skos:broader hero:p2866 ;
+  skos:hiddenLabel "nouée"@fr ;
   skos:prefLabel "häntä solmussa"@fi ;
 .
 hero:p2506
@@ -8086,19 +8633,24 @@ hero:p251
 hero:p2510
   rdf:type skos:Concept ;
   skos:altLabel "diffamé"@en ;
-  skos:broader hero:p2375 ;
-  skos:prefLabel "ilman häntää"@fi ;
+  skos:broader hero:p2514 ;
+  skos:hiddenLabel "diffamée"@fr ;
+  skos:prefLabel "hännätön"@fi ;
 .
 hero:p2511
   rdf:type skos:Concept ;
+  skos:altLabel "kalanpyrstöinen"@fi ;
+  skos:altLabel "mit Fischschwanz"@de ;
+  skos:altLabel "s rybím ocasem"@cs ;
   skos:broader hero:p2375 ;
-  skos:prefLabel "kalanpyrstöinen"@fi ;
+  skos:hiddenLabel "marinée"@fr ;
+  skos:prefLabel "meri-"@fi ;
 .
 hero:p2512
   rdf:type skos:Concept ;
   skos:altLabel "castrato"@it ;
   skos:altLabel "infamato"@it ;
-  skos:broader hero:p2375 ;
+  skos:broader hero:p2514 ;
   skos:prefLabel "kuohittu"@fi ;
 .
 hero:p2513
@@ -8107,19 +8659,24 @@ hero:p2513
   skos:altLabel "osceno"@it ;
   skos:altLabel "pizzled"@en ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "vilenée"@fr ;
   skos:note "Nelijalkaisen eläimen sukuelinten tinktuuri."@fi ;
   skos:prefLabel "vilené (fr)"@fi ;
 .
 hero:p2514
   rdf:type skos:Concept ;
+  skos:altLabel "condenadas"@es ;
   skos:altLabel "désarmé"@fr ;
   skos:altLabel "morné"@en ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "désarmée"@fr ;
+  skos:hiddenLabel "mornée"@fr ;
   skos:prefLabel "ilman varuksia"@fi ;
 .
 hero:p2515
   rdf:type skos:Concept ;
   skos:altLabel "Lanzette"@de ;
+  skos:altLabel "laatmes"@nl ;
   skos:altLabel "lancet"@en ;
   skos:altLabel "lansett"@sv ;
   skos:altLabel "lansetti"@fi ;
@@ -8130,6 +8687,7 @@ hero:p2515
 hero:p2516
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "omkleed"@nl ;
   skos:broader hero:p1958 ;
   skos:hiddenLabel "vêtu"@en ;
   skos:prefLabel "vêtu (fr)"@fi ;
@@ -8138,12 +8696,14 @@ hero:p2516
 .
 hero:p2517
   rdf:type skos:Concept ;
+  skos:altLabel "venda"@es ;
   skos:broader hero:p59 ;
   skos:broader hero:p60 ;
   skos:prefLabel "kavennettu lakio"@fi ;
 .
 hero:p2518
   rdf:type skos:Concept ;
+  skos:altLabel "contrachefe diminuto"@pt ;
   skos:broader hero:p60 ;
   skos:broader hero:p61 ;
   skos:prefLabel "kavennettu tyviö"@fi ;
@@ -8162,6 +8722,8 @@ hero:p252
 .
 hero:p2520
   rdf:type skos:Concept ;
+  skos:altLabel "tire"@fr ;
+  skos:altLabel "trait"@fr ;
   skos:altLabel "tvåradig schackrutad"@sv ;
   skos:altLabel "échiqueté de deux traits"@fr ;
   skos:broader hero:p1693 ;
@@ -8190,15 +8752,19 @@ hero:p2523
 .
 hero:p2524
   rdf:type skos:Concept ;
+  skos:altLabel "Rechter Seitensparren"@de ;
   skos:altLabel "echado"@es ;
   skos:broader hero:p57 ;
   skos:prefLabel "polviorsi oikealle"@fi ;
+  hero-meta:wboMatch "0558"^^xsd:string ;
 .
 hero:p2525
   rdf:type skos:Concept ;
+  skos:altLabel "Linker Seitensparren"@de ;
   skos:altLabel "echado contornado"@es ;
   skos:broader hero:p57 ;
   skos:prefLabel "polviorsi vasemmalle"@fi ;
+  hero-meta:wboMatch "0559"^^xsd:string ;
 .
 hero:p2526
   rdf:type skos:Concept ;
@@ -8215,6 +8781,7 @@ hero:p2528
   skos:altLabel "bicapitated"@en ;
   skos:altLabel "à deux têtes"@fr ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "bicéfalo"@es ;
   skos:prefLabel "kaksipäinen"@fi ;
 .
 hero:p2529
@@ -8268,8 +8835,9 @@ hero:p2533
 hero:p2534
   rdf:type skos:Concept ;
   skos:altLabel "fourchy"@en ;
-  skos:altLabel "fourchée"@fr ;
+  skos:altLabel "fourché"@fr ;
   skos:broader hero:p163 ;
+  skos:hiddenLabel "fourchée"@fr ;
   skos:prefLabel "cross fourchy (en)"@fi ;
 .
 hero:p2535
@@ -8301,6 +8869,7 @@ hero:p2539
   skosext:partOf hero:p1437 ;
   skosext:partOf hero:p202 ;
   skos:altLabel "Adlerklaue"@de ;
+  skos:altLabel "membre d'aigle"@fr ;
   skos:broader hero:p201 ;
   skos:prefLabel "kotkanjalka"@fi ;
 .
@@ -8316,6 +8885,8 @@ hero:p2540
   rdf:type skos:Concept ;
   skosext:partOf hero:p2539 ;
   skosext:partOf hero:p258 ;
+  skos:altLabel "griffe ailée"@fr ;
+  skos:altLabel "main d'aigle"@fr ;
   skos:broader hero:p2539 ;
   skos:prefLabel "siivekäs kotkanjalka"@fi ;
 .
@@ -8455,6 +9026,7 @@ hero:p2559
 .
 hero:p256
   rdf:type skos:Concept ;
+  skos:altLabel "alcáçova"@pt ;
   skos:broader hero:p522 ;
   skos:prefLabel "linna"@fi ;
   hero-meta:wboMatch "8021" ;
@@ -8501,10 +9073,10 @@ hero:p2564
 hero:p2565
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "cape"@fr ;
   skos:altLabel "maître"@fr ;
   skos:broader hero:p1694 ;
-  skos:note "Ranskan chapé on airutkuvio, joka jää jäljelle kun koko kilvestä leikataan pois kärki. Englannissa se tulkitaan kilven jaoksi. Pohjois-Euroopassa sitä ja sen johdannaiskuvioita ei käytetä lainkaan."@fi ;
-  skos:prefLabel "chapé (fr)"@fi ;
+  skos:prefLabel "chape (fr)"@fi ;
   skos:related hero:p125 ;
 .
 hero:p2566
@@ -8513,7 +9085,7 @@ hero:p2566
   skosext:partOf hero:p2565 ;
   skosext:partOf hero:p307 ;
   skos:broader hero:p2565 ;
-  skos:prefLabel "chaussé (fr)"@fi ;
+  skos:prefLabel "chausse (fr)"@fi ;
   skos:related hero:p2318 ;
 .
 hero:p2567
@@ -8521,19 +9093,23 @@ hero:p2567
   rdf:type hero-meta:NonFinnishConcept ;
   skosext:partOf hero:p2039 ;
   skosext:partOf hero:p2565 ;
+  skos:altLabel "embrasé à senestre"@fr ;
   skos:broader hero:p2565 ;
+  skos:hiddenLabel "embrassé à senestre"@fr ;
   skos:hiddenLabel "embrazado"@es ;
-  skos:prefLabel "embrassé à senestre (fr)"@fi ;
+  skos:prefLabel "embrase à senestre (fr)"@fi ;
   skos:related hero:p2319 ;
 .
 hero:p2568
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "contraembrasado"@es ;
+  skos:altLabel "embrasé à dextre"@fr ;
   skos:broader hero:p2565 ;
+  skos:hiddenLabel "embrassé à dextre"@fr ;
   skos:hiddenLabel "embrassé"@en ;
   skos:hiddenLabel "embrassé"@fr ;
-  skos:prefLabel "embrassé à dextre (fr)"@fi ;
+  skos:prefLabel "embrase à dextre (fr)"@fi ;
   skos:related hero:p2320 ;
 .
 hero:p2569
@@ -8541,8 +9117,9 @@ hero:p2569
   rdf:type hero-meta:NonFinnishConcept ;
   skosext:partOf hero:p1 ;
   skosext:partOf hero:p2566 ;
+  skos:altLabel "chaussé ployé"@fr ;
   skos:broader hero:p2566 ;
-  skos:prefLabel "chaussé ployé (fr)"@fi ;
+  skos:prefLabel "chausse ployé (fr)"@fi ;
   skos:related hero:p2411 ;
 .
 hero:p257
@@ -8556,9 +9133,9 @@ hero:p2570
   rdf:type hero-meta:NonFinnishConcept ;
   skosext:partOf hero:p1 ;
   skosext:partOf hero:p2565 ;
+  skos:altLabel "chapé ployé"@fr ;
   skos:broader hero:p2565 ;
-  skos:hiddenLabel "chape ployé"@en ;
-  skos:prefLabel "chapé ployé (fr)"@fi ;
+  skos:prefLabel "chape ployé (fr)"@fi ;
   skos:related hero:p2412 ;
 .
 hero:p2571
@@ -8605,6 +9182,7 @@ hero:p2575
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "aiglat"@fr ;
+  skos:altLabel "aiglon"@fr ;
   skos:broader hero:p201 ;
   skos:prefLabel "pieni kotka"@fi ;
 .
@@ -8646,6 +9224,7 @@ hero:p258
   skos:altLabel "mit Flügeln"@de ;
   skos:altLabel "winged"@en ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "ailée"@fr ;
   skos:prefLabel "siivekäs"@fi ;
 .
 hero:p2580
@@ -8663,6 +9242,7 @@ hero:p2580
 hero:p2581
   rdf:type skos:Concept ;
   skos:altLabel "givre"@fr ;
+  skos:altLabel "vouivre"@fr ;
   skos:broader hero:p1674 ;
   skos:broader hero:p232 ;
   skos:prefLabel "biscione (it)"@fi ;
@@ -8718,7 +9298,9 @@ hero:p2589
 hero:p259
   rdf:type skos:Concept ;
   skos:altLabel "flamant"@en ;
+  skos:altLabel "flambante"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "flamboyante"@fr ;
   skos:prefLabel "liekehtivä"@fi ;
 .
 hero:p2590
@@ -8735,7 +9317,7 @@ hero:p2591
   skos:altLabel "livery company"@en ;
   skos:altLabel "trades hall"@en ;
   skos:altLabel "worshipful company"@en ;
-  skos:broader hero:p2255 ;
+  skos:broader hero:p2210 ;
   skos:prefLabel "ammattikunnan vaakuna"@fi ;
 .
 hero:p2592
@@ -8792,10 +9374,13 @@ hero:p2599
 .
 hero:p26
   rdf:type skos:Concept ;
+  skos:altLabel "palissé"@fr ;
   skos:broader hero:p1660 ;
+  skos:hiddenLabel "palissadée"@fr ;
+  skos:hiddenLabel "palissée"@fr ;
   skos:hiddenLabel "pylväskoro"@fi ;
   skos:prefLabel "hakulikoro"@fi ;
-  hero-meta:wboMatch "0151-134" ;
+  hero-meta:wboMatch "-134"^^xsd:string ;
 .
 hero:p260
   rdf:type skos:Concept ;
@@ -8825,6 +9410,7 @@ hero:p2601
   rdf:type skos:Concept ;
   skos:broader hero:p2606 ;
   skos:prefLabel "peräsimellä varustettu"@fi ;
+  skos:related hero:p327 ;
 .
 hero:p2602
   rdf:type skos:Concept ;
@@ -8843,6 +9429,7 @@ hero:p2604
 .
 hero:p2605
   rdf:type skos:Concept ;
+  skos:altLabel "pavillonné"@fr ;
   skos:broader hero:p2907 ;
   skos:hiddenLabel "girouettée"@fr ;
   skos:prefLabel "lipulla varustettu"@fi ;
@@ -8857,13 +9444,19 @@ hero:p2606
 .
 hero:p2607
   rdf:type skos:Concept ;
+  skos:altLabel "voiles ferlées"@fr ;
   skos:broader hero:p2606 ;
   skos:prefLabel "reivatuin purjein"@fi ;
 .
 hero:p2608
   rdf:type skos:Concept ;
   skos:altLabel "equipped"@en ;
+  skos:altLabel "gréé"@fr ;
+  skos:altLabel "habillé"@fr ;
   skos:broader hero:p2606 ;
+  skos:hiddenLabel "gréée"@fr ;
+  skos:hiddenLabel "habillée"@fr ;
+  skos:hiddenLabel "équipée"@fr ;
   skos:prefLabel "takiloitu"@fi ;
 .
 hero:p2609
@@ -8894,6 +9487,7 @@ hero:p2611
   rdf:type skos:Concept ;
   skos:broader hero:p2606 ;
   skos:prefLabel "hankaimilla varustettu"@fi ;
+  skos:related hero:p264 ;
 .
 hero:p2612
   rdf:type skos:Concept ;
@@ -8997,8 +9591,9 @@ hero:p2627
   skosext:partOf hero:p2372 ;
   skosext:partOf hero:p323 ;
   skos:altLabel "Hirschhorn"@de ;
-  skos:altLabel "demi-ramure de cerf"@fr ;
+  skos:altLabel "demi ramure de cerf"@fr ;
   skos:broader hero:p323 ;
+  skos:hiddenLabel "demi-ramure de cerf"@fr ;
   skos:prefLabel "saksanhirven sarvi"@fi ;
 .
 hero:p2628
@@ -9092,6 +9687,7 @@ hero:p2639
   skosext:partOf hero:p192 ;
   skosext:partOf hero:p2350 ;
   skos:altLabel "Leopardenkopf"@de ;
+  skos:altLabel "masque de lion"@fr ;
   skos:broader hero:p192 ;
   skos:prefLabel "leijonannaama"@fi ;
 .
@@ -9306,12 +9902,19 @@ hero:p2665
   skos:altLabel "fleurdelysé"@fr ;
   skos:altLabel "fleury"@en ;
   skos:altLabel "fleuré"@fr ;
+  skos:altLabel "flor-de-lisado"@pt ;
   skos:broader hero:p2907 ;
   skos:hiddenLabel "fleurdelisé"@fr ;
+  skos:hiddenLabel "fleurdelisée"@fr ;
+  skos:hiddenLabel "fleurdelysée"@fr ;
+  skos:hiddenLabel "fleurée"@fr ;
+  skos:hiddenLabel "florencée"@fr ;
   skos:prefLabel "liljapäinen"@fi ;
+  skos:related hero:p244 ;
 .
 hero:p2666
   rdf:type skos:Concept ;
+  skos:altLabel "jødelue"@nb ;
   skos:broader hero:p1672 ;
   skos:prefLabel "päähine"@fi ;
 .
@@ -9320,10 +9923,12 @@ hero:p2667
   skos:broader hero:p2939 ;
   skos:broader hero:p522 ;
   skos:prefLabel "ruusuikkuna"@fi ;
+  skos:related hero:p83 ;
 .
 hero:p2668
   rdf:type skos:Concept ;
   skos:altLabel "butter churn"@en ;
+  skos:altLabel "karnton"@nl ;
   skos:broader hero:p2287 ;
   skos:prefLabel "kirnu"@fi ;
   hero-meta:wboMatch "9135" ;
@@ -9383,6 +9988,7 @@ hero:p2677
   rdf:type skos:Concept ;
   skosext:partOf hero:p265 ;
   skosext:partOf hero:p333 ;
+  skos:altLabel "moleta"@pt ;
   skos:altLabel "molette d'éperon"@fr ;
   skos:altLabel "spurrowel"@en ;
   skos:broader hero:p265 ;
@@ -9406,9 +10012,10 @@ hero:p2679
   skos:altLabel "vapentält"@sv ;
   skos:altLabel "våbentelt"@da ;
   skos:altLabel "våpentelt"@no ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p2802 ;
   skos:hiddenLabel "baldachin"@en ;
   skos:prefLabel "kruunausviitta"@fi ;
+  skos:related hero:p1236 ;
 .
 hero:p268
   rdf:type skos:Concept ;
@@ -9454,11 +10061,13 @@ hero:p2689
   rdf:type skos:Concept ;
   skosext:partOf hero:p1335 ;
   skosext:partOf hero:p2486 ;
+  skos:altLabel "bog"@da ;
   skos:broader hero:p1335 ;
   skos:prefLabel "pyökinpähkinä"@fi ;
 .
 hero:p269
   rdf:type skos:Concept ;
+  skos:altLabel "estrela caudata"@pt ;
   skos:broader hero:p1670 ;
   skos:prefLabel "pyrstötähti"@fi ;
   hero-meta:wboMatch "1031" ;
@@ -9467,6 +10076,7 @@ hero:p2690
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:broader hero:p2824 ;
+  skos:broader hero:p36 ;
   skos:prefLabel "kilven alue"@fi ;
 .
 hero:p2691
@@ -9498,6 +10108,7 @@ hero:p2695
   skos:altLabel "abismo"@es ;
   skos:altLabel "abismo"@pt ;
   skos:altLabel "abisso"@it ;
+  skos:altLabel "abyss"@en ;
   skos:altLabel "abîme"@fr ;
   skos:altLabel "corazón"@es ;
   skos:altLabel "cuore"@it ;
@@ -9626,14 +10237,9 @@ hero:p2710
   skos:prefLabel "rintapanssari"@fi ;
   hero-meta:wboMatch "9611" ;
 .
-hero:p2711
-  rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:prefLabel "keskusrenkainen"@fi ;
-.
 hero:p2712
   rdf:type skos:Concept ;
-  skos:altLabel "hardi"@fr ;
+  skos:altLabel "crowing"@en ;
   skos:broader hero:p2009 ;
   skos:prefLabel "laulava"@fi ;
 .
@@ -9723,8 +10329,10 @@ hero:p2724
 hero:p2725
   rdf:type skos:Concept ;
   skos:altLabel "arricciato"@it ;
+  skos:altLabel "erizonado"@es ;
   skos:altLabel "rabbuffato"@it ;
   skos:broader hero:p97 ;
+  skos:hiddenLabel "hérissonnée"@fr ;
   skos:prefLabel "selkä köyryssä seisova [kissa]"@fi ;
 .
 hero:p2726
@@ -9804,7 +10412,6 @@ hero:p2738
   rdf:type hero-meta:NonHeraldicConcept ;
   skos:altLabel "anagramado"@es ;
   skos:broader hero:p1673 ;
-  skos:broader hero:p2877 ;
   skos:prefLabel "inskriptio"@fi ;
 .
 hero:p2739
@@ -9830,11 +10437,13 @@ hero:p2740
   rdf:type skos:Concept ;
   skos:altLabel "jelloped"@en ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "barbée"@fr ;
   skos:prefLabel "heltta"@fi ;
 .
 hero:p2741
   rdf:type skos:Concept ;
   skos:altLabel "crested"@en ;
+  skos:altLabel "fiereza"@es ;
   skos:broader hero:p76 ;
   skos:hiddenLabel "crète"@fr ;
   skos:note "Kukon harjan (italiaksi ja ranskaksi myös delfiinin evien) tinktuuri."@fi ;
@@ -9844,6 +10453,7 @@ hero:p2742
   rdf:type skos:Concept ;
   skos:altLabel "legged"@en ;
   skos:altLabel "piotato"@it ;
+  skos:altLabel "sancado"@pt ;
   skos:broader hero:p76 ;
   skos:hiddenLabel "membrée"@fr ;
   skos:note "Eläimen, erityisesti linnun, jalkojen tinktuuri."@fi ;
@@ -9854,6 +10464,7 @@ hero:p2743
   skosext:partOf hero:p609 ;
   skosext:partOf hero:p95 ;
   skos:altLabel "trois anneaux concentriques"@fr ;
+  skos:altLabel "vires"@fr ;
   skos:broader hero:p95 ;
   skos:prefLabel "kolme samankeskistä rengasta"@fi ;
   hero-meta:wboMatch "0914" ;
@@ -9863,6 +10474,7 @@ hero:p2744
   skosext:partOf hero:p608 ;
   skosext:partOf hero:p95 ;
   skos:altLabel "deux anneaux concentriques"@fr ;
+  skos:altLabel "vires"@fr ;
   skos:broader hero:p95 ;
   skos:prefLabel "kaksi samankeskistä rengasta"@fi ;
   hero-meta:wboMatch "0913" ;
@@ -9872,6 +10484,7 @@ hero:p2745
   skos:altLabel "Büste"@de ;
   skos:altLabel "Rumpf"@de ;
   skos:altLabel "buste"@nl ;
+  skos:altLabel "torse"@fr ;
   skos:broader hero:p2288 ;
   skos:prefLabel "rintakuva"@fi ;
 .
@@ -9924,6 +10537,7 @@ hero:p2750
   skos:altLabel "resaltado"@es ;
   skos:altLabel "voor"@nl ;
   skos:broader hero:p298 ;
+  skos:hiddenLabel "brochante"@fr ;
   skos:prefLabel "päällikkeenä [2 yleiskuvio kuvion päällä]"@fi ;
   skos:related hero:p2751 ;
 .
@@ -9936,43 +10550,27 @@ hero:p2751
   skos:altLabel "depressed"@en ;
   skos:altLabel "oppressed"@en ;
   skos:broader hero:p298 ;
+  skos:hiddenLabel "brochante"@fr ;
   skos:hiddenLabel "debruised by"@en ;
   skos:prefLabel "päällikkeenä [1 airutkuvio kuvion päällä]"@fi ;
 .
 hero:p2752
   rdf:type skos:Concept ;
+  skos:altLabel "engolido"@pt ;
   skos:altLabel "engouled"@en ;
   skos:altLabel "verslindend"@nl ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "engolada"@es ;
   skos:hiddenLabel "engoulé"@en ;
+  skos:hiddenLabel "engoulée"@fr ;
   skos:prefLabel "engoulé (fr)"@fi ;
-.
-hero:p2753
-  rdf:type skos:Concept ;
-  skos:altLabel "sobre el todo"@es ;
-  skos:broader hero:p298 ;
-  skos:prefLabel "päällikkeenä [4 sydänkilpi jaon päällä]"@fi ;
-  skos:related hero:p2751 ;
 .
 hero:p2754
   rdf:type skos:Concept ;
   skos:altLabel "bataillé"@en ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "bataillée"@fr ;
   skos:prefLabel "kellon kieli"@fi ;
-.
-hero:p2755
-  rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:note "Myrskyävän meren ominaisuus."@fi ;
-  skos:prefLabel "agitée (fr)"@fi ;
-  skos:related hero:p1716 ;
-.
-hero:p2756
-  rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:note "Aaltoilevaa vedenpintaa kuvaava määre."@fi ;
-  skos:prefLabel "flotté (fr)"@fi ;
-  skos:related hero:p18 ;
 .
 hero:p2757
   rdf:type skos:Concept ;
@@ -9983,12 +10581,12 @@ hero:p2757
 .
 hero:p2758
   rdf:type skos:Concept ;
-  skos:altLabel "pamprée"@fr ;
+  skos:altLabel "pampré"@fr ;
   skos:altLabel "stalked"@en ;
   skos:altLabel "stelato"@it ;
   skos:altLabel "tigé"@en ;
   skos:broader hero:p2374 ;
-  skos:hiddenLabel "pampré"@fr ;
+  skos:hiddenLabel "pamprée"@fr ;
   skos:hiddenLabel "tigée"@fr ;
   skos:prefLabel "varsi"@fi ;
   skos:related hero:p2405 ;
@@ -10004,6 +10602,8 @@ hero:p276
   skos:altLabel "globe"@fr ;
   skos:altLabel "monde"@fr ;
   skos:altLabel "mound"@en ;
+  skos:altLabel "mundo"@es ;
+  skos:altLabel "mundo"@pt ;
   skos:broader hero:p2943 ;
   skos:prefLabel "valtakunnanomena"@fi ;
   skos:related hero:p2477 ;
@@ -10028,6 +10628,7 @@ hero:p2762
 hero:p2763
   rdf:type skos:Concept ;
   skos:broader hero:p2706 ;
+  skos:hiddenLabel "donjonnée"@fr ;
   skos:prefLabel "päätorni"@fi ;
   skos:related hero:p2062 ;
 .
@@ -10035,6 +10636,7 @@ hero:p2764
   rdf:type skos:Concept ;
   skos:broader hero:p19 ;
   skos:prefLabel "nystykoro"@fi ;
+  hero-meta:wboMatch "-175-641"^^xsd:string ;
 .
 hero:p2765
   rdf:type skos:Concept ;
@@ -10043,6 +10645,7 @@ hero:p2765
   skos:altLabel "ensanglanté"@en ;
   skos:altLabel "sangrante"@es ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "ensanglantée"@fr ;
   skos:prefLabel "vertavuotava"@fi ;
   skos:related hero:p2349 ;
   skos:related hero:p2392 ;
@@ -10056,6 +10659,7 @@ hero:p2767
   rdf:type skos:Concept ;
   skos:altLabel "super-charge"@en ;
   skos:broader hero:p1551 ;
+  skos:hiddenLabel "surchargée"@fr ;
   skos:prefLabel "surchargé (fr)"@fi ;
 .
 hero:p2768
@@ -10105,6 +10709,7 @@ hero:p2773
   rdf:type skos:Concept ;
   skos:altLabel "closed"@en ;
   skos:broader hero:p2877 ;
+  skos:hiddenLabel "fermée"@fr ;
   skos:prefLabel "suljettu"@fi ;
 .
 hero:p2774
@@ -10133,20 +10738,15 @@ hero:p2775
 hero:p2776
   rdf:type skos:Concept ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "oreillée"@fr ;
   skos:note "Delfiinin korvien tinktuuri."@fi ;
   skos:prefLabel "oreillé (fr)"@fi ;
-.
-hero:p2777
-  rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:prefLabel "renkainen"@fi ;
-  skos:related hero:p2711 ;
 .
 hero:p2778
   rdf:type skos:Concept ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "penchée"@fr ;
   skos:prefLabel "decantado (es)"@fi ;
-  skos:related hero:p307 ;
 .
 hero:p2779
   rdf:type skos:Concept ;
@@ -10253,7 +10853,8 @@ hero:p2789
   skos:altLabel "houssé"@fr ;
   skos:broader hero:p2375 ;
   skos:hiddenLabel "caparaconné"@fr ;
-  skos:prefLabel "satulapeitteellä varustettu"@fi ;
+  skos:hiddenLabel "caparaçonnée"@fr ;
+  skos:prefLabel "satulapeite [ominaisuus]"@fi ;
   skos:related hero:p2709 ;
 .
 hero:p279
@@ -10292,11 +10893,13 @@ hero:p2793
   skos:altLabel "schmachtend"@de ;
   skos:altLabel "spasimato"@it ;
   skos:broader hero:p2822 ;
+  skos:hiddenLabel "pâmée"@fr ;
   skos:prefLabel "suu auki [kala]"@fi ;
 .
 hero:p2794
   rdf:type skos:Concept ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "peautrée"@fr ;
   skos:prefLabel "pyrstö [kala]"@fi ;
   skos:related hero:p2395 ;
 .
@@ -10322,10 +10925,13 @@ hero:p2797
 hero:p2798
   rdf:type skos:Concept ;
   skos:altLabel "cerchiato"@it ;
+  skos:altLabel "gloria"@fi ;
   skos:altLabel "med strålkrans"@sv ;
   skos:broader hero:p2375 ;
   skos:broader hero:p2376 ;
   skos:broader hero:p2939 ;
+  skos:hiddenLabel "diadème"@fr ;
+  skos:hiddenLabel "diadémée"@fr ;
   skos:prefLabel "sädekehä"@fi ;
   skos:related hero:p718 ;
 .
@@ -10350,6 +10956,7 @@ hero:p2799
 hero:p28
   rdf:type skos:Concept ;
   skos:broader hero:p15 ;
+  skos:hiddenLabel "perronnée"@fr ;
   skos:prefLabel "kaksoissakarakoro"@fi ;
 .
 hero:p280
@@ -10386,12 +10993,14 @@ hero:p2801
 .
 hero:p2802
   rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
   skos:broader hero:p2256 ;
-  skos:prefLabel "kilven tausta"@fi ;
+  skos:prefLabel "kilpeä ympäröivät osat"@fi ;
 .
 hero:p2803
   rdf:type skos:Concept ;
   skos:broader hero:p2921 ;
+  skos:hiddenLabel "puercoespín"@es ;
   skos:prefLabel "piikkisika"@fi ;
   skos:related hero:p2361 ;
   hero-meta:wboMatch "5292" ;
@@ -10412,6 +11021,9 @@ hero:p2805
   skos:altLabel "leone Marciano"@it ;
   skos:altLabel "leone alato"@it ;
   skos:altLabel "león veneto"@es ;
+  skos:altLabel "lion ailé"@fr ;
+  skos:altLabel "lion aislé"@en ;
+  skos:altLabel "siivekäs leijona"@fi ;
   skos:broader hero:p192 ;
   skos:broader hero:p2939 ;
   skos:prefLabel "markuksenleijona"@fi ;
@@ -10460,6 +11072,7 @@ hero:p281
   skos:altLabel "hammaspyörä"@fi ;
   skos:altLabel "kuggkrans"@sv ;
   skos:altLabel "roda dentada"@ca ;
+  skos:altLabel "roue d'engrenage"@fr ;
   skos:altLabel "rueda de engranajes"@es ;
   skos:altLabel "rueda dentada"@es ;
   skos:altLabel "skärhjul"@sv ;
@@ -10488,7 +11101,7 @@ hero:p2811
   skos:altLabel "slogan"@en ;
   skos:altLabel "taisteluhuuto"@fi ;
   skos:altLabel "war cry"@en ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:prefLabel "sotahuuto"@fi ;
 .
 hero:p2812
@@ -10498,6 +11111,7 @@ hero:p2812
 .
 hero:p2813
   rdf:type skos:Concept ;
+  skos:altLabel "masure"@fr ;
   skos:broader hero:p522 ;
   skos:prefLabel "raunio"@fi ;
 .
@@ -10506,14 +11120,17 @@ hero:p2814
   skos:altLabel "apoyada"@es ;
   skos:altLabel "empinado"@es ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "appuyée"@fr ;
   skos:prefLabel "varaa"@fi ;
 .
 hero:p2815
   rdf:type skos:Concept ;
   skos:altLabel "caterattato"@it ;
   skos:altLabel "con saracinesca"@it ;
-  skos:altLabel "coulissée"@fr ;
+  skos:altLabel "coulissé"@fr ;
   skos:broader hero:p2706 ;
+  skos:hiddenLabel "coulissée"@fr ;
+  skos:hiddenLabel "hersée"@fr ;
   skos:prefLabel "laskuportti [ominaisuus]"@fi ;
   skos:related hero:p928 ;
 .
@@ -10524,6 +11141,7 @@ hero:p2816
   skos:altLabel "clariné"@en ;
   skos:altLabel "squillato"@it ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "clarinée"@fr ;
   skos:note "Lehmällä, lampaalla tms. kello kaulassa."@fi ;
   skos:prefLabel "clariné (fr)"@fi ;
   skos:related hero:p2398 ;
@@ -10532,6 +11150,7 @@ hero:p2816
 hero:p2817
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "em forma"@pt ;
   skos:altLabel "en forme"@fr ;
   skos:altLabel "forme"@fr ;
   skos:altLabel "repos"@fr ;
@@ -10595,7 +11214,7 @@ hero:p2823
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
   skos:broader hero:p2246 ;
-  skos:prefLabel "sijainti toisen kuvion tavoin"@fi ;
+  skos:prefLabel "sijoiteltu toisen kuvion tavoin"@fi ;
 .
 hero:p2824
   rdf:type skos:Concept ;
@@ -10667,6 +11286,7 @@ hero:p2831
 hero:p2832
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "contrabretesada"@es ;
   skos:broader hero:p3145 ;
   skos:prefLabel "korot kohdakkain"@fi ;
 .
@@ -10700,6 +11320,7 @@ hero:p2835
   skos:altLabel "corona di quercia"@it ;
   skos:altLabel "гражданская корона"@ru ;
   skos:broader hero:p248 ;
+  skos:hiddenLabel "corona cívica"@es ;
   skos:prefLabel "tammiseppele"@fi ;
 .
 hero:p2836
@@ -10717,27 +11338,30 @@ hero:p2838
   rdf:type skos:Concept ;
   skos:altLabel "bolkruis"@nl ;
   skos:altLabel "cross pommy"@en ;
-  skos:altLabel "cruz pomesada"@es ;
+  skos:altLabel "cruz pometada"@es ;
   skos:altLabel "kugelbesetztes Kreuz"@de ;
   skos:altLabel "pomeado"@es ;
-  skos:altLabel "pomesada"@es ;
+  skos:altLabel "pometada"@es ;
   skos:altLabel "pometeado"@es ;
   skos:altLabel "pomettata"@it ;
   skos:altLabel "pommeted"@en ;
-  skos:altLabel "pommetée"@fr ;
+  skos:altLabel "pommeté"@fr ;
   skos:broader hero:p167 ;
+  skos:hiddenLabel "cruz pomesada"@es ;
+  skos:hiddenLabel "pommetée"@fr ;
   skos:prefLabel "croix pommetée (fr)"@fi ;
   skos:related hero:p167 ;
   hero-meta:wboMatch "0370" ;
 .
 hero:p2839
   rdf:type skos:Concept ;
-  skos:altLabel "contre-potencée"@fr ;
+  skos:altLabel "contre-potencé"@fr ;
   skos:altLabel "croix potencée et contre-potencée"@fr ;
-  skos:altLabel "repotencée"@fr ;
+  skos:altLabel "repotencé"@fr ;
   skos:altLabel "repotenzada"@es ;
   skos:altLabel "ripotenziata"@it ;
   skos:broader hero:p150 ;
+  skos:hiddenLabel "repotencée"@fr ;
   skos:prefLabel "croix repotencée (fr)"@fi ;
   skos:related hero:p150 ;
   hero-meta:wboMatch "0319" ;
@@ -10749,6 +11373,7 @@ hero:p284
   skos:altLabel "hache"@en ;
   skos:altLabel "hatchet"@en ;
   skos:altLabel "röjningsyxa"@sv ;
+  skos:altLabel "segura"@pt ;
   skos:altLabel "timmeryxa"@sv ;
   skos:broader hero:p2281 ;
   skos:prefLabel "kirves"@fi ;
@@ -10760,8 +11385,11 @@ hero:p2840
   skos:altLabel "armes fausses"@fr ;
   skos:altLabel "armi dimandanti"@it ;
   skos:altLabel "armi enigmatiche"@it ;
+  skos:altLabel "enquerre"@es ;
+  skos:altLabel "enquerre"@fr ;
   skos:altLabel "enquiry"@en ;
   skos:altLabel "false heraldry"@en ;
+  skos:altLabel "inchiesta"@it ;
   skos:broader hero:p2255 ;
   skos:prefLabel "arms of enquiry (en)"@fi ;
   skos:related hero:p2800 ;
@@ -10816,6 +11444,8 @@ hero:p2844
 .
 hero:p2845
   rdf:type skos:Concept ;
+  skos:altLabel "aigrette"@fr ;
+  skos:altLabel "plumail"@fr ;
   skos:broader hero:p2072 ;
   skos:prefLabel "panassi"@fi ;
 .
@@ -10887,7 +11517,12 @@ hero:p2852
 hero:p2853
   rdf:type skos:Concept ;
   skos:altLabel "decapitado"@es ;
-  skos:broader hero:p2375 ;
+  skos:altLabel "décollé"@fr ;
+  skos:altLabel "étêté"@fr ;
+  skos:broader hero:p2514 ;
+  skos:hiddenLabel "décapitée"@fr ;
+  skos:hiddenLabel "décollée"@fr ;
+  skos:hiddenLabel "étêtée"@fr ;
   skos:prefLabel "päätön"@fi ;
 .
 hero:p2854
@@ -10905,7 +11540,9 @@ hero:p2855
 hero:p2856
   rdf:type skos:Concept ;
   skos:altLabel "gai"@en ;
+  skos:altLabel "nu"@fr ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "nue"@fr ;
   skos:prefLabel "gai (fr)"@fi ;
 .
 hero:p2857
@@ -10945,20 +11582,16 @@ hero:p286
 hero:p2860
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "roundel sanguine"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "guze (en)"@fi ;
 .
 hero:p2861
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "roundel tenné"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "orange (en)"@fi ;
-.
-hero:p2862
-  rdf:type skos:Concept ;
-  rdf:type hero-meta:NonFinnishConcept ;
-  skos:broader hero:p589 ;
-  skos:prefLabel "mulberry (en)"@fi ;
 .
 hero:p2863
   rdf:type skos:Concept ;
@@ -11009,6 +11642,7 @@ hero:p2869
 .
 hero:p287
   rdf:type skos:Concept ;
+  skos:altLabel "clé"@fr ;
   skos:broader hero:p522 ;
   skos:prefLabel "avain"@fi ;
   hero-meta:wboMatch "9084" ;
@@ -11017,6 +11651,7 @@ hero:p2870
   rdf:type skos:Concept ;
   skos:broader hero:p2009 ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "perchée"@fr ;
   skos:prefLabel "perched (en)"@fi ;
 .
 hero:p2871
@@ -11036,9 +11671,12 @@ hero:p2872
 hero:p2873
   rdf:type skos:Concept ;
   skos:altLabel "annulated"@en ;
+  skos:altLabel "renkainen"@fi ;
   skos:altLabel "ringed"@en ;
-  skos:broader hero:p2377 ;
-  skos:prefLabel "rengaspäinen"@fi ;
+  skos:broader hero:p2907 ;
+  skos:prefLabel "annuletty (en)"@fi ;
+  skos:related hero:p2424 ;
+  skos:related hero:p95 ;
 .
 hero:p2874
   rdf:type skos:Concept ;
@@ -11064,15 +11702,18 @@ hero:p2874
 hero:p2875
   rdf:type skos:Concept ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "bridée"@fr ;
   skos:prefLabel "suitsittu"@fi ;
 .
 hero:p2876
   rdf:type skos:Concept ;
+  skos:altLabel "cinchado"@es ;
   skos:altLabel "cinghiato"@it ;
   skos:altLabel "sanglé"@en ;
   skos:altLabel "stolato"@it ;
   skos:broader hero:p2375 ;
-  skos:prefLabel "satulavyöllä varustettu"@fi ;
+  skos:hiddenLabel "sanglée"@fr ;
+  skos:prefLabel "satulavyö"@fi ;
 .
 hero:p2877
   rdf:type skos:Concept ;
@@ -11093,9 +11734,13 @@ hero:p2879
 .
 hero:p288
   rdf:type skos:Concept ;
+  skos:altLabel "eslabón"@es ;
   skos:altLabel "ferris"@en ;
   skos:altLabel "fire striker"@en ;
+  skos:altLabel "fucile di Borgogna"@it ;
   skos:altLabel "furison"@en ;
+  skos:altLabel "mechero"@es ;
+  skos:altLabel "кресиво"@sr ;
   skos:broader hero:p2281 ;
   skos:prefLabel "tulusrauta"@fi ;
 .
@@ -11106,8 +11751,9 @@ hero:p2880
 .
 hero:p2881
   rdf:type skos:Concept ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p2802 ;
   skos:prefLabel "cordelière (fr)"@fi ;
+  skos:related hero:p2307 ;
 .
 hero:p2882
   rdf:type skos:Concept ;
@@ -11117,6 +11763,7 @@ hero:p2882
 hero:p2883
   rdf:type skos:Concept ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "frangée"@fr ;
   skos:note "Hapsureunaisen lipun tms. hapsujen tinktuuri."@fi ;
   skos:prefLabel "fringed (en)"@fi ;
 .
@@ -11134,14 +11781,9 @@ hero:p2885
   skos:altLabel "gringolé"@fr ;
   skos:altLabel "serpentifera"@it ;
   skos:broader hero:p139 ;
-  skos:prefLabel "croix gringolé (fr)"@fi ;
+  skos:hiddenLabel "gringolée"@fr ;
+  skos:prefLabel "croix gringolée (fr)"@fi ;
   skos:related hero:p232 ;
-.
-hero:p2886
-  rdf:type skos:Concept ;
-  skos:broader hero:p2375 ;
-  skos:broader hero:p2376 ;
-  skos:prefLabel "helmed (en)"@fi ;
 .
 hero:p2887
   rdf:type skos:Concept ;
@@ -11152,17 +11794,22 @@ hero:p2887
 .
 hero:p2888
   rdf:type skos:Concept ;
-  skos:broader hero:p2375 ;
+  skos:broader hero:p2514 ;
   skos:prefLabel "nupo"@fi ;
 .
 hero:p2889
   rdf:type skos:Concept ;
+  skos:altLabel "failli"@fr ;
+  skos:altLabel "fendu"@fr ;
   skos:broader hero:p2377 ;
-  skos:prefLabel "rompu (en)"@fi ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "rompue"@fr ;
+  skos:prefLabel "rompu (fr)"@fi ;
 .
 hero:p289
   rdf:type skos:Concept ;
   skos:altLabel "Fussangel"@de ;
+  skos:altLabel "abrolho"@pt ;
   skos:altLabel "chausse-trap"@en ;
   skos:altLabel "kavioansa"@fi ;
   skos:broader hero:p2285 ;
@@ -11172,19 +11819,22 @@ hero:p289
 .
 hero:p2890
   rdf:type skos:Concept ;
-  skos:broader hero:p2375 ;
-  skos:prefLabel "ilman siipiä"@fi ;
+  skos:broader hero:p2514 ;
+  skos:prefLabel "siivetön"@fi ;
 .
 hero:p2891
   rdf:type skos:Concept ;
   skos:broader hero:p76 ;
+  skos:hiddenLabel "éperonnée"@fr ;
   skos:note "Linnun (yleensä kukko tai kotka) kannusten tinktuuri."@fi ;
   skos:prefLabel "spurred (en)"@fi ;
 .
 hero:p2892
   rdf:type skos:Concept ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "enchaînée"@fr ;
   skos:prefLabel "ketjulla varustettu"@fi ;
+  skos:related hero:p406 ;
   skos:related hero:p746 ;
 .
 hero:p2893
@@ -11228,13 +11878,17 @@ hero:p2898
 hero:p2899
   rdf:type skos:Concept ;
   skos:altLabel "close"@en ;
+  skos:altLabel "plegada"@es ;
   skos:altLabel "trussed"@en ;
   skos:broader hero:p2897 ;
+  skos:hiddenLabel "perchada"@es ;
+  skos:hiddenLabel "pliée"@fr ;
   skos:prefLabel "wings closed (en)"@fi ;
 .
 hero:p29
   rdf:type skos:Concept ;
   skos:broader hero:p14 ;
+  skos:hiddenLabel "pignonnée"@fr ;
   skos:prefLabel "porraskoro"@fi ;
 .
 hero:p290
@@ -11265,6 +11919,7 @@ hero:p2903
   rdf:type skos:Concept ;
   skos:altLabel "de mesme"@fr ;
   skos:altLabel "de même"@fr ;
+  skos:altLabel "del medesimo"@it ;
   skos:altLabel "même"@fr ;
   skos:altLabel "same"@en ;
   skos:broader hero:p2902 ;
@@ -11348,7 +12003,7 @@ hero:p2915
   rdf:type skos:Concept ;
   skos:broader hero:p2910 ;
   skos:prefLabel "[cadency 5] annulet (en)"@fi ;
-  skos:related hero:p95 ;
+  skos:related hero:p2928 ;
 .
 hero:p2916
   rdf:type skos:Concept ;
@@ -11376,6 +12031,9 @@ hero:p2919
 .
 hero:p292
   rdf:type skos:Concept ;
+  skos:altLabel "Alpfuß"@de ;
+  skos:altLabel "Alpkreuz"@de ;
+  skos:altLabel "pentacle"@fr ;
   skos:altLabel "pentagram"@nb ;
   skos:altLabel "pentagrammi"@fi ;
   skos:altLabel "pentalpha"@en ;
@@ -11436,16 +12094,20 @@ hero:p2927
 .
 hero:p2928
   rdf:type skos:Concept ;
+  skos:altLabel "manilha"@pt ;
+  skos:altLabel "memória"@pt ;
   skos:broader hero:p95 ;
-  skos:prefLabel "annelet (fr)"@fi ;
+  skos:prefLabel "pieni rengas"@fi ;
 .
 hero:p2929
   rdf:type skos:Concept ;
   skos:altLabel "baglionato"@it ;
   skos:altLabel "bailonato"@it ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "baillonné"@fr ;
+  skos:hiddenLabel "bâillonnée"@fr ;
   skos:note "Keppiä (suukapulaa) hampaissaan kantava."@fi ;
-  skos:prefLabel "baillonné (fr)"@fi ;
+  skos:prefLabel "bâillonné (fr)"@fi ;
 .
 hero:p293
   rdf:type skos:Concept ;
@@ -11455,17 +12117,23 @@ hero:p293
 .
 hero:p2930
   rdf:type skos:Concept ;
+  skos:altLabel "atalayado"@es ;
+  skos:altLabel "bastigliato"@it ;
+  skos:altLabel "merlato rovesciato"@it ;
   skos:broader hero:p15 ;
-  skos:prefLabel "bastillé (fr)"@fi ;
+  skos:hiddenLabel "bastillée"@fr ;
+  skos:prefLabel "sakarakoro alapuolella"@fi ;
 .
 hero:p2931
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
+  skos:altLabel "arruela-besante"@pt ;
   skos:altLabel "rodella besant"@ca ;
   skos:altLabel "torta-bisante"@it ;
   skos:altLabel "tortillo-bezante"@es ;
   skos:altLabel "tourteau-besant"@fr ;
   skos:broader hero:p589 ;
+  skos:hiddenLabel "bezante tortillo"@es ;
   skos:prefLabel "besant-tourteau (fr)"@fi ;
 .
 hero:p2932
@@ -11482,11 +12150,16 @@ hero:p2933
 hero:p2934
   rdf:type skos:Concept ;
   skos:altLabel "bigarré"@en ;
+  skos:altLabel "manchada"@es ;
   skos:altLabel "marqueté"@fr ;
   skos:altLabel "miraillé"@fr ;
   skos:altLabel "tacheté"@fr ;
   skos:altLabel "variegated"@en ;
   skos:broader hero:p2902 ;
+  skos:hiddenLabel "bigarrée"@fr ;
+  skos:hiddenLabel "marquetée"@fr ;
+  skos:hiddenLabel "miraillée"@fr ;
+  skos:hiddenLabel "tachetée"@fr ;
   skos:prefLabel "bigarré (fr)"@fi ;
   skos:related hero:p2212 ;
 .
@@ -11502,15 +12175,10 @@ hero:p2936
   skos:broader hero:p2284 ;
   skos:prefLabel "kaviorauta"@fi ;
 .
-hero:p2937
-  rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:note "Rauhallisen vedenpinnan määre."@fi ;
-  skos:prefLabel "calme (fr)"@fi ;
-.
 hero:p2938
   rdf:type skos:Concept ;
-  skos:broader hero:p2826 ;
+  skos:broader hero:p299 ;
+  skos:hiddenLabel "cantonnée"@fr ;
   skos:prefLabel "cantonné (fr)"@fi ;
   skos:related hero:p3007 ;
 .
@@ -11530,10 +12198,18 @@ hero:p294
   skos:altLabel "assurgant"@en ;
   skos:altLabel "aufsteigende"@de ;
   skos:altLabel "fondato"@it ;
+  skos:altLabel "framväxande"@sv ;
   skos:altLabel "issant"@en ;
+  skos:altLabel "kasvava"@fi ;
+  skos:altLabel "sainte"@pt ;
   skos:altLabel "saliendo"@es ;
   skos:altLabel "saliente"@es ;
+  skos:altLabel "uppskjutande"@sv ;
+  skos:altLabel "vaxandi"@is ;
+  skos:altLabel "versova"@fi ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "kasvaa"@fi ;
+  skos:hiddenLabel "versoo"@fi ;
   skos:prefLabel "nouseva"@fi ;
 .
 hero:p2940
@@ -11583,18 +12259,21 @@ hero:p2946
 hero:p2947
   rdf:type skos:Concept ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "masquée"@fr ;
   skos:prefLabel "masqué (fr)"@fi ;
 .
 hero:p2948
   rdf:type skos:Concept ;
   skos:altLabel "comété"@fr ;
   skos:broader hero:p2704 ;
-  skos:hiddenLabel "caudé"@fr ;
-  skos:prefLabel "caudée (fr)"@fi ;
+  skos:hiddenLabel "caudée"@fr ;
+  skos:hiddenLabel "cométée"@fr ;
+  skos:prefLabel "caudé (fr)"@fi ;
 .
 hero:p2949
   rdf:type skos:Concept ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "cerclée"@fr ;
   skos:note "Tynnyrin vanteiden tinktuuri."@fi ;
   skos:prefLabel "cerclé (fr)"@fi ;
   skos:related hero:p594 ;
@@ -11617,6 +12296,7 @@ hero:p2951
   rdf:type skos:Concept ;
   skos:altLabel "ceintré"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "cintrée"@fr ;
   skos:note "Valtakunnanomenaa päiväntasaajalla ympäröivän vanteen ja yläosan puolivanteen ominaisuus."@fi ;
   skos:prefLabel "cintré (fr)"@fi ;
   skos:related hero:p594 ;
@@ -11630,6 +12310,7 @@ hero:p2953
   rdf:type skos:Concept ;
   skos:altLabel "moucheté"@en ;
   skos:broader hero:p2902 ;
+  skos:hiddenLabel "mouchetée"@fr ;
   skos:note "Kärpänhäntäkuvioinen. Ranskaksi voi viitata myös kalan täpliin."@fi ;
   skos:prefLabel "moucheté (fr)"@fi ;
   skos:related hero:p2266 ;
@@ -11643,8 +12324,8 @@ hero:p2954
 .
 hero:p2955
   rdf:type skos:Concept ;
-  skos:broader hero:p2377 ;
-  skos:prefLabel "croissanté (fr)"@fi ;
+  skos:broader hero:p139 ;
+  skos:prefLabel "cross ending in crescents (en)"@fi ;
 .
 hero:p2956
   rdf:type skos:Concept ;
@@ -11656,32 +12337,32 @@ hero:p2956
 hero:p2957
   rdf:type skos:Concept ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "dragonnée"@fr ;
   skos:prefLabel "lohikäärmeenhäntäinen"@fi ;
+  skos:related hero:p189 ;
 .
 hero:p2958
   rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
+  skos:altLabel "éclopé"@fr ;
+  skos:broader hero:p664 ;
+  skos:hiddenLabel "eclopé"@fr ;
+  skos:hiddenLabel "éclatée"@fr ;
+  skos:hiddenLabel "éclopée"@fr ;
   skos:note "Määre kuvaa salkoasetta, jonka varsi on murrettu terän alapuolelta niin, että siinä näkyy epäsäännöllisiä puunsäleitä."@fi ;
   skos:prefLabel "éclaté (fr)"@fi ;
 .
-hero:p2959
-  rdf:type skos:Concept ;
-  skos:broader hero:p2704 ;
-  skos:prefLabel "éclipsé (fr)"@fi ;
-.
 hero:p296
   rdf:type skos:Concept ;
-  skos:altLabel "versova"@fi ;
   skos:broader hero:p2374 ;
-  skos:broader hero:p2825 ;
-  skos:prefLabel "kasvava"@fi ;
-  skos:related hero:p294 ;
+  skos:hiddenLabel "nourrie"@fr ;
+  skos:prefLabel "nourri (fr)"@fi ;
 .
 hero:p2960
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "inferocito"@it ;
   skos:broader hero:p206 ;
+  skos:hiddenLabel "effarouchée"@fr ;
   skos:prefLabel "pystyynkavahtanut [kissa]"@fi ;
 .
 hero:p2961
@@ -11689,6 +12370,8 @@ hero:p2961
   rdf:type hero-meta:NonFinnishConcept ;
   skos:altLabel "effrayé"@fr ;
   skos:broader hero:p206 ;
+  skos:hiddenLabel "effarée"@fr ;
+  skos:hiddenLabel "effrayée"@fr ;
   skos:prefLabel "pystyynkavahtanut [hevonen]"@fi ;
 .
 hero:p2962
@@ -11701,6 +12384,8 @@ hero:p2963
   skos:altLabel "embocada"@es ;
   skos:altLabel "embouché"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "embouchée"@fr ;
+  skos:hiddenLabel "enguichée"@fr ;
   skos:note "Puhallinsoittimen suukappaleen tinktuuri."@fi ;
   skos:prefLabel "enguiché (fr)"@fi ;
   skos:related hero:p594 ;
@@ -11766,6 +12451,7 @@ hero:p2971
   skos:altLabel "marcados"@es ;
   skos:altLabel "spotted"@en ;
   skos:broader hero:p1551 ;
+  skos:hiddenLabel "marqués"@fr ;
   skos:prefLabel "marked (en)"@fi ;
   skos:related hero:p2738 ;
 .
@@ -11778,6 +12464,7 @@ hero:p2972
 hero:p2973
   rdf:type skos:Concept ;
   skos:broader hero:p2374 ;
+  skos:hiddenLabel "nervée"@fr ;
   skos:prefLabel "lehtisuonet"@fi ;
 .
 hero:p2974
@@ -11798,22 +12485,19 @@ hero:p2975
   skos:broader hero:p1536 ;
   skos:prefLabel "péri (fr)"@fi ;
 .
-hero:p2976
-  rdf:type skos:Concept ;
-  skos:broader hero:p2825 ;
-  skos:prefLabel "posé (fr)"@fi ;
-  skos:related hero:p1973 ;
-.
 hero:p2977
   rdf:type skos:Concept ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "terrassée"@fr ;
   skos:prefLabel "terrassé (fr)"@fi ;
-  skos:related hero:p296 ;
+  skos:related hero:p294 ;
 .
 hero:p2978
   rdf:type skos:Concept ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "plantée"@fr ;
   skos:prefLabel "planté (fr)"@fi ;
+  skos:related hero:p2977 ;
 .
 hero:p2979
   rdf:type skos:Concept ;
@@ -11835,6 +12519,7 @@ hero:p2980
 .
 hero:p2981
   rdf:type skos:Concept ;
+  skos:altLabel "en demi-profil"@fr ;
   skos:broader hero:p2245 ;
   skos:prefLabel "taré de trois quarts (fr)"@fi ;
 .
@@ -11888,23 +12573,27 @@ hero:p2989
 hero:p299
   rdf:type skos:Concept ;
   skos:altLabel "accompanied"@en ;
-  skos:altLabel "accosted"@en ;
-  skos:altLabel "accostée"@fr ;
-  skos:altLabel "cotoyé"@en ;
-  skos:altLabel "côtoyé"@fr ;
   skos:broader hero:p2826 ;
   skos:hiddenLabel "accompagnée"@fr ;
-  skos:hiddenLabel "cotoyé"@fr ;
-  skos:hiddenLabel "côtoyée"@fr ;
   skos:prefLabel "saatteena"@fi ;
 .
 hero:p2990
   rdf:type skos:Concept ;
+  skos:altLabel "gevlucht van windmolen"@nl ;
   skos:broader hero:p565 ;
   skos:prefLabel "tuulimyllyn siivet"@fi ;
 .
 hero:p2991
   rdf:type skos:Concept ;
+  skos:altLabel "Lätze"@de ;
+  skos:altLabel "flik"@nb ;
+  skos:altLabel "hanger"@nl ;
+  skos:altLabel "pendant"@fr ;
+  skos:altLabel "pendente"@it ;
+  skos:altLabel "pendente"@pt ;
+  skos:altLabel "pendiente"@es ;
+  skos:altLabel "penjant"@ca ;
+  skos:altLabel "point"@en ;
   skos:broader hero:p932 ;
   skos:prefLabel "label of one point (en)"@fi ;
 .
@@ -11951,6 +12640,7 @@ hero:p2999
 hero:p3
   rdf:type skos:Concept ;
   skos:altLabel "Kurvenschnitt"@de ;
+  skos:altLabel "gironnant"@fr ;
   skos:broader hero:p18 ;
   skos:prefLabel "ässäkoro"@fi ;
 .
@@ -11958,16 +12648,20 @@ hero:p30
   rdf:type skos:Concept ;
   skos:altLabel "kuusikoro [vanh.]"@fi ;
   skos:broader hero:p3069 ;
+  skos:hiddenLabel "sapinagée"@fr ;
   skos:prefLabel "havukoro"@fi ;
-  hero-meta:wboMatch "0151-185" ;
+  hero-meta:wboMatch "-185"^^xsd:string ;
 .
 hero:p300
   rdf:type skos:Concept ;
   skos:altLabel "braced"@en ;
   skos:altLabel "entravaillé"@fr ;
+  skos:altLabel "entretenida"@es ;
   skos:altLabel "entretenu"@fr ;
   skos:altLabel "fretted"@en ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "entrelacées"@fr ;
+  skos:hiddenLabel "entretenus"@fr ;
   skos:prefLabel "punoutuen"@fi ;
 .
 hero:p3000
@@ -12004,14 +12698,19 @@ hero:p3004
 hero:p3005
   rdf:type skos:Concept ;
   skos:altLabel "Kanne"@de ;
+  skos:altLabel "aguamanil"@es ;
   skos:altLabel "beaker"@en ;
   skos:altLabel "burette"@fr ;
   skos:altLabel "jug"@en ;
+  skos:altLabel "kan"@nl ;
+  skos:altLabel "lampetkan"@nl ;
   skos:altLabel "laver-pot"@en ;
   skos:altLabel "pignate"@fr ;
   skos:altLabel "pitcher"@en ;
+  skos:altLabel "schenkkan"@nl ;
   skos:broader hero:p2287 ;
   skos:prefLabel "kannu"@fi ;
+  skos:related hero:p3036 ;
 .
 hero:p3006
   rdf:type skos:Concept ;
@@ -12022,8 +12721,10 @@ hero:p3006
 .
 hero:p3007
   rdf:type skos:Concept ;
-  skos:broader hero:p2826 ;
+  skos:broader hero:p299 ;
+  skos:hiddenLabel "anglée"@fr ;
   skos:prefLabel "anglé (fr)"@fi ;
+  skos:related hero:p2938 ;
 .
 hero:p3008
   rdf:type skos:Concept ;
@@ -12042,9 +12743,11 @@ hero:p301
   rdf:type skos:Concept ;
   skos:altLabel "aculado"@es ;
   skos:altLabel "adorsé"@fr ;
+  skos:altLabel "de espaldas"@es ;
   skos:altLabel "endorsed"@en ;
   skos:altLabel "selin"@fi ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "adossées"@fr ;
   skos:prefLabel "selätysten"@fi ;
 .
 hero:p3010
@@ -12077,11 +12780,15 @@ hero:p3013
   skos:altLabel "Börse"@de ;
   skos:altLabel "Geldbörse"@de ;
   skos:altLabel "bag"@en ;
+  skos:altLabel "beugeltas"@nl ;
+  skos:altLabel "bolsa"@es ;
+  skos:altLabel "burjaca"@es ;
   skos:altLabel "gibecière"@fr ;
   skos:altLabel "kontti"@fi ;
   skos:altLabel "pack"@en ;
   skos:altLabel "palmer’s scrip"@en ;
   skos:altLabel "pilgrim’s scrip"@en ;
+  skos:altLabel "reistas"@nl ;
   skos:altLabel "scrip"@en ;
   skos:broader hero:p2941 ;
   skos:prefLabel "kukkaro"@fi ;
@@ -12104,6 +12811,7 @@ hero:p3016
   rdf:type skos:Concept ;
   skos:altLabel "cabled"@en ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "cablée"@fr ;
   skos:note "Tarkoittaa köyden tapaan kierteelle punottua."@fi ;
   skos:prefLabel "cablé (fr)"@fi ;
 .
@@ -12174,15 +12882,17 @@ hero:p3026
   rdf:type skos:Concept ;
   skos:altLabel "ecaillé"@en ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "ecaillée"@fr ;
   skos:note "Esimerkiksi merileijonan suomujen tinktuuri."@fi ;
-  skos:prefLabel "scaled (en)"@fi ;
+  skos:prefLabel "suomut"@fi ;
 .
 hero:p3027
   rdf:type skos:Concept ;
   skos:altLabel "givré"@fr ;
   skos:altLabel "guivré"@fr ;
   skos:broader hero:p139 ;
-  skos:prefLabel "croix guivré (fr)"@fi ;
+  skos:hiddenLabel "guivrée"@fr ;
+  skos:prefLabel "croix guivrée (fr)"@fi ;
   skos:related hero:p232 ;
   skos:related hero:p2885 ;
 .
@@ -12240,6 +12950,7 @@ hero:p3033
   skos:altLabel "Würfelbecher"@de ;
   skos:altLabel "beaker"@en ;
   skos:altLabel "bicchiere"@it ;
+  skos:altLabel "bokaal"@nl ;
   skos:altLabel "bägare"@sv ;
   skos:altLabel "coupe"@en ;
   skos:altLabel "covered cup"@en ;
@@ -12248,15 +12959,20 @@ hero:p3033
   skos:altLabel "hanap"@en ;
   skos:altLabel "hanap"@fr ;
   skos:altLabel "hanap"@sv ;
+  skos:altLabel "kroes"@nl ;
   skos:altLabel "pecchero"@it ;
   skos:altLabel "pikari"@fi ;
+  skos:altLabel "redoma"@pt ;
+  skos:altLabel "roemer"@nl ;
   skos:altLabel "кубок"@ru ;
   skos:altLabel "кубок"@uk ;
   skos:broader hero:p3041 ;
+  skos:hiddenLabel "copo"@pt ;
   skos:prefLabel "kuppi"@fi ;
 .
 hero:p3034
   rdf:type skos:Concept ;
+  skos:altLabel "acha de armas"@pt ;
   skos:altLabel "bec de corbin"@en ;
   skos:altLabel "berdiche"@en ;
   skos:altLabel "corsica"@en ;
@@ -12281,6 +12997,7 @@ hero:p3035
 .
 hero:p3036
   rdf:type skos:Concept ;
+  skos:altLabel "albarrada"@pt ;
   skos:altLabel "jarra"@pt ;
   skos:altLabel "pot"@fr ;
   skos:altLabel "vaasi"@fi ;
@@ -12296,6 +13013,7 @@ hero:p3037
 .
 hero:p3038
   rdf:type skos:Concept ;
+  skos:altLabel "rozelaar"@nl ;
   skos:broader hero:p2499 ;
   skos:prefLabel "ruusupensas"@fi ;
 .
@@ -12306,6 +13024,8 @@ hero:p3039
 .
 hero:p304
   rdf:type skos:Concept ;
+  skos:altLabel "liegend"@de ;
+  skos:altLabel "waagrechte"@de ;
   skos:broader hero:p2245 ;
   skos:prefLabel "hirsittäinen"@fi ;
   skos:related hero:p49 ;
@@ -12338,6 +13058,8 @@ hero:p3043
 .
 hero:p3044
   rdf:type skos:Concept ;
+  skos:altLabel "klophamer"@nl ;
+  skos:altLabel "stonemason's mallet"@en ;
   skos:broader hero:p574 ;
   skos:prefLabel "nuija [työkalu]"@fi ;
   skos:related hero:p1163 ;
@@ -12354,7 +13076,6 @@ hero:p3046
   rdf:type skos:Concept ;
   skos:broader hero:p1254 ;
   skos:prefLabel "mulperipuu"@fi ;
-  skos:related hero:p2862 ;
 .
 hero:p3047
   rdf:type skos:Concept ;
@@ -12427,7 +13148,7 @@ hero:p3057
   rdf:type skos:Concept ;
   skos:broader hero:p1662 ;
   skos:prefLabel "vuorimies"@fi ;
-  hero-meta:wboMatch "7481" ;
+  hero-meta:wboMatch "7481"^^xsd:string ;
 .
 hero:p3058
   rdf:type skos:Concept ;
@@ -12439,7 +13160,7 @@ hero:p3058
   skos:broader hero:p1674 ;
   skos:hiddenLabel "Fortune"@fr ;
   skos:prefLabel "Fortuna"@fi ;
-  hero-meta:wboMatch "7761" ;
+  hero-meta:wboMatch "7761"^^xsd:string ;
 .
 hero:p3059
   rdf:type skos:Concept ;
@@ -12462,7 +13183,10 @@ hero:p306
 .
 hero:p3061
   rdf:type skos:Concept ;
+  skos:altLabel "arcado"@pt ;
+  skos:altLabel "ferruled"@en ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "virolée"@fr ;
   skos:note "Puhallinsoittimen heloituksen tinktuuri."@fi ;
   skos:prefLabel "virolé (fr)"@fi ;
   skos:related hero:p594 ;
@@ -12494,6 +13218,7 @@ hero:p3065
 .
 hero:p3066
   rdf:type skos:Concept ;
+  skos:altLabel "duiventoren"@nl ;
   skos:altLabel "pigeon house"@en ;
   skos:broader hero:p522 ;
   skos:hiddenLabel "dove-cot"@en ;
@@ -12503,16 +13228,19 @@ hero:p3066
 .
 hero:p3067
   rdf:type skos:Concept ;
-  skos:broader hero:p2907 ;
-  skos:prefLabel "masuré (fr)"@fi ;
+  skos:altLabel "en ruinas"@es ;
+  skos:broader hero:p2706 ;
+  skos:hiddenLabel "masurée"@fr ;
+  skos:prefLabel "raunioitunut"@fi ;
   skos:related hero:p2813 ;
 .
 hero:p3068
   rdf:type skos:Concept ;
   skos:altLabel "Zinne"@de ;
   skos:broader hero:p15 ;
+  skos:hiddenLabel "enclavée"@fr ;
   skos:prefLabel "enclavé (fr)"@fi ;
-  hero-meta:wboMatch "0151-118" ;
+  hero-meta:wboMatch "-118"^^xsd:string ;
 .
 hero:p3069
   rdf:type skos:Concept ;
@@ -12534,11 +13262,14 @@ hero:p307
   skos:altLabel "versé"@en ;
   skos:altLabel "versé"@fr ;
   skos:broader hero:p2245 ;
+  skos:hiddenLabel "renversée"@fr ;
   skos:hiddenLabel "versée"@fr ;
   skos:prefLabel "kumottu"@fi ;
 .
 hero:p3070
   rdf:type skos:Concept ;
+  skos:altLabel "farol"@es ;
+  skos:altLabel "lantern"@en ;
   skos:broader hero:p2941 ;
   skos:prefLabel "lamppu"@fi ;
 .
@@ -12577,7 +13308,7 @@ hero:p3075
   skos:altLabel "table-trestle"@en ;
   skos:broader hero:p2941 ;
   skos:prefLabel "trestle (en)"@fi ;
-  hero-meta:wboMatch "9046" ;
+  hero-meta:wboMatch "9046"^^xsd:string ;
 .
 hero:p3076
   rdf:type skos:Concept ;
@@ -12586,6 +13317,7 @@ hero:p3076
   skos:altLabel "addice"@en ;
   skos:broader hero:p284 ;
   skos:hiddenLabel "adz"@en ;
+  skos:hiddenLabel "disselbijl"@nl ;
   skos:prefLabel "talso"@fi ;
 .
 hero:p3077
@@ -12634,12 +13366,14 @@ hero:p3081
   skos:altLabel "hautbois"@fr ;
   skos:altLabel "oboe"@en ;
   skos:altLabel "oboe"@fi ;
+  skos:altLabel "shawm"@en ;
   skos:broader hero:p2986 ;
   skos:prefLabel "skalmeija"@fi ;
 .
 hero:p3082
   rdf:type skos:Concept ;
   skos:altLabel "heuse"@fr ;
+  skos:altLabel "houseau"@fr ;
   skos:altLabel "housseau"@fr ;
   skos:broader hero:p2286 ;
   skos:prefLabel "hose (en)"@fi ;
@@ -12652,7 +13386,7 @@ hero:p3083
   skos:broader hero:p2281 ;
   skos:prefLabel "neula"@fi ;
   skos:related hero:p1431 ;
-  hero-meta:wboMatch "9344" ;
+  hero-meta:wboMatch "9344"^^xsd:string ;
 .
 hero:p3084
   rdf:type skos:Concept ;
@@ -12661,10 +13395,11 @@ hero:p3084
 .
 hero:p3085
   rdf:type skos:Concept ;
+  skos:altLabel "kuip"@nl ;
   skos:altLabel "saavi"@fi ;
   skos:broader hero:p2287 ;
   skos:prefLabel "palju"@fi ;
-  hero-meta:wboMatch "9136" ;
+  hero-meta:wboMatch "9136"^^xsd:string ;
 .
 hero:p3086
   rdf:type skos:Concept ;
@@ -12695,6 +13430,7 @@ hero:p3089
 hero:p309
   rdf:type skos:Concept ;
   skos:altLabel "3 + 2 + 1"@el ;
+  skos:altLabel "tres, dos, una"@es ;
   skos:altLabel "trois, deux et un"@fr ;
   skos:broader hero:p612 ;
   skos:prefLabel "3 + 2 + 1"@fi ;
@@ -12710,6 +13446,7 @@ hero:p3091
   rdf:type skos:Concept ;
   skos:altLabel "Santiago cross"@en ;
   skos:broader hero:p164 ;
+  skos:hiddenLabel "cruz de Sant'Iago"@pt ;
   skos:prefLabel "cruz de Santiago (es)"@fi ;
 .
 hero:p3092
@@ -12754,6 +13491,7 @@ hero:p3099
   rdf:type skos:Concept ;
   skosext:partOf hero:p2486 ;
   skosext:partOf hero:p3098 ;
+  skos:altLabel "castanha"@pt ;
   skos:broader hero:p3098 ;
   skos:prefLabel "kastanja"@fi ;
 .
@@ -12762,9 +13500,10 @@ hero:p31
   skos:altLabel "cimé"@fr ;
   skos:altLabel "granskura"@sv ;
   skos:broader hero:p3069 ;
+  skos:hiddenLabel "sapinée"@fr ;
   skos:prefLabel "kuusikoro"@fi ;
   skos:related hero:p351 ;
-  hero-meta:wboMatch "0151-184" ;
+  hero-meta:wboMatch "-184"^^xsd:string ;
 .
 hero:p310
   rdf:type skos:Concept ;
@@ -12804,14 +13543,14 @@ hero:p3105
   skos:altLabel "Astkreuz"@de ;
   skos:broader hero:p65 ;
   skos:prefLabel "Gegenastkreuz (de)"@fi ;
-  hero-meta:wboMatch "0329" ;
+  hero-meta:wboMatch "0329"^^xsd:string ;
 .
 hero:p3106
   rdf:type skos:Concept ;
   skos:altLabel "Astkreuz"@de ;
   skos:broader hero:p65 ;
   skos:prefLabel "Wechselastkreuz (de)"@fi ;
-  hero-meta:wboMatch "0328" ;
+  hero-meta:wboMatch "0328"^^xsd:string ;
 .
 hero:p3107
   rdf:type skos:Concept ;
@@ -12824,7 +13563,7 @@ hero:p3108
   rdf:type skos:Concept ;
   skos:broader hero:p19 ;
   skos:prefLabel "Jochschnitt (de)"@fi ;
-  hero-meta:wboMatch "0151-175-642" ;
+  hero-meta:wboMatch "-175-642"^^xsd:string ;
 .
 hero:p3109
   rdf:type skos:Concept ;
@@ -12836,6 +13575,7 @@ hero:p311
   skos:altLabel "sans nombre"@en ;
   skos:altLabel "sans nombre"@fr ;
   skos:broader hero:p2824 ;
+  skos:hiddenLabel "aspergée"@fr ;
   skos:hiddenLabel "sirotellussa"@fi ;
   skos:hiddenLabel "sirotettu"@fi ;
   skos:hiddenLabel "sirotteisesti"@fi ;
@@ -12852,6 +13592,8 @@ hero:p3110
 .
 hero:p3111
   rdf:type skos:Concept ;
+  skos:altLabel "tire"@fr ;
+  skos:altLabel "trait"@fr ;
   skos:altLabel "échiqueté de trois traits"@fr ;
   skos:broader hero:p1693 ;
   skos:broader hero:p2377 ;
@@ -12862,13 +13604,15 @@ hero:p3112
   skos:altLabel "järjestettyinä"@fi ;
   skos:altLabel "sijoitettuna"@fi ;
   skos:altLabel "ställda"@sv ;
-  skos:broader hero:p2826 ;
+  skos:broader hero:p2823 ;
+  skos:hiddenLabel "ordonnées"@fr ;
   skos:prefLabel "asetettuina"@fi ;
 .
 hero:p3113
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
-  skos:broader hero:p2255 ;
+  skos:altLabel "Urwappen"@de ;
+  skos:broader hero:p2210 ;
   skos:prefLabel "kantavaakuna"@fi ;
 .
 hero:p3114
@@ -12887,12 +13631,6 @@ hero:p3116
   skos:broader hero:p2942 ;
   skos:prefLabel "stetoskooppi"@fi ;
 .
-hero:p3117
-  rdf:type skos:Concept ;
-  skos:altLabel "commandostaf"@sv ;
-  skos:broader hero:p738 ;
-  skos:prefLabel "kommandostav (sv)"@fi ;
-.
 hero:p3118
   rdf:type skos:Concept ;
   skos:altLabel "stänger"@sv ;
@@ -12906,36 +13644,24 @@ hero:p3119
   skos:altLabel "mortar and pestle"@en ;
   skos:broader hero:p2287 ;
   skos:prefLabel "mortteli"@fi ;
-  hero-meta:wboMatch "9148" ;
+  hero-meta:wboMatch "9148"^^xsd:string ;
 .
 hero:p312
   rdf:type skos:Concept ;
-  skos:altLabel "auré"@en ;
-  skos:altLabel "besanté"@fr ;
-  skos:altLabel "bezanty"@en ;
-  skos:altLabel "billetty"@en ;
-  skos:altLabel "billetté"@fr ;
   skos:altLabel "castelé"@fr ;
   skos:altLabel "châtelé"@fr ;
   skos:altLabel "crusily"@en ;
-  skos:altLabel "fleurdelisé"@fr ;
-  skos:altLabel "goutty"@en ;
-  skos:altLabel "goutté"@fr ;
-  skos:altLabel "gutty"@en ;
+  skos:altLabel "estrellado"@es ;
   skos:altLabel "hurty"@en ;
-  skos:altLabel "masculy"@en ;
   skos:altLabel "pelletty"@en ;
   skos:altLabel "platy"@en ;
   skos:altLabel "powdered"@en ;
   skos:altLabel "replenished with"@en ;
-  skos:altLabel "semy-de-lys"@en ;
   skos:altLabel "semé"@en ;
   skos:altLabel "étincelé"@fr ;
   skos:altLabel "étoilé"@fr ;
   skos:broader hero:p2824 ;
   skos:hiddenLabel "crucilly"@en ;
-  skos:hiddenLabel "gutté"@en ;
-  skos:hiddenLabel "guttée"@en ;
   skos:prefLabel "kylvöinen"@fi ;
 .
 hero:p3120
@@ -12948,6 +13674,8 @@ hero:p3120
 hero:p3121
   rdf:type skos:Concept ;
   rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "riksheraldiker"@sv ;
+  skos:altLabel "statsheraldiker"@sv ;
   skos:broader hero:p2255 ;
   skos:prefLabel "vaakunakuningas"@fi ;
 .
@@ -12988,6 +13716,13 @@ hero:p3126
   skos:broader hero:p1349 ;
   skos:prefLabel "laventeli"@fi ;
 .
+hero:p3127
+  rdf:type skos:Concept ;
+  skos:altLabel "bei"@lv ;
+  skos:altLabel "oraz"@pl ;
+  skos:broader hero:p62 ;
+  skos:prefLabel "ja"@fi ;
+.
 hero:p3128
   rdf:type skos:Concept ;
   skos:broader hero:p1662 ;
@@ -13010,6 +13745,8 @@ hero:p313
   skos:altLabel "traspassat"@ca ;
   skos:altLabel "traversé"@fr ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "enfilée"@fr ;
+  skos:hiddenLabel "traversée"@fr ;
   skos:prefLabel "lävistämä"@fi ;
   skos:related hero:p314 ;
 .
@@ -13036,11 +13773,13 @@ hero:p3132
 hero:p3133
   rdf:type skos:Concept ;
   skos:altLabel "Stiege"@de ;
+  skos:altLabel "wenteltrap"@nl ;
   skos:broader hero:p522 ;
   skos:prefLabel "portaat"@fi ;
 .
 hero:p3134
   rdf:type skos:Concept ;
+  skos:altLabel "cotterel"@en ;
   skos:broader hero:p324 ;
   skos:prefLabel "cotterel (fr)"@fi ;
 .
@@ -13052,34 +13791,18 @@ hero:p3135
 .
 hero:p3136
   rdf:type skos:Concept ;
-  skos:broader hero:p2377 ;
+  skos:broader hero:p1697 ;
   skos:prefLabel "croisette (fr)"@fi ;
-.
-hero:p3137
-  rdf:type skos:Concept ;
-  skos:broader hero:p1979 ;
-  skos:prefLabel "nelosjänne"@fi ;
-.
-hero:p3138
-  rdf:type skos:Concept ;
-  skos:broader hero:p52 ;
-  skos:prefLabel "nelosriuku"@fi ;
-.
-hero:p3139
-  rdf:type skos:Concept ;
-  skos:broader hero:p50 ;
-  skos:prefLabel "nelosvarras"@fi ;
 .
 hero:p314
   rdf:type skos:Concept ;
   skos:altLabel "vidé"@en ;
+  skos:altLabel "vuidé"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "vaciada"@es ;
+  skos:hiddenLabel "vidée"@fr ;
+  skos:hiddenLabel "vuidée"@fr ;
   skos:prefLabel "lävistetty"@fi ;
-.
-hero:p3140
-  rdf:type skos:Concept ;
-  skos:broader hero:p1980 ;
-  skos:prefLabel "nelosvastajänne"@fi ;
 .
 hero:p3141
   rdf:type skos:Concept ;
@@ -13142,7 +13865,7 @@ hero:p315
   rdf:type skos:Concept ;
   skos:altLabel "corona turrita"@it ;
   skos:altLabel "muurkroon"@nl ;
-  skos:broader hero:p92 ;
+  skos:broader hero:p2222 ;
   skos:prefLabel "muurikruunu"@fi ;
 .
 hero:p3150
@@ -13164,21 +13887,285 @@ hero:p3152
   skos:broader hero:p62 ;
   skos:prefLabel "muodostuu"@fi ;
 .
+hero:p3153
+  rdf:type skos:Concept ;
+  skos:broader hero:p43 ;
+  skos:hiddenLabel "counter-quartered"@en ;
+  skos:prefLabel "counterquartered (en)"@fi ;
+.
+hero:p3154
+  rdf:type skos:Concept ;
+  skos:altLabel "cuartelado en escuadra"@es ;
+  skos:broader hero:p43 ;
+  skos:prefLabel "kulmakoroisesti nelijakoinen"@fi ;
+.
+hero:p3155
+  rdf:type skos:Concept ;
+  skos:broader hero:p63 ;
+  skos:prefLabel "flanquisado (es)"@fi ;
+.
+hero:p3156
+  rdf:type skos:Concept ;
+  skos:broader hero:p63 ;
+  skos:prefLabel "flanquedo (es)"@fi ;
+.
+hero:p3157
+  rdf:type skos:Concept ;
+  skos:broader hero:p2009 ;
+  skos:prefLabel "hardi (fr)"@fi ;
+.
+hero:p3158
+  rdf:type skos:Concept ;
+  skos:broader hero:p2009 ;
+  skos:prefLabel "peleando (es)"@fi ;
+.
+hero:p3159
+  rdf:type skos:Concept ;
+  skos:broader hero:p1254 ;
+  skos:prefLabel "mansikkapuu"@fi ;
+.
 hero:p316
   rdf:type skos:Concept ;
-  skos:broader hero:p92 ;
+  skos:broader hero:p2222 ;
   skos:prefLabel "herttuakunnan kruunu"@fi ;
+.
+hero:p3160
+  rdf:type skos:Concept ;
+  skos:altLabel "custódia"@pt ;
+  skos:altLabel "ostensorio"@es ;
+  skos:altLabel "ostensorium"@en ;
+  skos:broader hero:p2939 ;
+  skos:prefLabel "monstrance (en)"@fi ;
+.
+hero:p3161
+  rdf:type skos:Concept ;
+  skos:broader hero:p298 ;
+  skos:prefLabel "päällikkeenä [4]"@fi ;
+.
+hero:p3162
+  rdf:type skos:Concept ;
+  skos:altLabel "aipo"@pt ;
+  skos:broader hero:p1349 ;
+  skos:prefLabel "selleri"@fi ;
+.
+hero:p3163
+  rdf:type skos:Concept ;
+  skos:altLabel "incensiere"@it ;
+  skos:altLabel "kadzielnica"@pl ;
+  skos:broader hero:p2939 ;
+  skos:prefLabel "suitsukeastia"@fi ;
+.
+hero:p3164
+  rdf:type skos:Concept ;
+  skos:broader hero:p931 ;
+  skos:prefLabel "denticulé (fr)"@fi ;
+.
+hero:p3165
+  rdf:type skos:Concept ;
+  skos:altLabel "cotoyé"@en ;
+  skos:altLabel "côtoyé"@fr ;
+  skos:broader hero:p299 ;
+  skos:hiddenLabel "accostée"@fr ;
+  skos:hiddenLabel "cotoyé"@fr ;
+  skos:hiddenLabel "côtoyée"@fr ;
+  skos:prefLabel "accosté (fr)"@fi ;
+.
+hero:p3166
+  rdf:type skos:Concept ;
+  skos:broader hero:p522 ;
+  skos:prefLabel "akvedukti"@fi ;
+  skos:related hero:p257 ;
+.
+hero:p3167
+  rdf:type skos:Concept ;
+  skos:broader hero:p2338 ;
+  skos:prefLabel "kärryt"@fi ;
+  skos:related hero:p1397 ;
+.
+hero:p3168
+  rdf:type skos:Concept ;
+  skos:broader hero:p2281 ;
+  skos:prefLabel "hohtimet"@fi ;
+.
+hero:p3169
+  rdf:type skos:Concept ;
+  skos:broader hero:p2941 ;
+  skos:prefLabel "pöytä"@fi ;
 .
 hero:p317
   rdf:type skos:Concept ;
-  skos:broader hero:p92 ;
+  skos:broader hero:p2222 ;
   skos:prefLabel "kreivikunnan kruunu"@fi ;
+.
+hero:p3170
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "bouclier"@fr ;
+  skos:broader hero:p2254 ;
+  skos:prefLabel "buckler (en)"@fi ;
+.
+hero:p3171
+  rdf:type skos:Concept ;
+  skos:broader hero:p2281 ;
+  skos:prefLabel "cunha (pt)"@fi ;
+.
+hero:p3172
+  rdf:type skos:Concept ;
+  skos:broader hero:p361 ;
+  skos:prefLabel "tähkäkimppu"@fi ;
+  skos:related hero:p663 ;
+.
+hero:p3173
+  rdf:type skos:Concept ;
+  skos:altLabel "Drillingsinnenbord"@de ;
+  skos:broader hero:p110 ;
+  skos:prefLabel "kolmoiskehä"@fi ;
+  hero-meta:wboMatch "0094"@de ;
+.
+hero:p3174
+  rdf:type skos:Concept ;
+  skos:broader hero:p1488 ;
+  skos:prefLabel "Jousimies [Sagittarius]"@fi ;
+  skos:related hero:p2058 ;
+.
+hero:p3175
+  rdf:type skos:Concept ;
+  skos:altLabel "semy of bezants"@en ;
+  skos:altLabel "semé de besants d'or"@fr ;
+  skos:broader hero:p312 ;
+  skos:hiddenLabel "besantée"@fr ;
+  skos:prefLabel "bezanty (en)"@fi ;
+  skos:related hero:p521 ;
+  hero-meta:wboMatch "-921"^^xsd:string ;
+.
+hero:p3176
+  rdf:type skos:Concept ;
+  skos:altLabel "plintato"@it ;
+  skos:altLabel "semy of billets"@en ;
+  skos:altLabel "semé de billettes"@fr ;
+  skos:broader hero:p312 ;
+  skos:hiddenLabel "billettée"@fr ;
+  skos:prefLabel "billetty (en)"@fi ;
+  skos:related hero:p444 ;
+.
+hero:p3177
+  rdf:type skos:Concept ;
+  skos:altLabel "auré"@en ;
+  skos:altLabel "gutty"@en ;
+  skos:altLabel "gutté"@en ;
+  skos:altLabel "semy of gouttes"@en ;
+  skos:broader hero:p312 ;
+  skos:hiddenLabel "gouttée"@fr ;
+  skos:hiddenLabel "guttée"@en ;
+  skos:prefLabel "goutty (en)"@fi ;
+  skos:related hero:p493 ;
+.
+hero:p3178
+  rdf:type skos:Concept ;
+  skos:altLabel "seminato di gigli"@it ;
+  skos:altLabel "semy of fleurs-de-lys"@en ;
+  skos:altLabel "semé de fleur-de-lys"@fr ;
+  skos:broader hero:p312 ;
+  skos:hiddenLabel "fleurdelisée"@fr ;
+  skos:prefLabel "semy-de-lys (en)"@fi ;
+  skos:related hero:p244 ;
+.
+hero:p3179
+  rdf:type skos:Concept ;
+  skos:broader hero:p1162 ;
+  skos:broader hero:p2939 ;
+  skos:prefLabel "kaikkinäkevä silmä"@fi ;
 .
 hero:p318
   rdf:type skos:Concept ;
   skos:broader hero:p1254 ;
   skos:hiddenLabel "alder tree"@en ;
   skos:prefLabel "leppä"@fi ;
+.
+hero:p3180
+  rdf:type skos:Concept ;
+  skosext:partOf hero:p220 ;
+  skosext:partOf hero:p258 ;
+  skos:altLabel "St. Lukas-Stier"@de ;
+  skos:altLabel "bove alato"@it ;
+  skos:altLabel "bœuf ailé"@fr ;
+  skos:altLabel "geflügelte Stier"@de ;
+  skos:broader hero:p220 ;
+  skos:broader hero:p2939 ;
+  skos:hiddenLabel "boeuf ailé"@fr ;
+  skos:prefLabel "siivekäs härkä"@fi ;
+  skos:related hero:p785 ;
+.
+hero:p3181
+  rdf:type skos:Concept ;
+  skos:broader hero:p2406 ;
+  skos:hiddenLabel "acorn-cup"@en ;
+  skos:prefLabel "acorn cup (en)"@fi ;
+.
+hero:p3182
+  rdf:type skos:Concept ;
+  skosext:partOf hero:p2221 ;
+  skosext:partOf hero:p737 ;
+  skos:altLabel "Sternkreuz"@de ;
+  skos:altLabel "croce stellata"@it ;
+  skos:altLabel "palio"@es ;
+  skos:altLabel "sterrenkruis"@nl ;
+  skos:altLabel "tähtiristi"@fi ;
+  skos:altLabel "tähtrist"@et ;
+  skos:broader hero:p2221 ;
+  skos:broader hero:p3094 ;
+  skos:prefLabel "nelisakarainen tähti"@fi ;
+.
+hero:p3183
+  rdf:type skos:Concept ;
+  skos:broader hero:p444 ;
+  skos:prefLabel "palkittainen lipuke"@fi ;
+  skos:related hero:p556 ;
+  hero-meta:wboMatch "0282"^^xsd:string ;
+.
+hero:p3184
+  rdf:type skos:Concept ;
+  skos:broader hero:p36 ;
+  skos:prefLabel "Mittelschild (de)"@fi ;
+.
+hero:p3185
+  rdf:type skos:Concept ;
+  skos:altLabel "konttuuri"@fi ;
+  skos:broader hero:p2397 ;
+  skos:hiddenLabel "embellecida"@es ;
+  skos:prefLabel "embellecido (es)"@fi ;
+  skos:related hero:p2397 ;
+.
+hero:p3186
+  rdf:type skos:Concept ;
+  skos:altLabel "parti d'un trait et coupé de deux"@fr ;
+  skos:broader hero:p1447 ;
+  skos:broader hero:p38 ;
+  skos:prefLabel "halkoinen ja kahdesti katkoinen"@fi ;
+.
+hero:p3187
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "chivalric order"@en ;
+  skos:altLabel "equestrian order"@en ;
+  skos:altLabel "orden"@sv ;
+  skos:altLabel "order of knighthood"@en ;
+  skos:broader hero:p2255 ;
+  skos:prefLabel "ritarikunta"@fi ;
+.
+hero:p3188
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "ritarin vaakuna"@fi ;
+.
+hero:p3189
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "toernooi"@nl ;
+  skos:altLabel "turnering"@nb ;
+  skos:altLabel "турнир"@ru ;
+  skos:broader hero:p2255 ;
+  skos:prefLabel "turnajaiset"@fi ;
 .
 hero:p319
   rdf:type skos:Concept ;
@@ -13189,17 +14176,138 @@ hero:p319
   skos:hiddenLabel "bris-d'huis"@fr ;
   skos:prefLabel "saranarauta"@fi ;
 .
+hero:p3190
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "tilting"@en ;
+  skos:broader hero:p2255 ;
+  skos:prefLabel "peitsiottelu"@fi ;
+  skos:related hero:p324 ;
+.
+hero:p3191
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "Gelehrtenwappen (de)"@fi ;
+.
+hero:p3192
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "käsityöläisvaakuna"@fi ;
+.
+hero:p3193
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "Bauernwappen (de)"@fi ;
+.
+hero:p3194
+  rdf:type skos:Concept ;
+  skos:altLabel "accolé du collier"@fr ;
+  skos:broader hero:p1505 ;
+  skos:prefLabel "collar of order (en)"@fi ;
+.
+hero:p3195
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "yhdellä tupsulla"@fi ;
+  skos:related hero:p2116 ;
+.
+hero:p3196
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "kahdella tupsulla"@fi ;
+  skos:related hero:p608 ;
+.
+hero:p3197
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "kolmella tupsulla"@fi ;
+  skos:related hero:p609 ;
+.
+hero:p3198
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "kuudella tupsulla"@fi ;
+  skos:related hero:p612 ;
+.
+hero:p3199
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "kymmenellä tupsulla"@fi ;
+  skos:related hero:p674 ;
+.
 hero:p32
   rdf:type skos:Concept ;
   skos:broader hero:p24 ;
+  skos:hiddenLabel "croisettée"@fr ;
   skos:prefLabel "ristikoro"@fi ;
-  hero-meta:wboMatch "0151-120" ;
+  hero-meta:wboMatch "-120"^^xsd:string ;
 .
 hero:p320
   rdf:type skos:Concept ;
   skos:altLabel "2, 2"@fr ;
   skos:broader hero:p610 ;
   skos:prefLabel "2 + 2"@fi ;
+.
+hero:p3200
+  rdf:type skos:Concept ;
+  skos:broader hero:p3201 ;
+  skos:prefLabel "viidellätoista tupsulla"@fi ;
+  skos:related hero:p2585 ;
+.
+hero:p3201
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2248 ;
+  skos:prefLabel "papin hatun ominaisuus"@fi ;
+.
+hero:p3202
+  rdf:type skos:Concept ;
+  skos:broader hero:p2286 ;
+  skos:broader hero:p2939 ;
+  skos:prefLabel "pallium"@fi ;
+.
+hero:p3203
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "familievåpen"@nb ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "sukuvaakuna"@fi ;
+.
+hero:p3204
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "henkilövaakuna"@fi ;
+  skos:related hero:p2000 ;
+.
+hero:p3205
+  rdf:type skos:Concept ;
+  skos:broader hero:p2281 ;
+  skos:prefLabel "demi-lune (fr)"@fi ;
+  skos:related hero:p2294 ;
+  skos:related hero:p2425 ;
+.
+hero:p3206
+  rdf:type skos:Concept ;
+  skos:altLabel "tête et col"@fr ;
+  skos:broader hero:p519 ;
+  skos:prefLabel "tête et cou (fr)"@fi ;
+.
+hero:p3207
+  rdf:type skos:Concept ;
+  skos:broader hero:p2907 ;
+  skos:prefLabel "isoilla kirjaimilla"@fi ;
+.
+hero:p3208
+  rdf:type skos:Concept ;
+  skos:broader hero:p2824 ;
+  skos:prefLabel "oikealla"@fi ;
+.
+hero:p3209
+  rdf:type skos:Concept ;
+  skos:broader hero:p2824 ;
+  skos:prefLabel "vasemmalla"@fi ;
 .
 hero:p321
   rdf:type skos:Concept ;
@@ -13210,6 +14318,42 @@ hero:p321
   skos:prefLabel "kärppä"@fi ;
   skos:related hero:p1520 ;
   hero-meta:wboMatch "5055" ;
+.
+hero:p3210
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "Stadtwappen"@de ;
+  skos:altLabel "civic arms"@en ;
+  skos:altLabel "kunnallisvaakuna"@fi ;
+  skos:altLabel "kuntavaakuna"@fi ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "kunnanvaakuna"@fi ;
+.
+hero:p3211
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "yhteisövaakuna"@fi ;
+.
+hero:p3212
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:altLabel "riksvapen"@sv ;
+  skos:altLabel "statsvåben"@da ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "valtakunnanvaakuna"@fi ;
+.
+hero:p3213
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "lääninvaakuna"@fi ;
+.
+hero:p3214
+  rdf:type skos:Concept ;
+  rdf:type hero-meta:UpperConcept ;
+  skos:broader hero:p2210 ;
+  skos:prefLabel "maakunnan vaakuna"@fi ;
 .
 hero:p322
   rdf:type skos:Concept ;
@@ -13258,12 +14402,22 @@ hero:p328
   skos:broader hero:p436 ;
   skos:prefLabel "käsi"@fi ;
 .
+hero:p329
+  rdf:type skos:Concept ;
+  skos:altLabel "Harnisch"@de ;
+  skos:altLabel "armour"@en ;
+  skos:altLabel "harnesk"@sv ;
+  skos:altLabel "harnisk"@nb ;
+  skos:broader hero:p2286 ;
+  skos:prefLabel "haarniska"@fi ;
+  skos:related hero:p598 ;
+.
 hero:p33
   rdf:type skos:Concept ;
   skos:broader hero:p3069 ;
   skos:prefLabel "apilakoro"@fi ;
   skos:related hero:p90 ;
-  hero-meta:wboMatch "0151-187" ;
+  hero-meta:wboMatch "-187"^^xsd:string ;
 .
 hero:p330
   rdf:type skos:Concept ;
@@ -13321,6 +14475,9 @@ hero:p336
 hero:p337
   rdf:type skos:Concept ;
   skos:altLabel "dalpil"@sv ;
+  skos:altLabel "venábulo"@pt ;
+  skos:altLabel "virote"@pt ;
+  skos:altLabel "xara"@pt ;
   skos:broader hero:p2285 ;
   skos:prefLabel "nuoli"@fi ;
 .
@@ -13328,8 +14485,9 @@ hero:p338
   rdf:type skos:Concept ;
   skos:altLabel "flighted"@en ;
   skos:broader hero:p2707 ;
+  skos:hiddenLabel "empennée"@fr ;
   skos:note "Nuolen sulkien tinktuuri."@fi ;
-  skos:prefLabel "sulat [nuoli]"@fi ;
+  skos:prefLabel "sulat"@fi ;
 .
 hero:p339
   rdf:type skos:Concept ;
@@ -13425,9 +14583,10 @@ hero:p349
 hero:p35
   rdf:type skos:Concept ;
   skos:broader hero:p3069 ;
+  skos:hiddenLabel "fleuronnée"@fr ;
   skos:prefLabel "liljakoro"@fi ;
   skos:related hero:p244 ;
-  hero-meta:wboMatch "0151-188" ;
+  hero-meta:wboMatch "-188"^^xsd:string ;
 .
 hero:p350
   rdf:type skos:Concept ;
@@ -13439,6 +14598,7 @@ hero:p350
 hero:p351
   rdf:type skos:Concept ;
   skos:broader hero:p2125 ;
+  skos:hiddenLabel "picea"@es ;
   skos:prefLabel "kuusi"@fi ;
   hero-meta:wboMatch "2032" ;
 .
@@ -13497,11 +14657,18 @@ hero:p359
 .
 hero:p36
   rdf:type skos:Concept ;
+  skos:altLabel "Wappenschild"@de ;
   skos:altLabel "clypeus"@la ;
+  skos:altLabel "shield"@en ;
   skos:altLabel "skiöld"@sv ;
+  skos:altLabel "vapensköld"@sv ;
+  skos:altLabel "våbenskjold"@da ;
+  skos:altLabel "våpenskjold"@nb ;
+  skos:altLabel "wapenbord"@nl ;
   skos:broader hero:p2256 ;
   skos:hiddenLabel "skjöld"@sv ;
   skos:prefLabel "kilpi"@fi ;
+  skos:related hero:p2254 ;
 .
 hero:p361
   rdf:type skos:Concept ;
@@ -13569,6 +14736,7 @@ hero:p37
   rdf:type skos:Concept ;
   skos:altLabel "coupé"@en ;
   skos:altLabel "katkaistu"@fi ;
+  skos:altLabel "party per fess"@en ;
   skos:broader hero:p1691 ;
   skos:hiddenLabel "per fesse"@en ;
   skos:prefLabel "katkoinen"@fi ;
@@ -13630,6 +14798,7 @@ hero:p377
   skos:altLabel "grythängsle"@sv ;
   skos:altLabel "hanger"@en ;
   skos:altLabel "kettle-hook"@en ;
+  skos:altLabel "kjelekroker"@nb ;
   skos:altLabel "pot-hooks"@en ;
   skos:broader hero:p2941 ;
   skos:prefLabel "haahlat"@fi ;
@@ -13654,6 +14823,7 @@ hero:p38
   rdf:type skos:Concept ;
   skos:altLabel "halkaistu"@fi ;
   skos:altLabel "parti"@en ;
+  skos:altLabel "party per pale"@en ;
   skos:broader hero:p1691 ;
   skos:prefLabel "halkoinen"@fi ;
   hero-meta:wboMatch "0101" ;
@@ -13711,6 +14881,7 @@ hero:p388
 hero:p39
   rdf:type skos:Concept ;
   skos:altLabel "lohkaistu"@fi ;
+  skos:altLabel "party per bend"@en ;
   skos:altLabel "tranché"@en ;
   skos:broader hero:p1691 ;
   skos:prefLabel "lohkoinen"@fi ;
@@ -13761,6 +14932,7 @@ hero:p396
   skos:altLabel "αγριόχοιρος"@el ;
   skos:altLabel "дзік"@be ;
   skos:broader hero:p2926 ;
+  skos:hiddenLabel "jabali"@es ;
   skos:prefLabel "karju"@fi ;
   hero-meta:wboMatch "5241" ;
 .
@@ -13788,11 +14960,14 @@ hero:p399
 .
 hero:p4
   rdf:type skos:Concept ;
+  skos:altLabel "Winkelmaßschnitt"@de ;
+  skos:altLabel "en équerre"@en ;
   skos:broader hero:p1660 ;
   skos:prefLabel "kulmakoro"@fi ;
 .
 hero:p40
   rdf:type skos:Concept ;
+  skos:altLabel "party per bend sinister"@en ;
   skos:altLabel "taillé"@en ;
   skos:broader hero:p1691 ;
   skos:prefLabel "vastalohkoinen"@fi ;
@@ -13809,6 +14984,7 @@ hero:p401
 hero:p402
   rdf:type skos:Concept ;
   skos:altLabel "bâton noueux"@fr ;
+  skos:altLabel "decote"@pt ;
   skos:altLabel "écot"@fr ;
   skos:broader hero:p2289 ;
   skos:hiddenLabel "kekäle"@fi ;
@@ -13846,7 +15022,7 @@ hero:p407
 hero:p408
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
-  skos:broader hero:p1673 ;
+  skos:broader hero:p2738 ;
   skos:prefLabel "kirjain"@fi ;
 .
 hero:p409
@@ -13897,6 +15073,7 @@ hero:p413
 .
 hero:p415
   rdf:type skos:Concept ;
+  skos:altLabel "cogujada"@es ;
   skos:altLabel "leivonen"@fi ;
   skos:altLabel "skylark"@en ;
   skos:broader hero:p2082 ;
@@ -13962,11 +15139,13 @@ hero:p426
 .
 hero:p428
   rdf:type skos:Concept ;
+  skos:altLabel "hoe head"@en ;
   skos:broader hero:p2282 ;
   skos:prefLabel "kuokanterä"@fi ;
 .
 hero:p429
   rdf:type skos:Concept ;
+  skos:altLabel "alcaraván"@es ;
   skos:broader hero:p2082 ;
   skos:prefLabel "kuovi"@fi ;
 .
@@ -13978,6 +15157,7 @@ hero:p43
   skos:broader hero:p37 ;
   skos:broader hero:p38 ;
   skos:hiddenLabel "cuartel"@es ;
+  skos:hiddenLabel "cuartelado"@es ;
   skos:hiddenLabel "ecartelé"@fr ;
   skos:prefLabel "nelijakoinen"@fi ;
   hero-meta:wboMatch "0231" ;
@@ -13993,6 +15173,7 @@ hero:p432
   skos:altLabel "cannon ball"@en ;
   skos:altLabel "gunstone"@en ;
   skos:altLabel "ogress"@en ;
+  skos:altLabel "roundel sable"@en ;
   skos:broader hero:p589 ;
   skos:hiddenLabel "ogoesse"@fr ;
   skos:prefLabel "kuula"@fi ;
@@ -14072,10 +15253,13 @@ hero:p443
   rdf:type skos:Concept ;
   skos:altLabel "vallitus"@fi ;
   skos:broader hero:p522 ;
+  skos:hiddenLabel "fortification"@en ;
+  skos:hiddenLabel "fortress"@en ;
   skos:prefLabel "linnake"@fi ;
 .
 hero:p444
   rdf:type skos:Concept ;
+  skos:altLabel "Längsschindel"@de ;
   skos:altLabel "cartela"@es ;
   skos:altLabel "plinto"@it ;
   skos:broader hero:p1699 ;
@@ -14136,6 +15320,7 @@ hero:p451
   skos:broader hero:p1669 ;
   skos:broader hero:p589 ;
   skos:prefLabel "lähde"@fi ;
+  skos:related hero:p2315 ;
 .
 hero:p452
   rdf:type skos:Concept ;
@@ -14148,6 +15333,7 @@ hero:p453
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
   skos:altLabel "Rasen"@de ;
+  skos:altLabel "grasgrond"@nl ;
   skos:altLabel "terrasse"@nl ;
   skos:altLabel "tertre"@fr ;
   skos:broader hero:p1667 ;
@@ -14174,6 +15360,10 @@ hero:p457
 .
 hero:p458
   rdf:type skos:Concept ;
+  skos:altLabel "Kommandostab"@de ;
+  skos:altLabel "commandostaf"@sv ;
+  skos:altLabel "kommandostav"@sv ;
+  skos:altLabel "laska komendanta"@pl ;
   skos:broader hero:p738 ;
   skos:prefLabel "marsalkansauva"@fi ;
 .
@@ -14189,6 +15379,7 @@ hero:p46
   skos:altLabel "jaquelado"@es ;
   skos:altLabel "skákborðsmunstur"@is ;
   skos:broader hero:p1693 ;
+  skos:hiddenLabel "ajedrez"@es ;
   skos:prefLabel "shakkiruutuinen"@fi ;
   hero-meta:wboMatch "0233" ;
 .
@@ -14235,6 +15426,7 @@ hero:p468
   rdf:type skos:Concept ;
   skos:broader hero:p1664 ;
   skos:prefLabel "nahkiainen"@fi ;
+  skos:related hero:p224 ;
   hero-meta:wboMatch "3264" ;
 .
 hero:p469
@@ -14288,6 +15480,7 @@ hero:p475
 .
 hero:p476
   rdf:type skos:Concept ;
+  skos:altLabel "haak"@nl ;
   skos:altLabel "hameçon"@en ;
   skos:altLabel "nokkanen"@fi ;
   skos:broader hero:p2280 ;
@@ -14299,6 +15492,7 @@ hero:p476
 .
 hero:p477
   rdf:type skos:Concept ;
+  skos:altLabel "esquirol"@es ;
   skos:broader hero:p2921 ;
   skos:prefLabel "orava"@fi ;
   skos:related hero:p1521 ;
@@ -14307,6 +15501,7 @@ hero:p477
 hero:p478
   rdf:type skos:Concept ;
   skos:altLabel "Rohrkolben"@de ;
+  skos:altLabel "junco"@es ;
   skos:broader hero:p1349 ;
   skos:prefLabel "osmankäämi"@fi ;
   hero-meta:wboMatch "2462" ;
@@ -14338,6 +15533,7 @@ hero:p481
   skos:altLabel "kettle"@en ;
   skos:altLabel "pot"@en ;
   skos:broader hero:p2287 ;
+  skos:hiddenLabel "caldera"@es ;
   skos:prefLabel "pata"@fi ;
 .
 hero:p482
@@ -14379,6 +15575,7 @@ hero:p487
 hero:p488
   rdf:type skos:Concept ;
   skos:altLabel "Schildchen"@de ;
+  skos:altLabel "inescutcheon"@en ;
   skos:broader hero:p2943 ;
   skos:prefLabel "pienoiskilpi"@fi ;
 .
@@ -14413,7 +15610,9 @@ hero:p490
   skos:altLabel "Mitra"@de ;
   skos:altLabel "mitra"@it ;
   skos:altLabel "mitra"@sv ;
+  skos:broader hero:p1987 ;
   skos:broader hero:p2666 ;
+  skos:broader hero:p2939 ;
   skos:prefLabel "piispanhiippa"@fi ;
 .
 hero:p492
@@ -14422,6 +15621,7 @@ hero:p492
   skos:altLabel "Krümme"@de ;
   skos:altLabel "abbot's crozier"@en ;
   skos:altLabel "abbotstav"@sv ;
+  skos:altLabel "abtsstaf"@nl ;
   skos:altLabel "apotinsauva"@fi ;
   skos:altLabel "bastone pastorale"@it ;
   skos:altLabel "biskopsstav"@sv ;
@@ -14503,9 +15703,11 @@ hero:p502
   skos:altLabel "Bock"@de ;
   skos:altLabel "ariete"@it ;
   skos:altLabel "buck"@en ;
+  skos:altLabel "cabrío"@es ;
   skos:altLabel "capro"@it ;
   skos:altLabel "chivato"@es ;
   skos:broader hero:p2926 ;
+  skos:hiddenLabel "cabrio"@es ;
   skos:prefLabel "pukki"@fi ;
   skos:related hero:p1727 ;
   hero-meta:wboMatch "5232" ;
@@ -14561,14 +15763,18 @@ hero:p508
 .
 hero:p509
   rdf:type skos:Concept ;
+  skos:altLabel "Madone"@fr ;
   skos:altLabel "Madonna"@da ;
   skos:altLabel "Madonna"@en ;
   skos:altLabel "virgin Mary"@en ;
   skos:broader hero:p506 ;
+  skos:hiddenLabel "Maria"@es ;
   skos:prefLabel "pyhä Maria"@fi ;
 .
 hero:p51
   rdf:type skos:Concept ;
+  skos:altLabel "pæl"@nb ;
+  skos:altLabel "pæl"@nn ;
   skos:broader hero:p1694 ;
   skos:prefLabel "paalu"@fi ;
   hero-meta:wboMatch "0111" ;
@@ -14582,6 +15788,7 @@ hero:p510
 hero:p511
   rdf:type skos:Concept ;
   skos:broader hero:p506 ;
+  skos:hiddenLabel "Martin de Tours"@es ;
   skos:prefLabel "pyhä Martti"@fi ;
 .
 hero:p512
@@ -14609,11 +15816,19 @@ hero:p515
   rdf:type skos:Concept ;
   skosext:partOf hero:p2426 ;
   skosext:partOf hero:p2486 ;
+  skos:altLabel "Nuss"@de ;
   skos:altLabel "cobnut"@en ;
   skos:altLabel "filbert"@en ;
-  skos:altLabel "pähkinä"@fi ;
+  skos:altLabel "hasselpähkinä"@fi ;
+  skos:altLabel "hneta"@is ;
+  skos:altLabel "noot"@nl ;
+  skos:altLabel "nut"@en ;
+  skos:altLabel "nöt"@sv ;
+  skos:altLabel "nød"@da ;
+  skos:altLabel "nøtt"@nb ;
+  skos:altLabel "nøtt"@nn ;
   skos:broader hero:p2426 ;
-  skos:prefLabel "hasselpähkinä"@fi ;
+  skos:prefLabel "pähkinä"@fi ;
 .
 hero:p516
   rdf:type skos:Concept ;
@@ -14636,6 +15851,7 @@ hero:p519
 .
 hero:p52
   rdf:type skos:Concept ;
+  skos:altLabel "Fadenpfahl"@de ;
   skos:broader hero:p51 ;
   skos:prefLabel "riuku"@fi ;
   hero-meta:wboMatch "0121" ;
@@ -14652,6 +15868,7 @@ hero:p521
   rdf:type skos:Concept ;
   skos:altLabel "mynt"@sv ;
   skos:altLabel "raha"@fi ;
+  skos:altLabel "roundel or"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "kultaraha"@fi ;
 .
@@ -14782,6 +15999,7 @@ hero:p544
   skos:altLabel "canard"@fr ;
   skos:altLabel "pato"@es ;
   skos:broader hero:p2082 ;
+  skos:hiddenLabel "anade"@es ;
   skos:prefLabel "sorsa"@fi ;
   hero-meta:wboMatch "4941" ;
 .
@@ -14795,6 +16013,7 @@ hero:p545
 hero:p547
   rdf:type skos:Concept ;
   skos:altLabel "fjäderpenna"@sv ;
+  skos:altLabel "pluma de escribir"@es ;
   skos:broader hero:p2942 ;
   skos:prefLabel "sulkakynä"@fi ;
 .
@@ -14836,6 +16055,7 @@ hero:p553
   skosext:partOf hero:p248 ;
   skosext:partOf hero:p2486 ;
   skos:altLabel "gland"@en ;
+  skos:altLabel "lande"@pt ;
   skos:broader hero:p248 ;
   skos:prefLabel "tammenterho"@fi ;
 .
@@ -14850,6 +16070,7 @@ hero:p555
   skos:altLabel "Katharinenrad"@de ;
   skos:altLabel "Katherine-wheel"@en ;
   skos:altLabel "lámání kolem"@cs ;
+  skos:altLabel "roda de navalhas"@pt ;
   skos:altLabel "rueda del suplicio"@es ;
   skos:altLabel "teilausratas"@fi ;
   skos:broader hero:p260 ;
@@ -14859,11 +16080,14 @@ hero:p555
 .
 hero:p556
   rdf:type skos:Concept ;
+  skos:altLabel "dakpan"@nl ;
+  skos:altLabel "steen"@nl ;
   skos:broader hero:p522 ;
   skos:prefLabel "tiili"@fi ;
 .
 hero:p557
   rdf:type skos:Concept ;
+  skos:altLabel "buzina"@pt ;
   skos:altLabel "cor"@fr ;
   skos:altLabel "orifant"@fr ;
   skos:altLabel "shofar"@en ;
@@ -14907,7 +16131,7 @@ hero:p560
   skos:altLabel "motto"@nb ;
   skos:altLabel "motto"@sv ;
   skos:altLabel "vaalilause"@fi ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p2802 ;
   skos:prefLabel "tunnuslause"@fi ;
 .
 hero:p563
@@ -14917,6 +16141,7 @@ hero:p563
   skos:altLabel "grilled helm"@en ;
   skos:altLabel "kalterikypärä"@fi ;
   skos:altLabel "öppen hjälm"@sv ;
+  skos:broader hero:p1987 ;
   skos:broader hero:p720 ;
   skos:prefLabel "turnajaiskypärä"@fi ;
 .
@@ -14953,6 +16178,7 @@ hero:p57
   skos:altLabel "gesparrt"@de ;
   skos:altLabel "γωνία"@el ;
   skos:broader hero:p1694 ;
+  skos:hiddenLabel "cabrío"@es ;
   skos:prefLabel "polviorsi"@fi ;
   hero-meta:wboMatch "0551" ;
 .
@@ -14965,6 +16191,7 @@ hero:p571
 hero:p572
   rdf:type skos:Concept ;
   skos:altLabel "falot"@fr ;
+  skos:altLabel "merkkituli"@fi ;
   skos:altLabel "vartiorovio"@fi ;
   skos:broader hero:p1668 ;
   skos:hiddenLabel "kartio"@fi ;
@@ -15072,9 +16299,17 @@ hero:p588
 .
 hero:p589
   rdf:type skos:Concept ;
+  skos:altLabel "Ball"@de ;
   skos:altLabel "Scheibe"@de ;
+  skos:altLabel "bal"@nl ;
+  skos:altLabel "ball"@en ;
+  skos:altLabel "bola"@es ;
+  skos:altLabel "boll"@sv ;
+  skos:altLabel "boule"@fr ;
+  skos:altLabel "disco"@es ;
   skos:altLabel "koek"@nl ;
   skos:altLabel "palla"@it ;
+  skos:altLabel "pallo"@fi ;
   skos:altLabel "pyörylä"@fi ;
   skos:altLabel "rodella"@ca ;
   skos:altLabel "roundle"@en ;
@@ -15104,6 +16339,7 @@ hero:p593
   rdf:type skos:Concept ;
   skos:altLabel "boutonné"@en ;
   skos:broader hero:p2374 ;
+  skos:hiddenLabel "botonada"@es ;
   skos:hiddenLabel "boutonnée"@fr ;
   skos:prefLabel "emiö"@fi ;
 .
@@ -15115,6 +16351,7 @@ hero:p594
   skos:altLabel "nivelet"@fi ;
   skos:altLabel "purfled"@en ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "emboutée"@fr ;
   skos:hiddenLabel "liitosvanne"@fi ;
   skos:prefLabel "helat"@fi ;
 .
@@ -15137,6 +16374,7 @@ hero:p598
   skos:altLabel "i rustning"@sv ;
   skos:altLabel "vambraced"@en ;
   skos:broader hero:p2376 ;
+  skos:hiddenLabel "armée"@fr ;
   skos:hiddenLabel "vambrased"@en ;
   skos:prefLabel "haarniskoitu"@fi ;
 .
@@ -15148,6 +16386,7 @@ hero:p6
 hero:p60
   rdf:type skos:Concept ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "nillée"@fr ;
   skos:prefLabel "kavennettu"@fi ;
 .
 hero:p601
@@ -15162,7 +16401,10 @@ hero:p603
 .
 hero:p606
   rdf:type skos:Concept ;
+  skos:altLabel "adjurado"@es ;
+  skos:altLabel "janela"@pt ;
   skos:broader hero:p2706 ;
+  skos:hiddenLabel "aclarada"@es ;
   skos:hiddenLabel "ajourée"@fr ;
   skos:prefLabel "ikkunat"@fi ;
 .
@@ -15278,7 +16520,9 @@ hero:p61
   skos:altLabel "barre basse"@fr ;
   skos:altLabel "base"@en ;
   skos:altLabel "champagne"@en ;
+  skos:altLabel "contrachefe"@pt ;
   skos:altLabel "jalus"@et ;
+  skos:altLabel "ponta"@pt ;
   skos:altLabel "sköldfot"@sv ;
   skos:broader hero:p1694 ;
   skos:prefLabel "tyviö"@fi ;
@@ -15496,6 +16740,7 @@ hero:p615
 .
 hero:p616
   rdf:type skos:Concept ;
+  skos:broader hero:p2222 ;
   skos:broader hero:p92 ;
   skos:prefLabel "kuninkaankruunu"@fi ;
 .
@@ -15508,6 +16753,7 @@ hero:p619
   rdf:type skos:Concept ;
   skos:altLabel "entire"@en ;
   skos:altLabel "firm"@en ;
+  skos:altLabel "firmado"@pt ;
   skos:altLabel "fixed"@en ;
   skos:broader hero:p2824 ;
   skos:broader hero:p2825 ;
@@ -15527,7 +16773,9 @@ hero:p621
   skos:altLabel "Querstrom"@de ;
   skos:altLabel "Strom"@de ;
   skos:altLabel "koski"@fi ;
+  skos:altLabel "ribeira"@pt ;
   skos:broader hero:p1669 ;
+  skos:hiddenLabel "rio"@es ;
   skos:prefLabel "virta"@fi ;
   hero-meta:wboMatch "1203" ;
 .
@@ -15551,13 +16799,11 @@ hero:p625
 hero:p627
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
-  skos:broader hero:p1673 ;
+  skos:broader hero:p2738 ;
   skos:prefLabel "vuosiluku"@fi ;
 .
 hero:p628
   rdf:type skos:Concept ;
-  skos:altLabel "abismada"@es ;
-  skos:altLabel "failli"@fr ;
   skos:altLabel "tyvessä"@fi ;
   skos:broader hero:p2824 ;
   skos:prefLabel "alainen"@fi ;
@@ -15568,8 +16814,10 @@ hero:p629
   skos:altLabel "langué"@fr ;
   skos:altLabel "lenguado"@es ;
   skos:altLabel "linguado"@es ;
+  skos:altLabel "linguado"@pt ;
   skos:broader hero:p76 ;
   skos:hiddenLabel "lampassée"@fr ;
+  skos:hiddenLabel "languée"@fr ;
   skos:prefLabel "kieli"@fi ;
 .
 hero:p63
@@ -15585,18 +16833,22 @@ hero:p63
 hero:p630
   rdf:type skos:Concept ;
   skos:altLabel "Spruchband"@de ;
+  skos:altLabel "banderole"@fr ;
   skos:altLabel "breve"@it ;
   skos:altLabel "liston"@fr ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p2811 ;
+  skos:broader hero:p560 ;
   skos:prefLabel "nauha"@fi ;
 .
 hero:p631
   rdf:type skos:Concept ;
+  skos:broader hero:p2222 ;
   skos:broader hero:p92 ;
   skos:prefLabel "ritarikruunu"@fi ;
 .
 hero:p633
   rdf:type skos:Concept ;
+  skos:altLabel "cinturón"@es ;
   skos:broader hero:p2286 ;
   skos:prefLabel "vyö"@fi ;
 .
@@ -15632,6 +16884,7 @@ hero:p638
 hero:p639
   rdf:type skos:Concept ;
   rdf:type hero-meta:NonHeraldicConcept ;
+  skos:altLabel "rochedo"@pt ;
   skos:altLabel "stone"@en ;
   skos:broader hero:p1667 ;
   skos:prefLabel "kivi"@fi ;
@@ -15652,14 +16905,25 @@ hero:p640
 .
 hero:p641
   rdf:type skos:Concept ;
+  skos:altLabel "ladeado"@pt ;
   skos:altLabel "mises en fasce"@fr ;
-  skos:altLabel "rangées en fasce"@fr ;
+  skos:altLabel "nebeneinander"@de ;
+  skos:altLabel "rangés en fasce"@fr ;
   skos:altLabel "uno accanto all'altro"@it ;
   skos:altLabel "vieretysten"@fi ;
   skos:broader hero:p2823 ;
   skos:hiddenLabel "in fesse"@en ;
+  skos:hiddenLabel "rangées en fasce"@fr ;
   skos:prefLabel "hirsittäin"@fi ;
   skos:related hero:p49 ;
+.
+hero:p643
+  rdf:type skos:Concept ;
+  skos:altLabel "crenelado"@pt ;
+  skos:altLabel "kernelled"@en ;
+  skos:altLabel "sakarainen"@fi ;
+  skos:broader hero:p15 ;
+  skos:prefLabel "sakarakoro yläpuolella"@fi ;
 .
 hero:p644
   rdf:type skos:Concept ;
@@ -15667,9 +16931,13 @@ hero:p644
   skos:altLabel "el uno sobre el otro"@es ;
   skos:altLabel "l'un sur l'autre"@fr ;
   skos:altLabel "mises en pal"@fr ;
+  skos:altLabel "rangés en pal"@fr ;
+  skos:altLabel "um sobre o outro"@pt ;
   skos:altLabel "uno sull'altro"@it ;
+  skos:altLabel "übereinander"@de ;
   skos:broader hero:p2823 ;
   skos:hiddenLabel "paaluittain"@fi ;
+  skos:hiddenLabel "rangées en pal"@fr ;
   skos:prefLabel "paaluttain"@fi ;
   skos:related hero:p51 ;
 .
@@ -15706,11 +16974,13 @@ hero:p651
 .
 hero:p653
   rdf:type skos:Concept ;
-  skos:altLabel "mal ordenadas"@es ;
-  skos:altLabel "mal ordonnées"@fr ;
+  skos:altLabel "em roquete"@pt ;
+  skos:altLabel "mal ordenado"@es ;
+  skos:altLabel "mal ordonnés"@fr ;
   skos:altLabel "male ordinato"@it ;
   skos:altLabel "malordenades"@ca ;
   skos:broader hero:p609 ;
+  skos:hiddenLabel "mal ordonnées"@fr ;
   skos:prefLabel "1 + 2"@fi ;
 .
 hero:p654
@@ -15750,10 +17020,14 @@ hero:p66
 .
 hero:p660
   rdf:type skos:Concept ;
-  skos:altLabel "vogante"@it ;
-  skos:altLabel "voguant"@fr ;
+  skos:altLabel "vogante [nave]"@it ;
+  skos:altLabel "voguant [navire]"@fr ;
   skos:broader hero:p2009 ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "flottant"@fr ;
+  skos:hiddenLabel "nuotante"@it ;
+  skos:hiddenLabel "vogante"@it ;
+  skos:hiddenLabel "voguant"@fr ;
   skos:prefLabel "uimassa"@fi ;
   skos:related hero:p1973 ;
   skos:related hero:p243 ;
@@ -15768,12 +17042,18 @@ hero:p661
 hero:p662
   rdf:type skos:Concept ;
   skos:altLabel "empoigné"@en ;
+  skos:altLabel "lazada"@es ;
   skos:altLabel "liadas"@es ;
   skos:altLabel "lié"@en ;
   skos:altLabel "lié"@fr ;
   skos:broader hero:p2825 ;
+  skos:hiddenLabel "empoignée"@fr ;
+  skos:hiddenLabel "empoignées"@fr ;
+  skos:hiddenLabel "empoignés"@fr ;
+  skos:hiddenLabel "liado"@es ;
   skos:hiddenLabel "liée"@fr ;
   skos:prefLabel "sidottu"@fi ;
+  skos:related hero:p663 ;
 .
 hero:p663
   rdf:type skos:Concept ;
@@ -15820,6 +17100,8 @@ hero:p669
 hero:p67
   rdf:type skos:Concept ;
   skos:altLabel "pairle"@en ;
+  skos:altLabel "puntiaguda"@es ;
+  skos:altLabel "pálio"@pt ;
   skos:broader hero:p1694 ;
   skos:prefLabel "haaruristi"@fi ;
   hero-meta:wboMatch "0803" ;
@@ -15896,15 +17178,16 @@ hero:p682
   skos:altLabel "habited"@en ;
   skos:altLabel "vêtu"@fr ;
   skos:broader hero:p2376 ;
+  skos:hiddenLabel "habillée"@fr ;
   skos:hiddenLabel "parée"@fr ;
+  skos:hiddenLabel "vêtue"@fr ;
   skos:prefLabel "vaatteet"@fi ;
 .
 hero:p684
   rdf:type skos:Concept ;
-  skos:altLabel "Alpfuß"@de ;
-  skos:altLabel "Alpkreuz"@de ;
   skos:altLabel "abwechselnde Tinktur"@de ;
   skos:altLabel "de l'un à l'autre"@en ;
+  skos:altLabel "entrecambado"@pt ;
   skos:altLabel "in verwechselte Farben"@de ;
   skos:broader hero:p2902 ;
   skos:prefLabel "vuorovärinen"@fi ;
@@ -15919,6 +17202,7 @@ hero:p685
 hero:p687
   rdf:type skos:Concept ;
   skos:altLabel "Morgenstern"@de ;
+  skos:altLabel "maça de armas"@pt ;
   skos:altLabel "morning star"@en ;
   skos:altLabel "spikklubba"@sv ;
   skos:altLabel "stella del mattino"@it ;
@@ -15989,10 +17273,10 @@ hero:p697
 hero:p698
   rdf:type skos:Concept ;
   skos:altLabel "1 + 3 + 1"@da ;
-  skos:altLabel "1 + 3 + 1"@it ;
   skos:altLabel "1 + 3 + 1"@nl ;
   skos:altLabel "1, 3 and 1"@en ;
   skos:altLabel "mises en croix"@fr ;
+  skos:altLabel "ordinate in croce"@it ;
   skos:broader hero:p611 ;
   skos:hiddenLabel "1, 3, 1"@fr ;
   skos:prefLabel "1 + 3 + 1"@fi ;
@@ -16000,15 +17284,17 @@ hero:p698
 .
 hero:p699
   rdf:type skos:Concept ;
+  skos:altLabel "log dog"@en ;
   skos:broader hero:p2281 ;
   skos:prefLabel "sinkilä"@fi ;
+  skos:related hero:p922 ;
 .
 hero:p7
   rdf:type skos:Concept ;
   skos:altLabel "pommetty"@en ;
   skos:broader hero:p14 ;
   skos:prefLabel "kuulakärkikoro"@fi ;
-  hero-meta:wboMatch "0151-163" ;
+  hero-meta:wboMatch "-163"^^xsd:string ;
 .
 hero:p70
   rdf:type skos:Concept ;
@@ -16047,14 +17333,18 @@ hero:p713
 hero:p716
   rdf:type skos:Concept ;
   skos:altLabel "mises en bande"@fr ;
+  skos:altLabel "rangés en bande"@fr ;
   skos:broader hero:p2823 ;
+  skos:hiddenLabel "rangées en bande"@fr ;
   skos:prefLabel "palkittain"@fi ;
   skos:related hero:p53 ;
 .
 hero:p717
   rdf:type skos:Concept ;
   skos:altLabel "mises en barre"@fr ;
+  skos:altLabel "rangés en barre"@fr ;
   skos:broader hero:p2823 ;
+  skos:hiddenLabel "rangées en barre"@fr ;
   skos:prefLabel "vastapalkittain"@fi ;
   skos:related hero:p55 ;
 .
@@ -16067,7 +17357,10 @@ hero:p718
   skos:broader hero:p2375 ;
   skos:broader hero:p2376 ;
   skos:broader hero:p2939 ;
+  skos:hiddenLabel "auréolée"@fr ;
   skos:hiddenLabel "glory"@en ;
+  skos:hiddenLabel "nimbada"@es ;
+  skos:hiddenLabel "nimbée"@fr ;
   skos:prefLabel "nimbed (en)"@fi ;
 .
 hero:p719
@@ -16083,6 +17376,7 @@ hero:p719
 .
 hero:p72
   rdf:type skos:Concept ;
+  skos:altLabel "em aspa"@pt ;
   skos:altLabel "ristikkäin"@fi ;
   skos:altLabel "vinoristikkäin"@fi ;
   skos:broader hero:p2823 ;
@@ -16093,6 +17387,7 @@ hero:p72
 hero:p720
   rdf:type skos:Concept ;
   skos:altLabel "bronzealderhjelm"@da ;
+  skos:altLabel "casco"@pt ;
   skos:altLabel "casque"@fr ;
   skos:altLabel "dragonhjelm"@da ;
   skos:altLabel "heaume"@en ;
@@ -16137,7 +17432,10 @@ hero:p73
 .
 hero:p732
   rdf:type skos:Concept ;
+  skos:altLabel "coberto"@pt ;
   skos:altLabel "coperto"@it ;
+  skos:altLabel "couvert"@fr ;
+  skos:altLabel "cubierta"@es ;
   skos:altLabel "essorée"@en ;
   skos:broader hero:p2706 ;
   skos:hiddenLabel "essorée"@fr ;
@@ -16163,6 +17461,7 @@ hero:p736
 hero:p737
   rdf:type skos:Concept ;
   skos:altLabel "vierzackige"@de ;
+  skos:altLabel "à quatre branches"@fr ;
   skos:broader hero:p2704 ;
   skos:prefLabel "nelisakarainen"@fi ;
   skos:related hero:p610 ;
@@ -16208,6 +17507,8 @@ hero:p746
   rdf:type skos:Concept ;
   skos:altLabel "lié"@fr ;
   skos:broader hero:p2907 ;
+  skos:hiddenLabel "attachée"@fr ;
+  skos:hiddenLabel "liée"@fr ;
   skos:prefLabel "hihna"@fi ;
 .
 hero:p75
@@ -16228,11 +17529,14 @@ hero:p76
   skos:altLabel "appendices"@fr ;
   skos:altLabel "beväpning"@sv ;
   skos:broader hero:p2375 ;
+  skos:hiddenLabel "armado"@es ;
+  skos:hiddenLabel "armé"@fr ;
   skos:hiddenLabel "armée"@fr ;
   skos:prefLabel "varukset"@fi ;
 .
 hero:p77
   rdf:type skos:Concept ;
+  skos:altLabel "flama"@pt ;
   skos:altLabel "foguera"@ca ;
   skos:broader hero:p1671 ;
   skos:prefLabel "liekki"@fi ;
@@ -16244,8 +17548,10 @@ hero:p78
 .
 hero:p782
   rdf:type skos:Concept ;
+  skos:altLabel "centellada"@es ;
   skos:altLabel "endgespitzte"@de ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "aiguisée"@fr ;
   skos:prefLabel "teroitettu"@fi ;
 .
 hero:p783
@@ -16286,12 +17592,17 @@ hero:p79
 .
 hero:p8
   rdf:type skos:Concept ;
+  skos:altLabel "dantelada"@es ;
   skos:altLabel "dentelé"@en ;
+  skos:altLabel "endentado"@pt ;
+  skos:altLabel "feuille de scie"@fr ;
   skos:altLabel "vivré"@en ;
   skos:altLabel "vivré"@fr ;
   skos:broader hero:p14 ;
+  skos:hiddenLabel "dentelée"@fr ;
+  skos:hiddenLabel "vivrée"@fr ;
   skos:prefLabel "sahakoro"@fi ;
-  hero-meta:wboMatch "0151-142" ;
+  hero-meta:wboMatch "-142"^^xsd:string ;
 .
 hero:p80
   rdf:type skos:Concept ;
@@ -16370,7 +17681,7 @@ hero:p9
   skos:broader hero:p14 ;
   skos:prefLabel "sudenhammaskoro"@fi ;
   skos:related hero:p8 ;
-  hero-meta:wboMatch "0151-139" ;
+  hero-meta:wboMatch "-139"^^xsd:string ;
 .
 hero:p90
   rdf:type skos:Concept ;
@@ -16400,8 +17711,12 @@ hero:p903
 .
 hero:p904
   rdf:type skos:Concept ;
+  skos:altLabel "drakkar"@fr ;
+  skos:altLabel "drakkar"@pl ;
   skos:altLabel "langskib"@da ;
   skos:altLabel "viking ship"@en ;
+  skos:altLabel "vikingskip"@nb ;
+  skos:altLabel "vikingskip"@nn ;
   skos:broader hero:p439 ;
   skos:prefLabel "viikinkilaiva"@fi ;
 .
@@ -16454,6 +17769,7 @@ hero:p911
   rdf:type skos:Concept ;
   skosext:partOf hero:p116 ;
   skosext:partOf hero:p178 ;
+  skos:altLabel "ruste"@fr ;
   skos:broader hero:p116 ;
   skos:prefLabel "kairattu ruutu"@fi ;
 .
@@ -16462,6 +17778,7 @@ hero:p92
   skos:broader hero:p2666 ;
   skos:broader hero:p2943 ;
   skos:prefLabel "kruunu"@fi ;
+  skos:related hero:p2222 ;
 .
 hero:p920
   rdf:type skos:Concept ;
@@ -16479,6 +17796,8 @@ hero:p921
   skos:broader hero:p2826 ;
   skos:broader hero:p3144 ;
   skos:hiddenLabel "abaissée"@fr ;
+  skos:hiddenLabel "alennetusti"@fi ;
+  skos:hiddenLabel "caido"@es ;
   skos:prefLabel "alennettu"@fi ;
 .
 hero:p922
@@ -16495,7 +17814,7 @@ hero:p922
 .
 hero:p923
   rdf:type skos:Concept ;
-  skos:broader hero:p92 ;
+  skos:broader hero:p1673 ;
   skos:prefLabel "kruununvanne"@fi ;
 .
 hero:p924
@@ -16504,15 +17823,16 @@ hero:p924
   skos:altLabel "cymer"@pl ;
   skos:altLabel "panache"@en ;
   skos:altLabel "λοφίο"@el ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:prefLabel "kypäränkoriste"@fi ;
 .
 hero:p925
   rdf:type skos:Concept ;
+  skos:altLabel "hachements"@fr ;
   skos:altLabel "helmteken"@nl ;
   skos:altLabel "lehtilaite"@fi ;
   skos:altLabel "löfverket"@sv ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:hiddenLabel "löfvärk"@sv ;
   skos:prefLabel "kypäränpeite"@fi ;
 .
@@ -16531,7 +17851,7 @@ hero:p927
   skos:altLabel "torque"@fr ;
   skos:altLabel "torse"@en ;
   skos:altLabel "tortil"@fr ;
-  skos:broader hero:p2256 ;
+  skos:broader hero:p1987 ;
   skos:prefLabel "lakipunos"@fi ;
   hero-meta:wboMatch "9719" ;
 .
@@ -16539,6 +17859,7 @@ hero:p928
   rdf:type skos:Concept ;
   skos:altLabel "coulisse"@fr ;
   skos:altLabel "herse"@en ;
+  skos:altLabel "valpoort"@nl ;
   skos:broader hero:p522 ;
   skos:prefLabel "laskuportti [yleiskuvio]"@fi ;
   hero-meta:wboMatch "8085" ;
@@ -16549,17 +17870,21 @@ hero:p929
   skos:broader hero:p2826 ;
   skos:broader hero:p3144 ;
   skos:hiddenLabel "haussée"@fr ;
+  skos:hiddenLabel "ylennetysti"@fi ;
   skos:prefLabel "nostettu"@fi ;
 .
 hero:p93
   rdf:type skos:Concept ;
   skos:altLabel "Dolch"@de ;
+  skos:altLabel "alfanje"@es ;
   skos:altLabel "cutlass"@en ;
   skos:altLabel "dagger"@en ;
+  skos:altLabel "estoque"@pt ;
   skos:altLabel "falchion"@en ;
   skos:altLabel "glaive"@fr ;
   skos:altLabel "scimitar"@en ;
   skos:altLabel "seax"@en ;
+  skos:altLabel "tizona"@es ;
   skos:broader hero:p2285 ;
   skos:broader hero:p2942 ;
   skos:prefLabel "miekka"@fi ;
@@ -16570,8 +17895,12 @@ hero:p930
   skos:altLabel "fileteada"@es ;
   skos:altLabel "frangiato"@it ;
   skos:altLabel "perfilada"@es ;
+  skos:altLabel "perfilado"@pt ;
+  skos:altLabel "rebrassé"@fr ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "bordée"@fr ;
   skos:hiddenLabel "fimbrated"@en ;
+  skos:hiddenLabel "rebrassée"@fr ;
   skos:prefLabel "päärmätty"@fi ;
 .
 hero:p931
@@ -16580,6 +17909,7 @@ hero:p931
   skos:altLabel "gobony"@en ;
   skos:broader hero:p1693 ;
   skos:broader hero:p2377 ;
+  skos:hiddenLabel "componné"@fr ;
   skos:prefLabel "ruutujonoinen"@fi ;
 .
 hero:p932
@@ -16610,7 +17940,6 @@ hero:p95
   skos:altLabel "ciclamoro"@it ;
   skos:altLabel "cyclamore"@fr ;
   skos:altLabel "false roundel"@en ;
-  skos:altLabel "ring"@en ;
   skos:broader hero:p589 ;
   skos:prefLabel "rengas"@fi ;
   hero-meta:wboMatch "0912" ;
@@ -16627,12 +17956,15 @@ hero:p97
   skos:altLabel "fermo"@it ;
   skos:altLabel "posé"@fr ;
   skos:broader hero:p2010 ;
+  skos:hiddenLabel "arrêtée"@fr ;
+  skos:hiddenLabel "posée"@fr ;
   skos:prefLabel "seisova"@fi ;
 .
 hero:p98
   rdf:type skos:Concept ;
   skos:altLabel "flying"@en ;
   skos:altLabel "volando"@es ;
+  skos:altLabel "volante"@pt ;
   skos:broader hero:p2009 ;
   skos:prefLabel "lentävä"@fi ;
 .
