@@ -43,14 +43,14 @@ g.namespace_manager.bind('rdau', RDAU)
 
 
 if len(sys.argv) not in (4,5,6,7):
-    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI> [<vocab-id>] [<default-link-vocab>] [<lang-override>]" % sys.argv[0]
+    print >>sys.stderr, "Usage: %s <oai-pmh-provider> <set-name> <concept-namespace-URI> [<vocab-id>,<vocab-id>] [<default-link-vocab>] [<lang-override>]" % sys.argv[0]
     sys.exit(1)
 
 provider, setname, concns = sys.argv[1:4]
 if len(sys.argv) >= 5:
-    vocabid = sys.argv[4]
+    vocabids = sys.argv[4].split(',')
 else:
-    vocabid = None
+    vocabids = None
 
 if len(sys.argv) >= 6:
     linkvocabid = sys.argv[5]
@@ -153,15 +153,15 @@ for count, oaipmhrec in enumerate(recs):
 #    if count % 10 == 0: print >>sys.stderr, "count: %d" % count
     rec = oaipmhrec[1] # MARCXML record
 
-    if vocabid is not None:
-        if vocabid != rec['040']['f'].lower():
+    if vocabids is not None:
+        if rec['040']['f'].lower() not in vocabids:
             # wrong vocab id - skip this record
             continue
 
     if '889' in rec: # Melinda
         uri = URIRef(concns + rec['889']['c'])
     elif '024' in rec: # Seko / Fennica (proposed concepts with allocated URI)
-        if vocabid == 'seko' and 76316 <= int(rec['001'].value()) <= 77539:
+        if 'seko' in vocabids and 76316 <= int(rec['001'].value()) <= 77539:
             continue
         uri = URIRef(rec['024']['a'])
     else: # Fennica / Alma / Viola
