@@ -7,6 +7,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 juho: a skos:ConceptScheme ;
     dc:publisher "National Library of Finland"@en,
@@ -56,3 +57,9 @@ juho-meta:Concept a owl:Class;
     rdfs:label "JUHO-käsite"@fi, 
         "JUHO-begrepp"@sv, 
         "JUHO Concept"@en .
+
+yso-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "YSO-käsite"@fi, 
+        "YSO-begrepp"@sv, 
+        "YSO Concept"@en .
