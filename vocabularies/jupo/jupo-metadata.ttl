@@ -7,12 +7,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 jupo: a skos:ConceptScheme ;
     dc:publisher "National Library of Finland"@en,
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    dc:creator 
+    dc:creator
 
         "Kansalliskirjasto"@fi ,
         "Nationalbiblioteket i Finland"@sv ,
@@ -56,8 +57,13 @@ The ontology is based on the Finnish General Upper Ontology YSO. Some 2307 conce
 
 jupo-meta:Concept a owl:Class;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "JUPO-käsite"@fi, 
-        "JUPO-begrepp"@sv, 
+    rdfs:label "JUPO-käsite"@fi,
+        "JUPO-begrepp"@sv,
         "JUPO Concept"@en .
 
+yso-meta:concept a owl:class;
+    rdfs:subclassof skos:concept ;
+    rdfs:label "YSO-käsite"@fi,
+        "ALLFO-begrepp"@sv,
+        "YSO concept"@en .
 

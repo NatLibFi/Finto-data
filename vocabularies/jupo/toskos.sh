@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="jupo.ttl jupo-metadata.ttl yso-jupo.ttl"
+INFILES="jupo-metadata.ttl jupo.ttl yso-jupo.ttl"
 OUTFILE=jupo-skos.ttl
 
 SKOSIFYHOME="../../../Skosify"
