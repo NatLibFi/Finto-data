@@ -139,9 +139,3 @@ setup() {
   grep 'core#prefLabel' yso-paikat.nt | grep ' : ' | cut -d ' ' -f 3- | sed -e 's/ : [^)]*)/)/' >undisambiguated.txt
   ! grep -F -f undisambiguated.txt yso-paikat.nt
 }
-
-@test "ei kielikoodittomia labeleita" {
-  nolang="$(grep 'core#prefLabel' yso-paikat.nt | cut -d ' ' -f 3- | grep -v '@')"
-  echo $nolang
-  [ "$nolang" = "" ]
-}
