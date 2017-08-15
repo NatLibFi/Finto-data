@@ -23,7 +23,7 @@ OUTFILE=yso-paikat-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
 LOGFILE=skosify.log
-OPTS="--no-enrich-mappings"
+OPTS="--no-enrich-mappings --set-modified"
 
 $SKOSIFYHOME/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
 
