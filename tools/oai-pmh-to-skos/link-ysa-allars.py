@@ -4,8 +4,8 @@
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
 import sys
 
-if len(sys.argv) != 6:
-    print >>sys.stderr, "Usage: %s <ysa.ttl> <allars.ttl> <yso.ttl> <ysa-linked.ttl> <allars-linked.ttl>" % sys.argv[0]
+if len(sys.argv) != 7:
+    print >>sys.stderr, "Usage: %s <ysa.ttl> <allars.ttl> <yso.ttl> <yso-places.ttl> <ysa-linked.ttl> <allars-linked.ttl>" % sys.argv[0]
     sys.exit(1)
 
 ysa = Graph()
@@ -81,6 +81,10 @@ for ysaconc, allarsconcs in ysa_to_allars.items():
 yso = Graph()
 yso.parse(sys.argv[3], format='turtle')
 
+# add links to YSO Places
+ysop = Graph()
+ysop.parse(sys.argv[4], format='turtle')
+
 def link_concepts(s, p, o):
     if (s, OWL.deprecated, Literal('true', datatype=XSD.boolean)) in yso:
         return # ignore deprecated YSO concepts
@@ -95,16 +99,16 @@ def link_concepts(s, p, o):
         else:
             print >>sys.stderr, "YSO concept %s linked to nonexistent Allars concept %s" % (s,o)
 
-for s,o in yso.subject_objects(SKOS.closeMatch):
-    link_concepts(s, SKOS.closeMatch, o)
+for linkprop in (SKOS.closeMatch, SKOS.exactMatch):
+    for s,o in yso.subject_objects(linkprop):
+        link_concepts(s, linkprop, o)
+    for s,o in ysop.subject_objects(linkprop):
+        link_concepts(s, linkprop, o)
 
-for s,o in yso.subject_objects(SKOS.exactMatch):
-    link_concepts(s, SKOS.exactMatch, o)
-
-ysaout = open(sys.argv[4], 'w')
+ysaout = open(sys.argv[5], 'w')
 ysa.serialize(destination=ysaout, format='turtle')
 ysaout.close()
 
-allarsout = open(sys.argv[5], 'w')
+allarsout = open(sys.argv[6], 'w')
 allars.serialize(destination=allarsout, format='turtle')
 allarsout.close()

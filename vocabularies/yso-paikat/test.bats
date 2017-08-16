@@ -92,6 +92,10 @@ setup() {
   ! grep 'Karjalan tasavalta (' yso-paikat.nt
 }
 
+@test "ei Karvia-alkuisia joissa sulkutarkenne" {
+  ! grep 'Karvia (' yso-paikat.nt
+}
+
 @test "ei Kiihtelysvaara-alkuisia joissa sulkutarkenne" {
   ! grep 'Kiihtelysvaara (' yso-paikat.nt
 }
@@ -116,10 +120,6 @@ setup() {
   ! grep 'Pohjanmaa (' yso-paikat.nt
 }
 
-@test "ei Uuras-alkuisia joissa sulkutarkenne" {
-  ! grep 'Uuras (' yso-paikat.nt
-}
-
 @test "ei Yhdysvallat-alkuisia joissa sulkutarkenne" {
   ! grep 'Yhdysvallat (' yso-paikat.nt
 }
@@ -142,10 +142,4 @@ setup() {
 @test "ei pareja, joista vain toisella on tarkenne" {
   grep 'core#prefLabel' yso-paikat.nt | grep ' : ' | cut -d ' ' -f 3- | sed -e 's/ : [^)]*)/)/' >undisambiguated.txt
   ! grep -F -f undisambiguated.txt yso-paikat.nt
-}
-
-@test "ei kielikoodittomia labeleita" {
-  nolang="$(grep 'core#prefLabel' yso-paikat.nt | cut -d ' ' -f 3- | grep -v '@')"
-  echo $nolang
-  [ "$nolang" = "" ]
 }
