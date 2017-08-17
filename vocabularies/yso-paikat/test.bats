@@ -120,6 +120,10 @@ setup() {
   ! grep 'Pohjanmaa (' yso-paikat.nt
 }
 
+@test "ei Viena-alkuisia joissa sulkutarkenne" {
+  ! grep 'Viena (' yso-paikat.nt
+}
+
 @test "ei Yhdysvallat-alkuisia joissa sulkutarkenne" {
   ! grep 'Yhdysvallat (' yso-paikat.nt
 }
