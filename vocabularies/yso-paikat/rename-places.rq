@@ -32,9 +32,20 @@ CONSTRUCT {
 
   # reformat labels with type specifiers, e.g. "Vallinkoski (koski) (Imatra)" -> "Vallinkoski (Imatra : koski)"
   BIND(IF(CONTAINS(?l, ') ('),
-          STRLANG(CONCAT(STRBEFORE(?l, '('), '(', STRBEFORE(STRAFTER(?l, ') ('), ')'), ' : ', STRAFTER(STRBEFORE(?l, ') ('), '('), ')'), LANG(?l)),
+          STRLANG(
+            CONCAT(
+              STRBEFORE(?l, '('),
+              '(',
+              SUBSTR(STRAFTER(?l, ') ('), 1, STRLEN(STRAFTER(?l, ') (')) - 1),
+              ' : ',
+              STRAFTER(STRBEFORE(?l, ') ('), '('),
+              ')'
+             ), LANG(?l)),
           ?l)
-       AS ?label)
+       AS ?l2)
+
+  # strip parentheses from within qualifier
+  BIND(REPLACE(?l2, '\\((.*) \\(.+\\)( : .*)?\\)', '($1$2)') AS ?label)
 
   ?plc ?prop ?val .
   FILTER (?prop != skos:prefLabel)

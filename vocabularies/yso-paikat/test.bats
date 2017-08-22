@@ -132,6 +132,10 @@ setup() {
   ! grep 'core#prefLabel.* -- ' yso-paikat.nt
 }
 
+@test "ei sisäkkäisiä sulkeita labeleissa" {
+  ! grep 'core#prefLabel.*(.*(' yso-paikat.nt
+}
+
 @test "ei ketjuja huomautuksissa" {
   ! grep 'core#note.* -- ' yso-paikat.nt
 }

@@ -19,16 +19,17 @@ CONSTRUCT {
   ?plc skos:note ?allarsnote .
   ?plc skos:exactMatch ?ysac .
   ?plc skos:exactMatch ?allarsc .
+  ?plc dct:modified ?mod .
 } WHERE {
   ?ysac a ysameta:GeographicalConcept .
   ?ysac ?ysaprop ?ysaval .
+  ?ysac dct:modified ?ymod .
   BIND(IRI(REPLACE(STR(?ysac), STR(ysa:Y), STR(yso:p))) as ?plc)
   BIND(IF(isIRI(?ysaval), IRI(REPLACE(STR(?ysaval), STR(ysa:Y), STR(yso:p))), ?ysaval) AS ?newval)
   FILTER (?ysaprop != skos:inScheme)
   FILTER (?ysaprop != skos:exactMatch)
   FILTER (?ysaprop != skos:broadMatch)
   FILTER (?ysaprop != skos:narrowMatch)
-  FILTER (?ysaprop != dct:created)
   FILTER (?ysaprop != dct:modified)
   FILTER (?ysaprop != rdf:type)
 
@@ -41,10 +42,11 @@ CONSTRUCT {
     ?ysac skos:exactMatch ?allarsc .
     ?allarsc a allarsmeta:GeographicalConcept .
     ?allarsc skos:prefLabel ?allarspref .
+    ?allarsc dct:modified ?amod .
     OPTIONAL { ?allarsc skos:altLabel ?allarsalt . }
     OPTIONAL { ?allarsc skos:hiddenLabel ?allarshidden . }
     OPTIONAL { ?allarsc skos:note ?allarsnote . }
-    
   }
+  BIND(IF(BOUND(?amod), IF(?amod > ?ymod, ?amod, ?ymod), ?ymod) AS ?mod)
 }
 
