@@ -9,6 +9,7 @@ import re
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 OWL=Namespace("http://www.w3.org/2002/07/owl#")
 LAP=Namespace("http://urn.fi/URN:NBN:fi:au:lapponica:")
+DCT=Namespace("http://purl.org/dc/terms/")
 
 infile=sys.argv[1]
 
@@ -19,6 +20,7 @@ g = Graph()
 g.namespace_manager.bind('skos', SKOS)
 g.namespace_manager.bind('owl', OWL)
 g.namespace_manager.bind('lapponica', LAP)
+g.namespace_manager.bind('dct', DCT)
 
 # add custom types
 g.add((LAP.OrgConcept, RDF.type, OWL.Class))
@@ -31,6 +33,7 @@ g.add((LAP.GeoConcept, RDFS.label, Literal(u"Maantieteellinen asiasana", "fi")))
 
 labelmap = {}
 counter = 1
+replacemap = {}
 
 def label2uri(label):
   global counter
@@ -63,7 +66,9 @@ for line in open(infile):
   elif line.startswith('KT'):
     rel=SKOS.altLabel
     line = line[2:].strip()
-  elif line.startswith(u'KÄ'): continue
+  elif line.startswith(u'KÄ'):
+    replacemap[conc] = line[2:].strip()
+    continue
 
   if rel is None:
     label = line
@@ -92,6 +97,10 @@ for line in open(infile):
     target = label2uri(line)
   
   g.add((conc, rel, target))
-  
+
+for conc, label in replacemap.items():
+  target = label2uri(label)
+  g.add((conc, DCT.isReplacedBy, target))
+  g.add((conc, OWL.deprecated, Literal(True)))
   
 g.serialize(destination=sys.stdout, format='turtle')  
