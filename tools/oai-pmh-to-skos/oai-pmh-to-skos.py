@@ -123,6 +123,9 @@ def format_timestamp(ts):
         year += 2000
     mon = int(ts[2:4])
     day = int(ts[4:6])
+    if day == 0:
+        # fix invalid/inaccurate timestamps
+        day = 1
     if len(ts) > 6:
         h = int(ts[6:8])
         m = int(ts[8:10])
