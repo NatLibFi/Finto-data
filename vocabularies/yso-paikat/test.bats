@@ -65,6 +65,16 @@ setup() {
   ! grep '"Jyväskylän maalaiskunta (Vaajakoski)"' yso-paikat.nt
 }
 
+@test "Jänisjärvi (Karjala)" {
+  grep "Jänisjärvi (Karjala)" yso-paikat.nt
+  ! grep "Karjala (Jänisjärvi)" yso-paikat.nt
+}
+
+@test "Pyhäjärvi (Karjala)" {
+  grep "Pyhäjärvi (Karjala)" yso-paikat.nt
+  ! grep "Karjala (Pyhäjärvi)" yso-paikat.nt
+}
+
 @test "Vallinkoski (Imatra : koski)" {
   grep "Vallinkoski (Imatra : koski)" yso-paikat.nt
   ! grep "Vallinkoski (koski) (Imatra)" yso-paikat.nt
