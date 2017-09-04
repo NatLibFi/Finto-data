@@ -16,12 +16,16 @@ import pytz
 import urllib
 import urllib2
 import json 
+import re
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 RDAU=Namespace("http://rdaregistry.info/Elements/u/")
+
+# simple regex to perform basic validation of URIs/IRIs
+IRI = re.compile(r'^[^\x00-\x20<>"{}|^`\\]*$')
 
 class MARCXMLReader(object):
     """Returns the PyMARC record from the OAI structure for MARC XML"""
@@ -88,6 +92,11 @@ LINKLANGMAP = {
     'cilla': 'sv',
     'musa': 'fi',
     'ysa': 'fi',
+}
+
+RELCODE = {
+    'na': SKOS.exactMatch,
+    'nb': SKOS.closeMatch,
 }
 
 # temporary dicts to store label/URI mappings between passes
@@ -254,23 +263,30 @@ for count, oaipmhrec in enumerate(recs):
     
     # links to other authorities (750/751/762)
     for f in rec.get_fields('750') + rec.get_fields('751') + rec.get_fields('762'):
-        vid = f['2'] # target vocabulary id
+        if f.indicator2 == '7':
+            vid = f['2'] # target vocabulary id
+        else:
+            vid = 'vocab' + f.indicator2 # 0: LCSH, 1: LC Children's Subjects, 2: MesH etc.
         if vid is not None: vid = vid.lower()
+        mappingrel = RELCODE.get(f['w'], SKOS.closeMatch)
         linklang = LINKLANGMAP.get(vid, None)
-        if linklang is None:
-            if linkvocabid is not None and linkvocabid in LINKLANGMAP:
-                linklang = LINKLANGMAP[linkvocabid]
-                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0], linkvocabid)).encode('UTF-8')
+        if linklang is None: # not a vocabulary code used for internal linking between local MARC authority files
+            if f['0'] is not None:
+                if IRI.match(f['0']):
+                    g.add((uri, mappingrel, URIRef(f['0'])))
+                else:
+                    print >>sys.stderr, ("%s '%s': Bad link target URI '%s'" % (uri, prefLabel, f['0']))
+                continue
             elif vid == 'lcmpt':
                 target_uri = lookup(combined_label(f)[0])
                 if target_uri:
-                    if f['w'] == 'na':
-                        g.add((uri, SKOS.exactMatch, URIRef(target_uri)))
-                    elif f['w'] == 'nb':
-                        g.add((uri, SKOS.closeMatch, URIRef(target_uri)))
+                    g.add((uri, mappingrel, URIRef(target_uri)))
                 else:
                     print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0])).encode('UTF-8')
                 continue
+            elif linkvocabid is not None and linkvocabid in LINKLANGMAP:
+                linklang = LINKLANGMAP[linkvocabid]
+                print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s', assuming '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0], linkvocabid)).encode('UTF-8')
             else:
                 print >>sys.stderr, ("%s '%s': Unknown target vocabulary '%s' for linked term '%s'" % (uri, prefLabel, f['2'], combined_label(f)[0])).encode('UTF-8')
                 continue
