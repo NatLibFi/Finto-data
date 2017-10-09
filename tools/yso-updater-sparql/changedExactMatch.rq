@@ -1,0 +1,90 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
+PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
+PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
+PREFIX lcsh: <http://id.loc.gov/authorities/subjects/>
+#
+# Changed exactMatches for already existing concepts
+#
+CONSTRUCT {
+  ?ysoConcept yso-update:newExactMatch ?newExactMatch .
+  ?ysoConcept yso-update:removedExactMatch ?oldExactMatch .
+  ?ysoConcept rdfs:subClassOf ?changeCategory .
+}
+WHERE {
+  SERVICE <http://sparql.dev.finto.fi/skos-history/sparql> {
+    GRAPH ?versionHistoryGraph {
+      # parameters
+      VALUES ( ?versionHistoryGraph ?oldVersion ?newVersion ?changeCategory ) {
+        ( <http://www.yso.fi/onto/ysa/version> undef undef yso-update:muuttuneet )
+      }
+      # get the current and the previous version as default versions
+      ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
+      ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
+      # select the versions to actually use
+      BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
+      BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
+      # get the delta and via that the relevant graphs
+      ?delta a sh:SchemeDelta ;
+        sh:deltaFrom/dc:identifier ?oldVersionSelected ;
+        sh:deltaTo/dc:identifier ?newVersionSelected ;
+        sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
+        sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
+        dcterms:hasPart ?insertions ;
+        dcterms:hasPart ?deletions .
+      ?deletions a sh:SchemeDeltaDeletions ;
+        sh:usingNamedGraph/sd:name ?deletionsGraph .
+      ?insertions a sh:SchemeDeltaInsertions ;
+        sh:usingNamedGraph/sd:name ?insertionsGraph .
+    }
+    
+    {
+      # deleted exactMatches
+      GRAPH ?deletionsGraph {
+        ?concept skos:exactMatch ?oldExactMatch .
+        FILTER(STRSTARTS(STR(?oldExactMatch), STR(lcsh:)))
+      }
+    }
+    UNION
+    {
+      # newly inserted exactMatches
+      GRAPH ?insertionsGraph {
+        ?concept skos:exactMatch ?newExactMatch .
+        FILTER(STRSTARTS(STR(?newExactMatch), STR(lcsh:)))
+      }
+    }
+
+    # ... for already existing concepts
+    FILTER exists {
+      GRAPH ?oldVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+    # ... that still remain
+    FILTER exists {
+      GRAPH ?newVersionGraph {
+        ?concept ?p []
+      }
+    }
+    
+  }
+
+  # equivalent YSO concept to target
+  ?ysoConcept om:definedConcept ?concept .
+
+  # check that the YSO concept is not deprecated
+  FILTER NOT EXISTS {
+    ?ysoConcept a yso-meta:DeprecatedConcept .
+  }
+
+}
