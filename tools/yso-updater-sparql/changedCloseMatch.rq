@@ -11,7 +11,6 @@ PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
 PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
 PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
 PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
-PREFIX lcsh: <http://id.loc.gov/authorities/subjects/>
 #
 # Changed closeMatches for already existing concepts
 #
@@ -51,7 +50,7 @@ WHERE {
       # deleted closeMatches
       GRAPH ?deletionsGraph {
         ?concept skos:closeMatch ?oldCloseMatch .
-        FILTER(STRSTARTS(STR(?oldCloseMatch), STR(lcsh:)))
+        FILTER(STRSTARTS(STR(?oldCloseMatch), "http://id.loc.gov/authorities/subjects/"))
       }
     }
     UNION
@@ -59,7 +58,7 @@ WHERE {
       # newly inserted closeMatches
       GRAPH ?insertionsGraph {
         ?concept skos:closeMatch ?newCloseMatch .
-        FILTER(STRSTARTS(STR(?newCloseMatch), STR(lcsh:)))
+        FILTER(STRSTARTS(STR(?newCloseMatch), "http://id.loc.gov/authorities/subjects/"))
       }
     }
 

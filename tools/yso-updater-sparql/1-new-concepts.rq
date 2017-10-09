@@ -13,7 +13,6 @@ PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
 PREFIX sh: <http://purl.org/skos-history/>
 PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
-PREFIX lcsh: <http://id.loc.gov/authorities/subjects/>
 
 CONSTRUCT {
   ?newc om:definedConcept ?c .
@@ -56,12 +55,12 @@ WHERE {
       OPTIONAL { ?c dc:source ?source }
       OPTIONAL {
         ?c skos:closeMatch ?closeMatch .
-        FILTER(STRSTARTS(STR(?closeMatch), STR(lcsh:)))
+        FILTER(STRSTARTS(STR(?closeMatch), "http://id.loc.gov/authorities/subjects/"))
         BIND(STRLANG(CONCAT("YSAn LCSH-linkki: closeMatch <", STR(?closeMatch), ">"), "fi") AS ?matchNote)
       }
       OPTIONAL {
         ?c skos:exactMatch ?exactMatch .
-        FILTER(STRSTARTS(STR(?exactMatch), STR(lcsh:)))
+        FILTER(STRSTARTS(STR(?exactMatch), "http://id.loc.gov/authorities/subjects/"))
         BIND(STRLANG(CONCAT("YSAn LCSH-linkki: exactMatch <", STR(?exactMatch), ">"), "fi") AS ?matchNote)
       }
       OPTIONAL { ?ysagroup skos:member ?c }
