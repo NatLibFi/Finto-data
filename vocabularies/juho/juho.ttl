@@ -815,7 +815,13 @@ juho:p10173
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1911 ;
-  skos:prefLabel "ohjaus (suunnan säätely)"@fi ;
+  skos:prefLabel "ohjaus (suuntaaminen)"@fi ;
+  juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:related juho:p2810 ;
+  juho-meta:related juho:p2875 ;
+  juho-meta:related juho:p3793 ;
+  juho-meta:related juho:p6662 ;
+  juho-meta:related juho:p6722 ;
 .
 juho:p10174
   rdf:type juho-meta:Concept ;
@@ -827,7 +833,6 @@ juho:p10174
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p84 ;
-  juho-meta:related juho:p3033 ;
   juho-meta:related juho:p5397 ;
   juho-meta:related juho:p6029 ;
 .
@@ -1381,10 +1386,11 @@ juho:p10339
 .
 juho:p10348
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p4861 ;
   skos:prefLabel "tupakka (nautintoainekasvit)"@fi ;
-  juho-meta:related juho:p1910 ;
+  yso-meta:deprecatedReplacedBy juho:p1910 ;
 .
 juho:p1035
   rdf:type juho-meta:Concept ;
@@ -4681,20 +4687,19 @@ juho:p1119
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p5099 ;
-  skos:prefLabel "vesiviljely"@fi ;
+  skos:prefLabel "vesiviljely (kalatalous)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010308" ;
   juho-meta:hasPoiminta "eurodoc" ;
   juho-meta:hasPoiminta "mmm" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:hasSelite "1) Vesieliöiden (esim. kalojen, äyriäisten, vesikasvien) kasvattaminen vesissä. 2) Kasvien viljelymenetelmä, jossa multaa käytetään kasvualustassa osittain tai ei lainkaan" ;
-  juho-meta:hasThematicGroup juho:p30 ;
+  juho-meta:hasSelite "Vesieliöiden (esim. kalojen, äyriäisten) kasvattaminen vesissä." ;
   juho-meta:hasThematicGroup juho:p458 ;
-  juho-meta:hasThematicGroup juho:p771 ;
   juho-meta:related juho:p1116 ;
   juho-meta:related juho:p1117 ;
   juho-meta:related juho:p1118 ;
   juho-meta:related juho:p1120 ;
+  juho-meta:related juho:p14080 ;
 .
 juho:p11190
   rdf:type juho-meta:Concept ;
@@ -6047,9 +6052,9 @@ juho:p11516
   juho-meta:hasThematicGroup juho:p8 ;
 .
 juho:p11517
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1207 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "ympäristönsuojelusihteerit"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011217" ;
@@ -6251,7 +6256,7 @@ juho:p11558
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1432 ;
-  skos:prefLabel "tyyli"@fi ;
+  skos:prefLabel "tyyli (ominaisuudet)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010307" ;
   juho-meta:hasPoiminta "vnk" ;
@@ -7136,8 +7141,8 @@ juho:p11792
   juho-meta:hasPoiminta "vm" ;
 .
 juho:p11796
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   skos:prefLabel "kuntien yhdistyminen"@fi ;
   juho-meta:hasPaivitetty "20010711" ;
   juho-meta:hasPoiminta "sm" ;
@@ -7566,8 +7571,10 @@ juho:p11920
 juho:p11921
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p10623 ;
-  skos:prefLabel "työn jakaminen"@fi ;
+  rdfs:subClassOf juho:p2746 ;
+  owl:equivalentClass juho:p11921 ;
+  skos:altLabel "työn jakaminen"@fi ;
+  skos:prefLabel "työn uusjako"@fi ;
   juho-meta:hasPaivitetty "20010817" ;
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasPoiminta "tem" ;
@@ -7846,8 +7853,8 @@ juho:p11983
   juho-meta:hasThematicGroup juho:p8 ;
 .
 juho:p11984
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p801 ;
   skos:prefLabel "pakolaiskeskukset"@fi ;
   juho-meta:hasPaivitetty "20010815" ;
@@ -7883,7 +7890,7 @@ juho:p11987
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p14387 ;
-  skos:prefLabel "raamattu"@fi ;
+  skos:prefLabel "Raamattu"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031027" ;
   juho-meta:hasPoiminta "opm" ;
@@ -8743,7 +8750,7 @@ juho:p12054
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p2833 ;
-  skos:altLabel "psyykkiset tekijät" ;
+  skos:altLabel "psyykkiset tekijät"@fi ;
   skos:prefLabel "psykologiset tekijät"@fi ;
   juho-meta:hasPaivitetty "20010815" ;
   juho-meta:hasPoiminta "stm" ;
@@ -9755,7 +9762,7 @@ juho:p12139
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2240 ;
-  skos:prefLabel "tiede"@fi ;
+  skos:prefLabel "tiede (ilmiöt)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -9820,9 +9827,9 @@ juho:p12143
   juho-meta:related juho:p3738 ;
 .
 juho:p12144
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p482 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   owl:equivalentClass yso:p2700 ;
   skos:altLabel "julkaiseminen"@fi ;
   skos:prefLabel "julkaisutoiminta"@fi ;
@@ -11098,9 +11105,9 @@ juho:p12496
   juho-meta:hasPoiminta "vm" ;
 .
 juho:p12515
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "piirtäjät"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011213" ;
@@ -12609,9 +12616,9 @@ juho:p1297
 juho:p1298
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p1277 ;
   owl:equivalentClass yso:p12733 ;
   skos:altLabel "kansanterveystyö"@fi ;
-  skos:altLabel "terveysneuvonta"@fi ;
   skos:prefLabel "terveyskasvatus"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
@@ -12621,7 +12628,7 @@ juho:p1298
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p12096 ;
-  juho-meta:related juho:p1277 ;
+  juho-meta:related juho:p14079 ;
 .
 juho:p12988
   rdf:type juho-meta:Concept ;
@@ -12897,8 +12904,9 @@ juho:p1312
   juho-meta:related juho:p2342 ;
 .
 juho:p1313
-  rdf:type yso-meta:DeprecatedConcept ;
+  rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p2452 ;
   owl:equivalentClass yso:p20733 ;
   skos:prefLabel "EU-oikeus"@fi ;
   juho-meta:hasPaivitetty "20060929" ;
@@ -12906,7 +12914,6 @@ juho:p1313
   juho-meta:hasPoiminta "VM" ;
   juho-meta:hasPoiminta "VNK" ;
   juho-meta:hasThematicGroup juho:p25 ;
-  yso-meta:deprecatedReplacedBy juho:p2452 ;
 .
 juho:p13138
   rdf:type juho-meta:Concept ;
@@ -13294,6 +13301,7 @@ juho:p13324
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p1009 ;
+  owl:equivalentClass yso:p21890 ;
   skos:altLabel "etsivät"@fi ;
   skos:prefLabel "rikosetsivät"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
@@ -13342,9 +13350,9 @@ juho:p13340
   juho-meta:hasPoiminta "stm" ;
 .
 juho:p13347
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p812 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "ohjelmatyöntekijät"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
@@ -14217,7 +14225,7 @@ juho:p13843
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p22929 ;
-  skos:prefLabel "ontologiat"@fi ;
+  skos:prefLabel "ontologiat (tiedonhallinta)"@fi ;
   juho-meta:hasPaivitetty "20100527" ;
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasThematicGroup juho:p39 ;
@@ -14235,6 +14243,7 @@ juho:p13845
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p25147 ;
+  skos:altLabel "vanhusten palvelut"@fi ;
   skos:prefLabel "vanhuspalvelut"@fi ;
   juho-meta:hasPaivitetty "20110309" ;
   juho-meta:hasPoiminta "stm" ;
@@ -15078,7 +15087,7 @@ juho:p13920
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p22685 ;
-  skos:altLabel "maastakäännytys  [p3931]" ;
+  skos:altLabel "maastakäännytys"@fi ;
   skos:prefLabel "maasta käännyttäminen"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20090511" ;
@@ -15356,7 +15365,7 @@ juho:p13944
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p465 ;
   owl:equivalentClass yso:p26930 ;
-  skos:prefLabel "yhdyskuntaseuraamustoimisto"@fi ;
+  skos:prefLabel "yhdyskuntaseuraamustoimistot"@fi ;
   juho-meta:hasPaivitetty "20100415" ;
   juho-meta:hasPoiminta "om" ;
   juho-meta:hasSelite "Rikosseuraamusalueet jakaantuvat rikosseuraamuskeskuksiin (Rike), joiden alaisuudessa toimii vankiloita ja yhdyskuntaseuraamustoimistoja." ;
@@ -15591,9 +15600,8 @@ juho:p13965
   juho-meta:hasThematicGroup juho:p262 ;
 .
 juho:p13966
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho:p2649 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "rikosseuraamuslaitoksen keskushallintoyksikkö"@fi ;
   juho-meta:hasPaivitetty "20100415" ;
   juho-meta:hasPoiminta "om" ;
@@ -15608,7 +15616,6 @@ juho:p13966
 juho:p13967
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p959 ;
   owl:equivalentClass yso:p27073 ;
   skos:prefLabel "seutukaupungit"@fi ;
   juho-meta:hasPaivitetty "20121212" ;
@@ -15722,9 +15729,8 @@ juho:p13977
   juho-meta:hasThematicGroup juho:p80 ;
 .
 juho:p13978
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho:p2649 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "rikosseuraamuslaitoksen terveydenhuoltoyksikkö"@fi ;
   juho-meta:hasPaivitetty "20100415" ;
   juho-meta:hasPoiminta "om" ;
@@ -16017,8 +16023,8 @@ juho:p14000
   juho-meta:hasThematicGroup juho:p75 ;
 .
 juho:p14001
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p6303 ;
   skos:prefLabel "positiivinen syrjintä"@fi ;
   juho-meta:hasPaivitetty "20110812" ;
@@ -16132,7 +16138,7 @@ juho:p14012
 juho:p14013
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho:p4778 ;
-  skos:altLabel "yhteistoiminta-asiamiehet" ;
+  skos:altLabel "yhteistoiminta-asiamiehet"@fi ;
   skos:prefLabel "YT-asiamiehet"@fi ;
   juho-meta:hasPaivitetty "20160419" ;
 .
@@ -16199,7 +16205,7 @@ juho:p14020
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho:p13838 ;
   owl:equivalentClass yso:p3394 ;
-  skos:prefLabel "vaestönkasvu"@fi ;
+  skos:prefLabel "väestönkasvu"@fi ;
   juho-meta:hasPaivitetty "20160419" ;
   juho-meta:hasThematicGroup juho:p75 ;
   juho-meta:related juho:p10441 ;
@@ -16304,6 +16310,15 @@ juho:p14033
   skos:prefLabel "työ- ja elinkeinotoimistot"@fi ;
   juho-meta:hasPaivitetty "20160419" ;
   juho-meta:related juho:p8209 ;
+.
+juho:p14034
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p3919 ;
+  skos:altLabel "norminpurku"@fi ;
+  skos:prefLabel "deregulaatio"@fi ;
+  juho-meta:hasThematicGroup juho:p25 ;
+  juho-meta:related juho:p3280 ;
 .
 juho:p14035
   rdf:type juho-meta:Concept ;
@@ -16650,6 +16665,75 @@ juho:p14075
   juho-meta:hasPaivitetty "20160419" ;
   juho-meta:hasThematicGroup juho:p511 ;
   juho-meta:related juho:p2598 ;
+.
+juho:p14076
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p3971 ;
+  skos:prefLabel "testit"@fi ;
+  juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:hasThematicGroup juho:p39 ;
+.
+juho:p14077
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p2101 ;
+  skos:prefLabel "maksulaitokset"@fi ;
+  juho-meta:hasThematicGroup juho:p63 ;
+  juho-meta:related juho:p1586 ;
+.
+juho:p14078
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p7067 ;
+  skos:prefLabel "haitalliset aineet"@fi ;
+  juho-meta:hasThematicGroup juho:p35 ;
+  juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:hasThematicGroup juho:p8 ;
+  juho-meta:related juho:p1598 ;
+  juho-meta:related juho:p5324 ;
+.
+juho:p14079
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p3102 ;
+  owl:equivalentClass yso:p7094 ;
+  skos:altLabel "terveysvalistus"@fi ;
+  skos:prefLabel "terveysneuvonta"@fi ;
+  juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:related juho:p1298 ;
+.
+juho:p14080
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p1117 ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p29426 ;
+  skos:altLabel "vesiviljely (kasvinviljely)"@fi ;
+  skos:prefLabel "hydroviljely"@fi ;
+  juho-meta:hasSelite "Kasvien viljelymeetlmä, jossa multaa käytetään kasvualustassa osittain tai ei lainkaan."@fi ;
+  juho-meta:hasThematicGroup juho:p458 ;
+  juho-meta:related juho:p1119 ;
+.
+juho:p14081
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p23839 ;
+  skos:prefLabel "ohjaus (neuvominen)"@fi ;
+.
+juho:p14082
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf yso:p27716 ;
+  skos:prefLabel "digitointi"@fi ;
+  juho-meta:hasThematicGroup juho:p63 ;
+.
+juho:p14083
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p2441 ;
+  skos:prefLabel "lunastuslauseke"@fi ;
+  juho-meta:hasSelite "Lunastuslauseke termiä käytetään kohdentamaan asia osakeyhtiölakiin laajan lunastusoikeus-käsitteen sijaan."@fi ;
+  juho-meta:hasThematicGroup juho:p49 ;
 .
 juho:p1415
   rdf:type juho-meta:Concept ;
@@ -18411,7 +18495,6 @@ juho:p1598
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2361 ;
-  skos:altLabel "haitalliset aineet"@fi ;
   skos:prefLabel "vaaralliset aineet"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020731" ;
@@ -19085,7 +19168,7 @@ juho:p1694
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2921 ;
   skos:altLabel "uskontokunnat"@fi ;
-  skos:prefLabel "uskonnot"@fi ;
+  skos:prefLabel "uskonnot (opit)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031021" ;
   juho-meta:hasPoiminta "hare" ;
@@ -21834,7 +21917,7 @@ juho:p1910
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p4845 ;
-  skos:prefLabel "tupakka (nautintoaineet)"@fi ;
+  skos:prefLabel "tupakka"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020814" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -26740,7 +26823,7 @@ juho:p2241
   skos:altLabel "nettikauppa"@fi ;
   skos:altLabel "sähköinen kaupankäynti"@fi ;
   skos:altLabel "sähköinen kauppa"@fi ;
-  skos:prefLabel "verkkokauppa"@fi ;
+  skos:prefLabel "verkkokauppa (verkkoliiketoiminta)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040518" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -27595,7 +27678,7 @@ juho:p2304
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p11243 ;
-  skos:prefLabel "tullitariffi"@fi ;
+  skos:prefLabel "tullitariffit"@fi ;
   juho-meta:hasPaivitetty "20020123" ;
   juho-meta:hasPoiminta "eurodoc" ;
   juho-meta:hasPoiminta "tem" ;
@@ -28574,7 +28657,6 @@ juho:p2371
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p10817 ;
-  skos:altLabel "ulosmittaus"@fi ;
   skos:prefLabel "ulosotto"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020916" ;
@@ -29877,8 +29959,8 @@ juho:p2451
 juho:p2452
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p2505 ;
   owl:equivalentClass yso:p12349 ;
-  skos:altLabel "EU-oikeus"@fi ;
   skos:prefLabel "eurooppaoikeus"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20060929" ;
@@ -29892,7 +29974,6 @@ juho:p2452
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasSelite "Eurooppaoikeus koskee sekä Euroopan unionin oikeutta että Euroopan neuvoston piirissä syntynyttä normistoa. " ;
   juho-meta:hasThematicGroup juho:p25 ;
-  juho-meta:related juho:p2493 ;
   juho-meta:related juho:p767 ;
 .
 juho:p2453
@@ -30474,8 +30555,8 @@ juho:p2492
 juho:p2493
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p1313 ;
   owl:equivalentClass yso:p12348 ;
-  skos:altLabel "EU-oikeus"@fi ;
   skos:prefLabel "EY-oikeus"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020806" ;
@@ -30484,8 +30565,8 @@ juho:p2493
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasPoiminta "vnk" ;
+  juho-meta:hasSelite "Tarkoittaa Euroopan yhteisöjen (Euroopan yhteisö, Euroopan atomienergiayhteisö, Euroopan hiili- ja teräsyhteisö) säädöksiä."@fi ;
   juho-meta:hasThematicGroup juho:p25 ;
-  juho-meta:related juho:p2452 ;
   juho-meta:related juho:p767 ;
 .
 juho:p2494
@@ -34530,9 +34611,9 @@ juho:p2755
   juho-meta:hasThematicGroup juho:p30 ;
 .
 juho:p2756
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p523 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "Varustamoliikelaitos"@fi ;
   juho-meta:hasPaivitetty "20071004" ;
   juho-meta:hasPoiminta "lvm" ;
@@ -35609,7 +35690,7 @@ juho:p2822
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p8471 ;
-  skos:altLabel "testit"@fi ;
+  skos:altLabel "testaaminen"@fi ;
   skos:prefLabel "testaus"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
@@ -35620,9 +35701,10 @@ juho:p2822
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasPoiminta "vnk" ;
-  juho-meta:hasSelite "POISTA TÄMÄ TERMI " ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:hasThematicGroup juho:p30 ;
+  juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:related juho:p14076 ;
   juho-meta:related juho:p3175 ;
 .
 juho:p2823
@@ -38660,7 +38742,6 @@ juho:p3016
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p210 ;
-  juho-meta:related juho:p3114 ;
 .
 juho:p3017
   rdf:type juho-meta:Concept ;
@@ -38834,14 +38915,19 @@ juho:p3029
 juho:p303
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p381 ;
   owl:equivalentClass yso:p10821 ;
-  skos:altLabel "osakeanti"@fi ;
-  skos:prefLabel "emissiot"@fi ;
+  skos:prefLabel "emissiot (taloustiede)"@fi ;
+  skos:prefLabel "emissiot (ympäristöoikeus)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020130" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vm" ;
+  juho-meta:hasSelite "Emissio eli päästö, ympäristöoikeudessa saastepäästön nimitys."@fi ;
+  juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:hasThematicGroup juho:p63 ;
+  juho-meta:hasThematicGroup juho:p8 ;
   juho-meta:related juho:p296 ;
 .
 juho:p3030
@@ -40597,9 +40683,7 @@ juho:p3133
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031013" ;
   juho-meta:hasPoiminta "um" ;
-  juho-meta:hasSelite "Indeksoi novellityypit esim. tieteiskirjallisuus bnovellit. Katso genret termin kaunokirjallisuus yhteydestä " ;
   juho-meta:hasThematicGroup juho:p210 ;
-  juho-meta:related juho:p3114 ;
 .
 juho:p3134
   rdf:type juho-meta:Concept ;
@@ -41443,12 +41527,14 @@ juho:p3185
 .
 juho:p3186
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p355 ;
   skos:prefLabel "kumoaminen"@fi ;
   juho-meta:hasPaivitetty "20030924" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p210 ;
+  yso-meta:deprecatedReplacedBy juho:p2962 ;
 .
 juho:p3187
   rdf:type juho-meta:Concept ;
@@ -43449,8 +43535,8 @@ juho:p3313
   juho-meta:related juho:p1083 ;
 .
 juho:p3314
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p3546 ;
   skos:prefLabel "metsästys (alkutuotanto)"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -46983,8 +47069,8 @@ juho:p3745
   juho-meta:related juho:p3744 ;
 .
 juho:p3746
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p224 ;
   skos:prefLabel "mittarit (mittauslaitteet)"@fi ;
   yso-meta:deprecatedReplacedBy juho:p2034 ;
@@ -48618,7 +48704,6 @@ juho:p3930
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2658 ;
-  skos:altLabel "kansanterveystyö"@fi ;
   skos:prefLabel "terveydenhuolto"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031016" ;
@@ -53346,6 +53431,7 @@ juho:p4566
 juho:p4569
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p14076 ;
   owl:equivalentClass yso:p17246 ;
   skos:prefLabel "kuntotestit"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -53358,8 +53444,7 @@ juho:p457
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p11309 ;
-  skos:altLabel "siemenet"@fi ;
-  skos:prefLabel "siemen"@fi ;
+  skos:prefLabel "siemenet"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010420" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -54057,7 +54142,6 @@ juho:p4643
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p17008 ;
-  skos:altLabel "maalit ja lakat"@fi ;
   skos:prefLabel "lakat"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010228" ;
@@ -54069,7 +54153,6 @@ juho:p4644
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p8671 ;
-  skos:altLabel "maalit ja lakat"@fi ;
   skos:prefLabel "maalit"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010228" ;
@@ -55054,6 +55137,8 @@ juho:p4768
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p4479 ;
+  skos:altLabel "yhteinen raha"@fi ;
+  skos:altLabel "yhteinen valuutta"@fi ;
   skos:prefLabel "yhtenäisvaluutta"@fi ;
   juho-meta:hasPaivitetty "20020121" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -55094,6 +55179,7 @@ juho:p477
 .
 juho:p4770
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p4479 ;
   skos:altLabel "yhteinen valuutta"@fi ;
@@ -55101,6 +55187,7 @@ juho:p4770
   juho-meta:hasPaivitetty "20040621" ;
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p63 ;
+  yso-meta:deprecatedReplacedBy juho:p4768 ;
 .
 juho:p4771
   rdf:type juho-meta:Concept ;
@@ -56752,8 +56839,8 @@ juho:p4964
   juho-meta:hasPoiminta "um" ;
 .
 juho:p4965
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13240 ;
   skos:prefLabel "näyttökokeet"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -59895,7 +59982,6 @@ juho:p5395
   juho-meta:hasPaivitetty "20010305" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p84 ;
-  juho-meta:related juho:p3033 ;
   juho-meta:related juho:p5396 ;
   juho-meta:related juho:p5397 ;
 .
@@ -60448,8 +60534,8 @@ juho:p5478
   juho-meta:related juho:p1124 ;
 .
 juho:p5482
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p3215 ;
   skos:altLabel "Pohjois-Korea"@fi ;
   skos:prefLabel "Korean kansantasavalta"@fi ;
@@ -61923,9 +62009,9 @@ juho:p5736
   juho-meta:related juho:p5600 ;
 .
 juho:p5738
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "postivirkailijat"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
@@ -61982,6 +62068,7 @@ juho:p5742
 .
 juho:p5743
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2700 ;
   skos:prefLabel "julkaisutoiminta"@fi ;
@@ -61997,6 +62084,7 @@ juho:p5743
   juho-meta:related juho:p5742 ;
   juho-meta:related juho:p7787 ;
   juho-meta:related juho:p8859 ;
+  yso-meta:deprecatedReplacedBy juho:p12144 ;
 .
 juho:p5744
   rdf:type juho-meta:Concept ;
@@ -62149,7 +62237,7 @@ juho:p5770
   juho-meta:related juho:p6035 ;
 .
 juho:p5771
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p5575 ;
   skos:prefLabel "uusmedia (tuotokset)"@fi ;
@@ -62528,7 +62616,7 @@ juho:p5840
   juho-meta:hasThematicGroup juho:p80 ;
 .
 juho:p5841
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p19245 ;
   skos:prefLabel "työpajat"@fi ;
@@ -62537,6 +62625,7 @@ juho:p5841
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p80 ;
+  yso-meta:deprecatedReplacedBy juho:p5840 ;
 .
 juho:p5842
   rdf:type juho-meta:Concept ;
@@ -63253,7 +63342,7 @@ juho:p5988
 juho:p5989
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p392 ;
+  rdfs:subClassOf juho:p3771 ;
   skos:prefLabel "terapia"@fi ;
   juho-meta:hasPaivitetty "20010817" ;
   juho-meta:hasPoiminta "stm" ;
@@ -63360,7 +63449,7 @@ juho:p6
 juho:p600
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p21510 ;
+  owl:equivalentClass yso:p1808 ;
   skos:prefLabel "musiikki"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
@@ -63687,7 +63776,7 @@ juho:p6040
 juho:p6043
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p3086 ;
+  rdfs:subClassOf juho:p2940 ;
   skos:altLabel "Suomen Punainen Risti"@fi ;
   skos:prefLabel "SPR"@fi ;
   juho-meta:hasAsiasanalaji "kotim.org" ;
@@ -67862,7 +67951,7 @@ juho:p6681
 juho:p6682
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p6250 ;
+  rdfs:subClassOf juho:p11 ;
   skos:prefLabel "tuotantopanokset"@fi ;
   juho-meta:hasPaivitetty "20040621" ;
   juho-meta:hasPoiminta "mmm" ;
@@ -69563,7 +69652,7 @@ juho:p6844
 juho:p6845
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p3086 ;
+  rdfs:subClassOf juho:p2940 ;
   skos:prefLabel "taiteilijajärjestöt"@fi ;
   juho-meta:hasPaivitetty "20031015" ;
   juho-meta:hasPoiminta "opm" ;
@@ -69573,12 +69662,11 @@ juho:p6845
 juho:p6846
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p3086 ;
+  rdfs:subClassOf juho:p2940 ;
   skos:prefLabel "tieteelliset järjestöt"@fi ;
   juho-meta:hasPaivitetty "20031016" ;
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p39 ;
-  juho-meta:related juho:p3086 ;
 .
 juho:p6849
   rdf:type juho-meta:Concept ;
@@ -69833,8 +69921,8 @@ juho:p6883
   juho-meta:related juho:p6882 ;
 .
 juho:p6885
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p17058 ;
   skos:prefLabel "perheiden yhdistäminen"@fi ;
   juho-meta:hasPaivitetty "20010815" ;
@@ -70661,8 +70749,8 @@ juho:p7004
   juho-meta:related juho:p9853 ;
 .
 juho:p7005
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p14025 ;
   skos:prefLabel "metro (liikenneväylät)"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -70758,7 +70846,7 @@ juho:p7012
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p6415 ;
-  skos:prefLabel "uskonto"@fi ;
+  skos:prefLabel "uskonto (uskominen)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040621" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -71928,7 +72016,7 @@ juho:p72
   juho-meta:related juho:p74 ;
 .
 juho:p720
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2448 ;
   skos:altLabel "vanhempainloma"@fi ;
@@ -71948,6 +72036,7 @@ juho:p720
   juho-meta:related juho:p6105 ;
   juho-meta:related juho:p721 ;
   juho-meta:related juho:p8723 ;
+  yso-meta:deprecatedReplacedBy juho:p721 ;
 .
 juho:p7201
   rdf:type juho-meta:Concept ;
@@ -71975,6 +72064,7 @@ juho:p721
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p8664 ;
+  skos:altLabel "vanhempainloma"@fi ;
   skos:prefLabel "vanhempainvapaa"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040705" ;
@@ -72022,6 +72112,12 @@ juho:p7225
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p178 ;
   skos:prefLabel "ohjaus (neuvominen)"@fi ;
+  juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:related juho:p10995 ;
+  juho-meta:related juho:p3674 ;
+  juho-meta:related juho:p4840 ;
+  juho-meta:related juho:p647 ;
+  juho-meta:related juho:p8952 ;
 .
 juho:p7233
   rdf:type juho-meta:Concept ;
@@ -72460,7 +72556,7 @@ juho:p7305
 juho:p7306
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p20899 ;
+  owl:equivalentClass yso:p11951 ;
   skos:prefLabel "mediataide"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031022" ;
@@ -73540,8 +73636,8 @@ juho:p7482
   juho-meta:hasPoiminta "um" ;
 .
 juho:p7483
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2485 ;
   skos:prefLabel "mallit (samaistumismallit)"@fi ;
   yso-meta:deprecatedReplacedBy yso:p510 ;
@@ -75241,7 +75337,7 @@ juho:p7734
 juho:p7735
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p3086 ;
+  rdfs:subClassOf juho:p2940 ;
   skos:prefLabel "Finpro"@fi ;
   juho-meta:hasAsiasanalaji "kotim.org" ;
   juho-meta:hasPaivitetty "20011025" ;
@@ -75731,7 +75827,8 @@ juho:p7835
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p88 ;
-  skos:prefLabel "kuljetusyritykset" ;
+  skos:altLabel "kuljetusyritykset"@fi ;
+  skos:prefLabel "kuljetusliikkeet"@fi ;
   juho-meta:hasPaivitetty "20010711" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
@@ -76131,6 +76228,7 @@ juho:p7900
 .
 juho:p7902
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
   rdfs:subClassOf juho:p2948 ;
@@ -76138,6 +76236,7 @@ juho:p7902
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
   juho-meta:hasPoiminta "stm" ;
+  yso-meta:deprecatedReplacedBy juho:p2948 ;
 .
 juho:p7903
   rdf:type juho-meta:Concept ;
@@ -77327,7 +77426,6 @@ juho:p812
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1075 ;
-  skos:altLabel "työläiset"@fi ;
   skos:prefLabel "työntekijät"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020809" ;
@@ -77793,7 +77891,8 @@ juho:p8183
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p15459 ;
-  skos:prefLabel "urheilujoukkueet"@fi ;
+  skos:altLabel "urheilujoukkueet"@fi ;
+  skos:prefLabel "joukkueet (urheilu)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031020" ;
   juho-meta:hasPoiminta "opm" ;
@@ -78149,9 +78248,9 @@ juho:p8231
   juho-meta:related juho:p8232 ;
 .
 juho:p8232
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "sanomaviestittäjät"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011218" ;
@@ -79062,8 +79161,8 @@ juho:p835
   juho-meta:related juho:p2778 ;
 .
 juho:p8350
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p524 ;
   skos:prefLabel "ohjaus (opastaminen)"@fi ;
   yso-meta:deprecatedReplacedBy juho:p7225 ;
@@ -79621,6 +79720,7 @@ juho:p8517
 .
 juho:p8518
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p25147 ;
   skos:altLabel "vanhuspalvelut"@fi ;
@@ -79630,6 +79730,7 @@ juho:p8518
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p3096 ;
   juho-meta:related juho:p3413 ;
+  yso-meta:deprecatedReplacedBy juho:p13845 ;
 .
 juho:p852
   rdf:type juho-meta:Concept ;
@@ -80055,8 +80156,8 @@ juho:p8587
   juho-meta:related juho:p3462 ;
 .
 juho:p8598
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p801 ;
   skos:prefLabel "Poliisin tekniikkakeskus"@fi ;
   juho-meta:hasAsiasanalaji "kotim.org" ;
@@ -81791,8 +81892,7 @@ juho:p8902
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p3128 ;
-  skos:altLabel "kuluttajavalituslautakunta"@fi ;
-  skos:prefLabel "kuluttajavalituslautakunta"@fi ;
+  skos:prefLabel "Kuluttajariitalautakunta"@fi ;
   juho-meta:hasAsiasanalaji "kotim.org" ;
   juho-meta:hasPaivitetty "20011025" ;
   juho-meta:hasPoiminta "om" ;
@@ -83727,7 +83827,7 @@ juho:p931
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p4641 ;
-  skos:prefLabel "oppaat"@fi ;
+  skos:prefLabel "oppaat (teokset)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031027" ;
   juho-meta:hasPoiminta "lvm" ;
@@ -83955,9 +84055,9 @@ juho:p9364
   juho-meta:hasThematicGroup juho:p35 ;
 .
 juho:p9367
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p2286 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "perushyödykkeet (palvelut)"@fi ;
   yso-meta:deprecatedReplacedBy juho:p2324 ;
 .
@@ -85641,12 +85741,14 @@ juho:p973
 .
 juho:p9738
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
   skos:prefLabel "rullajärjestelijät"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
   juho-meta:hasPoiminta "stm" ;
+  yso-meta:deprecatedReplacedBy juho:p1006 ;
 .
 juho:p9739
   rdf:type juho-meta:Concept ;
@@ -86158,14 +86260,10 @@ juho:p9819
 .
 juho:p982
   rdf:type juho-meta:Concept ;
-  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p13838 ;
-  owl:equivalentClass juho:p982 ;
   owl:equivalentClass yso:p3215 ;
   skos:altLabel "maat"@fi ;
   skos:prefLabel "valtiot (alueelliset kokonaisuudet)"@fi ;
-  skos:prefLabel "valtiot (julkisyhteisöt)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020812" ;
   juho-meta:hasPaivitetty "20160419" ;
@@ -86457,7 +86555,7 @@ juho:p989
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1912 ;
-  skos:prefLabel "ohjaus (esityksen)"@fi ;
+  skos:prefLabel "ohjaus (taide)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031014" ;
   juho-meta:hasPoiminta "opm" ;
@@ -86466,18 +86564,7 @@ juho:p989
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasPoiminta "vnk" ;
-  juho-meta:hasThematicGroup juho:p210 ;
-  juho-meta:related juho:p10995 ;
-  juho-meta:related juho:p2810 ;
-  juho-meta:related juho:p2875 ;
-  juho-meta:related juho:p3542 ;
-  juho-meta:related juho:p3674 ;
-  juho-meta:related juho:p3793 ;
-  juho-meta:related juho:p4840 ;
-  juho-meta:related juho:p647 ;
-  juho-meta:related juho:p6662 ;
-  juho-meta:related juho:p6722 ;
-  juho-meta:related juho:p8952 ;
+  juho-meta:hasThematicGroup juho:p22 ;
 .
 juho:p9898
   rdf:type juho-meta:Concept ;
@@ -86633,9 +86720,9 @@ juho:p9915
   juho-meta:related juho:p773 ;
 .
 juho:p9916
-  rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p1006 ;
-  rdfs:subClassOf yso-meta:DeprecatedConcept ;
   skos:prefLabel "piirireviisorit"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
