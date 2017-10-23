@@ -7,7 +7,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
-@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 jupo: a skos:ConceptScheme ;
     dc:publisher "National Library of Finland"@en,
@@ -46,14 +45,14 @@ JUPO-ontologia on alunperin kehitetty Aalto- ja Helsingin yliopiston johtamassa 
 
 Ontologin baserar sig på den Yleinen suomalainen ontologia YSO vartill har cirka 2307 begrepp tillagts som hänför sig till den offentliga sektorns tjänster."""@sv,
 
-"""The Finnish Ontology for Public Administration Services (JUPO) aims to help public administration to produce semantically consistent service descriptions and to help users to find the services easily in different web services. It also aims to facilitate the use and production of service-related information in information networks.
+"""The public services ontology JUPO facilitates the semantically unified description of services in order to enhance service findabilty for human users and service data use, reuse and production in ICT systems.
 
 The ontology is based on the Finnish General Upper Ontology YSO. Some 2307 concepts related to public administration services have been incorporated into the YSO."""@en ;
 
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
     dct:license <http://creativecommons.org/licenses/by/3.0/> ;
     dct:relation <http://www.yso.fi/onto/yso/> ;
-    owl:versionInfo "2016-12-23 14:00:33Z" .
+    owl:versionInfo "2017-10-19 12:00:33Z" .
 
 jupo-meta:Concept a owl:Class;
     rdfs:subClassOf skos:Concept ;
@@ -61,9 +60,4 @@ jupo-meta:Concept a owl:Class;
         "JUPO-begrepp"@sv,
         "JUPO Concept"@en .
 
-yso-meta:concept a owl:class;
-    rdfs:subclassof skos:concept ;
-    rdfs:label "YSO-käsite"@fi,
-        "ALLFO-begrepp"@sv,
-        "YSO concept"@en .
 
