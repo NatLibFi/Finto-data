@@ -1,6 +1,10 @@
 #!/bin/sh
 
-INFILES="metatietosanasto.rdf"
+JENABIN="/data/apache-jena/bin"
+
+$JENABIN/update --data=metatietosanasto.rdf --update=fix-types.rq --dump >metatietosanasto.nt
+
+INFILES="metatietosanasto-meta.ttl metatietosanasto.nt"
 OUTFILE=metatietosanasto-skos.ttl
 
 SKOSIFYHOME="../../../Skosify/skosify/"
