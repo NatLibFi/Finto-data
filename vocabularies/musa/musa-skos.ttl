@@ -1028,17 +1028,6 @@ musa:p180 a skos:Concept ;
         "amatörmusik"@sv ;
     skos:related musa:p66176 .
 
-musa:p188 a skos:Concept ;
-    dct:created "1996-02-15"^^xsd:date ;
-    dct:modified "2017-09-04T13:29:19+03:00"^^xsd:dateTime ;
-    skos:broader musa:p613 ;
-    skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85088951> ;
-    skos:definition "Improvisatorinen säestys, joka soitetaan viihteellisten nuottimerkintöjen, esimerkiksi ns.  sointumerkkien mukaan tai kuulonvaraisesti."@fi ;
-    skos:inScheme musa: ;
-    skos:note "Termi on tarkoitettu kirjallisuuden ja nuottijulkaisujen indeksointiin."@fi ;
-    skos:prefLabel "vapaa säestys"@fi,
-        "fritt ackompanjemang"@sv .
-
 musa:p194 a skos:Concept ;
     dct:created "1996-02-09"^^xsd:date ;
     dct:modified "2017-09-04T13:29:19+03:00"^^xsd:dateTime ;
@@ -3370,17 +3359,6 @@ musa:p1123 a skos:Concept ;
     skos:prefLabel "rāgat"@fi,
         "ragor"@sv .
 
-musa:p1126 a skos:Concept ;
-    dct:created "1997-10-01"^^xsd:date ;
-    dct:modified "2017-09-04T13:29:37+03:00"^^xsd:dateTime ;
-    skos:broader musa:p66173 ;
-    skos:definition "Erikseen julkaistu säestysosuus, jonka avulla harjoitellaan soolo-osuuksia, esimerkiksi  Music-minus-one -tyyppiset julkaisut."@fi ;
-    skos:exactMatch <http://id.loc.gov/authorities/subjects/sh85111872> ;
-    skos:inScheme musa: ;
-    skos:note "Termiä käytetään yhdessä sen termin kanssa, jonka säestämisestä on kysymys, esimerkiksi säestykset : yksinlaulut. Termiä ei koskaan käytetä säestettyjen musiikkiesitysten yhteydessä. Lähinnä populaarimusiikin yhteydessä esiintyvistä pelkän säestyksen ja laulujen sanat sisältävistä julkaisuista käytetään termiä karaoke."@fi ;
-    skos:prefLabel "säestykset"@fi ;
-    skos:related musa:p613 .
-
 musa:p1134 a skos:Concept ;
     dct:created "1997-10-01"^^xsd:date ;
     dct:modified "2017-09-21T13:40:02+03:00"^^xsd:dateTime ;
@@ -3528,6 +3506,18 @@ musa:p185 a skos:Concept ;
     skos:prefLabel "vanha musiikki"@fi,
         "tidig musik"@sv ;
     skos:related musa:p471 .
+
+musa:p188 a skos:Concept ;
+    dct:created "1996-02-15"^^xsd:date ;
+    dct:modified "2017-09-04T13:29:19+03:00"^^xsd:dateTime ;
+    skos:broader musa:p1126,
+        musa:p613 ;
+    skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85088951> ;
+    skos:definition "Improvisatorinen säestys, joka soitetaan viihteellisten nuottimerkintöjen, esimerkiksi ns.  sointumerkkien mukaan tai kuulonvaraisesti."@fi ;
+    skos:inScheme musa: ;
+    skos:note "Termi on tarkoitettu kirjallisuuden ja nuottijulkaisujen indeksointiin."@fi ;
+    skos:prefLabel "vapaa säestys"@fi,
+        "fritt ackompanjemang"@sv .
 
 musa:p1911 a skos:Concept ;
     dct:created "1998-06-22"^^xsd:date ;
@@ -5248,13 +5238,12 @@ musa:p81456 a skos:Concept ;
         "beguine"@sv .
 
 musa:p81457 a skos:Concept ;
-    dct:created "1998-07-07"^^xsd:date ;
+    dct:created "2017-06-26"^^xsd:date ;
     dct:modified "2017-09-04T13:30:05+03:00"^^xsd:dateTime ;
     skos:broader musa:p508 ;
     skos:definition "Alun perin andalusialainen tanssi, josta on kehittynyt erilaisia populaareja tyylejä Espanjassa ja latinalaisessa Amerikassa."@fi ;
     skos:inScheme musa: ;
-    skos:prefLabel "bolero (tanssit)"@fi,
-        "bolero"@sv .
+    skos:prefLabel "bolero (tanssit)"@fi .
 
 musa:p81458 a skos:Concept ;
     dct:created "1998-07-07"^^xsd:date ;
@@ -6605,7 +6594,8 @@ musa:p523 a skos:Concept ;
     skos:definition "Sävellys, jonka tahdissa on tarkoitus tanssia boleroa tai joka tyylittelee mainitunlaista tanssisävellystä."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/subjects/sh85015369> ;
     skos:inScheme musa: ;
-    skos:prefLabel "bolerot (sävellykset)"@fi ;
+    skos:prefLabel "bolerot (sävellykset)"@fi,
+        "bolero"@sv ;
     skos:related musa:p749 .
 
 musa:p530 a skos:Concept ;
@@ -9209,6 +9199,22 @@ musa:p999 a skos:Concept ;
     skos:related musa:p289,
         musa:p510 .
 
+musa:p1126 a skos:Concept ;
+    dct:created "1997-10-01"^^xsd:date ;
+    dct:modified "2017-09-04T13:29:37+03:00"^^xsd:dateTime ;
+    skos:broader musa:p66173 ;
+    skos:definition "Erikseen julkaistu säestysosuus, jonka avulla harjoitellaan soolo-osuuksia, esimerkiksi  Music-minus-one -tyyppiset julkaisut."@fi,
+        "Säestäminen + säestykset = ackompanjemang"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/subjects/sh85111872> ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p188 ;
+    skos:note "Termiä käytetään yhdessä sen termin kanssa, jonka säestämisestä on kysymys, esimerkiksi säestykset : yksinlaulut. Termiä ei koskaan käytetä säestettyjen musiikkiesitysten yhteydessä. Lähinnä populaarimusiikin yhteydessä esiintyvistä pelkän säestyksen ja laulujen sanat sisältävistä julkaisuista käytetään termiä karaoke."@fi ;
+    skos:prefLabel "säestykset"@fi,
+        "ackompanjemang"@sv ;
+    skos:related musa:p468,
+        musa:p606,
+        musa:p613 .
+
 musa:p1130 a skos:Concept ;
     dct:created "1998-05-27"^^xsd:date ;
     dct:modified "2017-05-09T08:36:44+03:00"^^xsd:dateTime ;
@@ -9646,14 +9652,12 @@ musa:p607 a skos:Concept ;
 musa:p613 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
     dct:modified "2017-09-21T13:39:55+03:00"^^xsd:dateTime ;
-    skos:definition "Solistisen esityksen tukeminen soittamalla tai laulamalla."@fi,
-        "Säestäminen + säestykset = ackompanjemang"@sv ;
+    skos:definition "Solistisen esityksen tukeminen soittamalla tai laulamalla."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/subjects/sh85088951> ;
     skos:inScheme musa: ;
     skos:narrower musa:p188 ;
     skos:note "Termiä käytetään vain aihetta koskevan kirjallisuuden ja laulun- ja soitonoppaiden  indeksoinnissa. Musiikkiesitysten tallenteiden yhteydessä käytetään soveltaen termiä  säestykset."@fi ;
-    skos:prefLabel "säestäminen"@fi,
-        "ackompanjemang"@sv ;
+    skos:prefLabel "säestäminen"@fi ;
     skos:related musa:p1126,
         musa:p468,
         musa:p606 .
@@ -10996,23 +11000,6 @@ musa:p602 a skos:Concept ;
         "rörbladsinstrument"@sv ;
     skos:related musa:p455 .
 
-musa:p606 a skos:Concept ;
-    dct:created "1996-02-07"^^xsd:date ;
-    dct:modified "2017-05-28T16:04:59+03:00"^^xsd:dateTime ;
-    skos:definition "Nimitys taiteelliselle esittämiselle (laulamista, soittamista, tanssimista)."@fi ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p969 ;
-    skos:prefLabel "esittäminen"@fi,
-        "framförande"@sv ;
-    skos:related musa:p442,
-        musa:p468,
-        musa:p510,
-        musa:p604,
-        musa:p610,
-        musa:p611,
-        musa:p612,
-        musa:p613 .
-
 musa:p642 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
     dct:modified "2017-09-21T13:39:55+03:00"^^xsd:dateTime ;
@@ -11270,6 +11257,24 @@ musa:p603 a skos:Concept ;
         musa:p676 ;
     skos:prefLabel "puupuhaltimet"@fi,
         "träblåsinstrument"@sv .
+
+musa:p606 a skos:Concept ;
+    dct:created "1996-02-07"^^xsd:date ;
+    dct:modified "2017-05-28T16:04:59+03:00"^^xsd:dateTime ;
+    skos:definition "Nimitys taiteelliselle esittämiselle (laulamista, soittamista, tanssimista)."@fi ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p969 ;
+    skos:prefLabel "esittäminen"@fi,
+        "framförande"@sv ;
+    skos:related musa:p1126,
+        musa:p442,
+        musa:p468,
+        musa:p510,
+        musa:p604,
+        musa:p610,
+        musa:p611,
+        musa:p612,
+        musa:p613 .
 
 musa:p685 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -11733,29 +11738,6 @@ musa:p442 a skos:Concept ;
         musa:p759,
         musa:p761 .
 
-musa:p468 a skos:Concept ;
-    dct:created "1996-02-08"^^xsd:date ;
-    dct:modified "2017-09-21T13:24:21+03:00"^^xsd:dateTime ;
-    skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85088806> ;
-    skos:definition "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
-    skos:inScheme musa: ;
-    skos:narrower musa:p467,
-        musa:p66109,
-        musa:p66172,
-        musa:p66184,
-        musa:p66193,
-        musa:p719,
-        musa:p819 ;
-    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi ;
-    skos:prefLabel "soittaminen"@fi,
-        "musicerande"@sv ;
-    skos:related musa:p1124,
-        musa:p455,
-        musa:p606,
-        musa:p613,
-        musa:p757,
-        musa:p800 .
-
 musa:p527 a skos:Concept ;
     dct:created "1996-02-15"^^xsd:date ;
     dct:modified "2017-09-21T13:39:52+03:00"^^xsd:dateTime ;
@@ -11805,6 +11787,30 @@ musa:p65 a skos:Concept ;
         musa:p533,
         musa:p534,
         musa:p81108 .
+
+musa:p468 a skos:Concept ;
+    dct:created "1996-02-08"^^xsd:date ;
+    dct:modified "2017-09-21T13:24:21+03:00"^^xsd:dateTime ;
+    skos:closeMatch <http://id.loc.gov/authorities/subjects/sh85088806> ;
+    skos:definition "Soittimen käyttäminen musiikillisen äänen tuottamiseen."@fi ;
+    skos:inScheme musa: ;
+    skos:narrower musa:p467,
+        musa:p66109,
+        musa:p66172,
+        musa:p66184,
+        musa:p66193,
+        musa:p719,
+        musa:p819 ;
+    skos:note "Jos termiä käytetään konkreettisesti, soittimen nimi on aina yhdistettävä mukaan,  esimerkiksi soittaminen : kitara. Termiä ei käytetä nuottien tai äänitteiden indeksoinnissa."@fi ;
+    skos:prefLabel "soittaminen"@fi,
+        "musicerande"@sv ;
+    skos:related musa:p1124,
+        musa:p1126,
+        musa:p455,
+        musa:p606,
+        musa:p613,
+        musa:p757,
+        musa:p800 .
 
 musa:p304 a skos:Concept ;
     dct:created "1996-02-08"^^xsd:date ;
@@ -12601,7 +12607,7 @@ Specialtesaurus för musik är uppgjord enligt standarden Suomenkielisen tesauru
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-11-06T03:56:40+00:00"^^xsd:dateTime ;
+    dct:modified "2017-11-07T04:18:51+00:00"^^xsd:dateTime ;
     dct:relation <http://www.yso.fi/onto/allars/>,
         ysa: ;
     dct:subject yso:p21510 ;
