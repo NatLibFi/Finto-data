@@ -346,14 +346,6 @@ mts:m2067 a skos:Concept ;
     skos:prefLabel "piirustus"@fi,
         "teckning"@sv .
 
-mts:m2068 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Kuoron esityskokoonpano, jossa on sopraano-, altto-, tenori- ja bassoääniä tai ainakin sekä nais- että miesääniä."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sekakuoro"@fi,
-        "blandad kör"@sv .
-
 mts:m2074 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9182,15 +9174,6 @@ mts:m1969 a skos:Concept ;
     skos:prefLabel "Nocturnet"@fi,
         "Nocturner"@sv .
 
-mts:m197 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Campanella (kuoro)"@fi,
-        "Brahe Djäknar (kör)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kuoro"@fi,
-        "kör"@sv .
-
 mts:m1970 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9777,6 +9760,15 @@ mts:m2066 a skos:Concept ;
     skos:prefLabel "pelikortti"@fi,
         "spelkort"@sv .
 
+mts:m2068 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:definition "Kuoron esityskokoonpano, jossa on sopraano-, altto-, tenori- ja bassoääniä tai ainakin sekä nais- että miesääniä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sekakuoro"@fi,
+        "blandad kör"@sv .
+
 mts:m2069 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9840,6 +9832,14 @@ mts:m2082 a skos:Concept ;
         "Korrigerad undertitel:"@sv ;
     skos:scopeNote "Käytetään MARC 21 -formaatin 246-kentän i-osakentässä."@fi .
 
+mts:m2089 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "naiskuoro"@fi,
+        "damkör"@sv .
+
 mts:m209 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -9847,6 +9847,37 @@ mts:m209 a isothes:ConceptGroup,
     skos:prefLabel "Myöhempi päänimeke"@fi,
         "Senare huvudtitel"@sv ;
     skos:scopeNote "Moniosaisen monografian tai sarja-aineiston myöhemmässä osassa esiintyvä päänimeke, joka eroaa ensimmäisessä tai aiemmassa osassa esiintyneestä päänimekkeestä."@fi .
+
+mts:m2090 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "unisonokuoro"@fi .
+
+mts:m2091 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "nuorisokuoro"@fi,
+        "ungdomskör"@sv .
+
+mts:m2092 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mieskuoro"@fi,
+        "manskör"@sv .
+
+mts:m2093 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m197 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lapsikuoro"@fi,
+        "barnkör"@sv .
 
 mts:m21 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18530,6 +18561,21 @@ mts:m232 a skos:Concept ;
         "datorskiva"@sv ;
     skos:scopeNote "tietokonetallenne"@fi .
 
+mts:m197 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Campanella (kuoro)"@fi,
+        "Brahe Djäknar (kör)"@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2068,
+        mts:m2089,
+        mts:m2090,
+        mts:m2091,
+        mts:m2092,
+        mts:m2093 ;
+    skos:prefLabel "kuoro"@fi,
+        "kör"@sv .
+
 mts:m407 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18602,5 +18648,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-11-10T03:40:26+00:00"^^xsd:dateTime .
+    dct:modified "2017-11-11T03:12:23+00:00"^^xsd:dateTime .
 
