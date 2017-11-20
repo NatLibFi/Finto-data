@@ -47,37 +47,6 @@ hero-meta:wboMatch a owl:DatatypeProperty ;
     rdfs:label "WBO-vastine"@fi ;
     rdfs:domain skos:Concept .
 
-hero:p1973 skos:prefLabel "sommé (fr)"@be,
-        "sumado (es)"@ca,
-        "supporting (en)"@cs,
-        "varpå (sv)"@da,
-        "supporting (en)"@de,
-        "supporting (en)"@el,
-        "supporting"@en,
-        "sumado"@es,
-        "jolla (fi)"@et,
-        "jolla"@fi,
-        "sommé"@fr,
-        "sommé (fr)"@hr,
-        "supporting (en)"@hu,
-        "varpå (sv)"@is,
-        "sostenente"@it,
-        "fastigiatus"@la,
-        "supporting (en)"@lt,
-        "supporting (en)"@lv,
-        "varpå (sv)"@nb,
-        "sommé (fr)"@nl,
-        "varpå (sv)"@nn,
-        "supporting (en)"@pl,
-        "suportando"@pt,
-        "fastigiatus (la)"@ro,
-        "sommé (fr)"@ru,
-        "supporting (en)"@sk,
-        "supporting (en)"@sq,
-        "sommé (fr)"@sr,
-        "varpå"@sv,
-        "sommé (fr)"@uk .
-
 hero:p101 a skos:Concept ;
     skos:broader hero:p52 ;
     skos:inScheme hero: ;
@@ -43408,19 +43377,6 @@ hero:p96 a skos:Concept ;
         "gös"@sv,
         "судак"@uk .
 
-<http://www.yso.fi/onto/hero> a skos:Concept ;
-    skos:altLabel "cimado"@es,
-        "encumbrada"@es,
-        "supportant"@fr,
-        "supporté"@fr,
-        "sustendo"@pt ;
-    skos:broader hero:p2825 ;
-    skos:hiddenLabel "sommée"@fr,
-        "supportée"@fr ;
-    skos:inScheme hero: ;
-    skos:prefLabel "jolla"@fi ;
-    skos:related hero:p660 .
-
 hero:p10 a skos:Concept ;
     skos:broader hero:p14 ;
     skos:hiddenLabel "flambée"@fr ;
@@ -48662,6 +48618,48 @@ hero:p1967 a skos:Concept ;
         "fruité (fr)"@sr,
         "frukter"@sv,
         "фруктовый (ru)"@uk .
+
+hero:p1973 a skos:Concept ;
+    skos:altLabel "cimado"@es,
+        "encumbrada"@es,
+        "supportant"@fr,
+        "supporté"@fr,
+        "sustendo"@pt ;
+    skos:broader hero:p2825 ;
+    skos:hiddenLabel "sommée"@fr,
+        "supportée"@fr ;
+    skos:inScheme hero: ;
+    skos:prefLabel "sommé (fr)"@be,
+        "sumado (es)"@ca,
+        "supporting (en)"@cs,
+        "varpå (sv)"@da,
+        "supporting (en)"@de,
+        "supporting (en)"@el,
+        "supporting"@en,
+        "sumado"@es,
+        "jolla (fi)"@et,
+        "jolla"@fi,
+        "sommé"@fr,
+        "sommé (fr)"@hr,
+        "supporting (en)"@hu,
+        "varpå (sv)"@is,
+        "sostenente"@it,
+        "fastigiatus"@la,
+        "supporting (en)"@lt,
+        "supporting (en)"@lv,
+        "varpå (sv)"@nb,
+        "sommé (fr)"@nl,
+        "varpå (sv)"@nn,
+        "supporting (en)"@pl,
+        "suportando"@pt,
+        "fastigiatus (la)"@ro,
+        "sommé (fr)"@ru,
+        "supporting (en)"@sk,
+        "supporting (en)"@sq,
+        "sommé (fr)"@sr,
+        "varpå"@sv,
+        "sommé (fr)"@uk ;
+    skos:related hero:p660 .
 
 hero:p1974 a skos:Concept ;
     skos:altLabel "guarnecida"@es,
@@ -76697,7 +76695,7 @@ hero:p660 a skos:Concept ;
         "flottant [oiseau] (fr)"@sr,
         "flytande"@sv,
         "flottant [oiseau] (fr)"@uk ;
-    skos:related <http://www.yso.fi/onto/hero>,
+    skos:related hero:p1973,
         hero:p243 .
 
 hero:p694 a skos:Concept ;
@@ -88466,10 +88464,10 @@ hero:p365 a skos:Concept ;
 hero:p2825 a skos:Concept ;
     skos:broader hero:p2246 ;
     skos:inScheme hero: ;
-    skos:narrower <http://www.yso.fi/onto/hero>,
-        hero:p1390,
+    skos:narrower hero:p1390,
         hero:p1892,
         hero:p1966,
+        hero:p1973,
         hero:p2066,
         hero:p2814,
         hero:p2869,
@@ -90422,7 +90420,7 @@ Koko vaakunan tekstimuotoiseen kuvaukseen tarvitaan vaakunaselitys, joka koostuu
         <http://lexvo.org/id/iso639-3/swe>,
         <http://lexvo.org/id/iso639-3/ukr> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2017-11-15T07:00:20+00:00"^^xsd:dateTime ;
+    dct:modified "2017-11-20T09:02:46+00:00"^^xsd:dateTime ;
     owl:imports <http://www.w3.org/2004/02/skos/core> ;
     skos:hasTopConcept hero:p1659,
         hero:p2250,
