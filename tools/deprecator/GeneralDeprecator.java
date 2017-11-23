@@ -38,6 +38,7 @@ public class GeneralDeprecator {
 	private Vector<String> emailSet;
 	private boolean loytyiDeprekoitavaa;
 	private HashMap<Property, RDFNode> kaikilleLisattava;
+	private HashSet<Resource> replacedByMustaLista;
 	
 	public GeneralDeprecator(String deprekoitavanPolku, String deprConfinPolku) {
 		this.loytyiDeprekoitavaa = false;
@@ -51,6 +52,7 @@ public class GeneralDeprecator {
 		this.epailyttavatUudetStatementit = new HashSet<Statement>();
 		this.emailSet = new Vector<String>();
 		this.kaikilleLisattava = new HashMap<Property, RDFNode>();
+		this.replacedByMustaLista = new HashSet<Resource>();
 		this.lueDeprPropertytTiedostosta(deprConfinPolku);
 	}
 	
@@ -98,6 +100,11 @@ public class GeneralDeprecator {
 						break;
 					case "tripleForAllDeprecatedConcepts":
 						this.kaikilleLisattava.put(this.onto.createProperty(riviSplit[1]), this.onto.createResource(riviSplit[2]));
+						break;
+					case "replaceByBlackList":
+						for (int i = 1; i < riviSplit.length; i++) {
+							this.replacedByMustaLista.add(this.onto.createResource(riviSplit[i]));
+						}
 					}	
 				}
 				rivi = br.readLine();
@@ -167,7 +174,9 @@ public class GeneralDeprecator {
 			StmtIterator iter2 = this.onto.listStatements(deprekoitava, this.replacedByDefault, (RDFNode)null);
 			while (iter2.hasNext()) {
 				Statement stmt2 = iter2.nextStatement();
-				lisattava = this.onto.createStatement(deprekoitava, this.replacedBy, stmt2.getObject());
+				Resource obj = (Resource)(stmt2.getObject());
+				if (!this.replacedByMustaLista.contains(obj))
+					lisattava = this.onto.createStatement(deprekoitava, this.replacedBy, obj);
 			}
 		}
 		if (lisattava != null) this.onto.add(lisattava);
