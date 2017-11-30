@@ -95,12 +95,30 @@ dct:Point rdfs:subClassOf dct:Policy .
 <http://rdvocab.info/termList/fontSize/1002> skos:prefLabel "isotekstinen"@fi,
         "stor stil"@sv .
 
+mts:m1061 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi,
+        "namnet på den person, släkt eller institution som är ansvarig för distributionen av ett publicerat material."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Jakajan nimi"@fi,
+        "Distributörens namn"@sv .
+
 mts:m1091 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Kolme kertaa viikossa"@fi,
         "Tre gånger i veckan"@sv .
+
+mts:m1129 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi,
+        "namnet på den person, släkt eller institution som är ansvarig för ett verks förläggning, publikation och utgivning. Förläggare avser även boktryckare och bokhandlare som givit ut gamla tryckta verk."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kustantajan nimi"@fi,
+        "Förläggarens namn"@sv .
 
 mts:m1151 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -125,6 +143,15 @@ mts:m1253 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "160 kierr./min"@fi,
         "160 varv/min"@sv .
+
+mts:m1276 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi,
+        "Namnet på den person, släkt eller institution som är ansvarig för ett verks tryckning, kopiering, framställning av typsnitt osv."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Valmistajan nimi"@fi,
+        "Tillverkarens namn"@sv .
 
 mts:m138 a isothes:ConceptGroup,
         skos:Collection ;
@@ -1425,15 +1452,6 @@ mts:m1060 a isothes:ConceptGroup,
     skos:prefLabel "esittäjä"@fi,
         "artist"@sv .
 
-mts:m1061 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "julkaistun aineiston jakelemisesta vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi,
-        "namnet på den person, släkt eller institution som är ansvarig för distributionen av ett publicerat material."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Jakajan nimi"@fi,
-        "Distributörens namn"@sv .
-
 mts:m1063 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -1925,15 +1943,6 @@ mts:m1128 a skos:Concept ;
     skos:prefLabel "opiskelijalehdet"@fi,
         "studenttidningar"@sv ;
     skos:scopeNote "Jatkuvien julkaisujen (ISBD) genre-termi. Sarja-aineistojen (RDA) genre-termi"@fi .
-
-mts:m1129 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi,
-        "namnet på den person, släkt eller institution som är ansvarig för ett verks förläggning, publikation och utgivning. Förläggare avser även boktryckare och bokhandlare som givit ut gamla tryckta verk."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Kustantajan nimi"@fi,
-        "Förläggarens namn"@sv .
 
 mts:m113 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3638,15 +3647,6 @@ mts:m1275 a skos:Concept ;
         "salsa"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
-mts:m1276 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi."@fi,
-        "Namnet på den person, släkt eller institution som är ansvarig för ett verks tryckning, kopiering, framställning av typsnitt osv."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Valmistajan nimi"@fi,
-        "Tillverkarens namn"@sv .
-
 mts:m1277 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -5165,7 +5165,6 @@ mts:m148 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30082 ;
-    skos:member mts:m1276 ;
     skos:prefLabel "Valmistaja"@fi,
         "Tillverkare"@sv ;
     skos:scopeNote "Henkilö, suku tai yhteisö, joka on vastuussa julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne."@fi .
@@ -13453,7 +13452,6 @@ mts:m64 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30083 ;
     skos:definition "Henkilö, suku tai yhteisö, joka on vastuussa aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä."@fi ;
-    skos:member mts:m1129 ;
     skos:prefLabel "kustantaja"@fi,
         "förläggare"@sv ;
     skos:scopeNote "Jos kuvaileva yhteisö katsoo suhde-elementin itsessään olevan riittävä, ei suhteen määritetä käytetä kuvaamaan suhteen luonnetta."@fi .
@@ -15514,7 +15512,6 @@ mts:m889 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Henkilö, suku tai yhteisö, joka on vastuussa aineiston jakelemisesta."@fi ;
-    skos:member mts:m1061 ;
     skos:prefLabel "jakaja"@fi,
         "distributör"@sv ;
     skos:scopeNote "Jos kuvaileva yhteisö katsoo suhde-elementin itsessään olevan riittävä, ei suhteen määritetä käytetä kuvaamaan suhteen luonnetta."@fi .
@@ -18664,5 +18661,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2017-11-29T04:11:19+00:00"^^xsd:dateTime .
+    dct:modified "2017-11-30T03:15:19+00:00"^^xsd:dateTime .
 
