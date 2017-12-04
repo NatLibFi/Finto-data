@@ -2397,12 +2397,6 @@ slm: a owl:Ontology ;
 
 <http://www.yso.fi/onto/kauno/p991> dct:isReplacedBy slm:s991 .
 
-yso-meta:Hierarchy dct:isReplacedBy slm:s225 ;
-    rdfs:subClassOf skos:Concept ;
-    skos:prefLabel "Hierarchical concept"@en,
-        "Hierarkisoiva käsite"@fi,
-        "Hierarkiserande begrepp"@sv .
-
 slm:s1080 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
     rdfs:subClassOf <http://www.yso.fi/onto/yso/p1148> ;
     skos:altLabel "huumorisarjakuvat"@fi,
@@ -8489,6 +8483,11 @@ slm:s997 a skos:Concept ;
     skos:prefLabel "tuhkimotarinat"@fi,
         "askungeberättelser"@sv .
 
+yso-meta:Hierarchy rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Hierarchical concept"@en,
+        "Hierarkisoiva käsite"@fi,
+        "Hierarkiserande begrepp"@sv .
+
 slm:s1011 a skos:Concept ;
     skos:altLabel "antiutopiat"@fi,
         "utopistiset romaanit"@fi,
@@ -8829,11 +8828,6 @@ slm:s216 a skos:Concept ;
     skos:prefLabel "rillumareielokuvat"@fi,
         "rillumareifilmer"@sv ;
     skos:related slm:s709 .
-
-slm:s225 rdfs:subClassOf skos:Concept ;
-    skos:prefLabel "Hierarchical concept"@en,
-        "Hierarkisoiva käsite"@fi,
-        "Hierarkiserande begrepp"@sv .
 
 slm:s241 a skos:Concept ;
     skos:broader slm:s662 ;
@@ -13071,8 +13065,8 @@ slm:s436 a skos:Concept ;
     skos:prefLabel "popmusiikki"@fi,
         "popmusik"@sv .
 
-slm:s593 a slm:s225,
-        skos:Concept ;
+slm:s593 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1012,
         slm:s1036,
@@ -13830,8 +13824,8 @@ slm:s1175 a skos:Concept ;
         slm:s9 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s285 a slm:s225,
-        skos:Concept ;
+slm:s285 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1006,
         slm:s1051,
@@ -13928,8 +13922,8 @@ slm:s285 a slm:s225,
     skos:prefLabel "Monografioiden genretermit"@fi ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s861 a slm:s225,
-        skos:Concept ;
+slm:s861 a skos:Concept,
+        yso-meta:Hierarchy ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1,
         slm:s1008,
@@ -14151,7 +14145,7 @@ slm:s861 a slm:s225,
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 <http://urn.fi/URN:NBN:fi:au:mts:> a skos:ConceptScheme ;
-    dct:modified "2017-12-04T11:17:21+00:00"^^xsd:dateTime ;
+    dct:modified "2017-12-04T11:21:56+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1011,
         slm:s1015,
         slm:s1016,
