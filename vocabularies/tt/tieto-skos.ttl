@@ -9,7 +9,90 @@
 @prefix tt: <http://urn.fi/URN:NBN:fi:au:tt:> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+tt:t101 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t33 ;
+    skos:definition "form of literacy that is related to information that is presented in different media"@en,
+        "eri medioissa esitetyn tiedon lukutaito"@fi,
+        "färdighet att läsa information som presenteras i olika medier"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Media literacy emphasises the significance of evaluating the utility and validity of information."@en,
+        "Medialukutaidossa korostuu tiedon hyödyllisyyden ja paikkansapitävyyden arvioimisen merkitys."@fi,
+        "Centralt för medieläskunnighet är att kunna bedöma informationens användbarhet och korrekthet."@sv ;
+    skos:prefLabel "media literacy"@en,
+        "medialukutaito"@fi,
+        "medieläskunnighet"@sv .
+
+tt:t118 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t133 ;
+    skos:definition "code (in a code set) that individualises the target that it is referring to"@en,
+        "koodi (koodistossa), joka yksilöi viittaamansa kohteen"@fi,
+        "kod (i en koduppsättning) som identifierar det objekt som koden refererar till"@sv ;
+    skos:hiddenLabel "identifier"@en,
+        "tunnus"@fi ;
+    skos:inScheme tt: ;
+    skos:note "Some identifiers are permanent (Persistent Identifier, PID)."@en,
+        "Osa tunnuksista on pysyviä (pysyvä tunnus, PID, Persistent Identifier)."@fi,
+        "En del beteckningar är bestående (PID, Persistent Identifier)."@sv ;
+    skos:prefLabel "identifier (in a code set)"@en,
+        "tunnus (koodistossa)"@fi,
+        "beteckning (i en koduppsättning)"@sv .
+
+tt:t119 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "unprotected data"@en ;
+    skos:broader tt:t117 ;
+    skos:definition "information whose unauthorised access and use has not been prohibited"@en,
+        "tieto, johon luvattomasti pääsyä ja jonka luvatonta käyttöä ei ole estetty"@fi,
+        "uppgift, vars olovliga användning inte har förhindrats"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "unprotected information"@en,
+        "suojaamaton tieto"@fi,
+        "oskyddad uppgift"@sv .
+
+tt:t124 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t109 ;
+    skos:definition "intellectual property right that is created primarily for the author of a written or artistic work"@en,
+        "ensisijaisesti tekijälle syntyvä immateriaalioikeus, joka koskee kirjallista tai taiteellista teosta"@fi,
+        "immateriell rätt som i första hand uppstår till den som har skapat ett litterärt eller konstnärligt verk"@sv ;
+    skos:inScheme tt: ;
+    skos:note "A copyright is created only for the personal form of expression of a work. The exploitation of a work's ideas, information and theories cannot be limited on the basis of its copyright."@en,
+        "Tekijänoikeus koskee vain teoksen persoonallista ilmaisumuotoa. Teoksen sisältämien ideoiden, tietojen ja teorioiden hyödyntämistä ei voi rajoittaa tekijänoikeuden nojalla."@fi,
+        "Upphovsrätten gäller endast för den personliga uttrycksformen av ett verk. Utnyttjandet av idéer, information och teorier i ett verk kan inte begränsas med stöd av upphovsrätt."@sv ;
+    skos:prefLabel "copyright"@en,
+        "tekijänoikeus"@fi,
+        "upphovsrätt"@sv .
+
+tt:t125 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t35 ;
+    skos:definition "storage of data for a specific term"@en,
+        "tiedon säilytys tietyn ennalta määritellyn ajan"@fi,
+        "förvaring av information i förhandsbestämd tid"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Fixed-term storage can be short or long term in nature, and the storage period can last for 100 years or more."@en,
+        "Määräaikaissäilytys voi olla lyhyt- tai pitkäaikaista, ja määritelty säilytysaika voi olla jopa 100 vuotta tai enemmän."@fi,
+        "Tidsbunden förvaring kan utföras på kort eller lång sikt, och den förhandsbestämda förvaringstiden kan vara upp till 100 år eller mer."@sv ;
+    skos:prefLabel "fixed-term data storage"@en,
+        "tiedon määräaikaissäilytys"@fi,
+        "tidsbunden förvaring av information"@sv .
+
+tt:t126 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t114 ;
+    skos:definition "register whose the information on the target has been copied to another information resource"@en,
+        "rekisteri, josta kohteeseen liittyvä tieto on kopioitu toiseen tietovarantoon"@fi,
+        "register som information om ett objekt har kopierats från till ett annat datalager"@sv ;
+    skos:inScheme tt: ;
+    skos:note "For example, the population information system is the source register for personal identity codes."@en,
+        "Esimerkiksi Väestötietojärjestelmä on henkilötunnusten lähderekisteri."@fi,
+        "Exempel: Befolkningsdataregistret är ett källregister över personbeteckningar."@sv ;
+    skos:prefLabel "source register"@en,
+        "lähderekisteri"@fi,
+        "källregister"@sv .
 
 tt:t13 a skos:Concept ;
     dc:source "JHS 179 Kokonaisarkkitehtuurin suunnittelu ja kehittäminen, 2017-02-07" ;
@@ -26,6 +109,148 @@ tt:t13 a skos:Concept ;
         "kyvykkyys"@fi,
         "förmåga"@sv ;
     skos:topConceptOf tt: .
+
+tt:t130 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "implicit kunskap"@sv,
+        "underförstådd kunskap"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "knowledge that a person accumulates through experience"@en,
+        "kokemuksen kautta henkilölle kertynyt tieto"@fi,
+        "kunskap som samlats in via erfarenhet"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Tacit knowledge is subjective and intuitive in nature. It is often hard or practically impossible to wholly change tacit knowledge into explicit knowledge."@en,
+        "Hiljainen tieto on luonteeltaan subjektiivista ja intuitiivista. Hiljaista tietoa on usein vaikeaa tai jopa mahdotonta muuttaa kokonaan eksplisiittiseksi tiedoksi."@fi,
+        "Tyst kunskap är subjektiv och intuitiv. Det är ofta svårt och i vissa fall omöjligt att omvandla tyst kunskap till explicit kunskap."@sv ;
+    skos:prefLabel "tacit knowledge"@en,
+        "hiljainen tieto"@fi,
+        "tyst kunskap"@sv .
+
+tt:t131 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary that has been created for a specific purpose and whose creation and maintenance are subject to agreed-upon practices and discretion"@en,
+        "tiettyä käyttötarkoitusta varten laadittu sanasto, jonka laadinnassa ja päivittämisessä on noudatettu sovittuja käytäntöjä ja harkintaa"@fi,
+        "ordlista som har skapats för ett visst syfte efter överenskommen praxis och övervägande"@sv ;
+    skos:inScheme tt: ;
+    skos:note "In addition to the terms that are to be used, a controlled vocabulary may contain other terms (such as synonyms or terms describing the same subject) that are not to be used as-is but help guide users into using a specifically selected term. In index term lists, these types of terms that guide users to the terms that are to be used are called non-descriptors. Controlled vocabularies can be used to unify the descriptions of materials, for example."@en,
+        "Käytettävien termien lisäksi kontrolloitu sanasto saattaa sisältää muita termejä (esim. synonyymejä tai samaa aihepiiriä kuvaavia termejä), joita ei itsessään käytetä, vaan ne ohjaavat käyttämään sen sijaan tiettyä valittua termiä. Asiasanastoissa näitä käytettäviin termeihin ohjaavia termejä kutsutaan ohjaustermeiksi. Kontrolloitujen sanastojen avulla pyritään yhdenmukaistamaan esimerkiksi aineistojen kuvailua."@fi,
+        "Utöver termer som ska användas kan en kontrollerad ordlista även innehålla andra termer (t.ex. synonymer eller termer som beskriver samma ämnesområde) som inte används direkt, utan som hänvisar till att använda de valda termerna. I ämnesordsregister kallas dessa termer hänvisningsord. Kontrollerade ordlistor används till exempel för att enhetligt beskriva olika material."@sv ;
+    skos:prefLabel "controlled vocabulary"@en,
+        "kontrolloitu sanasto"@fi,
+        "kontrollerad ordlista"@sv .
+
+tt:t132 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "vapaa sanasto"@fi,
+        "fri ordlista"@sv ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary that is based on some or all free word choices that have been made in a specific environment"@en,
+        "sanasto, joka perustuu joihinkin tai kaikkiin tietyssä ympäristössä tehtyihin vapaisiin sanavalintoihin"@fi,
+        "ordlista som baserar sig på vissa eller alla fria ordval i ett visst sammanhang"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Uncontrolled vocabularies include glossaries that explain the terms that appear in a specific text and open index term lists, i.e. folksonomies."@en,
+        "Avoimia sanastoja ovat esimerkiksi tietyssä tekstissä esiintyviä termejä selittävät sanastot ja avoimet asiasanastot eli folksonomiat."@fi,
+        "Öppna ordlistor är till exempel ordlistor över termer som förekommer i en viss text och öppna ämnesordsregister, dvs. folksonomier."@sv ;
+    skos:prefLabel "uncontrolled vocabulary"@en,
+        "avoin sanasto"@fi,
+        "öppen ordlista"@sv .
+
+tt:t137 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t122 ;
+    skos:definition "confidential information whose unauthorised disclosure or use has been evaluated and classified according to national safety classification standards on the harm that it could cause to any public or private interest"@en,
+        "salassa pidettävä tieto, jonka luvattomasta paljastumisesta tai luvattomasta käytöstä aiheutuva haitta yleiselle tai yksityiselle edulle on arvioitu ja merkitty kansallisen suojaustasoluokittelun mukaisesti"@fi,
+        "sekretessbelagd uppgift som har en klassificering enligt skyddsnivå enligt den skada som obehörigt avslöjande eller obehörig användning av uppgiften kan orsaka för allmänna och enskilda intressen"@sv ;
+    skos:inScheme tt: ;
+    skos:note "\"The following protection levels are used for the classification of information by protection level: Protection level I, if unauthorised disclosure or use could cause particularly grave damage to any public interest; protection level II, if unauthorised disclosure or use could cause significant damage to any public interest; protection level III, if unauthorised disclosure or use could cause damage to any public or private interest; protection level IV, if unauthorised disclosure or use could cause harm to any public or private interest.\""@en,
+        "\"Suojaustasoluokittelussa käytetään seuraavia luokkia: Suojaustaso I, jos luvaton paljastuminen tai käyttö voi aiheuttaa erityisen suurta vahinkoa yleiselle edulle; suojaustaso II, jos luvaton paljastuminen tai käyttö voi aiheuttaa merkittävää vahinkoa yleiselle edulle; suojaustaso III, jos luvaton paljastuminen tai käyttö voi aiheuttaa vahinkoa yleiselle tai yksityiselle edulle; suojaustaso IV, jos luvaton paljastuminen tai käyttö voi aiheuttaa haittaa yleiselle edulle tai yksityiselle edulle.\""@fi,
+        "\"Vid klassificering enligt skyddsnivå används följande klasser: Skyddsnivå I, om obehörigt avslöjande eller obehörig användning kan orsaka särskilt stor skada för allmänna intressen; skyddsnivå II, om obehörigt avslöjande eller obehörig användning kan orsaka betydande skada för allmänna intressen; skyddsnivå III, om obehörigt avslöjande eller obehörig användning kan orsaka skada för allmänna eller enskilda intressen; skyddsnivå IV, om obehörigt avslöjande eller obehörig användning kan orsaka olägenheter för allmänna eller enskilda intressen.\""@sv ;
+    skos:prefLabel "information classified by protection level"@en,
+        "suojaustasoluokiteltu tieto"@fi,
+        "uppgift klassificerad enligt skyddsnivå"@sv .
+
+tt:t14 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "teknisen tason yhteentoimivuus"@fi,
+        "interoperabilitet på teknisk nivå"@sv ;
+    skos:broader tt:t65 ;
+    skos:definition "form of interoperability that enables the transfer of data via information technology"@en,
+        "yhteentoimivuus, joka mahdollistaa tietotekniikan avulla tehtävät tiedonsiirrot"@fi,
+        "interoperabilitet som gör det möjligt att överföra information med hjälp av informationsteknik"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Technical interoperability is connected to the technical part of information systems, i.e. hardware and software. However, the benefits of technical interoperability are limited if there is no semantic, organisational or legal interoperability between the information systems."@en,
+        "Tekninen yhteentoimivuus liittyy tekniseen, laitteista ja ohjelmista koostuvaan osaan tietojärjestelmiä. Teknisellä yhteentoimivuudella saavutettavat edut ovat rajallisia, jos tietojärjestelmien välillä ei ole semanttista, organisatorista tai oikeudellista yhteentoimivuutta."@fi,
+        "Teknisk interoperabilitet anknyter till den tekniska delen av informationssystem som utgörs av enheter och program. Fördelarna som uppnås med teknisk interoperabilitet är begränsade utan semantisk, organisatorisk och rättslig interoperabilitet mellan ifrågavarande informationssystem."@sv ;
+    skos:prefLabel "technical interoperability"@en,
+        "tekninen yhteentoimivuus"@fi,
+        "teknisk interoperabilitet"@sv .
+
+tt:t140 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t17 ;
+    skos:definition "case register where every case is provided with its own number or other identifier and whose purpose is to enable good information management practices and openness in the activities of public authorities"@en,
+        "asiarekisteri, jossa jokaisella asialla on oma numero tai muu tunnus ja jonka tarkoituksena on toteuttaa viranomaisen hyvää tiedonhallintatapaa ja julkisuutta"@fi,
+        "ärenderegister, där varje ärende har ett eget nummer eller någon annan beteckning och vars syfte är att genomföra myndigheters praxis för god informationshantering och offentlighet"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "journal"@en,
+        "diaari"@fi,
+        "diarium"@sv .
+
+tt:t20 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t35 ;
+    skos:definition "storage of data without any time limits"@en,
+        "tiedon säilytys ilman aikarajaa"@fi,
+        "förvaring av information utan tidsgräns"@sv ;
+    skos:inScheme tt: ;
+    skos:note "The permanent storage of data can usually last for hundreds of years, even forever"@en,
+        "Pysyväissäilytyksessä tietoja säilytetään tavallisesti satoja vuosia, jopa ikuisesti."@fi,
+        "Information som förvaras permanent förvaras vanligtvis i hundratals år, i vissa fall för evigt."@sv ;
+    skos:prefLabel "permanent data storage"@en,
+        "tiedon pysyväissäilytys"@fi,
+        "permanent förvaring av information"@sv .
+
+tt:t22 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t33 ;
+    skos:definition "form of literacy that is related to information that is presented with the help of digital tools"@en,
+        "digitaalisten välineiden avulla esitetyn tiedon lukutaito"@fi,
+        "färdighet att läsa information som presenteras med digitala verktyg"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "digital literacy"@en,
+        "digitaalinen lukutaito"@fi,
+        "digital läskunnighet"@sv .
+
+tt:t30 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t114 ;
+    skos:definition "register that is maintained on the targets of a specific function and that contains the necessary information for the preparation, management and monitoring of any related matters"@en,
+        "tietyn toiminnon kohteista ylläpidettävä rekisteri, johon merkitään asioiden valmistelussa, käsittelyssä ja seurannassa tarvittavat tiedot"@fi,
+        "register som omfattar objekt som tillhör en särskild funktion och information som behövs för beredning, behandling och uppföljning av ärenden"@sv ;
+    skos:inScheme tt: ;
+    skos:note "A special register can contain information on e.g. people, companies or buildings."@en,
+        "Erityisrekisteri voi sisältää tietoa esimerkiksi henkilöistä, yrityksistä tai rakennuksista."@fi,
+        "Ett specialregister kan innehålla information om till exempel personer, företag eller byggnader."@sv ;
+    skos:prefLabel "special register"@en,
+        "erityisrekisteri"@fi,
+        "specialregister"@sv .
+
+tt:t36 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "perustieto"@fi,
+        "huvuddata"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "information describing a target that is related to an organisation's activities and that is required or utilised by several of the organisation's processes or functions"@en,
+        "organisaation toimintaan liittyvää kohdetta kuvaava tieto, jota useampi organisaation prosessi tai toiminto tarvitsee tai hyödyntää"@fi,
+        "uppgifter som beskriver föremål i anslutning till en organisations verksamhet som flera av organisationens processer eller funktioner behöver eller använder"@sv ;
+    skos:inScheme tt: ;
+    skos:note "The master data of an organisation can include information on e.g. the organisation's customers, suppliers, partners, products, services or offices. Master data is usually slow to change and needed in the long term."@en,
+        "Organisaation master dataa voivat olla esimerkiksi asiakkaita, toimittajia, yhteistyökumppaneita, tuotteita, palveluita tai toimipaikkoja koskevat tiedot. Tavallisesti master data on hitaasti muuttuvaa ja sen tarve on pitkäaikaista."@fi,
+        "En organisations master data kan vara uppgifter om till exempel kunder, leverantörer, samarbetspartners, produkter, tjänster eller verksamhetsställen. Master data ändras vanligtvis långsamt och behövs under längre perioder."@sv ;
+    skos:prefLabel "master data"@en,
+        "master data"@fi,
+        "master data"@sv .
 
 tt:t39 a skos:Concept ;
     dc:source "Tietotekniikan termitalkoot, 2012-12-21" ;
@@ -46,6 +271,79 @@ tt:t39 a skos:Concept ;
         "geografisk information"@sv ;
     skos:topConceptOf tt: .
 
+tt:t42 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t117 ;
+    skos:definition "information that is accessible to all"@en,
+        "tieto, johon kaikilla on pääsy"@fi,
+        "information som alla har tillgång till"@sv ;
+    skos:inScheme tt: ;
+    skos:note "All documents created by public authorities are public in nature unless otherwise stated by law."@en,
+        "Viranomaisten asiakirjat ovat julkisia, jollei laissa erikseen toisin säädetä."@fi,
+        "Myndighetshandlingar är offentliga, om inte något annat föreskrivs i lag."@sv ;
+    skos:prefLabel "public information"@en,
+        "julkinen tieto"@fi,
+        "offentlig information"@sv .
+
+tt:t45 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "tekijänoikeuden lähioikeus"@fi,
+        "upphovsrätten närstående rättighet"@sv ;
+    skos:broader tt:t109 ;
+    skos:definition "intellectual property right that concerns the presentation of or financial investment connection to an intellectual work that does not result in a copyrightable work but whose protection is defined separately in connection with copyright legislation"@en,
+        "immateriaalioikeus, joka koskee sellaista henkisen työn esitystä tai henkiseen työhön liittyvää taloudellista panostusta, jonka tuloksena ei synny tekijänoikeuksilla suojattavaa teosta mutta jonka suojasta säädetään erikseen tekijänoikeuslakien yhteydessä"@fi,
+        "immateriell rättighet som gäller en framställning av intellektuellt arbete eller en ekonomisk investering i samband med intellektuellt arbete som inte resulterar i ett verk som skyddas av upphovsrätt utan som skyddas enligt skilda bestämmelser i upphovsrättslagen"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Neighbouring rights are used to protect e.g. databases, lists, performances by performing artists, works by recording and visual recording producers as well as the rights of public broadcasting corporations to their broadcasting signals. A neighbouring right can be created for a private person or organisation."@en,
+        "Lähioikeuksilla suojataan mm. tietokantoja, luetteloita, esittävien taiteilijoiden suoritteita, äänite- ja kuvatallennetuottajien tekemää työtä sekä yleisradioyhtiöiden oikeutta lähetyssignaaliinsa. Lähioikeus voi syntyä yksityishenkilölle tai organisaatiolle."@fi,
+        "Närstående rättigheter används för att skydda bl.a. Databaser, kataloger, konstnärliga framföranden, ljud- och bildproducenters arbeten samt rundradiobolags rätt till sin egen sändningssignal. Närstående rättigheter kan uppstå till privatpersoner eller organisationer."@sv ;
+    skos:prefLabel "neighbouring right"@en,
+        "lähioikeus"@fi,
+        "närstående rättighet"@sv .
+
+tt:t46 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "protected data"@en ;
+    skos:broader tt:t117 ;
+    skos:definition "information whose unauthorised access and use has been prohibited with legislative, administrative, technical and physical means"@en,
+        "tieto, johon luvaton pääsy ja jonka luvaton käyttö on estetty juridisin, hallinnollisin, teknisin ja fyysisin toimenpitein"@fi,
+        "uppgift, vars olovliga användning har förhindrats med juridiska, administrativa, tekniska och fysiska åtgärder"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "protected information"@en,
+        "suojattu tieto"@fi,
+        "skyddad uppgift"@sv .
+
+tt:t52 a skos:Concept ;
+    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
+    skos:broader tt:t78 ;
+    skos:definition "concept that corresponds to a single unique concept"@en,
+        "käsite, joka vastaa yhtä ainutkertaista tarkoitetta"@fi,
+        "begrepp som kan knytas till en unik referent"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Individual concepts are referred to with proper names such as 'Jupiter' and 'the Baltic Sea'. Terminology work rarely focuses on individual concepts."@en,
+        "Yksilökäsitteisiin viitataan erisnimillä kuten 'Jupiter' ja 'Itämeri'. Sanastotyössä käsitellään yksilökäsitteitä melko harvoin."@fi,
+        "Individualbegrepp benämns med egennamn. Exempel: 'Jupiter', 'Östersjön'. Individualbegrepp utreds sällan i terminologiarbete."@sv ;
+    skos:prefLabel "individual concept"@en,
+        "yksilökäsite"@fi,
+        "individualbegrepp"@sv .
+
+tt:t55 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "juridinen yhteentoimivuus"@fi,
+        "interoperabilitet på rättslig nivå"@sv,
+        "juridisk interoperabilitet"@sv ;
+    skos:broader tt:t65 ;
+    skos:definition "form of interoperability that enables data transfers between different legislative regions without violating any pertinent legislation"@en,
+        "yhteentoimivuus, joka mahdollistaa tiedonsiirrot eri lainsäädännöllisten alueiden välillä ilman, että asiaankuuluvaa lainsäädäntöä rikotaan"@fi,
+        "interoperabilitet som gör det möjligt att överföra information mellan områden med olika lagstiftning utan att relevanta lagar bryts"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Legal interoperability is connected especially to the nature of the data that is contained in the information systems and how this data is collected, arranged and transferred."@en,
+        "Oikeudellinen yhteentoimivuus liittyy erityisesti tietojärjestelmissä käsiteltävien tietojen luonteeseen ja tapoihin, joilla tietoja kerätään, järjestetään ja siirretään."@fi,
+        "Rättslig interoperabilitet anknyter speciellt till information i informationssystem samt till informationens art och hur man samlar in, ordnar och överför informationen."@sv ;
+    skos:prefLabel "legal interoperability"@en,
+        "oikeudellinen yhteentoimivuus"@fi,
+        "rättslig interoperabilitet"@sv .
+
 tt:t57 a skos:Concept ;
     dc:source "Tietotermit / Tietojohtaminen (Laihonen et al., 2013)" ;
     skos:definition "description of current conditions, the events that created the situation, the analysis and interpretation of the situation, as well as the operational readiness of different actors"@en,
@@ -59,6 +357,210 @@ tt:t57 a skos:Concept ;
         "tilannekuva"@fi,
         "lägesbild"@sv ;
     skos:topConceptOf tt: .
+
+tt:t6 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "big data"@fi,
+        "big data"@sv ;
+    skos:broader tt:t31 ;
+    skos:definition "data (machine-readable information) that is diverse, large in size and grows rapidly"@en,
+        "data (koneluettava tieto), joka on monimuotoinen ja suuri kooltaan sekä kasvaa nopeasti"@fi,
+        "mångsidig och riklig mängd data (maskinläsbara uppgifter) som snabbt ökar i storlek"@sv ;
+    skos:inScheme tt: ;
+    skos:note "To be able to process big data, a device or application needs a great deal of storage capacity and processing power."@en,
+        "Laitteilta ja sovelluksilta vaaditaan huomattavaa tallennuskapasiteettia ja suorituskykyä, jotta ne pystyisivät käsittelemään massadataa."@fi,
+        "Maskiner och program måste ha betydande lagringskapacitet och prestanda för att kunna bearbeta stordata."@sv ;
+    skos:prefLabel "big data"@en,
+        "massadata"@fi,
+        "stordata"@sv .
+
+tt:t60 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "turvaluokiteltu tieto"@fi,
+        "säkerhetsskyddsklassificerad uppgift"@sv ;
+    skos:broader tt:t122 ;
+    skos:definition "confidential information whose unauthorised disclosure or use has been evaluated and classified according to international safety classification standards on the harm that it could cause to international relations, state security, national defence or any other similar public interest"@en,
+        "salassa pidettävä tieto, jonka luvattomasta paljastumisesta tai luvattomasta käytöstä aiheutuva haitta kansainvälisille suhteille, valtion turvallisuudelle, maanpuolustukselle tai muulle vastaavalle yleiselle edulle on arvioitu ja merkitty kansainvälisen turvallisuusluokittelun mukaisesti"@fi,
+        "sekretessbelagd uppgift som har en anteckning om internationell säkerhetsklassificering enligt den skada som obehörigt avslöjande eller obehörig användning av uppgiften kan orsaka för internationella relationer, statens säkerhet, försvaret eller andra allmänna intressen."@sv ;
+    skos:inScheme tt: ;
+    skos:note "\"The following classes are used for the classification of classified information: Class I TOP SECRET, if unauthorised disclosure or use could cause particularly grave damage to any public interest; class II SECRET, if unauthorised disclosure or use could cause significant damage to any public interest; class III CONFIDENTIAL, if unauthorised disclosure or use could cause damage to any public or private interest; class IV RESTRICTED, if unauthorised disclosure or use could cause harm to any public or private interest.\""@en,
+        "\"Turvallisuusluokittelussa käytetään seuraavia luokkia: Turvallisuusluokka I ERITTÄIN SALAINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa erityisen suurta vahinkoa yleiselle edulle; turvallisuusluokka II SALAINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa merkittävää vahinkoa yleiselle edulle; turvallisuusluokka III LUOTTAMUKSELLINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa vahinkoa yleiselle tai yksityiselle edulle; turvallisuusluokka IV KÄYTTÖ RAJOITETTU, jos luvaton paljastuminen tai käyttö voi aiheuttaa haittaa yleiselle edulle tai yksityiselle edulle.\""@fi,
+        "\"Följande klasser används vid säkerhetsklassificering: Säkerhetsklass I YTTERST HEMLIG, om obehörigt avslöjande eller obehörig användning kan orsaka särskilt stor skada för allmänna intressen; säkerhetsklass II HEMLIG, om obehörigt avslöjande eller obehörig användning kan orsaka betydande skada för allmänna intressen; säkerhetsklass III KONFIDENTIELL, om obehörigt avslöjande eller obehörig användning kan orsaka skada för allmänna eller enskilda intressen; säkerhetsklass IV BEGRÄNSAD TILLGÅNG, om obehörigt avslöjande eller obehörig användning kan orsaka olägenheter för allmänna eller enskilda intressen.\""@sv ;
+    skos:prefLabel "classified information"@en,
+        "turvallisuusluokiteltu tieto"@fi,
+        "säkerhetsklassificerad uppgift"@sv .
+
+tt:t64 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t113 ;
+    skos:definition "index term list that indicates the relationships between the index terms that are presented in the list"@en,
+        "asiasanasto, jossa asiasanojen yhteydessä ilmaistaan niiden suhteet muihin asiasanoihin"@fi,
+        "ämnesordsregister som omfattar förhållanden mellan ämnesord"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "thesaurus"@en,
+        "tesaurus"@fi,
+        "tesaurus"@sv .
+
+tt:t68 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t54 ;
+    skos:definition "business information that helps utilise resources in an efficient manner"@en,
+        "liiketoimintatieto, joka ohjaa hyödyntämään resursseja tehokkaasti"@fi,
+        "affärskunskap som hjälper att använda resurser effektivt"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "operational information"@en,
+        "operatiivinen tieto"@fi,
+        "operativ kunskap"@sv .
+
+tt:t70 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t114 ;
+    skos:definition "register that contains information on the key basic units of society and their features and that also individualises these basic units"@en,
+        "rekisteri, joka sisältää tietoja yhteiskunnan keskeisistä perusyksiköistä ja näiden ominaisuuksista sekä yksilöi nämä perusyksiköt"@fi,
+        "register som omfattar information om samhällets centrala grundenheter och deras egenskaper och som identifierar dessa grundenheter"@sv ;
+    skos:inScheme tt: ;
+    skos:note "It is common for basic registers to be prescribed by an act or decree. Basic registers include personal information systems, community information systems, real estate systems and building information systems."@en,
+        "Perusrekistereille on ominaista, että niistä säädetään laissa tai asetuksessa. Perusrekistereitä ovat henkilötietojärjestelmä, yhteisötietojärjestelmä, kiinteistötietojärjestelmä ja rakennustietojärjestelmä."@fi,
+        "Basregister kännetecknas av att det finns bestämmelser om dem i lagen. Basregister är befolkningsdatasystemet, företags- och organisationsdatasystemet samt fastighetsdatasystemet."@sv ;
+    skos:prefLabel "basic register"@en,
+        "perusrekisteri"@fi,
+        "basregister"@sv .
+
+tt:t71 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "jaettu ymmärrys"@fi,
+        "delad förståelse"@sv ;
+    skos:broader tt:t138 ;
+    skos:definition "adequate understanding of all those participating in the decision-making process on what they agree and disagree on and the reasons for their agreements or disagreements"@en,
+        "kaikkien päätöksentekoon osallistuvien riittävä ymmärrys siitä, mistä he ovat samaa ja mistä eri mieltä ja miksi"@fi,
+        "tillräcklig förståelse mellan beslutsfattare över vad de är överens och oense om samt varför"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Shared understanding can be achieved by laying out the participants' views, opinions and values as well as their justifications and disagreements that are related to the matter at hand."@en,
+        "Yhteinen ymmärrys on mahdollista saavuttaa kuvaamalla päätöksentekoon osallistuvien näkemykset, mielipiteet ja arvot aiheesta sekä perustelut ja erimielisyydet."@fi,
+        "Det är möjligt att uppnå en gemensam förståelse genom att beskriva synpunkterna, åsikterna och värderingarna samt motiveringarna och meningsskiljaktigheterna hos de som deltar i beslutsfattandet."@sv ;
+    skos:prefLabel "shared understanding"@en,
+        "yhteinen ymmärrys"@fi,
+        "gemensam förståelse"@sv .
+
+tt:t72 a skos:Concept ;
+    dc:source "Tietotekniikan termitalkoot, 2013-12-16" ;
+    skos:broader tt:t31 ;
+    skos:definition "data (machine-readable information) that is raw or unedited from the perspective of a specific information processing phase"@en,
+        "tietyn tietojen käsittelyvaiheen kannalta käsittelemätön tai muokkaamaton data (koneluettava tieto)"@fi,
+        "data (maskinläsbara uppgifter) som inte har behandlats eller redigerats i ett visst databehandlingsskede"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Data is often processed in several phases, so the processed data of one phase may be raw data in another."@en,
+        "Dataa käsitellään monesti useassa vaiheessa, joten yhden vaiheen käsitelty data saattaa olla seuraavan vaiheen raakadataa."@fi,
+        "Data behandlas ofta i flera skeden, så data som har behandlats i ett skede kan vara rådata i nästa skede."@sv ;
+    skos:prefLabel "raw data"@en,
+        "raakadata"@fi,
+        "rådata"@sv .
+
+tt:t76 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "sosiaalinen pääoma"@fi,
+        "socialt kapital"@sv ;
+    skos:broader tt:t2 ;
+    skos:definition "intellectual capital that is comprised of an organisation's relationships with its customers and other stakeholders as well as the benefits that it derives from these relationships"@en,
+        "aineeton pääoma, joka koostuu organisaation suhteista asiakkaisiin ja muihin sidosryhmiin sekä näistä suhteista saatavasta hyödystä"@fi,
+        "intellektuellt kapital som består av en organisations relationer till kunder och andra intressentgrupper samt av den nytta som relationerna medför"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "relational capital"@en,
+        "suhdepääoma"@fi,
+        "relationellt kapital"@sv .
+
+tt:t8 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t33 ;
+    skos:definition "form of literacy that is related to visual information and visual forms of expression"@en,
+        "visuaalisessa muodossa esitetyn tiedon ja visuaalisten ilmaisukeinojen lukutaito"@fi,
+        "färdighet att läsa visuellt representerad information och visuella uttrycksformer"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "visual literacy"@en,
+        "visuaalinen lukutaito"@fi,
+        "visuell läskunnighet"@sv .
+
+tt:t88 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t54 ;
+    skos:definition "business information that is used to target resources in the appropriate manner and adjust operations when necessary"@en,
+        "liiketoimintatieto, joka ohjaa kohdentamaan resursseja tarpeiden mukaisesti ja muuttamaan tarvittaessa toimintapoja"@fi,
+        "affärskunskap som hjälper att tilldela resurser och ändra verksamhetssätt enligt behov"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "tactical information"@en,
+        "taktinen tieto"@fi,
+        "taktisk kunskap"@sv .
+
+tt:t89 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t2 ;
+    skos:definition "intellectual capital that is comprised of an organisation's structures, leadership, systems, processes and technologies as well as corporate culture, values and atmosphere"@en,
+        "aineeton pääoma, joka koostuu organisaation rakenteista, johtamisesta, järjestelmistä, prosesseista ja teknologiasta sekä yrityskulttuurista, arvoista ja ilmapiiristä"@fi,
+        "intellektuellt kapital som består av en organisations strukturer, ledning, system, processer och teknologi samt dess företagskultur, värderingar och gemenskap"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "structural capital"@en,
+        "rakennepääoma"@fi,
+        "strukturkapital"@sv .
+
+tt:t91 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t117 ;
+    skos:definition "information that is expressed in some language or other code"@en,
+        "jollain kielellä tai muulla koodilla ilmaistu tieto"@fi,
+        "information uttryckt på ett språk eller genom en annan kod"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Explicit knowledge can be presented as text, speech or through a diagram, for example. Explicit knowledge can be transferred and stored."@en,
+        "Eksplisiittinen tieto voi olla esimerkiksi tekstin, puheen tai kaavion muodossa. Eksplisiittistä tietoa voidaan siirtää ja tallentaa."@fi,
+        "Explicit kunskap kan framställas till exempel i form av text, tal eller diagram. Explicit kunskap kan överföras och lagras."@sv ;
+    skos:prefLabel "explicit knowledge"@en,
+        "eksplisiittinen tieto"@fi,
+        "explicit kunskap"@sv .
+
+tt:t92 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t54 ;
+    skos:definition "business information that is used to guide an organisation towards overall business activities that are suitable for the organisation’s objectives"@en,
+        "liiketoimintatieto, joka ohjaa organisaation tavoitteiden kannalta tarkoituksenmukaiseen kokonaisliiketoimintaan"@fi,
+        "affärskunskap som leder till en ändamålsenlig affärsverksamhet enligt organisationens mål"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "strategic information"@en,
+        "strateginen tieto"@fi,
+        "strategisk kunskap"@sv .
+
+tt:t96 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "organisatorial interoperability"@en,
+        "organisaatioiden yhteentoimivuus"@fi,
+        "organisaatiotason yhteentoimivuus"@fi,
+        "interoperabilitet på organisatorisk nivå"@sv,
+        "samverkan mellan organisationer"@sv ;
+    skos:broader tt:t65 ;
+    skos:definition "form of interoperability that enables different organisations to aim for common objectives with the help of practices that support the objectives"@en,
+        "yhteentoimivuus, joka mahdollistaa organisaatioiden yhteisesti sovittujen päämäärien tavoittelun niitä tukevien käytäntöjen avulla"@fi,
+        "interoperabilitet som gör det möjligt för organisationer att uppnå gemensamma mål med hjälp av praxis som stöder dem"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Organisational interoperability is connected especially to the arrangement of knowledge processes in a way that ensures that the data is produced and shared in the manner that most benefits the common objective. The common objective can be a jointly produced service, for example."@en,
+        "Organisatorinen yhteentoimivuus liittyy erityisesti tietoprosessien järjestämiseen siten, että tietoa tuotetaan ja jaetaan sovittua päämäärää parhaiten edistävällä tavalla. Sovittu päämäärä voi olla esimerkiksi yhteisesti tuotettava palvelu."@fi,
+        "Organisatorisk interoperabilitet anknyter speciellt till organisering av informationsprocesser på så sätt, att information kan skapas och delas på bästa möjliga sätt med tanke på ett överenskommet mål. Det överenskomna målet kan vara till exempel en samproducerad tjänst."@sv ;
+    skos:prefLabel "organisational interoperability"@en,
+        "organisatorinen yhteentoimivuus"@fi,
+        "organisatorisk interoperabilitet"@sv .
+
+tt:t97 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "semanttisen tason yhteentoimivuus"@fi,
+        "interoperabilitet på semantisk nivå"@sv ;
+    skos:broader tt:t65 ;
+    skos:definition "form of interoperability that enables the transfer and processing of data in a way that retains the meaning of the data so that it remains unchanged and understandable for all parties"@en,
+        "yhteentoimivuus, joka mahdollistaa tiedon siirtämisen ja käsittelyn tavalla, jossa tiedon merkitys säilyy muuttumattomana ja ymmärrettävänä kaikille osapuolille"@fi,
+        "interoperabilitet som gör det möjligt att överföra och behandla information så att dess innebörd bevaras oförändrad och begriplig för alla parter"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Semanctic interoperability can be improved with glossaries and classifications."@en,
+        "Semanttista yhteentoimivuutta voidaan parantaa sanastoilla ja luokituksilla."@fi,
+        "Man kan förbättra semantisk interoperabilitet med ordlistor och klassificeringar."@sv ;
+    skos:prefLabel "semantic interoperability"@en,
+        "semanttinen yhteentoimivuus"@fi,
+        "semantisk interoperabilitet"@sv .
 
 tt:t10 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -77,21 +579,6 @@ tt:t10 a skos:Concept ;
     skos:related tt:t82 ;
     skos:topConceptOf tt: .
 
-tt:t101 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t33 ;
-    skos:definition "form of literacy that is related to information that is presented in different media"@en,
-        "eri medioissa esitetyn tiedon lukutaito"@fi,
-        "färdighet att läsa information som presenteras i olika medier"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Media literacy emphasises the significance of evaluating the utility and validity of information."@en,
-        "Medialukutaidossa korostuu tiedon hyödyllisyyden ja paikkansapitävyyden arvioimisen merkitys."@fi,
-        "Centralt för medieläskunnighet är att kunna bedöma informationens användbarhet och korrekthet."@sv ;
-    skos:prefLabel "media literacy"@en,
-        "medialukutaito"@fi,
-        "medieläskunnighet"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t103 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:altLabel "informationsspecialist"@sv ;
@@ -104,6 +591,69 @@ tt:t103 a skos:Concept ;
         "informationsexpert"@sv ;
     skos:related tt:t115 ;
     skos:topConceptOf tt: .
+
+tt:t104 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    isothes:narrowerPartitive tt:t37 ;
+    skos:broader tt:t2 ;
+    skos:definition "intellectual capital that is comprised of staff expertise and knowledge"@en,
+        "henkilöstön osaamisesta ja tietämyksestä koostuva aineeton pääoma"@fi,
+        "intellektuellt kapital som består av personalens kompetenser och kunskaper"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "human capital"@en,
+        "inhimillinen pääoma"@fi,
+        "humankapital"@sv .
+
+tt:t108 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t117 ;
+    skos:definition "string of characters, message, fact or observation that is not necessarily interpretable but that can be refined into information"@en,
+        "alimman jalostusasteen tieto, joka ei välttämättä ole tulkittavissa, mutta sitä jalostamalla voidaan saada informaatiota"@fi,
+        "teckensträng, meddelande, faktum eller observation som nödvändigtvis inte kan tolkas, men som kan förädlas till information"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Data is often used to refer to strings of characters and images, but e.g. sounds, light, heat and other observable things can also be data."@en,
+        "Datalla tarkoitetaan usein merkkijonoja ja kuvia, mutta dataa ovat myös esimerkiksi äänet, valo, lämpö ja muut havaittavissa olevat asiat."@fi,
+        "Med data avses oftast teckensträngar och bilder, men data kan även vara ljud, ljus, värme och andra observerbara saker."@sv ;
+    skos:prefLabel "data (potential information)"@en,
+        "data (alimman jalostusasteen tieto)"@fi,
+        "data (potentiell information)"@sv ;
+    skos:related tt:t4 .
+
+tt:t11 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary used in the production of metadata whose terms and expressions conform to a specific set of rules or guidelines on the formulation of their descriptions"@en,
+        "metatietojen tuottamisessa käytettävä sanasto, jonka sisältämät termit ja ilmaukset ovat tiettyjen kuvailusääntöjen tai kuvailuohjeiden mukaisia"@fi,
+        "ordlista som används för att skapa metadata och som innehåller termer och uttryck som har skapats enligt vissa riktlinjer"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "metadata glossary"@en,
+        "metatietosanasto"@fi,
+        "metadataordlista"@sv ;
+    skos:related tt:t41 .
+
+tt:t110 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t33 ;
+    skos:definition "media literacy of information that is presented on the internet and on other information networks"@en,
+        "internetin ja muiden tietoverkkojen avulla esitetyn tiedon medialukutaito"@fi,
+        "färdighet att läsa information som presenteras i olika medier på internet och i andra datanät"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "network literacy"@en,
+        "verkkolukutaito"@fi,
+        "webbläskunnighet"@sv ;
+    skos:related tt:t38 .
+
+tt:t112 a skos:Concept ;
+    dc:source "JHS 183 Julkisen hallinnon palvelujen tietomalli ja ryhmittely verkkopalveluissa, 2013-02-28" ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary that contains information on the concepts and terms used by special fields"@en,
+        "sanasto, joka sisältää erikoisalojen käsitteisiin ja niiden nimityksiin liittyvää tietoa"@fi,
+        "ordlista som omfattar uppgifter om och benämningar för begrepp som tillhör olika fackområden"@sv ;
+    skos:inScheme tt: ;
+    skos:prefLabel "terminological glossary"@en,
+        "terminologinen sanasto"@fi,
+        "terminologisk ordlista"@sv ;
+    skos:related tt:t78 .
 
 tt:t116 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -122,36 +672,6 @@ tt:t116 a skos:Concept ;
     skos:related tt:t50 ;
     skos:topConceptOf tt: .
 
-tt:t118 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t133 ;
-    skos:definition "code (in a code set) that individualises the target that it is referring to"@en,
-        "koodi (koodistossa), joka yksilöi viittaamansa kohteen"@fi,
-        "kod (i en koduppsättning) som identifierar det objekt som koden refererar till"@sv ;
-    skos:hiddenLabel "identifier"@en,
-        "tunnus"@fi ;
-    skos:inScheme tt: ;
-    skos:note "Some identifiers are permanent (Persistent Identifier, PID)."@en,
-        "Osa tunnuksista on pysyviä (pysyvä tunnus, PID, Persistent Identifier)."@fi,
-        "En del beteckningar är bestående (PID, Persistent Identifier)."@sv ;
-    skos:prefLabel "identifier (in a code set)"@en,
-        "tunnus (koodistossa)"@fi,
-        "beteckning (i en koduppsättning)"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t119 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "unprotected data"@en ;
-    skos:broader tt:t117 ;
-    skos:definition "information whose unauthorised access and use has not been prohibited"@en,
-        "tieto, johon luvattomasti pääsyä ja jonka luvatonta käyttöä ei ole estetty"@fi,
-        "uppgift, vars olovliga användning inte har förhindrats"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "unprotected information"@en,
-        "suojaamaton tieto"@fi,
-        "oskyddad uppgift"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t12 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:definition "person who works in the information sector"@en,
@@ -164,99 +684,17 @@ tt:t12 a skos:Concept ;
     skos:related tt:t115 ;
     skos:topConceptOf tt: .
 
-tt:t124 a skos:Concept ;
+tt:t128 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t109 ;
-    skos:definition "intellectual property right that is created primarily for the author of a written or artistic work"@en,
-        "ensisijaisesti tekijälle syntyvä immateriaalioikeus, joka koskee kirjallista tai taiteellista teosta"@fi,
-        "immateriell rätt som i första hand uppstår till den som har skapat ett litterärt eller konstnärligt verk"@sv ;
+    skos:broader tt:t33 ;
+    skos:definition "form of literacy required by data acquisition whose essential characteristics include the ability to define the need for information, versatile information retrieval skills and the critical evaluation of information"@en,
+        "tiedonhankinnassa tarvittava lukutaito, johon sisältyvät olennaisina kyky määritellä tiedontarve, monipuoliset tiedonhakutaidot ja tiedon kriittinen arviointi"@fi,
+        "läskunnighet som behövs för informationsanskaffning och som omfattar färdigheten att definiera informationsbehovet, mångsidiga kunskaper i informationssökning och en kritisk bedömning av information"@sv ;
     skos:inScheme tt: ;
-    skos:note "A copyright is created only for the personal form of expression of a work. The exploitation of a work's ideas, information and theories cannot be limited on the basis of its copyright."@en,
-        "Tekijänoikeus koskee vain teoksen persoonallista ilmaisumuotoa. Teoksen sisältämien ideoiden, tietojen ja teorioiden hyödyntämistä ei voi rajoittaa tekijänoikeuden nojalla."@fi,
-        "Upphovsrätten gäller endast för den personliga uttrycksformen av ett verk. Utnyttjandet av idéer, information och teorier i ett verk kan inte begränsas med stöd av upphovsrätt."@sv ;
-    skos:prefLabel "copyright"@en,
-        "tekijänoikeus"@fi,
-        "upphovsrätt"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t125 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t35 ;
-    skos:definition "storage of data for a specific term"@en,
-        "tiedon säilytys tietyn ennalta määritellyn ajan"@fi,
-        "förvaring av information i förhandsbestämd tid"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Fixed-term storage can be short or long term in nature, and the storage period can last for 100 years or more."@en,
-        "Määräaikaissäilytys voi olla lyhyt- tai pitkäaikaista, ja määritelty säilytysaika voi olla jopa 100 vuotta tai enemmän."@fi,
-        "Tidsbunden förvaring kan utföras på kort eller lång sikt, och den förhandsbestämda förvaringstiden kan vara upp till 100 år eller mer."@sv ;
-    skos:prefLabel "fixed-term data storage"@en,
-        "tiedon määräaikaissäilytys"@fi,
-        "tidsbunden förvaring av information"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t126 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t114 ;
-    skos:definition "register whose the information on the target has been copied to another information resource"@en,
-        "rekisteri, josta kohteeseen liittyvä tieto on kopioitu toiseen tietovarantoon"@fi,
-        "register som information om ett objekt har kopierats från till ett annat datalager"@sv ;
-    skos:inScheme tt: ;
-    skos:note "For example, the population information system is the source register for personal identity codes."@en,
-        "Esimerkiksi Väestötietojärjestelmä on henkilötunnusten lähderekisteri."@fi,
-        "Exempel: Befolkningsdataregistret är ett källregister över personbeteckningar."@sv ;
-    skos:prefLabel "source register"@en,
-        "lähderekisteri"@fi,
-        "källregister"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t130 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "implicit kunskap"@sv,
-        "underförstådd kunskap"@sv ;
-    skos:broader tt:t117 ;
-    skos:definition "knowledge that a person accumulates through experience"@en,
-        "kokemuksen kautta henkilölle kertynyt tieto"@fi,
-        "kunskap som samlats in via erfarenhet"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Tacit knowledge is subjective and intuitive in nature. It is often hard or practically impossible to wholly change tacit knowledge into explicit knowledge."@en,
-        "Hiljainen tieto on luonteeltaan subjektiivista ja intuitiivista. Hiljaista tietoa on usein vaikeaa tai jopa mahdotonta muuttaa kokonaan eksplisiittiseksi tiedoksi."@fi,
-        "Tyst kunskap är subjektiv och intuitiv. Det är ofta svårt och i vissa fall omöjligt att omvandla tyst kunskap till explicit kunskap."@sv ;
-    skos:prefLabel "tacit knowledge"@en,
-        "hiljainen tieto"@fi,
-        "tyst kunskap"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t131 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary that has been created for a specific purpose and whose creation and maintenance are subject to agreed-upon practices and discretion"@en,
-        "tiettyä käyttötarkoitusta varten laadittu sanasto, jonka laadinnassa ja päivittämisessä on noudatettu sovittuja käytäntöjä ja harkintaa"@fi,
-        "ordlista som har skapats för ett visst syfte efter överenskommen praxis och övervägande"@sv ;
-    skos:inScheme tt: ;
-    skos:note "In addition to the terms that are to be used, a controlled vocabulary may contain other terms (such as synonyms or terms describing the same subject) that are not to be used as-is but help guide users into using a specifically selected term. In index term lists, these types of terms that guide users to the terms that are to be used are called non-descriptors. Controlled vocabularies can be used to unify the descriptions of materials, for example."@en,
-        "Käytettävien termien lisäksi kontrolloitu sanasto saattaa sisältää muita termejä (esim. synonyymejä tai samaa aihepiiriä kuvaavia termejä), joita ei itsessään käytetä, vaan ne ohjaavat käyttämään sen sijaan tiettyä valittua termiä. Asiasanastoissa näitä käytettäviin termeihin ohjaavia termejä kutsutaan ohjaustermeiksi. Kontrolloitujen sanastojen avulla pyritään yhdenmukaistamaan esimerkiksi aineistojen kuvailua."@fi,
-        "Utöver termer som ska användas kan en kontrollerad ordlista även innehålla andra termer (t.ex. synonymer eller termer som beskriver samma ämnesområde) som inte används direkt, utan som hänvisar till att använda de valda termerna. I ämnesordsregister kallas dessa termer hänvisningsord. Kontrollerade ordlistor används till exempel för att enhetligt beskriva olika material."@sv ;
-    skos:prefLabel "controlled vocabulary"@en,
-        "kontrolloitu sanasto"@fi,
-        "kontrollerad ordlista"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t132 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "vapaa sanasto"@fi,
-        "fri ordlista"@sv ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary that is based on some or all free word choices that have been made in a specific environment"@en,
-        "sanasto, joka perustuu joihinkin tai kaikkiin tietyssä ympäristössä tehtyihin vapaisiin sanavalintoihin"@fi,
-        "ordlista som baserar sig på vissa eller alla fria ordval i ett visst sammanhang"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Uncontrolled vocabularies include glossaries that explain the terms that appear in a specific text and open index term lists, i.e. folksonomies."@en,
-        "Avoimia sanastoja ovat esimerkiksi tietyssä tekstissä esiintyviä termejä selittävät sanastot ja avoimet asiasanastot eli folksonomiat."@fi,
-        "Öppna ordlistor är till exempel ordlistor över termer som förekommer i en viss text och öppna ämnesordsregister, dvs. folksonomier."@sv ;
-    skos:prefLabel "uncontrolled vocabulary"@en,
-        "avoin sanasto"@fi,
-        "öppen ordlista"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "information literacy"@en,
+        "informaatiolukutaito"@fi,
+        "informationsläskunnighet"@sv ;
+    skos:related tt:t1 .
 
 tt:t136 a skos:Concept ;
     dc:source "Laajakaistasanasto (TSK 43, 2012)" ;
@@ -270,50 +708,6 @@ tt:t136 a skos:Concept ;
     skos:related tt:t80 ;
     skos:topConceptOf tt: .
 
-tt:t137 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t122 ;
-    skos:definition "confidential information whose unauthorised disclosure or use has been evaluated and classified according to national safety classification standards on the harm that it could cause to any public or private interest"@en,
-        "salassa pidettävä tieto, jonka luvattomasta paljastumisesta tai luvattomasta käytöstä aiheutuva haitta yleiselle tai yksityiselle edulle on arvioitu ja merkitty kansallisen suojaustasoluokittelun mukaisesti"@fi,
-        "sekretessbelagd uppgift som har en klassificering enligt skyddsnivå enligt den skada som obehörigt avslöjande eller obehörig användning av uppgiften kan orsaka för allmänna och enskilda intressen"@sv ;
-    skos:inScheme tt: ;
-    skos:note "\"The following protection levels are used for the classification of information by protection level: Protection level I, if unauthorised disclosure or use could cause particularly grave damage to any public interest; protection level II, if unauthorised disclosure or use could cause significant damage to any public interest; protection level III, if unauthorised disclosure or use could cause damage to any public or private interest; protection level IV, if unauthorised disclosure or use could cause harm to any public or private interest.\""@en,
-        "\"Suojaustasoluokittelussa käytetään seuraavia luokkia: Suojaustaso I, jos luvaton paljastuminen tai käyttö voi aiheuttaa erityisen suurta vahinkoa yleiselle edulle; suojaustaso II, jos luvaton paljastuminen tai käyttö voi aiheuttaa merkittävää vahinkoa yleiselle edulle; suojaustaso III, jos luvaton paljastuminen tai käyttö voi aiheuttaa vahinkoa yleiselle tai yksityiselle edulle; suojaustaso IV, jos luvaton paljastuminen tai käyttö voi aiheuttaa haittaa yleiselle edulle tai yksityiselle edulle.\""@fi,
-        "\"Vid klassificering enligt skyddsnivå används följande klasser: Skyddsnivå I, om obehörigt avslöjande eller obehörig användning kan orsaka särskilt stor skada för allmänna intressen; skyddsnivå II, om obehörigt avslöjande eller obehörig användning kan orsaka betydande skada för allmänna intressen; skyddsnivå III, om obehörigt avslöjande eller obehörig användning kan orsaka skada för allmänna eller enskilda intressen; skyddsnivå IV, om obehörigt avslöjande eller obehörig användning kan orsaka olägenheter för allmänna eller enskilda intressen.\""@sv ;
-    skos:prefLabel "information classified by protection level"@en,
-        "suojaustasoluokiteltu tieto"@fi,
-        "uppgift klassificerad enligt skyddsnivå"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t14 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "teknisen tason yhteentoimivuus"@fi,
-        "interoperabilitet på teknisk nivå"@sv ;
-    skos:broader tt:t65 ;
-    skos:definition "form of interoperability that enables the transfer of data via information technology"@en,
-        "yhteentoimivuus, joka mahdollistaa tietotekniikan avulla tehtävät tiedonsiirrot"@fi,
-        "interoperabilitet som gör det möjligt att överföra information med hjälp av informationsteknik"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Technical interoperability is connected to the technical part of information systems, i.e. hardware and software. However, the benefits of technical interoperability are limited if there is no semantic, organisational or legal interoperability between the information systems."@en,
-        "Tekninen yhteentoimivuus liittyy tekniseen, laitteista ja ohjelmista koostuvaan osaan tietojärjestelmiä. Teknisellä yhteentoimivuudella saavutettavat edut ovat rajallisia, jos tietojärjestelmien välillä ei ole semanttista, organisatorista tai oikeudellista yhteentoimivuutta."@fi,
-        "Teknisk interoperabilitet anknyter till den tekniska delen av informationssystem som utgörs av enheter och program. Fördelarna som uppnås med teknisk interoperabilitet är begränsade utan semantisk, organisatorisk och rättslig interoperabilitet mellan ifrågavarande informationssystem."@sv ;
-    skos:prefLabel "technical interoperability"@en,
-        "tekninen yhteentoimivuus"@fi,
-        "teknisk interoperabilitet"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t140 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t17 ;
-    skos:definition "case register where every case is provided with its own number or other identifier and whose purpose is to enable good information management practices and openness in the activities of public authorities"@en,
-        "asiarekisteri, jossa jokaisella asialla on oma numero tai muu tunnus ja jonka tarkoituksena on toteuttaa viranomaisen hyvää tiedonhallintatapaa ja julkisuutta"@fi,
-        "ärenderegister, där varje ärende har ett eget nummer eller någon annan beteckning och vars syfte är att genomföra myndigheters praxis för god informationshantering och offentlighet"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "journal"@en,
-        "diaari"@fi,
-        "diarium"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t16 a skos:Concept ;
     dc:source "JHS 179 Kokonaisarkkitehtuurin suunnittelu ja kehittäminen, 2017-02-07" ;
     skos:definition "structure of an organisation or other entity as a whole"@en,
@@ -324,33 +718,6 @@ tt:t16 a skos:Concept ;
         "kokonaisarkkitehtuuri (rakenne)"@fi,
         "övergripande arkitektur (struktur)"@sv ;
     skos:related tt:t32 ;
-    skos:topConceptOf tt: .
-
-tt:t20 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t35 ;
-    skos:definition "storage of data without any time limits"@en,
-        "tiedon säilytys ilman aikarajaa"@fi,
-        "förvaring av information utan tidsgräns"@sv ;
-    skos:inScheme tt: ;
-    skos:note "The permanent storage of data can usually last for hundreds of years, even forever"@en,
-        "Pysyväissäilytyksessä tietoja säilytetään tavallisesti satoja vuosia, jopa ikuisesti."@fi,
-        "Information som förvaras permanent förvaras vanligtvis i hundratals år, i vissa fall för evigt."@sv ;
-    skos:prefLabel "permanent data storage"@en,
-        "tiedon pysyväissäilytys"@fi,
-        "permanent förvaring av information"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t22 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t33 ;
-    skos:definition "form of literacy that is related to information that is presented with the help of digital tools"@en,
-        "digitaalisten välineiden avulla esitetyn tiedon lukutaito"@fi,
-        "färdighet att läsa information som presenteras med digitala verktyg"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "digital literacy"@en,
-        "digitaalinen lukutaito"@fi,
-        "digital läskunnighet"@sv ;
     skos:topConceptOf tt: .
 
 tt:t29 a skos:Concept ;
@@ -375,21 +742,6 @@ tt:t3 a skos:Concept ;
         "luokka"@fi,
         "klass"@sv ;
     skos:related tt:t81 ;
-    skos:topConceptOf tt: .
-
-tt:t30 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t114 ;
-    skos:definition "register that is maintained on the targets of a specific function and that contains the necessary information for the preparation, management and monitoring of any related matters"@en,
-        "tietyn toiminnon kohteista ylläpidettävä rekisteri, johon merkitään asioiden valmistelussa, käsittelyssä ja seurannassa tarvittavat tiedot"@fi,
-        "register som omfattar objekt som tillhör en särskild funktion och information som behövs för beredning, behandling och uppföljning av ärenden"@sv ;
-    skos:inScheme tt: ;
-    skos:note "A special register can contain information on e.g. people, companies or buildings."@en,
-        "Erityisrekisteri voi sisältää tietoa esimerkiksi henkilöistä, yrityksistä tai rakennuksista."@fi,
-        "Ett specialregister kan innehålla information om till exempel personer, företag eller byggnader."@sv ;
-    skos:prefLabel "special register"@en,
-        "erityisrekisteri"@fi,
-        "specialregister"@sv ;
     skos:topConceptOf tt: .
 
 tt:t32 a skos:Concept ;
@@ -422,37 +774,17 @@ tt:t34 a skos:Concept ;
     skos:related tt:t9 ;
     skos:topConceptOf tt: .
 
-tt:t36 a skos:Concept ;
+tt:t43 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "perustieto"@fi,
-        "huvuddata"@sv ;
-    skos:broader tt:t117 ;
-    skos:definition "information describing a target that is related to an organisation's activities and that is required or utilised by several of the organisation's processes or functions"@en,
-        "organisaation toimintaan liittyvää kohdetta kuvaava tieto, jota useampi organisaation prosessi tai toiminto tarvitsee tai hyödyntää"@fi,
-        "uppgifter som beskriver föremål i anslutning till en organisations verksamhet som flera av organisationens processer eller funktioner behöver eller använder"@sv ;
+    skos:broader tt:t15 ;
+    skos:definition "content (information) that is published in a data network"@en,
+        "tietoverkossa julkaistu sisältö (informaatio)"@fi,
+        "innehåll (information) som har publicerats i ett datanät"@sv ;
     skos:inScheme tt: ;
-    skos:note "The master data of an organisation can include information on e.g. the organisation's customers, suppliers, partners, products, services or offices. Master data is usually slow to change and needed in the long term."@en,
-        "Organisaation master dataa voivat olla esimerkiksi asiakkaita, toimittajia, yhteistyökumppaneita, tuotteita, palveluita tai toimipaikkoja koskevat tiedot. Tavallisesti master data on hitaasti muuttuvaa ja sen tarve on pitkäaikaista."@fi,
-        "En organisations master data kan vara uppgifter om till exempel kunder, leverantörer, samarbetspartners, produkter, tjänster eller verksamhetsställen. Master data ändras vanligtvis långsamt och behövs under längre perioder."@sv ;
-    skos:prefLabel "master data"@en,
-        "master data"@fi,
-        "master data"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t42 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that is accessible to all"@en,
-        "tieto, johon kaikilla on pääsy"@fi,
-        "information som alla har tillgång till"@sv ;
-    skos:inScheme tt: ;
-    skos:note "All documents created by public authorities are public in nature unless otherwise stated by law."@en,
-        "Viranomaisten asiakirjat ovat julkisia, jollei laissa erikseen toisin säädetä."@fi,
-        "Myndighetshandlingar är offentliga, om inte något annat föreskrivs i lag."@sv ;
-    skos:prefLabel "public information"@en,
-        "julkinen tieto"@fi,
-        "offentlig information"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "online content"@en,
+        "verkkosisältö"@fi,
+        "nätverksinnehåll"@sv ;
+    skos:related tt:t38 .
 
 tt:t44 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -466,68 +798,39 @@ tt:t44 a skos:Concept ;
     skos:related tt:t24 ;
     skos:topConceptOf tt: .
 
-tt:t45 a skos:Concept ;
+tt:t50 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "tekijänoikeuden lähioikeus"@fi,
-        "upphovsrätten närstående rättighet"@sv ;
-    skos:broader tt:t109 ;
-    skos:definition "intellectual property right that concerns the presentation of or financial investment connection to an intellectual work that does not result in a copyrightable work but whose protection is defined separately in connection with copyright legislation"@en,
-        "immateriaalioikeus, joka koskee sellaista henkisen työn esitystä tai henkiseen työhön liittyvää taloudellista panostusta, jonka tuloksena ei synny tekijänoikeuksilla suojattavaa teosta mutta jonka suojasta säädetään erikseen tekijänoikeuslakien yhteydessä"@fi,
-        "immateriell rättighet som gäller en framställning av intellektuellt arbete eller en ekonomisk investering i samband med intellektuellt arbete som inte resulterar i ett verk som skyddas av upphovsrätt utan som skyddas enligt skilda bestämmelser i upphovsrättslagen"@sv ;
+    skos:broader tt:t31 ;
+    skos:definition "data (machine-readable information) pertaining to a person that the person in question can personally manage and utilise in accordance with MyData (principle)"@en,
+        "henkilöä koskeva data (koneluettava tieto), jota kyseinen henkilö voi itse hallinnoida ja hyödyntää omadatan (periaate) mukaisesti"@fi,
+        "data (maskinläsbara uppgifter) om en person som personen i fråga har rätt att hantera och använda enligt MyData (princip)"@sv ;
+    skos:hiddenLabel "mydata (data)"@en,
+        "mydata (data)"@sv ;
     skos:inScheme tt: ;
-    skos:note "Neighbouring rights are used to protect e.g. databases, lists, performances by performing artists, works by recording and visual recording producers as well as the rights of public broadcasting corporations to their broadcasting signals. A neighbouring right can be created for a private person or organisation."@en,
-        "Lähioikeuksilla suojataan mm. tietokantoja, luetteloita, esittävien taiteilijoiden suoritteita, äänite- ja kuvatallennetuottajien tekemää työtä sekä yleisradioyhtiöiden oikeutta lähetyssignaaliinsa. Lähioikeus voi syntyä yksityishenkilölle tai organisaatiolle."@fi,
-        "Närstående rättigheter används för att skydda bl.a. Databaser, kataloger, konstnärliga framföranden, ljud- och bildproducenters arbeten samt rundradiobolags rätt till sin egen sändningssignal. Närstående rättigheter kan uppstå till privatpersoner eller organisationer."@sv ;
-    skos:prefLabel "neighbouring right"@en,
-        "lähioikeus"@fi,
-        "närstående rättighet"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "MyData (data)"@en,
+        "omadata (data)"@fi,
+        "MyData (data)"@sv ;
+    skos:related tt:t116 .
 
-tt:t46 a skos:Concept ;
+tt:t53 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "protected data"@en ;
-    skos:broader tt:t117 ;
-    skos:definition "information whose unauthorised access and use has been prohibited with legislative, administrative, technical and physical means"@en,
-        "tieto, johon luvaton pääsy ja jonka luvaton käyttö on estetty juridisin, hallinnollisin, teknisin ja fyysisin toimenpitein"@fi,
-        "uppgift, vars olovliga användning har förhindrats med juridiska, administrativa, tekniska och fysiska åtgärder"@sv ;
+    skos:altLabel "ei-rakenteinen data"@fi,
+        "ei-rakenteinen tieto"@fi,
+        "rakenteeton tieto"@fi,
+        "rakenteistamaton data"@fi,
+        "rakenteistamaton tieto"@fi,
+        "icke-strukturella data"@sv,
+        "icke-strukturerade data"@sv,
+        "ostrukturella data"@sv ;
+    skos:broader tt:t31 ;
+    skos:definition "data (machine-readable information) that does not have a metadata-defined structure that could be used to parse the data"@en,
+        "data (koneluettava tieto), jolla ei ole metatietojen avulla määritettyä rakennetta, jonka avulla data voitaisiin jäsentää"@fi,
+        "data (maskinläsbara uppgifter) som inte har en struktur definierad med hjälp av metadata för analys av ifrågavarande data"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "protected information"@en,
-        "suojattu tieto"@fi,
-        "skyddad uppgift"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t52 a skos:Concept ;
-    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
-    skos:broader tt:t78 ;
-    skos:definition "concept that corresponds to a single unique concept"@en,
-        "käsite, joka vastaa yhtä ainutkertaista tarkoitetta"@fi,
-        "begrepp som kan knytas till en unik referent"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Individual concepts are referred to with proper names such as 'Jupiter' and 'the Baltic Sea'. Terminology work rarely focuses on individual concepts."@en,
-        "Yksilökäsitteisiin viitataan erisnimillä kuten 'Jupiter' ja 'Itämeri'. Sanastotyössä käsitellään yksilökäsitteitä melko harvoin."@fi,
-        "Individualbegrepp benämns med egennamn. Exempel: 'Jupiter', 'Östersjön'. Individualbegrepp utreds sällan i terminologiarbete."@sv ;
-    skos:prefLabel "individual concept"@en,
-        "yksilökäsite"@fi,
-        "individualbegrepp"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t55 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "juridinen yhteentoimivuus"@fi,
-        "interoperabilitet på rättslig nivå"@sv,
-        "juridisk interoperabilitet"@sv ;
-    skos:broader tt:t65 ;
-    skos:definition "form of interoperability that enables data transfers between different legislative regions without violating any pertinent legislation"@en,
-        "yhteentoimivuus, joka mahdollistaa tiedonsiirrot eri lainsäädännöllisten alueiden välillä ilman, että asiaankuuluvaa lainsäädäntöä rikotaan"@fi,
-        "interoperabilitet som gör det möjligt att överföra information mellan områden med olika lagstiftning utan att relevanta lagar bryts"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Legal interoperability is connected especially to the nature of the data that is contained in the information systems and how this data is collected, arranged and transferred."@en,
-        "Oikeudellinen yhteentoimivuus liittyy erityisesti tietojärjestelmissä käsiteltävien tietojen luonteeseen ja tapoihin, joilla tietoja kerätään, järjestetään ja siirretään."@fi,
-        "Rättslig interoperabilitet anknyter speciellt till information i informationssystem samt till informationens art och hur man samlar in, ordnar och överför informationen."@sv ;
-    skos:prefLabel "legal interoperability"@en,
-        "oikeudellinen yhteentoimivuus"@fi,
-        "rättslig interoperabilitet"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "unstructured data"@en,
+        "rakenteeton data"@fi,
+        "ostrukturerade data"@sv ;
+    skos:related tt:t21 .
 
 tt:t58 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -541,51 +844,20 @@ tt:t58 a skos:Concept ;
         "mångläskunnighet"@sv ;
     skos:topConceptOf tt: .
 
-tt:t6 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "big data"@fi,
-        "big data"@sv ;
-    skos:broader tt:t31 ;
-    skos:definition "data (machine-readable information) that is diverse, large in size and grows rapidly"@en,
-        "data (koneluettava tieto), joka on monimuotoinen ja suuri kooltaan sekä kasvaa nopeasti"@fi,
-        "mångsidig och riklig mängd data (maskinläsbara uppgifter) som snabbt ökar i storlek"@sv ;
+tt:t59 a skos:Concept ;
+    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
+    skos:broader tt:t78 ;
+    skos:definition "concept that corresponds to two or several objects that possess similar characteristics"@en,
+        "käsite, joka vastaa kahta tai useampaa tarkoitetta, joilla on yhteisiä ominaisuuksia"@fi,
+        "begrepp som kan knytas till två eller flera referenter som har gemensamma egenskaper"@sv ;
     skos:inScheme tt: ;
-    skos:note "To be able to process big data, a device or application needs a great deal of storage capacity and processing power."@en,
-        "Laitteilta ja sovelluksilta vaaditaan huomattavaa tallennuskapasiteettia ja suorituskykyä, jotta ne pystyisivät käsittelemään massadataa."@fi,
-        "Maskiner och program måste ha betydande lagringskapacitet och prestanda för att kunna bearbeta stordata."@sv ;
-    skos:prefLabel "big data"@en,
-        "massadata"@fi,
-        "stordata"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t60 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "turvaluokiteltu tieto"@fi,
-        "säkerhetsskyddsklassificerad uppgift"@sv ;
-    skos:broader tt:t122 ;
-    skos:definition "confidential information whose unauthorised disclosure or use has been evaluated and classified according to international safety classification standards on the harm that it could cause to international relations, state security, national defence or any other similar public interest"@en,
-        "salassa pidettävä tieto, jonka luvattomasta paljastumisesta tai luvattomasta käytöstä aiheutuva haitta kansainvälisille suhteille, valtion turvallisuudelle, maanpuolustukselle tai muulle vastaavalle yleiselle edulle on arvioitu ja merkitty kansainvälisen turvallisuusluokittelun mukaisesti"@fi,
-        "sekretessbelagd uppgift som har en anteckning om internationell säkerhetsklassificering enligt den skada som obehörigt avslöjande eller obehörig användning av uppgiften kan orsaka för internationella relationer, statens säkerhet, försvaret eller andra allmänna intressen."@sv ;
-    skos:inScheme tt: ;
-    skos:note "\"The following classes are used for the classification of classified information: Class I TOP SECRET, if unauthorised disclosure or use could cause particularly grave damage to any public interest; class II SECRET, if unauthorised disclosure or use could cause significant damage to any public interest; class III CONFIDENTIAL, if unauthorised disclosure or use could cause damage to any public or private interest; class IV RESTRICTED, if unauthorised disclosure or use could cause harm to any public or private interest.\""@en,
-        "\"Turvallisuusluokittelussa käytetään seuraavia luokkia: Turvallisuusluokka I ERITTÄIN SALAINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa erityisen suurta vahinkoa yleiselle edulle; turvallisuusluokka II SALAINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa merkittävää vahinkoa yleiselle edulle; turvallisuusluokka III LUOTTAMUKSELLINEN, jos luvaton paljastuminen tai käyttö voi aiheuttaa vahinkoa yleiselle tai yksityiselle edulle; turvallisuusluokka IV KÄYTTÖ RAJOITETTU, jos luvaton paljastuminen tai käyttö voi aiheuttaa haittaa yleiselle edulle tai yksityiselle edulle.\""@fi,
-        "\"Följande klasser används vid säkerhetsklassificering: Säkerhetsklass I YTTERST HEMLIG, om obehörigt avslöjande eller obehörig användning kan orsaka särskilt stor skada för allmänna intressen; säkerhetsklass II HEMLIG, om obehörigt avslöjande eller obehörig användning kan orsaka betydande skada för allmänna intressen; säkerhetsklass III KONFIDENTIELL, om obehörigt avslöjande eller obehörig användning kan orsaka skada för allmänna eller enskilda intressen; säkerhetsklass IV BEGRÄNSAD TILLGÅNG, om obehörigt avslöjande eller obehörig användning kan orsaka olägenheter för allmänna eller enskilda intressen.\""@sv ;
-    skos:prefLabel "classified information"@en,
-        "turvallisuusluokiteltu tieto"@fi,
-        "säkerhetsklassificerad uppgift"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t64 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t113 ;
-    skos:definition "index term list that indicates the relationships between the index terms that are presented in the list"@en,
-        "asiasanasto, jossa asiasanojen yhteydessä ilmaistaan niiden suhteet muihin asiasanoihin"@fi,
-        "ämnesordsregister som omfattar förhållanden mellan ämnesord"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "thesaurus"@en,
-        "tesaurus"@fi,
-        "tesaurus"@sv ;
-    skos:topConceptOf tt: .
+    skos:note "For example: 'motor', 'sea', and 'talent'."@en,
+        "Esimerkiksi: 'moottori', 'meri' ja 'lahjakkuus'."@fi,
+        "Exempel: 'motor', 'hav', 'begåvning'."@sv ;
+    skos:prefLabel "general concept"@en,
+        "yleiskäsite"@fi,
+        "allmänbegrepp"@sv ;
+    skos:related tt:t102 .
 
 tt:t66 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -602,64 +874,29 @@ tt:t66 a skos:Concept ;
     skos:related tt:t47 ;
     skos:topConceptOf tt: .
 
-tt:t68 a skos:Concept ;
+tt:t67 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t54 ;
-    skos:definition "business information that helps utilise resources in an efficient manner"@en,
-        "liiketoimintatieto, joka ohjaa hyödyntämään resursseja tehokkaasti"@fi,
-        "affärskunskap som hjälper att använda resurser effektivt"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "information that, at first, was classified as personal data, but has now been irreversibly edited to the point that the person can no longer be identified"@en,
+        "alun perin henkilötiedoksi luokiteltu tieto, jota on peruuttamattomasti muokattu siten, ettei henkilö ole enää tunnistettavissa"@fi,
+        "ursprungligen en personuppgift som har ändrats oåterkalleligt så att personen i fråga inte längre kan identifieras"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "operational information"@en,
-        "operatiivinen tieto"@fi,
-        "operativ kunskap"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "anonymised information"@en,
+        "anonymisoitu tieto"@fi,
+        "anonymiserad uppgift"@sv ;
+    skos:related tt:t63 .
 
-tt:t70 a skos:Concept ;
+tt:t69 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t114 ;
-    skos:definition "register that contains information on the key basic units of society and their features and that also individualises these basic units"@en,
-        "rekisteri, joka sisältää tietoja yhteiskunnan keskeisistä perusyksiköistä ja näiden ominaisuuksista sekä yksilöi nämä perusyksiköt"@fi,
-        "register som omfattar information om samhällets centrala grundenheter och deras egenskaper och som identifierar dessa grundenheter"@sv ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary that is presented in a machine-readable form and defines the hierarchical relationships of the concepts of an application or subject area"@en,
+        "konepäättelyä tukevassa muodossa esitetty sanasto, jossa määritellään sovellus- tai aihealueen käsitteiden hierarkkiset suhteet"@fi,
+        "ordlista med hierarkiska förhållanden mellan begrepp för ett visst tillämpnings- eller ämnesområde i en form lämpad för maskintolkning"@sv ;
     skos:inScheme tt: ;
-    skos:note "It is common for basic registers to be prescribed by an act or decree. Basic registers include personal information systems, community information systems, real estate systems and building information systems."@en,
-        "Perusrekistereille on ominaista, että niistä säädetään laissa tai asetuksessa. Perusrekistereitä ovat henkilötietojärjestelmä, yhteisötietojärjestelmä, kiinteistötietojärjestelmä ja rakennustietojärjestelmä."@fi,
-        "Basregister kännetecknas av att det finns bestämmelser om dem i lagen. Basregister är befolkningsdatasystemet, företags- och organisationsdatasystemet samt fastighetsdatasystemet."@sv ;
-    skos:prefLabel "basic register"@en,
-        "perusrekisteri"@fi,
-        "basregister"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t71 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "jaettu ymmärrys"@fi,
-        "delad förståelse"@sv ;
-    skos:broader tt:t138 ;
-    skos:definition "adequate understanding of all those participating in the decision-making process on what they agree and disagree on and the reasons for their agreements or disagreements"@en,
-        "kaikkien päätöksentekoon osallistuvien riittävä ymmärrys siitä, mistä he ovat samaa ja mistä eri mieltä ja miksi"@fi,
-        "tillräcklig förståelse mellan beslutsfattare över vad de är överens och oense om samt varför"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Shared understanding can be achieved by laying out the participants' views, opinions and values as well as their justifications and disagreements that are related to the matter at hand."@en,
-        "Yhteinen ymmärrys on mahdollista saavuttaa kuvaamalla päätöksentekoon osallistuvien näkemykset, mielipiteet ja arvot aiheesta sekä perustelut ja erimielisyydet."@fi,
-        "Det är möjligt att uppnå en gemensam förståelse genom att beskriva synpunkterna, åsikterna och värderingarna samt motiveringarna och meningsskiljaktigheterna hos de som deltar i beslutsfattandet."@sv ;
-    skos:prefLabel "shared understanding"@en,
-        "yhteinen ymmärrys"@fi,
-        "gemensam förståelse"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t72 a skos:Concept ;
-    dc:source "Tietotekniikan termitalkoot, 2013-12-16" ;
-    skos:broader tt:t31 ;
-    skos:definition "data (machine-readable information) that is raw or unedited from the perspective of a specific information processing phase"@en,
-        "tietyn tietojen käsittelyvaiheen kannalta käsittelemätön tai muokkaamaton data (koneluettava tieto)"@fi,
-        "data (maskinläsbara uppgifter) som inte har behandlats eller redigerats i ett visst databehandlingsskede"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Data is often processed in several phases, so the processed data of one phase may be raw data in another."@en,
-        "Dataa käsitellään monesti useassa vaiheessa, joten yhden vaiheen käsitelty data saattaa olla seuraavan vaiheen raakadataa."@fi,
-        "Data behandlas ofta i flera skeden, så data som har behandlats i ett skede kan vara rådata i nästa skede."@sv ;
-    skos:prefLabel "raw data"@en,
-        "raakadata"@fi,
-        "rådata"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "ontology"@en,
+        "ontologia"@fi,
+        "ontologi"@sv ;
+    skos:related tt:t78 .
 
 tt:t73 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -686,20 +923,6 @@ tt:t75 a skos:Concept ;
     skos:related tt:t117 ;
     skos:topConceptOf tt: .
 
-tt:t76 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "sosiaalinen pääoma"@fi,
-        "socialt kapital"@sv ;
-    skos:broader tt:t2 ;
-    skos:definition "intellectual capital that is comprised of an organisation's relationships with its customers and other stakeholders as well as the benefits that it derives from these relationships"@en,
-        "aineeton pääoma, joka koostuu organisaation suhteista asiakkaisiin ja muihin sidosryhmiin sekä näistä suhteista saatavasta hyödystä"@fi,
-        "intellektuellt kapital som består av en organisations relationer till kunder och andra intressentgrupper samt av den nytta som relationerna medför"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "relational capital"@en,
-        "suhdepääoma"@fi,
-        "relationellt kapital"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t79 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:definition "system comprised of data and the people managing the data, data processing devices, data transfer devices, data processing programmes and data processing regulations, the purpose of which is to enhance, facilitate or enable some activity."@en,
@@ -715,18 +938,6 @@ tt:t79 a skos:Concept ;
     skos:related tt:t65 ;
     skos:topConceptOf tt: .
 
-tt:t8 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t33 ;
-    skos:definition "form of literacy that is related to visual information and visual forms of expression"@en,
-        "visuaalisessa muodossa esitetyn tiedon ja visuaalisten ilmaisukeinojen lukutaito"@fi,
-        "färdighet att läsa visuellt representerad information och visuella uttrycksformer"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "visual literacy"@en,
-        "visuaalinen lukutaito"@fi,
-        "visuell läskunnighet"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t81 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:definition "act of grouping phenomena into classes based on their similar attributes so that the classes differ from one another"@en,
@@ -738,6 +949,23 @@ tt:t81 a skos:Concept ;
         "klassificering"@sv ;
     skos:related tt:t3 ;
     skos:topConceptOf tt: .
+
+tt:t84 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "yhdistetty data"@fi,
+        "kombinerade data"@sv ;
+    skos:broader tt:t98 ;
+    skos:definition "structured data that is connected to the data in several datasets with the help of links"@en,
+        "rakenteinen data, joka on yhdistetty useiden tietoaineistojen sisältämään dataan linkkien avulla"@fi,
+        "strukturerade data som har kombinerats med data i andra datauppsättningar med hjälp av länkar"@sv ;
+    skos:inScheme tt: ;
+    skos:note "Linked data can be open data, in which case it is referred to as linked open data."@en,
+        "Linkitetty data voi olla avointa dataa, jolloin sitä kutsutaan avoimeksi linkitetyksi dataksi."@fi,
+        "Länkade data kan vara öppna data, och kallas i sådant fall länkade öppna data."@sv ;
+    skos:prefLabel "linked data"@en,
+        "linkitetty data"@fi,
+        "länkade data"@sv ;
+    skos:related tt:t82 .
 
 tt:t85 a skos:Concept ;
     dc:source "Tietotekniikan termitalkoot, 2016-11-11" ;
@@ -751,93 +979,21 @@ tt:t85 a skos:Concept ;
     skos:related tt:t117 ;
     skos:topConceptOf tt: .
 
-tt:t88 a skos:Concept ;
+tt:t100 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t54 ;
-    skos:definition "business information that is used to target resources in the appropriate manner and adjust operations when necessary"@en,
-        "liiketoimintatieto, joka ohjaa kohdentamaan resursseja tarpeiden mukaisesti ja muuttamaan tarvittaessa toimintapoja"@fi,
-        "affärskunskap som hjälper att tilldela resurser och ändra verksamhetssätt enligt behov"@sv ;
+    skos:broader tt:t134,
+        tt:t31 ;
+    skos:definition "data (machine-readable information) that can be freely reused by anyone in accordance with its terms of use"@en,
+        "data (koneluettava tieto), joka on kenen tahansa uudelleen käytettävissä maksutta sen käyttöehtojen mukaisesti"@fi,
+        "data (maskinläsbara uppgifter) som vem som helst har rätt att återanvända kostnadsfritt enligt tillhörande användarvillkor"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "tactical information"@en,
-        "taktinen tieto"@fi,
-        "taktisk kunskap"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t89 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t2 ;
-    skos:definition "intellectual capital that is comprised of an organisation's structures, leadership, systems, processes and technologies as well as corporate culture, values and atmosphere"@en,
-        "aineeton pääoma, joka koostuu organisaation rakenteista, johtamisesta, järjestelmistä, prosesseista ja teknologiasta sekä yrityskulttuurista, arvoista ja ilmapiiristä"@fi,
-        "intellektuellt kapital som består av en organisations strukturer, ledning, system, processer och teknologi samt dess företagskultur, värderingar och gemenskap"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "structural capital"@en,
-        "rakennepääoma"@fi,
-        "strukturkapital"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t91 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that is expressed in some language or other code"@en,
-        "jollain kielellä tai muulla koodilla ilmaistu tieto"@fi,
-        "information uttryckt på ett språk eller genom en annan kod"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Explicit knowledge can be presented as text, speech or through a diagram, for example. Explicit knowledge can be transferred and stored."@en,
-        "Eksplisiittinen tieto voi olla esimerkiksi tekstin, puheen tai kaavion muodossa. Eksplisiittistä tietoa voidaan siirtää ja tallentaa."@fi,
-        "Explicit kunskap kan framställas till exempel i form av text, tal eller diagram. Explicit kunskap kan överföras och lagras."@sv ;
-    skos:prefLabel "explicit knowledge"@en,
-        "eksplisiittinen tieto"@fi,
-        "explicit kunskap"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t92 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t54 ;
-    skos:definition "business information that is used to guide an organisation towards overall business activities that are suitable for the organisation’s objectives"@en,
-        "liiketoimintatieto, joka ohjaa organisaation tavoitteiden kannalta tarkoituksenmukaiseen kokonaisliiketoimintaan"@fi,
-        "affärskunskap som leder till en ändamålsenlig affärsverksamhet enligt organisationens mål"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "strategic information"@en,
-        "strateginen tieto"@fi,
-        "strategisk kunskap"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t96 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "organisatorial interoperability"@en,
-        "organisaatioiden yhteentoimivuus"@fi,
-        "organisaatiotason yhteentoimivuus"@fi,
-        "interoperabilitet på organisatorisk nivå"@sv,
-        "samverkan mellan organisationer"@sv ;
-    skos:broader tt:t65 ;
-    skos:definition "form of interoperability that enables different organisations to aim for common objectives with the help of practices that support the objectives"@en,
-        "yhteentoimivuus, joka mahdollistaa organisaatioiden yhteisesti sovittujen päämäärien tavoittelun niitä tukevien käytäntöjen avulla"@fi,
-        "interoperabilitet som gör det möjligt för organisationer att uppnå gemensamma mål med hjälp av praxis som stöder dem"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Organisational interoperability is connected especially to the arrangement of knowledge processes in a way that ensures that the data is produced and shared in the manner that most benefits the common objective. The common objective can be a jointly produced service, for example."@en,
-        "Organisatorinen yhteentoimivuus liittyy erityisesti tietoprosessien järjestämiseen siten, että tietoa tuotetaan ja jaetaan sovittua päämäärää parhaiten edistävällä tavalla. Sovittu päämäärä voi olla esimerkiksi yhteisesti tuotettava palvelu."@fi,
-        "Organisatorisk interoperabilitet anknyter speciellt till organisering av informationsprocesser på så sätt, att information kan skapas och delas på bästa möjliga sätt med tanke på ett överenskommet mål. Det överenskomna målet kan vara till exempel en samproducerad tjänst."@sv ;
-    skos:prefLabel "organisational interoperability"@en,
-        "organisatorinen yhteentoimivuus"@fi,
-        "organisatorisk interoperabilitet"@sv ;
-    skos:topConceptOf tt: .
-
-tt:t97 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "semanttisen tason yhteentoimivuus"@fi,
-        "interoperabilitet på semantisk nivå"@sv ;
-    skos:broader tt:t65 ;
-    skos:definition "form of interoperability that enables the transfer and processing of data in a way that retains the meaning of the data so that it remains unchanged and understandable for all parties"@en,
-        "yhteentoimivuus, joka mahdollistaa tiedon siirtämisen ja käsittelyn tavalla, jossa tiedon merkitys säilyy muuttumattomana ja ymmärrettävänä kaikille osapuolille"@fi,
-        "interoperabilitet som gör det möjligt att överföra och behandla information så att dess innebörd bevaras oförändrad och begriplig för alla parter"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Semanctic interoperability can be improved with glossaries and classifications."@en,
-        "Semanttista yhteentoimivuutta voidaan parantaa sanastoilla ja luokituksilla."@fi,
-        "Man kan förbättra semantisk interoperabilitet med ordlistor och klassificeringar."@sv ;
-    skos:prefLabel "semantic interoperability"@en,
-        "semanttinen yhteentoimivuus"@fi,
-        "semantisk interoperabilitet"@sv ;
-    skos:topConceptOf tt: .
+    skos:note "Open data can be provided by the public sector, companies, other organisations as well as private individuals. The terms of use of any open data can be found in its accompanying licence. The most common licences that comply with public sector recommendations are Creative Commons Attribution 4.0, which mandates that the data be properly attributed , and CC0, which permits anyone to use the data without any special requirements."@en,
+        "Avointa dataa voi olla julkishallinnolla, yrityksillä, muilla organisaatioilla sekä yksityishenkilöillä. Avoimen datan käyttöehdot ilmenevät siihen liitetystä käyttöluvasta. Usein käytettyjä ja julkishallintoa koskevien suositusten mukaisia avoimen datan käyttölupia ovat Creative Commons Nimeä 4.0, johon sisältyy lähteen nimeämisvaatimus, ja CC0, jolla data on kaikkien käytettävissä ilman erityisiä käyttöehtoja."@fi,
+        "Öppna data kan innehas av den offentliga förvaltningen, företag, andra organisationer och privatpersoner. Användarvillkoren för öppna data finns i tillhörande licens. Vanliga licenser för öppna data som följer rekommendationerna för den offentliga förvaltningen är Creative Commons Erkännande 4.0, som omfattar krav på erkännande av källan, och CC0, som kan användas för att tillåta alla att använda ifrågavarande data utan skilda användarvillkor."@sv ;
+    skos:prefLabel "open data"@en,
+        "avoin data"@fi,
+        "öppna data"@sv ;
+    skos:related tt:t18 .
 
 tt:t102 a skos:Concept ;
     dc:source "Tietotermit / Terminologian sanasto (TSK 36, 2006)" ;
@@ -853,19 +1009,6 @@ tt:t102 a skos:Concept ;
         "term"@sv ;
     skos:related tt:t59,
         tt:t86 ;
-    skos:topConceptOf tt: .
-
-tt:t104 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    isothes:narrowerPartitive tt:t37 ;
-    skos:broader tt:t2 ;
-    skos:definition "intellectual capital that is comprised of staff expertise and knowledge"@en,
-        "henkilöstön osaamisesta ja tietämyksestä koostuva aineeton pääoma"@fi,
-        "intellektuellt kapital som består av personalens kompetenser och kunskaper"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "human capital"@en,
-        "inhimillinen pääoma"@fi,
-        "humankapital"@sv ;
     skos:topConceptOf tt: .
 
 tt:t106 a skos:Concept ;
@@ -900,48 +1043,6 @@ tt:t107 a skos:Concept ;
         tt:t78 ;
     skos:topConceptOf tt: .
 
-tt:t108 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "string of characters, message, fact or observation that is not necessarily interpretable but that can be refined into information"@en,
-        "alimman jalostusasteen tieto, joka ei välttämättä ole tulkittavissa, mutta sitä jalostamalla voidaan saada informaatiota"@fi,
-        "teckensträng, meddelande, faktum eller observation som nödvändigtvis inte kan tolkas, men som kan förädlas till information"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Data is often used to refer to strings of characters and images, but e.g. sounds, light, heat and other observable things can also be data."@en,
-        "Datalla tarkoitetaan usein merkkijonoja ja kuvia, mutta dataa ovat myös esimerkiksi äänet, valo, lämpö ja muut havaittavissa olevat asiat."@fi,
-        "Med data avses oftast teckensträngar och bilder, men data kan även vara ljud, ljus, värme och andra observerbara saker."@sv ;
-    skos:prefLabel "data (potential information)"@en,
-        "data (alimman jalostusasteen tieto)"@fi,
-        "data (potentiell information)"@sv ;
-    skos:related tt:t4 ;
-    skos:topConceptOf tt: .
-
-tt:t11 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary used in the production of metadata whose terms and expressions conform to a specific set of rules or guidelines on the formulation of their descriptions"@en,
-        "metatietojen tuottamisessa käytettävä sanasto, jonka sisältämät termit ja ilmaukset ovat tiettyjen kuvailusääntöjen tai kuvailuohjeiden mukaisia"@fi,
-        "ordlista som används för att skapa metadata och som innehåller termer och uttryck som har skapats enligt vissa riktlinjer"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "metadata glossary"@en,
-        "metatietosanasto"@fi,
-        "metadataordlista"@sv ;
-    skos:related tt:t41 ;
-    skos:topConceptOf tt: .
-
-tt:t110 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t33 ;
-    skos:definition "media literacy of information that is presented on the internet and on other information networks"@en,
-        "internetin ja muiden tietoverkkojen avulla esitetyn tiedon medialukutaito"@fi,
-        "färdighet att läsa information som presenteras i olika medier på internet och i andra datanät"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "network literacy"@en,
-        "verkkolukutaito"@fi,
-        "webbläskunnighet"@sv ;
-    skos:related tt:t38 ;
-    skos:topConceptOf tt: .
-
 tt:t111 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:definition "commonly agreed-upon principles and policies on the operation methods and procedures that focus on the production, procurement, migration, opening, sharing, use, maintenance and storage of data"@en,
@@ -953,19 +1054,6 @@ tt:t111 a skos:Concept ;
         "informationspolicy"@sv ;
     skos:related tt:t117,
         tt:t139 ;
-    skos:topConceptOf tt: .
-
-tt:t112 a skos:Concept ;
-    dc:source "JHS 183 Julkisen hallinnon palvelujen tietomalli ja ryhmittely verkkopalveluissa, 2013-02-28" ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary that contains information on the concepts and terms used by special fields"@en,
-        "sanasto, joka sisältää erikoisalojen käsitteisiin ja niiden nimityksiin liittyvää tietoa"@fi,
-        "ordlista som omfattar uppgifter om och benämningar för begrepp som tillhör olika fackområden"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "terminological glossary"@en,
-        "terminologinen sanasto"@fi,
-        "terminologisk ordlista"@sv ;
-    skos:related tt:t78 ;
     skos:topConceptOf tt: .
 
 tt:t120 a skos:Concept ;
@@ -996,6 +1084,20 @@ tt:t121 a skos:Concept ;
         "tietopääoma"@fi,
         "kunskapskapital"@sv ;
     skos:topConceptOf tt: .
+
+tt:t122 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t117 ;
+    skos:definition "information that can be accessed and used only with special permission to ensure no damage or harm to any public or private interest"@en,
+        "tieto, johon pääsy ja jonka käyttö on luvallista vain tietyin ehdoin sen varmistamiseksi, ettei yleiselle tai yksityiselle edulle aiheudu vahinkoa tai haittaa"@fi,
+        "uppgift som omfattar användarvillkor för att försäkra att ingen skada eller olägenhet uppkommer för ett allmänt eller enskilt intresse"@sv ;
+    skos:hiddenLabel "salassapidettävä tieto"@fi ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t137,
+        tt:t60 ;
+    skos:prefLabel "confidential information"@en,
+        "salassa pidettävä tieto"@fi,
+        "sekretessbelagd uppgift"@sv .
 
 tt:t123 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1029,18 +1131,21 @@ tt:t127 a skos:Concept ;
         tt:t63 ;
     skos:topConceptOf tt: .
 
-tt:t128 a skos:Concept ;
+tt:t134 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t33 ;
-    skos:definition "form of literacy required by data acquisition whose essential characteristics include the ability to define the need for information, versatile information retrieval skills and the critical evaluation of information"@en,
-        "tiedonhankinnassa tarvittava lukutaito, johon sisältyvät olennaisina kyky määritellä tiedontarve, monipuoliset tiedonhakutaidot ja tiedon kriittinen arviointi"@fi,
-        "läskunnighet som behövs för informationsanskaffning och som omfattar färdigheten att definiera informationsbehovet, mångsidiga kunskaper i informationssökning och en kritisk bedömning av information"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "information that can be freely reused by anyone in accordance with its terms of use"@en,
+        "tieto, joka on kenen tahansa uudelleen käytettävissä maksutta sen käyttöehtojen mukaisesti"@fi,
+        "information som vem som helst har rätt att återanvända kostnadsfritt enligt tillhörande användarvillkor"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "information literacy"@en,
-        "informaatiolukutaito"@fi,
-        "informationsläskunnighet"@sv ;
-    skos:related tt:t1 ;
-    skos:topConceptOf tt: .
+    skos:narrower tt:t100 ;
+    skos:note "The terms of use of a piece of open information can include for example a source attribution requirement."@en,
+        "Avoimen tiedon käyttöehtona voi olla esimerkiksi lähteen mainitseminen."@fi,
+        "Användarvillkoren för öppen information kan till exempel omfatta att man måste nämna källan."@sv ;
+    skos:prefLabel "open information"@en,
+        "avoin tieto"@fi,
+        "öppen information"@sv ;
+    skos:related tt:t18 .
 
 tt:t139 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1054,6 +1159,41 @@ tt:t139 a skos:Concept ;
     skos:related tt:t111,
         tt:t9 ;
     skos:topConceptOf tt: .
+
+tt:t15 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t4 ;
+    skos:definition "information that has been produced for a certain target group"@en,
+        "tiettyä kohderyhmää varten tuotettu informaatio"@fi,
+        "information som har producerats för en viss målgrupp"@sv ;
+    skos:hiddenLabel "content"@en,
+        "sisältö"@fi,
+        "innehåll"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t43 ;
+    skos:note "\"Especially in the fields of communications and marketing, content is usually used to mean information that is published in the form of text, images or sound, or as a combination of these. This content can be modified for publication on several different channels, such as websites, online magazines or social media. Depending on where it is used, content can be used to indicate other things: for example, the contents of a text can be used to refer to its intended meaning to distinguish it from how it is presented; see also information content.\""@en,
+        "\"Varsinkin viestinnän ja markkinoinnin alalla sisällöllä tarkoitetaan tavallisesti informaatiota, joka julkaistaan tekstin, kuvan tai äänen muodossa tai näiden yhdistelmänä. Sisältöä voidaan muokata julkaistavaksi useissa eri kanavissa, kuten verkkosivuilla, verkkolehdessä tai sosiaalisessa mediassa. Käyttöyhteydestä riippuen sisällöllä voidaan tarkoittaa muitakin asioita, esimerkiksi tekstin sisällöllä voidaan viitata tarkoitettuun merkitykseen erotukseksi esitysmuodosta; vrt. myös tietosisältö.\""@fi,
+        "Med innehåll avses särskilt inom kommunikation och marknadsföring information som publiceras i form av text, bild eller ljud eller en kombination av dessa. Innehåll kan redigeras för publicering via olika kanaler, som webbplatser, webbtidningar eller sociala medier. Beroende på sammanhanget kan innehåll omfatta även andra saker. Till exempel textinnehåll kan syfta på den avsedda innebörden i motsats till formatet. Jmfr. även informationsinnehåll."@sv ;
+    skos:prefLabel "content (information)"@en,
+        "sisältö (informaatio)"@fi,
+        "innehåll (information)"@sv ;
+    skos:related tt:t25 .
+
+tt:t17 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t114 ;
+    skos:definition "register of initiated cases, what phase they are in as well as any related records"@en,
+        "rekisteri vireillepannuista asioista, näiden käsittelyvaiheista ja niihin liittyvistä asiakirjoista"@fi,
+        "register över anhängiggjorda ärenden samt tillhörande behandlingsskeden och handlingar"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t140 ;
+    skos:note "A case register is typically part of a special information system (case processing or case management system) that is used to manage the cases that have been handled by the organisation and any related records in accordance with the organisation's predefined processing rules."@en,
+        "Asiarekisteri on tavallisesti osa erityistä tietojärjestelmää (asiankäsittely- tai asianhallintajärjestelmä), jonka avulla organisaation käsittelemät asiat ja niihin liittyvät asiakirjat hallitaan ennalta määriteltyjen käsittelysääntöjen mukaisesti."@fi,
+        "Ett ärenderegister tillhör vanligtvis ett särskilt informationssystem (ärendebehandlings- eller ärendehanteringssystem), som används för att hantera ärenden och tillhörande handlingar inom en organisation enligt på förhand fastslagna bestämmelser."@sv ;
+    skos:prefLabel "case register"@en,
+        "asiarekisteri"@fi,
+        "ärenderegister"@sv ;
+    skos:related tt:t77 .
 
 tt:t21 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1133,19 +1273,6 @@ tt:t40 a skos:Concept ;
         tt:t78 ;
     skos:topConceptOf tt: .
 
-tt:t43 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t15 ;
-    skos:definition "content (information) that is published in a data network"@en,
-        "tietoverkossa julkaistu sisältö (informaatio)"@fi,
-        "innehåll (information) som har publicerats i ett datanät"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "online content"@en,
-        "verkkosisältö"@fi,
-        "nätverksinnehåll"@sv ;
-    skos:related tt:t38 ;
-    skos:topConceptOf tt: .
-
 tt:t48 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:altLabel "~datalager"@sv,
@@ -1192,41 +1319,25 @@ tt:t5 a skos:Concept ;
         tt:t7 ;
     skos:topConceptOf tt: .
 
-tt:t50 a skos:Concept ;
+tt:t51 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t31 ;
-    skos:definition "data (machine-readable information) pertaining to a person that the person in question can personally manage and utilise in accordance with MyData (principle)"@en,
-        "henkilöä koskeva data (koneluettava tieto), jota kyseinen henkilö voi itse hallinnoida ja hyödyntää omadatan (periaate) mukaisesti"@fi,
-        "data (maskinläsbara uppgifter) om en person som personen i fråga har rätt att hantera och använda enligt MyData (princip)"@sv ;
-    skos:hiddenLabel "mydata (data)"@en,
-        "mydata (data)"@sv ;
+    skos:altLabel "tiedon louhinta"@fi,
+        "tiedon rikastaminen"@fi,
+        "tiedonrikastus"@fi,
+        "datautvinning"@sv ;
+    skos:broader tt:t1 ;
+    skos:definition "data acquisition from a large dataset that contains structured data with methods that can identify the connections between different data"@en,
+        "tiedonhankinta laajasta, rakenteista dataa sisältävästä tietoaineistosta asioiden välisiä yhteyksiä tunnistavien menetelmien avulla"@fi,
+        "informationsinsamling från ett större informationsmaterial med hjälp av metoder som identifierar saksamband"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "MyData (data)"@en,
-        "omadata (data)"@fi,
-        "MyData (data)"@sv ;
-    skos:related tt:t116 ;
-    skos:topConceptOf tt: .
-
-tt:t53 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "ei-rakenteinen data"@fi,
-        "ei-rakenteinen tieto"@fi,
-        "rakenteeton tieto"@fi,
-        "rakenteistamaton data"@fi,
-        "rakenteistamaton tieto"@fi,
-        "icke-strukturella data"@sv,
-        "icke-strukturerade data"@sv,
-        "ostrukturella data"@sv ;
-    skos:broader tt:t31 ;
-    skos:definition "data (machine-readable information) that does not have a metadata-defined structure that could be used to parse the data"@en,
-        "data (koneluettava tieto), jolla ei ole metatietojen avulla määritettyä rakennetta, jonka avulla data voitaisiin jäsentää"@fi,
-        "data (maskinläsbara uppgifter) som inte har en struktur definierad med hjälp av metadata för analys av ifrågavarande data"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "unstructured data"@en,
-        "rakenteeton data"@fi,
-        "ostrukturerade data"@sv ;
-    skos:related tt:t21 ;
-    skos:topConceptOf tt: .
+    skos:note "The data mining process can utilise statistical methods, for example."@en,
+        "Tiedonlouhintaa voidaan tehdä esimerkiksi tilastollisin menetelmin."@fi,
+        "Informationsutvinning kan göras till exempel med statistiska metoder."@sv ;
+    skos:prefLabel "data mining"@en,
+        "tiedonlouhinta"@fi,
+        "informationsutvinning"@sv ;
+    skos:related tt:t82,
+        tt:t98 .
 
 tt:t56 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1241,47 +1352,21 @@ tt:t56 a skos:Concept ;
     skos:related tt:t41 ;
     skos:topConceptOf tt: .
 
-tt:t59 a skos:Concept ;
-    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
-    skos:broader tt:t78 ;
-    skos:definition "concept that corresponds to two or several objects that possess similar characteristics"@en,
-        "käsite, joka vastaa kahta tai useampaa tarkoitetta, joilla on yhteisiä ominaisuuksia"@fi,
-        "begrepp som kan knytas till två eller flera referenter som har gemensamma egenskaper"@sv ;
-    skos:inScheme tt: ;
-    skos:note "For example: 'motor', 'sea', and 'talent'."@en,
-        "Esimerkiksi: 'moottori', 'meri' ja 'lahjakkuus'."@fi,
-        "Exempel: 'motor', 'hav', 'begåvning'."@sv ;
-    skos:prefLabel "general concept"@en,
-        "yleiskäsite"@fi,
-        "allmänbegrepp"@sv ;
-    skos:related tt:t102 ;
-    skos:topConceptOf tt: .
-
-tt:t67 a skos:Concept ;
+tt:t63 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:broader tt:t117 ;
-    skos:definition "information that, at first, was classified as personal data, but has now been irreversibly edited to the point that the person can no longer be identified"@en,
-        "alun perin henkilötiedoksi luokiteltu tieto, jota on peruuttamattomasti muokattu siten, ettei henkilö ole enää tunnistettavissa"@fi,
-        "ursprungligen en personuppgift som har ändrats oåterkalleligt så att personen i fråga inte längre kan identifieras"@sv ;
+    skos:definition "information that is connected to an identified or identifiable natural person"@en,
+        "tunnistettuun tai tunnistettavissa olevaan luonnolliseen henkilöön liittyvä tieto"@fi,
+        "uppgift som kan hänföras till en identifierad eller identifierbar fysisk person"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "anonymised information"@en,
-        "anonymisoitu tieto"@fi,
-        "anonymiserad uppgift"@sv ;
-    skos:related tt:t63 ;
-    skos:topConceptOf tt: .
-
-tt:t69 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary that is presented in a machine-readable form and defines the hierarchical relationships of the concepts of an application or subject area"@en,
-        "konepäättelyä tukevassa muodossa esitetty sanasto, jossa määritellään sovellus- tai aihealueen käsitteiden hierarkkiset suhteet"@fi,
-        "ordlista med hierarkiska förhållanden mellan begrepp för ett visst tillämpnings- eller ämnesområde i en form lämpad för maskintolkning"@sv ;
-    skos:inScheme tt: ;
-    skos:prefLabel "ontology"@en,
-        "ontologia"@fi,
-        "ontologi"@sv ;
-    skos:related tt:t78 ;
-    skos:topConceptOf tt: .
+    skos:note "According to the EU data protection regulation 2016/679, an identifiable natural person is someone who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person."@en,
+        "EU:n tietosuoja-asetuksen (2016/679) mukaan tunnistettavissa olevana pidetään luonnollista henkilöä, joka voidaan suoraan tai epäsuorasti tunnistaa erityisesti tunnistetietojen, kuten nimen, henkilötunnuksen, sijaintitiedon, verkkotunnisteiden taikka yhden tai useamman hänelle tunnusomaisen fyysisen, fysiologisen, geneettisen, psyykkisen, taloudellisen, kulttuurillisen tai sosiaalisen tekijän perusteella."@fi,
+        "Enligt EU:s dataskyddsförordning (2016/679) är en identifierbar person en fysisk person som direkt eller indirekt kan identifieras särskilt med hänvisning till en identifierare som ett namn, ett identifikationsnummer, en lokaliseringsuppgift eller onlineidentifikatorer eller en eller flera faktorer som är specifika för den fysiska personens fysiska, fysiologiska, genetiska, psykiska, ekonomiska, kulturella eller sociala identitet."@sv ;
+    skos:prefLabel "personal data"@en,
+        "henkilötieto"@fi,
+        "personuppgift"@sv ;
+    skos:related tt:t127,
+        tt:t67 .
 
 tt:t83 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1297,23 +1382,21 @@ tt:t83 a skos:Concept ;
     skos:related tt:t93 ;
     skos:topConceptOf tt: .
 
-tt:t84 a skos:Concept ;
+tt:t87 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "yhdistetty data"@fi,
-        "kombinerade data"@sv ;
-    skos:broader tt:t98 ;
-    skos:definition "structured data that is connected to the data in several datasets with the help of links"@en,
-        "rakenteinen data, joka on yhdistetty useiden tietoaineistojen sisältämään dataan linkkien avulla"@fi,
-        "strukturerade data som har kombinerats med data i andra datauppsättningar med hjälp av länkar"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "knowledge that is based on wide-ranging experience and learning from it and that can be used to evaluate, handle and solve complicated situations while taking any likely consequences and uncertainty factors into account"@en,
+        "laaja-alaiseen kokemukseen ja siitä oppimiseen perustuva tieto, jonka avulla voidaan arvioida, käsitellä ja ratkaista monimutkaisia tilanteita todennäköiset seuraukset ja epävarmuustekijät huomioiden"@fi,
+        "kunskap som grundar sig på omfattande erfarenheter och lärdomar och som kan tillämpas för att bedöma, behandla och lösa komplicerade situationer med hänsyn till sannolika konsekvenser och osäkerhetsfaktorer"@sv ;
     skos:inScheme tt: ;
-    skos:note "Linked data can be open data, in which case it is referred to as linked open data."@en,
-        "Linkitetty data voi olla avointa dataa, jolloin sitä kutsutaan avoimeksi linkitetyksi dataksi."@fi,
-        "Länkade data kan vara öppna data, och kallas i sådant fall länkade öppna data."@sv ;
-    skos:prefLabel "linked data"@en,
-        "linkitetty data"@fi,
-        "länkade data"@sv ;
-    skos:related tt:t82 ;
-    skos:topConceptOf tt: .
+    skos:note "Wisdom is based on a person's ability to internalise, refine and apply knowledge based on what they have experienced and learned."@en,
+        "Viisaus perustuu ihmisen kykyyn sisäistää, jalostaa ja soveltaa tietoa opitun ja koetun pohjalta."@fi,
+        "Visdom grundar sig på människans förmåga att anamma, förädla och tillämpa lärdomar och upplevelser."@sv ;
+    skos:prefLabel "wisdom"@en,
+        "viisaus"@fi,
+        "visdom"@sv ;
+    skos:related tt:t138,
+        tt:t27 .
 
 tt:t90 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1394,23 +1477,6 @@ tt:t1 a skos:Concept ;
     skos:related tt:t128 ;
     skos:topConceptOf tt: .
 
-tt:t100 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t134,
-        tt:t31 ;
-    skos:definition "data (machine-readable information) that can be freely reused by anyone in accordance with its terms of use"@en,
-        "data (koneluettava tieto), joka on kenen tahansa uudelleen käytettävissä maksutta sen käyttöehtojen mukaisesti"@fi,
-        "data (maskinläsbara uppgifter) som vem som helst har rätt att återanvända kostnadsfritt enligt tillhörande användarvillkor"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Open data can be provided by the public sector, companies, other organisations as well as private individuals. The terms of use of any open data can be found in its accompanying licence. The most common licences that comply with public sector recommendations are Creative Commons Attribution 4.0, which mandates that the data be properly attributed , and CC0, which permits anyone to use the data without any special requirements."@en,
-        "Avointa dataa voi olla julkishallinnolla, yrityksillä, muilla organisaatioilla sekä yksityishenkilöillä. Avoimen datan käyttöehdot ilmenevät siihen liitetystä käyttöluvasta. Usein käytettyjä ja julkishallintoa koskevien suositusten mukaisia avoimen datan käyttölupia ovat Creative Commons Nimeä 4.0, johon sisältyy lähteen nimeämisvaatimus, ja CC0, jolla data on kaikkien käytettävissä ilman erityisiä käyttöehtoja."@fi,
-        "Öppna data kan innehas av den offentliga förvaltningen, företag, andra organisationer och privatpersoner. Användarvillkoren för öppna data finns i tillhörande licens. Vanliga licenser för öppna data som följer rekommendationerna för den offentliga förvaltningen är Creative Commons Erkännande 4.0, som omfattar krav på erkännande av källan, och CC0, som kan användas för att tillåta alla att använda ifrågavarande data utan skilda användarvillkor."@sv ;
-    skos:prefLabel "open data"@en,
-        "avoin data"@fi,
-        "öppna data"@sv ;
-    skos:related tt:t18 ;
-    skos:topConceptOf tt: .
-
 tt:t105 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:definition "identifiable entity that consists of objects or stored information"@en,
@@ -1440,21 +1506,6 @@ tt:t115 a skos:Concept ;
     skos:related tt:t103,
         tt:t12,
         tt:t24 ;
-    skos:topConceptOf tt: .
-
-tt:t122 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that can be accessed and used only with special permission to ensure no damage or harm to any public or private interest"@en,
-        "tieto, johon pääsy ja jonka käyttö on luvallista vain tietyin ehdoin sen varmistamiseksi, ettei yleiselle tai yksityiselle edulle aiheudu vahinkoa tai haittaa"@fi,
-        "uppgift som omfattar användarvillkor för att försäkra att ingen skada eller olägenhet uppkommer för ett allmänt eller enskilt intresse"@sv ;
-    skos:hiddenLabel "salassapidettävä tieto"@fi ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t137,
-        tt:t60 ;
-    skos:prefLabel "confidential information"@en,
-        "salassa pidettävä tieto"@fi,
-        "sekretessbelagd uppgift"@sv ;
     skos:topConceptOf tt: .
 
 tt:t129 a skos:Concept ;
@@ -1492,23 +1543,6 @@ tt:t133 a skos:Concept ;
     skos:related tt:t41 ;
     skos:topConceptOf tt: .
 
-tt:t134 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that can be freely reused by anyone in accordance with its terms of use"@en,
-        "tieto, joka on kenen tahansa uudelleen käytettävissä maksutta sen käyttöehtojen mukaisesti"@fi,
-        "information som vem som helst har rätt att återanvända kostnadsfritt enligt tillhörande användarvillkor"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t100 ;
-    skos:note "The terms of use of a piece of open information can include for example a source attribution requirement."@en,
-        "Avoimen tiedon käyttöehtona voi olla esimerkiksi lähteen mainitseminen."@fi,
-        "Användarvillkoren för öppen information kan till exempel omfatta att man måste nämna källan."@sv ;
-    skos:prefLabel "open information"@en,
-        "avoin tieto"@fi,
-        "öppen information"@sv ;
-    skos:related tt:t18 ;
-    skos:topConceptOf tt: .
-
 tt:t135 a skos:Concept ;
     dc:source "Tietotermit" ;
     isothes:broaderPartitive tt:t7 ;
@@ -1522,43 +1556,6 @@ tt:t135 a skos:Concept ;
         "dokumenthantering"@sv ;
     skos:related tt:t129,
         tt:t62 ;
-    skos:topConceptOf tt: .
-
-tt:t15 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t4 ;
-    skos:definition "information that has been produced for a certain target group"@en,
-        "tiettyä kohderyhmää varten tuotettu informaatio"@fi,
-        "information som har producerats för en viss målgrupp"@sv ;
-    skos:hiddenLabel "content"@en,
-        "sisältö"@fi,
-        "innehåll"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t43 ;
-    skos:note "\"Especially in the fields of communications and marketing, content is usually used to mean information that is published in the form of text, images or sound, or as a combination of these. This content can be modified for publication on several different channels, such as websites, online magazines or social media. Depending on where it is used, content can be used to indicate other things: for example, the contents of a text can be used to refer to its intended meaning to distinguish it from how it is presented; see also information content.\""@en,
-        "\"Varsinkin viestinnän ja markkinoinnin alalla sisällöllä tarkoitetaan tavallisesti informaatiota, joka julkaistaan tekstin, kuvan tai äänen muodossa tai näiden yhdistelmänä. Sisältöä voidaan muokata julkaistavaksi useissa eri kanavissa, kuten verkkosivuilla, verkkolehdessä tai sosiaalisessa mediassa. Käyttöyhteydestä riippuen sisällöllä voidaan tarkoittaa muitakin asioita, esimerkiksi tekstin sisällöllä voidaan viitata tarkoitettuun merkitykseen erotukseksi esitysmuodosta; vrt. myös tietosisältö.\""@fi,
-        "Med innehåll avses särskilt inom kommunikation och marknadsföring information som publiceras i form av text, bild eller ljud eller en kombination av dessa. Innehåll kan redigeras för publicering via olika kanaler, som webbplatser, webbtidningar eller sociala medier. Beroende på sammanhanget kan innehåll omfatta även andra saker. Till exempel textinnehåll kan syfta på den avsedda innebörden i motsats till formatet. Jmfr. även informationsinnehåll."@sv ;
-    skos:prefLabel "content (information)"@en,
-        "sisältö (informaatio)"@fi,
-        "innehåll (information)"@sv ;
-    skos:related tt:t25 ;
-    skos:topConceptOf tt: .
-
-tt:t17 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t114 ;
-    skos:definition "register of initiated cases, what phase they are in as well as any related records"@en,
-        "rekisteri vireillepannuista asioista, näiden käsittelyvaiheista ja niihin liittyvistä asiakirjoista"@fi,
-        "register över anhängiggjorda ärenden samt tillhörande behandlingsskeden och handlingar"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t140 ;
-    skos:note "A case register is typically part of a special information system (case processing or case management system) that is used to manage the cases that have been handled by the organisation and any related records in accordance with the organisation's predefined processing rules."@en,
-        "Asiarekisteri on tavallisesti osa erityistä tietojärjestelmää (asiankäsittely- tai asianhallintajärjestelmä), jonka avulla organisaation käsittelemät asiat ja niihin liittyvät asiakirjat hallitaan ennalta määriteltyjen käsittelysääntöjen mukaisesti."@fi,
-        "Ett ärenderegister tillhör vanligtvis ett särskilt informationssystem (ärendebehandlings- eller ärendehanteringssystem), som används för att hantera ärenden och tillhörande handlingar inom en organisation enligt på förhand fastslagna bestämmelser."@sv ;
-    skos:prefLabel "case register"@en,
-        "asiarekisteri"@fi,
-        "ärenderegister"@sv ;
-    skos:related tt:t77 ;
     skos:topConceptOf tt: .
 
 tt:t19 a skos:Concept ;
@@ -1632,26 +1629,19 @@ tt:t47 a skos:Concept ;
         tt:t7 ;
     skos:topConceptOf tt: .
 
-tt:t51 a skos:Concept ;
+tt:t54 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "tiedon louhinta"@fi,
-        "tiedon rikastaminen"@fi,
-        "tiedonrikastus"@fi,
-        "datautvinning"@sv ;
-    skos:broader tt:t1 ;
-    skos:definition "data acquisition from a large dataset that contains structured data with methods that can identify the connections between different data"@en,
-        "tiedonhankinta laajasta, rakenteista dataa sisältävästä tietoaineistosta asioiden välisiä yhteyksiä tunnistavien menetelmien avulla"@fi,
-        "informationsinsamling från ett större informationsmaterial med hjälp av metoder som identifierar saksamband"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "information that is used to support the decisions that concern the activities and development of an organisation"@en,
+        "organisaation toimintaa ja kehittämistä koskevien päätösten tukena käytettävä tieto"@fi,
+        "kunskap som stöder en organisations verksamhets- och utvecklingsbeslut"@sv ;
     skos:inScheme tt: ;
-    skos:note "The data mining process can utilise statistical methods, for example."@en,
-        "Tiedonlouhintaa voidaan tehdä esimerkiksi tilastollisin menetelmin."@fi,
-        "Informationsutvinning kan göras till exempel med statistiska metoder."@sv ;
-    skos:prefLabel "data mining"@en,
-        "tiedonlouhinta"@fi,
-        "informationsutvinning"@sv ;
-    skos:related tt:t82,
-        tt:t98 ;
-    skos:topConceptOf tt: .
+    skos:narrower tt:t68,
+        tt:t88,
+        tt:t92 ;
+    skos:prefLabel "business information"@en,
+        "liiketoimintatieto"@fi,
+        "affärskunskap"@sv .
 
 tt:t61 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1665,23 +1655,6 @@ tt:t61 a skos:Concept ;
         "makulering av information"@sv ;
     skos:related tt:t19,
         tt:t35 ;
-    skos:topConceptOf tt: .
-
-tt:t63 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that is connected to an identified or identifiable natural person"@en,
-        "tunnistettuun tai tunnistettavissa olevaan luonnolliseen henkilöön liittyvä tieto"@fi,
-        "uppgift som kan hänföras till en identifierad eller identifierbar fysisk person"@sv ;
-    skos:inScheme tt: ;
-    skos:note "According to the EU data protection regulation 2016/679, an identifiable natural person is someone who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person."@en,
-        "EU:n tietosuoja-asetuksen (2016/679) mukaan tunnistettavissa olevana pidetään luonnollista henkilöä, joka voidaan suoraan tai epäsuorasti tunnistaa erityisesti tunnistetietojen, kuten nimen, henkilötunnuksen, sijaintitiedon, verkkotunnisteiden taikka yhden tai useamman hänelle tunnusomaisen fyysisen, fysiologisen, geneettisen, psyykkisen, taloudellisen, kulttuurillisen tai sosiaalisen tekijän perusteella."@fi,
-        "Enligt EU:s dataskyddsförordning (2016/679) är en identifierbar person en fysisk person som direkt eller indirekt kan identifieras särskilt med hänvisning till en identifierare som ett namn, ett identifikationsnummer, en lokaliseringsuppgift eller onlineidentifikatorer eller en eller flera faktorer som är specifika för den fysiska personens fysiska, fysiologiska, genetiska, psykiska, ekonomiska, kulturella eller sociala identitet."@sv ;
-    skos:prefLabel "personal data"@en,
-        "henkilötieto"@fi,
-        "personuppgift"@sv ;
-    skos:related tt:t127,
-        tt:t67 ;
     skos:topConceptOf tt: .
 
 tt:t74 a skos:Concept ;
@@ -1717,23 +1690,6 @@ tt:t80 a skos:Concept ;
     skos:related tt:t136,
         tt:t28,
         tt:t95 ;
-    skos:topConceptOf tt: .
-
-tt:t87 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "knowledge that is based on wide-ranging experience and learning from it and that can be used to evaluate, handle and solve complicated situations while taking any likely consequences and uncertainty factors into account"@en,
-        "laaja-alaiseen kokemukseen ja siitä oppimiseen perustuva tieto, jonka avulla voidaan arvioida, käsitellä ja ratkaista monimutkaisia tilanteita todennäköiset seuraukset ja epävarmuustekijät huomioiden"@fi,
-        "kunskap som grundar sig på omfattande erfarenheter och lärdomar och som kan tillämpas för att bedöma, behandla och lösa komplicerade situationer med hänsyn till sannolika konsekvenser och osäkerhetsfaktorer"@sv ;
-    skos:inScheme tt: ;
-    skos:note "Wisdom is based on a person's ability to internalise, refine and apply knowledge based on what they have experienced and learned."@en,
-        "Viisaus perustuu ihmisen kykyyn sisäistää, jalostaa ja soveltaa tietoa opitun ja koetun pohjalta."@fi,
-        "Visdom grundar sig på människans förmåga att anamma, förädla och tillämpa lärdomar och upplevelser."@sv ;
-    skos:prefLabel "wisdom"@en,
-        "viisaus"@fi,
-        "visdom"@sv ;
-    skos:related tt:t138,
-        tt:t27 ;
     skos:topConceptOf tt: .
 
 tt:t94 a skos:Concept ;
@@ -1774,6 +1730,21 @@ tt:t109 a skos:Concept ;
         tt:t74 ;
     skos:topConceptOf tt: .
 
+tt:t138 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t117 ;
+    skos:definition "information that explains the causes and connections between different matters and that can be refined into wisdom"@en,
+        "asioiden syitä ja yhteyksiä selittävä tieto, josta voidaan jalostaa viisautta"@fi,
+        "kunskap om orsaker och associationer som kan förädlas till visdom"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t71 ;
+    skos:prefLabel "understanding"@en,
+        "ymmärrys"@fi,
+        "förståelse"@sv ;
+    skos:related tt:t27,
+        tt:t37,
+        tt:t87 .
+
 tt:t2 a skos:Concept ;
     dc:source "Tietotermit" ;
     isothes:broaderPartitive tt:t121 ;
@@ -1808,20 +1779,20 @@ tt:t27 a skos:Concept ;
         tt:t87 ;
     skos:topConceptOf tt: .
 
-tt:t54 a skos:Concept ;
+tt:t37 a skos:Concept ;
     dc:source "Tietotermit" ;
+    isothes:broaderPartitive tt:t104 ;
     skos:broader tt:t117 ;
-    skos:definition "information that is used to support the decisions that concern the activities and development of an organisation"@en,
-        "organisaation toimintaa ja kehittämistä koskevien päätösten tukena käytettävä tieto"@fi,
-        "kunskap som stöder en organisations verksamhets- och utvecklingsbeslut"@sv ;
+    skos:definition "information that the recipient has interpreted, approved and internalised and that can then be refined into comprehension"@en,
+        "vastaanottajan tulkintansa tuloksena hyväksymä ja sisäistämä tieto, josta voidaan jalostaa ymmärrystä"@fi,
+        "information som tolkats, accepterats och anammats av mottagaren och som kan förädlas till förståelse"@sv ;
     skos:inScheme tt: ;
-    skos:narrower tt:t68,
-        tt:t88,
-        tt:t92 ;
-    skos:prefLabel "business information"@en,
-        "liiketoimintatieto"@fi,
-        "affärskunskap"@sv ;
-    skos:topConceptOf tt: .
+    skos:prefLabel "knowledge"@en,
+        "tietämys"@fi,
+        "kunskap"@sv ;
+    skos:related tt:t138,
+        tt:t27,
+        tt:t4 .
 
 tt:t62 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1838,21 +1809,86 @@ tt:t62 a skos:Concept ;
         tt:t94 ;
     skos:topConceptOf tt: .
 
-tt:t138 a skos:Concept ;
+tt:t77 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:broader tt:t117 ;
-    skos:definition "information that explains the causes and connections between different matters and that can be refined into wisdom"@en,
-        "asioiden syitä ja yhteyksiä selittävä tieto, josta voidaan jalostaa viisautta"@fi,
-        "kunskap om orsaker och associationer som kan förädlas till visdom"@sv ;
+    isothes:narrowerPartitive tt:t62 ;
+    skos:broader tt:t26 ;
+    skos:definition "document that has been made or received in connection with the activities of an organisation or private individual and which is then stored as evidence and information property"@en,
+        "dokumentti, joka on laadittu tai vastaanotettu jonkin organisaation tai yksityisen henkilön toiminnan yhteydessä tai toimintaa varten ja jota tämän jälkeen säilytetään todisteena ja tieto-omaisuutena"@fi,
+        "dokument som har upprättats eller mottagits i samband med en organisations eller en enskild persons verksamhet och som sedan förvaras som bevis och som en informationstillgång"@sv ;
     skos:inScheme tt: ;
-    skos:narrower tt:t71 ;
-    skos:prefLabel "understanding"@en,
-        "ymmärrys"@fi,
-        "förståelse"@sv ;
-    skos:related tt:t27,
-        tt:t37,
-        tt:t87 ;
-    skos:topConceptOf tt: .
+    skos:note "A record can contain written text, images or sounds. A record must be reproducible. It can be saved digitally or in paper form. The storage of records is often necessitated by legal requirements or business needs."@en,
+        "Asiakirja voi sisältää kirjoitettua tekstiä, kuvaa tai ääntä. Asiakirjan tulee olla toisinnettavissa. Se voidaan tallentaa sähköisessä tai paperimuodossa. Asiakirjojen säilytyksen taustalla ovat usein lailliset velvoitteet tai liiketoimien tarpeet."@fi,
+        "En handling kan innehålla skriven text, bild och ljud. En handling bör kunna reproduceras. En handling kan lagras både elektroniskt och i pappersform. Handlingar förvaras oftast på grund av lagliga förpliktelser eller affärsbehov."@sv ;
+    skos:prefLabel "record"@en,
+        "asiakirja"@fi,
+        "handling"@sv ;
+    skos:related tt:t129,
+        tt:t17,
+        tt:t49 .
+
+tt:t98 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:altLabel "rakenteellinen data"@fi,
+        "rakenteellinen tieto"@fi,
+        "rakenteinen tieto"@fi,
+        "strukturella data"@sv ;
+    skos:broader tt:t31 ;
+    skos:definition "data (machine-readable information) that has a metadata-defined structure that can be used to parse the data"@en,
+        "data (koneluettava tieto), johon on liitetty metatietojen avulla määritetty rakenne, jonka avulla data voidaan jäsentää"@fi,
+        "data (maskinläsbara uppgifter) som har en struktur definierad med hjälp av metadata för analys av ifrågavarande data"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t84 ;
+    skos:note "Data can be produced in a structured form in many ways, for example by following instructions on how information should be entered into an electronic form that contains predefined metadata. Structured data can also be created by structuring unstructured data."@en,
+        "Dataa voidaan tuottaa rakenteisessa muodossa monin tavoin, esimerkiksi kirjaamalla annettujen ohjeiden mukaisesti tietoja sähköisiin lomakkeisiin, joihin metatietoja on etukäteen määritelty. Rakenteista dataa voidaan tuottaa myös rakenteetonta dataa rakenteistamalla."@fi,
+        "Data kan skapas i strukturerad form på flera sätt, till exempel genom att registrera uppgifter i elektroniska formulär med förhandsbestämda metadata enligt givna anvisningar. Strukturerade data kan även skapas genom att strukturera ostrukturerade data."@sv ;
+    skos:prefLabel "structured data"@en,
+        "rakenteinen data"@fi,
+        "strukturerade data"@sv ;
+    skos:related tt:t21,
+        tt:t41,
+        tt:t51 .
+
+tt:t113 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    isothes:narrowerPartitive tt:t83,
+        tt:t93 ;
+    skos:altLabel "keyword list"@en,
+        "list of subject headings"@en,
+        "ämnesordlista"@sv ;
+    skos:broader tt:t86 ;
+    skos:definition "glossary that is used in the thematic description and retrieval of data"@en,
+        "sanasto, jota käytetään aineiston aiheen kuvailussa ja tiedonhaussa"@fi,
+        "ordlista som används för beskrivning av ett material och för informationssökning"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t64 ;
+    skos:note "Index term lists are usually controlled glossaries. Open index term lists are called folksonomies."@en,
+        "Asiasanastot ovat tavallisesti kontrolloituja sanastoja. Avoimia asiasanastoja kutsutaan folksonomioiksi."@fi,
+        "Ämnesordregister är ofta kontrollerade ordlistor. Öppna ämnesordsregister kallas för folksonomier."@sv ;
+    skos:prefLabel "index term list"@en,
+        "asiasanasto"@fi,
+        "ämnesordsregister"@sv ;
+    skos:related tt:t105,
+        tt:t99 .
+
+tt:t114 a skos:Concept ;
+    dc:source "Tietotermit" ;
+    skos:broader tt:t48 ;
+    skos:definition "information resource whose purpose is to contain information that is essential for a specific use on its registered targets in an organised manner"@en,
+        "tietovaranto, jonka tarkoituksena on sisältää tietyn käyttötarkoituksen kannalta oleelliset tiedot rekisteröinnin kohteista järjestäytyneellä tavalla"@fi,
+        "informationsresurs som omfattar organiserade uppgifter om registrerade objekt som är väsentliga för ett visst syfte"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t126,
+        tt:t17,
+        tt:t30,
+        tt:t70 ;
+    skos:note "Typically, a register is created for a single purpose and its maintenance strives for coverage and up-to-dateness."@en,
+        "Tyypillisesti rekisteri luodaan tiettyä käyttötarkoitusta varten ja sen ylläpidossa pyritään kattavuuteen ja ajantasaisuuteen."@fi,
+        "Ett register skapas vanligtvis för ett visst syfte, och man försöker upprätthålla det som heltäckande och aktuellt."@sv ;
+    skos:prefLabel "register"@en,
+        "rekisteri"@fi,
+        "register"@sv ;
+    skos:related tt:t127 .
 
 tt:t18 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1872,21 +1908,21 @@ tt:t18 a skos:Concept ;
         tt:t74 ;
     skos:topConceptOf tt: .
 
-tt:t37 a skos:Concept ;
+tt:t4 a skos:Concept ;
     dc:source "Tietotermit" ;
-    isothes:broaderPartitive tt:t104 ;
+    isothes:broaderPartitive tt:t121 ;
     skos:broader tt:t117 ;
-    skos:definition "information that the recipient has interpreted, approved and internalised and that can then be refined into comprehension"@en,
-        "vastaanottajan tulkintansa tuloksena hyväksymä ja sisäistämä tieto, josta voidaan jalostaa ymmärrystä"@fi,
-        "information som tolkats, accepterats och anammats av mottagaren och som kan förädlas till förståelse"@sv ;
+    skos:definition "interpretable data that can be refined into knowledge"@en,
+        "tulkittavissa oleva tieto, josta voidaan jalostaa tietämystä"@fi,
+        "data, vars innebörd kan tolkas och förädlas till kunskap"@sv ;
     skos:inScheme tt: ;
-    skos:prefLabel "knowledge"@en,
-        "tietämys"@fi,
-        "kunskap"@sv ;
-    skos:related tt:t138,
+    skos:narrower tt:t15 ;
+    skos:prefLabel "information"@en,
+        "informaatio"@fi,
+        "information"@sv ;
+    skos:related tt:t108,
         tt:t27,
-        tt:t4 ;
-    skos:topConceptOf tt: .
+        tt:t37 .
 
 tt:t65 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -1909,25 +1945,6 @@ tt:t65 a skos:Concept ;
     skos:related tt:t79 ;
     skos:topConceptOf tt: .
 
-tt:t77 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    isothes:narrowerPartitive tt:t62 ;
-    skos:broader tt:t26 ;
-    skos:definition "document that has been made or received in connection with the activities of an organisation or private individual and which is then stored as evidence and information property"@en,
-        "dokumentti, joka on laadittu tai vastaanotettu jonkin organisaation tai yksityisen henkilön toiminnan yhteydessä tai toimintaa varten ja jota tämän jälkeen säilytetään todisteena ja tieto-omaisuutena"@fi,
-        "dokument som har upprättats eller mottagits i samband med en organisations eller en enskild persons verksamhet och som sedan förvaras som bevis och som en informationstillgång"@sv ;
-    skos:inScheme tt: ;
-    skos:note "A record can contain written text, images or sounds. A record must be reproducible. It can be saved digitally or in paper form. The storage of records is often necessitated by legal requirements or business needs."@en,
-        "Asiakirja voi sisältää kirjoitettua tekstiä, kuvaa tai ääntä. Asiakirjan tulee olla toisinnettavissa. Se voidaan tallentaa sähköisessä tai paperimuodossa. Asiakirjojen säilytyksen taustalla ovat usein lailliset velvoitteet tai liiketoimien tarpeet."@fi,
-        "En handling kan innehålla skriven text, bild och ljud. En handling bör kunna reproduceras. En handling kan lagras både elektroniskt och i pappersform. Handlingar förvaras oftast på grund av lagliga förpliktelser eller affärsbehov."@sv ;
-    skos:prefLabel "record"@en,
-        "asiakirja"@fi,
-        "handling"@sv ;
-    skos:related tt:t129,
-        tt:t17,
-        tt:t49 ;
-    skos:topConceptOf tt: .
-
 tt:t9 a skos:Concept ;
     dc:source "Tietotermit" ;
     isothes:narrowerPartitive tt:t23,
@@ -1948,71 +1965,27 @@ tt:t9 a skos:Concept ;
         tt:t34 ;
     skos:topConceptOf tt: .
 
-tt:t98 a skos:Concept ;
+tt:t31 a skos:Concept ;
     dc:source "Tietotermit" ;
-    skos:altLabel "rakenteellinen data"@fi,
-        "rakenteellinen tieto"@fi,
-        "rakenteinen tieto"@fi,
-        "strukturella data"@sv ;
-    skos:broader tt:t31 ;
-    skos:definition "data (machine-readable information) that has a metadata-defined structure that can be used to parse the data"@en,
-        "data (koneluettava tieto), johon on liitetty metatietojen avulla määritetty rakenne, jonka avulla data voidaan jäsentää"@fi,
-        "data (maskinläsbara uppgifter) som har en struktur definierad med hjälp av metadata för analys av ifrågavarande data"@sv ;
+    skos:altLabel "koneluettava tieto"@fi,
+        "maskinläsbara uppgifter"@sv ;
+    skos:broader tt:t117 ;
+    skos:definition "information that has been formatted to be readable by machines"@en,
+        "tieto koneellisesti käsiteltävässä muodossa"@fi,
+        "uppgifter i maskinläsbar form"@sv ;
     skos:inScheme tt: ;
-    skos:narrower tt:t84 ;
-    skos:note "Data can be produced in a structured form in many ways, for example by following instructions on how information should be entered into an electronic form that contains predefined metadata. Structured data can also be created by structuring unstructured data."@en,
-        "Dataa voidaan tuottaa rakenteisessa muodossa monin tavoin, esimerkiksi kirjaamalla annettujen ohjeiden mukaisesti tietoja sähköisiin lomakkeisiin, joihin metatietoja on etukäteen määritelty. Rakenteista dataa voidaan tuottaa myös rakenteetonta dataa rakenteistamalla."@fi,
-        "Data kan skapas i strukturerad form på flera sätt, till exempel genom att registrera uppgifter i elektroniska formulär med förhandsbestämda metadata enligt givna anvisningar. Strukturerade data kan även skapas genom att strukturera ostrukturerade data."@sv ;
-    skos:prefLabel "structured data"@en,
-        "rakenteinen data"@fi,
-        "strukturerade data"@sv ;
-    skos:related tt:t21,
-        tt:t41,
-        tt:t51 ;
-    skos:topConceptOf tt: .
-
-tt:t113 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    isothes:narrowerPartitive tt:t83,
-        tt:t93 ;
-    skos:altLabel "keyword list"@en,
-        "list of subject headings"@en,
-        "ämnesordlista"@sv ;
-    skos:broader tt:t86 ;
-    skos:definition "glossary that is used in the thematic description and retrieval of data"@en,
-        "sanasto, jota käytetään aineiston aiheen kuvailussa ja tiedonhaussa"@fi,
-        "ordlista som används för beskrivning av ett material och för informationssökning"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t64 ;
-    skos:note "Index term lists are usually controlled glossaries. Open index term lists are called folksonomies."@en,
-        "Asiasanastot ovat tavallisesti kontrolloituja sanastoja. Avoimia asiasanastoja kutsutaan folksonomioiksi."@fi,
-        "Ämnesordregister är ofta kontrollerade ordlistor. Öppna ämnesordsregister kallas för folksonomier."@sv ;
-    skos:prefLabel "index term list"@en,
-        "asiasanasto"@fi,
-        "ämnesordsregister"@sv ;
-    skos:related tt:t105,
-        tt:t99 ;
-    skos:topConceptOf tt: .
-
-tt:t114 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:broader tt:t48 ;
-    skos:definition "information resource whose purpose is to contain information that is essential for a specific use on its registered targets in an organised manner"@en,
-        "tietovaranto, jonka tarkoituksena on sisältää tietyn käyttötarkoituksen kannalta oleelliset tiedot rekisteröinnin kohteista järjestäytyneellä tavalla"@fi,
-        "informationsresurs som omfattar organiserade uppgifter om registrerade objekt som är väsentliga för ett visst syfte"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t126,
-        tt:t17,
-        tt:t30,
-        tt:t70 ;
-    skos:note "Typically, a register is created for a single purpose and its maintenance strives for coverage and up-to-dateness."@en,
-        "Tyypillisesti rekisteri luodaan tiettyä käyttötarkoitusta varten ja sen ylläpidossa pyritään kattavuuteen ja ajantasaisuuteen."@fi,
-        "Ett register skapas vanligtvis för ett visst syfte, och man försöker upprätthålla det som heltäckande och aktuellt."@sv ;
-    skos:prefLabel "register"@en,
-        "rekisteri"@fi,
-        "register"@sv ;
-    skos:related tt:t127 ;
-    skos:topConceptOf tt: .
+    skos:narrower tt:t100,
+        tt:t50,
+        tt:t53,
+        tt:t6,
+        tt:t72,
+        tt:t98 ;
+    skos:note "The usability of data can be improved by e.g. structuring the data or adding any relevant metadata."@en,
+        "Datan hyödynnettävyyttä voidaan parantaa esimerkiksi rakenteistamalla tai metatietojen avulla."@fi,
+        "Data kan utnyttjas bättre genom att strukturera dem eller lägga till metadata till dem."@sv ;
+    skos:prefLabel "data (machine-readable information)"@en,
+        "data (koneluettava tieto)"@fi,
+        "data (maskinläsbara uppgifter)"@sv .
 
 tt:t33 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -2051,66 +2024,6 @@ tt:t35 a skos:Concept ;
         tt:t61 ;
     skos:topConceptOf tt: .
 
-tt:t4 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    isothes:broaderPartitive tt:t121 ;
-    skos:broader tt:t117 ;
-    skos:definition "interpretable data that can be refined into knowledge"@en,
-        "tulkittavissa oleva tieto, josta voidaan jalostaa tietämystä"@fi,
-        "data, vars innebörd kan tolkas och förädlas till kunskap"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t15 ;
-    skos:prefLabel "information"@en,
-        "informaatio"@fi,
-        "information"@sv ;
-    skos:related tt:t108,
-        tt:t27,
-        tt:t37 ;
-    skos:topConceptOf tt: .
-
-tt:t78 a skos:Concept ;
-    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
-    skos:definition "unit of information that consists of a unique combination of characteristics"@en,
-        "tiedon yksikkö, joka muodostuu käsitepiirteiden ainutkertaisesta yhdistelmästä"@fi,
-        "kunskapsenhet som skapats genom en unik kombination av kännetecken"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t52,
-        tt:t59 ;
-    skos:note "Concepts are used to parse information. Concepts are not necessarily language-specific, but societal and cultural factors often result in the creation of different conceptual divisions in different languages. Not every concept necessarily has an established linguistic expression that is attached to it."@en,
-        "Käsitteitä käytetään tiedon jäsentämiseen. Käsitteet eivät välttämättä ole kielisidonnaisia, mutta yhteiskunta- ja kulttuurisidonnaiset tekijät vaikuttavat usein erilaisen käsitejaon syntymiseen eri kielissä. Kaikille käsitteille ei välttämättä ole vakiintunut niitä vastaavaa kielellistä ilmausta."@fi,
-        "Begrepp används för att strukturera vetande. Begrepp är inte nödvändigtvis bundna till ett visst språk. De påverkas dock av sociala eller kulturbetingade förutsättningar som ofta leder till skilda indelningar i olika språk. Ett begrepp måste inte nödvändigtvis ha något motsvarande språkligt uttryck."@sv ;
-    skos:prefLabel "concept"@en,
-        "käsite"@fi,
-        "begrepp"@sv ;
-    skos:related tt:t107,
-        tt:t112,
-        tt:t40,
-        tt:t69 ;
-    skos:topConceptOf tt: .
-
-tt:t31 a skos:Concept ;
-    dc:source "Tietotermit" ;
-    skos:altLabel "koneluettava tieto"@fi,
-        "maskinläsbara uppgifter"@sv ;
-    skos:broader tt:t117 ;
-    skos:definition "information that has been formatted to be readable by machines"@en,
-        "tieto koneellisesti käsiteltävässä muodossa"@fi,
-        "uppgifter i maskinläsbar form"@sv ;
-    skos:inScheme tt: ;
-    skos:narrower tt:t100,
-        tt:t50,
-        tt:t53,
-        tt:t6,
-        tt:t72,
-        tt:t98 ;
-    skos:note "The usability of data can be improved by e.g. structuring the data or adding any relevant metadata."@en,
-        "Datan hyödynnettävyyttä voidaan parantaa esimerkiksi rakenteistamalla tai metatietojen avulla."@fi,
-        "Data kan utnyttjas bättre genom att strukturera dem eller lägga till metadata till dem."@sv ;
-    skos:prefLabel "data (machine-readable information)"@en,
-        "data (koneluettava tieto)"@fi,
-        "data (maskinläsbara uppgifter)"@sv ;
-    skos:topConceptOf tt: .
-
 tt:t41 a skos:Concept ;
     dc:source "Tietotermit" ;
     skos:altLabel "metainformation"@sv ;
@@ -2130,7 +2043,26 @@ tt:t41 a skos:Concept ;
         tt:t133,
         tt:t56,
         tt:t62,
-        tt:t98 ;
+        tt:t98 .
+
+tt:t78 a skos:Concept ;
+    dc:source "Terminologian sanasto (TSK 36, 2006)" ;
+    skos:definition "unit of information that consists of a unique combination of characteristics"@en,
+        "tiedon yksikkö, joka muodostuu käsitepiirteiden ainutkertaisesta yhdistelmästä"@fi,
+        "kunskapsenhet som skapats genom en unik kombination av kännetecken"@sv ;
+    skos:inScheme tt: ;
+    skos:narrower tt:t52,
+        tt:t59 ;
+    skos:note "Concepts are used to parse information. Concepts are not necessarily language-specific, but societal and cultural factors often result in the creation of different conceptual divisions in different languages. Not every concept necessarily has an established linguistic expression that is attached to it."@en,
+        "Käsitteitä käytetään tiedon jäsentämiseen. Käsitteet eivät välttämättä ole kielisidonnaisia, mutta yhteiskunta- ja kulttuurisidonnaiset tekijät vaikuttavat usein erilaisen käsitejaon syntymiseen eri kielissä. Kaikille käsitteille ei välttämättä ole vakiintunut niitä vastaavaa kielellistä ilmausta."@fi,
+        "Begrepp används för att strukturera vetande. Begrepp är inte nödvändigtvis bundna till ett visst språk. De påverkas dock av sociala eller kulturbetingade förutsättningar som ofta leder till skilda indelningar i olika språk. Ett begrepp måste inte nödvändigtvis ha något motsvarande språkligt uttryck."@sv ;
+    skos:prefLabel "concept"@en,
+        "käsite"@fi,
+        "begrepp"@sv ;
+    skos:related tt:t107,
+        tt:t112,
+        tt:t40,
+        tt:t69 ;
     skos:topConceptOf tt: .
 
 tt:t82 a skos:Concept ;
@@ -2154,8 +2086,7 @@ tt:t82 a skos:Concept ;
         tt:t48,
         tt:t51,
         tt:t84,
-        tt:t94 ;
-    skos:topConceptOf tt: .
+        tt:t94 .
 
 tt:t86 a skos:Concept ;
     dc:source "Tietotermit" ;
@@ -2268,65 +2199,37 @@ Tietotermien tarkoitus on selkeyttää viestintää ja tukea tiedonhallintaa ja 
 Syftet med ordlistan är att förtydliga kommunikation samt stöda informationshantering och intero-perabilitet i en informationsmiljö som förändras snabbt. Projektet med ordlistan initierades av Fi-nansministeriet och genomfördes av Lingsoft Language Services Ab och Tietojohtaminen ry. Sak-kunniga inom informationshantering från både den offentliga förvaltningen och den privata sektorn har gett sina synpunkter på ordlistan. Ordlistan upprätthålls tillsammans med JHS-rekommendation-erna för den offentliga förvaltningen. Användare uppmuntras till att lägga fram utvecklingsförslag via Fintos responsformulär eller <a href="mailto:sanastot@lingsoft.fi">med e-post</a>.
 """@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2017-12-08T06:23:42+00:00"^^xsd:dateTime ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:modified "2017-12-08T06:50:12+00:00"^^xsd:dateTime ;
     dct:title "Tietotermit"@fi ;
     skos:hasTopConcept tt:t1,
         tt:t10,
-        tt:t100,
-        tt:t101,
         tt:t102,
         tt:t103,
-        tt:t104,
         tt:t105,
         tt:t106,
         tt:t107,
-        tt:t108,
         tt:t109,
-        tt:t11,
-        tt:t110,
         tt:t111,
-        tt:t112,
-        tt:t113,
-        tt:t114,
         tt:t115,
         tt:t116,
         tt:t117,
-        tt:t118,
-        tt:t119,
         tt:t12,
         tt:t120,
         tt:t121,
-        tt:t122,
         tt:t123,
-        tt:t124,
-        tt:t125,
-        tt:t126,
         tt:t127,
-        tt:t128,
         tt:t129,
         tt:t13,
-        tt:t130,
-        tt:t131,
-        tt:t132,
         tt:t133,
-        tt:t134,
         tt:t135,
         tt:t136,
-        tt:t137,
-        tt:t138,
         tt:t139,
-        tt:t14,
-        tt:t140,
-        tt:t15,
         tt:t16,
-        tt:t17,
         tt:t18,
         tt:t19,
         tt:t2,
-        tt:t20,
         tt:t21,
-        tt:t22,
         tt:t23,
         tt:t24,
         tt:t25,
@@ -2335,80 +2238,40 @@ Syftet med ordlistan är att förtydliga kommunikation samt stöda informationsh
         tt:t28,
         tt:t29,
         tt:t3,
-        tt:t30,
-        tt:t31,
         tt:t32,
         tt:t33,
         tt:t34,
         tt:t35,
-        tt:t36,
-        tt:t37,
         tt:t38,
         tt:t39,
-        tt:t4,
         tt:t40,
-        tt:t41,
-        tt:t42,
-        tt:t43,
         tt:t44,
-        tt:t45,
-        tt:t46,
         tt:t47,
         tt:t48,
         tt:t49,
         tt:t5,
-        tt:t50,
-        tt:t51,
-        tt:t52,
-        tt:t53,
-        tt:t54,
-        tt:t55,
         tt:t56,
         tt:t57,
         tt:t58,
-        tt:t59,
-        tt:t6,
-        tt:t60,
         tt:t61,
         tt:t62,
-        tt:t63,
-        tt:t64,
         tt:t65,
         tt:t66,
-        tt:t67,
-        tt:t68,
-        tt:t69,
         tt:t7,
-        tt:t70,
-        tt:t71,
-        tt:t72,
         tt:t73,
         tt:t74,
         tt:t75,
-        tt:t76,
-        tt:t77,
         tt:t78,
         tt:t79,
-        tt:t8,
         tt:t80,
         tt:t81,
-        tt:t82,
         tt:t83,
-        tt:t84,
         tt:t85,
         tt:t86,
-        tt:t87,
-        tt:t88,
-        tt:t89,
         tt:t9,
         tt:t90,
-        tt:t91,
-        tt:t92,
         tt:t93,
         tt:t94,
         tt:t95,
-        tt:t96,
-        tt:t97,
-        tt:t98,
         tt:t99 .
 
