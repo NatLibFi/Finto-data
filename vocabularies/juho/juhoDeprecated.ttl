@@ -14586,16 +14586,22 @@ juho:p695  a                        juho-meta:Concept ;
         juho-meta:hasThematicGroup  juho:p8 ;
         juho-meta:related           juho:p696 , juho:p569 .
 
-juho:p11847  a                      juho-meta:Concept ;
-        rdfs:subClassOf             juho-meta:juho-kasitteet ;
-        owl:equivalentClass         yso:p5889 ;
-        skos:altLabel               "mielenterveyspotilaat"@fi ;
-        skos:prefLabel              "psykiatriset potilaat"@fi ;
-        juho-meta:hasLahde          "ysa" ;
-        juho-meta:hasPaivitetty     "20010305" ;
-        juho-meta:hasPoiminta       "stm" ;
-        juho-meta:hasThematicGroup  juho:p67 ;
-        juho-meta:related           juho:p10105 .
+juho:p11847  a                         juho-meta:Concept , yso-meta:DeprecatedConcept ;
+        rdfs:subClassOf                yso-meta:deprecatedConcepts ;
+        owl:deprecated                 true ;
+        skos:altLabel                  "mielenterveyspotilaat"@fi ;
+        skos:prefLabel                 "psykiatriset potilaat"@fi ;
+        juho-meta:hasLahde             "ysa" ;
+        juho-meta:hasPaivitetty        "20010305" ;
+        juho-meta:hasPoiminta          "stm" ;
+        yso-meta:comment               "deprecated on 08.12.2017" ;
+        yso-meta:deprecatedAssociativeRelation
+                juho:p10105 ;
+        yso-meta:deprecatedExactMatch  yso:p5889 ;
+        yso-meta:deprecatedHasThematicGroup
+                juho:p67 ;
+        yso-meta:deprecatedReplacedBy  yso-meta:DeprecatedConcept ;
+        yso-meta:deprecatedSubClassOf  juho-meta:juho-kasitteet , yso-meta:DeprecatedConcept .
 
 juho:p10753  a                      juho-meta:Concept ;
         rdfs:subClassOf             juho-meta:juho-kasitteet ;
@@ -28369,8 +28375,7 @@ juho:p10105  a                      juho-meta:Concept ;
         juho-meta:hasLahde          "ysa" ;
         juho-meta:hasPaivitetty     "20010316" ;
         juho-meta:hasPoiminta       "stm" ;
-        juho-meta:hasThematicGroup  juho:p80 ;
-        juho-meta:related           juho:p11847 .
+        juho-meta:hasThematicGroup  juho:p80 .
 
 juho:p1530  a                       juho-meta:Concept ;
         rdfs:subClassOf             juho-meta:juho-kasitteet ;
@@ -38321,18 +38326,8 @@ juho:p757  a                        juho-meta:Concept ;
         juho-meta:hasThematicGroup  juho:p49 ;
         juho-meta:related           juho:p2213 , juho:p2172 , juho:p756 , juho:p755 , juho:p2056 , juho:p2021 .
 
-juho:   a                              owl:Ontology , yso-meta:DeprecatedConcept ;
-        rdfs:subClassOf                yso-meta:deprecatedConcepts ;
-        owl:deprecated                 true ;
-        owl:imports                    <http://topbraid.org/spin/skosspin> , <file:///C:/Users/vnkgranhol/TBCFreeWorkspace/TopBraid/SKOS/skos-core.ttl.tbc> , <http://topbraid.org/spin/skoscleaner> , <https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf> , <http://www.w3.org/2004/02/skos/core> , <http://www.w3.org/2008/05/skos-xl> ;
-        skos:altLabel                  "mielenterveyspotilaat"@fi ;
-        skos:prefLabel                 "psykiatriset potilaat"@fi ;
-        yso-meta:comment               "deprecated on 08.12.2017" ;
-        yso-meta:deprecatedExactMatch  yso:p5889 ;
-        yso-meta:deprecatedHasThematicGroup
-                juho:p67 ;
-        yso-meta:deprecatedReplacedBy  juho:p11847 ;
-        yso-meta:deprecatedSubClassOf  juho:p13838 , yso-meta:DeprecatedConcept .
+juho:   a            owl:Ontology ;
+        owl:imports  <http://www.w3.org/2008/05/skos-xl> , <http://www.w3.org/2004/02/skos/core> , <https://github.com/NatLibFi/Finto-data/raw/master/vocabularies/yso/ysoKehitys.rdf> , <http://topbraid.org/spin/skoscleaner> , <http://topbraid.org/spin/skosspin> .
 
 juho:p8877  a                      juho-meta:Concept ;
         rdfs:subClassOf            juho:p3558 , juho-meta:juho-kasitteet ;
