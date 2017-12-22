@@ -13,6 +13,7 @@ PREFIX om: <http://www.yso.fi/onto/yso-peilaus/2007-03-02/>
 PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
 PREFIX sh: <http://purl.org/skos-history/>
 PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX rdau: <http://rdaregistry.info/Elements/u/>
 
 CONSTRUCT {
   ?newc om:definedConcept ?c .
@@ -29,6 +30,10 @@ CONSTRUCT {
   ?newc skos:editorialNote ?matchNote .
   ?newc skos:related ?ysorelated .
   ?ysorelated skos:related ?newc .
+  ?newc rdau:P60686 ?ysosuccessor .
+  ?ysosuccessor rdau:P60683 ?newc .
+  ?newc rdau:P60683 ?ysopredecessor .
+  ?ysopredecessor rdau:P60686 ?newc .
   ?newc dct:created ?created .
 }
 WHERE {
@@ -71,6 +76,18 @@ WHERE {
         FILTER NOT EXISTS { ?ysar a ysa-meta:GeographicalConcept }
       }
       BIND(IF(BOUND(?ysar), ?ysar, 'r') AS ?related)
+
+      # successor, predecessor
+      OPTIONAL {
+        ?c rdau:P60686 ?ysas
+        FILTER NOT EXISTS { ?ysas a ysa-meta:GeographicalConcept }
+      }
+      BIND(IF(BOUND(?ysas), ?ysas, 's') AS ?successor)
+      OPTIONAL {
+	?c rdau:P60683 ?ysap
+        FILTER NOT EXISTS { ?ysap a ysa-meta:GeographicalConcept }
+      }
+      BIND(IF(BOUND(?ysap), ?ysap, 'p') AS ?predecessor)
     }  
   }
   BIND(IRI(REPLACE(STR(?c), STR(ysa:), STR(yso:))) as ?newc)
@@ -114,5 +131,39 @@ WHERE {
       )
     )
     AS ?ysorelated
+  )
+
+  OPTIONAL {
+    ?ysos om:definedConcept ?successor
+  }
+  BIND(
+    IF(BOUND(?ysos),
+      IF(EXISTS { ?ysos a yso-meta:DeprecatedConcept } || EXISTS { ?ysob a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysos
+      ), 
+      IF(BOUND(?ysas),
+        IRI(REPLACE(STR(?ysas), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysosuccessor
+  )
+
+  OPTIONAL {
+    ?ysop om:definedConcept ?predecessor
+  }
+  BIND(
+    IF(BOUND(?ysop),
+      IF(EXISTS { ?ysop a yso-meta:DeprecatedConcept } || EXISTS { ?ysor a yso-meta:DeprecatedAggregateConcept },
+        ?unbound,
+        ?ysop
+      ), 
+      IF(BOUND(?ysap),
+        IRI(REPLACE(STR(?ysap), STR(ysa:), STR(yso:))),
+        ?unbound
+      )
+    )
+    AS ?ysopredecessor
   )
 }
