@@ -22,6 +22,7 @@ WHERE {
       # because sdbquery doesn't understand RDF 1.1 langStrings
       BIND(STR(?svlabel) AS ?label)
       FILTER NOT EXISTS { ?allarsc a allars-meta:GeographicalConcept }
+      FILTER(!CONTAINS(?label, ' -- '))
     }
   }
   ?ysoc om:definedConcept ?allarsc .
