@@ -48,3 +48,5 @@ define("SERVICE_LOGO", "resource/finto-pics/finto.png");
 define("CUSTOM_CSS", "resource/css/finto.css");
 
 define("GLOBAL_PLUGINS", "yse");
+
+define("SPARQL_COLLATION_ENABLED", TRUE);
