@@ -142,7 +142,7 @@ public class Kokoaja2 {
 		Resource skosConcept = this.onto.createResource(this.skosNs + "Concept");
 		
 		Resource ysoConcept = this.koko.createResource(ysoMetaNs + "Concept");
-		Literal fiLabel = this.koko.createLiteral("YSO-kasite", "fi");
+		Literal fiLabel = this.koko.createLiteral("YSO-käsite", "fi");
 		Literal enLabel = this.koko.createLiteral("YSO Concept", "en");
 		Literal svLabel = this.koko.createLiteral("Allfo-begrepp", "sv");
 		this.koko.add(ysoConcept, RDF.type, OWL.Class);
