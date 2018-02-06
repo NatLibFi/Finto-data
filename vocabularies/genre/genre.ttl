@@ -200,6 +200,12 @@ slm:s95  a               owl:Class , skos:Concept ;
         skos:prefLabel   "verkkojulkaisut"@fi , "webbpublikationer"@sv ;
         skos:related     slm:s889 .
 
+slm:s571  a              owl:Class , skos:Concept ;
+        rdfs:comment     "Används om tecknade serier med texten placerad vanligtvis under bilden i tvåradigt rim."@sv , "Käytetään sarjakuvista, joiden teksti on yleensä kuvan alla riimitettynä säeparina."@fi ;
+        rdfs:subClassOf  slm:s356 ;
+        skos:altLabel    "rimserier"@sv ;
+        skos:prefLabel   "tecknade serier med rim"@sv , "riimisarjakuvat"@fi .
+
 slm:s458  a             owl:Class , skos:Concept ;
         skos:prefLabel  "wienervalser"@sv , "wieninvalssit"@fi .
 
@@ -273,10 +279,9 @@ slm:s218  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p14716> ;
         skos:prefLabel   "näköispainokset"@fi , "faksimil"@sv .
 
-slm:s807  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:prefLabel   "esikoisohjaukset"@fi , "debutregier"@sv ;
-        skos:related     slm:s1125 .
+slm:s807  a             owl:Class , skos:Concept ;
+        skos:prefLabel  "esikoisohjaukset"@fi , "debutregier"@sv ;
+        skos:related    slm:s1125 .
 
 slm:s342  a             owl:Class , skos:Concept ;
         skos:prefLabel  "kalenterit"@fi , "kalendrar"@sv .
@@ -380,9 +385,10 @@ slm:s604  a              owl:Class , skos:Concept ;
 slm:s345  a             owl:Class , skos:Concept ;
         skos:prefLabel  "hymner"@sv , "hymnit"@fi .
 
-slm:s964  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:prefLabel   "morgonsamlingar"@sv , "päivänavaukset"@fi .
+slm:s964  a                 owl:Class , skos:Concept ;
+        skos:altLabel       "morgonandakter"@sv ;
+        skos:editorialNote  "On oikeastaan tilaisuus/tapahtuma." ;
+        skos:prefLabel      "morgonsamlingar"@sv , "päivänavaukset"@fi .
 
 slm:s856  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
@@ -709,7 +715,7 @@ slm:s169  a              owl:Class , skos:Concept ;
 slm:s881  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään teoksista, joiden sivuilla on luukkuja, joiden alle voi kurkistaa."@fi , "Används om böcker, där det t.ex. finns luckor som kan öppnas."@sv ;
         rdfs:subClassOf  slm:s1075 ;
-        skos:altLabel    "luukkukirjat"@fi , "böcker med luckor"@sv ;
+        skos:altLabel    "titthålsböcker"@sv , "titt ut-böcker"@sv , "luukkukirjat"@fi , "böcker med luckor"@sv ;
         skos:prefLabel   "kurkistuskirjat"@fi , "titt-ut-böcker"@sv ;
         skos:related     slm:s1181 .
 
@@ -785,9 +791,10 @@ slm:s135  a              owl:Class , skos:Concept ;
         skos:prefLabel   "barnfilmer"@sv , "lastenelokuvat"@fi ;
         skos:related     slm:s4 , slm:s968 , slm:s574 .
 
-slm:s1155  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s77 , slm:ongelmatsv ;
-        skos:prefLabel   "föremålsanimationsfilmer"@sv , "esineanimaatioelokuvat"@fi .
+slm:s1155  a                owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s77 , slm:ongelmatsv ;
+        skos:editorialNote  "Onko sellaista? Ks. google, 0 tulosta. Mahdoton kääntää?" ;
+        skos:prefLabel      "föremålsanimationsfilmer"@sv , "esineanimaatioelokuvat"@fi .
 
 slm:s953  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s523 , slm:s939 ;
@@ -1065,6 +1072,10 @@ slm:s202  a             owl:Class , skos:Concept ;
         skos:altLabel   "handledningar"@sv ;
         skos:prefLabel  "oppaat (teokset)"@fi , "guider (verk)"@sv .
 
+slm:s284  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1075 , slm:ongelmatsv ;
+        skos:prefLabel   "böcker med griffelsidor"@sv , "liitutaulukirjat"@fi .
+
 slm:s147  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s103 ;
         skos:prefLabel   "erikoisbibliografiat"@fi , "specialbibliografier"@sv .
@@ -1309,7 +1320,7 @@ slm:s190  a              owl:Class , skos:Concept ;
         skos:related     slm:s763 , slm:s1024 , slm:s607 , slm:s1119 , slm:s1073 , slm:s612 , slm:s1131 , slm:s1071 , slm:s1028 , slm:s1087 , slm:s1161 .
 
 slm:s934  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s141 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s141 ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p24970> ;
         skos:prefLabel   "viihdelukemistot"@fi , "nöjesläsning"@sv ;
         skos:related     slm:s691 .
@@ -1495,10 +1506,11 @@ slm:s1127  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
         skos:prefLabel   "rap"@sv , "rap"@fi .
 
-slm:s186  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 , slm:ongelmatsv ;
-        skos:prefLabel   "kvinnoserier (tecknade serier)"@sv , "naissarjakuvat"@fi ;
-        skos:related     slm:s600 .
+slm:s186  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s356 , slm:ongelmatsv ;
+        skos:editorialNote  "Mihin tämä oikeastaan viittaa (naisten tekemät, naisille suunnattut)? Onko tällainen jako mies-/naissarjat tarpeen? " ;
+        skos:prefLabel      "kvinnoserier (tecknade serier)"@sv , "naissarjakuvat"@fi ;
+        skos:related        slm:s600 .
 
 slm:s1160  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s435 ;
@@ -1509,7 +1521,8 @@ slm:s87  a               owl:Class , skos:Concept ;
         skos:prefLabel   "undervisningsserier (tecknade serier)"@sv , "opetussarjakuvat"@fi .
 
 slm:s1059  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s356 ;
+        skos:altLabel    "tecknade serier i färg"@sv ;
         skos:prefLabel   "värisarjakuvat"@fi , "färgserier"@sv ;
         skos:related     slm:s71 .
 
@@ -1585,7 +1598,7 @@ slm:s425  a              owl:Class , skos:Concept ;
         skos:related     slm:s696 .
 
 slm:s1165  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s618 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s618 ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15564> ;
         skos:prefLabel   "sagor"@sv , "sadut"@fi ;
         skos:related     slm:s778 , slm:s1181 , slm:s981 , slm:s1140 , slm:s1045 , slm:s352 .
@@ -1607,11 +1620,12 @@ slm:s162  a              owl:Class , skos:Concept ;
         skos:prefLabel   "tyttökirjat"@fi , "flickböcker"@sv ;
         skos:related     slm:s1181 , slm:s168 , slm:s364 .
 
-slm:s1110  a             owl:Class , skos:Concept ;
-        rdfs:comment     "Används om böcker med skurna eller vikta sidor."@sv , "Käytetään teoksista, joiden sivut on leikelty tai taitettu."@fi ;
-        rdfs:subClassOf  slm:s562 , slm:s1075 , slm:ongelmatsv ;
-        skos:prefLabel   "utvikningsböcker"@sv , "taittotehostekirjat"@fi ;
-        skos:related     slm:s1181 .
+slm:s1110  a                owl:Class , skos:Concept ;
+        rdfs:comment        "Används om böcker med skurna eller vikta sidor."@sv , "Käytetään teoksista, joiden sivut on leikelty tai taitettu."@fi ;
+        rdfs:subClassOf     slm:s562 , slm:s1075 , slm:ongelmatsv ;
+        skos:editorialNote  "Onko tämä \"keksitty\" termi aivan tarpeen? Utvikningsbok lähinnä huvittava, mutta parempaakaan ei välttämättä ole. Tällaista jakoa ei ruotsiksi, vaan lähinnä mekaniska böcker..." ;
+        skos:prefLabel      "utvikningsböcker"@sv , "taittotehostekirjat"@fi ;
+        skos:related        slm:s1181 .
 
 slm:s530  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
@@ -1721,11 +1735,11 @@ slm:s199  a              owl:Class , skos:Concept ;
         skos:prefLabel   "taide-eepokset"@fi , "konstepos"@sv ;
         skos:related     slm:s681 , slm:s1173 , slm:s452 .
 
-slm:s562  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Används om verk med olika specialeffekter, t.ex. ljud."@sv , "Käytetään teoksista, joissa on ääni- tai muu tehoste mukana."@fi ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:prefLabel   "tehostekirjat"@fi , "effektböcker"@sv ;
-        skos:related     slm:s1075 , slm:s1068 .
+slm:s562  a             owl:Class , skos:Concept ;
+        rdfs:comment    "Används om verk med olika specialeffekter, t.ex. ljud."@sv , "Käytetään teoksista, joissa on ääni- tai muu tehoste mukana."@fi ;
+        skos:altLabel   "böcker med specialeffekter"@sv , "böcker med effektmedel"@sv ;
+        skos:prefLabel  "tehostekirjat"@fi , "effektböcker"@sv ;
+        skos:related    slm:s1075 , slm:s1068 .
 
 slm:s1042  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
@@ -1776,7 +1790,7 @@ slm:s1058  a            owl:Class , skos:Concept ;
 
 slm:s177  a                 owl:Class , skos:Concept ;
         rdfs:subClassOf     slm:s446 , slm:ongelmatsv ;
-        skos:editorialNote  "Miten nämä eroavat pop-up-kirjoista? Tälle ei taida olla ruotsinkielistä vastinetta. " ;
+        skos:editorialNote  "Miten nämä eroavat pop-up-kirjoista? Tälle ei taida olla ruotsinkielistä vastinetta. Wikipedia: \"ponnahduskirja eli näyttämökirja on kolmiulotteinen tai liikkuvia osia sisältävä kirja\" eng. ja sv. vastine pop up" ;
         skos:prefLabel      "näyttämökirjat"@fi .
 
 slm:s326  a              owl:Class , skos:Concept ;
@@ -2068,7 +2082,8 @@ slm:s2  a               owl:Class , skos:Concept ;
         skos:prefLabel  "valser"@sv , "valssit"@fi .
 
 slm:s674  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s929 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s929 ;
+        skos:altLabel    "danspjäser"@sv , "dansskådespel"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p7998> ;
         skos:prefLabel   "tanssinäytelmät"@fi , "dansdramer"@sv .
 
@@ -2151,7 +2166,7 @@ slm:s621  a                 owl:Class , skos:Concept ;
         skos:altLabel       "itkuvirret"@fi ;
         skos:closeMatch     <http://www.yso.fi/onto/yso/p7971> ;
         skos:editorialNote  "genresanastossa nyt: itkut ja itkut (tuotokset) !" ;
-        skos:prefLabel      "itkut (tuotokset)"@fi , "gråtkväden"@sv .
+        skos:prefLabel      "itkut (tuotokset)"@fi , "gråtkväden (alster)"@sv .
 
 slm:s790  a              owl:Class , skos:Concept ;
         rdfs:comment     "Grit lit kuvaa Yhdysvaltain etelävaltioiden köyhien valkoihoisten kovaa elämää, ongelmia ja koettelemuksia."@fi ;
@@ -2212,10 +2227,9 @@ slm:s1190  a             owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p27843> ;
         skos:prefLabel   "naamioteatteri"@fi , "maskteater"@sv .
 
-slm:s998  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:altLabel    "kartböcker"@sv , "atlaser"@sv ;
-        skos:prefLabel   "kartastot"@fi , "kartverk"@sv .
+slm:s998  a             owl:Class , skos:Concept ;
+        skos:altLabel   "kartböcker"@sv , "atlaser"@sv ;
+        skos:prefLabel  "kartastot"@fi , "kartverk"@sv .
 
 slm:s838  a             owl:Class , skos:Concept ;
         skos:prefLabel  "orientalisk dans"@sv , "itämainen tanssi"@fi .
@@ -2689,7 +2703,7 @@ slm:s1107  a             owl:Class , skos:Concept ;
 
 slm:s961  a              owl:Class , skos:Concept ;
         rdfs:comment     "Används om verk som beskriver emigrationen och emigranternas situation i det nya samhället."@sv , "Käytetään teoksista, jotka kuvaavat siirtolaisuutta ja siirtolaisten elämää uudessa yhteiskunnassa."@fi ;
-        rdfs:subClassOf  slm:s975 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s975 ;
         skos:altLabel    "invandrarlitteratur"@sv , "invandrarromaner"@sv , "siirtolaisromaanit"@fi , "emigrantromaner"@sv , "maahanmuuttajakirjallisuus"@fi , "maahanmuuttajaromaanit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p7318> ;
         skos:prefLabel   "siirtolaiskirjallisuus"@fi , "migrantlitteratur"@sv ;
@@ -2750,13 +2764,20 @@ slm:s752  a              owl:Class , skos:Concept ;
 
 slm:s228  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään teoksista, joiden sivut ovat paksut niihin tarttumisen helpottamiseksi."@fi , "Används om böcker med styva, kartonnerade sidor lätta att gripa tag i."@sv ;
-        rdfs:subClassOf  slm:s1075 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s1075 ;
         skos:prefLabel   "paksulehtiset kirjat"@fi , "tjockbladiga böcker"@sv ;
         skos:related     slm:s1181 .
 
 slm:s240  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
         skos:prefLabel   "maaseutuelokuvat"@fi , "landsbygdsfilmer"@sv .
+
+slm:s632  a              owl:Class , skos:Concept ;
+        rdfs:comment     "Används om verk, där berättelsen handlar om en resa och händelser som utspelas under den."@sv , "Käytetään teoksista, joissa tarina koostuu matkasta ja sen aikana koetuista tapahtumista."@fi ;
+        rdfs:subClassOf  slm:s518 ;
+        skos:altLabel    "vagabondlitteratur"@sv , "road-berättelser"@sv ;
+        skos:prefLabel   "vandringsromaner"@sv , "vaellusromaanit"@fi ;
+        skos:related     slm:s368 .
 
 slm:s33  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1174 ;
@@ -3073,9 +3094,9 @@ slm:s688  a              owl:Class , <http://www.yso.fi/onto/kauno-meta/Concept>
 
 slm:s315  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s618 , slm:ongelmatsv ;
-        skos:altLabel    "fornnordiska sagor"@sv , "isländska sagor"@sv ;
+        skos:altLabel    "sagalitteratur"@sv , "sagor (fornnordiska)"@sv , "isländska sagor"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p121> ;
-        skos:prefLabel   "saagat"@fi , "sagor (fornnordiska)"@sv .
+        skos:prefLabel   "saagat"@fi , "fornnordiska sagor"@sv .
 
 slm:s1048  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s718 ;
@@ -3105,7 +3126,8 @@ slm:s1040  a            owl:Class , skos:Concept ;
         skos:prefLabel  "sonatiinit"@fi , "sonatiner"@sv .
 
 slm:s828  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1186 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s1186 ;
+        skos:altLabel    "hårdrock"@sv ;
         skos:prefLabel   "hard rock"@sv , "hard rock"@fi .
 
 slm:s264  a              owl:Class , skos:Concept ;
@@ -3596,11 +3618,6 @@ slm:s589  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26450> ;
         skos:prefLabel   "simulaatiopelit"@fi , "simulatorspel"@sv .
 
-slm:s571  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Används om tecknade serier med texten placerad vanligtvis under bilden i tvåradigt rim."@sv , "Käytetään sarjakuvista, joiden teksti on yleensä kuvan alla riimitettynä säeparina."@fi ;
-        rdfs:subClassOf  slm:s356 , slm:ongelmatsv ;
-        skos:prefLabel   "riimisarjakuvat"@fi , "rimserier (tecknade serier)"@sv .
-
 slm:s1003  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
         skos:altLabel    "modetidskrifter"@sv ;
@@ -3852,11 +3869,11 @@ slm:s18  a               owl:Class , skos:Concept ;
         skos:prefLabel   "lääkäriromaanit"@fi , "läkarromaner"@sv ;
         skos:related     slm:s691 .
 
-slm:s941  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 , slm:ongelmatsv ;
-        skos:altLabel    "Onko sellaista? Ks. google. Mahdoton kääntää?" ;
-        skos:prefLabel   "hakusanaromaanit"@fi , "uppslagsromaner"@sv ;
-        skos:related     slm:s381 .
+slm:s941  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s518 , slm:ongelmatsv ;
+        skos:editorialNote  "Onko sellaista? Ks. google. Mahdoton kääntää?" ;
+        skos:prefLabel      "hakusanaromaanit"@fi , "uppslagsromaner"@sv ;
+        skos:related        slm:s381 .
 
 slm:s286  a              owl:Class , skos:Concept ;
         skos:altLabel    "självbiografier"@sv , "bekännelselitteratur"@sv , "omaelämäkerrat"@fi , "autobiografiat"@fi , "tunnustuskirjallisuus"@fi , "autobiografier"@sv ;
@@ -3864,9 +3881,10 @@ slm:s286  a              owl:Class , skos:Concept ;
         skos:prefLabel   "muistelmat"@fi , "memoarer"@sv ;
         skos:related     slm:s611 , slm:s1006 , slm:s770 .
 
-slm:s508  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s947 , slm:ongelmatsv , slm:s662 ;
-        skos:prefLabel   "mestizomusik"@sv , "mestizomusiikki"@fi .
+slm:s508  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s947 , slm:ongelmatsv , slm:s662 ;
+        skos:editorialNote  "Sellaista kuin mestizomusiikki ei näytä oikeastaan olevan, googlessa vain muso ja hklj, kyseessä mestitsien musiikki? eng. on kyllä mestizo music" ;
+        skos:prefLabel      "mestizomusik"@sv , "mestizomusiikki"@fi .
 
 slm:s1161  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -3896,9 +3914,8 @@ slm:s689  a             owl:Class , skos:Concept ;
         skos:prefLabel  "miljömusik"@sv , "ympäristömusiikki"@fi .
 
 slm:s340  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Genre inom tv- och datorspel där spelaren styr (hoppar med) en spelfigur mellan olika plattformar."@sv , "Videopelien lajityyppi, joissa yleensä ohjataan pelihahmoa hyppäämällä erilaisten tasojen päälle."@fi ;
-        rdfs:subClassOf  slm:s44 , slm:ongelmatsv ;
-        skos:altLabel    "tappelupelit"@fi ;
+        rdfs:comment     "Genre inom tv- och datorspel där spelaren styr och hoppar med en spelfigur mellan olika plattformar."@sv , "Videopelien lajityyppi, joissa yleensä ohjataan pelihahmoa hyppäämällä erilaisten tasojen päälle."@fi ;
+        rdfs:subClassOf  slm:s44 ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p25685> ;
         skos:prefLabel   "plattformsspel"@sv , "tasohyppelypelit"@fi .
 
@@ -3908,10 +3925,6 @@ slm:s821  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6478> ;
         skos:prefLabel   "eepokset"@fi , "epos"@sv ;
         skos:related     slm:s352 .
-
-slm:s1038  a            owl:Class , skos:Concept ;
-        skos:altLabel   "textlösa böcker"@sv ;
-        skos:prefLabel  "böcker utan text"@sv , "tekstittömät kirjat"@fi .
 
 slm:s845  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -4050,10 +4063,9 @@ slm:s799  a              owl:Class , skos:Concept ;
         skos:prefLabel   "superhjälteserier (tecknade serier)"@sv , "supersankarisarjakuvat"@fi ;
         skos:related     slm:s302 .
 
-slm:s491  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:altLabel    "extranummer"@sv ;
-        skos:prefLabel   "encoret"@fi , "encorer"@sv .
+slm:s491  a             owl:Class , skos:Concept ;
+        skos:altLabel   "encorer"@sv ;
+        skos:prefLabel  "encoret"@fi , "extranummer"@sv .
 
 slm:s212  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -4321,6 +4333,10 @@ slm:s900  a              owl:Class , skos:Concept ;
         skos:prefLabel   "följetonger"@sv , "jatkokertomukset"@fi ;
         skos:related     slm:s1121 , slm:s1037 , slm:s555 .
 
+slm:s1038  a            owl:Class , skos:Concept ;
+        skos:altLabel   "böcker utan text"@sv ;
+        skos:prefLabel  "tekstittömät kirjat"@fi , "textlösa böcker"@sv .
+
 slm:s579  a             owl:Class , skos:Concept ;
         skos:altLabel   "kasettikirjat"@fi , "kassettböcker"@sv , "äänikirjat (muille kuin lukemisesteisille)"@fi ;
         skos:prefLabel  "äänikirjat"@fi , "ljudböcker"@sv .
@@ -4381,11 +4397,10 @@ slm:s176  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
         skos:prefLabel   "fadot"@fi , "fado"@sv .
 
-slm:s697  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Käytetään teoksista, joiden teksti on tavutettu."@fi , "Används om verk med text i avstavad form."@sv ;
-        rdfs:subClassOf  slm:ongelmatsv ;
-        skos:prefLabel   "avstavningsböcker"@sv , "tavukirjat"@fi ;
-        skos:related     slm:s501 , slm:s1181 .
+slm:s697  a             owl:Class , skos:Concept ;
+        rdfs:comment    "Käytetään teoksista, joiden teksti on tavutettu."@fi , "Används om verk med text i avstavad form."@sv ;
+        skos:prefLabel  "avstavningsböcker"@sv , "tavukirjat"@fi ;
+        skos:related    slm:s501 , slm:s1181 .
 
 slm:s574  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -4493,10 +4508,6 @@ slm:s1132  a             owl:Class , skos:Concept ;
 slm:s456  a             owl:Class , skos:Concept ;
         skos:prefLabel  "lambada"@sv , "lambadat"@fi .
 
-slm:s284  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1075 , slm:ongelmatsv ;
-        skos:prefLabel   "liitutaulukirjat"@fi .
-
 slm:s614  a             owl:Class , skos:Concept ;
         skos:prefLabel  "sinfonia concertantet"@fi , "sinfonia concertante"@sv .
 
@@ -4539,7 +4550,6 @@ slm:s399  a             owl:Class , skos:Concept ;
 
 slm:s1037  a             owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään kaunokirjallisista teoksista, jotka useassa osassa seuraavat samojen päähenkilöiden vaiheita."@fi , "Används om skönlitterära verk, där samma huvudpersoners levnadsöden skildras i många separata delar."@sv ;
-        rdfs:subClassOf  slm:ongelmatsv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p8416> ;
         skos:prefLabel   "långserieböcker"@sv , "sarjakirjat"@fi ;
         skos:related     slm:s1121 , slm:s900 , slm:s555 .
@@ -4623,11 +4633,12 @@ slm:s98  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
         skos:prefLabel   "actionserier (tecknade serier)"@sv , "toimintasarjakuvat"@fi .
 
-slm:s624  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Sanataideteos, jossa vaeltamisen tai vaeltavan ihmisen motiivi on keskeinen."@fi ;
-        rdfs:subClassOf  slm:ongelmatsv , slm:s1045 ;
-        skos:prefLabel   "vaellustarinat"@fi ;
-        skos:related     slm:s327 .
+slm:s624  a                 owl:Class , skos:Concept ;
+        rdfs:comment        "Sanataideteos, jossa vaeltamisen tai vaeltavan ihmisen motiivi on keskeinen."@fi ;
+        rdfs:subClassOf     slm:ongelmatsv , slm:s1045 ;
+        skos:editorialNote  "on monimerkityksinen termi, eri merkitys folkloristiikkassa kuin kirjallisuustieteessä (ks. tepa).. ruotsiksi eri termi riippuen merkityksestä.. viittaako tämä nyt varmasti nimenomaan vain huomautuksessa olevaan merkitykseen? kun RT on kuitenkin paikallistarinat ja bellassa on vastineena vandringssägner (joka EI voi viitata huomautuksessa olevaan merkitykseen, vaan folkloristiikan merkitykseen) " , "vandringsskildringar? " , "vaellustarina folkloristiikkassa, ks. esim.: https://www.doria.fi/bitstream/handle/10024/130703/BorodulinaYana.pdf  https://helda.helsinki.fi/bitstream/handle/10224/4084/honko99-123.pdf?sequence=1 eli ei ole \"Sanataideteos, jossa vaeltamisen tai vaeltavan ihmisen motiivi on keskeinen\"" ;
+        skos:prefLabel      "vaellustarinat"@fi ;
+        skos:related        slm:s327 .
 
 slm:s104  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
@@ -4833,7 +4844,6 @@ slm:s16  a              owl:Class , skos:Concept ;
         skos:prefLabel  "kokousjulkaisut"@fi , "konferenspublikationer"@sv .
 
 slm:s1045  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:ongelmatsv ;
         skos:altLabel    "historier"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p4990> ;
         skos:prefLabel   "sägner"@sv , "tarinat"@fi ;
@@ -4969,13 +4979,6 @@ slm:s394  a              owl:Class , skos:Concept ;
         skos:prefLabel   "koskettelukirjat"@fi , "taktila böcker"@sv ;
         skos:related     slm:s1075 , slm:s1181 .
 
-slm:s632  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Används om verk, där berättelsen handlar om en resa och händelser som utspelas under den."@sv , "Käytetään teoksista, joissa tarina koostuu matkasta ja sen aikana koetuista tapahtumista."@fi ;
-        rdfs:subClassOf  slm:s518 , slm:ongelmatsv ;
-        skos:altLabel    "vagabondlitteratur"@sv ;
-        skos:prefLabel   "road-berättelser"@sv , "vaellusromaanit"@fi ;
-        skos:related     slm:s368 .
-
 slm:s227  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1177 ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p3453> ;
@@ -5062,7 +5065,7 @@ slm:s214  a              owl:Class , skos:Concept ;
 slm:s826  a                 owl:Class , skos:Concept ;
         rdfs:comment        "Käytetään teoksista, joihin on leikattu erilaisia reikiä."@fi , "Används om böcker med olika slags hål på sina sidor."@sv ;
         rdfs:subClassOf     slm:s1075 , slm:ongelmatsv ;
-        skos:editorialNote  "luckbok, titthålsbok (SAO)?"@sv ;
+        skos:editorialNote  "luckbok, titthålsbok (SAO)? Även kurkistuskirjat"@sv ;
         skos:prefLabel      "aukkokirjat"@fi , "gluggböcker"@sv ;
         skos:related        slm:s1181 , slm:s548 .
 
@@ -5324,7 +5327,7 @@ slm:s835  a              owl:Class , skos:Concept ;
 slm:s524  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi ;
         rdfs:subClassOf  slm:s975 , slm:ongelmatsv ;
-        skos:altLabel    "inre monolog"@sv ;
+        skos:altLabel    "medvetandeström-litteratur"@sv , "inre monolog-litteratur"@sv , "inre monolog"@sv ;
         skos:prefLabel   "inre monolog (genre)"@sv , "tajunnanvirtakirjallisuus"@fi ;
         skos:related     slm:s181 .
 
@@ -5501,8 +5504,8 @@ slm:s60  a               owl:Class , skos:Concept ;
         skos:prefLabel   "mbalax"@fi , "mbalax"@sv .
 
 slm:s414  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Käytetään teoksista, joiden piirroskuvitukseen on piilotettu etsittäviä hahmoja."@fi , "Används om böcker illustrerade med bilder med dolda figurer som skall letas fram."@sv ;
-        rdfs:subClassOf  slm:s1075 , slm:ongelmatsv ;
+        rdfs:comment     "Används om böcker illustrerade med bilder med dolda figurer som ska letas fram."@sv , "Käytetään teoksista, joiden piirroskuvitukseen on piilotettu etsittäviä hahmoja."@fi ;
+        rdfs:subClassOf  slm:s1075 ;
         skos:prefLabel   "böcker med fixeringsbilder"@sv , "piilokuvakirjat"@fi ;
         skos:related     slm:s1181 .
 
@@ -5714,7 +5717,7 @@ slm:s1069  a                owl:Class , skos:Concept ;
         rdfs:comment        "Käytetään teoksista, jotka käsittelevät urheilua ja urheilemista."@fi , "Används om verk, som beskriver idrott och idrottare."@sv ;
         rdfs:subClassOf     slm:s975 , slm:ongelmatsv ;
         skos:altLabel       "sportromaner"@sv , "urheiluromaanit"@fi ;
-        skos:editorialNote  "Pitäisikö määritelmään lisätä \"kaunokirjallisista teoksista\" - tämä on aikaisemmin ollut kaunossa ja nyt kun on yleisgenresanastossa on vaara että käytetään myös tietokirjallisuudesta joka käsittelee urheilua? Huom. ruotsiksi \"-romaner\" muodossa. " ;
+        skos:editorialNote  "Pitäisikö määritelmään lisätä \"kaunokirjallisista teoksista\" - tämä on aikaisemmin ollut kaunossa ja nyt kun on yleisgenresanastossa on vaara että käytetään myös tietokirjallisuudesta joka käsittelee urheilua? Huom. ruotsiksi \"-romaner\" muodossa (eli nimenomaan kaunokirjallisuus)" ;
         skos:prefLabel      "urheilukirjallisuus"@fi , "idrottsromaner"@sv .
 
 slm:s21  a               owl:Class , skos:Concept ;
