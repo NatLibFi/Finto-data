@@ -34,16 +34,15 @@ for arg in sys.argv:
     if arg == 'debug':
         edit_issues = False
     elif 'issues-to-triples' not in arg:
-        print arg
         with open(arg) as json_file:
           secrets = json.load(json_file)
-        
+
 g = Github(secrets['username'], secrets['password'])
 repo = g.get_user('Finto-ehdotus').get_repo('YSE')
 newlab = repo.get_label('uusi')
 accept_lab = repo.get_label('vastaanotettu')
 
-timeframe = datetime.datetime.now() - datetime.timedelta(days=8)
+timeframe = datetime.datetime.now() - datetime.timedelta(days=30)
 
 new_issues = repo.get_issues(labels=[accept_lab], since=timeframe, state='open')
 
