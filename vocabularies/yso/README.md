@@ -1,7 +1,7 @@
 Yleinen suomalainen ontologia YSO
 =================================
 
-Tässä kansiossa sijaitsevat sekä YSOn julkaisuversio yso-skos.ttl että kehitysversio ysoKehitys.rdf. YSO päivittyy Finton kehityspalvelimelle tasatunnein, mutta viralliseen Fintoon vain kerran päivässä (yleensä aamuyöstä).
+Tässä kansiossa sijaitsevat sekä YSOn tuottamiseen käytetyt ohjelmanpätkät että itse YSOn kehitys ja julkaisuversiot.
 
 ### YSOn kehitysversion päivittyminen
 
