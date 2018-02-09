@@ -14,3 +14,17 @@ YSOn purittaminen tapahtuu joka yö ajettavalla `update-yso-1-purify` cronjobill
 ### YSAn muutosten päivittyminen YSOn kehitysversioon
 
 YSAn muutokset tuodaan SDB-tietokannan YSO-kehitysversioon aina kuukauden ensimmäisenä päivänä. Päivityksestä vastaa `skos-history-ysa-yso-update` cronjob, joka löytyy onki-kk:n kansiosta `/etc/cron.d/`.  
+
+### Ratkaisuja yleisiin ongelmatilanteisiin
+
+Kootaan tänne yleisimpiä YSO-niksejä.
+
+#### YSO ei päivity koska yläkäsitteiden lukumäärä on jotain muuta kuin kolme:
+
+YSOn kehitysversioon on todennäköisesti lipsahtanut uusi käsite, jolla ei ole vielä merkattuna yläkäsitettä. Tällöin käsite tulkitaan virheellisesti YSOn uudeksi yläkäsitteeksi ja julkaisu estetään. Tilanne ratkeaa automaattisesti kun virheellinen data on korjattu SDB-tietokantaan TBC:llä.
+
+Jos yläkäsitteiden määrä on nolla, kehitystiedosto on todennäköisesti tyhjä jonkin käsittelyssä tapahtuneen virheen takia. Tällöin oikea ratkaisu on mennä palvelimelle katsomaan miksei päivitysputki toimi oikein.
+
+#### YSOn julkaisuversion käsitteillä on ylimääräisiä kehitykseen liittyviä propertyjä
+
+YSOn kehitysversiossa on tällöin otettu todennäköisesti käyttöön uusi property, mutta sitä ei ole muistettu lisätä poistettavien propertyjen joukkoon skosifyn konfiguraatiossa `finnonto.cfg`.
