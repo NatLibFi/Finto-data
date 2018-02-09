@@ -25,6 +25,6 @@ YSOn kehitysversioon on todennäköisesti lipsahtanut uusi käsite, jolla ei ole
 
 Jos yläkäsitteiden määrä on nolla, kehitystiedosto on todennäköisesti tyhjä jonkin käsittelyssä tapahtuneen virheen takia. Tällöin oikea ratkaisu on mennä palvelimelle katsomaan miksei päivitysputki toimi oikein.
 
-#### YSOn julkaisuversion käsitteillä on ylimääräisiä kehitykseen liittyviä propertyjä
+#### YSOn julkaisuversion käsitteillä näkyy ylimääräisiä kehitykseen liittyviä propertyjä:
 
 YSOn kehitysversiossa on tällöin otettu todennäköisesti käyttöön uusi property, mutta sitä ei ole muistettu lisätä poistettavien propertyjen joukkoon skosifyn konfiguraatiossa `finnonto.cfg`.
