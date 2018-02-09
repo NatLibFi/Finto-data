@@ -1,6 +1,5 @@
 #!/bin/sh
 
-#INFILES="hero-metadata.ttl hero-combined.ttl"
 INFILES="hero-combined.ttl"
 OUTFILE=hero-skos.ttl
 
