@@ -28,3 +28,7 @@ Jos yläkäsitteiden määrä on nolla, kehitystiedosto on todennäköisesti tyh
 #### YSOn julkaisuversion käsitteillä näkyy ylimääräisiä kehitykseen liittyviä propertyjä:
 
 YSOn kehitysversiossa on tällöin otettu todennäköisesti käyttöön uusi property, mutta sitä ei ole muistettu lisätä poistettavien propertyjen joukkoon skosifyn konfiguraatiossa `finnonto.cfg`.
+
+### Ongelmaloki
+
+14.2.2018: YSO ei ollut päivittynyt yöllä sillä ysa/allärs matchien päivitin tuotti jostain syystä lähes tyhjän tiedoston. Cronjobien ajaminen uudestaan ratkaisi ongelman.
