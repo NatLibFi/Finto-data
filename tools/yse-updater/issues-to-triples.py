@@ -48,6 +48,7 @@ new_issues = repo.get_issues(labels=[accept_lab], since=timeframe, state='open')
 
 yse_skos = Graph().parse('yse-skos.ttl', format='turtle')
 
+# converts github-issue heading elements to skos-properties
 def headingToProperty(block):
     propHeading = block.split('\n', 1)[0].strip()
     headToProp = {
@@ -72,6 +73,7 @@ def guessLang(block):
         return 'en'
     return 'fi'
 
+# creates new triples from the given block and adds them to the newtriples graph
 def addPropertyValueTriples(prop, block, uri):
     vals = filter(None, block.split('\n')[1:])
     for value in vals:
@@ -89,6 +91,7 @@ def addPropertyValueTriples(prop, block, uri):
             value_uri = value.split('(')[1][:-1]
             newtriples.add( (rdflib.term.URIRef(uri), rdflib.term.URIRef(skos + prop), rdflib.term.URIRef(value_uri)) )
 
+# converts the github-issue markdown into skos triples
 def issueToTriple(issue):
     md_blocks = issue.body.split('#### ')
     uri = ysa + 'Y' + str(issue.number + 500000)
@@ -113,6 +116,7 @@ def issueToTriple(issue):
         if (prop and len(block.split('\n', 1)) > 1):
             addPropertyValueTriples(prop, block, uri)
 
+# iterating through the new issues that have been marked with the "vastaanotettu" label
 for issue in new_issues:
     uri = 'http://finto.fi/yse/fi/page/Y' + str(issue.number + 500000)
     if newlab not in issue.labels or issue.number < 4500: # early issues have been handled separately
@@ -128,6 +132,7 @@ for issue in new_issues:
         issue.edit(body=newbody);
         issue.remove_from_labels(accept_lab)
 
+# looks up prefLabels for YSA uris from the finto api
 def getYsaLabel(uri):
   if uri not in labels:
     params = urlencode({'uri': uri, 'format': 'application/json', 'lang': 'fi'})
