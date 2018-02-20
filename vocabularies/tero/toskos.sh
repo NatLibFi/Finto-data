@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="tero-metadata.ttl tero.ttl yso-tero.ttl"
+INFILES="tero-metadata.ttl tero-yso-replacedby.ttl tero.ttl yso-tero.ttl"
 OUTFILE=tero-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
