@@ -7,6 +7,7 @@ from rdflib.util import guess_format
 # namespaces
 TERO = Namespace("http://www.yso.fi/onto/tero/")
 TEROYSO = Namespace("http://www.yso.fi/onto/tero/p")
+YSO = Namespace("http://www.yso.fi/onto/yso/p")
 TEROMETA = Namespace("http://www.yso.fi/onto/tero-meta/")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
@@ -19,7 +20,7 @@ g.namespace_manager.bind('tero',TERO)
 g.namespace_manager.bind('terometa',TEROMETA)
 
 for conc in g.subjects(RDF.type, SKOS.Concept):
-  if not conc.startswith(TEROYSO):
+  if not conc.startswith(TEROYSO) and not conc.startswith(YSO):
     g.add((conc, RDF.type, TEROMETA.Concept))
 
 g.serialize(destination=sys.stdout, format='turtle')
