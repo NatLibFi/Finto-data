@@ -13,17 +13,23 @@ csvfile = open('HERO.csv', 'rb')
 reader = csv.reader(csvfile, encoding='utf-8', delimiter=';')
 types = ['', herometa.UpperConcept, herometa.NonHeraldicConcept, herometa.NonFinnishConcept]
 langcodes = ['et', 'hu', 'en', 'nl', 'de', 'sv', 'nb', 'nn', 'da', 'is', 'lt', 'lv', 'sq', 'el', 'la', 'it', 'fr', 'es', 'ca', 'pt', 'ro', 'pl', 'cs', 'sk', 'hr', 'sr', 'ru', 'be', 'uk']
+wbo_missing = False
 
 for row in reader:
     heroid = row[0]
     wbo = row[-1]
+    if not wbo.isalnum():
+        wbo_missing = True
+        wbo = ''
     uri = URIRef('http://www.yso.fi/onto/hero/p' + heroid)
     if (uri, None, None) not in hero:
         print 'MISSING: ' + heroid 
     if len(wbo) > 0:
         hero.add( (uri, herometa.wboMatch, Literal(wbo)) )
-
-    for index, label in enumerate(row[2:-1]):
+    end = -1
+    if wbo_missing:
+        end = None 
+    for index, label in enumerate(row[2:end]):
         if " {" in label:
             labstr = label.split(" {")
             if len(labstr) > 1:
