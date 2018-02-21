@@ -8,6 +8,8 @@ Skriptien ajaminen vaatii pygithub moduulin,
 joka asennetaan esimerkiksi seuraavalla komennolla:
 `pip install pygithub`
 
+Molempia skriptejä ajetaan öisin finto-dev-kk -palvelimella `update-yse` cronjobilla.
+
 #### issues-to-triples.py
 
 Tämä skripti hakee "vastaanotettu"-labelilla varustetut
@@ -32,5 +34,8 @@ sekä kaksi lokitiedostoa
 
 Tämä skripti vastaa suljettujen issueiden käsittelystä YSEssä.
 
-Tätä työtä ei ole tällä hetkellä automatisoitu, sillä työkalu ei suoriudu
-kaikista tapauksista itsekseen.
+Tällä hetkellä skripti osaa poistaa YSEstä ehdotukset,
+jotka on hyväksytty YSAan samalla URIlla ja prefLabelilla.
+
+Toteuttamatta on toiminnalisuus, joka listaisi YSEn aukinaiset ehdotukset,
+joiden issue on kuitenkin suljettu GitHubissa.
