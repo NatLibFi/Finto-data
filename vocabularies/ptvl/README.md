@@ -7,5 +7,5 @@ Tästä syystä päivityksen oikeellisuuden tarkistamisessa on hyvä olla eritt�
 ### Sanaston päivittäminen
 
 Aja ensin `ptvl-from-skos.py` -skripti, joka luo csv-tiedostot taulukon tiedoista. Tämän jälkeen ajetaan 
-`ptvl-to-skos.py`, joka tuottaa triplejä CSV-tiedostoista. Näiden vaiheiden jälkeen on erittäin tärkeää tarkistaa 
+`ptvl-to-skos.py`, joka tuottaa triplejä CSV-tiedostoista. Kolmantena työvaiheena on sanaston ajaminen skosifyn läpi `toskos.sh`-skriptillä. Näiden vaiheiden jälkeen on erittäin tärkeää tarkistaa 
 `git diff`-komennolla, että päivitys näyttäisi onnistuneen.
