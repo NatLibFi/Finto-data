@@ -2,6 +2,7 @@
 
 DATADIR=/data/Finto-data-update
 NEWISSUES=/data/Finto-data-update/tools/yse-updater/issues-to-triples.py
+CLOSEDISSUES=/data/Finto-data-update/tools/yse-updater/check-closed-issues.py
 YSEDIR=/data/Finto-data-update/vocabularies/yse
 
 cd $DATADIR
@@ -9,6 +10,7 @@ svn up
 cd $YSEDIR
 
 $NEWISSUES /etc/ysecreds 2>$YSEDIR/yse-convert.log
+$CLOSEDISSUES /etc/ysecreds 2>$YSEDIR/yse-closed.log
 
 minimumsize=10000
 actualsize=$(du -b "$YSEDIR/yse-skos.ttl" | cut -f 1)
