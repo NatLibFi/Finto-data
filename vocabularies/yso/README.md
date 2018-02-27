@@ -33,7 +33,6 @@ WHERE {
   FILTER(!STRSTARTS(STR(?o),STR(yso-translate:))) .
   FILTER(!STRSTARTS(STR(?p),STR(yso-meta:developmentComment))) .
 }
-
 ```
 
 ### Ratkaisuja yleisiin ongelmatilanteisiin
