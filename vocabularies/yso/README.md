@@ -13,7 +13,28 @@ YSOn purittaminen tapahtuu joka yö ajettavalla `update-yso-1-purify` cronjobill
 
 ### YSAn muutosten päivittyminen YSOn kehitysversioon
 
-YSAn muutokset tuodaan SDB-tietokannan YSO-kehitysversioon aina kuukauden ensimmäisenä päivänä. Päivityksestä vastaa `skos-history-ysa-yso-update` cronjob, joka löytyy onki-kk:n kansiosta `/etc/cron.d/`.  
+YSAn muutokset tuodaan SDB-tietokannan YSO-kehitysversioon aina kuukauden ensimmäisenä päivänä. Päivityksestä vastaa `skos-history-ysa-yso-update` cronjob, joka löytyy onki-kk:n kansiosta `/etc/cron.d/`.
+
+### YSOn ajallisesti jäädytetyn kehitysversion julkaisu
+
+Ennen kuin ysoKehitys.rdf siirretään omaan kansioonsa (katso mallia Aristoteles julkaisusta), tulee sisäiseen käyttöön tarkoitetut kehityspropertyt poistaa esimerkiksi oheisella sparql-kyselyllä. Kysely on helpointa ajaa Jenan `sparql`-komentorivityökalulla.
+
+```
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-translate: <http://www.yso.fi/onto/yso-translate/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
+
+CONSTRUCT { ?s ?p ?o . } 
+WHERE {
+  ?s ?p ?o .
+  FILTER(!STRSTARTS(STR(?s),STR(yso-update:))) .
+  FILTER(!STRSTARTS(STR(?o),STR(yso-update:))) .
+  FILTER(!STRSTARTS(STR(?s),STR(yso-translate:))) .
+  FILTER(!STRSTARTS(STR(?o),STR(yso-translate:))) .
+  FILTER(!STRSTARTS(STR(?p),STR(yso-meta:developmentComment))) .
+}
+
+```
 
 ### Ratkaisuja yleisiin ongelmatilanteisiin
 
