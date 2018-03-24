@@ -16,40 +16,12 @@ slm:StructuringClass a rdfs:Class ;
 slm: a owl:Ontology ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
-slm:s1080 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p1148> ;
-    skos:altLabel "huumorisarjakuvat"@fi,
-        "pilasarjakuvat"@fi,
-        "humorserier"@sv,
-        "skämtserier"@sv ;
-    skos:prefLabel "sarjakuvat -- satiiri"@fi,
-        "tecknade serier -- satir"@sv .
-
 slm:s1093 a owl:DeprecatedClass ;
     skos:altLabel "kirjallisuusarvostelut"@fi,
         "bokrecensioner"@sv ;
     skos:prefLabel "kirja-arvostelut"@fi,
         "litteraturrecensioner"@sv ;
     yso-meta:developmentComment "haudattu"@fi .
-
-slm:s745 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p1148> ;
-    skos:altLabel "metasarjakuvat"@fi,
-        "metaserier"@sv ;
-    skos:prefLabel "sarjakuvat -- metafiktio"@fi,
-        "tecknade serier -- metafiktion"@sv .
-
-slm:s867 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p1148> ;
-    skos:altLabel "huumorisarjakuvat"@fi,
-        "pilasarjakuvat"@fi,
-        "humorserier"@sv,
-        "skämtserier"@sv ;
-    skos:prefLabel "sarjakuvat -- huumori"@fi,
-        "tecknade serier -- humor"@sv .
 
 slm:s991 a owl:DeprecatedClass ;
     skos:prefLabel "konventionaalinen kirjallisuus"@fi,
@@ -1588,6 +1560,12 @@ slm:s406 a skos:Concept ;
     skos:prefLabel "aatedraamat"@fi,
         "idédramer"@sv .
 
+slm:s406_1 a skos:Concept ;
+    skos:broader slm:s929 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "lukudraamat"@fi,
+        "läsdramer"@sv .
+
 slm:s407 a skos:Concept ;
     skos:broader slm:s285 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -1737,6 +1715,13 @@ slm:s444 a skos:Concept ;
     skos:prefLabel "highlife"@fi,
         "highlife"@sv .
 
+slm:s446 a skos:Concept ;
+    skos:altLabel "näyttämökirjat"@fi ;
+    skos:broader slm:s1075 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "pop-up-kirjat"@fi,
+        "pop-up-böcker"@sv .
+
 slm:s447 a skos:Concept ;
     skos:broader slm:s861 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -1818,13 +1803,6 @@ slm:s466 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "harjoitusaineistot"@fi,
         "övningsmaterial"@sv .
-
-slm:s467 a skos:Concept ;
-    skos:altLabel "technothrillers (litteratur)"@sv ;
-    skos:broader slm:s382 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "teknotrillerit (kirjallisuus)"@fi,
-        "teknothrillers (litteratur)"@sv .
 
 slm:s468 a skos:Concept ;
     skos:broader slm:s241 ;
@@ -2164,15 +2142,6 @@ slm:s57 a skos:Concept ;
     skos:prefLabel "lännensarjakuvat"@fi,
         "västernserier (tecknade serier)"@sv .
 
-slm:s571 a skos:Concept ;
-    rdfs:comment "Käytetään sarjakuvista, joiden teksti on yleensä kuvan alla riimitettynä säeparina."@fi,
-        "Används om tecknade serier med texten placerad vanligtvis under bilden i tvåradigt rim."@sv ;
-    skos:altLabel "rimserier"@sv ;
-    skos:broader slm:s356 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "riimisarjakuvat"@fi,
-        "tecknade serier med rim"@sv .
-
 slm:s572 a skos:Concept ;
     skos:broader slm:s861 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -2191,14 +2160,6 @@ slm:s578 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "varoitustarinat"@fi,
         "varningssägner"@sv .
-
-slm:s579 a skos:Concept ;
-    skos:altLabel "kasettikirjat"@fi,
-        "kassettböcker"@sv ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "äänikirjat"@fi,
-        "ljudböcker"@sv ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 slm:s580 a skos:Concept ;
     skos:altLabel "barnsånger"@sv ;
@@ -2569,14 +2530,6 @@ slm:s687 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "duetot"@fi,
         "duetter"@sv .
-
-slm:s688 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p1148> ;
-    skos:altLabel "omakustannesarjakuvat"@fi ;
-    skos:prefLabel "sarjakuvat -- omakustanteet"@fi,
-        "tecknade serier -- eget förlag"@sv ;
-    skos:related <http://www.yso.fi/onto/kauno/p3642> .
 
 slm:s689 a skos:Concept ;
     skos:broader slm:s861 ;
@@ -3167,16 +3120,6 @@ slm:s846 a skos:Concept ;
     skos:prefLabel "avioliittoromaanit"@fi,
         "äktenskapsromaner"@sv .
 
-slm:s852 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:comment "Indeksoi tarvittaessa myös sarjakuvaseuran nimellä."@fi,
-        "Indexera vid behov även med namnet på serieföreningen."@sv ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p15468> ;
-    skos:altLabel "sarjakuvaseurojen sarjakuvalehdet"@fi ;
-    skos:prefLabel "sarjakuvalehdet -- sarjakuvaseurat"@fi,
-        "serietidningar -- serieföreningar"@sv ;
-    skos:related <http://www.yso.fi/onto/kauno/p2129> .
-
 slm:s854 a skos:Concept ;
     skos:broader slm:s285 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -3195,12 +3138,6 @@ slm:s857 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "harrastelehdet"@fi,
         "hobbytidningar"@sv .
-
-slm:s859 a skos:Concept ;
-    skos:broader slm:s58 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "Daisy-kirjat"@fi,
-        "Daisy-böcker"@sv .
 
 slm:s86 a skos:Concept ;
     skos:broader slm:s560 ;
@@ -3238,13 +3175,6 @@ slm:s877 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "katekismukset"@fi,
         "katekeser"@sv .
-
-slm:s879 a skos:Concept ;
-    skos:altLabel "technothrillers (filmer)"@sv ;
-    skos:broader slm:s607 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "teknotrillerit (elokuvat)"@fi,
-        "teknothrillers (filmer)"@sv .
 
 slm:s88 a skos:Concept ;
     skos:broader slm:s436 ;
@@ -3442,6 +3372,7 @@ slm:s943 a skos:Concept ;
 
 slm:s944 a skos:Concept ;
     skos:broader slm:s975 ;
+    skos:definition "Beatkirjallisuus on amerikkalaisten 1950-ja 60-luvun underground-kirjailijoiden ja -runoilijoiden (Kerouac, Burroughs, Ginsberg) kirjoittamaa keskikuokkaista elämäntapaa kritisoivaa kirjallisuutta."@fi ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "beatkirjallisuus"@fi,
         "beatlitteratur"@sv .
@@ -3615,14 +3546,6 @@ slm:s998 a skos:Concept ;
     skos:prefLabel "kartastot"@fi,
         "kartverk"@sv .
 
-<http://www.yso.fi/onto/kauno/p2129> skos:related slm:s852 .
-
-<http://www.yso.fi/onto/kauno/p224> skos:related slm:s165 .
-
-<http://www.yso.fi/onto/kauno/p3642> skos:related slm:s688 .
-
-<http://www.yso.fi/onto/kauno/p4086> skos:related slm:s165 .
-
 <http://www.yso.fi/onto/yso/p10046> skos:closeMatch slm:s244 .
 
 <http://www.yso.fi/onto/yso/p10095> skos:closeMatch slm:s906 .
@@ -3647,8 +3570,6 @@ slm:s998 a skos:Concept ;
 
 <http://www.yso.fi/onto/yso/p10904> skos:closeMatch slm:s555 .
 
-<http://www.yso.fi/onto/yso/p10919> skos:closeMatch slm:s679 .
-
 <http://www.yso.fi/onto/yso/p11009> skos:closeMatch slm:s1064 .
 
 <http://www.yso.fi/onto/yso/p11311> skos:closeMatch slm:s400 .
@@ -3658,6 +3579,8 @@ slm:s998 a skos:Concept ;
 <http://www.yso.fi/onto/yso/p11410> skos:closeMatch slm:s423 .
 
 <http://www.yso.fi/onto/yso/p11411> skos:closeMatch slm:s842 .
+
+<http://www.yso.fi/onto/yso/p1148> skos:closeMatch slm:s356 .
 
 <http://www.yso.fi/onto/yso/p11597> skos:closeMatch slm:s1006 .
 
@@ -3796,6 +3719,8 @@ slm:s998 a skos:Concept ;
 <http://www.yso.fi/onto/yso/p15340> skos:closeMatch slm:s198 .
 
 <http://www.yso.fi/onto/yso/p15342> skos:closeMatch slm:s1015 .
+
+<http://www.yso.fi/onto/yso/p15468> skos:closeMatch slm:s784 .
 
 <http://www.yso.fi/onto/yso/p15527> skos:closeMatch slm:s418 .
 
@@ -4481,15 +4406,12 @@ slm:s1068 a skos:Concept ;
     skos:related slm:s562 .
 
 slm:s1069 a skos:Concept ;
-    rdfs:comment "Käytetään teoksista, jotka käsittelevät urheilua ja urheilemista."@fi,
-        "Används om verk, som beskriver idrott och idrottare."@sv ;
-    skos:altLabel "urheiluromaanit"@fi,
+    skos:altLabel "urheilukirjallisuus"@fi,
         "sportromaner"@sv ;
     skos:broader slm:ongelmatsv,
-        slm:s975 ;
-    skos:editorialNote "Pitäisikö määritelmään lisätä \"kaunokirjallisista teoksista\" - tämä on aikaisemmin ollut kaunossa ja nyt kun on yleisgenresanastossa on vaara että käytetään myös tietokirjallisuudesta joka käsittelee urheilua? Huom. ruotsiksi \"-romaner\" muodossa (eli nimenomaan kaunokirjallisuus)"@fi ;
+        slm:s518 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "urheilukirjallisuus"@fi,
+    skos:prefLabel "urheiluromaanit"@fi,
         "idrottsromaner"@sv .
 
 slm:s1088 a skos:Concept ;
@@ -4571,24 +4493,16 @@ slm:s1117 a skos:Concept ;
     skos:prefLabel "dainat"@fi,
         "dainos"@sv .
 
-slm:s1122 a skos:Concept ;
-    rdfs:comment "Vertauskertomus, jossa havainnollisen esimerkkitapauksen avulla tähdennetään uskonnollisen, siveellisen tai maailmankatsomuksellisen idean tai menettelyn tärkeyttä."@fi,
-        "Liknelse, i vilken betydelsen av en religiös, moralisk eller ideologisk idé eller metod poängteras med hjälp av ett illustrativt exempelfall."@sv ;
-    skos:altLabel "vertauskuvalliset teokset"@fi,
-        "allegoriska verk"@sv ;
-    skos:broader slm:s618 ;
+slm:s113 a skos:Concept ;
+    skos:altLabel "kioskiromaanit"@fi,
+        "pulp fiction"@fi,
+        "kioskromaner"@sv,
+        "pulp fiction"@sv ;
+    skos:broader slm:s691 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p80> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "paraabelit"@fi,
-        "parabler"@sv ;
-    skos:related slm:s918 .
-
-slm:s1126 a skos:Concept ;
-    rdfs:comment "Irvokas, hullutteleva; karkean koominen teos."@fi ;
-    skos:broader slm:s919 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "burleski komedia"@fi,
-        "burlesk komedi"@sv ;
-    skos:related slm:s865 .
+    skos:prefLabel "kioskikirjallisuus"@fi,
+        "kiosklitteratur"@sv .
 
 slm:s1130 a skos:Concept ;
     skos:broader slm:s436 ;
@@ -4934,8 +4848,6 @@ slm:s245 a skos:Concept ;
         "psalmböcker"@sv .
 
 slm:s253 a skos:Concept ;
-    rdfs:comment "Fanien tuottamaa fiktiivistä tekstiä, jossa lähtökohtana on käytetty jotakin populaarikulttuurin tuotetta, kuten televisiosarjaa, elokuvaa, kirjaa, sarjakuvaa tai julkisuuden henkilöitä. Fanifiktiossa alkuperäistekstin juonta, genreä ja näkökulmaa on muokattu tai laajennettu. Faniyhteisöissä syntyy usein suosittuja juonirakennelmia, joita useat kirjoittajat hyödyntävät. Fanifiktiolle on ominaista, että materiaali on useimmiten julkaistu ilman tekijänoikeuksien haltijoiden lupaa."@fi,
-        "Fanfiction är en term för skönlitterära berättelser skapade av amatörer, alternativt professionella skribenter utan tillstånd, och som utspelar sig i redan existerande fiktiva universum. Företeelsen är vanligt förekommande inom populärkultur, och uppkommer vanligen i kölvattnen till populära tv-serier, tecknade serier, och serier av filmer, romaner och datorspel."@sv ;
     skos:altLabel "fan fiction"@fi,
         "fanfiction"@fi,
         "fan fiction"@sv ;
@@ -5085,6 +4997,16 @@ slm:s324 a skos:Concept ;
     skos:prefLabel "matrikkelit"@fi,
         "matriklar"@sv .
 
+slm:s327 a skos:Concept ;
+    skos:altLabel "lokala historier"@sv,
+        "lokala legender"@sv,
+        "lokalsägner"@sv ;
+    skos:broader slm:s455 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p28783> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "paikallistarinat"@fi,
+        "lokala berättelser"@sv .
+
 slm:s328 a skos:Concept ;
     skos:broader slm:s919 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -5166,6 +5088,19 @@ slm:s375 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "pastoraalit"@fi,
         "pastoraler"@sv .
+
+slm:s381 a skos:Concept ;
+    skos:altLabel "flarf-runot"@fi,
+        "hakukonerunot"@fi,
+        "hakusanarunot"@fi,
+        "flarfpoesi"@sv,
+        "googlepoesi"@sv,
+        "sökmaskinspoesi"@sv ;
+    skos:broader slm:s669 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p28242> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "hakukonerunous"@fi,
+        "sökordspoesi"@sv .
 
 slm:s387 a skos:Concept ;
     skos:altLabel "ungdomsserier"@sv ;
@@ -5301,13 +5236,6 @@ slm:s439 a skos:Concept ;
         "konstnärsfilmer"@sv ;
     skos:related slm:s167 .
 
-slm:s446 a skos:Concept ;
-    skos:broader slm:s1075 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s177 ;
-    skos:prefLabel "pop-up-kirjat"@fi,
-        "pop-up-böcker"@sv .
-
 slm:s45 a skos:Concept ;
     rdfs:comment "Käytetään teoksista, jotka tekijä on sijoittanut historialliseen aikaan."@fi,
         "Används om verk, där handlingen är förlagd till historien."@sv ;
@@ -5323,6 +5251,14 @@ slm:s454 a skos:Concept ;
     skos:prefLabel "telenovelat"@fi,
         "telenovelas"@sv ;
     skos:related slm:s661 .
+
+slm:s467 a skos:Concept ;
+    skos:altLabel "technothrillers"@sv ;
+    skos:broader slm:s382,
+        slm:s607 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "teknotrillerit"@fi,
+        "teknothrillers"@sv .
 
 slm:s471 a skos:Concept ;
     skos:altLabel "mininovellit"@fi,
@@ -5421,14 +5357,6 @@ slm:s513 a skos:Concept ;
         "läkarserier"@sv ;
     skos:related slm:s853 .
 
-slm:s526 a skos:Concept ;
-    skos:altLabel "animationsserier"@sv ;
-    skos:broader slm:s354 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "animaatiosarjat"@fi,
-        "animerade serier"@sv ;
-    skos:related slm:s77 .
-
 slm:s527 a skos:Concept ;
     rdfs:comment "Käytetään teoksista, jotka sijoittuvat Yhdysvaltojen historian ns, Villin lännen aikaan."@fi,
         "Används om verk, där handlingen försiggår under den s. k. Vilda Västern-tiden i USAs historia."@sv ;
@@ -5502,6 +5430,25 @@ slm:s575 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "vuosikirjat"@fi,
         "årsböcker"@sv .
+
+slm:s579 a skos:Concept ;
+    skos:altLabel "kasettikirjat"@fi,
+        "kassettböcker"@sv ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s58 ;
+    skos:prefLabel "äänikirjat"@fi,
+        "ljudböcker"@sv ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
+slm:s58 a skos:Concept ;
+    skos:altLabel "kasettikirjat"@fi,
+        "äänikirjat (lukemisesteisille)"@fi,
+        "kassettböcker"@sv ;
+    skos:broader slm:s579 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13992> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "lukemisesteisten äänikirjat"@fi,
+        "talböcker"@sv .
 
 slm:s582 a skos:Concept ;
     skos:altLabel "fotografibloggar"@sv ;
@@ -5642,13 +5589,6 @@ slm:s678 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "helkavirret"@fi,
         "helkasånger"@sv .
-
-slm:s679 a skos:Concept ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p10919> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "poliittinen taide"@fi,
-        "politisk konst"@sv ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 slm:s685 a skos:Concept ;
     skos:broader slm:s1150 ;
@@ -6059,11 +5999,11 @@ slm:s925 a skos:Concept ;
     skos:altLabel "mokumentit"@fi,
         "fiktiva dokumentärfilmer"@sv,
         "mockumentärer"@sv ;
+    skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26398> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "pseudodokumentit"@fi,
-        "pseudodokumentärer"@sv ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+        "pseudodokumentärer"@sv .
 
 slm:s933 a skos:Concept ;
     skos:broader slm:s1075 ;
@@ -6163,8 +6103,6 @@ slm:s997 a skos:Concept ;
     skos:prefLabel "tuhkimotarinat"@fi,
         "askungeberättelser"@sv .
 
-<http://www.yso.fi/onto/yso/p15468> skos:closeMatch slm:s784 .
-
 slm:s1011 a skos:Concept ;
     skos:altLabel "antiutopiat"@fi,
         "utopistiset romaanit"@fi,
@@ -6251,10 +6189,10 @@ slm:s1083 a skos:Concept ;
         "scifi"@sv ;
     skos:broader slm:s356 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1032 ;
+    skos:narrower slm:s1032,
+        slm:s984 ;
     skos:prefLabel "tieteissarjakuvat"@fi,
-        "science fiction-serier (tecknade serier)"@sv ;
-    skos:related slm:s984 .
+        "science fiction-serier (tecknade serier)"@sv .
 
 slm:s1084 a skos:Concept ;
     skos:altLabel "Internet-sarjat"@fi,
@@ -6302,18 +6240,6 @@ slm:s1125 a skos:Concept ;
     skos:related slm:s807 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s113 a skos:Concept ;
-    skos:altLabel "kioskiromaanit"@fi,
-        "pulp fiction"@fi,
-        "kioskromaner"@sv,
-        "pulp fiction"@sv ;
-    skos:broader slm:s691 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p80> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s712 ;
-    skos:prefLabel "kioskikirjallisuus"@fi,
-        "kiosklitteratur"@sv .
-
 slm:s1132 a skos:Concept ;
     skos:broader slm:s354 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -6357,15 +6283,6 @@ slm:s1148 a skos:Concept ;
         slm:s741 ;
     skos:prefLabel "käsikirjat"@fi,
         "handböcker"@sv .
-
-slm:s1152 a skos:Concept ;
-    rdfs:comment "Kertomus, jossa on keskeistä henkilön sisäisen ja ulkoisen - yleensä myönteisen - kehityksen ja persoonallisuuden kypsymisen kuvaus. (Mukailtu \"kehitysromaanin\" määritelmästä)."@fi ;
-    skos:broader slm:s618 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "kehityskertomukset"@fi,
-        "utvecklingsberättelser"@sv ;
-    skos:related slm:s604,
-        slm:s665 .
 
 slm:s1153 a skos:Concept ;
     rdfs:comment "Käytetään harrastajien tekemistä elokuvista."@fi,
@@ -6448,14 +6365,6 @@ slm:s167 a skos:Concept ;
         "konstnärsromaner"@sv ;
     skos:related slm:s439 .
 
-slm:s177 a skos:Concept ;
-    skos:broader slm:ongelmatsv,
-        slm:s446 ;
-    skos:editorialNote "Miten nämä eroavat pop-up-kirjoista? Tälle ei taida olla ruotsinkielistä vastinetta. Wikipedia: \"ponnahduskirja eli näyttämökirja on kolmiulotteinen tai liikkuvia osia sisältävä kirja\" eng. ja sv. vastine pop up"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "näyttämökirjat"@fi ;
-    skos:related slm:s1181 .
-
 slm:s18 a skos:Concept ;
     skos:broader slm:s518 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p29229> ;
@@ -6463,15 +6372,6 @@ slm:s18 a skos:Concept ;
     skos:prefLabel "lääkäriromaanit"@fi,
         "läkarromaner"@sv ;
     skos:related slm:s691 .
-
-slm:s186 a skos:Concept ;
-    skos:broader slm:ongelmatsv,
-        slm:s356 ;
-    skos:editorialNote "Mihin tämä oikeastaan viittaa (naisten tekemät, naisille suunnattut)? Onko tällainen jako mies-/naissarjat tarpeen?"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "naissarjakuvat"@fi,
-        "kvinnoserier (tecknade serier)"@sv ;
-    skos:related slm:s600 .
 
 slm:s188 a skos:Concept ;
     skos:altLabel "ihmissuhde-elokuvat"@fi,
@@ -6581,13 +6481,13 @@ slm:s280 a skos:Concept ;
 slm:s289 a skos:Concept ;
     skos:altLabel "valikoimateokset"@fi,
         "urvalsverk"@sv ;
-    skos:broader slm:s285 ;
+    skos:broader slm:s285,
+        slm:s963 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p10123> ;
     skos:definition "Useamman kuin yhden kirjailijan kaunokirjallisista teksteistä koostuva valikoima."@fi ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "antologiat"@fi,
-        "antologier"@sv ;
-    skos:related slm:s963 .
+        "antologier"@sv .
 
 slm:s310 a skos:Concept ;
     rdfs:comment "Ransk. comédie de boulevard, 1800-luvun jälkipuoliskolla kehittynyt ranskalainen komediatyyppi, tavallisesti farssin keinoja käyttäjävä perhe- tai avioliittokomedia."@fi ;
@@ -6627,17 +6527,6 @@ slm:s317 a skos:Concept ;
     skos:prefLabel "kuvatehostekirjat"@fi,
         "böcker med bildeffekter"@sv ;
     skos:related slm:s1181 .
-
-slm:s327 a skos:Concept ;
-    skos:altLabel "lokala historier"@sv,
-        "lokala legender"@sv,
-        "lokalsägner"@sv ;
-    skos:broader slm:s455 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p28783> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "paikallistarinat"@fi,
-        "lokala berättelser"@sv ;
-    skos:related slm:s624 .
 
 slm:s331 a skos:Concept ;
     rdfs:comment "Tiivis japanilainen runo, jonka 31 tavua jakautuvat viidelle riville järjestyksessä: 5, 7, 5, 7, 7."@fi,
@@ -6688,20 +6577,6 @@ slm:s366 a skos:Concept ;
     skos:related slm:s901,
         slm:s923 .
 
-slm:s367 a skos:Concept ;
-    rdfs:comment "Tarkoittaa japanilaista animaatiota."@fi,
-        "Används om japansk animation."@sv ;
-    skos:altLabel "anime-elokuvat"@fi,
-        "anime-sarjat"@fi,
-        "anime-filmer"@sv,
-        "anime-serier"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p21417> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "animet"@fi,
-        "anime"@sv ;
-    skos:related slm:s374 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s368 a skos:Concept ;
     rdfs:comment "Käytetän elokuvista, joissa keskeisen kerronnan rakenteen muodostaa matkustaminen usein symbolisesti esitettynä pakenemisena yhteiskunnallisista sidonnaisuuksista vapaaseen elämään."@fi,
         "Används om filmer, vilkas centrala anföringsstruktur består av en resa ofta symboliskt framställd som en flykt från den sociala bundenheten till ett fritt liv."@sv ;
@@ -6748,20 +6623,6 @@ slm:s380 a skos:Concept ;
         "flickserier (tecknade serier)"@sv ;
     skos:related slm:s953 .
 
-slm:s381 a skos:Concept ;
-    skos:altLabel "flarf-runot"@fi,
-        "hakukonerunot"@fi,
-        "hakusanarunot"@fi,
-        "flarfpoesi"@sv,
-        "googlepoesi"@sv,
-        "sökmaskinspoesi"@sv ;
-    skos:broader slm:s669 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p28242> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "hakukonerunous"@fi,
-        "sökordspoesi"@sv ;
-    skos:related slm:s941 .
-
 slm:s383 a skos:Concept ;
     skos:broader slm:s633 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1637> ;
@@ -6771,6 +6632,8 @@ slm:s383 a skos:Concept ;
     skos:related slm:s141 .
 
 slm:s39 a skos:Concept ;
+    skos:altLabel "lehdet"@fi,
+        "päivälehdet"@fi ;
     skos:broader slm:s593 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s223,
@@ -6968,6 +6831,15 @@ slm:s524 a skos:Concept ;
         "inre monolog (genre)"@sv ;
     skos:related slm:s181 .
 
+slm:s526 a skos:Concept ;
+    skos:altLabel "animationsserier"@sv ;
+    skos:broader slm:s354 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s367 ;
+    skos:prefLabel "animaatiosarjat"@fi,
+        "animerade serier"@sv ;
+    skos:related slm:s77 .
+
 slm:s528 a skos:Concept ;
     rdfs:comment "Käytetään elokuvista, jotka kuvaavat naisen asemaa."@fi,
         "Används om filmer som skildrar kvinnors liv."@sv ;
@@ -7047,8 +6919,6 @@ slm:s569 a skos:Concept ;
     skos:related slm:s993 .
 
 slm:s573 a skos:Concept ;
-    rdfs:comment "Käytetään kaunokirjallisuuteen kuuluvasta poliittisesta ja yhteiskunnallisesta mielipidekirjallisuudesta."@fi,
-        "Används om skönlitterära verk, som för fram politiska och samhälleliga åsikter"@sv ;
     skos:altLabel "opinionslitteratur"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p8211> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -7057,25 +6927,13 @@ slm:s573 a skos:Concept ;
     skos:related slm:s1082 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s58 a skos:Concept ;
-    skos:altLabel "kasettikirjat"@fi,
-        "äänikirjat (lukemisesteisille)"@fi,
-        "kassettböcker"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13992> ;
+slm:s604 a skos:Concept ;
+    skos:broader slm:s518 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s859 ;
-    skos:prefLabel "lukemisesteisten äänikirjat"@fi,
-        "talböcker"@sv ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
-slm:s600 a skos:Concept ;
-    skos:broader slm:ongelmatsv,
-        slm:s356 ;
-    skos:editorialNote "Vain vähän google-osumia. Mihin viittaa, miehille suunnatut sarjakuvat va sarjakuvat miehistä?"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "miessarjakuvat"@fi,
-        "mansserier (tecknade serier)"@sv ;
-    skos:related slm:s186 .
+    skos:prefLabel "psykologiset romaanit"@fi,
+        "psykologiska romaner"@sv ;
+    skos:related slm:s15,
+        slm:s665 .
 
 slm:s611 a skos:Concept ;
     rdfs:comment "Autofiktio on fiktion laji, joka yhdistelee omaelämäkerran ja romaanin piirteitä."@fi,
@@ -7103,17 +6961,6 @@ slm:s622 a skos:Concept ;
     skos:prefLabel "sananparret"@fi,
         "ordstäv"@sv ;
     skos:related slm:s907 .
-
-slm:s624 a skos:Concept ;
-    rdfs:comment "Sanataideteos, jossa vaeltamisen tai vaeltavan ihmisen motiivi on keskeinen."@fi ;
-    skos:broader slm:ongelmatsv,
-        slm:s1045 ;
-    skos:editorialNote "on monimerkityksinen termi, eri merkitys folkloristiikkassa kuin kirjallisuustieteessä (ks. tepa).. ruotsiksi eri termi riippuen merkityksestä.. viittaako tämä nyt varmasti nimenomaan vain huomautuksessa olevaan merkitykseen? kun RT on kuitenkin paikallistarinat ja bellassa on vastineena vandringssägner (joka EI voi viitata huomautuksessa olevaan merkitykseen, vaan folkloristiikan merkitykseen)"@fi,
-        "vaellustarina folkloristiikkassa, ks. esim.: https://www.doria.fi/bitstream/handle/10024/130703/BorodulinaYana.pdf  https://helda.helsinki.fi/bitstream/handle/10224/4084/honko99-123.pdf?sequence=1 eli ei ole \"Sanataideteos, jossa vaeltamisen tai vaeltavan ihmisen motiivi on keskeinen\""@fi,
-        "vandringsskildringar?"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "vaellustarinat"@fi ;
-    skos:related slm:s327 .
 
 slm:s633 a skos:Concept ;
     skos:broader slm:s285 ;
@@ -7182,6 +7029,18 @@ slm:s650 a skos:Concept ;
         "pikareskberättelser"@sv ;
     skos:related slm:s465,
         slm:s760 .
+
+slm:s665 a skos:Concept ;
+    rdfs:comment "Romaani, jossa on keskeistä henkilön sisäisen ja ulkoisen - yleensä myönteisen - kehityksen ja persoonallisuuden kypsymisen kuvaus."@fi,
+        "Används om verk, som skildrar hur en individ utvecklas och mognar."@sv ;
+    skos:altLabel "Bildungsroman"@fi,
+        "bildningsromaner"@sv ;
+    skos:broader slm:s518 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p12951> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "kehitysromaanit"@fi,
+        "utvecklingsromaner"@sv ;
+    skos:related slm:s604 .
 
 slm:s672 a skos:Concept ;
     skos:broader slm:s518 ;
@@ -7257,6 +7116,14 @@ slm:s701 a skos:Concept ;
     skos:prefLabel "salonkikomediat"@fi,
         "salongskomedier"@sv ;
     skos:related slm:s310 .
+
+slm:s712 a skos:Concept ;
+    skos:broader slm:s1175 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "giallo-elokuvat"@fi,
+        "giallo-filmer"@sv ;
+    skos:related slm:s1092,
+        slm:s607 .
 
 slm:s719 a skos:Concept ;
     skos:broader slm:s285 ;
@@ -7587,15 +7454,6 @@ slm:s936 a skos:Concept ;
         "historiska dramer"@sv ;
     skos:related slm:s959 .
 
-slm:s941 a skos:Concept ;
-    skos:broader slm:ongelmatsv,
-        slm:s518 ;
-    skos:editorialNote "Onko sellaista? Ks. google. Mahdoton kääntää?"@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "hakusanaromaanit"@fi,
-        "uppslagsromaner"@sv ;
-    skos:related slm:s381 .
-
 slm:s947 a skos:Concept ;
     rdfs:comment "MUSA LT laulumusiikki, onko aina tätä? Myös kaikki alakäsitteet?" ;
     skos:broader slm:s861 ;
@@ -7635,16 +7493,15 @@ slm:s959 a skos:Concept ;
     skos:related slm:s936 .
 
 slm:s963 a skos:Concept ;
-    rdfs:comment "Monen tekijän tai saman tekijän useita kirjoituksia sisältävä teos."@fi,
+    rdfs:comment "Yhden tai useamman tekijän teoksista koostuva valikoima."@fi,
         "Ett verk som består av flera texter av en eller flera upphovsmän."@sv ;
     skos:altLabel "valikoimateokset"@fi,
         "urvalsverk"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p17283> ;
-    skos:editorialNote "Antologiat: Useamman kuin yhden kirjailijan kaunokirjallisista teksteistä koostuva valikoima. {@fi}, Kielitoimiston sanakirja: monen tekijän (t. saman tekijän useita) kirjoituksia sisältävä teos."@fi ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s289 ;
     skos:prefLabel "kokoomateokset"@fi,
         "samlingsverk"@sv ;
-    skos:related slm:s289 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 slm:s985 a skos:Concept ;
@@ -7749,18 +7606,6 @@ slm:s1023 a skos:Concept ;
         "episka dikter"@sv ;
     skos:related slm:s352 .
 
-slm:s1026 a skos:Concept ;
-    skos:altLabel "science fiction -sarjat"@fi,
-        "scifisarjat"@fi,
-        "sci-fi serier"@sv ;
-    skos:broader slm:s354 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p25680> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1032 ;
-    skos:prefLabel "tieteissarjat"@fi,
-        "science fiction-serier (tv-serier)"@sv ;
-    skos:related slm:s1041 .
-
 slm:s103 a skos:Concept ;
     skos:broader slm:s435 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -7828,18 +7673,6 @@ slm:s1090 a skos:Concept ;
         "böcker med ljudeffekter"@sv ;
     skos:related slm:s1075,
         slm:s1181 .
-
-slm:s1110 a skos:Concept ;
-    rdfs:comment "Käytetään teoksista, joiden sivut on leikelty tai taitettu."@fi,
-        "Används om böcker med skurna eller vikta sidor."@sv ;
-    skos:broader slm:ongelmatsv,
-        slm:s1075,
-        slm:s562 ;
-    skos:editorialNote "Onko tämä \"keksitty\" termi aivan tarpeen? Utvikningsbok lähinnä huvittava, mutta parempaakaan ei välttämättä ole. Tällaista jakoa ei ruotsiksi, vaan lähinnä mekaniska böcker..."@fi ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "taittotehostekirjat"@fi,
-        "utvikningsböcker"@sv ;
-    skos:related slm:s1181 .
 
 slm:s1114 a skos:Concept ;
     skos:broader slm:s170 ;
@@ -7953,15 +7786,6 @@ slm:s139 a skos:Concept ;
         "myter"@sv ;
     skos:related slm:s316 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
-slm:s154 a skos:Concept ;
-    skos:broader slm:s861 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "parafraasit"@fi,
-        "parafraser"@sv ;
-    skos:related slm:s556,
-        slm:s577,
-        slm:s909 .
 
 slm:s182 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -8082,6 +7906,21 @@ slm:s364 a skos:Concept ;
     skos:prefLabel "poikakirjat"@fi,
         "pojkböcker"@sv ;
     skos:related slm:s162 .
+
+slm:s367 a skos:Concept ;
+    rdfs:comment "Tarkoittaa japanilaista animaatiota."@fi,
+        "Används om japansk animation."@sv ;
+    skos:altLabel "anime-elokuvat"@fi,
+        "anime-sarjat"@fi,
+        "anime-filmer"@sv,
+        "anime-serier"@sv ;
+    skos:broader slm:s526,
+        slm:s77 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p21417> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "animet"@fi,
+        "anime"@sv ;
+    skos:related slm:s374 .
 
 slm:s37 a skos:Concept ;
     skos:broader slm:ongelmatsv,
@@ -8272,15 +8111,6 @@ slm:s566 a skos:Concept ;
     skos:related slm:s770,
         slm:s785 .
 
-slm:s604 a skos:Concept ;
-    skos:broader slm:s518 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "psykologiset romaanit"@fi,
-        "psykologiska romaner"@sv ;
-    skos:related slm:s1152,
-        slm:s15,
-        slm:s665 .
-
 slm:s616 a skos:Concept ;
     skos:broader slm:s1139 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -8335,19 +8165,6 @@ slm:s661 a skos:Concept ;
     skos:related slm:s1005,
         slm:s454 .
 
-slm:s665 a skos:Concept ;
-    rdfs:comment "Romaani, jossa on keskeistä henkilön sisäisen ja ulkoisen - yleensä myönteisen - kehityksen ja persoonallisuuden kypsymisen kuvaus."@fi,
-        "Används om verk, som skildrar hur en individ utvecklas och mognar."@sv ;
-    skos:altLabel "Bildungsroman"@fi,
-        "bildningsromaner"@sv ;
-    skos:broader slm:s518 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p12951> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "kehitysromaanit"@fi,
-        "utvecklingsromaner"@sv ;
-    skos:related slm:s1152,
-        slm:s604 .
-
 slm:s67 a skos:Concept ;
     rdfs:comment "Esim. elokuvan pohjalta tehty sarjakuva."@fi ;
     skos:broader slm:s356 ;
@@ -8380,6 +8197,23 @@ slm:s686 a skos:Concept ;
         "LL-böcker"@sv ;
     skos:related slm:s478,
         slm:s855 .
+
+slm:s690 a skos:Concept ;
+    rdfs:comment "Käytetään teoksista, joissa kauhu syntyy yliluonnollisten voimien uhatessa normaalia elämää eläviä ihmisiä."@fi,
+        "Används om verk, som beskriver en övernaturlig värld och den skräck den skapar hos människor som lever i normala förhållanden."@sv ;
+    skos:altLabel "goottilaiset kauhuromaanit"@fi,
+        "goottilaiset romaanit"@fi,
+        "kauhuromaanit"@fi,
+        "gotiska romaner"@sv,
+        "gotiska skräckromaner"@sv,
+        "skräckromaner"@sv ;
+    skos:broader slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15087> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s121 ;
+    skos:prefLabel "kauhukirjallisuus"@fi,
+        "skräcklitteratur"@sv ;
+    skos:related slm:s1135 .
 
 slm:s718 a skos:Concept ;
     skos:broader slm:s861 ;
@@ -8642,6 +8476,19 @@ slm:s1005 a skos:Concept ;
     skos:related slm:s661,
         slm:s691 .
 
+slm:s1026 a skos:Concept ;
+    skos:altLabel "science fiction -sarjat"@fi,
+        "scifisarjat"@fi,
+        "sci-fi serier"@sv ;
+    skos:broader slm:s354 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p25680> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1032,
+        slm:s984 ;
+    skos:prefLabel "tieteissarjat"@fi,
+        "science fiction-serier (tv-serier)"@sv ;
+    skos:related slm:s1041 .
+
 slm:s1027 a skos:Concept ;
     rdfs:comment "Käytetään teoksista, jotka kuvaavat yhteiskuntaa ja eri yhteiskuntaryhmiä."@fi,
         "Används om verk som skildrar samhället och olika samhällsgrupper."@sv ;
@@ -8773,6 +8620,16 @@ slm:s141 a skos:Concept ;
     skos:prefLabel "lukemistot"@fi,
         "läseböcker (textsamlingar)"@sv ;
     skos:related slm:s383 .
+
+slm:s154 a skos:Concept ;
+    skos:broader slm:s861 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "parafraasit"@fi,
+        "parafraser"@sv ;
+    skos:related slm:s529,
+        slm:s556,
+        slm:s577,
+        slm:s909 .
 
 slm:s158 a skos:Concept ;
     skos:altLabel "action-sarjat"@fi ;
@@ -8992,6 +8849,20 @@ slm:s560 a skos:Concept ;
     skos:prefLabel "heavy rock"@fi,
         "heavy rock"@sv .
 
+slm:s562 a skos:Concept ;
+    rdfs:comment "Käytetään teoksista, joissa on ääni- tai muu tehoste mukana."@fi,
+        "Används om verk med olika specialeffekter, t.ex. ljud."@sv ;
+    skos:altLabel "böcker med effektmedel"@sv,
+        "böcker med specialeffekter"@sv ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1090,
+        slm:s317 ;
+    skos:prefLabel "tehostekirjat"@fi,
+        "effektböcker"@sv ;
+    skos:related slm:s1068,
+        slm:s1075 ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
 slm:s574 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13988> ;
@@ -9034,6 +8905,16 @@ slm:s606 a skos:Concept ;
     skos:prefLabel "historiikit"@fi,
         "historiker"@sv .
 
+slm:s631 a skos:Concept ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "sarjakuva-albumit"@fi,
+        "seriealbum"@sv ;
+    skos:related slm:s185,
+        slm:s356,
+        slm:s639,
+        slm:s784 ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
 slm:s670 a skos:Concept ;
     skos:altLabel "sagopjäser"@sv ;
     skos:broader slm:s875 ;
@@ -9044,24 +8925,6 @@ slm:s670 a skos:Concept ;
     skos:related slm:s1181,
         slm:s574,
         slm:s986 .
-
-slm:s690 a skos:Concept ;
-    rdfs:comment "Käytetään teoksista, joissa kauhu syntyy yliluonnollisten voimien uhatessa normaalia elämää eläviä ihmisiä."@fi,
-        "Används om verk, som beskriver en övernaturlig värld och den skräck den skapar hos människor som lever i normala förhållanden."@sv ;
-    skos:altLabel "goottilaiset kauhuromaanit"@fi,
-        "goottilaiset romaanit"@fi,
-        "kauhuromaanit"@fi,
-        "gotiska romaner"@sv,
-        "gotiska skräckromaner"@sv,
-        "skräckromaner"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15087> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s121 ;
-    skos:prefLabel "kauhukirjallisuus"@fi,
-        "skräcklitteratur"@sv ;
-    skos:related slm:s1135,
-        slm:s712 .
 
 slm:s699 a skos:Concept ;
     skos:altLabel "samhällskritiska dramer"@sv ;
@@ -9170,6 +9033,21 @@ slm:s900 a skos:Concept ;
         slm:s1121,
         slm:s555 .
 
+slm:s918 a skos:Concept ;
+    skos:altLabel "messiadit"@fi,
+        "uskonnolliset romaanit"@fi,
+        "messiader"@sv,
+        "religiösa berättelser"@sv,
+        "religiösa romaner"@sv ;
+    skos:broader slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p7289> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1170 ;
+    skos:prefLabel "uskonnollinen kirjallisuus"@fi,
+        "religiös litteratur"@sv ;
+    skos:related slm:s725,
+        slm:s802 .
+
 slm:s939 a skos:Concept ;
     rdfs:comment "Käytetään sarjakuvista, joiden päähenkilönä on lapsi tai lapsiyhteisö."@fi,
         "Används om tecknade serier med ett barn eller barnkollektiv som huvudperson."@sv ;
@@ -9226,16 +9104,14 @@ slm:s982 a skos:Concept ;
 slm:s984 a skos:Concept ;
     rdfs:comment "1980-luvulla syntynyt fiktion alalaji, jossa ovat keskeisessä osassa tietoverkot, väestöräjähdys, yhteiskunnan pirstoutuminen, ekologiset kriisit ja ihmisen toiminta kyberavaruudessa."@fi,
         "Genre inom fiktion som uppstod på 1980-talet och inom vilken datanät, befolkningsexplosion, samhällssplittring, ekologiska kriser och människans verksamhet i cyberrymden är centrala."@sv ;
+    skos:broader slm:s1026,
+        slm:s1066,
+        slm:s1083,
+        slm:s418 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15528> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:prefLabel "kyberpunk"@fi,
-        "cyberpunk"@sv ;
-    skos:related slm:s1066,
-        slm:s1083,
-        slm:s418 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
-<http://www.yso.fi/onto/yso/p1148> skos:closeMatch slm:s356 .
+        "cyberpunk"@sv .
 
 slm:s1006 a skos:Concept ;
     skos:altLabel "biografiat"@fi,
@@ -9372,6 +9248,19 @@ slm:s181 a skos:Concept ;
         slm:s929 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
+slm:s185 a skos:Concept ;
+    skos:altLabel "sarjakuvanovellit"@fi,
+        "serienoveller"@sv ;
+    skos:broader slm:s27,
+        slm:s356 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p26599> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "novellisarjakuvat"@fi,
+        "grafiska noveller"@sv ;
+    skos:related slm:s631,
+        slm:s639,
+        slm:s784 .
+
 slm:s215 a skos:Concept ;
     skos:broader slm:s285,
         owl:Thing ;
@@ -9458,11 +9347,11 @@ slm:s418 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15527> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1032,
-        slm:s56 ;
+        slm:s56,
+        slm:s984 ;
     skos:prefLabel "tieteiskirjallisuus"@fi,
         "science fiction-litteratur"@sv ;
-    skos:related slm:s1140,
-        slm:s984 .
+    skos:related slm:s1140 .
 
 slm:s423 a skos:Concept ;
     skos:altLabel "anekdootit"@fi ;
@@ -9512,21 +9401,6 @@ slm:s556 a skos:Concept ;
         slm:s909 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s562 a skos:Concept ;
-    rdfs:comment "Käytetään teoksista, joissa on ääni- tai muu tehoste mukana."@fi,
-        "Används om verk med olika specialeffekter, t.ex. ljud."@sv ;
-    skos:altLabel "böcker med effektmedel"@sv,
-        "böcker med specialeffekter"@sv ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1090,
-        slm:s1110,
-        slm:s317 ;
-    skos:prefLabel "tehostekirjat"@fi,
-        "effektböcker"@sv ;
-    skos:related slm:s1068,
-        slm:s1075 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s588 a skos:Concept ;
     skos:altLabel "Internet-pelit"@fi,
         "nettipelit"@fi,
@@ -9556,30 +9430,6 @@ slm:s603 a skos:Concept ;
     skos:related slm:s1021,
         slm:s1114,
         slm:s1172 .
-
-slm:s631 a skos:Concept ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "sarjakuva-albumit"@fi,
-        "seriealbum"@sv ;
-    skos:related slm:s165,
-        slm:s185,
-        slm:s356,
-        slm:s639,
-        slm:s784 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
-slm:s712 a skos:Concept ;
-    rdfs:comment "Giallo-termillä on kaksi merkitystä: 1)Italialaisen jännityskirjallisuuden lajityyppi, joka on saanut nimensä kansien vallitsevasta keltaisesta väristä. 2)Italialainen jännitys- tai kauhuelokuvagenre. Giallo-elokuvissa kuvataan yleensä kasvottoman murhaajan veritekoja. Uhrit ovat usein kauniita naisia. Tehokeinoina käytetään alastomuutta sekä roiskuvaa verta ja erityistä raakuutta sisältäviä otoksia."@fi,
-        "Termen har två betydelser: 1) Genre inom italiensk kriminalfiktion som fått sitt namn av böckernas gula omslag. 2) Italiensk thriller- eller skräckfilmsgenre. Giallofilmer skildrar i allmänhet en ansiktslös mördares blodsdåd. Offren är ofta vackra kvinnor. Som effektmedel används nakenhet samt stänkande blod och tagningar som innehåller speciell råhet."@sv ;
-    skos:broader slm:s113,
-        slm:s1175 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "giallo"@fi,
-        "giallo"@sv ;
-    skos:related slm:s1092,
-        slm:s382,
-        slm:s607,
-        slm:s690 .
 
 slm:s722 a skos:Concept ;
     skos:altLabel "sitcomit"@fi,
@@ -9620,6 +9470,17 @@ slm:s768 a skos:Concept ;
         slm:s332,
         slm:s433 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
+slm:s784 a skos:Concept ;
+    skos:broader slm:s298 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15468> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "sarjakuvalehdet"@fi,
+        "serietidningar"@sv ;
+    skos:related slm:s185,
+        slm:s356,
+        slm:s631,
+        slm:s639 .
 
 slm:s82 a skos:Concept ;
     skos:broader slm:s1092,
@@ -9667,35 +9528,6 @@ slm:s871 a skos:Concept ;
         slm:s588 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:s918 a skos:Concept ;
-    skos:altLabel "messiadit"@fi,
-        "uskonnolliset romaanit"@fi,
-        "messiader"@sv,
-        "religiösa berättelser"@sv,
-        "religiösa romaner"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p7289> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1170 ;
-    skos:prefLabel "uskonnollinen kirjallisuus"@fi,
-        "religiös litteratur"@sv ;
-    skos:related slm:s1122,
-        slm:s725,
-        slm:s802 .
-
-slm:s962 a skos:Concept ;
-    rdfs:comment "Käytetään aasialaisista fantasiaseikkailuelokuvista."@fi,
-        "Används om asiatiska (fantasy)äventyrsfilmer."@sv ;
-    skos:broader slm:ongelmatsv,
-        slm:s1175 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "easternit"@fi,
-        "easterns"@sv ;
-    skos:related slm:s1028,
-        slm:s1131,
-        slm:s504,
-        slm:s607 .
-
 slm:s1015 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15342> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -9708,6 +9540,25 @@ slm:s1015 a skos:Concept ;
         slm:s871 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
+slm:s1028 a skos:Concept ;
+    rdfs:comment "Käytetään toimintaelokuvista, joissa esitetään itämaisia kamppailulajeja, esim. kung futa, judoa."@fi,
+        "Används om actionfilmer, som presenterar österländska kampsporter, t.ex. kung fu, judo."@sv ;
+    skos:altLabel "kung fu -elokuvat"@fi,
+        "kung-fu -elokuvat"@fi,
+        "taistelulajielokuvat"@fi,
+        "kung fu-filmer"@sv,
+        "kung-fu-filmer"@sv ;
+    skos:broader slm:s612 ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "kamppailulajielokuvat"@fi,
+        "kampsportsfilmer"@sv ;
+    skos:related slm:s1024,
+        slm:s1087,
+        slm:s1131,
+        slm:s1161,
+        slm:s190,
+        slm:s607 .
+
 slm:s1073 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p14891> ;
@@ -9719,35 +9570,6 @@ slm:s1073 a skos:Concept ;
         slm:s259,
         slm:s607,
         slm:s612 .
-
-slm:s165 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:subClassOf slm:ongelmatsv,
-        <http://www.yso.fi/onto/yso/p12676> ;
-    skos:altLabel "sarjakuvakokoelmat"@fi,
-        "seriesamlingar"@sv ;
-    skos:prefLabel "sarjakuvat -- kokoelmat"@fi,
-        "tecknade serier-- samlingar"@sv ;
-    skos:related slm:s185,
-        slm:s356,
-        slm:s631,
-        slm:s639,
-        slm:s784,
-        <http://www.yso.fi/onto/kauno/p224>,
-        <http://www.yso.fi/onto/kauno/p4086> .
-
-slm:s185 a skos:Concept ;
-    skos:altLabel "sarjakuvanovellit"@fi,
-        "serienoveller"@sv ;
-    skos:broader slm:s27,
-        slm:s356 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p26599> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "novellisarjakuvat"@fi,
-        "grafiska noveller"@sv ;
-    skos:related slm:s165,
-        slm:s631,
-        slm:s639,
-        slm:s784 .
 
 slm:s499 a skos:Concept ;
     skos:broader slm:s861 ;
@@ -9773,20 +9595,6 @@ slm:s520 a skos:Concept ;
         slm:s755,
         slm:s926 .
 
-slm:s529 a skos:Concept ;
-    skos:altLabel "elokuvasovitukset"@fi,
-        "filmbearbetningar"@sv ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "filmatisoinnit"@fi,
-        "filmatiseringar"@sv ;
-    skos:related slm:s1058,
-        slm:s1118,
-        slm:s1175,
-        slm:s556,
-        slm:s657,
-        slm:s909 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s598 a skos:Concept ;
     skos:altLabel "folklore"@fi,
         "folklore"@sv ;
@@ -9800,6 +9608,18 @@ slm:s598 a skos:Concept ;
         slm:s842 ;
     skos:prefLabel "kansankertomukset"@fi,
         "folkliga berättelser"@sv .
+
+slm:s639 a skos:Concept ;
+    skos:broader slm:s518 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p21268> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "sarjakuvaromaanit"@fi,
+        "grafiska romaner"@sv ;
+    skos:related slm:s1088,
+        slm:s185,
+        slm:s356,
+        slm:s631,
+        slm:s784 .
 
 slm:s691 a skos:Concept ;
     skos:altLabel "populaarikirjallisuus"@fi,
@@ -9857,18 +9677,6 @@ slm:s770 a skos:Concept ;
         slm:s365,
         slm:s566,
         slm:s958 .
-
-slm:s784 a skos:Concept ;
-    skos:broader slm:s298 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15468> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "sarjakuvalehdet"@fi,
-        "serietidningar"@sv ;
-    skos:related slm:s165,
-        slm:s185,
-        slm:s356,
-        slm:s631,
-        slm:s639 .
 
 slm:s821 a skos:Concept ;
     rdfs:comment "Laaja, kertova, runomittainen sanataideteos, joka käsittelee suurta ja vakavaa, usein jumal- tai sankaritarustosta peräisin olevaa aihetta."@fi ;
@@ -9939,26 +9747,6 @@ slm:s1007 a skos:Concept ;
     skos:prefLabel "latinalaisamerikkalainen populaarimusiikki"@fi,
         "latinamerikansk populärmusik"@sv .
 
-slm:s1028 a skos:Concept ;
-    rdfs:comment "Käytetään toimintaelokuvista, joissa esitetään itämaisia kamppailulajeja, esim. kung futa, judoa."@fi,
-        "Används om actionfilmer, som presenterar österländska kampsporter, t.ex. kung fu, judo."@sv ;
-    skos:altLabel "kung fu -elokuvat"@fi,
-        "kung-fu -elokuvat"@fi,
-        "taistelulajielokuvat"@fi,
-        "kung fu-filmer"@sv,
-        "kung-fu-filmer"@sv ;
-    skos:broader slm:s612 ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "kamppailulajielokuvat"@fi,
-        "kampsportsfilmer"@sv ;
-    skos:related slm:s1024,
-        slm:s1087,
-        slm:s1131,
-        slm:s1161,
-        slm:s190,
-        slm:s607,
-        slm:s962 .
-
 slm:s1076 a skos:Concept ;
     skos:broader slm:s1165,
         slm:s598 ;
@@ -10000,18 +9788,20 @@ slm:s497 a skos:Concept ;
     skos:prefLabel "afro"@fi,
         "afro"@sv .
 
-slm:s639 a skos:Concept ;
-    skos:broader slm:s518 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p21268> ;
+slm:s529 a skos:Concept ;
+    skos:altLabel "elokuvasovitukset"@fi,
+        "filmbearbetningar"@sv ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "sarjakuvaromaanit"@fi,
-        "grafiska romaner"@sv ;
-    skos:related slm:s1088,
-        slm:s165,
-        slm:s185,
-        slm:s356,
-        slm:s631,
-        slm:s784 .
+    skos:prefLabel "filmatisoinnit"@fi,
+        "filmatiseringar"@sv ;
+    skos:related slm:s1058,
+        slm:s1118,
+        slm:s1175,
+        slm:s154,
+        slm:s556,
+        slm:s657,
+        slm:s909 ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 slm:s662 a skos:Concept ;
     skos:broader slm:s861 ;
@@ -10025,6 +9815,22 @@ slm:s662 a skos:Concept ;
         slm:s808 ;
     skos:prefLabel "perinnemusiikki"@fi,
         "traditionell musik"@sv .
+
+slm:s865 a skos:Concept ;
+    skos:altLabel "farssit (elokuvat)"@fi,
+        "farssit (näytelmät)"@fi,
+        "farser (skådespel)"@sv ;
+    skos:broader slm:s919 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p16428> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s710 ;
+    skos:prefLabel "farssit"@fi,
+        "farser"@sv ;
+    skos:related slm:s1128,
+        slm:s1149,
+        slm:s5,
+        slm:s519,
+        slm:s722 .
 
 slm:s1058 a skos:Concept ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -10068,6 +9874,20 @@ slm:s455 a skos:Concept ;
     skos:prefLabel "kansantarinat"@fi,
         "folksägner"@sv .
 
+slm:s504 a skos:Concept ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p6735> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:prefLabel "fantasiaelokuvat"@fi,
+        "fantasyfilmer"@sv ;
+    skos:related slm:s1041,
+        slm:s1066,
+        slm:s1131,
+        slm:s1140,
+        slm:s130,
+        slm:s574,
+        slm:s833 .
+
 slm:s69 a skos:Concept ;
     rdfs:comment "Käytetään salapoliisikirjallisuudesta, jossa rikos tapahtuu ns. suljetussa huoneessa eli siten ettei kukaan ole voinut päästä rikoksen tapahtumapaikalle tekemään rikosta."@fi,
         "Definierar deckarlitteratur där brottet sker i s.k. låst rum. Ingen har med andra ord kunnat ta sig in brottsplatsen för att begå brottet."@sv ;
@@ -10086,23 +9906,6 @@ slm:s69 a skos:Concept ;
         slm:s911,
         slm:s926 .
 
-slm:s865 a skos:Concept ;
-    skos:altLabel "farssit (elokuvat)"@fi,
-        "farssit (näytelmät)"@fi,
-        "farser (skådespel)"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p16428> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s710 ;
-    skos:prefLabel "farssit"@fi,
-        "farser"@sv ;
-    skos:related slm:s1126,
-        slm:s1128,
-        slm:s1149,
-        slm:s5,
-        slm:s519,
-        slm:s722 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s1066 a skos:Concept ;
     skos:altLabel "science fiction"@fi,
         "scifi"@fi,
@@ -10110,7 +9913,8 @@ slm:s1066 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2003> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1032 ;
+    skos:narrower slm:s1032,
+        slm:s984 ;
     skos:prefLabel "tieteiselokuvat"@fi,
         "science fiction-filmer"@sv ;
     skos:related slm:s1092,
@@ -10118,8 +9922,7 @@ slm:s1066 a skos:Concept ;
         slm:s26,
         slm:s504,
         slm:s607,
-        slm:s82,
-        slm:s984 .
+        slm:s82 .
 
 slm:s1071 a skos:Concept ;
     skos:broader slm:s188,
@@ -10259,21 +10062,6 @@ slm:s479 a skos:Concept ;
         slm:s471,
         slm:s618 .
 
-slm:s504 a skos:Concept ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p6735> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:prefLabel "fantasiaelokuvat"@fi,
-        "fantasyfilmer"@sv ;
-    skos:related slm:s1041,
-        slm:s1066,
-        slm:s1131,
-        slm:s1140,
-        slm:s130,
-        slm:s574,
-        slm:s833,
-        slm:s962 .
-
 slm:s641 a skos:Concept ;
     skos:broader slm:s499 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -10307,23 +10095,6 @@ slm:s763 a skos:Concept ;
         slm:s190,
         slm:s607,
         slm:s898 .
-
-slm:s77 a skos:Concept ;
-    skos:altLabel "animaatiot"@fi,
-        "animerade filmer"@sv ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13637> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1060,
-        slm:s1063,
-        slm:s1155,
-        slm:s1164,
-        slm:s189,
-        slm:s594,
-        slm:s733 ;
-    skos:prefLabel "animaatioelokuvat"@fi,
-        "animationsfilmer"@sv ;
-    skos:related slm:s526 .
 
 slm:s1024 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -10360,7 +10131,6 @@ slm:s171 a skos:Concept ;
         slm:s926 .
 
 slm:s352 a skos:Concept ;
-    rdfs:comment "Kertova sanataide; eeppinen runous; sanataiteen laji, jossa kertominen on keskeistä. ... päälajit ovat eepos, romaani ja novelli."@fi ;
     skos:altLabel "epiikka"@fi,
         "proosa"@fi,
         "prosa"@sv ;
@@ -10397,6 +10167,24 @@ slm:s657 a skos:Concept ;
         slm:s813,
         slm:s909 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
+slm:s77 a skos:Concept ;
+    skos:altLabel "animaatiot"@fi,
+        "animerade filmer"@sv ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13637> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1060,
+        slm:s1063,
+        slm:s1155,
+        slm:s1164,
+        slm:s189,
+        slm:s367,
+        slm:s594,
+        slm:s733 ;
+    skos:prefLabel "animaatioelokuvat"@fi,
+        "animationsfilmer"@sv ;
+    skos:related slm:s526 .
 
 slm:s1128 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p9239> ;
@@ -10622,6 +10410,26 @@ slm:s926 a skos:Concept ;
         slm:s905,
         slm:s911 .
 
+slm:s1045 a skos:Concept ;
+    skos:altLabel "historier"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p4990> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1135,
+        slm:s455,
+        slm:s527,
+        slm:s650 ;
+    skos:prefLabel "tarinat"@fi,
+        "sägner"@sv ;
+    skos:related slm:s1102,
+        slm:s1165,
+        slm:s27,
+        slm:s352,
+        slm:s423,
+        slm:s479,
+        slm:s618,
+        slm:s935 ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
 slm:s1161 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p12143> ;
@@ -10686,27 +10494,6 @@ slm:s909 a skos:Concept ;
         slm:s67,
         slm:s813 .
 
-slm:s1045 a skos:Concept ;
-    skos:altLabel "historier"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p4990> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1135,
-        slm:s455,
-        slm:s527,
-        slm:s624,
-        slm:s650 ;
-    skos:prefLabel "tarinat"@fi,
-        "sägner"@sv ;
-    skos:related slm:s1102,
-        slm:s1165,
-        slm:s27,
-        slm:s352,
-        slm:s423,
-        slm:s479,
-        slm:s618,
-        slm:s935 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s1186 a skos:Concept ;
     skos:broader slm:s436 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -10767,6 +10554,59 @@ owl:Thing skos:narrower slm:s1075,
         slm:s975,
         slm:s983 .
 
+slm:s1131 a skos:Concept ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15061> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s994 ;
+    skos:prefLabel "seikkailuelokuvat"@fi,
+        "äventyrsfilmer"@sv ;
+    skos:related slm:s1024,
+        slm:s1028,
+        slm:s1066,
+        slm:s1071,
+        slm:s1073,
+        slm:s1087,
+        slm:s1161,
+        slm:s190,
+        slm:s26,
+        slm:s504,
+        slm:s607,
+        slm:s612,
+        slm:s748,
+        slm:s905 .
+
+slm:s382 a skos:Concept ;
+    skos:altLabel "dekkarit"@fi,
+        "jännitysromaanit"@fi,
+        "trillerit"@fi,
+        "deckare"@sv,
+        "spänningslitteratur"@sv,
+        "spänningsromaner"@sv,
+        "thriller"@sv,
+        "thrillrar"@sv ;
+    skos:broader slm:ongelmatsv,
+        slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p5087> ;
+    skos:editorialNote "se även ST"@sv ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1111,
+        slm:s355,
+        slm:s467,
+        slm:s816,
+        slm:s926 ;
+    skos:prefLabel "jännityskirjallisuus"@fi,
+        "thrillers (litteratur)"@sv ;
+    skos:related slm:s171,
+        slm:s194,
+        slm:s287,
+        slm:s41,
+        slm:s69,
+        slm:s73,
+        slm:s806,
+        slm:s905,
+        slm:s911 .
+
 slm:s436 a skos:Concept ;
     skos:broader slm:s861 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -10812,6 +10652,29 @@ slm:s593 a skos:Concept,
         "Genretermer för fortlöpande publikationer"@sv ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
+slm:s618 a skos:Concept ;
+    rdfs:comment "Sanasto sisältää joitain kertomusten lajityyppinimiä. Indeksoi muut kertomustyypit esim. murrekirjallisuus -- kertomukset."@fi ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p24639> ;
+    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
+    skos:narrower slm:s1055,
+        slm:s1165,
+        slm:s15,
+        slm:s315,
+        slm:s316,
+        slm:s555,
+        slm:s584,
+        slm:s598,
+        slm:s723,
+        slm:s900,
+        slm:s935 ;
+    skos:prefLabel "kertomukset"@fi,
+        "berättelser"@sv ;
+    skos:related slm:s1045,
+        slm:s27,
+        slm:s352,
+        slm:s479 ;
+    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
+
 slm:s905 a skos:Concept ;
     skos:altLabel "seikkailuromaanit"@fi,
         "äventyrsromaner"@sv ;
@@ -10835,29 +10698,6 @@ slm:s905 a skos:Concept ;
         slm:s845,
         slm:s911,
         slm:s926 .
-
-slm:s1131 a skos:Concept ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15061> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s994 ;
-    skos:prefLabel "seikkailuelokuvat"@fi,
-        "äventyrsfilmer"@sv ;
-    skos:related slm:s1024,
-        slm:s1028,
-        slm:s1066,
-        slm:s1071,
-        slm:s1073,
-        slm:s1087,
-        slm:s1161,
-        slm:s190,
-        slm:s26,
-        slm:s504,
-        slm:s607,
-        slm:s612,
-        slm:s748,
-        slm:s905,
-        slm:s962 .
 
 slm:s202 a skos:Concept ;
     skos:altLabel "handledningar"@sv ;
@@ -10883,38 +10723,6 @@ slm:s202 a skos:Concept ;
     skos:prefLabel "oppaat (teokset)"@fi,
         "guider (verk)"@sv .
 
-slm:s382 a skos:Concept ;
-    skos:altLabel "dekkarit"@fi,
-        "jännitysromaanit"@fi,
-        "trillerit"@fi,
-        "deckare"@sv,
-        "spänningslitteratur"@sv,
-        "spänningsromaner"@sv,
-        "thriller"@sv,
-        "thrillrar"@sv ;
-    skos:broader slm:ongelmatsv,
-        slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p5087> ;
-    skos:editorialNote "se även ST"@sv ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1111,
-        slm:s355,
-        slm:s467,
-        slm:s816,
-        slm:s926 ;
-    skos:prefLabel "jännityskirjallisuus"@fi,
-        "thrillers (litteratur)"@sv ;
-    skos:related slm:s171,
-        slm:s194,
-        slm:s287,
-        slm:s41,
-        slm:s69,
-        slm:s712,
-        slm:s73,
-        slm:s806,
-        slm:s905,
-        slm:s911 .
-
 slm:s1081 a skos:Concept ;
     skos:broader slm:s861 ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
@@ -10939,38 +10747,12 @@ slm:s1081 a skos:Concept ;
     skos:prefLabel "laulut"@fi,
         "sånger"@sv .
 
-slm:s618 a skos:Concept ;
-    rdfs:comment "Sanasto sisältää joitain kertomusten lajityyppinimiä. Indeksoi muut kertomustyypit esim. murrekirjallisuus -- kertomukset."@fi ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p24639> ;
-    skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1055,
-        slm:s1122,
-        slm:s1152,
-        slm:s1165,
-        slm:s15,
-        slm:s315,
-        slm:s316,
-        slm:s555,
-        slm:s584,
-        slm:s598,
-        slm:s723,
-        slm:s900,
-        slm:s935 ;
-    skos:prefLabel "kertomukset"@fi,
-        "berättelser"@sv ;
-    skos:related slm:s1045,
-        slm:s27,
-        slm:s352,
-        slm:s479 ;
-    skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
-
 slm:s919 a skos:Concept ;
     skos:altLabel "huvinäytelmät"@fi,
         "lustspel"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13876> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1126,
-        slm:s310,
+    skos:narrower slm:s310,
         slm:s328,
         slm:s425,
         slm:s5,
@@ -10981,6 +10763,7 @@ slm:s919 a skos:Concept ;
         slm:s722,
         slm:s752,
         slm:s755,
+        slm:s865,
         slm:s990 ;
     skos:prefLabel "komediat"@fi,
         "komedier"@sv ;
@@ -11025,9 +10808,9 @@ slm:s607 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p17774> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1071,
+        slm:s467,
         slm:s488,
-        slm:s822,
-        slm:s879 ;
+        slm:s822 ;
     skos:prefLabel "jännityselokuvat"@fi,
         "thrillers (filmer)"@sv ;
     skos:related slm:s1022,
@@ -11046,16 +10829,14 @@ slm:s607 a skos:Concept ;
         slm:s612,
         slm:s712,
         slm:s763,
-        slm:s82,
-        slm:s962 .
+        slm:s82 .
 
 slm:s1075 a skos:Concept ;
     rdfs:comment "Käytetään useimmiten lapsille tarkoitetuista teoksista, joilla voi myös leikkiä."@fi,
         "Används om oftast för barn avsedda böcker, som man även kan leka med."@sv ;
     skos:broader owl:Thing ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1110,
-        slm:s228,
+    skos:narrower slm:s228,
         slm:s273,
         slm:s284,
         slm:s29,
@@ -11117,6 +10898,40 @@ slm:s1150 a skos:Concept ;
         "dikter"@sv ;
     skos:related slm:s669 .
 
+slm:ongelmatsv a slm:StructuringClass ;
+    skos:narrower slm:s1062,
+        slm:s1063,
+        slm:s1069,
+        slm:s1074,
+        slm:s111,
+        slm:s1155,
+        slm:s1166,
+        slm:s1191,
+        slm:s141,
+        slm:s189,
+        slm:s257,
+        slm:s284,
+        slm:s315,
+        slm:s37,
+        slm:s372,
+        slm:s382,
+        slm:s486,
+        slm:s494,
+        slm:s497,
+        slm:s508,
+        slm:s524,
+        slm:s570,
+        slm:s621,
+        slm:s774,
+        slm:s813,
+        slm:s826,
+        slm:s835,
+        slm:s909,
+        slm:s921,
+        slm:s946 ;
+    skos:prefLabel "ongelmatsvg"@fi,
+        "ongelmatsvg"@sv .
+
 slm:s354 a skos:Concept ;
     skos:altLabel "sarjafilmit"@fi,
         "tv-sarjat"@fi,
@@ -11176,6 +10991,7 @@ slm:s929 a skos:Concept ;
         slm:s35,
         slm:s376,
         slm:s406,
+        slm:s406_1,
         slm:s420,
         slm:s43,
         slm:s431,
@@ -11215,11 +11031,9 @@ slm:s1181 a skos:Concept ;
     skos:related slm:s1074,
         slm:s1075,
         slm:s1090,
-        slm:s1110,
         slm:s1165,
         slm:s162,
         slm:s168,
-        slm:s177,
         slm:s228,
         slm:s273,
         slm:s29,
@@ -11246,53 +11060,11 @@ slm:s1181 a skos:Concept ;
         slm:s975 ;
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
-slm:ongelmatsv a slm:StructuringClass ;
-    skos:narrower slm:s1062,
-        slm:s1063,
-        slm:s1069,
-        slm:s1074,
-        slm:s111,
-        slm:s1110,
-        slm:s1155,
-        slm:s1166,
-        slm:s1191,
-        slm:s141,
-        slm:s177,
-        slm:s186,
-        slm:s189,
-        slm:s257,
-        slm:s284,
-        slm:s315,
-        slm:s37,
-        slm:s372,
-        slm:s382,
-        slm:s486,
-        slm:s494,
-        slm:s497,
-        slm:s508,
-        slm:s524,
-        slm:s570,
-        slm:s600,
-        slm:s621,
-        slm:s624,
-        slm:s774,
-        slm:s813,
-        slm:s826,
-        slm:s835,
-        slm:s909,
-        slm:s921,
-        slm:s941,
-        slm:s946,
-        slm:s962 ;
-    skos:prefLabel "ongelmatsvg"@fi,
-        "ongelmatsvg"@sv .
-
 slm:s975 a skos:Concept ;
     skos:broader owl:Thing ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
-    skos:narrower slm:s1069,
-        slm:s108,
+    skos:narrower slm:s108,
         slm:s1082,
         slm:s1085,
         slm:s1140,
@@ -11340,6 +11112,7 @@ slm:s518 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1896> ;
     skos:inScheme <http://urn.fi/URN:NBN:fi:au:mts:> ;
     skos:narrower slm:s1031,
+        slm:s1069,
         slm:s1088,
         slm:s1121,
         slm:s1154,
@@ -11380,7 +11153,6 @@ slm:s518 a skos:Concept ;
         slm:s872,
         slm:s880,
         slm:s914,
-        slm:s941,
         slm:s952,
         slm:s981 ;
     skos:prefLabel "romaanit"@fi,
@@ -11405,7 +11177,6 @@ slm:s356 a skos:Concept ;
         slm:s130,
         slm:s156,
         slm:s185,
-        slm:s186,
         slm:s24,
         slm:s295,
         slm:s299,
@@ -11418,8 +11189,6 @@ slm:s356 a skos:Concept ;
         slm:s523,
         slm:s563,
         slm:s57,
-        slm:s571,
-        slm:s600,
         slm:s637,
         slm:s656,
         slm:s664,
@@ -11439,7 +11208,6 @@ slm:s356 a skos:Concept ;
     skos:prefLabel "sarjakuvat"@fi,
         "tecknade serier"@sv ;
     skos:related slm:s1162,
-        slm:s165,
         slm:s631,
         slm:s639,
         slm:s784 .
@@ -11593,9 +11361,9 @@ slm:s1175 a skos:Concept ;
         slm:s894,
         slm:s898,
         slm:s901,
+        slm:s925,
         slm:s928,
         slm:s945,
-        slm:s962,
         slm:s968,
         slm:s982,
         slm:s99,
@@ -11932,7 +11700,7 @@ slm:s861 a skos:Concept,
     skos:topConceptOf <http://urn.fi/URN:NBN:fi:au:mts:> .
 
 <http://urn.fi/URN:NBN:fi:au:mts:> a skos:ConceptScheme ;
-    dct:modified "2018-03-23T03:57:55+00:00"^^xsd:dateTime ;
+    dct:modified "2018-03-24T03:29:13+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1011,
         slm:s1015,
         slm:s1016,
@@ -11975,7 +11743,6 @@ slm:s861 a skos:Concept,
         slm:s329,
         slm:s352,
         slm:s365,
-        slm:s367,
         slm:s399,
         slm:s402,
         slm:s44,
@@ -11990,7 +11757,6 @@ slm:s861 a skos:Concept,
         slm:s562,
         slm:s573,
         slm:s579,
-        slm:s58,
         slm:s593,
         slm:s611,
         slm:s618,
@@ -11999,7 +11765,6 @@ slm:s861 a skos:Concept,
         slm:s64,
         slm:s657,
         slm:s677,
-        slm:s679,
         slm:s697,
         slm:s70,
         slm:s711,
@@ -12016,7 +11781,6 @@ slm:s861 a skos:Concept,
         slm:s855,
         slm:s861,
         slm:s862,
-        slm:s865,
         slm:s871,
         slm:s876,
         slm:s889,
@@ -12026,13 +11790,11 @@ slm:s861 a skos:Concept,
         slm:s907,
         slm:s915,
         slm:s919,
-        slm:s925,
         slm:s929,
         slm:s930,
         slm:s942,
         slm:s95,
         slm:s963,
         slm:s97,
-        slm:s984,
         slm:s985 .
 
