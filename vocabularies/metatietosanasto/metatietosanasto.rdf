@@ -338,13 +338,23 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:copyright-vuosi">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jakeluaika">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">copyright-vuosi</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30008"/>
+    <skos:definition xml:lang="fi">Liittää manifestaation julkaistun manifestaation jakeluun liittyvään aikaan.</skos:definition>
+    <skos:prefLabel xml:lang="sv">distributionstid</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">jakeluaika</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:julkaisuaika">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30011"/>
+    <skos:definition xml:lang="fi">Liittää manifestaation manifestaation kustantamiseen, julkaisemiseen tai ilmestymiseen liittyvään aikaan.</skos:definition>
+    <skos:prefLabel xml:lang="fi">julkaisuaika</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">utgivningstid</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -14072,8 +14082,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Copyright-vuosi</rdfs:label>
-    <rdfs:label xml:lang="sv">Copyrightår</rdfs:label>
+    <rdfs:label xml:lang="fi">copyright-vuosi</rdfs:label>
+    <rdfs:label xml:lang="sv">copyrightår</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30007"/>
     <skos:definition xml:lang="fi">Aika, joka liittyy copyright-säädösten tai vastaavien säädösten alaiseen copyright-suojaukseen. Copyright-vuosiin sisältyvät P-ajat (phonogram) (äänitteiden copyright-suojaukseen liittyvät ajat).</skos:definition>
     <skos:definition xml:lang="sv">Copyrightåret är en tid med anknytning till upphovsrättsskyddet som faller under upphovsrättslagar eller motsvarande lagstiftning. I copyrightåren ingår P-tider (phonogram) (tider anknutna till upphovsrättsskydd för ljudinspelningar)</skos:definition>
@@ -19264,5 +19274,23 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tuotantoaika">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30009"/>
+    <skos:definition xml:lang="fi">Liittää manifestaation julkaisemattoman manifestaation kaivertamiseen, valmistamiseen, kokoamiseen tms. liittyvään aikaan.</skos:definition>
+    <skos:prefLabel xml:lang="sv">produktionstid</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuotantoaika</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:valmistusaika">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30010"/>
+    <skos:definition xml:lang="fi">Liittää manifestaation julkaistun manifestaation painamiseen, monistamiseen, kirjasinten valamiseen jne. liittyvään aikaan.</skos:definition>
+    <skos:prefLabel xml:lang="sv">tillverkningstid</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">valmistusaika</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
