@@ -166,6 +166,10 @@ slm:s1128  a             owl:Class , skos:Concept ;
         skos:prefLabel   "huumori"@fi , "humor"@sv ;
         skos:related     slm:s64 , slm:s919 , slm:s865 , slm:s423 , slm:s1016 , slm:s842 , slm:s215 , slm:s1149 .
 
+slm:s281_1  a            owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s435 ;
+        skos:prefLabel   "puhelinluettelot"@fi , "telefonkataloger"@sv .
+
 slm:s1028  a             owl:Class , skos:Concept ;
         rdfs:comment     "Används om actionfilmer, som presenterar österländska kampsporter, t.ex. kung fu, judo."@sv , "Käytetään toimintaelokuvista, joissa esitetään itämaisia kamppailulajeja, esim. kung futa, judoa."@fi ;
         rdfs:subClassOf  slm:s612 ;
@@ -181,12 +185,6 @@ slm:s1062  a                owl:Class , skos:Concept ;
         rdfs:subClassOf     slm:ongelmatsv ;
         skos:editorialNote  "YSE" ;
         skos:prefLabel      "sambor (musik)"@sv , "sambat"@fi .
-
-slm:s156  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 ;
-        skos:altLabel    "splattersarjakuvat"@fi ;
-        skos:prefLabel   "splatter-serier (tecknade serier)"@sv , "splatter-sarjakuvat"@fi ;
-        skos:related     slm:s731 .
 
 slm:s977  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s499 ;
@@ -295,8 +293,9 @@ slm:s118  a              owl:Class , skos:Concept ;
         skos:altLabel    "pantomiimisarjakuvat"@fi , "stumserier"@sv , "puhekuplattomat sarjakuvat"@fi ;
         skos:prefLabel   "mykkä sarjakuva"@fi , "pantomimserier"@sv .
 
-slm:s831  a             owl:Class , skos:Concept ;
-        skos:prefLabel  "föräldraguider"@sv , "vanhempainoppaat"@fi .
+slm:s831  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s202 ;
+        skos:prefLabel   "föräldraguider"@sv , "vanhempainoppaat"@fi .
 
 slm:s727  a             owl:Class , skos:Concept ;
         skos:prefLabel  "moriskat"@fi , "moresca"@sv .
@@ -484,7 +483,7 @@ slm:s192  a              owl:Class , skos:Concept ;
 
 slm:s691  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
-        skos:altLabel    "viihderomaanit"@fi , "populärlitteratur"@sv , "underhållningsromaner"@sv , "populaarikirjallisuus"@fi , "massmarknadslitteratur"@sv , "triviallitteratur"@sv , "triviaalikirjallisuus"@fi ;
+        skos:altLabel    "viihderomaanit"@fi , "populärlitteratur"@sv , "romanttinen viihdekirjallisuus"@fi , "underhållningsromaner"@sv , "populaarikirjallisuus"@fi , "massmarknadslitteratur"@sv , "triviallitteratur"@sv , "triviaalikirjallisuus"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p3> ;
         skos:prefLabel   "underhållningslitteratur"@sv , "viihdekirjallisuus"@fi ;
         skos:related     slm:s18 , slm:s672 , slm:s934 , slm:s1005 .
@@ -879,7 +878,7 @@ slm:s287  a              owl:Class , skos:Concept ;
         skos:altLabel    "salapoliisiromaanit"@fi , "deckare"@sv , "detektivromaner"@sv , "dekkarit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5086> ;
         skos:prefLabel   "detektivlitteratur"@sv , "salapoliisikirjallisuus"@fi ;
-        skos:related     slm:s73 , slm:s911 , slm:s816 , slm:s926 , slm:s41 , slm:s171 , slm:s905 , slm:s69 , slm:s382 , slm:s194 .
+        skos:related     slm:s73 , slm:s911 , slm:s816 , slm:s1154_1 , slm:s926 , slm:s41 , slm:s171 , slm:s905 , slm:s69 , slm:s382 , slm:s194 .
 
 slm:s20  a               owl:Class , skos:Concept ;
         rdfs:comment     "Yliluonnollisia piirteitä sisältävä, totena pidetty kertomus."@fi ;
@@ -1158,6 +1157,11 @@ slm:s473  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s532 ;
         skos:prefLabel   "dancehall"@fi , "dancehall"@sv .
 
+slm:s680  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1175 , slm:s356 ;
+        skos:prefLabel   "splatter"@fi , "splatter"@sv ;
+        skos:related     slm:s82 , slm:s731 , slm:s1092 .
+
 slm:s1109  a            owl:Class , skos:Concept ;
         skos:prefLabel  "läkarböcker"@sv , "lääkärikirjat"@fi .
 
@@ -1423,9 +1427,9 @@ slm:s1032  a             owl:Class , skos:Concept ;
 slm:s407  a             owl:Class , skos:Concept ;
         skos:prefLabel  "pysselböcker"@sv , "puuhakirjat"@fi .
 
-slm:s209  a             owl:Class , skos:Concept ;
-        rdfs:comment    "LT oppaat (teokset)? On monografioiden genretermi." ;
-        skos:prefLabel  "sångskolor"@sv , "laulunoppaat"@fi .
+slm:s209  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s202 ;
+        skos:prefLabel   "sångskolor"@sv , "laulunoppaat"@fi .
 
 slm:s110  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p19188> ;
@@ -1802,6 +1806,12 @@ slm:s1027  a             owl:Class , skos:Concept ;
         skos:prefLabel   "yhteiskunnalliset sarjakuvat"@fi , "samhällsserier (tecknade serier)"@sv ;
         skos:related     slm:s753 , slm:s675 , slm:s699 , slm:s81 .
 
+slm:s1154_1  a           owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s911 , slm:s518 ;
+        skos:altLabel    "mysiga deckare"@sv , "mjukisdeckare"@sv ;
+        skos:prefLabel   "pehmodekkarit"@fi , "mysdeckare"@sv ;
+        skos:related     slm:s287 .
+
 slm:s261  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s354 ;
         skos:prefLabel   "erotiska tv-serier"@sv , "eroottiset televisiosarjat"@fi ;
@@ -1879,6 +1889,11 @@ slm:s80  a               owl:Class , skos:Concept ;
 slm:s79  a              owl:Class , skos:Concept ;
         rdfs:comment    "LT harjoitukset?" ;
         skos:prefLabel  "fingerövningar"@sv , "sormiharjoitukset"@fi .
+
+slm:s58_1  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s889 , slm:s579 ;
+        skos:altLabel    "elektroniset äänikirjat"@fi , "sähköiset äänikirjat"@fi , "elektroniska ljudböcker"@sv ;
+        skos:prefLabel   "e-äänikirjat"@fi , "e-ljudböcker"@sv .
 
 slm:s759  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s662 ;
@@ -2245,6 +2260,9 @@ slm:s728  a             owl:Class , skos:Concept ;
 slm:s740  a             owl:Class , skos:Concept ;
         skos:prefLabel  "vigilior"@sv , "vigiliat"@fi .
 
+slm:s102_1  a           owl:Class , skos:Concept ;
+        skos:prefLabel  "testit"@fi , "test"@sv .
+
 slm:s1057  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
         skos:altLabel    "informationstidningar"@sv ;
@@ -2506,6 +2524,10 @@ slm:s932  a             owl:Class , skos:Concept ;
 slm:s1034  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1033 ;
         skos:prefLabel   "gallikansk sång"@sv , "gallikaaninen laulu"@fi .
+
+slm:s897_1  a           owl:Class , skos:Concept ;
+        skos:altLabel   "vykort"@sv ;
+        skos:prefLabel  "postikortit"@fi , "postkort"@sv .
 
 slm:s404  a              owl:Class , skos:Concept ;
         rdfs:comment     "Används om verk, som skildrar krigshändelser."@sv , "Käytetään kirjoista, joissa kuvataan sodankäyntiä."@fi ;
@@ -2794,7 +2816,7 @@ slm:s787  a              owl:Class , skos:Concept ;
         skos:related     slm:s1181 .
 
 slm:s285  a             yso-meta:Hierarchy , owl:Class , skos:Concept ;
-        skos:narrower   slm:s505 , slm:s576 , slm:s478 , slm:s279 , slm:s550 , slm:s719 , slm:s540 , slm:s569 , slm:s205 , slm:s487 , slm:s686 , slm:s141 , slm:s392 , slm:s262 , slm:s558 , slm:s964 , slm:s110 , slm:s827 , slm:s209 , slm:s912 , slm:s1097 , slm:s812 , slm:s206 , slm:s1167 , slm:s245 , slm:s834 , slm:s356 , slm:s877 , slm:s257 , slm:s435 , slm:s841 , slm:s427 , slm:s623 , slm:s112 , slm:s63 , slm:s341 , slm:s943 , slm:s729 , slm:s289 , slm:s122 , slm:s1148 , slm:s896 , slm:s409 , slm:s1109 , slm:s132 , slm:s654 , slm:s765 , slm:s114 , slm:s1051 , slm:s477 , slm:s561 , slm:s220 , slm:s694 , slm:s820 , slm:s904 , slm:s983 , slm:s202 , slm:s276 , slm:s633 , slm:s854 , slm:s457 , slm:s155 , slm:s897 , slm:s286 , slm:s606 , slm:s407 , slm:s970 , slm:s998 , slm:s775 , slm:s443 , slm:s1144 , slm:s992 , slm:s423 , slm:s831 , slm:s598 , slm:s1086 , slm:s291 , slm:s140 , slm:s313 , slm:s184 , slm:s506 , slm:s197 , slm:s16 , slm:s922 , slm:s960 , slm:s1006 , slm:s172 , slm:s1191 , slm:s956 , slm:s597 , slm:s536 , slm:s215 , slm:s1064 , slm:s958 ;
+        skos:narrower   slm:s505 , slm:s576 , slm:s478 , slm:s279 , slm:s550 , slm:s719 , slm:s540 , slm:s569 , slm:s205 , slm:s487 , slm:s686 , slm:s141 , slm:s392 , slm:s262 , slm:s558 , slm:s964 , slm:s110 , slm:s477_1 , slm:s827 , slm:s209 , slm:s912 , slm:s1097 , slm:s812 , slm:s206 , slm:s1167 , slm:s245 , slm:s834 , slm:s356 , slm:s877 , slm:s257 , slm:s435 , slm:s841 , slm:s427 , slm:s623 , slm:s112 , slm:s63 , slm:s341 , slm:s897_1 , slm:s943 , slm:s729 , slm:s289 , slm:s122 , slm:s1148 , slm:s896 , slm:s409 , slm:s1109 , slm:s132 , slm:s654 , slm:s765 , slm:s114 , slm:s1051 , slm:s477 , slm:s561 , slm:s220 , slm:s694 , slm:s820 , slm:s904 , slm:s983 , slm:s202 , slm:s276 , slm:s633 , slm:s854 , slm:s457 , slm:s155 , slm:s897 , slm:s286 , slm:s606 , slm:s407 , slm:s970 , slm:s998 , slm:s775 , slm:s443 , slm:s1144 , slm:s992 , slm:s423 , slm:s831 , slm:s598 , slm:s1086 , slm:s291 , slm:s140 , slm:s313 , slm:s184 , slm:s506 , slm:s197 , slm:s16 , slm:s922 , slm:s960 , slm:s1006 , slm:s172 , slm:s1191 , slm:s964_1 , slm:s956 , slm:s597 , slm:s102_1 , slm:s536 , slm:s215 , slm:s1064 , slm:s958 ;
         skos:prefLabel  "Genretermer för monografier"@sv , "Monografioiden genretermit"@fi .
 
 slm:s1159  a            owl:Class , skos:Concept ;
@@ -2858,7 +2880,7 @@ slm:s55  a               owl:Class , skos:Concept ;
         skos:prefLabel   "rancheramusiikki"@fi , "rancheramusik"@sv .
 
 slm:s1006  a             owl:Class , skos:Concept ;
-        skos:altLabel    "elämänkerrat"@fi , "biografiat"@fi ;
+        skos:altLabel    "elämänkerrat"@fi , "biografiat"@fi , "henkilöhistoriat"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11597> ;
         skos:prefLabel   "elämäkerrat"@fi , "biografier"@sv ;
         skos:related     slm:s928 , slm:s770 .
@@ -2867,7 +2889,7 @@ slm:s731  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p25055> ;
         skos:prefLabel   "skräckserier (tecknade serier)"@sv , "kauhusarjakuvat"@fi ;
-        skos:related     slm:s156 , slm:s274 .
+        skos:related     slm:s274 , slm:s680 .
 
 slm:s950  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s39 ;
@@ -2930,6 +2952,10 @@ slm:s982  a              owl:Class , skos:Concept ;
 
 slm:s1103  a            owl:Class , skos:Concept ;
         skos:prefLabel  "ricercaret"@fi , "ricercarer"@sv .
+
+slm:s250_1  a            owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s518 ;
+        skos:prefLabel   "ensyklopediset romaanit"@fi , "encyklopediska romaner"@sv .
 
 slm:s806  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
@@ -3127,7 +3153,7 @@ slm:s94  a               owl:Class , skos:Concept ;
 slm:s179  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään runomuotoisista romaaneista."@fi , "Används om romaner skrivna i bunden form."@sv ;
         rdfs:subClassOf  slm:s518 ;
-        skos:altLabel    "diktromaner"@sv ;
+        skos:altLabel    "diktromaner"@sv , "runoproosa"@fi ;
         skos:prefLabel   "runoromaanit"@fi , "versromaner"@sv .
 
 slm:s281  a              owl:Class , skos:Concept ;
@@ -3944,11 +3970,18 @@ slm:s1074  a             owl:Class , skos:Concept ;
         skos:prefLabel   "lastenrunot"@fi , "barnlyrik"@sv ;
         skos:related     slm:s862 , slm:s1181 .
 
+slm:s964_1  a           owl:Class , skos:Concept ;
+        skos:prefLabel  "ord för dagen"@sv , "päivänsanat"@fi .
+
 slm:s913  a             owl:Class , skos:Concept ;
         skos:prefLabel  "fanfarer"@sv , "fanfaarit"@fi .
 
 slm:s262  a             owl:Class , skos:Concept ;
         skos:prefLabel  "sukukirjat"@fi , "släktböcker"@sv .
+
+slm:s205_1  a            owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:prefLabel   "historiska kartor"@sv , "historialliset kartat"@fi .
 
 slm:s606  a             owl:Class , skos:Concept ;
         skos:prefLabel  "historiker"@sv , "historiikit"@fi .
@@ -4554,6 +4587,7 @@ slm:s502  a             owl:Class , skos:Concept ;
         skos:prefLabel  "joiut"@fi , "jojkar"@sv .
 
 slm:s477  a             owl:Class , skos:Concept ;
+        skos:altLabel   "kasvikirjat"@fi , "växtböcker"@sv ;
         skos:prefLabel  "kasviot"@fi , "floror"@sv .
 
 slm:s694  a              owl:Class , skos:Concept ;
@@ -4629,6 +4663,7 @@ slm:s969  a             owl:Class , skos:Concept ;
 
 slm:s520  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
+        skos:altLabel    "romanttinen viihdekirjallisuus"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p19812> ;
         skos:prefLabel   "rakkausromaanit"@fi , "kärleksromaner"@sv ;
         skos:related     slm:s1055 , slm:s997 , slm:s926 , slm:s755 .
@@ -4770,6 +4805,10 @@ slm:s376  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p27767> ;
         skos:prefLabel   "dockskådespel"@sv , "nukkenäytelmät"@fi ;
         skos:related     slm:s875 .
+
+slm:s477_1  a           owl:Class , skos:Concept ;
+        skos:altLabel   "otteet"@fi ;
+        skos:prefLabel  "katkelmat"@fi .
 
 slm:s721  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s977 ;
@@ -5062,15 +5101,10 @@ slm:s203  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s241 ;
         skos:prefLabel   "kelttiläinen kansanmusiikki"@fi , "keltisk folkmusik"@sv .
 
-slm:s680  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1175 ;
-        skos:altLabel    "splatterelokuvat"@fi ;
-        skos:prefLabel   "splatterfilmer"@sv , "splatter-elokuvat"@fi ;
-        skos:related     slm:s82 , slm:s1092 .
-
 slm:s166  a              owl:Class , skos:Concept ;
         rdfs:comment     "Proosa-asuun painettu runo, jossa käytetään runolle ominaisia rytmisiä kadensseja ja figuuroja, soinnutusta, yllättäviä kuvia jne."@fi ;
         rdfs:subClassOf  slm:s1150 ;
+        skos:altLabel    "runoproosa"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5808> ;
         skos:prefLabel   "proosarunot"@fi , "prosadikter"@sv .
 
@@ -5257,6 +5291,10 @@ slm:s660  a              owl:Class , skos:Concept ;
         skos:prefLabel   "skolpjäser"@sv , "koulunäytelmät"@fi ;
         skos:related     slm:s43 .
 
+slm:s59_1  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s170 ;
+        skos:prefLabel   "selviytymispelit"@fi , "överlevnadsspel"@sv .
+
 slm:s1035  a            owl:Class , skos:Concept ;
         skos:prefLabel  "rondot"@fi , "rondon"@sv .
 
@@ -5425,6 +5463,10 @@ slm:s222  a              owl:Class , skos:Concept ;
 slm:s804  a             owl:Class , skos:Concept ;
         skos:prefLabel  "tarantellat"@fi , "tarantellor"@sv .
 
+slm:s332_1  a            owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1150 ;
+        skos:prefLabel   "esinerunot"@fi , "sakdikter"@sv .
+
 slm:s523  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään sarjakuvista, joiden päähenkilönä on nuori tai nuorisoyhteisö."@fi , "Används om tecknade serier med en ung person eller ungdomskollektiv som huvudperson."@sv ;
         rdfs:subClassOf  slm:s356 ;
@@ -5486,6 +5528,7 @@ slm:s877  a             owl:Class , skos:Concept ;
 
 slm:s143  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s669 ;
+        skos:altLabel    "äänirunot"@fi ;
         skos:prefLabel   "äänirunous"@fi , "ljudpoesi"@sv .
 
 slm:s221  a              owl:Class , skos:Concept ;
