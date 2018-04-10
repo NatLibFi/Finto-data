@@ -524,13 +524,6 @@ mts:m2153 a skos:Collection ;
     skos:member mts:m2126 ;
     skos:prefLabel "Tuottajan rinnakkainen nimi"@fi .
 
-mts:m2154 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:member mts:m2133 ;
-    skos:prefLabel "jakelupaikka tuntematon"@fi,
-        "distributionsort okänd"@sv .
-
 mts:m2155 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -544,13 +537,6 @@ mts:m2156 a skos:Collection ;
     rdfs:seeAlso rdam:P30089 ;
     skos:definition "Liittää manifestaation jakelupaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
     skos:prefLabel "rinnakkainen jakelupaikka"@fi .
-
-mts:m2157 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:member mts:m2133 ;
-    skos:prefLabel "jakeluaika tuntematon"@fi,
-        "distributionstid okänd"@sv .
 
 mts:m2158 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -605,13 +591,6 @@ mts:m2165 a skos:Collection ;
     skos:member mts:m2142 ;
     skos:prefLabel "julkaisuaika tuntematon"@fi,
         "utgivningstid okänd"@sv .
-
-mts:m2166 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:member mts:m2133 ;
-    skos:prefLabel "jakaja tuntematon"@fi,
-        "distributör okänd"@sv .
 
 mts:m2167 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10282,6 +10261,18 @@ mts:m2132 a isothes:ConceptGroup,
     skos:prefLabel "Painettu"@fi ;
     skos:scopeNote "RDA-kuvailussa käytettävä termi."@fi .
 
+mts:m2133 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30108 ;
+    skos:definition "Liittää manifestaation tietoon, joka identifioi julkaistun manifestaation jakelupaikan tai -paikat, jakajan tai jakajat sekä jakeluajan tai -ajat."@fi ;
+    skos:member mts:m1061,
+        mts:m2154,
+        mts:m2157,
+        mts:m2166 ;
+    skos:prefLabel "Jakelutiedot"@fi .
+
 mts:m2134 a skos:Concept ;
     dc:source "Kansallinen termi"@fi ;
     skos:example "1 kuntoiluvälne"@fi,
@@ -10324,6 +10315,18 @@ mts:m2144 a isothes:ConceptGroup,
     skos:prefLabel "Digitoitu manifestaatiosta"@fi ;
     skos:scopeNote "RDA-kuvailussa käytettävä termi."@fi .
 
+mts:m2154 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:prefLabel "jakelupaikka tuntematon"@fi,
+        "distributionsort okänd"@sv .
+
+mts:m2157 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:prefLabel "jakeluaika tuntematon"@fi,
+        "distributionstid okänd"@sv .
+
 mts:m216 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:inScheme mts: ;
@@ -10338,6 +10341,12 @@ mts:m2162 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30055 ;
     skos:prefLabel "Huomautus julkaisutiedosta"@fi .
+
+mts:m2166 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:prefLabel "jakaja tuntematon"@fi,
+        "distributör okänd"@sv .
 
 mts:m217 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19227,15 +19236,6 @@ mts:m2036 a skos:Concept ;
         "pianojohtostemma"@fi,
         "pianodirektion"@sv .
 
-mts:m2133 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30108 ;
-    skos:definition "Liittää manifestaation tietoon, joka identifioi julkaistun manifestaation jakelupaikan tai -paikat, jakajan tai jakajat sekä jakeluajan tai -ajat."@fi ;
-    skos:member mts:m1061 ;
-    skos:prefLabel "Jakelutiedot"@fi .
-
 mts:m599 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19408,5 +19408,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-04-09T03:30:32+00:00"^^xsd:dateTime .
+    dct:modified "2018-04-10T03:08:46+00:00"^^xsd:dateTime .
 
