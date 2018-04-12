@@ -2880,7 +2880,7 @@ slm:s55  a               owl:Class , skos:Concept ;
         skos:prefLabel   "rancheramusiikki"@fi , "rancheramusik"@sv .
 
 slm:s1006  a             owl:Class , skos:Concept ;
-        skos:altLabel    "elämänkerrat"@fi , "biografiat"@fi , "henkilöhistoriat"@fi ;
+        skos:altLabel    "elämänkerrat"@fi , "biografiat"@fi , "levnadsteckningar"@sv , "henkilöhistoriat"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11597> ;
         skos:prefLabel   "elämäkerrat"@fi , "biografier"@sv ;
         skos:related     slm:s928 , slm:s770 .
@@ -3088,7 +3088,7 @@ slm:s768  a              owl:Class , skos:Concept ;
         skos:related     slm:s254 , slm:s332 , slm:s237 , slm:s433 .
 
 slm:s1069  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 , slm:ongelmatsv ;
+        rdfs:subClassOf  slm:s518 ;
         skos:altLabel    "sportromaner"@sv , "urheilukirjallisuus"@fi ;
         skos:prefLabel   "urheiluromaanit"@fi , "idrottsromaner"@sv .
 
@@ -3153,7 +3153,7 @@ slm:s94  a               owl:Class , skos:Concept ;
 slm:s179  a              owl:Class , skos:Concept ;
         rdfs:comment     "Käytetään runomuotoisista romaaneista."@fi , "Används om romaner skrivna i bunden form."@sv ;
         rdfs:subClassOf  slm:s518 ;
-        skos:altLabel    "diktromaner"@sv , "runoproosa"@fi ;
+        skos:altLabel    "diktromaner"@sv , "runoproosa"@fi , "diktprosa"@sv ;
         skos:prefLabel   "runoromaanit"@fi , "versromaner"@sv .
 
 slm:s281  a              owl:Class , skos:Concept ;
@@ -3971,6 +3971,7 @@ slm:s1074  a             owl:Class , skos:Concept ;
         skos:related     slm:s862 , slm:s1181 .
 
 slm:s964_1  a           owl:Class , skos:Concept ;
+        skos:altLabel   "dagens ord"@sv ;
         skos:prefLabel  "ord för dagen"@sv , "päivänsanat"@fi .
 
 slm:s913  a             owl:Class , skos:Concept ;
@@ -4807,8 +4808,8 @@ slm:s376  a              owl:Class , skos:Concept ;
         skos:related     slm:s875 .
 
 slm:s477_1  a           owl:Class , skos:Concept ;
-        skos:altLabel   "otteet"@fi ;
-        skos:prefLabel  "katkelmat"@fi .
+        skos:altLabel   "otteet"@fi , "avsnitt (utdrag)"@sv ;
+        skos:prefLabel  "katkelmat"@fi , "utdrag"@sv .
 
 slm:s721  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s977 ;
@@ -5104,7 +5105,7 @@ slm:s203  a              owl:Class , skos:Concept ;
 slm:s166  a              owl:Class , skos:Concept ;
         rdfs:comment     "Proosa-asuun painettu runo, jossa käytetään runolle ominaisia rytmisiä kadensseja ja figuuroja, soinnutusta, yllättäviä kuvia jne."@fi ;
         rdfs:subClassOf  slm:s1150 ;
-        skos:altLabel    "runoproosa"@fi ;
+        skos:altLabel    "runoproosa"@fi , "diktprosa"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5808> ;
         skos:prefLabel   "proosarunot"@fi , "prosadikter"@sv .
 
@@ -5247,12 +5248,13 @@ slm:s1143  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s372 ;
         skos:prefLabel   "mariachimusik"@sv , "mariachimusiikki"@fi .
 
-slm:s524  a              owl:Class , skos:Concept ;
-        rdfs:comment     "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi ;
-        rdfs:subClassOf  slm:s975 , slm:ongelmatsv ;
-        skos:altLabel    "medvetandeström-litteratur"@sv , "inre monolog-litteratur"@sv , "inre monolog"@sv ;
-        skos:prefLabel   "inre monolog (genre)"@sv , "tajunnanvirtakirjallisuus"@fi ;
-        skos:related     slm:s181 .
+slm:s524  a                 owl:Class , skos:Concept ;
+        rdfs:comment        "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi ;
+        rdfs:subClassOf     slm:s975 , slm:ongelmatsv ;
+        skos:altLabel       "medvetandeström-litteratur"@sv , "inre monolog-litteratur"@sv , "inre monolog"@sv ;
+        skos:editorialNote  "YSAn sisäinen monologi myös inre monolog, Bellassa tarkenne (berättarteknik)." ;
+        skos:prefLabel      "inre monolog (genre)"@sv , "tajunnanvirtakirjallisuus"@fi ;
+        skos:related        slm:s181 .
 
 slm:s464  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s499 ;
@@ -5528,7 +5530,7 @@ slm:s877  a             owl:Class , skos:Concept ;
 
 slm:s143  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s669 ;
-        skos:altLabel    "äänirunot"@fi ;
+        skos:altLabel    "äänirunot"@fi , "ljuddikter"@sv ;
         skos:prefLabel   "äänirunous"@fi , "ljudpoesi"@sv .
 
 slm:s221  a              owl:Class , skos:Concept ;
