@@ -450,14 +450,6 @@ mts:m2123 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Teksti painettu horisontaalisesti."@fi .
 
-mts:m2145 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30088 ;
-    skos:definition "Liittää manifestaation paikkaan, joka liittyy manifestaation kustantamiseen, julkaisemiseen tai ilmestymiseen."@fi ;
-    skos:prefLabel "kustannuspaikka"@fi,
-        "utgivningsort"@sv .
-
 mts:m2150 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10212,10 +10204,11 @@ mts:m2142 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30111 ;
     skos:member mts:m1129,
-        mts:m2163,
+        mts:m2145,
         mts:m2165,
         mts:m2174,
-        mts:m2175 ;
+        mts:m2175,
+        mts:m2177 ;
     skos:prefLabel "Julkaisutiedot"@fi .
 
 mts:m2143 a skos:Collection ;
@@ -10230,11 +10223,20 @@ mts:m2144 a isothes:ConceptGroup,
     skos:prefLabel "Digitoitu manifestaatiosta"@fi ;
     skos:scopeNote "RDA-kuvailussa käytettävä termi."@fi .
 
+mts:m2145 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30088 ;
+    skos:definition "Liittää manifestaation paikkaan, joka liittyy manifestaation kustantamiseen, julkaisemiseen tai ilmestymiseen."@fi ;
+    skos:prefLabel "kustannuspaikka"@fi,
+        "utgivningsort"@sv .
+
 mts:m2146 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "tuotantoaika tuntematon"@fi,
-        "productionstid okänd"@sv .
+        "produktionstid okänd"@sv .
 
 mts:m2147 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10271,7 +10273,7 @@ mts:m2155 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:prefLabel "tuotantopaikka tuntematon"@fi,
-        "productionsort okänd"@sv .
+        "produktionsort okänd"@sv .
 
 mts:m2157 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10302,12 +10304,6 @@ mts:m2162 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30055 ;
     skos:prefLabel "Huomautus julkaisutiedosta"@fi .
 
-mts:m2163 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:prefLabel "julkaisupaikka tuntematon"@fi,
-        "utgivningsort okänd"@sv .
-
 mts:m2164 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10315,9 +10311,10 @@ mts:m2164 a skos:Collection ;
     skos:definition "Liittää manifestaation valmistajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
     skos:prefLabel "Valmistajan rinnakkainen nimi"@fi .
 
-mts:m2165 a skos:Collection ;
+mts:m2165 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:inScheme mts: ;
     skos:prefLabel "julkaisuaika tuntematon"@fi,
         "utgivningstid okänd"@sv .
 
@@ -10363,13 +10360,21 @@ mts:m2174 a skos:Collection ;
     skos:prefLabel "kustantaja tuntematon"@fi,
         "utgivare okänd"@sv .
 
-mts:m2175 a skos:Collection ;
+mts:m2175 a isothes:ConceptGroup,
+        skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30011 ;
     skos:definition "Liittää manifestaation manifestaation kustantamiseen, julkaisemiseen tai ilmestymiseen liittyvään aikaan."@fi ;
     skos:prefLabel "julkaisuaika"@fi,
         "utgivningstid"@sv .
+
+mts:m2177 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kustannuspaikka tuntematon"@fi,
+        "utgivningsort okänd"@sv .
 
 mts:m218 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19400,5 +19405,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-04-11T02:45:12+00:00"^^xsd:dateTime .
+    dct:modified "2018-04-12T03:09:59+00:00"^^xsd:dateTime .
 
