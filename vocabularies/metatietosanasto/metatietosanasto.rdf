@@ -338,6 +338,31 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuva-arvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">elokuva-arvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kappaleellaKunnioitettu">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">kappaleella kunnioitettu</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40022"/>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, jolle kappale on lahjoitettu kunnianosoituksena</skos:definition>
+    <skos:definition xml:lang="sv">person eller institution som donerats ett exemplar som en hedersbetygelse</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kirja-arvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">kirja-arvostelu</rdfs:label>
+    <skos:altLabel xml:lang="fi">kirjallisuusarvostelu</skos:altLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -2942,17 +2967,6 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Käytettävissä lisenssin hankkineiden organisaatioiden verkossa.</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Tillgänglig i nätverk hos organisationer som har licens.</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1215">
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m34"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">festskriftsföremål</rdfs:label>
-    <rdfs:label xml:lang="fi">kunnianosoituksen kohde</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10049"/>
-    <skos:definition xml:lang="fi">henkilö tai yhteisö, jonka kunniaksi teos (esim. juhlakirja) on tehty</skos:definition>
-    <skos:definition xml:lang="sv">person eller institution till vars ära ett verk (t.ex. festskrift) har gjorts</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1216">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -7833,17 +7847,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:definition xml:lang="fi">henkilö tai yhteisö, jolle kappale on omistettu</skos:definition>
     <skos:definition xml:lang="sv">person eller institution som tillägnats ett exemplar</skos:definition>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1766">
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">dedicerat till</rdfs:label>
-    <rdfs:label xml:lang="fi">kunnianosoituksen kohde (kappale)</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40022"/>
-    <skos:definition xml:lang="fi">henkilö tai yhteisö, jolle kappale on lahjoitettu kunnianosoituksena</skos:definition>
-    <skos:definition xml:lang="sv">person eller institution som donerats ett exemplar som en hedersbetygelse</skos:definition>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1767">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
@@ -11534,6 +11537,7 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2156">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30089"/>
     <skos:definition xml:lang="fi">Liittää manifestaation jakelupaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:definition>
@@ -11575,6 +11579,7 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2160">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30091"/>
     <skos:definition xml:lang="fi">Liittää manifestaation tuotantopaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:definition>
@@ -11583,6 +11588,7 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2161">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2176"/>
     <skos:definition xml:lang="fi">Liittää manifestaation painostietoon toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:definition>
@@ -11632,6 +11638,7 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2168">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30090"/>
     <skos:definition xml:lang="fi">Liittää manifestaation valmistuspaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:definition>
@@ -11683,6 +11690,7 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2173">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30091"/>
     <skos:definition xml:lang="fi">Liittää manifestaation tuotantopaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:definition>
@@ -19520,5 +19528,57 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:musiikkiarvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">musiikkiarvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sirkusarvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">sirkusarvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:taidearvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">taidearvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tanssiarvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">tanssiarvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teatteriarvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">teatteriarvostelu</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teoksellaKunnioitettu">
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m34"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">teoksella kunnioitettu</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10049"/>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, jonka kunniaksi teos (esim. juhlakirja) on tehty</skos:definition>
+    <skos:definition xml:lang="sv">person eller institution till vars ära ett verk (t.ex. festskrift) har gjorts</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:videoarvostelu">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m991"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">videoarvostelu</rdfs:label>
   </owl:Class>
 </rdf:RDF>
