@@ -457,71 +457,6 @@ mts:m2150 a skos:Collection ;
     skos:definition "Liittää manifestaation kustantajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
     skos:prefLabel "Kustantajan rinnakkainen nimi"@fi .
 
-mts:m2152 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30008 ;
-    skos:definition "Liittää manifestaation julkaistun manifestaation jakeluun liittyvään aikaan."@fi ;
-    skos:prefLabel "jakeluaika"@fi,
-        "distributionstid"@sv .
-
-mts:m2156 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30089 ;
-    skos:definition "Liittää manifestaation jakelupaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
-    skos:prefLabel "rinnakkainen jakelupaikka"@fi .
-
-mts:m2159 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30009 ;
-    skos:definition "Liittää manifestaation julkaisemattoman manifestaation kaivertamiseen, valmistamiseen, kokoamiseen tms. liittyvään aikaan."@fi ;
-    skos:prefLabel "tuotantoaika"@fi,
-        "produktionstid"@sv .
-
-mts:m2160 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30091 ;
-    skos:definition "Liittää manifestaation tuotantopaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
-    skos:prefLabel "rinnakkainen tuotantopaikka"@fi .
-
-mts:m2161 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso mts:m2176 ;
-    skos:definition "Liittää manifestaation painostietoon toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
-    skos:member mts:m706 ;
-    skos:prefLabel "rinnakkainen painostieto"@fi .
-
-mts:m2168 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30090 ;
-    skos:definition "Liittää manifestaation valmistuspaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
-    skos:prefLabel "rinnakkainen valmistuspaikka"@fi .
-
-mts:m2170 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30086 ;
-    skos:definition "Liittää manifestaation julkaisemattoman manifestaation kaivertamiseen, valmistamiseen, kokoamiseen tms. liittyvään aikaan."@fi ;
-    skos:prefLabel "tuotantopaikka"@fi,
-        "produktionsort"@sv .
-
-mts:m2172 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30085 ;
-    skos:definition "Liittää manifestaation paikkaan, joka liittyy julkaistun manifestaation jakeluun."@fi ;
-    skos:prefLabel "jakelupaikka"@fi,
-        "distributionort"@sv .
-
 mts:m2173 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -1521,13 +1456,6 @@ mts:m1050 a skos:Concept ;
     skos:prefLabel "kansio"@fi,
         "mapp"@sv ;
     skos:scopeNote "Manifestaation tunnisteen lisäys."@fi .
-
-mts:m1052 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Kandidaatintyö"@fi,
-        "Kandidatarbete"@sv .
 
 mts:m1054 a isothes:ConceptGroup,
         skos:Collection ;
@@ -4648,6 +4576,7 @@ mts:m1387 a skos:Concept ;
 mts:m1388 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Kandidaatintyö"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "Kandidaatintutkielma"@fi,
         "Kandidatavhandling"@sv .
@@ -10084,7 +10013,10 @@ mts:m2126 a isothes:ConceptGroup,
         mts:m2148,
         mts:m2149,
         mts:m2155,
-        mts:m2169 ;
+        mts:m2159,
+        mts:m2160,
+        mts:m2169,
+        mts:m2170 ;
     skos:prefLabel "Tuotantotiedot"@fi .
 
 mts:m2127 a isothes:ConceptGroup,
@@ -10128,7 +10060,8 @@ mts:m2131 a isothes:ConceptGroup,
         mts:m2151,
         mts:m2158,
         mts:m2164,
-        mts:m2167 ;
+        mts:m2167,
+        mts:m2168 ;
     skos:prefLabel "Valmistustiedot"@fi .
 
 mts:m2132 a isothes:ConceptGroup,
@@ -10144,9 +10077,12 @@ mts:m2133 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30108 ;
     skos:definition "Liittää manifestaation tietoon, joka identifioi julkaistun manifestaation jakelupaikan tai -paikat, jakajan tai jakajat sekä jakeluajan tai -ajat."@fi ;
     skos:member mts:m1061,
+        mts:m2152,
         mts:m2154,
+        mts:m2156,
         mts:m2157,
-        mts:m2166 ;
+        mts:m2166,
+        mts:m2172 ;
     skos:prefLabel "Jakelutiedot"@fi .
 
 mts:m2134 a skos:Concept ;
@@ -10250,6 +10186,14 @@ mts:m2151 a skos:Collection ;
     skos:prefLabel "valmistuspaikka tuntematon"@fi,
         "tillverkningsort okänd"@sv .
 
+mts:m2152 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30008 ;
+    skos:definition "Liittää manifestaation julkaistun manifestaation jakeluun liittyvään aikaan."@fi ;
+    skos:prefLabel "jakeluaika"@fi,
+        "distributionstid"@sv .
+
 mts:m2154 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10261,6 +10205,14 @@ mts:m2155 a skos:Collection ;
         "RDA-termi"@fi ;
     skos:prefLabel "tuotantopaikka tuntematon"@fi,
         "produktionsort okänd"@sv .
+
+mts:m2156 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30089 ;
+    skos:definition "Liittää manifestaation jakelupaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
+    skos:prefLabel "rinnakkainen jakelupaikka"@fi .
 
 mts:m2157 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10276,6 +10228,14 @@ mts:m2158 a skos:Collection ;
     skos:prefLabel "valmistusaika"@fi,
         "tillverkningstid"@sv .
 
+mts:m2159 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30009 ;
+    skos:definition "Liittää manifestaation julkaisemattoman manifestaation kaivertamiseen, valmistamiseen, kokoamiseen tms. liittyvään aikaan."@fi ;
+    skos:prefLabel "tuotantoaika"@fi,
+        "produktionstid"@sv .
+
 mts:m216 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:inScheme mts: ;
@@ -10283,6 +10243,23 @@ mts:m216 a skos:Concept ;
         "annan"@sv ;
     skos:scopeNote "Jos mikään mediatyypin termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi,
         "Då ingen medietyp passar in på den inspelning som beskrivs, anges termen annan."@sv .
+
+mts:m2160 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30091 ;
+    skos:definition "Liittää manifestaation tuotantopaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
+    skos:prefLabel "rinnakkainen tuotantopaikka"@fi .
+
+mts:m2161 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m2176 ;
+    skos:definition "Liittää manifestaation painostietoon toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
+    skos:member mts:m706 ;
+    skos:prefLabel "rinnakkainen painostieto"@fi .
 
 mts:m2162 a isothes:ConceptGroup,
         skos:Collection ;
@@ -10319,6 +10296,14 @@ mts:m2167 a skos:Collection ;
     skos:prefLabel "valmistuspaikka"@fi,
         "tillverkningsort"@sv .
 
+mts:m2168 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30090 ;
+    skos:definition "Liittää manifestaation valmistuspaikkaan toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
+    skos:prefLabel "rinnakkainen valmistuspaikka"@fi .
+
 mts:m2169 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10334,12 +10319,28 @@ mts:m217 a skos:Concept ;
     skos:prefLabel "kaksipuolinen"@fi,
         "dubbelsidigt"@sv .
 
+mts:m2170 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30086 ;
+    skos:definition "Liittää manifestaation julkaisemattoman manifestaation kaivertamiseen, valmistamiseen, kokoamiseen tms. liittyvään aikaan."@fi ;
+    skos:prefLabel "tuotantopaikka"@fi,
+        "produktionsort"@sv .
+
 mts:m2171 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30064 ;
     skos:prefLabel "Huomautus painoksesta"@fi .
+
+mts:m2172 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30085 ;
+    skos:definition "Liittää manifestaation paikkaan, joka liittyy julkaistun manifestaation jakeluun."@fi ;
+    skos:prefLabel "jakelupaikka"@fi,
+        "distributionort"@sv .
 
 mts:m2174 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10432,6 +10433,13 @@ mts:m2188 a isothes:ConceptGroup,
     dc:source "Kansallinen termi"@fi ;
     skos:prefLabel "äänikirja"@fi .
 
+mts:m2189 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Yliopiston analyysiseminaarin muotoisen kurssin aikana laadittu ja siinä esitettäväksi tarkoitettu esitelmä. (Wikisanakirja)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Analyysiseminaarityö"@fi .
+
 mts:m219 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10439,6 +10447,27 @@ mts:m219 a skos:Concept ;
     skos:prefLabel "venelehdet"@fi,
         "båttidningar"@sv ;
     skos:scopeNote "Jatkuvien julkaisujen (ISBD) genre-termi. Sarja-aineistojen (RDA) genre-termi"@fi .
+
+mts:m2190 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Yliopiston laudaturseminaarin muotoisen kurssin aikana laadittu ja siinä esitettäväksi tarkoitettu esitelmä. (Wikisanakirja)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Laudaturseminaarityö"@fi .
+
+mts:m2191 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Yliopiston seminaarin muotoisen kurssin aikana laadittu ja siinä esitettäväksi tarkoitettu esitelmä. (Wikisanakirja)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Seminaarityö"@fi .
+
+mts:m2192 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Yliopiston proseminaarin muotoisen kurssin aikana laadittu ja siinä esitettäväksi tarkoitettu esitelmä. (Wikisanakirja)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Proseminaarityö"@fi .
 
 mts:m22 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16002,8 +16031,7 @@ mts:m91 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10209 ;
-    skos:member mts:m1052,
-        mts:m1153,
+    skos:member mts:m1153,
         mts:m1270,
         mts:m1384,
         mts:m1388,
@@ -16012,6 +16040,10 @@ mts:m91 a isothes:ConceptGroup,
         mts:m1806,
         mts:m1808,
         mts:m2043,
+        mts:m2189,
+        mts:m2190,
+        mts:m2191,
+        mts:m2192,
         mts:m415,
         mts:m65,
         mts:m92,
@@ -18691,6 +18723,7 @@ mts:m706 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30107 ;
     skos:member mts:m1242,
+        mts:m2161,
         mts:m296,
         mts:m7,
         mts:m812 ;
@@ -19464,5 +19497,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-04-20T03:14:47+00:00"^^xsd:dateTime .
+    dct:modified "2018-04-21T03:16:36+00:00"^^xsd:dateTime .
 
