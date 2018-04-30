@@ -1,0 +1,66 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
+PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
+#
+# Changed prefLabels for already existing concepts
+#
+SELECT DISTINCT ?concept ?oldLabel ?newLabel
+WHERE {
+  GRAPH ?versionHistoryGraph {
+    # parameters
+    VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+      ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508" )
+    }
+    # get the current and the previous version as default versions
+    ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
+    ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
+    # select the versions to actually use
+    BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
+    BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
+    # get the delta and via that the relevant graphs
+    ?delta a sh:SchemeDelta ;
+      sh:deltaFrom/dc:identifier ?oldVersionSelected ;
+      sh:deltaTo/dc:identifier ?newVersionSelected ;
+      sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
+      sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
+      dcterms:hasPart ?insertions ;
+      dcterms:hasPart ?deletions .
+    ?deletions a sh:SchemeDeltaDeletions ;
+      sh:usingNamedGraph/sd:name ?deletionsGraph .
+    ?insertions a sh:SchemeDeltaInsertions ;
+      sh:usingNamedGraph/sd:name ?insertionsGraph .
+  }
+  
+  OPTIONAL {
+    # newly inserted prefLabels
+    GRAPH ?insertionsGraph {
+      ?concept skos:prefLabel ?newLabel .
+    }
+  }
+
+  OPTIONAL {
+    # deleted prefLabels
+    GRAPH ?deletionsGraph {
+      ?concept skos:prefLabel ?oldLabel .
+    }
+  }
+  
+  FILTER (BOUND(?newLabel) || BOUND(?oldLabel))
+  FILTER (LANG(?newLabel) = LANG(?oldLabel))
+  FILTER (!(BOUND(?newLabel) && BOUND(?oldLabel) && ?newLabel = ?oldLabel))
+  
+  # ... for already existing concepts
+  FILTER exists {
+    GRAPH ?oldVersionGraph {
+      ?concept ?p []
+    }
+  }
+
+}
+ORDER BY LCASE(?oldLabel)
