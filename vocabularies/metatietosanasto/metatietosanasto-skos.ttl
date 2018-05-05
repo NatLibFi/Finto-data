@@ -575,6 +575,7 @@ mts:m261 a isothes:ConceptGroup,
         mts:m1990,
         mts:m2002,
         mts:m2003,
+        mts:m2207,
         mts:m346,
         mts:m439,
         mts:m580 ;
@@ -10373,7 +10374,7 @@ mts:m2161 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    rdfs:seeAlso mts:m2176 ;
+    rdfs:seeAlso rdam:P30013 ;
     skos:definition "Liittää manifestaation painostietoon toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
     skos:prefLabel "rinnakkainen painostieto"@fi .
 
@@ -10508,7 +10509,7 @@ mts:m2181 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10049 ;
     skos:altLabel "kunnianosoituksen kohde"@fi ;
-    skos:definition "Liitää teoksen toimijaan, jonka kunniaksi teos on tehty"@fi,
+    skos:definition "Liittää teoksen toimijaan, jonka kunniaksi teos on tehty"@fi,
         "person eller institution till vars ära ett verk (t.ex. festskrift) har gjorts"@sv ;
     skos:prefLabel "teoksella kunnioitettu"@fi .
 
@@ -10624,6 +10625,26 @@ mts:m220 a isothes:ConceptGroup,
     skos:prefLabel "Rinnakkainen päänimeke"@fi,
         "Parallell huvudtitel"@sv ;
     skos:scopeNote "Päänimeke toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi .
+
+mts:m2206 a skos:Concept ;
+    dc:source "RDA-termi"@fi ;
+    skos:definition "Aineisto, joka ei sisällä ääntä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "äänetön"@fi .
+
+mts:m2207 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:definition "Ekspression sisältämä ääni tai äänen puuttuminen."@fi ;
+    skos:member mts:m2206,
+        mts:m2208 ;
+    skos:prefLabel "Äänisisältö"@fi .
+
+mts:m2208 a skos:Concept ;
+    dc:source "RDA-termi"@fi ;
+    skos:definition "Aineisto, joka  sisällää ääntä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ääni"@fi .
 
 mts:m221 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19669,5 +19690,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-05-04T03:20:09+00:00"^^xsd:dateTime .
+    dct:modified "2018-05-05T03:10:44+00:00"^^xsd:dateTime .
 
