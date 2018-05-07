@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 from rdflib import Graph, Namespace, RDF
@@ -11,7 +11,7 @@ YSO = Namespace("http://www.yso.fi/onto/yso/p")
 TEROMETA = Namespace("http://www.yso.fi/onto/tero-meta/")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
-# input graph  
+# input graph
 g = Graph()
 for fn in sys.argv[1:]:
   g.parse(fn, format=guess_format(fn))
@@ -23,4 +23,4 @@ for conc in g.subjects(RDF.type, SKOS.Concept):
   if not conc.startswith(TEROYSO) and not conc.startswith(YSO):
     g.add((conc, RDF.type, TEROMETA.Concept))
 
-g.serialize(destination=sys.stdout, format='turtle')
+g.serialize(destination=sys.stdout.buffer, format='turtle')
