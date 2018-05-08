@@ -3625,7 +3625,7 @@ slm:s98 a skos:Concept ;
 
 slm:s980 a skos:Concept ;
     skos:broader slm:s567 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "konserttiaariat"@fi,
         "konsertarior"@sv .
 
@@ -5502,7 +5502,8 @@ slm:s582 a skos:Concept ;
     skos:altLabel "fotografibloggar"@sv ;
     skos:broader slm:s1086 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28135> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "valokuvablogit"@fi,
         "fotobloggar"@sv .
 
@@ -5576,7 +5577,7 @@ slm:s632 a skos:Concept ;
 slm:s644 a skos:Concept ;
     skos:broader slm:s1086 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27911> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s593 ;
     skos:prefLabel "videoblogit"@fi,
         "videobloggar"@sv .
 
@@ -8591,26 +8592,6 @@ slm:s1078 a skos:Concept ;
     skos:scopeNote "Käytetään ei-fiktiivisistä elokuvista, jotka sisältävät todellisia tapahtumia näyttelijöiden esittäminä (esim. Satumaa : Unto Monosen elämä ja tangot)."@fi,
         "Används om icke-fiktiva filmer, som innehåller verkliga händelser uppförda av skådespelare (t.ex. Sagolandet : Unto Mononens liv och tango)."@sv .
 
-slm:s1086 a skos:Concept ;
-    skos:altLabel "nettipäiväkirjat"@fi,
-        "veppilokit"@fi,
-        "verkkolokit"@fi,
-        "verkkopäiväkirjat"@fi,
-        "web-log"@fi,
-        "weblog"@fi,
-        "nätdagböcker"@sv,
-        "webbdagböcker"@sv,
-        "webbjournaler"@sv,
-        "webbloggar"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p2719> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s582,
-        slm:s644 ;
-    skos:prefLabel "blogit"@fi,
-        "bloggar"@sv ;
-    skos:related slm:s155 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s1121 a skos:Concept ;
     skos:broader slm:s518 ;
     skos:inScheme slm:s285 ;
@@ -9237,6 +9218,28 @@ slm:s1041 a skos:Concept ;
         slm:s1140,
         slm:s130,
         slm:s504 .
+
+slm:s1086 a skos:Concept ;
+    skos:altLabel "nettipäiväkirjat"@fi,
+        "veppilokit"@fi,
+        "verkkolokit"@fi,
+        "verkkopäiväkirjat"@fi,
+        "web-log"@fi,
+        "weblog"@fi,
+        "nätdagböcker"@sv,
+        "webbdagböcker"@sv,
+        "webbjournaler"@sv,
+        "webbloggar"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p2719> ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
+    skos:narrower slm:s582,
+        slm:s644 ;
+    skos:prefLabel "blogit"@fi,
+        "bloggar"@sv ;
+    skos:related slm:s155 ;
+    skos:topConceptOf slm:s285,
+        slm:s593 .
 
 slm:s1102 a skos:Concept ;
     skos:broader slm:s1076 ;
@@ -11452,6 +11455,7 @@ slm:s1175 a skos:Concept ;
 slm:s593 a skos:ConceptScheme ;
     skos:hasTopConcept slm:s1012,
         slm:s1036,
+        slm:s1086,
         slm:s125,
         slm:s151,
         slm:s224,
@@ -11672,7 +11676,7 @@ slm:s861 a skos:ConceptScheme ;
         "Genretermer för musik"@sv .
 
 slm:s285 a skos:ConceptScheme ;
-    dct:modified "2018-05-07T02:45:07+00:00"^^xsd:dateTime ;
+    dct:modified "2018-05-08T02:52:22+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1006,
         slm:s1011,
         slm:s1016,
