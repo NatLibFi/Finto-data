@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ONTOFILE=genre-purify.ttl
+ONTOFILE=slm-purify.ttl
 FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py

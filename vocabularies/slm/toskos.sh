@@ -1,10 +1,10 @@
 #!/bin/sh
 
-INFILES="genre.ttl"
-OUTFILE=genre-skos.ttl
+INFILES="slm.ttl"
+OUTFILE=slm-skos.ttl
 
 SKOSIFYHOME="../../../Skosify"
 LOGFILE=skosify.log
-OPTS="--namespace http://urn.fi/URN:NBN:fi:au:mts: -c ./genresanasto.cfg"
+OPTS="--namespace http://urn.fi/URN:NBN:fi:au:mts: -c ./slm.cfg"
 
 $SKOSIFYHOME/skosify/skosify.py $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
