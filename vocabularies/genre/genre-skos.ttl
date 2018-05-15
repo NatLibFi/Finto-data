@@ -18,13 +18,15 @@ slm: a owl:Ontology ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
 slm:s1093 a owl:DeprecatedClass ;
+    rdfs:subClassOf yso-update:ongelmatfi ;
     skos:altLabel "kirjallisuusarvostelut"@fi,
         "bokrecensioner"@sv ;
+    skos:inScheme slm:s285 ;
     skos:prefLabel "kirja-arvostelut"@fi,
-        "litteraturrecensioner"@sv ;
-    yso-meta:developmentComment "haudattu"@fi .
+        "litteraturrecensioner"@sv .
 
 slm:s991 a owl:DeprecatedClass ;
+    rdfs:subClassOf yso-update:ongelmatfi ;
     skos:prefLabel "konventionaalinen kirjallisuus"@fi,
         "konventionell litteratur"@sv ;
     ysometa:developmentComment "haudattu"@fi .
@@ -45,12 +47,13 @@ slm:s100 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
     rdfs:comment "Käytetään teoksista, joissa ihminen joutuu erilleen muusta kulttuurista, yleensä autiolle saarelle."@fi,
         "Används om verk, där människan isoleras från civilisationen och ofta hamnar på en öde ö."@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p23743> ;
+    skos:inScheme slm:s285 ;
     skos:prefLabel "robinsonadit"@fi,
         "robinsonader"@sv .
 
 slm:s1000 a skos:Concept ;
     skos:broader slm:s532 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rock steady"@fi,
         "rock steady"@sv .
 
@@ -84,7 +87,7 @@ slm:s1008 a skos:Concept ;
 
 slm:s1009 a skos:Concept ;
     skos:broader slm:s96 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "orkesterimusiikki"@fi,
         "orkestermusik"@sv .
 
@@ -128,13 +131,13 @@ slm:s1025 a skos:Concept ;
 
 slm:s1029 a skos:Concept ;
     skos:broader slm:s280 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kamarioopperat"@fi,
         "kammaroperor"@sv .
 
 slm:s1034 a skos:Concept ;
     skos:broader slm:s1033 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "gallikaaninen laulu"@fi,
         "gallikansk sång"@sv .
 
@@ -191,7 +194,7 @@ slm:s1047 a skos:Concept ;
 
 slm:s1048 a skos:Concept ;
     skos:broader slm:s718 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "concerto grossot"@fi,
         "concerto grosson"@sv .
 
@@ -211,13 +214,13 @@ slm:s105 a skos:Concept ;
 
 slm:s1052 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "maakuntalaulut"@fi,
         "landskapssånger"@sv .
 
 slm:s1056 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "benga"@fi,
         "benga"@sv .
 
@@ -238,16 +241,17 @@ slm:s1061 a skos:Concept ;
     skos:altLabel "nätserier (tecknade serier)"@sv,
         "onlineserier (tecknade serier)"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "verkkosarjakuvat"@fi,
         "webbserier (tecknade serier)"@sv .
 
 slm:s1062 a skos:Concept ;
-    skos:broader yso-update:ongelmatsv ;
     skos:editorialNote "YSE"@fi ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "sambat"@fi,
-        "sambor (musik)"@sv .
+        "sambor (kompositioner)"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s1065 a skos:Concept ;
     skos:broader slm:s298 ;
@@ -257,7 +261,7 @@ slm:s1065 a skos:Concept ;
 
 slm:s1067 a skos:Concept ;
     skos:broader slm:s1033 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "gregoriaaninen laulu"@fi,
         "gregoriansk sång"@sv .
 
@@ -277,13 +281,14 @@ slm:s107 a skos:Concept ;
 
 slm:s1070 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "episodisarjakuvat"@fi,
         "episodserier (tecknade serier)"@sv .
 
 slm:s1079 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "taarab"@fi,
         "taarab"@sv .
 
@@ -305,7 +310,8 @@ slm:s1085 a skos:Concept ;
 
 slm:s1091 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "eroottiset sarjakuvat"@fi,
         "erotiska serier"@sv .
 
@@ -345,7 +351,7 @@ slm:s1100 a skos:Concept ;
 
 slm:s1101 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kotiseutulaulut"@fi,
         "hembygdssånger"@sv .
 
@@ -369,13 +375,14 @@ slm:s1106 a skos:Concept ;
 
 slm:s1107 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "joululaulut"@fi,
         "julsånger"@sv .
 
 slm:s1108 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "sotasarjakuvat"@fi,
         "krigsserier (tecknade serier)"@sv .
 
@@ -387,7 +394,8 @@ slm:s1109 a skos:Concept ;
 
 slm:s111 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "jännityssarjakuvat"@fi,
         "thrillers (tecknade serier)"@sv .
 
@@ -406,7 +414,7 @@ slm:s1115 a skos:Concept ;
 
 slm:s1116 a skos:Concept ;
     skos:broader slm:s129 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "surumusiikki"@fi,
         "sorgemusik"@sv .
 
@@ -425,19 +433,19 @@ slm:s1123 a skos:Concept ;
 
 slm:s1124 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "juju"@fi,
         "juju"@sv .
 
 slm:s1127 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rap"@fi,
         "rap"@sv .
 
 slm:s1129 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "reggaeton"@fi,
         "reggaeton"@sv .
 
@@ -477,13 +485,13 @@ slm:s1141 a skos:Concept ;
 
 slm:s1143 a skos:Concept ;
     skos:broader slm:s372 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "mariachimusiikki"@fi,
         "mariachimusik"@sv .
 
 slm:s1145 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "folk rock"@fi,
         "folkrock (förstärkt)"@sv .
 
@@ -497,19 +505,19 @@ slm:s1146 a skos:Concept ;
 
 slm:s1147 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "protestilaulut"@fi,
         "protestsånger"@sv .
 
 slm:s1156 a skos:Concept ;
     skos:broader slm:s616 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "liturginen musiikki"@fi,
         "liturgisk musik"@sv .
 
 slm:s1157 a skos:Concept ;
     skos:broader slm:s840 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "soulblues"@fi,
         "soulblues"@sv .
 
@@ -538,19 +546,19 @@ slm:s1169 a skos:Concept ;
     skos:altLabel "hip hop"@sv,
         "hip-hop"@sv ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "hip hop"@fi,
         "hiphop"@sv .
 
 slm:s117 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "soukous"@fi,
         "soukous"@sv .
 
 slm:s1176 a skos:Concept ;
     skos:broader slm:s560 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "black metal"@fi,
         "black metal"@sv .
 
@@ -565,7 +573,8 @@ slm:s118 a skos:Concept ;
         "puhekuplattomat sarjakuvat"@fi,
         "stumserier"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "mykkä sarjakuva"@fi,
         "pantomimserier"@sv .
 
@@ -584,7 +593,7 @@ slm:s1182 a skos:Concept ;
 slm:s1183 a skos:Concept ;
     skos:altLabel "rock and roll"@sv ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rock and roll"@fi,
         "rock'n'roll"@sv .
 
@@ -611,7 +620,7 @@ slm:s1189 a skos:Concept ;
 
 slm:s1193 a skos:Concept ;
     skos:broader slm:s334 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kuoromusiikki"@fi,
         "körmusik"@sv .
 
@@ -705,7 +714,7 @@ slm:s125 a skos:Concept ;
 
 slm:s127 a skos:Concept ;
     skos:broader slm:s721 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "Mississippi-blues"@fi,
         "Mississippi-blues"@sv .
 
@@ -729,13 +738,13 @@ slm:s132 a skos:Concept ;
 
 slm:s133 a skos:Concept ;
     skos:broader slm:s106 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "house"@fi,
         "house"@sv .
 
 slm:s134 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "soul"@fi,
         "soul"@sv .
 
@@ -821,7 +830,7 @@ slm:s151 a skos:Concept ;
 
 slm:s152 a skos:Concept ;
     skos:broader slm:s508 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "inkamusiikki"@fi,
         "inkamusik"@sv .
 
@@ -859,13 +868,13 @@ slm:s163 a skos:Concept ;
 
 slm:s164 a skos:Concept ;
     skos:broader slm:s116 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "triosonaatit"@fi,
         "triosonater"@sv .
 
 slm:s169 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "punk rock"@fi,
         "punkrock"@sv .
 
@@ -898,7 +907,7 @@ slm:s175 a skos:Concept ;
 
 slm:s176 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "fadot"@fi,
         "fado"@sv .
 
@@ -951,13 +960,13 @@ slm:s191 a skos:Concept ;
 
 slm:s192 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "tekno"@fi,
         "techno"@sv .
 
 slm:s195 a skos:Concept ;
     skos:broader slm:s235 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "dixieland"@fi,
         "dixieland"@sv .
 
@@ -975,7 +984,7 @@ slm:s2 a skos:Concept ;
 
 slm:s200 a skos:Concept ;
     skos:broader slm:s1139 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ylistysmusiikki"@fi,
         "lovsångsmusik"@sv .
 
@@ -988,13 +997,13 @@ slm:s201 a skos:Concept ;
 
 slm:s203 a skos:Concept ;
     skos:broader slm:s241 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kelttiläinen kansanmusiikki"@fi,
         "keltisk folkmusik"@sv .
 
 slm:s204 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kansallislaulut"@fi,
         "nationalsånger"@sv .
 
@@ -1013,7 +1022,7 @@ slm:s209 a skos:Concept ;
 
 slm:s21 a skos:Concept ;
     skos:broader slm:s532 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "dub"@fi,
         "dub"@sv .
 
@@ -1031,7 +1040,7 @@ slm:s211 a skos:Concept ;
 
 slm:s212 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "pilkkalaulut"@fi,
         "nidvisor"@sv .
 
@@ -1044,13 +1053,13 @@ slm:s213 a skos:Concept ;
 
 slm:s217 a skos:Concept ;
     skos:broader slm:s635 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "cool jazz"@fi,
         "cool jazz"@sv .
 
 slm:s219 a skos:Concept ;
     skos:broader slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ragtime"@fi,
         "ragtime"@sv .
 
@@ -1064,7 +1073,7 @@ slm:s222 a skos:Concept ;
 
 slm:s223 a skos:Concept ;
     skos:broader slm:s39 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s593 ;
     skos:prefLabel "iltapäivälehdet"@fi,
         "kvällstidningar"@sv .
 
@@ -1082,7 +1091,7 @@ slm:s226 a skos:Concept ;
 
 slm:s229 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "latin rock"@fi,
         "latin rock"@sv .
 
@@ -1094,7 +1103,7 @@ slm:s23 a skos:Concept ;
 
 slm:s231 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "poliittiset laulut"@fi,
         "politiska sånger"@sv .
 
@@ -1113,7 +1122,7 @@ slm:s233 a skos:Concept ;
 slm:s234 a skos:Concept ;
     skos:altLabel "indie rock"@sv ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "indie rock"@fi,
         "indierock"@sv .
 
@@ -1143,7 +1152,7 @@ slm:s243 a skos:Concept ;
 
 slm:s246 a skos:Concept ;
     skos:broader slm:s1188 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "bhangra"@fi,
         "bhangra"@sv .
 
@@ -1155,7 +1164,7 @@ slm:s247 a skos:Concept ;
 
 slm:s248 a skos:Concept ;
     skos:broader slm:s1139 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "gospelmusiikki"@fi,
         "gospelmusik"@sv .
 
@@ -1168,7 +1177,7 @@ slm:s249 a skos:Concept ;
 
 slm:s25 a skos:Concept ;
     skos:broader slm:s629 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "katrillit"@fi,
         "kadriljer"@sv .
 
@@ -1243,7 +1252,7 @@ slm:s265 a skos:Concept ;
 
 slm:s268 a skos:Concept ;
     skos:broader slm:s129 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "joulumusiikki"@fi,
         "julmusik"@sv .
 
@@ -1292,7 +1301,7 @@ slm:s291 a skos:Concept ;
 
 slm:s293 a skos:Concept ;
     skos:broader slm:s96 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kamarimusiikki"@fi,
         "kammarmusik"@sv .
 
@@ -1312,13 +1321,15 @@ slm:s296 a skos:Concept ;
 
 slm:s299 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "rakkaussarjakuvat"@fi,
         "kärleksserier (tecknade serier)"@sv .
 
 slm:s30 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "historialliset sarjakuvat"@fi,
         "historiska serier (tecknade serier)"@sv .
 
@@ -1330,7 +1341,7 @@ slm:s300 a skos:Concept ;
 
 slm:s301 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "gamelanmusiikki"@fi,
         "gamelanmusik"@sv .
 
@@ -1377,7 +1388,7 @@ slm:s309 a skos:Concept ;
 
 slm:s31 a skos:Concept ;
     skos:broader slm:s235 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "Harlem-jazz"@fi,
         "Harlem-jazz"@sv .
 
@@ -1409,7 +1420,7 @@ slm:s319 a skos:Concept ;
 slm:s32 a skos:Concept ;
     skos:altLabel "vaggsånger"@sv ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kehtolaulut"@fi,
         "vaggvisor"@sv .
 
@@ -1454,7 +1465,7 @@ slm:s329 a skos:Concept ;
 
 slm:s33 a skos:Concept ;
     skos:broader slm:s1174 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "purpurit"@fi,
         "purpuri"@sv .
 
@@ -1466,7 +1477,7 @@ slm:s330 a skos:Concept ;
 
 slm:s335 a skos:Concept ;
     skos:broader slm:s586 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "bluegrass"@fi,
         "bluegrass"@sv .
 
@@ -1544,7 +1555,7 @@ slm:s351 a skos:Concept ;
 
 slm:s357 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "makossa"@fi,
         "makossa"@sv .
 
@@ -1562,7 +1573,7 @@ slm:s36 a skos:Concept ;
 
 slm:s360 a skos:Concept ;
     skos:broader slm:s421 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "mustalaismusiikki"@fi,
         "zigenarmusik"@sv .
 
@@ -1618,7 +1629,8 @@ slm:s384 a skos:Concept ;
 
 slm:s385 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "undergroundsarjakuvat"@fi,
         "undergroundserier"@sv .
 
@@ -1666,7 +1678,7 @@ slm:s399 a skos:Concept ;
 
 slm:s401 a skos:Concept ;
     skos:broader slm:s586 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "hillbilly"@fi,
         "hillbilly"@sv .
 
@@ -1697,7 +1709,7 @@ slm:s408 a skos:Concept ;
 
 slm:s410 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "hard bop"@fi,
         "hard bop"@sv .
 
@@ -1727,6 +1739,7 @@ slm:s416 a skos:Concept ;
     skos:topConceptOf slm:s861 .
 
 slm:s417 a owl:DeprecatedClass ;
+    rdfs:subClassOf yso-update:ongelmatfi ;
     skos:prefLabel "kirjasarjat"@fi,
         "bokserier"@sv ;
     skos:related slm:s850 ;
@@ -1755,7 +1768,8 @@ slm:s422 a skos:Concept ;
 
 slm:s424 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "uskonnolliset sarjakuvat"@fi,
         "religiösa serier (tecknade serier)"@sv .
 
@@ -1790,7 +1804,7 @@ slm:s430 a skos:Concept ;
     skos:altLabel "finska enstrofingar"@sv ;
     skos:broader slm:s713 ;
     skos:definition "En särskild typ av finska folkvisor."@sv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rekilaulut"@fi,
         "rekilaulut"@sv .
 
@@ -1815,13 +1829,13 @@ slm:s441 a skos:Concept ;
 
 slm:s442 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "laulelmat"@fi,
         "visor"@sv .
 
 slm:s444 a skos:Concept ;
     skos:broader slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "highlife"@fi,
         "highlife"@sv .
 
@@ -1846,7 +1860,7 @@ slm:s448 a skos:Concept ;
 
 slm:s449 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "fuusiomusiikki"@fi,
         "fusionsmusik"@sv .
 
@@ -1898,13 +1912,13 @@ slm:s462 a skos:Concept ;
 
 slm:s463 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "psychobilly"@fi,
         "psychobilly"@sv .
 
 slm:s464 a skos:Concept ;
     skos:broader slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "boogie woogie"@fi,
         "boogie woogie"@sv .
 
@@ -1916,19 +1930,19 @@ slm:s466 a skos:Concept ;
 
 slm:s468 a skos:Concept ;
     skos:broader slm:s241 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "pelimannimusiikki"@fi,
         "spelmansmusik"@sv .
 
 slm:s469 a skos:Concept ;
     skos:broader slm:s1007 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "vallenata"@fi,
         "vallenato"@sv .
 
 slm:s473 a skos:Concept ;
     skos:broader slm:s532 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "dancehall"@fi,
         "dancehall"@sv .
 
@@ -2087,7 +2101,8 @@ slm:s517 a skos:Concept ;
 
 slm:s522 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "perhesarjakuvat"@fi,
         "familjeserier (tecknade serier)"@sv ;
     skos:scopeNote "Käytetään yleensä humoristisista sarjakuvista, joissa kuvaillaan perhe-elämää."@fi,
@@ -2102,13 +2117,13 @@ slm:s525 a skos:Concept ;
 
 slm:s53 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ska"@fi,
         "ska"@sv .
 
 slm:s531 a skos:Concept ;
     skos:broader slm:s547 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ambient"@fi,
         "ambient"@sv .
 
@@ -2120,7 +2135,7 @@ slm:s533 a skos:Concept ;
 
 slm:s534 a skos:Concept ;
     skos:broader slm:s586 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "cajun"@fi,
         "cajun"@sv .
 
@@ -2189,7 +2204,7 @@ slm:s545 a skos:Concept ;
 
 slm:s55 a skos:Concept ;
     skos:broader slm:s1007 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rancheramusiikki"@fi,
         "rancheramusik"@sv .
 
@@ -2201,13 +2216,13 @@ slm:s550 a skos:Concept ;
 
 slm:s557 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "dance"@fi,
         "dance"@sv .
 
 slm:s559 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "swing"@fi,
         "swing"@sv .
 
@@ -2229,7 +2244,8 @@ slm:s561 a skos:Concept ;
 
 slm:s563 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "rikossarjakuvat"@fi,
         "kriminalserier (tecknade serier)"@sv .
 
@@ -2258,7 +2274,8 @@ slm:s57 a skos:Concept ;
         "vildavästernserier (tecknade serier)"@sv,
         "westernserier (tecknade serier)"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "lännensarjakuvat"@fi,
         "västernserier (tecknade serier)"@sv .
 
@@ -2290,13 +2307,13 @@ slm:s580 a skos:Concept ;
 
 slm:s581 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "acid jazz"@fi,
         "acid jazz"@sv .
 
 slm:s583 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rockabilly"@fi,
         "rockabilly"@sv .
 
@@ -2367,7 +2384,7 @@ slm:s6 a skos:Concept ;
 
 slm:s60 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "mbalax"@fi,
         "mbalax"@sv .
 
@@ -2379,13 +2396,13 @@ slm:s602 a skos:Concept ;
 
 slm:s605 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "onnittelulaulut"@fi,
         "gratulationssånger"@sv .
 
 slm:s608 a skos:Concept ;
     skos:broader slm:s635 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "west coast jazz"@fi,
         "west coast jazz"@sv .
 
@@ -2443,7 +2460,7 @@ slm:s62 a skos:Concept ;
 
 slm:s620 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "klezmer-musiikki"@fi,
         "klezmermusik"@sv .
 
@@ -2455,13 +2472,13 @@ slm:s623 a skos:Concept ;
 
 slm:s625 a skos:Concept ;
     skos:broader slm:s1130 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "hootenanny"@fi,
         "hootenanny"@sv .
 
 slm:s628 a skos:Concept ;
     skos:broader slm:s1007 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "calypso"@fi,
         "calypso"@sv .
 
@@ -2513,7 +2530,7 @@ slm:s643 a skos:Concept ;
 
 slm:s647 a skos:Concept ;
     skos:broader slm:s586 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "country and western"@fi,
         "country and western"@sv .
 
@@ -2525,7 +2542,7 @@ slm:s65 a skos:Concept ;
 
 slm:s651 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "yksinlaulut"@fi,
         "solosånger"@sv .
 
@@ -2550,13 +2567,14 @@ slm:s654 a skos:Concept ;
 
 slm:s655 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "funk"@fi,
         "funk"@sv .
 
 slm:s656 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "viidakkosarjakuvat"@fi,
         "djungelserier"@sv .
 
@@ -2706,7 +2724,7 @@ slm:s703 a skos:Concept ;
 
 slm:s704 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "tex mex -musiikki"@fi,
         "tex mex-musik"@sv .
 
@@ -2737,19 +2755,19 @@ slm:s708 a skos:Concept ;
 
 slm:s714 a skos:Concept ;
     skos:broader slm:s721 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "folkblues"@fi,
         "folkblues"@sv .
 
 slm:s715 a skos:Concept ;
     skos:broader slm:s1188 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rai"@fi,
         "rai"@sv .
 
 slm:s717 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "garage rock"@fi,
         "garage rock"@sv .
 
@@ -2763,13 +2781,13 @@ slm:s72 a skos:Concept ;
 
 slm:s720 a skos:Concept ;
     skos:broader slm:s260 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "vanhat tanssit"@fi,
         "salongsdanser"@sv .
 
 slm:s724 a skos:Concept ;
     skos:broader slm:s235 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "New Orleans -jazz"@fi,
         "New Orleans jazz"@sv .
 
@@ -2801,7 +2819,7 @@ slm:s733 a skos:Concept ;
 
 slm:s734 a skos:Concept ;
     skos:broader slm:s497 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "mbaqanga"@fi,
         "mbaqanga"@sv .
 
@@ -2813,7 +2831,7 @@ slm:s735 a skos:Concept ;
 
 slm:s737 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kupletit"@fi,
         "kupletter"@sv .
 
@@ -2851,7 +2869,7 @@ slm:s743 a skos:Concept ;
 
 slm:s744 a skos:Concept ;
     skos:broader slm:s718 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kaksoiskonsertot"@fi,
         "dubbelkonserter"@sv .
 
@@ -2880,19 +2898,19 @@ slm:s752 a skos:Concept ;
 
 slm:s754 a skos:Concept ;
     skos:broader slm:s96 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ohjelmamusiikki"@fi,
         "programmusik"@sv .
 
 slm:s756 a skos:Concept ;
     skos:broader slm:s560 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "thrash metal"@fi,
         "thrash metal"@sv .
 
 slm:s759 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "qawwali"@fi,
         "qawwali"@sv .
 
@@ -2957,13 +2975,13 @@ slm:s776 a skos:Concept ;
 
 slm:s777 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "afro-rock"@fi,
         "afrorock"@sv .
 
 slm:s779 a skos:Concept ;
     skos:broader slm:s1007 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "bossa nova"@fi,
         "bossa nova"@sv .
 
@@ -2987,7 +3005,7 @@ slm:s786 a skos:Concept ;
 
 slm:s788 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "bebop"@fi,
         "bebop"@sv .
 
@@ -3016,7 +3034,7 @@ slm:s790 a skos:Concept ;
 
 slm:s791 a skos:Concept ;
     skos:broader slm:s129 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "häämusiikki"@fi,
         "bröllopsmusik"@sv .
 
@@ -3028,13 +3046,13 @@ slm:s792 a skos:Concept ;
 
 slm:s794 a skos:Concept ;
     skos:broader slm:s1188 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ghazal"@fi,
         "ghazal"@sv .
 
 slm:s797 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "työlaulut"@fi,
         "arbetssånger"@sv .
 
@@ -3066,7 +3084,7 @@ slm:s805 a skos:Concept ;
 
 slm:s808 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "arabialainen musiikki"@fi,
         "arabisk musik"@sv .
 
@@ -3085,7 +3103,7 @@ slm:s810 a skos:Concept ;
 
 slm:s811 a skos:Concept ;
     skos:broader slm:s718 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kolmoiskonsertot"@fi,
         "trippelkonserter"@sv .
 
@@ -3110,7 +3128,7 @@ slm:s815 a skos:Concept ;
 
 slm:s818 a skos:Concept ;
     skos:broader slm:s421 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "salonkimusiikki"@fi,
         "salongsmusik"@sv .
 
@@ -3143,13 +3161,13 @@ slm:s827 a skos:Concept ;
 slm:s828 a skos:Concept ;
     skos:altLabel "hårdrock"@sv ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "hard rock"@fi,
         "hard rock"@sv .
 
 slm:s829 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "kisällilaulut"@fi,
         "gesällvisor"@sv .
 
@@ -3215,7 +3233,7 @@ slm:s84 a skos:Concept ;
 
 slm:s843 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "grunge"@fi,
         "grunge"@sv .
 
@@ -3239,7 +3257,7 @@ slm:s854 a skos:Concept ;
 
 slm:s856 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "rautalankamusiikki"@fi,
         "ståltrådsmusik"@sv .
 
@@ -3252,7 +3270,7 @@ slm:s857 a skos:Concept ;
 
 slm:s86 a skos:Concept ;
     skos:broader slm:s560 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "doom metal"@fi,
         "doom metal"@sv .
 
@@ -3289,13 +3307,13 @@ slm:s877 a skos:Concept ;
 
 slm:s88 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "surfmusiikki"@fi,
         "surfmusik"@sv .
 
 slm:s882 a skos:Concept ;
     skos:broader slm:s390 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "bysanttilainen kirkkomusiikki"@fi,
         "bysantisk kyrkomusik"@sv .
 
@@ -3313,7 +3331,7 @@ slm:s884 a skos:Concept ;
 
 slm:s885 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "progressiivinen rock"@fi,
         "progressiv rock"@sv .
 
@@ -3383,7 +3401,7 @@ slm:s90 a skos:Concept ;
 
 slm:s908 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "third stream -jazz"@fi,
         "third stream jazz"@sv .
 
@@ -3420,13 +3438,13 @@ slm:s920 a skos:Concept ;
 
 slm:s924 a skos:Concept ;
     skos:broader slm:s421 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "barbershop-musiikki"@fi,
         "barbershop"@sv .
 
 slm:s927 a skos:Concept ;
     skos:broader slm:s560 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "death metal"@fi,
         "death metal"@sv .
 
@@ -3439,7 +3457,7 @@ slm:s93 a skos:Concept ;
 
 slm:s931 a skos:Concept ;
     skos:broader slm:s1081 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "madrigaalit"@fi,
         "madrigaler"@sv .
 
@@ -3451,7 +3469,7 @@ slm:s932 a skos:Concept ;
 
 slm:s937 a skos:Concept ;
     skos:broader slm:s840 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "Chicago-blues"@fi,
         "Chicago-blues"@sv .
 
@@ -3495,7 +3513,7 @@ slm:s946 a skos:Concept ;
 
 slm:s949 a skos:Concept ;
     skos:broader slm:s207 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "pasodoblet"@fi,
         "pasodobler"@sv .
 
@@ -3503,19 +3521,19 @@ slm:s950 a skos:Concept ;
     skos:broader slm:s39 ;
     skos:definition "Tietyn alueen asioita käsitteleviä sanomalehtiä."@fi,
         "Dagstidningar som behandlar angelägenheter i ett särskilt område."@sv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s593 ;
     skos:prefLabel "aluelehdet"@fi,
         "regiontidningar"@sv .
 
 slm:s951 a skos:Concept ;
     skos:broader slm:s1033 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "ambrosiaaninen laulu"@fi,
         "ambrosiansk sång"@sv .
 
 slm:s954 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "free jazz"@fi,
         "free jazz"@sv .
 
@@ -3533,7 +3551,7 @@ slm:s956 a skos:Concept ;
 
 slm:s957 a skos:Concept ;
     skos:broader slm:s235 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "Chicago-jazz"@fi,
         "Chicagojazz"@sv .
 
@@ -3598,14 +3616,15 @@ slm:s973 a skos:Concept ;
 
 slm:s974 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "teknorock"@fi,
         "technorock"@sv .
 
 slm:s976 a skos:Concept ;
     skos:altLabel "djurserier (tecknade serier)"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "eläinsarjakuvat"@fi,
         "fabeldjursserier"@sv ;
     skos:scopeNote "Käytetään sarjakuvista, joiden päähenkilönä on useimmiten ihmisenkaltaisesti toimiva eläin tai eläinyhteisö."@fi,
@@ -3619,7 +3638,8 @@ slm:s979 a skos:Concept ;
 
 slm:s98 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "toimintasarjakuvat"@fi,
         "actionserier (tecknade serier)"@sv .
 
@@ -3639,7 +3659,7 @@ slm:s983 a skos:Concept ;
 
 slm:s987 a skos:Concept ;
     skos:broader slm:s977 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "cityblues"@fi,
         "city blues"@sv .
 
@@ -4495,14 +4515,15 @@ slm:s1050 a skos:Concept ;
 slm:s1059 a skos:Concept ;
     skos:altLabel "tecknade serier i färg"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "värisarjakuvat"@fi,
         "färgserier"@sv ;
     skos:related slm:s71 .
 
 slm:s106 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s133 ;
     skos:prefLabel "diskomusiikki"@fi,
         "diskomusik"@sv .
@@ -4605,7 +4626,7 @@ slm:s113 a skos:Concept ;
 
 slm:s1130 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s625 ;
     skos:prefLabel "folkmusiikki"@fi,
         "folkrock (akustisk)"@sv .
@@ -4666,7 +4687,7 @@ slm:s1171 a skos:Concept ;
 
 slm:s1174 a skos:Concept ;
     skos:broader slm:s260 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s33 ;
     skos:prefLabel "kansantanssit"@fi,
         "folkdanser"@sv .
@@ -4826,7 +4847,7 @@ slm:s205 a skos:Concept ;
 
 slm:s207 a skos:Concept ;
     skos:broader slm:s260 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s949 ;
     skos:prefLabel "latinalaistanssit"@fi,
         "latinamerikanska danser"@sv .
@@ -4843,7 +4864,7 @@ slm:s208 a skos:Concept ;
 slm:s214 a skos:Concept ;
     skos:broader slm:s1081 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2370> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "juomalaulut"@fi,
         "dryckesvisor"@sv .
 
@@ -4875,7 +4896,8 @@ slm:s220 a skos:Concept ;
 slm:s221 a skos:Concept ;
     skos:broader slm:s470 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19590> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s861 ;
     skos:prefLabel "laulunäytelmät"@fi,
         "sångspel (dramer)"@sv .
 
@@ -4890,7 +4912,8 @@ slm:s228 a skos:Concept ;
 
 slm:s24 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "valokuvasarjakuvat"@fi,
         "fotoserier"@sv ;
     skos:related slm:s847 .
@@ -5218,7 +5241,7 @@ slm:s400 a skos:Concept ;
 slm:s402 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19429> ;
     skos:inScheme slm:s285 ;
-    skos:note "Klassisen kauden teos tai kirjailija; pysyväarvoinen,  yleisesti tunnustettu; kirjallisuuden parhaimmistoon kuuluva, vakiintuneen aseman saavuttanut; ns. kuolematon teos tai kirjailija."@fi,
+    skos:note "Yleisesti tunnustettu, kirjallisuuden parhaimmistoon kuuluva, vakiintuneen aseman saavuttanut ns. kuolematon teos."@fi,
         "Allmänt erkänt verk som uppnått en etablerad ställning och som anses ha ett bestående värde och höra till litteraturens elit; ett s.k. odödligt verk."@sv ;
     skos:prefLabel "klassikot"@fi,
         "klassiker"@sv ;
@@ -5274,7 +5297,7 @@ slm:s437 a skos:Concept ;
     skos:altLabel "ballader"@sv ;
     skos:broader slm:s1081,
         yso-update:ongelmatfi ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "balladit (musiikki)"@fi,
         "ballader (musik)"@sv .
 
@@ -5387,7 +5410,7 @@ slm:s493 a skos:Concept ;
     skos:prefLabel "minisarjat"@fi,
         "miniserier"@sv ;
     skos:related slm:s236 ;
-    skos:scopeNote "Käytetään televisiosarjoista, joissa tarinan juoni ja kokonaisuus koostuvat rajallisesta määrästä jaksoja."@fi,
+    skos:scopeNote "Televisiosarja, joka koostuu ennalta päätetystä määrästä jaksoja (yleensä n. 3-6)."@fi,
         "Används om tv-serier med ett begränsat antal avsnitt."@sv .
 
 slm:s495 a skos:Concept ;
@@ -5453,7 +5476,7 @@ slm:s547 a skos:Concept ;
 slm:s553 a skos:Concept ;
     skos:broader slm:s1007,
         slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "salsa"@fi,
         "salsa"@sv .
 
@@ -5475,7 +5498,7 @@ slm:s570 a skos:Concept ;
     skos:broader slm:s1186,
         yso-update:ongelmatsv ;
     skos:editorialNote "Pitäisi päivittää YSAn mukaan?"@fi ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "uusi aalto"@fi,
         "new wave"@sv .
 
@@ -5558,7 +5581,7 @@ slm:s626 a skos:Concept ;
 
 slm:s629 a skos:Concept ;
     skos:broader slm:s260 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s25 ;
     skos:prefLabel "kontratanssit"@fi,
         "kontradanser"@sv .
@@ -5608,7 +5631,8 @@ slm:s660 a skos:Concept ;
 
 slm:s664 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "kokeelliset sarjakuvat"@fi,
         "experimentella serier"@sv ;
     skos:related slm:s736 .
@@ -5675,7 +5699,8 @@ slm:s70 a skos:Concept ;
 slm:s71 a skos:Concept ;
     skos:altLabel "svartvita tecknade serier"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "mustavalkoiset sarjakuvat"@fi,
         "svartvita serier"@sv ;
     skos:related slm:s1059 .
@@ -5773,7 +5798,8 @@ slm:s747 a skos:Concept ;
 
 slm:s753 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "poliittiset sarjakuvat"@fi,
         "politiska serier (tecknade serier)"@sv ;
     skos:related slm:s1027 .
@@ -5833,7 +5859,7 @@ slm:s778 a skos:Concept ;
 slm:s78 a skos:Concept ;
     skos:broader slm:s353,
         slm:s476 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "balettimusiikki"@fi,
         "balettmusik"@sv .
 
@@ -5872,7 +5898,8 @@ slm:s795 a skos:Concept ;
 
 slm:s799 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "supersankarisarjakuvat"@fi,
         "superhjälteserier (tecknade serier)"@sv ;
     skos:related slm:s302 ;
@@ -5919,7 +5946,8 @@ slm:s841 a skos:Concept ;
 
 slm:s845 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "seikkailusarjakuvat"@fi,
         "äventyrsserier (tecknade serier)"@sv ;
     skos:related slm:s905 .
@@ -5965,7 +5993,8 @@ slm:s851 a skos:Concept ;
 slm:s87 a skos:Concept ;
     skos:broader slm:s356,
         slm:s719 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "opetussarjakuvat"@fi,
         "undervisningsserier (tecknade serier)"@sv .
 
@@ -6072,7 +6101,7 @@ slm:s933 a skos:Concept ;
 slm:s940 a skos:Concept ;
     skos:broader slm:s1209,
         slm:s280 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "televisio-oopperat"@fi,
         "tv-operor"@sv .
 
@@ -6233,7 +6262,8 @@ slm:s1083 a skos:Concept ;
         "scifi"@fi,
         "scifi"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:narrower slm:s1032,
         slm:s984 ;
     skos:prefLabel "tieteissarjakuvat"@fi,
@@ -6373,7 +6403,8 @@ slm:s1170 a skos:Concept ;
 
 slm:s1179 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "nuortensarjakuvat"@fi,
         "tecknade serier för ungdomar"@sv ;
     skos:related slm:s523,
@@ -6490,7 +6521,7 @@ slm:s216 a skos:Concept ;
 
 slm:s241 a skos:Concept ;
     skos:broader slm:s662 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s203,
         slm:s468 ;
     skos:prefLabel "kansanmusiikki"@fi,
@@ -6545,7 +6576,7 @@ slm:s277 a skos:Concept ;
     skos:broader slm:s1007,
         slm:s1188,
         slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:prefLabel "soca"@fi,
         "soca"@sv .
 
@@ -6653,12 +6684,12 @@ slm:s368 a skos:Concept ;
         "Används om filmer vars centrala berättelsestruktur utgörs av en resa, ofta symboliskt framställd som en flykt från social bundenhet till ett fritt liv."@sv .
 
 slm:s37 a skos:Concept ;
-    skos:broader yso-update:ongelmatsv ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s1138,
         slm:s781 ;
-    skos:prefLabel "messut"@fi,
-        "mässor (musik)"@sv .
+    skos:prefLabel "messut (sävellykset)"@fi,
+        "mässor (kompositioner)"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s371 a skos:Concept ;
     skos:altLabel "räiskintäpelit"@fi ;
@@ -6672,7 +6703,7 @@ slm:s371 a skos:Concept ;
 slm:s372 a skos:Concept ;
     skos:broader slm:s1007,
         yso-update:ongelmatsv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1143 ;
     skos:prefLabel "son-musiikki"@fi,
         "son-musik"@sv .
@@ -6691,7 +6722,8 @@ slm:s380 a skos:Concept ;
     skos:altLabel "tjejserier (tecknade serier)"@sv ;
     skos:broader slm:s523,
         slm:s939 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "tyttösarjakuvat"@fi,
         "flickserier (tecknade serier)"@sv ;
     skos:related slm:s953 .
@@ -6717,7 +6749,7 @@ slm:s39 a skos:Concept ;
 slm:s390 a skos:Concept ;
     skos:broader slm:s334,
         slm:s616 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s882 ;
     skos:prefLabel "ortodoksinen kirkkomusiikki"@fi,
         "ortodox kyrkomusik"@sv .
@@ -6859,6 +6891,15 @@ slm:s506 a skos:Concept ;
         "reseberättelser"@sv ;
     skos:related slm:s521 ;
     skos:topConceptOf slm:s285 .
+
+slm:s508 a skos:Concept ;
+    skos:broader slm:s662,
+        slm:s947 ;
+    skos:editorialNote "Sellaista kuin mestizomusiikki ei näytä oikeastaan olevan, googlessa vain muso ja hklj, kyseessä mestitsien musiikki? eng. on kyllä mestizo music"@fi ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s152 ;
+    skos:prefLabel "mestizomusiikki"@fi,
+        "mestizomusik"@sv .
 
 slm:s512 a skos:Concept ;
     skos:altLabel "den nya romanen"@sv ;
@@ -7050,7 +7091,7 @@ slm:s634 a skos:Concept ;
 slm:s635 a skos:Concept ;
     skos:altLabel "mainstreamjazz"@sv ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s217,
         slm:s608 ;
     skos:prefLabel "mainstream"@fi,
@@ -7172,7 +7213,7 @@ slm:s719 a skos:Concept ;
 
 slm:s721 a skos:Concept ;
     skos:broader slm:s977 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s127,
         slm:s714 ;
     skos:prefLabel "country blues"@fi,
@@ -7290,7 +7331,7 @@ slm:s822 a skos:Concept ;
 
 slm:s840 a skos:Concept ;
     skos:broader slm:s977 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1157,
         slm:s937 ;
     skos:prefLabel "urban blues"@fi,
@@ -7302,11 +7343,11 @@ slm:s850 a skos:Concept ;
         "seriepublikationer"@sv,
         "serier (periodika)"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p20498> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s593 ;
     skos:prefLabel "sarjajulkaisut"@fi,
         "seriella publikationer"@sv ;
     skos:related slm:s417 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm:s593 .
 
 slm:s853 a skos:Concept ;
     skos:broader slm:s354 ;
@@ -7335,7 +7376,8 @@ slm:s869 a skos:Concept ;
 slm:s891 a skos:Concept ;
     skos:altLabel "barnserier (tecknade serier)"@sv ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "lastensarjakuvat"@fi,
         "tecknade serier för barn"@sv ;
     skos:related slm:s1179,
@@ -7374,7 +7416,8 @@ slm:s903 a skos:Concept ;
         "manhwaserier"@sv ;
     skos:broader slm:s356 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22675> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "manhwat"@fi,
         "manhwa"@sv ;
     skos:related slm:s374 ;
@@ -7500,7 +7543,8 @@ slm:s95 a skos:Concept ;
 slm:s953 a skos:Concept ;
     skos:broader slm:s523,
         slm:s939 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "poikasarjakuvat"@fi,
         "pojkserier (tecknade serier)"@sv ;
     skos:related slm:s380 .
@@ -7638,7 +7682,8 @@ slm:s1032 a skos:Concept ;
         slm:s1066,
         slm:s1083,
         slm:s418 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "avaruusoopperat"@fi,
         "rymdoperor"@sv .
 
@@ -7791,7 +7836,8 @@ slm:s129 a skos:Concept ;
 
 slm:s130 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "fantasiasarjakuvat"@fi,
         "fantasyserier (tecknade serier)"@sv ;
     skos:related slm:s1041,
@@ -7891,7 +7937,8 @@ slm:s290 a skos:Concept ;
 
 slm:s295 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "sunnuntaisarjakuvat"@fi,
         "söndagsserier"@sv ;
     skos:related slm:s47,
@@ -7962,7 +8009,8 @@ slm:s374 a skos:Concept ;
         "mangaserier"@sv ;
     skos:broader slm:s356 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13956> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "mangat"@fi,
         "manga"@sv ;
     skos:related slm:s367,
@@ -8086,16 +8134,6 @@ slm:s481 a skos:Concept ;
         slm:s919 ;
     skos:topConceptOf slm:s285 .
 
-slm:s508 a skos:Concept ;
-    skos:broader slm:s662,
-        slm:s947,
-        yso-update:ongelmatsv ;
-    skos:editorialNote "Sellaista kuin mestizomusiikki ei näytä oikeastaan olevan, googlessa vain muso ja hklj, kyseessä mestitsien musiikki? eng. on kyllä mestizo music"@fi ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s152 ;
-    skos:prefLabel "mestizomusiikki"@fi,
-        "mestizomusik"@sv .
-
 slm:s509 a skos:Concept ;
     skos:broader slm:s929 ;
     skos:inScheme slm:s285 ;
@@ -8108,7 +8146,7 @@ slm:s509 a skos:Concept ;
 
 slm:s532 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1000,
         slm:s21,
         slm:s473 ;
@@ -8150,7 +8188,7 @@ slm:s566 a skos:Concept ;
 
 slm:s616 a skos:Concept ;
     skos:broader slm:s1139 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1033,
         slm:s1156,
         slm:s390 ;
@@ -8170,7 +8208,8 @@ slm:s627 a skos:Concept ;
 
 slm:s637 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "aikakauslehtisarjakuvat"@fi,
         "veckopresserier"@sv ;
     skos:related slm:s295,
@@ -8204,7 +8243,8 @@ slm:s661 a skos:Concept ;
 
 slm:s67 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:note "Esim. elokuvan pohjalta tehty sarjakuva."@fi ;
     skos:prefLabel "sarjakuvasovitukset"@fi,
         "bearbetningar till tecknade serier"@sv ;
@@ -8264,7 +8304,8 @@ slm:s718 a skos:Concept ;
 slm:s731 a skos:Concept ;
     skos:broader slm:s356 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25055> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "kauhusarjakuvat"@fi,
         "skräckserier (tecknade serier)"@sv ;
     skos:related slm:s274,
@@ -8442,7 +8483,8 @@ slm:s9 a skos:Concept ;
 
 slm:s902 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "sanomalehtisarjakuvat"@fi,
         "dagspresserier"@sv ;
     skos:related slm:s295,
@@ -8512,7 +8554,7 @@ slm:s961 a skos:Concept ;
 
 slm:s977 a skos:Concept ;
     skos:broader slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s721,
         slm:s840,
         slm:s987 ;
@@ -8547,7 +8589,8 @@ slm:s1026 a skos:Concept ;
 
 slm:s1027 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "yhteiskunnalliset sarjakuvat"@fi,
         "samhällsserier (tecknade serier)"@sv ;
     skos:related slm:s675,
@@ -8560,7 +8603,7 @@ slm:s1027 a skos:Concept ;
 slm:s1033 a skos:Concept ;
     skos:broader slm:s334,
         slm:s616 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1034,
         slm:s1067,
         slm:s951 ;
@@ -8665,6 +8708,19 @@ slm:s158 a skos:Concept ;
         slm:s612,
         slm:s748 .
 
+slm:s162 a skos:Concept ;
+    skos:altLabel "tjejböcker"@sv ;
+    skos:broader slm:s1181,
+        slm:s168 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p12592> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s28 ;
+    skos:prefLabel "tyttökirjat"@fi,
+        "flickböcker"@sv ;
+    skos:related slm:s364 ;
+    skos:scopeNote "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi,
+        "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
+
 slm:s193 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4999> ;
     skos:inScheme slm:s285 ;
@@ -8688,7 +8744,7 @@ slm:s215 a skos:Concept ;
 
 slm:s235 a skos:Concept ;
     skos:broader slm:s641 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s195,
         slm:s31,
         slm:s724,
@@ -8786,7 +8842,8 @@ slm:s47 a skos:Concept ;
     skos:altLabel "strippserier"@sv ;
     skos:broader slm:s356 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22813> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:note "Lyhyt sarjakuva, jonka pituus on yleensä 2-4 ruutua."@fi,
         "Kort tecknad serie, vars längd vanligtvis är 2-4 rutor."@sv ;
     skos:prefLabel "strippisarjakuvat"@fi,
@@ -8798,7 +8855,8 @@ slm:s47 a skos:Concept ;
 slm:s470 a skos:Concept ;
     skos:broader slm:s929 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p6422> ;
-    skos:inScheme slm:s861 ;
+    skos:inScheme slm:s285,
+        slm:s861 ;
     skos:narrower slm:s221 ;
     skos:prefLabel "musiikkinäytelmät"@fi,
         "musikdramer"@sv ;
@@ -8861,7 +8919,8 @@ slm:s519 a skos:Concept ;
 
 slm:s523 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:narrower slm:s380,
         slm:s953 ;
     skos:prefLabel "nuorisosarjakuvat"@fi,
@@ -8885,7 +8944,7 @@ slm:s555 a skos:Concept ;
 
 slm:s560 a skos:Concept ;
     skos:broader slm:s1186 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1176,
         slm:s756,
         slm:s86,
@@ -8973,7 +9032,8 @@ slm:s670 a skos:Concept ;
 slm:s680 a skos:Concept ;
     skos:broader slm:s1175,
         slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "splatter"@fi,
         "splatter"@sv ;
     skos:related slm:s1092,
@@ -9114,7 +9174,8 @@ slm:s918 a skos:Concept ;
 
 slm:s939 a skos:Concept ;
     skos:broader slm:s356 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:narrower slm:s380,
         slm:s953 ;
     skos:prefLabel "lapsisarjakuvat"@fi,
@@ -9171,7 +9232,8 @@ slm:s984 a skos:Concept ;
         slm:s1083,
         slm:s418 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15528> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:note "1980-luvulla syntynyt fiktion alalaji, jossa ovat keskeisessä osassa tietoverkot, väestöräjähdys, yhteiskunnan pirstoutuminen, ekologiset kriisit ja ihmisen toiminta kyberavaruudessa."@fi,
         "Genre inom fiktion som uppstod på 1980-talet och inom vilken datanät, befolkningsexplosion, samhällssplittring, ekologiska kriser och människans verksamhet i cyberrymden är centrala."@sv ;
     skos:prefLabel "kyberpunk"@fi,
@@ -9325,20 +9387,6 @@ slm:s155 a skos:Concept ;
         slm:s286 ;
     skos:topConceptOf slm:s285 .
 
-slm:s162 a skos:Concept ;
-    skos:altLabel "tjejböcker"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p12592> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s28 ;
-    skos:prefLabel "tyttökirjat"@fi,
-        "flickböcker"@sv ;
-    skos:related slm:s1181,
-        slm:s168,
-        slm:s364 ;
-    skos:scopeNote "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi,
-        "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv ;
-    skos:topConceptOf slm:s285 .
-
 slm:s181 a skos:Concept ;
     skos:altLabel "yksinpuhelut"@fi ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p14559> ;
@@ -9357,7 +9405,8 @@ slm:s185 a skos:Concept ;
     skos:broader slm:s27,
         slm:s356 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26599> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
     skos:prefLabel "novellisarjakuvat"@fi,
         "grafiska noveller"@sv ;
     skos:related slm:s631,
@@ -9808,7 +9857,7 @@ slm:s930 a skos:Concept ;
 
 slm:s1007 a skos:Concept ;
     skos:broader slm:s947 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s277,
         slm:s372,
         slm:s469,
@@ -10036,13 +10085,13 @@ slm:s168 a skos:Concept ;
         "ungdomsromaner"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5398> ;
     skos:inScheme slm:s285 ;
-    skos:narrower slm:s364,
+    skos:narrower slm:s162,
+        slm:s364,
         slm:s767 ;
     skos:prefLabel "nuortenkirjallisuus"@fi,
         "ungdomslitteratur"@sv ;
     skos:related slm:s1166,
         slm:s1181,
-        slm:s162,
         slm:s43,
         slm:s825,
         slm:s975 ;
@@ -10120,7 +10169,7 @@ slm:s479 a skos:Concept ;
 
 slm:s641 a skos:Concept ;
     skos:broader slm:s499 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s235,
         slm:s410,
         slm:s449,
@@ -10510,15 +10559,16 @@ slm:s909 a skos:Concept ;
     skos:altLabel "adaptaatiot"@fi,
         "versiot"@fi,
         "adaptationer"@sv,
-        "bearbetningar"@sv ;
+        "arrangemang (musik)"@sv ;
     skos:broader yso-update:ongelmatfi,
         yso-update:ongelmatsv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2760> ;
-    skos:editorialNote "YSA/Allärsissa sekä kirjallisuus- että musiikkiryhmässä, minkä takia genresanastossa rajattu musiikkiin (ja sen mukaan myös eri termi ruotsiksi)? Myös KS:ssa laajempi merkitys kuin pelkkä musiikki.."@fi ;
+    skos:editorialNote "Ruotsiksi laitettu 14.5.18: bearbetningar, eli myös muu kuin musiikki! (tarvitaan myös muuhun)"@fi,
+        "YSA/Allärsissa sekä kirjallisuus- että musiikkiryhmässä, minkä takia genresanastossa rajattu musiikkiin (ja sen mukaan myös eri termi ruotsiksi)? Myös KS:ssa laajempi merkitys kuin pelkkä musiikki.."@fi ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s668 ;
     skos:prefLabel "sovitukset"@fi,
-        "arrangemang (musik)"@sv ;
+        "bearbetningar"@sv ;
     skos:related slm:s1058,
         slm:s1118,
         slm:s154,
@@ -10574,7 +10624,7 @@ slm:s669 a skos:Concept ;
 
 slm:s1186 a skos:Concept ;
     skos:broader slm:s436 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm:s861 ;
     skos:narrower slm:s1145,
         slm:s1183,
         slm:s169,
@@ -10643,26 +10693,6 @@ slm:s612 a skos:Concept ;
         slm:s328,
         slm:s397,
         slm:s607 .
-
-yso-update:ongelmatfi a ysometa:StructuringClass ;
-    skos:narrower slm:s1166,
-        slm:s1201,
-        slm:s124,
-        slm:s141,
-        slm:s154,
-        slm:s322,
-        slm:s363,
-        slm:s375,
-        slm:s437,
-        slm:s577,
-        slm:s598,
-        slm:s661,
-        slm:s669,
-        slm:s723,
-        slm:s904,
-        slm:s909 ;
-    skos:prefLabel "ongelmatfig"@fi,
-        "ongelmatfig"@sv .
 
 slm:s1131 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -10796,6 +10826,49 @@ slm:s1081 a skos:Concept ;
         "sånger"@sv ;
     skos:topConceptOf slm:s861 .
 
+yso-update:ongelmatfi a ysometa:StructuringClass ;
+    skos:narrower slm:s1166,
+        slm:s1201,
+        slm:s124,
+        slm:s141,
+        slm:s154,
+        slm:s322,
+        slm:s363,
+        slm:s375,
+        slm:s437,
+        slm:s577,
+        slm:s598,
+        slm:s661,
+        slm:s669,
+        slm:s723,
+        slm:s904,
+        slm:s909 ;
+    skos:prefLabel "ongelmatfig"@fi,
+        "ongelmatfig"@sv .
+
+yso-update:ongelmatsv a ysometa:StructuringClass ;
+    skos:narrower slm:s1063,
+        slm:s1155,
+        slm:s1166,
+        slm:s1191,
+        slm:s141,
+        slm:s189,
+        slm:s284,
+        slm:s372,
+        slm:s486,
+        slm:s494,
+        slm:s497,
+        slm:s524,
+        slm:s562,
+        slm:s570,
+        slm:s774,
+        slm:s813,
+        slm:s826,
+        slm:s909,
+        slm:s921 ;
+    skos:prefLabel "ongelmatsvg"@fi,
+        "ongelmatsvg"@sv .
+
 slm:s202 a skos:Concept ;
     skos:altLabel "handledningar"@sv ;
     skos:inScheme slm:s285 ;
@@ -10848,32 +10921,6 @@ slm:s919 a skos:Concept ;
         slm:s481,
         slm:s619 ;
     skos:topConceptOf slm:s285 .
-
-yso-update:ongelmatsv a ysometa:StructuringClass ;
-    skos:narrower slm:s1062,
-        slm:s1063,
-        slm:s1155,
-        slm:s1166,
-        slm:s1191,
-        slm:s141,
-        slm:s189,
-        slm:s284,
-        slm:s37,
-        slm:s372,
-        slm:s486,
-        slm:s494,
-        slm:s497,
-        slm:s508,
-        slm:s524,
-        slm:s562,
-        slm:s570,
-        slm:s774,
-        slm:s813,
-        slm:s826,
-        slm:s909,
-        slm:s921 ;
-    skos:prefLabel "ongelmatsvg"@fi,
-        "ongelmatsvg"@sv .
 
 slm:s607 a skos:Concept ;
     skos:altLabel "trillerit"@fi,
@@ -11093,7 +11140,8 @@ slm:s929 a skos:Concept ;
 slm:s1181 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4742> ;
     skos:inScheme slm:s285 ;
-    skos:narrower slm:s364,
+    skos:narrower slm:s162,
+        slm:s364,
         slm:s767,
         slm:s910,
         slm:s981,
@@ -11104,7 +11152,6 @@ slm:s1181 a skos:Concept ;
         slm:s1075,
         slm:s1090,
         slm:s1165,
-        slm:s162,
         slm:s168,
         slm:s228,
         slm:s273,
@@ -11469,8 +11516,9 @@ slm:s593 a skos:ConceptScheme ;
         slm:s575,
         slm:s595,
         slm:s599,
-        slm:s7 ;
-    skos:prefLabel "Jatkuvien julkaisujen genretermit"@fi,
+        slm:s7,
+        slm:s850 ;
+    skos:prefLabel "Jatkuvien julkaisujen lajityyppi- ja muototermit"@fi,
         "Genretermer för fortlöpande publikationer"@sv .
 
 slm:s861 a skos:ConceptScheme ;
@@ -11485,6 +11533,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s1040,
         slm:s1047,
         slm:s1049,
+        slm:s1062,
         slm:s107,
         slm:s1077,
         slm:s1081,
@@ -11553,6 +11602,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s361,
         slm:s362,
         slm:s369,
+        slm:s37,
         slm:s370,
         slm:s373,
         slm:s378,
@@ -11672,11 +11722,11 @@ slm:s861 a skos:ConceptScheme ;
         slm:s969,
         slm:s972,
         slm:s973 ;
-    skos:prefLabel "Musiikin genretermit"@fi,
+    skos:prefLabel "Musiikin lajityyppi- ja muototermit"@fi,
         "Genretermer för musik"@sv .
 
 slm:s285 a skos:ConceptScheme ;
-    dct:modified "2018-05-14T03:47:36+00:00"^^xsd:dateTime ;
+    dct:modified "2018-05-15T03:27:25+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1006,
         slm:s1011,
         slm:s1016,
@@ -11719,7 +11769,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s153,
         slm:s155,
         slm:s16,
-        slm:s162,
         slm:s168,
         slm:s172,
         slm:s181,
@@ -11815,7 +11864,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s833,
         slm:s834,
         slm:s841,
-        slm:s850,
         slm:s851,
         slm:s854,
         slm:s855,
@@ -11848,6 +11896,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s985,
         slm:s992,
         slm:s998 ;
-    skos:prefLabel "Monografioiden genretermit"@fi,
+    skos:prefLabel "Monografioiden lajityyppi- ja muototermit"@fi,
         "Genretermer för monografier"@sv .
 
