@@ -1,3 +1,48 @@
+<!-- Cookie Consent -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
+<script>
+{% if request.lang == 'fi' %}
+cookieMessage = "Finto.fi-sivusto käyttää evästeitä käyttäjän kieliasetusten muistamiseen sekä käytön tilastointiin. Käyttämällä Finto.fi-sivustoa hyväksyt evästeiden käytön.";
+cookieDismiss = "Selvä!";
+cookieLink = "Lue lisää";
+cookieHref = "https://www.kiwi.fi/x/2zOOBQ";
+{% elseif request.lang == 'sv' %}
+cookieMessage = "Finto.fi-sidan använder cookies för att komma ihåg användares språkinställningar och för användningsstatistik. Genom att använda Finto.fi-sidan godkänner du användningen av cookies.";
+cookieDismiss = "Klart!";
+cookieLink = "Läs mer";
+cookieHref = "https://www.kiwi.fi/x/3jOOBQ";
+{% elseif request.lang == 'en' %}
+cookieMessage = "Finto.fi uses cookies to store language preferences and compile usage statistics. By using finto.fi you accept the use of cookies.";
+cookieDismiss = "Got it!";
+cookieLink = "Learn more";
+cookieHref = "https://www.kiwi.fi/x/4DOOBQ";
+{% endif %}
+
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#d4edeb",
+      "text": "#333333"
+    },
+    "button": {
+      "background": "#394554",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless",
+  "content": {
+    "message": cookieMessage,
+    "dismiss": cookieDismiss,
+    "link": cookieLink,
+    "href": cookieHref
+  }
+})});
+</script>
+<!-- End Cookie consent -->
+
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
