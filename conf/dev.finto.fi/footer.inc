@@ -32,7 +32,6 @@ window.cookieconsent.initialise({
       "text": "#ffffff"
     }
   },
-  "showLink": false,
   "theme": "edgeless",
   "content": {
     "message": cookieMessage,
