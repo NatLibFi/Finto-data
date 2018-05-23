@@ -1,3 +1,40 @@
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
+<script>
+
+{% if request.lang == 'fi' %}
+cookieMessage = "Finto.fi-sivusto käyttää evästeitä käyttäjän kieliasetusten muistamiseen sekä käytön tilastointiin. Käyttämällä Finto.fi-sivustoa hyväksyt evästeiden käytön.";
+cookieDismiss = "Selvä!";
+{% elseif request.lang == 'sv' %}
+cookieMessage = "Finto.fi-sidan använder cookies för att komma ihåg användares språkinställningar och för användningsstatistik. Genom att använda Finto.fi-sidan godkänner du användningen av cookies.";
+cookieDismiss = "Klart!";
+{% elseif request.lang == 'en' %}
+cookieMessage = "Finto.fi uses cookies to store language preferences and compile usage statistics. By using finto.fi you accept the use of cookies.";
+cookieDismiss = "Got it!";
+{% endif %}
+
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#eaf7f7",
+      "text": "#5c7291"
+    },
+    "button": {
+      "background": "#56cbdb",
+      "text": "#ffffff"
+    }
+  },
+  "showLink": false,
+  "theme": "edgeless",
+  "content": {
+    "message": cookieMessage,
+    "dismiss": cookieDismiss
+  }
+})});
+</script>
+
 <script type="text/javascript">
 function createConceptObject(conceptUri, conceptData) {
   var newNode = { 
