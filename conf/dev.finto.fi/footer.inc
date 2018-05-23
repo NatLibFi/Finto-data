@@ -6,12 +6,15 @@
 {% if request.lang == 'fi' %}
 cookieMessage = "Finto.fi-sivusto käyttää evästeitä käyttäjän kieliasetusten muistamiseen sekä käytön tilastointiin. Käyttämällä Finto.fi-sivustoa hyväksyt evästeiden käytön.";
 cookieDismiss = "Selvä!";
+cookieHref = "https://www.kiwi.fi/x/2zOOBQ";
 {% elseif request.lang == 'sv' %}
 cookieMessage = "Finto.fi-sidan använder cookies för att komma ihåg användares språkinställningar och för användningsstatistik. Genom att använda Finto.fi-sidan godkänner du användningen av cookies.";
 cookieDismiss = "Klart!";
+cookieHref = "https://www.kiwi.fi/x/3jOOBQ";
 {% elseif request.lang == 'en' %}
 cookieMessage = "Finto.fi uses cookies to store language preferences and compile usage statistics. By using finto.fi you accept the use of cookies.";
 cookieDismiss = "Got it!";
+cookieHref = "https://www.kiwi.fi/x/4DOOBQ";
 {% endif %}
 
 window.addEventListener("load", function(){
@@ -30,7 +33,8 @@ window.cookieconsent.initialise({
   "theme": "edgeless",
   "content": {
     "message": cookieMessage,
-    "dismiss": cookieDismiss
+    "dismiss": cookieDismiss,
+    "href": cookieHref
   }
 })});
 </script>
