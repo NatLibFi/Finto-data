@@ -37,6 +37,7 @@ window.cookieconsent.initialise({
   "content": {
     "message": cookieMessage,
     "dismiss": cookieDismiss,
+    "link": cookieLink,
     "href": cookieHref
   }
 })});
