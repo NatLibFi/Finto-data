@@ -18,11 +18,11 @@ window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
-      "background": "#eaf7f7",
-      "text": "#5c7291"
+      "background": "d4edeb",
+      "text": "#333333"
     },
     "button": {
-      "background": "#56cbdb",
+      "background": "#394554",
       "text": "#ffffff"
     }
   },
