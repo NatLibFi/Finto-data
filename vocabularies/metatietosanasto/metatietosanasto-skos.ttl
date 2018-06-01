@@ -774,8 +774,6 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 
 <http://rdaregistry.info/termList/CollTitle/1001> skos:exactMatch mts:m2108 .
 
-<http://rdaregistry.info/termList/CollTitle/1002> skos:exactMatch mts:m2120 .
-
 <http://rdaregistry.info/termList/CollTitle/1003> skos:exactMatch mts:m2117 .
 
 <http://rdaregistry.info/termList/CollTitle/1004> skos:exactMatch mts:m2110 .
@@ -4565,7 +4563,8 @@ mts:m1374 a isothes:ConceptGroup,
         mts:m2114,
         mts:m2117,
         mts:m2120,
-        mts:m2122 ;
+        mts:m2122,
+        mts:m2209 ;
     skos:prefLabel "Vakiintunut kokoava nimeke"@fi,
         "Grupptitel"@sv ;
     skos:scopeNote "Nimeke, jota käytetään ensisijaisena nimekkeenä kokoelmasta, joka sisältää kahden tai useamman teoksen tai kahden tai useamman osan teoksesta (esim. Teokset, Runot, Valikoima)."@fi .
@@ -6346,7 +6345,8 @@ mts:m1628 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10223 ;
-    skos:member mts:m1800 ;
+    skos:member mts:m1374,
+        mts:m1800 ;
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
         "Verkets primära titel"@sv ;
     skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
@@ -7820,7 +7820,6 @@ mts:m1803 a isothes:ConceptGroup,
         mts:m1213,
         mts:m1231,
         mts:m1319,
-        mts:m1374,
         mts:m1409,
         mts:m1426,
         mts:m1475,
@@ -10652,6 +10651,15 @@ mts:m221 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Alanimeke esiössä:"@fi,
         "Undertitel på förtextsidan:"@sv .
+
+mts:m2210 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Runeberg Junior -palkinto"@fi,
+        "Runeberg Junior-priset"@sv ;
+    skos:scopeNote "Myönnetään suomen- tai ruotsinkieliselle lastenkirjalle, jonka kohderyhmänä ovat 6-9-vuotiaat lapset. Palkinto myönnettiin ensimmäisen kerran 5.2.2017"@fi,
+        "Priset tilldelas en finsk- eller svensk barnbok som riktas till åldergruppen 6-9 år. Det utdelades första gången på 5.2.2017."@sv .
 
 mts:m222 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13640,6 +13648,7 @@ mts:m580 a isothes:ConceptGroup,
         mts:m1616,
         mts:m1621,
         mts:m1633,
+        mts:m2210,
         mts:m274,
         mts:m380,
         mts:m483,
@@ -16919,6 +16928,9 @@ mts:m999 a isothes:ConceptGroup,
 
 rdac:C10005 skos:exactMatch mts:m627 .
 
+<http://rdaregistry.info/termList/CollTitle/1002> skos:exactMatch mts:m2120,
+        mts:m2209 .
+
 <http://rdaregistry.info/termList/RDACarrierType/1006> skos:exactMatch mts:m650 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1012> skos:exactMatch mts:m1361,
@@ -18208,6 +18220,17 @@ mts:m2174 a skos:Collection ;
         "RDA-termi"@fi ;
     skos:prefLabel "kustantaja tuntematon"@fi,
         "utgivare okänd"@sv .
+
+mts:m2209 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Kahta tai usempaa kohteeseen sisältyvää teosta tai teoksen osaa identifioidessa merkitään auktorisoitu hakutieo tai  vakiintunut kokoava nimeke, jota seuraa sana Valikoima. Valikoima voidaan merkitä myös kahta tai useampaa numeroimatonta tai muuta kuin peräkkäistä osaa identifioitaessa osien ensisijaiseksi nimekkeeksi"@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/CollTitle/1002> ;
+    skos:example "Homeros. Ilias. Valikoima."@fi,
+        "Sullivan, Arthur, 1842-1900. Oopperat. Valikoima. Libretot."@fi,
+        "The Simpsons (televisio-ohjelma). Valikoima."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "valikoima"@fi .
 
 mts:m223 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19690,5 +19713,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-05-31T03:05:22+00:00"^^xsd:dateTime .
+    dct:modified "2018-06-01T02:48:11+00:00"^^xsd:dateTime .
 
