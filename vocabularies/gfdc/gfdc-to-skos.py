@@ -106,6 +106,8 @@ def add_metadata(field, values):
     for lang3, lang2 in LANGMAP.items():
         if values[lang3] != '':
             for val in values[lang3].splitlines():
+                if val == '':
+                    continue
                 g.add((GFDC[''], fielduri, Literal(val, lang2)))
 
 with open(classes_file, 'rb') as cf:
