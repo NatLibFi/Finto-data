@@ -2844,11 +2844,12 @@ slm:s417  a                          owl:DeprecatedClass , owl:Class ;
         skos:prefLabel               "bokserier"@sv , "kirjasarjat"@fi ;
         yso-meta:developmentComment  "haudattu"@fi .
 
-slm:s102  a             owl:Class , skos:Concept ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
-        skos:related    slm:s1075 ;
-        skos:scopeNote  "Används om böcker med uppgifter."@sv , "Käytetään teoksista, joissa on tehtäviä."@fi .
+slm:s102  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:ongelmatfi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
+        skos:related     slm:s1075 ;
+        skos:scopeNote   "Används om böcker med uppgifter."@sv , "Käytetään teoksista, joissa on tehtäviä."@fi .
 
 slm:s885  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
@@ -5089,6 +5090,7 @@ slm:s704  a              owl:Class , skos:Concept ;
 
 slm:s746  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s245 , slm:s409 ;
+        skos:altLabel    "nuottivirsikirjat"@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "koralpsalmböcker"@sv , "koraalivirsikirjat"@fi .
 
