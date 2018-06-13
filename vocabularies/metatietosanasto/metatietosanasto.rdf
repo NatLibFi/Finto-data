@@ -338,6 +338,34 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:aikuiskoulutus">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">ONIX-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">aikuiskoulutus</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ammatillinenKoulutus">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">ONIX-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">ammatillinen koulutus</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:korkeakoulu">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">ONIX-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">korkeakoulu</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lukio">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">ONIX-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">lukio</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -507,6 +535,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:altLabel xml:lang="fi">Laitteistovaatimukset</skos:altLabel>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1327"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m168"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2213"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m331"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m361"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m482"/>
@@ -11959,8 +11988,13 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Opiskelutaso</rdfs:label>
     <rdfs:label xml:lang="sv">Utbildningsnivå</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aikuiskoulutus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ammatillinenKoulutus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:korkeakoulu"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lukio"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1564"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m335"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:peruskoulu"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2195">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -19921,5 +19955,12 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:peruskoulu">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">ONIX-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">peruskoulu</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
