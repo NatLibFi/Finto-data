@@ -140,23 +140,18 @@ mts:m138 a isothes:ConceptGroup,
         mts:m1296,
         mts:m1432,
         mts:m148,
-        mts:m1685,
         mts:m169,
         mts:m180,
         mts:m1803,
         mts:m182,
         mts:m191,
-        mts:m2044,
         mts:m2126,
         mts:m2131,
         mts:m2133,
         mts:m2142,
-        mts:m2162,
-        mts:m2171,
         mts:m245,
         mts:m291,
         mts:m315,
-        mts:m333,
         mts:m364,
         mts:m4,
         mts:m404,
@@ -169,7 +164,6 @@ mts:m138 a isothes:ConceptGroup,
         mts:m52,
         mts:m537,
         mts:m558,
-        mts:m571,
         mts:m573,
         mts:m58,
         mts:m600,
@@ -10776,6 +10770,12 @@ mts:m2218 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "korkeakoulu"@fi .
 
+mts:m2219 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Tekijätiedot vyötteestä."@fi .
+
 mts:m222 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10783,6 +10783,58 @@ mts:m222 a skos:Concept ;
     skos:prefLabel "soolot"@fi,
         "solonummer"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
+
+mts:m2220 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30057 ;
+    skos:member mts:m2219,
+        mts:m2223 ;
+    skos:prefLabel "Huomautus vastuullisuudesta"@fi .
+
+mts:m2221 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kuvailun perustana versio 21.10.1999."@fi .
+
+mts:m2222 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30050 ;
+    skos:member mts:m2221,
+        mts:m2225 ;
+    skos:prefLabel "Huomautus manifestaation kuvailun perustana käytetystä numerosta, osasta tai versiosta"@fi .
+
+mts:m2223 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Vastuullisuustieto kustantajan kotisivulta."@fi .
+
+mts:m2224 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30137 ;
+    skos:member mts:m1685,
+        mts:m2044,
+        mts:m2162,
+        mts:m2171,
+        mts:m2220,
+        mts:m2222,
+        mts:m2224,
+        mts:m333,
+        mts:m571 ;
+    skos:prefLabel "Huomautus manifestaatiosta"@fi .
+
+mts:m2225 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kuvailun perustana painetun aineiston tietue."@fi .
 
 mts:m224 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -19843,5 +19895,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-06-14T02:57:25+00:00"^^xsd:dateTime .
+    dct:modified "2018-06-15T03:21:12+00:00"^^xsd:dateTime .
 
