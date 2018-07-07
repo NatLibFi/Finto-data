@@ -2553,10 +2553,10 @@ slm:s500 a skos:Concept ;
     skos:topConceptOf slm:s861 .
 
 slm:s502 a skos:Concept ;
+    skos:broader slm:s713 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "joiut"@fi,
-        "jojkar"@sv ;
-    skos:topConceptOf slm:s861 .
+        "jojkar"@sv .
 
 slm:s505 a skos:Concept ;
     skos:inScheme slm:s285 ;
@@ -5724,14 +5724,6 @@ slm:s712 a skos:Concept ;
     skos:prefLabel "giallo-elokuvat"@fi,
         "giallo-filmer"@sv .
 
-slm:s713 a skos:Concept ;
-    skos:altLabel "folksånger"@sv ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s430 ;
-    skos:prefLabel "kansanlaulut"@fi,
-        "folkvisor"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s716 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:inScheme slm:s285 ;
@@ -7030,6 +7022,15 @@ slm:s697 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, joiden teksti on tavutettu."@fi,
         "Används om verk med text i avstavad form."@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s713 a skos:Concept ;
+    skos:altLabel "folksånger"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s430,
+        slm:s502 ;
+    skos:prefLabel "kansanlaulut"@fi,
+        "folkvisor"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s719 a skos:Concept ;
     skos:inScheme slm:s285 ;
@@ -10508,7 +10509,6 @@ slm:s861 a skos:ConceptScheme ;
         slm:s491,
         slm:s499,
         slm:s500,
-        slm:s502,
         slm:s507,
         slm:s510,
         slm:s516,
@@ -10602,7 +10602,7 @@ slm:s861 a skos:ConceptScheme ;
         "Genretermer för musik"@sv .
 
 slm:s285 a skos:ConceptScheme ;
-    dct:modified "2018-07-06T02:17:44+00:00"^^xsd:dateTime ;
+    dct:modified "2018-07-07T03:18:24+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1006,
         slm:s1011,
         slm:s1016,
