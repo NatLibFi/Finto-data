@@ -338,6 +338,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jousiyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">jousiyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kosketinsoitinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">kosketinsoitinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyomasoitinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">lyömäsoitinyhtye</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -1270,6 +1288,7 @@ rättsinstans</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Yleensä alle kymmenen muusikon esittäjäryhmä.</skos:definition>
     <skos:example xml:lang="sv">Beatles (ensemble)</skos:example>
     <skos:example xml:lang="fi">Beatles (yhtye)</skos:example>
     <skos:prefLabel xml:lang="sv">ensemble</skos:prefLabel>
@@ -9689,6 +9708,9 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Typ av institution</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteisön tyyppi</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50237"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:jousiyhtye"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kosketinsoitinyhtye"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lyomasoitinyhtye"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1063"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1100"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m113"/>
@@ -9721,8 +9743,10 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2080"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2081"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2083"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2085"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2087"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2090"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m237"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m24"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m244"/>
@@ -9762,6 +9786,11 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m898"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m941"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m942"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nappailysoitinyhtye"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puhallinorkesteri"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puhallinyhtye"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puupuhallinyhtye"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:vaskipuhallinyhtye"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1960">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -9921,6 +9950,15 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">ljudkonstnär (uttryck)</rdfs:label>
     <rdfs:label xml:lang="fi">äänitaiteilija (ekspressio)</rdfs:label>
     <skos:definition xml:lang="fi">Henkilö tai yhteisö, joka osallistuu (ekspression tekemiseen, tekemällä taidetta äänestä, käyttäen ääntä sekä sen mediumina että aiheena</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m197_1">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="sv">Brahe Djäknar (kör)</skos:example>
+    <skos:example xml:lang="fi">Campanella (kuoro)</skos:example>
+    <skos:prefLabel xml:lang="fi">kuoro</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">kör</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m198">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -10837,7 +10875,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">Tähän määritelmä.</skos:definition>
+    <skos:definition xml:lang="fi">Kamariorkesterina pidetään esityskokoonpanoa, jossa on edustajia vähintään kahdesta soitinperheestä ja jossa on korkeintaan noin 25 soittajaa. Tätä suuremmista kokoonpanoista käytetään termejä orkesteri, sinfoniaorkesteri ja puhallinorkesteri. Jos kokoonpanossa on vain jousisoittimia (lisäksi voi olla joitakin lyömäsoittimia), käytetään termiä jousiorkesteri.</skos:definition>
     <skos:prefLabel xml:lang="fi">kamariorkesteri</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kammarorkester</skos:prefLabel>
   </owl:Class>
@@ -10906,12 +10944,23 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousitrio</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">stråktrio</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2085_1">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Ensemble bestående av violin, viola och violoncell.</skos:definition>
+    <skos:definition xml:lang="fi">Esityskokoonpano: viulu, alttoviulu, sello.</skos:definition>
+    <skos:prefLabel xml:lang="fi">jousitrio</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">stråktrio</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2086">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Länsimaisen taidemusiikin esittämiseen alun perin tarkoitettu yli yhdeksän hengen esityskokoonpano, jonka soittimisto koostuu jousisoittimista (voi sisältää continuon ja muutamia lyömäsoittimia). 1900-luvulta alkaen kokoonpanoa on käytetty runsaasti myös populaarimusiikissa.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousiorkesteri</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">stråkorkester</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Jos orkesterissa on mukana myös muihin soitinryhmiin kuuluvia soittimia, mutta kyseessä ei ole täysimittainen sinfoniaorkesteri, käytetään termiä kamariorkesteri.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2087">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -10927,6 +10976,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">sånggrupp</skos:altLabel>
+    <skos:definition xml:lang="fi">2-9 laulajan muodostaman esityskokoonpano. Suuremmasta kokoonpanosta käytetään termiä kuoro.</skos:definition>
     <skos:prefLabel xml:lang="fi">lauluyhtye</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">sångensemble</skos:prefLabel>
   </owl:Class>
@@ -10935,6 +10985,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m197"/>
+    <skos:definition xml:lang="fi">Esityskokoonpano, jossa on vain naisäänisiä laulajia (sopraanoja, mezzosopraanoja ja alttoja).</skos:definition>
     <skos:prefLabel xml:lang="sv">damkör</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">naiskuoro</skos:prefLabel>
   </owl:Class>
@@ -10961,6 +11012,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m197"/>
+    <skos:definition xml:lang="fi">Kuoro, joka koostuu nuorista, mutta ei enää lapsi-ikäisistä laulajista.</skos:definition>
     <skos:prefLabel xml:lang="fi">nuorisokuoro</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">ungdomskör</skos:prefLabel>
   </owl:Class>
@@ -10969,6 +11021,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m197"/>
+    <skos:definition xml:lang="fi">Kuoro, jossa on vain miesäänisiä laulajia (tenoreita, baritoneja ja bassoja).</skos:definition>
     <skos:prefLabel xml:lang="sv">manskör</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">mieskuoro</skos:prefLabel>
   </owl:Class>
@@ -10977,6 +11030,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m197"/>
+    <skos:definition xml:lang="fi">Kuorokokoonpano, jossa on vain lapsiäänisiä laulajia (sopraanoja ja alttoja).</skos:definition>
     <skos:prefLabel xml:lang="sv">barnkör</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">lapsikuoro</skos:prefLabel>
   </owl:Class>
@@ -20029,5 +20083,38 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:nappailysoitinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">näppäilysoitinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puhallinorkesteri">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Pääosin vaskipuhaltimista koostuva orkesteri.</skos:definition>
+    <skos:prefLabel xml:lang="sv">blåsorkester</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">puhallinorkesteri</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Jos orkesteri koostuu pääosin puupuhaltimista, käytetään ensisijaisesti käsitettä kamariorkesteri.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puhallinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">puhallinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puupuhallinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">puupuhallinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:vaskipuhallinyhtye">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">vaskipuhallinyhtye</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
