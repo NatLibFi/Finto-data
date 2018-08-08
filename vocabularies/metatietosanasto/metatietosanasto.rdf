@@ -338,6 +338,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:HuomautusEkspressiosta">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m261"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">Anmärkning om uttryck</rdfs:label>
+    <rdfs:label xml:lang="fi">Huomautus ekspressiosta</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2193"/>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle16-vuotiailta.">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -378,7 +388,14 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Yhteenveto sisällöstä</rdfs:label>
-    <skos:definition xml:lang="fi">Liittää ekspression toisen ekspression sisällön tiivistelmään, kokoavaan katsaukseen, synopsikseen tms.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:abstrakti"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tiivistelma"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:abstrakti">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">abstrakti</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -20232,6 +20249,13 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:example xml:lang="fi">Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska.</skos:example>
     <skos:prefLabel xml:lang="fi">tekstitys kuulovammaisille</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tiivistelma">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">sammandrag</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tiivistelmä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:vaihtoehtoisetAaniraidat">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
