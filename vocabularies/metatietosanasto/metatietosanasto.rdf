@@ -338,6 +338,23 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Kielimerkinnät levyltä.</skos:example>
+    <skos:prefLabel xml:lang="fi">kielimerkinnät levyltä</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Kielten tiedonlähde.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuvailuNakovammaisille">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Kuvailu näkövammaisille englanniksi.</skos:example>
+    <skos:prefLabel xml:lang="fi">kuvailu näkövammaisille</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -374,10 +391,12 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
-    <rdfs:label xml:lang="sv">Användningsrestriktioner</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot (manifestaatio)</rdfs:label>
+    <rdfs:label xml:lang="sv">Användningsrestriktioner (manifestation)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m516"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
     <skos:scopeNote xml:lang="fi">Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1001">
@@ -3542,6 +3561,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Anmärkning om språk</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus kielestä</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kuvailuNakovammaisille"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1016"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1143"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1295"/>
@@ -3559,6 +3580,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m548"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m730"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tekstitysKuulovammaisille"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:vaihtoehtoisetAaniraidat"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1283">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -11708,15 +11731,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="sv">parallell upplageuppgift</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">rinnakkainen painostieto</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2162">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">Anmärkning om utgivningsuppgift</rdfs:label>
-    <rdfs:label xml:lang="fi">Huomautus julkaisutiedosta</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30055"/>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2164">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -12017,8 +12031,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1088"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1245"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1558"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2197">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -12267,7 +12279,6 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1685"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2044"/>
-    <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2162"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2171"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2220"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2222"/>
@@ -15789,8 +15800,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Författarens signatur</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Tekijän signeeraus:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">författarens signatur</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tekijän signeeraus</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m566">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -18066,8 +18077,8 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m61"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
-    <rdfs:label xml:lang="sv">Användningsrestriktioner</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot (kappale)</rdfs:label>
+    <rdfs:label xml:lang="sv">Användningsrestriktioner (exemplar)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40048"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m118"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1278"/>
@@ -20142,5 +20153,21 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tekstitysKuulovammaisille">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska.</skos:example>
+    <skos:prefLabel xml:lang="fi">tekstitys kuulovammaisille</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:vaihtoehtoisetAaniraidat">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Vaihtoehtoiset ääniraidat: englanti, saksa, ranska, italia.</skos:example>
+    <skos:prefLabel xml:lang="fi">vaihtoehtoiset ääniraidat</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
