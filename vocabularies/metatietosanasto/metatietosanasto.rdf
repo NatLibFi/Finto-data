@@ -338,6 +338,39 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle16-vuotiailta.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">Förbjuden under 16 år.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kielletty alle 16-vuotiailta.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle3-vuotiailta.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">Förbjuden under 3 år.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kielletty alle 3-vuotiailta.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle7-vuotiailta.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">Förbjuden under 7 år.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kielletty alle 7-vuotiailta.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SallittuKaikenikaisille.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Sallittu kaikenikäisille.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SisaltaaMyosInteraktiivisenAR-mobiilikartaston">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Sisältää myös interaktiivisen AR-mobiilikartaston.</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -394,6 +427,10 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:label xml:lang="fi">Aineiston käyttöehdot (manifestaatio)</rdfs:label>
     <rdfs:label xml:lang="sv">Användningsrestriktioner (manifestation)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle16-vuotiailta."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle3-vuotiailta."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:KiellettyAlle7-vuotiailta."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:SallittuKaikenikaisille."/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m516"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
@@ -1170,8 +1207,11 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">Ikäsuositus:</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Åldersrekommendation:</skos:prefLabel>
+    <skos:example xml:lang="fi">Ikäsuositus 16+.</skos:example>
+    <skos:example xml:lang="fi">Ikäsuositus 2+.</skos:example>
+    <skos:example xml:lang="fi">Ikäsuositus 8+.</skos:example>
+    <skos:prefLabel xml:lang="fi">Ikäsuositus</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Åldersrekommendation</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1089">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -4533,7 +4573,6 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">Kandidatavhandling</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1389">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m175"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -6016,13 +6055,6 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:prefLabel xml:lang="sv">företagshistoriker</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">yrityshistoriikit</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Monografioiden genre-termi</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1558">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">Ei alle</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Inte under</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1559">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -12030,7 +12062,6 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Ålder</rdfs:label>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1088"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1245"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1558"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2197">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -15862,6 +15893,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="sv">Anmärkning om bärare</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus tallenteesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:SisaltaaMyosInteraktiivisenAR-mobiilikartaston"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1006"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m112"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m114"/>
