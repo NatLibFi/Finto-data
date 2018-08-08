@@ -338,23 +338,22 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jousiyhtye">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">jousiyhtye</skos:prefLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Kielimerkinnät levyltä.</skos:example>
+    <skos:prefLabel xml:lang="fi">kielimerkinnät levyltä</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Kielten tiedonlähde.</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kosketinsoitinyhtye">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuvailuNakovammaisille">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">kosketinsoitinyhtye</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyomasoitinyhtye">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">lyömäsoitinyhtye</skos:prefLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Kuvailu näkövammaisille englanniksi.</skos:example>
+    <skos:prefLabel xml:lang="fi">kuvailu näkövammaisille</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -392,10 +391,12 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
-    <rdfs:label xml:lang="sv">Användningsrestriktioner</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot (manifestaatio)</rdfs:label>
+    <rdfs:label xml:lang="sv">Användningsrestriktioner (manifestation)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m516"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
     <skos:scopeNote xml:lang="fi">Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1001">
@@ -542,8 +543,8 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:example xml:lang="fi">Rinnakkaistekstit suomeksi ja englanniksi.</skos:example>
-    <skos:prefLabel xml:lang="sv">Parallelltexter på</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Rinnakkaistekstit</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">parallelltexter på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">rinnakkaistekstit</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1017">
     <dc:source xml:lang="fi">RDA-termi ; ISBD-termi</dc:source>
@@ -1667,8 +1668,8 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Osa lehden numeroista ruotsiksi.</skos:example>
-    <skos:prefLabel xml:lang="sv">Del av seriens nummer på</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Osa lehden numeroista</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">del av seriens nummer på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">osa lehden numeroista</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1144">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -2465,6 +2466,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m213"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m219"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m222"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2231"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m226"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m229"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m230"/>
@@ -3559,6 +3561,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Anmärkning om språk</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus kielestä</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kielimerkinnatLevylta"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kuvailuNakovammaisille"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1016"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1143"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1295"/>
@@ -3568,6 +3572,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1727"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1734"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1976"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2026"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2028"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2033"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2226"/>
@@ -3575,6 +3580,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m548"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m730"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tekstitysKuulovammaisille"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:vaihtoehtoisetAaniraidat"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1283">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -3691,8 +3698,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Esityskieli: englanti.</skos:example>
-    <skos:prefLabel xml:lang="fi">Esityskieli:</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Framförande på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">esityskieli</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">framförande på</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1296">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -4762,8 +4769,10 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Huvudroll</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Pääosa</skos:prefLabel>
+    <skos:example xml:lang="fi">Pääosa artikkeleista käännetty turkin kielestä.</skos:example>
+    <skos:example xml:lang="fi">Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi.</skos:example>
+    <skos:prefLabel xml:lang="sv">huvudroll</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">pääosa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1415">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -5794,8 +5803,8 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Osa sarja osista ruotsiksi.</skos:example>
-    <skos:prefLabel xml:lang="sv">Några av seriens delar på</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Osa sarjan osista</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">några av seriens delar på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">osa sarjan osista</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1534">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -6628,8 +6637,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Pääosa tekstistä suomeksi.</skos:example>
-    <skos:prefLabel xml:lang="sv">Huvuddelen av texten på</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Pääosa tekstistä</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">huvuddelen av texten på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">pääosa tekstistä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m163">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -7464,8 +7473,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
-    <skos:prefLabel xml:lang="fi">Teksti käännetty koneellisesti.</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Text översatt maskinellt.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teksti käännetty koneellisesti</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">text översatt maskinellt</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1728">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -7519,8 +7528,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Sanat: suomi, englanti.</skos:example>
-    <skos:prefLabel xml:lang="sv">Ord:</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Sanat:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">ord</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sanat</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1735">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -9708,9 +9717,6 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Typ av institution</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteisön tyyppi</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50237"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:jousiyhtye"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kosketinsoitinyhtye"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lyomasoitinyhtye"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1063"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1100"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m113"/>
@@ -9747,6 +9753,14 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2085"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2087"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2090"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2227"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2228"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2230"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2232"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2233"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2234"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2236"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2237"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m237"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m24"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m244"/>
@@ -9786,11 +9800,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m898"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m941"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m942"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nappailysoitinyhtye"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puhallinorkesteri"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puhallinyhtye"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:puupuhallinyhtye"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:vaskipuhallinyhtye"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1960">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -9950,15 +9959,6 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">ljudkonstnär (uttryck)</rdfs:label>
     <rdfs:label xml:lang="fi">äänitaiteilija (ekspressio)</rdfs:label>
     <skos:definition xml:lang="fi">Henkilö tai yhteisö, joka osallistuu (ekspression tekemiseen, tekemällä taidetta äänestä, käyttäen ääntä sekä sen mediumina että aiheena</skos:definition>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m197_1">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:example xml:lang="sv">Brahe Djäknar (kör)</skos:example>
-    <skos:example xml:lang="fi">Campanella (kuoro)</skos:example>
-    <skos:prefLabel xml:lang="fi">kuoro</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">kör</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m198">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -10434,8 +10434,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
-    <skos:prefLabel xml:lang="fi">Kielimerkinnät kannesta.</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Uppgifter om språk från omslaget.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kielimerkinnät kannesta</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">uppgifter om språk från omslaget</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Huomautus kielimerkintöjen tiedonlähteestä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2027">
@@ -10452,8 +10452,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
-    <skos:prefLabel xml:lang="sv">Delvis lättläst</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Osittain selkokielinen</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">delvis lättläst</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">osittain selkokielinen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2029">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -10503,8 +10503,10 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:definition xml:lang="fi">Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)</skos:definition>
-    <skos:prefLabel xml:lang="sv">Lättläst</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Selkokielinen</skos:prefLabel>
+    <skos:example xml:lang="fi">MARC 21: 546 ## ‡a Selkokielinen.</skos:example>
+    <skos:example xml:lang="fi">MARC 21: 546 ## ‡a selkokielinen ‡2 mts</skos:example>
+    <skos:prefLabel xml:lang="sv">lättläst</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">selkokielinen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2034">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -10848,6 +10850,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av flöjt, oboe, klarinett, valthorn och fagott.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: huilu, oboe, klarinetti, käyrätorvi, fagotti.</skos:definition>
     <skos:prefLabel xml:lang="sv">blåsarkvintett</skos:prefLabel>
@@ -10857,6 +10860,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av 2 violiner, viola och violoncell.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: 2 viulua, alttoviulu, sello.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousikvartetti</skos:prefLabel>
@@ -10866,6 +10870,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition>Ensemble bestående av piano, violin, viola och violoncell.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: piano, viulu, alttoviulu, sello.</skos:definition>
     <skos:prefLabel xml:lang="sv">pianokvartett</skos:prefLabel>
@@ -10875,6 +10880,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m400"/>
     <skos:definition xml:lang="fi">Kamariorkesterina pidetään esityskokoonpanoa, jossa on edustajia vähintään kahdesta soitinperheestä ja jossa on korkeintaan noin 25 soittajaa. Tätä suuremmista kokoonpanoista käytetään termejä orkesteri, sinfoniaorkesteri ja puhallinorkesteri. Jos kokoonpanossa on vain jousisoittimia (lisäksi voi olla joitakin lyömäsoittimia), käytetään termiä jousiorkesteri.</skos:definition>
     <skos:prefLabel xml:lang="fi">kamariorkesteri</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kammarorkester</skos:prefLabel>
@@ -10904,6 +10910,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av 2 violiner, 2 violor och violoncell.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: 2 viulu, 2 alttoviulu, sello.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousikvintetti</skos:prefLabel>
@@ -10921,6 +10928,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av piano, 2 violiner, viola och violoncell.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: piano, 2 viulua, alttoviulu, sello.</skos:definition>
     <skos:prefLabel xml:lang="sv">pianokvintett</skos:prefLabel>
@@ -10932,6 +10940,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">instrumentalband</skos:altLabel>
     <skos:altLabel xml:lang="sv">instrumentalgrupp</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1100"/>
     <skos:prefLabel xml:lang="sv">instrumentalensemble</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">soitinyhtye</skos:prefLabel>
   </owl:Class>
@@ -10939,15 +10948,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="sv">Ensemble bestående av violin, viola och violoncell.</skos:definition>
-    <skos:definition xml:lang="fi">Esityskokoonpano: viulu, alttoviulu, sello.</skos:definition>
-    <skos:prefLabel xml:lang="fi">jousitrio</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">stråktrio</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2085_1">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av violin, viola och violoncell.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: viulu, alttoviulu, sello.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousitrio</skos:prefLabel>
@@ -10957,6 +10958,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m400"/>
     <skos:definition xml:lang="fi">Länsimaisen taidemusiikin esittämiseen alun perin tarkoitettu yli yhdeksän hengen esityskokoonpano, jonka soittimisto koostuu jousisoittimista (voi sisältää continuon ja muutamia lyömäsoittimia). 1900-luvulta alkaen kokoonpanoa on käytetty runsaasti myös populaarimusiikissa.</skos:definition>
     <skos:prefLabel xml:lang="fi">jousiorkesteri</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">stråkorkester</skos:prefLabel>
@@ -10966,6 +10968,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
     <skos:definition xml:lang="sv">Ensemble bestående av flöjt, oboe, klarinett och fagott.</skos:definition>
     <skos:definition xml:lang="fi">Esityskokoonpano: huilu, oboe, klarinetti, fagotti.</skos:definition>
     <skos:prefLabel xml:lang="fi">puupuhallinkvartetti</skos:prefLabel>
@@ -10976,6 +10979,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">sånggrupp</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1100"/>
     <skos:definition xml:lang="fi">2-9 laulajan muodostaman esityskokoonpano. Suuremmasta kokoonpanosta käytetään termiä kuoro.</skos:definition>
     <skos:prefLabel xml:lang="fi">lauluyhtye</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">sångensemble</skos:prefLabel>
@@ -11727,15 +11731,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="sv">parallell upplageuppgift</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">rinnakkainen painostieto</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2162">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">Anmärkning om utgivningsuppgift</rdfs:label>
-    <rdfs:label xml:lang="fi">Huomautus julkaisutiedosta</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30055"/>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2164">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -12036,8 +12031,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1088"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1245"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1558"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2197">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -12286,7 +12279,6 @@ Katso myös taktiili teksti.</skos:definition>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1685"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2044"/>
-    <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2162"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2171"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2220"/>
     <isothes:subGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2222"/>
@@ -12312,6 +12304,20 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="sv">ljudspår</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">ääniraita</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2227">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">puupuhallinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2228">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">jousiyhtye</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m223">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -12319,6 +12325,70 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/bookFormat/1004"/>
     <skos:prefLabel xml:lang="fi">12:o</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">12:o</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2230">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m400"/>
+    <skos:definition xml:lang="fi">Pääosin vaskipuhaltimista koostuva orkesteri.</skos:definition>
+    <skos:prefLabel xml:lang="sv">blåsorkester</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">puhallinorkesteri</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Jos orkesteri koostuu pääosin puupuhaltimista, käytetään ensisijaisesti käsitettä kamariorkesteri.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2231">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kehtopainokset</skos:altLabel>
+    <skos:definition xml:lang="fi">Kirjapainotaidon varhaisaikana eli ennen vuotta 1501 painettu kirja; kehtokirja.</skos:definition>
+    <skos:prefLabel xml:lang="fi">inkunaabelit</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">inkunabler</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Monografioiden genre-termi</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2232">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">vaskipuhallinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2233">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">puhallinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2234">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">näppäilysoitinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2235">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="sv">Brahe Djäknar (kör)</skos:example>
+    <skos:example xml:lang="fi">Campanella (kuoro)</skos:example>
+    <skos:prefLabel xml:lang="fi">kuoro</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">kör</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2236">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">lyömäsoitinyhtye</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2237">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2084"/>
+    <skos:prefLabel xml:lang="fi">kosketinsoitinyhtye</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m224">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -13958,8 +14028,8 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:example xml:lang="fi">Tekstiä myös englanniksi.</skos:example>
-    <skos:prefLabel xml:lang="fi">Tekstiä myös</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Text även på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tekstiä myös</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">text även på</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Käytetään esim.  kun julkaisu ei ole kaksikielinen, mutta tekstiä on jonkin verran myös toisella kielellä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m388">
@@ -15562,8 +15632,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Osa tekstistä englanniksi.</skos:example>
-    <skos:prefLabel xml:lang="sv">Del av texten på</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Osa tekstistä</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">del av texten på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">osa tekstistä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m549">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -15730,8 +15800,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Författarens signatur</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Tekijän signeeraus:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">författarens signatur</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tekijän signeeraus</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m566">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -16275,8 +16345,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Av-aineistossa: Teksti: suomi, ruotsi.</skos:example>
     <skos:example xml:lang="fi">Teksti suomeksi ja ruotsiksi.</skos:example>
-    <skos:prefLabel xml:lang="fi">Teksti</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Text</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teksti</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">text</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m612">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -17428,8 +17498,8 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
     <skos:example xml:lang="fi">Teksti vain suomeksi.</skos:example>
-    <skos:prefLabel xml:lang="fi">Teksti vain</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Text endast på</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teksti vain</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">text endast på</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m731">
@@ -18007,8 +18077,8 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m61"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Aineiston käyttöehdot</rdfs:label>
-    <rdfs:label xml:lang="sv">Användningsrestriktioner</rdfs:label>
+    <rdfs:label xml:lang="fi">Aineiston käyttöehdot (kappale)</rdfs:label>
+    <rdfs:label xml:lang="sv">Användningsrestriktioner (exemplar)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40048"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m118"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1278"/>
@@ -20084,37 +20154,20 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:nappailysoitinyhtye">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tekstitysKuulovammaisille">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">näppäilysoitinyhtye</skos:prefLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska.</skos:example>
+    <skos:prefLabel xml:lang="fi">tekstitys kuulovammaisille</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puhallinorkesteri">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:vaihtoehtoisetAaniraidat">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">Pääosin vaskipuhaltimista koostuva orkesteri.</skos:definition>
-    <skos:prefLabel xml:lang="sv">blåsorkester</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">puhallinorkesteri</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Jos orkesteri koostuu pääosin puupuhaltimista, käytetään ensisijaisesti käsitettä kamariorkesteri.</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puhallinyhtye">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">puhallinyhtye</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:puupuhallinyhtye">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">puupuhallinyhtye</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:vaskipuhallinyhtye">
-    <dc:source xml:lang="fi">ISBD-termi</dc:source>
-    <dc:source xml:lang="fi">RDA-termi</dc:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">vaskipuhallinyhtye</skos:prefLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m611"/>
+    <skos:example xml:lang="fi">Vaihtoehtoiset ääniraidat: englanti, saksa, ranska, italia.</skos:example>
+    <skos:prefLabel xml:lang="fi">vaihtoehtoiset ääniraidat</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
