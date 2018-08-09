@@ -180,6 +180,12 @@ mts:m138 a isothes:ConceptGroup,
     skos:prefLabel "Manifestaatio"@fi,
         "Manifestation"@sv .
 
+mts:m1389 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "Julkaistu myös eripainoksena."@fi,
+        "Även utkommit som särtryck."@sv .
+
 mts:m1401 a owl:AnnotationProperty ;
     skos:prefLabel "vakioidut fraasit"@fi,
         "standardiserade fraser"@sv .
@@ -248,13 +254,6 @@ mts:m1731 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Yhteenveto"@fi,
         "Sammandrag"@sv .
-
-mts:m1732 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Tiivistelmä"@fi,
-        "Abstract"@sv .
 
 mts:m1878 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -333,32 +332,6 @@ mts:m2018 a skos:Concept ;
     skos:prefLabel "kohokuva"@fi,
         "relief"@sv .
 
-mts:m2079 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Kamariorkesterina pidetään esityskokoonpanoa, jossa on edustajia vähintään kahdesta soitinperheestä ja jossa on korkeintaan noin 25 soittajaa. Tätä suuremmista kokoonpanoista käytetään termejä orkesteri, sinfoniaorkesteri ja puhallinorkesteri. Jos kokoonpanossa on vain jousisoittimia (lisäksi voi olla joitakin lyömäsoittimia), käytetään termiä jousiorkesteri."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kamariorkesteri"@fi,
-        "kammarorkester"@sv .
-
-mts:m2086 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Länsimaisen taidemusiikin esittämiseen alun perin tarkoitettu yli yhdeksän hengen esityskokoonpano, jonka soittimisto koostuu jousisoittimista (voi sisältää continuon ja muutamia lyömäsoittimia). 1900-luvulta alkaen kokoonpanoa on käytetty runsaasti myös populaarimusiikissa."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousiorkesteri"@fi,
-        "stråkorkester"@sv ;
-    skos:scopeNote "Jos orkesterissa on mukana myös muihin soitinryhmiin kuuluvia soittimia, mutta kyseessä ei ole täysimittainen sinfoniaorkesteri, käytetään termiä kamariorkesteri."@fi .
-
-mts:m2088 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:altLabel "sånggrupp"@sv ;
-    skos:definition "2-9 laulajan muodostaman esityskokoonpano. Suuremmasta kokoonpanosta käytetään termiä kuoro."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "lauluyhtye"@fi,
-        "sångensemble"@sv .
-
 mts:m2103 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -388,13 +361,6 @@ mts:m2150 a skos:Collection ;
     skos:definition "Liittää manifestaation kustantajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi ;
     skos:prefLabel "Kustantajan rinnakkainen nimi"@fi,
         "Parallellt utgivarnamn"@sv .
-
-mts:m2193 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Vertaisarvioitu"@fi,
-        "Kollegialt granskad"@sv .
 
 mts:m2197 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -474,7 +440,6 @@ mts:m2224 a isothes:ConceptGroup,
         "RDA-termi"@fi ;
     isothes:subGroup mts:m1685,
         mts:m2044,
-        mts:m2162,
         mts:m2171,
         mts:m2220,
         mts:m2222,
@@ -482,15 +447,6 @@ mts:m2224 a isothes:ConceptGroup,
         mts:m571 ;
     rdfs:seeAlso rdam:P30137 ;
     skos:prefLabel "Huomautus manifestaatiosta"@fi .
-
-mts:m2229 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: viulu, alttoviulu, sello."@fi,
-        "Ensemble bestående av violin, viola och violoncell."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousitrio"@fi,
-        "stråktrio"@sv .
 
 mts:m2235 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -530,6 +486,9 @@ mts:m261 a isothes:ConceptGroup,
         mts:m2002,
         mts:m2003,
         mts:m2207,
+        mts:m2243,
+        mts:m2244,
+        mts:m2247,
         mts:m346,
         mts:m439,
         mts:m580 ;
@@ -1150,9 +1109,15 @@ mts:m1000 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30146 ;
-    skos:member mts:m516 ;
-    skos:prefLabel "Aineiston käyttöehdot"@fi,
-        "Användningsrestriktioner"@sv ;
+    skos:member mts:m1730,
+        mts:m2238,
+        mts:m2242,
+        mts:m2248,
+        mts:m2249,
+        mts:m516,
+        mts:m535 ;
+    skos:prefLabel "Aineiston käyttöehdot (manifestaatio)"@fi,
+        "Användningsrestriktioner (manifestation)"@sv ;
     skos:scopeNote "Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia."@fi .
 
 mts:m1002 a skos:Concept ;
@@ -1746,9 +1711,12 @@ mts:m1087 a skos:Concept ;
 mts:m1088 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:example "Ikäsuositus 16+."@fi,
+        "Ikäsuositus 2+."@fi,
+        "Ikäsuositus 8+."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Ikäsuositus:"@fi,
-        "Åldersrekommendation:"@sv .
+    skos:prefLabel "Ikäsuositus"@fi,
+        "Åldersrekommendation"@sv .
 
 mts:m1089 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -1848,16 +1816,6 @@ mts:m110 a isothes:ConceptGroup,
         mts:m285 ;
     skos:prefLabel "Hankintalähde"@fi,
         "Anskaffningskälla"@sv .
-
-mts:m1100 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Yleensä alle kymmenen muusikon esittäjäryhmä."@fi ;
-    skos:example "Beatles (yhtye)"@fi,
-        "Beatles (ensemble)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "yhtye"@fi,
-        "ensemble"@sv .
 
 mts:m1101 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -2163,14 +2121,6 @@ mts:m1141 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "CCIR-standardi"@fi,
         "CCIR standard"@sv .
-
-mts:m1143 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa lehden numeroista ruotsiksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa lehden numeroista"@fi,
-        "del av seriens nummer på"@sv .
 
 mts:m1144 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3814,9 +3764,14 @@ mts:m1282 a isothes:ConceptGroup,
         mts:m1727,
         mts:m1734,
         mts:m1976,
+        mts:m2026,
         mts:m2028,
         mts:m2033,
         mts:m2226,
+        mts:m2239,
+        mts:m2240,
+        mts:m2241,
+        mts:m2245,
         mts:m387,
         mts:m548,
         mts:m611,
@@ -3903,14 +3858,6 @@ mts:m1294 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30016 ;
     skos:prefLabel "digitoituna"@fi,
         "digitaliserad"@sv .
-
-mts:m1295 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Esityskieli: englanti."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "esityskieli"@fi,
-        "framförande på"@sv .
 
 mts:m1296 a isothes:ConceptGroup,
         skos:Collection ;
@@ -4628,12 +4575,6 @@ mts:m1388 a skos:Concept ;
     skos:prefLabel "Kandidaatintutkielma"@fi,
         "Kandidatavhandling"@sv .
 
-mts:m1389 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    skos:prefLabel "Julkaistu myös eripainoksena."@fi,
-        "Även utkommit som särtryck."@sv .
-
 mts:m139 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -4809,15 +4750,6 @@ mts:m1413 a skos:Concept ;
     skos:prefLabel "varieteet"@fi,
         "varietéer"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
-
-mts:m1414 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Pääosa artikkeleista käännetty turkin kielestä."@fi,
-        "Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "pääosa"@fi,
-        "huvudroll"@sv .
 
 mts:m1415 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5622,14 +5554,6 @@ mts:m1532 a skos:Concept ;
     skos:prefLabel "1,4 m/s"@fi,
         "1,4 m/s"@sv .
 
-mts:m1533 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa sarja osista ruotsiksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa sarjan osista"@fi,
-        "några av seriens delar på"@sv .
-
 mts:m1535 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -5804,13 +5728,6 @@ mts:m1557 a skos:Concept ;
     skos:prefLabel "yrityshistoriikit"@fi,
         "företagshistoriker"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
-
-mts:m1558 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Ei alle"@fi,
-        "Inte under"@sv .
 
 mts:m1559 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6304,14 +6221,6 @@ mts:m1628 a isothes:ConceptGroup,
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
         "Verkets primära titel"@sv ;
     skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
-
-mts:m1629 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Pääosa tekstistä suomeksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "pääosa tekstistä"@fi,
-        "huvuddelen av texten på"@sv .
 
 mts:m163 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7044,13 +6953,14 @@ mts:m1730 a skos:Concept ;
     skos:prefLabel "Kielletty alle 12-vuotiailta."@fi,
         "Förbjuden under 12 år."@sv .
 
-mts:m1734 a skos:Concept ;
+mts:m1732 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:example "Sanat: suomi, englanti."@fi ;
+    skos:altLabel "tiivistelmä"@fi,
+        "sammandrag"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "sanat"@fi,
-        "ord"@sv .
+    skos:prefLabel "Tiivistelmä"@fi,
+        "Abstract"@sv .
 
 mts:m1736 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7165,7 +7075,6 @@ mts:m1749 a isothes:ConceptGroup,
 mts:m175 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:member mts:m1389 ;
     skos:prefLabel "sisältää"@fi,
         "innehåller"@sv .
 
@@ -9606,15 +9515,6 @@ mts:m2022 a skos:Concept ;
         "instrumentskola"@sv ;
     skos:scopeNote "Soitonoppaan kaltaiset aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona."@fi .
 
-mts:m2026 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Kielimerkinnät kannesta."@fi,
-        "Uppgifter om språk från omslaget."@sv ;
-    skos:scopeNote "Huomautus kielimerkintöjen tiedonlähteestä."@fi .
-
 mts:m2030 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "Kansallinen termi"@fi ;
@@ -9891,32 +9791,14 @@ mts:m2075 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Julkaistu myöhemmin suomeksi nimellä:"@fi .
 
-mts:m2076 a skos:Concept ;
+mts:m2079 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: huilu, oboe, klarinetti, käyrätorvi, fagotti."@fi,
-        "Ensemble bestående av flöjt, oboe, klarinett, valthorn och fagott."@sv ;
+    skos:broader mts:m400 ;
+    skos:definition "Kamariorkesterina pidetään esityskokoonpanoa, jossa on edustajia vähintään kahdesta soitinperheestä ja jossa on korkeintaan noin 25 soittajaa. Tätä suuremmista kokoonpanoista käytetään termejä orkesteri, sinfoniaorkesteri ja puhallinorkesteri. Jos kokoonpanossa on vain jousisoittimia (lisäksi voi olla joitakin lyömäsoittimia), käytetään termiä jousiorkesteri."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "puhallinkvintetti"@fi,
-        "blåsarkvintett"@sv .
-
-mts:m2077 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: 2 viulua, alttoviulu, sello."@fi,
-        "Ensemble bestående av 2 violiner, viola och violoncell."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousikvartetti"@fi,
-        "stråkkvartett"@sv .
-
-mts:m2078 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Ensemble bestående av piano, violin, viola och violoncell."@fi,
-        "Esityskokoonpano: piano, viulu, alttoviulu, sello."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "pianokvartetti"@fi,
-        "pianokvartett"@sv .
+    skos:prefLabel "kamariorkesteri"@fi,
+        "kammarorkester"@sv .
 
 mts:m208 a isothes:ConceptGroup,
         skos:Collection ;
@@ -9937,15 +9819,6 @@ mts:m2080 a skos:Concept ;
     skos:prefLabel "pianotrio"@fi,
         "pianotrio"@sv .
 
-mts:m2081 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: 2 viulu, 2 alttoviulu, sello."@fi,
-        "Ensemble bestående av 2 violiner, 2 violor och violoncell."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousikvintetti"@fi,
-        "stråkkvintett"@sv .
-
 mts:m2082 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -9954,41 +9827,25 @@ mts:m2082 a skos:Concept ;
         "Korrigerad undertitel:"@sv ;
     skos:scopeNote "Käytetään MARC 21 -formaatin 246-kentän i-osakentässä."@fi .
 
-mts:m2083 a skos:Concept ;
+mts:m2086 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: piano, 2 viulua, alttoviulu, sello."@fi,
-        "Ensemble bestående av piano, 2 violiner, viola och violoncell."@sv ;
+    skos:broader mts:m400 ;
+    skos:definition "Länsimaisen taidemusiikin esittämiseen alun perin tarkoitettu yli yhdeksän hengen esityskokoonpano, jonka soittimisto koostuu jousisoittimista (voi sisältää continuon ja muutamia lyömäsoittimia). 1900-luvulta alkaen kokoonpanoa on käytetty runsaasti myös populaarimusiikissa."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "pianokvintetti"@fi,
-        "pianokvintett"@sv .
+    skos:prefLabel "jousiorkesteri"@fi,
+        "stråkorkester"@sv ;
+    skos:scopeNote "Jos orkesterissa on mukana myös muihin soitinryhmiin kuuluvia soittimia, mutta kyseessä ei ole täysimittainen sinfoniaorkesteri, käytetään termiä kamariorkesteri."@fi .
 
-mts:m2084 a skos:Concept ;
+mts:m2088 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:altLabel "instrumentalband"@sv,
-        "instrumentalgrupp"@sv ;
+    skos:altLabel "sånggrupp"@sv ;
+    skos:broader mts:m1100 ;
+    skos:definition "2-9 laulajan muodostaman esityskokoonpano. Suuremmasta kokoonpanosta käytetään termiä kuoro."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "soitinyhtye"@fi,
-        "instrumentalensemble"@sv .
-
-mts:m2085 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: viulu, alttoviulu, sello."@fi,
-        "Ensemble bestående av violin, viola och violoncell."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousitrio"@fi,
-        "stråktrio"@sv .
-
-mts:m2087 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Esityskokoonpano: huilu, oboe, klarinetti, fagotti."@fi,
-        "Ensemble bestående av flöjt, oboe, klarinett och fagott."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "puupuhallinkvartetti"@fi,
-        "träblåsarkvartett"@sv .
+    skos:prefLabel "lauluyhtye"@fi,
+        "sångensemble"@sv .
 
 mts:m2089 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10450,14 +10307,6 @@ mts:m2161 a isothes:ConceptGroup,
     skos:prefLabel "rinnakkainen painostieto"@fi,
         "parallell upplageuppgift"@sv .
 
-mts:m2162 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30055 ;
-    skos:prefLabel "Huomautus julkaisutiedosta"@fi,
-        "Anmärkning om utgivningsuppgift"@sv .
-
 mts:m2164 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10682,6 +10531,13 @@ mts:m2192 a skos:Concept ;
     skos:prefLabel "Proseminaarityö"@fi,
         "Proseminariearbete"@sv .
 
+mts:m2193 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Vertaisarvioitu"@fi,
+        "Kollegialt granskad"@sv .
+
 mts:m2194 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -10705,10 +10561,7 @@ mts:m2196 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     skos:member mts:m1088,
-        mts:m1245,
-        mts:m1558,
-        mts:m1730,
-        mts:m535 ;
+        mts:m1245 ;
     skos:prefLabel "Ikä"@fi,
         "Ålder"@sv .
 
@@ -10868,27 +10721,6 @@ mts:m2225 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Kuvailun perustana painetun aineiston tietue."@fi .
 
-mts:m2227 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "puupuhallinyhtye"@fi .
-
-mts:m2228 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jousiyhtye"@fi .
-
-mts:m2230 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Pääosin vaskipuhaltimista koostuva orkesteri."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "puhallinorkesteri"@fi,
-        "blåsorkester"@sv ;
-    skos:scopeNote "Jos orkesteri koostuu pääosin puupuhaltimista, käytetään ensisijaisesti käsitettä kamariorkesteri."@fi .
-
 mts:m2231 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -10899,35 +10731,12 @@ mts:m2231 a skos:Concept ;
         "inkunabler"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
 
-mts:m2232 a skos:Concept ;
+mts:m2238 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "vaskipuhallinyhtye"@fi .
-
-mts:m2233 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "puhallinyhtye"@fi .
-
-mts:m2234 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "näppäilysoitinyhtye"@fi .
-
-mts:m2236 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "lyömäsoitinyhtye"@fi .
-
-mts:m2237 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kosketinsoitinyhtye"@fi .
+    skos:prefLabel "Kielletty alle 3-vuotiailta."@fi,
+        "Förbjuden under 3 år."@sv .
 
 mts:m224 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
@@ -10936,6 +10745,76 @@ mts:m224 a skos:Concept ;
         "inb."@sv ;
     skos:scopeNote "manifestaation tunnisteen lisäys kovakantiselle kirjalle"@fi,
         "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv .
+
+mts:m2242 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kielletty alle 7-vuotiailta."@fi,
+        "Förbjuden under 7 år."@sv .
+
+mts:m2243 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:member mts:m1016,
+        mts:m1143,
+        mts:m1295,
+        mts:m1414,
+        mts:m1533,
+        mts:m1629,
+        mts:m1727,
+        mts:m1734,
+        mts:m1976,
+        mts:m2026,
+        mts:m2028,
+        mts:m2033,
+        mts:m2226,
+        mts:m2239,
+        mts:m2240,
+        mts:m2241,
+        mts:m2245,
+        mts:m387,
+        mts:m548,
+        mts:m611,
+        mts:m730 ;
+    skos:prefLabel "Huomautus kielestä"@fi,
+        "Anmärkning om språk"@sv .
+
+mts:m2244 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:member mts:m2193 ;
+    skos:prefLabel "Huomautus ekspressiosta"@fi,
+        "Anmärkning om uttryck"@sv .
+
+mts:m2246 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Sisältää myös interaktiivisen AR-mobiilikartaston."@fi ;
+    skos:scopeNote "AR = augmented reality, lisätty todellisuus."@fi .
+
+mts:m2247 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:member mts:m1732,
+        mts:m2250 ;
+    skos:prefLabel "Yhteenveto sisällöstä"@fi .
+
+mts:m2248 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Sallittu kaikenikäisille."@fi .
+
+mts:m2249 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Kielletty alle 16-vuotiailta."@fi,
+        "Förbjuden under 16 år."@sv .
 
 mts:m225 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10946,6 +10825,12 @@ mts:m225 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Palapelikirja"@fi,
         "Pusselbok"@sv .
+
+mts:m2250 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "abstrakti"@fi .
 
 mts:m226 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12410,17 +12295,6 @@ mts:m40 a skos:Concept ;
         "militärmusik"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
-mts:m400 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Tav. kapellimestarin johtama soitinyhtye, jossa ainakin muutamaa ääntä soittaa useampi soittaja; myös yl. soitinyhtyeestä (Kielitoimiston sanakirja)."@fi,
-        "Vanligtvis instrumentalensembler som leds av en kapellmästare, och där åtminstone några stämmor spelas av flera instrumentalister; även allmänt om instrumentalensemble."@sv ;
-    skos:example "Tapiola Sinfonietta (orkesteri)"@fi,
-        "Wasa sinfonietta (orkester)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "orkesteri"@fi,
-        "orkester"@sv .
-
 mts:m401 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -13574,14 +13448,6 @@ mts:m547 a skos:Concept ;
         "Peking-opera"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
-mts:m548 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa tekstistä englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa tekstistä"@fi,
-        "del av texten på"@sv .
-
 mts:m55 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -13721,8 +13587,8 @@ mts:m565 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Tekijän signeeraus:"@fi,
-        "Författarens signatur"@sv .
+    skos:prefLabel "tekijän signeeraus"@fi,
+        "författarens signatur"@sv .
 
 mts:m567 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13787,6 +13653,7 @@ mts:m571 a isothes:ConceptGroup,
         mts:m1861,
         mts:m20,
         mts:m2130,
+        mts:m2246,
         mts:m225,
         mts:m293,
         mts:m307,
@@ -15518,8 +15385,8 @@ mts:m792 a isothes:ConceptGroup,
         mts:m820,
         mts:m846,
         mts:m860 ;
-    skos:prefLabel "Aineiston käyttöehdot"@fi,
-        "Användningsrestriktioner"@sv .
+    skos:prefLabel "Aineiston käyttöehdot (kappale)"@fi,
+        "Användningsrestriktioner (exemplar)"@sv .
 
 mts:m793 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17255,15 +17122,6 @@ mts:m1012 a skos:Concept ;
     skos:prefLabel "mikromuoto"@fi,
         "mikroform"@sv .
 
-mts:m1016 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Rinnakkaistekstit suomeksi ja englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "rinnakkaistekstit"@fi,
-        "parallelltexter på"@sv .
-
 mts:m1019 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Liikettä kuvailevan merkkijärjestelmän avulla esitetty sisältö, joka on tarkoitettu kosketeltavaksi."@fi ;
@@ -17420,6 +17278,14 @@ mts:m1142 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-äänilevy"@fi,
         "dvd-ljudskiva"@sv .
+
+mts:m1143 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa lehden numeroista ruotsiksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa lehden numeroista"@fi,
+        "del av seriens nummer på"@sv .
 
 mts:m115 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17635,6 +17501,14 @@ mts:m1290 a skos:Concept ;
     skos:prefLabel "tekstiili"@fi,
         "textil"@sv .
 
+mts:m1295 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Esityskieli: englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esityskieli"@fi,
+        "framförande på"@sv .
+
 mts:m1301 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "Kansallinen termi"@fi ;
@@ -17744,6 +17618,15 @@ mts:m1411 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "C-kasetti"@fi,
         "Kassettband"@sv .
+
+mts:m1414 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Pääosa artikkeleista käännetty turkin kielestä."@fi,
+        "Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pääosa"@fi,
+        "huvudroll"@sv .
 
 mts:m1421 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17961,6 +17844,14 @@ mts:m153 a isothes:ConceptGroup,
     skos:prefLabel "Ekspression ja toimijoiden väliset suhteet"@fi,
         "Relationer mellan uttryck och aktörer"@sv .
 
+mts:m1533 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa sarja osista ruotsiksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa sarjan osista"@fi,
+        "några av seriens delar på"@sv .
+
 mts:m1534 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
     skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi,
@@ -18039,6 +17930,14 @@ mts:m1625 a skos:Concept ;
     skos:prefLabel "Yksi-kaksi kertaa vuodessa"@fi,
         "En-två gånger om året"@sv .
 
+mts:m1629 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Pääosa tekstistä suomeksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pääosa tekstistä"@fi,
+        "huvuddelen av texten på"@sv .
+
 mts:m165 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18104,14 +18003,6 @@ mts:m1710 a skos:Concept ;
         "ljudtråd"@sv ;
     skos:scopeNote "äänitallenne"@fi .
 
-mts:m1727 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teksti käännetty koneellisesti"@fi,
-        "text översatt maskinellt"@sv .
-
 mts:m173 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18121,6 +18012,14 @@ mts:m173 a skos:Concept ;
     skos:prefLabel "videokasetti"@fi,
         "videokassett"@sv ;
     skos:scopeNote "videotallenne"@fi .
+
+mts:m1734 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Sanat: suomi, englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sanat"@fi,
+        "ord"@sv .
 
 mts:m1735 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -18174,15 +18073,6 @@ mts:m187 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "tietokoneohjelma"@fi,
         "datorprogram"@sv .
-
-mts:m1976 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstitys: suomi, ruotsi, englanti, saksa, ranska."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstitys"@fi,
-        "textning"@sv .
 
 mts:m1999 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18251,14 +18141,6 @@ mts:m2027 a skos:Concept ;
         "kuorokirja"@fi,
         "körbok"@sv .
 
-mts:m2028 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osittain selkokielinen"@fi,
-        "delvis lättläst"@sv .
-
 mts:m2029 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18284,17 +18166,6 @@ mts:m2032 a skos:Concept ;
     skos:prefLabel "table book"@fi,
         "table book"@sv .
 
-mts:m2033 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi ;
-    skos:example "MARC 21: 546 ## ‡a Selkokielinen."@fi,
-        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "selkokielinen"@fi,
-        "lättläst"@sv .
-
 mts:m2034 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18314,6 +18185,76 @@ mts:m2062 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "liite"@fi,
         "bilaga"@sv .
+
+mts:m2076 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: huilu, oboe, klarinetti, käyrätorvi, fagotti."@fi,
+        "Ensemble bestående av flöjt, oboe, klarinett, valthorn och fagott."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "puhallinkvintetti"@fi,
+        "blåsarkvintett"@sv .
+
+mts:m2077 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: 2 viulua, alttoviulu, sello."@fi,
+        "Ensemble bestående av 2 violiner, viola och violoncell."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jousikvartetti"@fi,
+        "stråkkvartett"@sv .
+
+mts:m2078 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Ensemble bestående av piano, violin, viola och violoncell."@fi,
+        "Esityskokoonpano: piano, viulu, alttoviulu, sello."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pianokvartetti"@fi,
+        "pianokvartett"@sv .
+
+mts:m2081 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: 2 viulu, 2 alttoviulu, sello."@fi,
+        "Ensemble bestående av 2 violiner, 2 violor och violoncell."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jousikvintetti"@fi,
+        "stråkkvintett"@sv .
+
+mts:m2083 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: piano, 2 viulua, alttoviulu, sello."@fi,
+        "Ensemble bestående av piano, 2 violiner, viola och violoncell."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pianokvintetti"@fi,
+        "pianokvintett"@sv .
+
+mts:m2085 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: viulu, alttoviulu, sello."@fi,
+        "Ensemble bestående av violin, viola och violoncell."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jousitrio"@fi,
+        "stråktrio"@sv .
+
+mts:m2087 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:definition "Esityskokoonpano: huilu, oboe, klarinetti, fagotti."@fi,
+        "Ensemble bestående av flöjt, oboe, klarinett och fagott."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "puupuhallinkvartetti"@fi,
+        "träblåsarkvartett"@sv .
 
 mts:m2090 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18524,14 +18465,19 @@ mts:m2209 a skos:Concept ;
     skos:prefLabel "valikoima"@fi,
         "urval"@sv .
 
-mts:m2226 a skos:Concept ;
+mts:m2227 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Ääniraita: englanti."@fi ;
+    skos:broader mts:m2084 ;
     skos:inScheme mts: ;
-    skos:prefLabel "ääniraita"@fi,
-        "ljudspår"@sv .
+    skos:prefLabel "puupuhallinyhtye"@fi .
+
+mts:m2228 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jousiyhtye"@fi .
 
 mts:m223 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18540,6 +18486,51 @@ mts:m223 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "12:o"@fi,
         "12:o"@sv .
+
+mts:m2230 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m400 ;
+    skos:definition "Pääosin vaskipuhaltimista koostuva orkesteri."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "puhallinorkesteri"@fi,
+        "blåsorkester"@sv ;
+    skos:scopeNote "Jos orkesteri koostuu pääosin puupuhaltimista, käytetään ensisijaisesti käsitettä kamariorkesteri."@fi .
+
+mts:m2232 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaskipuhallinyhtye"@fi .
+
+mts:m2233 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "puhallinyhtye"@fi .
+
+mts:m2234 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "näppäilysoitinyhtye"@fi .
+
+mts:m2236 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lyömäsoitinyhtye"@fi .
+
+mts:m2237 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m2084 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kosketinsoitinyhtye"@fi .
 
 mts:m228 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18760,16 +18751,6 @@ mts:m378 a skos:Concept ;
     skos:prefLabel "karttapallo"@fi,
         "jordglob"@sv .
 
-mts:m387 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstiä myös englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstiä myös"@fi,
-        "text även på"@sv ;
-    skos:scopeNote "Käytetään esim.  kun julkaisu ei ole kaksikielinen, mutta tekstiä on jonkin verran myös toisella kielellä."@fi .
-
 mts:m405 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18978,6 +18959,14 @@ mts:m546 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "vinyyli"@fi,
         "vinyl"@sv .
+
+mts:m548 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa tekstistä englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa tekstistä"@fi,
+        "del av texten på"@sv .
 
 mts:m549 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -19276,16 +19265,6 @@ mts:m729 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "opetuskortti"@fi,
         "undervisningskort"@sv .
-
-mts:m730 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Teksti vain suomeksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teksti vain"@fi,
-        "text endast på"@sv ;
-    skos:scopeNote "Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä."@fi .
 
 mts:m744 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19654,6 +19633,15 @@ mts:m984 a skos:Concept ;
     skos:prefLabel "kovalevy"@fi,
         "träfiberskiva"@sv .
 
+mts:m1016 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Rinnakkaistekstit suomeksi ja englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "rinnakkaistekstit"@fi,
+        "parallelltexter på"@sv .
+
 mts:m1051 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Digitaalinen aineisto, joka on saatavana laitteisto- ja ohjelmistoyhteydellä tietoverkosta."@fi ;
@@ -19670,6 +19658,18 @@ mts:m108 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "kohokuvioitu"@fi,
         "reliefmönstrad"@sv .
+
+mts:m1100 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Yleensä alle kymmenen muusikon esittäjäryhmä."@fi ;
+    skos:example "Beatles (yhtye)"@fi,
+        "Beatles (ensemble)"@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2084,
+        mts:m2088 ;
+    skos:prefLabel "yhtye"@fi,
+        "ensemble"@sv .
 
 mts:m1303 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19702,6 +19702,23 @@ mts:m1578 a skos:Concept ;
     skos:prefLabel "palapeli"@fi,
         "pussel"@sv .
 
+mts:m1727 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teksti käännetty koneellisesti"@fi,
+        "text översatt maskinellt"@sv .
+
+mts:m1976 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstitys: suomi, ruotsi, englanti, saksa, ranska."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstitys"@fi,
+        "textning"@sv .
+
 mts:m2019 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19725,6 +19742,34 @@ mts:m2023 a skos:Concept ;
         "viulujohtostemma"@fi,
         "violindirektion"@sv .
 
+mts:m2026 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kielimerkinnät kannesta"@fi,
+        "uppgifter om språk från omslaget"@sv ;
+    skos:scopeNote "Huomautus kielimerkintöjen tiedonlähteestä."@fi .
+
+mts:m2028 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osittain selkokielinen"@fi,
+        "delvis lättläst"@sv .
+
+mts:m2033 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi ;
+    skos:example "MARC 21: 546 ## ‡a Selkokielinen."@fi,
+        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "selkokielinen"@fi,
+        "lättläst"@sv .
+
 mts:m2037 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19747,6 +19792,58 @@ mts:m2139 a skos:Concept ;
     skos:prefLabel "lehti"@fi,
         "blad"@sv ;
     skos:scopeNote "Monikossa lehteä."@fi .
+
+mts:m2226 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Ääniraita: englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ääniraita"@fi,
+        "ljudspår"@sv .
+
+mts:m2239 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Vaihtoehtoiset ääniraidat: englanti, saksa, ranska, italia."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaihtoehtoiset ääniraidat"@fi .
+
+mts:m2240 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstitys kuulovammaisille"@fi .
+
+mts:m2241 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Kuvailu näkövammaisille englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kuvailu näkövammaisille"@fi .
+
+mts:m2245 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Kielimerkinnät levyltä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kielimerkinnät levyltä"@fi ;
+    skos:scopeNote "Kielten tiedonlähde."@fi .
+
+mts:m387 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstiä myös englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstiä myös"@fi,
+        "text även på"@sv ;
+    skos:scopeNote "Käytetään esim.  kun julkaisu ei ole kaksikielinen, mutta tekstiä on jonkin verran myös toisella kielellä."@fi .
 
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19785,6 +19882,16 @@ mts:m634 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "solid dot -painatus"@fi,
         "solid dot-tryckning"@sv .
+
+mts:m730 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Teksti vain suomeksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teksti vain"@fi,
+        "text endast på"@sv ;
+    skos:scopeNote "Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä."@fi .
 
 mts:m77 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19861,6 +19968,20 @@ mts:m2036 a skos:Concept ;
     skos:prefLabel "piano conductor part"@en,
         "pianojohtostemma"@fi,
         "pianodirektion"@sv .
+
+mts:m400 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Tav. kapellimestarin johtama soitinyhtye, jossa ainakin muutamaa ääntä soittaa useampi soittaja; myös yl. soitinyhtyeestä (Kielitoimiston sanakirja)."@fi,
+        "Vanligtvis instrumentalensembler som leds av en kapellmästare, och där åtminstone några stämmor spelas av flera instrumentalister; även allmänt om instrumentalensemble."@sv ;
+    skos:example "Tapiola Sinfonietta (orkesteri)"@fi,
+        "Wasa sinfonietta (orkester)"@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2079,
+        mts:m2086,
+        mts:m2230 ;
+    skos:prefLabel "orkesteri"@fi,
+        "orkester"@sv .
 
 mts:m599 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19965,10 +20086,38 @@ mts:m611 a skos:Concept ;
         mts:m2028,
         mts:m2033,
         mts:m2226,
+        mts:m2239,
+        mts:m2240,
+        mts:m2241,
+        mts:m2245,
         mts:m387,
         mts:m730 ;
     skos:prefLabel "teksti"@fi,
         "text"@sv .
+
+mts:m2084 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "instrumentalband"@sv,
+        "instrumentalgrupp"@sv ;
+    skos:broader mts:m1100 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2076,
+        mts:m2077,
+        mts:m2078,
+        mts:m2081,
+        mts:m2083,
+        mts:m2085,
+        mts:m2087,
+        mts:m2227,
+        mts:m2228,
+        mts:m2232,
+        mts:m2233,
+        mts:m2234,
+        mts:m2236,
+        mts:m2237 ;
+    skos:prefLabel "soitinyhtye"@fi,
+        "instrumentalensemble"@sv .
 
 mts: a skos:ConceptScheme ;
     dc:creator "Kansalliskirjasto"@fi,
@@ -20010,5 +20159,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-08-08T03:07:11+00:00"^^xsd:dateTime .
+    dct:modified "2018-08-09T03:11:37+00:00"^^xsd:dateTime .
 
