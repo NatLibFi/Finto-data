@@ -448,15 +448,6 @@ mts:m2224 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30137 ;
     skos:prefLabel "Huomautus manifestaatiosta"@fi .
 
-mts:m2235 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Campanella (kuoro)"@fi,
-        "Brahe Djäknar (kör)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kuoro"@fi,
-        "kör"@sv .
-
 mts:m251 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -486,7 +477,6 @@ mts:m261 a isothes:ConceptGroup,
         mts:m2002,
         mts:m2003,
         mts:m2207,
-        mts:m2243,
         mts:m2244,
         mts:m2247,
         mts:m346,
@@ -675,6 +665,8 @@ Videolaitteella käytettävät aineistot."""@fi .
     skos:scopeNote "Aineiston käyttöön ei tarvita välinettä."@fi .
 
 rdaa:P50095 skos:exactMatch mts:m627 .
+
+rdae:P20069 rdfs:label "has summarization of content"@en .
 
 rdam:P30022 skos:exactMatch mts:m2062 .
 
@@ -1795,8 +1787,8 @@ mts:m1099 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Exlibris"@fi,
-        "Exlibris"@sv ;
+    skos:prefLabel "exlibris"@fi,
+        "exlibris"@sv ;
     skos:scopeNote "Henkilön/yhteisön nimi"@fi .
 
 mts:m11 a skos:Concept ;
@@ -2122,12 +2114,21 @@ mts:m1141 a skos:Concept ;
     skos:prefLabel "CCIR-standardi"@fi,
         "CCIR standard"@sv .
 
+mts:m1143 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa lehden numeroista ruotsiksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa lehden numeroista"@fi,
+        "del av seriens nummer på"@sv .
+
 mts:m1144 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:example "Yhteensidottu: Peruskoulun uskontokirja, 1-4, 1. painokset."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Yhteensidottu:"@fi,
-        "Sammanbunden:"@sv .
+    skos:prefLabel "yhteensidottu"@fi,
+        "sammanbunden:"@sv .
 
 mts:m1145 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3859,6 +3860,14 @@ mts:m1294 a isothes:ConceptGroup,
     skos:prefLabel "digitoituna"@fi,
         "digitaliserad"@sv .
 
+mts:m1295 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Esityskieli: englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esityskieli"@fi,
+        "framförande på"@sv .
+
 mts:m1296 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -4751,6 +4760,15 @@ mts:m1413 a skos:Concept ;
         "varietéer"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
 
+mts:m1414 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Pääosa artikkeleista käännetty turkin kielestä."@fi,
+        "Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pääosa"@fi,
+        "huvudroll"@sv .
+
 mts:m1415 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -5266,9 +5284,10 @@ mts:m1490 a skos:Concept ;
 mts:m1491 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:example "MARC 21 562 ## ‡a Kpl 3: Nimiösivu puuttuu."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Nimiösivu puuttuu:"@fi,
-        "Titelsida fattas:"@sv .
+    skos:prefLabel "nimiösivu puuttuu"@fi,
+        "titelsida fattas"@sv .
 
 mts:m1492 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5553,6 +5572,14 @@ mts:m1532 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "1,4 m/s"@fi,
         "1,4 m/s"@sv .
+
+mts:m1533 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa sarja osista ruotsiksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa sarjan osista"@fi,
+        "några av seriens delar på"@sv .
 
 mts:m1535 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6221,6 +6248,14 @@ mts:m1628 a isothes:ConceptGroup,
     skos:prefLabel "Teoksen ensisijainen nimeke"@fi,
         "Verkets primära titel"@sv ;
     skos:scopeNote "Nimeke tai nimekkeen muoto, joka on valittu teoksen identifioimiseksi."@fi .
+
+mts:m1629 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Pääosa tekstistä suomeksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pääosa tekstistä"@fi,
+        "huvuddelen av texten på"@sv .
 
 mts:m163 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6956,11 +6991,17 @@ mts:m1730 a skos:Concept ;
 mts:m1732 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:altLabel "tiivistelmä"@fi,
-        "sammandrag"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "Tiivistelmä"@fi,
-        "Abstract"@sv .
+    skos:prefLabel "tiivistelmä"@fi,
+        "sammandrag"@sv .
+
+mts:m1734 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Sanat: suomi, englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sanat"@fi,
+        "ord"@sv .
 
 mts:m1736 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10753,34 +10794,6 @@ mts:m2242 a skos:Concept ;
     skos:prefLabel "Kielletty alle 7-vuotiailta."@fi,
         "Förbjuden under 7 år."@sv .
 
-mts:m2243 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:member mts:m1016,
-        mts:m1143,
-        mts:m1295,
-        mts:m1414,
-        mts:m1533,
-        mts:m1629,
-        mts:m1727,
-        mts:m1734,
-        mts:m1976,
-        mts:m2026,
-        mts:m2028,
-        mts:m2033,
-        mts:m2226,
-        mts:m2239,
-        mts:m2240,
-        mts:m2241,
-        mts:m2245,
-        mts:m387,
-        mts:m548,
-        mts:m611,
-        mts:m730 ;
-    skos:prefLabel "Huomautus kielestä"@fi,
-        "Anmärkning om språk"@sv .
-
 mts:m2244 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -10799,6 +10812,7 @@ mts:m2246 a skos:Concept ;
 mts:m2247 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
+    rdfs:seeAlso rdae:P20069 ;
     skos:member mts:m1732,
         mts:m2250 ;
     skos:prefLabel "Yhteenveto sisällöstä"@fi .
@@ -10830,7 +10844,29 @@ mts:m2250 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "abstrakti"@fi .
+    skos:prefLabel "abstract"@en,
+        "abstrakti"@fi,
+        "abstrakt"@sv .
+
+mts:m2251 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kaava-arkki"@fi ;
+    skos:scopeNote "kartta-aineiston laajuuden yksikkö"@fi .
+
+mts:m2252 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi ;
+    skos:prefLabel "sarjakuva"@fi,
+        "tecknade serie"@sv .
+
+mts:m2253 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "MARC 21 562 ## ‡a Kpl 2: Nimiösivu puutteellinen."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "nimiösivu puutteellinen"@fi .
 
 mts:m226 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11085,13 +11121,6 @@ mts:m257 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "säätiö"@fi,
         "stiftelse"@sv .
-
-mts:m259 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Yhteensidottuna lisäksi:"@fi,
-        "Därtill sammanbunden:"@sv .
 
 mts:m26 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13103,9 +13132,12 @@ mts:m505 a skos:Concept ;
 mts:m506 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:example "De cetis: variantti jossa tarkastuspäivämäärä kokonaan painettuna."@fi,
+        "Variantti, jossa takakanteen on painettu hinta ja palautusviikko-merkintä."@fi,
+        "variantti: 1858"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Variantti:"@fi,
-        "Variant:"@sv .
+    skos:prefLabel "variantti"@fi,
+        "variant"@sv .
 
 mts:m508 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -13447,6 +13479,14 @@ mts:m547 a skos:Concept ;
     skos:prefLabel "Peking-ooppera"@fi,
         "Peking-opera"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
+
+mts:m548 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:example "Osa tekstistä englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osa tekstistä"@fi,
+        "del av texten på"@sv .
 
 mts:m55 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14265,7 +14305,7 @@ mts:m653 a isothes:ConceptGroup,
     skos:member mts:m1099,
         mts:m1144,
         mts:m1491,
-        mts:m259,
+        mts:m2253,
         mts:m506,
         mts:m565,
         mts:m774,
@@ -15218,9 +15258,10 @@ mts:m773 a skos:Concept ;
 mts:m774 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:example "Reunahuomautuksia Pirjo Karvosen kirjoitukseen."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Reunahuomautukset:"@fi,
-        "Marginalanmärkningar"@sv .
+    skos:prefLabel "reunahuomautuksia"@fi,
+        "marginalanmärkningar"@sv .
 
 mts:m775 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15432,6 +15473,7 @@ mts:m8 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30182 ;
+    skos:definition "Liittää manifestaation manifestaation yksiköiden ja/tai osayksiköiden määrään ja tyyppiin."@fi ;
     skos:member mts:m1001,
         mts:m1010,
         mts:m1024,
@@ -15489,6 +15531,7 @@ mts:m8 a isothes:ConceptGroup,
         mts:m2138,
         mts:m2139,
         mts:m2141,
+        mts:m2251,
         mts:m349,
         mts:m368,
         mts:m370,
@@ -16841,8 +16884,8 @@ mts:m973 a skos:Concept ;
     skos:example "Nimiösivulla omistajamerkintä: bror Tolpo."@fi,
         "Nimiösivulla: Helsingin Yliopiston Kirjastolle, tervehdys Myrskylän seurakunnalta. Kunnioittaen W. Hagfors."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Omistajan merkintä"@fi,
-        "Ägarens anteckning:"@sv .
+    skos:prefLabel "omistajan merkintä"@fi,
+        "ägarens anteckning:"@sv .
 
 mts:m974 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16962,9 +17005,9 @@ mts:m99 a skos:Concept ;
 mts:m991 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
+    isothes:subGroup mts:m12 ;
     rdfs:seeAlso rdaw:P10004 ;
-    skos:member mts:m12,
-        mts:m2004,
+    skos:member mts:m2004,
         mts:m2048,
         mts:m2049,
         mts:m2050,
@@ -16987,7 +17030,8 @@ mts:m991 a isothes:ConceptGroup,
         mts:m2186,
         mts:m2187,
         mts:m2188,
-        mts:m2212 ;
+        mts:m2212,
+        mts:m2252 ;
     skos:prefLabel "Teoksen muoto"@fi,
         "Verkets form"@sv .
 
@@ -17121,6 +17165,15 @@ mts:m1012 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "mikromuoto"@fi,
         "mikroform"@sv .
+
+mts:m1016 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Rinnakkaistekstit suomeksi ja englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "rinnakkaistekstit"@fi,
+        "parallelltexter på"@sv .
 
 mts:m1019 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -17278,14 +17331,6 @@ mts:m1142 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-äänilevy"@fi,
         "dvd-ljudskiva"@sv .
-
-mts:m1143 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa lehden numeroista ruotsiksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa lehden numeroista"@fi,
-        "del av seriens nummer på"@sv .
 
 mts:m115 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17501,14 +17546,6 @@ mts:m1290 a skos:Concept ;
     skos:prefLabel "tekstiili"@fi,
         "textil"@sv .
 
-mts:m1295 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Esityskieli: englanti."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "esityskieli"@fi,
-        "framförande på"@sv .
-
 mts:m1301 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "Kansallinen termi"@fi ;
@@ -17618,15 +17655,6 @@ mts:m1411 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "C-kasetti"@fi,
         "Kassettband"@sv .
-
-mts:m1414 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Pääosa artikkeleista käännetty turkin kielestä."@fi,
-        "Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "pääosa"@fi,
-        "huvudroll"@sv .
 
 mts:m1421 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17844,14 +17872,6 @@ mts:m153 a isothes:ConceptGroup,
     skos:prefLabel "Ekspression ja toimijoiden väliset suhteet"@fi,
         "Relationer mellan uttryck och aktörer"@sv .
 
-mts:m1533 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa sarja osista ruotsiksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa sarjan osista"@fi,
-        "några av seriens delar på"@sv .
-
 mts:m1534 a skos:Concept ;
     dc:source "ISBD-termi"@fi ;
     skos:definition "Viestin sisältää liikkuvaa kuvaa tai stillkuvia ja on suunniteltu käytettäväksi toistolaitteen, kuten videokasettinauhurin tai DVD-soittimen avulla. Käsittää sekä digitaalisesti koodattua että analogista kuvaa sisältävät viestimet."@fi,
@@ -17930,14 +17950,6 @@ mts:m1625 a skos:Concept ;
     skos:prefLabel "Yksi-kaksi kertaa vuodessa"@fi,
         "En-två gånger om året"@sv .
 
-mts:m1629 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Pääosa tekstistä suomeksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "pääosa tekstistä"@fi,
-        "huvuddelen av texten på"@sv .
-
 mts:m165 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18003,6 +18015,14 @@ mts:m1710 a skos:Concept ;
         "ljudtråd"@sv ;
     skos:scopeNote "äänitallenne"@fi .
 
+mts:m1727 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teksti käännetty koneellisesti"@fi,
+        "text översatt maskinellt"@sv .
+
 mts:m173 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18012,14 +18032,6 @@ mts:m173 a skos:Concept ;
     skos:prefLabel "videokasetti"@fi,
         "videokassett"@sv ;
     skos:scopeNote "videotallenne"@fi .
-
-mts:m1734 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Sanat: suomi, englanti."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sanat"@fi,
-        "ord"@sv .
 
 mts:m1735 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -18073,6 +18085,15 @@ mts:m187 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "tietokoneohjelma"@fi,
         "datorprogram"@sv .
+
+mts:m1976 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstitys: suomi, ruotsi, englanti, saksa, ranska."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstitys"@fi,
+        "textning"@sv .
 
 mts:m1999 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18132,6 +18153,15 @@ mts:m2025 a skos:Concept ;
         "partiselli"@fi,
         "particell"@sv .
 
+mts:m2026 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kielimerkinnät kannesta"@fi,
+        "uppgifter om språk från omslaget"@sv ;
+    skos:scopeNote "Huomautus kielimerkintöjen tiedonlähteestä."@fi .
+
 mts:m2027 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18140,6 +18170,14 @@ mts:m2027 a skos:Concept ;
     skos:prefLabel "choir book"@en,
         "kuorokirja"@fi,
         "körbok"@sv .
+
+mts:m2028 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "osittain selkokielinen"@fi,
+        "delvis lättläst"@sv .
 
 mts:m2029 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18165,6 +18203,17 @@ mts:m2032 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "table book"@fi,
         "table book"@sv .
+
+mts:m2033 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi ;
+    skos:example "MARC 21: 546 ## ‡a Selkokielinen."@fi,
+        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "selkokielinen"@fi,
+        "lättläst"@sv .
 
 mts:m2034 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18465,6 +18514,15 @@ mts:m2209 a skos:Concept ;
     skos:prefLabel "valikoima"@fi,
         "urval"@sv .
 
+mts:m2226 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Ääniraita: englanti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ääniraita"@fi,
+        "ljudspår"@sv .
+
 mts:m2227 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18531,6 +18589,39 @@ mts:m2237 a skos:Concept ;
     skos:broader mts:m2084 ;
     skos:inScheme mts: ;
     skos:prefLabel "kosketinsoitinyhtye"@fi .
+
+mts:m2239 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Vaihtoehtoiset ääniraidat: englanti, saksa, ranska, italia."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaihtoehtoiset ääniraidat"@fi .
+
+mts:m2240 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstitys kuulovammaisille"@fi .
+
+mts:m2241 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Kuvailu näkövammaisille englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kuvailu näkövammaisille"@fi .
+
+mts:m2245 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Kielimerkinnät levyltä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kielimerkinnät levyltä"@fi ;
+    skos:scopeNote "Kielten tiedonlähde."@fi .
 
 mts:m228 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18751,6 +18842,16 @@ mts:m378 a skos:Concept ;
     skos:prefLabel "karttapallo"@fi,
         "jordglob"@sv .
 
+mts:m387 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Tekstiä myös englanniksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstiä myös"@fi,
+        "text även på"@sv ;
+    skos:scopeNote "Käytetään esim.  kun julkaisu ei ole kaksikielinen, mutta tekstiä on jonkin verran myös toisella kielellä."@fi .
+
 mts:m405 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -18959,14 +19060,6 @@ mts:m546 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "vinyyli"@fi,
         "vinyl"@sv .
-
-mts:m548 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:example "Osa tekstistä englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osa tekstistä"@fi,
-        "del av texten på"@sv .
 
 mts:m549 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -19265,6 +19358,16 @@ mts:m729 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "opetuskortti"@fi,
         "undervisningskort"@sv .
+
+mts:m730 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:broader mts:m611 ;
+    skos:example "Teksti vain suomeksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teksti vain"@fi,
+        "text endast på"@sv ;
+    skos:scopeNote "Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä."@fi .
 
 mts:m744 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19633,15 +19736,6 @@ mts:m984 a skos:Concept ;
     skos:prefLabel "kovalevy"@fi,
         "träfiberskiva"@sv .
 
-mts:m1016 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Rinnakkaistekstit suomeksi ja englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "rinnakkaistekstit"@fi,
-        "parallelltexter på"@sv .
-
 mts:m1051 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Digitaalinen aineisto, joka on saatavana laitteisto- ja ohjelmistoyhteydellä tietoverkosta."@fi ;
@@ -19702,23 +19796,6 @@ mts:m1578 a skos:Concept ;
     skos:prefLabel "palapeli"@fi,
         "pussel"@sv .
 
-mts:m1727 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teksti käännetty koneellisesti"@fi,
-        "text översatt maskinellt"@sv .
-
-mts:m1976 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstitys: suomi, ruotsi, englanti, saksa, ranska."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstitys"@fi,
-        "textning"@sv .
-
 mts:m2019 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19742,34 +19819,6 @@ mts:m2023 a skos:Concept ;
         "viulujohtostemma"@fi,
         "violindirektion"@sv .
 
-mts:m2026 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kielimerkinnät kannesta"@fi,
-        "uppgifter om språk från omslaget"@sv ;
-    skos:scopeNote "Huomautus kielimerkintöjen tiedonlähteestä."@fi .
-
-mts:m2028 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "osittain selkokielinen"@fi,
-        "delvis lättläst"@sv .
-
-mts:m2033 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi ;
-    skos:example "MARC 21: 546 ## ‡a Selkokielinen."@fi,
-        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "selkokielinen"@fi,
-        "lättläst"@sv .
-
 mts:m2037 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19792,58 +19841,6 @@ mts:m2139 a skos:Concept ;
     skos:prefLabel "lehti"@fi,
         "blad"@sv ;
     skos:scopeNote "Monikossa lehteä."@fi .
-
-mts:m2226 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Ääniraita: englanti."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "ääniraita"@fi,
-        "ljudspår"@sv .
-
-mts:m2239 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Vaihtoehtoiset ääniraidat: englanti, saksa, ranska, italia."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "vaihtoehtoiset ääniraidat"@fi .
-
-mts:m2240 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstitys kuulovammaisille"@fi .
-
-mts:m2241 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Kuvailu näkövammaisille englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kuvailu näkövammaisille"@fi .
-
-mts:m2245 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Kielimerkinnät levyltä."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kielimerkinnät levyltä"@fi ;
-    skos:scopeNote "Kielten tiedonlähde."@fi .
-
-mts:m387 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstiä myös englanniksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstiä myös"@fi,
-        "text även på"@sv ;
-    skos:scopeNote "Käytetään esim.  kun julkaisu ei ole kaksikielinen, mutta tekstiä on jonkin verran myös toisella kielellä."@fi .
 
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19882,16 +19879,6 @@ mts:m634 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "solid dot -painatus"@fi,
         "solid dot-tryckning"@sv .
-
-mts:m730 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m611 ;
-    skos:example "Teksti vain suomeksi."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teksti vain"@fi,
-        "text endast på"@sv ;
-    skos:scopeNote "Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä."@fi .
 
 mts:m77 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20159,5 +20146,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-08-09T03:11:37+00:00"^^xsd:dateTime .
+    dct:modified "2018-08-10T03:08:16+00:00"^^xsd:dateTime .
 
