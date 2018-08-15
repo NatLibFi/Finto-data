@@ -899,6 +899,7 @@ slm:s1223 a skos:Concept ;
         "sånger på teckenspråk"@sv .
 
 slm:s1224 a skos:Concept ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026635> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "anthemit"@fi,
         "anthems"@sv ;
@@ -1205,10 +1206,10 @@ slm:s195 a skos:Concept ;
         "dixieland"@sv .
 
 slm:s196 a skos:Concept ;
+    skos:broader slm:s1081 ;
     skos:inScheme slm:s861 ;
-    skos:prefLabel "vokaliisit"@fi,
-        "vokaliser"@sv ;
-    skos:topConceptOf slm:s861 .
+    skos:prefLabel "vokaliisit (laulut)"@fi,
+        "vokaliser (sånger)"@sv .
 
 slm:s197 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1984> ;
@@ -3080,12 +3081,6 @@ slm:s626 a skos:Concept ;
         "endagsromaner"@sv ;
     skos:scopeNote "Käytetään teoksista, joissa tapahtuma-aikana on yksi vuorokausi."@fi,
         "Används om verk som utspelar sig under ett dygn."@sv .
-
-slm:s628 a skos:Concept ;
-    skos:broader slm:s1007 ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "calypso"@fi,
-        "calypso"@sv .
 
 slm:s63 a skos:Concept ;
     skos:altLabel "cirkulärbrev"@sv,
@@ -5183,14 +5178,6 @@ slm:s371 a skos:Concept ;
         "skjutspel"@sv ;
     skos:related slm:s1163 .
 
-slm:s372 a skos:Concept ;
-    skos:altLabel "son-musiikki"@fi ;
-    skos:broader slm:s1007 ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1143 ;
-    skos:prefLabel "son mexicano"@fi,
-        "son-musik"@sv .
-
 slm:s38 a skos:Concept ;
     skos:altLabel "kamppailupelit"@fi,
         "tappelupelit"@fi ;
@@ -5578,6 +5565,13 @@ slm:s622 a skos:Concept ;
     skos:related slm:s907 ;
     skos:topConceptOf slm:s285 .
 
+slm:s628 a skos:Concept ;
+    skos:broader slm:s1007 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "calypso"@fi,
+        "calypso"@sv ;
+    skos:related slm:s1226 .
+
 slm:s629 a skos:Concept ;
     skos:broader owl:Thing ;
     skos:inScheme slm:s861 ;
@@ -5768,6 +5762,7 @@ slm:s778 a skos:Concept ;
     skos:related slm:s1165 .
 
 slm:s78 a skos:Concept ;
+    skos:altLabel "baletit (musiikki)"@fi ;
     skos:broader slm:s353,
         slm:s476 ;
     skos:inScheme slm:s861 ;
@@ -6433,6 +6428,18 @@ slm:s1214 a skos:Concept ;
         "mysdeckare"@sv ;
     skos:related slm:s287 .
 
+slm:s1226 a skos:Concept ;
+    skos:altLabel "kuubalainen son"@fi,
+        "son"@fi,
+        "son (kuubalainen populaarimusiikki)"@fi,
+        "son (kubansk musik)"@sv ;
+    skos:broader slm:s499 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "son cubano"@fi,
+        "son cubano"@sv ;
+    skos:related slm:s372,
+        slm:s628 .
+
 slm:s126 a skos:Concept ;
     skos:altLabel "maahanmuuttajakirjallisuus"@fi,
         "emigrantromaner"@sv,
@@ -6635,6 +6642,16 @@ slm:s37 a skos:Concept ;
     skos:prefLabel "messut (sävellykset)"@fi,
         "mässor (kompositioner)"@sv ;
     skos:topConceptOf slm:s861 .
+
+slm:s372 a skos:Concept ;
+    skos:altLabel "son-musiikki"@fi,
+        "son-musik"@sv ;
+    skos:broader slm:s1007 ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1143 ;
+    skos:prefLabel "son mexicano"@fi,
+        "son mexicano"@sv ;
+    skos:related slm:s1226 .
 
 slm:s374 a skos:Concept ;
     skos:altLabel "mangasarjakuvat"@fi,
@@ -8826,18 +8843,6 @@ slm:s230 a skos:Concept ;
         slm:s869,
         slm:s928 .
 
-slm:s499 a skos:Concept ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s219,
-        slm:s444,
-        slm:s464,
-        slm:s553,
-        slm:s641,
-        slm:s977 ;
-    skos:prefLabel "afroamerikkalainen musiikki"@fi,
-        "afroamerikansk musik"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s865 a skos:Concept ;
     skos:altLabel "farssit (elokuvat)"@fi,
         "farssit (näytelmät)"@fi,
@@ -8914,6 +8919,19 @@ slm:s168 a skos:Concept ;
     skos:scopeNote "Käytetään nuorille tarkoitetuista teoksista."@fi,
         "Används om verk avsedda för ungdomar."@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s499 a skos:Concept ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1226,
+        slm:s219,
+        slm:s444,
+        slm:s464,
+        slm:s553,
+        slm:s641,
+        slm:s977 ;
+    skos:prefLabel "afroamerikkalainen musiikki"@fi,
+        "afroamerikansk musik"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s504 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -9680,30 +9698,6 @@ slm:s436 a skos:Concept ;
     skos:prefLabel "popmusiikki"@fi,
         "popmusik"@sv .
 
-slm:s1081 a skos:Concept ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1052,
-        slm:s1101,
-        slm:s1107,
-        slm:s1147,
-        slm:s1223,
-        slm:s176,
-        slm:s204,
-        slm:s212,
-        slm:s214,
-        slm:s231,
-        slm:s32,
-        slm:s442,
-        slm:s605,
-        slm:s651,
-        slm:s737,
-        slm:s797,
-        slm:s829,
-        slm:s931 ;
-    skos:prefLabel "laulut"@fi,
-        "sånger"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s919 a skos:Concept ;
     skos:altLabel "huvinäytelmät"@fi,
         "lustspel"@sv ;
@@ -9730,6 +9724,31 @@ slm:s919 a skos:Concept ;
         slm:s481,
         slm:s619 ;
     skos:topConceptOf slm:s285 .
+
+slm:s1081 a skos:Concept ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1052,
+        slm:s1101,
+        slm:s1107,
+        slm:s1147,
+        slm:s1223,
+        slm:s176,
+        slm:s196,
+        slm:s204,
+        slm:s212,
+        slm:s214,
+        slm:s231,
+        slm:s32,
+        slm:s442,
+        slm:s605,
+        slm:s651,
+        slm:s737,
+        slm:s797,
+        slm:s829,
+        slm:s931 ;
+    skos:prefLabel "laulut"@fi,
+        "sånger"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s202 a skos:Concept ;
     skos:altLabel "handledningar"@sv ;
@@ -10414,7 +10433,6 @@ slm:s861 a skos:ConceptScheme ;
         slm:s178,
         slm:s183,
         slm:s187,
-        slm:s196,
         slm:s2,
         slm:s210,
         slm:s226,
@@ -10556,7 +10574,7 @@ slm:s861 a skos:ConceptScheme ;
         "Genretermer för musik"@sv .
 
 slm:s285 a skos:ConceptScheme ;
-    dct:modified "2018-08-14T03:28:17+00:00"^^xsd:dateTime ;
+    dct:modified "2018-08-15T03:31:00+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s1006,
         slm:s1011,
         slm:s1016,
