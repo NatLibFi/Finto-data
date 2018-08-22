@@ -7,7 +7,8 @@ import sys
 
 TYPEMAP = {
   u'vakavesi' : { 'fi': u'järvi', 'sv': u'sjö'},
-  u'kylä, kaupunginosa tai kulmakunta' : { 'fi': u'kylä', 'sv': u'by'}
+  u'kylä, kaupunginosa tai kulmakunta' : { 'fi': u'kylä', 'sv': u'by'},
+  u'virtavesi' : { 'fi': u'virta', 'sv': u'ström'}
 }
 
 
@@ -16,7 +17,7 @@ def get_place_type(g, place, lang):
     if src is None:
         return None
     pnrtype = src.split('tyyppitieto: ')[1]
-    return TYPEMAP[pnrtype.lower()][lang]
+    return TYPEMAP.get(pnrtype.lower())[lang] if TYPEMAP.get(pnrtype.lower(), None) else None
 
 g = Graph()
 g.parse(sys.argv[1], format='turtle')
