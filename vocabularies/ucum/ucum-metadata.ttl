@@ -4,7 +4,19 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ucum: <http://www.yso.fi/onto/ucum/> .
+@prefix ucum: <http://urn.fi/URN:NBN:fi:au:ucum:> .
 
 ucum: a skos:ConceptScheme ;
         dc:license <http://unitsofmeasure.org/trac/wiki/TermsOfUse> .
+
+ucum:Unit a owl:Class ;
+		rdfs:subClassOf skos:Concept ;
+		skos:prefLabel "unit"@en .
+		
+ucum:Base-unit a owl:Class ;
+		rdfs:subClassOf skos:Concept ;
+		skos:prefLabel "base unit"@en .
+
+ucum:Prefix a owl:Class ;
+		rdfs:subClassOf skos:Concept ;
+		skos:prefLabel "prefix"@en .
