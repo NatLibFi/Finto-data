@@ -341,6 +341,26 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SisaltoKuunneltavissaJaKatsottavissaMobiililaitteenAvulla">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Sisältö kuunneltavissa ja katsottavissa mobiililaitteen avulla.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SisaltoKuunneltavissaMobiililaitteenAvulla">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Sisältö kuunneltavissa mobiililaitteen avulla.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:innoittaja">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">innoittaja</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10291"/>
+    <skos:scopeNote xml:lang="fi">Teos, jota toinen teos on innoittanut.Vastavuoroinen suhde: innoituksen perustana.</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -871,9 +891,10 @@ Mikroskooppilaitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="sv">Efterföljande</rdfs:label>
-    <rdfs:label xml:lang="fi">Seuraaja</rdfs:label>
+    <rdfs:label xml:lang="sv">efterföljande</rdfs:label>
+    <rdfs:label xml:lang="fi">seuraaja</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10170"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10191"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1055">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -3081,8 +3102,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Televisioversion perustana (teos):</rdfs:label>
-    <rdfs:label xml:lang="sv">Tv-version baserad på (verk):</rdfs:label>
+    <rdfs:label xml:lang="sv">Tv-version baserad på (verk)</rdfs:label>
+    <rdfs:label xml:lang="fi">televisiosovelluksen perustana (teos)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10132"/>
+    <skos:altLabel xml:lang="fi">televisioversion perustana (teos)</skos:altLabel>
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, josta televisiosovitus on tehty. Vastavuoroinen suhde: televisiosovellus (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1229">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -3954,8 +3978,8 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Elokuvaversion perustana (teos):</rdfs:label>
-    <rdfs:label xml:lang="sv">Filmversion baserad på (verk):</rdfs:label>
+    <rdfs:label xml:lang="fi">elokuvaversion perustana (teos):</rdfs:label>
+    <rdfs:label xml:lang="sv">filmversion baserad på (verk):</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10129"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1321">
@@ -6109,9 +6133,10 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">Nyproduktion baserad på (verk):</rdfs:label>
-    <rdfs:label xml:lang="fi">Uusintaproduktion perustana (teos):</rdfs:label>
-    <skos:scopeNote>Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos)</skos:scopeNote>
+    <rdfs:label xml:lang="sv">nyproduktion baserad på (verk)</rdfs:label>
+    <rdfs:label xml:lang="fi">uusintaproduktion perustana (teos)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10185"/>
+    <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1567">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -6626,8 +6651,8 @@ Katso myös taktiili teksti.</skos:definition>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="sv">Barnversion baserad på (verk):</rdfs:label>
-    <rdfs:label xml:lang="fi">Lastenversion perustana (teos):</rdfs:label>
+    <rdfs:label xml:lang="sv">barnversion baserad på (verk)</rdfs:label>
+    <rdfs:label xml:lang="fi">lastenversion perustana (teos)</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1625">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -16120,6 +16145,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="sv">Anmärkning om bärare</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus tallenteesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:SisaltoKuunneltavissaJaKatsottavissaMobiililaitteenAvulla"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:SisaltoKuunneltavissaMobiililaitteenAvulla"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1006"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m112"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m114"/>
@@ -16625,8 +16652,9 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Romaanimukaelman perustana (teos):</rdfs:label>
-    <rdfs:label xml:lang="sv">Romanbearbetning baserad på (verk):</rdfs:label>
+    <rdfs:label xml:lang="fi">romaanimukaelman perustana (teos)</rdfs:label>
+    <rdfs:label xml:lang="sv">romanbearbetning baserad på (verk)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10130"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva romaanimukaelma on tehty. Vastavuoroinen suhde: romaanimukaelma (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m614">
@@ -17879,10 +17907,10 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:label xml:lang="fi">Mukaelma (teos):</rdfs:label>
-    <rdfs:label xml:lang="sv">Omarbetning (verk):</rdfs:label>
+    <rdfs:label xml:lang="fi">mukaelma (teos)</rdfs:label>
+    <rdfs:label xml:lang="sv">omarbetning (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10155"/>
-    <skos:altLabel xml:lang="fi">Mukaelma teoksesta</skos:altLabel>
+    <skos:altLabel xml:lang="fi">mukaelma teoksesta</skos:altLabel>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, joka on muokattu kuvailun kohteena olevasta teoksesta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai viestintävälinettä varten. Koskee myös muodon muutoksia tai samassa muodossa kokonaan uudelleenmuokattuja teoksia.Vastavuoroinen suhde:mukaelman perustana (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m744">
@@ -20068,9 +20096,11 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Edeltäjä</rdfs:label>
-    <rdfs:label xml:lang="sv">Föregående</rdfs:label>
+    <rdfs:label xml:lang="fi">edeltäjä (teos)</rdfs:label>
+    <rdfs:label xml:lang="sv">föregående (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10226"/>
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, jonka sisältöä myöhempi teos jatkaa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m961">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -20439,5 +20469,13 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:runomukaelmanPerustana(Teos)">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">runomukaelman perustana (teos)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10128"/>
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, josta runomukaelma on tehty. Vastavuoroinen suhde: runomukaelma (teos)</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
