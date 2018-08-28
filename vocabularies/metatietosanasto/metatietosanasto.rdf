@@ -341,6 +341,28 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esiosaTeokselle">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1054"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">esiosa teokselle</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10195"/>
+    <skos:scopeNote xml:lang="fi">Teos, jota myöhempi teos juonellisesti edeltää.&#xD;
+Vastavuoroinen suhde: esiosa (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jakautumisenTulos(Teos)">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1054"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">jakautumisen tulos (teos):</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10211"/>
+    <skos:scopeNote xml:lang="fi">Teos, joka on tulosta aiemman teoksen jakautumisesta kahteen tai useampiin teoksiin.&#xD;
+Vastavuoroinen suhde: jatkaa osittain teosta.</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -12699,7 +12721,7 @@ Vastavuoroinen suhde: jakautumisen tulos (teos).</skos:scopeNote>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">korvaa osittain teosta:</rdfs:label>
+    <rdfs:label xml:lang="fi">korvaa osittain teoksen:</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10206"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisällön myöhempi teos osittain korvaa. Myöhempi teos sisältää tavallisesti päivitetty tietoa, joka korvaa vanhemman teoksen tiedon. Käytetään tavallisesti yksiosaisissa teoksissa, moniosaisissa monografioissa ja päivittyvissä julkaisuissa.&#xD;
@@ -12740,10 +12762,10 @@ Vastavuoroinen suhde: sulautunut osittain teokseen.</skos:scopeNote>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">jatko-osa</rdfs:label>
+    <rdfs:label xml:lang="fi">jatko-osa:</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10020"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
-    <skos:scopeNote>Liittää teoksen teokseen, joka juonellisesti jatkaa aikaisemmin ilmestynyttä teosta. Vastavuoroinen suhde: jatko-osa teokselle.</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, joka juonellisesti jatkaa aikaisemmin ilmestynyttä teosta. Vastavuoroinen suhde: jatko-osa teokselle.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2265">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1455"/>
@@ -20589,5 +20611,26 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teokseenSulautunut">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m960"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">teokseen sulautunut:</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10224"/>
+    <skos:scopeNote xml:lang="fi">Teos, joka on sulautunut osaksi toista teosta.&#xD;
+Vastavuoroinen suhde: sulautunut teokseen.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teokseenYhdistyja">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m960"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">teokseen yhdistyjä:</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10213"/>
+    <skos:scopeNote xml:lang="fi">Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa.</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
