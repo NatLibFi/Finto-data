@@ -13,6 +13,61 @@
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix : <#> .
 
+# Skosmos main configuration
+
+:config a skosmos:Configuration ;
+    # SPARQL endpoint
+    # a local Fuseki server is usually on localhost:3030
+    skosmos:sparqlEndpoint <http://api.finto.fi/sparql> ;
+    # sparql-query extension, or "Generic" for plain SPARQL 1.1
+    # set to "JenaText" instead if you use Fuseki with jena-text index
+    skosmos:sparqlDialect "JenaText" ;
+    # whether to enable collation in sparql queries
+    # skosmos:sparqlCollationEnabled ? ;
+    # HTTP client configuration
+    # skosmos:sparqlTimeout ? ;
+    skosmos:httpTimeout 3 ;
+    # customize the service name
+    skosmos:serviceName "Finto" ;
+    # customize the base element. Set this if the automatic base url detection doesn't work. For example setups behind a proxy.
+    # skosmos:baseHref "?" ;
+    # interface languages available, and the corresponding system locales
+    skosmos:languages (
+        [ rdfs:label "fi" ; rdf:value "fi_FI.utf8" ]
+        [ rdfs:label "sv" ; rdf:value "sv_SE.utf8" ]
+        [ rdfs:label "en" ; rdf:value "en_GB.utf8" ]
+    ) ;
+    # how many results (maximum) to load at a time on the search results page
+    # skosmos:searchResultsSize ? ;
+    # how many items (maximum) to retrieve in transitive property queries
+    skosmos:transitiveLimit 1000 ;
+    # whether or not to log caught exceptions
+    skosmos:logCaughtExceptions false ;
+    # set to TRUE to enable logging into browser console
+    # skosmos:logBrowserConsole ? ;
+    # set to a logfile path to enable logging into log file
+    # skosmos:logFileName "?" ;
+    # a default location for Twig template rendering
+    skosmos:templateCache "/tmp/finto.fi-template-cache" ;
+    # customize the css by adding your own stylesheet
+    skosmos:customCss "resource/css/finto.css" ;
+    # default email address where to send the feedback
+    skosmos:feedbackAddress "finto-posti@helsinki.fi" ;
+    # email address to set as the sender for feedback messages
+    # skosmos:feedbackSender "?" ;
+    # email address to set as the envelope sender for feedback messages
+    skosmos:feedbackEnvelopeSender "" ;
+    # whether to display the ui language selection as a dropdown (useful for cases where there are more than 3 languages) 
+    # skosmos:uiLanguageDropdown ? ;
+    # whether to enable the spam honey pot or not, enabled by default
+    # skosmos:uiHoneypotEnabled ? ;
+    # default time a user must wait before submitting a form
+    # skosmos:uiHoneypotTime ? ;
+    # plugins to activate for the whole installation (including all vocabularies)
+    skosmos:globalPlugins ( "yse" ) .
+
+# Skosmos vocabularies
+
 :afo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "AFO - Luonnonvara- ja ympäristöontologia"@fi,
 		"AFO - Naturresurs- och miljöontologi"@sv,
