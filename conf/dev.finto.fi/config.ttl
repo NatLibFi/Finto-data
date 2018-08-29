@@ -18,7 +18,7 @@
 :config a skosmos:Configuration ;
     # SPARQL endpoint
     # a local Fuseki server is usually on localhost:3030
-    skosmos:sparqlEndpoint "http://api.dev.finto.fi/sparql" ;
+    skosmos:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
     # sparql-query extension, or "Generic" for plain SPARQL 1.1
     # set to "JenaText" instead if you use Fuseki with jena-text index
     skosmos:sparqlDialect "JenaText" ;
@@ -143,7 +143,8 @@
         skosmos:shortName "CER";
         dc:subject :cat_science ;
         void:uriSpace "http://tieteentermipankki.fi/wiki/";
-        skosmos:language "fi";
+        skosmos:language "fi", "en";
+	skosmos:fullAlphabeticalIndex "true";
         void:dataDump <http://dev.finto.fi/download/cer/cer-skos.ttl> ;
         void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
         skosmos:sparqlGraph <http://tieteentermipankki.fi/wiki/> .
