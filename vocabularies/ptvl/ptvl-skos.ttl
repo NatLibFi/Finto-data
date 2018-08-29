@@ -622,6 +622,30 @@ ptvl:v1222 a skos:Concept ;
         "Hallinnon yleiset neuvontapalvelut"@fi,
         "Förvaltningens generella rådgivningstjänster"@sv .
 
+ptvl:v5008 a skos:Concept ;
+    skos:broader ptvl:v5001 ;
+    skos:inScheme ptvl:TT ;
+    skos:notation "TT1.2" ;
+    skos:prefLabel "County"@en,
+        "Maakunta"@fi,
+        "Landskap"@sv .
+
+ptvl:v5009 a skos:Concept ;
+    skos:broader ptvl:v5001 ;
+    skos:inScheme ptvl:TT ;
+    skos:notation "TT1.5" ;
+    skos:prefLabel "Health and social services centre of an unincorporated county enterprise"@en,
+        "Maakunnan liikelaitoksen sote-keskus"@fi,
+        "Landskapets affärsverkets social- och hälsocentral"@sv .
+
+ptvl:v5010 a skos:Concept ;
+    skos:broader ptvl:v5005 ;
+    skos:inScheme ptvl:TT ;
+    skos:notation "TT2.3" ;
+    skos:prefLabel "Health and social services centre of a private service provider"@en,
+        "Yksityisen palvelutuottajan sote-keskus"@fi,
+        "Privat tjänsteproducents social- och hälsocentral"@sv .
+
 ptvl:v1002 a skos:Concept ;
     skos:broader ptvl:v1001 ;
     skos:inScheme ptvl: ;
@@ -2917,7 +2941,7 @@ ptvl:v5002 a skos:Concept ;
 ptvl:v5003 a skos:Concept ;
     skos:broader ptvl:v5001 ;
     skos:inScheme ptvl:TT ;
-    skos:notation "TT1.2" ;
+    skos:notation "TT1.3" ;
     skos:prefLabel "Municipality"@en,
         "Kunta"@fi,
         "Kommun"@sv .
@@ -2925,7 +2949,7 @@ ptvl:v5003 a skos:Concept ;
 ptvl:v5004 a skos:Concept ;
     skos:broader ptvl:v5001 ;
     skos:inScheme ptvl:TT ;
-    skos:notation "TT1.3" ;
+    skos:notation "TT1.4" ;
     skos:prefLabel "Regional joint organization"@en,
         "Alueellinen yhteistoimintaorganisaatio"@fi,
         "Regionalt samarbetsorgan"@sv .
@@ -3014,16 +3038,6 @@ ptvl:v1171 a skos:Concept ;
         "Konsumentärenden"@sv ;
     skos:topConceptOf ptvl: .
 
-ptvl:v5005 a skos:Concept ;
-    skos:inScheme ptvl:TT ;
-    skos:narrower ptvl:v5006,
-        ptvl:v5007 ;
-    skos:notation "TT2" ;
-    skos:prefLabel "Private sector service producers"@en,
-        "Yksityiset palvelutuottajat"@fi,
-        "Privata serviceleverantörer"@sv ;
-    skos:topConceptOf ptvl:TT .
-
 ptvl:v1152 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:narrower ptvl:v1153,
@@ -3066,15 +3080,15 @@ ptvl:v1206 a skos:Concept ;
         "Kommunikation"@sv ;
     skos:topConceptOf ptvl: .
 
-ptvl:v5001 a skos:Concept ;
+ptvl:v5005 a skos:Concept ;
     skos:inScheme ptvl:TT ;
-    skos:narrower ptvl:v5002,
-        ptvl:v5003,
-        ptvl:v5004 ;
-    skos:notation "TT1" ;
-    skos:prefLabel "Public sector service producers"@en,
-        "Julkiset palvelutuottajat"@fi,
-        "Offentliga serviceleverantörer"@sv ;
+    skos:narrower ptvl:v5006,
+        ptvl:v5007,
+        ptvl:v5010 ;
+    skos:notation "TT2" ;
+    skos:prefLabel "Private sector service producers"@en,
+        "Yksityiset palvelutuottajat"@fi,
+        "Privata serviceleverantörer"@sv ;
     skos:topConceptOf ptvl:TT .
 
 ptvl:TTP a skos:ConceptScheme ;
@@ -3210,6 +3224,19 @@ ptvl:v1210 a skos:Concept ;
         "Motion och friluftsliv"@sv ;
     skos:topConceptOf ptvl: .
 
+ptvl:v5001 a skos:Concept ;
+    skos:inScheme ptvl:TT ;
+    skos:narrower ptvl:v5002,
+        ptvl:v5003,
+        ptvl:v5004,
+        ptvl:v5008,
+        ptvl:v5009 ;
+    skos:notation "TT1" ;
+    skos:prefLabel "Public sector service producers"@en,
+        "Julkiset palvelutuottajat"@fi,
+        "Offentliga serviceleverantörer"@sv ;
+    skos:topConceptOf ptvl:TT .
+
 ptvl:v1095 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:narrower ptvl:v1217,
@@ -3275,16 +3302,6 @@ ptvl:v2001 a skos:Concept ;
         "Medborgare"@sv ;
     skos:scopeNote "Palvelutietovarantoon kuvattavalle palvelulle valitaan Kansalaiset-kohderyhmä, kun palvelun halutaan näkyvän kansalaisen palvelunäkymässä. Saman palvelun voi kytkeä myös Yritykset- ja/tai Viranomaiset-kohderyhmään, jos palvelun halutaan näkyvän myös näissä palvelunäkymän versioissa."@fi ;
     skos:topConceptOf ptvl:KR .
-
-ptvl:TT a skos:ConceptScheme ;
-    dc:description """Luokituksessa on eritelty organisaatiotyypit, jotka tuottavat palveluja
-kansalaisille, yrityksille ja yhteisöille."""@fi ;
-    dct:isPartOf ptvl: ;
-    skos:hasTopConcept ptvl:v5001,
-        ptvl:v5005 ;
-    skos:prefLabel "Classification of public service producer organization types"@en,
-        "Julkisten palvelujen tuottajatyyppiluokat"@fi,
-        "Producenttyper för offentliga tjänster"@sv .
 
 ptvl:v1184 a skos:Concept ;
     skos:inScheme ptvl: ;
@@ -3458,6 +3475,16 @@ ptvl:v1174 a skos:Concept ;
         "Immigration och emigration"@sv ;
     skos:topConceptOf ptvl: .
 
+ptvl:TT a skos:ConceptScheme ;
+    dc:description """Luokituksessa on eritelty organisaatiotyypit, jotka tuottavat palveluja
+kansalaisille, yrityksille ja yhteisöille."""@fi ;
+    dct:isPartOf ptvl: ;
+    skos:hasTopConcept ptvl:v5001,
+        ptvl:v5005 ;
+    skos:prefLabel "Classification of public service producer organization types"@en,
+        "Julkisten palvelujen tuottajatyyppiluokat"@fi,
+        "Producenttyper för offentliga tjänster"@sv .
+
 ptvl:v1076 a skos:Concept ;
     skos:inScheme ptvl: ;
     skos:narrower ptvl:v1077,
@@ -3618,7 +3645,7 @@ Luokituksen termejä voi ja on suositeltavaa käyttää myös rajatun aiheen tai
         "Julkisten palvelujen luokitus"@fi,
         "Klassifikation av offentliga tjänster"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:modified "2018-02-26T14:31:54+00:00"^^xsd:dateTime ;
+    dct:modified "2018-08-29T13:55:55+00:00"^^xsd:dateTime ;
     skos:hasTopConcept ptvl:v1001,
         ptvl:v1007,
         ptvl:v1013,
