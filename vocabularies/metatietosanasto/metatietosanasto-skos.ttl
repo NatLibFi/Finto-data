@@ -20,6 +20,8 @@
 
 dct:Point rdfs:subClassOf dct:Policy .
 
+rdaw:P10117 skos:member mts:m2288 .
+
 <http://rdvocab.info/termList/RDACarrierType/1004> skos:prefLabel "äänilevy"@fi,
         "ljudskiva"@sv .
 
@@ -95,6 +97,15 @@ dct:Point rdfs:subClassOf dct:Policy .
 <http://rdvocab.info/termList/fontSize/1002> skos:prefLabel "isotekstinen"@fi,
         "stor stil"@sv .
 
+mts:m1054 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10170,
+        rdaw:P10191 ;
+    skos:member mts:m2280 ;
+    skos:prefLabel "seuraaja (teos)"@fi,
+        "efterföljande (verk)"@sv .
+
 mts:m1091 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -125,6 +136,12 @@ mts:m1253 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "160 kierr./min"@fi,
         "160 varv/min"@sv .
+
+mts:m127 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:prefLabel "jatkoa teokselle"@fi,
+        "fortsättning på verket"@sv .
 
 mts:m138 a isothes:ConceptGroup,
         skos:Collection ;
@@ -435,6 +452,31 @@ mts:m2205 a skos:Concept ;
         "citat"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
 
+mts:m2265 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdae:P20149 ;
+    skos:prefLabel "edeltäjä (ekspressio)"@fi,
+        "föregående (uttryck)"@sv ;
+    skos:scopeNote "Liittää ekspression teoksen ekspressioon, jonka sisältöä uudemman teoksen ekspressio jatkaa."@fi .
+
+mts:m2267 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdae:P20169,
+        rdae:P20191 ;
+    skos:prefLabel "seuraaja (ekspressio)"@fi,
+        "efterföljande (uttryck)"@sv .
+
+mts:m2284 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Lukuoikeus painetun version tilaajalla."@fi,
+        "Prenumeranter av den tryckta versionen har tillgång till onlineresursen."@sv ;
+    skos:scopeNote "Verkkoaineiston kuvailun yhteydessä annetaan tieto siitä, että painetun version tilaajalla on lukuoikeus verkkoversioon."@fi,
+        "Vid beskrivning av onlineresurs uppger man att prenumeranter på den tryckta versionen har tillgång till onlineresursen."@sv .
+
 mts:m251 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -560,6 +602,23 @@ mts:m83 a isothes:ConceptGroup,
         mts:m991 ;
     skos:prefLabel "Teos"@fi,
         "Verk"@sv .
+
+mts:m837 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10190 ;
+    skos:altLabel "perustuu teokseen"@fi,
+        "pohjautuu teokseen"@fi ;
+    skos:member mts:m1228,
+        mts:m1399,
+        mts:m1545,
+        mts:m1566,
+        mts:m1579,
+        mts:m1624,
+        mts:m2262,
+        mts:m613 ;
+    skos:prefLabel "teoksen perustana"@fi,
+        "verk baserat på"@sv .
 
 mts:m838 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -1441,17 +1500,6 @@ mts:m1050 a skos:Concept ;
         "mapp"@sv ;
     skos:scopeNote "Manifestaation tunnisteen lisäys."@fi .
 
-mts:m1054 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10170,
-        rdaw:P10191 ;
-    skos:member mts:m2264,
-        mts:m2269,
-        mts:m2271 ;
-    skos:prefLabel "seuraaja (teos)"@fi,
-        "efterföljande (verk)"@sv .
-
 mts:m1055 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -2278,10 +2326,11 @@ mts:m1166 a isothes:ConceptGroup,
 
 mts:m1167 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "Kansallinen termi"@fi ;
     rdfs:seeAlso rdaw:P10251 ;
     skos:altLabel "Sarjakuvaversio teoksesta"@fi ;
-    skos:prefLabel "Sarjakuvaversio (teos):"@fi,
-        "Serieversion (verk):"@sv ;
+    skos:prefLabel "sarjakuvaversio (teos)"@fi,
+        "serieversion (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on kuvailun kohteena olevan teoksen sarjakuvaversio."@fi .
 
 mts:m1168 a skos:Concept ;
@@ -3689,12 +3738,6 @@ mts:m1269 a skos:Concept ;
     skos:prefLabel "8 mm"@fi,
         "8 mm"@sv .
 
-mts:m127 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    skos:prefLabel "jatkoa teokselle:"@fi,
-        "fortsättning på verket:"@sv .
-
 mts:m1270 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -4056,10 +4099,10 @@ mts:m1314 a skos:Concept ;
 mts:m1315 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:member mts:m1054,
-        mts:m960 ;
-    skos:prefLabel "Edeltäjä-seuraaja-suhteet"@fi,
-        "Föregående-efterföljande-relationer"@sv .
+    skos:member mts:m2274,
+        mts:m2275 ;
+    skos:prefLabel "Edeltäjä-seuraaja-suhteet (teos)"@fi,
+        "Föregående-efterföljande-relationer (verk)"@sv .
 
 mts:m1316 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4217,7 +4260,7 @@ mts:m1335 a isothes:ConceptGroup,
 
 mts:m1336 a isothes:ConceptGroup,
         skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
+    rdfs:comment "Kansallinen termi"@fi ;
     skos:prefLabel "itsenäinen jatko-osa teokselle"@fi,
         "fristående fortsättning på verket"@sv .
 
@@ -5092,10 +5135,10 @@ mts:m1453 a skos:Concept ;
 mts:m1455 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:member mts:m2265,
-        mts:m2267 ;
-    skos:prefLabel "Edeltäjä-seuraaja-suhteet"@fi,
-        "Föregående-efterföljande-relationer"@sv .
+    skos:member mts:m2286,
+        mts:m2295 ;
+    skos:prefLabel "Edeltäjä-seuraaja-suhteet (ekspressio)"@fi,
+        "Föregående-efterföljande-relationer (uttryck)"@sv .
 
 mts:m1456 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5701,8 +5744,9 @@ mts:m1544 a skos:Concept ;
 
 mts:m1545 a isothes:ConceptGroup,
         skos:Collection ;
-    skos:prefLabel "Selkokielisen version perustana (teos):"@fi,
-        "Lättläst version baserad på (verk):"@sv ;
+    rdfs:comment "Kansallinen termi"@fi ;
+    skos:prefLabel "selkokielisen version perustana (teos)"@fi,
+        "lättläst version baserad på (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva selkokielinen versio on tehty. Vastavuoroinen suhde: Selkokielinen versio (teos):"@fi .
 
 mts:m1546 a skos:Concept ;
@@ -5857,6 +5901,7 @@ mts:m1565 a isothes:ConceptGroup,
 
 mts:m1566 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10185 ;
     skos:prefLabel "uusintaproduktion perustana (teos)"@fi,
         "nyproduktion baserad på (verk)"@sv ;
@@ -5955,8 +6000,9 @@ mts:m1577 a isothes:ConceptGroup,
 
 mts:m1579 a isothes:ConceptGroup,
         skos:Collection ;
-    skos:prefLabel "Sarjakuvaversion perustana (teos):"@fi,
-        "Serieversion baserad på (verk):"@sv ;
+    rdfs:comment "Kansallinen termi"@fi ;
+    skos:prefLabel "sarjakuvaversion perustana (teos)"@fi,
+        "serieversion baserad på (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva sarjakuvaversio on tehty. Vastavuoroinen suhde: sarjakuvaversio (teos)"@fi .
 
 mts:m158 a isothes:ConceptGroup,
@@ -6282,6 +6328,7 @@ mts:m1623 a skos:Concept ;
 
 mts:m1624 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "Kansallinen termi"@fi ;
     skos:prefLabel "lastenversion perustana (teos)"@fi,
         "barnversion baserad på (verk)"@sv .
 
@@ -11005,8 +11052,7 @@ mts:m2254 a skos:Concept ;
 mts:m2255 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10227 ;
+    rdfs:seeAlso rdaw:P10227 ;
     skos:prefLabel "jatko-osa teokselle"@fi,
         "fortsättning på verket"@sv ;
     skos:scopeNote "Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa."@fi .
@@ -11014,8 +11060,7 @@ mts:m2255 a isothes:ConceptGroup,
 mts:m2256 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10207 ;
+    rdfs:seeAlso rdaw:P10207 ;
     skos:prefLabel "korvaa teoksen"@fi ;
     skos:scopeNote """Teos, jonka sisällön myöhempi teos korvaa. Myöhempi teos sisältää tavallisesti päivitetty tietoa, joka korvaa vanhemman teoksen tiedon. Käytetään tavallisesti yksiosaisissa teoksissa, moniosaisissa monografioissa ja päivittyvissä julkaisuissa.\r
 Vastavuoroinen suhde: korvaava teos."""@fi .
@@ -11023,8 +11068,7 @@ Vastavuoroinen suhde: korvaava teos."""@fi .
 mts:m2257 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10169 ;
+    rdfs:seeAlso rdaw:P10169 ;
     skos:prefLabel "eronnut teoksesta"@fi ;
     skos:scopeNote """Teos, jonka sisällöstä on eronnut osa, joka muodostaa uuden teoksen.\r
 Vastavuoroinen suhde: jatkuu osittain teoksessa."""@fi .
@@ -11032,8 +11076,7 @@ Vastavuoroinen suhde: jatkuu osittain teoksessa."""@fi .
 mts:m2258 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10168 ;
+    rdfs:seeAlso rdaw:P10168 ;
     skos:prefLabel "jatkaa osittain teosta"@fi ;
     skos:scopeNote """Teos, joka jakaantuu kahdeksi tai useammiksi erillisiksi uudelleen nimetyiksi teoksiksi. Käytetään yleensä sarja-aineistossa. \r
 Vastavuoroinen suhde: jakautumisen tulos (teos)."""@fi .
@@ -11057,8 +11100,7 @@ mts:m226 a skos:Concept ;
 mts:m2260 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10206 ;
+    rdfs:seeAlso rdaw:P10206 ;
     skos:prefLabel "korvaa osittain teoksen"@fi ;
     skos:scopeNote """Teos, jonka sisällön myöhempi teos osittain korvaa. Myöhempi teos sisältää tavallisesti päivitetty tietoa, joka korvaa vanhemman teoksen tiedon. Käytetään tavallisesti yksiosaisissa teoksissa, moniosaisissa monografioissa ja päivittyvissä julkaisuissa.\r
 Vastavuoroinen suhde: osittain korvattu teoksella."""@fi .
@@ -11066,14 +11108,14 @@ Vastavuoroinen suhde: osittain korvattu teoksella."""@fi .
 mts:m2261 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10122,
-        rdaw:P10156 ;
+    rdfs:seeAlso rdaw:P10122 ;
     skos:prefLabel "esiosa (teos)"@fi ;
     skos:scopeNote """Teos, joka juonellisesti edeltää aikaisemmin ilmestynyttä teosta.\r
 Vastavuoroinen suhde: esiosa teokselle."""@fi .
 
 mts:m2262 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10128 ;
     skos:prefLabel "runomukaelman perustana (teos)"@fi ;
     skos:scopeNote "Liittää teoksen teokseen, josta runomukaelma on tehty. Vastavuoroinen suhde: runomukaelma (teos)"@fi .
@@ -11081,8 +11123,7 @@ mts:m2262 a isothes:ConceptGroup,
 mts:m2263 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10225 ;
+    rdfs:seeAlso rdaw:P10225 ;
     skos:prefLabel "teokseen osittain sulautunut"@fi ;
     skos:scopeNote """eos, joka on osittain sulautunut osaksi toista teosta.\r
 Vastavuoroinen suhde: sulautunut osittain teokseen."""@fi .
@@ -11090,33 +11131,16 @@ Vastavuoroinen suhde: sulautunut osittain teokseen."""@fi .
 mts:m2264 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10020,
-        rdaw:P10156 ;
+    rdfs:seeAlso rdaw:P10020 ;
     skos:prefLabel "jatko-osa"@fi ;
     skos:scopeNote "Liittää teoksen teokseen, joka juonellisesti jatkaa aikaisemmin ilmestynyttä teosta. Vastavuoroinen suhde: jatko-osa teokselle."@fi .
 
-mts:m2265 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdae:P20149,
-        rdae:P20154 ;
-    skos:prefLabel "edeltäjä (ekspressio)"@fi,
-        "föregående (uttryck)"@sv ;
-    skos:scopeNote "Liittää ekspression teoksen ekspressioon, jonka sisältöä uudemman teoksen ekspressio jatkaa."@fi .
-
 mts:m2266 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10291 ;
     skos:prefLabel "innoittaja"@fi ;
     skos:scopeNote "Teos, jota toinen teos on innoittanut.Vastavuoroinen suhde: innoituksen perustana."@fi .
-
-mts:m2267 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdae:P20169,
-        rdae:P20191 ;
-    skos:prefLabel "seuraaja (ekspressio)"@fi,
-        "efterföljande (uttryck)"@sv .
 
 mts:m2268 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11127,8 +11151,7 @@ mts:m2268 a skos:Concept ;
 mts:m2269 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10195 ;
+    rdfs:seeAlso rdaw:P10195 ;
     skos:prefLabel "esiosa teokselle"@fi ;
     skos:scopeNote """Teos, jota myöhempi teos juonellisesti edeltää.\r
 Vastavuoroinen suhde: esiosa (teos)."""@fi .
@@ -11143,16 +11166,14 @@ mts:m227 a skos:Concept ;
 mts:m2270 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10213 ;
+    rdfs:seeAlso rdaw:P10213 ;
     skos:prefLabel "teokseen yhdistyjä"@fi ;
     skos:scopeNote "Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa."@fi .
 
 mts:m2271 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10211 ;
+    rdfs:seeAlso rdaw:P10211 ;
     skos:prefLabel "jakautumisen tulos (teos)"@fi ;
     skos:scopeNote """Teos, joka on tulosta aiemman teoksen jakautumisesta kahteen tai useampiin teoksiin.\r
 Vastavuoroinen suhde: jatkaa osittain teosta."""@fi .
@@ -11160,11 +11181,160 @@ Vastavuoroinen suhde: jatkaa osittain teosta."""@fi .
 mts:m2272 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10224 ;
+    rdfs:seeAlso rdaw:P10224 ;
     skos:prefLabel "teokseen sulautunut"@fi ;
     skos:scopeNote """Teos, joka on sulautunut osaksi toista teosta.\r
 Vastavuoroinen suhde: sulautunut teokseen."""@fi .
+
+mts:m2273 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10212 ;
+    skos:prefLabel "yhdistynyt teokseksi"@fi ;
+    skos:scopeNote """Teos, joka on muodostunut kahden tai useampien teosten yhdistymisestä. \r
+Vastavuoroinen suhde: teokseen yhdistyjä."""@fi .
+
+mts:m2274 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10170 ;
+    skos:member mts:m2264,
+        mts:m2269,
+        mts:m2271,
+        mts:m2273,
+        mts:m2276,
+        mts:m2279,
+        mts:m2282,
+        mts:m2285,
+        mts:m2291 ;
+    skos:prefLabel "myöhempi teos"@fi ;
+    skos:scopeNote """Teos, joka seuraa joko juonellisesti tai ajallisesti sitä edeltävää teosta. \r
+Vastavuoroinen suhde: aiempi teos."""@fi .
+
+mts:m2275 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10156 ;
+    skos:member mts:m1336,
+        mts:m2255,
+        mts:m2256,
+        mts:m2257,
+        mts:m2258,
+        mts:m2260,
+        mts:m2261,
+        mts:m2263,
+        mts:m2270,
+        mts:m2272,
+        mts:m960 ;
+    skos:prefLabel "aiempi teos"@fi,
+        "föregående (verk)"@sv ;
+    skos:scopeNote """Teos, joka edeltää joko juonellisesti tai ajallisesti sitä seuraavaa teosta. \r
+Vastavuoroinen suhde: myöhempi teos."""@fi .
+
+mts:m2276 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10146 ;
+    skos:prefLabel "sulautunut osittain teokseen"@fi ;
+    skos:scopeNote """Teos, joka on osittain sulautunut osaksi toista teosta. \r
+Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi .
+
+mts:m2277 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m2296 ;
+    skos:prefLabel "jäljitelmä (teos)"@fi ;
+    skos:scopeNote """Teos, joka jäljittelee lähdeteoksen tyyliä tai sisältöä. \r
+Vastavuoroinen suhde: jäljitelmän perustana (teos)."""@fi .
+
+mts:m2278 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10107 ;
+    skos:prefLabel "abstrakti (teos)"@fi ;
+    skos:scopeNote """Teos, joka abstrahoi lähdeteoksen objektiivisesti. \r
+Vastavuoroinen suhde: abstraktin perustana (teos)."""@fi .
+
+mts:m2279 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10104 ;
+    skos:prefLabel "jatkuu osittain teoksessa"@fi ;
+    skos:scopeNote """Teoksen osa, joka on eronnut aiemmasta teoksesta muodostaakseen uuden teoksen. Tätä suhdetta käytetään yleensä sarja-aineistoissa. \r
+Vastavuoroinen suhde: eronnut teoksesta."""@fi .
+
+mts:m2280 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10021 ;
+    skos:prefLabel "osittain korvattu teoksella"@fi ;
+    skos:scopeNote """Teos, joka osittain korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.\r
+Vastavuoroinen suhde: korvaa osittain teoksen."""@fi .
+
+mts:m2281 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10235,
+        mts:m575 ;
+    skos:prefLabel "musikaaliversio (teos)"@fi ;
+    skos:scopeNote """Musikaaliversio, joka perustuu lähdeteokseen.\r
+Vastavuoroinen suhde: musikaaliversion perustana (teos)."""@fi .
+
+mts:m2282 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10145 ;
+    skos:prefLabel "sulautunut teokseen"@fi ;
+    skos:scopeNote """Teos, joka on sulautunut osaksi toista teosta.\r
+Vastavuoroinen suhde: teokseen sulautunut."""@fi .
+
+mts:m2283 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10119 ;
+    skos:prefLabel "laajennelma (teos)"@fi ;
+    skos:scopeNote """Teos, joka laajentaa lähdeteosta.\r
+Vastavuoroinen suhde: laajennelman perustana (teos)."""@fi .
+
+mts:m2285 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10022 ;
+    skos:prefLabel "korvaava teos"@fi ;
+    skos:scopeNote """Teos, joka korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.\r
+Vastavuoroinen suhde: korvaa teoksen."""@fi .
+
+mts:m2286 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdae:P20169 ;
+    skos:prefLabel "myöhempi ekspressio"@fi ;
+    skos:scopeNote """Teoksen ekspressio, joka seuraa joko juonellisesti tai ajallisesti sitä edeltävää ekspressiota.\r
+Vastavuoroinen suhde: aiempi ekspressio."""@fi .
+
+mts:m2287 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10089 ;
+    skos:prefLabel "abstraktit (teos)"@fi ;
+    skos:scopeNote """Teos, joka on lähdeteoksen sisällön abstraktit sisältävä tiivistelmä- ja indeksointipalvelu. \r
+Vastavuoroinen suhde: abstraktien perustana (teos)."""@fi .
+
+mts:m2288 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10144 ;
+    skos:prefLabel "parodia (teos)"@fi ;
+    skos:scopeNote """Teos, joka jäljittelee lähdeteoksen tyyliä tai sisältöä humoristisesti. \r
+Vastavuoroinen suhde: parodian perustana (teos)."""@fi .
+
+mts:m2289 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m2290 ;
+    skos:prefLabel "lyhennelmä (teos)"@fi ;
+    skos:scopeNote """Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä. \r
+Vastavuoroinen suhde: lyhennelmän perustana (teos)."""@fi .
 
 mts:m229 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11175,6 +11345,44 @@ mts:m229 a skos:Concept ;
     skos:prefLabel "hip hop"@fi,
         "hiphop"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
+
+mts:m2291 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10191 ;
+    skos:prefLabel "seuraaja (teos)"@fi ;
+    skos:scopeNote """Teos, joka seuraa sitä edeltävää teosta. Käytetään yleensä sarja-aineistossa. \r
+Vastavuoroinen suhde: edeltäjä (teos)."""@fi .
+
+mts:m2292 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10016 ;
+    skos:prefLabel "dramatisointi (teos)"@fi ;
+    skos:scopeNote """Lähdeteoksesta sovitettu draamateos. \r
+Vastavuoroinen suhde: dramatisoinnin perustana (teos)."""@fi .
+
+mts:m2293 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10090 ;
+    skos:prefLabel "indeksointi (teos)"@fi ;
+    skos:scopeNote """Teos, joka on lähdeteoksen sisällön indeksoinnin sisältävä tiivistelmä- ja indeksointipalvelu. \r
+Vastavuoroinen suhde: indeksoinnin perustana (teos)."""@fi .
+
+mts:m2294 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Aineisto on vapaasti saatavissa."@fi .
+
+mts:m2295 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdae:P20154 ;
+    skos:prefLabel "aiempi ekspressio"@fi ;
+    skos:scopeNote """Teoksen ekspressio, joka edeltää joko juonellisesti tai ajallisesti sitä seuraavaa ekspressiota. \r
+Vastavuoroinen suhde: myöhempi ekspressio."""@fi .
 
 mts:m23 a isothes:ConceptGroup,
         skos:Collection ;
@@ -13658,12 +13866,17 @@ mts:m530 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10148 ;
-    skos:member mts:m1566,
-        mts:m1624,
-        mts:m2266,
+    skos:member mts:m2266,
+        mts:m2277,
+        mts:m2278,
+        mts:m2283,
+        mts:m2287,
+        mts:m2289,
+        mts:m2293,
         mts:m743 ;
     skos:prefLabel "johdettu teos"@fi,
-        "härlett verk"@sv .
+        "härlett verk"@sv ;
+    skos:scopeNote "Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana."@fi .
 
 mts:m531 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14082,12 +14295,6 @@ mts:m573 a isothes:ConceptGroup,
     skos:scopeNote "Mikrotallenteen kuvan pienennyssuhde merkitään, jos sitä pidetään tärkeänä tunnistamisen tai valinnan kannalta. Käytetään yhtä tai useampaa soveltuvaa termiä seuraavasta luettelosta:"@fi,
         "Förminskningsgraden för en mikrolagrad bild anges ifall den anses viktig för identifikation eller urval. En eller flera lämpliga termer från följande lista används:"@sv .
 
-mts:m575 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdaw:P10129 ;
-    skos:prefLabel "elokuvaversio"@fi,
-        "filmversion"@sv .
-
 mts:m576 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
@@ -14312,6 +14519,7 @@ mts:m600 a isothes:ConceptGroup,
         mts:m1069,
         mts:m1214,
         mts:m1559,
+        mts:m2294,
         mts:m48,
         mts:m601,
         mts:m740 ;
@@ -15019,10 +15227,10 @@ mts:m697 a isothes:ConceptGroup,
 mts:m698 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:member mts:m530,
-        mts:m837 ;
-    skos:prefLabel "Johdannaissuhteet"@fi,
-        "Härledda relationer"@sv .
+    rdfs:seeAlso rdaw:P10229 ;
+    skos:member mts:m530 ;
+    skos:prefLabel "Johdannaissuhteet (teos)"@fi,
+        "Härledda relationer (verk)"@sv .
 
 mts:m699 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15361,15 +15569,14 @@ mts:m742 a skos:Concept ;
 
 mts:m743 a isothes:ConceptGroup,
         skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10155 ;
     skos:altLabel "mukaelma teoksesta"@fi ;
     skos:member mts:m1167,
         mts:m1350,
-        mts:m1545,
-        mts:m1579,
-        mts:m2262,
-        mts:m575,
-        mts:m613 ;
+        mts:m2281,
+        mts:m2292,
+        mts:m575 ;
     skos:prefLabel "mukaelma (teos)"@fi,
         "omarbetning (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, joka on muokattu kuvailun kohteena olevasta teoksesta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai viestintävälinettä varten. Koskee myös muodon muutoksia tai samassa muodossa kokonaan uudelleenmuokattuja teoksia.Vastavuoroinen suhde:mukaelman perustana (teos)"@fi .
@@ -16160,17 +16367,6 @@ mts:m836 a skos:Concept ;
     skos:prefLabel "passacagliat"@fi,
         "passacaglior"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
-
-mts:m837 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10190 ;
-    skos:altLabel "Perustuu teokseen:"@fi,
-        "Pohjautuu teokseen:"@fi ;
-    skos:member mts:m1228,
-        mts:m1399 ;
-    skos:prefLabel "Teoksen perustana:"@fi,
-        "Verk baserat på:"@sv .
 
 mts:m839 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17113,19 +17309,7 @@ mts:m959 a skos:Concept ;
 mts:m960 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10156,
-        rdaw:P10226 ;
-    skos:member mts:m127,
-        mts:m1336,
-        mts:m2255,
-        mts:m2256,
-        mts:m2257,
-        mts:m2258,
-        mts:m2260,
-        mts:m2261,
-        mts:m2263,
-        mts:m2270,
-        mts:m2272 ;
+    rdfs:seeAlso rdaw:P10226 ;
     skos:prefLabel "edeltäjä (teos)"@fi,
         "föregående (verk)"@sv ;
     skos:scopeNote "Liittää teoksen teokseen, jonka sisältöä myöhempi teos jatkaa."@fi .
@@ -20322,6 +20506,16 @@ mts:m41 a skos:Concept ;
     skos:prefLabel "termoform"@fi,
         "termoform"@sv .
 
+mts:m575 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10129,
+        mts:m575 ;
+    skos:prefLabel "elokuvaversio"@fi,
+        "filmversion"@sv ;
+    skos:scopeNote """Lähdeteokseen perustuva elokuva. \r
+Vastavuoroinen suhde: elokuvaversion perustana (teos)."""@fi .
+
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -20620,5 +20814,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-09-05T03:12:35+00:00"^^xsd:dateTime .
+    dct:modified "2018-09-07T03:51:04+00:00"^^xsd:dateTime .
 
