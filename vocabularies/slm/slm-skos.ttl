@@ -14,14 +14,6 @@
 slm: a owl:Ontology ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
-slm:s100 a <http://www.yso.fi/onto/kauno-meta/Concept> ;
-    rdfs:comment "Käytetään teoksista, joissa ihminen joutuu erilleen muusta kulttuurista, yleensä autiolle saarelle."@fi,
-        "Används om verk, där människan isoleras från civilisationen och ofta hamnar på en öde ö."@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p23743> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "robinsonadit"@fi,
-        "robinsonader"@sv .
-
 slm:s1 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "työväenlaulut"@fi,
@@ -33,6 +25,15 @@ slm:s10 a skos:Concept ;
     skos:inScheme slm:s593 ;
     skos:prefLabel "liikuntalehdet"@fi,
         "motionstidningar"@sv .
+
+slm:s100 a skos:Concept ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p23743> ;
+    skos:inScheme slm:s285 ;
+    skos:note "Käytetään teoksista, joissa ihminen joutuu erilleen muusta kulttuurista, yleensä autiolle saarelle."@fi,
+        "Används om verk, där människan isoleras från civilisationen och ofta hamnar på en öde ö."@sv ;
+    skos:prefLabel "robinsonadit"@fi,
+        "robinsonader"@sv ;
+    skos:topConceptOf slm:s285 .
 
 slm:s1000 a skos:Concept ;
     skos:broader slm:s532 ;
@@ -6338,16 +6339,6 @@ slm:s1114 a skos:Concept ;
     skos:related slm:s1054,
         slm:s603 .
 
-slm:s1118 a skos:Concept ;
-    skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "uusintatuotantoelokuvat"@fi,
-        "nyfilmatiseringar"@sv ;
-    skos:related slm:s529,
-        slm:s716 ;
-    skos:scopeNote "Käytetään elokuvista, jotka ovat jonkin aikaisemman elokuvan ja sen käsikirjoituksen uusintatuotantoja."@fi,
-        "Används om filmer som är nyproduktioner av någon tidigare film och dess manus."@sv .
-
 slm:s1132 a skos:Concept ;
     skos:broader slm:s354 ;
     skos:inScheme slm:s285 ;
@@ -6682,16 +6673,6 @@ slm:s376 a skos:Concept ;
         "dockskådespel"@sv ;
     skos:related slm:s875 .
 
-slm:s379 a skos:Concept ;
-    skos:broader slm:s518 ;
-    skos:inScheme slm:s285 ;
-    skos:note "Esim. elokuvan tai näytelmän pohjalta tehty romaani."@fi,
-        "Roman gjord baserat på t.ex. en film eller ett skådespel"@sv ;
-    skos:prefLabel "romaanisovitukset"@fi,
-        "bearbetningar till romaner"@sv ;
-    skos:related slm:s1058,
-        slm:s657 .
-
 slm:s380 a skos:Concept ;
     skos:altLabel "tjejserier (tecknade serier)"@sv ;
     skos:broader slm:s523,
@@ -6811,15 +6792,6 @@ slm:s501 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka on kirjoitettu suuraakkosin."@fi,
         "Används om verk som är skrivna med versaler."@sv ;
     skos:topConceptOf slm:s285 .
-
-slm:s509 a skos:Concept ;
-    skos:broader slm:s929 ;
-    skos:inScheme slm:s285 ;
-    skos:note "Esim. romaanin pohjalta tehty näytelmäsovitus."@fi ;
-    skos:prefLabel "näytelmäsovitukset"@fi,
-        "bearbetningar till skådespel"@sv ;
-    skos:related slm:s1058,
-        slm:s657 .
 
 slm:s52 a skos:Concept ;
     skos:broader slm:s230,
@@ -6944,16 +6916,6 @@ slm:s650 a skos:Concept ;
         "pikareskberättelser"@sv ;
     skos:related slm:s465,
         slm:s760 .
-
-slm:s67 a skos:Concept ;
-    skos:broader slm:s356 ;
-    skos:inScheme slm:s285,
-        slm:s593 ;
-    skos:note "Esim. elokuvan pohjalta tehty sarjakuva."@fi ;
-    skos:prefLabel "sarjakuvasovitukset"@fi,
-        "bearbetningar till tecknade serier"@sv ;
-    skos:related slm:s1058,
-        slm:s657 .
 
 slm:s675 a skos:Concept ;
     skos:broader slm:s1150 ;
@@ -7134,16 +7096,6 @@ slm:s806 a skos:Concept ;
         "actionromaner"@sv ;
     skos:related slm:s382,
         slm:s905 .
-
-slm:s813 a skos:Concept ;
-    skos:altLabel "förkortade utgåvor"@sv,
-        "förkortade verk"@sv ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "lyhennelmät"@fi,
-        "förkortade upplagor"@sv ;
-    skos:related slm:s1058,
-        slm:s657 ;
-    skos:topConceptOf slm:s285 .
 
 slm:s826 a skos:Concept ;
     skos:altLabel "gluggböcker"@sv ;
@@ -7455,6 +7407,17 @@ slm:s1078 a skos:Concept ;
     skos:scopeNote "Käytetään ei-fiktiivisistä elokuvista, jotka sisältävät todellisia tapahtumia näyttelijöiden esittäminä (esim. Satumaa : Unto Monosen elämä ja tangot)."@fi,
         "Används om icke-fiktiva filmer, som innehåller verkliga händelser uppförda av skådespelare (t.ex. Sagolandet : Unto Mononens liv och tango)."@sv .
 
+slm:s1118 a skos:Concept ;
+    skos:broader slm:s1175 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "uusintatuotantoelokuvat"@fi,
+        "nyfilmatiseringar"@sv ;
+    skos:related slm:s529,
+        slm:s716,
+        slm:s909 ;
+    skos:scopeNote "Käytetään elokuvista, jotka ovat jonkin aikaisemman elokuvan ja sen käsikirjoituksen uusintatuotantoja."@fi,
+        "Används om filmer som är nyproduktioner av någon tidigare film och dess manus."@sv .
+
 slm:s1134 a skos:Concept ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26395> ;
@@ -7627,6 +7590,17 @@ slm:s338 a skos:Concept ;
         slm:s49,
         slm:s503 .
 
+slm:s379 a skos:Concept ;
+    skos:broader slm:s518 ;
+    skos:inScheme slm:s285 ;
+    skos:note "Esim. elokuvan tai näytelmän pohjalta tehty romaani."@fi,
+        "Roman gjord baserat på t.ex. en film eller ett skådespel"@sv ;
+    skos:prefLabel "romaanisovitukset"@fi,
+        "bearbetningar till romaner"@sv ;
+    skos:related slm:s1058,
+        slm:s657,
+        slm:s909 .
+
 slm:s421 a skos:Concept ;
     skos:broader slm:s1218 ;
     skos:inScheme slm:s861 ;
@@ -7765,6 +7739,16 @@ slm:s503 a skos:Concept ;
         slm:s338,
         slm:s49 .
 
+slm:s509 a skos:Concept ;
+    skos:broader slm:s929 ;
+    skos:inScheme slm:s285 ;
+    skos:note "Esim. romaanin pohjalta tehty näytelmäsovitus."@fi ;
+    skos:prefLabel "näytelmäsovitukset"@fi,
+        "bearbetningar till skådespel"@sv ;
+    skos:related slm:s1058,
+        slm:s657,
+        slm:s909 .
+
 slm:s519 a skos:Concept ;
     skos:broader slm:s929 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13875> ;
@@ -7795,15 +7779,6 @@ slm:s555 a skos:Concept ;
         slm:s900 ;
     skos:scopeNote "Käytetään kertomuksista, joiden päähenkilöt ja yleensä myös miljöö säilyvät teoksesta toiseen samana, mutta tarinat ovat teoskohtaisia."@fi,
         "Används om berättelser vars huvudpersoner och vanligen också miljö är desamma, men handlingen är en skild helhet för varje verk."@sv .
-
-slm:s556 a skos:Concept ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "dramatisoinnit"@fi,
-        "dramatiseringar"@sv ;
-    skos:related slm:s1058,
-        slm:s529,
-        slm:s657 ;
-    skos:topConceptOf slm:s285 .
 
 slm:s574 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -7855,6 +7830,17 @@ slm:s649 a skos:Concept ;
         slm:s461 ;
     skos:scopeNote "Käytetään rakkausromaaneista, jotka tekijä on sijoittanut historialliseen aikaan."@fi,
         "Används om kärleksromaner där handlingen är förlagd till historien."@sv .
+
+slm:s67 a skos:Concept ;
+    skos:broader slm:s356 ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
+    skos:note "Esim. elokuvan pohjalta tehty sarjakuva."@fi ;
+    skos:prefLabel "sarjakuvasovitukset"@fi,
+        "bearbetningar till tecknade serier"@sv ;
+    skos:related slm:s1058,
+        slm:s657,
+        slm:s909 .
 
 slm:s670 a skos:Concept ;
     skos:altLabel "sagopjäser"@sv ;
@@ -7924,6 +7910,17 @@ slm:s81 a skos:Concept ;
     skos:related slm:s1027,
         slm:s182,
         slm:s699 .
+
+slm:s813 a skos:Concept ;
+    skos:altLabel "förkortade utgåvor"@sv,
+        "förkortade verk"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "lyhennelmät"@fi,
+        "förkortade upplagor"@sv ;
+    skos:related slm:s1058,
+        slm:s657,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s842 a skos:Concept ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p11411> ;
@@ -8408,6 +8405,16 @@ slm:s523 a skos:Concept ;
     skos:scopeNote "Käytetään sarjakuvista, joiden päähenkilönä on nuori tai nuorisoyhteisö."@fi,
         "Används om tecknade serier med en ung person eller ett ungdomskollektiv som huvudperson."@sv .
 
+slm:s556 a skos:Concept ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "dramatisoinnit"@fi,
+        "dramatiseringar"@sv ;
+    skos:related slm:s1058,
+        slm:s529,
+        slm:s657,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
+
 slm:s560 a skos:Concept ;
     skos:broader slm:s1186 ;
     skos:inScheme slm:s861 ;
@@ -8664,19 +8671,6 @@ slm:s520 a skos:Concept ;
         slm:s755,
         slm:s926 .
 
-slm:s529 a skos:Concept ;
-    skos:altLabel "elokuvasovitukset"@fi,
-        "filmbearbetningar"@sv ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "filmatisoinnit"@fi,
-        "filmatiseringar"@sv ;
-    skos:related slm:s1058,
-        slm:s1118,
-        slm:s1175,
-        slm:s556,
-        slm:s657 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s639 a skos:Concept ;
     skos:broader slm:s518 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21268> ;
@@ -8849,6 +8843,20 @@ slm:s230 a skos:Concept ;
         slm:s869,
         slm:s928 .
 
+slm:s529 a skos:Concept ;
+    skos:altLabel "elokuvasovitukset"@fi,
+        "filmbearbetningar"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "filmatisoinnit"@fi,
+        "filmatiseringar"@sv ;
+    skos:related slm:s1058,
+        slm:s1118,
+        slm:s1175,
+        slm:s556,
+        slm:s657,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
+
 slm:s865 a skos:Concept ;
     skos:altLabel "farssit (elokuvat)"@fi,
         "farssit (näytelmät)"@fi,
@@ -8877,19 +8885,6 @@ slm:s1007 a skos:Concept ;
         slm:s779 ;
     skos:prefLabel "latinalaisamerikkalainen populaarimusiikki"@fi,
         "latinamerikansk populärmusik"@sv .
-
-slm:s1058 a skos:Concept ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "rinnakkaisteokset"@fi,
-        "parallellverk"@sv ;
-    skos:related slm:s379,
-        slm:s509,
-        slm:s529,
-        slm:s556,
-        slm:s657,
-        slm:s67,
-        slm:s813 ;
-    skos:topConceptOf slm:s285 .
 
 slm:s1092 a skos:Concept ;
     skos:broader slm:s1175 ;
@@ -8953,23 +8948,6 @@ slm:s504 a skos:Concept ;
         slm:s574,
         slm:s833 .
 
-slm:s657 a skos:Concept ;
-    skos:altLabel "adaptaatiot"@fi,
-        "versiot"@fi,
-        "adaptationer"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p3157> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "mukaelmat"@fi,
-        "omarbetningar"@sv ;
-    skos:related slm:s1058,
-        slm:s379,
-        slm:s509,
-        slm:s529,
-        slm:s556,
-        slm:s67,
-        slm:s813 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s662 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s1079,
@@ -8982,6 +8960,20 @@ slm:s662 a skos:Concept ;
     skos:prefLabel "perinnemusiikki"@fi,
         "traditionell musik"@sv ;
     skos:topConceptOf slm:s861 .
+
+slm:s1058 a skos:Concept ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "rinnakkaisteokset"@fi,
+        "parallellverk"@sv ;
+    skos:related slm:s379,
+        slm:s509,
+        slm:s529,
+        slm:s556,
+        slm:s657,
+        slm:s67,
+        slm:s813,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s1066 a skos:Concept ;
     skos:altLabel "science fiction"@fi,
@@ -9033,6 +9025,24 @@ slm:s479 a skos:Concept ;
         slm:s423,
         slm:s471,
         slm:s618 .
+
+slm:s657 a skos:Concept ;
+    skos:altLabel "adaptaatiot"@fi,
+        "versiot"@fi,
+        "adaptationer"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p3157> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "mukaelmat"@fi,
+        "omarbetningar"@sv ;
+    skos:related slm:s1058,
+        slm:s379,
+        slm:s509,
+        slm:s529,
+        slm:s556,
+        slm:s67,
+        slm:s813,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s69 a skos:Concept ;
     skos:altLabel "lukittu huone -kirjallisuus"@fi,
@@ -9337,6 +9347,28 @@ slm:s73 a skos:Concept ;
         slm:s926 ;
     skos:scopeNote "Käytetään teoksista, joiden tarina käsittelee vakoilua ja vakoilijoita."@fi,
         "Används om verk, som handlar om spionage och spioner."@sv .
+
+slm:s909 a skos:Concept ;
+    skos:altLabel "adaptaatiot"@fi,
+        "versiot"@fi,
+        "adaptationer"@sv,
+        "arrangemang (musik)"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p2760> ;
+    skos:inScheme slm:s285,
+        slm:s861 ;
+    skos:prefLabel "sovitukset"@fi,
+        "bearbetningar"@sv ;
+    skos:related slm:s1058,
+        slm:s1118,
+        slm:s379,
+        slm:s509,
+        slm:s529,
+        slm:s556,
+        slm:s657,
+        slm:s67,
+        slm:s813 ;
+    skos:topConceptOf slm:s285,
+        slm:s861 .
 
 slm:s1045 a skos:Concept ;
     skos:altLabel "historier"@sv ;
@@ -10565,6 +10597,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s890,
         slm:s892,
         slm:s90,
+        slm:s909,
         slm:s91,
         slm:s913,
         slm:s917,
@@ -10582,8 +10615,9 @@ slm:s861 a skos:ConceptScheme ;
         "Genretermer för musik"@sv .
 
 slm:s285 a skos:ConceptScheme ;
-    dct:modified "2018-09-07T03:53:41+00:00"^^xsd:dateTime ;
-    skos:hasTopConcept slm:s1006,
+    dct:modified "2018-09-08T02:51:39+00:00"^^xsd:dateTime ;
+    skos:hasTopConcept slm:s100,
+        slm:s1006,
         slm:s1011,
         slm:s1016,
         slm:s1020,
@@ -10758,6 +10792,7 @@ slm:s285 a skos:ConceptScheme ;
         slm:s9,
         slm:s906,
         slm:s907,
+        slm:s909,
         slm:s912,
         slm:s915,
         slm:s919,
