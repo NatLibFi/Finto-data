@@ -341,6 +341,37 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:EiLainausoikeutta">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Ei lainausoikeutta.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Ingen lånerätt.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:EsitysoikeusKirjastossa.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Esitysoikeus kirjastossa.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Visningsrätt i biblioteket.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:EsitysoikeusKoulussa.">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Esitysoikeus koulussa.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Visningsrätt i skolan.</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:arkki">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Litteä pala ohutta paperia tai muuta vastaavaa materiaalia.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDACarrierType/1048"/>
+    <skos:prefLabel xml:lang="sv">ark</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">arkki</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">ilman laitetta käytettävä tallenne</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -381,13 +412,10 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:label xml:lang="fi">Aineiston käyttöehdot (manifestaatio)</rdfs:label>
     <rdfs:label xml:lang="sv">Användningsrestriktioner (manifestation)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2238"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2242"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2248"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2249"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:EiLainausoikeutta"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:EsitysoikeusKirjastossa."/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:EsitysoikeusKoulussa."/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m516"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
     <skos:scopeNote xml:lang="fi">Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1001">
@@ -16979,8 +17007,14 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1069"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1214"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1559"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2238"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2242"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2248"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2249"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2294"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m48"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m535"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m601"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m740"/>
   </owl:Class>
@@ -18913,6 +18947,7 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <rdfs:label xml:lang="fi">Laajuuden yksikkö</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30182"/>
     <skos:definition xml:lang="fi">Liittää manifestaation manifestaation yksiköiden ja/tai osayksiköiden määrään ja tyyppiin.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:arkki"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1001"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1010"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1024"/>
