@@ -341,6 +341,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:AAC">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="en">Audio Interchange File Format</skos:altLabel>
+    <skos:prefLabel xml:lang="fi">ACC</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">ACC</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Äänen koodausmuoto, tiedostopääte .m4a, .m4b, .m4p, .m4v, .m4r, .3gp, .mp4, .aac . {@fi}</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:AIFF">
+    <dc:source xml:lang="fi">ISBD-termi</dc:source>
+    <dc:source xml:lang="fi">RDA-termi</dc:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="en">Audio Interchange File Format</skos:altLabel>
+    <skos:prefLabel xml:lang="fi">AIFF</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">AIFF</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Äänen koodausmuoto, tiedostopääte .aiff, .aif, .aifc</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:EiLainausoikeutta">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -371,6 +389,22 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:prefLabel xml:lang="sv">ark</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">arkki</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">ilman laitetta käytettävä tallenne</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:gratulaationKirjoittaja">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1157"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">gratulaation kirjoittaja</rdfs:label>
+    <skos:definition xml:lang="fi">Gratulaation eli onnittelukirjoituksen kirjoittaja</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:gratulaationKohde">
+    <dc:source xml:lang="fi">Kansallinen termi</dc:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m34"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">gratulaation kohde</rdfs:label>
+    <skos:definition xml:lang="fi">Gratulaation kohdehenkilö, jos se on osoitettu jollekin muulle kuin teoksen kirjoittajalle.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -7848,6 +7882,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">författare till dedikation</rdfs:label>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kirjoittaja</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50125"/>
     <skos:definition xml:lang="sv">författare till dedikation</skos:definition>
     <skos:definition xml:lang="fi">henkilö joka on kirjoittanut kappaleeseen omistuskirjoituksen tai merkinnän lahjoituksesta</skos:definition>
   </owl:Class>
@@ -16472,9 +16507,10 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">DVD-A</skos:altLabel>
-    <skos:prefLabel xml:lang="fi">DVD audio</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">DVD audio</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">DVD-Audio</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">DVD-Audio</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">DVD-levyjen yleisin digitaalinen formaatti.</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Äänen koodausmuoto.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m558">
     <dc:source xml:lang="fi">RDA-termi</dc:source>
@@ -19597,8 +19633,9 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
     <dc:source xml:lang="fi">RDA-termi</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">DVD video</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">DVD video</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">DVD-Video</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">DVD-Video</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Äänen koodausmuoto.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m860">
     <dc:source xml:lang="fi">ISBD-termi</dc:source>
@@ -20975,6 +21012,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">dedicerat till</rdfs:label>
     <rdfs:label xml:lang="fi">omistuskirjoituksen kohde</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50208"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
   </owl:Class>
