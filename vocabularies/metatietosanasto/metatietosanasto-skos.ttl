@@ -454,6 +454,24 @@ mts:m2284 a skos:Concept ;
     skos:scopeNote "Verkkoaineiston kuvailun yhteydessä annetaan tieto siitä, että painetun version tilaajalla on lukuoikeus verkkoversioon."@fi,
         "Vid beskrivning av onlineresurs uppger man att prenumeranter på den tryckta versionen har tillgång till onlineresursen."@sv .
 
+mts:m2299 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "Audio Interchange File Format"@en ;
+    skos:inScheme mts: ;
+    skos:prefLabel "AIFF"@fi,
+        "AIFF"@sv ;
+    skos:scopeNote "Äänen koodausmuoto, tiedostopääte .aiff, .aif, .aifc"@fi .
+
+mts:m2300 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:altLabel "Audio Interchange File Format"@en ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ACC"@fi,
+        "ACC"@sv ;
+    skos:scopeNote "Äänen koodausmuoto, tiedostopääte .m4a, .m4b, .m4p, .m4v, .m4r, .3gp, .mp4, .aac . {@fi}"@fi .
+
 mts:m251 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -850,8 +868,6 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 
 <http://rdaregistry.info/termList/RDACarrierType/1047> skos:exactMatch mts:m1285 .
 
-<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m238 .
-
 <http://rdaregistry.info/termList/RDACarrierType/1049> skos:exactMatch mts:m744 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1051> skos:exactMatch mts:m842 .
@@ -1107,13 +1123,10 @@ mts:m1000 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30146 ;
-    skos:member mts:m1730,
-        mts:m2238,
-        mts:m2242,
-        mts:m2248,
-        mts:m2249,
-        mts:m516,
-        mts:m535 ;
+    skos:member mts:m2301,
+        mts:m2303,
+        mts:m2305,
+        mts:m516 ;
     skos:prefLabel "Aineiston käyttöehdot (manifestaatio)"@fi,
         "Användningsrestriktioner (manifestation)"@sv ;
     skos:scopeNote "Aineiston käyttöä, esim. kopiointia, julkaisemista tai esille asettamista, koskevia rajoituksia."@fi .
@@ -3370,7 +3383,7 @@ mts:m1228 a isothes:ConceptGroup,
     rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10132 ;
     skos:altLabel "televisioversion perustana (teos)"@fi ;
-    skos:prefLabel "televisiosovelluksen perustana (teos)"@fi,
+    skos:prefLabel "televisiosovituksen perustana (teos)"@fi,
         "Tv-version baserad på (verk)"@sv ;
     skos:scopeNote "Liittää teoksen teokseen, josta televisiosovitus on tehty. Vastavuoroinen suhde: televisiosovellus (teos)."@fi .
 
@@ -3519,9 +3532,12 @@ mts:m1245 a skos:Concept ;
 mts:m1246 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Digital Accessible Information System"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "DAISY"@fi,
-        "DAISY"@sv .
+        "DAISY"@sv ;
+    skos:scopeNote "Äänen koodausmuoto."@fi,
+        "Äänikirjastandardi"@fi .
 
 mts:m1247 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5773,10 +5789,13 @@ mts:m1554 a isothes:ConceptGroup,
 mts:m1555 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
-    skos:definition "optinen digitaalisen datan tallennusmedia."@fi ;
+    skos:altLabel "Audio-CD"@fi,
+        "CDDA"@fi ;
+    skos:definition "Optinen digitaalisen datan tallennusmedia. CD-levyissä käytettävä äänen tallennusformaatti."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "CD-DA"@fi,
-        "CD-DA"@sv .
+        "CD-DA"@sv ;
+    skos:scopeNote "Äänen koodausmuoto."@fi .
 
 mts:m1556 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -5930,9 +5949,11 @@ mts:m1574 a skos:Concept ;
 mts:m1575 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Super Audio Compact Disc"@en ;
     skos:inScheme mts: ;
     skos:prefLabel "SACD"@fi,
-        "SACD"@sv .
+        "SACD"@sv ;
+    skos:scopeNote "Optinen äänilevyformaatti."@fi .
 
 mts:m1576 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -7233,6 +7254,7 @@ mts:m1756 a isothes:ConceptGroup,
 mts:m1757 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
+    rdfs:seeAlso rdaa:P50125 ;
     skos:definition "henkilö joka on kirjoittanut kappaleeseen omistuskirjoituksen tai merkinnän lahjoituksesta"@fi,
         "författare till dedikation"@sv ;
     skos:prefLabel "omistuskirjoituksen kirjoittaja"@fi,
@@ -9893,11 +9915,11 @@ mts:m2069 a skos:Concept ;
 mts:m207 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "Waveform Audio File"@en ;
     skos:inScheme mts: ;
     skos:prefLabel "WAV"@fi,
         "WAV"@sv ;
-    skos:scopeNote "Waveform Audio File"@fi,
-        "Waveform Audio File"@sv .
+    skos:scopeNote "Äänen koodausmuoto, tiedostopääte .wav, .wave"@fi .
 
 mts:m2070 a isothes:ConceptGroup,
         skos:Collection ;
@@ -11359,6 +11381,39 @@ mts:m230 a skos:Concept ;
     skos:prefLabel "työväenlaulut"@fi,
         "arbetarsånger"@sv ;
     skos:scopeNote "Musiikin genre-termi"@fi .
+
+mts:m2301 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Ei lainausoikeutta."@fi,
+        "Ingen lånerätt."@sv .
+
+mts:m2303 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Esitysoikeus kirjastossa."@fi,
+        "Visningsrätt i biblioteket."@sv .
+
+mts:m2304 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Gratulaation eli onnittelukirjoituksen kirjoittaja"@fi ;
+    skos:prefLabel "gratulaation kirjoittaja"@fi .
+
+mts:m2305 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Esitysoikeus koulussa."@fi,
+        "Visningsrätt i skolan."@sv .
+
+mts:m2306 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "Kansallinen termi"@fi ;
+    skos:definition "Gratulaation kohdehenkilö, jos se on osoitettu jollekin muulle kuin teoksen kirjoittajalle."@fi ;
+    skos:prefLabel "gratulaation kohde"@fi .
 
 mts:m231 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14048,9 +14103,12 @@ mts:m556 a skos:Concept ;
 mts:m557 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "DVD-A"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "DVD audio"@fi,
-        "DVD audio"@sv .
+    skos:prefLabel "DVD-Audio"@fi,
+        "DVD-Audio"@sv ;
+    skos:scopeNote "DVD-levyjen yleisin digitaalinen formaatti."@fi,
+        "Äänen koodausmuoto."@fi .
 
 mts:m558 a isothes:ConceptGroup,
         skos:Collection ;
@@ -14476,8 +14534,14 @@ mts:m600 a isothes:ConceptGroup,
         mts:m1069,
         mts:m1214,
         mts:m1559,
+        mts:m1730,
+        mts:m2238,
+        mts:m2242,
+        mts:m2248,
+        mts:m2249,
         mts:m2294,
         mts:m48,
+        mts:m535,
         mts:m601,
         mts:m740 ;
     skos:prefLabel "Aineiston saatavuuden rajoitukset (manifestaatio)"@fi,
@@ -15768,7 +15832,8 @@ mts:m773 a skos:Concept ;
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "RealAudio"@fi,
-        "RealAudio"@sv .
+        "RealAudio"@sv ;
+    skos:scopeNote "Äänen koodausmuoto, tiedostopääte .ra, .rm"@fi .
 
 mts:m774 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16048,6 +16113,7 @@ mts:m8 a isothes:ConceptGroup,
         mts:m2139,
         mts:m2141,
         mts:m2251,
+        mts:m2302,
         mts:m349,
         mts:m368,
         mts:m370,
@@ -16484,8 +16550,9 @@ mts:m86 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "DVD video"@fi,
-        "DVD video"@sv .
+    skos:prefLabel "DVD-Video"@fi,
+        "DVD-Video"@sv ;
+    skos:scopeNote "Äänen koodausmuoto."@fi .
 
 mts:m860 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17083,9 +17150,12 @@ mts:m93 a isothes:ConceptGroup,
 mts:m930 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
+    skos:altLabel "MPEG-1"@fi,
+        "MPEG-2 Audio Layer III"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "MP3"@fi,
-        "MP3"@sv .
+        "MP3"@sv ;
+    skos:scopeNote "Äänen koodausmuoto, tiedostopääte .mp3"@fi .
 
 mts:m931 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17618,7 +17688,8 @@ mts:m998 a skos:Concept ;
 mts:m999 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10069 ;
+    rdfs:seeAlso rdaa:P50208,
+        rdaw:P10069 ;
     skos:definition "teos, joka on omistettu henkilölle, suvulle tai yhteisölle."@fi ;
     skos:prefLabel "omistuskirjoituksen kohde"@fi,
         "dedicerat till"@sv .
@@ -17642,6 +17713,9 @@ rdac:C10005 skos:exactMatch mts:m627 .
 <http://rdaregistry.info/termList/RDACarrierType/1012> skos:exactMatch mts:m1361,
         mts:m1421 ;
     skos:prefLabel "datorskivmagasin"@sv .
+
+<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m2302,
+        mts:m238 .
 
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
@@ -17916,7 +17990,8 @@ mts:m1157 a isothes:ConceptGroup,
         mts:m1770,
         mts:m1771,
         mts:m1773,
-        mts:m2178 ;
+        mts:m2178,
+        mts:m2304 ;
     skos:prefLabel "Kappaleen ja toimijoiden väliset suhteet"@fi,
         "Relationer mellan exemplar och aktörer"@sv .
 
@@ -19231,6 +19306,16 @@ mts:m2288 a isothes:ConceptGroup,
     skos:scopeNote """Teos, joka jäljittelee lähdeteoksen tyyliä tai sisältöä humoristisesti. \r
 Vastavuoroinen suhde: parodian perustana (teos)."""@fi .
 
+mts:m2302 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "arkki"@fi,
+        "ark"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallenne"@fi .
+
 mts:m238 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -19341,6 +19426,7 @@ mts:m34 a isothes:ConceptGroup,
         mts:m2101,
         mts:m2102,
         mts:m2181,
+        mts:m2306,
         mts:m25,
         mts:m253,
         mts:m262,
@@ -20797,5 +20883,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-09-14T03:05:05+00:00"^^xsd:dateTime .
+    dct:modified "2018-09-15T02:48:08+00:00"^^xsd:dateTime .
 
