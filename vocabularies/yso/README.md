@@ -53,5 +53,5 @@ YSOn kehitysversiossa on tällöin otettu todennäköisesti käyttöön uusi pro
 
 14.2.2018: YSO ei ollut päivittynyt yöllä sillä ysa/allärs matchien päivitin tuotti jostain syystä lähes tyhjän tiedoston. Cronjobien ajaminen uudestaan ratkaisi ongelman.
 
-9.9.2018: YSO ei ollut päivittynyt yöllä sillä skossauksen yhteydessä tehty asa/allärt matchien päivitin tuotti pelkät namespace prefixit. Cronjobien ajaminen uudestaan ratkaisi ongelman.
+9.9.2018: YSO ei ollut päivittynyt yöllä sillä skossauksen yhteydessä tehty ysa/allärs -matchien päivitin tuotti pelkät namespaceprefixit. Cronjobien ajaminen uudestaan ratkaisi ongelman.
 
