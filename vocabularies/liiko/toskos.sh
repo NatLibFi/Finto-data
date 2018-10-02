@@ -1,6 +1,6 @@
 #!/bin/sh
 
-YSOFILE="../yso/ysoKehitys.rdf"
+YSOFILE="yso-mero.ttl"
 INFILES="mero-metadata.ttl mero.ttl $YSOFILE"
 OUTFILE=mero-skos.ttl
 
