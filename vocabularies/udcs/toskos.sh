@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="udcs-metadata.ttl udc-scheme.rdf udcsummary-skos.rdf"
+INFILES="udcs-metadata.ttl udc-scheme.rdf udcsummary-skos.ttl"
 OUTFILE=udcs-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
