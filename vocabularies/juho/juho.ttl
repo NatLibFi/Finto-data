@@ -1,4 +1,5 @@
 # baseURI: http://www.yso.fi/onto/juho/
+# imports: http://datashapes.org/dash
 # imports: http://topbraid.org/spin/skoscleaner
 # imports: http://topbraid.org/spin/skosspin
 # imports: http://www.w3.org/2004/02/skos/core
@@ -13,6 +14,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -85,6 +87,7 @@ juho-meta:temaattisetryhmat
 .
 juho:
   rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
   owl:imports <http://topbraid.org/spin/skoscleaner> ;
   owl:imports <http://topbraid.org/spin/skosspin> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -5675,11 +5678,11 @@ juho:p11424
 juho:p1143
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p3119 ;
   skos:prefLabel "liikennehankkeet"@fi ;
   juho-meta:hasPaivitetty "20010711" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p3119 ;
 .
 juho:p11434
   rdf:type juho-meta:Concept ;
@@ -5972,12 +5975,12 @@ juho:p11490
 juho:p11491
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p3119 ;
   skos:prefLabel "EU-hankkeet"@fi ;
   juho-meta:hasPaivitetty "20020911" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasPoiminta "om" ;
   juho-meta:hasThematicGroup juho:p26 ;
-  juho-meta:related juho:p3119 ;
 .
 juho:p11492
   rdf:type juho-meta:Concept ;
@@ -12748,6 +12751,8 @@ juho:p1300
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1650 ;
+  skos:prefLabel "early childhood education and care"@en ;
+  skos:prefLabel "småbarnspedagogik"@sv ;
   skos:prefLabel "varhaiskasvatus"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020812" ;
@@ -16301,7 +16306,12 @@ juho:p14019
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho:p1364 ;
   rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p3553 ;
+  skos:altLabel "EGF"@en ;
+  skos:altLabel "EGR"@fi ;
   skos:prefLabel "Euroopan globalisaatiorahasto"@fi ;
+  skos:prefLabel "European Globalisation Adjustment Fund"@en ;
+  skos:prefLabel "Europeiska globaliseringsfonden"@sv ;
   juho-meta:hasPaivitetty "20160419" ;
   juho-meta:hasThematicGroup juho:p63 ;
 .
@@ -16966,6 +16976,17 @@ juho:p14088
   juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:hasThematicGroup juho:p511 ;
   juho-meta:hasThematicGroup juho:p84 ;
+.
+juho:p14089
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p1364 ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p3553 ;
+  skos:prefLabel "Fonden för EU-bistånd till de sämst ställda"@sv ;
+  skos:prefLabel "Fund for European Aid to the Most Deprived"@en ;
+  skos:prefLabel "Vähävaraisten avun rahasto"@fi ;
+  juho-meta:hasPaivitetty "20160419" ;
+  juho-meta:hasThematicGroup juho:p63 ;
 .
 juho:p1415
   rdf:type juho-meta:Concept ;
@@ -41880,7 +41901,7 @@ juho:p3190
 juho:p3191
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass juho:p3191 ;
+  owl:equivalentClass yso:p25374 ;
   skos:prefLabel "olosuhteet"@fi ;
   juho-meta:hasPaivitetty "20010815" ;
   juho-meta:hasPoiminta "tem" ;
@@ -46377,6 +46398,7 @@ juho:p3619
 juho:p362
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p3119 ;
   skos:prefLabel "perustamishankkeet"@fi ;
   juho-meta:hasPaivitetty "20020912" ;
   juho-meta:hasPoiminta "om" ;
@@ -50802,6 +50824,7 @@ juho:p4196
 .
 juho:p4197
   rdf:type juho-meta:Concept ;
+  rdf:type yso-meta:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p1210 ;
   skos:prefLabel "yleiset tiet"@fi ;
@@ -50810,6 +50833,7 @@ juho:p4197
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
   juho-meta:related juho:p929 ;
+  yso-meta:deprecatedReplacedBy juho:p929 ;
 .
 juho:p42
   rdf:type juho-meta:Concept ;
@@ -77669,7 +77693,7 @@ juho:p8096
 juho:p8097
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass juho:p8097 ;
+  owl:equivalentClass yso:p13453 ;
   skos:altLabel "urheilutuomarit"@fi ;
   skos:prefLabel "tuomarit (urheilu)"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -84072,6 +84096,7 @@ juho:p929
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1210 ;
+  skos:altLabel "maantiet"@fi ;
   skos:prefLabel "tiet"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020814" ;
@@ -84081,7 +84106,6 @@ juho:p929
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p4197 ;
   juho-meta:related juho:p4314 ;
   juho-meta:related juho:p4588 ;
   juho-meta:related juho:p4589 ;

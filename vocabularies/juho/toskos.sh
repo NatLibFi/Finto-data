@@ -6,9 +6,9 @@ INFILE="juho.ttl"
 INFILES="juho-metadata.ttl yso-import.rdf juho-en-sv.ttl $INFILE"
 OUTFILE=juho-skos.ttl
 
-SKOSIFYHOME="../../../Skosify"
+SKOSIFYHOME="../../tools/skosify/"
 CONFFILE=../../conf/skosify/finnonto.cfg
 LOGFILE=skosify.log
 OPTS="-l fi"
 
-$SKOSIFYHOME/skosify/skosify.py $OPTS -c $CONFFILE -o $OUTFILE $INFILES 2>$LOGFILE
+$SKOSIFYHOME/skosify.py $OPTS -c $CONFFILE -o $OUTFILE $INFILES 2>$LOGFILE
