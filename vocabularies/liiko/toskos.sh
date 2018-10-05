@@ -1,6 +1,9 @@
 #!/bin/sh
 
-YSOFILE="yso-mero.ttl"
+cp ../yso/releases/2017.1.Aristoteles/ysoKehitys.rdf ./yso-import.rdf
+
+
+YSOFILE="yso-import.rdf"
 INFILES="mero-metadata.ttl mero.ttl $YSOFILE"
 OUTFILE=mero-skos.ttl
 
