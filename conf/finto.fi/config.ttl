@@ -353,6 +353,24 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://lexvo.org/id/iso639-3/> .
 
+:liiko a skosmos:Vocabulary, void:Dataset ;
+	dc:title "LIIKO - Liikenteen ontologia"@fi,
+		"LIIKO - Liikenteen ontologia"@sv,
+		"LIIKO - Liikenteen ontologia"@en ;
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/mero/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:shortName "MERO";
+	skosmos:indexShowClass <http://www.yso.fi/onto/mero-meta/Concept>;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	void:dataDump <http://api.finto.fi/download/liiko/mero-skos.ttl> ;
+	void:dataDump <http://api.finto.fi/download/liiko/mero-skos.rdf> ;
+	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/liiko/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/mero/> .
+
 :liito a skosmos:Vocabulary, void:Dataset ;
 	dc:title "LIITO - Liiketoimintaontologia"@fi,
 		"LIITO - Liiketoimintaontologia"@sv,
@@ -391,23 +409,6 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/tao/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/tao/> .
-
-:mero a skosmos:Vocabulary, void:Dataset ;
-	dc:title "MERO - Merenkulkualan ontologia"@fi,
-		"MERO - Merenkulkualan ontologia"@sv,
-		"MERO - Merenkulkualan ontologia"@en ;
-	dc:subject :cat_society ;
-	void:uriSpace "http://www.yso.fi/onto/mero/";
-	skosmos:language "fi", "sv", "en";
-	skosmos:defaultLanguage "fi";
-	skosmos:shortName "MERO";
-	skosmos:indexShowClass <http://www.yso.fi/onto/mero-meta/Concept>;
-	skosmos:arrayClass isothes:ThesaurusArray ;
-	void:dataDump <http://api.finto.fi/download/mero/mero-skos.ttl> ;
-	void:dataDump <http://api.finto.fi/download/mero/mero-skos.rdf> ;
-	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/mero/> ;
-        skosmos:mainConceptScheme <http://www.yso.fi/onto/mero/> .
 
 :mesh a skosmos:Vocabulary, void:Dataset ;
 	dc:title "MeSH / FinMeSH"@fi , "Medical Subject Headings"@en, "MeSH / SweMeSH"@sv ;
