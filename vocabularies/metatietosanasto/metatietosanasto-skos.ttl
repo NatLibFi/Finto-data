@@ -353,15 +353,6 @@ mts:m2123 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Teksti painettu horisontaalisesti."@fi .
 
-mts:m2150 a skos:Collection ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    rdfs:seeAlso rdam:P30095 ;
-    skos:definition "Liittää manifestaation kustantajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi,
-        "Uttrycker relation mellan manifestationen och utgivarens namn på ett annat språk och/eller skriftsystem."@sv ;
-    skos:prefLabel "Kustantajan rinnakkainen nimi"@fi,
-        "Parallellt utgivarnamn"@sv .
-
 mts:m2197 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -436,14 +427,6 @@ mts:m2205 a skos:Concept ;
     skos:prefLabel "sitaatitt"@fi,
         "citat"@sv ;
     skos:scopeNote "Monografioiden genre-termi"@fi .
-
-mts:m2280 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10021 ;
-    skos:prefLabel "osittain korvattu teoksella"@fi ;
-    skos:scopeNote """Teos, joka osittain korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.\r
-Vastavuoroinen suhde: korvaa osittain teoksen."""@fi .
 
 mts:m2284 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10324,9 +10307,9 @@ mts:m2142 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30111 ;
-    skos:member rdam:P30095,
-        mts:m1129,
+    skos:member mts:m1129,
         mts:m2145,
+        mts:m2150,
         mts:m2165,
         mts:m2173,
         mts:m2174,
@@ -10383,6 +10366,15 @@ mts:m2149 a skos:Collection ;
         "Uttrycker relation mellan manifestationen och producentens namn på ett annat språk och/eller skriftsystem."@sv ;
     skos:prefLabel "Tuottajan rinnakkainen nimi"@fi,
         "Parallellt producentnamn"@sv .
+
+mts:m2150 a skos:Collection ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    rdfs:seeAlso rdam:P30095 ;
+    skos:definition "Liittää manifestaation kustantajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi,
+        "Uttrycker relation mellan manifestationen och utgivarens namn på ett annat språk och/eller skriftsystem."@sv ;
+    skos:prefLabel "kustantajan rinnakkainen nimi"@fi,
+        "parallellt utgivarnamn"@sv .
 
 mts:m2151 a skos:Collection ;
     dc:source "ISBD-termi"@fi,
@@ -11188,6 +11180,7 @@ mts:m2274 a isothes:ConceptGroup,
         mts:m2273,
         mts:m2276,
         mts:m2279,
+        mts:m2280,
         mts:m2282,
         mts:m2285,
         mts:m2291 ;
@@ -11247,6 +11240,14 @@ mts:m2279 a isothes:ConceptGroup,
     skos:prefLabel "jatkuu osittain teoksessa"@fi ;
     skos:scopeNote """Teoksen osa, joka on eronnut aiemmasta teoksesta muodostaakseen uuden teoksen. Tätä suhdetta käytetään yleensä sarja-aineistoissa. \r
 Vastavuoroinen suhde: eronnut teoksesta."""@fi .
+
+mts:m2280 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10021 ;
+    skos:prefLabel "osittain korvattu teoksella"@fi ;
+    skos:scopeNote """Teos, joka osittain korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.\r
+Vastavuoroinen suhde: korvaa osittain teoksen."""@fi .
 
 mts:m2281 a isothes:ConceptGroup,
         skos:Collection ;
@@ -11420,6 +11421,12 @@ mts:m2306 a isothes:ConceptGroup,
     dc:source "Kansallinen termi"@fi ;
     skos:definition "Gratulaation kohdehenkilö, jos se on osoitettu jollekin muulle kuin teoksen kirjoittajalle."@fi ;
     skos:prefLabel "gratulaation kohde"@fi .
+
+mts:m2307 a skos:Concept ;
+    dc:source "RDA-termi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "taitekirja"@fi ;
+    skos:scopeNote "manifestaation tunnisteen lisäys taitetuista sivuista koostuvalle julkaisulle, jonka sivut avautuvat yhdeksi arkiksi"@fi .
 
 mts:m231 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12556,6 +12563,7 @@ mts:m364 a isothes:ConceptGroup,
         mts:m186,
         mts:m2097,
         mts:m224,
+        mts:m2307,
         mts:m410,
         mts:m54,
         mts:m606,
@@ -20883,5 +20891,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-10-10T03:12:12+00:00"^^xsd:dateTime .
+    dct:modified "2018-10-11T03:29:18+00:00"^^xsd:dateTime .
 
