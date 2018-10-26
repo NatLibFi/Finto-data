@@ -16732,6 +16732,7 @@ mts:m88 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30124 ;
+    skos:altLabel "Tiedoston muoto"@fi ;
     skos:member <http://rdvocab.info/termList/fileType/1001>,
         <http://rdvocab.info/termList/fileType/1002>,
         <http://rdvocab.info/termList/fileType/1004>,
@@ -19146,6 +19147,18 @@ mts:m2136 a skos:Concept ;
     skos:prefLabel "kansio"@fi,
         "mapp"@sv .
 
+mts:m2139 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Laajuuden yksikkö, yksittäinen arkki, joka muodostaa sidotun tai nidotun niteen alayksikön."@fi,
+        "Enskilt ark som är del av häftad eller inbunden volym."@sv ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierEU/1018> ;
+    skos:example "21 lehteä, 1 taitelehti : kuvitettu ; 44 cm"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lehti"@fi,
+        "blad"@sv ;
+    skos:scopeNote "Monikossa lehteä."@fi .
+
 mts:m214 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -20564,19 +20577,6 @@ mts:m2037 a skos:Concept ;
     skos:prefLabel "soolonuotti"@fi,
         "solonoter"@sv .
 
-mts:m2139 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:broader mts:m434 ;
-    skos:definition "Laajuuden yksikkö, yksittäinen arkki, joka muodostaa sidotun tai nidotun niteen alayksikön."@fi,
-        "Enskilt ark som är del av häftad eller inbunden volym."@sv ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierEU/1018> ;
-    skos:example "21 lehteä, 1 taitelehti : kuvitettu ; 44 cm"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "lehti"@fi,
-        "blad"@sv ;
-    skos:scopeNote "Monikossa lehteä."@fi .
-
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -20716,6 +20716,20 @@ mts:m400 a skos:Concept ;
     skos:prefLabel "orkesteri"@fi,
         "orkester"@sv .
 
+mts:m434 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi ;
+    skos:definition "Laajuuden yksikkö, kolmiulotteisia objekteja sisältävä kokonaisuus, jota on tarkoitettu käytettäväksi sovittujen sääntöjen mukaisesti leikeissä opetuksessa, huviksi tai terapiassa."@fi,
+        "Omfång bestående av tredimensionella föremål som utgör en helhet, avsett att användas enligt överenskomna regler i undervisning, som förströelse eller som terapi."@sv ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierEU/1014> ;
+    skos:example "MARC 21: 300## ‡a 1 peli (useita osia kotelossa) ‡c 13 x 18 x 4 cm + ‡e 2 taitelehteä (16 x 12 cm)"@fi,
+        "MARC 21: 300## ‡a 9 peliä (useita osia) + ‡e Opettajan info (23 sivua : kuvitettu)"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1010,
+        mts:m1578 ;
+    skos:prefLabel "peli"@fi,
+        "spel"@sv .
+
 mts:m599 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -20751,19 +20765,6 @@ mts:m92 a skos:Concept ;
         mts:m964 ;
     skos:prefLabel "Väitöskirja"@fi,
         "Doktorsavhandling"@sv .
-
-mts:m434 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi ;
-    skos:definition "Laajuuden yksikkö, kolmiulotteisia objekteja sisältävä kokonaisuus, jota on tarkoitettu käytettäväksi sovittujen sääntöjen mukaisesti leikeissä opetuksessa, huviksi tai terapiassa."@fi,
-        "Omfång bestående av tredimensionella föremål som utgör en helhet, avsett att användas enligt överenskomna regler i undervisning, som förströelse eller som terapi."@sv ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierEU/1014> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1010,
-        mts:m1578,
-        mts:m2139 ;
-    skos:prefLabel "peli"@fi,
-        "spel"@sv .
 
 mts:m232 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20901,5 +20902,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-10-25T04:26:21+00:00"^^xsd:dateTime .
+    dct:modified "2018-10-26T02:56:53+00:00"^^xsd:dateTime .
 
