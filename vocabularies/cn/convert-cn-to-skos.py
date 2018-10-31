@@ -24,6 +24,7 @@ RDAC=Namespace("http://rdaregistry.info/Elements/c/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 
 LAS_IDENTIFY_URL="http://demo.seco.tkk.fi/las/identify"
+FINTO_API_BASE="http://api.finto.fi/rest/v1/"
 
 LANG_CACHE_FILE='lang_cache.txt'
 
@@ -33,6 +34,8 @@ CorporateBody=RDAC.C10005
 preferredNameForTheCorporateBody=RDAA.P50041
 variantNameForTheCorporateBody=RDAA.P50025
 otherDesignationAssociatedWithTheCorporateBody=RDAA.P50033
+typeOfCorporateBody=RDAA.P50237
+typeOfJurisdiction=RDAA.P50238
 relatedCorporateBody=RDAA.P50218
 predecessor=RDAA.P50012
 successor=RDAA.P50016
@@ -54,6 +57,14 @@ class MARCXMLReader(object):
     marcxml.parse_xml(StringIO(tostring(element[0], encoding='UTF-8')), handler)
     return handler.records[0]
 
+
+def lookup_mts(label):
+  payload = {'label': label, 'lang': 'fi'}
+  req = requests.get(FINTO_API_BASE + 'mts/lookup', params=payload)
+  if req.status_code != 200:
+    return None
+
+  return URIRef(req.json()['result'][0]['uri'])
 
 def guess_language(text):
   """return the most likely language for the given unicode text string"""
@@ -146,7 +157,27 @@ def convert_record(oaipmhrec):
   
   for f in rec.get_fields('368'):
     #print uri, "368", f.as_marc('utf8')
-    g.add((uri, otherDesignationAssociatedWithTheCorporateBody, Literal(f.format_field(), lang='fi')))
+    if 'a' in f:
+      prop = typeOfCorporateBody
+      val = f['a']
+    elif 'b' in f:
+      prop = typeOfJurisdiction
+      val = f['b']
+    elif 'c' in f:
+      prop = otherDesignationAssociatedWithTheCorporateBody
+      val = f['c']
+    else:
+      print >>sys.stderr, "Could not parse 368 value for <%s>, skipping" % uri
+      continue
+
+    obj = Literal(val, lang='fi') # by default, use a literal value
+    if '2' in f and f['2'] == 'mts':
+      # try to see if we can use a URI value from MTS instead
+      mtsuri = lookup_mts(val)
+      if mtsuri is not None:
+        obj = mtsuri
+
+    g.add((uri, prop, obj))
 
   for f in rec.get_fields('370'):
     if 'e' in f:
