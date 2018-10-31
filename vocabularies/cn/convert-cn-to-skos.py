@@ -37,6 +37,7 @@ relatedCorporateBody=RDAA.P50218
 predecessor=RDAA.P50012
 successor=RDAA.P50016
 hierarchicalSuperior=RDAA.P50008
+hierarchicalSubordinate=RDAA.P50010
 corporateHistory=RDAA.P50035
 placeAssociatedWithTheCorporateBody=RDAA.P50031
 fieldOfActivityOfTheCorporateBody=RDAA.P50022
@@ -144,6 +145,7 @@ def convert_record(oaipmhrec):
       g.add((uri, dateOfTermination, Literal(fld['t'])))
   
   for f in rec.get_fields('368'):
+    #print uri, "368", f.as_marc('utf8')
     g.add((uri, otherDesignationAssociatedWithTheCorporateBody, Literal(f.format_field(), lang='fi')))
 
   for f in rec.get_fields('370'):
@@ -227,7 +229,7 @@ label_to_uri = {}
 
 oai = Client('https://fennica.linneanet.fi/cgi-bin/oai-pmh-fennica-asteri-aut.cgi', registry)
 
-#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2017,2,1))
+#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2018,10,15))
 recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames')
 for oaipmhrec in recs:
   convert_record(oaipmhrec)
@@ -248,6 +250,7 @@ for prop in (relatedCorporateBody, predecessor, successor, hierarchicalSuperior)
       else:
         g.add((s,prop,res))
         if prop == hierarchicalSuperior:
+          g.add((res,hierarchicalSubordinate,s)) # add inverse relationship
           g.add((s,SKOS.broader,res)) # also add skos:broader relationship to make a tree
 
 # store language determination cache
