@@ -342,6 +342,12 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Suhteet">
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="sv">Relationer</rdfs:label>
+    <rdfs:label xml:lang="fi">Suhteet</rdfs:label>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -1792,21 +1798,12 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1157">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1158"/>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m154"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Kappaleen ja toimijoiden väliset suhteet</rdfs:label>
     <rdfs:label xml:lang="sv">Relationer mellan exemplar och aktörer</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1158">
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="sv">Exemplarets relationer</rdfs:label>
-    <rdfs:label xml:lang="fi">Kappaleen suhteet</rdfs:label>
-    <skos:scopeNote xml:lang="fi">Kappaleen suhde tarkoittaa teoksen ja toisen entiteetin välistä suhdetta.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1159">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -1882,21 +1879,19 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1166">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Alkuperäinen:</rdfs:label>
     <rdfs:label xml:lang="sv">Original:</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1167">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">sarjakuvaversio (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">serieversion (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10251"/>
     <skos:altLabel xml:lang="fi">Sarjakuvaversio teoksesta</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on kuvailun kohteena olevan teoksen sarjakuvaversio.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1168">
@@ -1915,6 +1910,10 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Kompletterande relationer (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">Täydennyssuhteet (teos)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1398"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1443"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1548"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m117">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3079,14 +3078,13 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1228">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Tv-version baserad på (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">televisiosovituksen perustana (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10132"/>
     <skos:altLabel xml:lang="fi">televisioversion perustana (teos)</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, josta televisiosovitus on tehty. Vastavuoroinen suhde: televisiosovellus (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1229">
@@ -3691,12 +3689,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1294">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m93"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="sv">digitaliserad</rdfs:label>
     <rdfs:label xml:lang="fi">digitoituna</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30016"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m93"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1295">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3911,6 +3908,29 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Edeltäjä-seuraaja-suhteet (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">Föregående-efterföljande-relationer (verk)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1336"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2255"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2256"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2257"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2258"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2260"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2261"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2263"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2264"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2269"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2270"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2271"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2272"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2273"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2276"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2279"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2280"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2282"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2285"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2291"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m960"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1316">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3929,6 +3949,40 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Motsvarande manifestation</rdfs:label>
     <rdfs:label xml:lang="fi">Vastaava manifestaatio</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1166"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1294"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1389"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1419"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1422"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1479"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1541"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1778"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1779"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1780"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1781"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1782"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1783"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1784"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1785"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1786"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1787"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1788"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1789"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1790"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1791"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1792"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1793"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1794"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2100"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2127"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2132"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2137"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2140"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2144"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m243"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m93"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1318">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3947,13 +4001,12 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30130"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m132">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1399"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">elokuvaversion perustana (teos):</rdfs:label>
     <rdfs:label xml:lang="sv">filmversion baserad på (verk):</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10129"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1399"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1321">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -4079,12 +4132,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:definition xml:lang="fi">tuomioistuin, jota säännöt ja työjärjestykset koskevat riippumatta säännön virallisesta luonteesta (esim. laki, hallinnollinen säännös)</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1336">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">Kansallinen termi</rdfs:comment>
     <rdfs:label xml:lang="sv">fristående fortsättning på verket</rdfs:label>
     <rdfs:label xml:lang="fi">itsenäinen jatko-osa teokselle</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1337">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -4544,12 +4596,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">Kandidatavhandling</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1389">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Julkaistu myös eripainoksena.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som särtryck.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m139">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -4621,22 +4672,21 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1398">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Musiikki elokuvaan (teos):</rdfs:label>
     <rdfs:label xml:lang="sv">Musik till film (verk):</rdfs:label>
     <skos:altLabel xml:lang="fi">Musiikki elokuvasta</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohteena on elokuva, jonka musiikki kuvailun kohde on. Vastavuoroinen suhde: elokuvamusiikki (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1399">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Mukaelman perustana (teos):</rdfs:label>
     <rdfs:label xml:lang="sv">Omarbetning baserad på (verk):</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10142"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m132"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m14">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -4816,12 +4866,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">Titel på andra titelskärmen:</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1419">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös verkkoaineistona.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som onlineresurs.</rdfs:label>
     <skos:altLabel xml:lang="fi">Saatavana myös verkkoaineistona.</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m142">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -4856,11 +4905,10 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1422">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Alun perin julkaistu</rdfs:label>
     <rdfs:label xml:lang="sv">Ursprungligen utgiven</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
     <skos:scopeNote xml:lang="fi">Erit. av- ja musiikkiaineistossa.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Särskilt i av- och musikmaterial.</skos:scopeNote>
   </owl:Class>
@@ -5058,9 +5106,7 @@ Katso myös kartografinen liikkuva kuva.</skos:definition>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1443">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1169"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Supplement till verket</rdfs:label>
     <rdfs:label xml:lang="fi">Täydennysosa teokseen</rdfs:label>
@@ -5352,11 +5398,10 @@ Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäyt
     <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator för bok med hårda pärmar</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1479">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Linkki</rdfs:label>
     <rdfs:label xml:lang="sv">Länk</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m148">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -5578,7 +5623,7 @@ Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäyt
     <skos:scopeNote xml:lang="fi">Monografioiden genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1504">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m39"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -5796,8 +5841,7 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:scopeNote xml:lang="fi">Kansi on kirjan, vihkon, pakkauksen tms. päällysosa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m153">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m154"/>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m436"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -5902,12 +5946,11 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1541">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Alkuperäinen painos</rdfs:label>
     <rdfs:label xml:lang="sv">Originalupplaga</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30047"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1554"/>
     <skos:example xml:lang="fi">Alkuperäinen painos : Helsingissä : Minerva, 1927.</skos:example>
     <skos:example xml:lang="sv">Originalupplaga: Helsingfors universitet, 2005.</skos:example>
     <skos:scopeNote xml:lang="fi">Näköispainoksen tai uuden painoksen kuvailusta viitataan alkuperäiseen.</skos:scopeNote>
@@ -5938,12 +5981,11 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:prefLabel xml:lang="sv">prinsessa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1545">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">Kansallinen termi</rdfs:comment>
     <rdfs:label xml:lang="sv">lättläst version baserad på (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">selkokielisen version perustana (teos)</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva selkokielinen versio on tehty. Vastavuoroinen suhde: Selkokielinen versio (teos):</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1546">
@@ -5956,9 +5998,7 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:scopeNote xml:lang="fi">Helsingin Sanomien vuodesta 1995 vuosittain jakama palkinto vuoden parhaalle suomenkieliselle esikoisteokselle.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1548">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1169"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Supplement</rdfs:label>
     <rdfs:label xml:lang="fi">Täydennysosa</rdfs:label>
@@ -6019,12 +6059,13 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1554">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">jäljenne aineistosta</rdfs:label>
     <rdfs:label xml:lang="sv">kopia av material</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30043"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1166"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1422"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1541"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1555">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -6119,13 +6160,12 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:scopeNote xml:lang="fi">Sarjan muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1566">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">nyproduktion baserad på (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">uusintaproduktion perustana (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10185"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1567">
@@ -6234,12 +6274,11 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <skos:prefLabel xml:lang="sv">pussel</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1579">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">sarjakuvaversion perustana (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">serieversion baserad på (verk)</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva sarjakuvaversio on tehty. Vastavuoroinen suhde: sarjakuvaversio (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m158">
@@ -6636,12 +6675,11 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1624">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">Kansallinen termi</rdfs:comment>
     <rdfs:label xml:lang="sv">barnversion baserad på (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">lastenversion perustana (teos)</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1625">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -7988,18 +8026,16 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:example xml:lang="fi">Yhdistymisestä muodostunut: Suomi. Työ- ja elinkeinoministeriö</skos:example>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1778">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös CD-ROM-levynä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som cd-romskiva.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1779">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös LP-levynä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som lp-skiva.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m178">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -8012,80 +8048,70 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="fi">lelu</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1780">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös e-kirjana.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som e-bok.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
     <skos:scopeNote xml:lang="fi">E-kirjalla tarkoitetaan painetun kirjan kaltaista verkossa ilmestynyttä julkaisua. (Kielitoimiston sanakirjan määritelmä: kirja = (paksuhko) nidos paperiarkkeja, joissa on tav. painettua tekstiä, kuvia t. molempia; sen muotoisena (joskus useina nidoksina) ilmestynyt t. ilmestyvä kirjallinen tuote.)</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Med e-bok avses en på webben utgiven publikation som motsvarar en tryckt bok. (Bok = tryckt längre skrift (SAOL) ; litterär produkt som utkommit/utkommer i bokform, ibland i flera volymer.)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1781">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös äänikirjana.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som ljudbok.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1782">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös CD-äänilevynä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som cd-ljudskiva.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1783">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös digitoituna.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit digitaliserad.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1784">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu vain verkkoaineistona vuodesta...</rdfs:label>
     <rdfs:label xml:lang="sv">Utkommit enbart som onlineresurs från år ...</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
     <skos:example xml:lang="fi">Julkaistu vain verkkoaineistona vuodesta 2004-</skos:example>
     <skos:example xml:lang="sv">Utgiven enbart som onlineresurs från och med 2004-</skos:example>
     <skos:scopeNote xml:lang="fi">Esimerkiksi lehden ilmestyminen siirtyy verkkoon.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Till exempel utgivning av tidning som flyttats till webben.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1785">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös vinyylisinglelevynä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som vinylsingelskiva.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1786">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="sv">Sammanfattningsdelen publicerad även som onlineresurs.</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteenveto-osa julkaistu myös verkkoaineistona.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1787">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös tarvepainatteena.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som beställtryck.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1788">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös C-kasettina.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som C-kassett..</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1789">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös painettuna.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit tryckt.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m179">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -8101,41 +8127,36 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:definition xml:lang="sv">person eller institution som deltar i förverkligandet av ett uttryck genom att komplettera ett huvudsakligt innehåll med teckningar, fotografier, diagram o.s.v. Se konstnär eller fotograf om teckningarna el. dyl. utgör verkets huvudsakliga innehåll</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1790">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös e-lehtenä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som e-tidning.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
     <skos:scopeNote xml:lang="fi">E-lehdellä tarkoitetaan painetun sanoma- tai aikakauslehden kaltaista verkossa ilmestyvää julkaisua.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Med e-tidning avses en på webben utgiven publikation som motsvarar en tryckt tidning eller tidskrift.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1791">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Linkki digitoituun aineistoon:</rdfs:label>
     <rdfs:label xml:lang="sv">Länk till digitaliserat material:</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1792">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu myös MD-levynä.</rdfs:label>
     <rdfs:label xml:lang="sv">Även utkommit som md-skiva.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1793">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="sv">Delar i serien utkommit enbart som onlineresurser.</rdfs:label>
     <rdfs:label xml:lang="fi">Julkaistu joitakin sarjan osia vain verkkoaineistona.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1794">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Linkki verkkoaineistoon:</rdfs:label>
     <rdfs:label xml:lang="sv">Länk till onlineresurs:</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1795">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -10045,7 +10066,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1982">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Tavallisessa nuottiviivastossa on viisi viivaa, lyömäsoittimien nuoteissa voi olla 1–4-viivaisia viistoja.</skos:definition>
     <skos:prefLabel xml:lang="sv">Traditionell västerländsk notskrift</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Viivastonuottikirjoitus</skos:prefLabel>
@@ -10081,7 +10101,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1986">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">Mensuralnotskrift</skos:altLabel>
     <skos:definition xml:lang="fi">Mensuraalinotaatio eli mensuraalinuottikirjoitus (lat. mensura 'mitta') osoittaa musiikin rytmiä nuottien aika-arvoilla. Järjestelmä oli käytössä 1200–1600-luvulla, ja se on nykyisen viivastonotaation edeltäjä. (Lähde: Wikipedia.)</skos:definition>
     <skos:definition xml:lang="sv">Mensuralnotation anger musikens rytm med hjälp av noters tidsvärde. Systemet användes mellan 1200- och 1600-talet, och det är föregångare till den moderna notskriften.</skos:definition>
@@ -10164,7 +10183,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1994">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">tabit</skos:altLabel>
     <skos:altLabel xml:lang="fi">tablaruuri</skos:altLabel>
     <skos:altLabel xml:lang="fi">täbit</skos:altLabel>
@@ -10175,7 +10193,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1995">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">Neumskrift</skos:altLabel>
     <skos:definition xml:lang="sv">Notskrift använd i enstämmig bysantisk, ortodox och katolsk kyrkosång. Neumer anger vanligtvis inte rytm.</skos:definition>
     <skos:definition xml:lang="fi">Yksiäänisessä bysanttilaisessa, ortodoksisessa ja katolisessa kirkkolaulussa käytetty nuottikirjoitus, jossa rytmiä ei yleensä merkitä. (Lähde: englanninkielinen Wikipedia.)</skos:definition>
@@ -10185,7 +10202,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1996">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Englantilaisten Sarah Ann Gloverin ja John Curwenin kehittämään solmisaatiometodiin perustuva nuottikirjoitus. Do on sävellajin toonika ja sävelkorkeudet merkitään solfatavuja (esim. do, re, mi, fa, sol, la, ti, do) tai niiden lyhenteitä (d, r, m, f, s, l, t, d) käyttäen. (Lähde: englanninkielinen Wikipedia.)</skos:definition>
     <skos:prefLabel xml:lang="fi">Tonic sol-fa</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Tonic sol-fa</skos:prefLabel>
@@ -10200,7 +10216,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1998">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Solmisaatio on säveltavujen käyttöä sävelten niminä. Solmisaatiossa ei oteta kantaa sävelten absoluuttiseen korkeuteen, vaan ainoastaan sävelten keskinäisillä korkeuseroilla on merkitystä. Täten esimerkiksi sama laulu voidaan laulaa monelta eri korkeudelta samoilla solmisaatiotavuilla. (Lähde: Wikipedia.) Sävelkorkeudet merkitään solfatavuja (esim. do, re, mi, fa, sol, la, ti, do) tai niiden lyhenteitä (d, r, m, f, s, l, t, d) käyttäen.</skos:definition>
     <skos:prefLabel xml:lang="fi">Solmisaatio</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Solmisation</skos:prefLabel>
@@ -10250,7 +10265,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2001">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Nuottikirjoitus, jossa sävelkorkeudet on merkitty kirjaimin.</skos:definition>
     <skos:prefLabel xml:lang="sv">Bokstavsnotation</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Kirjainnuottikirjoitus</skos:prefLabel>
@@ -10314,7 +10328,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2006">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">Grafisk notering</skos:altLabel>
     <skos:altLabel xml:lang="sv">Grafisk notskrift</skos:altLabel>
     <skos:definition xml:lang="sv">Noterad musik som uttrycker musik med hjälp av grafiska symboler, annorlunda än i traditionell noterad musik.</skos:definition>
@@ -10375,7 +10388,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2013">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">numeronotaatio</skos:altLabel>
     <skos:definition xml:lang="fi">Nuottikirjoitus, jossa sävelkorkeudet on merkitty numeroin. Numeronnuottikirjoitusta on myös kaksitoistasäveljärjestelmää käsittelevissä teoriakirjoissa käytetty tapa sävelluokkien tai intervallien merkitsemiseksi numeroin. (Lähde: Musiikinteoria 2, Sibelius-Akatemia.)</skos:definition>
@@ -11194,11 +11206,10 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:scopeNote xml:lang="fi">Jatkuvien julkaisujen (ISBD) genre-termi. Sarja-aineistojen (RDA) genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2100">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Julkaistu aiemmin erillisinä niteinä.</rdfs:label>
     <rdfs:label xml:lang="sv">Tidigare utgiven i separata volymer.</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m892"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2101">
     <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
@@ -11457,9 +11468,7 @@ Katso myös taktiili teksti.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2127">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Liitteenä aineistossa</rdfs:label>
     <skos:scopeNote xml:lang="fi">RDA-kuvailussa käytettävä termi.</skos:scopeNote>
   </owl:Class>
@@ -11521,9 +11530,7 @@ Katso myös taktiili teksti.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2132">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Painettu</rdfs:label>
     <rdfs:label xml:lang="sv">Tryckt</rdfs:label>
     <skos:scopeNote xml:lang="fi">RDA-kuvailussa käytettävä termi.</skos:scopeNote>
@@ -11582,9 +11589,7 @@ Katso myös taktiili teksti.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2137">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Digitoitu painetusta</rdfs:label>
     <skos:scopeNote xml:lang="fi">RDA-kuvailussa käytettävä termi.</skos:scopeNote>
   </owl:Class>
@@ -11624,9 +11629,7 @@ Katso myös taktiili teksti.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2140">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">PDF</rdfs:label>
     <rdfs:label xml:lang="sv">PDF</rdfs:label>
     <skos:scopeNote xml:lang="fi">RDA-kuvailussa käytettävä termi.</skos:scopeNote>
@@ -11671,9 +11674,7 @@ Katso myös taktiili teksti.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2144">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">Digitoitu manifestaatiosta</rdfs:label>
     <skos:scopeNote xml:lang="fi">RDA-kuvailussa käytettävä termi.</skos:scopeNote>
   </owl:Class>
@@ -12646,42 +12647,38 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="fi">Nimeke takakannessa:</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2255">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">fortsättning på verket</rdfs:label>
     <rdfs:label xml:lang="fi">jatko-osa teokselle</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10227"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2256">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">korvaa teoksen</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10207"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisällön myöhempi teos korvaa. Myöhempi teos sisältää tavallisesti päivitetty tietoa, joka korvaa vanhemman teoksen tiedon. Käytetään tavallisesti yksiosaisissa teoksissa, moniosaisissa monografioissa ja päivittyvissä julkaisuissa.&#xD;
 Vastavuoroinen suhde: korvaava teos.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2257">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">eronnut teoksesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10169"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisällöstä on eronnut osa, joka muodostaa uuden teoksen.&#xD;
 Vastavuoroinen suhde: jatkuu osittain teoksessa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2258">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">jatkaa osittain teosta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10168"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, joka jakaantuu kahdeksi tai useammiksi erillisiksi uudelleen nimetyiksi teoksiksi. Käytetään yleensä sarja-aineistossa. &#xD;
 Vastavuoroinen suhde: jakautumisen tulos (teos).</skos:scopeNote>
   </owl:Class>
@@ -12702,60 +12699,54 @@ Vastavuoroinen suhde: jakautumisen tulos (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monografioiden genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2260">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">korvaa osittain teoksen</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10206"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisällön myöhempi teos osittain korvaa. Myöhempi teos sisältää tavallisesti päivitetty tietoa, joka korvaa vanhemman teoksen tiedon. Käytetään tavallisesti yksiosaisissa teoksissa, moniosaisissa monografioissa ja päivittyvissä julkaisuissa.&#xD;
 Vastavuoroinen suhde: osittain korvattu teoksella.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2261">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">esiosa (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10122"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, joka juonellisesti edeltää aikaisemmin ilmestynyttä teosta.&#xD;
 Vastavuoroinen suhde: esiosa teokselle.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2262">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">runomukaelman perustana (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10128"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, josta runomukaelma on tehty. Vastavuoroinen suhde: runomukaelma (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2263">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">teokseen osittain sulautunut</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10225"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">eos, joka on osittain sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: sulautunut osittain teokseen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2264">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">jatko-osa</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10020"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, joka juonellisesti jatkaa aikaisemmin ilmestynyttä teosta. Vastavuoroinen suhde: jatko-osa teokselle.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2266">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">innoittaja</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10291"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, jota toinen teos on innoittanut.Vastavuoroinen suhde: innoituksen perustana.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2268">
@@ -12765,12 +12756,11 @@ Vastavuoroinen suhde: sulautunut osittain teokseen.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">Sisältö kuunneltavissa mobiililaitteen avulla.</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2269">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">esiosa teokselle</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10195"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, jota myöhempi teos juonellisesti edeltää.&#xD;
 Vastavuoroinen suhde: esiosa (teos).</skos:scopeNote>
   </owl:Class>
@@ -12782,103 +12772,111 @@ Vastavuoroinen suhde: esiosa (teos).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">Ylänimeke selässä:</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2270">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">teokseen yhdistyjä</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10213"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2271">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">jakautumisen tulos (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10211"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on tulosta aiemman teoksen jakautumisesta kahteen tai useampiin teoksiin.&#xD;
 Vastavuoroinen suhde: jatkaa osittain teosta.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2272">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">teokseen sulautunut</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10224"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: sulautunut teokseen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2273">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">yhdistynyt teokseksi</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10212"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on muodostunut kahden tai useampien teosten yhdistymisestä. &#xD;
 Vastavuoroinen suhde: teokseen yhdistyjä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2274">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1315"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">myöhempi teos</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10170"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2264"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2269"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2271"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2273"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2276"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2279"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2280"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2282"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2285"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2291"/>
     <skos:scopeNote xml:lang="fi">Teos, joka seuraa joko juonellisesti tai ajallisesti sitä edeltävää teosta. &#xD;
 Vastavuoroinen suhde: aiempi teos.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2275">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1315"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">aiempi teos</rdfs:label>
     <rdfs:label xml:lang="sv">föregående (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10156"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1336"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2255"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2256"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2257"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2258"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2260"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2261"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2263"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2270"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2272"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m960"/>
     <skos:scopeNote xml:lang="fi">Teos, joka edeltää joko juonellisesti tai ajallisesti sitä seuraavaa teosta. &#xD;
 Vastavuoroinen suhde: myöhempi teos.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2276">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">sulautunut osittain teokseen</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10146"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on osittain sulautunut osaksi toista teosta. &#xD;
 Vastavuoroinen suhde: teokseen osittain sulautunut.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2277">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">jäljitelmä (teos)</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2296"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2288"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2288"/>
     <skos:scopeNote xml:lang="fi">Teos, joka jäljittelee lähdeteoksen tyyliä tai sisältöä. &#xD;
 Vastavuoroinen suhde: jäljitelmän perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2278">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">abstrakti (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10107"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, joka abstrahoi lähdeteoksen objektiivisesti. &#xD;
 Vastavuoroinen suhde: abstraktin perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2279">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">jatkuu osittain teoksessa</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10104"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teoksen osa, joka on eronnut aiemmasta teoksesta muodostaakseen uuden teoksen. Tätä suhdetta käytetään yleensä sarja-aineistoissa. &#xD;
 Vastavuoroinen suhde: eronnut teoksesta.</skos:scopeNote>
   </owl:Class>
@@ -12893,43 +12891,39 @@ Vastavuoroinen suhde: eronnut teoksesta.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">heijastava kuvatallenne</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2280">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">osittain korvattu teoksella</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10021"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka osittain korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.&#xD;
 Vastavuoroinen suhde: korvaa osittain teoksen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2281">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">musikaaliversio (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10235"/>
     <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m575"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Musikaaliversio, joka perustuu lähdeteokseen.&#xD;
 Vastavuoroinen suhde: musikaaliversion perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2282">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">sulautunut teokseen</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10145"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: teokseen sulautunut.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2283">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">laajennelma (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10119"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, joka laajentaa lähdeteosta.&#xD;
 Vastavuoroinen suhde: laajennelman perustana (teos).</skos:scopeNote>
   </owl:Class>
@@ -12943,12 +12937,11 @@ Vastavuoroinen suhde: laajennelman perustana (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Vid beskrivning av onlineresurs uppger man att prenumeranter på den tryckta versionen har tillgång till onlineresursen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2285">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">korvaava teos</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10022"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka korvaa aiemman teoksen sisällön, josta osa on vanhentunut yleensä päivitetyn tai uuden tiedon myötä. Sovelletaan tavallisesti yksiosaisiin aineistoihin, moniosaisiin monografioihin ja päivittyviin aineistoihin.&#xD;
 Vastavuoroinen suhde: korvaa teoksen.</skos:scopeNote>
   </owl:Class>
@@ -12963,32 +12956,30 @@ Vastavuoroinen suhde: korvaa teoksen.</skos:scopeNote>
 Vastavuoroinen suhde: aiempi ekspressio.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2287">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">abstraktit (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10089"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on lähdeteoksen sisällön abstraktit sisältävä tiivistelmä- ja indeksointipalvelu. &#xD;
 Vastavuoroinen suhde: abstraktien perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2288">
     <isothes:superGroup rdf:resource="http://rdaregistry.info/Elements/w/P10117"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">parodia (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10144"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2277"/>
     <skos:scopeNote xml:lang="fi">Teos, joka jäljittelee lähdeteoksen tyyliä tai sisältöä humoristisesti. &#xD;
 Vastavuoroinen suhde: parodian perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2289">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">lyhennelmä (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2290"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä. &#xD;
 Vastavuoroinen suhde: lyhennelmän perustana (teos).</skos:scopeNote>
   </owl:Class>
@@ -13003,32 +12994,29 @@ Vastavuoroinen suhde: lyhennelmän perustana (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2291">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">seuraaja (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10191"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:scopeNote xml:lang="fi">Teos, joka seuraa sitä edeltävää teosta. Käytetään yleensä sarja-aineistossa. &#xD;
 Vastavuoroinen suhde: edeltäjä (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2292">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">dramatisointi (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10016"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Lähdeteoksesta sovitettu draamateos. &#xD;
 Vastavuoroinen suhde: dramatisoinnin perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2293">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">indeksointi (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10090"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
     <skos:scopeNote xml:lang="fi">Teos, joka on lähdeteoksen sisällön indeksoinnin sisältävä tiivistelmä- ja indeksointipalvelu. &#xD;
 Vastavuoroinen suhde: indeksoinnin perustana (teos).</skos:scopeNote>
   </owl:Class>
@@ -13049,22 +13037,20 @@ Vastavuoroinen suhde: indeksoinnin perustana (teos).</skos:scopeNote>
 Vastavuoroinen suhde: myöhempi ekspressio.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2297">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">oopperasovitus (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10236"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Oopperasovitus, joka perustuu lähdeteokseen.&#xD;
 Vastavuoroinen suhde: oopperasovituksen perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2298">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">oratoriosovitus (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10289"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Oratorio, joka perustuu lähdeteokseen.&#xD;
 Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
   </owl:Class>
@@ -13163,7 +13149,6 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2308">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Noterad musik som uttrycker musik med ...</skos:definition>
     <skos:definition xml:lang="fi">Nuottikirjoitus, jossa musiikkia merkitään ...</skos:definition>
     <skos:prefLabel xml:lang="fi">Ekfoneettinen nuottikirjoitus</skos:prefLabel>
@@ -15505,14 +15490,13 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">kastratsångare</skos:prefLabel>
   </skos:Concept>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m243">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m93"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">ISBD-termi</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Faksimilupplaga</rdfs:label>
     <rdfs:label xml:lang="fi">Näköispainos</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30031"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m93"/>
     <skos:scopeNote xml:lang="fi">1)Sekä ulkoasultaan että sisällöltään tarkalleen alkuperäistä vastaava jäljennös. &#xD;
 2)Kuvitus, joka on tarkka jäljennös alkuperäisestä, yleensä myös mitoiltaan alkuperäistä vastaava, erityisesti kirjoista, asiakirjoista, painokuvista ja piirustuksista. Nykyisin valmistetaan usein valokuvaamalla tai digitaalisesti, aikaisemmin valmistettiin kaivertamalla tai muilla painomenetelmillä.  (engl. facsimile edition)</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Publikation vars huvudtext är en exakt kopia av en tidigare upplaga.</skos:scopeNote>
@@ -24310,8 +24294,7 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:prefLabel xml:lang="fi">sukututkija</skos:prefLabel>
   </skos:Concept>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m34">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m154"/>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m39"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -24781,7 +24764,7 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30142"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m373">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m374"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -24877,7 +24860,7 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <rdfs:label xml:lang="fi">Osa-kokonaisuussuhde (kappale)</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m383">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1158"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -25453,14 +25436,6 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:prefLabel xml:lang="fi">häämusiikki</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m436">
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Ekspression suhteet</rdfs:label>
-    <rdfs:label xml:lang="sv">Uttryckets relationer</rdfs:label>
-    <skos:scopeNote xml:lang="fi">Ekspression suhde tarkoittaa ekspression ja toisen entiteetin välistä suhdetta.</skos:scopeNote>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m437">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1568"/>
@@ -25990,8 +25965,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:prefLabel xml:lang="sv">45 varv./min</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m491">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m154"/>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m374"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -26378,13 +26352,19 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:prefLabel xml:lang="sv">original</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m530">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m698"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">härlett verk</rdfs:label>
     <rdfs:label xml:lang="fi">johdettu teos</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10148"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2266"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2277"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2278"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2283"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2287"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2289"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2293"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m531">
@@ -26898,14 +26878,13 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:prefLabel xml:lang="sv">normal förminskning</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m575">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">elokuvaversio (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">filmversion (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10129"/>
     <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m575"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:scopeNote xml:lang="fi">Lähdeteokseen perustuva elokuva. &#xD;
 Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
   </owl:Class>
@@ -27311,12 +27290,11 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m203"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m613">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">romaanimukaelman perustana (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">romanbearbetning baserad på (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10130"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, josta kuvailun kohteena oleva romaanimukaelma on tehty. Vastavuoroinen suhde: romaanimukaelma (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m614">
@@ -28156,6 +28134,32 @@ Euroopan yhteisö, yhteisöt (lyhenne: EY). Perhe-, kaupunki-, kyläyhteisö. Pi
     <rdfs:label xml:lang="sv">Härledda relationer (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">Johdannaissuhteet (teos)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10229"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1167"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1228"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m132"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1399"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1545"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1566"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1579"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1624"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2262"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2266"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2277"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2278"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2281"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2283"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2287"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2288"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2289"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2292"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2293"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2297"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2298"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m575"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m613"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m699">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -28574,14 +28578,19 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m743">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">mukaelma (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">omarbetning (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10155"/>
     <skos:altLabel xml:lang="fi">mukaelma teoksesta</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m530"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1167"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2281"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2292"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2297"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2298"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m575"/>
     <skos:scopeNote xml:lang="fi">Viittauksen kohde on teos, joka on muokattu kuvailun kohteena olevasta teoksesta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai viestintävälinettä varten. Koskee myös muodon muutoksia tai samassa muodossa kokonaan uudelleenmuokattuja teoksia.Vastavuoroinen suhde:mukaelman perustana (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m744">
@@ -28965,12 +28974,11 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:prefLabel xml:lang="sv">ungdomsförening</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m783">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1169"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">liittyy teokseen</rdfs:label>
     <rdfs:label xml:lang="sv">relaterat verk</rdfs:label>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1398"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m784">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -29563,8 +29571,6 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Musiikin genre-termi</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m837">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m698"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">teoksen perustana</rdfs:label>
@@ -29572,6 +29578,14 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10190"/>
     <skos:altLabel xml:lang="fi">perustuu teokseen</skos:altLabel>
     <skos:altLabel xml:lang="fi">pohjautuu teokseen</skos:altLabel>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1228"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1399"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1545"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1566"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1579"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1624"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2262"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m613"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m839">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -29910,7 +29924,7 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Viitataan yhteisöön, johon kuvailtava yhteisö on sulautunut.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m875">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m154"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -30108,12 +30122,31 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m892">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="sv">Annan publikationsform</rdfs:label>
     <rdfs:label xml:lang="fi">Muu julkaisumuoto</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30026"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1389"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1419"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1479"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1778"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1779"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1780"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1781"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1782"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1783"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1784"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1785"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1786"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1787"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1788"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1789"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1790"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1791"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1792"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1793"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1794"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2100"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m893">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -30481,12 +30514,12 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m93">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1317"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:label xml:lang="fi">jäljenteenä</rdfs:label>
     <rdfs:label xml:lang="sv">som kopia</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30039"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1294"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m243"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m930">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -30778,13 +30811,12 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">mycket stor stil</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m960">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">edeltäjä (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">föregående (verk)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10226"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, jonka sisältöä myöhempi teos jatkaa.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m961">
@@ -30957,7 +30989,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">Täydennyssuhteet (ekspressio)</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m977">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m436"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Suhteet"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
