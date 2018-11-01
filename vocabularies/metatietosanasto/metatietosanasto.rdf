@@ -1428,7 +1428,6 @@ rättsinstans</skos:definition>
     <rdfs:label xml:lang="fi">ekspression perustana</rdfs:label>
     <rdfs:label xml:lang="sv">uttryck baserat på</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20204"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m858"/>
     <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, johon johdettu ekspressio perustuu,</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1118">
@@ -7711,9 +7710,7 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:definition xml:lang="fi">henkilö, suku tai yhteisö, joka osallistuu ekspression tekemiseen tuottamalla teoksesta tulkinnan tai kriittisen selityksen</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m175">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m895"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">innehåller</rdfs:label>
     <rdfs:label xml:lang="fi">sisältää</rdfs:label>
@@ -18971,13 +18968,12 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">kemisti</skos:prefLabel>
   </skos:Concept>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m279">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m608"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">ISBD-termi</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Eripainos julkaisusta</rdfs:label>
     <rdfs:label xml:lang="sv">Särtryck ur publikationen</rdfs:label>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m608"/>
     <skos:scopeNote xml:lang="fi">Eripainoksen kuvailusta viitataan julkaisuun, josta eripainos on tehty</skos:scopeNote>
   </owl:Class>
   <skos:Concept rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2790">
@@ -27259,12 +27255,11 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">skrivarcirkel</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m608">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m895"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">ingår i materialet</rdfs:label>
     <rdfs:label xml:lang="fi">sisältyy aineistoon</rdfs:label>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m279"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m609">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -28475,11 +28470,11 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:scopeNote xml:lang="fi">Käytetään kun esim. nimeke on kahdella kielellä, mutta sisältö vain yhdellä kielellä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m731">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">härlett uttryck</rdfs:label>
     <rdfs:label xml:lang="fi">johdettu ekspressio</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20203"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m858"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1539"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1585"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m669"/>
@@ -30143,6 +30138,9 @@ Mikrolukulaitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Del-helhetsrelation (manifestation)</rdfs:label>
     <rdfs:label xml:lang="fi">Osa-kokonaisuussuhde (manifestaatio)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m175"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m279"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m608"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m896">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
