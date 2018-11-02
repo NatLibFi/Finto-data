@@ -343,13 +343,6 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:JulkaisussaLinkkiAR-sisältoon">
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">Julkaisussa linkki AR-sisältöön.</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Publikationen innehåller QR-kod.</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -24582,6 +24575,19 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:prefLabel xml:lang="sv">färgkrita</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">väriliitu</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3417">
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">värikuvitus</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3418">
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Julkaisussa linkki AR-sisältöön.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Publikationen innehåller QR-kod.</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m342">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -25626,9 +25632,9 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1977"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2018"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m275"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3417"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m440"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m455"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:varikuvitus"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m44">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -26932,7 +26938,6 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="sv">Anmärkning om bärare</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus tallenteesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:JulkaisussaLinkkiAR-sisältoon"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1006"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m112"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m114"/>
@@ -26973,6 +26978,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m293"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m307"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m325"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3418"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m379"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m414"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m429"/>
@@ -31349,11 +31355,5 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50208"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:varikuvitus">
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">värikuvitus</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
