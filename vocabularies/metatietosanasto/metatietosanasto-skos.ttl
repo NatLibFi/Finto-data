@@ -11452,6 +11452,7 @@ mts:m8 a isothes:ConceptGroup,
         mts:m2141,
         mts:m2251,
         mts:m2302,
+        mts:m3419,
         mts:m349,
         mts:m368,
         mts:m370,
@@ -11485,7 +11486,6 @@ mts:m8 a isothes:ConceptGroup,
         mts:m890,
         mts:m9,
         mts:m903,
-        mts:m906,
         mts:m965 ;
     skos:prefLabel "Laajuuden yksikkö"@fi,
         "Har omfång"@sv .
@@ -14642,9 +14642,6 @@ rdac:C10005 skos:exactMatch mts:m627 .
         mts:m1421 ;
     skos:prefLabel "datorskivmagasin"@sv .
 
-<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m2302,
-        mts:m238 .
-
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
 
@@ -17016,13 +17013,13 @@ mts:m2302 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi,
+    skos:definition "Laajuuden yksikkönä litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi,
         "Ett platt stycke tunt papper eller annat motsvarande material."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
+    skos:example "1 arkki (46 sivua)"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "arkki"@fi,
-        "ark"@sv ;
-    skos:scopeNote "ilman laitetta käytettävä tallenne"@fi .
+        "ark"@sv .
 
 mts:m2309 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -17141,7 +17138,7 @@ mts:m238 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi,
+    skos:definition "Tallennetyyppi, joka koostuu litteästä palasta ohutta paperia, muovia tms."@fi,
         "Ett platt stycke tunt papper eller annat motsvarande material."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
     skos:inScheme mts: ;
@@ -20290,6 +20287,19 @@ mts:m3413 a skos:Concept ;
     skos:prefLabel "radioamatööri"@fi,
         "radioamatör"@sv .
 
+mts:m3419 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Laajuuden yksikkönä pieni arkki jäykkää paperia, ohutta pahvia tms. läpinäkymätöntä materiaalia."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
+    skos:example "1 kotelo (30 korttia)"@fi,
+        "302 sivua : kuvitettu ; 25 cm + 1 korttipakka (78 korttia)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kortti"@fi,
+        "kort"@sv .
+
 mts:m348 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -21339,6 +21349,16 @@ Esimerkiksi karttapallot, pienoismallit jne."""@fi,
     skos:prefLabel "kartografinen kolmiulotteinen muoto"@fi,
         "kartografisk tredimensionell form"@sv .
 
+mts:m906 a skos:Concept ;
+    dc:source "RDA-termi"@fi ;
+    skos:definition "Pieni arkki jäykkää paperia, ohutta pahvia tms. läpinäkymätöntä materiaalia."@fi,
+        "Litet ark styvt papper, tunn kartong e.d. av ogenomskinligt material."@sv ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1045> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kortti"@fi,
+        "kort"@sv ;
+    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
+
 mts:m912 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     skos:definition "Kolmiulotteisena liikkuvana kuvana esitetty sisältö. Esimerkiksi 3D-elokuvat (näytellyt, animaatiot, 3D-videopelit jne. Kolmiulotteiseen liikkuvaan kuvaan voi liittyä ääntä."@fi ;
@@ -21493,6 +21513,10 @@ mts:m994 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "lukija"@fi,
         "uppläsare"@sv .
+
+<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m2302,
+        mts:m238,
+        mts:m3419 .
 
 mts:m108 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -27033,16 +27057,6 @@ mts:m899 a skos:Concept ;
     skos:prefLabel "nitraatti"@fi,
         "nitrat"@sv .
 
-mts:m906 a skos:Concept ;
-    dc:source "RDA-termi"@fi ;
-    skos:definition "Pieni arkki jäykkää paperia, ohutta pahvia tms. läpinäkymätöntä materiaalia."@fi,
-        "Litet ark styvt papper, tunn kartong e.d. av ogenomskinligt material."@sv ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1045> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kortti"@fi,
-        "kort"@sv ;
-    skos:scopeNote "ilman laitetta käytettävä tallennetyyppi"@fi .
-
 mts:m93 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdam:P30039 ;
@@ -29317,7 +29331,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-11-07T04:13:20+00:00"^^xsd:dateTime ;
+    dct:modified "2018-11-08T05:24:55+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
