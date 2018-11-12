@@ -154,7 +154,7 @@ public class GeneralDeprecator {
 	
 	private void merkitseDate(Resource deprekoitava) {
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String deprPvm = sdf.format(date);
 		this.onto.add(deprekoitava, this.dateProp, this.onto.createLiteral("deprecated on " + deprPvm));
 	}
@@ -299,7 +299,7 @@ public class GeneralDeprecator {
 			}
 
 			Date date = new Date();
-			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			String deprPvm = sdf.format(date);
 
 			viesti += "Deprekoinnissa " + deprPvm + " deprekoitiin seuraavat:\n";
