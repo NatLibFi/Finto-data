@@ -343,6 +343,20 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ViitteenSisaltavaEkspressio">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m977"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">Viitteen sisältävä ekspressio</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ViitteenSisaltavaTeos">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1504"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">Viitteen sisältävä teos</rdfs:label>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:dia">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -354,6 +368,14 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:example xml:lang="fi">MARC 21: 300 ## ‡a 19 diaa (9 min) + ‡e 2 CD-äänilevyä, 2 tekstilipuketta (10, 7 sivua)</skos:example>
     <skos:prefLabel xml:lang="fi">dia</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">diabild</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lastenversio(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">Kansallinen termi</rdfs:comment>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
+    <skos:prefLabel xml:lang="sv">barnversion (verk)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">lastenversio (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Viittauksen kohde on kuvailun kohteena olevan teoksen lastenversio.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -1370,7 +1392,6 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10251"/>
-    <skos:altLabel xml:lang="fi">Sarjakuvaversio teoksesta</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m743"/>
     <skos:prefLabel xml:lang="fi">sarjakuvaversio (teos)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">serieversion (verk)</skos:prefLabel>
@@ -2783,9 +2804,10 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10142"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:example xml:lang="fi">Mukaelman perustana (teos): Bellman, Carl Michael. Kom sköna källarflickor, suomi.</skos:example>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m132"/>
-    <skos:prefLabel xml:lang="fi">Mukaelman perustana (teos):</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Omarbetning baserad på (verk):</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">mukaelman perustana (teos)</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">omarbetning baserad på (verk)</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1400">
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -24747,8 +24769,8 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="sv">Härledda relationer</rdfs:label>
-    <rdfs:label xml:lang="fi">Johdannaissuhteet</rdfs:label>
+    <rdfs:label xml:lang="sv">Härledda relationer (uttryck</rdfs:label>
+    <rdfs:label xml:lang="fi">Johdannaissuhteet (ekspressio)</rdfs:label>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1539"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1585"/>
