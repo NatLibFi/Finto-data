@@ -8948,7 +8948,8 @@ mts:m2332 a isothes:ConceptGroup,
         mts:m3410,
         mts:m3411,
         mts:m3412,
-        mts:m3413 ;
+        mts:m3413,
+        mts:m3449 ;
     skos:prefLabel "ammatti tai tehtävä"@fi,
         "yrke eller uppgift"@sv .
 
@@ -14430,6 +14431,8 @@ mts:m999 a skos:Concept ;
 <http://www.yso.fi/onto/yso/p30058> skos:exactMatch mts:m2668 .
 
 <http://www.yso.fi/onto/yso/p30068> skos:exactMatch mts:m2429 .
+
+<http://www.yso.fi/onto/yso/p30088> skos:exactMatch mts:m3449 .
 
 <http://www.yso.fi/onto/yso/p30111> skos:exactMatch mts:m2587 .
 
@@ -26683,6 +26686,14 @@ mts:m3401 a skos:Concept ;
     skos:prefLabel "myyntipäällikkö"@fi,
         "försäljningschef"@sv .
 
+mts:m3449 a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:broader mts:m2987 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p30088> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mezzosopraano"@fi,
+        "mezzosopran (sångare)"@sv .
+
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -27583,16 +27594,6 @@ mts:m2833 a skos:Concept ;
     skos:prefLabel "viihdetaiteilija"@fi,
         "artist"@sv .
 
-mts:m2987 a skos:Concept ;
-    dc:source "YSO-termi"@fi ;
-    skos:broader mts:m2355 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p29862> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2668,
-        mts:m3123 ;
-    skos:prefLabel "naislaulaja"@fi,
-        "sångerska"@sv .
-
 mts:m3060 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:broader mts:m2447 ;
@@ -27703,6 +27704,17 @@ mts:m2934 a skos:Concept ;
         mts:m2939 ;
     skos:prefLabel "uskonnollinen johtaja"@fi,
         "religiös ledare"@sv .
+
+mts:m2987 a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:broader mts:m2355 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p29862> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2668,
+        mts:m3123,
+        mts:m3449 ;
+    skos:prefLabel "naislaulaja"@fi,
+        "sångerska"@sv .
 
 mts:m337 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -28932,5 +28944,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-11-28T03:35:52+00:00"^^xsd:dateTime .
+    dct:modified "2018-11-29T04:10:30+00:00"^^xsd:dateTime .
 
