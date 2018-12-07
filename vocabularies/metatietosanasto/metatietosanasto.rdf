@@ -343,6 +343,14 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvakasikirjoituksenPerustana(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10134"/>
+    <skos:prefLabel xml:lang="fi">elokuvakäsikirjoituksen perustana (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, josta elokuvan käsikirjoitus on muokattu.&#xD;
+Vastavuoroinen suhde: elokuvakäsikirjoitus (teos).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:indeksoinninPerustana(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -366,9 +374,47 @@ Vastavuoroinen suhde: innoittaja.</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10196"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:parodianPerustana(Teos)"/>
     <skos:prefLabel xml:lang="fi">jäljitelmän perustana (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, jonka tyyliä tai sisältöä johdettu teos jäljittelee.&#xD;
 Vastavuoroinen suhde: jäljitelmä (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoituksenPerustana(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10133"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:prefLabel xml:lang="fi">käsikirjoituksen perustana (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, josta elokuvan, televisio-ohjelman tai videon käsikirjoitus on muokattu.&#xD;
+Vastavuoroinen suhde: teokseen perustuva käsikirjoitus.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:koreografianPerustana(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10183"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:prefLabel xml:lang="fi">koreografian perustana (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, johon liike- tai tanssiteos perustuu.&#xD;
+Vastavuoroinen suhde: teokseen pohjautuva koreografia.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laajennelmanPerustana(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10184"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:prefLabel xml:lang="fi">laajennelman perustana (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, johon laajennelma perustuu.&#xD;
+Vastavuoroinen suhde: laajennelma (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyhennelmanPerustana(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10125"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:parodianPerustana(Teos)"/>
+    <skos:prefLabel xml:lang="fi">lyhennelmän perustana (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, jota on lyhennetty muuttamatta sen merkityssisältöä tai esitystapaa.&#xD;
+Vastavuoroinen suhde: lyhennelmä (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -2477,7 +2523,6 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10129"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1399"/>
     <skos:prefLabel xml:lang="fi">elokuvaversion perustana (teos)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">filmversion baserad på (verk)</skos:prefLabel>
   </owl:Class>
@@ -2888,10 +2933,15 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10142"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:example xml:lang="fi">Mukaelman perustana (teos): Bellman, Carl Michael. Kom sköna källarflickor, suomi.</skos:example>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoituksenPerustana(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:koreografianPerustana(Teos)"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1228"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m132"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1545"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1579"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1624"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2262"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3448"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m613"/>
     <skos:prefLabel xml:lang="fi">mukaelman perustana (teos)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">omarbetning baserad på (verk)</skos:prefLabel>
@@ -4328,7 +4378,6 @@ Katso myös taktiili teksti.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1624">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">Kansallinen termi</rdfs:comment>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:prefLabel xml:lang="sv">barnversion baserad på (verk)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">lastenversion perustana (teos)</skos:prefLabel>
   </owl:Class>
@@ -21772,7 +21821,6 @@ Vastavuoroinen suhde: abstrakti (teos).</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10127"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
     <skos:prefLabel xml:lang="fi">dramatisoinnin perustana (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, josta näytelmäsovitus on tehty. &#xD;
 Vastavuoroinen suhde: dramatisointi (teos)</skos:scopeNote>
@@ -26522,7 +26570,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10197"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2277"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:jaljitelmanPerustana(Teos)"/>
     <skos:prefLabel xml:lang="fi">parodian perustana (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, jonka tyyliä tai sisältöä jäljittellään humoristisesti.&#xD;
 Vastavuoroinen suhde: parodia (teos).</skos:scopeNote>
