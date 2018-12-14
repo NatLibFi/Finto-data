@@ -15963,15 +15963,6 @@ mts:m1552 a skos:Concept ;
     skos:prefLabel "uudelleenmiksaaja"@fi,
         "remixer"@sv .
 
-mts:m1566 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10185 ;
-    skos:broader mts:m837 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "uusintaproduktion perustana (teos)"@fi,
-        "nyproduktion baserad på (verk)"@sv ;
-    skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos)."@fi .
-
 mts:m1577 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdae:P20011 ;
@@ -20699,6 +20690,15 @@ mts:m3468 a skos:Concept ;
     skos:scopeNote """Teos, joka on sovitettu videopeliksi.\r
 Vastavuoroinen suhde: videopelisovitus (teos)"""@fi .
 
+mts:m3469 a skos:Concept ;
+    rdfs:comment "Kansallinen termi"@fi ;
+    skos:altLabel "pohjautuu osittain teokseen"@fi ;
+    skos:example "MARC 21: 700 1# ‡i Perustuu osittain teokseen: ‡a Tiainen, Esa, ‡d 1964- ‡e kirjoittaja. ‡t Johdon mitoitus ja suojaus. ‡0 (FI-ASTERI-N)000108588"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1399,
+        mts:m1566 ;
+    skos:prefLabel "perustuu osittain teokseen"@fi .
+
 mts:m348 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -22063,6 +22063,16 @@ mts:m1528 a skos:Concept ;
         "CD-skiva"@sv ;
     skos:scopeNote "(CD compact disc) tiedontallennukseen käytettävä optisesti luettava levy. CD-levylle tietoa (ääntä, kuvaa ja tekstiä) voidaan tallentaa yhdelle puolelle yhteen kerrokseen. CD-levytyyppeihin, joiden käyttötavat poikkeavat toisistaan, voidaan viitata kuhunkin eri termillä. CD-äänilevyä ja CD-ROM-levyä (CD-tietolevyä) voidaan ainoastaan toistaa, CD-R-levylle voidaan tallentaa yhden kerran ja CD-RW-levylle useita kertoja. (Tietotekniikan termitalkoot, 15.1.2013)"@fi,
         "CD (compact disc) optiskt lagringsmedium. Information (ljud, bild och text) lagras på en sida i ett lager. Olika typer av CD-skivor, vars användningssätt avviker från varandra, har varsin term. CD-ljudskivor och CD-ROM-skivor (CD-datorskivor) kan endast återges, CD-R-skivor kan spelas in en gång och CD-RW-skivor flera gånger."@sv .
+
+mts:m1566 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10185 ;
+    skos:broader mts:m3469,
+        mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "uusintaproduktion perustana (teos)"@fi,
+        "nyproduktion baserad på (verk)"@sv ;
+    skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos)."@fi .
 
 mts:m1578 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -28791,32 +28801,6 @@ mts:m2356 a skos:Concept ;
     skos:prefLabel "muusikko"@fi,
         "musiker"@sv .
 
-mts:m1399 a skos:Concept ;
-    rdfs:seeAlso rdaw:P10142 ;
-    skos:broader mts:m837 ;
-    skos:example "Mukaelman perustana (teos): Bellman, Carl Michael. Kom sköna källarflickor, suomi."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1228,
-        mts:m132,
-        mts:m1545,
-        mts:m1579,
-        mts:m1624,
-        mts:m2262,
-        mts:m3448,
-        mts:m3451,
-        mts:m3456,
-        mts:m3457,
-        mts:m3459,
-        mts:m3460,
-        mts:m3461,
-        mts:m3463,
-        mts:m3465,
-        mts:m3466,
-        mts:m3468,
-        mts:m613 ;
-    skos:prefLabel "mukaelman perustana (teos)"@fi,
-        "omarbetning baserad på (verk)"@sv .
-
 mts:m2505 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p7017> ;
@@ -28866,6 +28850,33 @@ mts:m2565 a skos:Concept ;
         mts:m3281 ;
     skos:prefLabel "toimittaja"@fi,
         "journalist"@sv .
+
+mts:m1399 a skos:Concept ;
+    rdfs:seeAlso rdaw:P10142 ;
+    skos:broader mts:m3469,
+        mts:m837 ;
+    skos:example "Mukaelman perustana (teos): Bellman, Carl Michael. Kom sköna källarflickor, suomi."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1228,
+        mts:m132,
+        mts:m1545,
+        mts:m1579,
+        mts:m1624,
+        mts:m2262,
+        mts:m3448,
+        mts:m3451,
+        mts:m3456,
+        mts:m3457,
+        mts:m3459,
+        mts:m3460,
+        mts:m3461,
+        mts:m3463,
+        mts:m3465,
+        mts:m3466,
+        mts:m3468,
+        mts:m613 ;
+    skos:prefLabel "mukaelman perustana (teos)"@fi,
+        "omarbetning baserad på (verk)"@sv .
 
 mts:m2619 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -29154,5 +29165,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-12-13T05:45:39+00:00"^^xsd:dateTime .
+    dct:modified "2018-12-14T04:06:42+00:00"^^xsd:dateTime .
 
