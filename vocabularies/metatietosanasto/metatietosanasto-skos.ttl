@@ -2549,6 +2549,7 @@ mts:m1415 a skos:Concept ;
 mts:m1416 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:m3474 ;
     skos:prefLabel "Osa-kokonaisuussuhde (teos)"@fi,
         "Del-helhetsrelation (verk)"@sv .
 
@@ -6760,7 +6761,7 @@ mts:m2105 a skos:Concept ;
 mts:m211 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdae:P20047 ;
-    skos:definition "henkilö tai yhteisö joka osallistuu ekspression tekemiseen vastaamalla haastattelijan, tavallisesti toimittajan, mielipidetutkijan tms. kysymyksiin"@fi ;
+    skos:definition "henkilö tai yhteisö joka osallistuu ekspression sisältämään haastatteluosuuteen vastaamalla haastattelijan, tavallisesti toimittajan, mielipidetutkijan tms. kysymyksiin."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "haastateltava (ekspressio)"@fi,
         "intervjuobjekt (uttryck)"@sv .
@@ -9608,6 +9609,8 @@ mts:m3430 a isothes:ConceptGroup,
 mts:m3433 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
+    skos:member mts:m3470,
+        mts:m3477 ;
     skos:prefLabel "Viitteen sisältävä teos"@fi .
 
 mts:m3436 a skos:Concept ;
@@ -9675,6 +9678,40 @@ mts:m346 a isothes:ConceptGroup,
         mts:m948 ;
     skos:prefLabel "Sisältötyyppi (RDA)"@fi,
         "Innehållstyp (RDA)"@sv .
+
+mts:m3470 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10294 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "muistoteos"@fi ;
+    skos:scopeNote """Teos, joka luotiin aiemman teoksen muiston kunnioittamiseksi. \r
+Vastavuoroinen suhde: muistoteoksen kohde."""@fi .
+
+mts:m3475 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10102 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3474 ;
+    skos:prefLabel "sisältyy sarjaan"@fi ;
+    skos:scopeNote """Teos, jonka osana sarjan osa on ilmestynyt. \r
+Vastavuoroinen suhde: sarjan osa (teos)."""@fi .
+
+mts:m3477 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10295 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "muistoteoksen kohde"@fi ;
+    skos:scopeNote """Teos, jonka muisto on kunnioitettu myöhemmässä teoksessa. \r
+Vastavuoroinen suhde: muistoteos."""@fi .
+
+mts:m3479 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10101 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3474 ;
+    skos:prefLabel "pääsarja"@fi ;
+    skos:scopeNote """Teos, jonka osana alasarja säännöllisesti julkaistaan. \r
+Vastavuoroinen suhde: alasarja."""@fi .
 
 mts:m349 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11278,6 +11315,12 @@ mts:m698 a isothes:ConceptGroup,
         mts:m3466,
         mts:m3467,
         mts:m3468,
+        mts:m3471,
+        mts:m3472,
+        mts:m3473,
+        mts:m3476,
+        mts:m3478,
+        mts:m3480,
         mts:m530,
         mts:m575,
         mts:m613,
@@ -12464,7 +12507,7 @@ mts:m951 a skos:Concept ;
 mts:m956 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdae:P20032 ;
-    skos:definition "henkilö tai yhteisö, joka osallistuu ekspression tekemiseen toimimalla haastattelijana, toimittajana, mielipidetutkijana tms."@fi ;
+    skos:definition "henkilö tai yhteisö, joka osallistuu ekspression sisältämään haastatteluosuuteen toimimalla haastattelijana, toimittajana, mielipidetutkijana tms."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "haastattelija (ekspressio)"@fi,
         "intervjuare (uttryck)"@sv .
@@ -20699,6 +20742,51 @@ mts:m3469 a skos:Concept ;
         mts:m1566 ;
     skos:prefLabel "perustuu osittain teokseen"@fi .
 
+mts:m3471 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10139 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mukautetun lyhennelmän perustana (teos)"@fi ;
+    skos:scopeNote """Teos, joka on systemaattisesti, kokonaisuudessaan ja mukaillen tiivistetty. \r
+Vastavuoroinen suhde: mukautettu lyhennelmä (teos)."""@fi .
+
+mts:m3472 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10027 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "variaation perustana (teos)"@fi ;
+    skos:scopeNote """Musiikkiteos, josta melodinen, temaattinen tai harmoninen aines on otettu erillisen, toistettavan ja muunneltavan teeman muodostamiseksi.\r
+Vastavuoroinen suhde: variaatio (teos)."""@fi .
+
+mts:m3473 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10143 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vapaan käännöksen perustana (teos)"@fi ;
+    skos:scopeNote """Teos, jota on sekä muokattu että käännetty toiselle kielelle. \r
+Vastavuoroinen suhde: vapaamuotoinen käännös (teos)."""@fi .
+
+mts:m3476 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10179 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "yhteenvedon perustana (teos)"@fi ;
+    skos:scopeNote """Teos, johon on lyhyt yhteenveto perustuu.\r
+Vastavuoroinen suhde: yhteenveto (teos)."""@fi .
+
+mts:m3478 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10186 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "parafraasin perustana (teos)"@fi ;
+    skos:scopeNote """Teos, johon sisällön toisintaminen perustuu.\r
+Vastavuoroinen suhde: parafraasi (teos)."""@fi .
+
 mts:m348 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -20710,6 +20798,15 @@ mts:m348 a skos:Concept ;
         "filmrulle"@sv ;
     skos:scopeNote "heijastettava kuvatallenne"@fi,
         "Bärare för projicerbara bilder."@sv .
+
+mts:m3480 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10161 ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "musiikkiteoksen teksti (teos)"@fi ;
+    skos:scopeNote """Teos, josta ei-näytelmällisen (muun kuin oratorion) musiikkiteoksen teksti on peräisin.\r
+Vastavuoroinen suhde: tekstiin perustuva musiikki (teos)."""@fi .
 
 mts:m354 a skos:Concept ;
     dc:source "Kansallinen termi"@fi ;
@@ -26886,6 +26983,16 @@ mts:m3467 a skos:Concept ;
     skos:scopeNote """Teos, jonka tyyliä tai sisältöä johdettu teos jäljittelee.\r
 Vastavuoroinen suhde: jäljitelmä (teos)."""@fi .
 
+mts:m3474 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10019 ;
+    skos:broader mts:m3475,
+        mts:m3479 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sisältyy teokseen"@fi ;
+    skos:scopeNote """Laajempi teos, jonka itsenäinen osa teos on.\r
+Vastavuoroinen suhde: sisältää (teos)."""@fi .
+
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -28271,25 +28378,6 @@ mts:m2659 a skos:Concept ;
     skos:prefLabel "avustaja"@fi,
         "hjälpare"@sv .
 
-mts:m837 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10190 ;
-    skos:altLabel "perustuu teokseen"@fi,
-        "pohjautuu teokseen"@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1399,
-        mts:m1566,
-        mts:m3446,
-        mts:m3447,
-        mts:m3453,
-        mts:m3454,
-        mts:m3458,
-        mts:m3464,
-        mts:m3467 ;
-    skos:prefLabel "teoksen perustana"@fi,
-        "verk baserat på"@sv .
-
 mts:m2274 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10170 ;
@@ -28628,6 +28716,31 @@ mts:m2739 a skos:Concept ;
         mts:m3388 ;
     skos:prefLabel "yleisurheilija"@fi,
         "friidrottare"@sv .
+
+mts:m837 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10190 ;
+    skos:altLabel "perustuu teokseen"@fi,
+        "pohjautuu teokseen"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1399,
+        mts:m1566,
+        mts:m3446,
+        mts:m3447,
+        mts:m3453,
+        mts:m3454,
+        mts:m3458,
+        mts:m3464,
+        mts:m3467,
+        mts:m3471,
+        mts:m3472,
+        mts:m3473,
+        mts:m3476,
+        mts:m3478,
+        mts:m3480 ;
+    skos:prefLabel "teoksen perustana"@fi,
+        "verk baserat på"@sv .
 
 mts:m1060 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
@@ -29165,5 +29278,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-12-14T04:06:42+00:00"^^xsd:dateTime .
+    dct:modified "2018-12-15T03:59:31+00:00"^^xsd:dateTime .
 
