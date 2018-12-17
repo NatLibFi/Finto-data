@@ -343,6 +343,15 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:alasarja">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10080"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sisaltaa(Teos)"/>
+    <skos:prefLabel xml:lang="fi">alasarja</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Sarja-aineisto tai moniosainen monografia, joka julkaistaan säännöllisesti osana laajempaa teosta.&#xD;
+Vastavuoroinen suhde: pääsarja.</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -1411,6 +1420,9 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Kompletterande relationer (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">Täydennyssuhteet (teos)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10228"/>
+    <skos:altLabel xml:lang="fi">Teoksen täydennyssuhde</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää teoksen teokseen, joka on täydennys- tai lisäosa toiseen teokseen tai jota toinen teos täydentää.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1398"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1443"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1548"/>
@@ -2849,10 +2861,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1398">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <skos:altLabel xml:lang="fi">Musiikki elokuvasta</skos:altLabel>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10245"/>
+    <skos:altLabel xml:lang="fi">musiikki elokuvasta</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
-    <skos:prefLabel xml:lang="fi">Musiikki elokuvaan (teos):</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Musik till film (verk):</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">musiikki elokuvaan (teos)</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">musik till film (verk)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Viittauksen kohteena on elokuva, jonka musiikki kuvailun kohde on. Vastavuoroinen suhde: elokuvamusiikki (teos)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1399">
@@ -3005,9 +3018,12 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Del-helhetsrelation (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">Osa-kokonaisuussuhde (teos)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:alasarja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3474"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3475"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3479"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sarjanOsa(Teos)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sisaltaa(Teos)"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1418">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -3204,8 +3220,9 @@ Katso myös kartografinen liikkuva kuva.</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1443">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <skos:prefLabel xml:lang="sv">Supplement till verket</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Täydennysosa teokseen</skos:prefLabel>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10192"/>
+    <skos:prefLabel xml:lang="sv">supplement till verket</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">täydennysosa teokseen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1445">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -3882,8 +3899,9 @@ MARC 21 700 1# ‡i Uudistettu versio teoksesta: ‡aHaikka, Sari. ‡t Kissan k
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1548">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <skos:prefLabel xml:lang="sv">Supplement</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Täydennysosa</skos:prefLabel>
+    <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1548"/>
+    <skos:prefLabel xml:lang="sv">supplement</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">täydennysosa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1549">
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -26811,6 +26829,15 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohde</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sarjanOsa(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10141"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sisaltaa(Teos)"/>
+    <skos:prefLabel xml:lang="fi">sarjan osa (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, joka on julkaistu sarjassa.&#xD;
+Vastavuoroinen suhde: sisältyy sarjaan.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sisaltaa(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
