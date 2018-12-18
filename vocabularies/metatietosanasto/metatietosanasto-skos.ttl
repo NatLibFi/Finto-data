@@ -1487,6 +1487,9 @@ mts:m1163 a isothes:ConceptGroup,
 mts:m1169 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10228 ;
+    skos:altLabel "Teoksen täydennyssuhde"@fi ;
+    skos:definition "Liittää teoksen teokseen, joka on täydennys- tai lisäosa toiseen teokseen tai jota toinen teos täydentää."@fi ;
     skos:member mts:m1398,
         mts:m1443,
         mts:m1548,
@@ -2549,7 +2552,12 @@ mts:m1415 a skos:Concept ;
 mts:m1416 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:member mts:m3474 ;
+    skos:member mts:m3474,
+        mts:m3475,
+        mts:m3479,
+        mts:m3481,
+        mts:m3482,
+        mts:m3483 ;
     skos:prefLabel "Osa-kokonaisuussuhde (teos)"@fi,
         "Del-helhetsrelation (verk)"@sv .
 
@@ -2683,9 +2691,10 @@ mts:m144 a skos:Concept ;
 
 mts:m1443 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10192 ;
     skos:inScheme mts: ;
-    skos:prefLabel "Täydennysosa teokseen"@fi,
-        "Supplement till verket"@sv .
+    skos:prefLabel "täydennysosa teokseen"@fi,
+        "supplement till verket"@sv .
 
 mts:m1447 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -3128,12 +3137,6 @@ mts:m1546 a skos:Concept ;
         "Helsingin Sanomats litteraturpris"@sv ;
     skos:scopeNote "Helsingin Sanomien vuodesta 1995 vuosittain jakama palkinto vuoden parhaalle suomenkieliselle esikoisteokselle."@fi,
         "Ett pris som sedan 1995 delats ut årligen av Helsingin Sanomat, för årets bästa finskspråkiga debutverk."@sv .
-
-mts:m1548 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Täydennysosa"@fi,
-        "Supplement"@sv .
 
 mts:m155 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -9687,15 +9690,6 @@ mts:m3470 a skos:Concept ;
     skos:scopeNote """Teos, joka luotiin aiemman teoksen muiston kunnioittamiseksi. \r
 Vastavuoroinen suhde: muistoteoksen kohde."""@fi .
 
-mts:m3475 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10102 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m3474 ;
-    skos:prefLabel "sisältyy sarjaan"@fi ;
-    skos:scopeNote """Teos, jonka osana sarjan osa on ilmestynyt. \r
-Vastavuoroinen suhde: sarjan osa (teos)."""@fi .
-
 mts:m3477 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10295 ;
@@ -9703,15 +9697,6 @@ mts:m3477 a skos:Concept ;
     skos:prefLabel "muistoteoksen kohde"@fi ;
     skos:scopeNote """Teos, jonka muisto on kunnioitettu myöhemmässä teoksessa. \r
 Vastavuoroinen suhde: muistoteos."""@fi .
-
-mts:m3479 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi ;
-    rdfs:seeAlso rdaw:P10101 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m3474 ;
-    skos:prefLabel "pääsarja"@fi ;
-    skos:scopeNote """Teos, jonka osana alasarja säännöllisesti julkaistaan. \r
-Vastavuoroinen suhde: alasarja."""@fi .
 
 mts:m349 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15666,11 +15651,12 @@ mts:m1395 a skos:Concept ;
 
 mts:m1398 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
-    skos:altLabel "Musiikki elokuvasta"@fi ;
+    rdfs:seeAlso rdaw:P10245 ;
+    skos:altLabel "musiikki elokuvasta"@fi ;
     skos:broader mts:m783 ;
     skos:inScheme mts: ;
-    skos:prefLabel "Musiikki elokuvaan (teos):"@fi,
-        "Musik till film (verk):"@sv ;
+    skos:prefLabel "musiikki elokuvaan (teos)"@fi,
+        "musik till film (verk)"@sv ;
     skos:scopeNote "Viittauksen kohteena on elokuva, jonka musiikki kuvailun kohde on. Vastavuoroinen suhde: elokuvamusiikki (teos)"@fi .
 
 mts:m1400 a skos:Concept ;
@@ -15984,6 +15970,13 @@ mts:m1545 a skos:Concept ;
     skos:prefLabel "selkokielisen version perustana (teos)"@fi,
         "lättläst version baserad på (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva selkokielinen versio on tehty. Vastavuoroinen suhde: Selkokielinen versio (teos):"@fi .
+
+mts:m1548 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso mts:m1548 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "täydennysosa"@fi,
+        "supplement"@sv .
 
 mts:m1549 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20769,6 +20762,15 @@ mts:m3473 a skos:Concept ;
     skos:scopeNote """Teos, jota on sekä muokattu että käännetty toiselle kielelle. \r
 Vastavuoroinen suhde: vapaamuotoinen käännös (teos)."""@fi .
 
+mts:m3475 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10102 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3474 ;
+    skos:prefLabel "sisältyy sarjaan"@fi ;
+    skos:scopeNote """Teos, jonka osana sarjan osa on ilmestynyt. \r
+Vastavuoroinen suhde: sarjan osa (teos)."""@fi .
+
 mts:m3476 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10179 ;
@@ -20786,6 +20788,15 @@ mts:m3478 a skos:Concept ;
     skos:prefLabel "parafraasin perustana (teos)"@fi ;
     skos:scopeNote """Teos, johon sisällön toisintaminen perustuu.\r
 Vastavuoroinen suhde: parafraasi (teos)."""@fi .
+
+mts:m3479 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10101 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3474 ;
+    skos:prefLabel "pääsarja"@fi ;
+    skos:scopeNote """Teos, jonka osana alasarja säännöllisesti julkaistaan. \r
+Vastavuoroinen suhde: alasarja."""@fi .
 
 mts:m348 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20807,6 +20818,24 @@ mts:m3480 a skos:Concept ;
     skos:prefLabel "musiikkiteoksen teksti (teos)"@fi ;
     skos:scopeNote """Teos, josta ei-näytelmällisen (muun kuin oratorion) musiikkiteoksen teksti on peräisin.\r
 Vastavuoroinen suhde: tekstiin perustuva musiikki (teos)."""@fi .
+
+mts:m3481 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10141 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3483 ;
+    skos:prefLabel "sarjan osa (teos)"@fi ;
+    skos:scopeNote """Teos, joka on julkaistu sarjassa.\r
+Vastavuoroinen suhde: sisältyy sarjaan."""@fi .
+
+mts:m3482 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10080 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3483 ;
+    skos:prefLabel "alasarja"@fi ;
+    skos:scopeNote """Sarja-aineisto tai moniosainen monografia, joka julkaistaan säännöllisesti osana laajempaa teosta.\r
+Vastavuoroinen suhde: pääsarja."""@fi .
 
 mts:m354 a skos:Concept ;
     dc:source "Kansallinen termi"@fi ;
@@ -26993,6 +27022,16 @@ mts:m3474 a skos:Concept ;
     skos:scopeNote """Laajempi teos, jonka itsenäinen osa teos on.\r
 Vastavuoroinen suhde: sisältää (teos)."""@fi .
 
+mts:m3483 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    rdfs:seeAlso rdaw:P10147 ;
+    skos:broader mts:m3481,
+        mts:m3482 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sisältää (teos)"@fi ;
+    skos:scopeNote """Teos, joka on itsenäinen osa laajempaa teosta.\r
+Vastavuoroinen suhde: sisältyy teokseen."""@fi .
+
 mts:m392 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -29278,5 +29317,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-12-17T05:30:36+00:00"^^xsd:dateTime .
+    dct:modified "2018-12-18T03:18:25+00:00"^^xsd:dateTime .
 
