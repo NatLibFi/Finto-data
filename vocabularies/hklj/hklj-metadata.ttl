@@ -1,0 +1,54 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix kaunokki: <http://urn.fi/URN:NBN:au:kaunokki:> .
+@prefix kaunokkimeta: <http://www.yso.fi/onto/kaunokki-meta/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix hklj-meta: <http://www.yso.fi/onto/hklj-meta/> .
+@prefix hklj:   <http://urn.fi/URN:NBN:fi:au:hklj:> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+hklj: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+
+    dc:creator
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Kirjastot.fi"@fi ,
+        "Libraries.fi"@en ,
+        "Biblioteken.fi"@sv ;
+
+    dc:description 
+	"""Verkko-HKLJ on Helsingin kaupunginkirjaston luokitusjärjestelmän verkkoversio. Se sisältää HKLJ:n taulukot ja hakemiston."""@fi ,
+	"Webb-HSKS är Helsingfors stadsbiblioteks klassifikationssystems webbversion. Den innehåller HSKS:s tabeller och registret."@sv ,
+	"The Web-HCLCS is the webversion of the Helsinki City Library Classification System. It contains the tables and the index of HCLCS."@en ;
+
+    dc:title "HCLCS"@en,
+        "HKLJ"@fi,
+        "HSKS"@sv ;
+    dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe> ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+
+	.
+
+hklj-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "hklj-luokka"@fi, 
+        "hklj-klass"@sv, 
+        "hklj Class"@en .
+
+hklj-meta:FormClass a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Muotoluokka"@fi,
+        "Formtilläg"@sv,
+        "Form tag"@en .
