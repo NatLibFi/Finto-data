@@ -1512,6 +1512,8 @@ mts:m1169 a isothes:ConceptGroup,
     skos:member mts:m1398,
         mts:m1443,
         mts:m1548,
+        mts:m3484,
+        mts:m3485,
         mts:m783 ;
     skos:prefLabel "Täydennyssuhteet (teos)"@fi,
         "Kompletterande relationer (verk)"@sv .
@@ -21069,6 +21071,26 @@ mts:m3482 a skos:Concept ;
     skos:scopeNote """Sarja-aineisto tai moniosainen monografia, joka julkaistaan säännöllisesti osana laajempaa teosta.\r
 Vastavuoroinen suhde: pääsarja."""@fi .
 
+mts:m3484 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10248 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m783 ;
+    skos:prefLabel "koreografia teokseen"@fi ;
+    skos:scopeNote """Teos, jossa käytetään koreografiateosta.\r
+Vastavuoroinen suhde: koreografia (teos)."""@fi .
+
+mts:m3485 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10247 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m783 ;
+    skos:prefLabel "koreografia (teos)"@fi ;
+    skos:scopeNote """Koreografiateos, jota käytetään toisissa teoksissa.\r
+Vastavuoroinen suhde: koreografia teokseen."""@fi .
+
 mts:m354 a skos:Concept ;
     dc:source "Kansallinen termi"@fi ;
     skos:altLabel "dramat. (dramaturgi)"@fi ;
@@ -21891,13 +21913,6 @@ mts:m780 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "kartta"@fi,
         "karta"@sv .
-
-mts:m783 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1398 ;
-    skos:prefLabel "liittyy teokseen"@fi,
-        "relaterat verk"@sv .
 
 mts:m784 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -28085,6 +28100,15 @@ mts:m649 a skos:Concept ;
         "ljudkassett"@sv ;
     skos:scopeNote "äänitallenne"@fi .
 
+mts:m783 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
+    skos:broader mts:m3484,
+        mts:m3485 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1398 ;
+    skos:prefLabel "liittyy teokseen"@fi,
+        "relaterat verk"@sv .
+
 mts:m92 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi ;
@@ -29576,5 +29600,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2018-12-20T03:34:10+00:00"^^xsd:dateTime .
+    dct:modified "2018-12-21T04:16:17+00:00"^^xsd:dateTime .
 
