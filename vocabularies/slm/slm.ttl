@@ -617,12 +617,6 @@ slm:s613  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "autolehdet"@fi , "biltidningar"@sv .
 
-slm:s1164  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s77 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "savianimaatioelokuvat"@fi , "leranimationsfilmer"@sv ;
-        skos:prefLabel   "leranimerade filmer"@sv , "vaha-animaatioelokuvat"@fi .
-
 slm:s496  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -712,7 +706,7 @@ slm:s691  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p3> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "underhållningslitteratur"@sv , "viihdekirjallisuus"@fi ;
-        skos:related     slm:s18 , slm:s672 , slm:s934 , slm:s1005 .
+        skos:related     slm:s18 , slm:s672 , slm:s1005 .
 
 slm:s5  a                owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s919 ;
@@ -813,6 +807,12 @@ slm:s1193  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "kuoromusiikki"@fi , "körmusik"@sv .
+
+slm:s1063  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s77 , yso-update:ongelmatsv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "piirretyt elokuvat"@fi , "tecknade animationsfilmer"@sv , "piirrosanimaatioelokuvat"@fi , "tecknade filmer"@sv , "käsinpiirretyt elokuvat"@fi ;
+        skos:prefLabel   "käsinpiirretyt animaatioelokuvat"@fi , "handritade animerade filmer"@sv .
 
 slm:s121  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s690 ;
@@ -1394,10 +1394,10 @@ slm:s398  a              owl:Class , skos:Concept ;
 
 slm:s855  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "lättlästa böcker (läsinlärning)"@sv ;
+        skos:altLabel    "lukemistot"@fi , "lättlästa böcker (läsinlärning)"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6188> ;
         skos:inScheme    slm:s285 ;
-        skos:note        "Tarkoittaa kirjoja, jotka on suunnattu sekä tavallisille lapsille ja nuorille tukemaan lukemiseen oppimista ja lukuharrastusta että niille lapsille ja nuorille, joilla on ongelmia hahmotus- ja ymmärtämiskyvyssä tai lukemaan oppimisessa. Tekstit ovat helposti luettavia, kuvat selkeitä"@fi ;
+        skos:note        "Kirjoja, jotka on tarkoitettu lukemaan oppimisen ja lukuharrastuksen tai kielten opiskelun tueksi. Tekstit ovat helposti luettavia."@fi ;
         skos:prefLabel   "lättlästa böcker"@sv , "helppolukuiset kirjat"@fi ;
         skos:related     slm:s478 , slm:s686 , slm:s813 .
 
@@ -1435,12 +1435,6 @@ slm:s667  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "versetit"@fi , "versetter"@sv .
 
-slm:s189  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s77 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "silhuettanimationsfilmer"@sv , "siluettanimerade filmer"@sv ;
-        skos:prefLabel   "siluettianimaatioelokuvat"@fi , "silhuettanimerade filmer"@sv .
-
 slm:s413  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026655> ;
@@ -1454,11 +1448,12 @@ slm:s335  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "bluegrass"@fi , "bluegrass"@sv .
 
-slm:s1233  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "kandityöt"@fi , "C-uppsatser"@sv , "kandidatarbeten"@sv , "kandidatuppsatser"@sv , "kandidaatintyöt"@fi ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "kandidaatintutkielmat"@fi , "kandidatavhandlingar"@sv .
+slm:s1233  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1270 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "kandityöt"@fi , "C-uppsatser"@sv , "kandidatarbeten"@sv , "kandidatuppsatser"@sv , "kandidaatintyöt"@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "kandidaatintutkielmat"@fi , "kandidatavhandlingar"@sv .
 
 slm:s144  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -1646,8 +1641,7 @@ slm:s383  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p1637> ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "läseböcker (skolböcker)"@sv , "lukukirjat"@fi ;
-        skos:related     slm:s141 .
+        skos:prefLabel   "läseböcker (skolböcker)"@sv , "lukukirjat"@fi .
 
 slm:s541  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -1806,11 +1800,12 @@ slm:s441  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "akustinen populaarimusiikki"@fi , "akustisk populärmusik"@sv .
 
-slm:s1236  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "lisensiaatintutkielmat"@fi , "licentiatuppsatser"@sv , "licentiatarbeten"@sv , "lisensiaatintyöt"@fi ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "licentiatavhandlingar"@sv , "lisensiaatintutkimukset"@fi .
+slm:s1236  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1270 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "lisensiaatintutkielmat"@fi , "licentiatuppsatser"@sv , "licentiatarbeten"@sv , "lisensiaatintyöt"@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "licentiatavhandlingar"@sv , "lisensiaatintutkimukset"@fi .
 
 slm:s336  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
@@ -1873,11 +1868,11 @@ slm:s190  a              owl:Class , skos:Concept ;
         skos:related     slm:s763 , slm:s1024 , slm:s607 , slm:s1119 , slm:s1073 , slm:s612 , slm:s1131 , slm:s1071 , slm:s1028 , slm:s1087 , slm:s1161 .
 
 slm:s934  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s141 ;
+        rdfs:subClassOf  slm:s691 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "lukemistot"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p24970> ;
-        skos:prefLabel   "viihdelukemistot"@fi , "nöjesläsning"@sv ;
-        skos:related     slm:s691 .
+        skos:prefLabel   "viihdelukemistot"@fi , "nöjesläsning"@sv .
 
 slm:s393  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 , yso-update:ongelmatfi ;
@@ -2431,6 +2426,7 @@ slm:s199  a              owl:Class , skos:Concept ;
 slm:s562  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:altLabel   "böcker med specialeffekter"@sv , "böcker med effektmedel"@sv ;
+        skos:inScheme   slm:s285 ;
         skos:prefLabel  "tehostekirjat"@fi , "effektböcker"@sv ;
         skos:related    slm:s1075 , slm:s1068 ;
         skos:scopeNote  "Används om verk med olika specialeffekter, t.ex. ljud."@sv , "Käytetään teoksista, joissa on ääni- tai muu tehoste mukana."@fi .
@@ -2763,11 +2759,12 @@ slm:s332  a              owl:Class , skos:Concept ;
         skos:related     slm:s768 , slm:s237 , slm:s433 .
 
 slm:s598  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi , slm:s618 ;
+        rdfs:subClassOf  slm:s618 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "folklore"@sv , "folklore"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p3505> ;
         skos:inScheme    slm:s285 ;
+        skos:note        "Kertova esitys tai teksti, joka kuvaa ja tulkitsee todellista tai kuvitteellista tapahtumaa tai tapahtumasarjaa"@fi ;
         skos:prefLabel   "kansankertomukset"@fi , "folkliga berättelser"@sv .
 
 slm:s172  a             owl:Class , skos:Concept ;
@@ -4085,10 +4082,11 @@ slm:s310  a              owl:Class , skos:Concept ;
         skos:related     slm:s701 .
 
 slm:s455  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi , slm:s598 , slm:s1045 ;
+        rdfs:subClassOf  slm:s598 , slm:s1045 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p7686> ;
         skos:inScheme    slm:s285 ;
+        skos:note        "Lyhyt, useimmiten yksiepisodinen kansankertomus, joka esittää stereotyyppisen, totena kerrotun tapahtumakulun."@fi ;
         skos:prefLabel   "folksägner"@sv , "kansantarinat"@fi .
 
 slm:s1067  a             owl:Class , skos:Concept ;
@@ -4616,11 +4614,6 @@ slm:s1192  a             owl:Class , skos:Concept ;
         skos:prefLabel   "yhteistyöpelit"@fi , "samarbetsspel"@sv ;
         skos:related     slm:s603 .
 
-slm:s733  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s77 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:prefLabel   "datoranimerade filmer"@sv , "tietokoneanimaatioelokuvat"@fi .
-
 slm:s1002  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4941,11 +4934,12 @@ slm:s445  a              owl:Class , skos:Concept ;
         skos:prefLabel   "historialliset romaanit"@fi , "historiska romaner"@sv ;
         skos:related     slm:s45 , slm:s1111 .
 
-slm:s1244  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "gradun"@sv , "gradut"@fi , "D-uppsatser"@sv , "trebetygsuppsatser"@sv , "pro gradur"@sv , "magisteruppsatser"@sv , "pro gradut"@fi ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "pro gradu -tutkielmat"@fi , "pro gradu-avhandlingar"@sv .
+slm:s1244  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1270 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "gradun"@sv , "gradut"@fi , "D-uppsatser"@sv , "trebetygsuppsatser"@sv , "pro gradur"@sv , "magisteruppsatser"@sv , "pro gradut"@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "pro gradu -tutkielmat"@fi , "pro gradu-avhandlingar"@sv .
 
 slm:s1019  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5171,6 +5165,11 @@ slm:s589  a              owl:Class , skos:Concept ;
         skos:altLabel    "simulationsspel"@sv , "simulaattoripelit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26450> ;
         skos:prefLabel   "simulaatiopelit"@fi , "simulatorspel"@sv .
+
+slm:s1268  a             owl:Class , skos:ConceptScheme ;
+        rdfs:subClassOf  yso-update:ongelmatfi ;
+        skos:altLabel    "Pienjulkaisut"@fi , "Efemera"@fi , "Ephemera"@fi ;
+        skos:prefLabel   "Pienpainatteet"@fi .
 
 slm:s1263  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s586 ;
@@ -5435,13 +5434,6 @@ slm:s713  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "kansanlaulut"@fi , "folkvisor"@sv .
 
-slm:s1155  a                owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s77 , yso-update:ongelmatsv ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:altLabel       "föremålsanimationsfilmer"@sv ;
-        skos:editorialNote  "Onko sellaista? Ks. google, 0 tulosta. Mahdoton kääntää?" ;
-        skos:prefLabel      "esineanimaatioelokuvat"@fi , "föremålsanimerade filmer"@sv .
-
 slm:s868  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5580,12 +5572,6 @@ slm:s641  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026879> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "jazz"@fi , "jazz"@sv .
-
-slm:s1060  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s77 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "cut out-animationsfilmer"@sv ;
-        skos:prefLabel   "cut out-animerade filmer"@sv , "pala-animaatioelokuvat"@fi .
 
 slm:s689  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6053,7 +6039,7 @@ slm:s1014  a             owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p1280> ;
         skos:definition  "Sanaton näytelmällinen esitys, joka perustuu eleisiin, ilmeisiin ja liikkeisiin; lisänä voi olla tanssia ja musiikkia."@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027183> ;
-        skos:inScheme    slm:s861 ;
+        skos:inScheme    slm:s285 ;
         skos:prefLabel   "pantomiimit"@fi , "pantomimer"@sv .
 
 slm:s735  a              owl:Class , skos:Concept ;
@@ -6520,11 +6506,12 @@ slm:s539  a              owl:Class , skos:Concept ;
         skos:prefLabel   "stockflottarfilmer"@sv , "tukkilaiselokuvat"@fi .
 
 slm:s723  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi , slm:s618 ;
+        rdfs:subClassOf  yso-update:ongelmatsv , slm:s618 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "lapsikertomukset"@fi ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "barns berättelser"@sv , "lapsikertomukset"@fi ;
-        skos:scopeNote   "Käytetään kertomuksista, joissa kuvataan maailmaa lapsen näkökulmasta."@fi , "Används om berättelser som skildrar världen ur barnets perspektiv."@sv .
+        skos:prefLabel   "barns berättelser"@sv , "lapsikuvaukset"@fi ;
+        skos:scopeNote   "Används om berättelser som skildrar världen ur barnets perspektiv."@sv .
 
 slm:s440  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
@@ -6764,13 +6751,6 @@ slm:s1075  a            owl:Class , skos:Concept ;
         skos:related    slm:s1090 , slm:s562 , slm:s1181 , slm:s910 , slm:s394 ;
         skos:scopeNote  "Används om verk, oftast avsedda för barn, som man även kan leka med."@sv , "Käytetään useimmiten lapsille tarkoitetuista teoksista, joilla voi myös leikkiä."@fi .
 
-slm:s1063  a                owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s77 , yso-update:ongelmatsv ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:altLabel       "käsinpiirretyt animaatioelokuvat"@fi , "piirretyt elokuvat"@fi , "tecknade animationsfilmer"@sv , "tecknade filmer"@sv , "käsinpiirretyt elokuvat"@fi ;
-        skos:editorialNote  "Onko tämän oikeasti tarkoitus viitata pelkästään käsinpiirretyihin? Eli \"traditional animation\"? Mietitään ruotsinnosta. Jos viittaa kaikkiin piirrettyihin niin sitten laitetaan \"tecknade filmer\", mutta jos näin on niin olisiko suomeksikin päätermin muutosta? Huom. Genresanasto: piirretyt elokuvat KÄYTÄ piirrosanimaatioelokuvat, mutta YSA: piirretyt elokuvat KÄYTÄ animaatioelokuvat" ;
-        skos:prefLabel      "piirrosanimaatioelokuvat"@fi , "handritade animerade filmer"@sv .
-
 slm:s1012  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:altLabel   "skandaltidningar"@sv , "sensationstidningar"@sv ;
@@ -6800,6 +6780,7 @@ slm:s1076  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p12552> ;
         skos:inScheme    slm:s285 ;
+        skos:note        "Pitkä, monitapahtumainen, fantasiaa sisältävä kansankertomus, jota on kerrottu ajanvietteeksi."@fi ;
         skos:prefLabel   "folksagor"@sv , "kansansadut"@fi ;
         skos:related     slm:s237 .
 
@@ -6922,6 +6903,11 @@ slm:s661  a              owl:Class , skos:Concept ;
         skos:prefLabel   "melodramer (drama)"@sv , "melodraamat (draama)"@fi ;
         skos:related     slm:s454 , slm:s1005 .
 
+slm:s1269  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:ongelmatfi ;
+        skos:inScheme    slm:s1268 ;
+        skos:prefLabel   "lomakkeet"@fi .
+
 slm:s871  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1177 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6973,6 +6959,11 @@ slm:s924  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "barbershop-musiikki"@fi , "barbershop"@sv .
 
+slm:s1271  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:ongelmatfi ;
+        skos:inScheme    slm:s1268 ;
+        skos:prefLabel   "mainokset"@fi .
+
 slm:s381  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -7011,6 +7002,11 @@ slm:s307  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "videorunous"@fi , "videolyrik"@sv .
+
+slm:s1267  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s435 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "osoiteluettelot"@fi .
 
 slm:s376  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
@@ -7067,6 +7063,7 @@ slm:s1090  a             owl:Class , skos:Concept ;
         skos:altLabel    "ljudeffektsböcker"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p28674> ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026177> ;
+        skos:inScheme    slm:s285 ;
         skos:prefLabel   "böcker med ljudeffekter"@sv , "äänitehostekirjat"@fi ;
         skos:related     slm:s1075 , slm:s1181 ;
         skos:scopeNote   "Används om böcker med olika mekaniska eller digitala ljudeffekter."@sv , "Käytetään teoksista, joissa on mukana mekaanisia tai digitaalisia äänitehosteita."@fi .
@@ -7388,11 +7385,12 @@ slm:s501  a             owl:Class , skos:Concept ;
         skos:related    slm:s697 , slm:s1181 ;
         skos:scopeNote  "Käytetään teoksista, jotka on kirjoitettu suuraakkosin."@fi , "Används om verk som är skrivna med versaler."@sv .
 
-slm:s1227  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "avhandlingar"@sv , "dissertationer"@sv ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "väitöskirjat"@fi , "doktorsavhandlingar"@sv .
+slm:s1227  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1270 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "avhandlingar"@sv , "dissertationer"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "väitöskirjat"@fi , "doktorsavhandlingar"@sv .
 
 slm:s323  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -7435,10 +7433,16 @@ slm:s1259  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "gospelrock"@sv , "gospelrock"@fi .
 
-slm:s1232  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
+slm:s1232  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1270 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "diplomityöt"@fi , "diplomarbeten"@sv .
+
+slm:s1270  a            owl:Class , skos:Concept ;
+        skos:altLabel   "opinnäytetyöt"@fi , "päättötyöt"@fi ;
         skos:inScheme   slm:s285 ;
-        skos:prefLabel  "diplomityöt"@fi , "diplomarbeten"@sv .
+        skos:prefLabel  "opinnäytteet"@fi .
 
 slm:s166  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -7536,15 +7540,6 @@ slm:s824  a              owl:Class , skos:Concept ;
         skos:altLabel    "kulturtidningar"@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "kulttuurilehdet"@fi , "kulturtidskrifter"@sv .
-
-slm:s141  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     yso-update:ongelmatsv , yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:closeMatch     <http://www.yso.fi/onto/yso/p14466> ;
-        skos:editorialNote  "Genrekokous päätti poistaa" ;
-        skos:inScheme       slm:s285 ;
-        skos:prefLabel      "läseböcker (textsamlingar)"@sv , "lukemistot"@fi ;
-        skos:related        slm:s383 .
 
 slm:s201  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
@@ -7916,6 +7911,7 @@ slm:s60  a               owl:Class , skos:Concept ;
 slm:s1237  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  yso-update:ongelmatfi ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s1268 ;
         skos:prefLabel   "esitteet"@fi .
 
 slm:s414  a              owl:Class , skos:Concept ;
@@ -8136,6 +8132,15 @@ slm:s492  a              owl:Class , skos:Concept ;
         skos:prefLabel   "konsolipelit"@fi , "konsolspel"@sv ;
         skos:related     slm:s1015 , slm:s588 , slm:s227 .
 
+slm:s849  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1175 , yso-update:ongelmatsv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "dokumentärdraman"@sv , "verklighetsbaserade filmer"@sv , "fiktiva dokumentärer"@sv , "dokumenttidraamat"@fi ;
+        skos:closeMatch  <http://www.yso.fi/onto/yso/p5666> ;
+        skos:prefLabel   "todellisuuspohjaiset elokuvat"@fi , "dokumentärdramer"@sv ;
+        skos:related     slm:s1078 , slm:s928 , slm:s230 ;
+        skos:scopeNote   "Används om fiktiva filmer som baserar sig på verkliga händelser (t.ex. Silkwood, Ett rop på frihet,  I faderns namn, A Civil Action, Dödens fält)."@sv , "Käytetään fiktiivisistä elokuvista, jotka pohjautuvat todellisiin tapahtumiin (esim. Tapaus Silkwood, Huuto vapaudelle, Isän nimeen, Siviilirohkeutta, Kuoleman kentät)."@fi .
+
 slm:s386  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
@@ -8169,8 +8174,7 @@ slm:s374  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p13956> ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "manga"@sv , "mangat"@fi ;
-        skos:related     slm:s903 , slm:s367 ;
-        skos:scopeNote   "Käytetään japanilaisista mangasarjakuvista."@fi .
+        skos:related     slm:s903 , slm:s367 .
 
 slm:s368  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -8224,15 +8228,6 @@ slm:s615  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "sorgmarscher"@sv , "surumarssit"@fi .
-
-slm:s849  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1175 , yso-update:ongelmatsv ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "dokumentärdraman"@sv , "verklighetsbaserade filmer"@sv , "fiktiva dokumentärer"@sv , "todellisuuspohjaiset elokuvat"@fi ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p5666> ;
-        skos:prefLabel   "dokumenttidraamat"@fi , "dokumentärdramer"@sv ;
-        skos:related     slm:s1078 , slm:s928 , slm:s230 ;
-        skos:scopeNote   "Används om fiktiva filmer som baserar sig på verkliga händelser (t.ex. Silkwood, Ett rop på frihet,  I faderns namn, A Civil Action, Dödens fält)."@sv , "Käytetään fiktiivisistä elokuvista, jotka pohjautuvat todellisiin tapahtumiin (esim. Tapaus Silkwood, Huuto vapaudelle, Isän nimeen, Siviilirohkeutta, Kuoleman kentät)."@fi .
 
 slm:s968  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
