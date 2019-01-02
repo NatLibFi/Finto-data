@@ -3,8 +3,8 @@
 INFILES="jupo-metadata.ttl jupo.ttl yso-jupo.ttl"
 OUTFILE=jupo-skos.ttl
 
-SKOSIFYHOME="../../../Skosify"
+SKOSIFYHOME="../../tools/skosify"
 CONFFILE="../../conf/skosify/finnonto.cfg"
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
