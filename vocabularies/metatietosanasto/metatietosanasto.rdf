@@ -343,6 +343,15 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvamusiikki(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10246"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">elokuvamusiikki (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Musiikkiteos, jota käytetään elokuvassa.&#xD;
+Vastavuoroinen suhde: musiikki elokuvaan (teos).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvanKasikirjoitus(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -384,17 +393,7 @@ Vastavuoroinen suhde: elokuvan käsikirjoitus (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teos, joka käyttää toisen teoksen tekstiä radio-ohjelman käsikirjoituksena.&#xD;
 Vastavuoroinen suhde: radio-ohjelman käsikirjoitus (teos).</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTeokseen">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
-    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10105"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
-    <skos:prefLabel xml:lang="fi">käsikirjoitus teokseen</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teos (kuten elokuvaan, televisioon tai videoon), joka käyttää toisen teoksen tekstiä käsikirjoituksena.&#xD;
-Vastavuoroinen suhde: käsikirjoitus (teos).</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:käsikirjoitusTelevisio-ohjelmaan(Teos)">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTelevisio-ohjelmaan(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10174"/>
@@ -402,6 +401,28 @@ Vastavuoroinen suhde: käsikirjoitus (teos).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">käsikirjoitus televisio-ohjelmaan (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, joka käyttää toisen teoksen tekstiä televisio-ohjelman käsikirjoituksena.&#xD;
 Vastavuoroinen suhde: televisio-ohjelman käsikirjoitus (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTeokseen">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10105"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusElokuvaan(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTelevisio-ohjelmaan(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusVideoon(Teos)"/>
+    <skos:prefLabel xml:lang="fi">käsikirjoitus teokseen</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos (kuten elokuvaan, televisioon tai videoon), joka käyttää toisen teoksen tekstiä käsikirjoituksena.&#xD;
+Vastavuoroinen suhde: käsikirjoitus (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusVideoon(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10175"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">käsikirjoitus videoon (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teos, joka käyttää toisen teoksen tekstiä videon käsikirjoituksena.&#xD;
+Vastavuoroinen suhde: videon käsikirjoitus (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:libretto(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1584,8 +1605,11 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:definition xml:lang="fi">Liittää teoksen teokseen, joka on täydennys- tai lisäosa toiseen teokseen tai jota toinen teos täydentää.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuvanKasikirjoitus(Teos)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitus(Teos)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusElokuvaan(Teos)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusRadio-ohjelmaan(Teos)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTelevisio-ohjelmaan(Teos)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusTeokseen"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitusVideoon(Teos)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:libretto(Teos)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:librettoTeokseen"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1398"/>
@@ -1683,7 +1707,9 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1185">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">Onix-term</dc11:source>
     <dc11:source xml:lang="fi">Onix-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Liten bok, t.ex. under 12 cm i höjd. (eng. miniature book)</skos:definition>
@@ -1694,6 +1720,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1186">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">kombination</skos:prefLabel>
@@ -1701,6 +1728,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:scopeNote xml:lang="fi">Mikrofilmin tai mikrokortin valoherkkiä kemikaaleja sisältävä pinnoitteen merkintä, kun pinnoite koostuu useasta emulsiosta.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1189">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20028"/>
@@ -1713,6 +1741,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1190">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/recMedium/1002"/>
@@ -1722,12 +1751,14 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1192">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">pappismunkki</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">prästmunk</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1193">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20277"/>
@@ -1738,6 +1769,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1197">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Grupp av butiker med samma ägare.</skos:definition>
@@ -1750,6 +1782,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1200">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30158"/>
@@ -1757,6 +1790,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:prefLabel xml:lang="sv">Huvudtitel till underserie:</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1201">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20024"/>
@@ -1769,6 +1803,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1202">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Kasetti, joka sisältää silmukkamaisen elokuvafilmin.</skos:definition>
@@ -1781,6 +1816,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1203">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">F19 (rykmentti)</skos:example>
@@ -1816,6 +1852,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1209">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAReductionRatio/1001"/>
@@ -1823,6 +1860,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:prefLabel xml:lang="fi">vähäinen pienennys</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m121">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m551"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -1869,6 +1907,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:prefLabel xml:lang="sv">föremål</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1211">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20055"/>
@@ -1881,6 +1920,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1212">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Kort med tryckta ord, siffror och/eller bilder som används för att förverkliga en särskild aktivitet. (eng. activity card)</skos:definition>
@@ -1892,6 +1932,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1213">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30144"/>
@@ -1901,12 +1942,14 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1214">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Käytettävissä lisenssin hankkineiden organisaatioiden verkossa.</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Tillgänglig i nätverk hos organisationer som har licens.</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1216">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10074"/>
@@ -1931,6 +1974,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m122">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">broder</skos:prefLabel>
@@ -1961,6 +2005,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">videotallenne</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1226">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -1988,12 +2033,14 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1229">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Dolby C</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby C</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1231">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30143"/>
@@ -2004,6 +2051,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1232">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Johanna (kirjakerho)</skos:example>
@@ -2024,6 +2072,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1235">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">metropoliitta</skos:prefLabel>
@@ -2045,6 +2094,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1237">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">täckfärg</skos:altLabel>
@@ -2054,12 +2104,14 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1238">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">QuickTime</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">QuickTime</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1239">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -2074,6 +2126,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Om resursens teckenstorlek är avsedd för synskadade, anges denna genom att använda en lämplig term från följande lista:</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1241">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50071"/>
@@ -2100,6 +2153,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1245">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">Rekommenderas från 12 år och uppåt.</skos:prefLabel>
@@ -2108,6 +2162,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1246">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">Digital Accessible Information System</skos:altLabel>
@@ -2135,6 +2190,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1249">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">120 kierr./min</skos:prefLabel>
@@ -2143,6 +2199,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m125">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAbaseMaterial/1010"/>
@@ -2152,6 +2209,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1252">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Nokia (kauppala)</skos:example>
@@ -2162,6 +2220,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1258">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">diagram</skos:prefLabel>
@@ -2169,6 +2228,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">kartta-aineiston laajuuden yksikkö</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1259">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10044"/>
@@ -2178,6 +2238,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">tuomari</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m126">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20045"/>
@@ -2190,6 +2251,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1260">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">igumeeni</skos:prefLabel>
@@ -2198,6 +2260,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1263">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">EIAJ</skos:prefLabel>
@@ -2206,6 +2269,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1265">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">kartblad</skos:prefLabel>
@@ -2215,6 +2279,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1266">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Fodral, som innehåller t.ex. grafikblad, bildkort el. dyl.</skos:definition>
@@ -2225,6 +2290,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1267">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">BIL</skos:prefLabel>
@@ -2233,6 +2299,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1268">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">15/16 tum/s</skos:prefLabel>
@@ -2241,6 +2308,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1269">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">8 mm</skos:prefLabel>
@@ -2249,6 +2317,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1270">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">Licentiatarbete</skos:altLabel>
@@ -2268,6 +2337,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1273">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAbaseMaterial/1003"/>
@@ -2277,6 +2347,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1274">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">koneella kirjoitettu</skos:prefLabel>
@@ -2285,6 +2356,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1276">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Julkaistun aineiston painamisesta, monistamisesta, kirjasinten valamisesta jne. vastuussa olevan henkilön, suvun tai yhteisön nimi.</skos:definition>
@@ -2293,6 +2365,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">valmistajan nimi</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1277">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20043"/>
@@ -2322,6 +2395,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1280">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">NTSC</skos:prefLabel>
@@ -2339,6 +2413,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1282">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m261"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -2370,6 +2445,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1283">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">SGML</skos:prefLabel>
@@ -2378,6 +2454,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1285">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Rullalle kääritty aineisto (paperia, filmiä, nauhaa tms.).</skos:definition>
@@ -2389,6 +2466,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1286">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">Försedd med ljudapparat.</skos:prefLabel>
@@ -2398,6 +2476,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">Kaunokki-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Bok med olika slags bildeffekter, t.ex. hologrambilder eller rörliga bilder.</skos:definition>
@@ -2406,6 +2485,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">Kuvatehostekirja</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1288">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">määrittelemätön</skos:prefLabel>
@@ -2429,6 +2509,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1290">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAbaseMaterial/1020"/>
@@ -2438,12 +2519,14 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1291">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">JPEG</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">JPEG</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1294">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30016"/>
@@ -2454,6 +2537,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1295">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Esityskieli: englanti.</skos:example>
@@ -2461,6 +2545,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">framförande på</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1296">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -2482,6 +2567,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator för en bok med mjuka pärmar</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1298">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10064"/>
@@ -2496,6 +2582,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">tuottaja</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m130">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20058"/>
@@ -2516,6 +2603,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1302">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Andelslag som bedriver detaljhandel; dess butik.</skos:definition>
@@ -2549,6 +2637,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1305">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Pielaveden Metsäpojat (metsästysseura)</skos:example>
@@ -2559,6 +2648,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1306">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">sisar</skos:prefLabel>
@@ -2567,6 +2657,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1307">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">arkimandrit</skos:prefLabel>
@@ -2586,6 +2677,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">toimisto</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1310">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20276"/>
@@ -2597,6 +2689,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1504"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Edeltäjä-seuraaja-suhteet (teos)</rdfs:label>
     <rdfs:label xml:lang="sv">Föregående-efterföljande-relationer (verk)</rdfs:label>
@@ -2637,6 +2730,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">Tjockbladig bok</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1317">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m373"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
@@ -2688,6 +2782,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">utkast</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1319">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30130"/>
@@ -2696,6 +2791,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m132">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10129"/>
     <skos:prefLabel xml:lang="fi">elokuvaversion perustana (teos)</skos:prefLabel>
@@ -2704,6 +2800,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1321">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Vid universitet och yrkeshögskolor: fortbildningsprogram under vilka forskarstuderande skriver doktorsavhandling.</skos:definition>
@@ -2723,6 +2820,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1325">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">En grupp som (regelbundet) samlas för någon slags hobby, studier, umgänge el. dyl.; dess lokal; även angående försäljningsorganisationer som grundar sig på köparnas medlemskap.</skos:definition>
@@ -2735,6 +2833,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1327">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">DVD-asema</skos:prefLabel>
@@ -2753,6 +2852,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1332">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1008"/>
@@ -2769,6 +2869,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Yhteisön kuvailussa viitataan siihen  sulautuneeseen yhteisöön.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1335">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10011"/>
@@ -2787,6 +2888,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1339">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">Bilaga i ficka på bakpärmens insida.</skos:prefLabel>
@@ -2795,6 +2897,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1344">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">mono</skos:prefLabel>
@@ -2803,6 +2906,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1345">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Maa- ja metsätalousministeriön alaisia alueellisia metsäalan hallinto- ja palveluorganisaatioita. Pohjois-Savon metsäkeskus (Kielitoimiston sanakirja).</skos:definition>
@@ -2824,6 +2928,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1347">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">TIFF</skos:prefLabel>
@@ -2842,6 +2947,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1352">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Lotus</skos:prefLabel>
@@ -2860,12 +2966,14 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1355">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">PDF</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">PDF</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1356">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Kaksiulotteisena liikkuvana kuvana esitetty kartografinen sisältö. Esimerkiksi liikkuvat satelliittikuvat maasta tai muista taivaankappaleista.</skos:definition>
@@ -2887,6 +2995,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m136">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Julkaisussa liikuteltavia kuvia.</skos:prefLabel>
@@ -2895,6 +3004,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1360">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAReductionRatio/1004"/>
@@ -2917,6 +3027,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1363">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">160 kierr./min</skos:prefLabel>
@@ -2937,6 +3048,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1366">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">derivativ master</skos:altLabel>
@@ -2946,6 +3058,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1368">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">oljefärg</skos:prefLabel>
@@ -2954,6 +3067,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1373">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example xml:lang="fi">Sea Horse (ravintola)</skos:example>
@@ -2987,6 +3101,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1375">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Kort, på vilket man kan skriva eller trycka meddelande, och som skickas per post utan kuvert.</skos:definition>
@@ -2998,6 +3113,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1376">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">JPEG2000</skos:prefLabel>
@@ -3006,12 +3122,14 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1378">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">kaavioita</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">schematiska bilder</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m138">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
@@ -3024,6 +3142,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1381">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">schemaigumen</skos:prefLabel>
@@ -3032,6 +3151,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1383">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">ohjelmatiedosto</skos:prefLabel>
@@ -3040,6 +3160,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1384">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">D-uppsats</skos:altLabel>
@@ -3055,6 +3176,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1386">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Tieto-Lauri -palkinto</skos:prefLabel>
@@ -3065,6 +3187,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1387">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">standardformat för stumfilm</skos:prefLabel>
@@ -3073,6 +3196,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1388">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">C-uppsats</skos:altLabel>
@@ -3093,6 +3217,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m139">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">kardinaali</skos:prefLabel>
@@ -3101,6 +3226,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1393">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAbaseMaterial/1029"/>
@@ -3119,6 +3245,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">lisätyn sanoituksen kirjoittaja</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1396">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10040"/>
@@ -3129,9 +3256,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1398">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10245"/>
     <skos:altLabel xml:lang="fi">musiikki elokuvasta</skos:altLabel>
+    <skos:altLabel xml:lang="sv">musik från film</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
     <skos:prefLabel xml:lang="fi">musiikki elokuvaan (teos)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">musik till film (verk)</skos:prefLabel>
@@ -3164,6 +3293,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">omarbetning baserad på (verk)</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1400">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20237"/>
@@ -3189,6 +3319,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1404">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="sv">Avser program såsom forskningsprogram, målprogram, miljöprogram, regionalprogram, utvecklingsprogram, utbildningsprogram, teknologiprogram, verksamhetsprogram o.s.v.</skos:definition>
@@ -3238,6 +3369,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m141">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Runeberg-palkinto</skos:prefLabel>
@@ -3248,6 +3380,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1410">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">HD-DVD</skos:prefLabel>
@@ -3256,6 +3389,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1411">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m649"/>
@@ -3265,6 +3399,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1412">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Quadruplex</skos:prefLabel>
@@ -3273,8 +3408,10 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1414">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="sv">Huvuddelen av texten på svenska, två artiklar på engelska, en artikel på danska.</skos:example>
     <skos:example xml:lang="fi">Pääosa artikkeleista käännetty turkin kielestä.</skos:example>
     <skos:example xml:lang="fi">Pääosa tekstistä ruotsiksi, kaksi artikkelia englanniksi, yksi artikkeli tanskaksi.</skos:example>
     <skos:prefLabel xml:lang="sv">huvuddel</skos:prefLabel>
@@ -3293,6 +3430,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1504"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Del-helhetsrelation (verk)</rdfs:label>
     <rdfs:label xml:lang="fi">Osa-kokonaisuussuhde (teos)</rdfs:label>
@@ -3332,6 +3470,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">överordnad institution</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1420">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">häftad</skos:prefLabel>
@@ -3342,6 +3481,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1421">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Kotelo, joka sisältää yhden tai useita tietolevyjä.</skos:definition>
@@ -29194,6 +29334,11 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10237"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuvamusiikki(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:naytelmämusiikki(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelmanMusiikki(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelmanMusiikki(Teos)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:videonMusiikki(Teos)"/>
     <skos:prefLabel xml:lang="fi">musiikki (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Musiikkiteos, jota on käytetty elokuvassa, teatteriesityksessä, televisio-ohjelmassa tms.&#xD;
 Vastavuoroinen suhde: musiikki teokseen.</skos:scopeNote>
@@ -29208,6 +29353,15 @@ Vastavuoroinen suhde: musiikki teokseen.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Elokuva, teatteriesitys, televisio-ohjelma tms.teos, jossa käytetään musiikkiteosta.&#xD;
 Vastavuoroinen suhde: musiikki (teos).</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:naytelmämusiikki(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10031"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">näytelmämusiikki (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Musiikkiteos, joka toimii näytelmän tai muun puhutun näyttämöteoksen taustamusiikkina&#xD;
+Vastavuoroinen suhde: näytelmämusiikki näyttämöteokseen.</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelmanKasikirjoitus(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
@@ -29218,6 +29372,15 @@ Vastavuoroinen suhde: musiikki (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teos, joka on radio-ohjelman teksti.&#xD;
 Vastavuoroinen suhde: käsikirjoitus radio-ohjelmaan (teos).</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelmanMusiikki(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10243"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">radio-ohjelman musiikki (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Musiikkiteos, jota käytetään radio-ohjelmassa.&#xD;
+Vastavuoroinen suhde: musiikki radio-ohjelmaan (teos).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelmanKasikirjoitus(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -29227,6 +29390,15 @@ Vastavuoroinen suhde: käsikirjoitus radio-ohjelmaan (teos).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teos, joka on televisio-ohjelman teksti.&#xD;
 Vastavuoroinen suhde: käsikirjoitus televisio-ohjelmaan (teos).</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelmanMusiikki(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10241"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">televisio-ohjelman musiikki (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Musiikkiteos, jota käytetään televisio-ohjelmassa.&#xD;
+Vastavuoroinen suhde: musiikki televisio-ohjelmaan (teos).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:videonKasikirjoitus(Teos)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
@@ -29235,5 +29407,14 @@ Vastavuoroinen suhde: käsikirjoitus televisio-ohjelmaan (teos).</skos:scopeNote
     <skos:prefLabel xml:lang="fi">videon käsikirjoitus (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, joka on videoteoksen teksti.&#xD;
 Vastavuoroinen suhde: käsikirjoitus videoon (teos).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:videonMusiikki(Teos)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10239"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m783"/>
+    <skos:prefLabel xml:lang="fi">videon musiikki (teos)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Musiikkiteos, jotä käytetään videossa.&#xD;
+Vastavuoroinen suhde: musiikki videoon (teos).</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
