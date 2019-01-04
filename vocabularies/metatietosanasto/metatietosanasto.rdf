@@ -363,15 +363,46 @@ Vastavuoroinen suhde: abstrakti (ekspressio).</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jonka sisällön on tiivistelmä- ja indeksointipalvelu indeksoinnut.&#xD;
 Vastavuoroinen suhde: indeksointi (ekspressio).</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jäljitelmänPerustana(Ekspressio)">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jaljitelmanPerustana(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20195"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:parodianPerustana(Ekspressio)"/>
     <skos:prefLabel xml:lang="fi">jäljitelmän perustana (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jonka tyyliä tai sisältöä johdettu teos jäljittelee.&#xD;
 Vastavuoroinen suhde: jäljitelmä (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kaannoksenPerustana">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20141"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">käännöksen perustana</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jota on käännetty alkuperäisestä poikkeavalle kielelle.&#xD;
+Vastavuoroinen suhde: käännös (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laajennelmanPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20184"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">laajennelman perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, johon lähteenä olevan teoksen laajennelma perustuu.&#xD;
+Vastavuoroinen suhde: laajennelma (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyhennelmänPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20121"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">lyhennelmän perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jota on lyhennetty muuttamatta sen merkitystä sisällöllisesti tai muutamatta lähteenä olevan teoksen esitystapaa.&#xD;
+Vastavuoroinen suhde: lyhennelmä (ekspressio).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -23640,7 +23671,6 @@ Vastavuoroinen suhde: videokäsikirjoitus (teos).</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10125"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3462"/>
     <skos:prefLabel xml:lang="sv">förkortning baserad på (verk)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">lyhennelmän perustana (teos)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, jota on lyhennetty muuttamatta sen merkityssisältöä tai esitystapaa.&#xD;
@@ -29887,5 +29917,58 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">teos, joka on omistettu henkilölle, suvulle tai yhteisölle.</skos:definition>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohde</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mukaelmanPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20152"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">mukaelman perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jota on muokattu jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai esitysmuotoa varten. Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.&#xD;
+Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.&#xD;
+Vastavuoroinen suhde: mukaelma (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mukautetunLyhennelmanPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20135"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">mukautetun lyhennelmän perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, joka on systemaattisesti, kokonaisuudessaan ja mukaillen tiivistetty.&#xD;
+Vastavuoroinen suhde: mukautettu lyhennelmä (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:musiikkiteoksenTeksti(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20159"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">musiikkiteoksen teksti (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, joka on ei-näytelmällisen musiikkiteoksen (muun kuin oratorion) teksti.&#xD;
+Vastavuoroinen suhde: tekstiin perustuva musiikki (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:parafraasinPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20186"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="fi">parafraasin perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, johon sisällön toisintaminen perustuu.&#xD;
+Vastavuoroinen suhde: parafraasi (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:parodianPerustana(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20196"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="sv">parodi baserad på (uttryck)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">parodian perustana (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, jonka tyyliä tai sisältöä jäljittellään humoristisesti.&#xD;
+Vastavuoroinen suhde: parodia (ekspressio).</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Uttryck vars stil eller innehåll imiteras på ett humoristiskt sätt i ett senare verk. Parallell relation: parodi (uttryck).</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
