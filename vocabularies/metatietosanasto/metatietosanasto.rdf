@@ -351,6 +351,33 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">Edellyttää palveluun rekisteröitymistä.</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuAiemminRuotsiksiNimella">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Julkaistu aiemmin ruotsiksi nimellä:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Tidigare utgiven på svenska med titeln:</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuMyohemminRuotsiksiNimella">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Julkaistu myöhemmin ruotsiksi nimellä:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Senare utgiven på svenska med titeln:</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuRuotsiksiMyosNimella">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Julkaistu ruotsiksi myös nimellä:</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Även utgiven på svenska med titeln:</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -8836,6 +8863,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kosketeltava nuottikirjoitus</skos:altLabel>
     <skos:definition xml:lang="sv">Musiknotation som avläses genom beröring.</skos:definition>
     <skos:definition xml:lang="fi">Tuntoaistiin perustuva nuottikirjoitustapa musiikille.</skos:definition>
     <skos:prefLabel xml:lang="fi">taktiili nuottikirjoitus</skos:prefLabel>
@@ -11588,7 +11616,7 @@ Vastavuoroinen suhde: esiosa teokselle.</skos:scopeNote>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:prefLabel xml:lang="sv">delvis införlivat i verket</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teokseen osittain sulautunut</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">eos, joka on osittain sulautunut osaksi toista teosta.&#xD;
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, joka on osittain sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: sulautunut osittain teokseen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2264">
@@ -11653,7 +11681,7 @@ Vastavuoroinen suhde: esiosa (teos).</skos:scopeNote>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:prefLabel xml:lang="sv">sammanslagen med verket</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teokseen yhdistyjä</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa.</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatkuu teoksena.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verk som slagits tillsammans med ett eller flera verk för att utforma ett nytt verk.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2271">
@@ -11676,7 +11704,7 @@ Vastavuoroinen suhde: jatkaa osittain teosta.</skos:scopeNote>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:prefLabel xml:lang="sv">införlivat i verket</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teokseen sulautunut</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teos, joka on sulautunut osaksi toista teosta.&#xD;
+    <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, joka on sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: sulautunut teokseen.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2273">
@@ -22384,6 +22412,9 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <rdfs:label xml:lang="sv">Anmärkning om titel</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus nimekkeestä</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30063"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuAiemminRuotsiksiNimella"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuMyohemminRuotsiksiNimella"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:JulkaistuRuotsiksiMyosNimella"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1002"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1097"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1151"/>
@@ -24580,6 +24611,7 @@ Vastavuoroinen suhde: tekstiin perustuva musiikki (ekspressio).</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20122"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
+    <skos:prefLabel xml:lang="sv">abstrakt baserat på (uttryck)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">abstraktin perustana (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen ekspressio, joka on abstrahoitu ytimekkäästi ja objektiivisesti.&#xD;
 Vastavuoroinen suhde: abstrakti (ekspressio).</skos:scopeNote>
@@ -24683,9 +24715,11 @@ Vastavuoroinen suhde: käännös (ekspressio).</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20104"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="sv">abstrakt (uttryck)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">abstrakti (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen ekspressio, joka abstrahoi lähteenä olevaa ekspressiota objektiivisesti.&#xD;
 Vastavuoroinen suhde: abstraktin perustana (ekspressio).</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Uttryck som objektivt abstraherar uttrycket som det baserar sig på. Parallell relation: abstrakt baserat på (uttryck).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3548">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -24789,8 +24823,8 @@ Vastavuoroinen suhde: mukaelma (ekspressio).</skos:scopeNote>
     <skos:altLabel xml:lang="sv">musiknotation</skos:altLabel>
     <skos:altLabel xml:lang="sv">notskrift</skos:altLabel>
     <skos:definition xml:lang="sv">Innehåll uttryckt med hjälp av musiknotation, avsett att betraktas. Omfattar alla former av musiknotation, med undantag för notation avsedd att vidröras. Se även taktil musiknotation.</skos:definition>
-    <skos:definition xml:lang="fi">Musiikkinotaationa esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat musiikkinotaatiot.&#xD;&#xD;
-Katso myös kosketeltava musiikkinotaatio.</skos:definition>
+    <skos:definition xml:lang="fi">Musiikkinotaationa esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat musiikkinotaatiot.&#xD;
+Katso myös tatiili musiikkinotaatio.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAContentType/1010"/>
     <skos:prefLabel xml:lang="sv">noterad musik</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">nuottikirjoitus</skos:prefLabel>
@@ -26643,6 +26677,7 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kosketeltava nuottikirjoitus</skos:altLabel>
     <skos:definition xml:lang="fi">Musiikkinotaationa esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistenuottikirjoitus ja muut taktiilit nuottikirjoitukset.</skos:definition>
     <skos:definition xml:lang="sv">Noterad musik avsedd att vidröras, t.ex. punktskriftsnoter.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAContentType/1016"/>
