@@ -1920,7 +1920,7 @@ mts:m1214 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "Käytettävissä lisenssin hankkineiden organisaatioiden verkossa."@fi,
+    skos:prefLabel "Käytettävissä lisenssin hankkineissa organisaatioissa."@fi,
         "Tillgänglig i nätverk hos organisationer som har licens."@sv .
 
 mts:m122 a skos:Concept ;
@@ -2704,7 +2704,7 @@ mts:m1374 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdam:P30128 ;
+    rdfs:seeAlso <http://rdaregistry.info/termList/RDATerms/1027> ;
     skos:member mts:m2106,
         mts:m2107,
         mts:m2108,
@@ -4673,7 +4673,7 @@ mts:m1750 a skos:Concept ;
     skos:prefLabel "lähetyksestä vastaava"@fi,
         "sändningsansvarig"@sv ;
     skos:scopeNote "henkilö, suku tai yhteisö, joka osallistuu manifestaation lähettämiseen yleisölle radiossa, televisiossa, suoratoistolähetyksenä tms."@fi,
-        "person eller institution som deltar i sändningen av en manifestation i radio, TV, direktsändning o.s.v.l"@sv .
+        "person eller institution som deltar i sändningen av en manifestation i radio, tv, direktsändning etc."@sv .
 
 mts:m1751 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -7301,6 +7301,7 @@ mts:m2005 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "kosketeltava nuottikirjoitus"@fi ;
     skos:definition "Tuntoaistiin perustuva nuottikirjoitustapa musiikille."@fi,
         "Musiknotation som avläses genom beröring."@sv ;
     skos:inScheme mts: ;
@@ -7501,7 +7502,7 @@ mts:m2048 a skos:Concept ;
         "RDA-term"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "televisio-ohjelma"@fi,
-        "TV-program"@sv .
+        "tv-program"@sv .
 
 mts:m2049 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -7972,7 +7973,7 @@ mts:m2135 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:definition "Toimija, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Tuottaja vastaa tyypillisesti rahoituksen hankkimisesta, tuotannon johdosta, avainhenkilöstön palkkaamisesta, jakelun järjestämisestä tms."@fi,
-        "Aktör som är ansvarig för de kommersiella uppgifterna vid produktionen av film, ljudupptagning, TV-program, direktsändning e.d. Producenten ansvarar vanligen för finansieringsanskaffning, produktionsledning, anställning av nyckelpersonal, organisering av distribution m.m."@sv ;
+        "Aktör som är ansvarig för de kommersiella uppgifterna vid produktionen av film, ljudupptagning, tv-program, direktsändning e.d. Producenten ansvarar vanligen för finansieringsanskaffning, produktionsledning, anställning av nyckelpersonal, organisering av distribution m.m."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "tuottaja"@fi,
         "producent"@sv ;
@@ -10298,7 +10299,7 @@ mts:m253 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10008 ;
     skos:definition "yhteisö, joka vastaa näyttämöteoksen, elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon taloudellisesta, teknisestä ja organisatorisesta johtamisesta"@fi,
-        "institution som ansvarar för den finansiella, tekniska eller organisatoriska ledningen av sceniskt verk, film, ljudupptagning, TV-program, direktsändning eller annan produktion"@sv ;
+        "institution som ansvarar för den finansiella, tekniska eller organisatoriska ledningen av sceniskt verk, film, ljudupptagning, tv-program, direktsändning eller annan produktion"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "tuotantoyhtiö"@fi,
         "produktionsbolag"@sv .
@@ -10756,6 +10757,9 @@ mts:m333 a isothes:ConceptGroup,
         mts:m2254,
         mts:m227,
         mts:m303,
+        mts:m3553,
+        mts:m3555,
+        mts:m3556,
         mts:m376,
         mts:m62,
         mts:m672,
@@ -10987,7 +10991,7 @@ mts:m3470 a skos:Concept ;
     rdfs:seeAlso rdaw:P10294 ;
     skos:inScheme mts: ;
     skos:prefLabel "muistoteos"@fi ;
-    skos:scopeNote """Teos, joka luotiin aiemman teoksen muiston kunnioittamiseksi. \r
+    skos:scopeNote """Liittää teoksen teokseen, joka luotiin aiemman teoksen muiston kunnioittamiseksi \r
 Vastavuoroinen suhde: muistoteoksen kohde."""@fi .
 
 mts:m3477 a skos:Concept ;
@@ -10996,7 +11000,7 @@ mts:m3477 a skos:Concept ;
     rdfs:seeAlso rdaw:P10295 ;
     skos:inScheme mts: ;
     skos:prefLabel "muistoteoksen kohde"@fi ;
-    skos:scopeNote """Teos, jonka muisto on kunnioitettu myöhemmässä teoksessa. \r
+    skos:scopeNote """Liittää teoksen teokseen, jonka muisto on kunnioitettu myöhemmässä teoksessa.\r
 Vastavuoroinen suhde: muistoteos."""@fi .
 
 mts:m349 a skos:Concept ;
@@ -11034,9 +11038,11 @@ mts:m3535 a skos:Concept ;
     rdfs:seeAlso rdae:P20135 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "mukautetun lyhennelmän perustana (ekspressio)"@fi ;
+    skos:prefLabel "mukautetun lyhennelmän perustana (ekspressio)"@fi,
+        "anpassad förkortad version baserad på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, joka on systemaattisesti, kokonaisuudessaan ja mukaillen tiivistetty.\r
-Vastavuoroinen suhde: mukautettu lyhennelmä (ekspressio)."""@fi .
+Vastavuoroinen suhde: mukautettu lyhennelmä (ekspressio)."""@fi,
+        "Uttryck av verk som systematiskt, i sin helhet och genom bearbetning har sammanfattats. Parallell relation: anpassad förkortad version (uttryck)."@sv .
 
 mts:m3536 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11064,9 +11070,11 @@ mts:m3538 a skos:Concept ;
     rdfs:seeAlso rdae:P20122 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "abstraktin perustana (ekspressio)"@fi ;
+    skos:prefLabel "abstraktin perustana (ekspressio)"@fi,
+        "abstrakt baserat på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, joka on abstrahoitu ytimekkäästi ja objektiivisesti.\r
-Vastavuoroinen suhde: abstrakti (ekspressio)."""@fi .
+Vastavuoroinen suhde: abstrakti (ekspressio)."""@fi,
+        "Uttryck som är kärnfullt och objektivt abstraherat. Parallell relation: abstrakt (uttryck)."@sv .
 
 mts:m3539 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11146,9 +11154,11 @@ mts:m3547 a skos:Concept ;
     rdfs:seeAlso rdae:P20104 ;
     skos:broader mts:m731 ;
     skos:inScheme mts: ;
-    skos:prefLabel "abstrakti (ekspressio)"@fi ;
+    skos:prefLabel "abstrakti (ekspressio)"@fi,
+        "abstrakt (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, joka abstrahoi lähteenä olevaa ekspressiota objektiivisesti.\r
-Vastavuoroinen suhde: abstraktin perustana (ekspressio)."""@fi .
+Vastavuoroinen suhde: abstraktin perustana (ekspressio)."""@fi,
+        "Uttryck som objektivt abstraherar uttrycket som det baserar sig på. Parallell relation: abstrakt baserat på (uttryck)."@sv .
 
 mts:m3548 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11156,9 +11166,11 @@ mts:m3548 a skos:Concept ;
     rdfs:seeAlso rdae:P20184 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "laajennelman perustana (ekspressio)"@fi ;
+    skos:prefLabel "laajennelman perustana (ekspressio)"@fi,
+        "utvidgad version baserad på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, johon lähteenä olevan teoksen laajennelma perustuu.\r
-Vastavuoroinen suhde: laajennelma (ekspressio)."""@fi .
+Vastavuoroinen suhde: laajennelma (ekspressio)."""@fi,
+        "Uttryck av verk som den utvidgade versionen av verket baserar sig på."@sv .
 
 mts:m3549 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11166,9 +11178,11 @@ mts:m3549 a skos:Concept ;
     rdfs:seeAlso rdae:P20194 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "indeksoinnin perustana (ekspressio)"@fi ;
+    skos:prefLabel "indeksoinnin perustana (ekspressio)"@fi,
+        "indexering baserad på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, jonka sisällön on tiivistelmä- ja indeksointipalvelu indeksoinnut.\r
-Vastavuoroinen suhde: indeksointi (ekspressio)."""@fi .
+Vastavuoroinen suhde: indeksointi (ekspressio)."""@fi,
+        "Uttryck vars innehåll har indexerats av en referat- och indexeringstjänst. Parallell relation: indexering (uttryck)."@sv .
 
 mts:m3550 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11176,9 +11190,11 @@ mts:m3550 a skos:Concept ;
     rdfs:seeAlso rdae:P20121 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "lyhennelmän perustana (ekspressio)"@fi ;
+    skos:prefLabel "lyhennelmän perustana (ekspressio)"@fi,
+        "förkortad version baserad på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, jota on lyhennetty muuttamatta sen merkitystä sisällöllisesti tai muutamatta lähteenä olevan teoksen esitystapaa.\r
-Vastavuoroinen suhde: lyhennelmä (ekspressio)."""@fi .
+Vastavuoroinen suhde: lyhennelmä (ekspressio)."""@fi,
+        "Uttryck som har förkortats utan att ändra källverkets betydelse innehållsmässigt eller utan att ändra framställningssättet i verket som det baserar sig på."@sv .
 
 mts:m3551 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -11190,6 +11206,41 @@ mts:m3551 a skos:Concept ;
     skos:scopeNote """Teoksen ekspressio, jota on muokattu jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai esitysmuotoa varten. Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.\r
 Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.\r
 Vastavuoroinen suhde: mukaelma (ekspressio)."""@fi .
+
+mts:m3552 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Edellyttää palveluun rekisteröitymistä."@fi .
+
+mts:m3553 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Julkaistu ruotsiksi myös nimellä:"@fi,
+        "Även utgiven på svenska med titeln:"@sv .
+
+mts:m3555 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Julkaistu aiemmin ruotsiksi nimellä:"@fi,
+        "Tidigare utgiven på svenska med titeln:"@sv .
+
+mts:m3556 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Julkaistu myöhemmin ruotsiksi nimellä:"@fi,
+        "Senare utgiven på svenska med titeln:"@sv .
 
 mts:m356 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -12005,10 +12056,10 @@ mts:m515 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Laitos jossa on televisiolähetin (Kielitoimiston sanakirja)"@fi,
-        "Anläggning med TV-sändare."@sv ;
+        "Anläggning med tv-sändare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "televisioasema"@fi,
-        "TV-station"@sv .
+        "tv-station"@sv .
 
 mts:m516 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12525,6 +12576,7 @@ mts:m600 a isothes:ConceptGroup,
         mts:m2248,
         mts:m2249,
         mts:m2294,
+        mts:m3552,
         mts:m48,
         mts:m535,
         mts:m601,
@@ -14219,7 +14271,7 @@ mts:m925 a skos:Concept ;
 mts:m928 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdam:P30128 ;
+    rdfs:seeAlso <http://rdaregistry.info/termList/RDATerms/1020> ;
     skos:inScheme mts: ;
     skos:prefLabel "Kokoava nimeke"@fi,
         "Grupptitel"@sv ;
@@ -17230,10 +17282,10 @@ mts:m1170 a skos:Concept ;
     rdfs:seeAlso rdaw:P10075 ;
     skos:broader mts:m1298 ;
     skos:definition "televisio-ohjelman tuottaja"@fi,
-        "producent av TV-program"@sv ;
+        "producent av tv-program"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "televisiotuottaja"@fi,
-        "TV-producent"@sv .
+        "tv-producent"@sv .
 
 mts:m1190 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17366,13 +17418,13 @@ mts:m1228 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10132 ;
     skos:altLabel "televisioversion perustana (teos)"@fi,
-        "TV-version baserad på (verk)"@sv ;
+        "tv-version baserad på (verk)"@sv ;
     skos:broader mts:m1399 ;
     skos:inScheme mts: ;
     skos:prefLabel "televisiosovituksen perustana (teos)"@fi,
-        "TV-bearbetning baserad på (verk)"@sv ;
+        "tv-bearbetning baserad på (verk)"@sv ;
     skos:scopeNote "Liittää teoksen teokseen, josta televisiosovitus on tehty. Vastavuoroinen suhde: televisiosovellus (teos)."@fi,
-        "Verk som omarbetats till ett TV-program. Parallell relation: TV-bearbetning."@sv .
+        "Verk som omarbetats till ett tv-program. Parallell relation: tv-bearbetning."@sv .
 
 mts:m1233 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -17505,6 +17557,7 @@ mts:m132 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10129 ;
+    skos:altLabel "filmatisoinnin perustana (teos)"@fi ;
     skos:broader mts:m1399 ;
     skos:inScheme mts: ;
     skos:prefLabel "elokuvaversion perustana (teos)"@fi,
@@ -17730,10 +17783,10 @@ mts:m1423 a skos:Concept ;
     rdfs:seeAlso rdaw:P10015 ;
     skos:broader mts:m397 ;
     skos:definition "ohjaaja, joka on vastuussa televisiotaltioinnin yleisestä johtamisesta"@fi,
-        "regissör som ansvarar för och leder arbetet vid en TV-inspelning"@sv ;
+        "regissör som ansvarar för och leder arbetet vid en tv-inspelning"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "televisio-ohjaaja"@fi,
-        "TV-regissör"@sv .
+        "tv-regissör"@sv .
 
 mts:m1437 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18203,7 +18256,7 @@ mts:m17 a skos:Concept ;
     rdfs:seeAlso rdae:P20070 ;
     skos:broader mts:m1241 ;
     skos:definition "esiintyjä, joka osallistuu ekspression tekemiseen hahmojen äänenä radio- tai muissa äänituotannoissa, animaatioelokuvissa tms., radio- ja tv-mainoksissa, dubatuissa aineistoissa jne."@fi,
-        "artist som deltar i förverkligandet av ett uttryck genom att ge sin röst åt figurer i radio- eller andra ljudproduktioner, tecknade filmer, radio- och TV-reklamer, dubbat material o.s.v."@sv ;
+        "artist som deltar i förverkligandet av ett uttryck genom att ge sin röst åt figurer i radio- eller andra ljudproduktioner, tecknade filmer, radio- och tv-reklamer, dubbat material o.s.v."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "ääninäyttelijä"@fi,
         "röstskådespelare"@sv .
@@ -18436,8 +18489,8 @@ mts:m1793 a skos:Concept ;
 mts:m1794 a skos:Concept ;
     skos:broader mts:m892 ;
     skos:inScheme mts: ;
-    skos:prefLabel "Linkki verkkoaineistoon:"@fi,
-        "Länk till onlineresurs:"@sv .
+    skos:prefLabel "Linkki verkkoaineistoon"@fi,
+        "Länk till onlineresurs"@sv .
 
 mts:m187 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -19428,7 +19481,7 @@ mts:m2263 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "teokseen osittain sulautunut"@fi,
         "delvis införlivat i verket"@sv ;
-    skos:scopeNote """eos, joka on osittain sulautunut osaksi toista teosta.\r
+    skos:scopeNote """Liittää teoksen teokseen, joka on osittain sulautunut osaksi toista teosta.\r
 Vastavuoroinen suhde: sulautunut osittain teokseen."""@fi .
 
 mts:m2264 a skos:Concept ;
@@ -19475,7 +19528,7 @@ mts:m2270 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "teokseen yhdistyjä"@fi,
         "sammanslagen med verket"@sv ;
-    skos:scopeNote "Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatko-osa."@fi,
+    skos:scopeNote "Teos, jonka sisältöä myöhemmin julkaistu teos juonellisesti jatkaa. Vastavuoroinen suhde: jatkuu teoksena."@fi,
         "Verk som slagits tillsammans med ett eller flera verk för att utforma ett nytt verk."@sv .
 
 mts:m2271 a skos:Concept ;
@@ -19498,7 +19551,7 @@ mts:m2272 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "teokseen sulautunut"@fi,
         "införlivat i verket"@sv ;
-    skos:scopeNote """Teos, joka on sulautunut osaksi toista teosta.\r
+    skos:scopeNote """Liittää teoksen teokseen, joka on sulautunut osaksi toista teosta.\r
 Vastavuoroinen suhde: sulautunut teokseen."""@fi .
 
 mts:m2273 a skos:Concept ;
@@ -19603,10 +19656,10 @@ mts:m2283 a skos:Concept ;
     skos:broader mts:m530 ;
     skos:inScheme mts: ;
     skos:prefLabel "laajennelma (teos)"@fi,
-        "utvidgning (verk)"@sv ;
+        "utvidgad version (verk)"@sv ;
     skos:scopeNote """Teos, joka laajentaa lähdeteosta.\r
 Vastavuoroinen suhde: laajennelman perustana (teos)."""@fi,
-        "Verk som utvidgar ett annat källverk. Parallell relation: utvidgning baserad på (verk)."@sv .
+        "Verk som utvidgar ett annat källverk. Parallell relation: utvidgad version baserad på (verk)."@sv .
 
 mts:m2285 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -19651,10 +19704,10 @@ mts:m2289 a skos:Concept ;
     skos:broader mts:m530 ;
     skos:inScheme mts: ;
     skos:prefLabel "lyhennelmä (teos)"@fi,
-        "förkortning (verk)"@sv ;
+        "förkortad version (verk)"@sv ;
     skos:scopeNote """Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä. \r
 Vastavuoroinen suhde: lyhennelmän perustana (teos)."""@fi,
-        "Verk som utgörs av en förkortning av ett annat källverk, och som har skapats utan att ändra källverkets semantiska innehåll eller berättarstil. Parallell relation: förkortning baserad på (verk)."@sv .
+        "Verk som förkortats från källverket utan att ändra källverkets semantiska innehåll eller berättarstil. Parallell relation: förkortad version baserad på (verk)."@sv .
 
 mts:m2291 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -19687,7 +19740,7 @@ mts:m2293 a skos:Concept ;
     skos:broader mts:m530 ;
     skos:inScheme mts: ;
     skos:prefLabel "indeksointi (teos)"@fi,
-        "indexering (teos)"@sv ;
+        "indexering (verk)"@sv ;
     skos:scopeNote """Teos, joka on lähdeteoksen sisällön indeksoinnin sisältävä tiivistelmä- ja indeksointipalvelu. \r
 Vastavuoroinen suhde: indeksoinnin perustana (teos)."""@fi,
         "Verk som omarbetats från källverk till indexering i en referat- och indexeringstjänst. Parallell relation: indexering baserad på (verk)"@sv .
@@ -22662,7 +22715,7 @@ mts:m3422 a skos:Concept ;
         "nyproduktion (verk)"@sv ;
     skos:scopeNote """Uusi filmatisointi, tai televisio- tai radio-ohjelman tai videon uusi versio\r
 Vastavuoroinen suhde: uusintaproduktion perustana (teos)."""@fi,
-        "Nyfilmatisering eller ny version av TV-program, radioprogram eller video. Parallell relation: nyproduktion baserad på (verk)."@sv .
+        "Nyfilmatisering eller ny version av tv-program, radioprogram eller video. Parallell relation: nyproduktion baserad på (verk)."@sv .
 
 mts:m3423 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22707,10 +22760,10 @@ mts:m3427 a skos:Concept ;
     skos:broader mts:m530 ;
     skos:inScheme mts: ;
     skos:prefLabel "mukautettu lyhennelmä (teos)"@fi,
-        "anpassad förkortning (verk)"@sv ;
+        "anpassad förkortad version (verk)"@sv ;
     skos:scopeNote """Teos, joka systemaattisesti, kokonaisuudessaan ja mukaillen tiivistää lähdeteoksen.\r
 Vastavuoroinen suhde: mukautetun lyhennelmän perustana (teos)."""@fi,
-        "Verk som systematiskt, i sin helhet och genom omarbetning sammanfattar ett källverk. Parallell relation: anpassad förkortning baserad på (verk)."@sv .
+        "Verk som systematiskt, i sin helhet och genom omarbetning sammanfattar ett källverk. Parallell relation: anpassad förkortad version baserad på (verk)."@sv .
 
 mts:m3428 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22754,10 +22807,10 @@ mts:m3432 a skos:Concept ;
     skos:broader mts:m743 ;
     skos:inScheme mts: ;
     skos:prefLabel "televisiosovitus (teos)"@fi,
-        "TV-bearbetning (verk)"@sv ;
+        "tv-bearbetning (verk)"@sv ;
     skos:scopeNote """Televisio-ohjelma, joka perustuu lähdeteokseen.\r
 Vastavuoroinen suhde: televisiosovituksen perustana (teos)."""@fi,
-        "TV-program som baserar sig på ett källverk. Parallell relation: TV-bearbetning baserat på (verk)."@sv .
+        "Tv-program som baserar sig på ett källverk. Parallell relation: tv-bearbetning baserat på (verk)."@sv .
 
 mts:m3435 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22770,18 +22823,6 @@ mts:m3435 a skos:Concept ;
     skos:scopeNote """Musiikkiteos, jonka melodinen, temaattinen tai harmoninen aines on otettu lähdeteoksesta erillisen, toistettavan ja muunneltavan teeman muodostamiseksi\r
 Vastavuoroinen suhde: variaation perustana (teos)."""@fi,
         "Musikaliskt verk som utformats genom omarbetning av ett källverks melodiska, tematiska eller harmoniska element. Parallell relation: variation baserad på (verk)."@sv .
-
-mts:m3436 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10096 ;
-    skos:broader mts:m3434 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "televisiokäsikirjoitus (teos)"@fi,
-        "TV-manuskript (verk)"@sv ;
-    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan televisio-ohjelman käsikirjoituksen\r
-Vastavuoroinen suhde: televisiokäsikirjoituksen perustana (teos)."""@fi,
-        "Verk som består av ett manuskript för TV-program som omarbetats från ett källverk. Parallell relation: TV-manuskript baserat på (verk)."@sv .
 
 mts:m3437 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22807,18 +22848,6 @@ mts:m3438 a skos:Concept ;
 Vastavuoroinen suhde: radiokäsikirjoituksen perustana (teos)."""@fi,
         "Verk som består av ett radiomanuskript som omarbetats från ett källverk. Parallell relation: radiomanuskript baserat på (verk)."@sv .
 
-mts:m3439 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10097 ;
-    skos:broader mts:m3434 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "videokäsikirjoitus (teos)"@fi,
-        "videomanuskript (verk)"@sv ;
-    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan videokäsikirjoituksen\r
-Vastavuoroinen suhde: videokäsikirjoituksen perustana (teos)."""@fi,
-        "Verk som består av videomanuskript som omarbetats från ett källverk. Parallell relation: videomanuskript baserat på (verk)."@sv .
-
 mts:m3440 a skos:Concept ;
     rdfs:comment "Kansallinen termi"@fi ;
     skos:broader mts:m743 ;
@@ -22838,19 +22867,6 @@ mts:m3441 a skos:Concept ;
     skos:scopeNote """Video, joka perustuu lähdeteokseen.\r
 Vastavuoroinen suhde: videosovituksen perustana (teos)."""@fi,
         "Video som har omarbetats från ett källverk. Parallell relation: videobearbetning baserad på (verk)."@sv .
-
-mts:m3442 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10094 ;
-    skos:altLabel "filmmanus (verk)"@sv ;
-    skos:broader mts:m3434 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "elokuvakäsikirjoitus (teos)"@fi,
-        "filmmanuskript (verk)"@sv ;
-    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan elokuva-, televisio- tai videokäsikirjoituksen.\r
-Vastavuoroinen suhde: käsikirjoituksen perustana (teos)."""@fi,
-        "Verk som består av filmmanuskript som omarbetats från ett källverk. Parallell relation: filmmanuskript baserat på (verk)."@sv .
 
 mts:m3445 a skos:Concept ;
     rdfs:comment "Kansallinen termi"@fi ;
@@ -22938,10 +22954,10 @@ mts:m3453 a skos:Concept ;
     skos:broader mts:m837 ;
     skos:inScheme mts: ;
     skos:prefLabel "lyhennelmän perustana (teos)"@fi,
-        "förkortning baserad på (verk)"@sv ;
+        "förkortad version baserad på (verk)"@sv ;
     skos:scopeNote """Teos, jota on lyhennetty muuttamatta sen merkityssisältöä tai esitystapaa.\r
 Vastavuoroinen suhde: lyhennelmä (teos)."""@fi,
-        "Verk som har omarbetas till en förkortning utan att ändra källverkets semantiska innehåll eller berättarstil. Parallell relation: förkortning (verk)."@sv .
+        "Verk som har förkortats utan att ändra källverkets semantiska innehåll eller framställningssätt. Parallell relation: förkortad version (verk)."@sv .
 
 mts:m3454 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22950,10 +22966,10 @@ mts:m3454 a skos:Concept ;
     skos:broader mts:m837 ;
     skos:inScheme mts: ;
     skos:prefLabel "laajennelman perustana (teos)"@fi,
-        "utvidgning baserad på (verk)"@sv ;
+        "utvidgad version baserad på (verk)"@sv ;
     skos:scopeNote """Teos, johon laajennelma perustuu.\r
 Vastavuoroinen suhde: laajennelma (teos)."""@fi,
-        "Verk som utvidgning baserar sig på. Parallell relation: utvidgning (verk)."@sv .
+        "Verk som utvidgad version baserar sig på. Parallell relation: utvidgad version (verk)."@sv .
 
 mts:m3455 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22962,10 +22978,10 @@ mts:m3455 a skos:Concept ;
     skos:broader mts:m3465 ;
     skos:inScheme mts: ;
     skos:prefLabel "televisiokäsikirjoituksen perustana (teos)"@fi,
-        "TV-manuskript baserat på (verk)"@sv ;
+        "tv-manuskript baserat på (verk)"@sv ;
     skos:scopeNote """Teos, josta televisio-ohjelman käsikirjoitus on muokattu.\r
 Vastavuoroinen suhde: televisiokäsikirjoitus (teos)."""@fi,
-        "Verk som omarbetats till manuskript för TV-program. Parallell relation: TV-manuskript (verk)."@sv .
+        "Verk som omarbetats till manuskript för tv-program. Parallell relation: tv-manuskript (verk)."@sv .
 
 mts:m3456 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -22989,7 +23005,7 @@ mts:m3457 a skos:Concept ;
     skos:prefLabel "koreografian perustana (teos)"@fi,
         "koreografi baserad på (verk)"@sv ;
     skos:scopeNote """Teos, johon liike- tai tanssiteos perustuu.\r
-Vastavuoroinen suhde: teokseen pohjautuva koreografia."""@fi,
+Vastavuoroinen suhde: teokseen perustuva koreografia."""@fi,
         "Verk som har omarbetats till ett rörelse- eller dansverk."@sv .
 
 mts:m3458 a skos:Concept ;
@@ -23094,10 +23110,10 @@ mts:m3471 a skos:Concept ;
     skos:broader mts:m837 ;
     skos:inScheme mts: ;
     skos:prefLabel "mukautetun lyhennelmän perustana (teos)"@fi,
-        "anpassad förkortning baserad på (verk)"@sv ;
+        "anpassad förkortad version baserad på (verk)"@sv ;
     skos:scopeNote """Teos, joka on systemaattisesti, kokonaisuudessaan ja mukaillen tiivistetty. \r
 Vastavuoroinen suhde: mukautettu lyhennelmä (teos)."""@fi,
-        "Verk som systematiskt och i sin helhet har sammanfattats. Parallell relation: anpassad förkortning (verk)."@sv .
+        "Verk som systematiskt och i sin helhet har sammanfattats. Parallell relation: anpassad förkortad version (verk)."@sv .
 
 mts:m3472 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -23227,9 +23243,11 @@ mts:m3484 a skos:Concept ;
     rdfs:seeAlso rdaw:P10248 ;
     skos:broader mts:m783 ;
     skos:inScheme mts: ;
-    skos:prefLabel "koreografia teokseen"@fi ;
+    skos:prefLabel "koreografia teokseen"@fi,
+        "koreografi till verket"@sv ;
     skos:scopeNote """Teos, jossa käytetään koreografiateosta.\r
-Vastavuoroinen suhde: koreografia (teos)."""@fi .
+Vastavuoroinen suhde: koreografia (teos)."""@fi,
+        "Verk i vilket ett koreografiskt verk används. Parallell relation: koreografi (verk)."@sv .
 
 mts:m3485 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -23308,9 +23326,11 @@ mts:m3492 a skos:Concept ;
     rdfs:seeAlso rdae:P20193 ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
-    skos:prefLabel "abstraktien perustana (ekspressio)"@fi ;
+    skos:prefLabel "abstraktien perustana (ekspressio)"@fi,
+        "abstrakten baserade på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, jonka sisällön on tiivistelmä- ja indeksointipalvelu abstrahoinut.\r
-Vastavuoroinen suhde: abstraktit (ekspressio)."""@fi .
+Vastavuoroinen suhde: abstraktit (ekspressio)."""@fi,
+        "Uttryck av ett verk, vars innehåll har abstraherats av en referat- och indexeringstjänst. Parallell relation: abstrakt (uttryck)"@sv .
 
 mts:m3493 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
@@ -23393,9 +23413,11 @@ mts:m3502 a skos:Concept ;
     rdfs:seeAlso rdaw:P10029 ;
     skos:broader mts:m1443 ;
     skos:inScheme mts: ;
-    skos:prefLabel "kadenssi sävellykseen (teos)"@fi ;
+    skos:prefLabel "kadenssi sävellykseen (teos)"@fi,
+        "kadens till kompositionen (verk)"@sv ;
     skos:scopeNote """Musiikkiteos, kuten konsertto, johon sama tai eri säveltäjä on säveltänyt solistille tarkoitetun koristeellisen osan\r
-Vastavuoroinen suhde: kadenssi (teos)."""@fi .
+Vastavuoroinen suhde: kadenssi (teos)."""@fi,
+        "Musikaliskt verk för vilket samma eller en annan kompositör har komponerat en dekorativ del avsedd för en solist. Parallell relation: kadens (verk)."@sv .
 
 mts:m3503 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -23490,9 +23512,11 @@ mts:m3514 a skos:Concept ;
     rdfs:seeAlso rdaw:P10092 ;
     skos:broader mts:m3521 ;
     skos:inScheme mts: ;
-    skos:prefLabel "korjattu teos"@fi ;
+    skos:prefLabel "korjattu teos"@fi,
+        "korrigerat verk"@sv ;
     skos:scopeNote """Julkaisemisen jälkeen löytyneitä paino- ja asiavirheitä ja niiden korjauksia sisältävä teos\r
-Vastavuoroinen suhde: korjaukset teokseen."""@fi .
+Vastavuoroinen suhde: korjaukset teokseen."""@fi,
+        "Verk som innehåller tryck- och sakfel som hittats efter utgivningen samt rättelser av dem. Parallell relation: korrigeringar till verket."@sv .
 
 mts:m3515 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -23576,9 +23600,11 @@ mts:m3526 a skos:Concept ;
     rdfs:seeAlso rdaw:P10246 ;
     skos:broader mts:m3522 ;
     skos:inScheme mts: ;
-    skos:prefLabel "elokuvamusiikki (teos)"@fi ;
+    skos:prefLabel "elokuvamusiikki (teos)"@fi,
+        "filmmusik (verk)"@sv ;
     skos:scopeNote """Musiikkiteos, jota käytetään elokuvassa.\r
-Vastavuoroinen suhde: musiikki elokuvaan (teos)."""@fi .
+Vastavuoroinen suhde: musiikki elokuvaan (teos)."""@fi,
+        "Musikaliskt verk som används i en film. Parallell relation: musik till filmen (verk)."@sv .
 
 mts:m3527 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -23615,9 +23641,11 @@ mts:m3530 a skos:Concept ;
     rdfs:seeAlso rdaw:P10026 ;
     skos:broader mts:m3521 ;
     skos:inScheme mts: ;
-    skos:prefLabel "kadenssi (teos)"@fi ;
+    skos:prefLabel "kadenssi (teos)"@fi,
+        "kadens (verk)"@sv ;
     skos:scopeNote """Musiikkiteos, joka muodostuu solistille tarkoitetusta koristeellisesta osasta. Liittyy saman tai eri säveltäjän musiikkiteokseen, kuten konserttoon\r
-Vastavuoroinen suhde: kadenssi sävellykseen (teos)."""@fi .
+Vastavuoroinen suhde: kadenssi sävellykseen (teos)."""@fi,
+        "Musikaliskt verk som utgörs av en dekorativ del avsedd för en solist. Relaterat till ett musikaliskt verk av samma eller en annan kompositör. Parallell relation: kadens till kompositionen (verk)."@sv .
 
 mts:m3531 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi ;
@@ -23664,9 +23692,11 @@ mts:m3541 a skos:Concept ;
     skos:broader mts:m1117 ;
     skos:inScheme mts: ;
     skos:narrower mts:m3543 ;
-    skos:prefLabel "jäljitelmän perustana (ekspressio)"@fi ;
+    skos:prefLabel "jäljitelmän perustana (ekspressio)"@fi,
+        "imitation baserad på (uttryck)"@sv ;
     skos:scopeNote """Teoksen ekspressio, jonka tyyliä tai sisältöä johdettu teos jäljittelee.\r
-Vastavuoroinen suhde: jäljitelmä (ekspressio)."""@fi .
+Vastavuoroinen suhde: jäljitelmä (ekspressio)."""@fi,
+        "Uttryck vars stil eller innehåll imiteras i ett härlett verk . Parallell relation: imitation (uttryck)."@sv .
 
 mts:m355 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -23693,8 +23723,8 @@ mts:m362 a skos:Concept ;
         "RDA-term"@sv ;
     skos:altLabel "musiknotation"@sv,
         "notskrift"@sv ;
-    skos:definition """Musiikkinotaationa esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat musiikkinotaatiot.\r\r
-Katso myös kosketeltava musiikkinotaatio."""@fi,
+    skos:definition """Musiikkinotaationa esitetty sisältö, joka on tarkoitettu katsottavaksi. Sisältää kaikki muut kuin kosketeltavassa muodossa olevat musiikkinotaatiot.\r
+Katso myös tatiili musiikkinotaatio."""@fi,
         "Innehåll uttryckt med hjälp av musiknotation, avsett att betraktas. Omfattar alla former av musiknotation, med undantag för notation avsedd att vidröras. Se även taktil musiknotation."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1010> ;
     skos:inScheme mts: ;
@@ -24135,7 +24165,8 @@ mts:m574 a skos:Concept ;
 mts:m575 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10129 ;
+    rdfs:seeAlso rdaw:P10025 ;
+    skos:altLabel "filmatisointi (teos)"@fi ;
     skos:broader mts:m743 ;
     skos:inScheme mts: ;
     skos:prefLabel "elokuvaversio (teos)"@fi,
@@ -24156,6 +24187,7 @@ mts:m577 a skos:Concept ;
 mts:m586 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
+    skos:altLabel "kosketeltava nuottikirjoitus"@fi ;
     skos:definition "Musiikkinotaationa esitetty sisältö, joka on tarkoitettu kosketeltavaksi. Esimerkiksi pistenuottikirjoitus ja muut taktiilit nuottikirjoitukset."@fi,
         "Noterad musik avsedd att vidröras, t.ex. punktskriftsnoter."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1016> ;
@@ -24873,7 +24905,7 @@ mts:m9 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Kaksiulotteinen tiedon esitystapa joko graafisessa muodossa tai taulukkona."@fi,
-        "Tvådimensionell framställning av data, i form av grafisk framställning eller tabell."@sv ;
+        "Tvådimensionellt framställningssätt för data, i antingen grafisk form eller som tabell."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDACarrierEU/1004> ;
     skos:inScheme mts: ;
     skos:prefLabel "taulukko"@fi,
@@ -25207,7 +25239,7 @@ mts:m1566 a skos:Concept ;
     skos:prefLabel "uusintaproduktion perustana (teos)"@fi,
         "nyproduktion baserad på (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, josta kuvailun kohteena oleva uusi filmatisointi, televisio- tai radio-ohjelma tai video on tehty. Vastavuoroinen suhde: Uusintaproduktio (teos)."@fi,
-        "Verk som producerats pånytt i form av nyinspelning eller nytt TV-program, radioprogram eller video. Parallell relation: nyproduktion (verk)."@sv .
+        "Verk som producerats pånytt i form av nyinspelning eller nytt tv-program, radioprogram eller video. Parallell relation: nyproduktion (verk)."@sv .
 
 mts:m1578 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -30011,6 +30043,46 @@ mts:m3401 a skos:Concept ;
     skos:prefLabel "myyntipäällikkö"@fi,
         "försäljningschef"@sv .
 
+mts:m3436 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10096 ;
+    skos:broader mts:m3434,
+        mts:m3554 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "televisiokäsikirjoitus (teos)"@fi,
+        "tv-manuskript (verk)"@sv ;
+    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan televisio-ohjelman käsikirjoituksen\r
+Vastavuoroinen suhde: televisiokäsikirjoituksen perustana (teos)."""@fi,
+        "Verk som består av ett manuskript för tv-program som omarbetats från ett källverk. Parallell relation: tv-manuskript baserat på (verk)."@sv .
+
+mts:m3439 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10097 ;
+    skos:broader mts:m3434,
+        mts:m3554 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "videokäsikirjoitus (teos)"@fi,
+        "videomanuskript (verk)"@sv ;
+    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan videokäsikirjoituksen\r
+Vastavuoroinen suhde: videokäsikirjoituksen perustana (teos)."""@fi,
+        "Verk som består av videomanuskript som omarbetats från ett källverk. Parallell relation: videomanuskript baserat på (verk)."@sv .
+
+mts:m3442 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10094 ;
+    skos:altLabel "filmmanus (verk)"@sv ;
+    skos:broader mts:m3434,
+        mts:m3554 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "elokuvakäsikirjoitus (teos)"@fi,
+        "filmmanuskript (verk)"@sv ;
+    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan elokuva-, televisio- tai videokäsikirjoituksen.\r
+Vastavuoroinen suhde: käsikirjoituksen perustana (teos)."""@fi,
+        "Verk som består av filmmanuskript som omarbetats från ett källverk. Parallell relation: filmmanuskript baserat på (verk)."@sv .
+
 mts:m3449 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:broader mts:m2987 ;
@@ -30030,7 +30102,7 @@ mts:m3467 a skos:Concept ;
         "imitation baserad på (verk)"@sv ;
     skos:scopeNote """Teos, jonka tyyliä tai sisältöä johdettu teos jäljittelee.\r
 Vastavuoroinen suhde: jäljitelmä (teos)."""@fi,
-        "Verk som imiteras i ett härlett verk. Parallell relation: imitation (verk)."@sv .
+        "Verk, vars stil eller innehåll imiteras i ett härlett verk. Parallell relation: imitation (verk)."@sv .
 
 mts:m3474 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -30177,7 +30249,7 @@ mts:m1298 a skos:Concept ;
     skos:altLabel "tuott. (tuottaja)"@fi,
         "prod. (producent)"@sv ;
     skos:definition "henkilö tai yhteisö, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Tuottaja vastaa tyypillisesti rahoituksen hankkimisesta, tuotannon johdosta, avainhenkilöstön palkkaamisesta, jakelun järjestämisestä jne."@fi,
-        "person eller institution som ansvarar för de kommersiella uppdrag som hör till produktionen av film, ljudupptagning, TV-program, direktsändning el. dyl. Producenten ansvarar i regel för finansieringsanskaffning, produktionsledning, anställning av nyckelpersoner, organisering av distribution o.s.v."@sv ;
+        "person eller institution som ansvarar för de kommersiella uppdrag som hör till produktionen av film, ljudupptagning, tv-program, direktsändning el. dyl. Producenten ansvarar i regel för finansieringsanskaffning, produktionsledning, anställning av nyckelpersoner, organisering av distribution o.s.v."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1170,
         mts:m1216,
@@ -30821,6 +30893,22 @@ mts:m3386 a skos:Concept ;
     skos:prefLabel "opinto-ohjaaja"@fi,
         "studiehandledare"@sv .
 
+mts:m3554 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10091 ;
+    skos:altLabel "teokseen pohjautuva koreografia"@fi ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3436,
+        mts:m3439,
+        mts:m3442 ;
+    skos:prefLabel "teokseen perustuva koreografia"@fi,
+        "koreografi baserat på (verk)"@sv ;
+    skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan elokuva-, televisio- tai videokäsikirjoituksen.\r
+Vastavuoroinen suhde: koreografian perustana (teos)."""@fi,
+        "Verk som innehåller film-, tv- eller videomanuskript som baserar sig på ett annat källverk. Parallell relation: koreografi baserat på (verk)."@sv .
+
 mts:m397 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -30828,7 +30916,7 @@ mts:m397 a skos:Concept ;
     skos:altLabel "ohj. (ohjaaja)"@fi,
         "reg. (regissör)"@sv ;
     skos:definition "henkilö tai yhteisö, joka on vastuussa elokuva-, radio- tai televisiotaltioinnin tms. yleisestä johtamisesta"@fi,
-        "person eller institution som ansvarar för och leder arbetet vid en film-, radio- eller TV-inspelning el. dyl"@sv ;
+        "person eller institution som ansvarar för och leder arbetet vid en film-, radio- eller tv-inspelning el. dyl"@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1423,
         mts:m699,
@@ -31040,7 +31128,7 @@ mts:m3465 a skos:Concept ;
         "manuskript baserat på (verk)"@sv ;
     skos:scopeNote """Teos, josta elokuvan, televisio-ohjelman tai videon käsikirjoitus on muokattu.\r
 Vastavuoroinen suhde: teokseen perustuva käsikirjoitus."""@fi,
-        "Verk som varit grund för film-, TV- eller videomanuskript. Parallell relation: manuskript baserat på ett verk."@sv .
+        "Verk som varit grund för film-, tv- eller videomanuskript. Parallell relation: manuskript baserat på ett verk."@sv .
 
 mts:m3501 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -31180,7 +31268,7 @@ mts:m3434 a skos:Concept ;
         "manuskript baserat på ett verk"@sv ;
     skos:scopeNote """Teos, joka sisältää lähdeteokseen perustuvan elokuva-, televisio- tai videokäsikirjoituksen.\r
 Vastavuoroinen suhde: käsikirjoituksen perustana (teos)."""@fi,
-        "Verk som innehåller film-, TV- eller videomanuskript som baserar sig på ett annat källverk. Parallell relation: manuskript baserat på (verk)."@sv .
+        "Verk som innehåller film-, tv- eller videomanuskript som baserar sig på ett annat källverk. Parallell relation: manuskript baserat på (verk)."@sv .
 
 mts:m3507 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32068,33 +32156,8 @@ mts:m530 a skos:Concept ;
         mts:m743 ;
     skos:prefLabel "johdettu teos"@fi,
         "härlett verk"@sv ;
-    skos:scopeNote "Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana."@fi .
-
-mts:m837 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10190 ;
-    skos:altLabel "perustuu teokseen"@fi,
-        "pohjautuu teokseen"@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1399,
-        mts:m1566,
-        mts:m3434,
-        mts:m3446,
-        mts:m3447,
-        mts:m3453,
-        mts:m3454,
-        mts:m3458,
-        mts:m3464,
-        mts:m3467,
-        mts:m3471,
-        mts:m3472,
-        mts:m3473,
-        mts:m3476,
-        mts:m3478,
-        mts:m3480 ;
-    skos:prefLabel "teoksen perustana"@fi,
-        "verk baserat på"@sv .
+    skos:scopeNote "Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana."@fi,
+        "Verk som baserar sig på ett källverk. Parallell relation: verk baserat på."@sv .
 
 mts:m1117 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32147,6 +32210,33 @@ mts:m743 a skos:Concept ;
     skos:prefLabel "mukaelma (teos)"@fi,
         "omarbetning (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, joka on muokattu kuvailun kohteena olevasta teoksesta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai viestintävälinettä varten. Koskee myös muodon muutoksia tai samassa muodossa kokonaan uudelleenmuokattuja teoksia.Vastavuoroinen suhde:mukaelman perustana (teos)"@fi .
+
+mts:m837 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10190 ;
+    skos:altLabel "perustuu teokseen"@fi,
+        "pohjautuu teokseen"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1399,
+        mts:m1566,
+        mts:m3434,
+        mts:m3446,
+        mts:m3447,
+        mts:m3453,
+        mts:m3454,
+        mts:m3458,
+        mts:m3464,
+        mts:m3467,
+        mts:m3471,
+        mts:m3472,
+        mts:m3473,
+        mts:m3476,
+        mts:m3478,
+        mts:m3480,
+        mts:m3554 ;
+    skos:prefLabel "teoksen perustana"@fi,
+        "verk baserat på"@sv .
 
 mts:m2338 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -32561,5 +32651,5 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-01-09T04:37:52+00:00"^^xsd:dateTime .
+    dct:modified "2019-01-15T04:06:52+00:00"^^xsd:dateTime .
 
