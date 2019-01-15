@@ -1184,7 +1184,7 @@ def convert(cs, language, g, g2):
                 multipleLanguages = False
                 languagesEncountered = set()
                 sortedPrefLabels = sorted(g2.preferredLabel(matchURIRef,
-                                        labelProperties=(SKOS.prefLabel,)))
+                                       labelProperties=[SKOS.prefLabel]))
                 for label in sortedPrefLabels:
                     languagesEncountered.add(label[1].language)
                     if len(languagesEncountered) > 1:
