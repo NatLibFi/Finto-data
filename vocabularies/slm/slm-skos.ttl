@@ -3607,10 +3607,10 @@ slm:s601 a skos:Concept ;
 
 slm:s602 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s887 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "serenadit"@fi,
-        "serenader"@sv ;
-    skos:topConceptOf slm:s861 .
+        "serenader"@sv .
 
 slm:s605 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4878,14 +4878,6 @@ slm:s886 a skos:Concept ;
     skos:prefLabel "seksilehdet"@fi,
         "sextidningar"@sv .
 
-slm:s887 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "sarjat"@fi,
-        "sviter"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s89 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s298 ;
@@ -4897,10 +4889,10 @@ slm:s89 a skos:Concept ;
 
 slm:s890 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s887 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "divertimentot"@fi,
-        "divertimenton"@sv ;
-    skos:topConceptOf slm:s861 .
+        "divertimenton"@sv .
 
 slm:s892 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8580,6 +8572,16 @@ slm:s869 a skos:Concept ;
         "historiska tv-serier"@sv ;
     skos:related slm:s1132,
         slm:s230 .
+
+slm:s887 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s602,
+        slm:s890 ;
+    skos:prefLabel "sarjat"@fi,
+        "sviter"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s888 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12389,7 +12391,6 @@ slm:s861 a skos:ConceptScheme ;
         slm:s590,
         slm:s592,
         slm:s596,
-        slm:s602,
         slm:s609,
         slm:s61,
         slm:s614,
@@ -12435,7 +12436,6 @@ slm:s861 a skos:ConceptScheme ;
         slm:s874,
         slm:s883,
         slm:s887,
-        slm:s890,
         slm:s892,
         slm:s90,
         slm:s909,
@@ -12458,7 +12458,7 @@ slm:s861 a skos:ConceptScheme ;
 
 slm:s285 a skos:ConceptScheme ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-01-15T04:09:20+00:00"^^xsd:dateTime ;
+    dct:modified "2019-01-16T03:37:55+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s100,
         slm:s1006,
         slm:s1011,
