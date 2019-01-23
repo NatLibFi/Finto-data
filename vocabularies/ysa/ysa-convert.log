@@ -14,6 +14,7 @@ http://www.yso.fi/onto/ysa/Y214472 'haitarijazz': Unknown target vocabulary 'Non
 http://www.yso.fi/onto/ysa/Y185426 'jakkarat': Unknown w subfield value 'g huonekalut', ignoring field
 http://www.yso.fi/onto/ysa/Y214718 'West Coast -jazz': Unknown target vocabulary 'None' for linked term 'Jazz -- California'
 http://www.yso.fi/onto/ysa/Y214504 'inkamusiikki': Unknown target vocabulary 'None' for linked term 'World music -- South America'
+No handlers could be found for logger "rdflib.term"
 http://www.yso.fi/onto/ysa/Y206870 'veronluonteiset maksut': Referred term 'verot' is an altLabel; should be 'verotus'
 http://www.yso.fi/onto/ysa/Y94518 'afroamerikkalainen musiikki': Unknown referred term 'salsa (sävellykset)'
 http://www.yso.fi/onto/ysa/Y205328 'eteläslaavilaiset kielet': Referred term 'kroatian kieli' is an altLabel; should be 'kroaatin kieli'
@@ -25,6 +26,7 @@ http://www.yso.fi/onto/ysa/Y175302 'allikot': Unknown referred term 'lammikot'
 http://www.yso.fi/onto/ysa/Y210363 'tefheinä': Unknown referred term 'röllinurmikat'
 http://www.yso.fi/onto/ysa/Y193135 'tietokoneohjelmat': Referred term 'ATLAS/ti' is an altLabel; should be 'ATLAS.ti'
 http://www.yso.fi/onto/ysa/Y193135 'tietokoneohjelmat': Unknown referred term 'OMS'
+http://www.yso.fi/onto/ysa/Y193135 'tietokoneohjelmat': Unknown referred term 'sekvensseri (tietokoneohjelmat)'
 http://www.yso.fi/onto/ysa/Y193135 'tietokoneohjelmat': Referred term 'ajurit -- tietotekniikka' is an altLabel; should be 'ajurit (tietokoneohjelmat)'
 http://www.yso.fi/onto/ysa/Y94086 'Alavus': Unknown referred term 'Kuivasjärvi'
 http://www.yso.fi/onto/ysa/Y94264 'Lempäälä': Unknown referred term 'Sääksjärvi'
@@ -119,3 +121,27 @@ http://www.yso.fi/onto/ysa/Y205368 'alkaliniteetti': Unknown referred term 'ph'
 http://www.yso.fi/onto/ysa/Y94180 'Kainuu': Unknown referred term 'Ristijärvi'
 http://www.yso.fi/onto/ysa/Y94230 'Kuhmoinen': Referred term 'Längelmäki -- Päijälä' is an altLabel; should be 'Jämsä -- Päijälä'
 http://www.yso.fi/onto/ysa/Y218505 'modaalisuus (musiikki)': Unknown referred term 'moodit (säveljärjestelmät)'
+Traceback (most recent call last):
+  File "tools/oai-pmh-to-skos/oai-pmh-to-skos.py", line 310, in <module>
+    g.serialize(format='turtle', destination=sys.stdout)
+  File "/usr/lib/python2.6/site-packages/rdflib/graph.py", line 943, in serialize
+    serializer.serialize(stream, base=base, encoding=encoding, **args)
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 231, in serialize
+    if self.statement(subject) and not firstTime:
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 292, in statement
+    return self.s_squared(subject) or self.s_default(subject)
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 297, in s_default
+    self.predicateList(subject)
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 400, in predicateList
+    self.objectList(properties[predicate])
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 411, in objectList
+    self.path(objects[0], OBJECT)
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 311, in path
+    or self.p_default(node, position, newline)):
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 317, in p_default
+    self.write(self.label(node, position))
+  File "/usr/lib/python2.6/site-packages/rdflib/plugins/serializers/turtle.py", line 333, in label
+    return self.getQName(node, position == VERB) or node.n3()
+  File "/usr/lib/python2.6/site-packages/rdflib/term.py", line 247, in n3
+    raise Exception('"%s" does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?'%self)
+Exception: "betapalvelu  Nimetty paikka  http://paikkatiedot.fi/so/1000772/10841235" does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?
