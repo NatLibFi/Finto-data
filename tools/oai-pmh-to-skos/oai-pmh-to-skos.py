@@ -242,7 +242,10 @@ for count, oaipmhrec in enumerate(recs):
     for f in rec.get_fields('670'):
         if 'u' in f: # URI link
             text = '; '.join(f.get_subfields('a','b'))
-            g.add((uri, SKOS.closeMatch, URIRef(f['u'])))
+            if IRI.match(f['u']):
+                g.add((uri, SKOS.closeMatch, URIRef(f['u'])))
+            else:
+                print >>sys.stderr, ("%s '%s': Bad link target URI '%s'" % (uri, prefLabel, f['u']))
         else:
             text = f.format_field()
         while text.startswith(u'Lähde:'):
