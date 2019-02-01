@@ -1,16 +1,26 @@
 #!/usr/bin/env python
 
-# Utility to generate dct:modified timestamps (xsd:date) for SKOS concepts.
+# Utility to generate dct:created and dct:modified timestamps (xsd:date) for
+# SKOS concepts.
 
 # The idea is that for each concept, a hash (MD5) is calculated based on the
 # triples where that concept is either the subject or object. Whenever the
 # triples change, the hash will be different. A separate TSV data file of
 # earlier hashes and timestamps is maintained.
 
-# For new concepts, no modified timestamp is initially given. However, the
-# next time the concept changes, a timestamp is added. The idea is that for
-# newly encountered concepts, we cannot know whether the concept has already
-# existed a long time or not.
+# First run
+# If the tool is run with an empty or nonexistent timestamp file, no
+# timestamps are added but hashes are stored in the timestamp file for later
+# reference. The idea is that without preexisting timestamp information, we
+# cannot know anything about how long the concepts have existed and when
+# they were last modified. However, the next time a concept changes, the
+# hash will be different and thus a modified timestamp is added and
+# thereafter maintained whenever the concept changes.
+
+# When a timestamp file exists and a new concept is encountered, it will be
+# given a modified timestamp. It will also be given a created timestamp,
+# unless it already has one in the data. Existing created timestamps will
+# not be touched.
 
 # The timestamp to give can be passed on the command line as the last
 # parameter. If not given, today's date will be used as the default.
@@ -42,8 +52,15 @@ old_timestamps = {}
 if os.path.exists(tsfile):
     with open(tsfile, 'r') as f:
         for line in f:
-            uri, hash, mtime = line.strip().split()
-            old_timestamps[URIRef(uri)] = (hash, mtime)
+            tsdata = line.strip().split()
+            if len(tsdata) > 3:
+                # new style timestamp file, both mtime and ctime
+                uri, hash, mtime, ctime = tsdata
+            else:
+                # old style timestamp file, only mtime
+                uri, hash, mtime = tsdata
+                ctime = '-'
+            old_timestamps[URIRef(uri)] = (hash, mtime, ctime)
 
 # load SKOS file
 g = Graph()
@@ -67,27 +84,41 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
     hash = concept_hash(concept)
 
     if concept in old_timestamps:
-        old_hash, old_mtime = old_timestamps[concept]
+        old_hash, old_mtime, old_ctime = old_timestamps[concept]
         if old_hash == hash:
             # hash is the same, maintain old timestamp
-            new_timestamps[concept] = (old_hash, old_mtime)
+            new_timestamps[concept] = (old_hash, old_mtime, old_ctime)
             continue
         else:
             # hash has changed, update timestamp
-            new_timestamps[concept] = (hash, timestamp)
+            new_timestamps[concept] = (hash, timestamp, old_ctime)
     else:
         if len(old_timestamps) == 0:
-            # we don't know anything about history, no timestamp
-            new_timestamps[concept] = (hash, '-')
+            # first run: we don't know anything about history - no timestamps
+            new_timestamps[concept] = (hash, '-', '-')
         else:
-            # the concept is new, update timestamp
-            new_timestamps[concept] = (hash, timestamp)
+            # the concept is new, update timestamps
+
+            # check whether the concept already has a created timestamp
+            graph_ctime = g.value(concept, DCT.created, None)
+            if graph_ctime is not None:
+                # there is already a created timestamp in the graph
+                # don't try to override it here
+                ctime = '-'
+            else:
+                # no created timestamp in the graph
+                # we will set the current timestamp as the ctime
+                ctime = timestamp
+
+            new_timestamps[concept] = (hash, timestamp, ctime)
 
 # Add the new timestamps to the graph
 for concept, cdata in new_timestamps.items():
-    hash, mtime = cdata
+    hash, mtime, ctime = cdata
     if mtime != '-':
         g.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
+    if ctime != '-':
+        g.add((concept, DCT.created, Literal(ctime, datatype=XSD.date)))
 
 # Copy old timestamps that were not in the vocabulary, just in case
 # so we don't lose data if the vocabulary is temporarily missing concepts
@@ -98,7 +129,7 @@ for concept in old_timestamps:
 # store the new timestamps in the timestamp data file
 with open(tsfile, 'w') as f:
     for concept, cdata in sorted(new_timestamps.items()):
-        hash, mtime = cdata
-        print >>f, "\t".join((concept, hash, mtime))
+        hash, mtime, ctime = cdata
+        print >>f, "\t".join((concept, hash, mtime, ctime))
 
 g.serialize(destination=sys.stdout, format='turtle')
