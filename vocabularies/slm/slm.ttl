@@ -8,8 +8,8 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
-@prefix ns1:   <http://purl.org/dc/elements/1.1/> .
 @prefix yso-update: <http://www.yso.fi/onto/yso-update/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 slm:s729  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -210,10 +210,10 @@ slm:s957  a              owl:Class , skos:Concept ;
 slm:s570  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "new wave"@fi ;
+        skos:altLabel    "new wave"@fi , "new wave"@sv ;
         skos:definition  "1970-luvun lopulle ja 1980-luvun alkupuolelle ajoittuva punk rockiin pohjautuva rock- ja popmusiikin tyyli, jossa punkin tyylilliset ja asenteelliset seikat yhdistyivät siistitympään muotoon." ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "uusi aalto (musiikki)"@fi , "new wave"@sv ;
+        skos:prefLabel   "uusi aalto (musiikki)"@fi , "new wave (musik)"@sv ;
         skos:related     slm:s169 .
 
 slm:s815  a              owl:Class , skos:Concept ;
@@ -2395,8 +2395,9 @@ slm:s1268  a             owl:Class , skos:ConceptScheme ;
 
 slm:s1292  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s887 ;
+        skos:altLabel    "notturnos"@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "notturnot"@fi .
+        skos:prefLabel   "notturnot"@fi , "notturno"@sv .
 
 slm:s50  a              owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -2530,6 +2531,11 @@ slm:s956  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "kurssijulkaisut"@fi , "kurspublikationer"@sv .
+
+slm:s1298  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "vägkartor"@sv , "tiekartat"@fi .
 
 slm:s1081  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3642,9 +3648,9 @@ slm:s1255  a             owl:Class , skos:Concept ;
 
 slm:s375  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "pastoraalinen musiikki"@fi ;
+        skos:altLabel   "pastoraalinen musiikki"@fi , "pastoral musik"@sv ;
         skos:inScheme   slm:s861 ;
-        skos:prefLabel  "pastoraalimusiikki"@fi , "pastoraler"@sv .
+        skos:prefLabel  "pastoraalimusiikki"@fi , "pastoralmusik"@sv .
 
 slm:s254  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4275,7 +4281,7 @@ slm:s560  a              owl:Class , skos:Concept ;
 slm:s1281  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1286 ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "komiteanmietinnöt"@fi .
+        skos:prefLabel   "komiteanmietinnöt"@fi , "kommittébetänkanden"@sv .
 
 slm:s175  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5112,6 +5118,11 @@ slm:s960  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "asiasanastot"@fi , "ämnesordsregister"@sv .
 
+slm:s1286  a            owl:Class , skos:Concept ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "betänkanden"@sv , "mietinnöt"@fi ;
+        skos:related    slm:s1280 .
+
 slm:s1096  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5407,9 +5418,9 @@ slm:s921  a              owl:Class , skos:Concept ;
 
 slm:s1288  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
-        skos:altLabel    "sateenkaarikirjallisuus"@fi ;
+        skos:altLabel    "regnbågslitteratur"@sv , "sateenkaarikirjallisuus"@fi , "queer-litteratur"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "queer-kirjallisuus"@fi .
+        skos:prefLabel   "queer-kirjallisuus"@fi , "queerlitteratur"@sv .
 
 slm:s67  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -5511,6 +5522,12 @@ slm:s868  a              owl:Class , skos:Concept ;
         skos:note        "Genre för religiösa eller sedelärande och oftast allegoriska skådespel, som uppkom på 1400-talet, t.ex. Spelet om Envar."@sv , "1400-luvulla syntynyt uskonnollisten tai opettavien, useimmiten allegoristen näytelmien laji, tunnetuimpia mm. Jokamies."@fi ;
         skos:prefLabel   "moraliteter"@sv , "moraliteetit"@fi ;
         skos:related     slm:s929 , slm:s802 , slm:s254 .
+
+slm:s1280  a            owl:Class , skos:Concept ;
+        skos:altLabel   "PM"@sv , "memoranda"@sv , "memorandum"@sv ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "promemorior"@sv , "muistiot"@fi ;
+        skos:related    slm:s1286 .
 
 slm:s505  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -5866,9 +5883,9 @@ slm:s262  a             owl:Class , skos:Concept ;
 
 slm:s1273  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
-        skos:altLabel    "topografiset kartat"@fi ;
+        skos:altLabel    "topografiset kartat"@fi , "topografiska kartor"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "maastokartat"@fi .
+        skos:prefLabel   "maastokartat"@fi , "terrängkartor"@sv .
 
 slm:s1202  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
@@ -5937,11 +5954,6 @@ slm:s1015  a             owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15342> ;
         skos:prefLabel   "mobilspel"@sv , "mobiilipelit"@fi ;
         skos:related     slm:s871 , slm:s588 , slm:s227 .
-
-slm:s1280  a            owl:Class , skos:Concept ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "muistiot"@fi ;
-        skos:related    slm:s1286 .
 
 slm:s1008  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6150,11 +6162,6 @@ slm:s561  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "referatpublikationer"@sv , "tiivistelmäjulkaisut"@fi .
 
-slm:s1286  a            owl:Class , skos:Concept ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "mietinnöt"@fi ;
-        skos:related    slm:s1280 .
-
 slm:s442  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6303,6 +6310,11 @@ slm:s115  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p13932> ;
         skos:prefLabel   "dogmaelokuvat"@fi , "dogmafilmer"@sv .
+
+slm:s1278  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "sjökort"@sv , "merikartat"@fi .
 
 slm:s459  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -7963,7 +7975,7 @@ slm:s843  a              owl:Class , skos:Concept ;
 slm:s1290  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "opaskartat"@fi .
+        skos:prefLabel   "opaskartat"@fi , "guidekartor"@sv .
 
 slm:s1189  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1218 ;
@@ -8214,7 +8226,7 @@ slm:s1276  a             owl:Class , skos:Concept ;
 slm:s1282  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "matkailukartat"@fi .
+        skos:prefLabel   "matkailukartat"@fi , "turistkartor"@sv .
 
 slm:s304  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s435 ;
@@ -8357,6 +8369,13 @@ slm:s968  a              owl:Class , skos:Concept ;
         skos:prefLabel   "nuortenelokuvat"@fi , "ungdomsfilmer"@sv ;
         skos:related     slm:s135 , slm:s387 , slm:s698 .
 
+slm:s1275  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s505 ;
+        skos:altLabel    "konsertrecensioner"@sv , "skivrecensioner"@sv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "musikrecensioner"@sv , "musiikkiarvostelut"@fi .
+
 slm:s15  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s618 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -8427,11 +8446,6 @@ slm:s657  a              owl:Class , skos:Concept ;
         skos:prefLabel   "mukaelmat"@fi , "omarbetningar"@sv ;
         skos:related     slm:s556 , slm:s529 , slm:s909 , slm:s1058 , slm:s813 , slm:s577 , slm:s67 , slm:s509 , slm:s379 .
 
-slm:s1278  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s205 ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "merikartat"@fi .
-
 slm:s322  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -8450,17 +8464,6 @@ slm:s184  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "suositukset"@fi , "rekommendationer"@sv .
 
-slm:s1275  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s505 ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "musiikkiarvostelut"@fi .
-
-slm:s1298  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s205 ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "tiekartat"@fi .
-
 slm:s112  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:altLabel   "terminologier"@sv ;
@@ -8473,13 +8476,14 @@ slm:s1295  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "monikuoroinen musiikki"@fi .
 
-slm:    a                owl:Ontology ;
-        ns1:creator      "Lajityyppi- ja muotosanastoryhmä"@fi ;
-        ns1:description  "Suomalainen lajityyppi- ja muotosanasto (SLM) on kaksikielinen sanasto aineistojen kuvailussa käytettävistä muotoa ja lajityyppiä eli genreä kuvaavista termeistä.\r\n\r\nSanaston on laatinut ja sitä ylläpitää Sisällönkuvailun asiantuntijaryhmän alainen Lajityyppi- ja muotosanastoryhmä, johon kuuluu jäseniä kirjastosektorin eri alueilta. Musiikin osalta sisällöstä vastaa Muusa-ryhmä.\r\n\r\nVoit ehdottaa uusia termejä ja muutoksia sanastoon <a href=\"//ehdotus.finto.fi/\">YSAn ja YSOn ehdotusjärjestelmän</a> avulla merkitsemällä ehdotuksen selitekenttään, että ehdotus koskee SLM-sanastoa."@fi ;
-        ns1:publisher    "Kansalliskirjasto"@fi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        dct:license      <http://creativecommons.org/publicdomain/zero/1.0/> ;
-        owl:imports      <http://www.w3.org/2004/02/skos/core> , <http://www.w3.org/2000/01/rdf-schema> , ns1: .
+slm:    a               owl:Ontology ;
+        dc:creator      "Lajityyppi- ja muotosanastoryhmä"@fi ;
+        dc:description  "Suomalainen lajityyppi- ja muotosanasto (SLM) on kaksikielinen sanasto aineistojen kuvailussa käytettävistä muotoa ja lajityyppiä eli genreä kuvaavista termeistä.\r\n\r\nSanaston on laatinut ja sitä ylläpitää Sisällönkuvailun asiantuntijaryhmän alainen Lajityyppi- ja muotosanastoryhmä, johon kuuluu jäseniä kirjastosektorin eri alueilta. Musiikin osalta sisällöstä vastaa Muusa-ryhmä.\r\n\r\nVoit ehdottaa uusia termejä ja muutoksia sanastoon <a href=\"//ehdotus.finto.fi/\">YSAn ja YSOn ehdotusjärjestelmän</a> avulla merkitsemällä ehdotuksen selitekenttään, että ehdotus koskee SLM-sanastoa."@fi ;
+        dc:publisher    "Kansalliskirjasto"@fi ;
+        dc:title        "Suomalainen lajityyppi- ja muotosanasto"@fi ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        dct:license     <http://creativecommons.org/publicdomain/zero/1.0/> ;
+        owl:imports     <http://www.w3.org/2004/02/skos/core> , <http://www.w3.org/2000/01/rdf-schema> , dc: .
 
 ysometa:StructuringClass
         a                rdfs:Class ;
