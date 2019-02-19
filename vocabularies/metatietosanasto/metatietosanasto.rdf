@@ -343,6 +343,12 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:aikakauslehti">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">aikakauslehti</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvakasikirjoitus">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -356,6 +362,20 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">handsskrift</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">käsikirjoitus</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:keskustelija">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Henkilö tai yhteisö, joka toimimalla keskustelijana osallistuu teoksen luomiseen.</skos:definition>
+    <skos:prefLabel xml:lang="sv">debattör</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">keskustelija</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:keskustelija(Ekspressio)">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">henkilö tai yhteisö, joka osallistuu ekspression sisältämään keskusteluosuuteen toimimalla keskustelijana.</skos:definition>
+    <skos:prefLabel xml:lang="sv">debattör (uttryck)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">keskustelija (ekspressio)</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:libretto">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -4325,6 +4345,7 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Ekspression ja toimijoiden väliset suhteet</rdfs:label>
     <rdfs:label xml:lang="sv">Relationer mellan uttryck och aktörer</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:keskustelija(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1043"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1096"/>
@@ -24301,6 +24322,7 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Relationer mellan verk och aktörer</rdfs:label>
     <rdfs:label xml:lang="fi">Teoksen ja toimijoiden väliset suhteet</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:keskustelija"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m103"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1037"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1042"/>
@@ -31616,6 +31638,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="sv">Verkets form</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10004"/>
     <skos:definition xml:lang="fi">Luokka tai genre, johon teos kuuluu.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aikakauslehti"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuvakasikirjoitus"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitus"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:libretto"/>
@@ -31644,6 +31667,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2188"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2212"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2252"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sanomalehti"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:savellys"/>
     <skos:prefLabel xml:lang="en">form of work</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset. Kun tarvitset tarkempaa genrejaottelua käytä Suomalaista lajityyppi- ja muotosanastoa (slm) http://finto.fi/slm/fi/</skos:scopeNote>
@@ -31704,6 +31728,12 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="en">dedicatee of</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohde</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sanomalehti">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">sanomalehti</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:savellys">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
