@@ -343,6 +343,20 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvakasikirjoitus">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">elokuvakäsikirjoitus</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">filmmanuskript</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitus">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">handsskrift</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">käsikirjoitus</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:libretto">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -31602,6 +31616,8 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="sv">Verkets form</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10004"/>
     <skos:definition xml:lang="fi">Luokka tai genre, johon teos kuuluu.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuvakasikirjoitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kasikirjoitus"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:libretto"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2004"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2048"/>
@@ -31628,6 +31644,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2188"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2212"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2252"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:savellys"/>
     <skos:prefLabel xml:lang="en">form of work</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset. Kun tarvitset tarkempaa genrejaottelua käytä Suomalaista lajityyppi- ja muotosanastoa (slm) http://finto.fi/slm/fi/</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets form-termer används för att skilja två olika verk med samma namn från varandra. För att ange mer detaljerad genreindelning, använd termer ur Finlands genre- och formlista (FGF) https://finto.fi/slm/sv/.</skos:scopeNote>
@@ -31687,5 +31704,13 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="en">dedicatee of</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohde</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:savellys">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Luovan musiikillisen työn tulos.</skos:definition>
+    <skos:prefLabel xml:lang="sv">komposition</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sävellys</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
