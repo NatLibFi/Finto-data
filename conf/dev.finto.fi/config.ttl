@@ -1042,7 +1042,6 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
 
-
 :ysoaristoteles a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, Aristoteles-versio"@fi,
 		"ALLFO - Allmän finländsk ontologi, Aristoteles version"@sv,
@@ -1064,6 +1063,30 @@
 	void:dataDump <http://dev.finto.fi/download/yso/releases/2017.1.Aristoteles/yso-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-aristoteles/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
+
+:ysoboethius a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia, Boethius-versio"@fi,
+		"ALLFO - Allmän finländsk ontologi, Boethius version"@sv,
+		"YSO - General Finnish ontology, Boethius version"@en ;
+	skosmos:shortName "YSO-B"@fi, "ALLFO-B"@sv, "YSO-B"@en;
+	
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:showChangeList "true" ;
+        skosmos:showPropertyInSearch skos:note ;
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "finna" ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2018.3.Boethius/yso-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2018.3.Boethius/yso-skos.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-boethius/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
 
 :tt a skosmos:Vocabulary, void:Dataset ;
