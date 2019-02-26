@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="ykl-metadata.ttl ykl.ttl"
+INFILES="ykl-metadata.ttl ykl.ttl ykl-hklj.ttl"
 OUTFILE=ykl-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
