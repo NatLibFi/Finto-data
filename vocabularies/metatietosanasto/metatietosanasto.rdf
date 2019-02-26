@@ -349,6 +349,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
+    <skos:definition xml:lang="fi">Liittää teoksen henkilöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
     <skos:prefLabel xml:lang="en">defendant person</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">henkilövastaaja</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
@@ -6094,10 +6095,11 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10048"/>
-    <skos:definition xml:lang="fi">henkilö, suku tai yhteisö, joka on omistanut teoksen jollekin</skos:definition>
+    <skos:altLabel xml:lang="fi">omistuksen tekijä</skos:altLabel>
+    <skos:altLabel xml:lang="fi">teoksen omistanut</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on omistanut teoksen jollekin.</skos:definition>
     <skos:prefLabel xml:lang="en">dedicator</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">dedicerat av</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">omistuksen tekijä</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teoksen omistuskirjoituksen tekijä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1761">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -24330,6 +24332,7 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Relationer mellan verk och aktörer</rdfs:label>
     <rdfs:label xml:lang="fi">Teoksen ja toimijoiden väliset suhteet</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:henkilovastaaja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m103"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1037"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1042"/>
@@ -24389,7 +24392,6 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m696"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m699"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m713"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m754"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m758"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m767"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m79"/>
@@ -24404,6 +24406,7 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:teoksenPerustaja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:toimituspaallikko"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tutkija"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:yhteisovastaaja"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3400">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -29750,15 +29753,6 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:prefLabel xml:lang="sv">Fragment</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Fragmentti</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m754">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">henkilö tai yhteisö joka on omistanut teoksen jollekin</skos:definition>
-    <skos:definition xml:lang="sv">person eller institution som har tillägnat någon ett verk</skos:definition>
-    <skos:prefLabel xml:lang="fi">teoksen omistanut</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">verk tillägnat av</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m755">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -31953,7 +31947,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10285"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
     <skos:definition xml:lang="fi">Liittää teoksen yhteisöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
-    <skos:prefLabel xml:lang="en">defendant instituion</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">defendant corporate body</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">yhteisövastaaja</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
