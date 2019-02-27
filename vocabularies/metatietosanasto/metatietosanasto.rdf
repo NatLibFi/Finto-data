@@ -343,17 +343,6 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:henkilovastaaja">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
-    <skos:definition xml:lang="fi">Liittää teoksen henkilöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
-    <skos:prefLabel xml:lang="en">defendant person</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">henkilövastaaja</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -24332,7 +24321,6 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Relationer mellan verk och aktörer</rdfs:label>
     <rdfs:label xml:lang="fi">Teoksen ja toimijoiden väliset suhteet</rdfs:label>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:henkilovastaaja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m103"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1037"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1042"/>
@@ -24377,6 +24365,11 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m352"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m354"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3571"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3577"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3578"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3579"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3580"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3581"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m38"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m384"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m397"/>
@@ -24403,10 +24396,6 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m986"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m997"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m999"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:teoksenPerustaja"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:toimituspaallikko"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tutkija"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:yhteisovastaaja"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3400">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -26473,6 +26462,39 @@ Vastavuoroinen suhde: henkilön tekemä kanne.</skos:definition>
     <skos:prefLabel xml:lang="fi">elokuvakäsikirjoitus</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">filmmanuskript</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3577">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10298"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1298"/>
+    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on juridisesti tai tiedollisesti vastuussa (muutoin kuin tekijänä) sarja-aineiston, päivittyvän aineiston tai moniosaisen monografian sisällöstä.</skos:definition>
+    <skos:prefLabel xml:lang="en">editorial director</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">toimituspäällikkö</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3578">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10285"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
+    <skos:definition xml:lang="fi">Liittää teoksen yhteisöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
+    <skos:prefLabel xml:lang="en">defendant corporate body</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">yhteisövastaaja</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3579">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
+    <skos:definition xml:lang="fi">Liittää teoksen henkilöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
+    <skos:prefLabel xml:lang="en">defendant person</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">henkilövastaaja</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m358">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -26483,6 +26505,27 @@ Vastavuoroinen suhde: henkilön tekemä kanne.</skos:definition>
     <skos:example xml:lang="fi">Varkaus (kaupunki)</skos:example>
     <skos:prefLabel xml:lang="fi">kaupunki</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">stad</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3580">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1298"/>
+    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka tukee teoksen syntymistä tutkimuksellaan.</skos:definition>
+    <skos:prefLabel xml:lang="en">researcher</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tutkija</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3581">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10299"/>
+    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on vastuussa sarja-aineiston, päivittyvän aineiston tai moniosaisen monografian perustamisesta.</skos:definition>
+    <skos:prefLabel xml:lang="en">founder of resource</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teoksen perustaja</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m359">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -31906,49 +31949,6 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="en">dedicatee of</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teoksen omistuskirjoituksen kohde</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teoksenPerustaja">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10299"/>
-    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on vastuussa sarja-aineiston, päivittyvän aineiston tai moniosaisen monografian perustamisesta.</skos:definition>
-    <skos:prefLabel xml:lang="en">founder of resource</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">teoksen perustaja</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:toimituspaallikko">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10298"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1298"/>
-    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on juridisesti tai tiedollisesti vastuussa (muutoin kuin tekijänä) sarja-aineiston, päivittyvän aineiston tai moniosaisen monografian sisällöstä.</skos:definition>
-    <skos:prefLabel xml:lang="en">editorial director</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">toimituspäällikkö</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tutkija">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1298"/>
-    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka tukee teoksen syntymistä tutkimuksellaan.</skos:definition>
-    <skos:prefLabel xml:lang="en">researcher</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">tutkija</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:yhteisovastaaja">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10285"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1396"/>
-    <skos:definition xml:lang="fi">Liittää teoksen yhteisöön, joka on syytettynä rikosprosessissa tai jota vastaan on nostettu kanne.</skos:definition>
-    <skos:prefLabel xml:lang="en">defendant corporate body</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">yhteisövastaaja</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
