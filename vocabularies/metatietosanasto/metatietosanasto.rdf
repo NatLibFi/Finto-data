@@ -379,12 +379,23 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:prefLabel xml:lang="fi">dubbausohjaaja</skos:prefLabel>
     <skos:prefLabel xml:lang="en">dubbing director</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esittelijä">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:erikoistehosteidenTekija">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20258"/>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu liikkuvaa kuvaa tai ääniteoksen sisältävän ekspression tekemiseen suunnittelemalla ja luomalla erikoistehosteet (kuvaus- tai tallennuspaikan mekaaniset tehosteet ja kameralla toteutettavat optiset tehosteet).</skos:definition>
+    <skos:prefLabel xml:lang="fi">erikoistehosteiden tekijä</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">special effects provider</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esittelija">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20013"/>
     <skos:definition xml:lang="fi">"Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen esiintymällä televisiossa tai elokuvassa taustatiedon antajana.</skos:definition>
     <skos:prefLabel xml:lang="fi">esittelijä</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">onscreen presenter</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jalkipuheenKirjoittaja">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -1606,6 +1617,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1773"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2178"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2304"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tallettaja"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1160">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -4390,6 +4402,9 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <rdfs:label xml:lang="sv">Relationer mellan uttryck och aktörer</rdfs:label>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:alkusanojenKirjoittaja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:artDirector"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:dubbausohjaaja"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:erikoistehosteidenTekija"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esittelija"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1043"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1096"/>
@@ -6125,10 +6140,12 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40015"/>
     <skos:definition xml:lang="fi">Henkilö, joka on tehnyt omakätisesti huomautuksia kappaleeseen.</skos:definition>
     <skos:definition xml:lang="sv">Person som egenhändigt gjort anmärkningar i ett exemplar.</skos:definition>
+    <skos:prefLabel xml:lang="en">annotator</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">författare till annotation</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">huomautusten tekijä</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">huomautusten kirjoittaja</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1759">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -6171,13 +6188,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:definition xml:lang="fi">henkilö, suku tai yhteisö,   joka osallistuu teoksen ekspressioon  restauroimalla ja/tai yhdistelemällä aikaisempia ekspressioita, jotka voivat olla vaurioituneita tai fragmentaarisia, uuden ekspression luomiseksi</skos:definition>
     <skos:prefLabel xml:lang="fi">entisöijä (ekspressio)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">konservator (uttryck)</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1761_1">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu liikkuvaa kuvaa tai ääniteoksen sisältävän ekspression tekemiseen suunnittelemalla ja luomalla erikoistehosteet (kuvaus- tai tallennuspaikan mekaaniset tehosteet ja kameralla toteutettavat optiset tehosteet).</skos:definition>
-    <skos:prefLabel xml:lang="fi">arikoistehosteiden tekijä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1762">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -18455,10 +18465,12 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m278">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20296"/>
     <skos:altLabel xml:lang="fi">DJ-miks. (DJ-miksaaja)</skos:altLabel>
     <skos:altLabel xml:lang="sv">DJ-mix. (DJ-mixer)</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1354"/>
     <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka miksaa ääniraitoja yhteen yhtäjaksoiseksi raidaksi live-esityksessä tai äänitysstudiossa.</skos:definition>
+    <skos:prefLabel xml:lang="en">DJ</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">DJ</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">DJ</skos:prefLabel>
   </owl:Class>
@@ -32061,5 +32073,21 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu ei-fiktiivisen liikkuvan kuvateoksen ekspression tekemiseen aktiivisena osallistujana.</skos:definition>
     <skos:prefLabel xml:lang="en">onscreen participant</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">osallistuja</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sensori">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20287"/>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu teoksen ekspression luomiseen tarkastamalla sisältöä kiistanalaisten osien salaamiseksi moraalisin, poliittisin, sotilaallisin tai muin perustein, jättäen alkuperäisen teoksen luonteen ja sisällön olennaisilta osiltaan muuttumattomaksi.</skos:definition>
+    <skos:prefLabel xml:lang="en">censor</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sensori</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tallettaja">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40006"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1743"/>
+    <skos:definition xml:lang="fi">Liittää kappaleen sen nykyiseen omistajaan, joka on antanut sen toisen toimijan hallintaan, vaikka laillisesti omistaa kappaleen.</skos:definition>
+    <skos:prefLabel xml:lang="fi">tallettaja</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
