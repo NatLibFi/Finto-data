@@ -582,6 +582,11 @@ public class Kokoaja2 {
 		return prefLabelKokoSubjektitMap;
 	}
 	
+	/* 
+     * Tämä metodi hakee koko-uri-vastaavuudet erikoisontologian käsiteille, tai jos sellaisia ei löydy, luo uudet koko-urit
+     * 
+     */
+	
 	public void muutaUritKokoUreiksi() {
 		HashSet<Resource> kokonSubjektitSet = new HashSet<Resource>();
 		HashSet<Resource> kokossaOlevatKokoUritTaiOikeamminResurssit = new HashSet<Resource>();
@@ -615,6 +620,8 @@ public class Kokoaja2 {
 			Collections.sort(eiYsoVektori);
 			kokoSubjektitVektori.addAll(eiYsoVektori);
 
+			
+			//kokonSubjektiVektorissa on nyt kaikki yhteen kokokäsitteeseen viittaavat urit ysosta ja erikoisontologioista
 			for (String uri:kokoSubjektitVektori) {
 				Resource subj = this.koko.createResource(uri);
 				Vector<Resource> ontoSubjSet = new Vector<Resource>();
@@ -649,6 +656,8 @@ public class Kokoaja2 {
 					}
 				}*/
 
+                    //Tästä eteenpäin loopin sisällä saattaa esiintyä virheitä:
+				
 					if (kokoSubj == null && this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj)) {
 						if (kokossaOlevatKokoUritTaiOikeamminResurssit.contains(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) {
 							kokoSubj = this.luoUusiKokoResurssi();
