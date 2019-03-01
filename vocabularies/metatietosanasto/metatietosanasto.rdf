@@ -343,6 +343,33 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Ammatti/harrastus">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m176"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Ammatti/harrastus</rdfs:label>
+    <rdfs:label xml:lang="sv">Yrke/intresse</rdfs:label>
+    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten kielellisyyttä kuvaavia termejä (esim. englanninkieliset, ruotsinkieliset, suomenkieliset).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:alkusanojenKirjoittaja">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20275"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m337"/>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen kirjoittamalla alkusanat alkuperäiseen teokseen.</skos:definition>
+    <skos:prefLabel xml:lang="fi">alkusanojen kirjoittaja</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">writer of foreword</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:artDirector">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen valvomalla elokuva- tms. tuotannon taiteilijoita ja lavasterakentajia.</skos:definition>
+    <skos:prefLabel xml:lang="fi">art director</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -4317,6 +4344,8 @@ Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen takti
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="fi">Ekspression ja toimijoiden väliset suhteet</rdfs:label>
     <rdfs:label xml:lang="sv">Relationer mellan uttryck och aktörer</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:alkusanojenKirjoittaja"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:artDirector"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1043"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1096"/>
@@ -4629,8 +4658,8 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Avsedd för vuxenstudier.</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Tarkoitettu aikuisopiskeluun.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">aikuisopiskelu</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">vuxenstudier</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1565">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -11010,8 +11039,7 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2216"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2217"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2218"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m335"/>
-    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten opiskelutasoa kuvaavia termejä.</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten opiskelutasoa kuvaavia termejä (esim. aikuisopiskelu, peruskoulu, lukio).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2195">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -11021,6 +11049,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Kieli</rdfs:label>
     <rdfs:label xml:lang="sv">Språk</rdfs:label>
+    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten kielellisyyttä kuvaavia termejä (esim. englanninkieliset, ruotsinkieliset, suomenkieliset).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2196">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -11032,6 +11061,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Ålder</rdfs:label>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1088"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1245"/>
+    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten kronologista ikää kuvaavia termejä (esim. Ikäsuositus 3+).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2197">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -18379,9 +18409,9 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <skos:altLabel xml:lang="fi">DJ-miks. (DJ-miksaaja)</skos:altLabel>
     <skos:altLabel xml:lang="sv">DJ-mix. (DJ-mixer)</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1354"/>
-    <skos:definition xml:lang="fi">henkilö tai yhteisö, joka henkilö tai yhteisö, joka luo äänitekokonaisuuden (ns. mix album, mix tape, mix CD tmv.) erillisistä levytyksistä tai niiden osista yhdistämällä ne (yleensä) tauottomaksi jatkumoksi ja muokkaamalla usein myös levytysten pituutta ja/tai audiokuvaa esim. efektilaitteiden ja/tai taajuuskorjaimien avulla</skos:definition>
-    <skos:prefLabel xml:lang="fi">DJ-miksaaja</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">DJ-mixer</skos:prefLabel>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka miksaa ääniraitoja yhteen yhtäjaksoiseksi raidaksi live-esityksessä tai äänitysstudiossa.</skos:definition>
+    <skos:prefLabel xml:lang="fi">DJ</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">DJ</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2780">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -23843,15 +23873,6 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <skos:prefLabel xml:lang="en">film producer</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">filmproducent</skos:prefLabel>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m335">
-    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Kurser:</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Kurssit:</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3350">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -24043,6 +24064,7 @@ jurisdiktionsområde än det lagstiftande.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20046"/>
     <skos:definition xml:lang="fi">henkilö tai yhteisö, joka osallistuu ekspression tekemiseen tuottamalla alkuteosta täydentävää tekstiä (esim. johdannon, esipuheen)</skos:definition>
     <skos:definition xml:lang="sv">person eller institution som deltar i förverkligandet av ett uttryck genom att producera text (t.ex. introduktion, förord) som kompletterar ett originalverk</skos:definition>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:alkusanojenKirjoittaja"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m126"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1400"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1749"/>
