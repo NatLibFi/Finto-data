@@ -659,7 +659,7 @@ public class Kokoaja2 {
                     //Tästä eteenpäin loopin sisällä saattaa esiintyä virheitä:
 				
 					if (kokoSubj == null && this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj)) {
-						if (kokossaOlevatKokoUritTaiOikeamminResurssit.contains(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) {
+						if (!kokossaOlevatKokoUritTaiOikeamminResurssit.contains(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) {
 							kokoSubj = this.luoUusiKokoResurssi();
 						} else {
 							kokoSubj = this.ontoKokoResurssivastaavuudetMap.get(ontoSubj);
