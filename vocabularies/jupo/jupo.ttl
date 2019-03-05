@@ -1,3 +1,8 @@
+# baseURI: http://www.yso.fi/onto/jupo/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.yso.fi/onto/yso/
+# prefix: jupo
+
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix jupo: <http://www.yso.fi/onto/jupo/> .
@@ -74,6 +79,14 @@ jupo-meta:tempConcept a owl:Class ;
 jupo: a owl:Ontology ;
     owl:imports <http://www.w3.org/2004/02/skos/core>,
         yso: .
+
+jupo:asiointineuvonta a jupo-meta:DeprecatedConcept ;
+    rdfs:subClassOf jupo-meta:deprecatedConcepts ;
+    owl:deprecated true ;
+    skos:prefLabel "servicerådgivning"@sv, "asiointineuvonta"@fi, "service guidance"@en ;
+    skos:inScheme jupo:deprecatedconceptscheme ;
+    yso-meta:comment "deprecated on 28.09.2017" ;
+    yso-meta:deprecatedReplacedBy jupo:3025 .
 
 jupo:p1001 a jupo-meta:Concept ;
     dc:source "JHS" ;
@@ -4637,7 +4650,6 @@ jupo:p1597 a jupo-meta:Concept ;
     yso-meta:singularPrefLabel "children's and youth home"@en .
 
 jupo:p1598 a jupo-meta:DeprecatedConcept ;
-    dct:isReplacedBy "juristit" ;
     rdfs:subClassOf jupo-meta:deprecatedConcepts ;
     owl:deprecated true ;
     skos:prefLabel "lakimiehet"@fi,
@@ -12564,18 +12576,6 @@ jupo:p3025 a jupo-meta:Concept ;
     jupo-meta:note "A service that gives guidance and advice on using especially public services."@en,
         "Palvelu, joka opastaa ja neuvoo etenkin julkisen sektorin asiointipalvelujen käytössä."@fi,
         "En tjänst som ger råd och vägledning speciellt i användningen av allmänna tjänster."@sv .
-
-jupo:p3026 a jupo-meta:Concept ;
-    rdfs:subClassOf jupo-meta:JUPO-kasitteet ;
-    skos:prefLabel "service guidance"@en,
-        "asiointineuvonta"@fi,
-        "servicerådgivning"@sv .
-
-jupo:p3027 a jupo-meta:Concept ;
-    rdfs:subClassOf jupo-meta:JUPO-kasitteet ;
-    skos:prefLabel "service guidance"@en,
-        "asiointineuvonta"@fi,
-        "servicerådgivning"@sv .
 
 jupo:p303 a jupo-meta:Concept ;
     dc:source "TEM" ;
