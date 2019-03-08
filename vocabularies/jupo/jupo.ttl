@@ -12576,15 +12576,12 @@ jupo:p3026 a jupo-meta:Concept ;
         "aktiivisuusedellytys"@fi,
         "aktivitetskrav"@sv .
 
-jupo:p3027 a jupo-meta:DeprecatedConcept ;
-    rdfs:subClassOf jupo-meta:deprecatedConcepts ;
-    owl:deprecated true ;
-    skos:inScheme jupo:p3028 ;
+jupo:p3027 a jupo-meta:Concept ;
+    rdfs:subClassOf jupo-meta:JUPO-kasitteet,
+        yso:p16262 ;
     skos:prefLabel "activation model"@en,
         "aktiivimalli"@fi,
-        "aktiveringsmodellen"@sv ;
-    yso-meta:comment "deprecated on 28.09.2017" ;
-    yso-meta:deprecatedReplacedBy jupo:p3029 .
+        "aktiveringsmodellen"@sv .
 
 jupo:p303 a jupo-meta:Concept ;
     dc:source "TEM" ;
@@ -19120,8 +19117,8 @@ jupo:p2799 a jupo-meta:GroupConcept ;
 
 jupo:p2810 a jupo-meta:Concept ;
     dc:source "Hki" ;
-    rdfs:comment """avopalvelu: palvelu, jonka antamiseen ei liity yhtäjaksoista, ympärivuorokautista palveluvastuuta sosiaali- ja terveydenhuollon toimintayksikössä\r
-Avopalveluja voivat olla sekä toimintayksiköissä annettavat palvelut (esim. vastaanotto- ja poliklinikkapalvelut) että toimintayksiköiden ulkopuolella annettavat palvelut (esim. kotipalvelu). Joihinkin avopalveluihin, kuten päiväsairaalapalveluihin ja vanhusten kotipalveluihin, voi kuulua myös ateria- ja asumispalveluja. Avopalvelutoiminnaksi katsotaan nykyisin myös ns. intervalli- eli jaksoittaishoidot, joissa avo- ja laitospalvelujaksot vuorottelevat.\r
+    rdfs:comment """avopalvelu: palvelu, jonka antamiseen ei liity yhtäjaksoista, ympärivuorokautista palveluvastuuta sosiaali- ja terveydenhuollon toimintayksikössä
+Avopalveluja voivat olla sekä toimintayksiköissä annettavat palvelut (esim. vastaanotto- ja poliklinikkapalvelut) että toimintayksiköiden ulkopuolella annettavat palvelut (esim. kotipalvelu). Joihinkin avopalveluihin, kuten päiväsairaalapalveluihin ja vanhusten kotipalveluihin, voi kuulua myös ateria- ja asumispalveluja. Avopalvelutoiminnaksi katsotaan nykyisin myös ns. intervalli- eli jaksoittaishoidot, joissa avo- ja laitospalvelujaksot vuorottelevat.
 Lähde: Sosiaali- ja terveydenhuollon asiakas- ja potilasasiakirjasanasto (Stakes ja TSK, 1995)""" ;
     rdfs:subClassOf jupo-meta:JUPO-kasitteet,
         yso:p824 ;
@@ -20214,6 +20211,13 @@ jupo:p84 a jupo-meta:Concept ;
     jupo-meta:subject "terveys" ;
     yso-meta:singularPrefLabel "hospital"@en .
 
+jupo-meta:DeprecatedConcept a owl:Class ;
+    rdfs:subClassOf jupo-meta:DeprecatedClass .
+
+jupo-meta:deprecatedConcepts a jupo-meta:StructuringClass ;
+    rdfs:subClassOf owl:Thing ;
+    skos:prefLabel "JUPO deprekoidut käsitteet"@fi .
+
 jupo:p2628 a jupo-meta:Concept ;
     rdfs:subClassOf jupo:p2555 ;
     skos:altLabel "education in metalwork and machinery"@en,
@@ -20285,13 +20289,6 @@ jupo:p794 a jupo-meta:Concept ;
     skos:prefLabel "rental of plots"@en,
         "tonttien vuokraus"@fi,
         "tomtuthyrning"@sv .
-
-jupo-meta:DeprecatedConcept a owl:Class ;
-    rdfs:subClassOf jupo-meta:DeprecatedClass .
-
-jupo-meta:deprecatedConcepts a jupo-meta:StructuringClass ;
-    rdfs:subClassOf owl:Thing ;
-    skos:prefLabel "JUPO deprekoidut käsitteet"@fi .
 
 jupo:p192 a jupo-meta:Concept ;
     rdfs:subClassOf jupo-meta:JUPO-kasitteet,
@@ -20915,14 +20912,6 @@ jupo:p2555 a jupo-meta:GroupConcept ;
     skos:prefLabel "vocational education and training by field"@en,
         "ammatillinen koulutus alan mukaan"@fi,
         "yrkesutbildning enligt område"@sv .
-
-jupo:asiointineuvonta a jupo-meta:DeprecatedConcept ;
-    rdfs:subClassOf jupo-meta:deprecatedConcepts ;
-    owl:deprecated true ;
-    skos:prefLabel "servicerådgivning"@sv, "asiointineuvonta"@fi, "service guidance"@en ;
-    skos:inScheme jupo:deprecatedconceptscheme ;
-    yso-meta:comment "deprecated on 28.09.2017" ;
-    yso-meta:deprecatedReplacedBy jupo:p3025 .
 
 jupo-meta:JUPO-kasitteet a jupo-meta:StructuringClass ;
     rdfs:subClassOf owl:Thing ;
