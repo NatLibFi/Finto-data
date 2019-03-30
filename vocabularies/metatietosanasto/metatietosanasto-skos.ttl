@@ -2711,12 +2711,13 @@ mts:m1328 a skos:Concept ;
     skos:scopeNote "Teoksen tekijä"@fi .
 
 mts:m1333 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50301 ;
     skos:example "Yhteisö: Metsänhoitoyhdistys Ylä-Savo ; yhteisöön sulautunut: Iisalmen metsänhoitoyhdistys"@fi,
         "Närpes sparbank ; i vilken uppgått Övermark sparbank."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "yhteisöön sulautunut"@fi,
+    skos:prefLabel "sulautunut yhteisö"@fi,
         "i vilken uppgått"@sv ;
-    skos:scopeNote "Yhteisön kuvailussa viitataan siihen  sulautuneeseen yhteisöön."@fi,
+    skos:scopeNote "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön."@fi,
         "Vid beskrivning av institution görs en hänvisning till institutioner som uppgått i institutionen."@sv .
 
 mts:m1335 a skos:Concept ;
@@ -4999,6 +5000,7 @@ mts:m1776 a isothes:ConceptGroup,
         mts:m142,
         mts:m1618,
         mts:m1777,
+        mts:m3642,
         mts:m874,
         mts:m925 ;
     skos:prefLabel "Yhteisöjen väliset suhteet"@fi,
@@ -11982,6 +11984,12 @@ mts:m3641 a isothes:ConceptGroup,
     skos:definition "Maatalouden, metsätalouden ja kalatalouden alkutuotantoa eli kasvinviljelyä, kotieläinten kasvatusta, metsänhoitoa, puunkorjuuta, metsästystä, kalastusta ja kalanviljelyä harjoittavat ja palvelevat toimijat. Pääluokkaan eivät kuulu eläinlääkärit (ks. terveys- ja sosiaaliala), maatilamatkailuyritykset (ks. majoitus- ja ravitsemisala) eivätkä puutavaran kuljetusta (ks. logistiikka-ala) tai tuotteiden jatkojalostusta (ks. teollisuus) harjoittavat toimijat."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "maa-, metsä- ja kalatalous"@fi .
+
+mts:m3642 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50229 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jakautunut yhteisö"@fi ;
+    skos:scopeNote "Liittää yhteisön yhteisöön, joka on jakautunut toiseen yhteisöön."@fi .
 
 mts:m372 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35082,7 +35090,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-03-29T04:08:28+00:00"^^xsd:dateTime ;
+    dct:modified "2019-03-30T04:17:10+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
