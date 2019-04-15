@@ -143,7 +143,7 @@ public class Kokoaja2 {
 		Resource skosConcept = this.onto.createResource(this.skosNs + "Concept");
 
 		Resource ysoConcept = this.koko.createResource(ysoMetaNs + "Concept");
-		Literal fiLabel = this.koko.createLiteral("YSO-kasite", "fi");
+		Literal fiLabel = this.koko.createLiteral("YSO-käsite", "fi");
 		Literal enLabel = this.koko.createLiteral("YSO Concept", "en");
 		Literal svLabel = this.koko.createLiteral("Allfo-begrepp", "sv");
 		this.koko.add(ysoConcept, RDF.type, OWL.Class);
@@ -201,20 +201,20 @@ public class Kokoaja2 {
 						}
 					} else if (!propertytJoitaEiHalutaKokoon.contains(stmt.getPredicate())) {
 
-						//Lisatty tarkistus siita ettei kokoon oteta ysossa olevia kokoon viittaavia exactMatcheja
+						//Lisätty tarkistus siitä ettei kokoon oteta ysossa olevia kokoon viittaavia exactMatcheja
 
 						if (stmt.getObject().isURIResource() ) {
 							if ( !((Resource)stmt.getObject()).getNameSpace().equals(this.kokoNs) )
 								this.koko.add(kokoSubj, stmt.getPredicate(), stmt.getObject());
 						} else {
-							//Literaaleille ei tallaista terkistusta tehda
+							//Literaaleille ei tällaista terkistusta tehdä
 							this.koko.add(kokoSubj, stmt.getPredicate(), stmt.getObject());
 						}
 					}
 			}
 		}
 	}
-
+	//miksi tämä ei lue skos:broaderia soton p667:lle?
 	public void lueOnto(String ontonPolku, Resource ontoTyyppi) {
 		System.out.println("Luetaan " + ontonPolku);
 		this.onto = JenaHelpers.lueMalliModeliksi(ontonPolku);
@@ -233,7 +233,7 @@ public class Kokoaja2 {
 
 		while (resIter.hasNext()) {
 			Resource ontoSubj = resIter.nextResource();
-			//lisattiin tarkistus deprekoitujen kasitteiden valttamiseksi
+			//lisättiin tarkistus deprekoitujen käsitteiden välttämiseksi
 
 			if (!this.mustaLista.contains(ontoSubj) && !this.onto.contains(ontoSubj, RDF.type, deprecated)) {
 				ontonOntoTyyppisetResurssit.add(ontoSubj);
@@ -249,7 +249,7 @@ public class Kokoaja2 {
 			Statement stmt = iter.nextStatement();
 			Resource subj = stmt.getSubject();
 			Resource obj = (Resource)stmt.getObject();
-			//Lisatty tarkistus siita ettei exactMatcheja kokoon haeta ontologioista (ts. Koko kootaan ysoon osoittavien exactMatchien perusteella)
+			//Lisätty tarkistus siitä ettei exactMatcheja kokoon haeta ontologioista (ts. Koko kootaan ysoon osoittavien exactMatchien perusteella)
 			if (ontonOntoTyyppisetResurssit.contains(subj) && !obj.getNameSpace().equals(this.kokoNs)) {
 				HashSet<Resource> matchitSet = new HashSet<Resource>();
 				if (ontonExactMatchitMap.containsKey(subj)) {
@@ -420,7 +420,7 @@ public class Kokoaja2 {
 		for (Statement stmt:lisattavat) this.koko.add(stmt);
 	}
 
-	// palautetaan paras prefLabel joukosta kandidaatteja - ensimmainen kriteeri on sulkutarkenteet (jos on, hyva), toinen pituus (lyhyempi parempi), kolmas aakkosjarjestys
+	// palautetaan paras prefLabel joukosta kandidaatteja - ensimmäinen kriteeri on sulkutarkenteet (jos on, hyvä), toinen pituus (lyhyempi parempi), kolmas aakkosjärjestys
 	public String palautaPrefLabeliksiSopivin(HashSet<String> kandidaatitSet) {
 		String paras = null;
 		for (String kandidaatti:kandidaatitSet) {
@@ -470,8 +470,10 @@ public class Kokoaja2 {
 					Collections.sort(broaderitVector);
 					String broaderitString = "";
 					for (int i = 0; i < broaderitVector.size(); i++) {
-						broaderitString += broaderitVector.get(i);
-						if (i < broaderitVector.size()-1) broaderitString += ", "; 
+						if (broaderitVector.get(i).trim().length() > 0) {
+							broaderitString += broaderitVector.get(i);
+							if (i < broaderitVector.size()-1) broaderitString += ", ";
+						}
 					}
 					HashSet<Resource> resSet = new HashSet<Resource>();
 					if (broaderStringResSetMap.containsKey(broaderitString)) resSet = broaderStringResSetMap.get(broaderitString);
@@ -600,172 +602,128 @@ public class Kokoaja2 {
 		return prefLabelKokoSubjektitMap;
 	}
 	/**
-	 * Vaihtoehtoinen metodi joka valitsee keskeisen kasitteen kullekin kasiteryppaalle
+	 * Vaihtoehtoinen metodi joka valitsee keskeisen käsitteen kullekin käsiteryppäälle
 	 *  @author joelitak
 	 *  @version 0.3
 	 *  @since 2019-03-07
 	 */
 	public void vaihtoehtoinenMuutaUritKokoUreiksi() {
-		//testataan kasitteiden maaraa 1.
-		System.out.println("Kokossa kasitteita: " + this.koko.listSubjects().toList().size());
+		//testataan käsitteiden määrää 1.
+		System.out.println("Kokossa käsitteitä: " + this.koko.listSubjects().toList().size());
 
-		HashMap<Resource, HashSet<Resource>> ryhmaIndeksi = new HashMap<>();
+		HashMap<Resource, HashSet<Resource>> ryhmäIndeksi = new HashMap<>();
 		Property skosExactMatch = this.koko.createProperty(this.skosNs + "exactMatch");
 
-		// Muodosta kasiterymia jotka linkittyvat toisiinsa skos:exactMatchien avulla
-		HashSet<Statement> kaikkiLinkitetytKasitteet = new HashSet<Statement>();
+		// Muodosta käsiterymiä jotka linkittyvät toisiinsa skos:exactMatchien avulla
+		HashSet<Statement> kaikkiLinkitetytKäsitteet = new HashSet<Statement>();
 
 		StmtIterator iter1 = this.koko.listStatements(null, skosExactMatch, (RDFNode)null);
-		kaikkiLinkitetytKasitteet.addAll(iter1.toSet());
+		kaikkiLinkitetytKäsitteet.addAll(iter1.toSet());
 
-		for (Statement linkki : kaikkiLinkitetytKasitteet) {
+		for (Statement linkki : kaikkiLinkitetytKäsitteet) {
 			Resource A = linkki.getSubject();
 			Resource B = linkki.getResource();
 
-			if ( ryhmaIndeksi.containsKey(A) &&
-					ryhmaIndeksi.containsKey(B) &&
-					ryhmaIndeksi.get(A) != ryhmaIndeksi.get(B) ) {
+			if ( ryhmäIndeksi.containsKey(A) &&
+					ryhmäIndeksi.containsKey(B) &&
+					ryhmäIndeksi.get(A) != ryhmäIndeksi.get(B) ) {
 
-				//yhdista ryhmat
-				ryhmaIndeksi.get(A).addAll(ryhmaIndeksi.get(B));
-				ryhmaIndeksi.remove(B);
-				ryhmaIndeksi.put(B, ryhmaIndeksi.get(A));
+				//yhdistä ryhmät
+				ryhmäIndeksi.get(A).addAll(ryhmäIndeksi.get(B));
+				ryhmäIndeksi.remove(B);
+				ryhmäIndeksi.put(B, ryhmäIndeksi.get(A));
 
-			} else if ( ryhmaIndeksi.containsKey(A) ) {
-				//lisaa olemassaolevaan
-				ryhmaIndeksi.get(A).add(B);
-			} else if ( ryhmaIndeksi.containsKey(B) ) {
-				//lisaa olemassaolevaan
-				ryhmaIndeksi.get(B).add(A);
+			} else if ( ryhmäIndeksi.containsKey(A) ) {
+				//lisää olemassaolevaan
+				ryhmäIndeksi.get(A).add(B);
+			} else if ( ryhmäIndeksi.containsKey(B) ) {
+				//lisää olemassaolevaan
+				ryhmäIndeksi.get(B).add(A);
 			} else {
-				//luo uusi ryhma
+				//luo uusi ryhmä
 				HashSet<Resource> uusi = new HashSet<Resource>();
 				uusi.add(A);
 				uusi.add(B);
-				ryhmaIndeksi.put(A, uusi);
-				ryhmaIndeksi.put(B, uusi);
+				ryhmäIndeksi.put(A, uusi);
+				ryhmäIndeksi.put(B, uusi);
 			}
 		}
 
-		//Lisaa viela kaikki skos:Conceptit etta erilleen jaavat kasitteet tulevat kokoon mukaan
+		//Lisää vielä kaikki skos:Conceptit että erilleen jäävät käsitteet tulevat kokoon mukaan
 		StmtIterator iter3 = this.koko.listStatements(null, RDF.type, this.koko.createResource(this.skosNs+"Concept"));
 
 		while (iter3.hasNext()) {
 			Resource subj = iter3.next().getSubject();
 
-			if (!ryhmaIndeksi.containsKey(subj)) {
+			if (!ryhmäIndeksi.containsKey(subj)) {
 				HashSet<Resource> newSet = new HashSet<Resource>();
 				newSet.add(subj);
-				ryhmaIndeksi.put(subj, newSet);
+				ryhmäIndeksi.put(subj, newSet);
 			}		
 
 		}
 
-		//Jokaiselle kasiteryhmalle, listaa kaikki kasitteet ja valitse niista pienin kokourivastaavuus vanhasta kokosta
-		for (HashSet<Resource> ryhma : ryhmaIndeksi.values()) {
-			Vector<Resource> ryhmanKokot = new Vector<Resource>();
-			for (Resource r : ryhma) {
+		//Jokaiselle käsiteryhmälle, listaa kaikki käsitteet ja valitse niistä pienin kokourivastaavuus vanhasta kokosta
+		for (HashSet<Resource> ryhmä : ryhmäIndeksi.values()) {
+			Vector<Resource> ryhmänKokot = new Vector<Resource>();
+			for (Resource r : ryhmä) {
 				Resource uusiKoko = this.ontoKokoResurssivastaavuudetMap.get(r);
 				if (uusiKoko != null) {
-					ryhmanKokot.add(uusiKoko);
+					ryhmänKokot.add(uusiKoko);
 				} 
 			}
-			//Jos kokourivastaavuutta ei loydy, luo uusi kokouri
-			if (ryhmanKokot.size() == 0 || ryhmanKokot.get(0) == null) {
-				ryhmanKokot.add(luoUusiKokoResurssi());
+			//Jos kokourivastaavuutta ei löydy, luo uusi kokouri
+			if (ryhmänKokot.size() == 0 || ryhmänKokot.get(0) == null) {
+				ryhmänKokot.add(luoUusiKokoResurssi());
 			} else {
 
-				Collections.sort(ryhmanKokot, new ResourceComparator());
+				Collections.sort(ryhmänKokot, new ResourceComparator());
 			}
-			Resource kokoSubj = ryhmanKokot.get(0);
+			Resource kokoSubj = ryhmänKokot.get(0);
 
-			for (Resource ontoSubj:ryhma) {
+			for (Resource ontoSubj:ryhmä) {
 
-				//Miksi tama tehdaan kummallekin?
+				//Miksi tämä tehdään kummallekin?
 				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(ontoSubj, kokoSubj);
 				this.ontoKokoResurssivastaavuudetMap.put(ontoSubj, kokoSubj);
 			}
 
-			for (Resource r : ryhma) {
+			for (Resource r : ryhmä) {
 				this.muutaKokoSubj(r, kokoSubj);
 			}
 			//Poista muut viittaukset kokoureihin ?
 
-			for (int i=1 ; i<ryhmanKokot.size(); i++) {
-				if (!kokoSubj.equals(ryhmanKokot.get(i)))
-					this.koko.add(ryhmanKokot.get(i), DCTerms.isReplacedBy, kokoSubj);
+			for (int i=1 ; i<ryhmänKokot.size(); i++) {
+				if (!kokoSubj.equals(ryhmänKokot.get(i)))
+					this.koko.add(ryhmänKokot.get(i), DCTerms.isReplacedBy, kokoSubj);
 			}
 
 		}
 
-		//Korjaus: viedaan kaikki hierarkiaan kiinnittamattomat kasitteet omaan laariinsa
-
-		ResIterator irtoIter = this.koko.listSubjects();
-		Resource ysoConcept = this.koko.getResource("http://www.yso.fi/onto/yso-meta/Concept");
-		Resource skosConcept = this.koko.getResource(this.skosNs+"Concept");
-		Property broader = this.koko.getProperty(this.skosNs+"broader");
-		Property prefLabel = this.koko.getProperty(this.skosNs+"prefLabel");
-
-		Resource juuri = this.luoUusiKokoResurssi();
-
-		this.koko.add(juuri, prefLabel, "kiinnittamattomat kasitteet", "fi");
-		this.koko.add(juuri, RDF.type, skosConcept);
-
-		while (irtoIter.hasNext()) {
-
-			Resource res = irtoIter.nextResource();
-			if ( !this.koko.contains(res, RDF.type, ysoConcept) &&
-					!this.koko.contains(res, broader, (RDFNode)null) ) {
-
-				if ( this.koko.contains(res, RDF.type, (RDFNode)null) &&
-						!this.koko.contains(res, RDF.type, OWL.Class) )
-					//Tama kasite tarvitsee vanhemman, muuten siita tulee juurikasite
-					this.koko.add(res, broader, juuri);
-
-			}
-
-
-		}
-
-
-		//Valitarkistus: listaa kaikki kokon subjektit jotka eivat ole kokouriresursseja
-		//(kokossa saa olla muuiden nimiavaruuksien kasitteista vain replacedByt)
-
-		//		ResIterator iter4 = this.koko.listSubjects();
-		//		while (iter4.hasNext()) {
-		//			Resource r = iter4.next();
-		//			if (!r.getURI().contains(this.kokoNs)) {
-		//				
-		//				//AGOOGA!
-		//				System.out.println("Hei, tallaisia ei pitaisi olla kokossa: " + r.getURI());
-		//			}
-		//			
-		//		}
-
-		//testataan kasitteiden maaraa 2.
-		System.out.println("Kokossa kasitteita urittamisen jalkeen: " + this.koko.listSubjects().toList().size());
+		//testataan käsitteiden määrää 2.
+		System.out.println("Kokossa käsitteitä urittamisen jälkeen: " + this.koko.listSubjects().toList().size());
 
 	}
 
 	private void valiTarkistus(String filename) {
 
-		//Tehdaan valitallennus kokosta tassa kohtaa:
+		//Tehdään välitallennus kokosta tässä kohtaa:
 		try {
-			System.out.println("Kirjoitetaan valikoko...");
+			System.out.println("Kirjoitetaan välikoko...");
 			this.koko.write((new FileWriter(filename)), "TTL");
 		} catch (IOException e) {
-			System.out.println("MITaSMITaS");
+			System.out.println("MITÄSMITÄS");
 			e.printStackTrace();
 		}
 	}
 
 	/* 
-	 * Tama metodi hakee koko-uri-vastaavuudet erikoisontologian kasiteille, tai jos sellaisia ei loydy, luo uudet koko-urit
+	 * Tämä metodi hakee koko-uri-vastaavuudet erikoisontologian käsiteille, tai jos sellaisia ei löydy, luo uudet koko-urit
 	 * 
 	 */
 
 	public void muutaUritKokoUreiksi() {
-		System.out.println("Kokossa kasitteita ennen kurittamista: " + this.koko.listSubjects().toList().size());
+		System.out.println("Kokossa käsitteitä ennen kurittamista: " + this.koko.listSubjects().toList().size());
 		HashSet<Resource> kokonSubjektitSet = new HashSet<Resource>();
 		HashSet<Resource> kokossaOlevatKokoUritTaiOikeamminResurssit = new HashSet<Resource>();
 		Vector<HashSet<Resource>> kokonKasitteetSittenReplacedBytVektori = new Vector<HashSet<Resource>>();
@@ -799,14 +757,14 @@ public class Kokoaja2 {
 			kokoSubjektitVektori.addAll(eiYsoVektori);
 
 
-			//kokonSubjektiVektorissa on nyt kaikki yhteen kokokasitteeseen viittaavat urit ysosta ja erikoisontologioista
-			//Talla hetkella kokoaja suosii liikaa yson kautta tulevia kokokasitteita. Kannattaa muuttaa muotoon, jossa otetaan kaikkien subjektivektorin kautta linkittyvien kokourien pienin
+			//kokonSubjektiVektorissa on nyt kaikki yhteen kokokäsitteeseen viittaavat urit ysosta ja erikoisontologioista
+			//Tällä hetkellä kokoaja suosii liikaa yson kautta tulevia kokokäsitteitä. Kannattaa muuttaa muotoon, jossa otetaan kaikkien subjektivektorin kautta linkittyvien kokourien pienin
 
 			for (String uri:kokoSubjektitVektori) {
 				Resource subj = this.koko.createResource(uri);
 				Vector<Resource> ontoSubjSet = new Vector<Resource>();
 				ontoSubjSet.add(subj);
-				Vector<String> eiYsoSubjSet = new Vector<String>(); //sisaltaa myos yso-subjektin silloin kun kaydaan tata lapi erikoisontologian kasitteille
+				Vector<String> eiYsoSubjSet = new Vector<String>(); //sisältää myös yso-subjektin silloin kun käydään tätä läpi erikoisontologian käsitteille
 				iter = this.koko.listStatements(subj, skosExactMatch, (RDFNode)null);
 				while (iter.hasNext()) {
 					Statement stmt = iter.nextStatement();
@@ -836,7 +794,7 @@ public class Kokoaja2 {
 					}
 				}*/
 
-					//Tasta eteenpain loopin sisalla saattaa esiintya virheita:
+					//Tästä eteenpäin loopin sisällä saattaa esiintyä virheitä:
 
 
 
@@ -844,21 +802,21 @@ public class Kokoaja2 {
 
 
 						if (!kokossaOlevatKokoUritTaiOikeamminResurssit.contains(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) { 
-							//jos paakasitetta ei ole valittu,
-							//vuorossa oleva kasite loytyy kokosta
-							//ja jos sita ei ole tamankertaisessa ajossa ajettu kokoon
-							//luodaan uusi paakasite
+							//jos pääkäsitettä ei ole valittu,
+							//vuorossa oleva käsite löytyy kokosta
+							//ja jos sitä ei ole tämänkertaisessa ajossa ajettu kokoon
+							//luodaan uusi pääkäsite
 							kokoSubj = this.luoUusiKokoResurssi(); 
 						} else {
-							//jos paakasitetta ei ole valittu,
-							//vuorossa oleva kasite loytyy kokosta,
-							//ja vuorossa olevaa kasitetta on tamankertaisessa ajossa ajettu kokoon,
-							//tehdaan vuorossa olevasta kasitteesta paakasite
+							//jos pääkäsitettä ei ole valittu,
+							//vuorossa oleva käsite löytyy kokosta,
+							//ja vuorossa olevaa käsitettä on tämänkertaisessa ajossa ajettu kokoon,
+							//tehdään vuorossa olevasta käsitteestä pääkäsite
 							kokoSubj = this.ontoKokoResurssivastaavuudetMap.get(ontoSubj); 
 						}
 					} else if (kokoSubj != null && this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj) && !kokoSubj.equals(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) { 
 
-						//jos paakasite on valittu
+						//jos pääkäsite on valittu
 						this.koko.add(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj), DCTerms.isReplacedBy, kokoSubj); 
 					}
 
@@ -876,7 +834,7 @@ public class Kokoaja2 {
 				this.muutaKokoSubj(subj, kokoSubj);
 			}
 		}
-		System.out.println("Kokossa kasitteita kurittamisen jalkeen: " + this.koko.listSubjects().toList().size());
+		System.out.println("Kokossa käsitteitä kurittamisen jälkeen: " + this.koko.listSubjects().toList().size());
 	}
 
 	private void muutaKokoSubj(Resource vanhaSubj, Resource uusiSubj) {
@@ -1143,14 +1101,14 @@ public class Kokoaja2 {
 			Resource korvaava = (Resource)(stmt.getObject());
 
 			poistettavat.add(stmt);
-			
-			/*Ei otetakaan huomioon korvaavuussuhteita kahden koko-kasitteen valilla
-			 * jos korvattava koko-kasite on korvattu useammalla koko-kasitteella 
+
+			/*Ei otetakaan huomioon korvaavuussuhteita kahden koko-käsitteen välillä
+			 * jos korvattava koko-käsite on korvattu useammalla koko-käsitteellä 
 			 */
 			if (this.koko.listStatements(korvattava, DCTerms.isReplacedBy, (RDFNode)null).toSet().size() > 1) {
 				continue;
 			}
-			
+
 			korvattavat.add(korvattava);
 			korvaavuusMap.put(korvattava, korvaava);
 			boolean jatka = true;
@@ -1158,7 +1116,7 @@ public class Kokoaja2 {
 				StmtIterator iter2 = this.koko.listStatements(korvaava, DCTerms.isReplacedBy, (RDFNode)null);
 				if (iter2.hasNext()) {
 					Statement stmt2 = iter2.nextStatement();
-					//lisatty tarkistus ikuisten looppien ehkaisemiseksi
+					//lisätty tarkistus ikuisten looppien ehkäisemiseksi
 					if (poistettavat.contains(stmt2))
 						jatka = false;
 					poistettavat.add(stmt2);
