@@ -343,6 +343,36 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:herra">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">keskiajan ritareiden ja pappien arvonimi</skos:definition>
+    <skos:prefLabel xml:lang="fi">herra</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:herttua">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">korkein aatelisarvo ja kuninkaallisten prinssien arvonimi eräissä maissa</skos:definition>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p25733"/>
+    <skos:prefLabel xml:lang="sv">hertig</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">herttua</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:herttuatar">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">herttuan puoliso; nainen jolla on herttuan arvo</skos:definition>
+    <skos:prefLabel xml:lang="sv">hertiginna</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">herttuatar</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:igumenia">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -1932,6 +1962,9 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <rdfs:label xml:lang="fi">arvonimi</rdfs:label>
     <rdfs:label xml:lang="sv">hederstitel</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50110"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:herra"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:herttua"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:herttuatar"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:igumenia"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kalifi"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1073"/>
@@ -1939,6 +1972,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m122"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1235"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1260"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1260_1"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1306"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1307"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1381"/>
@@ -1961,6 +1995,7 @@ Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimel
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m816"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m939"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m988"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:rovasti"/>
     <skos:prefLabel xml:lang="en">title of person</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1210">
@@ -2339,6 +2374,17 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p25527"/>
     <skos:prefLabel xml:lang="fi">igumeeni</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">igumen</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1260_1">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">juut. lainoppineiden ja opettajien arvonimi</skos:definition>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p16399"/>
+    <skos:prefLabel xml:lang="fi">rabbi</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">rabbi</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1263">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -32591,5 +32637,16 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teoksen omistuskirjoituksen kohde</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:rovasti">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">piispan ansioituneelle papille myöntämä arvonimi</skos:definition>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4293"/>
+    <skos:prefLabel xml:lang="sv">prost</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">rovasti</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
