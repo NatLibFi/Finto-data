@@ -11647,6 +11647,15 @@ Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat 
 Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi,
         "Manifestationens identifikator är en teckensträng med anknytning till manifestationen och skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv el.dyl. och som följer scheman ämnat för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer."@sv .
 
+mts:m3641 a isothes:ConceptGroup,
+        skos:Collection ;
+    skos:altLabel "kalatalous"@fi,
+        "maatalous"@fi,
+        "metsätalous"@fi ;
+    skos:definition "Maatalouden, metsätalouden ja kalatalouden alkutuotantoa eli kasvinviljelyä, kotieläinten kasvatusta, metsänhoitoa, puunkorjuuta, metsästystä, kalastusta ja kalanviljelyä harjoittavat ja palvelevat toimijat. Pääluokkaan eivät kuulu eläinlääkärit (ks. terveys- ja sosiaaliala), maatilamatkailuyritykset (ks. majoitus- ja ravitsemisala) eivätkä puutavaran kuljetusta (ks. logistiikka-ala) tai tuotteiden jatkojalostusta (ks. teollisuus) harjoittavat toimijat."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "maa-, metsä- ja kalatalous"@fi .
+
 mts:m3642 a skos:Concept ;
     rdfs:seeAlso rdaa:P50229 ;
     skos:inScheme mts: ;
@@ -11771,9 +11780,7 @@ mts:m3660 a isothes:ConceptGroup,
     skos:prefLabel "muu, mm. kunnoitusta osoittava arvonimi"@fi .
 
 mts:m3661 a isothes:ConceptGroup,
-        skos:Collection,
-        skos:Concept ;
-    skos:inScheme mts: ;
+        skos:Collection ;
     skos:member mts:m3597,
         mts:m3598,
         mts:m3600,
@@ -11795,8 +11802,17 @@ mts:m3661 a isothes:ConceptGroup,
         mts:m3637,
         mts:m3638,
         mts:m3640,
-        mts:m3641 ;
+        mts:m3662 ;
     skos:prefLabel "Toimiala"@fi .
+
+mts:m3662 a isothes:ConceptGroup,
+        skos:Collection ;
+    skos:altLabel "kalatalous"@fi,
+        "maatalous"@fi,
+        "metsätalous"@fi ;
+    skos:definition "Maatalouden, metsätalouden ja kalatalouden alkutuotantoa eli kasvinviljelyä, kotieläinten kasvatusta, metsänhoitoa, puunkorjuuta, metsästystä, kalastusta ja kalanviljelyä harjoittavat ja palvelevat toimijat. Pääluokkaan eivät kuulu eläinlääkärit (ks. terveys- ja sosiaaliala), maatilamatkailuyritykset (ks. majoitus- ja ravitsemisala) eivätkä puutavaran kuljetusta (ks. logistiikka-ala) tai tuotteiden jatkojalostusta (ks. teollisuus) harjoittavat toimijat."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "maa-, metsä- ja kalatalous"@fi .
 
 mts:m372 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15476,8 +15492,6 @@ mts:m999 a skos:Concept ;
 
 <http://www.yso.fi/onto/yso/p12947> skos:exactMatch mts:m3270 .
 
-<http://www.yso.fi/onto/yso/p12966> skos:exactMatch mts:m3622 .
-
 <http://www.yso.fi/onto/yso/p12968> skos:exactMatch mts:m3153 .
 
 <http://www.yso.fi/onto/yso/p12983> skos:exactMatch mts:m2511 .
@@ -16626,8 +16640,6 @@ mts:m999 a skos:Concept ;
 
 <http://www.yso.fi/onto/yso/p25257> skos:exactMatch mts:m3036 .
 
-<http://www.yso.fi/onto/yso/p25286> skos:exactMatch mts:m3622 .
-
 <http://www.yso.fi/onto/yso/p25305> skos:exactMatch mts:m2972 .
 
 <http://www.yso.fi/onto/yso/p25335> skos:exactMatch mts:m2426 .
@@ -17083,8 +17095,6 @@ mts:m999 a skos:Concept ;
 <http://www.yso.fi/onto/yso/p37965> skos:exactMatch mts:m2619 .
 
 <http://www.yso.fi/onto/yso/p3825> skos:exactMatch mts:m3193 .
-
-<http://www.yso.fi/onto/yso/p3850> skos:exactMatch mts:m3622 .
 
 <http://www.yso.fi/onto/yso/p3953> skos:exactMatch mts:m3610 .
 
@@ -25055,7 +25065,8 @@ mts:m3602 a isothes:ConceptGroup,
         mts:m3625,
         mts:m3627,
         mts:m3631,
-        mts:m3636 ;
+        mts:m3636,
+        mts:m3663 ;
     skos:prefLabel "teollisuus"@fi .
 
 mts:m3603 a skos:Concept ;
@@ -25330,15 +25341,6 @@ mts:m3640 a isothes:ConceptGroup,
     skos:definition "Sähkön, kaasun sekä lämmön ja kylmän tuottamista, siirtoa, jakelua ja kauppaa harjoittavat toimijat. Pääluokkaan eivät kuulu voimalaitosten, koneiden ja verkostojen rakentamista harjoittavat toimijat eivätkä sähköteknisen alan toimijat (ks. rakennusala)."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "energia-ala"@fi .
-
-mts:m3641 a isothes:ConceptGroup,
-        skos:Collection ;
-    skos:altLabel "kalatalous"@fi,
-        "maatalous"@fi,
-        "metsätalous"@fi ;
-    skos:definition "Maatalouden, metsätalouden ja kalatalouden alkutuotantoa eli kasvinviljelyä, kotieläinten kasvatusta, metsänhoitoa, puunkorjuuta, metsästystä, kalastusta ja kalanviljelyä harjoittavat ja palvelevat toimijat. Pääluokkaan eivät kuulu eläinlääkärit (ks. terveys- ja sosiaaliala), maatilamatkailuyritykset (ks. majoitus- ja ravitsemisala) eivätkä puutavaran kuljetusta (ks. logistiikka-ala) tai tuotteiden jatkojalostusta (ks. teollisuus) harjoittavat toimijat."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "maa-, metsä- ja kalatalous"@fi .
 
 mts:m3643 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -26945,8 +26947,17 @@ mts:m994 a skos:Concept ;
     skos:prefLabel "lukija"@fi,
         "uppläsare"@sv .
 
+<http://www.yso.fi/onto/yso/p12966> skos:exactMatch mts:m3622,
+        mts:m3663 .
+
+<http://www.yso.fi/onto/yso/p25286> skos:exactMatch mts:m3622,
+        mts:m3663 .
+
 <http://www.yso.fi/onto/yso/p29154> skos:exactMatch mts:m2759,
         mts:m3654 .
+
+<http://www.yso.fi/onto/yso/p3850> skos:exactMatch mts:m3622,
+        mts:m3663 .
 
 <http://www.yso.fi/onto/yso/p4293> skos:exactMatch mts:m2695,
         mts:m3656 .
@@ -33530,6 +33541,16 @@ mts:m3622 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "lasi-, kivi- ja saviteollisuus"@fi .
 
+mts:m3663 a skos:Concept ;
+    skos:altLabel "keraaminen teollisuus"@fi,
+        "kiviteollisuus"@fi,
+        "lasiteollisuus"@fi ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p12966>,
+        <http://www.yso.fi/onto/yso/p25286>,
+        <http://www.yso.fi/onto/yso/p3850> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lasi-, kivi- ja saviteollisuus"@fi .
+
 mts:m397 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -35425,7 +35446,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-05-02T07:51:14+00:00"^^xsd:dateTime ;
+    dct:modified "2019-05-02T11:06:06+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
