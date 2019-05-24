@@ -738,6 +738,8 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi ;
 
 <http://rdaregistry.info/termList/RDACarrierType/1047> skos:exactMatch mts:m1285 .
 
+<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m238 .
+
 <http://rdaregistry.info/termList/RDACarrierType/1049> skos:exactMatch mts:m744 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1051> skos:exactMatch mts:m842 .
@@ -8436,6 +8438,8 @@ mts:m2171 a isothes:ConceptGroup,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30064 ;
+    skos:member mts:m3929,
+        mts:m3930 ;
     skos:prefLabel "note on edition statement"@en,
         "Huomautus painoksesta"@fi,
         "Anmärkning om upplageuppgift"@sv .
@@ -9143,6 +9147,18 @@ mts:m2301 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Ei lainausoikeutta."@fi,
         "Utlånas ej."@sv .
+
+mts:m2302 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Laajuuden yksikkönä litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi,
+        "Ett platt stycke tunt papper eller annat motsvarande material."@sv ;
+    skos:example "1 arkki (46 sivua)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "arkki"@fi,
+        "ark"@sv .
 
 mts:m2303 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -12792,6 +12808,16 @@ mts:m3927 a skos:Concept ;
     skos:prefLabel "lyhenne avattuna"@fi,
         "förkortning utskriven"@sv .
 
+mts:m3929 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "Lisäpainokset: Lisäpainos 2017 (243 sivua)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lisäpainos"@fi,
+        "tilläggsupplagan"@sv .
+
 mts:m393 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -12802,6 +12828,17 @@ mts:m393 a skos:Concept ;
         "Allmän titel"@sv ;
     skos:scopeNote "Yleistermi, joka osoittaa julkaisun lajin ja/tai jaksottaisuuden. Esim. julkaisu, raportti, tutkimuksia, selvityksiä, kuukausitilasto. Musiikkiaineistossa termi ilmaisee musiikin muotoa tai lajia, esim. konsertto, muunnelma, sinfonia tai messu."@fi,
         "Allmän term som betecknar en publikations art och/eller periodicitet. T.ex. publikation, rapport, undersökning, utredning, månadsstatistik. I musikmaterial uttrycker termen musikens form eller genre, t.ex. konsert, omarbetning, symfoni eller mässa."@sv .
+
+mts:m3930 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "Varianttikappale 2018 (ohuempi painopaperi)."@fi,
+        "Variantexemplar (På pärmen: För studerande)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "varianttikappale"@fi,
+        "variantexemplar"@sv .
 
 mts:m395 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18507,9 +18544,6 @@ rdac:C10005 skos:exactMatch mts:m627 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1006> skos:exactMatch mts:m650 .
 
-<http://rdaregistry.info/termList/RDACarrierType/1048> skos:exactMatch mts:m2302,
-        mts:m238 .
-
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
 
@@ -21430,19 +21464,6 @@ mts:m2298 a skos:Concept ;
     skos:scopeNote """Oratorio, joka perustuu lähdeteokseen.\r
 Vastavuoroinen suhde: oratoriosovituksen perustana (teos)."""@fi,
         "Oratorium som baserar sig på ett källverk. Parallell relation: oratoriebearbetning baserad på (verk)."@sv .
-
-mts:m2302 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:definition "Laajuuden yksikkönä litteä pala ohutta paperia tai muuta vastaavaa materiaalia."@fi,
-        "Ett platt stycke tunt papper eller annat motsvarande material."@sv ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACarrierType/1048> ;
-    skos:example "1 arkki (46 sivua)"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "arkki"@fi,
-        "ark"@sv .
 
 mts:m2309 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -37629,7 +37650,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-05-23T03:06:15+00:00"^^xsd:dateTime ;
+    dct:modified "2019-05-24T02:59:28+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
