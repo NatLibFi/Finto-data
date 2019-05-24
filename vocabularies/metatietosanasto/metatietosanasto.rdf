@@ -343,16 +343,6 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lisapainos">
-    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:example xml:lang="fi">Lisäpainokset: Lisäpainos 2017 (243 sivua).</skos:example>
-    <skos:prefLabel xml:lang="fi">lisäpainos</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">tilläggsupplagan</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -10839,8 +10829,8 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Anmärkning om upplageuppgift</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus painoksesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30064"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lisapainos"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:varianttikappale"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3929"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3930"/>
     <skos:prefLabel xml:lang="en">note on edition statement</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2172">
@@ -29794,6 +29784,16 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:prefLabel xml:lang="sv">arbetstagare</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">työntekijä</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3929">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="fi">Lisäpainokset: Lisäpainos 2017 (243 sivua).</skos:example>
+    <skos:prefLabel xml:lang="fi">lisäpainos</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">tilläggsupplagan</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m393">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -29804,6 +29804,17 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:prefLabel xml:lang="fi">Yleisnimeke</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Allmän term som betecknar en publikations art och/eller periodicitet. T.ex. publikation, rapport, undersökning, utredning, månadsstatistik. I musikmaterial uttrycker termen musikens form eller genre, t.ex. konsert, omarbetning, symfoni eller mässa.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Yleistermi, joka osoittaa julkaisun lajin ja/tai jaksottaisuuden. Esim. julkaisu, raportti, tutkimuksia, selvityksiä, kuukausitilasto. Musiikkiaineistossa termi ilmaisee musiikin muotoa tai lajia, esim. konsertto, muunnelma, sinfonia tai messu.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3930">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="sv">Variantexemplar (På pärmen: För studerande)</skos:example>
+    <skos:example xml:lang="fi">Varianttikappale 2018 (ohuempi painopaperi).</skos:example>
+    <skos:prefLabel xml:lang="sv">variantexemplar</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">varianttikappale</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m395">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -34960,16 +34971,5 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">dedicerat till</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teoksen omistuskirjoituksen kohde</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:varianttikappale">
-    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:example xml:lang="sv">Variantexemplar (På pärmen: För studerande)</skos:example>
-    <skos:example xml:lang="fi">Varianttikappale 2018 (ohuempi painopaperi).</skos:example>
-    <skos:prefLabel xml:lang="sv">variantexemplar</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">varianttikappale</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
