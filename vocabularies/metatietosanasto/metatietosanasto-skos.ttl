@@ -12165,6 +12165,7 @@ mts:m3670 a skos:Concept ;
     skos:prefLabel "metsätalousneuvos"@fi .
 
 mts:m3671 a skos:Concept ;
+    skos:altLabel "hallitusneuvos (arvonimi)"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "hallitusneuvos"@fi .
 
@@ -12273,6 +12274,7 @@ mts:m3707 a skos:Concept ;
     skos:prefLabel "ylimetsänhoitaja"@fi .
 
 mts:m3708 a skos:Concept ;
+    skos:altLabel "lehtori (arvonimi)"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "lehtori"@fi .
 
@@ -22526,14 +22528,6 @@ mts:m2767 a skos:Concept ;
         "panostaja"@fi,
         "laddare"@sv .
 
-mts:m2770 a skos:Concept ;
-    dc:source "YSO-termi"@fi ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p5081> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "non-fiction writer"@en,
-        "tietokirjailija"@fi,
-        "fackboksförfattare"@sv .
-
 mts:m2772 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p19476> ;
@@ -31029,6 +31023,15 @@ mts:m2769 a skos:Concept ;
         "dramaturg"@sv ;
     skos:scopeNote "Teoksen tekijä"@fi .
 
+mts:m2770 a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:broader mts:m3004 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p5081> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "non-fiction writer"@en,
+        "tietokirjailija"@fi,
+        "fackboksförfattare"@sv .
+
 mts:m2773 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p3182> ;
@@ -35033,6 +35036,8 @@ mts:m2608 a skos:Concept ;
 
 mts:m2615 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
+    skos:altLabel "metsuri"@fi,
+        "metsätyömies"@fi ;
     skos:broader mts:m3928 ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p2981> ;
     skos:inScheme mts: ;
@@ -36466,23 +36471,6 @@ mts:m2650 a skos:Concept ;
         "käsityöläinen"@fi,
         "hantverkare"@sv .
 
-mts:m3004 a skos:Concept ;
-    dc:source "YSO-termi"@fi ;
-    skos:broader mts:m2505 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p8970> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2550,
-        mts:m2620,
-        mts:m2669,
-        mts:m2933,
-        mts:m3003,
-        mts:m3190,
-        mts:m3206,
-        mts:m3285 ;
-    skos:prefLabel "author"@en,
-        "kirjailija"@fi,
-        "författare"@sv .
-
 mts:m1443 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -36580,6 +36568,24 @@ mts:m2605 a skos:Concept ;
     skos:prefLabel "researcher"@en,
         "tutkija"@fi,
         "forskare"@sv .
+
+mts:m3004 a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:broader mts:m2505 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p8970> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2550,
+        mts:m2620,
+        mts:m2669,
+        mts:m2770,
+        mts:m2933,
+        mts:m3003,
+        mts:m3190,
+        mts:m3206,
+        mts:m3285 ;
+    skos:prefLabel "author"@en,
+        "kirjailija"@fi,
+        "författare"@sv .
 
 mts:m3521 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -37650,7 +37656,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-05-24T02:59:28+00:00"^^xsd:dateTime ;
+    dct:modified "2019-05-25T02:45:27+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
