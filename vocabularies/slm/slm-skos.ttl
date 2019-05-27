@@ -11,10 +11,6 @@
 @prefix yso-update: <http://www.yso.fi/onto/yso-update/> .
 @prefix ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 
-slm: a owl:Ontology ;
-    dct:created "2018-05-16"^^xsd:date ;
-    owl:imports <http://www.w3.org/2004/02/skos/core> .
-
 slm:s1 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:inScheme slm:s861 ;
@@ -131,7 +127,7 @@ slm:s1018 a skos:Concept ;
         "tredimensionella filmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25476> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "3D-elokuvat"@fi,
         "3D-filmer"@sv .
 
@@ -243,7 +239,7 @@ slm:s1046 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p8892> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "mainoselokuvat"@fi,
         "reklamfilmer"@sv .
 
@@ -285,7 +281,7 @@ slm:s1050 a skos:Concept ;
     skos:altLabel "älypelit"@fi ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19528> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "älykkyyspelit"@fi,
         "intelligensspel"@sv .
 
@@ -330,7 +326,7 @@ slm:s1063 a skos:Concept ;
         "tecknade animationsfilmer"@sv,
         "tecknade filmer"@sv ;
     skos:broader slm:s77 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "käsinpiirretyt animaatioelokuvat"@fi,
         "handritade animerade filmer"@sv .
 
@@ -414,10 +410,10 @@ slm:s1089 a skos:Concept ;
 slm:s109 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28710> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "dokumenttisarjat"@fi,
         "dokumentärserier"@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1091 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -455,6 +451,12 @@ slm:s1096 a skos:Concept ;
 
 slm:s1097 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "kotiseutuhistoriat"@fi,
+        "kotiseutuhistoriikit"@fi,
+        "paikallishistoriikit"@fi,
+        "pitäjänhistoriat"@fi,
+        "ortshistoriker"@sv,
+        "sockenhistoriker"@sv ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "paikallishistoriat"@fi,
         "lokalhistoriker"@sv ;
@@ -515,14 +517,6 @@ slm:s1105 a skos:Concept ;
         "passioner"@sv ;
     skos:topConceptOf slm:s861 .
 
-slm:s1106 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026922> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "marssit"@fi,
-        "marscher"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s1107 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1081 ;
@@ -577,14 +571,6 @@ slm:s1115 a skos:Concept ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "opinto-oppaat"@fi,
         "studiehandböcker"@sv .
-
-slm:s1116 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s129 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026822> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "surumusiikki"@fi,
-        "sorgemusik"@sv .
 
 slm:s1117 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -659,7 +645,7 @@ slm:s1138 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s37 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026973> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "offertoriumit"@fi,
         "offertorier"@sv .
 
@@ -673,7 +659,7 @@ slm:s114 a skos:Concept ;
 slm:s1141 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s709 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "iskelmäelokuvat"@fi,
         "schlagerfilmer"@sv ;
     skos:scopeNote "Käytetään elokuvista, joissa löyhä juoni sitoo iskelmälliset musiikkinumerot toisiinsa."@fi,
@@ -707,16 +693,9 @@ slm:s115 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13932> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "dogmaelokuvat"@fi,
         "dogmafilmer"@sv .
-
-slm:s1156 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s616 ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "liturginen musiikki"@fi,
-        "liturgisk musik"@sv .
 
 slm:s1157 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -745,7 +724,7 @@ slm:s1159 a skos:Concept ;
 slm:s1160 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s435 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "filmografiat"@fi,
         "filmografier"@sv .
 
@@ -754,7 +733,7 @@ slm:s1171 a skos:Concept ;
     skos:altLabel "lyhytfilmit"@fi ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15697> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lyhytelokuvat"@fi,
         "kortfilmer"@sv .
 
@@ -876,7 +855,7 @@ slm:s1202 a skos:Concept ;
 slm:s1203 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "selviytymispelit"@fi,
         "överlevnadsspel"@sv .
 
@@ -982,6 +961,14 @@ slm:s1224 a skos:Concept ;
         "anthems"@sv ;
     skos:topConceptOf slm:s861 .
 
+slm:s1225 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:broader slm:s466 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "vokaliisit (harjoitteet)"@fi,
+        "vokaliser (övningsmaterial)"@sv .
+
 slm:s1227 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "avhandlingar"@sv,
@@ -1064,6 +1051,14 @@ slm:s1236 a skos:Concept ;
     skos:prefLabel "lisensiaatintutkimukset"@fi,
         "licentiatavhandlingar"@sv .
 
+slm:s1237 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:inScheme slm: ;
+    skos:prefLabel "esitteet"@fi,
+        "broschyrer"@sv ;
+    skos:topConceptOf slm: .
+
 slm:s1238 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "keikka-arvostelut"@fi,
@@ -1102,13 +1097,6 @@ slm:s1241 a skos:Concept ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "peliarvostelut"@fi,
         "spelrecensioner"@sv .
-
-slm:s1242 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1051 ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "motiiviluettelot"@fi,
-        "motivkataloger"@sv .
 
 slm:s1243 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -1243,9 +1231,22 @@ slm:s1266 a skos:Concept ;
         "speed metal"@sv .
 
 slm:s1267 a skos:Concept ;
+    skos:altLabel "adresskalendrar"@sv,
+        "adresskataloger"@sv,
+        "adresslistor"@sv ;
     skos:broader slm:s435 ;
     skos:inScheme slm:s285 ;
-    skos:prefLabel "osoiteluettelot"@fi .
+    skos:prefLabel "osoiteluettelot"@fi,
+        "adressförteckningar"@sv .
+
+slm:s1269 a skos:Concept ;
+    dct:created "2019-05-23"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:altLabel "formulär"@sv ;
+    skos:inScheme slm: ;
+    skos:prefLabel "lomakkeet"@fi,
+        "blanketter"@sv ;
+    skos:topConceptOf slm: .
 
 slm:s127 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -1254,11 +1255,78 @@ slm:s127 a skos:Concept ;
     skos:prefLabel "Mississippi-blues"@fi,
         "Mississippi-blues"@sv .
 
+slm:s1271 a skos:Concept ;
+    dct:created "2019-05-23"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:inScheme slm: ;
+    skos:prefLabel "mainokset"@fi,
+        "reklamer"@sv ;
+    skos:topConceptOf slm: .
+
 slm:s1272 a skos:Concept ;
     skos:broader slm:s1029 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "intermezzot (kamarioopperat)"@fi,
         "intermezzon (kammaroperor)"@sv .
+
+slm:s1273 a skos:Concept ;
+    skos:altLabel "topografiset kartat"@fi,
+        "topografiska kartor"@sv ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "maastokartat"@fi,
+        "terrängkartor"@sv .
+
+slm:s1274 a skos:Concept ;
+    skos:altLabel "teatterimusiikki"@fi,
+        "teatermusik"@sv ;
+    skos:broader slm:s353 ;
+    skos:definition "Näytelmäesitykseen liittyvä musiikki."@fi ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026873> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "näytelmämusiikki"@fi,
+        "skådespelsmusik"@sv .
+
+slm:s1275 a skos:Concept ;
+    skos:altLabel "konsertrecensioner"@sv,
+        "skivrecensioner"@sv ;
+    skos:broader slm:s505 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "musiikkiarvostelut"@fi,
+        "musikrecensioner"@sv .
+
+slm:s1276 a skos:Concept ;
+    skos:altLabel "opettajan oppaat"@fi,
+        "opettajanoppaat"@fi,
+        "lärarguider"@sv,
+        "undervisningsguider"@sv ;
+    skos:broader slm:s202 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "opetusoppaat"@fi,
+        "lärarhandledningar"@sv .
+
+slm:s1277 a skos:Concept ;
+    skos:altLabel "äänitehosteet"@fi,
+        "ljudeffekter"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026593> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "äänitehostekokoelmat"@fi,
+        "ljudeffektssamlingar"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1278 a skos:Concept ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "merikartat"@fi,
+        "sjökort"@sv .
+
+slm:s1279 a skos:Concept ;
+    skos:definition "Konsertin yleisölle laadittu luettelo konsertissa esitettävästä ohjelmasta."@fi ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026065> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "konserttiohjelmat"@fi ;
+    skos:topConceptOf slm: .
 
 slm:s128 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -1267,11 +1335,177 @@ slm:s128 a skos:Concept ;
     skos:prefLabel "hoitosuositukset"@fi,
         "vårdrekommendationer"@sv .
 
+slm:s1281 a skos:Concept ;
+    skos:broader slm:s1286 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "komiteanmietinnöt"@fi,
+        "kommittébetänkanden"@sv .
+
+slm:s1282 a skos:Concept ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "matkailukartat"@fi,
+        "turistkartor"@sv .
+
+slm:s1284 a skos:Concept ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026954> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "musiikkileikit"@fi,
+        "musiklekar"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1285 a skos:Concept ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "tutkimusraportit"@fi,
+        "forskningsrapporter"@sv ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1288 a skos:Concept ;
+    skos:altLabel "sateenkaarikirjallisuus"@fi,
+        "queer-litteratur"@sv,
+        "regnbågslitteratur"@sv ;
+    skos:broader slm:s975 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "queer-kirjallisuus"@fi,
+        "queerlitteratur"@sv .
+
+slm:s1289 a skos:Concept ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1311 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "viitetietokannat"@fi,
+        "referensdatabaser"@sv .
+
+slm:s1290 a skos:Concept ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "opaskartat"@fi,
+        "guidekartor"@sv .
+
+slm:s1291 a skos:Concept ;
+    skos:altLabel "remiksaukset"@fi,
+        "remixit"@fi,
+        "remixar"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027046> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "uudelleenmiksaukset"@fi,
+        "remixer"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1292 a skos:Concept ;
+    skos:altLabel "notturnos"@sv ;
+    skos:broader slm:s887 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "notturnot"@fi,
+        "notturno"@sv .
+
+slm:s1295 a skos:Concept ;
+    skos:altLabel "monikuoromusiikki"@fi ;
+    skos:definition "Musiikki, joka on sävelletty cori spezzati -tekniikalla eli jonka esittäminen vaatii esittäjistön jakamisen kahdeksi tai useammaksi, usein erilleen toisistaan sijoitetuksi ryhmäksi."@fi ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "monikuoroinen musiikki"@fi,
+        "flerkörig musik"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1298 a skos:Concept ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "tiekartat"@fi,
+        "vägkartor"@sv .
+
+slm:s1299 a skos:Concept ;
+    skos:altLabel "häly (musiikki)"@fi,
+        "noise"@fi,
+        "oljudsmusik"@sv ;
+    skos:inScheme slm: ;
+    skos:prefLabel "hälymusiikki"@fi,
+        "noise"@sv ;
+    skos:topConceptOf slm: .
+
+slm:s1300 a skos:Concept ;
+    dct:created "2019-02-23"^^xsd:date ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "metsästyssignaalit"@fi,
+        "jaktsignaler"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1304 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-04-30"^^xsd:date ;
+    skos:altLabel "orkesterisoittoharjoitteet"@fi ;
+    skos:broader slm:s466 ;
+    skos:definition "Orkesterille sävelletyistä teoksista koostettua harjoitteluaineistoa, joka voi esiintyä nuottina, videona tai \"music-minus-one\" -tyyppisenä äänitteenä. Orkesteriharjoitukset ovat eri soittimille tarkoitettuja orkesterimusiikkiteosten katkelmia ja soolo-osuuksia yksittäisinä ääninä. Tunnettuja orkesteriharjoitusjulkaisuja ovat Orchesterstudien, Orchester Probe-Spiele ja Orchestral excerpts."@fi ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "orkesterisoiton harjoitusaineistot"@fi,
+        "övningsmaterial för orkesterspel"@sv .
+
+slm:s1306 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "musik i TV-program"@sv,
+        "musik i tv-program"@sv,
+        "televisionsmusik"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027132> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "televisiomusiikki"@fi,
+        "tv-musik"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1307 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "repetitiivinen musiikki"@fi,
+        "repetitiomusiikki"@fi,
+        "toistomusiikki"@fi ;
+    skos:broader slm:s474 ;
+    skos:definition "1960-luvulla syntyneen minimalistisen tyylisuuntauksen piiriin luettava taidemusiikki, jolle on ominaista toisteisuus ja tarkoituksellisen yksinkertaistettu rytminen, melodinen ja harmoninen sävelkieli."@fi,
+        "Konstmusik som räknas till den minimalistiska stilriktningen som uppkom på 1960-talet och för vilken redundans och ett avsiktligt förenklat rytmiskt, melodiskt och harmoniskt tonspråk är typiskt."@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026938> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "minimalistinen musiikki"@fi,
+        "minimalistisk musik"@sv .
+
+slm:s1308 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "isonuottiset"@fi,
+        "isonuottiset nuotit"@fi,
+        "musikalier med förstorad notskrift"@sv ;
+    skos:broader slm:s409 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "isonuottiset nuottijulkaisut"@fi,
+        "musikalier med stor notskrift"@sv .
+
+slm:s1309 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-04-30"^^xsd:date ;
+    skos:altLabel "science fiction -pelit"@fi,
+        "scifi-pelit"@fi,
+        "tieteispelit"@fi,
+        "scifispel"@sv ;
+    skos:broader slm:s170 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "scifipelit"@fi,
+        "science fiction-spel"@sv .
+
 slm:s131 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "sekstetot"@fi,
         "sextetter (kompositioner)"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1314 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "avantgarde (musiikki)"@fi,
+        "avantgardemusiikki"@fi,
+        "avantgardistinen musiikki"@fi,
+        "avantgardemusik"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "kokeellinen musiikki"@fi,
+        "experimentell musik"@sv ;
     skos:topConceptOf slm:s861 .
 
 slm:s132 a skos:Concept ;
@@ -1350,7 +1584,7 @@ slm:s145 a skos:Concept ;
         "memoryspel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28687> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "muistipelit"@fi,
         "minnesspel"@sv .
 
@@ -1427,7 +1661,7 @@ slm:s16 a skos:Concept ;
 slm:s160 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s749 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "kollaasielokuvat"@fi,
         "collagefilmer"@sv ;
     skos:scopeNote "Käytetään elokuvista, joissa on käytetty kollasitekniikkaa eli tekijä käyttää hyväkseen jo olemassa olevia filmejä yhdistelemällä niitä toisiinsa tai omaan materiaaliinsa."@fi,
@@ -1654,6 +1888,8 @@ slm:s21 a skos:Concept ;
 
 slm:s210 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2016026068> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "romanssit (musiikki)"@fi,
         "romanser (musik)"@sv ;
@@ -1721,7 +1957,7 @@ slm:s22 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2221> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "korttipelit"@fi,
         "kortspel"@sv .
 
@@ -1775,7 +2011,10 @@ slm:s226 a skos:Concept ;
 
 slm:s229 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "latinorock"@fi,
+        "latinorock"@sv ;
     skos:broader slm:s1186 ;
+    skos:definition "1960-luvulla Yhdysvalloissa kehittynyt rock-musiikin tyyli, johon on otettu vaikutteita latinalaisamerikkalaisesta tanssimusiikista. Tunnettu tyylin edustaja on Santana."@fi ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "latin rock"@fi,
         "latin rock"@sv .
@@ -1812,15 +2051,6 @@ slm:s233 a skos:Concept ;
         "antifoner"@sv ;
     skos:topConceptOf slm:s861 .
 
-slm:s234 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "indie rock"@sv ;
-    skos:broader slm:s1186 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026632> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "indie rock"@fi,
-        "indierock"@sv .
-
 slm:s238 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027006> ;
@@ -1832,7 +2062,7 @@ slm:s238 a skos:Concept ;
 slm:s240 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "maaseutuelokuvat"@fi,
         "landsbygdsfilmer"@sv .
 
@@ -1988,7 +2218,7 @@ slm:s278 a skos:Concept ;
     rdfs:comment "Spel som tydligt riktar sig till barn och i allmänhet är alltför lätta för vuxna. Bland digitala spel innehåller barnspel ofta söta spelfigurer som riktar sig till barn."@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26478> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Selvästi lapsille suunnatut pelit, jotka ovat yleensä aikuisille liian helppoja. Digitaalisissa peleissä lastenpelit sisältävät usein lapsille suunnattuja söpöjä pelihahmoja."@fi ;
     skos:prefLabel "lastenpelit"@fi,
         "barnspel"@sv .
@@ -2077,7 +2307,7 @@ slm:s293 a skos:Concept ;
 slm:s296 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Buddy-elokuvassa päähenkilöitä on kaksi, ja he ovat samaa sukupuolta, tavallisesti miehiä. Heillä on usein vastakkaisia luonteenpiirteitä, ja heidän erilaisuuttaan korostetaan joskus etnisillä tai kulttuurieroilla"@fi,
         "Buddyfilmerna har två huvudpersoner och de är av samma kön, vanligen män. De är ofta varandras motsatser vad gäller karaktärsdrag och deras olikhet framhävs ibland av etniska eller kulturella skillnader"@sv ;
     skos:prefLabel "buddy-elokuvat"@fi,
@@ -2087,7 +2317,7 @@ slm:s297 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25403> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Pelejä, joissa kaksi tai useampi osapuoli yrittää saavuttaa pelin voittoon johtavan tavoitteensa tekemällä suunnitelmia ja toteuttamalla ne vastustajan tai vastustajien päihittämiseksi. Klassisia strategiapelejä ovat esimerkiksi shakki ja tammi."@fi,
         "Spel, i vilka två eller flera deltagare försöker nå ett mål som leder till vinst, genom att göra upp planer och förverkliga dem för att besegra sina motståndare. Klassiska strategispel är t.ex. schack och damspel."@sv ;
     skos:prefLabel "strategiapelit"@fi,
@@ -2105,7 +2335,7 @@ slm:s3 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p20201> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "uskonnolliset elokuvat"@fi,
         "religiösa filmer"@sv .
 
@@ -2153,7 +2383,7 @@ slm:s305 a skos:Concept ;
         "indiefilmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p23310> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "independent-elokuvat"@fi,
         "independentfilmer"@sv ;
     skos:scopeNote "Käytetään yhdysvaltalaisista, Hollywood-studioiden ulkopuolella tehdyistä nk. riippumattomista elokuvista."@fi,
@@ -2252,12 +2482,12 @@ slm:s320 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "ratkaisukirjat (mysteerit)"@fi,
         "vuorovaikutteiset teokset"@fi ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "interaktiiviset teokset"@fi,
         "interaktiva verk"@sv ;
     skos:scopeNote "Käytetään fyysisistä tai digitaalisista teoksista, joiden juoneen tai kerrontaan lukija voi osallistua."@fi,
         "Används om fysiska eller digitala verk, i vilka läsaren kan delta i intrigen eller berättandet."@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s321 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2351,7 +2581,7 @@ slm:s336 a skos:Concept ;
     skos:altLabel "idrottsspel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26233> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "urheilupelit"@fi,
         "sportspel"@sv .
 
@@ -2373,7 +2603,7 @@ slm:s340 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25685> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Videopelien lajityyppi, joissa yleensä ohjataan pelihahmoa hyppäämällä erilaisten tasojen päälle."@fi,
         "Genre för videospel, i vilka spelaren styr och hoppar med en spelfigur mellan olika plattformar."@sv ;
     skos:prefLabel "tasohyppelypelit"@fi,
@@ -2414,7 +2644,7 @@ slm:s346 a skos:Concept ;
         "LARP"@sv ;
     skos:broader slm:s405 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19001> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "liveroolipelit"@fi,
         "lajv"@sv .
 
@@ -2516,6 +2746,15 @@ slm:s373 a skos:Concept ;
     skos:prefLabel "ryhmäkonsertot"@fi,
         "gruppkonserter"@sv .
 
+slm:s375 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "pastoraalinen musiikki"@fi,
+        "pastoral musik"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "pastoraalimusiikki"@fi,
+        "pastoralmusik"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s377 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s202 ;
@@ -2600,14 +2839,6 @@ slm:s392 a skos:Concept ;
         "kokböcker"@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s395 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "ackordguider"@sv ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "sointuoppaat"@fi,
-        "ackordtabeller"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s396 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "carmen figuratum"@fi,
@@ -2639,13 +2870,6 @@ slm:s399 a skos:Concept ;
     skos:prefLabel "esiosat"@fi,
         "prequel"@sv ;
     skos:topConceptOf slm:s285 .
-
-slm:s40 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "pastissit"@fi,
-        "pastischer"@sv ;
-    skos:topConceptOf slm:s861 .
 
 slm:s400 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2711,7 +2935,7 @@ slm:s412 a skos:Concept ;
         "spagettiwestern"@sv ;
     skos:broader slm:s888 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p23977> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "spagettiwesternit"@fi,
         "spagettivästerns"@sv .
 
@@ -2750,7 +2974,7 @@ slm:s42 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "koko perheen pelit"@fi ;
     skos:broader slm:s170 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "perhepelit"@fi,
         "familjespel"@sv .
 
@@ -2832,6 +3056,14 @@ slm:s431 a skos:Concept ;
     skos:prefLabel "kamarinäytelmät"@fi,
         "kammarspel"@sv .
 
+slm:s437 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:broader slm:s1081 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "balladit"@fi,
+        "ballader"@sv .
+
 slm:s438 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:inScheme slm:s861 ;
@@ -2845,7 +3077,7 @@ slm:s44 a skos:Concept ;
         "fightingspel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25686> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "toimintapelit"@fi,
         "actionspel"@sv .
 
@@ -2962,14 +3194,6 @@ slm:s464 a skos:Concept ;
     skos:prefLabel "boogie woogie"@fi,
         "boogie woogie"@sv .
 
-slm:s466 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027207> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "harjoitusaineistot"@fi,
-        "övningsmaterial"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s468 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s241 ;
@@ -2999,14 +3223,6 @@ slm:s473 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "dancehall"@fi,
         "dancehall"@sv .
-
-slm:s474 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026639> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "taidemusiikki"@fi,
-        "konstmusik"@sv ;
-    skos:topConceptOf slm:s861 .
 
 slm:s477 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3092,6 +3308,13 @@ slm:s491 a skos:Concept ;
         "extranummer"@sv ;
     skos:topConceptOf slm:s861 .
 
+slm:s494 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "beguinet"@fi,
+        "beguine"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s496 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s298 ;
@@ -3158,7 +3381,7 @@ slm:s511 a skos:Concept ;
 slm:s514 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "perhekomediat"@fi,
         "familjekomedier"@sv .
 
@@ -3276,7 +3499,7 @@ slm:s539 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p16860> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tukkilaiselokuvat"@fi,
         "stockflottarfilmer"@sv .
 
@@ -3510,7 +3733,7 @@ slm:s585 a skos:Concept ;
 slm:s587 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "opiskelijaelokuvat"@fi,
         "collegefilmer"@sv ;
     skos:scopeNote "Käytetään elokuvista, jotka kuvaavat opiskelijoiden elämää."@fi,
@@ -3522,7 +3745,7 @@ slm:s589 a skos:Concept ;
         "simulationsspel"@sv ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26450> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "simulaatiopelit"@fi,
         "simulatorspel"@sv .
 
@@ -3530,7 +3753,7 @@ slm:s59 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p6922> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "seikkailupelit"@fi,
         "äventyrsspel"@sv .
 
@@ -3564,7 +3787,7 @@ slm:s594 a skos:Concept ;
         "dockanimationsfilmer"@sv,
         "dockfilmer"@sv ;
     skos:broader slm:s77 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "nukkeanimaatioelokuvat"@fi,
         "dockanimerade filmer"@sv .
 
@@ -3601,16 +3824,16 @@ slm:s601 a skos:Concept ;
     skos:altLabel "videofilmit"@fi ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4216> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "videoelokuvat"@fi,
         "videofilmer"@sv .
 
 slm:s602 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s887 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "serenadit"@fi,
-        "serenader"@sv ;
-    skos:topConceptOf slm:s861 .
+        "serenader"@sv .
 
 slm:s605 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3786,7 +4009,7 @@ slm:s648 a skos:Concept ;
 slm:s65 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "siirtolaiselokuvat"@fi,
         "emigrantfilmer"@sv .
 
@@ -3806,11 +4029,13 @@ slm:s652 a skos:Concept ;
 
 slm:s653 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "konkreettinen runous"@fi,
+        "konkret poesi"@sv ;
     skos:broader slm:s1150 ;
     skos:inScheme slm:s285 ;
     skos:note "Modernin lyriikan suuntaus, jossa hyödynnetään visuaalisia, typografisia ja akustisia keinoja. Konkreettisessa runoudessa kieli ei ole pelkästään sanallisen kommunikaation väline, vaan sillä on myös materiaalinen ja visuaalinen ulottuvuus."@fi ;
-    skos:prefLabel "konkreettinen runous"@fi,
-        "konkret poesi"@sv .
+    skos:prefLabel "visuaalinen runous"@fi,
+        "visuell poesi"@sv .
 
 slm:s654 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3887,10 +4112,13 @@ slm:s667 a skos:Concept ;
 
 slm:s668 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "transkriptiot"@fi,
-        "transkriptioner"@sv ;
-    skos:topConceptOf slm:s285 .
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "transkriptiot"@fi,
+        "transkriberingar (musik)"@sv ;
+    skos:broader slm:s409 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "nuotinnokset"@fi,
+        "transkriptioner (musik)"@sv .
 
 slm:s671 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3903,7 +4131,7 @@ slm:s671 a skos:Concept ;
 slm:s673 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s709 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "rock-elokuvat"@fi,
         "rockfilmer"@sv .
 
@@ -4050,7 +4278,7 @@ slm:s703 a skos:Concept ;
         "dramakomedier (filmer)"@sv,
         "dramakomedier skådespel)"@sv ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "draamakomediat"@fi,
         "dramakomedier"@sv .
 
@@ -4095,7 +4323,7 @@ slm:s710 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s865 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19030> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sotilasfarssit"@fi,
         "militärfarser"@sv .
 
@@ -4108,10 +4336,10 @@ slm:s711 a skos:Concept ;
         "stand up comedy"@sv,
         "stå-upp-komik"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p9244> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "stand up -komiikka"@fi,
         "ståuppkomik"@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s714 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4157,7 +4385,7 @@ slm:s726 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "idrottsfilmer"@sv ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "urheiluelokuvat"@fi,
         "sportfilmer"@sv .
 
@@ -4292,7 +4520,7 @@ slm:s750 a skos:Concept ;
 slm:s752 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "slapstick-komediat"@fi,
         "slapstick-komedier"@sv ;
     skos:scopeNote "Käytetään komedioista, joissa hauskuus perustuu pantomiimiin ja fyysiseen komiikkaan, kuten lyönteihin, kaatumisiin, takaa-ajoihin tai esineiden heittelyyn."@fi,
@@ -4327,7 +4555,7 @@ slm:s758 a skos:Concept ;
     skos:altLabel "fantasispel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26239> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "fantasiapelit"@fi,
         "fantasyspel"@sv .
 
@@ -4351,14 +4579,6 @@ slm:s762 a skos:Concept ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "julkaisun laadinnan oppaat"@fi,
         "skrivhandböcker"@sv .
-
-slm:s764 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "solonummer"@sv ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "soolot"@fi,
-        "solon"@sv ;
-    skos:topConceptOf slm:s861 .
 
 slm:s765 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4395,7 +4615,7 @@ slm:s772 a skos:Concept ;
         "racerspel"@sv ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26238> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "ajopelit"@fi,
         "racingspel"@sv .
 
@@ -4405,6 +4625,13 @@ slm:s773 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "polkat"@fi,
         "polkor"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s774 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "arabeskit (musiikki)"@fi,
+        "arabesker (musik)"@sv ;
     skos:topConceptOf slm:s861 .
 
 slm:s776 a skos:Concept ;
@@ -4442,7 +4669,7 @@ slm:s781 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s37 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027048> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "requiemit"@fi,
         "rekviem"@sv .
 
@@ -4455,6 +4682,8 @@ slm:s783 a skos:Concept ;
 
 slm:s786 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:altLabel "ragat"@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027180> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "rāgat"@fi,
@@ -4582,7 +4811,7 @@ slm:s815 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "resefilmer"@sv ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "matkailuelokuvat"@fi,
         "turistfilmer"@sv .
 
@@ -4623,14 +4852,6 @@ slm:s827 a skos:Concept ;
     skos:prefLabel "ohjekirjat"@fi,
         "instruktionsböcker"@sv ;
     skos:topConceptOf slm:s285 .
-
-slm:s828 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "hårdrock"@sv ;
-    skos:broader slm:s1186 ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "hard rock"@fi,
-        "hard rock"@sv .
 
 slm:s829 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4800,14 +5021,14 @@ slm:s870 a skos:Concept ;
         "stumfilm"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13224> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "mykkäelokuvat"@fi,
         "stumfilmer"@sv .
 
 slm:s873 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "Bollywood-elokuvat"@fi,
         "Bollywoodfilmer"@sv .
 
@@ -4829,7 +5050,7 @@ slm:s878 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28697> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "abstraktit pelit"@fi,
         "abstrakta spel"@sv .
 
@@ -4878,14 +5099,6 @@ slm:s886 a skos:Concept ;
     skos:prefLabel "seksilehdet"@fi,
         "sextidningar"@sv .
 
-slm:s887 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "sarjat"@fi,
-        "sviter"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s89 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s298 ;
@@ -4897,10 +5110,10 @@ slm:s89 a skos:Concept ;
 
 slm:s890 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s887 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "divertimentot"@fi,
-        "divertimenton"@sv ;
-    skos:topConceptOf slm:s861 .
+        "divertimenton"@sv .
 
 slm:s892 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4922,7 +5135,7 @@ slm:s893 a skos:Concept ;
 slm:s894 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "piilokameraelokuvat"@fi,
         "dolda kameran-filmer"@sv .
 
@@ -5097,7 +5310,7 @@ slm:s934 a skos:Concept ;
     skos:altLabel "lukemistot"@fi ;
     skos:broader slm:s691 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p24970> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "viihdelukemistot"@fi,
         "nöjesläsning"@sv .
 
@@ -5111,7 +5324,7 @@ slm:s937 a skos:Concept ;
 slm:s938 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "pelisovitukset"@fi,
         "bearbetningar till spel"@sv .
 
@@ -5280,10 +5493,11 @@ slm:s970 a skos:Concept ;
 
 slm:s971 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
     skos:altLabel "ögonblicksskildringar"@sv ;
     skos:broader slm:s975 ;
     skos:inScheme slm:s285 ;
-    skos:note "Hetken tilannetta, tunnelmaa tms. esittävä kuva t. kuvaus; vrt. tilannekuva."@fi ;
+    skos:note "Hetken tilannetta, tunnelmaa tms. esittävä kuva tai kuvaus."@fi ;
     skos:prefLabel "tuokiokuvat"@fi,
         "ögonblicksbilder"@sv .
 
@@ -5370,7 +5584,7 @@ slm:s988 a skos:Concept ;
 slm:s99 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "episodielokuvat"@fi,
         "episodfilmer"@sv ;
     skos:scopeNote "Käytetään elokuvista, jotka koostuvat useista erillisistä tai toisiinsa löyhästi, esimerkiksi miljöön avulla, liittyvistä tarinoista."@fi,
@@ -5389,7 +5603,7 @@ slm:s996 a skos:Concept ;
         "pervasiva spel"@sv ;
     skos:broader slm:s1015 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26928> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Todellisuutta ja virtuaalimaailmaa yhdistävä, mobiililaitteilla pelattava pelimuoto, joka yhdistää fyysisen ja virtuaalisen tilan, kiinnittyy arkielämään ja voi hämärtää pelaajan ja ei-pelaajan rooleja."@fi,
         "En form av spel som spelas på mobila apparater och som kopplar samman verkligheten och den virtuella världen. Spelet sammanfogar det fysiska rummet med det virtuella, fäster sig i vardagslivet och kan fördunkla spelares och icke-spelares roller."@sv ;
     skos:prefLabel "pervasiiviset pelit"@fi,
@@ -5404,19 +5618,10 @@ slm:s998 a skos:Concept ;
         "kartverk"@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s999 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1150 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p12061> ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2017026008> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "rocklyriikka"@fi,
-        "rocklyrik"@sv .
-
 slm:s1002 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "mieselokuvat"@fi,
         "mansfilmer"@sv ;
     skos:related slm:s528 ;
@@ -5468,7 +5673,7 @@ slm:s1054 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2758> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lautapelit"@fi,
         "brädspel"@sv ;
     skos:related slm:s1114 .
@@ -5502,18 +5707,19 @@ slm:s1059 a skos:Concept ;
 
 slm:s106 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:broader slm:s436 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026768> ;
     skos:inScheme slm:s861 ;
-    skos:narrower slm:s133 ;
     skos:prefLabel "diskomusiikki"@fi,
-        "diskomusik"@sv .
+        "diskomusik"@sv ;
+    skos:related slm:s133 .
 
 slm:s1068 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "efektielokuvat"@fi ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tehoste-elokuvat"@fi,
         "specialeffektfilmer"@sv ;
     skos:related slm:s562 ;
@@ -5544,7 +5750,7 @@ slm:s1084 a skos:Concept ;
         "webb-tv-serier"@sv ;
     skos:broader slm:s930 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27303> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "nettisarjat"@fi,
         "webbserier (tv-serier)"@sv ;
     skos:related slm:s354 .
@@ -5561,7 +5767,7 @@ slm:s1095 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p9704> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tanssielokuvat"@fi,
         "dansfilmer"@sv ;
     skos:related slm:s709 .
@@ -5578,10 +5784,29 @@ slm:s1098 a skos:Concept ;
 slm:s1104 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sketsisarjat"@fi,
         "sketchserier (tv-serier)"@sv ;
     skos:related slm:s1149 .
+
+slm:s1106 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026922> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1283 ;
+    skos:prefLabel "marssit"@fi,
+        "marscher"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1116 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s129 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026822> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "surumusiikki"@fi,
+        "sorgemusik"@sv ;
+    skos:related slm:s1302 .
 
 slm:s1120 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -5639,20 +5864,11 @@ slm:s1136 a skos:Concept ;
         "no-skådespel"@sv ;
     skos:related slm:s35 .
 
-slm:s1145 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1186 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026810> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "folk rock"@fi,
-        "folkrock (förstärkt)"@sv ;
-    skos:related slm:s1255 .
-
 slm:s1153 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p16801> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "amatöörielokuvat"@fi,
         "amatörfilmer"@sv ;
     skos:related slm:s9 ;
@@ -5668,6 +5884,15 @@ slm:s1154 a skos:Concept ;
     skos:related slm:s136 ;
     skos:scopeNote "Käytetään teoksista, joissa kuvataan yhden perheen elämää."@fi,
         "Används om verk som skildrar livet hos en bestämd familj."@sv .
+
+slm:s1156 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:broader slm:s1294,
+        slm:s616 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "liturginen musiikki"@fi,
+        "liturgisk musik"@sv .
 
 slm:s116 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -5753,7 +5978,7 @@ slm:s1192 a skos:Concept ;
         "kooperativa spel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27737> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "yhteistyöpelit"@fi,
         "samarbetsspel"@sv ;
     skos:related slm:s603 .
@@ -5817,6 +6042,14 @@ slm:s1230 a skos:Concept ;
     skos:related slm:s633 ;
     skos:topConceptOf slm:s285 .
 
+slm:s1242 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s1051 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "motiiviluettelot"@fi,
+        "motivkataloger"@sv ;
+    skos:related slm:s1297 .
+
 slm:s1250 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s436 ;
@@ -5851,6 +6084,55 @@ slm:s1263 a skos:Concept ;
         "western swing"@sv ;
     skos:related slm:s401 .
 
+slm:s1280 a skos:Concept ;
+    skos:altLabel "PM"@sv,
+        "memoranda"@sv,
+        "memorandum"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "muistiot"@fi,
+        "promemorior"@sv ;
+    skos:related slm:s1286 ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1283 a skos:Concept ;
+    skos:broader slm:s1081,
+        slm:s1106 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "marssilaulut"@fi,
+        "marschsånger"@sv .
+
+slm:s1287 a skos:Concept ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "lähdejulkaisut"@fi,
+        "källpublikationer"@sv ;
+    skos:related slm:s1296 ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1293 a skos:Concept ;
+    skos:altLabel "sointutaulukot"@fi,
+        "sormitustaulukot"@fi ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026805> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "otetaulukot"@fi,
+        "grepptabeller"@sv ;
+    skos:related slm:s395 ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1296 a skos:Concept ;
+    skos:altLabel "ainesjulkaisut"@fi ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "aineskokoelmat"@fi,
+        "materialsamlingar"@sv ;
+    skos:related slm:s1287 ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1297 a skos:Concept ;
+    skos:broader slm:s1051 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "tyyppiluettelot"@fi,
+        "typkataloger"@sv ;
+    skos:related slm:s1242 .
+
 slm:s13 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "bembölingssagor"@sv,
@@ -5862,14 +6144,73 @@ slm:s13 a skos:Concept ;
         "Bembölesagor"@sv ;
     skos:related slm:s239 .
 
-slm:s133 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s106 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026865> ;
+slm:s1302 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:definition "Luonteeltaan vaikeroiva tai valittava soitinsävellys, joka on tehty todellisen tai poikkeustapauksessa fiktiivisen henkilön kuoleman johdosta."@fi,
+        "Klagande instrumentalkomposition som har skapats med anledning av en verklig, eller i undantagsfall fiktiv persons död."@sv ;
     skos:inScheme slm:s861 ;
-    skos:prefLabel "house"@fi,
-        "house"@sv ;
-    skos:related slm:s1245 .
+    skos:prefLabel "tombeaut"@fi,
+        "tombeauer"@sv ;
+    skos:related slm:s1116 ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1303 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "indie pop"@fi,
+        "indie"@sv ;
+    skos:broader slm:s436 ;
+    skos:definition "Indierockille läheinen tyylilaji, joka alun perin liittyi punkin myötä syntyneeseen tee se itse -eetokseen ja itsenäisiin levy-yhtiöihin. Äänimaisemaltaan indiepop on indierockiin ja punkiin verrattuna rauhallisempi ja vähemmän aggressiivinen."@fi,
+        "Genre nära indierock som från början hängde samman med gör-det-själv-etos och självständiga skivbolag som uppkom i samband med punk. Till sitt ljudlandskap är indiepop lugnare och mindre aggressivt än indierock och punk."@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2015026065> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "indiepop"@fi,
+        "indiepop"@sv ;
+    skos:related slm:s234 .
+
+slm:s1305 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "gigat"@fi,
+        "jigit"@fi,
+        "gigues"@sv,
+        "jiggar"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026881> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "giguet"@fi,
+        "giguer"@sv ;
+    skos:related slm:s476 ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1311 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026081> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1289 ;
+    skos:prefLabel "tietokannat"@fi ;
+    skos:topConceptOf slm: .
+
+slm:s1312 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:altLabel "soolot (soolo-osuudet)"@fi,
+        "solon"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "soolo-osuudet"@fi,
+        "solopartier"@sv ;
+    skos:related slm:s764 ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1313 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:broader slm:s1139,
+        slm:s421 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "hengellinen viihdemusiikki"@fi,
+        "andlig underhållningsmusik"@sv .
 
 slm:s149 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -5961,19 +6302,11 @@ slm:s20 a skos:Concept ;
     skos:prefLabel "uskomustarinat"@fi,
         "vittnessägner"@sv .
 
-slm:s205 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1202 ;
-    skos:prefLabel "kartat"@fi,
-        "kartor"@sv ;
-    skos:topConceptOf slm:s285 .
-
 slm:s216 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5336> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "rillumareielokuvat"@fi,
         "rillumareifilmer"@sv ;
     skos:related slm:s709 .
@@ -5987,6 +6320,18 @@ slm:s228 a skos:Concept ;
     skos:related slm:s1181 ;
     skos:scopeNote "Käytetään teoksista, joiden sivut ovat paksut niihin tarttumisen helpottamiseksi."@fi,
         "Används om verk med tjocka blad som är lätta att gripa tag i."@sv .
+
+slm:s234 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "indie rock"@fi,
+        "indie rock"@sv ;
+    skos:broader slm:s1186 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026632> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "indierock"@fi,
+        "indierock"@sv ;
+    skos:related slm:s1303 .
 
 slm:s24 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6002,7 +6347,7 @@ slm:s244 a skos:Concept ;
     skos:broader slm:s1175,
         slm:s719 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p10046> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "opetuselokuvat"@fi,
         "undervisningsfilmer"@sv .
 
@@ -6026,7 +6371,7 @@ slm:s246 a skos:Concept ;
 slm:s261 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "eroottiset televisiosarjat"@fi,
         "erotiska tv-serier"@sv ;
     skos:related slm:s290 .
@@ -6063,7 +6408,7 @@ slm:s270 a skos:Concept ;
 slm:s272 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "värielokuvat"@fi,
         "färgfilmer"@sv ;
     skos:related slm:s795 .
@@ -6111,7 +6456,7 @@ slm:s29 a skos:Concept ;
 slm:s302 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "supersankarielokuvat"@fi,
         "superhjältefilmer"@sv ;
     skos:related slm:s799 ;
@@ -6122,7 +6467,7 @@ slm:s310 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28268> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Ransk. comédie de boulevard, 1800-luvun jälkipuoliskolla kehittynyt ranskalainen komediatyyppi, tavallisesti farssin keinoja käyttäjävä perhe- tai avioliittokomedia."@fi ;
     skos:prefLabel "bulevardikomediat"@fi,
         "boulevardkomedier"@sv ;
@@ -6140,7 +6485,7 @@ slm:s314 a skos:Concept ;
 slm:s328 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "toimintakomediat"@fi,
         "actionkomedier"@sv ;
     skos:related slm:s612 .
@@ -6170,15 +6515,6 @@ slm:s339 a skos:Concept ;
         "haikudikter"@sv ;
     skos:related slm:s331 .
 
-slm:s353 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026775> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s78 ;
-    skos:prefLabel "näyttämömusiikki"@fi,
-        "scenmusik"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s355 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "politisk spänningslitteratur"@sv ;
@@ -6201,7 +6537,7 @@ slm:s359 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22705> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "luontoelokuvat"@fi,
         "naturfilmer"@sv ;
     skos:related slm:s85 .
@@ -6210,7 +6546,7 @@ slm:s368 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p16919> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "road moviet"@fi,
         "roadmovies"@sv ;
     skos:related slm:s632 ;
@@ -6222,7 +6558,7 @@ slm:s371 a skos:Concept ;
     skos:altLabel "räiskintäpelit"@fi ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26433> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "ammuntapelit"@fi,
         "skjutspel"@sv ;
     skos:related slm:s1163 .
@@ -6233,7 +6569,7 @@ slm:s38 a skos:Concept ;
         "tappelupelit"@fi ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22965> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "taistelupelit"@fi,
         "kampspel"@sv ;
     skos:related slm:s1163 .
@@ -6242,19 +6578,49 @@ slm:s387 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "ungdomsserier"@sv ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "nuortensarjat"@fi,
         "tv-serier för ungdomar"@sv ;
     skos:related slm:s968 .
+
+slm:s393 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-28"^^xsd:date ;
+    skos:altLabel "laululyriikka"@fi,
+        "sånglyrik"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p12045> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s999 ;
+    skos:prefLabel "sanoitukset"@fi,
+        "sångtexter"@sv ;
+    skos:topConceptOf slm:s285 .
+
+slm:s395 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "ackordguider"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "sointuoppaat"@fi,
+        "ackordtabeller"@sv ;
+    skos:related slm:s1293 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s4 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "barnserier (tv-serier)"@sv ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lastensarjat"@fi,
         "tv-serier för barn"@sv ;
     skos:related slm:s135 .
+
+slm:s40 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "pastissit"@fi,
+        "pastischer"@sv ;
+    skos:related slm:s577 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s401 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6284,7 +6650,7 @@ slm:s405 a skos:Concept ;
         "LARP"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4295> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s346 ;
     skos:prefLabel "roolipelit"@fi,
         "rollspel"@sv .
@@ -6307,7 +6673,7 @@ slm:s425 a skos:Concept ;
         "svart komedi (skådespel)"@sv ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27768> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "musta komedia"@fi,
         "svart komedi"@sv ;
     skos:related slm:s696 .
@@ -6316,7 +6682,7 @@ slm:s432 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "dokumenttielokuvat"@fi,
         "dokumentärfilmer"@sv ;
     skos:related slm:s958 .
@@ -6334,7 +6700,7 @@ slm:s434 a skos:Concept ;
 slm:s439 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "taiteilijaelokuvat"@fi,
         "konstnärsfilmer"@sv ;
     skos:related slm:s167 .
@@ -6383,17 +6749,17 @@ slm:s450 a skos:Concept ;
         "filmtrailer"@sv,
         "filmtrailers"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28077> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "elokuvatrailerit"@fi,
         "filmtrailrar"@sv ;
     skos:related slm:s1175 ;
     skos:scopeNote "Käytetään elokuvien esittelyfilmeistä, jotka on tehty niiden mainostamiseen elokuvateattereissa."@fi ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s454 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1005 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "telenovelat"@fi,
         "telenovelas"@sv ;
     skos:related slm:s661 .
@@ -6417,24 +6783,25 @@ slm:s471 a skos:Concept ;
         "kortnoveller"@sv ;
     skos:related slm:s479 .
 
+slm:s474 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026639> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1307 ;
+    skos:prefLabel "taidemusiikki"@fi,
+        "konstmusik"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s475 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "sarjat -- radio"@fi ;
     skos:broader slm:s930 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25716> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "radiosarjat"@fi,
         "radioserier"@sv ;
     skos:related slm:s354 .
-
-slm:s476 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026753> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s78 ;
-    skos:prefLabel "tanssimusiikki"@fi,
-        "dansmusik"@sv ;
-    skos:topConceptOf slm:s861 .
 
 slm:s480 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6449,7 +6816,7 @@ slm:s485 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27510> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "draamasarjat"@fi,
         "dramaserier"@sv ;
     skos:related slm:s627 .
@@ -6457,7 +6824,7 @@ slm:s485 a skos:Concept ;
 slm:s488 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s607 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "romanttiset jännityselokuvat"@fi,
         "romantiska thrillers (filmer)"@sv ;
     skos:related slm:s755 .
@@ -6465,7 +6832,7 @@ slm:s488 a skos:Concept ;
 slm:s493 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "minisarjat"@fi,
         "miniserier"@sv ;
     skos:related slm:s236 ;
@@ -6525,7 +6892,7 @@ slm:s512 a skos:Concept ;
 slm:s513 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lääkärisarjat"@fi,
         "läkarserier"@sv ;
     skos:related slm:s853 .
@@ -6545,13 +6912,15 @@ slm:s521 a skos:Concept ;
 
 slm:s524 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "inre monolog (genre) {@sv}"@sv,
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:altLabel "inre monolog (genre)"@sv,
         "inre monolog-litteratur"@sv,
+        "medvetandeström-litteratur"@sv,
         "stream of consciusness-litteratur"@sv ;
     skos:broader slm:s975 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "tajunnanvirtakirjallisuus"@fi,
-        "medvetandeström-litteratur"@sv ;
+        "medvetandeström (litteratur)"@sv ;
     skos:related slm:s181 ;
     skos:scopeNote "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi .
 
@@ -6561,7 +6930,7 @@ slm:s528 a skos:Concept ;
         "feministiska filmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p8638> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "naiselokuvat"@fi,
         "kvinnofilmer"@sv ;
     skos:related slm:s1002 ;
@@ -6579,12 +6948,13 @@ slm:s534 a skos:Concept ;
 
 slm:s538 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:altLabel "drum and bass"@sv ;
+    skos:broader slm:s1301 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "drum 'n' bass"@fi,
         "drum'n'bass"@sv ;
-    skos:related slm:s1251 ;
-    skos:topConceptOf slm:s861 .
+    skos:related slm:s1251 .
 
 slm:s544 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6639,7 +7009,8 @@ slm:s554 a skos:Concept ;
 
 slm:s557 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s436 ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1301 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027153> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "dance"@fi,
@@ -6656,15 +7027,27 @@ slm:s567 a skos:Concept ;
 
 slm:s569 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
     skos:altLabel "bibelberättelser"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4009> ;
-    skos:definition "Käytetään kertomuksista, jotka on muokattu Raamatusta tai joissa on aiheena jokin raamatunkertomus."@fi,
-        "Används om bearbetade berättelser ur Bibeln eller berättelser vars ämne tagits ur Bibeln."@sv ;
+    skos:definition "Kertomus, joka on muokattu Raamatusta."@fi,
+        "Berättelse ur Bibeln som bearbetats."@sv ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "raamatunkertomukset"@fi,
         "bibliska berättelser"@sv ;
     skos:related slm:s993 ;
     skos:topConceptOf slm:s285 .
+
+slm:s570 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "new wave"@fi,
+        "new wave"@sv ;
+    skos:broader slm:s1186 ;
+    skos:definition "1970-luvun lopulle ja 1980-luvun alkupuolelle ajoittuva punk rockiin pohjautuva rock- ja popmusiikin tyyli, jossa punkin tyylilliset ja asenteelliset seikat yhdistyivät siistitympään muotoon."@fi ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "uusi aalto (musiikki)"@fi,
+        "new wave (musik)"@sv ;
+    skos:related slm:s169 .
 
 slm:s573 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6709,7 +7092,7 @@ slm:s619 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27335> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "komediasarjat"@fi,
         "komediserier"@sv ;
     skos:related slm:s919 .
@@ -6822,7 +7205,7 @@ slm:s685 a skos:Concept ;
 slm:s698 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "jengielokuvat"@fi,
         "gängfilmer"@sv ;
     skos:related slm:s968 .
@@ -6833,7 +7216,7 @@ slm:s701 a skos:Concept ;
         "societetskomedier"@sv ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28526> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Komedia tai muu kerronnan muoto, jossa keskustellaan epämuodolliseen, henkevään ja nokkeluuksia viljelevään tyyliin sinänsä vakavista kysymyksistä."@fi ;
     skos:prefLabel "salonkikomediat"@fi,
         "salongskomedier"@sv ;
@@ -6853,14 +7236,14 @@ slm:s712 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1092,
         slm:s607 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "giallo-elokuvat"@fi,
         "giallo-filmer"@sv .
 
 slm:s716 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "yhteistuotantoelokuvat"@fi,
         "samproduktionsfilmer"@sv ;
     skos:related slm:s1118 .
@@ -6914,7 +7297,7 @@ slm:s751 a skos:Concept ;
         "porrfilmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4957> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "seksielokuvat"@fi,
         "sexfilmer"@sv ;
     skos:related slm:s290 .
@@ -6927,6 +7310,17 @@ slm:s753 a skos:Concept ;
     skos:prefLabel "poliittiset sarjakuvat"@fi,
         "politiska serier (tecknade serier)"@sv ;
     skos:related slm:s1027 .
+
+slm:s764 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "soolot (soolosävellykset)"@fi,
+        "solon"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "soolosävellykset"@fi,
+        "solokompositioner"@sv ;
+    skos:related slm:s1312 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s771 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6949,7 +7343,7 @@ slm:s775 a skos:Concept ;
 slm:s778 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s312 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "satukuunnelmat"@fi,
         "sagohörspel"@sv ;
     skos:related slm:s1165 .
@@ -7016,7 +7410,7 @@ slm:s794 a skos:Concept ;
 slm:s795 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "mustavalkoiset elokuvat"@fi,
         "svartvita filmer"@sv ;
     skos:related slm:s272 .
@@ -7057,11 +7451,11 @@ slm:s800 a skos:Concept ;
 
 slm:s807 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "esikoisohjaukset"@fi,
         "debutregier"@sv ;
     skos:related slm:s1125 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s808 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7094,7 +7488,7 @@ slm:s822 a skos:Concept ;
     skos:altLabel "poliittiset trillerit"@fi ;
     skos:broader slm:s607 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28209> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "poliittiset jännityselokuvat"@fi,
         "politiska thrillers (filmer)"@sv ;
     skos:related slm:s182 .
@@ -7108,6 +7502,16 @@ slm:s825 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka on tarkoitettu aikuistuville nuorille."@fi,
         "Används om böcker avsedda för ungdomar som närmar sig vuxenålder."@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s828 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "hårdrock"@sv ;
+    skos:broader slm:s1186 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "hard rock"@fi,
+        "hard rock"@sv ;
+    skos:related slm:s560 .
 
 slm:s834 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7158,7 +7562,7 @@ slm:s848 a skos:Concept ;
 slm:s85 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "eläinelokuvat"@fi,
         "djurfilmer"@sv ;
     skos:related slm:s359 ;
@@ -7169,7 +7573,7 @@ slm:s853 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25594> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sairaalasarjat"@fi,
         "sjukhusserier"@sv ;
     skos:related slm:s513 .
@@ -7237,16 +7641,16 @@ slm:s899 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5963> ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026413> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "musiikkivideot"@fi,
         "musikvideor"@sv ;
     skos:related slm:s709 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s901 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "chick flick"@fi,
         "chick flick"@sv ;
     skos:related slm:s366 .
@@ -7321,7 +7725,7 @@ slm:s925 a skos:Concept ;
     skos:broader slm:s1175,
         slm:s1209 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26398> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Pseudodokumentti on televisio-ohjelma tai elokuva, jossa fiktiivinen tarina esitetään todellisista tapahtumista kertovien dokumenttien tyyliä jäljitellen tai parodioiden."@fi ;
     skos:prefLabel "pseudodokumentit"@fi,
         "pseudodokumentärer"@sv .
@@ -7372,7 +7776,7 @@ slm:s945 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "romantiska draman"@sv ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "romanttiset draamat"@fi,
         "romantiska dramer"@sv ;
     skos:related slm:s627 .
@@ -7468,13 +7872,24 @@ slm:s997 a skos:Concept ;
     skos:scopeNote "Käytetään kertomuksista, joissa päähenkilö kohoaa köyhyydestä rikkauteen tai nousee sosiaalisessa arvoasteikossa."@fi,
         "Används om berättelser, i vilka huvudpersonen från att ha levt i fattigdom blir rik eller stiger på den sociala rangskalan."@sv .
 
+slm:s999 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1150,
+        slm:s393 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p12061> ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2017026008> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "rocklyriikka"@fi,
+        "rocklyrik"@sv .
+
 slm:s1021 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "enmansspel"@sv,
         "enpersonsspel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28159> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "yksinpelit"@fi,
         "ensamspel"@sv ;
     skos:related slm:s1172,
@@ -7494,7 +7909,7 @@ slm:s1023 a skos:Concept ;
 slm:s1030 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "poliisisarjat"@fi,
         "polisserier"@sv ;
     skos:related slm:s1087,
@@ -7506,7 +7921,7 @@ slm:s1053 a skos:Concept ;
         "västernserier"@sv,
         "western"@sv ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lännensarjat"@fi,
         "västernserier (tv-serier)"@sv ;
     skos:related slm:s748,
@@ -7590,7 +8005,7 @@ slm:s1114 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28086> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "seurapelit"@fi,
         "sällskapsspel"@sv ;
     skos:related slm:s1054,
@@ -7599,7 +8014,7 @@ slm:s1114 a skos:Concept ;
 slm:s1132 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "epookkisarjat"@fi,
         "epokserier"@sv ;
     skos:related slm:s869,
@@ -7616,6 +8031,17 @@ slm:s1142 a skos:Concept ;
     skos:prefLabel "televisionäytelmät"@fi,
         "tv-skådespel"@sv ;
     skos:related slm:s549 .
+
+slm:s1145 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1186 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026810> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "folk rock"@fi,
+        "folkrock (förstärkt)"@sv ;
+    skos:related slm:s1255,
+        slm:s1315 .
 
 slm:s1148 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7640,7 +8066,7 @@ slm:s1163 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28066> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sotapelit"@fi,
         "krigsspel"@sv ;
     skos:related slm:s371,
@@ -7661,7 +8087,7 @@ slm:s1172 a skos:Concept ;
         "tvåpersonsspel"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27751> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "kaksinpelit"@fi,
         "tvåpersonersspel"@sv ;
     skos:related slm:s1021,
@@ -7705,7 +8131,7 @@ slm:s1255 a skos:Concept ;
     skos:altLabel "country rock"@sv ;
     skos:broader slm:s1186 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026740> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "country rock"@fi,
         "countryrock"@sv ;
     skos:related slm:s1145,
@@ -7736,6 +8162,53 @@ slm:s126 a skos:Concept ;
     skos:related slm:s551,
         slm:s961 .
 
+slm:s1286 a skos:Concept ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1281 ;
+    skos:prefLabel "mietinnöt"@fi,
+        "betänkanden"@sv ;
+    skos:related slm:s1280 ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1294 a skos:Concept ;
+    dct:modified "2019-02-23"^^xsd:date ;
+    skos:altLabel "rituell musik"@sv ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1156 ;
+    skos:prefLabel "rituaalimusiikki"@fi,
+        "ritualmusik"@sv ;
+    skos:related slm:s129 ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1315 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "folkmetalli"@fi,
+        "kelttimetalli"@fi,
+        "keskiaikametalli"@fi,
+        "pakanametalli"@fi,
+        "tribal metal"@fi,
+        "folkmetall"@sv ;
+    skos:broader slm:s560 ;
+    skos:definition "Kansanmusiikkivaikutteinen heavy metalin tyylilaji."@fi,
+        "Typ av heavy metal influerad av folkmusik."@sv ;
+    skos:inScheme slm: ;
+    skos:prefLabel "folk metal"@fi,
+        "folk metal"@sv ;
+    skos:related slm:s1145,
+        slm:s241 .
+
+slm:s133 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1301 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026865> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "house"@fi,
+        "house"@sv ;
+    skos:related slm:s106,
+        slm:s1245 .
+
 slm:s136 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s518 ;
@@ -7760,21 +8233,21 @@ slm:s139 a skos:Concept ;
     skos:related slm:s316 ;
     skos:topConceptOf slm:s285 .
 
-slm:s169 a skos:Concept ;
+slm:s154 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1186 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027025> ;
+    dct:modified "2019-03-29"^^xsd:date ;
     skos:inScheme slm:s861 ;
-    skos:narrower slm:s1256 ;
-    skos:prefLabel "punk rock"@fi,
-        "punkrock"@sv ;
-    skos:related slm:s1222 .
+    skos:prefLabel "parafraasit (musiikki)"@fi,
+        "parafraser (musik)"@sv ;
+    skos:related slm:s577,
+        slm:s909 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s182 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p23245> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "poliittiset elokuvat"@fi,
         "politiska filmer"@sv ;
     skos:related slm:s81,
@@ -7785,7 +8258,7 @@ slm:s188 a skos:Concept ;
     skos:altLabel "ihmissuhde-elokuvat"@fi,
         "människorelationsfilmer"@sv ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1071,
         slm:s82 ;
     skos:prefLabel "psykologiset elokuvat"@fi,
@@ -7793,23 +8266,14 @@ slm:s188 a skos:Concept ;
 
 slm:s192 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s436 ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1301 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027130> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "tekno"@fi,
         "techno"@sv ;
     skos:related slm:s1245,
         slm:s1251 .
-
-slm:s241 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s203,
-        slm:s468 ;
-    skos:prefLabel "kansanmusiikki"@fi,
-        "folkmusik"@sv .
 
 slm:s248 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7837,7 +8301,7 @@ slm:s259 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28075> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sotasarjat"@fi,
         "krigsserier (tv-serier)"@sv ;
     skos:related slm:s1073,
@@ -7846,7 +8310,7 @@ slm:s259 a skos:Concept ;
 slm:s267 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "romanttiset televisiosarjat"@fi,
         "romantiska tv-serier"@sv ;
     skos:related slm:s755,
@@ -7866,7 +8330,7 @@ slm:s290 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4958> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "eroottiset elokuvat"@fi,
         "erotiska filmer"@sv ;
     skos:related slm:s261,
@@ -7918,6 +8382,18 @@ slm:s35 a skos:Concept ;
     skos:related slm:s1136,
         slm:s275 .
 
+slm:s353 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "teatterimusiikki"@fi,
+        "teatermusik"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026775> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1274,
+        slm:s78 ;
+    skos:prefLabel "näyttämömusiikki"@fi,
+        "scenmusik"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s364 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1181,
@@ -7958,7 +8434,7 @@ slm:s367 a skos:Concept ;
     skos:broader slm:s526,
         slm:s77 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21417> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Tarkoittaa japanilaista animaatiota."@fi,
         "Avser japansk animation."@sv ;
     skos:prefLabel "animet"@fi,
@@ -8063,18 +8539,6 @@ slm:s394 a skos:Concept ;
         "Används om böcker som är avsedda att beröras."@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s409 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "noter"@sv,
-        "notpublikationer"@sv,
-        "nottryck"@sv ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1180,
-        slm:s746 ;
-    skos:prefLabel "nuottijulkaisut"@fi,
-        "musikalier"@sv ;
-    skos:topConceptOf slm:s285 .
-
 slm:s451 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p786> ;
@@ -8089,11 +8553,33 @@ slm:s465 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "pikareskielokuvat"@fi ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "veijarielokuvat"@fi,
         "pikareskfilmer"@sv ;
     skos:related slm:s650,
         slm:s760 .
+
+slm:s466 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027207> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1225,
+        slm:s1304 ;
+    skos:prefLabel "harjoitusaineistot"@fi,
+        "övningsmaterial"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s476 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026753> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s78 ;
+    skos:prefLabel "tanssimusiikki"@fi,
+        "dansmusik"@sv ;
+    skos:related slm:s1305 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s478 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8145,7 +8631,7 @@ slm:s52 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s230,
         slm:s982 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "historialliset rakkauselokuvat"@fi,
         "historiska kärleksfilmer"@sv ;
     skos:related slm:s994 .
@@ -8154,7 +8640,7 @@ slm:s526 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "animationsserier"@sv ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s367 ;
     skos:prefLabel "animaatiosarjat"@fi,
         "animerade serier"@sv ;
@@ -8186,7 +8672,7 @@ slm:s549 a skos:Concept ;
     skos:broader slm:s1175,
         slm:s1209 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p23175> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "televisioelokuvat"@fi,
         "tv-filmer"@sv ;
     skos:related slm:s1142 .
@@ -8243,7 +8729,7 @@ slm:s627 a skos:Concept ;
         "drama"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26500> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "draamaelokuvat"@fi,
         "dramafilmer"@sv ;
     skos:related slm:s485,
@@ -8326,28 +8812,10 @@ slm:s686 a skos:Concept ;
         slm:s855 ;
     skos:topConceptOf slm:s285 .
 
-slm:s690 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "goottilaiset kauhuromaanit"@fi,
-        "goottilaiset romaanit"@fi,
-        "kauhuromaanit"@fi,
-        "gotiska romaner"@sv,
-        "gotiska skräckromaner"@sv,
-        "skräckromaner"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15087> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s121 ;
-    skos:prefLabel "kauhukirjallisuus"@fi,
-        "skräcklitteratur"@sv ;
-    skos:related slm:s1135 ;
-    skos:scopeNote "Käytetään teoksista, joissa kauhu syntyy yliluonnollisten voimien uhatessa normaalia elämää eläviä ihmisiä."@fi,
-        "Används om verk som beskriver övernaturliga krafter och den skräck de skapar hos normalt levande människor."@sv .
-
 slm:s696 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Kauhukomedia on elokuvamuoto, jossa yhdistellään kauhua ja komediaa."@fi ;
     skos:prefLabel "kauhukomediat"@fi,
         "skräckkomedier"@sv ;
@@ -8419,7 +8887,7 @@ slm:s749 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p19769> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s160 ;
     skos:prefLabel "kokeelliset elokuvat"@fi,
         "experimentella filmer"@sv ;
@@ -8475,7 +8943,7 @@ slm:s796 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p29187> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "vankilasarjat"@fi,
         "fängelseserier"@sv ;
     skos:related slm:s397,
@@ -8525,18 +8993,6 @@ slm:s826 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, joihin on leikattu erilaisia reikiä."@fi,
         "Används om böcker med olika slags hål på sina sidor."@sv .
 
-slm:s833 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p26066> ;
-    skos:inScheme slm:s285 ;
-    skos:note "Tyyli ja kerrontatekniikka, jossa muuten realistiseen, objektiiviseen ja raportoivaan kerrontaan on yhdistetty tai rinnastettu fantastisia, surrealistisia ym. vaikeasti selitettäviä aineksia."@fi,
-        "Stil och berättarteknik som förenar fantastiska, surrealistiska eller andra svårförklarade element med ett i övrigt realististiskt, objektivt och rapporterande berättande."@sv ;
-    skos:prefLabel "maaginen realismi"@fi,
-        "magisk realism"@sv ;
-    skos:related slm:s1140,
-        slm:s504 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s840 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s977 ;
@@ -8575,7 +9031,7 @@ slm:s868 a skos:Concept ;
 slm:s869 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "historialliset televisiosarjat"@fi,
         "historiska tv-serier"@sv ;
     skos:related slm:s1132,
@@ -8588,7 +9044,7 @@ slm:s888 a skos:Concept ;
         "western"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p18443> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s412 ;
     skos:prefLabel "lännenelokuvat"@fi,
         "västernfilmer"@sv ;
@@ -8629,7 +9085,7 @@ slm:s891 a skos:Concept ;
 slm:s898 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "epookkielokuvat"@fi,
         "epokfilmer"@sv ;
     skos:related slm:s1132,
@@ -8640,12 +9096,12 @@ slm:s9 a skos:Concept ;
     skos:altLabel "hemfilmer"@sv,
         "hemvideor"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27771> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "kotivideot"@fi,
         "hemvideofilmer"@sv ;
     skos:related slm:s1153,
         slm:s1175 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s907 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8723,7 +9179,7 @@ slm:s986 a skos:Concept ;
 slm:s990 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "luonnekomediat"@fi,
         "karaktärskomedier"@sv ;
     skos:related slm:s5,
@@ -8742,7 +9198,7 @@ slm:s994 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1131,
         slm:s230 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "historialliset seikkailuelokuvat"@fi,
         "historiska äventyrsfilmer"@sv ;
     skos:related slm:s52 .
@@ -8750,7 +9206,7 @@ slm:s994 a skos:Concept ;
 slm:s995 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sarjaelokuvat"@fi,
         "seriefilmer"@sv ;
     skos:related slm:s354,
@@ -8763,7 +9219,7 @@ slm:s1005 a skos:Concept ;
         "såpor"@sv ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p388> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s454 ;
     skos:prefLabel "saippuaoopperat"@fi,
         "tvåloperor"@sv ;
@@ -8789,7 +9245,7 @@ slm:s1026 a skos:Concept ;
         "sci-fi serier"@sv ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25680> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1032,
         slm:s984 ;
     skos:prefLabel "tieteissarjat"@fi,
@@ -8835,7 +9291,7 @@ slm:s1078 a skos:Concept ;
     skos:altLabel "dramatiserade dokumentärer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5668> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "draamadokumentit"@fi,
         "dramadokumentärer"@sv ;
     skos:related slm:s230,
@@ -8847,7 +9303,7 @@ slm:s1078 a skos:Concept ;
 slm:s1118 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "uusintatuotantoelokuvat"@fi,
         "nyfilmatiseringar"@sv ;
     skos:related slm:s529,
@@ -8860,22 +9316,12 @@ slm:s1134 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26395> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "laulupelit"@fi,
         "sångspel (spel)"@sv ;
     skos:related slm:s338,
         slm:s49,
         slm:s503 .
-
-slm:s1139 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s200,
-        slm:s248,
-        slm:s616 ;
-    skos:prefLabel "hengellinen musiikki"@fi,
-        "andlig musik"@sv ;
-    skos:topConceptOf slm:s861 .
 
 slm:s1144 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8913,7 +9359,8 @@ slm:s1226 a skos:Concept ;
 
 slm:s1245 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s436 ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1301 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027143> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "trance"@fi,
@@ -8933,16 +9380,6 @@ slm:s1265 a skos:Concept ;
     skos:related slm:s534,
         slm:s977 .
 
-slm:s129 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1116,
-        slm:s268,
-        slm:s791 ;
-    skos:prefLabel "juhlamusiikki"@fi,
-        "festmusik"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s130 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s356 ;
@@ -8958,7 +9395,7 @@ slm:s135 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15693> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "lastenelokuvat"@fi,
         "barnfilmer"@sv ;
     skos:related slm:s4,
@@ -8978,6 +9415,17 @@ slm:s162 a skos:Concept ;
     skos:related slm:s364 ;
     skos:scopeNote "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi,
         "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
+
+slm:s169 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:broader slm:s1186 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027025> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1256 ;
+    skos:prefLabel "punk rock"@fi,
+        "punkrock"@sv ;
+    skos:related slm:s1222,
+        slm:s570 .
 
 slm:s193 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9016,7 +9464,7 @@ slm:s215 a skos:Concept ;
 
 slm:s236 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "jatkosarjat"@fi,
         "fortsättningsserier"@sv ;
     skos:related slm:s1175,
@@ -9024,7 +9472,7 @@ slm:s236 a skos:Concept ;
         slm:s930 ;
     skos:scopeNote "Käytetään elokuvista ja ohjelmista, joissa tarina on jaettu jaksoihin niin, että jaksot toimivat myös itsenäisinä kertomuksina."@fi,
         "Används om filmer och program, i vilka storyn är indelad i avsnitt på så vis att de också fungerar som fristående berättelser."@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s239 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9038,10 +9486,22 @@ slm:s239 a skos:Concept ;
         slm:s13,
         slm:s80 .
 
+slm:s241 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s662 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s203,
+        slm:s468 ;
+    skos:prefLabel "kansanmusiikki"@fi,
+        "folkmusik"@sv ;
+    skos:related slm:s1315 .
+
 slm:s274 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "kauhusarjat"@fi,
         "skräckserier (tv-serier)"@sv ;
     skos:related slm:s1092,
@@ -9095,7 +9555,7 @@ slm:s338 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26401> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "soittopelit"@fi,
         "instrumentspel"@sv ;
     skos:related slm:s1134,
@@ -9210,7 +9670,7 @@ slm:s49 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26388> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "rytmipelit"@fi,
         "rytmspel"@sv ;
     skos:related slm:s1134,
@@ -9221,7 +9681,7 @@ slm:s492 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21628> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "konsolipelit"@fi,
         "konsolspel"@sv ;
     skos:related slm:s1015,
@@ -9236,7 +9696,7 @@ slm:s5 a skos:Concept ;
         "sedekomedier (skådespel)"@sv ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p28594> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tapakomediat"@fi,
         "sedekomedier"@sv ;
     skos:related slm:s722,
@@ -9247,7 +9707,7 @@ slm:s503 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26240> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "musiikkipelit"@fi,
         "musikspel"@sv ;
     skos:related slm:s1134,
@@ -9293,12 +9753,26 @@ slm:s574 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13988> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "satuelokuvat"@fi,
         "sagofilmer"@sv ;
     skos:related slm:s135,
         slm:s504,
         slm:s670 .
+
+slm:s577 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "variaatiot (musiikki)"@fi,
+        "varianter (musik)"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p3977> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "muunnelmat (musiikki)"@fi,
+        "variationer (musik)"@sv ;
+    skos:related slm:s154,
+        slm:s40,
+        slm:s657 ;
+    skos:topConceptOf slm:s861 .
 
 slm:s616 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9380,6 +9854,26 @@ slm:s681 a skos:Concept ;
 Taide-eepoksen ohella eeposten toinen päälaji. Kansaneepoksia ovat esim. Gilgames, Mahabharata, Ramayana, Edda, Rolandin laulu ja Popol Vuh."""@fi,
         "Används om episka verk som beskriver ett folks forntid och mytologi, t.ex. Gilgamesheposet, Mahabharata, Ramayana, Edda, Rolandssången och Popol Vuh."@sv .
 
+slm:s690 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "goottilaiset kauhuromaanit"@fi,
+        "goottilaiset romaanit"@fi,
+        "kauhuromaanit"@fi,
+        "gotiska romaner"@sv,
+        "gotiska skräckromaner"@sv,
+        "skräckromaner"@sv ;
+    skos:broader slm:s1310,
+        slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15087> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s121 ;
+    skos:prefLabel "kauhukirjallisuus"@fi,
+        "skräcklitteratur"@sv ;
+    skos:related slm:s1135 ;
+    skos:scopeNote "Käytetään teoksista, joissa kauhu syntyy yliluonnollisten voimien uhatessa normaalia elämää eläviä ihmisiä."@fi,
+        "Används om verk som beskriver övernaturliga krafter och den skräck de skapar hos normalt levande människor."@sv .
+
 slm:s699 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "samhällskritiska dramer"@sv ;
@@ -9423,12 +9917,26 @@ slm:s81 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p14887> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "yhteiskunnalliset elokuvat"@fi,
         "samhällskritiska filmer"@sv ;
     skos:related slm:s1027,
         slm:s182,
         slm:s699 .
+
+slm:s833 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p26066> ;
+    skos:inScheme slm:s285 ;
+    skos:note "Tyyli ja kerrontatekniikka, jossa muuten realistiseen, objektiiviseen ja raportoivaan kerrontaan on yhdistetty tai rinnastettu fantastisia, surrealistisia ym. vaikeasti selitettäviä aineksia."@fi,
+        "Stil och berättarteknik som förenar fantastiska, surrealistiska eller andra svårförklarade element med ett i övrigt realististiskt, objektivt och rapporterande berättande."@sv ;
+    skos:prefLabel "maaginen realismi"@fi,
+        "magisk realism"@sv ;
+    skos:related slm:s1140,
+        slm:s1310,
+        slm:s504 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s842 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9449,7 +9957,7 @@ slm:s849 a skos:Concept ;
         "fiktiva dokumentärer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5666> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "todellisuuspohjaiset elokuvat"@fi,
         "verklighetsbaserade filmer"@sv ;
     skos:related slm:s1078,
@@ -9460,6 +9968,7 @@ slm:s849 a skos:Concept ;
 
 slm:s855 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:altLabel "lukemistot"@fi,
         "lättlästa böcker (läsinlärning)"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p6188> ;
@@ -9477,7 +9986,7 @@ slm:s871 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p17281> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "videopelit"@fi,
         "videospel"@sv ;
     skos:related slm:s1015,
@@ -9499,6 +10008,22 @@ slm:s880 a skos:Concept ;
         slm:s736 ;
     skos:scopeNote "Käytetään teoksista, joissa kokeillaan ja pyritään kehittämään erilaisia kerrontatekniikkoja."@fi,
         "Används om verk, i vilka man experimenterar med och försöker utveckla olika berättartekniker."@sv .
+
+slm:s887 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:altLabel "alkusoittosarjat"@fi,
+        "kassaatiot"@fi,
+        "parthiat"@fi,
+        "partitat"@fi,
+        "tanssisarjat"@fi ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1292,
+        slm:s602,
+        slm:s890 ;
+    skos:prefLabel "sarjat"@fi,
+        "sviter"@sv ;
+    skos:topConceptOf slm:s861 .
 
 slm:s900 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9558,7 +10083,7 @@ slm:s968 a skos:Concept ;
     skos:altLabel "nuorisoelokuvat"@fi ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p9955> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "nuortenelokuvat"@fi,
         "ungdomsfilmer"@sv ;
     skos:related slm:s135,
@@ -9580,7 +10105,7 @@ slm:s982 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15767> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s52 ;
     skos:prefLabel "rakkauselokuvat"@fi,
         "kärleksfilmer"@sv ;
@@ -9623,7 +10148,7 @@ slm:s1022 a skos:Concept ;
         "maffiafilmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p12142> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "gangsterielokuvat"@fi,
         "gangsterfilmer"@sv ;
     skos:related slm:s1087,
@@ -9663,24 +10188,13 @@ slm:s1041 a skos:Concept ;
     skos:altLabel "fantasiserier"@sv ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27833> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "fantasiasarjat"@fi,
         "fantasyserier (tv-serier)"@sv ;
     skos:related slm:s1026,
         slm:s1140,
         slm:s130,
         slm:s504 .
-
-slm:s1051 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1242,
-        slm:s191,
-        slm:s324,
-        slm:s643 ;
-    skos:prefLabel "hakemistot"@fi,
-        "index (register)"@sv ;
-    skos:topConceptOf slm:s285 .
 
 slm:s1086 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9731,24 +10245,36 @@ slm:s1121 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, joiden tarinaa kaksi tai useampi kirjoittajaa tekevät peräkkäin."@fi,
         "Används om verk, vars berättelser två eller flera författare skriver efter varandra"@sv .
 
+slm:s1139 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1313,
+        slm:s200,
+        slm:s248,
+        slm:s616 ;
+    skos:prefLabel "hengellinen musiikki"@fi,
+        "andlig musik"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s1149 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p18006> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sketsit"@fi,
         "sketcher"@sv ;
     skos:related slm:s1104,
         slm:s1128,
         slm:s865,
         slm:s919 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1168 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "spänningserier"@sv ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p27692> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "jännityssarjat"@fi,
         "thrillerserier"@sv ;
     skos:related slm:s158,
@@ -9769,6 +10295,17 @@ slm:s1251 a skos:Concept ;
         slm:s532,
         slm:s538 .
 
+slm:s129 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1116,
+        slm:s268,
+        slm:s791 ;
+    skos:prefLabel "juhlamusiikki"@fi,
+        "festmusik"@sv ;
+    skos:related slm:s1294 ;
+    skos:topConceptOf slm:s861 .
+
 slm:s155 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2717> ;
@@ -9785,7 +10322,7 @@ slm:s158 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "action-sarjat"@fi ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "toimintasarjat"@fi,
         "actionserier (tv-serier)"@sv ;
     skos:related slm:s1168,
@@ -9825,7 +10362,7 @@ slm:s227 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p3453> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tietokonepelit"@fi,
         "datorspel"@sv ;
     skos:related slm:s1015,
@@ -9860,7 +10397,7 @@ slm:s26 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p12514> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "katastrofielokuvat"@fi,
         "katastroffilmer"@sv ;
     skos:related slm:s1066,
@@ -9891,19 +10428,19 @@ slm:s286 a skos:Concept ;
 slm:s312 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15814> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s778 ;
     skos:prefLabel "kuunnelmat"@fi,
         "hörspel"@sv ;
     skos:related slm:s181,
         slm:s193,
         slm:s929 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s397 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "vankilaelokuvat"@fi,
         "fängelsefilmer"@sv ;
     skos:related slm:s1161,
@@ -9911,34 +10448,20 @@ slm:s397 a skos:Concept ;
         slm:s612,
         slm:s796 .
 
-slm:s418 a skos:Concept ;
+slm:s409 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "science fiction"@fi,
-        "scifi"@fi,
-        "tieteisromaanit"@fi,
-        "scifi"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15527> ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "noter"@sv,
+        "notpublikationer"@sv,
+        "nottryck"@sv ;
     skos:inScheme slm:s285 ;
-    skos:narrower slm:s1032,
-        slm:s56,
-        slm:s984 ;
-    skos:prefLabel "tieteiskirjallisuus"@fi,
-        "science fiction-litteratur"@sv ;
-    skos:related slm:s1140 ;
-    skos:scopeNote "Käytetään teoksista, jotka kuvaavat tieteen ja tekniikan todellisia tai kuviteltuja saavutuksia ja ihmisen elämää tulevaisuudessa tai uudessa ympäristössä."@fi,
-        "Används om verk som beskriver vetenskapens och teknikens verkliga eller fiktiva resultat och människans liv i framtiden eller i en ny omgivning."@sv .
-
-slm:s421 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1218 ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1254,
-        slm:s360,
-        slm:s818,
-        slm:s924 ;
-    skos:prefLabel "viihdemusiikki"@fi,
-        "underhållningsmusik"@sv .
+    skos:narrower slm:s1180,
+        slm:s1308,
+        slm:s668,
+        slm:s746 ;
+    skos:prefLabel "nuottijulkaisut"@fi,
+        "musikalier"@sv ;
+    skos:topConceptOf slm:s285 .
 
 slm:s423 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9996,14 +10519,14 @@ slm:s532 a skos:Concept ;
 
 slm:s556 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "dramatisoinnit"@fi,
         "dramatiseringar"@sv ;
     skos:related slm:s1058,
         slm:s529,
         slm:s657,
         slm:s909 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s562 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10030,7 +10553,7 @@ slm:s588 a skos:Concept ;
         "webbspel"@sv ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22610> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "verkkopelit"@fi,
         "internetspel"@sv ;
     skos:related slm:s1015,
@@ -10042,7 +10565,7 @@ slm:s603 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p26475> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:note "Konsolipeli, jota voi pelata usea pelaaja yhtä aikaa."@fi,
         "Konsolspel som kan spelas av flera spelare samtidigt."@sv ;
     skos:prefLabel "moninpelit"@fi,
@@ -10105,7 +10628,7 @@ slm:s722 a skos:Concept ;
     skos:broader slm:s354,
         slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21691> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "tilannekomediat"@fi,
         "situationskomedier"@sv ;
     skos:related slm:s5,
@@ -10129,7 +10652,7 @@ slm:s739 a skos:Concept ;
 slm:s748 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "seikkailusarjat"@fi,
         "äventyrsserier (tv-serier)"@sv ;
     skos:related slm:s1053,
@@ -10158,7 +10681,7 @@ slm:s77 a skos:Concept ;
         "animationsfilmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13637> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1063,
         slm:s367,
         slm:s594 ;
@@ -10180,22 +10703,26 @@ slm:s784 a skos:Concept ;
 
 slm:s813 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "förkortade utgåvor"@sv,
+    dct:modified "2019-03-28"^^xsd:date ;
+    skos:altLabel "förkortade upplagor"@sv,
+        "förkortade utgåvor"@sv,
         "förkortade verk"@sv ;
-    skos:inScheme slm:s285 ;
+    skos:definition "Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä."@fi,
+        "Verk som har förkortats utan att betydelseinnehållet eller framställningsstilen har ändrats."@sv ;
+    skos:inScheme slm: ;
     skos:prefLabel "lyhennelmät"@fi,
-        "förkortade upplagor"@sv ;
+        "förkortade versioner"@sv ;
     skos:related slm:s1058,
         slm:s657,
         slm:s855,
         slm:s909 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s858 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25593> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "rikossarjat"@fi,
         "kriminalserier (tv-serier)"@sv ;
     skos:related slm:s1030,
@@ -10244,7 +10771,7 @@ slm:s1015 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15342> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s996 ;
     skos:prefLabel "mobiilipelit"@fi,
         "mobilspel"@sv ;
@@ -10253,11 +10780,23 @@ slm:s1015 a skos:Concept ;
         slm:s588,
         slm:s871 .
 
+slm:s1051 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1242,
+        slm:s1297,
+        slm:s191,
+        slm:s324,
+        slm:s643 ;
+    skos:prefLabel "hakemistot"@fi,
+        "index (register)"@sv ;
+    skos:topConceptOf slm:s285 .
+
 slm:s1073 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p14891> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "sotaelokuvat"@fi,
         "krigsfilmer"@sv ;
     skos:related slm:s1131,
@@ -10285,7 +10824,7 @@ slm:s1209 a skos:Concept ;
         "TV-program"@sv,
         "televisionsprogram"@sv,
         "teveprogram"@sv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1142,
         slm:s354,
         slm:s549,
@@ -10293,7 +10832,7 @@ slm:s1209 a skos:Concept ;
         slm:s940 ;
     skos:prefLabel "televisio-ohjelmat"@fi,
         "tv-program"@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1270 a skos:Concept ;
     skos:altLabel "opinnäytetyöt"@fi,
@@ -10310,6 +10849,73 @@ slm:s1270 a skos:Concept ;
         "lärdomsprov"@sv ;
     skos:topConceptOf slm:s285 .
 
+slm:s1301 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "EDM"@fi,
+        "elektroninen musiikki"@fi,
+        "klubimusiikki"@fi,
+        "EDM"@sv,
+        "electronic dance music"@sv ;
+    skos:broader slm:s436 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027153> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1245,
+        slm:s133,
+        slm:s192,
+        slm:s538,
+        slm:s557 ;
+    skos:prefLabel "elektroninen tanssimusiikki"@fi,
+        "elektronisk dansmusik"@sv .
+
+slm:s1310 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2019-03-29"^^xsd:date ;
+    skos:altLabel "fantastik"@sv ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
+    skos:narrower slm:s1140,
+        slm:s418,
+        slm:s690 ;
+    skos:prefLabel "spekulatiivinen fiktio"@fi,
+        "spekulativ fiktion"@sv ;
+    skos:related slm:s833 ;
+    skos:topConceptOf slm:s285,
+        slm:s593 .
+
+slm:s418 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "science fiction"@fi,
+        "scifi"@fi,
+        "tieteisromaanit"@fi,
+        "scifi"@sv ;
+    skos:broader slm:s1310,
+        slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15527> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1032,
+        slm:s56,
+        slm:s984 ;
+    skos:prefLabel "tieteiskirjallisuus"@fi,
+        "science fiction-litteratur"@sv ;
+    skos:related slm:s1140 ;
+    skos:scopeNote "Käytetään teoksista, jotka kuvaavat tieteen ja tekniikan todellisia tai kuviteltuja saavutuksia ja ihmisen elämää tulevaisuudessa tai uudessa ympäristössä."@fi,
+        "Används om verk som beskriver vetenskapens och teknikens verkliga eller fiktiva resultat och människans liv i framtiden eller i en ny omgivning."@sv .
+
+slm:s421 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:broader slm:s1218 ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1254,
+        slm:s1313,
+        slm:s360,
+        slm:s818,
+        slm:s924 ;
+    skos:prefLabel "viihdemusiikki"@fi,
+        "underhållningsmusik"@sv .
+
 slm:s520 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "romanttinen viihdekirjallisuus"@fi ;
@@ -10323,19 +10929,6 @@ slm:s520 a skos:Concept ;
     skos:related slm:s1055,
         slm:s755,
         slm:s926 .
-
-slm:s560 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1186 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026854> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1176,
-        slm:s1266,
-        slm:s756,
-        slm:s86,
-        slm:s927 ;
-    skos:prefLabel "heavy rock"@fi,
-        "heavy rock"@sv .
 
 slm:s586 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10409,7 +11002,7 @@ slm:s709 a skos:Concept ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p14501> ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026950> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1141,
         slm:s673 ;
     skos:prefLabel "musiikkielokuvat"@fi,
@@ -10422,7 +11015,7 @@ slm:s755 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13352> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "romanttiset komediat"@fi,
         "romantiska komedier"@sv ;
     skos:related slm:s267,
@@ -10450,7 +11043,7 @@ slm:s82 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1092,
         slm:s188 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "psykologiset kauhuelokuvat"@fi,
         "psykologiska skräckfilmer"@sv ;
     skos:related slm:s1066,
@@ -10492,7 +11085,7 @@ slm:s928 a skos:Concept ;
         "verklighetsbaserade filmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1234> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "elämäkertaelokuvat"@fi,
         "biografiska filmer"@sv ;
     skos:related slm:s1006,
@@ -10508,7 +11101,7 @@ slm:s930 a skos:Concept ;
     skos:altLabel "sarjafilmit"@fi,
         "filmserier"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p387> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1084,
         slm:s354,
         slm:s475 ;
@@ -10516,7 +11109,7 @@ slm:s930 a skos:Concept ;
         "programserier"@sv ;
     skos:related slm:s236,
         slm:s995 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1028 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10526,7 +11119,7 @@ slm:s1028 a skos:Concept ;
         "kung fu-filmer"@sv,
         "kung-fu-filmer"@sv ;
     skos:broader slm:s612 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "kamppailulajielokuvat"@fi,
         "kampsportsfilmer"@sv ;
     skos:related slm:s1024,
@@ -10554,13 +11147,26 @@ slm:s1076 a skos:Concept ;
         "folksagor"@sv ;
     skos:related slm:s237 .
 
+slm:s205 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1202,
+        slm:s1273,
+        slm:s1278,
+        slm:s1282,
+        slm:s1290,
+        slm:s1298 ;
+    skos:prefLabel "kartat"@fi,
+        "kartor"@sv ;
+    skos:topConceptOf slm:s285 .
+
 slm:s230 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "todellisuuspohjaiset elokuvat"@fi,
         "verklighetsbaserade filmer"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5667> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s52,
         slm:s994 ;
     skos:prefLabel "historialliset elokuvat"@fi,
@@ -10574,7 +11180,7 @@ slm:s529 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "elokuvasovitukset"@fi,
         "filmbearbetningar"@sv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "filmatisoinnit"@fi,
         "filmatiseringar"@sv ;
     skos:related slm:s1058,
@@ -10583,7 +11189,7 @@ slm:s529 a skos:Concept ;
         slm:s556,
         slm:s657,
         slm:s909 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s865 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10592,7 +11198,7 @@ slm:s865 a skos:Concept ;
         "farser (skådespel)"@sv ;
     skos:broader slm:s919 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p16428> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s710 ;
     skos:prefLabel "farssit"@fi,
         "farser"@sv ;
@@ -10606,7 +11212,7 @@ slm:s1092 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p7966> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s712,
         slm:s82 ;
     skos:prefLabel "kauhuelokuvat"@fi,
@@ -10677,7 +11283,7 @@ slm:s504 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p6735> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "fantasiaelokuvat"@fi,
         "fantasyfilmer"@sv ;
     skos:related slm:s1041,
@@ -10688,8 +11294,34 @@ slm:s504 a skos:Concept ;
         slm:s574,
         slm:s833 .
 
+slm:s560 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-28"^^xsd:date ;
+    skos:altLabel "heavy"@fi,
+        "heavy rock"@fi,
+        "heavyrock"@fi,
+        "hevi"@fi,
+        "hevimetalli"@fi,
+        "metallimusiikki"@fi,
+        "heavy"@sv,
+        "heavy rock"@sv,
+        "metallmusik"@sv ;
+    skos:broader slm:s1186 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026854> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1176,
+        slm:s1266,
+        slm:s1315,
+        slm:s756,
+        slm:s86,
+        slm:s927 ;
+    skos:prefLabel "heavy metal"@fi,
+        "heavy metal"@sv ;
+    skos:related slm:s828 .
+
 slm:s1058 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "rinnakkaisteokset"@fi,
         "parallellverk"@sv ;
@@ -10710,7 +11342,7 @@ slm:s1066 a skos:Concept ;
         "scifi"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2003> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1032,
         slm:s984 ;
     skos:prefLabel "tieteiselokuvat"@fi,
@@ -10754,40 +11386,6 @@ slm:s499 a skos:Concept ;
         "afroamerikansk musik"@sv ;
     skos:topConceptOf slm:s861 .
 
-slm:s505 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1093,
-        slm:s1229,
-        slm:s1231,
-        slm:s1238,
-        slm:s1239,
-        slm:s1240,
-        slm:s1241,
-        slm:s1243 ;
-    skos:prefLabel "arvostelut"@fi,
-        "recensioner"@sv ;
-    skos:topConceptOf slm:s285 .
-
-slm:s657 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "adaptaatiot"@fi,
-        "versiot"@fi,
-        "adaptationer"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p3157> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "mukaelmat"@fi,
-        "omarbetningar"@sv ;
-    skos:related slm:s1058,
-        slm:s379,
-        slm:s509,
-        slm:s529,
-        slm:s556,
-        slm:s67,
-        slm:s813,
-        slm:s909 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s662 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:inScheme slm:s861 ;
@@ -10828,7 +11426,7 @@ slm:s763 a skos:Concept ;
         "svart film"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p20347> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "film noir"@fi,
         "film noir"@sv ;
     skos:related slm:s1024,
@@ -10863,7 +11461,7 @@ slm:s1071 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s188,
         slm:s607 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "psykologiset jännityselokuvat"@fi,
         "psykologiska thrillers (filmer)"@sv ;
     skos:related slm:s1024,
@@ -10878,7 +11476,7 @@ slm:s1071 a skos:Concept ;
 slm:s1119 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "oikeussalielokuvat"@fi,
         "rättegångsfilmer"@sv ;
     skos:related slm:s1022,
@@ -10950,6 +11548,22 @@ slm:s41 a skos:Concept ;
     skos:scopeNote "Käytetään rikoskirjoista, jotka kuvaavat poliisin työtä rikoksen selvittämiseksi."@fi,
         "Används om verk som beskriver polisens arbete och utredning av brott."@sv .
 
+slm:s505 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1093,
+        slm:s1229,
+        slm:s1231,
+        slm:s1238,
+        slm:s1239,
+        slm:s1240,
+        slm:s1241,
+        slm:s1243,
+        slm:s1275 ;
+    skos:prefLabel "arvostelut"@fi,
+        "recensioner"@sv ;
+    skos:topConceptOf slm:s285 .
+
 slm:s641 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s499 ;
@@ -10967,10 +11581,31 @@ slm:s641 a skos:Concept ;
     skos:prefLabel "jazz"@fi,
         "jazz"@sv .
 
+slm:s657 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "adaptaatiot"@fi,
+        "versiot"@fi,
+        "adaptationer"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p3157> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "mukaelmat"@fi,
+        "omarbetningar"@sv ;
+    skos:related slm:s1058,
+        slm:s379,
+        slm:s509,
+        slm:s529,
+        slm:s556,
+        slm:s577,
+        slm:s67,
+        slm:s813,
+        slm:s909 ;
+    skos:topConceptOf slm:s285 .
+
 slm:s1024 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "salapoliisielokuvat"@fi,
         "detektivfilmer"@sv ;
     skos:related slm:s1028,
@@ -11002,28 +11637,6 @@ slm:s1128 a skos:Concept ;
         slm:s865,
         slm:s919 ;
     skos:topConceptOf slm:s285 .
-
-slm:s1140 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "fantasiaromaanit"@fi,
-        "fantasyromaner"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p14840> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s610,
-        slm:s94,
-        slm:s988 ;
-    skos:prefLabel "fantasiakirjallisuus"@fi,
-        "fantasylitteratur"@sv ;
-    skos:related slm:s1041,
-        slm:s1165,
-        slm:s130,
-        slm:s418,
-        slm:s504,
-        slm:s833,
-        slm:s981 ;
-    skos:scopeNote "Käytetään teoksista, jotka kuvaavat yliluonnollista, tuonpuoleista maailmaa tai maailmaa, jossa meidän todellisuutemme lait eivät päde."@fi,
-        "Används om verk, som beskriver en övernaturlig hinsidesverklighet eller en värld, där lagarna för vår verklighet inte gäller."@sv .
 
 slm:s1165 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -11105,35 +11718,36 @@ slm:s73 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, joiden tarina käsittelee vakoilua ja vakoilijoita."@fi,
         "Används om verk, som handlar om spionage och spioner."@sv .
 
-slm:s909 a skos:Concept ;
+slm:s1140 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "adaptaatiot"@fi,
-        "versiot"@fi,
-        "adaptationer"@sv,
-        "arrangemang (musik)"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p2760> ;
-    skos:inScheme slm:s285,
-        slm:s861 ;
-    skos:prefLabel "sovitukset"@fi,
-        "bearbetningar"@sv ;
-    skos:related slm:s1058,
-        slm:s1118,
-        slm:s379,
-        slm:s509,
-        slm:s529,
-        slm:s556,
-        slm:s657,
-        slm:s67,
-        slm:s813 ;
-    skos:topConceptOf slm:s285,
-        slm:s861 .
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "fantasiaromaanit"@fi,
+        "fantasyromaner"@sv ;
+    skos:broader slm:s1310,
+        slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p14840> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s610,
+        slm:s94,
+        slm:s988 ;
+    skos:prefLabel "fantasiakirjallisuus"@fi,
+        "fantasylitteratur"@sv ;
+    skos:related slm:s1041,
+        slm:s1165,
+        slm:s130,
+        slm:s418,
+        slm:s504,
+        slm:s833,
+        slm:s981 ;
+    skos:scopeNote "Käytetään teoksista, jotka kuvaavat yliluonnollista, tuonpuoleista maailmaa tai maailmaa, jossa meidän todellisuutemme lait eivät päde."@fi,
+        "Används om verk, som beskriver en övernaturlig hinsidesverklighet eller en värld, där lagarna för vår verklighet inte gäller."@sv .
 
 slm:s190 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "agenttielokuvat"@fi,
         "agentfilmer"@sv ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "vakoiluelokuvat"@fi,
         "spionfilmer"@sv ;
     skos:related slm:s1024,
@@ -11196,6 +11810,31 @@ slm:s816 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, joissa jännityselementin ohella korostetaan ihmisten ja heidän motiiviensa psykologista kuvausta."@fi,
         "Används om verk som förutom att de är spännande, dessutom ger en psykologisk beskrivning av människor och deras motiv."@sv .
 
+slm:s909 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
+    skos:altLabel "adaptaatiot"@fi,
+        "versiot"@fi,
+        "adaptationer"@sv,
+        "arrangemang (musik)"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p2760> ;
+    skos:inScheme slm:s285,
+        slm:s861 ;
+    skos:prefLabel "sovitukset"@fi,
+        "bearbetningar"@sv ;
+    skos:related slm:s1058,
+        slm:s1118,
+        slm:s154,
+        slm:s379,
+        slm:s509,
+        slm:s529,
+        slm:s556,
+        slm:s657,
+        slm:s67,
+        slm:s813 ;
+    skos:topConceptOf slm:s285,
+        slm:s861 .
+
 slm:s911 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "dekkarit"@fi,
@@ -11247,7 +11886,7 @@ slm:s1045 a skos:Concept ;
 slm:s1087 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "poliisielokuvat"@fi,
         "polisfilmer"@sv ;
     skos:related slm:s1022,
@@ -11267,7 +11906,7 @@ slm:s1161 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p12143> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "rikoselokuvat"@fi,
         "kriminalfilmer"@sv ;
     skos:related slm:s1024,
@@ -11327,7 +11966,7 @@ slm:s1177 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22353> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1015,
         slm:s1134,
         slm:s227,
@@ -11379,7 +12018,7 @@ slm:s612 a skos:Concept ;
     skos:altLabel "action-elokuvat"@fi ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p20056> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1028 ;
     skos:prefLabel "toimintaelokuvat"@fi,
         "actionfilmer"@sv ;
@@ -11401,7 +12040,7 @@ slm:s1131 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p15061> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s994 ;
     skos:prefLabel "seikkailuelokuvat"@fi,
         "äventyrsfilmer"@sv ;
@@ -11471,6 +12110,7 @@ slm:s618 a skos:Concept ;
 
 slm:s436 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:broader slm:s1218 ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s106,
@@ -11479,14 +12119,13 @@ slm:s436 a skos:Concept ;
         slm:s1130,
         slm:s1169,
         slm:s1186,
-        slm:s1245,
         slm:s1250,
+        slm:s1301,
+        slm:s1303,
         slm:s134,
-        slm:s192,
         slm:s277,
         slm:s53,
         slm:s532,
-        slm:s557,
         slm:s655,
         slm:s704,
         slm:s856,
@@ -11499,7 +12138,7 @@ slm:s919 a skos:Concept ;
     skos:altLabel "huvinäytelmät"@fi,
         "lustspel"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p13876> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s310,
         slm:s328,
         slm:s425,
@@ -11520,7 +12159,7 @@ slm:s919 a skos:Concept ;
         slm:s451,
         slm:s481,
         slm:s619 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1186 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -11539,6 +12178,7 @@ slm:s1186 a skos:Concept ;
         slm:s234,
         slm:s463,
         slm:s560,
+        slm:s570,
         slm:s583,
         slm:s717,
         slm:s777,
@@ -11554,6 +12194,7 @@ slm:s202 a skos:Concept ;
     skos:altLabel "handledningar"@sv ;
     skos:inScheme slm:s285 ;
     skos:narrower slm:s1115,
+        slm:s1276,
         slm:s148,
         slm:s159,
         slm:s209,
@@ -11576,42 +12217,13 @@ slm:s202 a skos:Concept ;
         "guider (verk)"@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s1081 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027103> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1052,
-        slm:s1101,
-        slm:s1107,
-        slm:s1147,
-        slm:s1223,
-        slm:s1258,
-        slm:s1264,
-        slm:s176,
-        slm:s196,
-        slm:s204,
-        slm:s212,
-        slm:s214,
-        slm:s231,
-        slm:s32,
-        slm:s442,
-        slm:s605,
-        slm:s651,
-        slm:s737,
-        slm:s797,
-        slm:s829,
-        slm:s931 ;
-    skos:prefLabel "laulut"@fi,
-        "sånger"@sv ;
-    skos:topConceptOf slm:s861 .
-
 slm:s607 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "trillerit"@fi,
         "thriller -- film"@sv ;
     skos:broader slm:s1175 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p17774> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1071,
         slm:s467,
         slm:s488,
@@ -11667,10 +12279,43 @@ slm:s1075 a skos:Concept ;
         "Används om verk, oftast avsedda för barn, som man även kan leka med."@sv ;
     skos:topConceptOf slm:s285 .
 
+slm:s1081 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-05-23"^^xsd:date ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027103> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1052,
+        slm:s1101,
+        slm:s1107,
+        slm:s1147,
+        slm:s1223,
+        slm:s1258,
+        slm:s1264,
+        slm:s1283,
+        slm:s176,
+        slm:s196,
+        slm:s204,
+        slm:s212,
+        slm:s214,
+        slm:s231,
+        slm:s32,
+        slm:s437,
+        slm:s442,
+        slm:s605,
+        slm:s651,
+        slm:s737,
+        slm:s797,
+        slm:s829,
+        slm:s931 ;
+    skos:prefLabel "laulut"@fi,
+        "sånger"@sv ;
+    skos:topConceptOf slm:s861 .
+
 slm:s170 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-03-22"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p6062> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1021,
         slm:s1050,
         slm:s1054,
@@ -11680,6 +12325,7 @@ slm:s170 a skos:Concept ;
         slm:s1177,
         slm:s1192,
         slm:s1203,
+        slm:s1309,
         slm:s145,
         slm:s22,
         slm:s278,
@@ -11696,7 +12342,7 @@ slm:s170 a skos:Concept ;
         slm:s938 ;
     skos:prefLabel "pelit"@fi,
         "spel"@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1218 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -11739,7 +12385,7 @@ slm:s354 a skos:Concept ;
     skos:broader slm:s1209,
         slm:s930 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p25701> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1005,
         slm:s1026,
         slm:s1030,
@@ -11925,6 +12571,7 @@ slm:s975 a skos:Concept ;
         slm:s1140,
         slm:s1150,
         slm:s126,
+        slm:s1288,
         slm:s27,
         slm:s287,
         slm:s322,
@@ -12150,7 +12797,7 @@ slm:s298 a skos:Concept ;
 slm:s1175 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1235> ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:narrower slm:s1002,
         slm:s1018,
         slm:s1022,
@@ -12236,7 +12883,7 @@ slm:s1175 a skos:Concept ;
         slm:s450,
         slm:s529,
         slm:s9 ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s593 a skos:ConceptScheme ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12244,6 +12891,7 @@ slm:s593 a skos:ConceptScheme ;
         slm:s1036,
         slm:s1086,
         slm:s125,
+        slm:s1310,
         slm:s151,
         slm:s224,
         slm:s298,
@@ -12260,6 +12908,53 @@ slm:s593 a skos:ConceptScheme ;
         slm:s850 ;
     skos:prefLabel "Jatkuvien julkaisujen lajityyppi- ja muototermit"@fi,
         "Genretermer för fortlöpande publikationer"@sv .
+
+slm: a skos:ConceptScheme ;
+    dc:creator "Lajityyppi- ja muotosanastoryhmä"@fi ;
+    dc:description """Finländsk genre- och formlista (FGF) är en tvåspråkig vokabulär med termer som används för att ange form och genre vid beskrivningen av material. \r
+\r
+FGF har sammanställts och upprätthålls av en arbetsgrupp för genre- och formtermer som verkar inom Expertgruppen för innehållsbeskrivning, och till vilken medlemmar från bibliotekssektorns olika områden hör. \r
+\r
+Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.fi/">blanketten för begreppsförslag till Allärs och ALLFO</a> genom att ange i förklaringsfältet att förslaget gäller FGF. {@sv}\r
+\r
+""",
+        """Suomalainen lajityyppi- ja muotosanasto (SLM) on kaksikielinen sanasto aineistojen kuvailussa käytettävistä muotoa ja lajityyppiä eli genreä kuvaavista termeistä.\r
+\r
+Sanaston on laatinut ja sitä ylläpitää Sisällönkuvailun asiantuntijaryhmän alainen Lajityyppi- ja muotosanastoryhmä, johon kuuluu jäseniä kirjastosektorin eri alueilta. Musiikin osalta sisällöstä vastaa Muusa-ryhmä.\r
+\r
+Voit ehdottaa uusia termejä ja muutoksia sanastoon <a href="//ehdotus.finto.fi/">YSAn ja YSOn ehdotusjärjestelmän</a> avulla merkitsemällä ehdotuksen selitekenttään, että ehdotus koskee SLM-sanastoa."""@fi ;
+    dc:publisher "Kansalliskirjasto"@fi ;
+    dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:modified "2019-05-27T02:49:21+00:00"^^xsd:dateTime ;
+    owl:imports dc:,
+        <http://www.w3.org/2000/01/rdf-schema>,
+        <http://www.w3.org/2004/02/skos/core> ;
+    skos:hasTopConcept slm:s109,
+        slm:s1149,
+        slm:s1175,
+        slm:s1209,
+        slm:s1237,
+        slm:s1269,
+        slm:s1271,
+        slm:s1279,
+        slm:s1299,
+        slm:s1311,
+        slm:s170,
+        slm:s236,
+        slm:s312,
+        slm:s320,
+        slm:s450,
+        slm:s529,
+        slm:s556,
+        slm:s711,
+        slm:s807,
+        slm:s813,
+        slm:s899,
+        slm:s9,
+        slm:s919,
+        slm:s930 .
 
 slm:s861 a skos:ConceptScheme ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12300,12 +12995,25 @@ slm:s861 a skos:ConceptScheme ;
         slm:s1249,
         slm:s1252,
         slm:s1257,
+        slm:s1277,
+        slm:s1284,
         slm:s129,
+        slm:s1291,
+        slm:s1293,
+        slm:s1294,
+        slm:s1295,
+        slm:s1300,
+        slm:s1302,
+        slm:s1305,
+        slm:s1306,
         slm:s131,
+        slm:s1312,
+        slm:s1314,
         slm:s137,
         slm:s144,
         slm:s146,
         slm:s150,
+        slm:s154,
         slm:s163,
         slm:s174,
         slm:s175,
@@ -12346,6 +13054,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s369,
         slm:s37,
         slm:s370,
+        slm:s375,
         slm:s378,
         slm:s386,
         slm:s391,
@@ -12369,6 +13078,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s489,
         slm:s490,
         slm:s491,
+        slm:s494,
         slm:s499,
         slm:s500,
         slm:s510,
@@ -12377,19 +13087,18 @@ slm:s861 a skos:ConceptScheme ;
         slm:s533,
         slm:s535,
         slm:s537,
-        slm:s538,
         slm:s541,
         slm:s543,
         slm:s565,
         slm:s567,
         slm:s568,
         slm:s572,
+        slm:s577,
         slm:s580,
         slm:s585,
         slm:s590,
         slm:s592,
         slm:s596,
-        slm:s602,
         slm:s609,
         slm:s61,
         slm:s614,
@@ -12417,6 +13126,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s764,
         slm:s771,
         slm:s773,
+        slm:s774,
         slm:s776,
         slm:s783,
         slm:s786,
@@ -12435,7 +13145,6 @@ slm:s861 a skos:ConceptScheme ;
         slm:s874,
         slm:s883,
         slm:s887,
-        slm:s890,
         slm:s892,
         slm:s90,
         slm:s909,
@@ -12458,7 +13167,6 @@ slm:s861 a skos:ConceptScheme ;
 
 slm:s285 a skos:ConceptScheme ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-01-15T04:09:20+00:00"^^xsd:dateTime ;
     skos:hasTopConcept slm:s100,
         slm:s1006,
         slm:s1011,
@@ -12475,7 +13183,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s1075,
         slm:s1086,
         slm:s1089,
-        slm:s109,
         slm:s1097,
         slm:s1098,
         slm:s110,
@@ -12487,20 +13194,23 @@ slm:s285 a skos:ConceptScheme ;
         slm:s114,
         slm:s1144,
         slm:s1148,
-        slm:s1149,
         slm:s1162,
         slm:s1167,
-        slm:s1175,
         slm:s1181,
         slm:s1191,
         slm:s1206,
         slm:s1207,
-        slm:s1209,
         slm:s1210,
         slm:s1213,
         slm:s122,
         slm:s1230,
         slm:s1270,
+        slm:s1280,
+        slm:s1285,
+        slm:s1286,
+        slm:s1287,
+        slm:s1296,
+        slm:s1310,
         slm:s132,
         slm:s139,
         slm:s140,
@@ -12509,7 +13219,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s155,
         slm:s16,
         slm:s168,
-        slm:s170,
         slm:s172,
         slm:s181,
         slm:s184,
@@ -12522,7 +13231,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s215,
         slm:s218,
         slm:s220,
-        slm:s236,
         slm:s245,
         slm:s253,
         slm:s254,
@@ -12534,15 +13242,14 @@ slm:s285 a skos:ConceptScheme ;
         slm:s286,
         slm:s291,
         slm:s308,
-        slm:s312,
         slm:s313,
-        slm:s320,
         slm:s329,
         slm:s341,
         slm:s352,
         slm:s356,
         slm:s365,
         slm:s392,
+        slm:s393,
         slm:s394,
         slm:s399,
         slm:s402,
@@ -12551,7 +13258,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s427,
         slm:s435,
         slm:s443,
-        slm:s450,
         slm:s451,
         slm:s457,
         slm:s477,
@@ -12561,13 +13267,11 @@ slm:s285 a skos:ConceptScheme ;
         slm:s501,
         slm:s505,
         slm:s506,
-        slm:s529,
         slm:s536,
         slm:s540,
         slm:s544,
         slm:s550,
         slm:s552,
-        slm:s556,
         slm:s558,
         slm:s561,
         slm:s562,
@@ -12589,13 +13293,11 @@ slm:s285 a skos:ConceptScheme ;
         slm:s654,
         slm:s657,
         slm:s661,
-        slm:s668,
         slm:s677,
         slm:s686,
         slm:s694,
         slm:s697,
         slm:s70,
-        slm:s711,
         slm:s719,
         slm:s72,
         slm:s729,
@@ -12605,9 +13307,7 @@ slm:s285 a skos:ConceptScheme ;
         slm:s765,
         slm:s768,
         slm:s775,
-        slm:s807,
         slm:s812,
-        slm:s813,
         slm:s817,
         slm:s820,
         slm:s821,
@@ -12625,17 +13325,13 @@ slm:s285 a skos:ConceptScheme ;
         slm:s889,
         slm:s896,
         slm:s897,
-        slm:s899,
-        slm:s9,
         slm:s906,
         slm:s907,
         slm:s909,
         slm:s912,
         slm:s915,
-        slm:s919,
         slm:s922,
         slm:s929,
-        slm:s930,
         slm:s942,
         slm:s943,
         slm:s95,

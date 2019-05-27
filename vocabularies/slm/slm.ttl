@@ -1,5 +1,5 @@
-@prefix ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 @prefix dct:   <http://purl.org/dc/terms/> .
+@prefix ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 @prefix slm:   <http://urn.fi/URN:NBN:fi:au:slm:> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
@@ -9,6 +9,7 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 @prefix yso-update: <http://www.yso.fi/onto/yso-update/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 slm:s729  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -46,6 +47,13 @@ slm:s1240  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "tanssiarvostelut"@fi , "dansrecensioner"@sv .
+
+slm:s1275  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s505 ;
+        skos:altLabel    "konsertrecensioner"@sv , "skivrecensioner"@sv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "musikrecensioner"@sv , "musiikkiarvostelut"@fi .
 
 slm:s1093  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s505 ;
@@ -387,6 +395,15 @@ slm:s384  a              owl:Class , skos:Concept ;
         skos:prefLabel   "eläinlehdet"@fi , "djurtidningar"@sv ;
         skos:scopeNote   "Tuotantoeläimiä käsitteleviä lehtiä indeksoitaessa käytetään termiä maatalouslehdet. Korvaa termin lemmikkieläimet."@fi , "För indexering av tidningar som behandlar produktionsdjur används termen lantbrukstidningar."@sv .
 
+slm:s1303  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s436 ;
+        skos:altLabel    "indie"@sv , "indie pop"@fi ;
+        skos:definition  "Genre nära indierock som från början hängde samman med gör-det-själv-etos och självständiga skivbolag som uppkom i samband med punk. Till sitt ljudlandskap är indiepop lugnare och mindre aggressivt än indierock och punk."@sv , "Indierockille läheinen tyylilaji, joka alun perin liittyi punkin myötä syntyneeseen tee se itse -eetokseen ja itsenäisiin levy-yhtiöihin. Äänimaisemaltaan indiepop on indierockiin ja punkiin verrattuna rauhallisempi ja vähemmän aggressiivinen."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026065> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "indiepop"@sv , "indiepop"@fi ;
+        skos:related     slm:s234 .
+
 slm:s686  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "lättlästa böcker (handikappanpassade)"@sv ;
@@ -449,9 +466,10 @@ slm:s484  a              owl:Class , skos:Concept ;
 slm:s653  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "konkret poesi"@sv , "konkreettinen runous"@fi ;
         skos:inScheme    slm:s285 ;
         skos:note        "Modernin lyriikan suuntaus, jossa hyödynnetään visuaalisia, typografisia ja akustisia keinoja. Konkreettisessa runoudessa kieli ei ole pelkästään sanallisen kommunikaation väline, vaan sillä on myös materiaalinen ja visuaalinen ulottuvuus."@fi ;
-        skos:prefLabel   "konkret poesi"@sv , "konkreettinen runous"@fi .
+        skos:prefLabel   "visuell poesi"@sv , "visuaalinen runous"@fi .
 
 slm:s1102  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1076 ;
@@ -535,34 +553,24 @@ slm:s978  a              owl:Class , skos:Concept ;
         skos:prefLabel   "sukukronikat"@fi , "släktkrönikor"@sv ;
         skos:related     slm:s136 .
 
-slm:s538  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "drum and bass"@sv ;
-        skos:inScheme   slm:s861 ;
-        skos:prefLabel  "drum 'n' bass"@fi , "drum'n'bass"@sv ;
-        skos:related    slm:s1251 .
-
-slm:s1237  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
+slm:s538  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1301 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "broschyrer"@sv , "esitteet"@fi .
-
-slm:s1269  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        skos:altLabel    "formulär"@sv ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "lomakkeet"@fi , "blanketter"@sv .
-
-slm:s1271  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "reklamer"@sv , "mainokset"@fi .
+        skos:altLabel    "drum and bass"@sv ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "drum 'n' bass"@fi , "drum'n'bass"@sv ;
+        skos:related     slm:s1251 .
 
 slm:s170  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6062> ;
         skos:prefLabel   "spel"@sv , "pelit"@fi .
+
+slm:s1291  a             owl:Class , skos:Concept ;
+        skos:altLabel    "remixar"@sv , "remiksaukset"@fi , "remixit"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027046> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "uudelleenmiksaukset"@fi , "remixer"@sv .
 
 slm:s1089  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -599,6 +607,11 @@ slm:s200  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026728> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "lovsångsmusik"@sv , "ylistysmusiikki"@fi .
+
+slm:s1313  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1139 , slm:s421 ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "andlig underhållningsmusik"@sv , "hengellinen viihdemusiikki"@fi .
 
 slm:s49  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1177 ;
@@ -709,7 +722,7 @@ slm:s1119  a             owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään elokuvista, jotka kuvaavat (useimmiten anglosaksisessa oikeussaliympäristössä) syytetyn syyllisyyden selvittämistä oikeusprosessin avulla."@fi , "Används om filmer, vars handling beskriver (oftast i en anglosaxisk rättssalsmiljö) utredning av den åtalades skuld med hjälp av en rättsprocess."@sv .
 
 slm:s690  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
+        rdfs:subClassOf  slm:s975 , slm:s1310 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "goottilaiset kauhuromaanit"@fi , "kauhuromaanit"@fi , "gotiska skräckromaner"@sv , "skräckromaner"@sv , "goottilaiset romaanit"@fi , "gotiska romaner"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15087> ;
@@ -751,12 +764,12 @@ slm:s401  a              owl:Class , skos:Concept ;
         skos:related     slm:s1263 .
 
 slm:s133  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s106 ;
+        rdfs:subClassOf  slm:s1301 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026865> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "house"@sv , "house"@fi ;
-        skos:related     slm:s1245 .
+        skos:related     slm:s1245 , slm:s106 .
 
 slm:s387  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s354 ;
@@ -791,6 +804,13 @@ slm:s173  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "runokuvakirjat"@fi , "diktbilderböcker"@sv ;
         skos:scopeNote   "Käytetään kuvateoksista, joiden teksti on runomuodossa."@fi , "Används om bilderböcker med texten i versform."@sv .
+
+slm:s1293  a             owl:Class , skos:Concept ;
+        skos:altLabel    "sormitustaulukot"@fi , "sointutaulukot"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026805> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "grepptabeller"@sv , "otetaulukot"@fi ;
+        skos:related     slm:s395 .
 
 slm:s910  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s739 , slm:s1181 ;
@@ -891,7 +911,7 @@ slm:s833  a              owl:Class , skos:Concept ;
         skos:related     slm:s504 , slm:s1140 .
 
 slm:s1140  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
+        rdfs:subClassOf  slm:s975 , slm:s1310 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "fantasyromaner"@sv , "fantasiaromaanit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p14840> ;
@@ -906,6 +926,15 @@ slm:s130  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "fantasiasarjakuvat"@fi , "fantasyserier (tecknade serier)"@sv ;
         skos:related     slm:s504 , slm:s1140 .
+
+slm:s570  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1186 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "new wave"@fi , "new wave"@sv ;
+        skos:definition  "1970-luvun lopulle ja 1980-luvun alkupuolelle ajoittuva punk rockiin pohjautuva rock- ja popmusiikin tyyli, jossa punkin tyylilliset ja asenteelliset seikat yhdistyivät siistitympään muotoon." ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "uusi aalto (musiikki)"@fi , "new wave (musik)"@sv ;
+        skos:related     slm:s169 .
 
 slm:s815  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -926,6 +955,14 @@ slm:s78  a               owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026650> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "balettmusik"@sv , "balettimusiikki"@fi .
+
+slm:s1274  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s353 ;
+        skos:altLabel    "teatterimusiikki"@fi , "teatermusik"@sv ;
+        skos:definition  "Näytelmäesitykseen liittyvä musiikki."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026873> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "näytelmämusiikki"@fi , "skådespelsmusik"@sv .
 
 slm:s1186  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
@@ -1088,7 +1125,7 @@ slm:s467  a              owl:Class , skos:Concept ;
         skos:prefLabel   "teknotrillerit"@fi , "teknothrillers"@sv .
 
 slm:s1225  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
+        rdfs:subClassOf  slm:s466 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "vokaliser (övningsmaterial)"@sv , "vokaliisit (harjoitteet)"@fi .
@@ -1176,7 +1213,7 @@ slm:s218  a              owl:Class , skos:Concept ;
         skos:prefLabel   "näköispainokset"@fi , "faksimil"@sv .
 
 slm:s984  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1083 , slm:s418 , slm:s1066 , slm:s1026 ;
+        rdfs:subClassOf  slm:s1083 , slm:s418 , slm:s1066 , slm:s1026 , slm:s1310 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15528> ;
         skos:inScheme    slm:s593 , slm:s285 ;
@@ -1444,17 +1481,16 @@ slm:s127  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "Mississippi-blues"@fi , "Mississippi-blues"@sv .
 
-slm:s569  a              owl:Class , skos:Concept ;
+slm:s887  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "bibelberättelser"@sv ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p4009> ;
-        skos:definition  "Används om bearbetade berättelser ur Bibeln eller berättelser vars ämne tagits ur Bibeln."@sv , "Käytetään kertomuksista, jotka on muokattu Raamatusta tai joissa on aiheena jokin raamatunkertomus."@fi ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "raamatunkertomukset"@fi , "bibliska berättelser"@sv ;
-        skos:related     slm:s993 .
+        skos:altLabel    "alkusoittosarjat"@fi , "kassaatiot"@fi , "parthiat"@fi , "tanssisarjat"@fi , "partitat"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "sviter"@sv , "sarjat"@fi .
 
 slm:s786  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "ragat"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027180> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "rāgat"@fi , "ragor"@sv .
@@ -1476,6 +1512,13 @@ slm:s1006  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "elämäkerrat"@fi , "biografier"@sv ;
         skos:related     slm:s928 , slm:s770 .
+
+slm:s1315  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s560 ;
+        skos:altLabel    "kelttimetalli"@fi , "folkmetalli"@fi , "pakanametalli"@fi , "keskiaikametalli"@fi , "tribal metal"@fi , "folkmetall"@sv ;
+        skos:definition  "Kansanmusiikkivaikutteinen heavy metalin tyylilaji."@fi , "Typ av heavy metal influerad av folkmusik."@sv ;
+        skos:prefLabel   "folk metal"@sv , "folk metal"@fi ;
+        skos:related     slm:s1145 , slm:s241 .
 
 slm:s451  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1572,6 +1615,14 @@ slm:s81  a               owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p14887> ;
         skos:prefLabel   "yhteiskunnalliset elokuvat"@fi , "samhällskritiska filmer"@sv ;
         skos:related     slm:s182 , slm:s1027 , slm:s699 .
+
+slm:s1307  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s474 ;
+        skos:altLabel    "repetitiivinen musiikki"@fi , "toistomusiikki"@fi , "repetitiomusiikki"@fi ;
+        skos:definition  "Konstmusik som räknas till den minimalistiska stilriktningen som uppkom på 1960-talet och för vilken redundans och ett avsiktligt förenklat rytmiskt, melodiskt och harmoniskt tonspråk är typiskt."@sv , "1960-luvulla syntyneen minimalistisen tyylisuuntauksen piiriin luettava taidemusiikki, jolle on ominaista toisteisuus ja tarkoituksellisen yksinkertaistettu rytminen, melodinen ja harmoninen sävelkieli."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026938> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "minimalistinen musiikki"@fi , "minimalistisk musik"@sv .
 
 slm:s381  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -1709,6 +1760,14 @@ slm:s434  a              owl:Class , skos:Concept ;
         skos:related     slm:s1181 ;
         skos:scopeNote   "Kirja, johon voi kiinnittää liitteenä olevia magneetteja."@fi , "Bok, i vilken bifogade magneter kan fästas."@sv .
 
+slm:s577  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "varianter (musik)"@sv , "variaatiot (musiikki)"@fi ;
+        skos:closeMatch  <http://www.yso.fi/onto/yso/p3977> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "variationer (musik)"@sv , "muunnelmat (musiikki)"@fi ;
+        skos:related     slm:s40 , slm:s154 , slm:s657 .
+
 slm:s920  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026813> ;
@@ -1750,20 +1809,13 @@ slm:s529  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:altLabel   "elokuvasovitukset"@fi , "filmbearbetningar"@sv ;
         skos:prefLabel  "filmatisoinnit"@fi , "filmatiseringar"@sv ;
-        skos:related    slm:s556 , slm:s1118 , slm:s1175 , slm:s909 , slm:s1058 , slm:s154 , slm:s657 .
+        skos:related    slm:s556 , slm:s1118 , slm:s1175 , slm:s909 , slm:s1058 , slm:s657 .
 
 slm:s1058  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "rinnakkaisteokset"@fi , "parallellverk"@sv ;
         skos:related    slm:s556 , slm:s529 , slm:s909 , slm:s813 , slm:s67 , slm:s657 , slm:s509 , slm:s379 .
-
-slm:s154  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "parafraasit"@fi , "parafraser"@sv ;
-        skos:related     slm:s556 , slm:s529 .
 
 slm:s657  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1838,6 +1890,11 @@ slm:s922  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 , slm:s285 ;
         skos:prefLabel   "laulukirjat"@fi , "sångböcker"@sv .
 
+slm:s1314  a            owl:Class , skos:Concept ;
+        skos:altLabel   "avantgardistinen musiikki"@fi , "avantgardemusiikki"@fi , "avantgardemusik"@sv , "avantgarde (musiikki)"@fi ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "kokeellinen musiikki"@fi , "experimentell musik"@sv .
+
 slm:s479  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s352 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1904,6 +1961,10 @@ slm:s542  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "asiakaslehdet"@fi , "kundtidningar"@sv .
 
+slm:s1237  a            owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:prefLabel  "broschyrer"@sv , "esitteet"@fi .
+
 slm:s834  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
@@ -1945,7 +2006,7 @@ slm:s1192  a             owl:Class , skos:Concept ;
         skos:related     slm:s603 .
 
 slm:s192  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s436 ;
+        rdfs:subClassOf  slm:s1301 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027130> ;
         skos:inScheme    slm:s861 ;
@@ -2021,15 +2082,6 @@ slm:s584  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "joulukertomukset"@fi , "julberättelser"@sv .
 
-slm:s375  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "paimennäytelmät"@fi , "pastoraaliromaanit"@fi , "herdedikter"@sv , "herdediktning"@sv , "pastorallitteratur"@sv , "paimenromaanit"@fi , "pastoraldramer"@sv , "paimenrunot"@fi ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p14673> ;
-        skos:definition  "Käytetään teoksista, jotka kuvaavat ihannoiden paimenten elämää maaseudulla tai jotka liittyvät tähän genreperinteeseen."@fi , "Används om verk, som skildrar herdar och herdinnor i en idyllisk lantlig miljö, eller som anknyter sig till denna genretradition."@sv ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "pastoraler"@sv , "pastoraalit"@fi .
-
 slm:s71  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -2046,6 +2098,14 @@ slm:s862  a              owl:Class , skos:Concept ;
         skos:note        "Luettava tai laulettava, nokkelasanainen, tavallisesti ajatukseton hoku, hokema. Loruille on ominaista nopea, helposti tarttuva rytmi, usein myös alkusoinnun hyödyntäminen."@fi ;
         skos:prefLabel   "ramsor"@sv , "lorut"@fi ;
         skos:related     slm:s1074 , slm:s1181 .
+
+slm:s229  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1186 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "latinorock"@sv , "latinorock"@fi ;
+        skos:definition  "1960-luvulla Yhdysvalloissa kehittynyt rock-musiikin tyyli, johon on otettu vaikutteita latinalaisamerikkalaisesta tanssimusiikista. Tunnettu tyylin edustaja on Santana."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "latin rock"@fi , "latin rock"@sv .
 
 slm:s1235  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -2110,19 +2170,17 @@ slm:s683  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "ristikkolehdet"@fi , "korsordstidningar"@sv .
 
+slm:s1276  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s202 ;
+        skos:altLabel    "opettajanoppaat"@fi , "lärarguider"@sv , "opettajan oppaat"@fi , "undervisningsguider"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "opetusoppaat"@fi , "lärarhandledningar"@sv .
+
 slm:s1193  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s334 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "kuoromusiikki"@fi , "körmusik"@sv .
-
-slm:s813  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     yso-update:ongelmatsv ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:altLabel       "förkortade utgåvor"@sv , "förkortade verk"@sv ;
-        skos:editorialNote  "Seuraavaan genre-kokoukseen: lisätäänkö määritelmä: \"kirjallisen tuotteen lyhennetty laitos\" (Kielitoimiston s.) tms.? Termiä voidaan muuten käyttää toisessakin merkityksessä -Melindassa muutama osuma, jossa käytetty merkityksessä \"tiivistelmä\"/\"referaatti\" (esim. \"Venäjän kielen ja kirjallisuuden tutkielmien suomenkieliset lyhennelmät 1992-1993\"). Ruotsiksi ei ole termiä, joka sopisi molempiin näihin merkityksiin, eikä kai suomeksikaan haluta että tulee hajontaa näiden osalta (olisi varmaan hyvä jos käytettäisiin aina \"tiivistelmät\" kun kyseessä on referaatti jostain esim. opinnäytteestä). Ks. myös http://tieteentermipankki.fi/wiki/Tekstuaalitieteet:lyhennelm%C3%A4\r\nhttps://fi.wiktionary.org/wiki/lyhennelm%C3%A4" ;
-        skos:prefLabel      "lyhennelmät"@fi , "förkortade upplagor"@sv ;
-        skos:related        slm:s909 , slm:s1058 , slm:s855 , slm:s657 .
 
 slm:s1063  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s77 ;
@@ -2176,6 +2234,12 @@ slm:s1175  a             owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p1235> ;
         skos:prefLabel   "filmer"@sv , "elokuvat"@fi ;
         skos:related     slm:s450 , slm:s529 , slm:s236 .
+
+slm:s1280  a            owl:Class , skos:Concept ;
+        skos:altLabel   "PM"@sv , "memoranda"@sv , "memorandum"@sv ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "promemorior"@sv , "muistiot"@fi ;
+        skos:related    slm:s1286 .
 
 slm:s902  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -2233,7 +2297,7 @@ slm:s265  a             owl:Class , skos:Concept ;
         skos:prefLabel  "vaudeville"@sv , "vaudeville"@fi .
 
 slm:s1156  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s616 ;
+        rdfs:subClassOf  slm:s616 , slm:s1294 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "liturginen musiikki"@fi , "liturgisk musik"@sv .
@@ -2384,7 +2448,8 @@ slm:s106  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026768> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "diskomusiikki"@fi , "diskomusik"@sv .
+        skos:prefLabel   "diskomusiikki"@fi , "diskomusik"@sv ;
+        skos:related     slm:s133 .
 
 slm:s108  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -2409,6 +2474,22 @@ slm:s445  a              owl:Class , skos:Concept ;
         skos:note        "Romaani, jossa ajan ja miljöön kuvaus, tapahtumien kulku ja usein ainakin osa teoksen keskeisistä henkilöistä ovat historiallisiksi havaittavia."@fi , "Roman, i vilken handlingen är förlagd till historien."@sv ;
         skos:prefLabel   "historialliset romaanit"@fi , "historiska romaner"@sv ;
         skos:related     slm:s45 , slm:s1111 .
+
+slm:s1145  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1186 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026810> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "folk rock"@fi , "folkrock (förstärkt)"@sv ;
+        skos:related     slm:s1315 , slm:s1255 .
+
+slm:s241  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s662 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "folkmusik"@sv , "kansanmusiikki"@fi ;
+        skos:related     slm:s1315 .
 
 slm:s808  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s662 ;
@@ -2537,6 +2618,11 @@ slm:s753  a              owl:Class , skos:Concept ;
         skos:prefLabel   "poliittiset sarjakuvat"@fi , "politiska serier (tecknade serier)"@sv ;
         skos:related     slm:s1027 .
 
+slm:s1279  a             owl:Class , skos:Concept ;
+        skos:definition  "Konsertin yleisölle laadittu luettelo konsertissa esitettävästä ohjelmasta."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026065> ;
+        skos:prefLabel   "konserttiohjelmat"@fi .
+
 slm:s909  a                 owl:Class , skos:Concept ;
         dct:created         "2018-05-16"^^xsd:date ;
         skos:altLabel       "adaptationer"@sv , "adaptaatiot"@fi , "versiot"@fi , "arrangemang (musik)"@sv ;
@@ -2551,13 +2637,6 @@ slm:s716  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:prefLabel   "samproduktionsfilmer"@sv , "yhteistuotantoelokuvat"@fi ;
         skos:related     slm:s1118 .
-
-slm:s570  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s1186 , yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:editorialNote  "Pitäisi päivittää YSAn mukaan?" ;
-        skos:inScheme       slm:s861 ;
-        skos:prefLabel      "uusi aalto"@fi , "new wave"@sv .
 
 slm:s1191  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -2639,10 +2718,12 @@ slm:s395  a                 owl:Class , skos:Concept ;
         skos:altLabel       "ackordguider"@sv ;
         skos:editorialNote  "LT soitonoppaat tai oppaat (teokset)?" ;
         skos:inScheme       slm:s861 ;
-        skos:prefLabel      "sointuoppaat"@fi , "ackordtabeller"@sv .
+        skos:prefLabel      "sointuoppaat"@fi , "ackordtabeller"@sv ;
+        skos:related        slm:s1293 .
 
 slm:s353  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "teatterimusiikki"@fi , "teatermusik"@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026775> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "näyttämömusiikki"@fi , "scenmusik"@sv .
@@ -2703,11 +2784,22 @@ slm:s83  a              owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "canzoner"@sv , "canzonat"@fi .
 
+slm:s1284  a             owl:Class , skos:Concept ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026954> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "musiikkileikit"@fi , "musiklekar"@sv .
+
 slm:s174  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027141> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "tonadilla"@sv , "tonadillat"@fi .
+
+slm:s1306  a             owl:Class , skos:Concept ;
+        skos:altLabel    "musik i tv-program"@sv , "musik i TV-program"@sv , "televisionsmusik"@sv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027132> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "televisiomusiikki"@fi , "tv-musik"@sv .
 
 slm:s635  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s641 ;
@@ -2767,7 +2859,8 @@ slm:s843  a              owl:Class , skos:Concept ;
 slm:s40  a              owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
-        skos:prefLabel  "pastischer"@sv , "pastissit"@fi .
+        skos:prefLabel  "pastischer"@sv , "pastissit"@fi ;
+        skos:related    slm:s577 .
 
 slm:s583  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
@@ -2795,10 +2888,23 @@ slm:s347  a             owl:Class , skos:Concept ;
         skos:note       "Äänite- tai nuottikokoelma, joka on valmistettu yksittäisen säveltäjän, laulajan, muun artistin tai yhtyeen kunniaksi."@fi , "Ljudupptagning eller notsamling som har gjorts till en enskild kompositörs, sångares eller annan artists eller ensembles ära."@sv ;
         skos:prefLabel  "tributer"@sv , "tribuutit"@fi .
 
+slm:s1301  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s436 ;
+        skos:altLabel    "klubimusiikki"@fi , "EDM"@sv , "EDM"@fi , "electronic dance music"@sv , "elektroninen musiikki"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027153> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "elektronisk dansmusik"@sv , "elektroninen tanssimusiikki"@fi .
+
 slm:s163  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "reklammusik"@sv , "mainosmusiikki"@fi .
+
+slm:s1312  a            owl:Class , skos:Concept ;
+        skos:altLabel   "soolot (soolo-osuudet)"@fi , "solon"@sv ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "solopartier"@sv , "soolo-osuudet"@fi ;
+        skos:related    slm:s764 .
 
 slm:s144  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -2891,11 +2997,11 @@ slm:s1079  a             owl:Class , skos:Concept ;
         skos:prefLabel   "taarab"@sv , "taarab"@fi .
 
 slm:s437  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1081 , yso-update:ongelmatfi ;
+        rdfs:subClassOf  slm:s1081 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "ballader"@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "balladit (musiikki)"@fi , "ballader (musik)"@sv .
+        skos:prefLabel   "balladit"@fi , "ballader"@sv .
 
 slm:s489  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3014,6 +3120,13 @@ slm:s883  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "aleatorisk musik"@sv , "aleatorinen musiikki"@fi .
 
+slm:s668  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s409 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "transkriptiot"@fi , "transkriberingar (musik)"@sv ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "transkriptioner (musik)"@sv , "nuotinnokset"@fi .
+
 slm:s268  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s129 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3092,13 +3205,6 @@ slm:s507  a              owl:Class , skos:Concept ;
         skos:prefLabel   "rhythm and blues"@sv , "rhythm and blues"@fi ;
         skos:related     slm:s1250 .
 
-slm:s1145  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1186 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026810> ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "folk rock"@fi , "folkrock (förstärkt)"@sv .
-
 slm:s651  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3111,10 +3217,11 @@ slm:s491  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "encoret"@fi , "extranummer"@sv .
 
-slm:s602  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s861 ;
-        skos:prefLabel  "serenadit"@fi , "serenader"@sv .
+slm:s602  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s887 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "serenadit"@fi , "serenader"@sv .
 
 slm:s1103  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3184,10 +3291,11 @@ slm:s804  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "tarantellat"@fi , "tarantellor"@sv .
 
-slm:s890  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s861 ;
-        skos:prefLabel  "divertimentot"@fi , "divertimenton"@sv .
+slm:s890  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s887 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "divertimentot"@fi , "divertimenton"@sv .
 
 slm:s1062  a                owl:Class , skos:Concept ;
         dct:created         "2018-05-16"^^xsd:date ;
@@ -3228,12 +3336,10 @@ slm:s430  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "rekilaulut"@fi , "rekilaulut"@sv .
 
-slm:s774  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:editorialNote  "YSAssa nyt jaettu" ;
-        skos:inScheme       slm:s861 ;
-        skos:prefLabel      "arabeskit"@fi , "arabesker"@sv .
+slm:s774  a             owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "arabeskit (musiikki)"@fi , "arabesker (musik)"@sv .
 
 slm:s734  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1218 ;
@@ -3248,6 +3354,12 @@ slm:s1217  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "sydstatsrock"@sv , "southern rock"@fi .
+
+slm:s1302  a             owl:Class , skos:Concept ;
+        skos:definition  "Luonteeltaan vaikeroiva tai valittava soitinsävellys, joka on tehty todellisen tai poikkeustapauksessa fiktiivisen henkilön kuoleman johdosta."@fi , "Klagande instrumentalkomposition som har skapats med anledning av en verklig, eller i undantagsfall fiktiv persons död."@sv ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "tombeauer"@sv , "tombeaut"@fi ;
+        skos:related     slm:s1116 .
 
 slm:s150  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3317,23 +3429,17 @@ slm:s517  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "poloneesit"@fi , "polonäser"@sv .
 
-slm:s241  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s662 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "folkmusik"@sv , "kansanmusiikki"@fi .
-
 slm:s301  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s662 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "gamelanmusiikki"@fi , "gamelanmusik"@sv .
 
-slm:s210  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s861 ;
-        skos:prefLabel  "romanssit (musiikki)"@fi , "romanser (musik)"@sv .
+slm:s210  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2016026068> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "romanssit (musiikki)"@fi , "romanser (musik)"@sv .
 
 slm:s708  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3357,12 +3463,6 @@ slm:s776  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "hits"@sv , "hitit"@fi .
 
-slm:s887  a              owl:Class , skos:Concept ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027116> ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "sviter"@sv , "sarjat"@fi .
-
 slm:s33  a              owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
@@ -3374,6 +3474,10 @@ slm:s797  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027171> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "arbetssånger"@sv , "työlaulut"@fi .
+
+slm:s1300  a            owl:Class , skos:Concept ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "metsästyssignaalit"@fi , "jaktsignaler"@sv .
 
 slm:s421  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1218 ;
@@ -3395,18 +3499,22 @@ slm:s1263  a             owl:Class , skos:Concept ;
         skos:prefLabel   "western swing"@sv , "western swing"@fi ;
         skos:related     slm:s401 .
 
+slm:s1292  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s887 ;
+        skos:altLabel    "notturnos"@sv ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "notturnot"@fi , "notturno"@sv .
+
 slm:s1107  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "joululaulut"@fi , "julsånger"@sv .
 
-slm:s494  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:editorialNote  "YSAssa jaettu" ;
-        skos:inScheme       slm:s861 ;
-        skos:prefLabel      "beguine"@sv , "beguinet"@fi .
+slm:s494  a             owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "beguine"@sv , "beguinet"@fi .
 
 slm:s629  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3418,6 +3526,12 @@ slm:s625  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "hootenanny"@sv , "hootenanny"@fi .
+
+slm:s1277  a             owl:Class , skos:Concept ;
+        skos:altLabel    "ljudeffekter"@sv , "äänitehosteet"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2011026593> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "äänitehostekokoelmat"@fi , "ljudeffektssamlingar"@sv .
 
 slm:s974  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
@@ -3577,7 +3691,7 @@ slm:s874  a             owl:Class , skos:Concept ;
         skos:prefLabel  "meditationsmusik"@sv , "meditaatiomusiikki"@fi .
 
 slm:s1245  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s436 ;
+        rdfs:subClassOf  slm:s1301 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027143> ;
         skos:inScheme    slm:s861 ;
@@ -3606,6 +3720,13 @@ slm:s1047  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026800> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "fandangor"@sv , "fandangot"@fi .
+
+slm:s1305  a             owl:Class , skos:Concept ;
+        skos:altLabel    "gigat"@fi , "jiggar"@sv , "jigit"@fi , "gigues"@sv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026881> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "giguer"@sv , "giguet"@fi ;
+        skos:related     slm:s476 .
 
 slm:s687  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3636,7 +3757,7 @@ slm:s195  a              owl:Class , skos:Concept ;
         skos:prefLabel   "dixieland"@sv , "dixieland"@fi .
 
 slm:s557  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s436 ;
+        rdfs:subClassOf  slm:s1301 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027153> ;
         skos:inScheme    slm:s861 ;
@@ -3647,6 +3768,12 @@ slm:s642  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "hambot"@fi , "hambor"@sv .
+
+slm:s1294  a            owl:Class , skos:Concept ;
+        skos:altLabel   "rituell musik"@sv ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "rituaalimusiikki"@fi , "ritualmusik"@sv ;
+        skos:related    slm:s129 .
 
 slm:s830  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3674,15 +3801,22 @@ slm:s12  a              owl:Class , skos:Concept ;
 slm:s560  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "heavyrock"@fi , "heavy"@fi , "heavy rock"@sv , "metallimusiikki"@fi , "hevimetalli"@fi , "heavy rock"@fi , "heavy"@sv , "hevi"@fi , "metallmusik"@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026854> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "heavy rock"@sv , "heavy rock"@fi .
+        skos:prefLabel   "heavy metal"@fi , "heavy metal"@sv ;
+        skos:related     slm:s828 .
 
 slm:s1129  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "reggaeton"@fi , "reggaeton"@sv .
+
+slm:s1283  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1081 , slm:s1106 ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "marschsånger"@sv , "marssilaulut"@fi .
 
 slm:s728  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3693,10 +3827,10 @@ slm:s728  a              owl:Class , skos:Concept ;
 slm:s234  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "indie rock"@sv ;
+        skos:altLabel    "indie rock"@sv , "indie rock"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026632> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "indie rock"@fi , "indierock"@sv .
+        skos:prefLabel   "indierock"@fi , "indierock"@sv .
 
 slm:s469  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1007 ;
@@ -3728,12 +3862,6 @@ slm:s88  a               owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027117> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "surfmusiikki"@fi , "surfmusik"@sv .
-
-slm:s229  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1186 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "latin rock"@fi , "latin rock"@sv .
 
 slm:s221  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s470 ;
@@ -4015,6 +4143,12 @@ slm:s1259  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "gospelrock"@sv , "gospelrock"@fi .
 
+slm:s154  a             owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "parafraser (musik)"@sv , "parafraasit (musiikki)"@fi ;
+        skos:related    slm:s909 , slm:s577 .
+
 slm:s951  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1033 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4048,9 +4182,10 @@ slm:s238  a              owl:Class , skos:Concept ;
 
 slm:s764  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "solonummer"@sv ;
+        skos:altLabel   "soolot (soolosävellykset)"@fi , "solon"@sv ;
         skos:inScheme   slm:s861 ;
-        skos:prefLabel  "soolot"@fi , "solon"@sv .
+        skos:prefLabel  "soolosävellykset"@fi , "solokompositioner"@sv ;
+        skos:related    slm:s1312 .
 
 slm:s1019  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4164,19 +4299,11 @@ slm:s559  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "swing"@fi , "swing"@sv .
 
-slm:s577  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "varianter"@sv , "variaatiot"@fi ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p3977> ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "muunnelmat"@fi , "variationer"@sv ;
-        skos:related     slm:s40 , slm:s154 , slm:s657 .
-
 slm:s129  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s861 ;
-        skos:prefLabel  "juhlamusiikki"@fi , "festmusik"@sv .
+        skos:prefLabel  "juhlamusiikki"@fi , "festmusik"@sv ;
+        skos:related    slm:s1294 .
 
 slm:s572  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -4314,11 +4441,23 @@ slm:s474  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "konstmusik"@sv , "taidemusiikki"@fi .
 
+slm:s375  a             owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:altLabel   "pastoraalinen musiikki"@fi , "pastoral musik"@sv ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "pastoraalimusiikki"@fi , "pastoralmusik"@sv .
+
 slm:s55  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1007 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "rancheramusiikki"@fi , "rancheramusik"@sv .
+
+slm:s1295  a             owl:Class , skos:Concept ;
+        skos:altLabel    "monikuoromusiikki"@fi ;
+        skos:definition  "Musiikki, joka on sävelletty cori spezzati -tekniikalla eli jonka esittäminen vaatii esittäjistön jakamisen kahdeksi tai useammaksi, usein erilleen toisistaan sijoitetuksi ryhmäksi."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "flerkörig musik"@sv , "monikuoroinen musiikki"@fi .
 
 slm:s1188  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1218 ;
@@ -4385,6 +4524,13 @@ slm:s510  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027013> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "preludit"@fi , "preludier"@sv .
+
+slm:s1304  a             yso-update:ongelmatsv , owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s466 ;
+        skos:altLabel    "orkesterisoittoharjoitteet"@fi ;
+        skos:definition  "Orkesterille sävelletyistä teoksista koostettua harjoitteluaineistoa, joka voi esiintyä nuottina, videona tai \"music-minus-one\" -tyyppisenä äänitteenä. Orkesteriharjoitukset ovat eri soittimille tarkoitettuja orkesterimusiikkiteosten katkelmia ja soolo-osuuksia yksittäisinä ääninä. Tunnettuja orkesteriharjoitusjulkaisuja ovat Orchesterstudien, Orchester Probe-Spiele ja Orchestral excerpts."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "orkesterisoiton harjoitusaineistot"@fi , "övningsmaterial för orkesterspel"@sv .
 
 slm:s500  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4466,7 +4612,8 @@ slm:s828  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "hårdrock"@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "hard rock"@sv , "hard rock"@fi .
+        skos:prefLabel   "hard rock"@sv , "hard rock"@fi ;
+        skos:related     slm:s560 .
 
 slm:s203  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s241 ;
@@ -4517,6 +4664,32 @@ slm:s1202  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "historiska kartor"@sv , "historialliset kartat"@fi .
+
+slm:s1282  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "matkailukartat"@fi , "turistkartor"@sv .
+
+slm:s1298  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "vägkartor"@sv , "tiekartat"@fi .
+
+slm:s1290  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "opaskartat"@fi , "guidekartor"@sv .
+
+slm:s1278  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "sjökort"@sv , "merikartat"@fi .
+
+slm:s1273  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 ;
+        skos:altLabel    "topografiset kartat"@fi , "topografiska kartor"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "maastokartat"@fi , "terrängkartor"@sv .
 
 slm:s69  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s287 ;
@@ -4796,6 +4969,10 @@ slm:s982  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kärleksfilmer"@sv , "rakkauselokuvat"@fi ;
         skos:related     slm:s755 , slm:s267 .
 
+slm:s1285  a            owl:Class , skos:Concept ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "tutkimusraportit"@fi , "forskningsrapporter"@sv .
+
 slm:s20  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s455 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4804,6 +4981,10 @@ slm:s20  a               owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:note        "Yliluonnollisia piirteitä sisältävä, totena pidetty kertomus."@fi ;
         skos:prefLabel   "vittnessägner"@sv , "uskomustarinat"@fi .
+
+slm:s1299  a            owl:Class , skos:Concept ;
+        skos:altLabel   "oljudsmusik"@sv , "noise"@fi , "häly (musiikki)"@fi ;
+        skos:prefLabel  "noise"@sv , "hälymusiikki"@fi .
 
 slm:s1114  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
@@ -4825,6 +5006,11 @@ slm:s128  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "vårdrekommendationer"@sv , "hoitosuositukset"@fi .
+
+slm:s1309  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s170 ;
+        skos:altLabel    "tieteispelit"@fi , "scifispel"@sv , "scifi-pelit"@fi , "science fiction -pelit"@fi ;
+        skos:prefLabel   "scifipelit"@fi , "science fiction-spel"@sv .
 
 slm:s409  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -4912,8 +5098,7 @@ slm:s850  a              owl:Class , skos:Concept ;
         skos:altLabel    "julkaisusarjat"@fi , "serier (periodika)"@sv , "publikationsserier"@sv , "seriepublikationer"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p20498> ;
         skos:inScheme    slm:s593 ;
-        skos:prefLabel   "sarjajulkaisut"@fi , "seriella publikationer"@sv ;
-        skos:related     slm:s417 .
+        skos:prefLabel   "sarjajulkaisut"@fi , "seriella publikationer"@sv .
 
 slm:s901  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -4946,7 +5131,7 @@ slm:s645  a                 owl:Class , skos:Concept ;
         dct:created         "2018-05-16"^^xsd:date ;
         skos:altLabel       "vildmarksberättelser"@sv , "erätarinat"@fi , "jakthistorier"@sv , "ödemarkslitteratur"@sv ;
         skos:closeMatch     <http://www.yso.fi/onto/yso/p10766> ;
-        skos:editorialNote  "Poistetaan" ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
         skos:inScheme       slm:s285 ;
         skos:prefLabel      "eräkirjallisuus"@fi , "vildmarkslitteratur"@sv ;
         skos:scopeNote      "Används om verk som beskriver vildmarksliv med jakt, fiske och vandring."@sv , "Käytetään teoksista, joissa kuvataan eräelämää - metsästystä, kalastusta ja vaeltamista."@fi .
@@ -4964,9 +5149,14 @@ slm:s394  a              owl:Class , skos:Concept ;
         skos:related     slm:s1075 , slm:s1181 ;
         skos:scopeNote   "Käytetään teoksista, jotka on tarkoitettu kosketeltaviksi."@fi , "Används om böcker som är avsedda att beröras."@sv .
 
-slm:    a            owl:Ontology ;
-        dct:created  "2018-05-16"^^xsd:date ;
-        owl:imports  <http://www.w3.org/2004/02/skos/core> .
+slm:    a               owl:Ontology ;
+        dc:creator      "Lajityyppi- ja muotosanastoryhmä"@fi ;
+        dc:description  "Suomalainen lajityyppi- ja muotosanasto (SLM) on kaksikielinen sanasto aineistojen kuvailussa käytettävistä muotoa ja lajityyppiä eli genreä kuvaavista termeistä.\r\n\r\nSanaston on laatinut ja sitä ylläpitää Sisällönkuvailun asiantuntijaryhmän alainen Lajityyppi- ja muotosanastoryhmä, johon kuuluu jäseniä kirjastosektorin eri alueilta. Musiikin osalta sisällöstä vastaa Muusa-ryhmä.\r\n\r\nVoit ehdottaa uusia termejä ja muutoksia sanastoon <a href=\"//ehdotus.finto.fi/\">YSAn ja YSOn ehdotusjärjestelmän</a> avulla merkitsemällä ehdotuksen selitekenttään, että ehdotus koskee SLM-sanastoa."@fi , "Finländsk genre- och formlista (FGF) är en tvåspråkig vokabulär med termer som används för att ange form och genre vid beskrivningen av material. \r\n\r\nFGF har sammanställts och upprätthålls av en arbetsgrupp för genre- och formtermer som verkar inom Expertgruppen för innehållsbeskrivning, och till vilken medlemmar från bibliotekssektorns olika områden hör. \r\n\r\nFörslag till nya termer och ändringar i FGF ges med <a href=\"//ehdotus.finto.fi/\">blanketten för begreppsförslag till Allärs och ALLFO</a> genom att ange i förklaringsfältet att förslaget gäller FGF. {@sv}\r\n\r\n" ;
+        dc:publisher    "Kansalliskirjasto"@fi ;
+        dc:title        "Suomalainen lajityyppi- ja muotosanasto"@fi ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        dct:license     <http://creativecommons.org/publicdomain/zero/1.0/> ;
+        owl:imports     <http://www.w3.org/2004/02/skos/core> , <http://www.w3.org/2000/01/rdf-schema> , dc: .
 
 slm:s1179  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -5035,7 +5225,7 @@ slm:s202  a             owl:Class , skos:Concept ;
         skos:prefLabel  "oppaat (teokset)"@fi , "guider (verk)"@sv .
 
 slm:s284  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1075 , yso-update:ongelmatsv ;
+        rdfs:subClassOf  slm:s1075 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "böcker med griffelsidor"@sv , "liitutaulukirjat"@fi .
@@ -5060,8 +5250,14 @@ slm:s1050  a             owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p19528> ;
         skos:prefLabel   "älykkyyspelit"@fi , "intelligensspel"@sv .
 
+slm:s1097  a            owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:altLabel   "ortshistoriker"@sv , "paikallishistoriikit"@fi , "kotiseutuhistoriikit"@fi , "sockenhistoriker"@sv , "pitäjänhistoriat"@fi , "kotiseutuhistoriat"@fi ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "paikallishistoriat"@fi , "lokalhistoriker"@sv .
+
 slm:s56  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s418 ;
+        rdfs:subClassOf  slm:s418 , slm:s1310 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "höyrypunk"@fi , "ångpunk"@sv ;
         skos:inScheme    slm:s285 ;
@@ -5128,13 +5324,11 @@ slm:s109  a              owl:Class , skos:Concept ;
         skos:prefLabel   "dokumenttisarjat"@fi , "dokumentärserier"@sv .
 
 slm:s393  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1150 , yso-update:ongelmatfi ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "sångtexter"@sv , "sanoitukset"@fi ;
+        skos:altLabel    "sånglyrik"@sv , "laululyriikka"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p12045> ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "sånglyrik"@sv , "laululyriikka"@fi ;
-        skos:related     slm:s999 .
+        skos:prefLabel   "sångtexter"@sv , "sanoitukset"@fi .
 
 slm:s648  a              owl:Class , skos:Concept ;
         rdfs:comment     "Femstrofig gyckeldikt vars första strof vanligtvis slutar med ett ortsnamn och i vars sista strof finns en överraskande ofta tvetydig tillspetsning."@sv ;
@@ -5442,6 +5636,12 @@ slm:s1090  a             owl:Class , skos:Concept ;
         skos:related     slm:s1075 , slm:s1181 ;
         skos:scopeNote   "Används om böcker med olika mekaniska eller digitala ljudeffekter."@sv , "Käytetään teoksista, joissa on mukana mekaanisia tai digitaalisia äänitehosteita."@fi .
 
+slm:s1308  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s409 ;
+        skos:altLabel    "isonuottiset"@fi , "isonuottiset nuotit"@fi , "musikalier med förstorad notskrift"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "isonuottiset nuottijulkaisut"@fi , "musikalier med stor notskrift"@sv .
+
 slm:s97  a               owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p29198> ;
@@ -5461,6 +5661,10 @@ slm:s839  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kollaasiromaanit"@fi , "collageromaner"@sv ;
         skos:related     slm:s880 ;
         skos:scopeNote   "Käytetään teoksista, joissa on käytetty kollaasitekniikkaa eli tekijä käyttää hyväkseen jo olemassa olevia tekstejä yhdistelemällä niitä toisiinsa tai omaan tekstiinsä"@fi , "Används om verk, i vilka collageteknik använts, d.v.s. författaren har utnyttjat redan existerande texter genom att kombinera dem med varandra eller med egen text."@sv .
+
+slm:s1311  a             owl:Class , skos:Concept ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026081> ;
+        skos:prefLabel   "tietokannat"@fi .
 
 slm:s946  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s103 ;
@@ -5612,6 +5816,10 @@ slm:s1244  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "pro gradu -tutkielmat"@fi , "pro gradu-avhandlingar"@sv .
 
+slm:s1289  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1311 ;
+        skos:prefLabel   "viitetietokannat"@fi , "referensdatabaser"@sv .
+
 slm:s528  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5665,14 +5873,6 @@ slm:s944  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "beatlitteratur"@sv , "beatkirjallisuus"@fi .
 
-slm:s971  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "ögonblicksskildringar"@sv ;
-        skos:inScheme    slm:s285 ;
-        skos:note        "Hetken tilannetta, tunnelmaa tms. esittävä kuva t. kuvaus; vrt. tilannekuva."@fi ;
-        skos:prefLabel   "ögonblicksbilder"@sv , "tuokiokuvat"@fi .
-
 slm:s110  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p19188> ;
@@ -5719,6 +5919,10 @@ slm:s162  a              owl:Class , skos:Concept ;
         skos:prefLabel   "tyttökirjat"@fi , "flickböcker"@sv ;
         skos:related     slm:s364 ;
         skos:scopeNote   "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi , "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
+
+slm:s1269  a            owl:Class , skos:Concept ;
+        skos:altLabel   "formulär"@sv ;
+        skos:prefLabel  "lomakkeet"@fi , "blanketter"@sv .
 
 slm:s725  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -5947,7 +6151,7 @@ slm:s1083  a             owl:Class , skos:Concept ;
         skos:prefLabel   "science fiction-serier (tecknade serier)"@sv , "tieteissarjakuvat"@fi .
 
 slm:s418  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
+        rdfs:subClassOf  slm:s975 , slm:s1310 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "scifi"@sv , "scifi"@fi , "tieteisromaanit"@fi , "science fiction"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15527> ;
@@ -6005,6 +6209,11 @@ slm:s50  a              owl:Class , skos:Concept ;
         skos:inScheme   slm:s593 ;
         skos:prefLabel  "verkkolehdet"@fi , "elektroniska tidskrifter"@sv .
 
+slm:s1286  a            owl:Class , skos:Concept ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "betänkanden"@sv , "mietinnöt"@fi ;
+        skos:related    slm:s1280 .
+
 slm:s7  a                owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "LL-tidningar"@sv , "lättlästa dagstidningar"@sv , "lättlästa tidskrifter"@sv ;
@@ -6012,14 +6221,15 @@ slm:s7  a                owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "selkolehdet"@fi , "lättlästa tidningar"@sv .
 
-slm:s866  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1150 , yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "folklore"@sv , "folklore"@fi ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p1361> ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "kansanrunous"@fi , "folkdiktning"@sv ;
-        skos:related     slm:s915 , slm:s1151 , slm:s443 , slm:s1191 .
+slm:s866  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s1150 , yso-update:ongelmatfi ;
+        dct:created         "2018-05-16"^^xsd:date ;
+        skos:altLabel       "folklore"@sv , "folklore"@fi ;
+        skos:closeMatch     <http://www.yso.fi/onto/yso/p1361> ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
+        skos:inScheme       slm:s285 ;
+        skos:prefLabel      "kansanrunous"@fi , "folkdiktning"@sv ;
+        skos:related        slm:s915 , slm:s1151 , slm:s443 , slm:s1191 .
 
 slm:s1078  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -6214,11 +6424,6 @@ slm:s925  a              owl:Class , skos:Concept ;
         skos:note        "Pseudodokumentti on televisio-ohjelma tai elokuva, jossa fiktiivinen tarina esitetään todellisista tapahtumista kertovien dokumenttien tyyliä jäljitellen tai parodioiden."@fi ;
         skos:prefLabel   "pseudodokumentit"@fi , "pseudodokumentärer"@sv .
 
-slm:s1097  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "paikallishistoriat"@fi , "lokalhistoriker"@sv .
-
 slm:s633  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
@@ -6248,9 +6453,9 @@ slm:s82  a               owl:Class , skos:Concept ;
 slm:s524  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "inre monolog-litteratur"@sv , "inre monolog (genre) {@sv}"@sv , "stream of consciusness-litteratur"@sv ;
+        skos:altLabel    "medvetandeström-litteratur"@sv , "inre monolog-litteratur"@sv , "stream of consciusness-litteratur"@sv , "inre monolog (genre)"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "medvetandeström-litteratur"@sv , "tajunnanvirtakirjallisuus"@fi ;
+        skos:prefLabel   "medvetandeström (litteratur)"@sv , "tajunnanvirtakirjallisuus"@fi ;
         skos:related     slm:s181 ;
         skos:scopeNote   "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi .
 
@@ -6293,7 +6498,7 @@ slm:s439  a              owl:Class , skos:Concept ;
 slm:s556  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:prefLabel  "dramatisoinnit"@fi , "dramatiseringar"@sv ;
-        skos:related    slm:s529 , slm:s909 , slm:s1058 , slm:s154 , slm:s657 .
+        skos:related    slm:s529 , slm:s909 , slm:s1058 , slm:s657 .
 
 slm:s938  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
@@ -6363,10 +6568,6 @@ slm:s308  a                 owl:Class , skos:Concept ;
         skos:inScheme       slm:s285 ;
         skos:note           "Käytetän kirjoista, joissa on kaksi teosta yhteensidottuna siten, että molemmilla teoksilla on omat kansikuvansa ja alkunsa."@fi , "Används om böcker som innehåller två verk sammanbundna på så vis att bägge har egna pärmbilder och början."@sv ;
         skos:prefLabel      "kääntökirjat"@fi , "vändbara böcker"@sv .
-
-slm:s668  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:prefLabel  "transkriptiot"@fi , "transkriptioner"@sv .
 
 slm:s670  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s875 ;
@@ -6463,6 +6664,12 @@ slm:s1023  a             owl:Class , skos:Concept ;
         skos:prefLabel   "kertomarunot"@fi , "episka dikter"@sv ;
         skos:related     slm:s352 .
 
+slm:s1297  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1051 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "typkataloger"@sv , "tyyppiluettelot"@fi ;
+        skos:related     slm:s1242 .
+
 slm:s285  a             owl:Class , skos:ConceptScheme ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:prefLabel  "Monografioiden lajityyppi- ja muototermit"@fi , "Genretermer för monografier"@sv .
@@ -6473,6 +6680,11 @@ slm:s57  a               owl:Class , skos:Concept ;
         skos:altLabel    "westernit"@fi , "westernserier (tecknade serier)"@sv , "vildavästernserier (tecknade serier)"@sv ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "lännensarjakuvat"@fi , "västernserier (tecknade serier)"@sv .
+
+slm:s1281  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1286 ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "komiteanmietinnöt"@fi , "kommittébetänkanden"@sv .
 
 slm:s282  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -6503,6 +6715,15 @@ slm:s305  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p23310> ;
         skos:prefLabel   "independent-elokuvat"@fi , "independentfilmer"@sv ;
         skos:scopeNote   "Käytetään yhdysvaltalaisista, Hollywood-studioiden ulkopuolella tehdyistä nk. riippumattomista elokuvista."@fi , "Används om amerikanska s.k. oberoende filmer, som gjorts utanför Hollywood-studior."@sv .
+
+slm:s569  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "bibelberättelser"@sv ;
+        skos:closeMatch  <http://www.yso.fi/onto/yso/p4009> ;
+        skos:definition  "Berättelse ur Bibeln som bearbetats."@sv , "Kertomus, joka on muokattu Raamatusta."@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "raamatunkertomukset"@fi , "bibliska berättelser"@sv ;
+        skos:related     slm:s993 .
 
 slm:s790  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -6637,13 +6858,14 @@ slm:s1203  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:prefLabel   "selviytymispelit"@fi , "överlevnadsspel"@sv .
 
-slm:s669  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 , yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "runous"@fi , "poesi"@sv ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "lyriikka"@fi , "lyrik"@sv ;
-        skos:related     slm:s1150 .
+slm:s669  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s975 , yso-update:ongelmatfi ;
+        dct:created         "2018-05-16"^^xsd:date ;
+        skos:altLabel       "runous"@fi , "poesi"@sv ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
+        skos:inScheme       slm:s285 ;
+        skos:prefLabel      "lyriikka"@fi , "lyrik"@sv ;
+        skos:related        slm:s1150 .
 
 slm:s540  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6861,7 +7083,8 @@ slm:s1242  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1051 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "motivkataloger"@sv , "motiiviluettelot"@fi .
+        skos:prefLabel   "motivkataloger"@sv , "motiiviluettelot"@fi ;
+        skos:related     slm:s1297 .
 
 slm:s1230  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6924,6 +7147,14 @@ slm:s846  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "avioliittoromaanit"@fi , "äktenskapsromaner"@sv .
+
+slm:s971  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s975 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "ögonblicksskildringar"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:note        "Hetken tilannetta, tunnelmaa tms. esittävä kuva tai kuvaus."@fi ;
+        skos:prefLabel   "ögonblicksbilder"@sv , "tuokiokuvat"@fi .
 
 slm:s762  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s202 ;
@@ -7187,13 +7418,12 @@ slm:s388  a              owl:Class , skos:Concept ;
         skos:related     slm:s479 , slm:s27 .
 
 slm:s999  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1150 ;
+        rdfs:subClassOf  slm:s1150 , slm:s393 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p12061> ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2017026008> ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "rocklyrik"@sv , "rocklyriikka"@fi ;
-        skos:related     slm:s393 .
+        skos:prefLabel   "rocklyrik"@sv , "rocklyriikka"@fi .
 
 slm:s350  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s266 ;
@@ -8023,6 +8253,13 @@ slm:s161  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "naistenlehdet"@fi , "damtidningar"@sv .
 
+slm:s813  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "förkortade utgåvor"@sv , "förkortade upplagor"@sv , "förkortade verk"@sv ;
+        skos:definition  "Verk som har förkortats utan att betydelseinnehållet eller framställningsstilen har ändrats."@sv , "Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä."@fi ;
+        skos:prefLabel   "lyhennelmät"@fi , "förkortade versioner"@sv ;
+        skos:related     slm:s909 , slm:s1058 , slm:s855 , slm:s657 .
+
 slm:s222  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s202 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -8316,21 +8553,37 @@ slm:s429  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "marknadsföringstidningar"@sv , "markkinointilehdet"@fi .
 
-slm:s417  a                          owl:DeprecatedClass , owl:Class ;
-        rdfs:subClassOf              yso-update:ongelmatfi ;
-        skos:prefLabel               "bokserier"@sv , "kirjasarjat"@fi ;
-        yso-meta:developmentComment  "haudattu"@fi .
+slm:s1296  a            owl:Class , skos:Concept ;
+        skos:altLabel   "ainesjulkaisut"@fi ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "aineskokoelmat"@fi , "materialsamlingar"@sv .
+
+slm:s1288  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s975 ;
+        skos:altLabel    "regnbågslitteratur"@sv , "sateenkaarikirjallisuus"@fi , "queer-litteratur"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "queer-kirjallisuus"@fi , "queerlitteratur"@sv .
 
 slm:s1267  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatsv , slm:s435 ;
+        rdfs:subClassOf  slm:s435 ;
+        skos:altLabel    "adresskataloger"@sv , "adresskalendrar"@sv , "adresslistor"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "osoiteluettelot"@fi .
+        skos:prefLabel   "adressförteckningar"@sv , "osoiteluettelot"@fi .
+
+slm:s1310  a            owl:Class , skos:Concept ;
+        skos:altLabel   "fantastik"@sv ;
+        skos:inScheme   slm:s593 , slm:s285 ;
+        skos:prefLabel  "spekulativ fiktion"@sv , "spekulatiivinen fiktio"@fi ;
+        skos:related    slm:s833 .
+
+slm:s1287  a            owl:Class , skos:Concept ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "lähdejulkaisut"@fi , "källpublikationer"@sv ;
+        skos:related    slm:s1296 .
+
+slm:s1271  a            owl:Class , skos:Concept ;
+        skos:prefLabel  "reklamer"@sv , "mainokset"@fi .
 
 ysometa:StructuringClass
         a                rdfs:Class ;
         rdfs:subClassOf  owl:Class .
-
-slm:s991  a                         owl:DeprecatedClass , owl:Class ;
-        rdfs:subClassOf             yso-update:ongelmatfi ;
-        skos:prefLabel              "konventionaalinen kirjallisuus"@fi , "konventionell litteratur"@sv ;
-        ysometa:developmentComment  "haudattu"@fi .

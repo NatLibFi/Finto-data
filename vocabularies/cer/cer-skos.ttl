@@ -8,19 +8,6 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ttp: a skos:ConceptScheme ;
-    dc:creator "National Library of Finland"@en,
-        "Kansalliskirjasto"@fi,
-        "Nationalbiblioteket i Finland"@sv ;
-    dc:description "Tieteen termipankin CER-ontologian testiversio."@fi ;
-    dc:publisher "National Library of Finland"@en,
-        "Kansalliskirjasto"@fi,
-        "Nationalbiblioteket i Finland"@sv ;
-    dc:title "Clean Energy Research ontology of The Bank of Finnish Terminology in Art and Sciences"@en,
-        "Tieteen termipankin CER-ontologia"@fi ;
-    dct:language <http://lexvo.org/id/iso639-3/eng>,
-        <http://lexvo.org/id/iso639-3/fin> .
-
 ttp:hasPartOf a owl:ObjectProperty ;
     rdfs:domain ttp:Concept ;
     rdfs:range ttp:Concept ;
@@ -1748,7 +1735,40 @@ ttp:isPartOf a owl:ObjectProperty ;
     skos:prefLabel "renewable energy (re)sources"@en,
         "uusiutuvat energialähteet"@fi .
 
+ttp:Concept a owl:Class ;
+    rdfs:comment "CER-käsite."@fi ;
+    rdfs:subClassOf owl:Class,
+        skos:Concept ;
+    skos:note "CER-käsite."@fi ;
+    skos:prefLabel "Tieteen termipankin käsite"@fi .
+
 <http://www.yso.fi/onto/kasvimofologia/conceptscheme> a skos:ConceptScheme ;
+    dc:creator "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:description """Puhtaan energian tutkimus (Clean Energy Research, CER) -ontologia sisältää vähähiilisen 
+energian tutkimuksen käsitteitä. CER-ontologia on toteutettu ontologisoimalla Tieteen 
+Termipankin Puhtaan energian termistö eli niin kutsuttu CER-termistö. CER-ontologia on 
+pilottikokeilu Tieteen Termipankin termistöjen ontologisoimiseksi.
+
+Monitieteinen CER-termistö on koottu BCDC Energia -tutkimushankkeessa käytetyistä keskeisistä 
+käsitteistä vuosina 2017-2018. BCDC Energia on Suomen Akatemian Strategisen tutkimuksen 
+vastuualueen (STN) rahoittama konsortiohanke vuosille 2015-2020. BCDC Energian -hankkeen 
+puhtaan energian tuotannon ja käytön tutkimuksessa ovat mukana taloustiede, ilmatiede, 
+tietojenkäsittelytiede, informaatiotutkimus ja langaton viestintä. Käsitteet on kerätty 
+konsortion tutkijoiden julkaisuista sekä muista keskeisistä puhtaan energian tutkimuksen 
+julkaisuista. Vuoden 2018 lopussa termejä on 207. Ne on määritelty sekä suomeksi että englanniksi. 
+
+BCDC Energia -hankkeen toimituskunta vastaa CER-terminologian ja -ontologian sisällöstä.
+"""@fi ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:title "Clean Energy Research ontology of The Bank of Finnish Terminology in Art and Sciences"@en,
+        "Tieteen termipankin CER-ontologia"@fi ;
+    dct:language <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
     skos:hasTopConcept <http://tieteentermipankki.fi/wiki/Clean_Energy_Research:5g_in_communication_system>,
         <http://tieteentermipankki.fi/wiki/Clean_Energy_Research:ad_hoc_network>,
         <http://tieteentermipankki.fi/wiki/Clean_Energy_Research:agent_based_modeling>,

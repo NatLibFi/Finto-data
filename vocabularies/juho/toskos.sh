@@ -3,7 +3,7 @@
 cp ../yso/ysoKehitys.rdf yso-import.rdf
 
 INFILE="juho.ttl"
-INFILES="juho-metadata.ttl yso-import.rdf juho-en-sv.ttl $INFILE"
+INFILES="juho-metadata.ttl yso-import.rdf $INFILE"
 OUTFILE=juho-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"

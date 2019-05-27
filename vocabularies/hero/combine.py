@@ -12,7 +12,7 @@ hero = Graph().parse('hero.ttl', format='turtle')
 csvfile = open('HERO.csv', 'rb')
 reader = csv.reader(csvfile, encoding='utf-8', delimiter=';')
 types = ['', herometa.UpperConcept, herometa.NonHeraldicConcept, herometa.NonFinnishConcept]
-langcodes = ['fi', 'et', 'hu', 'en', 'nl', 'de', 'sv', 'nb', 'nn', 'da', 'is', 'lt', 'lv', 'sq', 'el', 'la', 'it', 'fr', 'es', 'ca', 'pt', 'ro', 'pl', 'cs', 'sk', 'hr', 'sr', 'ru', 'be', 'uk']
+langcodes = ['fi', 'et', 'hu', 'en', 'nl', 'de', 'sv', 'nb', 'nn', 'da', 'is', 'lt', 'lv', 'sq', 'el', 'la', 'it', 'fr', 'es', 'ca', 'pt', 'ro', 'pl', 'cs', 'sk', 'sl', 'hr', 'sr', 'bg', 'ru', 'be', 'uk']
 wbo_missing = False
 
 for row in reader:
@@ -30,6 +30,7 @@ for row in reader:
     if wbo_missing:
         end = None 
     for index, label in enumerate(row[1:end]):
+        #print "{} / {}".format(index, len(row))
         if " {" in label:
             labstr = label.split(" {")
             if len(labstr) > 1:
@@ -38,6 +39,9 @@ for row in reader:
                 if lablang == 'fi':
                     hero.remove((uri, skos.prefLabel, None))
                 hero.add( (uri, skos.prefLabel, Literal(pref, lang=lablang)) )
+        elif len(label) > 0 and index == len(row)-2: #handle the wikidata uris
+            wikidatauri = "http://wikidata.org/wiki/" + label
+            hero.add((uri, skos.relatedMatch, URIRef(wikidatauri)))
         elif len(label) > 0:
             lablang = langcodes[index]
             hero.add((uri, skos.prefLabel, Literal(label, lang=lablang)))
