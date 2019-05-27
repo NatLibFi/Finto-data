@@ -16,15 +16,17 @@ import logging
 from datetime import datetime, date
 import subprocess
 import urllib
-from collections import namedtuple, Sequence
+from collections import namedtuple
+from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.80"
+CONVERSION_PROCESS = "Finto SKOS to MARC 0.81"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
 DEFAULTCREATIONDATE = "1980-01-01"
+KEEPMODIFIEDAFTER = "ALL"
 KEEPDEPRECATEDAFTER = "ALL"
 ENDPOINT_ADDRESS = "http://api.dev.finto.fi/sparql"
 ENDPOINTGRAPHS = [] # palvelupisteen graafien osoitteet, jotka ladataan läpikäytäviin muihin graafeihin
@@ -145,7 +147,7 @@ LEADERDELETED2 = '00000sz  a2200000n  4500'
 CATALOGCODES = '|n|anznnbabn           | ana      '
 CATALOGCODES_NA = '|n|enznnbbbn           | ana      '
 
-GROUPINGCLASSES = [ISOTHES.ConceptGroup, ISOTHES.ThesaurusArray, SKOS.Collection]
+GROUPINGCLASSES = [ISOTHES.ConceptGroup, ISOTHES.ThesaurusArray, SKOS.Collection, YSOMETA.Hierarchy]
 
 # tuple helpottamaan getValues-apufunktion arvojen käsittelyä
 ValueProp = namedtuple("ValueProp", ['value', 'prop'])
@@ -176,11 +178,15 @@ def readCommandLineArguments():
     parser.add_argument("-log", "--log_file", help="Log file location.")
     parser.add_argument("-locDir", "--loc_directory",
         help="Library of Congress directory from which to look for and download to LoC marcxml files. One shall not set if one does not want LoC links.")
+    parser.add_argument("-keepModifiedAfter", "--keep_modified_after",
+        help="Create separate batch of MARC21 files for concepts modified after the date given (set in YYYY-MM-DD format).")
     parser.add_argument("-defaultCreationDate", "--default_creation_date",
         help="Default creation date (set in YYYY-MM-DD format) for a concept if it has not been declared explicitly. Default: " + DEFAULTCREATIONDATE)
     parser.add_argument("-keepDeprecatedAfter", "--keep_deprecated_after",
         help="Keep deprecated concepts deprecated after (not inclusive) the date given (set in YYYY-MM-DD format). Set to 'ALL' for no limits and 'NONE' to discard all.")
-    
+    parser.add_argument("-keepGroupingClasses", "--keep_grouping_classes",
+        help="Keep grouping classes defined in config file.")
+        
     args = parser.parse_args()
     return args
 
@@ -209,6 +215,7 @@ def readEndpointGraphs(settings):
     
     queryFrom = ""
     ret = Graph()
+
     for endpointGraphIRI in settings.get("endpointGraphs").split(","):
         sparql.setQuery(queryStart + "\nFROM <" + str(endpointGraphIRI) + ">" + queryEnd)
         sparql.setMethod("GET")
@@ -228,7 +235,6 @@ def readEndpointGraphs(settings):
             logging.warning("SPARQL endpoint not found in url " + settings.get("endpoint") +
                 ". Skipping querying linked concepts.")
             break
-            
     return ret
 
 # funktio konfiguraatiotiedostoissa olevien monimutkaisten merkkijonojen lukemiseen ja siistimiseen
@@ -419,7 +425,9 @@ def convert(cs, language, g, g2):
             else vocId),
         "groupingClasses" : [URIRef(x) for x in cs.get("groupingClasses", fallback=",".join(GROUPINGCLASSES)).split(",")],
         "groupingClassesDefault" : [URIRef(x) for x in cs.parser.get("DEFAULT", "groupingClasses", fallback=",".join(GROUPINGCLASSES)).split(",")],
+        'keepModified' : cs.get("keepModifiedAfter", fallback=KEEPMODIFIEDAFTER).lower() != "none",
         'keepDeprecated' : cs.get("keepDeprecatedAfter", fallback=KEEPDEPRECATEDAFTER).lower() != "none",
+        'keepGroupingClasses' : cs.getboolean("keepGroupingClasses", fallback=False),
         'write688created' : cs.get("defaultCreationDate", fallback=None) != None
     }
     if helper_variables['keepDeprecated']:   
@@ -467,6 +475,18 @@ def convert(cs, language, g, g2):
                 deprecated_counter += 1
                 continue
         
+        #skipataan ryhmittelevät käsitteet
+        if not helper_variables['keepGroupingClasses']:
+            groupingClassConcept = False
+            if any (conceptType in helper_variables["groupingClasses"] for conceptType in g.objects(concept, RDF.type)):
+                continue
+        
+        # dct:modified -> 005 EI TULOSTETA, 688 
+        # tutkitaan, onko käsite muuttunut vai alkuperäinen
+        # ja valitaan leader sen perusteella
+        mod = g.value(concept, DCT.modified, None)
+        
+          
         rec = Record()   
         deprecatedString = ""
         # Organisaation ISIL-tunniste -> 003
@@ -479,13 +499,12 @@ def convert(cs, language, g, g2):
         # dct:modified -> 005 EI TULOSTETA, 688 
         # tutkitaan, onko käsite muuttunut vai alkuperäinen
         # ja valitaan leader sen perusteella
-        mod = g.value(concept, DCT.modified, None)
         if mod is None:
             rec.leader = cs.get("leaderNew", fallback=LEADERNEW)
         else:
             rec.leader = cs.get("leaderChanged", fallback=LEADERCHANGED)
             modified = mod.toPython() # datetime.date or datetime.datetime object
-            
+  
         # dct:created -> 008
         crt = g.value(concept, DCT.created, None)
         if crt is None:
@@ -607,7 +626,6 @@ def convert(cs, language, g, g2):
                 if groupno is None:
                     valueProps = sorted(getValues(g, group, SKOS.prefLabel, language=language),
                                        key=lambda o: o.value)
-
                     if len(valueProps) == 0: 
                         logging.warning("Could not find preflabel for target %s in language: %s. Skipping property %s target for concept %s." %
                           (group, language, SKOS.member, concept))
@@ -734,7 +752,7 @@ def convert(cs, language, g, g2):
                 
                 tag = "550" # alustetaan 550-arvoon
                 if (target, SKOS.inScheme, YSO.places) in g:
-                        tag = "551"
+                    tag = "551"
                 elif vocId == "slm":
                     tag = "555"
                 
@@ -1037,19 +1055,23 @@ def convert(cs, language, g, g2):
             elif matchURIRef.startswith(LCGF):
                 sub2 = "lcgft" 
                 loc_object = {"prefix": str(LCGF), "id": matchURIRef.split("/")[-1]}
+                
             elif matchURIRef.startswith(ALLARS):
                 if (matchURIRef, RDF.type, ALLARSMETA.GeographicalConcept) in g2: #or matchType == DCT.spatial:
                     tag = "751"
                 sub2 = "allars"
+                #continue
             elif matchURIRef.startswith(KOKO):
                 continue # skip KOKO concepts
             elif matchURIRef.startswith(SLM):
                 tag = "755"
                 sub2 = "slm"
+                
             elif matchURIRef.startswith(YSA):
                 if (matchURIRef, RDF.type, YSAMETA.GeographicalConcept) in g2: #or matchType == DCT.spatial:
                     tag = "751"
                 sub2 = "ysa"
+                #continue
             elif matchURIRef.startswith(YSO):
                 sub2 = "yso"
             else:
@@ -1077,6 +1099,7 @@ def convert(cs, language, g, g2):
                 # kovakoodattu yso ja slm - muuten niiden tulisi olla jossain globaalissa muuttujassa
                 if sub2 == "yso" or sub2 == "slm" or cs.getboolean("multilanguage", fallback=False):
                     sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
+                
                 
                 fields.append(
                     Field(
@@ -1112,6 +1135,7 @@ def convert(cs, language, g, g2):
                 except OSError as e:
                     # haetaan kongressin kirjastosta tarvittava tiedosto ja tallennetaan se
                     try:
+                        #TODO: timeout requestille
                         with urllib.request.urlopen(loc_object["prefix"] + loc_object["id"] + ".marcxml.xml") as marcxml, \
                             open(local_loc_source, 'wb') as out_file:
                             shutil.copyfileobj(marcxml, out_file)
@@ -1184,16 +1208,14 @@ def convert(cs, language, g, g2):
                 multipleLanguages = False
                 languagesEncountered = set()
                 sortedPrefLabels = sorted(g2.preferredLabel(matchURIRef,
-                                       labelProperties=[SKOS.prefLabel]))
+                                        labelProperties=(SKOS.prefLabel)))
                 for label in sortedPrefLabels:
                     languagesEncountered.add(label[1].language)
                     if len(languagesEncountered) > 1:
                         multipleLanguages = True
                         break
-                    
                 processedLanguages = set()             
                 for type2, prefLabel in sortedPrefLabels:
-                    
                     prefLabelLanguage = prefLabel.language if prefLabel.language != None else ""
                     
                     if prefLabelLanguage:
@@ -1239,7 +1261,6 @@ def convert(cs, language, g, g2):
                             subfields = subfields
                         )
                     )
-
                 if not prefLabel and not cs.getboolean("ignoreOtherGraphWarnings", fallback=IGNOREOTHERGRAPHWARNINGS): 
                     logging.warning("Could not find preflabel for target %s. Skipping property %s target for concept %s." %
                       (str(matchURIRef), str(valueProp.prop), concept))
@@ -1251,21 +1272,10 @@ def convert(cs, language, g, g2):
             o.value().lower()
             )):
             rec.add_field(sorted_field)
-
-        # Konversion tiedot -> 884
-
-        tag = "884"
-        rec.add_field(
-                        Field(
-                            tag=tag,
-                            indicators = [' ', " "],
-                            subfields = [
-                                'a', CONVERSION_PROCESS,
-                                'u', CONVERSION_URI
-                            ]
-                        )
-                    )
+            
         writer_records_counter += 1
+        #TODO: tulostaa toiseen tiedostoon vain muokatut käsitteet: if helper_variables['keepModified']:
+        #TODO: tulosta toiseen tiedostoon MARCXML HTML-taittoisessa muodossa
         writer.write(rec)
 
     if handle is not sys.stdout:
@@ -1306,7 +1316,8 @@ def convert(cs, language, g, g2):
         pass
 # MAIN
 
-def main():
+def main():    
+    
     settings = ConfigParser(interpolation=ExtendedInterpolation())
     args = readCommandLineArguments()
     
@@ -1346,6 +1357,8 @@ def main():
     
     logger = logging.getLogger()
     logger.setLevel(loglevel)
+    
+    logger.propagate = False
     
     try:
         __IPYTHON__
@@ -1405,7 +1418,7 @@ def main():
     
     if args.input_format:
         settings.set(cs, "inputFormat", args.input_format)
-    
+  
     if not sys.stdin.isatty():
         try:
             __IPYTHON__
@@ -1459,18 +1472,32 @@ def main():
         if settings.get(cs, "locDirectory")[-1] != "/":
             settings.set(cs, "locDirectory", settings.get(cs, "locDirectory") + "/")
     
+    if args.keep_modified_after:
+        settings.set(cs, "keepModifiedAfter", args.keep_modified_after)
+    if settings.get(cs, "keepModifiedAfter", fallback=None) != None:
+        deprecationLimit = settings.get(cs, "keepModifiedAfter")
+        if deprecationLimit.lower() == "all":
+            pass
+        elif deprecationLimit.lower() == "none":
+            pass
+        else:
+            try:
+                datetime.date(datetime.strptime(deprecationLimit, "%Y-%m-%d"))
+            except ValueError:
+                logging.error("Cannot interpret 'keepModifiedAfter' value set in configuration file or given as a CLI parameter. Possible values are 'ALL', 'NONE' and ISO 8601 format for dates.")
+                sys.exit(2)
+                
     if args.default_creation_date:
         settings.set(cs, "defaultCreationDate", args.default_creation_date)
-            
-    if args.keep_deprecated_after:
-        settings.set(cs, "keepDeprecatedAfter", args.keep_deprecated_after)
     if settings.get(cs, "defaultCreationDate", fallback=None) != None:
         try:
             datetime.date(datetime.strptime(settings.get(cs, "defaultCreationDate"), "%Y-%m-%d"))
         except ValueError:
             logging.error("Cannot interpret 'defaultCreationDate' value set in configuration file or given as a CLI parameter. Possible values: ISO 8601 format for dates.")
             sys.exit(2)
-
+    
+    if args.keep_deprecated_after:
+        settings.set(cs, "keepDeprecatedAfter", args.keep_deprecated_after)
     if settings.get(cs, "keepDeprecatedAfter", fallback=None) != None:
         deprecationLimit = settings.get(cs, "keepDeprecatedAfter")
         if deprecationLimit.lower() == "all":
