@@ -6,6 +6,9 @@ from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 from pymarc import Record, Field, XMLWriter, MARCReader
 import xml.etree.ElementTree as ET
+from xml.dom.minidom import parseString
+from lxml import etree
+import io
 import shutil
 
 import argparse
@@ -21,7 +24,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.81"
+CONVERSION_PROCESS = "Finto SKOS to MARC 0.82"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -168,6 +171,7 @@ def readCommandLineArguments():
     parser.add_argument("-i", "--input", help="Input file location, e.g., yso-skos.ttl")
     parser.add_argument("-if", "--input_format", help="Input file format. Default: turtle")
     parser.add_argument("-o", "--output", help="Output file name, e.g., yso.mrcx.")
+    parser.add_argument("-op", "--output_pretty", help="Output file name for pretty xml, e.g., yso.mrcx.")
     parser.add_argument("-vocId", "--vocabulary_code", help="MARC code used in tag 040 subfield f.", required=True)
     parser.add_argument("-lang", "--languages",
         help="The RDF language tag of the language one is willing to convert. In case of multiple, separate them with space.")
@@ -463,6 +467,9 @@ def convert(cs, language, g, g2):
             handle = open(cs.get("output", fallback=defaultOutputFileName), "wb")
         
     writer = XMLWriter(handle)
+        
+    pretty_xml_writer = XMLWriter(open(cs.get("output_pretty"), "wb"))
+    
     # käydään läpi käsitteet
     for concept in sorted(g.subjects(RDF.type, SKOS.Concept)):
         incrementor += 1
@@ -1277,9 +1284,31 @@ def convert(cs, language, g, g2):
         #TODO: tulostaa toiseen tiedostoon vain muokatut käsitteet: if helper_variables['keepModified']:
         #TODO: tulosta toiseen tiedostoon MARCXML HTML-taittoisessa muodossa
         writer.write(rec)
-
+        pretty_xml_writer.write(rec)
+        
     if handle is not sys.stdout:
         writer.close()
+    
+    pretty_xml_writer.close()
+    
+    
+    tree = ET.parse(cs.get("output_pretty"))
+    root = tree.getroot()
+    ET.register_namespace("", ET_namespaces['marcxml'])
+    logging.info("Formatting the xml file into pretty XML")
+    xml = parseString(ET.tostring(root, "utf-8")).toprettyxml()
+    with open('MARC21slim.xsd', 'r', newline='', encoding="utf-8") as fh:
+        data = fh.read().replace('\n', '')
+        f = io.StringIO(data)
+        xmlschema_doc = etree.parse(f)
+        xmlschema = etree.XMLSchema(xmlschema_doc)
+        test_xml = io.StringIO(xml)
+        doc = etree.parse(test_xml)
+        xmlschema.assert_(doc)
+        fh.close()
+    xmlfile = open(cs.get("output_pretty"), 'wb')
+    xmlfile.write(bytes(xml, 'UTF-8'))
+    xmlfile.close()
     
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
@@ -1438,6 +1467,9 @@ def main():
         settings.set(cs, "output", args.output)
         settings.set(cs, "outputSpecified", "true")
     
+    if args.output_pretty:
+        settings.set(cs, "output_pretty", args.output_pretty)
+        
     if not sys.stdout.isatty() and settings.get(cs, "output", fallback=None) != None:
         try:
             __IPYTHON__
