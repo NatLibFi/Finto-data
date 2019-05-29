@@ -7,8 +7,6 @@ from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 from pymarc import Record, Field, XMLWriter, MARCReader
 import xml.etree.ElementTree as ET
 from xml.dom.minidom import parseString
-from lxml import etree
-import io
 import shutil
 
 import argparse
@@ -1291,23 +1289,14 @@ def convert(cs, language, g, g2):
     
     pretty_xml_writer.close()
     
-    
     tree = ET.parse(cs.get("output_pretty"))
     root = tree.getroot()
     ET.register_namespace("", ET_namespaces['marcxml'])
     logging.info("Formatting the xml file into pretty XML")
-    xml = parseString(ET.tostring(root, "utf-8")).toprettyxml()
-    with open('MARC21slim.xsd', 'r', newline='', encoding="utf-8") as fh:
-        data = fh.read().replace('\n', '')
-        f = io.StringIO(data)
-        xmlschema_doc = etree.parse(f)
-        xmlschema = etree.XMLSchema(xmlschema_doc)
-        test_xml = io.StringIO(xml)
-        doc = etree.parse(test_xml)
-        xmlschema.assert_(doc)
-        fh.close()
+    doc = parseString(ET.tostring(root))
+    xml = doc.toprettyxml(encoding='utf8') 
     xmlfile = open(cs.get("output_pretty"), 'wb')
-    xmlfile.write(bytes(xml, 'UTF-8'))
+    xmlfile.write(xml)
     xmlfile.close()
     
     # lokitetaan vähän tietoa konversiosta
