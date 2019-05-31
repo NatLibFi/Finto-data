@@ -22,6 +22,7 @@ DCT=Namespace("http://purl.org/dc/terms/")
 RDAA=Namespace("http://rdaregistry.info/Elements/a/")
 RDAC=Namespace("http://rdaregistry.info/Elements/c/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
+ISNI=Namespace("http://isni.org/isni/")
 
 LAS_IDENTIFY_URL="http://demo.seco.tkk.fi/las/identify"
 FINTO_API_BASE="http://api.finto.fi/rest/v1/"
@@ -148,6 +149,12 @@ def convert_record(oaipmhrec):
   modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
   g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
   
+  # ISNI
+  for f in rec.get_fields('024'):
+    if '2' in f and f['2'] == 'isni' and 'a' in f:
+      isni = ISNI[f['a']]
+      g.add((uri, SKOS.closeMatch, isni))
+
   if '046' in rec:
     fld = rec['046']
     if 's' in fld:
@@ -260,7 +267,7 @@ label_to_uri = {}
 
 oai = Client('https://fennica.linneanet.fi/cgi-bin/oai-pmh-fennica-asteri-aut.cgi', registry)
 
-#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2018,10,15))
+#recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames', from_=datetime(2019,05,15))
 recs = oai.listRecords(metadataPrefix='marc21', set='corporateNames')
 for oaipmhrec in recs:
   convert_record(oaipmhrec)

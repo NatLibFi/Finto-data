@@ -561,23 +561,6 @@ slm:s538  a              owl:Class , skos:Concept ;
         skos:prefLabel   "drum 'n' bass"@fi , "drum'n'bass"@sv ;
         skos:related     slm:s1251 .
 
-slm:s1237  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "broschyrer"@sv , "esitteet"@fi .
-
-slm:s1269  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        skos:altLabel    "formulär"@sv ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "lomakkeet"@fi , "blanketter"@sv .
-
-slm:s1271  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        skos:inScheme    slm:s1268 ;
-        skos:prefLabel   "reklamer"@sv , "mainokset"@fi .
-
 slm:s170  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6062> ;
@@ -1505,15 +1488,6 @@ slm:s887  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "sviter"@sv , "sarjat"@fi .
 
-slm:s569  a              owl:Class , skos:Concept ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "bibelberättelser"@sv ;
-        skos:closeMatch  <http://www.yso.fi/onto/yso/p4009> ;
-        skos:definition  "Används om bearbetade berättelser ur Bibeln eller berättelser vars ämne tagits ur Bibeln."@sv , "Käytetään kertomuksista, jotka on muokattu Raamatusta tai joissa on aiheena jokin raamatunkertomus."@fi ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "raamatunkertomukset"@fi , "bibliska berättelser"@sv ;
-        skos:related     slm:s993 .
-
 slm:s786  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "ragat"@fi ;
@@ -1986,6 +1960,10 @@ slm:s542  a              owl:Class , skos:Concept ;
         skos:definition  "Yrityksen sidosryhmille tai asiakkaille suunnattuja lehtiä. Mediaopas 10.4.2013."@fi , "Tidningar riktade till ett företags intressentgrupper eller kunder."@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "asiakaslehdet"@fi , "kundtidningar"@sv .
+
+slm:s1237  a            owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:prefLabel  "broschyrer"@sv , "esitteet"@fi .
 
 slm:s834  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -2922,12 +2900,11 @@ slm:s163  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s861 ;
         skos:prefLabel  "reklammusik"@sv , "mainosmusiikki"@fi .
 
-slm:s1312  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatsv ;
-        skos:altLabel    "soolot (soolo-osuudet)"@fi ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "soolo-osuudet"@fi ;
-        skos:related     slm:s764 .
+slm:s1312  a            owl:Class , skos:Concept ;
+        skos:altLabel   "soolot (soolo-osuudet)"@fi , "solon"@sv ;
+        skos:inScheme   slm:s861 ;
+        skos:prefLabel  "solopartier"@sv , "soolo-osuudet"@fi ;
+        skos:related    slm:s764 .
 
 slm:s144  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -3020,11 +2997,11 @@ slm:s1079  a             owl:Class , skos:Concept ;
         skos:prefLabel   "taarab"@sv , "taarab"@fi .
 
 slm:s437  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1081 , yso-update:ongelmatfi ;
+        rdfs:subClassOf  slm:s1081 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "ballader"@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "balladit (musiikki)"@fi , "ballader (musik)"@sv .
+        skos:prefLabel   "balladit"@fi , "ballader"@sv .
 
 slm:s489  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3144,7 +3121,7 @@ slm:s883  a              owl:Class , skos:Concept ;
         skos:prefLabel   "aleatorisk musik"@sv , "aleatorinen musiikki"@fi .
 
 slm:s668  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatsv , slm:s409 ;
+        rdfs:subClassOf  slm:s409 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "transkriptiot"@fi , "transkriberingar (musik)"@sv ;
         skos:inScheme    slm:s861 ;
@@ -5154,7 +5131,7 @@ slm:s645  a                 owl:Class , skos:Concept ;
         dct:created         "2018-05-16"^^xsd:date ;
         skos:altLabel       "vildmarksberättelser"@sv , "erätarinat"@fi , "jakthistorier"@sv , "ödemarkslitteratur"@sv ;
         skos:closeMatch     <http://www.yso.fi/onto/yso/p10766> ;
-        skos:editorialNote  "Poistetaan" ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
         skos:inScheme       slm:s285 ;
         skos:prefLabel      "eräkirjallisuus"@fi , "vildmarkslitteratur"@sv ;
         skos:scopeNote      "Används om verk som beskriver vildmarksliv med jakt, fiske och vandring."@sv , "Käytetään teoksista, joissa kuvataan eräelämää - metsästystä, kalastusta ja vaeltamista."@fi .
@@ -5247,12 +5224,11 @@ slm:s202  a             owl:Class , skos:Concept ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "oppaat (teokset)"@fi , "guider (verk)"@sv .
 
-slm:s284  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s1075 , yso-update:ongelmatsv ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:editorialNote  "Auli selvittää, onko tarvetta" ;
-        skos:inScheme       slm:s285 ;
-        skos:prefLabel      "böcker med griffelsidor"@sv , "liitutaulukirjat"@fi .
+slm:s284  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1075 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "böcker med griffelsidor"@sv , "liitutaulukirjat"@fi .
 
 slm:s147  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s103 ;
@@ -5897,14 +5873,6 @@ slm:s944  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "beatlitteratur"@sv , "beatkirjallisuus"@fi .
 
-slm:s971  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "ögonblicksskildringar"@sv ;
-        skos:inScheme    slm:s285 ;
-        skos:note        "Hetken tilannetta, tunnelmaa tms. esittävä kuva t. kuvaus; vrt. tilannekuva."@fi ;
-        skos:prefLabel   "ögonblicksbilder"@sv , "tuokiokuvat"@fi .
-
 slm:s110  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p19188> ;
@@ -5952,6 +5920,10 @@ slm:s162  a              owl:Class , skos:Concept ;
         skos:related     slm:s364 ;
         skos:scopeNote   "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi , "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
 
+slm:s1269  a            owl:Class , skos:Concept ;
+        skos:altLabel   "formulär"@sv ;
+        skos:prefLabel  "lomakkeet"@fi , "blanketter"@sv .
+
 slm:s725  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5979,25 +5951,6 @@ slm:s1232  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "diplomityöt"@fi , "diplomarbeten"@sv .
-
-slm:s669  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s975 , yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:altLabel       "runous"@fi , "poesi"@sv ;
-        skos:editorialNote  "Poistetaan" ;
-        skos:inScheme       slm:s285 ;
-        skos:prefLabel      "lyriikka"@fi , "lyrik"@sv ;
-        skos:related        slm:s1150 .
-
-slm:s866  a                 owl:Class , skos:Concept ;
-        rdfs:subClassOf     slm:s1150 , yso-update:ongelmatfi ;
-        dct:created         "2018-05-16"^^xsd:date ;
-        skos:altLabel       "folklore"@sv , "folklore"@fi ;
-        skos:closeMatch     <http://www.yso.fi/onto/yso/p1361> ;
-        skos:editorialNote  "Poistetaan" ;
-        skos:inScheme       slm:s285 ;
-        skos:prefLabel      "kansanrunous"@fi , "folkdiktning"@sv ;
-        skos:related        slm:s915 , slm:s1151 , slm:s443 , slm:s1191 .
 
 slm:s341  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6268,6 +6221,16 @@ slm:s7  a                owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "selkolehdet"@fi , "lättlästa tidningar"@sv .
 
+slm:s866  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s1150 , yso-update:ongelmatfi ;
+        dct:created         "2018-05-16"^^xsd:date ;
+        skos:altLabel       "folklore"@sv , "folklore"@fi ;
+        skos:closeMatch     <http://www.yso.fi/onto/yso/p1361> ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
+        skos:inScheme       slm:s285 ;
+        skos:prefLabel      "kansanrunous"@fi , "folkdiktning"@sv ;
+        skos:related        slm:s915 , slm:s1151 , slm:s443 , slm:s1191 .
+
 slm:s1078  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6490,9 +6453,9 @@ slm:s82  a               owl:Class , skos:Concept ;
 slm:s524  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "inre monolog-litteratur"@sv , "stream of consciusness-litteratur"@sv , "inre monolog (genre)"@sv ;
+        skos:altLabel    "medvetandeström-litteratur"@sv , "inre monolog-litteratur"@sv , "stream of consciusness-litteratur"@sv , "inre monolog (genre)"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "medvetandeström-litteratur"@sv , "tajunnanvirtakirjallisuus"@fi ;
+        skos:prefLabel   "medvetandeström (litteratur)"@sv , "tajunnanvirtakirjallisuus"@fi ;
         skos:related     slm:s181 ;
         skos:scopeNote   "Käytetään teoksista, joiden kertomatekniikkana on tajunnanvirtatekniikka, jonka avulla pyritään kuvaamaan ihmisen alitajuisia mielenliikkeitä."@fi .
 
@@ -6753,6 +6716,15 @@ slm:s305  a              owl:Class , skos:Concept ;
         skos:prefLabel   "independent-elokuvat"@fi , "independentfilmer"@sv ;
         skos:scopeNote   "Käytetään yhdysvaltalaisista, Hollywood-studioiden ulkopuolella tehdyistä nk. riippumattomista elokuvista."@fi , "Används om amerikanska s.k. oberoende filmer, som gjorts utanför Hollywood-studior."@sv .
 
+slm:s569  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "bibelberättelser"@sv ;
+        skos:closeMatch  <http://www.yso.fi/onto/yso/p4009> ;
+        skos:definition  "Berättelse ur Bibeln som bearbetats."@sv , "Kertomus, joka on muokattu Raamatusta."@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "raamatunkertomukset"@fi , "bibliska berättelser"@sv ;
+        skos:related     slm:s993 .
+
 slm:s790  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6885,6 +6857,15 @@ slm:s1203  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:prefLabel   "selviytymispelit"@fi , "överlevnadsspel"@sv .
+
+slm:s669  a                 owl:Class , skos:Concept ;
+        rdfs:subClassOf     slm:s975 , yso-update:ongelmatfi ;
+        dct:created         "2018-05-16"^^xsd:date ;
+        skos:altLabel       "runous"@fi , "poesi"@sv ;
+        skos:editorialNote  "Poistetaan (päätetty)." ;
+        skos:inScheme       slm:s285 ;
+        skos:prefLabel      "lyriikka"@fi , "lyrik"@sv ;
+        skos:related        slm:s1150 .
 
 slm:s540  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -7166,6 +7147,14 @@ slm:s846  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "avioliittoromaanit"@fi , "äktenskapsromaner"@sv .
+
+slm:s971  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s975 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "ögonblicksskildringar"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:note        "Hetken tilannetta, tunnelmaa tms. esittävä kuva tai kuvaus."@fi ;
+        skos:prefLabel   "ögonblicksbilder"@sv , "tuokiokuvat"@fi .
 
 slm:s762  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s202 ;
@@ -8265,7 +8254,6 @@ slm:s161  a              owl:Class , skos:Concept ;
         skos:prefLabel   "naistenlehdet"@fi , "damtidningar"@sv .
 
 slm:s813  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:ongelmatsv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "förkortade utgåvor"@sv , "förkortade upplagor"@sv , "förkortade verk"@sv ;
         skos:definition  "Verk som har förkortats utan att betydelseinnehållet eller framställningsstilen har ändrats."@sv , "Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä."@fi ;
@@ -8592,6 +8580,9 @@ slm:s1287  a            owl:Class , skos:Concept ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "lähdejulkaisut"@fi , "källpublikationer"@sv ;
         skos:related    slm:s1296 .
+
+slm:s1271  a            owl:Class , skos:Concept ;
+        skos:prefLabel  "reklamer"@sv , "mainokset"@fi .
 
 ysometa:StructuringClass
         a                rdfs:Class ;
