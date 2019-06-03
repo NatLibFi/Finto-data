@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+# coding=utf-8
 
 from rdflib import Graph, Namespace, URIRef, BNode, Literal, RDF
 from rdflib.namespace import SKOS, XSD, OWL, DC
 from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
+import socket
 from pymarc import Record, Field, XMLWriter, MARCReader
 import xml.etree.ElementTree as ET
 from xml.dom.minidom import parseString
@@ -22,7 +24,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.82"
+CONVERSION_PROCESS = "Finto SKOS to MARC 0.83"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -221,6 +223,7 @@ def readEndpointGraphs(settings):
     for endpointGraphIRI in settings.get("endpointGraphs").split(","):
         sparql.setQuery(queryStart + "\nFROM <" + str(endpointGraphIRI) + ">" + queryEnd)
         sparql.setMethod("GET")
+        sparql.setTimeout(600)
         ret_length = len(ret)
         try:
             ret += sparql.query().convert()
@@ -237,6 +240,9 @@ def readEndpointGraphs(settings):
             logging.warning("SPARQL endpoint not found in url " + settings.get("endpoint") +
                 ". Skipping querying linked concepts.")
             break
+        except socket.timeout as e:
+            logging.warning("SPARQL endpoint now answering within timeout limit. " +
+                "Skipping querying linked concepts.") 
     return ret
 
 # funktio konfiguraatiotiedostoissa olevien monimutkaisten merkkijonojen lukemiseen ja siistimiseen
@@ -1141,7 +1147,7 @@ def convert(cs, language, g, g2):
                     # haetaan kongressin kirjastosta tarvittava tiedosto ja tallennetaan se
                     try:
                         #TODO: timeout requestille
-                        with urllib.request.urlopen(loc_object["prefix"] + loc_object["id"] + ".marcxml.xml") as marcxml, \
+                        with urllib.request.urlopen(loc_object["prefix"] + loc_object["id"] + ".marcxml.xml", timeout=5) as marcxml, \
                             open(local_loc_source, 'wb') as out_file:
                             shutil.copyfileobj(marcxml, out_file)
                             logging.info("Downloaded LCSH link to %s." %
