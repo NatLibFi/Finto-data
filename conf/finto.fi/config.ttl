@@ -4,6 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
@@ -834,10 +835,20 @@
     rdau:P60686; 
 	void:dataDump <http://api.finto.fi/download/yso/yso-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/yso/yso-skos.rdf> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-fi-marc-pretty.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-sv-marc-pretty.mrcx> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> ;
 	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv, "yso/eng"@en .
+
+<http://dev.finto.fi/download/yso/yso-fi-marc-pretty.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "fi" .
+
+<http://dev.finto.fi/download/yso/yso-sv-marc-pretty.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "sv" .
 
 :yso-paikat a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO-paikat"@fi ,
