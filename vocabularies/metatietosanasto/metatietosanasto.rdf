@@ -343,6 +343,28 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:emannoitsija">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kodinhoitaja</skos:altLabel>
+    <skos:definition xml:lang="fi">Vanh. Ennen emännöitsijä kuuluu arvostettuun palvelusväkeen, jolla oli alaisia. Nykyisin puhutaan kodinhoitajasta [http://urn.fi/URN:NBN:fi:au:mts:m2985].</skos:definition>
+    <skos:prefLabel xml:lang="fi">emännöitsijä</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">husföreståndarinna</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">matron</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:farmanomi">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">farmanom</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">farmanomi</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">pharmacist assistant</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:logonomi">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p12110"/>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="sv">logonom</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">logonomi</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">speech teacher</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -11832,10 +11854,11 @@ Vastavuoroinen suhde: esiosa teokselle.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10225"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
     <skos:prefLabel xml:lang="en">absorption in part of (work)</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">delvis införlivat i verket</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">delvis uppgått i verk</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teokseen osittain sulautunut</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää teoksen teokseen, joka on osittain sulautunut osaksi toista teosta.&#xD;
 Vastavuoroinen suhde: sulautunut osittain teokseen.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Sammankopplar verk med ett verk som delvis har uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verket.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2264">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -12001,6 +12024,7 @@ Vastavuoroinen suhde: myöhempi teos.</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">sulautunut osittain teokseen</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teos, joka on osittain sulautunut osaksi toista teosta. &#xD;
 Vastavuoroinen suhde: teokseen osittain sulautunut.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Verk som delvis uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2277">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -12593,6 +12617,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">ammatti tai tehtävä</rdfs:label>
     <rdfs:label xml:lang="sv">yrke eller uppgift</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:emannoitsija"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2309"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2310"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2311"/>
@@ -19423,7 +19448,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p15492"/>
     <skos:prefLabel xml:lang="fi">kehitysvammaisten hoitaja</skos:prefLabel>
     <skos:prefLabel xml:lang="en">nurse for persons with intellectual disabilities</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">vårdare av person med utvecklingsstörning</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">vårdare av personer med utvecklingsstörning</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2877">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -27812,7 +27837,9 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">tsaritsa</skos:altLabel>
     <skos:definition xml:lang="fi">tsaarin puoliso; tsaaria vastaava naispuolinen hallitsija</skos:definition>
+    <skos:definition xml:lang="sv">tsarens gemål; kvinnlig motsvarighet till tsar</skos:definition>
     <skos:prefLabel xml:lang="fi">tsaaritar</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">tsarinna</skos:prefLabel>
   </owl:Class>
@@ -28670,6 +28697,8 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <skos:altLabel xml:lang="sv">lärd grad</skos:altLabel>
     <skos:altLabel xml:lang="sv">lärograd</skos:altLabel>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:farmanomi"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:logonomi"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1802"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3747"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3765"/>
@@ -28834,6 +28863,7 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3924"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3925"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3926"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:merkonomi"/>
     <skos:prefLabel xml:lang="sv">lärdomsgrad</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">oppiarvo</skos:prefLabel>
   </owl:Class>
@@ -35684,5 +35714,21 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="fi">teoksen omistuskirjoituksen kohde</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:merkonomi">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p18821"/>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="sv">merkonom</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">merkonomi</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:viilari">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">viilaaja</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2615"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2527"/>
+    <skos:prefLabel xml:lang="sv">filare</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">filer</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">viilari</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
