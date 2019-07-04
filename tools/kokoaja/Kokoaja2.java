@@ -2,13 +2,17 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 
 import com.hp.hpl.jena.rdf.model.Literal;
@@ -18,6 +22,7 @@ import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.DC;
@@ -131,9 +136,14 @@ public class Kokoaja2 {
 		StmtIterator iter = this.onto.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
-			if (!this.mustaLista.contains(stmt.getSubject())) {
-				this.koko.add(stmt);
-				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(stmt.getSubject(), (Resource)stmt.getObject());
+			Resource subject = stmt.getSubject();
+			Resource object = stmt.getResource();
+			if (!this.mustaLista.contains(subject)) {
+
+				//Jottei tapahtuisi jakautuvia korvaavuussuhteita, valitaan jokaiselle replaced-suhteelle vain yksi sopiva seuraaja
+				object = this.haeKorvaava(subject, this.onto);
+				this.koko.add(subject, DCTerms.isReplacedBy, object);
+				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(subject, object);
 			}
 		}
 	}
@@ -214,7 +224,7 @@ public class Kokoaja2 {
 			}
 		}
 	}
-	//miksi tämä ei lue skos:broaderia soton p667:lle?
+
 	public void lueOnto(String ontonPolku, Resource ontoTyyppi) {
 		System.out.println("Luetaan " + ontonPolku);
 		this.onto = JenaHelpers.lueMalliModeliksi(ontonPolku);
@@ -251,12 +261,15 @@ public class Kokoaja2 {
 			Resource obj = (Resource)stmt.getObject();
 			//Lisätty tarkistus siitä ettei exactMatcheja kokoon haeta ontologioista (ts. Koko kootaan ysoon osoittavien exactMatchien perusteella)
 			if (ontonOntoTyyppisetResurssit.contains(subj) && !obj.getNameSpace().equals(this.kokoNs)) {
-				HashSet<Resource> matchitSet = new HashSet<Resource>();
-				if (ontonExactMatchitMap.containsKey(subj)) {
-					matchitSet = ontonExactMatchitMap.get(subj);
+				//lisätty tarkistus siitä ettei linkata deprekoituihin resursseihin
+				if ( !obj.hasProperty(DCTerms.isReplacedBy) ) {
+					HashSet<Resource> matchitSet = new HashSet<Resource>();
+					if (ontonExactMatchitMap.containsKey(subj)) {
+						matchitSet = ontonExactMatchitMap.get(subj);
+					}
+					matchitSet.add((Resource)(stmt.getObject()));
+					ontonExactMatchitMap.put(subj, matchitSet);
 				}
-				matchitSet.add((Resource)(stmt.getObject()));
-				ontonExactMatchitMap.put(subj, matchitSet);
 			}
 		}
 
@@ -320,7 +333,11 @@ public class Kokoaja2 {
 		iter = this.onto.listStatements((Resource)null, DCTerms.isReplacedBy, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
-			this.koko.add(stmt);
+			Resource subject = stmt.getSubject();
+
+			//Jottei tapahtuisi jakautuvia korvaavuussuhteita, valitaan jokaiselle replaced-suhteelle vain yksi sopiva seuraaja
+			Resource object = this.haeKorvaava(subject, this.onto);
+			this.koko.add(subject, DCTerms.isReplacedBy, object);
 		}
 	}
 
@@ -620,7 +637,12 @@ public class Kokoaja2 {
 		StmtIterator iter1 = this.koko.listStatements(null, skosExactMatch, (RDFNode)null);
 		kaikkiLinkitetytKäsitteet.addAll(iter1.toSet());
 
+		System.out.println("Linkitettyjä käsitteitä oli " + kaikkiLinkitetytKäsitteet.size());
+		this.siivoaPoisTuplaVastaavuudet(kaikkiLinkitetytKäsitteet);
+		System.out.println("Siivouksen jälkeen linkitettyjä on " + kaikkiLinkitetytKäsitteet.size());
+
 		for (Statement linkki : kaikkiLinkitetytKäsitteet) {
+
 			Resource A = linkki.getSubject();
 			Resource B = linkki.getResource();
 
@@ -665,6 +687,7 @@ public class Kokoaja2 {
 
 		//Jokaiselle käsiteryhmälle, listaa kaikki käsitteet ja valitse niistä pienin kokourivastaavuus vanhasta kokosta
 		for (HashSet<Resource> ryhmä : ryhmäIndeksi.values()) {
+
 			Vector<Resource> ryhmänKokot = new Vector<Resource>();
 			for (Resource r : ryhmä) {
 				Resource uusiKoko = this.ontoKokoResurssivastaavuudetMap.get(r);
@@ -680,29 +703,54 @@ public class Kokoaja2 {
 				Collections.sort(ryhmänKokot, new ResourceComparator());
 			}
 			Resource kokoSubj = ryhmänKokot.get(0);
-
 			for (Resource ontoSubj:ryhmä) {
 
 				//Miksi tämä tehdään kummallekin?
 				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(ontoSubj, kokoSubj);
 				this.ontoKokoResurssivastaavuudetMap.put(ontoSubj, kokoSubj);
 			}
-
 			for (Resource r : ryhmä) {
 				this.muutaKokoSubj(r, kokoSubj);
 			}
 			//Poista muut viittaukset kokoureihin ?
-
 			for (int i=1 ; i<ryhmänKokot.size(); i++) {
 				if (!kokoSubj.equals(ryhmänKokot.get(i)))
 					this.koko.add(ryhmänKokot.get(i), DCTerms.isReplacedBy, kokoSubj);
 			}
-
 		}
 
+		//Siivotaan lopuksi hierarkiasta erikoisonto- ja ysourit joihin on saatettu viitata exactMatcheilla
+		Property broader = this.koko.getProperty(this.skosNs+"broader");
+		Property narrower = this.koko.getProperty(this.skosNs+"narrower");
+		HashSet<Statement> korvattavatHierarkiset = new HashSet<Statement>();
+		StmtIterator broaderIter = this.koko.listStatements(null, broader, (RDFNode)null);
+		while (broaderIter.hasNext()) {
+			Statement s = broaderIter.next();
+			if (!s.getResource().getNameSpace().endsWith("/koko/")) {
+				korvattavatHierarkiset.add(s);
+			}
+		}
+		StmtIterator narrowerIter = this.koko.listStatements(null, narrower, (RDFNode)null);
+		while (narrowerIter.hasNext()) {
+			Statement s = narrowerIter.next();
+			if (!s.getResource().getNameSpace().endsWith("/koko/")) {
+				korvattavatHierarkiset.add(s);
+			}
+		}
+		
+		for (Statement s : korvattavatHierarkiset) {
+			Resource korvaava = this.ontoKokoResurssivastaavuudetMap.get(s.getResource());
+			this.koko.remove(s);
+			if (korvaava == null) {
+				System.out.println("Käsitteelle " + s.getResource() + " ei löytynyt vastaavaa koko-uria. Poistetaan viittaus uriin.");
+			} else {
+				this.koko.add(s.getSubject(), s.getPredicate(), korvaava);
+			}
+		}
+		
 		//testataan käsitteiden määrää 2.
 		System.out.println("Kokossa käsitteitä urittamisen jälkeen: " + this.koko.listSubjects().toList().size());
-
+		
 	}
 
 	private void valiTarkistus(String filename) {
@@ -712,7 +760,6 @@ public class Kokoaja2 {
 			System.out.println("Kirjoitetaan välikoko...");
 			this.koko.write((new FileWriter(filename)), "TTL");
 		} catch (IOException e) {
-			System.out.println("MITÄSMITÄS");
 			e.printStackTrace();
 		}
 	}
@@ -1217,15 +1264,15 @@ public class Kokoaja2 {
 		this.vaihtoehtoinenMuutaUritKokoUreiksi();
 		//this.valiTarkistus("koko-3-kuritettu.ttl");
 		this.korjaaLopuksiObjectit();
-		//this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
+		this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
-		//this.valiTarkistus("koko-5-exactMatch.ttl");
+		this.valiTarkistus("koko-5-exactMatch.ttl");
 		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
-		//this.valiTarkistus("koko-6-purettuKorvaavuus.ttl");
+		this.valiTarkistus("koko-6-purettuKorvaavuus.ttl");
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
-		//this.valiTarkistus("koko-7-eiEroa-muutokset-verrattu.ttl");
+		this.valiTarkistus("koko-7-eiEroa-muutokset-verrattu.ttl");
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
-		//this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
+		this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
 	}
 
@@ -1251,7 +1298,26 @@ public class Kokoaja2 {
 	}
 
 	public void kirjoitaKoko(String kokonPolku) {
+		
+		try {
+			System.out.println("Kirjoitetaan välikoko...");
+			this.koko.write((new FileWriter(kokonPolku+".alt")), "TTL");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
 		JenaHelpers.kirjoitaMalli(this.koko, kokonPolku, true);
+	}
+	private Resource haeKorvaava(Resource res, Model model) {
+		List<Resource> results = new ArrayList<>();
+		StmtIterator iter = model.listStatements(res, DCTerms.isReplacedBy, (RDFNode)null);
+		while (iter.hasNext()) {
+			results.add(iter.next().getResource());
+		}
+		if (results.size() > 1) {
+			Collections.sort(results, new ResourceHierarchyComparator());
+		} return results.get(0);
 	}
 
 	/*
@@ -1277,6 +1343,123 @@ public class Kokoaja2 {
 
 		kokoaja.kirjoitaKoko(args[5]);
 	}
+
+
+	private void siivoaPoisTuplaVastaavuudet(HashSet<Statement> kaikkiLinkitetytKäsitteet) {
+
+		HashMap<Resource, HashSet<Statement>> kaikkiLinkitMap = new HashMap<Resource, HashSet<Statement>>();
+		for (Statement s : kaikkiLinkitetytKäsitteet) {
+
+			Resource r1 = s.getSubject();
+			Resource r2 = s.getResource();
+
+			//Muodostetaan pussukat
+			if (!kaikkiLinkitMap.containsKey(r1) && !kaikkiLinkitMap.containsKey(r2)) {
+				HashSet<Statement> set = new HashSet<Statement>();
+				set.add(s);
+				set.add(s);
+				kaikkiLinkitMap.put(r1, set);
+				kaikkiLinkitMap.put(r2, set);
+
+			}
+			else if (kaikkiLinkitMap.containsKey(r1) && kaikkiLinkitMap.containsKey(r2)) {
+				HashSet<Statement> s1 = kaikkiLinkitMap.get(r1);
+				HashSet<Statement> s2 = kaikkiLinkitMap.get(r2);
+				s1.addAll(s2);
+				s1.add(s);
+				s1.add(s);
+				kaikkiLinkitMap.replace(r2, s1);
+			}
+			else if (kaikkiLinkitMap.containsKey(r1)) {
+				HashSet<Statement> set = kaikkiLinkitMap.get(r1);
+				set.add(s);
+				kaikkiLinkitMap.put(r2, set);
+			}
+			else if (kaikkiLinkitMap.containsKey(r2)) {
+
+				HashSet<Statement> set = kaikkiLinkitMap.get(r2);
+				set.add(s);
+				kaikkiLinkitMap.put(r1, set);
+			}
+		}
+		HashSet<HashSet<Statement>> valueSet = new HashSet<>();
+		valueSet.addAll(kaikkiLinkitMap.values());
+
+		//Käy läpi kaikki pussukat (niitä on noin 55000)
+		for (HashSet<Statement> pussukka : valueSet) {
+
+			HashMap<String, HashSet<Statement>> tämänPussukanRomahtaneet = new HashMap<>();
+
+			for (Statement s : pussukka) {
+				String ns1 = s.getSubject().getNameSpace();
+				String ns2 = s.getResource().getNameSpace();
+
+				if (s.getSubject().getURI().equals(s.getResource().getURI())) continue; //ei huomioida exactMatcheja itsensä kanssa
+
+				HashSet<Statement> set1 =  tämänPussukanRomahtaneet.containsKey(ns1) ? tämänPussukanRomahtaneet.get(ns1) : new HashSet<Statement>(); 
+				set1.add(s);
+				tämänPussukanRomahtaneet.put(ns1, set1);
+				HashSet<Statement> set2 =  tämänPussukanRomahtaneet.containsKey(ns2) ? tämänPussukanRomahtaneet.get(ns2) : new HashSet<Statement>(); 
+				set2.add(s);
+				tämänPussukanRomahtaneet.put(ns2, set2);
+
+			}
+
+
+			for (HashSet<Statement> set : tämänPussukanRomahtaneet.values()) {
+				if (set.size() > 1) {
+
+					//jos pussukka romauttaa yhteen useamman käsitteen samasta nimiavaruudesta, valitaan vain yksi sopiva
+					kaikkiLinkitetytKäsitteet.removeAll(poistaNäistäTuplat(set));
+
+				}
+			}
+		}
+	}
+
+	private HashSet<Statement> poistaNäistäTuplat(HashSet<Statement> set) {
+
+		HashSet<Statement> result = new HashSet<>();
+
+		////Säännöt tuplien poistamiseksi:
+
+		for (Statement s : set) {
+			boolean poisto = false;
+
+			//Hylätään resurssit jolle ei löydy labelia
+			if (!poisto && !koko.contains(s.getResource(), koko.getProperty(skosNs+"prefLabel")))
+				poisto = true;
+
+			//Hylätään deprekoitu resurssi
+			if (!poisto && koko.containsLiteral(s.getResource(), koko.getProperty("http://www.w3.org/2002/07/owl#deprecated"), true))
+				poisto = true;
+
+			if (poisto)
+				result.add(s);
+		}
+
+		// Tähän voi lisäksi lisätä hyvänä lisänä lisää lisäsääntöjä, kuten vertailua prefLabeleiden kesken yms.
+		// ...
+
+
+		if (result.size() +1 < set.size()) {
+			//jos näyttää siltä että poistolistan koko ei riitä yksiselitteisen käsitteen löytämiseen
+			ArrayList<Statement> list = new ArrayList<>(set);
+			int pieninIndeksi = 0;
+			for (int i = 1 ; i<list.size(); i++) {
+				int levelCurrent = ResourceHierarchyComparator.hierarchyLevel(list.get(i).getResource());
+				int levelReference = ResourceHierarchyComparator.hierarchyLevel(list.get(pieninIndeksi).getResource());
+				if (levelCurrent > levelReference) {
+					pieninIndeksi = i;
+				} 
+			}
+			for (Statement s : set)
+				if (!s.equals(list.get(pieninIndeksi)))
+					result.add(s);
+		} 
+		return result;
+	}
+
 }
 
 class ResourceComparator implements Comparator<Resource> {
@@ -1297,4 +1480,65 @@ class ResourceComparator implements Comparator<Resource> {
 	public int compare(Resource arg0, Resource arg1) {
 		return arg0.toString().compareTo(arg1.toString());
 	}
+}
+
+class ResourceHierarchyComparator implements Comparator<Resource> {
+
+	static Property broader = ResourceFactory.createProperty("http://www.w3.org/2004/02/skos/core#broader");
+	static Property narrower = ResourceFactory.createProperty("http://www.w3.org/2004/02/skos/core#narrower");
+
+	@Override
+	public int compare(Resource arg0, Resource arg1) {
+		int levelOf0 = ResourceHierarchyComparator.hierarchyLevel(arg0);
+		int levelOf1 = ResourceHierarchyComparator.hierarchyLevel(arg1);
+
+		if (levelOf0 > levelOf1)
+			return 1;
+		if (levelOf0 < levelOf1)
+			return -1;
+
+		//if both are at the same level:
+		int children0 = ResourceHierarchyComparator.numberOfSuccessors(arg0);
+		int children1 = ResourceHierarchyComparator.numberOfSuccessors(arg1);
+
+		if (children0 < children1)
+			return 1;
+		if (children0 > children1)
+			return -1;
+
+		//all else equal:
+		return 0;
+	}
+
+	public static int hierarchyLevel(Resource res) {
+
+		int dist = 0;
+		Set<Statement> isot = res.listProperties(broader).toSet();
+		while (isot.size() > 0) {
+
+			Set<Statement> tmp = new HashSet<Statement>();
+			for (Statement s :isot) {
+				tmp.addAll(s.getResource().listProperties(broader).toSet());
+			}
+			isot = tmp;
+			dist ++;
+		}
+		return dist;
+	}
+
+	public static int numberOfSuccessors(Resource res) {
+
+		int child = 0;
+
+		List<Statement> list = res.listProperties(narrower).toList();
+		child += list.size();
+
+		for (Statement s : list) {
+			child += numberOfSuccessors(s.getResource());
+		}
+
+		return child;
+
+	}
+
 }
