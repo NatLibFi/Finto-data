@@ -1264,15 +1264,15 @@ public class Kokoaja2 {
 		this.vaihtoehtoinenMuutaUritKokoUreiksi();
 		//this.valiTarkistus("koko-3-kuritettu.ttl");
 		this.korjaaLopuksiObjectit();
-		this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
+		//this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
-		this.valiTarkistus("koko-5-exactMatch.ttl");
+		//this.valiTarkistus("koko-5-exactMatch.ttl");
 		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
-		this.valiTarkistus("koko-6-purettuKorvaavuus.ttl");
+		//this.valiTarkistus("koko-6-purettuKorvaavuus.ttl");
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
-		this.valiTarkistus("koko-7-eiEroa-muutokset-verrattu.ttl");
+		//this.valiTarkistus("koko-7-eiEroa-muutokset-verrattu.ttl");
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
-		this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
+		//this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
 	}
 
