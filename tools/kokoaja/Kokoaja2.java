@@ -737,7 +737,7 @@ public class Kokoaja2 {
 				korvattavatHierarkiset.add(s);
 			}
 		}
-		
+
 		for (Statement s : korvattavatHierarkiset) {
 			Resource korvaava = this.ontoKokoResurssivastaavuudetMap.get(s.getResource());
 			this.koko.remove(s);
@@ -747,10 +747,10 @@ public class Kokoaja2 {
 				this.koko.add(s.getSubject(), s.getPredicate(), korvaava);
 			}
 		}
-		
+
 		//testataan käsitteiden määrää 2.
 		System.out.println("Kokossa käsitteitä urittamisen jälkeen: " + this.koko.listSubjects().toList().size());
-		
+
 	}
 
 	private void valiTarkistus(String filename) {
@@ -1273,6 +1273,9 @@ public class Kokoaja2 {
 		//this.valiTarkistus("koko-7-eiEroa-muutokset-verrattu.ttl");
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
 		//this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
+		
+		this.korjaaHierarkia();
+				
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
 	}
 
@@ -1294,19 +1297,63 @@ public class Kokoaja2 {
 		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
+		
+		this.korjaaHierarkia();
+		
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
 	}
 
-	public void kirjoitaKoko(String kokonPolku) {
+	/**
+	 * Huolehtii siitä, että Kokon ylätason hierarkiaan ei tipu käsitteitä jotka eivät ripustu minkään toisen käsitteen alle.
+	 * Näitä käsitteitä kerätään kokon "Hierarkian ulkopuoliset"@fi -käsitteen alle.
+	 *
+	 */
+	private void korjaaHierarkia() {
+		Resource ulkopuoliset;
+
+		Property prefLabel =  this.koko.getProperty(skosNs+"prefLabel");
+		Property broader = this.koko.getProperty(skosNs+"broader");
+
+		Literal ulkopNimi = this.koko.createLiteral("hierarkian ulkopuoliset", "fi");
+		StmtIterator ulkopuolisenNimi = this.koko.listStatements(null, prefLabel, ulkopNimi);
+		if ( ulkopuolisenNimi.hasNext() ) ulkopuoliset = ulkopuolisenNimi.next().getSubject();
+		else  {
+			ulkopuoliset = this.luoUusiKokoResurssi();
+			ulkopuoliset.addProperty(prefLabel, ulkopNimi);
+		}
+
+		Set<Resource> jonkunLapset = this.koko.listResourcesWithProperty(broader).toSet();
+		Set<Resource> ylätasonResurssit = this.koko.listResourcesWithProperty(RDF.type, this.koko.getResource(skosNs+"Concept") ).toSet();
+		ylätasonResurssit.removeAll(jonkunLapset);
 		
+		HashSet<Resource> sallittuYlätaso = new HashSet<Resource>();
+		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p37038")); //oliot
+		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p34034")); //ominaisuudet
+		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p35417")); //tapahtumat ja toiminta
+		sallittuYlätaso.add(ulkopuoliset);
+		
+		for (Resource r : ylätasonResurssit) {
+			
+			if (!sallittuYlätaso.contains(r))
+				r.addProperty(broader, ulkopuoliset);
+		}
+		
+		
+	}
+
+
+
+
+	public void kirjoitaKoko(String kokonPolku) {
+
 		try {
 			System.out.println("Kirjoitetaan välikoko...");
 			this.koko.write((new FileWriter(kokonPolku+".alt")), "TTL");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
+
 		JenaHelpers.kirjoitaMalli(this.koko, kokonPolku, true);
 	}
 	private Resource haeKorvaava(Resource res, Model model) {
