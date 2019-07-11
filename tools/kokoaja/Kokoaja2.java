@@ -670,7 +670,7 @@ public class Kokoaja2 {
 				ryhmäIndeksi.put(B, uusi);
 			}
 		}
-
+		
 		//Lisää vielä kaikki skos:Conceptit että erilleen jäävät käsitteet tulevat kokoon mukaan
 		StmtIterator iter3 = this.koko.listStatements(null, RDF.type, this.koko.createResource(this.skosNs+"Concept"));
 
@@ -1255,14 +1255,14 @@ public class Kokoaja2 {
 			String polku = this.ontologioidenTyypitPolutMap.get(ontonTyyppi);
 			this.lueOnto(polku, ontonTyyppi);
 		}
-		//this.valiTarkistus("koko-0-ontot.ttl");
+		this.valiTarkistus("koko-0-ontot.ttl");
 		this.muutaCandidateLabelitPrefJaAltLabeleiksi();
-		//this.valiTarkistus("koko-1-candidate.ttl");
+		this.valiTarkistus("koko-1-candidate.ttl");
 		this.romautaFiPrefLabelienJaVanhempienPerusteella();
-		//this.valiTarkistus("koko-2-romautettu.ttl");
+		this.valiTarkistus("koko-2-romautettu.ttl");
 		//this.muutaUritKokoUreiksi();
 		this.vaihtoehtoinenMuutaUritKokoUreiksi();
-		//this.valiTarkistus("koko-3-kuritettu.ttl");
+		this.valiTarkistus("koko-3-kuritettu.ttl");
 		this.korjaaLopuksiObjectit();
 		//this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
@@ -1313,13 +1313,19 @@ public class Kokoaja2 {
 
 		Property prefLabel =  this.koko.getProperty(skosNs+"prefLabel");
 		Property broader = this.koko.getProperty(skosNs+"broader");
+		Property definition = this.koko.getProperty(skosNs+"definition");
 
 		Literal ulkopNimi = this.koko.createLiteral("hierarkian ulkopuoliset", "fi");
+
 		StmtIterator ulkopuolisenNimi = this.koko.listStatements(null, prefLabel, ulkopNimi);
 		if ( ulkopuolisenNimi.hasNext() ) ulkopuoliset = ulkopuolisenNimi.next().getSubject();
 		else  {
 			ulkopuoliset = this.luoUusiKokoResurssi();
+			this.ontoKokoResurssivastaavuudetMap.put(ulkopuoliset, ulkopuoliset);
 			ulkopuoliset.addProperty(prefLabel, ulkopNimi);
+			ulkopuoliset.addProperty(definition, "Käsitteet joille ei löytynyt yläkäsitettä päätyvät tänne.", "fi");
+			ulkopuoliset.addProperty(RDF.type, this.koko.getResource(skosNs+"Concept"));
+			ulkopuoliset.addProperty(this.koko.getProperty(skosNs+"topConceptOf"), this.koko.getResource(kokoNs));
 		}
 
 		Set<Resource> jonkunLapset = this.koko.listResourcesWithProperty(broader).toSet();
