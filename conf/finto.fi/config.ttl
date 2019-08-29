@@ -139,6 +139,22 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:cn:> .
 
+:geo a skosmos:Vocabulary, void:Dataset ;
+	dc:title "GEO - Geologian ontologia"@fi, "GEO - Geologian ontologia"@sv, "GEO - Geologian ontologia"@en ;
+	skosmos:shortName "GEO";
+	dc:subject :cat_geo ;
+	void:uriSpace "http://www.yso.fi/onto/gtk/";
+	#skosmos:indexShowClass <http://www.yso.fi/onto/gtk-meta/Concept>;
+	skosmos:language "fi", "en";
+        skosmos:useModifiedDate "true";
+	skosmos:defaultLanguage "fi";
+	skosmos:groupClass isothes:ConceptGroup ;
+	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+	void:dataDump <http://api.finto.fi/download/geo/geo-skos.ttl> ;
+	void:dataDump <http://api.finto.fi/download/geo/geo-skos.rdf> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/gtk/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/gtk/> .
+
 :hklj a skosmos:Vocabulary, void:Dataset ;
 	dc:title "HKLJ -  Helsingin kaupunginkirjaston luokitusjärjestelmä"@fi, "HSKS - Helsingfors stadsbiblioteks klassifikationssystem"@sv, "HCLCS - Helsinki City Library Classification System"@en ;
 	skosmos:shortName "HKLJ";
@@ -249,7 +265,7 @@
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:shortName "KAUNO";
-	skosmos:marcSourceCode "kauno";
+	skosmos:marcSourceCode "kauno/fin"@fi, "kauno/swe"@sv;
 	skosmos:indexShowClass <http://www.yso.fi/onto/kauno-meta/Concept>;
 	skosmos:arrayClass isothes:ThesaurusArray ;
 	skosmos:groupClass <http://www.yso.fi/onto/kauno-meta/ConceptGroup> ;

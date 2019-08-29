@@ -16,7 +16,11 @@ def get_place_type(g, place, lang):
     src = g.value(place, DC.source, None)
     if src is None:
         return None
-    pnrtype = src.split('tyyppitieto: ')[1]
+    try:
+        pnrtype = src.split('tyyppitieto: ')[1]
+    except IndexError:
+        print >>sys.stderr, "Cannot parse PNR type from '%s' (%s)" % (src, place)
+        return None
     return TYPEMAP.get(pnrtype.lower())[lang] if TYPEMAP.get(pnrtype.lower(), None) else None
 
 g = Graph()

@@ -8,7 +8,7 @@ Skriptien ajaminen vaatii pygithub moduulin,
 joka asennetaan esimerkiksi seuraavalla komennolla:
 `pip install pygithub`
 
-Molempia skriptejä ajetaan öisin finto-dev-kk -palvelimella `update-yse` cronjobilla.
+Molempia skriptejä ajetaan öisin onki-kk -palvelimella `update-yse` cronjobilla.
 
 #### issues-to-triples.py
 

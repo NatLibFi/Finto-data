@@ -1,7 +1,7 @@
 #!/bin/sh
 
-INFILES="koko-metadata.ttl koko_test-2019-03-18.ttl"
-OUTFILE=koko-skos_test-2019-03-18.ttl
+INFILES="koko-metadata.ttl kokotesti.ttl"
+OUTFILE=koko-skos_test.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
 LOGFILE=skosify.log
