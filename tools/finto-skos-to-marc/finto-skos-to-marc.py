@@ -7,10 +7,11 @@ from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 import socket
 from pymarc import Record, Field, XMLWriter, MARCReader
-import xml.etree.ElementTree as ET
-from xml.dom.minidom import parseString
+from lxml import etree as ET
 import shutil
 
+import pickle
+import os.path
 import argparse
 import unicodedata
 from configparser import ConfigParser, ExtendedInterpolation
@@ -24,7 +25,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.83"
+CONVERSION_PROCESS = "Finto SKOS to MARC 0.84"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -342,6 +343,27 @@ def getURLs(string):
             urls.append(word)
     return urls
 
+def getHandle(cs, helper_variables):
+    if cs.get("output", fallback=None) == None:
+        try:
+            __IPYTHON__
+            handle = sys.stdout
+        except NameError:
+            handle = sys.stdout.buffer
+    else:
+        parts = cs.get("languages").split(",")
+        if len(parts) > 1:
+            output = cs.get("output")
+            if len(output.split(".")) > 1:
+                helper_variables["outputFileName"] = ".".join(output.split(".")[:-1]) + "-" + language + "." + output.split(".")[-1]
+                handle = open(helper_variables["outputFileName"], "wb")
+            else:
+                helper_variables["outputFileName"] = output + "-" + language
+                handle = open(helper_variables["outputFileName"], "wb")
+        else:
+            handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
+    return handle
+            
 class ConvertHTMLYSOATags(HTMLParser):
     '''
     Korvaa mahdolliset yso-linkit $a-osakenttämerkillä siten, että käytettävä termi
@@ -423,7 +445,7 @@ def convert(cs, language, g, g2):
     # kääntää graafin (g) kielellä (language) ConfigParser-sektion (cs) ohjeiden mukaisesti MARCXML-muotoon
     # g2 sisältää vieraat graafit (poislukien mahdolliset lcsh & lcgf-viitteet), joista etsitään
     # käytettyjä termejä 7XX kenttiin
-    
+ 
     vocId = cs.get("vocabulary_code")
     
     # variable for a bit complicated constants and casting/converting them to appropiate types
@@ -436,7 +458,8 @@ def convert(cs, language, g, g2):
         'keepModified' : cs.get("keepModifiedAfter", fallback=KEEPMODIFIEDAFTER).lower() != "none",
         'keepDeprecated' : cs.get("keepDeprecatedAfter", fallback=KEEPDEPRECATEDAFTER).lower() != "none",
         'keepGroupingClasses' : cs.getboolean("keepGroupingClasses", fallback=False),
-        'write688created' : cs.get("defaultCreationDate", fallback=None) != None
+        'write688created' : cs.get("defaultCreationDate", fallback=None) != None,
+        'defaultOutputFileName' : "yso2marc-" + cs.name.lower() + "-" + language + ".mrcx"
     }
     if helper_variables['keepDeprecated']:   
         helper_variables['keepDeprecatedLimit'] = False \
@@ -449,30 +472,9 @@ def convert(cs, language, g, g2):
     writer_records_counter = 0
     ysoATagParser = ConvertHTMLYSOATags()
     ET_namespaces = {"marcxml": "http://www.loc.gov/MARC21/slim"}
-    defaultOutputFileName = "yso2marc-" + cs.name.lower() + "-" + language + ".mrcx"
-    
-    if cs.get("output", fallback=None) == None:
-        try:
-            __IPYTHON__
-            handle = sys.stdout
-        except NameError:
-            handle = sys.stdout.buffer
-    else:
-        parts = cs.get("languages").split(",")
-        if len(parts) > 1:
-            output = cs.get("output")
-            if len(output.split(".")) > 1:
-                helper_variables["outputFileName"] = ".".join(output.split(".")[:-1]) + "-" + language + "." + output.split(".")[-1]
-                handle = open(helper_variables["outputFileName"], "wb")
-            else:
-                helper_variables["outputFileName"] = output + "-" + language
-                handle = open(helper_variables["outputFileName"], "wb")
-        else:
-            handle = open(cs.get("output", fallback=defaultOutputFileName), "wb")
-        
+
+    handle = getHandle(cs, helper_variables)
     writer = XMLWriter(handle)
-        
-    pretty_xml_writer = XMLWriter(open(cs.get("output_pretty"), "wb"))
     
     # käydään läpi käsitteet
     for concept in sorted(g.subjects(RDF.type, SKOS.Concept)):
@@ -1060,6 +1062,7 @@ def convert(cs, language, g, g2):
             # Comment: if we want to direct queries to spesific graphs, one per vocab,
             # that graph needs to be selected here based on the void:uriSpace
             
+            sub2 = ""
             if matchURIRef.startswith(LCSH):
                 second_indicator = "0"
                 loc_object = {"prefix": str(LCSH), "id": matchURIRef.split("/")[-1]}
@@ -1106,7 +1109,7 @@ def convert(cs, language, g, g2):
                 sub4 = "EQ"
             elif valueProp.prop == SKOS.prefLabel:
                 sub4 = "EQ"
-                
+
                 # kovakoodattu yso ja slm - muuten niiden tulisi olla jossain globaalissa muuttujassa
                 if sub2 == "yso" or sub2 == "slm" or cs.getboolean("multilanguage", fallback=False):
                     sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
@@ -1180,11 +1183,11 @@ def convert(cs, language, g, g2):
 
                     for tagNumber in LCSH_1XX_FIELDS:
                         tagNode = recordNode.find("./marcxml:datafield[@tag='" + tagNumber + "']", ET_namespaces)
-                        if tagNode:
+                        if tagNode is not None:
                             # otetaan ensimmäinen
                             break
 
-                    if tagNode:
+                    if tagNode is not None:
                         tag = "7" + tagNode.attrib["tag"][1:]
                         first_indicator = tagNode.attrib["ind1"]
                         subfields = []
@@ -1288,22 +1291,15 @@ def convert(cs, language, g, g2):
         #TODO: tulostaa toiseen tiedostoon vain muokatut käsitteet: if helper_variables['keepModified']:
         #TODO: tulosta toiseen tiedostoon MARCXML HTML-taittoisessa muodossa
         writer.write(rec)
-        pretty_xml_writer.write(rec)
-        
+    
     if handle is not sys.stdout:
         writer.close()
     
-    pretty_xml_writer.close()
-    
-    tree = ET.parse(cs.get("output_pretty"))
-    root = tree.getroot()
-    ET.register_namespace("", ET_namespaces['marcxml'])
-    logging.info("Formatting the xml file into pretty XML")
-    doc = parseString(ET.tostring(root))
-    xml = doc.toprettyxml(encoding='utf8') 
-    xmlfile = open(cs.get("output_pretty"), 'wb')
-    xmlfile.write(xml)
-    xmlfile.close()
+    parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
+    tree = ET.parse(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), parser)
+    e = tree.getroot()
+    handle = getHandle(cs, helper_variables)
+    handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True))
     
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
@@ -1334,7 +1330,7 @@ def convert(cs, language, g, g2):
                     with open(helper_variables.get("outputFileName"), "rb") as f:
                         shutil.copyfileobj(f, outputChannel)
                 else:
-                    with open(cs.get("output", fallback=defaultOutputFileName), "rb") as f:
+                    with open(cs.get("output", fallback=helper_variables['defaultOutputFileName']), "rb") as f:
                         shutil.copyfileobj(f, outputChannel)
     except ValueError:
         pass
@@ -1361,14 +1357,13 @@ def main():
     settings.set("DEFAULT", "vocabulary_code", cs.lower())
     # Used in MARC code used in tag 040 subfield f
     # and 7XX foreign language prefLabels
-    
     graphi = Graph()
     other_graphs = Graph()
 
     if args.config_section:
         # override default config section
         cs = args.config_section.upper()
-    
+
     # prepare settings
     
     # configure logging
@@ -1442,7 +1437,7 @@ def main():
     
     if args.input_format:
         settings.set(cs, "inputFormat", args.input_format)
-  
+
     if not sys.stdin.isatty():
         try:
             __IPYTHON__
@@ -1453,10 +1448,27 @@ def main():
             graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))
         
         except NameError:
-            graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))
-        
+            graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))        
     else:
-        graphi += Graph().parse(settings.get(cs, "input"), format=settings.get(cs, "inputFormat", fallback="turtle"))
+        graph_loaded = False
+        pickleFile = settings.get(cs, "pickleFile", fallback=None)
+        if pickleFile:
+            if os.path.isfile(pickleFile):
+                timestamp = os.path.getmtime(pickleFile)
+                file_date = date.fromtimestamp(timestamp)
+                if file_date == date.today():
+                    with open(pickleFile, 'rb') as input_file: 
+                        try:     
+                            graphi = pickle.load(input_file)
+                            graph_loaded = True
+                        except EOFError:
+                            logging.error("EOFError in "%pickleFile)
+        if not graph_loaded:            
+            graphi += Graph().parse(settings.get(cs, "input"), format=settings.get(cs, "inputFormat", fallback="turtle"))
+            if pickleFile:
+                with open(pickleFile, 'wb') as output:
+                    pickle.dump(graphi, output, pickle.HIGHEST_PROTOCOL)
+            output.close()    
 
     if args.output:
         settings.set(cs, "output", args.output)
