@@ -15265,6 +15265,7 @@ mts:m698 a isothes:ConceptGroup,
         mts:m3476,
         mts:m3478,
         mts:m3480,
+        mts:m4114,
         mts:m530,
         mts:m575,
         mts:m613,
@@ -26718,6 +26719,7 @@ Vastavuoroinen suhde: videosovitus."""@fi,
         "Verk som omarbetats till video. Parallell relation: videobearbetning (verk)."@sv .
 
 mts:m3463 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi ;
     rdfs:seeAlso rdaw:P10234 ;
     skos:broader mts:m1399 ;
     skos:inScheme mts: ;
@@ -29596,6 +29598,13 @@ mts:m4113 a skos:Concept ;
     skos:broader mts:m2605 ;
     skos:inScheme mts: ;
     skos:prefLabel "erikoistutkija"@fi .
+
+mts:m4114 a skos:Concept ;
+    rdfs:comment "Kansallinen termi"@fi ;
+    skos:broader mts:m837 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "intertekstuaalisen viittauksen perustana (teos)"@fi ;
+    skos:scopeNote "Teos, jolla on intertekstuaalinen suhde toiseen teokseeni."@fi .
 
 mts:m412 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -42164,34 +42173,6 @@ mts:m743 a skos:Concept ;
         "omarbetning (verk)"@sv ;
     skos:scopeNote "Viittauksen kohde on teos, joka on muokattu kuvailun kohteena olevasta teoksesta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai viestintävälinettä varten. Koskee myös muodon muutoksia tai samassa muodossa kokonaan uudelleenmuokattuja teoksia.Vastavuoroinen suhde:mukaelman perustana (teos)"@fi .
 
-mts:m837 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10190 ;
-    skos:altLabel "perustuu teokseen"@fi,
-        "pohjautuu teokseen"@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1399,
-        mts:m1566,
-        mts:m3434,
-        mts:m3446,
-        mts:m3447,
-        mts:m3453,
-        mts:m3454,
-        mts:m3458,
-        mts:m3464,
-        mts:m3467,
-        mts:m3471,
-        mts:m3472,
-        mts:m3473,
-        mts:m3476,
-        mts:m3478,
-        mts:m3480,
-        mts:m3554 ;
-    skos:prefLabel "based on (work)"@en,
-        "teoksen perustana"@fi,
-        "verk baserat på"@sv .
-
 mts:m2338 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:altLabel "advisors"@en,
@@ -42280,6 +42261,35 @@ mts:m2500 a skos:Concept ;
     skos:prefLabel "ombudsman"@en,
         "asiamies"@fi,
         "ombud"@sv .
+
+mts:m837 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10190 ;
+    skos:altLabel "perustuu teokseen"@fi,
+        "pohjautuu teokseen"@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1399,
+        mts:m1566,
+        mts:m3434,
+        mts:m3446,
+        mts:m3447,
+        mts:m3453,
+        mts:m3454,
+        mts:m3458,
+        mts:m3464,
+        mts:m3467,
+        mts:m3471,
+        mts:m3472,
+        mts:m3473,
+        mts:m3476,
+        mts:m3478,
+        mts:m3480,
+        mts:m3554,
+        mts:m4114 ;
+    skos:prefLabel "based on (work)"@en,
+        "teoksen perustana"@fi,
+        "verk baserat på"@sv .
 
 mts:m2505 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -42943,7 +42953,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-09-16T00:08:41+00:00"^^xsd:dateTime ;
+    dct:modified "2019-09-17T00:25:34+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
