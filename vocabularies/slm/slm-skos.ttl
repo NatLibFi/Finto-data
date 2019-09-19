@@ -6415,6 +6415,14 @@ slm:s1339 a skos:Concept ;
     skos:prefLabel "hengelliset lastenlaulut"@fi,
         "andliga barnvisor"@sv .
 
+slm:s1341 a skos:Concept ;
+    dct:created "2019-09-19"^^xsd:date ;
+    dct:modified "2019-09-19"^^xsd:date ;
+    skos:broader slm:s618 ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s665 ;
+    skos:prefLabel "kehityskertomukset"@fi .
+
 slm:s149 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "utopistiset romaanit"@fi,
@@ -7431,17 +7439,6 @@ slm:s664 a skos:Concept ;
     skos:prefLabel "kokeelliset sarjakuvat"@fi,
         "experimentella serier"@sv ;
     skos:related slm:s736 .
-
-slm:s665 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "Bildungsroman"@fi,
-        "bildningsromaner"@sv ;
-    skos:broader slm:s518 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p12951> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "kehitysromaanit"@fi,
-        "utvecklingsromaner"@sv ;
-    skos:related slm:s604 .
 
 slm:s672 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9043,6 +9040,20 @@ slm:s661 a skos:Concept ;
     skos:related slm:s1005,
         slm:s454 ;
     skos:topConceptOf slm:s285 .
+
+slm:s665 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-09-19"^^xsd:date ;
+    skos:altLabel "Bildungsroman"@fi,
+        "kehityskertomukset (romaanit)"@fi,
+        "bildningsromaner"@sv ;
+    skos:broader slm:s1341,
+        slm:s518 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p12951> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "kehitysromaanit"@fi,
+        "utvecklingsromaner"@sv ;
+    skos:related slm:s604 .
 
 slm:s675 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12452,30 +12463,6 @@ slm:s905 a skos:Concept ;
         slm:s911,
         slm:s926 .
 
-slm:s618 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p24639> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1055,
-        slm:s1165,
-        slm:s15,
-        slm:s315,
-        slm:s316,
-        slm:s555,
-        slm:s584,
-        slm:s598,
-        slm:s723,
-        slm:s900,
-        slm:s904,
-        slm:s935 ;
-    skos:prefLabel "kertomukset"@fi,
-        "berättelser"@sv ;
-    skos:related slm:s1045,
-        slm:s27,
-        slm:s352,
-        slm:s479 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s436 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2019-03-22"^^xsd:date ;
@@ -12500,6 +12487,32 @@ slm:s436 a skos:Concept ;
         slm:s88 ;
     skos:prefLabel "popmusiikki"@fi,
         "popmusik"@sv .
+
+slm:s618 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2019-09-19"^^xsd:date ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p24639> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1055,
+        slm:s1165,
+        slm:s1341,
+        slm:s15,
+        slm:s315,
+        slm:s316,
+        slm:s555,
+        slm:s584,
+        slm:s598,
+        slm:s723,
+        slm:s900,
+        slm:s904,
+        slm:s935 ;
+    skos:prefLabel "kertomukset"@fi,
+        "berättelser"@sv ;
+    skos:related slm:s1045,
+        slm:s27,
+        slm:s352,
+        slm:s479 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s919 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13299,7 +13312,7 @@ Voit ehdottaa uusia termejä ja muutoksia sanastoon <a href="//ehdotus.finto.fi/
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-09-18T00:09:43+00:00"^^xsd:dateTime ;
+    dct:modified "2019-09-19T00:20:02+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
