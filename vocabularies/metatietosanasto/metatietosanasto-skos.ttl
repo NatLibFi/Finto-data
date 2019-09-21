@@ -13709,12 +13709,6 @@ mts:m4116 a skos:Concept ;
         "kenraalibasso"@fi,
         "generalbas"@sv .
 
-mts:m4117 a skos:Concept ;
-    rdfs:comment "Kansallinen termi"@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "intertekstuaalinen suhde (teos)"@fi ;
-    skos:scopeNote "Vastavuoroinen suhde: intertekstuaalisen viittauksen perustana (teos)."@fi .
-
 mts:m414 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "Kaunokki-termi"@fi,
@@ -29629,6 +29623,13 @@ mts:m4114 a skos:Concept ;
     skos:prefLabel "intertekstuaalisen viittauksen perustana (teos)"@fi ;
     skos:scopeNote "Teos, jolla on intertekstuaalinen suhde toiseen teokseeni."@fi .
 
+mts:m4117 a skos:Concept ;
+    rdfs:comment "Kansallinen termi"@fi ;
+    skos:broader mts:m530 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "intertekstuaalinen suhde (teos)"@fi ;
+    skos:scopeNote "Vastavuoroinen suhde: intertekstuaalisen viittauksen perustana (teos)."@fi .
+
 mts:m412 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -42029,33 +42030,6 @@ mts:m2605 a skos:Concept ;
         "tutkija"@fi,
         "forskare"@sv .
 
-mts:m530 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10148 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2266,
-        mts:m2277,
-        mts:m2278,
-        mts:m2283,
-        mts:m2287,
-        mts:m2289,
-        mts:m2293,
-        mts:m3420,
-        mts:m3421,
-        mts:m3422,
-        mts:m3424,
-        mts:m3427,
-        mts:m3429,
-        mts:m3435,
-        mts:m3445,
-        mts:m743 ;
-    skos:prefLabel "derivative (work)"@en,
-        "johdettu teos"@fi,
-        "härlett verk"@sv ;
-    skos:scopeNote "Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana."@fi,
-        "Verk som baserar sig på ett källverk. Parallell relation: verk baserat på."@sv .
-
 mts:m1060 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -42168,6 +42142,34 @@ mts:m2452 a skos:Concept ;
     skos:prefLabel "public servant"@en,
         "virkamies"@fi,
         "tjänsteman (offentligt anställda)"@sv .
+
+mts:m530 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10148 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2266,
+        mts:m2277,
+        mts:m2278,
+        mts:m2283,
+        mts:m2287,
+        mts:m2289,
+        mts:m2293,
+        mts:m3420,
+        mts:m3421,
+        mts:m3422,
+        mts:m3424,
+        mts:m3427,
+        mts:m3429,
+        mts:m3435,
+        mts:m3445,
+        mts:m4117,
+        mts:m743 ;
+    skos:prefLabel "derivative (work)"@en,
+        "johdettu teos"@fi,
+        "härlett verk"@sv ;
+    skos:scopeNote "Teos, joka perustuu lähdeteokseen.Vastavuoroinen suhde: teoksen perustana."@fi,
+        "Verk som baserar sig på ett källverk. Parallell relation: verk baserat på."@sv .
 
 mts:m743 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -42976,7 +42978,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-09-20T00:04:55+00:00"^^xsd:dateTime ;
+    dct:modified "2019-09-21T00:43:26+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
