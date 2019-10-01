@@ -1,11 +1,13 @@
 #!/bin/sh
 
-INFILES="maotao.ttl maotao-metadata.ttl yso-maotao.ttl"
+#Skosify installed with "sudo pip3 install --upgrade skosify"
+
+INFILES="maotao.ttl maotao-metadata.ttl ysoKehitys-Cicero-2019.ttl"
 OUTFILE=maotao-skos.ttl
 
-SKOSIFYHOME="/home/terminologi/ontology/SKOSIFY/"
-CONFFILE=finnonto.cfg
+CONFFILE="finnonto.cfg"
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+#skosify -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+~/ontology/SKOSIFY/Skosify-master/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
 
