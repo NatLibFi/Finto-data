@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp ../yso/ysoKehitys.rdf yso-import.rdf
+#cp ../yso/ysoKehitys.rdf yso-import.rdf
 
 INFILE="juho.ttl"
 INFILES="juho-metadata.ttl yso-import.rdf $INFILE"
