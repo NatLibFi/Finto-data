@@ -6,8 +6,9 @@ import argparse
 import pickle
 from datetime import datetime, date
 import os.path
+import hashlib
 
-def compare_records(input_file_1, input_file_2, mrcx_file, pickle_file, date_1, date_2):
+def compare_records(args):
     """
     input_file_1: Vertailtavien MARC-tietueiden tiedostonimi
     input_file_2: Tiedostonimi MARC-tietueille, joista tallennetaan muokatut ja uudet
@@ -18,10 +19,22 @@ def compare_records(input_file_1, input_file_2, mrcx_file, pickle_file, date_1, 
     """
     #git rev-list -1 --before="2019-08-23 23:59" master
     #git log
+    
+    input_file_1 = args.first_input_file
+    input_file_2 = args.second_input_file 
+    mrcx_file = args.output_mrcx
+    pickle_file = args.output_pkl
+    date_1 = args.original_date
+    date_2 = args.modified_date
+    
     modified_records = 0    
     new_records = 0
     all_records = {}
-
+    
+    loglevel = logging.INFO
+    logger = logging.getLogger()
+    logger.setLevel(loglevel)
+    
     if date_1:
         old_date = datetime.date(datetime.strptime(date_1, "%Y-%m-%d"))
     else:
@@ -37,8 +50,10 @@ def compare_records(input_file_1, input_file_2, mrcx_file, pickle_file, date_1, 
     
     old_records_dict = {}
     for record in records:
+        md5 = hashlib.md5()        
+        md5.update(str.encode(str(record)))
         for field in record.get_fields('024'):
-            old_records_dict.update({field['a']: record})
+            old_records_dict.update({field['a']: md5.hexdigest()})
     records = parse_xml_to_array(input_file_2)
 
     for record in records:
@@ -49,8 +64,11 @@ def compare_records(input_file_1, input_file_2, mrcx_file, pickle_file, date_1, 
             record_id = field['a']
         if record_id:
             if record_id in old_records_dict:
-                old_record = old_records_dict[record_id]
-                if not str(old_record) == str(record):
+                md5 = hashlib.md5()        
+                md5.update(str.encode(str(record)))
+                hash = md5.hexdigest()
+                old_hash = old_records_dict[record_id]
+                if not old_hash == hash:
                     modified = True
                     modified_records += 1
             else:
@@ -61,10 +79,10 @@ def compare_records(input_file_1, input_file_2, mrcx_file, pickle_file, date_1, 
         if modified:
             writer.write(record)
             modified_date = new_date
-        all_records.update({record_id: modified_date})
-                    
-    print("Number of modified records: %s"%modified_records)
-    print("Number of new records: %s"%new_records)
+        all_records[record_id] = (modified_date, hash)
+    
+    logging.info("Number of modified records: %s"%modified_records)
+    logging.info("Number of new records: %s"%new_records)
     
     if pickle_file:
         with open(pickle_file, 'wb') as output:
@@ -87,19 +105,14 @@ def readCommandLineArguments():
     parser.add_argument("-i2", "--second_input_file", help="File name for records whose changes are detected", required=True)    
     parser.add_argument("-o1", "--output_mrcx", help="Output file name for changed MARC XML records", required=True)
     parser.add_argument("-o2", "--output_pkl", help="Output file name for pickle file for dates of modifications")
-    parser.add_argument("-dd", "--default_date", help="Default date for records without modifications (set in YYYY-MM-DD format)")
+    parser.add_argument("-dd", "--original_date", help="Date of records of the first input file (set in YYYY-MM-DD format)")
     parser.add_argument("-md", "--modified_date", help="Modification date for records with modifications (set in YYYY-MM-DD format)")
     args = parser.parse_args()
     return args
 
 def main():
     args = readCommandLineArguments()
-    compare_records(input_file_1=args.first_input_file, 
-                    input_file_2=args.second_input_file, 
-                    mrcx_file=args.output_mrcx,
-                    pickle_file=args.output_pkl,
-                    date_1=args.default_date,
-                    date_2=args.modified_date)
+    compare_records(args)
    
 if __name__ == "__main__":
     main()

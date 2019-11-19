@@ -6,13 +6,14 @@ from rdflib.namespace import SKOS, XSD, OWL, DC
 from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 import socket
-from pymarc import Record, Field, XMLWriter, MARCReader
+from pymarc import Record, Field, XMLWriter, MARCReader, parse_xml_to_array
 from lxml import etree as ET
 import shutil
 
 import pickle
-import os.path
+import os
 import argparse
+import hashlib
 import unicodedata
 from configparser import ConfigParser, ExtendedInterpolation
 import sys
@@ -25,7 +26,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.84"
+CONVERSION_PROCESS = "Finto SKOS to MARC 0.85"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -36,6 +37,7 @@ ENDPOINT_ADDRESS = "http://api.dev.finto.fi/sparql"
 ENDPOINTGRAPHS = [] # palvelupisteen graafien osoitteet, jotka ladataan läpikäytäviin muihin graafeihin
 IGNOREOTHERGRAPHWARNINGS = False # lokitetaanko virheet muissa, kuin prosessoitavassa graafissa
 NORMALIZATION_FORM = "NFD" # käytetään UTF8-merkkien dekoodauksessa
+TEMPFOLDER = "tmp" #käytetään uusia tietueita luodessa, jos vanhoja tietueita sisältävän vertailutiedoston nimi on sama kuin output-tiedosto
 
 YSO=Namespace('http://www.yso.fi/onto/yso/')
 YSOMETA=Namespace('http://www.yso.fi/onto/yso-meta/')
@@ -172,7 +174,6 @@ def readCommandLineArguments():
     parser.add_argument("-i", "--input", help="Input file location, e.g., yso-skos.ttl")
     parser.add_argument("-if", "--input_format", help="Input file format. Default: turtle")
     parser.add_argument("-o", "--output", help="Output file name, e.g., yso.mrcx.")
-    parser.add_argument("-op", "--output_pretty", help="Output file name for pretty xml, e.g., yso.mrcx.")
     parser.add_argument("-vocId", "--vocabulary_code", help="MARC code used in tag 040 subfield f.", required=True)
     parser.add_argument("-lang", "--languages",
         help="The RDF language tag of the language one is willing to convert. In case of multiple, separate them with space.")
@@ -183,6 +184,12 @@ def readCommandLineArguments():
     parser.add_argument("-log", "--log_file", help="Log file location.")
     parser.add_argument("-locDir", "--loc_directory",
         help="Library of Congress directory from which to look for and download to LoC marcxml files. One shall not set if one does not want LoC links.")
+    parser.add_argument("-pv", "--pickle_vocabulary",
+        help="File location for the vocabulary in Python's pickle format for faster execution. \
+        If file's modification date is earlier than today, the file is overwritten. Else the vocabulary is loaded from this file.")
+    parser.add_argument("-modificationDates", "--modification_dates",
+        help="File location for pickle file, which contains latest modification dates for concepts (e. g. {'concept uri': 'YYYY-MM-DD'}) \
+        The file is updated after new records are created, if keepModifiedAfter is left out of command line arguments") 
     parser.add_argument("-keepModifiedAfter", "--keep_modified_after",
         help="Create separate batch of MARC21 files for concepts modified after the date given (set in YYYY-MM-DD format).")
     parser.add_argument("-defaultCreationDate", "--default_creation_date",
@@ -344,26 +351,32 @@ def getURLs(string):
     return urls
 
 def getHandle(cs, helper_variables):
-    if cs.get("output", fallback=None) == None:
+    if not "outputFileName" in helper_variables:
         try:
             __IPYTHON__
             handle = sys.stdout
         except NameError:
             handle = sys.stdout.buffer
     else:
-        parts = cs.get("languages").split(",")
-        if len(parts) > 1:
-            output = cs.get("output")
-            if len(output.split(".")) > 1:
-                helper_variables["outputFileName"] = ".".join(output.split(".")[:-1]) + "-" + language + "." + output.split(".")[-1]
-                handle = open(helper_variables["outputFileName"], "wb")
-            else:
-                helper_variables["outputFileName"] = output + "-" + language
-                handle = open(helper_variables["outputFileName"], "wb")
-        else:
-            handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
+        handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     return handle
-            
+    
+def getPreviousRecords(input_file):
+    """
+    Luetaan edelliset MARCXML-tiedostoon vertailua varten, jotta voidaan selvittää MARC21-tietueista ne muutokset,
+    jotka eivät näy SKOS-muodossa
+    """
+    try:
+        records = parse_xml_to_array(input_file)
+        records_dict = {}
+        for record in records:
+            for field in record.get_fields('024'):
+                records_dict.update({field['a']: record})
+        return records_dict
+    except FileNotFoundError:
+        logging.error("Input file %s for previous MARCXML records was not found"%input_file)
+        sys.exit(2)
+    
 class ConvertHTMLYSOATags(HTMLParser):
     '''
     Korvaa mahdolliset yso-linkit $a-osakenttämerkillä siten, että käytettävä termi
@@ -455,17 +468,48 @@ def convert(cs, language, g, g2):
             else vocId),
         "groupingClasses" : [URIRef(x) for x in cs.get("groupingClasses", fallback=",".join(GROUPINGCLASSES)).split(",")],
         "groupingClassesDefault" : [URIRef(x) for x in cs.parser.get("DEFAULT", "groupingClasses", fallback=",".join(GROUPINGCLASSES)).split(",")],
-        'keepModified' : cs.get("keepModifiedAfter", fallback=KEEPMODIFIEDAFTER).lower() != "none",
+        'modificationDates': cs.get("modificationDates", fallback=None),
+        'keepModified' : cs.get("keepModifiedAfter", fallback=None),
         'keepDeprecated' : cs.get("keepDeprecatedAfter", fallback=KEEPDEPRECATEDAFTER).lower() != "none",
         'keepGroupingClasses' : cs.getboolean("keepGroupingClasses", fallback=False),
         'write688created' : cs.get("defaultCreationDate", fallback=None) != None,
         'defaultOutputFileName' : "yso2marc-" + cs.name.lower() + "-" + language + ".mrcx"
     }
+
+    if helper_variables['keepModified']:
+        helper_variables['keepModifiedLimit'] = False \
+        if cs.get("keepModifiedAfter", fallback=KEEPDEPRECATEDAFTER).lower() == "all" \
+        else datetime.date(datetime.strptime(cs.get("keepModifiedAfter"), "%Y-%m-%d"))
+
     if helper_variables['keepDeprecated']:   
         helper_variables['keepDeprecatedLimit'] = False \
         if cs.get("keepDeprecatedAfter", fallback=KEEPDEPRECATEDAFTER).lower() == "all" \
         else datetime.date(datetime.strptime(cs.get("keepDeprecatedAfter"), "%Y-%m-%d"))
-    
+
+    if cs.get("output", fallback=None):
+        parts = cs.get("languages").split(",")
+        if len(parts) > 1:
+            output = cs.get("output")
+            if len(output.split(".")) > 1:
+                helper_variables["outputFileName"] = ".".join(output.split(".")[:-1]) + "-" + language + "." + output.split(".")[-1]
+            else:
+                helper_variables["outputFileName"] = output + "-" + language
+        else:   
+            helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
+
+    #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja 
+    #arvona tuplen, jossa on tietueen viimeinen muokkauspäivämäärä ja tietueen sisältö MD5-tiivisteenä
+    if helper_variables['modificationDates']:
+        if os.path.isfile(helper_variables['modificationDates']):
+            with open(helper_variables['modificationDates'], 'rb') as pickle_file: 
+                try:
+                    modified_dates = pickle.load(pickle_file)
+                except EOFError:
+                    logging.error("The file %s for modification dates is empty "%helper_variables['modificationDates'])
+                    sys.exit(2)
+        else:
+            modified_dates = {}
+
     logging.info("Processing vocabulary with vocabulary code '%s' in language '%s'" % (vocId, language))
     incrementor = 0
     deprecated_counter = 0
@@ -476,14 +520,22 @@ def convert(cs, language, g, g2):
     handle = getHandle(cs, helper_variables)
     writer = XMLWriter(handle)
     
-    # käydään läpi käsitteet
-    for concept in sorted(g.subjects(RDF.type, SKOS.Concept)):
+    concs = []
+    # käydään läpi vain muuttuneet käsitteet
+    if helper_variables['keepModified']:
+        for uri in modified_dates:
+            if modified_dates[uri][0] > helper_variables['keepModifiedLimit']:  
+                concs.append(URIRef(uri))
+    else:
+        concs = g.subjects(RDF.type, SKOS.Concept)
+    
+    for concept in sorted(concs):
         incrementor += 1
         if incrementor % 1000 == 0:
             logging.info("Processing %sth concept" % (incrementor))
         
-        # skipataan deprekoidut, jos niitä ei haluta mukaan
-        if (concept, OWL.deprecated, Literal(True)) in g:
+        # skipataan deprekoidut, jos niitä ei haluta mukaan. Jos haetaan muuttuneita käsitteitä, tulostetaan kaikki
+        if not helper_variables['keepModified'] and (concept, OWL.deprecated, Literal(True)) in g:
             if not helper_variables['keepDeprecated']:
                 deprecated_counter += 1
                 continue
@@ -498,8 +550,7 @@ def convert(cs, language, g, g2):
         # tutkitaan, onko käsite muuttunut vai alkuperäinen
         # ja valitaan leader sen perusteella
         mod = g.value(concept, DCT.modified, None)
-        
-          
+   
         rec = Record()   
         deprecatedString = ""
         # Organisaation ISIL-tunniste -> 003
@@ -651,8 +702,8 @@ def convert(cs, language, g, g2):
                         groupno = str(groupname[0:groupname.index(" ")])
                         groupname = str(groupname[len(groupno) + 1:])
                     except ValueError:
-                        logging.warning("Tried to parse group number for group %s from preflabel %s in language %s but failed." %
-                          (group, language))
+                        logging.warning("Tried to parse group number for group %s from concept %s in language %s but failed." %
+                          (group, valueProps[0].value, language))
                         continue
 
                 rec.add_field(
@@ -940,6 +991,7 @@ def convert(cs, language, g, g2):
                     continue # skip deprecated concepts
                     
                 valueProps = sorted(getValues(g, target, SKOS.prefLabel, language=language), key=lambda o: str(o.value))
+                replacedByURIRef = URIRef(target)
                 if len(valueProps) > 1:
                     logging.warning("Multiple prefLabels detected for target %s in language %s. Choosing the first." %
                       (target, language)) 
@@ -963,7 +1015,7 @@ def convert(cs, language, g, g2):
                 #)
             if len(labels) > 0:
                 subfield_values = ['i', TRANSLATIONS["682iDEFAULT"][language]]
-                
+
                 for label in labels[:-1]:
                     subfield_values.extend(('a', 
                                       decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ","))
@@ -973,7 +1025,7 @@ def convert(cs, language, g, g2):
                                       decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
                                       #str(label)
                                      ))
-                #subfields_values.extend(('0', target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
+                #subfield_values.extend(('0', target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
                 rec.add_field(
                     Field(
                         tag='682',
@@ -1288,19 +1340,35 @@ def convert(cs, language, g, g2):
             rec.add_field(sorted_field)
             
         writer_records_counter += 1
-        #TODO: tulostaa toiseen tiedostoon vain muokatut käsitteet: if helper_variables['keepModified']:
-        #TODO: tulosta toiseen tiedostoon MARCXML HTML-taittoisessa muodossa
         writer.write(rec)
-    
+
+        if helper_variables['modificationDates']:
+            md5 = hashlib.md5()        
+            md5.update(str.encode(str(rec)))
+            hash = md5.hexdigest()
+            if str(concept) in modified_dates:
+                if not hash == modified_dates[str(concept)][1]:
+                    modified_dates[str(concept)] = (date.today(), hash)
+            else:  
+                modified_dates[str(concept)] = (date.today(), hash)
+
     if handle is not sys.stdout:
         writer.close()
-    
-    parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
-    tree = ET.parse(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), parser)
-    e = tree.getroot()
-    handle = getHandle(cs, helper_variables)
-    handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True))
-    
+
+    if helper_variables['modificationDates']:
+        with open(helper_variables['modificationDates'], 'wb') as output:
+            pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
+            output.close()  
+
+    #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet prettyXML-muodossa
+    if not helper_variables['keepModified']:
+        parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
+        file_path = helper_variables["outputFileName"]
+        tree = ET.parse(file_path, parser)
+        e = tree.getroot()
+        handle = getHandle(cs, helper_variables)
+        handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True))
+
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
         logging.info(
@@ -1337,7 +1405,7 @@ def convert(cs, language, g, g2):
 # MAIN
 
 def main():    
-    
+
     settings = ConfigParser(interpolation=ExtendedInterpolation())
     args = readCommandLineArguments()
     
@@ -1365,7 +1433,7 @@ def main():
         cs = args.config_section.upper()
 
     # prepare settings
-    
+  
     # configure logging
     
     loglevel = logging.INFO
@@ -1395,10 +1463,10 @@ def main():
         fileHandler = logging.FileHandler(settings.get(cs, "logfile"), mode="w")
         fileHandler.setFormatter(logFormatter)
         logger.addHandler(fileHandler)
-        
+
     if len(logger.handlers) > 1 and settings.get(cs, "logfile", fallback=None) != None:
         logging.info("Two standard error streams identified. Writing to both sys.stderr and " + settings.get(cs, "logfile") + ".")
-    
+
     if args.endpoint:
         settings.set(cs, "endpoint", args.endpoint)
     
@@ -1451,7 +1519,10 @@ def main():
             graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))        
     else:
         graph_loaded = False
-        pickleFile = settings.get(cs, "pickleFile", fallback=None)
+        if args.pickle_vocabulary:
+            pickleFile = args.pickle_vocabulary
+        else:   
+            pickleFile = settings.get(cs, "pickleVocabulary", fallback=None)
         if pickleFile:
             if os.path.isfile(pickleFile):
                 timestamp = os.path.getmtime(pickleFile)
@@ -1473,10 +1544,7 @@ def main():
     if args.output:
         settings.set(cs, "output", args.output)
         settings.set(cs, "outputSpecified", "true")
-    
-    if args.output_pretty:
-        settings.set(cs, "output_pretty", args.output_pretty)
-        
+
     if not sys.stdout.isatty() and settings.get(cs, "output", fallback=None) != None:
         try:
             __IPYTHON__
@@ -1510,10 +1578,14 @@ def main():
     if settings.get(cs, "locDirectory", fallback=None) != None:
         if settings.get(cs, "locDirectory")[-1] != "/":
             settings.set(cs, "locDirectory", settings.get(cs, "locDirectory") + "/")
-    
+
+    if args.keep_modified_after and not args.modification_dates:
+        logging.error('Arguments required with --keep_modified_after: --modification_dates')
+        sys.exit(2)
+    if args.modification_dates:    
+        settings.set(cs, "modificationDates", args.modification_dates)
     if args.keep_modified_after:
         settings.set(cs, "keepModifiedAfter", args.keep_modified_after)
-    if settings.get(cs, "keepModifiedAfter", fallback=None) != None:
         deprecationLimit = settings.get(cs, "keepModifiedAfter")
         if deprecationLimit.lower() == "all":
             pass
@@ -1525,7 +1597,7 @@ def main():
             except ValueError:
                 logging.error("Cannot interpret 'keepModifiedAfter' value set in configuration file or given as a CLI parameter. Possible values are 'ALL', 'NONE' and ISO 8601 format for dates.")
                 sys.exit(2)
-                
+
     if args.default_creation_date:
         settings.set(cs, "defaultCreationDate", args.default_creation_date)
     if settings.get(cs, "defaultCreationDate", fallback=None) != None:
@@ -1561,4 +1633,7 @@ def main():
         convert(settings[cs], lang, graphi, other_graphs)
     
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException as e:
+        logging.exception(e)
