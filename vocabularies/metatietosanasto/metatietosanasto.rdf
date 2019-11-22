@@ -65,6 +65,7 @@ Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita kats
     <skos:prefLabel xml:lang="sv">flera medietyper</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">useita välittäviä laitteita</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Aineistot, joihin liittyy vähintään kolme eri mediatyyppiä.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Material, till vilka hör minst tre olika medietyper.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1009">
     <skos:prefLabel xml:lang="fi">määrittelemätön välittävä laite</skos:prefLabel>
@@ -346,6 +347,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hallitusneuvos">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">hallitusneuvos (arvonimi)</skos:altLabel>
+    <skos:altLabel xml:lang="sv">regeringsråd (hederstitel)</skos:altLabel>
+    <skos:definition xml:lang="sv">Ministeriets högsta föredragande. Även som hederstitel [http://urn.fi/URN:NBN:fi:au:mts:m3671]</skos:definition>
+    <skos:definition xml:lang="fi">Ministeriön ylin esittelijä (Lähde: Kielitoimiston sanakirja). Myös arvonimenä: [http://urn.fi/URN:NBN:fi:au:mts:m3671]</skos:definition>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="fi">hallitusneuvos</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">regeringsråd</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -33100,6 +33111,8 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m121"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hallitusneuvos"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2413"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3656"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3664"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3665"/>
@@ -33108,7 +33121,6 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3668"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3669"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3670"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3671"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3672"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3673"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3674"/>
@@ -33302,8 +33314,6 @@ Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musii
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3671">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">hallitusneuvos (ammatti)</skos:altLabel>
-    <skos:altLabel xml:lang="fi">hallitusneuvos (arvonimi)</skos:altLabel>
-    <skos:altLabel xml:lang="sv">regeringsråd (hederstitel)</skos:altLabel>
     <skos:altLabel xml:lang="sv">regeringsråd (yrke)</skos:altLabel>
     <skos:definition xml:lang="sv">Ministeriets högsta föredragande. Även som hederstitel [http://urn.fi/URN:NBN:fi:au:mts:m3671]</skos:definition>
     <skos:definition xml:lang="fi">Ministeriön ylin esittelijä (Lähde: Kielitoimiston sanakirja). Myös arvonimenä: [http://urn.fi/URN:NBN:fi:au:mts:m3671]</skos:definition>
@@ -36927,10 +36937,11 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Levy, jolle on kaiverrettu tai uurrettu modulaatioiksi tai pulsseiksi tallennettuja äänisignaaleja yhtenäiseksi spiraalimaiseksi uraksi.</skos:definition>
-    <skos:definition xml:lang="sv">Skiva på vilken ljudsignaler, upptagna som modulationer och pulser e.d., har ristats eller skurits in så de bildar ett enhetligt spiralformat spår.</skos:definition>
+    <skos:definition xml:lang="sv">Skiva på vilken ljudsignaler, upptagna som modulationer och pulser e.d., har ristats eller skurits in så att de bildar ett enhetligt spiralformat spår.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDACarrierType/1004"/>
     <skos:prefLabel xml:lang="sv">ljudskiva</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">äänilevy</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">ljudbärare</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">äänitallenne</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4070">
@@ -38309,8 +38320,9 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:prefLabel xml:lang="sv">gemensam titel</skos:prefLabel>
     <skos:prefLabel xml:lang="en">variant title</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">yhteisnimeke</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">Den delen av en titel som en grupp sammanhörande publikationer har gemensamt utöver  sina egna titlar. Den gemensamma titeln påvisar sammanhörigheten. Med hjälp av den och deltiteln kan publikationen identifieras. Gemensam titel kan också betyda den gemensamma delen i en titel för en huvudpublikation och dess supplement, eller för en huvudserie och dess underserie, då supplementet eller underserierna har en osjälvständig titel (eng. common title)</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Merkitään MARC 21 -formaatin 246-kentän i-osakenttään.</skos:scopeNote>
-    <skos:scopeNote xml:lang="fi">Se osa nimekettä, joka ryhmällä yhteenkuuluvia julkaisuja on yhteinen niiden omien nimekkeiden lisäksi. Yhteisnimeke osoittaa tämän yhteenkuuluvuuden. Sen ja osan nimekkeen avulla julakisu tunnistetaan. Yhteisnimeke voi merkitä myös pääjulkaisun ja sen suplementin sekä pääsarjan ja sen alasarjojen nimekkeiden yhteistä osaa, kun suplementilla tai alasarjoilla on epäitsenäinen nimeke. (engl. common title)</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Se osa nimekettä, joka ryhmällä yhteenkuuluvia julkaisuja on yhteinen niiden omien nimekkeiden lisäksi. Yhteisnimeke osoittaa tämän yhteenkuuluvuuden. Sen ja osan nimekkeen avulla julkaisu tunnistetaan. Yhteisnimeke voi merkitä myös pääjulkaisun ja sen suplementin sekä pääsarjan ja sen alasarjojen nimekkeiden yhteistä osaa, kun suplementilla tai alasarjoilla on epäitsenäinen nimeke. (engl. common title)</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m527">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -39301,7 +39313,7 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Kasetti, joka sisältää silmukkamaisen ääninauhan.</skos:definition>
-    <skos:definition xml:lang="sv">Magasin som innehåller ändlöst ljudband.</skos:definition>
+    <skos:definition xml:lang="sv">Magasin som innehåller ljudband.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDACarrierType/1002"/>
     <skos:prefLabel xml:lang="sv">ljudmagasin</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">äänisilmukkakasetti</skos:prefLabel>
@@ -42527,5 +42539,14 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:opettaja">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">lärare (hederstitel)</skos:altLabel>
+    <skos:altLabel xml:lang="fi">opettaja (arvonimi)</skos:altLabel>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="sv">lärare</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">opettaja</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">teacher</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
