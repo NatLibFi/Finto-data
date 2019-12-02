@@ -670,12 +670,22 @@
 #	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi";
 	void:dataDump <http://api.finto.fi/download/slm/slm-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/slm/slm-skos.rdf> ;
+    void:dataDump <http://api.finto.fi/download/slm/slm-fin.mrcx> ;
+	void:dataDump <http://api.finto.fi/download/slm/slm-swe.mrcx> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:slm:> ;
 	skosmos:useModifiedDate "true";
     	skosmos:mainConceptScheme <http://urn.fi/URN:NBN:fi:au:slm:> ;
 	skosmos:marcSourceCode "slm/fin"@fi, "slm/swe"@sv, "slm/eng"@en .
 
+<http://dev.finto.fi/download/slm/slm-fin.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "fi" .
+
+<http://dev.finto.fi/download/slm/slm-swe.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "sv" .
+        
 :soto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "SOTO - Sotatieteen ontologia"@fi,
 		"SOTO - Sotatieteen ontologia"@sv,
@@ -852,18 +862,18 @@
     rdau:P60686; 
 	void:dataDump <http://api.finto.fi/download/yso/yso-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/yso/yso-skos.rdf> ;
-	void:dataDump <http://dev.finto.fi/download/yso/yso-fi-marc-pretty.mrcx> ;
-	void:dataDump <http://dev.finto.fi/download/yso/yso-sv-marc-pretty.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-fin.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-swe.mrcx> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> ;
 	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv, "yso/eng"@en .
 
-<http://dev.finto.fi/download/yso/yso-fi-marc-pretty.mrcx>
+<http://dev.finto.fi/download/yso/yso-fin.mrcx>
         dct:format "application/marcxml+xml";
         dct:language "fi" .
 
-<http://dev.finto.fi/download/yso/yso-sv-marc-pretty.mrcx>
+<http://dev.finto.fi/download/yso/yso-swe.mrcx>
         dct:format "application/marcxml+xml";
         dct:language "sv" .
 
@@ -879,10 +889,20 @@
 	skosmos:defaultLanguage "fi";
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.rdf> ;
+    void:dataDump <http://dev.finto.fi/download/yso/yso-paikat-fin.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-paikat-swe.mrcx> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-paikat/> ;
 	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv, "yso/eng"@en .
 
+<http://dev.finto.fi/download/yso-paikat/yso-paikat-fin.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "fi" .
+
+<http://dev.finto.fi/download/yso-paikat/yso-paikat-swe.mrcx>
+        dct:format "application/marcxml+xml";
+        dct:language "sv" .
+        
 :yse a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSAn ja YSOn käsite-ehdotukset"@fi,
 		"Allärs och ALLFO begreppsförslag"@sv,
