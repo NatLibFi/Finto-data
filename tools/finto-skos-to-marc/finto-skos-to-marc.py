@@ -1539,8 +1539,7 @@ def main():
             if pickleFile:
                 with open(pickleFile, 'wb') as output:
                     pickle.dump(graphi, output, pickle.HIGHEST_PROTOCOL)
-            output.close()    
-
+  
     if args.output:
         settings.set(cs, "output", args.output)
         settings.set(cs, "outputSpecified", "true")
