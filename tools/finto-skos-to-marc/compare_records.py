@@ -95,7 +95,7 @@ def compare_records(args):
     tree = ET.parse(mrcx_file, parser)
     e = tree.getroot()
     handle = open(mrcx_file, "wb")
-    handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True))
+    handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True, xml_declaration=True))
    
 def readCommandLineArguments():
     parser = argparse.ArgumentParser(description="Ohjelma, \

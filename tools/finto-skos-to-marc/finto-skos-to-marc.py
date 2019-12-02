@@ -1360,14 +1360,14 @@ def convert(cs, language, g, g2):
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
             output.close()  
 
-    #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet prettyXML-muodossa
+    #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
     if not helper_variables['keepModified']:
         parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
         file_path = helper_variables["outputFileName"]
         tree = ET.parse(file_path, parser)
         e = tree.getroot()
         handle = getHandle(cs, helper_variables)
-        handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True))
+        handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True, xml_declaration=True))
 
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
