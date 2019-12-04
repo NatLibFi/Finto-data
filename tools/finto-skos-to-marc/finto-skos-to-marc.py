@@ -26,7 +26,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 0.85"
+CONVERSION_PROCESS = "Finto SKOS to MARC 1.00"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -37,7 +37,6 @@ ENDPOINT_ADDRESS = "http://api.dev.finto.fi/sparql"
 ENDPOINTGRAPHS = [] # palvelupisteen graafien osoitteet, jotka ladataan läpikäytäviin muihin graafeihin
 IGNOREOTHERGRAPHWARNINGS = False # lokitetaanko virheet muissa, kuin prosessoitavassa graafissa
 NORMALIZATION_FORM = "NFD" # käytetään UTF8-merkkien dekoodauksessa
-TEMPFOLDER = "tmp" #käytetään uusia tietueita luodessa, jos vanhoja tietueita sisältävän vertailutiedoston nimi on sama kuin output-tiedosto
 
 YSO=Namespace('http://www.yso.fi/onto/yso/')
 YSOMETA=Namespace('http://www.yso.fi/onto/yso-meta/')
@@ -64,12 +63,11 @@ LANGUAGES = {
     'fr': 'fre',
     'it': 'ita',
     'ru': 'rus',
-#    'se': 'sme', # pohjoissaami
-    'sme': 'sme', # pohjoissaami
-    'sma': 'sma', # etalasaami
-    'smn': 'smn', # inarinsaami,
-    'sms': 'sms', # koltansaami,
-    'smj': 'smj', # luulajansaami
+    'sme': 'sme', # pohjoissaame
+    'sma': 'sma', # eteläsaame
+    'smn': 'smn', # inarinsaame
+    'sms': 'sms', # koltansaame
+    'smj': 'smj', # luulajansaame
 }
 
 #LCSH mäpättävät 1xx-kentät
@@ -117,30 +115,6 @@ SORT_5XX_W_ORDER = {
     'i': '004',
     'a': '005',
     'b': '006'
-}
-
-#katso-viittauksen kentän tyyppi - selite
-TERMGROUP = {
-    SKOS.altLabel: {
-        "fi": "ohjaustermi",
-        "sv": "hänvisningsterm",
-        "en": "entry term"
-    },
-    SKOS.hiddenLabel: {
-        "fi": "piilotermi",
-        "sv": "dold term",
-        "en": "hidden term"
-    },
-    YSOMETA.singularPrefLabel: {
-        "fi": "käytettävän termin yksikkömuoto",
-        "sv": "föredragen term i singular",
-        "en": "singular entry term"
-    },
-    YSOMETA.singularAltLabel: {
-        "fi": "ohjaustermin yksikkömuoto",
-        "sv": "hänvisningsterm term i singular",
-        "en": "singular entry term"
-    }
 }
 
 # paikka 5, 'n' = uusi, 'c' = muuttunut/korjattu, d = poistettu (ei seuraajia), x = 1 seuraaja, s = >= 2 seuraajaa
@@ -349,33 +323,6 @@ def getURLs(string):
             len(res.netloc) > 3 and "." in res.netloc:
             urls.append(word)
     return urls
-
-def getHandle(cs, helper_variables):
-    if not "outputFileName" in helper_variables:
-        try:
-            __IPYTHON__
-            handle = sys.stdout
-        except NameError:
-            handle = sys.stdout.buffer
-    else:
-        handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
-    return handle
-    
-def getPreviousRecords(input_file):
-    """
-    Luetaan edelliset MARCXML-tiedostoon vertailua varten, jotta voidaan selvittää MARC21-tietueista ne muutokset,
-    jotka eivät näy SKOS-muodossa
-    """
-    try:
-        records = parse_xml_to_array(input_file)
-        records_dict = {}
-        for record in records:
-            for field in record.get_fields('024'):
-                records_dict.update({field['a']: record})
-        return records_dict
-    except FileNotFoundError:
-        logging.error("Input file %s for previous MARCXML records was not found"%input_file)
-        sys.exit(2)
     
 class ConvertHTMLYSOATags(HTMLParser):
     '''
@@ -494,8 +441,8 @@ def convert(cs, language, g, g2):
                 helper_variables["outputFileName"] = ".".join(output.split(".")[:-1]) + "-" + language + "." + output.split(".")[-1]
             else:
                 helper_variables["outputFileName"] = output + "-" + language
-        else:   
-            helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
+    if not "outputFileName" in helper_variables:
+        helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
 
     #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja 
     #arvona tuplen, jossa on tietueen viimeinen muokkauspäivämäärä ja tietueen sisältö MD5-tiivisteenä
@@ -517,12 +464,13 @@ def convert(cs, language, g, g2):
     ysoATagParser = ConvertHTMLYSOATags()
     ET_namespaces = {"marcxml": "http://www.loc.gov/MARC21/slim"}
 
-    handle = getHandle(cs, helper_variables)
+    handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     writer = XMLWriter(handle)
     
     concs = []
-    # käydään läpi vain muuttuneet käsitteet
+    
     if helper_variables['keepModified']:
+        # käydään läpi vain muuttuneet käsitteet
         for uri in modified_dates:
             if modified_dates[uri][0] > helper_variables['keepModifiedLimit']:  
                 concs.append(URIRef(uri))
@@ -542,7 +490,6 @@ def convert(cs, language, g, g2):
         
         #skipataan ryhmittelevät käsitteet
         if not helper_variables['keepGroupingClasses']:
-            groupingClassConcept = False
             if any (conceptType in helper_variables["groupingClasses"] for conceptType in g.objects(concept, RDF.type)):
                 continue
         
@@ -785,7 +732,6 @@ def convert(cs, language, g, g2):
                     tag = tag,
                     indicators = [' ', ' '],
                     subfields = [
-                        #'i', TERMGROUP[valueProp.prop][language], # nämä selitteet haluttiin jättää pois - kuvailujärjestelmä hoitaa
                         'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
                         #'a', str(valueProp.value)
                     ]
@@ -1189,10 +1135,9 @@ def convert(cs, language, g, g2):
             # library of congress -viitteet käsitellään erikseen
             if loc_object:
                 if cs.get("locDirectory", fallback=None) == None:
-                    # skipataan
                     continue
                 recordNode = None
-                local_loc_source = cs.get("locDirectory") + loc_object["id"] + ".marcxml.xml"
+                local_loc_source = os.path.join(cs.get("locDirectory"), loc_object["id"] + ".marcxml.xml")
                 downloaded = False
                 try:
                     #recordNode = lcshRecordNodes[loc_object["id"]]
@@ -1201,7 +1146,6 @@ def convert(cs, language, g, g2):
                 except OSError as e:
                     # haetaan kongressin kirjastosta tarvittava tiedosto ja tallennetaan se
                     try:
-                        #TODO: timeout requestille
                         with urllib.request.urlopen(loc_object["prefix"] + loc_object["id"] + ".marcxml.xml", timeout=5) as marcxml, \
                             open(local_loc_source, 'wb') as out_file:
                             shutil.copyfileobj(marcxml, out_file)
@@ -1358,7 +1302,6 @@ def convert(cs, language, g, g2):
     if helper_variables['modificationDates']:
         with open(helper_variables['modificationDates'], 'wb') as output:
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
-            output.close()  
 
     #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
     if not helper_variables['keepModified']:
@@ -1366,8 +1309,11 @@ def convert(cs, language, g, g2):
         file_path = helper_variables["outputFileName"]
         tree = ET.parse(file_path, parser)
         e = tree.getroot()
-        handle = getHandle(cs, helper_variables)
+        handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
         handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True, xml_declaration=True))
+
+        if handle is not sys.stdout:
+            handle.close()
 
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
@@ -1380,32 +1326,18 @@ def convert(cs, language, g, g2):
             "Processed %s concepts. Wrote %s MARCXML records." %
             (incrementor, writer_records_counter)
         )
-    
-    # also write to stdout if it is spesified except in the case of IPython instance with explicit output
-    try:
-        if not sys.stdout.isatty() and cs.get("output", fallback=None) != None:
-            diverted = False
-            try:
-                __IPYTHON__
-                if cs.get("outputSpecified", fallback=None) == None:
-                    diverted = True
-                    raise Exception("Raising Exception - diverting code flow.")
-                pass
-            except Exception:
-                outputChannel = sys.stdout if diverted else sys.stdout.buffer
-                
-                if helper_variables.get("outputFileName"):
-                    with open(helper_variables.get("outputFileName"), "rb") as f:
-                        shutil.copyfileobj(f, outputChannel)
-                else:
-                    with open(cs.get("output", fallback=helper_variables['defaultOutputFileName']), "rb") as f:
-                        shutil.copyfileobj(f, outputChannel)
-    except ValueError:
-        pass
+
+    if cs.get("outputSpecified", fallback=None) == None:
+        outputChannel = sys.stdout.buffer
+        with open(cs.get("output", fallback=helper_variables['defaultOutputFileName']), "rb") as f:
+            shutil.copyfileobj(f, outputChannel)
+    if cs.get("outputSpecified", fallback=None) == None:
+        os.remove(cs.get("output", fallback=helper_variables['defaultOutputFileName']))
+
+    logging.info("Conversion completed: %s"%datetime.now().replace(microsecond=0).isoformat())
 # MAIN
 
 def main():    
-
     settings = ConfigParser(interpolation=ExtendedInterpolation())
     args = readCommandLineArguments()
     
@@ -1438,34 +1370,14 @@ def main():
     
     loglevel = logging.INFO
     logFormatter = logging.Formatter('%(levelname)s - %(message)s')
-    logging.basicConfig(level=logging.INFO,
-        format='%(levelname)s - %(message)s',
-    )
+    
+    if args.log_file:
+        logging.basicConfig(filename=args.log_file)
     
     logger = logging.getLogger()
     logger.setLevel(loglevel)
-    
     logger.propagate = False
-    
-    try:
-        __IPYTHON__
-        for handler in logger.handlers:
-            logger.removeHandler(handler)
-            logger.handlers = []
-    except NameError:
-        pass
-    
-    if args.log_file:
-        settings.set(cs, "logfile", args.log_file)
-    
-    if settings.get(cs, "logfile", fallback=None) != None:
-    #if args.log_file:
-        fileHandler = logging.FileHandler(settings.get(cs, "logfile"), mode="w")
-        fileHandler.setFormatter(logFormatter)
-        logger.addHandler(fileHandler)
-
-    if len(logger.handlers) > 1 and settings.get(cs, "logfile", fallback=None) != None:
-        logging.info("Two standard error streams identified. Writing to both sys.stderr and " + settings.get(cs, "logfile") + ".")
+    logging.info("Conversion started: %s"%datetime.now().replace(microsecond=0).isoformat())
 
     if args.endpoint:
         settings.set(cs, "endpoint", args.endpoint)
@@ -1487,42 +1399,21 @@ def main():
         settings.set(cs, "groupingClasses", ",".join(readConfigVariable(settings.get(cs, "groupingClasses"), ",")))
     else:
         settings.set(cs, "groupingClasses", "")
-    
-    if args.input:
-        settings.set(cs, "input", args.input)
-    
-    if not sys.stdin.isatty() and args.input:
-        try:
-            # sallitaan tämä IPythonin tapauksessa - käsittely alempana
-            __IPYTHON__
-        except NameError:
-            logging.error("Both piped data and data with --input detected.")
-            sys.exit(2)
-    
-    if not settings.get(cs, "input", fallback=False) and sys.stdin.isatty():
-        logging.error("Input is required. Either pipe data, set with --input or in configuration file.")
+
+    if not args.input:
+        logging.error("Input is required.")
         sys.exit(2)
-    
+
     if args.input_format:
         settings.set(cs, "inputFormat", args.input_format)
 
-    if not sys.stdin.isatty():
-        try:
-            __IPYTHON__
-            # mahdollisuus syöttää IPythonissa kummalla tahansa tavalla
-            # Huom. jos molemmat ovat tyhjiä, tulee lopputuloksestakin "tyhjä" = <collection/> (ei virhettä)
-            if settings.get(cs, "input", fallback=None) != None:
-                graphi += Graph().parse(settings.get(cs, "input"), format=settings.get(cs, "inputFormat", fallback="turtle"))
-            graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))
-        
-        except NameError:
-            graphi += Graph().parse(sys.stdin, format=settings.get(cs, "inputFormat", fallback="turtle"))        
-    else:
-        graph_loaded = False
-        if args.pickle_vocabulary:
-            pickleFile = args.pickle_vocabulary
-        else:   
-            pickleFile = settings.get(cs, "pickleVocabulary", fallback=None)
+    graphi = Graph()
+    graph_loaded = False
+
+    if args.pickle_vocabulary:
+        pickleFile = args.pickle_vocabulary
+    else:   
+        pickleFile = settings.get(cs, "pickleVocabulary", fallback=None)
         if pickleFile:
             if os.path.isfile(pickleFile):
                 timestamp = os.path.getmtime(pickleFile)
@@ -1534,24 +1425,17 @@ def main():
                             graph_loaded = True
                         except EOFError:
                             logging.error("EOFError in "%pickleFile)
-        if not graph_loaded:            
-            graphi += Graph().parse(settings.get(cs, "input"), format=settings.get(cs, "inputFormat", fallback="turtle"))
-            if pickleFile:
-                with open(pickleFile, 'wb') as output:
-                    pickle.dump(graphi, output, pickle.HIGHEST_PROTOCOL)
-  
+       
+    if not graph_loaded:
+        graphi += Graph().parse(args.input, format=settings.get(cs, "inputFormat", fallback="turtle"))
+        if pickleFile:
+            with open(pickleFile, 'wb') as output:
+                pickle.dump(graphi, output, pickle.HIGHEST_PROTOCOL)
+
     if args.output:
         settings.set(cs, "output", args.output)
         settings.set(cs, "outputSpecified", "true")
 
-    if not sys.stdout.isatty() and settings.get(cs, "output", fallback=None) != None:
-        try:
-            __IPYTHON__
-            if settings.get(cs, "outputSpecified", fallback=False) == False:
-                raise Exception("Raising Exception - diverting code flow.")
-        except Exception:
-            logging.info("Two standard output streams identified. Writing to both sys.stdout and " + settings.get(cs, "output") + ".")
-    
     if args.languages != None:
         settings.set(cs, "languages", ",".join(readConfigVariable(args.languages, " ")))
     elif settings.get(cs, "languages", fallback=None) == None:
@@ -1559,25 +1443,13 @@ def main():
         sys.exit(2)
     else:
         settings.set(cs, "languages", ",".join(readConfigVariable(settings.get(cs, "languages"), ",")))
-    
-    # stdout ja useita kieliä -> estä ajo, paitsi jos kyseessä on iPython
-    if len(settings.get(cs, "languages").split(",")) > 1 and not sys.stdout.isatty():
-        try:
-            __IPYTHON__
-        except NameError:
-            logging.error("Multiple languages asked to be processed; however, standard out stream is declared. Cannot generate multiple files into standard out stream.")
-            sys.exit(2)
-        
+
     if args.multilanguage_vocabulary:
         settings.set(cs, "multilanguage", "true")
     
     if args.loc_directory:
         settings.set(cs, "locDirectory", args.loc_directory)
-    # lisätään mahdollinen puuttuva kauttamerkki. TODO: hallinta '\'-merkeille?
-    if settings.get(cs, "locDirectory", fallback=None) != None:
-        if settings.get(cs, "locDirectory")[-1] != "/":
-            settings.set(cs, "locDirectory", settings.get(cs, "locDirectory") + "/")
-
+     
     if args.keep_modified_after and not args.modification_dates:
         logging.error('Arguments required with --keep_modified_after: --modification_dates')
         sys.exit(2)
@@ -1585,14 +1457,14 @@ def main():
         settings.set(cs, "modificationDates", args.modification_dates)
     if args.keep_modified_after:
         settings.set(cs, "keepModifiedAfter", args.keep_modified_after)
-        deprecationLimit = settings.get(cs, "keepModifiedAfter")
-        if deprecationLimit.lower() == "all":
+        modifiedLimit = settings.get(cs, "keepModifiedAfter")
+        if modifiedLimit.lower() == "all":
             pass
-        elif deprecationLimit.lower() == "none":
+        elif modifiedLimit.lower() == "none":
             pass
         else:
             try:
-                datetime.date(datetime.strptime(deprecationLimit, "%Y-%m-%d"))
+                datetime.date(datetime.strptime(modifiedLimit, "%Y-%m-%d"))
             except ValueError:
                 logging.error("Cannot interpret 'keepModifiedAfter' value set in configuration file or given as a CLI parameter. Possible values are 'ALL', 'NONE' and ISO 8601 format for dates.")
                 sys.exit(2)

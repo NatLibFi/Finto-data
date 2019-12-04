@@ -19,7 +19,7 @@ Toisella tavalla komentoon on lisättävä --modification_dates-parametri, joka 
 
 Kolmannella tavalla on --modification_dates-parametrin lisäksi tarvitaan --keep_modified_after-parametrin, jonka avulla haetaan parametrin päivämääränä ja sen jälkeen muuttuneet käsitteet.
 
-Muunnettava tiedosto on myös mahdollista putkittaa ohjelmalle, ja muunnettu tiedosto sekä lokitiedosto edelleenputkittaa UNIX-käytänteiden mukaisesti. Putkituksella ei kuitenkaan ole mahdollista ulostulostaa useita erikielisiä tiedostoja yhdellä kertaa - `--output`-parametria käytettäessä eri kieliversiot eritellään toisistaan `nimi-kielitarkenne`-erotuksilla.
+Muunnettu tiedosto sekä lokitiedosto on mahdollisuus putkittaa UNIX-käytänteiden mukaisesti. Putkituksella ei kuitenkaan ole mahdollista ulostulostaa useita erikielisiä tiedostoja yhdellä kertaa - `--output`-parametria käytettäessä eri kieliversiot eritellään toisistaan `nimi-kielitarkenne`-erotuksilla.
 
 Katso tarkemmat ohjeet --help-komennolla.
 
