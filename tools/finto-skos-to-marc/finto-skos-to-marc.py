@@ -467,6 +467,12 @@ def convert(cs, language, g, g2):
     handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     writer = XMLWriter(handle)
     
+    pref_labels = set()
+    for conc in g.subjects(RDF.type, SKOS.Concept):
+        pf = g.preferredLabel(conc, lang="fi")
+        if pf:
+            pref_labels.add(str(pf[0][1]))
+
     concs = []
     
     if helper_variables['keepModified']:
@@ -716,9 +722,11 @@ def convert(cs, language, g, g2):
                                                 YSOMETA.singularAltLabel, SKOS.hiddenLabel], language=language),
                                 key=lambda o: str(o.value)): 
 
+            if str(valueProp.value) in pref_labels:
+                continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
-                    continue
+                    continue            
             seen_values.add(str(valueProp.value))
             
             tag = "450"
@@ -1372,7 +1380,7 @@ def main():
     logFormatter = logging.Formatter('%(levelname)s - %(message)s')
     
     if args.log_file:
-        logging.basicConfig(filename=args.log_file)
+        logging.basicConfig(filename=args.log_file, filemode="w")
     
     logger = logging.getLogger()
     logger.setLevel(loglevel)
