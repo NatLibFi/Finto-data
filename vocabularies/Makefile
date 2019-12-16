@@ -8,3 +8,5 @@ all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) yso/yso-fin.mrcx
 yso/yso-fin.mrcx: yso/yso-skos.ttl
 	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="fi" --output=$@ --log_file="yso/yso-fin.log" --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-fi.pkl"
 	
+yso/yso-swe.mrcx: yso/yso-skos.ttl
+	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --log_file="yso/yso-swe.log" --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl"
