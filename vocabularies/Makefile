@@ -6,7 +6,7 @@ all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) yso/yso-fin.mrcx yso/yso-s
 	rapper -i turtle -o rdfxml-abbrev $^ >$@ || rm $@
 
 yso/yso-fin.mrcx: yso/yso-skos.ttl
-	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="fi" --output=$@ --log_file="yso/yso-fin.log" --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-fi.pkl"
+	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-fi.pkl" 2>yso/yso-fin.log
 	
 yso/yso-swe.mrcx: yso/yso-skos.ttl
-	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --log_file="yso/yso-swe.log" --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl"
+	python ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl" 2>yso/yso-swe.log
