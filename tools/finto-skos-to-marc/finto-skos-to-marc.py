@@ -26,7 +26,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 1.00"
+CONVERSION_PROCESS = "Finto SKOS to MARC 1.01"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -469,9 +469,9 @@ def convert(cs, language, g, g2):
     
     pref_labels = set()
     for conc in g.subjects(RDF.type, SKOS.Concept):
-        pf = g.preferredLabel(conc, lang="fi")
-        if pf:
-            pref_labels.add(str(pf[0][1]))
+        pref_label = g.preferredLabel(conc, lang=language)
+        if pref_label:
+            pref_labels.add(str(pref_label[0][1]))
 
     concs = []
     
