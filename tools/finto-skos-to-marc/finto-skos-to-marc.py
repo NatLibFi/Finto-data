@@ -26,7 +26,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 1.01"
+CONVERSION_PROCESS = "Finto SKOS to MARC 1.02"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -713,6 +713,7 @@ def convert(cs, language, g, g2):
         # skos:altLabel -> 447, 448, 450, 451, 455
         # 450 katso-viittaus
         # poistetaan toisteiset skos:hiddenLabelit
+        # jätetään tuottamatta 45X-kentät, jotka ovat toisessa käsitteessä 15X-kenttinä, paitsi altLabelein kohdalla
         # OLETUS: poistettujen käsitteiden seuraajien tietoihin EI merkitä poistetun käsitteen
         # skos:prefLabelia näihin kenttiin, sillä sen oletetaan jo olevan skos:altLabelina kun siihen
         # on haluttu viitata vanhalla muodolla
@@ -721,8 +722,7 @@ def convert(cs, language, g, g2):
         for valueProp in sorted(getValues(g, concept, [SKOS.altLabel, YSOMETA.singularPrefLabel,
                                                 YSOMETA.singularAltLabel, SKOS.hiddenLabel], language=language),
                                 key=lambda o: str(o.value)): 
-
-            if str(valueProp.value) in pref_labels:
+            if valueProp.prop != SKOS.altLabel and str(valueProp.value) in pref_labels:
                 continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
