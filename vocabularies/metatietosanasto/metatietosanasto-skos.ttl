@@ -14250,6 +14250,24 @@ mts:m4125 a skos:Concept ;
     skos:prefLabel "kohokuvia"@fi,
         "reliefer"@sv .
 
+mts:m4126 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20145 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "container of (expression):"@en,
+        "sisältää (ekspressio)"@fi ;
+    skos:scopeNote "Liittää ekspression teoksen ekspressioon, joka on itsenäinen osa laajempaa ekspressiota. Vastavuoroinen suhde: sisältyy ekspressioon."@fi .
+
+mts:m4127 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20074 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "contained in (expression)"@en,
+        "sisältyy ekspressioon"@fi ;
+    skos:scopeNote "Liittää ekspression laajempaan ekspressioon, jonka itsenäinen osa ekspressio on. Vastavuoroinen suhde: sisältää (ekspressio)."@fi .
+
 mts:m414 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "Kaunokki-termi"@fi,
@@ -17390,6 +17408,8 @@ mts:m981 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
+    skos:member mts:m4126,
+        mts:m4127 ;
     skos:prefLabel "Osa-kokonaisuussuhde (ekspressio)"@fi,
         "Del-helhetsrelation (uttryck)"@sv .
 
@@ -45104,7 +45124,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-12-20T01:12:34+00:00"^^xsd:dateTime ;
+    dct:modified "2019-12-21T01:33:32+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
