@@ -13710,6 +13710,7 @@ mts:m3935 a skos:Concept ;
         "kamrer"@sv .
 
 mts:m3936 a skos:Concept ;
+    skos:altLabel "teollisuusneuvos (arvonimi)"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "industrial counsellor"@en,
         "teollisuusneuvos"@fi,
@@ -15286,8 +15287,9 @@ mts:m581 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "Tanssivan karhun kääntäjä -palkinto"@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Tanssivan karhun kääntäjä -palkinto"@fi,
+    skos:prefLabel "Kääntäjäkarhu-palkinto"@fi,
         "Översättarbjörnen"@sv ;
     skos:scopeNote "Vuoden paras käännöskokoelma"@fi,
         "Pris som utdelas för årets bästa översättning."@sv .
@@ -21707,18 +21709,6 @@ mts:m1794 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Linkki verkkoaineistoon"@fi,
         "Länk till onlineresurs"@sv .
-
-mts:m1802 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:altLabel "opettaja (arvonimi)"@fi,
-        "opettaja (oppiarvo)"@fi,
-        "lärare (hederstitel)"@sv,
-        "lärare (lärdomsgrad)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teacher"@en,
-        "opettaja"@fi,
-        "lärare"@sv .
 
 mts:m1809 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -32499,9 +32489,6 @@ mts:m994 a skos:Concept ;
     skos:prefLabel "lukija"@fi,
         "uppläsare"@sv .
 
-<http://www.yso.fi/onto/yso/p11775> skos:closeMatch mts:m3926 ;
-    skos:exactMatch mts:m3090 .
-
 <http://www.yso.fi/onto/yso/p13413> skos:closeMatch mts:m3925 ;
     skos:exactMatch mts:m3336 .
 
@@ -32762,6 +32749,19 @@ mts:m1772 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "myyjä"@fi,
         "försäljare"@sv .
+
+mts:m1802 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:altLabel "opettaja (arvonimi)"@fi,
+        "opettaja (oppiarvo)"@fi,
+        "lärare (hederstitel)"@sv,
+        "lärare (lärdomsgrad)"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p11775> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teacher"@en,
+        "opettaja"@fi,
+        "lärare"@sv .
 
 mts:m2016 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35684,7 +35684,8 @@ mts:m2699 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
     skos:altLabel "industrial counsellors"@en,
-        "teollisuusneuvokset"@fi ;
+        "teollisuusneuvokset"@fi,
+        "teollisuusneuvos (ammatti)"@fi ;
     skos:broader mts:m2452 ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p2405> ;
     skos:inScheme mts: ;
@@ -41043,7 +41044,9 @@ mts:m3625 a skos:Concept ;
         "elektronik- och elindustri"@sv .
 
 mts:m3747 a skos:Concept ;
-    skos:altLabel "VT"@fi ;
+    skos:altLabel "VT"@fi,
+        "varatuomari (oppiarvo)"@fi,
+        "vicehäradshövding (lärdomsgrad)"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21303> ;
     skos:inScheme mts: ;
     skos:prefLabel "varatuomari"@fi,
@@ -41335,6 +41338,10 @@ mts:m93 a skos:Concept ;
     skos:prefLabel "reproduced as (manifestation)"@en,
         "jäljenteenä"@fi,
         "reproducerats som"@sv .
+
+<http://www.yso.fi/onto/yso/p11775> skos:closeMatch mts:m1802,
+        mts:m3926 ;
+    skos:exactMatch mts:m3090 .
 
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -45124,7 +45131,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2019-12-27T01:05:06+00:00"^^xsd:dateTime ;
+    dct:modified "2019-12-28T01:16:18+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
