@@ -3906,7 +3906,7 @@ mts:m1565 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "parallel other title information of series"@en,
         "sarjan rinnakkainen muu nimeketieto"@fi,
-        "övrig parallell titelinformation till serien"@sv ;
+        "övrig parallell titelinformation till serie"@sv ;
     skos:scopeNote "Sarjan muu nimeketieto toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi,
         "Annan titelinformation för serie på ett annat språk och/eller med ett annat skriftsystem."@sv .
 
@@ -14258,8 +14258,10 @@ mts:m4126 a skos:Concept ;
     rdfs:seeAlso rdae:P20145 ;
     skos:inScheme mts: ;
     skos:prefLabel "container of (expression):"@en,
-        "sisältää (ekspressio)"@fi ;
-    skos:scopeNote "Liittää ekspression teoksen ekspressioon, joka on itsenäinen osa laajempaa ekspressiota. Vastavuoroinen suhde: sisältyy ekspressioon."@fi .
+        "sisältää (ekspressio)"@fi,
+        "innehåller (uttryck)"@sv ;
+    skos:scopeNote "Liittää ekspression teoksen ekspressioon, joka on itsenäinen osa laajempaa ekspressiota. Vastavuoroinen suhde: sisältyy ekspressioon."@fi,
+        "Sammankopplar ett uttryck med ett verks uttryck som är en självständig del av ett vidare uttryck. Parallell relation: ingår i uttrycket."@sv .
 
 mts:m4127 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -14267,8 +14269,10 @@ mts:m4127 a skos:Concept ;
     rdfs:seeAlso rdae:P20074 ;
     skos:inScheme mts: ;
     skos:prefLabel "contained in (expression)"@en,
-        "sisältyy ekspressioon"@fi ;
-    skos:scopeNote "Liittää ekspression laajempaan ekspressioon, jonka itsenäinen osa ekspressio on. Vastavuoroinen suhde: sisältää (ekspressio)."@fi .
+        "sisältyy ekspressioon"@fi,
+        "ingår i uttrycket"@sv ;
+    skos:scopeNote "Liittää ekspression laajempaan ekspressioon, jonka itsenäinen osa ekspressio on. Vastavuoroinen suhde: sisältää (ekspressio)."@fi,
+        "Sammankopplar ett uttryck med ett vidare uttryck, i vilket uttrycket är en självständig del. Parallell relation: innehåller (uttryck)."@sv .
 
 mts:m414 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -21711,6 +21715,17 @@ mts:m1794 a skos:Concept ;
     skos:prefLabel "Linkki verkkoaineistoon"@fi,
         "Länk till onlineresurs"@sv .
 
+mts:m1802 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:altLabel "opettaja (arvonimi)"@fi,
+        "opettaja (oppiarvo)"@fi,
+        "lärare (hederstitel)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teacher"@en,
+        "opettaja"@fi,
+        "lärare"@sv .
+
 mts:m1809 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -22246,7 +22261,8 @@ mts:m2094 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "kreivin puoliso; (naimisissa oleva t. ollut) kreivin tytär {@fi}"@fi ;
+    skos:definition "kreivin puoliso; (naimisissa oleva t. ollut) kreivin tytär"@fi,
+        "greves maka; greves dotter (som är eller har varit gift)"@sv ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p20849> ;
     skos:inScheme mts: ;
     skos:prefLabel "kreivitär"@fi,
@@ -28326,7 +28342,7 @@ mts:m3504 a skos:Concept ;
         "konkordans till verket"@sv ;
     skos:scopeNote """Teos, johon konkordanssihakemisto (pääteoksen kaikkien sanojen hakemisto) liittyy.\r
 Vastavuoroinen suhde: konkordanssihakemisto (teos)."""@fi,
-        "Verk till vilket konkordansen hör. Parallell relation: konkordans (verk)."@sv .
+        "Verk till vilket konkordansen (index över alla ord i huvudverket) hör. Parallell relation: konkordans (verk)."@sv .
 
 mts:m3505 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -28750,7 +28766,8 @@ mts:m3596 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20275 ;
-    skos:altLabel "saatesanojen kirjoittaja"@fi ;
+    skos:altLabel "saatesanojen kirjoittaja"@fi,
+        "författare till inledningsord"@sv ;
     skos:broader mts:m337 ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen kirjoittamalla alkusanat alkuperäiseen teokseen."@fi,
         "Sammankopplar ett uttryck med en aktör som deltar i utförandet av ett verks uttryck genom att skriva förord till det ursprungliga verket."@sv ;
@@ -32491,6 +32508,9 @@ mts:m994 a skos:Concept ;
     skos:prefLabel "lukija"@fi,
         "uppläsare"@sv .
 
+<http://www.yso.fi/onto/yso/p11775> skos:closeMatch mts:m3926 ;
+    skos:exactMatch mts:m3090 .
+
 <http://www.yso.fi/onto/yso/p13413> skos:closeMatch mts:m3925 ;
     skos:exactMatch mts:m3336 .
 
@@ -32751,19 +32771,6 @@ mts:m1772 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "myyjä"@fi,
         "försäljare"@sv .
-
-mts:m1802 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:altLabel "opettaja (arvonimi)"@fi,
-        "opettaja (oppiarvo)"@fi,
-        "lärare (hederstitel)"@sv,
-        "lärare (lärdomsgrad)"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p11775> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "teacher"@en,
-        "opettaja"@fi,
-        "lärare"@sv .
 
 mts:m2016 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35687,7 +35694,8 @@ mts:m2699 a skos:Concept ;
         "ALLFO-term"@sv ;
     skos:altLabel "industrial counsellors"@en,
         "teollisuusneuvokset"@fi,
-        "teollisuusneuvos (ammatti)"@fi ;
+        "teollisuusneuvos (ammatti)"@fi,
+        "industriråd (yrke)"@sv ;
     skos:broader mts:m2452 ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p2405> ;
     skos:inScheme mts: ;
@@ -41047,6 +41055,7 @@ mts:m3625 a skos:Concept ;
 
 mts:m3747 a skos:Concept ;
     skos:altLabel "VT"@fi,
+        "varatuomari (arvonimi)"@fi,
         "varatuomari (oppiarvo)"@fi,
         "vicehäradshövding (lärdomsgrad)"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21303> ;
@@ -41340,10 +41349,6 @@ mts:m93 a skos:Concept ;
     skos:prefLabel "reproduced as (manifestation)"@en,
         "jäljenteenä"@fi,
         "reproducerats som"@sv .
-
-<http://www.yso.fi/onto/yso/p11775> skos:closeMatch mts:m1802,
-        mts:m3926 ;
-    skos:exactMatch mts:m3090 .
 
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -45133,7 +45138,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-01-07T01:35:14+00:00"^^xsd:dateTime ;
+    dct:modified "2020-01-08T00:56:52+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
