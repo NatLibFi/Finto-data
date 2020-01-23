@@ -360,6 +360,14 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:JulkaisussaIrrotettaviaSivuja.">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">Julkaisussa irrotettavia sivuja.</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laulu">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -38872,6 +38880,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="sv">Anmärkning om bärare</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus tallenteesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:JulkaisussaIrrotettaviaSivuja."/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1006"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m112"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m114"/>
@@ -42619,6 +42628,8 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:label xml:lang="fi">Teoksen muoto</rdfs:label>
     <rdfs:label xml:lang="sv">Verkets form</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10004"/>
+    <skos:altLabel xml:lang="en">Category of work</skos:altLabel>
+    <skos:altLabel xml:lang="fi">Teoksen kategoria</skos:altLabel>
     <skos:definition xml:lang="sv">Klass eller genre, till vilket ett verk hör.</skos:definition>
     <skos:definition xml:lang="fi">Luokka tai genre, johon teos kuuluu.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:laulu"/>
@@ -42654,6 +42665,9 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3573"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3576"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:musiikkialbumi"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:musikaali"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ooppera"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:virsi"/>
     <skos:prefLabel xml:lang="en">form of work</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset. Kun tarvitset tarkempaa genrejaottelua käytä Suomalaista lajityyppi- ja muotosanastoa (slm) http://finto.fi/slm/fi/</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets form-termer används för att skilja två olika verk med samma namn från varandra. För att ange mer detaljerad genreindelning, använd termer ur Finlands genre- och formlista (FGF) https://finto.fi/slm/sv/.</skos:scopeNote>
@@ -42727,6 +42741,18 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Useita sävellyksiä sisältävä tai kestoltaan pitkä (vähintään n. 30 min) äänitejulkaisu.</skos:definition>
     <skos:prefLabel xml:lang="fi">musiikkialbumi</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:musikaali">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">musikaali</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ooppera">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">ooppera</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:virsi">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
