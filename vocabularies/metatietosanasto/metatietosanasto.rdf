@@ -360,6 +360,35 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Valotehostekirja">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="fi">Kaunokki-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Kirja, joka sisältää erilaisia valotehosteita, esim. hälytysajoneuvon vilkkuvalo (ilman ääntä).</skos:definition>
+    <skos:prefLabel xml:lang="fi">Valotehostekirja</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuvakriitikko">
+    <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">elokuva-arvostelija</skos:altLabel>
+    <skos:altLabel xml:lang="sv">filmrecensent</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2386"/>
+    <skos:prefLabel xml:lang="fi">elokuvakriitikko</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">filmcritic</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">filmkritiker</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kirjallisuuskriitikko">
+    <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kirjallisuusarvostelija</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2386"/>
+    <skos:prefLabel xml:lang="fi">kirjallisuuskriitikko</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -13152,6 +13181,8 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">ammatti tai tehtävä</rdfs:label>
     <rdfs:label xml:lang="sv">yrke eller uppgift</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuvakriitikko"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kirjallisuuskriitikko"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2309"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2310"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2311"/>
@@ -14431,7 +14462,9 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4143"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4145"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4148"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:musiikkikriitikko"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:rap-artisti"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:taidekriitikko"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2333">
     <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
@@ -39018,6 +39051,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="sv">Anmärkning om bärare</rdfs:label>
     <rdfs:label xml:lang="fi">Huomautus tallenteesta</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Valotehostekirja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1006"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m112"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m114"/>
@@ -40834,8 +40868,8 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">avoselkäinen sidos</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">bokband med öppen rygg</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Avoselkäinen sidos</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Bokband med öppen rygg</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Inbunden bok, vars rygg saknar överdrag och vars bindning är synlig.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Sidottu kirja, jonka selkä on päällystämättä ja (lanka)sidos on näkyvissä.</skos:scopeNote>
   </owl:Class>
@@ -42873,6 +42907,17 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:musiikkikriitikko">
+    <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">musiikkiarvostelija</skos:altLabel>
+    <skos:altLabel xml:lang="sv">musikrecensent</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2386"/>
+    <skos:prefLabel xml:lang="en">music critic</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">musiikkikriitikko</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">musikkritiker</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:rap-artisti">
     <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -42889,5 +42934,16 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="en">rap artist</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">rap artist</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">rap-artisti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:taidekriitikko">
+    <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">konstrecensent</skos:altLabel>
+    <skos:altLabel xml:lang="fi">taidearvostelija</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2386"/>
+    <skos:prefLabel xml:lang="en">art critic</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">konstkritiker</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">taidekriitikko</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
