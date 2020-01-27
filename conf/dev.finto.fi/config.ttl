@@ -1197,6 +1197,29 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-cicero/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+	
+:ysodiotima a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia, Diotima-versio"@fi,
+		"ALLFO - Allmän finländsk ontologi, Diotima version"@sv,
+		"YSO - General Finnish ontology, Diotima version"@en ;
+	skosmos:shortName "YSO-D"@fi, "ALLFO-D"@sv, "YSO-D"@en;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:showChangeList "true" ;
+        skosmos:showPropertyInSearch skos:note ;
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "finna" ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2020.1.Diotima/yso-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2020.1.Diotima/ysoKehitys.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-diotima/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
 
 :ysotietomalliuudistus a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, tietomalliuudistus (testi)"@fi,
