@@ -9611,7 +9611,6 @@ mts:m2332 a isothes:ConceptGroup,
         mts:m2355,
         mts:m2356,
         mts:m2357,
-        mts:m2358,
         mts:m2359,
         mts:m2360,
         mts:m2361,
@@ -10842,7 +10841,12 @@ mts:m2332 a isothes:ConceptGroup,
         mts:m4142,
         mts:m4143,
         mts:m4145,
-        mts:m4148 ;
+        mts:m4148,
+        mts:m4151,
+        mts:m4152,
+        mts:m4153,
+        mts:m4154,
+        mts:m4155 ;
     skos:prefLabel "ammatti tai tehtävä"@fi,
         "yrke eller uppgift"@sv .
 
@@ -14399,6 +14403,16 @@ mts:m4150 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "musikaali"@fi .
 
+mts:m4156 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "Kaunokki-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Kirja, joka sisältää erilaisia valotehosteita, esim. hälytysajoneuvon vilkkuvalo (ilman ääntä)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Valotehostekirja"@fi .
+
 mts:m416 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -15286,6 +15300,7 @@ mts:m571 a isothes:ConceptGroup,
         mts:m4124,
         mts:m4134,
         mts:m414,
+        mts:m4156,
         mts:m429,
         mts:m467,
         mts:m471,
@@ -16363,8 +16378,8 @@ mts:m78 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "avoselkäinen sidos"@fi,
-        "bokband med öppen rygg"@sv ;
+    skos:prefLabel "Avoselkäinen sidos"@fi,
+        "Bokband med öppen rygg"@sv ;
     skos:scopeNote "Sidottu kirja, jonka selkä on päällystämättä ja (lanka)sidos on näkyvissä."@fi,
         "Inbunden bok, vars rygg saknar överdrag och vars bindning är synlig."@sv .
 
@@ -19530,7 +19545,7 @@ mts:m999 a skos:Concept ;
 
 <http://www.yso.fi/onto/yso/p29810> skos:exactMatch mts:m2641 .
 
-<http://www.yso.fi/onto/yso/p29833> skos:exactMatch mts:m2358 .
+<http://www.yso.fi/onto/yso/p29833> skos:exactMatch mts:m4155 .
 
 <http://www.yso.fi/onto/yso/p29861> skos:exactMatch mts:m3123 .
 
@@ -23376,17 +23391,6 @@ mts:m2384 a skos:Concept ;
     skos:prefLabel "radio operator"@en,
         "radiosähköttäjä"@fi,
         "radiotelegrafist"@sv .
-
-mts:m2386 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "kriitikko"@fi,
-        "kritiker"@sv ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p13344> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "critic"@en,
-        "arvostelija"@fi,
-        "recensent"@sv .
 
 mts:m2387 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -31295,6 +31299,47 @@ mts:m415 a skos:Concept ;
     skos:prefLabel "AMK-opinnäytetyö"@fi,
         "YH-examensarbete"@sv .
 
+mts:m4151 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "kirjallisuusarvostelija"@fi ;
+    skos:broader mts:m2386 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kirjallisuuskriitikko"@fi .
+
+mts:m4152 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "taidearvostelija"@fi,
+        "konstrecensent"@sv ;
+    skos:broader mts:m2386 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "art critic"@en,
+        "taidekriitikko"@fi,
+        "konstkritiker"@sv .
+
+mts:m4153 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "musiikkiarvostelija"@fi,
+        "musikrecensent"@sv ;
+    skos:broader mts:m2386 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "music critic"@en,
+        "musiikkikriitikko"@fi,
+        "musikkritiker"@sv .
+
+mts:m4154 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "elokuva-arvostelija"@fi,
+        "filmrecensent"@sv ;
+    skos:broader mts:m2386 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "filmcritic"@en,
+        "elokuvakriitikko"@fi,
+        "filmkritiker"@sv .
+
 mts:m425 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -33521,23 +33566,6 @@ mts:m2357 a skos:Concept ;
     skos:prefLabel "master hairdresser"@en,
         "kampaajamestari"@fi,
         "frisörmästare"@sv .
-
-mts:m2358 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "MCs"@en,
-        "masters of ceremonies"@en,
-        "MC:t"@fi,
-        "Master of ceremonyt"@fi,
-        "räppääjät"@fi,
-        "MC"@sv,
-        "MC:s"@sv ;
-    skos:broader mts:m2356 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p29833> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "MC"@en,
-        "MC"@fi,
-        "MC (musik)"@sv .
 
 mts:m2359 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -41494,6 +41522,23 @@ mts:m41 a skos:Concept ;
     skos:prefLabel "termoform"@fi,
         "termoform"@sv .
 
+mts:m4155 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "MCs"@en,
+        "rapper"@en,
+        "MC"@fi,
+        "rap-artistit"@fi,
+        "räppääjät"@fi,
+        "MC"@sv,
+        "rappare"@sv ;
+    skos:broader mts:m2356 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p29833> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "rap artist"@en,
+        "rap-artisti"@fi,
+        "rap artist"@sv .
+
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -43174,6 +43219,21 @@ mts:m232 a skos:Concept ;
     skos:scopeNote "tietokonetallenne"@fi,
         "datorbärare"@sv .
 
+mts:m2386 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "kriitikko"@fi,
+        "kritiker"@sv ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p13344> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4151,
+        mts:m4152,
+        mts:m4153,
+        mts:m4154 ;
+    skos:prefLabel "critic"@en,
+        "arvostelija"@fi,
+        "recensent"@sv .
+
 mts:m2414 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -44605,7 +44665,6 @@ mts:m2356 a skos:Concept ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p1644> ;
     skos:inScheme mts: ;
     skos:narrower mts:m2355,
-        mts:m2358,
         mts:m2466,
         mts:m2563,
         mts:m2589,
@@ -44619,7 +44678,8 @@ mts:m2356 a skos:Concept ;
         mts:m3092,
         mts:m3151,
         mts:m3310,
-        mts:m3318 ;
+        mts:m3318,
+        mts:m4155 ;
     skos:prefLabel "musician"@en,
         "muusikko"@fi,
         "musiker"@sv .
@@ -45369,7 +45429,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-01-27T01:29:57+00:00"^^xsd:dateTime ;
+    dct:modified "2020-01-28T01:17:50+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
