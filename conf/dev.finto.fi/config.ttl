@@ -27,7 +27,7 @@
     skosmos:sparqlCollationEnabled true ;
     # HTTP client configuration
     skosmos:sparqlTimeout 20 ;
-    skosmos:httpTimeout 3 ;
+    skosmos:httpTimeout 10 ;
     # customize the service name
     skosmos:serviceName "DevFinto" ;
     # customize the base element. Set this if the automatic base url detection doesn't work. For example setups behind a proxy.
@@ -787,6 +787,24 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/paikat/> .
 
+:yso-paikat-vb a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO-paikat, VB"@fi ,
+		"ALLFO-orter, VB"@sv,
+		"YSO places, VB"@en ;
+	dc:subject :cat_geo ;
+	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv, "yso/eng"@en ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "wiki", "suggestions" ;
+	void:dataDump <http://dev.finto.fi/download/yso-paikat/yso-paikat-vb-dump.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/yso-paikat/yso-paikat-vb-dump.rdf> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-paikat-fin.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/yso/yso-paikat-swe.mrcx> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-paikat-vb/> .
+
 :yso-paikat a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO-paikat"@fi ,
 		"ALLFO-orter"@sv,
@@ -997,6 +1015,7 @@
         skosmos:useModifiedDate "true";
 	skosmos:defaultLanguage "en";
 	skosmos:showTopConcepts "true";
+	skosmos:sortByNotation true ;
 	skosmos:mainConceptScheme <http://udcdata.info/udc-schema> ;
 	void:dataDump <http://dev.finto.fi/download/udcs/udcs-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/udcs/udcs-skos.rdf> ;
@@ -1026,12 +1045,13 @@
 :ykl a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YKL - Yleisten kirjastojen luokitusjärjestelmä"@fi, "KAB - Allmänna bibliotekens klassifikationssystem"@sv, "PLC - Finnish Public Libraries Classification System"@en ;
 	skosmos:shortName "YKL";
-	dc:subject :cat_lang ;
+	dc:subject :cat_general ;
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:ykl:";
 	skosmos:language "fi", "en", "sv";
 	skosmos:defaultLanguage "fi";
         skosmos:defaultSidebarView "hierarchy";
 	skosmos:showTopConcepts "true";
+	skosmos:sortByNotation true ;
 	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	void:dataDump <http://dev.finto.fi/download/ykl/ykl-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/ykl/ykl-skos.rdf> ;
@@ -1197,6 +1217,29 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-cicero/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+	
+:ysodiotima a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia, Diotima-versio"@fi,
+		"ALLFO - Allmän finländsk ontologi, Diotima version"@sv,
+		"YSO - General Finnish ontology, Diotima version"@en ;
+	skosmos:shortName "YSO-D"@fi, "ALLFO-D"@sv, "YSO-D"@en;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:showChangeList "true" ;
+        skosmos:showPropertyInSearch skos:note ;
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "finna" ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2020.1.Diotima/yso-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2020.1.Diotima/ysoKehitys.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-diotima/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
 
 :ysotietomalliuudistus a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, tietomalliuudistus (testi)"@fi,
