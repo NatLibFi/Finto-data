@@ -26,7 +26,7 @@ from collections.abc import Sequence
 from html.parser import HTMLParser
 
 # globaalit muuttujat
-CONVERSION_PROCESS = "Finto SKOS to MARC 1.02"
+CONVERSION_PROCESS = "Finto SKOS to MARC 1.03"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -482,7 +482,6 @@ def convert(cs, language, g, g2):
                 concs.append(URIRef(uri))
     else:
         concs = g.subjects(RDF.type, SKOS.Concept)
-    
     for concept in sorted(concs):
         incrementor += 1
         if incrementor % 1000 == 0:
@@ -521,6 +520,9 @@ def convert(cs, language, g, g2):
         else:
             rec.leader = cs.get("leaderChanged", fallback=LEADERCHANGED)
             modified = mod.toPython() # datetime.date or datetime.datetime object
+            if not type(modified) in [date, datetime]:
+                logging.error("Modification date invalid in concept %s "%concept)
+                modified = None
   
         # dct:created -> 008
         crt = g.value(concept, DCT.created, None)
@@ -528,8 +530,9 @@ def convert(cs, language, g, g2):
             created = datetime.date(datetime.strptime(cs.get("defaultCreationDate", fallback=DEFAULTCREATIONDATE), "%Y-%m-%d"))
         else:
             created = crt.toPython() # datetime.date or datetime.datetime object
-            if type(created) == datetime:
-                created = datetime.date(created) # datetime.date
+            if not type(created) in [date, datetime]:
+                logging.error("Creation date invalid in concept %s "%concept)
+                created = datetime.date(datetime.strptime(cs.get("defaultCreationDate", fallback=DEFAULTCREATIONDATE), "%Y-%m-%d"))
         
         code = cs.get("catalogCodes", fallback=CATALOGCODES)
         
@@ -1422,17 +1425,17 @@ def main():
         pickleFile = args.pickle_vocabulary
     else:   
         pickleFile = settings.get(cs, "pickleVocabulary", fallback=None)
-        if pickleFile:
-            if os.path.isfile(pickleFile):
-                timestamp = os.path.getmtime(pickleFile)
-                file_date = date.fromtimestamp(timestamp)
-                if file_date == date.today():
-                    with open(pickleFile, 'rb') as input_file: 
-                        try:     
-                            graphi = pickle.load(input_file)
-                            graph_loaded = True
-                        except EOFError:
-                            logging.error("EOFError in "%pickleFile)
+    if pickleFile:
+        if os.path.isfile(pickleFile):
+            timestamp = os.path.getmtime(pickleFile)
+            file_date = date.fromtimestamp(timestamp)
+            if file_date == date.today():
+                with open(pickleFile, 'rb') as input_file: 
+                    try:     
+                        graphi = pickle.load(input_file)
+                        graph_loaded = True
+                    except EOFError:
+                        logging.error("EOFError in "%pickleFile)
        
     if not graph_loaded:
         graphi += Graph().parse(args.input, format=settings.get(cs, "inputFormat", fallback="turtle"))
