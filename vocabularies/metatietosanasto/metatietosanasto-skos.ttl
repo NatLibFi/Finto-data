@@ -1034,6 +1034,19 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi,
 <http://rdvocab.info/termList/fileType/1006> skos:prefLabel "videotiedostomuoto"@fi,
         "videofilsformat"@sv .
 
+mts:erikoissairaanhoitaja a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "erikoissairaanhoitajat"@fi ;
+    skos:broader mts:m2562 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "erikoissairaanhoitaja"@fi .
+
+mts:kehittamispaallikko a skos:Concept ;
+    skos:broader mts:m2433 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kehittämispäällikkö"@fi .
+
 mts:m0 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -1243,6 +1256,13 @@ mts:m1042 a skos:Concept ;
         "fotograf"@sv ;
     skos:scopeNote "Teoksen tekijä"@fi,
         "Verkets skapare"@sv .
+
+mts:m1042_1 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:broader mts:m3060 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "luontovalokuvaaja"@fi .
 
 mts:m1043 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -5479,7 +5499,6 @@ mts:m1802 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:altLabel "opettaja (arvonimi)"@fi,
-        "opettaja (oppiarvo)"@fi,
         "lärare (hederstitel)"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "teacher"@en,
@@ -17719,6 +17738,27 @@ mts:m999 a skos:Concept ;
     skos:scopeNote "Teokseen liittyvä muu toimija"@fi,
         "Annan aktör relaterad till verk"@sv .
 
+mts:seurakuntapastori a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:broader mts:m2479 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "seurakuntapastori"@fi .
+
+mts:sotilaskapellimestari a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "sotilaskapellimestari (ammatti)"@fi ;
+    skos:broader mts:m2771 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sotilaskapellimestari"@fi .
+
+mts:steel-kitaristi a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:broader mts:m2619 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "steel-kitaristi"@fi .
+
 <http://www.yso.fi/onto/yso/p1004> skos:exactMatch mts:m1461 .
 
 <http://www.yso.fi/onto/yso/p10052> skos:closeMatch mts:m3759 .
@@ -19873,6 +19913,10 @@ mts:m999 a skos:Concept ;
 
 <http://www.yso.fi/onto/yso/p6346> skos:exactMatch mts:m2815 .
 
+<http://www.yso.fi/onto/yso/p6406> skos:exactMatch mts:liikenainen .
+
+<http://www.yso.fi/onto/yso/p6407> skos:exactMatch mts:liikemies .
+
 <http://www.yso.fi/onto/yso/p6414> skos:exactMatch mts:m2583 .
 
 <http://www.yso.fi/onto/yso/p6526> skos:exactMatch mts:m3024 .
@@ -20143,6 +20187,22 @@ rdac:C10005 skos:exactMatch mts:m627 .
 
 <http://rdaregistry.info/termList/RDAContentType/1012> skos:exactMatch mts:m1735,
         mts:m478 .
+
+mts:liikemies a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:broader mts:m2785 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p6407> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "liikemies"@fi,
+        "affärsman"@sv .
+
+mts:liikenainen a skos:Concept ;
+    skos:broader mts:m2785 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p6406> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "liikenainen"@fi,
+        "affärskvinna"@sv .
 
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35565,6 +35625,7 @@ mts:m2641 a skos:Concept ;
     skos:altLabel "basses"@en,
         "bassolaulajat"@fi,
         "bassot"@fi,
+        "laulaja (basso)"@fi,
         "laulajat -- basso"@fi,
         "bas (sångare)"@sv,
         "basar"@sv,
@@ -37232,6 +37293,7 @@ mts:m2880 a skos:Concept ;
     skos:altLabel "bass players"@en,
         "bassists"@en,
         "basistit"@fi,
+        "bassokitaristi"@fi,
         "basister"@sv ;
     skos:broader mts:m2619 ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p10985> ;
@@ -39153,6 +39215,7 @@ mts:m3123 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:altLabel "sopranos"@en,
         "koloratuurisopraanot"@fi,
+        "laulaja (sopraano)"@fi,
         "laulajat -- sopraano"@fi,
         "sopraanolaulajat"@fi,
         "sopraanot"@fi,
@@ -41219,7 +41282,8 @@ Vastavuoroinen suhde: käsikirjoituksen perustana (teos)."""@fi,
 mts:m3449 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
-    skos:altLabel "mezzosopran (sångare)"@sv ;
+    skos:altLabel "laulaja (mezzosopraano)"@fi,
+        "mezzosopran (sångare)"@sv ;
     skos:broader mts:m2987 ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p30088> ;
     skos:inScheme mts: ;
@@ -41978,19 +42042,6 @@ mts:m2540 a skos:Concept ;
         "lyömäsoittaja"@fi,
         "slagverkare"@sv .
 
-mts:m2562 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "sairaanhoitaja (ammatti)"@fi,
-        "sjukskötare (yrke)"@sv ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p8452> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2371,
-        mts:m2575 ;
-    skos:prefLabel "nurse"@en,
-        "sairaanhoitaja"@fi,
-        "sjukskötare"@sv .
-
 mts:m2566 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -42257,20 +42308,6 @@ mts:m2759 a skos:Concept ;
     skos:prefLabel "caliph"@en,
         "kalifi"@fi,
         "kalif"@sv .
-
-mts:m2771 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "kapellimestari (ammatti)"@fi,
-        "kapellmästare (yrke)"@sv,
-        "orkesterdirigent"@sv ;
-    skos:broader mts:m2356,
-        mts:m2827 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p5326> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "conductor (music)"@en,
-        "kapellimestari"@fi,
-        "kapellmästare"@sv .
 
 mts:m2779 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -42988,6 +43025,20 @@ mts:m2430 a skos:Concept ;
         "piirtäjä"@fi,
         "tecknare"@sv .
 
+mts:m2562 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "sairaanhoitaja (ammatti)"@fi,
+        "sjukskötare (yrke)"@sv ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p8452> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:erikoissairaanhoitaja,
+        mts:m2371,
+        mts:m2575 ;
+    skos:prefLabel "nurse"@en,
+        "sairaanhoitaja"@fi,
+        "sjukskötare"@sv .
+
 mts:m2589 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -43091,6 +43142,21 @@ mts:m2757 a skos:Concept ;
         "arkkitehti"@fi,
         "arkitekt"@sv .
 
+mts:m2771 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "kapellimestari (ammatti)"@fi,
+        "kapellmästare (yrke)"@sv,
+        "orkesterdirigent"@sv ;
+    skos:broader mts:m2356,
+        mts:m2827 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p5326> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:sotilaskapellimestari ;
+    skos:prefLabel "conductor (music)"@en,
+        "kapellimestari"@fi,
+        "kapellmästare"@sv .
+
 mts:m2798 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
     skos:altLabel "chairmen"@en,
@@ -43139,23 +43205,6 @@ mts:m2933 a skos:Concept ;
     skos:prefLabel "lyricist"@en,
         "sanoittaja"@fi,
         "textförfattare"@sv .
-
-mts:m3060 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "photographers"@en,
-        "valokuvaajat"@fi,
-        "valokuvataiteilijat"@fi,
-        "fotografer"@sv,
-        "fotokonstnärer"@sv ;
-    skos:broader mts:m2447 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p12307> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2814,
-        mts:m3118 ;
-    skos:prefLabel "photographer"@en,
-        "valokuvaaja"@fi,
-        "fotograf"@sv .
 
 mts:m3102 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -43384,6 +43433,24 @@ mts:m2987 a skos:Concept ;
     skos:prefLabel "female singer"@en,
         "naislaulaja"@fi,
         "sångerska"@sv .
+
+mts:m3060 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "photographers"@en,
+        "valokuvaajat"@fi,
+        "valokuvataiteilijat"@fi,
+        "fotografer"@sv,
+        "fotokonstnärer"@sv ;
+    skos:broader mts:m2447 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p12307> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1042_1,
+        mts:m2814,
+        mts:m3118 ;
+    skos:prefLabel "photographer"@en,
+        "valokuvaaja"@fi,
+        "fotograf"@sv .
 
 mts:m3112 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -43982,29 +44049,6 @@ mts:m2650 a skos:Concept ;
         "käsityöläinen"@fi,
         "hantverkare"@sv .
 
-mts:m2785 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "entrepreneurs"@en,
-        "yksityisyrittäjät"@fi,
-        "yrittäjät"@fi,
-        "egenföretagare"@sv,
-        "privatföretagare"@sv ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p1178> ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2443,
-        mts:m2642,
-        mts:m2731,
-        mts:m2914,
-        mts:m3023,
-        mts:m3039,
-        mts:m3077,
-        mts:m4012,
-        mts:m4072 ;
-    skos:prefLabel "entrepreneur"@en,
-        "yrittäjä"@fi,
-        "företagare"@sv .
-
 mts:m3946 a skos:Concept ;
     skos:inScheme mts: ;
     skos:narrower mts:m2599,
@@ -44172,32 +44216,30 @@ mts:m2421 a skos:Concept ;
         "seppä"@fi,
         "smed"@sv .
 
-mts:m2479 a skos:Concept ;
-    dc:source "YSO-termi"@fi ;
-    skos:altLabel "clergymen"@en,
-        "minister"@en,
-        "pastors"@en,
-        "priests"@en,
-        "papit"@fi,
-        "pastorit"@fi,
-        "pastorer"@sv,
-        "präster"@sv ;
-    skos:broader mts:m2671 ;
-    skos:exactMatch <http://www.yso.fi/onto/yso/p5468> ;
+mts:m2785 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "entrepreneurs"@en,
+        "yksityisyrittäjät"@fi,
+        "yrittäjät"@fi,
+        "egenföretagare"@sv,
+        "privatföretagare"@sv ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p1178> ;
     skos:inScheme mts: ;
-    skos:narrower mts:m2478,
-        mts:m2561,
-        mts:m2611,
-        mts:m2661,
-        mts:m2695,
-        mts:m2815,
-        mts:m3034,
-        mts:m3051,
-        mts:m3065,
-        mts:m3315 ;
-    skos:prefLabel "priest"@en,
-        "pappi"@fi,
-        "präst"@sv .
+    skos:narrower mts:liikemies,
+        mts:liikenainen,
+        mts:m2443,
+        mts:m2642,
+        mts:m2731,
+        mts:m2914,
+        mts:m3023,
+        mts:m3039,
+        mts:m3077,
+        mts:m4012,
+        mts:m4072 ;
+    skos:prefLabel "entrepreneur"@en,
+        "yrittäjä"@fi,
+        "företagare"@sv .
 
 mts:m3004 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -44246,6 +44288,34 @@ mts:m2349 a skos:Concept ;
     skos:prefLabel "military person"@en,
         "sotilashenkilö"@fi,
         "militärperson"@sv .
+
+mts:m2479 a skos:Concept ;
+    dc:source "YSO-termi"@fi ;
+    skos:altLabel "clergymen"@en,
+        "minister"@en,
+        "pastors"@en,
+        "priests"@en,
+        "papit"@fi,
+        "pastorit"@fi,
+        "pastorer"@sv,
+        "präster"@sv ;
+    skos:broader mts:m2671 ;
+    skos:exactMatch <http://www.yso.fi/onto/yso/p5468> ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2478,
+        mts:m2561,
+        mts:m2611,
+        mts:m2661,
+        mts:m2695,
+        mts:m2815,
+        mts:m3034,
+        mts:m3051,
+        mts:m3065,
+        mts:m3315,
+        mts:seurakuntapastori ;
+    skos:prefLabel "priest"@en,
+        "pappi"@fi,
+        "präst"@sv .
 
 mts:m2726 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -45170,7 +45240,8 @@ mts:m2619 a skos:Concept ;
         mts:m4142,
         mts:m4143,
         mts:m4145,
-        mts:m4148 ;
+        mts:m4148,
+        mts:steel-kitaristi ;
     skos:prefLabel "instrumentalist"@en,
         "soittaja"@fi,
         "instrumentalist"@sv .
@@ -45308,7 +45379,8 @@ mts:m2433 a skos:Concept ;
         "direktörer"@sv ;
     skos:exactMatch <http://www.yso.fi/onto/yso/p26193> ;
     skos:inScheme mts: ;
-    skos:narrower mts:m2319,
+    skos:narrower mts:kehittamispaallikko,
+        mts:m2319,
         mts:m2432,
         mts:m2472,
         mts:m2496,
@@ -45458,7 +45530,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-02-14T12:08:43+00:00"^^xsd:dateTime ;
+    dct:modified "2020-02-14T13:32:11+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
