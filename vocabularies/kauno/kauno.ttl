@@ -1,8 +1,3 @@
-# baseURI: http://www.yso.fi/onto/kauno/
-# imports: file:///kauno/yso-import.rdf
-# imports: http://www.w3.org/2004/02/skos/core
-# prefix: kauno
-
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix kauno: <http://www.yso.fi/onto/kauno/> .
@@ -34,7 +29,7 @@ kaunometa:source a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 kauno: a owl:Ontology ;
-    owl:imports <file:///kauno/yso-import.rdf>,
+    owl:imports <file:///kauno/ysoKehitys.rdf>,
         <http://www.w3.org/2004/02/skos/core> .
 
 kauno:p1779 a owl:DeprecatedClass ;
@@ -71,6 +66,7 @@ kauno:p5985 a owl:ObjectProperty ;
 
 kauno:p6374 a kaunometa:Concept ;
     rdfs:subClassOf yso:p6546 ;
+    owl:equivalentClass yso:p29707 ;
     skos:altLabel "selkokieliset aineistot"@fi ;
     skos:prefLabel "selkoaineistot"@fi ;
     kaunometa:facet kaunometa:section_3 ;
@@ -84,6 +80,7 @@ kauno:p6376 a kaunometa:Concept ;
 
 kauno:p6377 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p3693 ;
+    owl:equivalentClass yso:p29646 ;
     skos:prefLabel "visuaalinen runous"@fi ;
     kaunometa:facet kaunometa:section_3 ;
     kaunometa:related kauno:p4344 .
@@ -97,6 +94,7 @@ kauno:p6378 a kaunometa:Concept ;
 
 kauno:p6380 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p3776 ;
+    owl:equivalentClass yso:p29626 ;
     skos:prefLabel "amatsonit (mytologia)"@fi,
         "amasoner (mytologi)"@sv ;
     kaunometa:facet kaunometa:section_6 ;
@@ -229,6 +227,7 @@ kauno:p6397 a kaunometa:Concept ;
 
 kauno:p6398 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p2477 ;
+    owl:equivalentClass yso:p29547 ;
     skos:prefLabel "etsivätoimistot"@fi ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p2677 .
@@ -569,6 +568,7 @@ kauno:p6453 a kaunometa:Concept ;
 
 kauno:p6454 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4577 ;
+    owl:equivalentClass yso:p29560 ;
     skos:prefLabel "sotakokemukset"@fi ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1513,
@@ -612,6 +612,7 @@ kauno:p6459 a kaunometa:Concept ;
 
 kauno:p6460 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p2136 ;
+    owl:equivalentClass yso:p29647 ;
     skos:prefLabel "hengellinen väkivalta"@fi ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p3660 .
@@ -678,11 +679,10 @@ kauno:p6469 a kaunometa:Concept ;
     owl:equivalentClass yso:p17158 ;
     skos:altLabel "alistaminen"@fi,
         "alistus"@fi,
-        "alistusmenettely"@fi,
         "hemställan"@sv,
         "underställande"@sv ;
-    skos:prefLabel "alistus (ratkaistavaksi)"@fi,
-        "underställning"@sv ;
+    skos:prefLabel "alistusmenettely"@fi,
+        "underställningsförfarande"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p2511 .
 
@@ -762,6 +762,7 @@ kauno:p6479 a kaunometa:Concept ;
 
 kauno:p6480 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p183 ;
+    owl:equivalentClass yso:p29628 ;
     skos:prefLabel "hyötypelit"@fi ;
     kaunometa:facet kaunometa:section_3 .
 
@@ -916,6 +917,7 @@ kauno:p6502 a kaunometa:Concept ;
 
 kauno:p6503 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p757 ;
+    owl:equivalentClass yso:p36817 ;
     skos:prefLabel "e-äänikirjat"@fi,
         "e-ljudböcker"@sv ;
     kaunometa:facet kaunometa:section_3 .
@@ -1025,6 +1027,101 @@ kauno:p6517 a kaunometa:Concept ;
     skos:prefLabel "ruutuaika"@fi,
         "skärmtid"@sv ;
     kaunometa:facet kaunometa:section_1 .
+
+kauno:p6520 a kaunometa:Concept ;
+    rdfs:subClassOf yso:p410 ;
+    skos:prefLabel "pariskunnat"@fi,
+        "par"@sv ;
+    kaunometa:facet kaunometa:section_6 .
+
+kauno:p6521 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "akaninkielinen kirjallisuus"@fi,
+        "litteratur på akan"@sv ;
+    kaunometa:facet kaunometa:section_3 ;
+    kauno:p5985 yso:p910 .
+
+kauno:p6522 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "šonankielinen kirjallisuus"@fi,
+        "litteratur på shona"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6523 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "vainkielinen kirjallisuus"@fi,
+        "litteratur på vai"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6524 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "njandžankielinen kirjallisuus"@fi,
+        "litteratur på nyanja"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6525 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "fulaninkielinen kirjallisuus"@fi,
+        "litteratur på fula"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6526 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "igbonkielinen kirjallisuus"@fi,
+        "litteratur på igbo"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6527 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "twinkielinen kirjallisuus"@fi,
+        "litteratur på twi"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6528 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p1522 ;
+    skos:prefLabel "entiset sotilaat"@fi,
+        "före detta soldater"@sv ;
+    kaunometa:facet kaunometa:section_6 .
+
+kauno:p6529 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "gankielinen kirjallisuus"@fi,
+        "litteratur på gan"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6530 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "wolofinkielinen kirjallisuus"@fi,
+        "litteratur på wolof"@sv ;
+    kaunometa:facet kaunometa:section_3 .
+
+kauno:p6531 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p3047 ;
+    skos:prefLabel "joulunodotus"@fi,
+        "väntan på julen"@sv ;
+    kaunometa:facet kaunometa:section_1 .
+
+kauno:p6532 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p4223 ;
+    skos:altLabel "deepavali"@fi,
+        "divali"@fi,
+        "diwali"@fi,
+        "deepavali"@sv ;
+    skos:prefLabel "Diwali"@fi,
+        "Diwali"@sv ;
+    kaunometa:facet kaunometa:section_1 .
+
+kauno:p6533 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p4446 ;
+    skos:prefLabel "Troijan sota"@fi,
+        "Trojanska kriget"@sv ;
+    kaunometa:facet kaunometa:section_1 .
+
+kauno:p6534 a kaunometa:Concept ;
+    rdfs:subClassOf kauno:p123 ;
+    skos:prefLabel "bembankielinen kirjallisuus"@fi,
+        "litteratur på bemba"@sv ;
+    kaunometa:facet kaunometa:section_3 .
 
 kauno:p1002 a kaunometa:Concept ;
     rdfs:comment """1. diakonian virassa toimiva vars. lut. kirkon viranhaltija. 
@@ -1767,6 +1864,7 @@ kauno:p1469 a kaunometa:Concept ;
 
 kauno:p1477 a kaunometa:Concept ;
     rdfs:subClassOf yso:p1365 ;
+    owl:equivalentClass yso:p29674 ;
     skos:prefLabel "äänirunous"@fi,
         "ljudpoesi"@sv ;
     kaunometa:facet kaunometa:section_3 .
@@ -1981,12 +2079,11 @@ kauno:p1635 a kaunometa:Concept ;
 kauno:p1636 a kaunometa:Concept ;
     rdfs:comment "levyjuontaja, ”tiskijukka”."@fi ;
     owl:equivalentClass yso:p19863 ;
-    skos:altLabel "DJ:t"@fi,
+    skos:altLabel "disc jockeyt"@fi,
         "tiskijukat"@fi,
-        "DJ"@sv,
-        "discjockey"@sv ;
-    skos:prefLabel "disc jockeyt"@fi,
         "diskjockey"@sv ;
+    skos:prefLabel "DJ:t"@fi,
+        "DJ"@sv ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:source "Verkko-Kaunokki"@fi .
 
@@ -2264,7 +2361,7 @@ kauno:p1782 a kaunometa:Concept ;
 
 kauno:p180 a kaunometa:Concept ;
     owl:equivalentClass yso:p12705 ;
-    skos:prefLabel "ohjaajat"@fi,
+    skos:prefLabel "ohjaajat (taiteet ja media)"@fi,
         "regissörer"@sv ;
     kaunometa:facet kaunometa:section_6 .
 
@@ -2332,6 +2429,7 @@ kauno:p1835 a kaunometa:Concept ;
 kauno:p1836 a kaunometa:Concept ;
     rdfs:comment "Futuristissävyinen koneiden ihailu oli 1920-luvun lopulla ominaista useille tulenkantajille. Ihannoidut koneet liittyivät matkusteluun ja vapaa-ajan käyttöön, kuten auto, juna ja lentokone, eivät esim. tehdasmiljööseen."@fi ;
     rdfs:subClassOf kauno:p1021 ;
+    owl:equivalentClass yso:p35905 ;
     skos:prefLabel "koneromantiikka"@fi,
         "maskinromantik"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -3085,6 +3183,7 @@ kauno:p2211 a kaunometa:Concept ;
 
 kauno:p2216 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4070 ;
+    owl:equivalentClass yso:p30217 ;
     skos:prefLabel "vapaa mitta"@fi,
         "fri vers"@sv ;
     kaunometa:facet kaunometa:section_1 .
@@ -4402,8 +4501,8 @@ kauno:p2891 a kaunometa:Concept ;
 kauno:p2905 a kaunometa:Concept ;
     rdfs:comment "Lennokas haltioitumista tai innostusta ilmentävä, usein juhlava ja rakenteeltaan mutkikas, joko riimitetty tai vapaamittainen runo."@fi ;
     owl:equivalentClass yso:p2142 ;
-    skos:prefLabel "oodit"@fi,
-        "oden"@sv ;
+    skos:prefLabel "oodit (runot)"@fi,
+        "oden (dikter)"@sv ;
     kaunometa:facet kaunometa:section_3 ;
     kaunometa:source "Yrjö Hosiaisluoma: Kirjallisuuden sanakirja"@fi .
 
@@ -4948,7 +5047,7 @@ kauno:p3236 a kaunometa:Concept ;
         "Webb-Bella"@sv .
 
 kauno:p3241 a kaunometa:Concept ;
-    owl:equivalentClass yso:p4572 ;
+    rdfs:subClassOf yso:p949 ;
     skos:altLabel "läten"@sv ;
     skos:prefLabel "äänet"@fi,
         "röster"@sv ;
@@ -5042,6 +5141,7 @@ kauno:p3278 a kaunometa:Concept ;
 kauno:p328 a kaunometa:Concept ;
     rdfs:comment "Tiettyä aatetta ajava tai tähdentävä näytelmä, jossa usein tarjotaan ratkaisua yhteiskunnalliseen ongelmaan."@fi ;
     rdfs:subClassOf kauno:p1886 ;
+    owl:equivalentClass yso:p32610 ;
     skos:prefLabel "aatedraamat"@fi,
         "idédramer"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -5370,8 +5470,8 @@ kauno:p3485 a kaunometa:Concept ;
 kauno:p3487 a kaunometa:Concept ;
     rdfs:comment "itsenäinen: tois(t)en vallasta, holhouksesta, avusta tms. riippumaton."@fi ;
     owl:equivalentClass yso:p13263 ;
-    skos:prefLabel "itsenäisyys (valtiot ja yhteisöt)"@fi,
-        "självständighet (stater och gemenskaper)"@sv ;
+    skos:prefLabel "itsenäisyys (valtiot)"@fi,
+        "självständighet (stater)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:source "Kielitoimiston sanakirja"@fi .
 
@@ -5548,8 +5648,6 @@ kauno:p3561 a kaunometa:Concept ;
 
 kauno:p3563 a kaunometa:Concept ;
     owl:equivalentClass yso:p4178 ;
-    skos:prefLabel "mongoloidit"@fi,
-        "mongoloider"@sv ;
     kaunometa:facet kaunometa:section_6 .
 
 kauno:p3564 a kaunometa:Concept ;
@@ -6012,8 +6110,8 @@ kauno:p3807 a kaunometa:Concept ;
     rdfs:comment "Antiikin aikana elegiseen runomittaan laadittu runoelma, useimmiten hauta-, muisto- tai omistuskirjoitus; sittemmin yleensä runo, jolla on melankolinen pohjasävy."@fi,
         "klagosång, sorgekväde, t.ex. över en avliden; ursprungligen ett antikt versmått."@sv ;
     owl:equivalentClass yso:p10201 ;
-    skos:prefLabel "elegiat"@fi,
-        "elegier"@sv ;
+    skos:prefLabel "elegiat (runot)"@fi,
+        "elegier (dikter)"@sv ;
     kaunometa:facet kaunometa:section_3 ;
     kaunometa:source "Yrjö Hosiaisluoma: Kirjallisuuden sanakirja"@fi,
         "Nationalencyklopedin"@sv .
@@ -6090,11 +6188,9 @@ kauno:p3875 a kaunometa:Concept ;
         "Webb-Bella"@sv .
 
 kauno:p3883 a kaunometa:Concept ;
-    rdfs:comment "Tarkoittaa vuoden 1905 yleislakkoa"@fi,
-        "Termen står för generalstrejken 1905"@sv ;
     owl:equivalentClass yso:p16533 ;
-    skos:prefLabel "suurlakko"@fi,
-        "storstrejken"@sv ;
+    skos:prefLabel "suurlakko (1905)"@fi,
+        "storstrejken (1905)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:source "Verkko-Kaunokki"@fi,
         "Webb-Bella"@sv .
@@ -7689,8 +7785,7 @@ kauno:p514 a kaunometa:Concept ;
 
 kauno:p515 a kaunometa:Concept ;
     owl:equivalentClass yso:p18481 ;
-    skos:altLabel "eläimet -- käyttäytyminen"@fi,
-        "djurens beteende"@sv ;
+    skos:altLabel "djurens beteende"@sv ;
     skos:prefLabel "eläinten käyttäytyminen"@fi,
         "djurbeteende"@sv ;
     kaunometa:facet kaunometa:section_1 .
@@ -8128,6 +8223,7 @@ kauno:p5330 a kaunometa:Concept ;
 
 kauno:p5342 a kaunometa:Concept ;
     rdfs:subClassOf yso:p7500 ;
+    owl:equivalentClass yso:p38203 ;
     skos:altLabel "palavrar"@sv ;
     skos:prefLabel "konferenssit"@fi,
         "konferenser"@sv ;
@@ -8540,6 +8636,7 @@ kauno:p5463 a kaunometa:Concept ;
 
 kauno:p5464 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4446 ;
+    owl:equivalentClass yso:p28382 ;
     skos:altLabel "Ensimmäinen Tšetšenian sota"@fi,
         "Toinen Tšetšenian sota"@fi,
         "Tsetsenian sota"@fi,
@@ -8745,6 +8842,7 @@ kauno:p5502 a kaunometa:Concept ;
 
 kauno:p5503 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p6026 ;
+    owl:equivalentClass yso:p27596 ;
     skos:altLabel "Israelin ja Palestiinan kriisi"@fi,
         "Israelin-Palestiinan konflikti"@fi,
         "Lähi-idän konflikti"@fi,
@@ -9032,6 +9130,7 @@ kauno:p5540 a kaunometa:Concept ;
 
 kauno:p5541 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p2075 ;
+    owl:equivalentClass yso:p28736 ;
     skos:prefLabel "Yhdysvaltain sisällissota"@fi,
         "amerikanska inbördeskriget"@sv ;
     kaunometa:developmentComment "Puuttuu YSO"@fi ;
@@ -9851,6 +9950,7 @@ kauno:p5656 a kaunometa:Concept ;
 
 kauno:p5657 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p5478 ;
+    owl:equivalentClass yso:p23641 ;
     skos:prefLabel "Graal"@fi,
         "Graal"@sv ;
     kaunometa:developmentComment "puuttuu YSO"@fi ;
@@ -10050,6 +10150,7 @@ kauno:p569 a kaunometa:Concept ;
 
 kauno:p5692 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4646 ;
+    owl:equivalentClass yso:p27464 ;
     skos:prefLabel "Kristalliyö"@fi,
         "Kristallnatten"@sv ;
     kaunometa:developmentComment "puuttuu YSO"@fi ;
@@ -11732,6 +11833,7 @@ kauno:p5940 a kaunometa:Concept ;
     rdfs:comment "Kosovon sota tarkoittaa kahta aseellista selkkausta (sisällissotaa ja kansainvälistä sotaa) entisen Jugoslavian alueella. 1) Sisällissota 1996-1999. 2) NATOn hyökkäys Jugoslaviaan vuonna 1999"@fi,
         "Avser två beväpnade konflikter (inbördeskrig och internationellt krig) på forna Jugoslaviens område. 1. Inbördeskriget 1996-1999. 2.NATO:s anfall på Jugoslavien 1999"@sv ;
     rdfs:subClassOf kauno:p5690 ;
+    owl:equivalentClass yso:p26080 ;
     skos:prefLabel "Kosovon sota"@fi,
         "Kosovokriget"@sv ;
     kaunometa:developmentComment "puuttuu YSO"@fi ;
@@ -12115,6 +12217,7 @@ kauno:p5991 a kaunometa:Concept ;
 
 kauno:p5992 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p5173 ;
+    owl:equivalentClass yso:p27080 ;
     skos:altLabel "Orient Express"@fi,
         "Orient Express"@sv ;
     skos:prefLabel "Idän pikajuna"@fi,
@@ -12884,14 +12987,6 @@ kauno:p6113 a kaunometa:Concept ;
     kaunometa:related kauno:p4664,
         kauno:p5807 .
 
-kauno:p6115 a kaunometa:Concept ;
-    owl:equivalentClass yso:p24758 ;
-    skos:prefLabel "oikeakätisyys"@fi,
-        "högerhänthet"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1139,
-        kauno:p4194 .
-
 kauno:p6117 a kaunometa:Concept ;
     owl:equivalentClass yso:p28015 ;
     skos:altLabel "forumiteatteri"@fi,
@@ -12954,6 +13049,7 @@ kauno:p6122 a kaunometa:Concept ;
 
 kauno:p6123 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4401 ;
+    owl:equivalentClass yso:p29687 ;
     skos:prefLabel "sivistymättömyys"@fi,
         "obildning"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -13357,6 +13453,7 @@ kauno:p6184 a kaunometa:Concept ;
 
 kauno:p6185 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p5666 ;
+    owl:equivalentClass yso:p30167 ;
     skos:prefLabel "nuortensarjat"@fi,
         "TV-serier för ungdomar"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -13535,6 +13632,7 @@ kauno:p6211 a kaunometa:Concept ;
 
 kauno:p6214 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p3081 ;
+    owl:equivalentClass yso:p27648 ;
     skos:altLabel "Tanssiva kongressi"@fi,
         "Wienin tanssiva kongressi"@fi ;
     skos:prefLabel "Wienin kongressi"@fi,
@@ -14400,6 +14498,7 @@ kauno:p6344 a kaunometa:Concept ;
 
 kauno:p6345 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p757 ;
+    owl:equivalentClass yso:p29663 ;
     skos:prefLabel "Daisy-kirjat"@fi,
         "Daisy-böcker"@sv ;
     kaunometa:facet kaunometa:section_3 .
@@ -14582,6 +14681,7 @@ kauno:p6381 a kaunometa:Concept ;
 kauno:p6400 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p183,
         kauno:p5792 ;
+    owl:equivalentClass yso:p29694 ;
     skos:prefLabel "kauhupelit"@fi,
         "skräckspel"@sv ;
     kaunometa:facet kaunometa:section_3 .
@@ -14684,6 +14784,7 @@ kauno:p6516 a kaunometa:Concept ;
 
 kauno:p6518 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p3707 ;
+    owl:equivalentClass yso:p29494 ;
     skos:prefLabel "bookcrossing"@fi,
         "bookcrossing"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -14882,6 +14983,7 @@ kauno:p760 a kaunometa:Concept ;
     rdfs:comment "Käytetään runomuotoisista romaaneista."@fi,
         "Används om romaner skrivna i bunden form."@sv ;
     rdfs:subClassOf yso:p1896 ;
+    owl:equivalentClass yso:p35397 ;
     skos:prefLabel "runoromaanit"@fi,
         "versromaner"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -14978,6 +15080,7 @@ kauno:p829 a kaunometa:Concept ;
 kauno:p830 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p3651,
         yso:p3835 ;
+    owl:equivalentClass yso:p21063 ;
     skos:prefLabel "Facebook"@fi,
         "Facebook"@sv ;
     kaunometa:facet kaunometa:section_1 .
@@ -15233,6 +15336,7 @@ kauno:p961 a kaunometa:Concept ;
 
 kauno:p962 a kaunometa:Concept ;
     rdfs:subClassOf yso:p6624 ;
+    owl:equivalentClass yso:p21062 ;
     skos:prefLabel "YouTube"@fi,
         "YouTube"@sv ;
     kaunometa:facet kaunometa:section_1 .
@@ -15562,7 +15666,9 @@ kauno:p1139 a kaunometa:Concept ;
         "höger och vänster"@sv ;
     skos:prefLabel "vasen ja oikea"@fi,
         "vänster och höger"@sv ;
-    kaunometa:facet kaunometa:section_1 .
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p4194,
+        kauno:p6115 .
 
 kauno:p1140 a kaunometa:Concept ;
     owl:equivalentClass yso:p2828 ;
@@ -15963,7 +16069,6 @@ kauno:p136 a kaunometa:Concept ;
 
 kauno:p1366 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p836 ;
-    owl:equivalentClass yso:p13129 ;
     skos:altLabel "reformaatio"@fi ;
     skos:prefLabel "uskonpuhdistus"@fi,
         "reformationen"@sv ;
@@ -16934,7 +17039,7 @@ kauno:p1881 a kaunometa:Concept ;
 
 kauno:p1885 a kaunometa:Concept ;
     owl:equivalentClass yso:p481 ;
-    skos:prefLabel "tappiot"@fi,
+    skos:prefLabel "tappiot (talous)"@fi,
         "förluster (ekonomiska fenomen)"@sv ;
     kaunometa:facet kaunometa:section_1 .
 
@@ -18313,8 +18418,8 @@ kauno:p2667 a kaunometa:Concept ;
 
 kauno:p2668 a kaunometa:Concept ;
     owl:equivalentClass yso:p5229 ;
-    skos:prefLabel "punk"@fi,
-        "punk"@sv ;
+    skos:prefLabel "punk (kulttuuri)"@fi,
+        "punk(kultur)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p4321 .
 
@@ -18490,6 +18595,7 @@ kauno:p2745 a kaunometa:Concept ;
     rdfs:comment "Poliittista, sosiaalista, uskonnollista tai muuta aatetta käsittelevä romaani. Aateromaanille on usein luonteenomaista opettavaisuus, joka toisinaan johtaa tendenssimäisyyteen ja psykologisen kuvauksen stereotyyppisyyteen."@fi,
         "Används om verk, som beskriver och för fram en ideologi."@sv ;
     rdfs:subClassOf kauno:p1344 ;
+    owl:equivalentClass yso:p29719 ;
     skos:altLabel "aatekirjallisuus"@fi,
         "katsomusromaanit"@fi,
         "livsåskådningslitteratur"@sv,
@@ -19438,6 +19544,7 @@ kauno:p3196 a kaunometa:Concept ;
 kauno:p3202 a kaunometa:Concept ;
     rdfs:comment "Kerronnan siirtyminen aiempiin tapahtumiin; paluu ajassa taaksepäin; retrospektio; analepsis."@fi ;
     rdfs:subClassOf yso:p400 ;
+    owl:equivalentClass yso:p29753 ;
     skos:altLabel "takautumat"@fi,
         "tillbakablickar"@sv ;
     skos:prefLabel "takaumat"@fi,
@@ -19498,8 +19605,8 @@ kauno:p322 a kaunometa:Concept ;
 
 kauno:p3227 a kaunometa:Concept ;
     owl:equivalentClass yso:p6358 ;
-    skos:prefLabel "neorealismi"@fi,
-        "neorealism"@sv ;
+    skos:prefLabel "neorealismi (taide)"@fi,
+        "neorealism (konst)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1781 .
 
@@ -20643,7 +20750,7 @@ kauno:p3743 a kaunometa:Concept ;
 kauno:p3745 a kaunometa:Concept ;
     owl:equivalentClass yso:p20729 ;
     skos:altLabel "julistaminen"@fi ;
-    skos:prefLabel "julistus (toiminta)"@fi,
+    skos:prefLabel "julistaminen"@fi,
         "förkunnelse"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p542 .
@@ -21583,12 +21690,6 @@ kauno:p4186 a kaunometa:Concept ;
         "medberoende"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p4557 .
-
-kauno:p4194 a kaunometa:Concept ;
-    owl:equivalentClass yso:p19546 ;
-    skos:prefLabel "vasenkätisyys"@fi,
-        "vänsterhänthet"@sv ;
-    kaunometa:facet kaunometa:section_1 .
 
 kauno:p4195 a kaunometa:Concept ;
     owl:equivalentClass yso:p15403 ;
@@ -22972,7 +23073,7 @@ kauno:p5131 a kaunometa:Concept ;
 
 kauno:p5134 a kaunometa:Concept ;
     owl:equivalentClass yso:p8884 ;
-    skos:prefLabel "maalaus (taiteellinen luonti)"@fi,
+    skos:prefLabel "maalaus (kuvataide)"@fi,
         "målning (konstnärligt skapande)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p718 .
@@ -23652,8 +23753,8 @@ kauno:p5471 a kaunometa:Concept ;
     owl:equivalentClass yso:p5124 ;
     skos:altLabel "liikevoitto"@fi,
         "företagsvinst"@sv ;
-    skos:prefLabel "voitot"@fi,
-        "vinster"@sv ;
+    skos:prefLabel "voitot (talous)"@fi,
+        "vinster (ekonomi)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1885,
         kauno:p2388 .
@@ -24852,7 +24953,7 @@ kauno:p6089 a kaunometa:Concept ;
 
 kauno:p609 a kaunometa:Concept ;
     owl:equivalentClass yso:p10976 ;
-    skos:altLabel "metamorfoosi -- biologia"@fi,
+    skos:altLabel "metamorfoosi (biologia)"@fi,
         "muodonmuutos"@fi ;
     skos:prefLabel "muodonvaihdos"@fi,
         "metamorfos (biologi)"@sv ;
@@ -24892,6 +24993,14 @@ kauno:p6114 a kaunometa:Concept ;
         "veckoslut"@sv ;
     kaunometa:facet kaunometa:section_4 ;
     kaunometa:related kauno:p2906 .
+
+kauno:p6115 a kaunometa:Concept ;
+    owl:equivalentClass yso:p24758 ;
+    skos:prefLabel "oikeakätisyys"@fi,
+        "högerhänthet"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1139,
+        kauno:p4194 .
 
 kauno:p6116 a kaunometa:Concept ;
     owl:equivalentClass yso:p28232 ;
@@ -27367,7 +27476,7 @@ kauno:p1717 a kaunometa:Concept ;
     owl:equivalentClass yso:p16711 ;
     skos:altLabel "förlorande"@sv,
         "utplånande"@sv ;
-    skos:prefLabel "häviäminen (häviön kärsiminen)"@fi,
+    skos:prefLabel "häviäminen (tappio)"@fi,
         "nederlag"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p2388 .
@@ -27508,7 +27617,7 @@ kauno:p1813 a kaunometa:Concept ;
 kauno:p1819 a kaunometa:Concept ;
     owl:equivalentClass yso:p1865 ;
     skos:prefLabel "markkinat (taloustiede)"@fi,
-        "marknaden (samhälleliga system)"@sv ;
+        "marknader (ekonomi)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1214 .
 
@@ -28055,6 +28164,7 @@ kauno:p2168 a kaunometa:Concept ;
 kauno:p2170 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p2177,
         yso:p649 ;
+    owl:equivalentClass yso:p30150 ;
     skos:prefLabel "kotiinpaluu"@fi,
         "hemkomst"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -28303,6 +28413,7 @@ kauno:p2344 a kaunometa:Concept ;
 kauno:p2345 a kaunometa:Concept ;
     rdfs:comment "Yleisemmin novellikokoelman, mutta toisinaan myös romaanin rakenne-elementteihin kuuluva varsinaisesta ydinkertomuksesta tai kertomussikermästä eroava taustakertomus, jonka avulla on sidottavissa yhteen moniaineksinenkin joukko kertomuksia; kertomus, johon on upotettu toinen kertomus."@fi ;
     rdfs:subClassOf kauno:p2048 ;
+    owl:equivalentClass yso:p33451 ;
     skos:altLabel "kehyskertomus"@fi ;
     skos:prefLabel "kehyskertomukset"@fi,
         "ramberättelser"@sv ;
@@ -28341,7 +28452,7 @@ kauno:p2358 a kaunometa:Concept ;
 kauno:p2361 a kaunometa:Concept ;
     owl:equivalentClass yso:p2978 ;
     skos:prefLabel "hallitukset (julkinen hallinto)"@fi,
-        "regeringar (förvaltningsmyndigheter)"@sv ;
+        "regeringar"@sv ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p4561,
         kauno:p524 .
@@ -29018,6 +29129,17 @@ kauno:p2732 a kaunometa:Concept ;
     kaunometa:related kauno:p62,
         kauno:p904 .
 
+kauno:p2733 a kaunometa:Concept ;
+    rdfs:subClassOf yso:p191 ;
+    skos:altLabel "päihteiden käyttö"@fi,
+        "rusmedelsbruk"@sv ;
+    skos:prefLabel "päihteet -- käyttö"@fi,
+        "rusmedel -- användning"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1220,
+        kauno:p1742,
+        kauno:p3106 .
+
 kauno:p2734 a kaunometa:Concept ;
     rdfs:comment "romaanin, elokuvan tms. totunnaisesta poikkeava sankari."@fi,
         "(huvud)person i litterärt verk (eller liknande) som avviker från den gängse bilden av en hjälte"@sv ;
@@ -29033,6 +29155,7 @@ kauno:p2734 a kaunometa:Concept ;
 kauno:p2738 a kaunometa:Concept ;
     rdfs:comment "Pääjuonen oheen limitetty kertomus, jolla on usein temaattisesti ja rakenteellisesti merkittävä tehtävä varsinkin romaaneissa... Sisäkertomukset ovat poikkeamia pääjuonesta ja siten omiaan hidastamaan kerrontaa, mutta niiden avulla voidaan luoda monikerroksisempi ja monivivahteisempi kuva maailmasta."@fi ;
     rdfs:subClassOf kauno:p2048 ;
+    owl:equivalentClass yso:p30333 ;
     skos:altLabel "sisäiskertomus"@fi,
         "sisäkertomus"@fi,
         "kärnberättelse"@sv ;
@@ -29931,10 +30054,10 @@ kauno:p3283 a kaunometa:Concept ;
 
 kauno:p3294 a kaunometa:Concept ;
     owl:equivalentClass yso:p11148 ;
-    skos:altLabel "itsenäistyminen -- politiikka"@fi,
-        "självständighetsprocess -- politik"@sv ;
-    skos:prefLabel "itsenäistyminen (valtiot ja yhteisöt)"@fi,
-        "självständighetsprocess (statsvetenskap)"@sv ;
+    skos:altLabel "itsenäistyminen (politiikka)"@fi,
+        "självständighetsprocess (politik)"@sv ;
+    skos:prefLabel "itsenäistyminen (valtiot)"@fi,
+        "självständighetsprocess (stater)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1288,
         kauno:p1722 .
@@ -30172,11 +30295,11 @@ kauno:p3486 a kaunometa:Concept ;
 kauno:p3490 a kaunometa:Concept ;
     rdfs:comment "sensitiivinen =  herkkätuntoinen, herkkä, arka."@fi ;
     owl:equivalentClass yso:p20121 ;
-    skos:altLabel "herkkyys"@fi,
-        "herkkätunteisuus"@fi,
+    skos:altLabel "herkkätunteisuus"@fi,
+        "sensitiivisyys"@fi,
         "tunneherkkyys"@fi ;
-    skos:prefLabel "sensitiivisyys"@fi,
-        "sensitivitet"@sv ;
+    skos:prefLabel "herkkyys (psykologia)"@fi,
+        "sensitivitet (psykologi)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p2845,
         kauno:p3328 ;
@@ -30850,6 +30973,19 @@ kauno:p3851 a kaunometa:Concept ;
     kaunometa:related kauno:p2533,
         kauno:p4126 .
 
+kauno:p3855 a kaunometa:Concept ;
+    rdfs:comment "Asiasanaa käytetään nuorten, erityisesti murrosikäisten kehityspsykologiaan kuuluvasta kaudesta, jolloin nuori etsii rajojaan ja aikuisuuttaan."@fi,
+        "Ämnesordet används för att beskriva en period som hör till ungdomars, speciellt pubertetsungdomars utvecklingspsykologi då den unga söker sina gränser och sitt vuxenblivande."@sv ;
+    rdfs:subClassOf yso:p2124 ;
+    skos:prefLabel "sekoilu"@fi,
+        "rumlande"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1491,
+        kauno:p1793,
+        kauno:p2143 ;
+    kaunometa:source "Verkko-Kaunokki"@fi,
+        "Webb-Bella"@sv .
+
 kauno:p3874 a kaunometa:Concept ;
     owl:equivalentClass yso:p22426 ;
     skos:altLabel "misogynia"@fi,
@@ -31467,6 +31603,12 @@ kauno:p4192 a kaunometa:Concept ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1495 ;
     kaunometa:source "Kielitoimiston sanakirja"@fi .
+
+kauno:p4194 a kaunometa:Concept ;
+    owl:equivalentClass yso:p19546 ;
+    skos:prefLabel "vasenkätisyys"@fi,
+        "vänsterhänthet"@sv ;
+    kaunometa:facet kaunometa:section_1 .
 
 kauno:p4197 a kaunometa:Concept ;
     rdfs:comment "Käytetään lapsille tarkoituista sarjakuvista."@fi,
@@ -32625,7 +32767,7 @@ kauno:p5151 a kaunometa:Concept ;
     rdfs:comment """velvoittava, vaativa kilpailu- t. osallistumiskutsu. 
 Laajemmin vaikea ja kiehtova tehtävä; tarve, vaatimus."""@fi ;
     owl:equivalentClass yso:p6564 ;
-    skos:prefLabel "haasteet (haastavat tilanteet)"@fi,
+    skos:prefLabel "haasteet (ongelmat)"@fi,
         "utmaningar"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p5150,
@@ -33065,6 +33207,7 @@ kauno:p5404 a kaunometa:Concept ;
 kauno:p5409 a kaunometa:Concept ;
     rdfs:comment "Tendenssikirjallisuus on kirjallisuutta, jossa pyritään ohjaamaan lukijan mielipiteitä tiettyyn suuntaan."@fi ;
     rdfs:subClassOf kauno:p2520 ;
+    owl:equivalentClass yso:p38095 ;
     skos:prefLabel "tendenssikirjallisuus"@fi,
         "tendenslitteratur"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -35969,6 +36112,7 @@ kauno:p2144 a kaunometa:Concept ;
 
 kauno:p2149 a kaunometa:Concept ;
     rdfs:subClassOf yso:p1896 ;
+    owl:equivalentClass yso:p29681 ;
     skos:prefLabel "psykologiset romaanit"@fi,
         "psykologiska romaner"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -36299,6 +36443,7 @@ kauno:p2384 a kaunometa:Concept ;
 
 kauno:p2388 a kaunometa:Concept ;
     rdfs:subClassOf yso:p14 ;
+    owl:equivalentClass yso:p38090 ;
     skos:prefLabel "voittaminen"@fi,
         "vinnande"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -36404,6 +36549,7 @@ kauno:p2453 a kaunometa:Concept ;
 
 kauno:p2457 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p4009 ;
+    owl:equivalentClass yso:p37896 ;
     skos:prefLabel "taikasauvat"@fi,
         "trollstavar"@sv ;
     kaunometa:facet kaunometa:section_1 ;
@@ -36512,9 +36658,9 @@ kauno:p2581 a kaunometa:Concept ;
 
 kauno:p2583 a kaunometa:Concept ;
     owl:equivalentClass yso:p2125 ;
-    skos:altLabel "lapsen kehitys"@fi,
-        "barnens utveckling"@sv ;
-    skos:prefLabel "lasten kehitys"@fi,
+    skos:altLabel "lasten kehitys"@fi,
+        "barns utveckling"@sv ;
+    skos:prefLabel "lapsen kehitys"@fi,
         "barnets utveckling"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1167,
@@ -36658,17 +36804,6 @@ kauno:p2725 a kaunometa:Concept ;
     kaunometa:related kauno:p161,
         kauno:p3076,
         kauno:p4632 .
-
-kauno:p2733 a kaunometa:Concept ;
-    rdfs:subClassOf yso:p191 ;
-    skos:altLabel "päihteiden käyttö"@fi,
-        "rusmedelsbruk"@sv ;
-    skos:prefLabel "päihteet -- käyttö"@fi,
-        "rusmedel -- användning"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1220,
-        kauno:p1742,
-        kauno:p3106 .
 
 kauno:p2737 a kaunometa:Concept ;
     owl:equivalentClass yso:p9011 ;
@@ -37221,15 +37356,6 @@ kauno:p3045 a kaunometa:Concept ;
     kaunometa:related kauno:p1668,
         kauno:p3231,
         kauno:p4511 .
-
-kauno:p3047 a kaunometa:Concept ;
-    owl:equivalentClass yso:p820 ;
-    skos:prefLabel "odotukset"@fi,
-        "förväntningar"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1510,
-        kauno:p2061,
-        kauno:p2145 .
 
 kauno:p3053 a kaunometa:Concept ;
     owl:equivalentClass yso:p3393 ;
@@ -38237,19 +38363,6 @@ kauno:p3854 a kaunometa:Concept ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p278,
         kauno:p743 .
-
-kauno:p3855 a kaunometa:Concept ;
-    rdfs:comment "Asiasanaa käytetään nuorten, erityisesti murrosikäisten kehityspsykologiaan kuuluvasta kaudesta, jolloin nuori etsii rajojaan ja aikuisuuttaan."@fi,
-        "Ämnesordet används för att beskriva en period som hör till ungdomars, speciellt pubertetsungdomars utvecklingspsykologi då den unga söker sina gränser och sitt vuxenblivande."@sv ;
-    rdfs:subClassOf yso:p2124 ;
-    skos:prefLabel "sekoilu"@fi,
-        "rumlande"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1491,
-        kauno:p1793,
-        kauno:p2143 ;
-    kaunometa:source "Verkko-Kaunokki"@fi,
-        "Webb-Bella"@sv .
 
 kauno:p3868 a kaunometa:Concept ;
     owl:equivalentClass yso:p21102 ;
@@ -41564,14 +41677,13 @@ kauno:p1792 a kaunometa:Concept ;
         kauno:p5190 .
 
 kauno:p1793 a kaunometa:Concept ;
-    owl:equivalentClass yso:p11616 ;
     skos:altLabel "tonår"@sv ;
+    skos:broader kauno:p2837 ;
     skos:prefLabel "murrosikäiset"@fi,
         "tonåringar"@sv ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p2143,
         kauno:p2837,
-        kauno:p3855,
         kauno:p6193 .
 
 kauno:p1796 a kaunometa:Concept ;
@@ -41770,6 +41882,7 @@ kauno:p2072 a kaunometa:Concept ;
 
 kauno:p2084 a kaunometa:Concept ;
     rdfs:subClassOf yso:p2424 ;
+    owl:equivalentClass yso:p37837 ;
     skos:prefLabel "rinnakkaiset maailmat"@fi,
         "parallella världar"@sv ;
     kaunometa:facet kaunometa:section_2 ;
@@ -42719,6 +42832,15 @@ kauno:p3024 a kaunometa:Concept ;
         kauno:p3774,
         kauno:p378 .
 
+kauno:p3047 a kaunometa:Concept ;
+    owl:equivalentClass yso:p820 ;
+    skos:prefLabel "odotukset"@fi,
+        "förväntningar"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1510,
+        kauno:p2061,
+        kauno:p2145 .
+
 kauno:p3051 a kaunometa:Concept ;
     owl:equivalentClass yso:p3762 ;
     skos:altLabel "ungdomarnas ställning"@sv ;
@@ -43078,8 +43200,8 @@ kauno:p3357 a kaunometa:Concept ;
 
 kauno:p3401 a kaunometa:Concept ;
     owl:equivalentClass yso:p14883 ;
-    skos:prefLabel "kolhoosit (organisaatiot)"@fi,
-        "kolhoser (organisationer)"@sv ;
+    skos:prefLabel "kolhoosit"@fi,
+        "kolhoser"@sv ;
     kaunometa:facet kaunometa:section_2 ;
     kaunometa:related kauno:p127,
         kauno:p1483,
@@ -44090,7 +44212,7 @@ kauno:p4482 a kaunometa:Concept ;
 
 kauno:p4492 a kaunometa:Concept ;
     owl:equivalentClass yso:p1586 ;
-    skos:prefLabel "tekniikka (erikoisalat)"@fi,
+    skos:prefLabel "tekniikka (tieteet)"@fi,
         "teknik (vetenskaper)"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p4305,
@@ -45767,8 +45889,6 @@ kauno:p1560 a kaunometa:Concept ;
         kauno:p4387 .
 
 kauno:p1568 a kaunometa:Concept ;
-    skos:prefLabel "splatter"@fi,
-        "splatter"@sv ;
     kaunometa:facet owl:DeprecatedClass ;
     yso-meta:developmentComment "haudattu"@fi .
 
@@ -46597,11 +46717,11 @@ kauno:p2794 a kaunometa:Concept ;
 
 kauno:p2796 a kaunometa:Concept ;
     owl:equivalentClass yso:p5437 ;
-    skos:altLabel "lopettaminen"@fi,
+    skos:altLabel "lopetus"@fi,
         "avslutande"@sv,
         "avslutning"@sv,
         "nedläggning"@sv ;
-    skos:prefLabel "lopetus"@fi,
+    skos:prefLabel "lopettaminen"@fi,
         "slutande"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1216,
@@ -47383,8 +47503,8 @@ kauno:p3835 a kaunometa:Concept ;
 
 kauno:p3843 a kaunometa:Concept ;
     owl:equivalentClass yso:p17592 ;
-    skos:prefLabel "tuomarit"@fi,
-        "domare"@sv ;
+    skos:prefLabel "tuomarit (oikeus)"@fi,
+        "domare (juridik)"@sv ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p1926,
         kauno:p3449,
@@ -48851,7 +48971,7 @@ kauno:p1237 a kaunometa:Concept ;
         kauno:p4646 .
 
 kauno:p1253 a kaunometa:Concept ;
-    owl:equivalentClass yso:p4363 ;
+    rdfs:subClassOf kauno:p3917 ;
     skos:altLabel "ydinperheet"@fi,
         "kärnfamiljer"@sv ;
     skos:prefLabel "perheet"@fi,
@@ -49169,7 +49289,6 @@ kauno:p1742 a kaunometa:Concept ;
         "droganvändning"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p2678,
-        kauno:p2733,
         kauno:p2889,
         kauno:p5052 .
 
@@ -49491,7 +49610,7 @@ kauno:p2200 a kaunometa:Concept ;
 kauno:p2209 a kaunometa:Concept ;
     owl:equivalentClass yso:p10848 ;
     skos:altLabel "rädsla"@sv ;
-    skos:prefLabel "pelko (tunteet)"@fi,
+    skos:prefLabel "pelko"@fi,
         "fruktan"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1287,
@@ -49722,8 +49841,8 @@ kauno:p2551 a kaunometa:Concept ;
     rdfs:comment "Tarkoittaa valkoisen eli europidisen rodun edustajia."@fi,
         "En annan term för europider och kaukasoider."@sv ;
     owl:equivalentClass yso:p9960 ;
-    skos:prefLabel "valkoiset (etninen rooli)"@fi,
-        "vita"@sv ;
+    skos:prefLabel "valkoihoiset"@fi,
+        "vithyade"@sv ;
     kaunometa:facet kaunometa:section_6 ;
     kaunometa:related kauno:p139,
         kauno:p2757,
@@ -51686,16 +51805,6 @@ kauno:p1216 a kaunometa:Concept ;
         kauno:p5050,
         kauno:p746 .
 
-kauno:p123 a kaunometa:Concept ;
-    owl:equivalentClass yso:p8113 ;
-    skos:altLabel "kirjallisuus (erikoisala)"@fi,
-        "kirjallisuus (kirjalliset teokset)"@fi,
-        "litteratur (genre)"@sv,
-        "litteratur (litterära verk)"@sv ;
-    skos:prefLabel "kirjallisuus"@fi,
-        "litteratur"@sv ;
-    kaunometa:facet kaunometa:section_1 .
-
 kauno:p1231 a kaunometa:Concept ;
     owl:equivalentClass yso:p9241 ;
     skos:prefLabel "satiiri"@fi,
@@ -53598,7 +53707,7 @@ kauno:p2511 a kaunometa:Concept ;
         "kuvande"@sv,
         "kuvning"@sv,
         "underkuvande"@sv ;
-    skos:prefLabel "alistus (vallan alaisuuteen)"@fi,
+    skos:prefLabel "alistus (vallankäyttö)"@fi,
         "underkuvning"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1407,
@@ -54729,8 +54838,8 @@ kauno:p1631 a kaunometa:Concept ;
 
 kauno:p181 a kaunometa:Concept ;
     owl:equivalentClass yso:p1688 ;
-    skos:prefLabel "städer @sv}",
-        "kaupungit"@fi ;
+    skos:prefLabel "kaupungit"@fi,
+        "städer"@sv ;
     kaunometa:facet kaunometa:section_2 ;
     kaunometa:related kauno:p2123,
         kauno:p2300,
@@ -55288,16 +55397,6 @@ kauno:p3887 a kaunometa:Concept ;
         kauno:p3503,
         kauno:p4600 .
 
-kauno:p3917 a kaunometa:Concept ;
-    owl:equivalentClass yso:p1127 ;
-    skos:prefLabel "ryhmät"@fi,
-        "grupper"@sv ;
-    kaunometa:facet kaunometa:section_6 ;
-    kaunometa:related kauno:p5090,
-        kauno:p5091,
-        kauno:p5092,
-        kauno:p5093 .
-
 kauno:p3954 a kaunometa:Concept ;
     rdfs:comment "vars. säännöllisesti pidettävä musiikki-, elokuva- tm. juhla."@fi ;
     owl:equivalentClass yso:p1304 ;
@@ -55403,20 +55502,6 @@ kauno:p4403 a kaunometa:Concept ;
         kauno:p3061,
         kauno:p4583,
         kauno:p469 .
-
-kauno:p4446 a kaunometa:Concept ;
-    rdfs:comment "Sanasto sisältää joidenkin sotien nimiä; myös kaikkia muita voi käyttää asiasanoina. Eri maiden väliset sodat indeksoidaan esim. sodat -- Japani -- Venäjä -- 1904-1905 ja/tai käyttämällä sodan nimeä asiasanana, esim. Persianlahden sota."@fi,
-        "Registret upptar namnen på några krig ; också alla andra kan användas som ämnesord. Krig mellan olika länder indexeras t.ex. krig -- Japan -- Ryssland -- 1904-1905 och/eller att använda namnet som ämnesord, t.ex. Persiska kriget"@sv ;
-    owl:equivalentClass yso:p1271 ;
-    skos:prefLabel "sodat (tapahtumat)"@fi,
-        "krig"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1041,
-        kauno:p2189,
-        kauno:p3224,
-        kauno:p4212 ;
-    kaunometa:source "Verkko-Kaunokki"@fi,
-        "Webb-Bella"@sv .
 
 kauno:p4575 a kaunometa:Concept ;
     owl:equivalentClass yso:p6735 ;
@@ -55748,6 +55833,7 @@ kauno:p1224 a kaunometa:Concept ;
     rdfs:comment "Käytetään teoksista, jotka yleensä kuvaavat yksityisetsivän työtä ja joissa rikoksen selvittämiseen liittyy yleensä yhteiskuntakuvausta ja kritiikkiä."@fi,
         "Används om verk, som i allmänhet skildrar privatdetektivens arbete och där kritik riktas mot samhället i samband med att brotten kartläggs."@sv ;
     rdfs:subClassOf yso:p5088 ;
+    owl:equivalentClass yso:p29768 ;
     skos:prefLabel "kovaksikeitetty rikoskirjallisuus"@fi,
         "hårdkokt kriminalfiktion"@sv ;
     kaunometa:facet kaunometa:section_3 ;
@@ -55778,24 +55864,6 @@ kauno:p1491 a kaunometa:Concept ;
         kauno:p3855,
         kauno:p4347,
         kauno:p5361 .
-
-kauno:p1522 a kaunometa:Concept ;
-    rdfs:comment "Sotilasarvojen nimiä voi käyttää asiasanoina, esim. kersantit."@fi,
-        "Namn på militära grader kan användas som ämnesord, t.ex. sergeanter."@sv ;
-    owl:equivalentClass yso:p2504 ;
-    skos:prefLabel "sotilaat"@fi,
-        "soldater"@sv ;
-    kaunometa:facet kaunometa:section_6 ;
-    kaunometa:related kauno:p1420,
-        kauno:p2190,
-        kauno:p2331,
-        kauno:p2846,
-        kauno:p3762,
-        kauno:p4527,
-        kauno:p5322,
-        kauno:p599 ;
-    kaunometa:source "Verkko-Kaunokki"@fi,
-        "Webb-Bella"@sv .
 
 kauno:p1648 a kaunometa:Concept ;
     owl:equivalentClass yso:p1571 ;
@@ -55857,6 +55925,7 @@ kauno:p2011 a kaunometa:Concept ;
     rdfs:comment "Käytetään rikoskirjoista, jotka kuvaavat poliisin työtä rikoksen selvittämiseksi."@fi,
         "Används om verk, som beskriver polisens arbete och utredning av brott."@sv ;
     rdfs:subClassOf yso:p5088 ;
+    owl:equivalentClass yso:p29712 ;
     skos:altLabel "poliisiromaanit"@fi ;
     skos:prefLabel "poliisikirjallisuus"@fi,
         "polisromaner"@sv ;
@@ -56245,6 +56314,16 @@ kauno:p3893 a kaunometa:Concept ;
         kauno:p470,
         kauno:p702 .
 
+kauno:p3917 a kaunometa:Concept ;
+    owl:equivalentClass yso:p1127 ;
+    skos:prefLabel "ryhmät"@fi,
+        "grupper"@sv ;
+    kaunometa:facet kaunometa:section_6 ;
+    kaunometa:related kauno:p5090,
+        kauno:p5091,
+        kauno:p5092,
+        kauno:p5093 .
+
 kauno:p4143 a kaunometa:Concept ;
     owl:equivalentClass yso:p2798 ;
     skos:prefLabel "avoliitto"@fi,
@@ -56291,6 +56370,20 @@ kauno:p4390 a kaunometa:Concept ;
         kauno:p3780,
         kauno:p4015,
         kauno:p646 .
+
+kauno:p4446 a kaunometa:Concept ;
+    rdfs:comment "Sanasto sisältää joidenkin sotien nimiä; myös kaikkia muita voi käyttää asiasanoina. Eri maiden väliset sodat indeksoidaan esim. sodat -- Japani -- Venäjä -- 1904-1905 ja/tai käyttämällä sodan nimeä asiasanana, esim. Persianlahden sota."@fi,
+        "Registret upptar namnen på några krig ; också alla andra kan användas som ämnesord. Krig mellan olika länder indexeras t.ex. krig -- Japan -- Ryssland -- 1904-1905 och/eller att använda namnet som ämnesord, t.ex. Persiska kriget"@sv ;
+    owl:equivalentClass yso:p1271 ;
+    skos:prefLabel "sodat"@fi,
+        "krig"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1041,
+        kauno:p2189,
+        kauno:p3224,
+        kauno:p4212 ;
+    kaunometa:source "Verkko-Kaunokki"@fi,
+        "Webb-Bella"@sv .
 
 kauno:p4534 a kaunometa:Concept ;
     owl:equivalentClass yso:p9662 ;
@@ -56380,6 +56473,24 @@ kauno:p1346 a kaunometa:Concept ;
         kauno:p4595,
         kauno:p606,
         kauno:p668 .
+
+kauno:p1522 a kaunometa:Concept ;
+    rdfs:comment "Sotilasarvojen nimiä voi käyttää asiasanoina, esim. kersantit."@fi,
+        "Namn på militära grader kan användas som ämnesord, t.ex. sergeanter."@sv ;
+    owl:equivalentClass yso:p2504 ;
+    skos:prefLabel "sotilaat"@fi,
+        "soldater"@sv ;
+    kaunometa:facet kaunometa:section_6 ;
+    kaunometa:related kauno:p1420,
+        kauno:p2190,
+        kauno:p2331,
+        kauno:p2846,
+        kauno:p3762,
+        kauno:p4527,
+        kauno:p5322,
+        kauno:p599 ;
+    kaunometa:source "Verkko-Kaunokki"@fi,
+        "Webb-Bella"@sv .
 
 kauno:p1542 a kaunometa:Concept ;
     rdfs:comment "Käytetään teoksista, jotka kuvaavat salapoliisin tai yksityisetsivän suorittamaa rikoksen selvittämistä."@fi,
@@ -56902,23 +57013,6 @@ kauno:p2298 a kaunometa:Concept ;
         kauno:p4580,
         kauno:p720 .
 
-kauno:p2459 a kaunometa:Concept ;
-    owl:equivalentClass yso:p3485 ;
-    skos:altLabel "emootiot"@fi,
-        "tunnetilat"@fi,
-        "emotioner"@sv,
-        "känslotillstånd"@sv ;
-    skos:prefLabel "tunteet"@fi,
-        "känslor"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p1341,
-        kauno:p165,
-        kauno:p2543,
-        kauno:p2614,
-        kauno:p291,
-        kauno:p3422,
-        kauno:p3951 .
-
 kauno:p3520 a kaunometa:Concept ;
     owl:equivalentClass yso:p2084 ;
     skos:prefLabel "aselajit"@fi,
@@ -57049,8 +57143,8 @@ kauno:p3979 a kaunometa:Concept ;
         kauno:p866 .
 
 kauno:p4400 a kaunometa:Concept ;
-    owl:equivalentClass yso:p4608 ;
-    skos:prefLabel "pelot (spesifiset)"@fi,
+    rdfs:subClassOf kauno:p2459 ;
+    skos:prefLabel "pelot"@fi,
         "rädslor"@sv ;
     kaunometa:facet kaunometa:section_1 ;
     kaunometa:related kauno:p1327,
@@ -57158,6 +57252,23 @@ kauno:p2069 a kaunometa:Concept ;
         kauno:p4143,
         kauno:p720,
         kauno:p746 .
+
+kauno:p2459 a kaunometa:Concept ;
+    owl:equivalentClass yso:p3485 ;
+    skos:altLabel "emootiot"@fi,
+        "tunnetilat"@fi,
+        "emotioner"@sv,
+        "känslotillstånd"@sv ;
+    skos:prefLabel "tunteet"@fi,
+        "känslor"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p1341,
+        kauno:p165,
+        kauno:p2543,
+        kauno:p2614,
+        kauno:p291,
+        kauno:p3422,
+        kauno:p3951 .
 
 kauno:p2514 a kaunometa:Concept ;
     owl:equivalentClass yso:p8053 ;
@@ -57321,20 +57432,6 @@ kauno:p4200 a kaunometa:Concept ;
         kauno:p552,
         kauno:p862,
         kauno:p883 .
-
-kauno:p4223 a kaunometa:Concept ;
-    owl:equivalentClass yso:p2571 ;
-    skos:prefLabel "juhlapäivät"@fi,
-        "högtider"@sv ;
-    kaunometa:facet kaunometa:section_1 ;
-    kaunometa:related kauno:p2117,
-        kauno:p2935,
-        kauno:p3149,
-        kauno:p3635,
-        kauno:p3954,
-        kauno:p4323,
-        kauno:p498,
-        kauno:p5209 .
 
 kauno:p551 a kaunometa:Concept ;
     owl:equivalentClass yso:p247 ;
@@ -57501,6 +57598,20 @@ kauno:p3681 a kaunometa:Concept ;
         kauno:p4309,
         kauno:p559,
         kauno:p896 .
+
+kauno:p4223 a kaunometa:Concept ;
+    owl:equivalentClass yso:p2571 ;
+    skos:prefLabel "juhlapäivät"@fi,
+        "högtider"@sv ;
+    kaunometa:facet kaunometa:section_1 ;
+    kaunometa:related kauno:p2117,
+        kauno:p2935,
+        kauno:p3149,
+        kauno:p3635,
+        kauno:p3954,
+        kauno:p4323,
+        kauno:p498,
+        kauno:p5209 .
 
 kauno:p548 a kaunometa:Concept ;
     owl:equivalentClass yso:p629 ;
@@ -58027,6 +58138,16 @@ kauno:p5666 a kaunometa:Concept ;
         "tv-serier"@sv ;
     kaunometa:facet kaunometa:section_3 .
 
+kauno:p123 a kaunometa:Concept ;
+    owl:equivalentClass yso:p8113 ;
+    skos:altLabel "kirjallisuus (erikoisala)"@fi,
+        "kirjallisuus (kirjalliset teokset)"@fi,
+        "litteratur (genre)"@sv,
+        "litteratur (litterära verk)"@sv ;
+    skos:prefLabel "kirjallisuus"@fi,
+        "litteratur"@sv ;
+    kaunometa:facet kaunometa:section_1 .
+
 kauno:p1954 a kaunometa:Concept ;
     rdfs:subClassOf kauno:p2758 ;
     owl:equivalentClass yso:p626 ;
@@ -58067,28 +58188,6 @@ kauno:p2637 a kaunometa:Concept ;
         kauno:p534,
         kauno:p706,
         kauno:p823 .
-
-kauno:p2837 a kaunometa:Concept ;
-    owl:equivalentClass yso:p5593 ;
-    skos:altLabel "ikäluokat"@fi,
-        "åldersklasser"@sv ;
-    skos:prefLabel "ikäryhmät"@fi,
-        "åldersgrupper"@sv ;
-    kaunometa:facet kaunometa:section_6 ;
-    kaunometa:related kauno:p1251,
-        kauno:p142,
-        kauno:p1519,
-        kauno:p1622,
-        kauno:p1649,
-        kauno:p1793,
-        kauno:p2143,
-        kauno:p2285,
-        kauno:p251,
-        kauno:p2916,
-        kauno:p2957,
-        kauno:p3313,
-        kauno:p4128,
-        kauno:p4148 .
 
 kauno:p707 a kaunometa:Concept ;
     owl:equivalentClass yso:p5131 ;
@@ -58157,6 +58256,28 @@ kauno:p2590 a kaunometa:Concept ;
         kauno:p784,
         kauno:p821,
         kauno:p970 .
+
+kauno:p2837 a kaunometa:Concept ;
+    owl:equivalentClass yso:p5593 ;
+    skos:altLabel "ikäluokat"@fi,
+        "åldersklasser"@sv ;
+    skos:prefLabel "ikäryhmät"@fi,
+        "åldersgrupper"@sv ;
+    kaunometa:facet kaunometa:section_6 ;
+    kaunometa:related kauno:p1251,
+        kauno:p142,
+        kauno:p1519,
+        kauno:p1622,
+        kauno:p1649,
+        kauno:p1793,
+        kauno:p2143,
+        kauno:p2285,
+        kauno:p251,
+        kauno:p2916,
+        kauno:p2957,
+        kauno:p3313,
+        kauno:p4128,
+        kauno:p4148 .
 
 kauno:p3780 a kaunometa:Concept ;
     owl:equivalentClass yso:p6935 ;
