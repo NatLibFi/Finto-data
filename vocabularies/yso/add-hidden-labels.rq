@@ -1,0 +1,23 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX yso: <http://www.yso.fi/onto/yso/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/> 
+
+CONSTRUCT { ?sub skos:hiddenLabel ?newLiteral . }
+
+WHERE {
+  
+  ?sub a yso-meta:Concept .
+  {
+  	?sub skos:prefLabel ?bracketLabel .
+  }
+  UNION {
+  	?sub skos:altLabel ?bracketLabel .
+  }
+  FILTER (CONTAINS(STR(?bracketLabel), " ("))
+  BIND (STRBEFORE(?bracketLabel, " (") AS ?newLiteral)
+  FILTER NOT EXISTS { ?sub ?pred ?newLiteral }
+  
+}
+
