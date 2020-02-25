@@ -400,14 +400,6 @@ slm:s1089 a skos:Concept ;
         "gravinskrifter"@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s109 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p28710> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "dokumenttisarjat"@fi,
-        "dokumentärserier"@sv ;
-    skos:topConceptOf slm: .
-
 slm:s1091 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s356 ;
@@ -1678,13 +1670,6 @@ slm:s1352 a skos:Concept ;
         "dödsannonser"@sv ;
     skos:topConceptOf slm: .
 
-slm:s1354 a skos:Concept ;
-    dct:created "2020-02-21"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
-    skos:broader owl:Thing ;
-    skos:inScheme slm: ;
-    skos:prefLabel "urheiludokumentit"@fi .
-
 slm:s1357 a skos:Concept ;
     dct:created "2020-02-21"^^xsd:date ;
     dct:modified "2020-02-21"^^xsd:date ;
@@ -1715,13 +1700,6 @@ slm:s1361 a skos:Concept ;
     skos:inScheme slm: ;
     skos:prefLabel "tiedotteet"@fi ;
     skos:topConceptOf slm: .
-
-slm:s1362 a skos:Concept ;
-    dct:created "2020-02-21"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
-    skos:broader owl:Thing ;
-    skos:inScheme slm: ;
-    skos:prefLabel "sotadokumentit"@fi .
 
 slm:s137 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -4293,16 +4271,6 @@ slm:s682 a skos:Concept ;
     skos:prefLabel "potilaslehdet"@fi,
         "patienttidningar"@sv .
 
-slm:s683 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
-    skos:altLabel "ristikkolehdet"@fi ;
-    skos:broader owl:Thing ;
-    skos:inScheme slm:s285,
-        slm:s593 ;
-    skos:prefLabel "sanaristikot"@fi,
-        "korsordstidningar"@sv .
-
 slm:s684 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s518 ;
@@ -6504,11 +6472,11 @@ slm:s1355 a skos:Concept ;
 
 slm:s1358 a skos:Concept ;
     dct:created "2020-02-21"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
-    skos:broader owl:Thing ;
+    dct:modified "2020-02-25"^^xsd:date ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s738 ;
-    skos:prefLabel "sarjallinen musiikki"@fi .
+    skos:prefLabel "sarjallinen musiikki"@fi ;
+    skos:topConceptOf slm:s861 .
 
 slm:s149 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7051,15 +7019,6 @@ slm:s425 a skos:Concept ;
         "svart komedi"@sv ;
     skos:related slm:s696 .
 
-slm:s432 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "dokumenttielokuvat"@fi,
-        "dokumentärfilmer"@sv ;
-    skos:related slm:s958 .
-
 slm:s434 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1075 ;
@@ -7593,6 +7552,17 @@ slm:s677 a skos:Concept ;
         "anagram"@sv ;
     skos:related slm:s817 ;
     skos:topConceptOf slm:s285 .
+
+slm:s683 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
+    skos:altLabel "ristikkolehdet"@fi ;
+    skos:inScheme slm:s285,
+        slm:s593 ;
+    skos:prefLabel "sanaristikot"@fi,
+        "korsordstidningar"@sv ;
+    skos:topConceptOf slm:s285,
+        slm:s593 .
 
 slm:s685 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8401,6 +8371,17 @@ slm:s1083 a skos:Concept ;
     skos:prefLabel "tieteissarjakuvat"@fi,
         "science fiction-serier (tecknade serier)"@sv .
 
+slm:s109 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p28710> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "dokumenttisarjat"@fi,
+        "dokumentärserier"@sv ;
+    skos:related slm:s1354,
+        slm:s1362 ;
+    skos:topConceptOf slm: .
+
 slm:s1090 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "ljudeffektsböcker"@sv ;
@@ -8660,15 +8641,24 @@ slm:s1348 a skos:Concept ;
         "intonationer (kyrkomusik)"@sv ;
     skos:related slm:s1067 .
 
+slm:s1354 a skos:Concept ;
+    dct:created "2020-02-21"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
+    skos:inScheme slm: ;
+    skos:prefLabel "urheiludokumentit"@fi ;
+    skos:related slm:s109,
+        slm:s432 ;
+    skos:topConceptOf slm: .
+
 slm:s1356 a skos:Concept ;
     dct:created "2020-02-21"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
     skos:altLabel "videoteokset"@fi ;
-    skos:broader owl:Thing ;
     skos:inScheme slm: ;
     skos:prefLabel "videotaideteokset"@fi ;
     skos:related slm:s1336,
-        slm:s307 .
+        slm:s307 ;
+    skos:topConceptOf slm: .
 
 slm:s136 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8681,6 +8671,15 @@ slm:s136 a skos:Concept ;
         slm:s978 ;
     skos:scopeNote "Käytetään teoksista, joissa kuvataan yhden suvun tai perheen elämää."@fi,
         "Används om verk som skildrar en släkts eller en familjs liv."@sv .
+
+slm:s1362 a skos:Concept ;
+    dct:created "2020-02-21"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
+    skos:inScheme slm: ;
+    skos:prefLabel "sotadokumentit"@fi ;
+    skos:related slm:s109,
+        slm:s432 ;
+    skos:topConceptOf slm: .
 
 slm:s154 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10075,6 +10074,18 @@ slm:s43 a skos:Concept ;
         slm:s660,
         slm:s875 .
 
+slm:s432 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-02-25"^^xsd:date ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "dokumenttielokuvat"@fi,
+        "dokumentärfilmer"@sv ;
+    skos:related slm:s1354,
+        slm:s1362,
+        slm:s958 .
+
 slm:s433 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s975 ;
@@ -11349,12 +11360,6 @@ slm:s977 a skos:Concept ;
     skos:prefLabel "blues"@fi,
         "blues"@sv ;
     skos:related slm:s1265 .
-
-owl:Thing skos:narrower slm:s1354,
-        slm:s1356,
-        slm:s1358,
-        slm:s1362,
-        slm:s683 .
 
 slm:s1006 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13593,7 +13598,8 @@ slm:s593 a skos:ConceptScheme ;
         slm:s323,
         slm:s342,
         slm:s356,
-        slm:s50 ;
+        slm:s50,
+        slm:s683 ;
     skos:prefLabel "Jatkuvien julkaisujen lajityyppi- ja muototermit"@fi,
         "Genretermer för fortlöpande publikationer"@sv .
 
@@ -13613,7 +13619,7 @@ Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.f
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-02-24T02:33:15+00:00"^^xsd:dateTime ;
+    dct:modified "2020-02-25T01:36:17+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
@@ -13632,7 +13638,10 @@ Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.f
         slm:s1330,
         slm:s1336,
         slm:s1352,
+        slm:s1354,
+        slm:s1356,
         slm:s1361,
+        slm:s1362,
         slm:s170,
         slm:s236,
         slm:s312,
@@ -13701,6 +13710,7 @@ slm:s861 a skos:ConceptScheme ;
         slm:s1321,
         slm:s1327,
         slm:s1344,
+        slm:s1358,
         slm:s137,
         slm:s144,
         slm:s146,
@@ -13983,6 +13993,7 @@ slm:s285 a skos:ConceptScheme ;
         slm:s657,
         slm:s661,
         slm:s677,
+        slm:s683,
         slm:s686,
         slm:s694,
         slm:s697,
