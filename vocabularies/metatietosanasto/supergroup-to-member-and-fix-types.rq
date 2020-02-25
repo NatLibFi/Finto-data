@@ -1,11 +1,16 @@
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 PREFIX isothes: <http://purl.org/iso25964/skos-thes#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+
 DELETE {
   ?group isothes:superGroup ?super .
+  ?x a owl:Class .
 }
 INSERT {
   ?super skos:member ?group .
 }
 WHERE {
-  ?group isothes:superGroup ?super .
+  { ?group isothes:superGroup ?super . }
+  UNION
+  { ?x a owl:Class . }
 }
