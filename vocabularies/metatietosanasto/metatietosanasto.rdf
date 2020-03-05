@@ -360,14 +360,38 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiJulkinen">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:EiJulkinen">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi ; ISBD-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:example>MARC 21 -formaatissa: 506 1# ‡a Ei julkinen.</skos:example>
-    <skos:prefLabel xml:lang="fi">ei julkinen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Ei julkinen.</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Saatavuuden rajoitus.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Loppuunmyyty">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">Loppuunmyyty kirja</skos:altLabel>
+    <skos:altLabel xml:lang="en">Out of print book</skos:altLabel>
+    <skos:altLabel xml:lang="sv">Utgången bok</skos:altLabel>
+    <skos:example>MARC 21 -formaatissa: 506 1# ‡a Loppuunmyyty.</skos:example>
+    <skos:prefLabel xml:lang="fi">Loppuunmyyty.</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Out of print.</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Utgången.</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Painos on loppu kustantajalta.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:VainVirkakayttoon">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="fi">MARC 21 -formaatissa: 506 1# ‡a Vain virkakäyttöön.</skos:example>
+    <skos:prefLabel xml:lang="fi">Vain virkakäyttöön.</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -39600,6 +39624,9 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:scopeNote>
     <rdfs:label xml:lang="fi">Aineiston saatavuuden rajoitukset (manifestaatio)</rdfs:label>
     <rdfs:label xml:lang="sv">Åtkomstrestriktioner (exemplar)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30145"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:EiJulkinen"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:Loppuunmyyty"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:VainVirkakayttoon"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1028"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1069"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1214"/>
