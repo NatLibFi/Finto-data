@@ -448,17 +448,6 @@ mts:m3584 a skos:Concept ;
         "sensori"@fi,
         "censor"@sv .
 
-mts:m3588 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20294 ;
-    skos:definition "Liittää ekspression toimijaan, joka osallistuu musiikkiteoksen ekspression tekemiseen tuottamalla ääniä sähköisillä äänilaitteilla ja/tai tietokoneohjelmilla"@fi,
-        "Sammankopplar ett uttryck med en aktör som deltar i utförandet av ett musikaliskt verks uttryck, genom att producera ljud med hjälp av elektroniska ljudapparater och/eller datorprogram"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "music programmer"@en,
-        "musiikkiohjelmoija (ekspressio)"@fi,
-        "musikprogrammerare (uttryck)"@sv .
-
 mts:m3590 a skos:Concept ;
     dc:source "RDA-termi"@fi ;
     rdfs:seeAlso rdae:P20280 ;
@@ -3701,6 +3690,7 @@ mts:m153 a isothes:ConceptGroup,
         mts:m3574,
         mts:m3586,
         mts:m3587,
+        mts:m3588,
         mts:m359,
         mts:m3594,
         mts:m3595,
@@ -11461,7 +11451,6 @@ mts:m34 a isothes:ConceptGroup,
         mts:m1978,
         mts:m1980,
         mts:m2042,
-        mts:m2046,
         mts:m2063,
         mts:m2101,
         mts:m2102,
@@ -11936,6 +11925,17 @@ mts:m3587 a skos:Concept ;
     skos:prefLabel "special effects provider"@en,
         "erikoistehosteiden tekijä"@fi,
         "skapare av specialeffekter"@sv .
+
+mts:m3588 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20294 ;
+    skos:definition "Liittää ekspression toimijaan, joka osallistuu musiikkiteoksen ekspression tekemiseen tuottamalla ääniä sähköisillä äänilaitteilla ja/tai tietokoneohjelmilla"@fi,
+        "Sammankopplar ett uttryck med en aktör som deltar i utförandet av ett musikaliskt verks uttryck, genom att producera ljud med hjälp av elektroniska ljudapparater och/eller datorprogram"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "music programmer"@en,
+        "musiikkiohjelmoija"@fi,
+        "musikprogrammerare"@sv .
 
 mts:m3589 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14952,6 +14952,22 @@ mts:m532 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Kangaskirja"@fi,
         "Tygbok"@sv .
+
+mts:m534 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10050 ;
+    skos:altLabel "ohjelmoija (suhde)"@fi,
+        "programmoija"@fi,
+        "programmerare (relation)"@sv ;
+    skos:definition "henkilö tai yhteisö, joka on vastuussa tietokoneohjelman luomisesta"@fi,
+        "person eller institution som ansvarar för skapandet av ett datorprogram"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "programmer"@en,
+        "ohjelmoija"@fi,
+        "programmerare"@sv ;
+    skos:scopeNote "Teoksen tekijä"@fi,
+        "Verkets skapare"@sv .
 
 mts:m535 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -22102,18 +22118,6 @@ mts:m2038 a skos:Concept ;
         "mikrofichekassett"@sv ;
     skos:scopeNote "mikromuotoinen tallenne"@fi,
         "mikroformsbärare"@sv .
-
-mts:m2046 a skos:Concept ;
-    dc:source "Kansallinen termi"@fi,
-        "Nationell term"@sv ;
-    skos:altLabel "progr. (musiikkiohjelmoija)"@fi,
-        "progr. (musikprogrammerare)"@sv ;
-    skos:broader mts:m534 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "musiikkiohjelmoija"@fi,
-        "musikprogrammerare"@sv ;
-    skos:scopeNote "Teoksen tekijä"@fi,
-        "Verkets skapare"@sv .
 
 mts:m2062 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -31778,23 +31782,6 @@ mts:m53 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "originaali"@fi,
         "original"@sv .
-
-mts:m534 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10050 ;
-    skos:altLabel "ohjelmoija (suhde)"@fi,
-        "programmoija"@fi,
-        "programmerare (relation)"@sv ;
-    skos:definition "henkilö tai yhteisö, joka on vastuussa tietokoneohjelman luomisesta"@fi,
-        "person eller institution som ansvarar för skapandet av ett datorprogram"@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2046 ;
-    skos:prefLabel "programmer"@en,
-        "ohjelmoija"@fi,
-        "programmerare"@sv ;
-    skos:scopeNote "Teoksen tekijä"@fi,
-        "Verkets skapare"@sv .
 
 mts:m545 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -45975,7 +45962,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-03-10T03:20:27+00:00"^^xsd:dateTime ;
+    dct:modified "2020-03-11T03:11:43+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
