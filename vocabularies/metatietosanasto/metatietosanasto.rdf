@@ -360,6 +360,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laajennelma(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20115"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">laajennelma (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">"Liittää ekspression teoksen ekspressioon, joka laajentaa lähteenä olevaa teosta.&#xD;
+Vastavuoroinen suhde: laajennelman perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -38128,6 +38138,7 @@ Vastavuoroinen suhde: käsikirjoitus (ekspressio).</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20114"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4187"/>
     <skos:prefLabel xml:lang="en">imitated as (expression)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">imitation (uttryck)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">jäljitelmä (ekspressio)</skos:prefLabel>
@@ -38208,7 +38219,6 @@ Vastavuoroinen suhde: oopperasoviyus (ekspressio).</skos:scopeNote>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20142"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
-    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4179"/>
     <skos:prefLabel xml:lang="fi">parodia (ekspressio)</skos:prefLabel>
     <skos:prefLabel xml:lang="en">parodied as expression</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka jäljittelee lähteenä olevan teoksen tyyliä tai sisältöä humoristisesti.&#xD;
@@ -42112,6 +42122,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Härledda relationer (uttryck</rdfs:label>
     <rdfs:label xml:lang="fi">Johdannaissuhteet (ekspressio)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:laajennelma(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1539"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1585"/>
@@ -42147,6 +42158,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4180"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4181"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4184"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4185"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4186"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4187"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4188"/>
@@ -42160,6 +42172,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m669"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m877"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:mukaelma(Ekspressio)"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m859">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -43476,5 +43489,15 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mukaelma(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20153"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">mukaelma (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka on muokattu kuvailun kohteena olevasta ekspressiosta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai esitysmuotoa varten. Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.&#xD;
+Vastavuoroinen suhde: mukaelman perustana (ekspressio).</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
