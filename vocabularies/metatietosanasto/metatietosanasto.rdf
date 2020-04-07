@@ -370,6 +370,27 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10296"/>
     <skos:prefLabel xml:lang="en">derivative work relationship</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiTiedossa">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="fi">ei tiedossa</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Henkilön sukupuoli ei ole tiedossa.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:koreografia(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:liittyyEkspressioon"/>
+    <skos:prefLabel xml:lang="fi">koreografia (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Teoksen ekspressio, joka tarjoaa koreografian käytettäväksi liittyvässä ekspressiossa.&#xD;
+Vastavuoroinen suhde: koreografia ekspressioon.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:liittyyEkspressioon">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <skos:prefLabel xml:lang="fi">liittyy ekspressioon</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyhennelma(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
@@ -43427,6 +43448,8 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Kompletterande relationer (uttryck)</rdfs:label>
     <rdfs:label xml:lang="fi">Täydennyssuhteet (ekspressio)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:koreografia(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:liittyyEkspressioon"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m977">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3414"/>
@@ -43642,6 +43665,12 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mies">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p8173"/>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="fi">mies</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mukautettuLyhennelma(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
@@ -43661,6 +43690,12 @@ Vastavuoroinen suhde: mukautetun lyhennelmän perustana (ekspressio).</skos:scop
     <skos:prefLabel xml:lang="fi">musikaaliversio (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression musikaaliteoksen ekspressioon, joka perustuu lähteenä olevaan ekspressioon.&#xD;
 Vastavuoroinen suhde: musikaaliversion perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:nainen">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p16991"/>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="fi">nainen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:oopperasovitus(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -43751,6 +43786,16 @@ Vastavuoroinen suhde: sarjakuvaversion perustana (ekspressio).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">sovitus</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression musiikkiteoksen ekspressioon, jossa on muokattu alkuperäisteoksen esityskokoonpanoa.&#xD;
 Vastavuoroinen suhde: sovituksen perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sukupuoli">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m551"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <skos:definition xml:lang="fi">Henkilön sukupuoli-identiteetti.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:eiTiedossa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:mies"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nainen"/>
+    <skos:prefLabel xml:lang="fi">sukupuoli</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tekstiinPerustuvaMusiikki(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
