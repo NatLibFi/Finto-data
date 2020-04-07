@@ -360,6 +360,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyhennelma(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20166"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">lyhennelmä (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">"Liittää ekspression teoksen ekspressioon, joka on lyhennetty lähteenä olevasta ekspressiosta muuttamatta sen merkityssisältöä tai esitystyyliä.&#xD;
+Vastavuoroinen suhde: lyhennelmän perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -38339,6 +38349,8 @@ Vastavuoroinen suhde: laajennelman perustana (ekspressio).</skos:scopeNote>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:romaanimukaelma(Ekspressio)"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:runomukaelma(Ekspressio)"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sarjakuvaversio(Ekspressio)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:televisiosovitus(Ekspressio)"/>
+    <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:videosovitus(Ekspressio)"/>
     <skos:prefLabel xml:lang="fi">mukaelma (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka on muokattu kuvailun kohteena olevasta ekspressiosta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai esitysmuotoa varten. Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.&#xD;
 Vastavuoroinen suhde: mukaelman perustana (ekspressio).</skos:scopeNote>
@@ -42223,6 +42235,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:label xml:lang="sv">Härledda relationer (uttryck</rdfs:label>
     <rdfs:label xml:lang="fi">Johdannaissuhteet (ekspressio)</rdfs:label>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lyhennelma(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1539"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1585"/>
@@ -42282,13 +42295,21 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m669"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m877"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:mukautettuLyhennelma(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:musikaaliversio(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:oopperasovitus(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:oratoriosovitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:parafraasi(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:radiokasikirjoitus(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:radiosovitus(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:romaanimukaelma(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:runomukaelma(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sarjakuvaversio(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sovitus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tekstiinPerustuvaMusiikki(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:televisiosovitus(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:uusintaproduktio(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:videosovitus(Ekspressio)"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m859">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -43606,6 +43627,16 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mukautettuLyhennelma(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20170"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">mukautettu lyhennelmä (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka systemaattisesti, kokonaisuudessaan ja mukaillen tiivistää lähteenä olevan ekspression&#xD;
+Vastavuoroinen suhde: mukautetun lyhennelmän perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:musikaaliversio(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
@@ -43635,6 +43666,16 @@ Vastavuoroinen suhde: oopperasovituksen perustana (ekspressio).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">oratoriosovitus (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression oratorion ekspressioon, joka perustuu lähteenä olevaan ekspressioon.&#xD;
 Vastavuoroinen suhde: oratoriosovituksen perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:parafraasi(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20164"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">parafraasi (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, johon sisällön toisintaminen perustuu.&#xD;
+Vastavuoroinen suhde: parafraasin perustana (ekspressio).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:radiokasikirjoitus(Ekspressio)">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -43685,5 +43726,55 @@ Vastavuoroinen suhde: runomukaelman perustana (ekspressio).</skos:scopeNote>
     <skos:prefLabel xml:lang="fi">sarjakuvaversio (ekspressio)</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression sarjakuvaromaaniin, joka perustuu lähteenä olevaan ekspressioon.&#xD;
 Vastavuoroinen suhde: sarjakuvaversion perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sovitus">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20165"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">sovitus</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression musiikkiteoksen ekspressioon, jossa on muokattu alkuperäisteoksen esityskokoonpanoa.&#xD;
+Vastavuoroinen suhde: sovituksen perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tekstiinPerustuvaMusiikki(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20087"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">tekstiin perustuva musiikki (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression ei-näytelmällisen musiikkiteoksen (muu kuin oratorion) ekspressioon, jonka teksti on peräisin lähteenä olevasta teoksesta.&#xD;
+Vastavuoroinen suhde: musiikkiteoksen teksti (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:televisiosovitus(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20066"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">televisiosovitus (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression televisio-ohjelmaan, joka perustuu lähteenä olevaan ekspressioon.&#xD;
+Vastavuoroinen suhde: televisiosovituksen perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:uusintaproduktio(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20086"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">uusintaproduktio (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression uuden elokuvan, televisio- tai radio-ohjelman tai videon ekspressioon, joka perustuu aiempaan teokseen.&#xD;
+Vastavuoroinen suhde: uusintaproduktion perustana (ekspressio).</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:videosovitus(Ekspressio)">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20067"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m731"/>
+    <skos:prefLabel xml:lang="fi">videosovitus (ekspressio)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Liittää ekspression videoon, joka perustuu lähteenä olevaan ekspressioon.&#xD;
+Vastavuoroinen suhde: videosovituksen perustana (ekspressio).</skos:scopeNote>
   </owl:Class>
 </rdf:RDF>
