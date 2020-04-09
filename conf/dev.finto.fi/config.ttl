@@ -7,6 +7,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
+@prefix schema: <http://schema.org/> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosmos: <http://purl.org/net/skosmos#> .
@@ -1282,6 +1283,15 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:tt:> .
 
+:musa skosmos:useParamPlugin :musaMessage .
+
+:musaMessage a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value "Tämä on testiviesti."@fi , "Det här är ett testmeddelande."@sv, "This is a test message." ;
+    ] .
 
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,
