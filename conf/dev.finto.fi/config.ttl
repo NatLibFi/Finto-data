@@ -1293,6 +1293,17 @@
         schema:value "Tämä on päivitettyä tietoa sisältävä testiviesti."@fi , "Det här är ett testmeddelande."@sv, "This is a test message." ;
     ] .
 
+:muso skosmos:useParamPlugin :musoMessage .
+
+:musoMessage  a skosmos:ParameterizedPlugin ;
+                skosmos:usePlugin "message";
+                skosmos:parameters 
+			[ a			schema:PropertyValue ;
+                          schema:propertyID 	"msg";
+                          schema:value		"Sanasto ei ole enää käytössä."@fi ,
+  						"---"@sv,
+  						“Default message without a language code”; ] .
+
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,
 		"Tillgängliga tesaurusar och ontologier"@sv,
