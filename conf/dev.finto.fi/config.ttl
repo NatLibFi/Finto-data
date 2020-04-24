@@ -538,6 +538,20 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/kulo/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/kulo/> .
 
+:lajisto a skosmos:Vocabulary, void:Dataset ;
+	dc:title "LAJISTO - Lajitietokeskuksen lajiluettelo"@fi,
+		"LAJISTO - Artdatacentrets artlista"@sv,
+		"LAJISTO - Species list of FinBIF"@en ;
+	skosmos:shortName "LAJISTO";
+	dc:subject :cat_science ;
+	void:uriSpace "http://tun.fi/";
+	skosmos:language "fi", "sv", "zxx-x-taxon";
+	skosmos:defaultLanguage "fi";
+	void:dataDump <http://dev.finto.fi/download/lajisto/lajisto-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/lajisto/lajisto-skos.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://tun.fi/> .
+
 :oiko a skosmos:Vocabulary, void:Dataset ;
         dc:title "OIKO - Oikeushallinnon ontologia"@fi ;
         dc:subject :cat_society ;
