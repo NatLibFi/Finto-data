@@ -360,6 +360,17 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:duplikaatti">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite, joka on alkuperäisen kuvan tai ääniraidan jäljitelmä, tavallisesti negatiivisella polariteetilla, jossa negatiivinen duplikaatti on valmistettu master-positiivista, joka vuorostaan on valmistettu aiemmasta negatiivista.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1003"/>
+    <skos:prefLabel xml:lang="en">duplicate</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">duplikaatti</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kaksiKertaaVuodessa">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -393,6 +404,18 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1015"/>
     <skos:prefLabel xml:lang="fi">kerran kolmessa vuodessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">triennial</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:koevedos">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite, joka on elokuvan tuottajan ja ohjaajan hyväksymä koevedos.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1011"/>
+    <skos:prefLabel xml:lang="fi">koevedos</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">reference print</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">referenskopia</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -833,7 +856,10 @@ Mikroskooppilaitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite mikromuotoiselle aineistolle, jota käytetään seuraavien sukupolvien mikromuotoisten aineistojen valmistamiseen.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1010"/>
     <skos:prefLabel xml:lang="fi">painomaster</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">printing master</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">tryckmaster</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1056">
@@ -16558,9 +16584,9 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdfs:label xml:lang="fi">Elokuvafilmin sukupolvi</rdfs:label>
     <rdfs:label xml:lang="sv">Generation av film</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30193"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:koevedos"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m53"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m704"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m856"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m933"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m996"/>
     <skos:prefLabel xml:lang="en">generation of motion picture film</skos:prefLabel>
@@ -23220,6 +23246,9 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30168"/>
     <skos:altLabel xml:lang="fi">Huomautus ilmestymistiheydestä</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää manifestaation ilmestymistiheyteen, joka ilmaisee, millaisin aikavälein sarja-aineiston numerot tai osat ilmestyvät tai päivittyvän aineiston päivitykset tapahtuvat.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kaksiKertaaVuodessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kerranKahdessaVuodessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kerranKolmessaVuodessa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1049"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1091"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1332"/>
@@ -23230,6 +23259,12 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1658"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m282"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m430"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4355"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4356"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4357"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4358"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4359"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4360"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m915"/>
     <skos:prefLabel xml:lang="en">frequency</skos:prefLabel>
     <skos:prefLabel xml:lang="en">note on frequency</skos:prefLabel>
@@ -24459,6 +24494,9 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Äänitteen sukupolven määrite originaalilevyn positiiviselle metallikopiolle, jota on käytetty yhden tai useamman isiön tuottamiseen.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1008"/>
+    <skos:prefLabel xml:lang="en">mother</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">positiv modermatris</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">äitiö</skos:prefLabel>
   </owl:Class>
@@ -41216,6 +41254,9 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Äänitteen sukupolven määrite nauhan alkuperäiselle äänitysversiolle, josta voidaan tehdä kopioita.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1006"/>
+    <skos:prefLabel xml:lang="en">master tape</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">masterband</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">masternauha</skos:prefLabel>
   </owl:Class>
@@ -41470,6 +41511,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="fi">Digitaalisen aineiston sukupolvi</rdfs:label>
     <rdfs:label xml:lang="sv">Generation av digital resurs</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30192"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:duplikaatti"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1366"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m53"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m704"/>
@@ -41539,7 +41581,10 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite digitaaliselle aineistolle, joka on digitaalisesti luodun aineiston ensimmäinen versio.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1009"/>
     <skos:prefLabel xml:lang="fi">originaali</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">original</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">original</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m530">
@@ -43241,6 +43286,9 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite digitaaliselle aineistolle, joka on luotu digitoimalla suurimmalla mahdollisella resoluutiolla ja jota usein käytetään kopioiden valmistamiseen.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1005"/>
+    <skos:prefLabel xml:lang="en">master</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">masterkopia</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">masterkopio</skos:prefLabel>
   </owl:Class>
@@ -44357,7 +44405,10 @@ Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita kats
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite alkuperäiselle kamerafilmille tai videonauhalle, jolle aineisto on kuvattu.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1004"/>
     <skos:prefLabel xml:lang="fi">ensimmäinen sukupolvi</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">first generation</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">första generation</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m846">
@@ -44453,15 +44504,6 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:example xml:lang="fi">Metsätalous tuotanto- ja palvelusuuntana (projekti)</skos:example>
     <skos:prefLabel xml:lang="sv">projekt</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">projekti</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m856">
-    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">referenskopia</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">vertailukopio</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m857">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -45107,8 +45149,8 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">Ilmestymistiheys ei tiedossa</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">Utgivningsfrekvens okänd</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">ilmestymistiheys ei tiedossa</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">utgivningsfrekvens okänd</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m918">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -45175,7 +45217,10 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Sukupolven määrite aineistolle, joka on eri sukupolvien yhdistelmä ja jota ei tästä syystä voida kuvata täsmällisemmällä termillä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAGeneration/1007"/>
     <skos:prefLabel xml:lang="sv">blandad generation</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">mixed generation</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sukupolvien yhdistelmä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m923">
