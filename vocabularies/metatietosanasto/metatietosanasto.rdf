@@ -389,6 +389,21 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kaikkiAlueet"/>
     <skos:prefLabel xml:lang="en">reduction ratio</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Mittakaava">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m261"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Mittakaava</rdfs:label>
+    <rdfs:label xml:lang="en">Scale</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20228"/>
+    <skos:definition xml:lang="fi">Liittää ekspression kuvan tai esineen ja sen esittämän todellisen kohteen mittojen väliseen suhteeseen.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:eiMittakaavassa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:eiMittakaavatietoa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:eriMittakaavoja"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:mittakaavaVaihtelee"/>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:alue1">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -542,6 +557,39 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARegionalEncoding/1014"/>
     <skos:prefLabel xml:lang="fi">alue U/C</skos:prefLabel>
     <skos:prefLabel xml:lang="en">region U/C</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiMittakaavassa">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Stillkuvan tai kolmiulotteisen muodon mitat, jotka eivät ole mittakaavassa.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/scale/1004"/>
+    <skos:prefLabel xml:lang="fi">ei mittakaavassa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">not drawn to scale</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiMittakaavatietoa">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Aineiston mittakaavaa ei pystytä määrittelemään.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/scale/1002"/>
+    <skos:prefLabel xml:lang="fi">ei mittakaavatietoa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">scale not given</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eriMittakaavoja">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Aineisto koostuu useammasta eri mittakaavassa olevasta kuvasta, kartasta jne.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/scale/1001"/>
+    <skos:prefLabel xml:lang="fi">eri mittakaavoja</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">scales differ</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kaikkiAlueet">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -884,8 +932,11 @@ Mikroskooppilaitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Dbx:n kehittämä melunvaimennusjärjestelmä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1003"/>
     <skos:prefLabel xml:lang="fi">dbx</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">dbx</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">dbx encoded</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1042">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -1662,8 +1713,11 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Dolby Laboratoriesin analogiselle magneettinauhalle kehittämä melunvaimennusjärjestelmä, joka on Dolby-A: n yksinkertaistettu versio kuluttajakäyttöön.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1006"/>
     <skos:prefLabel xml:lang="fi">Dolby B</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby B</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dolby-B encoded</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m114">
     <dc11:source xml:lang="sv">Bella-term</dc11:source>
@@ -1696,6 +1750,9 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">CCIR:n alun perin antama standardi lomitettujen analogisten videosignaalien koodaamiseksi digitaalisessa videomuodossa.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1001"/>
+    <skos:prefLabel xml:lang="en">CCIR encoded</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">CCIR standard</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">CCIR-standardi</skos:prefLabel>
   </owl:Class>
@@ -2017,8 +2074,11 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">CBS Laboratoriesin 1970-luvun lopulla kehittämä melunvaimennusjärjestelmä analogisesti tallennetulle äänelle.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1002"/>
     <skos:prefLabel xml:lang="fi">CX</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">CX</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">CX encoded</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1178">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -2418,8 +2478,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Dolby Laboratoriesin vuonna 1980 kehittämä melunvaimennusjärjestelmä, joka on Dolby-A: n ja Dolby-B: n yhdistetty versio käytettäväksi analogisessa magneettinauhassa.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1007"/>
     <skos:prefLabel xml:lang="fi">Dolby C</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby C</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dolby-C encoded</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1231">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -9476,10 +9539,10 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/termList/AspectRatio/1003"/>
     <skos:altLabel xml:lang="sv">kombination</skos:altLabel>
     <skos:definition xml:lang="sv">Kombination av bildförhållandena full screen och wide screen.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasuhde liikkuvaa kuvaa sisältävälle aineistolle, joka käsittää useita eri kuvasuhteita.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/AspectRatio/1003"/>
     <skos:prefLabel xml:lang="sv">blandade bildförhållanden</skos:prefLabel>
     <skos:prefLabel xml:lang="en">mixed aspect ratio</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">yhdistelmä (kuvasuhde)</skos:prefLabel>
@@ -9869,9 +9932,9 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/termList/AspectRatio/1002"/>
     <skos:altLabel xml:lang="sv">bredbild</skos:altLabel>
     <skos:definition xml:lang="fi">Liikkuvan kuvan kuvasuhde, joka on 1.5:1 tai suurempi</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/AspectRatio/1002"/>
     <skos:prefLabel xml:lang="en">wide screen</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">wide screen</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">wide screen</skos:prefLabel>
@@ -9882,8 +9945,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/termList/AspectRatio/1001"/>
     <skos:definition xml:lang="fi">Liikkuvan kuvan kuvasuhde, joka on pienempi kuin 1.5:1</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/AspectRatio/1001"/>
     <skos:prefLabel xml:lang="en">full screen</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">full screen</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">normalbild</skos:prefLabel>
@@ -12149,7 +12212,9 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Aineisto, joka ei sisällä ääntä.</skos:definition>
     <skos:definition xml:lang="sv">Resurs som inte innehåller ljud.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/soundCont/1002"/>
     <skos:prefLabel xml:lang="sv">ljudlös</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">silent</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">äänetön</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2207">
@@ -12159,8 +12224,10 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Ljudinnehåll</rdfs:label>
+    <rdfs:label xml:lang="en">Sound content</rdfs:label>
     <rdfs:label xml:lang="fi">Äänisisältö</rdfs:label>
-    <skos:definition xml:lang="fi">Ekspression sisältämä ääni tai äänen puuttuminen.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20225"/>
+    <skos:definition xml:lang="fi">Liittää ekspression ekspression sisältämään ääneen tai äänen puuttumiseen.</skos:definition>
     <skos:definition xml:lang="sv">Ljud som ett uttryck innehåller eller avsaknad av ljud.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2206"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2208"/>
@@ -12171,7 +12238,9 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Aineisto, joka  sisällää ääntä.</skos:definition>
     <skos:definition xml:lang="sv">Resurs som innehåller ljud.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/soundCont/1001"/>
     <skos:prefLabel xml:lang="sv">ljud</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">sound</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">ääni</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2209">
@@ -26852,6 +26921,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdfs:label xml:lang="fi">Äänentoiston erityisominaisuudet</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30138"/>
     <skos:altLabel xml:lang="sv">Ljudåtergivningens specialegenskaper</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää manifestaation äänitteen äänityksessä käytettyyn taajuuskorjausjärjestelmään, kohinanvaimennusjärjestelmään tms.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1040"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1139"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1141"/>
@@ -41718,8 +41788,11 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Dolby Laboratoriesin kehittämä melunvaimennusjärjestelmä ammattimaiseen käyttöön analogisessa magneettinauhassa.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1005"/>
     <skos:prefLabel xml:lang="fi">Dolby A</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby A</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Dolby-A encoded</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m490">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -46083,6 +46156,9 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Dolby Laboratoriesin kehittämä sarja melunvaimennusjärjestelmiä käytettäväksi analogisessa magneettinauhassa.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/specPlayback/1004"/>
+    <skos:prefLabel xml:lang="en">Dolby</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Dolby</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby</skos:prefLabel>
   </owl:Class>
@@ -46574,5 +46650,16 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:mittakaavaVaihtelee">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Aineiston mittakaava vaihtelee, eikä arvojen laajuutta pystytä määrittelemään.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/scale/1003"/>
+    <skos:prefLabel xml:lang="fi">mittakaava vaihtelee</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">scale varies</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
