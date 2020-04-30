@@ -28,7 +28,7 @@ from html.parser import HTMLParser
 # globaalit muuttujat
 CONVERSION_PROCESS = "Finto SKOS to MARC 1.03"
 CONVERSION_URI = "https://www.kiwi.fi/x/XoK6B" # konversio-APIn uri tai muu dokumentti, jossa kuvataan konversio
-CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
+CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 040-kentat
 
 DEFAULTCREATIONDATE = "1980-01-01"
 KEEPMODIFIEDAFTER = "ALL"
@@ -401,10 +401,11 @@ class ConvertHTMLYSOATags(HTMLParser):
         self.merkkijono.append(data)
 
 # pääfunktio
-def convert(cs, language, g, g2):
+def convert(cs, vocabulary_name, language, g, g2):
     # kääntää graafin (g) kielellä (language) ConfigParser-sektion (cs) ohjeiden mukaisesti MARCXML-muotoon
     # g2 sisältää vieraat graafit (poislukien mahdolliset lcsh & lcgf-viitteet), joista etsitään
     # käytettyjä termejä 7XX kenttiin
+    # vocabulary_name-parametriä tarvitaan tunnistamaan, että kyseessä YSO-paikat-ontolohgia, joihin tehdään 670-kenttiä
  
     vocId = cs.get("vocabulary_code")
     
@@ -425,7 +426,7 @@ def convert(cs, language, g, g2):
 
     if helper_variables['keepModified']:
         helper_variables['keepModifiedLimit'] = False \
-        if cs.get("keepModifiedAfter", fallback=KEEPDEPRECATEDAFTER).lower() == "all" \
+        if cs.get("keepModifiedAfter", fallback=KEEPMODIFIEDAFTER).lower() == "all" \
         else datetime.date(datetime.strptime(cs.get("keepModifiedAfter"), "%Y-%m-%d"))
 
     if helper_variables['keepDeprecated']:   
@@ -478,10 +479,11 @@ def convert(cs, language, g, g2):
     if helper_variables['keepModified']:
         # käydään läpi vain muuttuneet käsitteet
         for uri in modified_dates:
-            if modified_dates[uri][0] > helper_variables['keepModifiedLimit']:  
+            if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:  
                 concs.append(URIRef(uri))
     else:
         concs = g.subjects(RDF.type, SKOS.Concept)
+
     for concept in sorted(concs):
         incrementor += 1
         if incrementor % 1000 == 0:
@@ -498,23 +500,13 @@ def convert(cs, language, g, g2):
             if any (conceptType in helper_variables["groupingClasses"] for conceptType in g.objects(concept, RDF.type)):
                 continue
         
+        rec = Record()   
+        deprecatedString = ""
+
         # dct:modified -> 005 EI TULOSTETA, 688 
         # tutkitaan, onko käsite muuttunut vai alkuperäinen
         # ja valitaan leader sen perusteella
         mod = g.value(concept, DCT.modified, None)
-   
-        rec = Record()   
-        deprecatedString = ""
-        # Organisaation ISIL-tunniste -> 003
-        rec.add_field(
-            Field(
-                tag='003',
-                data = cs.get("creatorAgency", fallback=CREATOR_AGENCY)
-            )
-        )
-        # dct:modified -> 005 EI TULOSTETA, 688 
-        # tutkitaan, onko käsite muuttunut vai alkuperäinen
-        # ja valitaan leader sen perusteella
         if mod is None:
             rec.leader = cs.get("leaderNew", fallback=LEADERNEW)
         else:
@@ -828,31 +820,50 @@ def convert(cs, language, g, g2):
         # TODO: JS: laitetaan 667 kenttään SLM:n käsiteskeemat jokaiselle käsitteelle
         
         # dc:source -> 670 kasitteen tai kuvauksen lahde
-        # tulostetaan termin kielen mukaan samankieliset lähteet
-        # mikäli kielikoodilla ei ole propertille arvoa, ohjelma ei tulosta tätä kenttää
-        # voidaanko tunnistaa, onko lähteessä URI, jolloin
-        # $u-osakenttään laitetaan tämä URI
-        # 4.5.2018 - palataan myöhemmin tähän
-        # JS: 6.8.2018 - usein pelkkä lähdeviittaus, jolloin kielellä ei merkitystä
-        for valueProp in sorted(getValues(g, concept, DC.source, language=language), key=lambda o: str(o.value)):  
-            subfields = [
-                'a', 
-                decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
-                #str(valueProp.value)
-            ]
-            # TODO: linkkien koodaus tarkistetaan/tehdään myöhemmin
-            #urls = getURLs(valueProp.value)
-            #for url in urls:
-            #    subfields.append("u")
-            #    subfields.append(url)
-                
-            rec.add_field(
-                Field(
-                    tag='670',
-                    indicators = [' ', ' '],
-                    subfields = subfields
+        # tulostetaan vain yso-paikkojen kohdalla url, joka closeMatchissa 
+        # haetaan ensin lähdetiedoista Maanmittauslaitoksen paikannimirekisterin tyyppitieto
+        # liitetään se paikkatieto-URIin closeMatchissa, jos kumpiakin on vain yksi 
+        if vocabulary_name == "YSO-PAIKAT":
+            subfield_list = []
+            subfield_b = None
+            geographical_types = set()
+            for valueProp in sorted(getValues(g, concept, DC.source, language=language), key=lambda o: str(o.value)):
+                if "Maanmittauslaitoksen paikannimirekisteri; " in valueProp.value:
+                    geographical_type = valueProp.value.split("; ")
+                    if len(geographical_type) > 1:
+                        geographical_type = geographical_type[1]
+                        geographical_types.add(geographical_type)
+                elif not "Wikidata" in valueProp.value:
+                    # dc:sourcessa on ollut myös URLeja. Siivotaan ne tässä pois
+                    if not valueProp.value.startswith("http"):
+                        subfield_list.append([
+                            'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, valueProp.value))
+                        ])
+            if len(geographical_types) == 1:
+                subfield_b = next(iter(geographical_types))
+            # ruotsinkieliseen sanastoon ei laiteta paikanninimirekisterilinkkejä, koska ruotsinkielinen selite puuttuu
+            for valueProp in sorted(getValues(g, concept, SKOS.closeMatch, language=language), key=lambda o: str(o.value)):  
+                if "http://paikkatiedot.fi" in valueProp.value:
+                    if subfield_b:
+                        subfield_list.append([
+                            'a', 'Maanmittauslaitoksen paikannimirekisteri',
+                            'b', subfield_b,
+                            'u', valueProp.value
+                        ])
+                else:
+                    subfield_list.append([
+                        'a', 'Wikidata',
+                        'u', valueProp.value
+                    ])
+
+            for subfields in subfield_list:
+                rec.add_field(
+                    Field(
+                        tag='670',
+                        indicators = [' ', ' '],
+                        subfields = subfields
+                    )
                 )
-            )
         # skos:definition -> 677 huomautus määritelmästä
         # määritelmän lähde voidaan merkitä osakenttään $v
         # sitä varten tulee sopia tavasta merkitä tämä lähde, jotta
@@ -1314,17 +1325,16 @@ def convert(cs, language, g, g2):
         with open(helper_variables['modificationDates'], 'wb') as output:
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
 
-    #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
-    if not helper_variables['keepModified']:
-        parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
-        file_path = helper_variables["outputFileName"]
-        tree = ET.parse(file_path, parser)
-        e = tree.getroot()
-        handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
-        handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True, xml_declaration=True))
+    # tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
+    parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
+    file_path = helper_variables["outputFileName"]
+    tree = ET.parse(file_path, parser)
+    e = tree.getroot()
+    handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
+    handle.write(ET.tostring(e, encoding='UTF-8', pretty_print=True, xml_declaration=True))
 
-        if handle is not sys.stdout:
-            handle.close()
+    if handle is not sys.stdout:
+        handle.close()
 
     # lokitetaan vähän tietoa konversiosta
     if helper_variables['keepDeprecated']:
@@ -1365,6 +1375,7 @@ def main():
                 settings.set(sec, key, val[1:-1])
     
     cs = args.vocabulary_code.upper() # default config section to vocabulary code
+
     settings.set("DEFAULT", "vocabulary_code", cs.lower())
     # Used in MARC code used in tag 040 subfield f
     # and 7XX foreign language prefLabels
@@ -1512,7 +1523,7 @@ def main():
             pass
     
     for lang in settings.get(cs, "languages").split(","):
-        convert(settings[cs], lang, graphi, other_graphs)
+        convert(settings[cs], cs, lang, graphi, other_graphs)
     
 if __name__ == "__main__":
     try:
