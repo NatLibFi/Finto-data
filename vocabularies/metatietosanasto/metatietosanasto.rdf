@@ -363,6 +363,27 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Sidostyyppi">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Sidostyyppi</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30309"/>
+    <skos:definition xml:lang="fi">Liittää manifestaation menetelmään, jota käytetään sitomaan julkaistu tai julkaisematon manifestaatio.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1017"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1050"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1420"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1477"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m186"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2097"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2307"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m606"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m921"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m962"/>
+    <skos:prefLabel xml:lang="en">type of binding</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3839,10 +3860,11 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Pehmeäkantisen kirjan sidostyyppi.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDATypeOfBinding/1001"/>
     <skos:prefLabel xml:lang="sv">häftad</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">nidottu</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">manifestaation tunnisteen lisäys pehmeäkantiselle kirjalle</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator för en bok med mjuka pärmar</skos:scopeNote>
+    <skos:prefLabel xml:lang="en">paperback</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1421">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -3959,6 +3981,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:label xml:lang="fi">Ääniraidan asemointi</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30161"/>
     <skos:altLabel xml:lang="sv">Spårkonfiguration (ljudfilm)</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää manifestaation ääniraidan sijaintiin äänifilmissä.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1140"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m214"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m888"/>
@@ -4276,9 +4299,11 @@ Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäyt
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Kovakantisen kirjan sidostyyppi.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDATypeOfBinding/1002"/>
+    <skos:prefLabel xml:lang="en">hardback</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">inbunden</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sidottu</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">manifestaation tunnisteen lisäys kovakantiselle kirjalle</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator för bok med hårda pärmar</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1479">
@@ -11232,7 +11257,9 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">edge track</skos:altLabel>
+    <skos:definition xml:lang="fi">Ääniraita, joka on sijoitettu lähelle filmirullan reunaa.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/trackConfig/1002"/>
+    <skos:prefLabel xml:lang="en">edge track</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">edge track</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kantspår</skos:prefLabel>
   </owl:Class>
@@ -33378,29 +33405,19 @@ Katso myös tatiili musiikkinotaatio.</skos:definition>
     <rdfs:label xml:lang="fi">Manifestaation tunniste</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30004"/>
     <skos:altLabel xml:lang="sv">Manifestationens identifikator</skos:altLabel>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1017"/>
+    <skos:definition xml:lang="fi">Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta. Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.&#xD;
+&#xD;
+Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä.</skos:definition>
+    <skos:definition xml:lang="sv">Manifestationens identifikator är en teckensträng med anknytning till manifestationen och skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv e.d. och som följer scheman ämnat för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1047"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1050"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1420"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1477"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1679"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m186"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2097"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2307"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3443"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3444"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m410"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m54"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m606"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m751"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m921"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m946"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m962"/>
     <skos:prefLabel xml:lang="en">identifier for manifestation</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.&#xD;&#xD;
-Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.&#xD;&#xD;
-Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä.</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">Manifestationens identifikator är en teckensträng med anknytning till manifestationen och skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv e.d. och som följer scheman ämnat för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3640">
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3661"/>
@@ -41761,8 +41778,10 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Tallentamisen tapa, jossa aineiston sisältö tallennetaan binääristen arvojen jaksoina.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/typeRec/1002"/>
     <skos:prefLabel xml:lang="fi">digitaalinen</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">digital</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">digital</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m482">
@@ -43343,6 +43362,7 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <rdfs:label xml:lang="fi">Äänen tallentamisen tapa</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30172"/>
     <skos:altLabel xml:lang="sv">Inspelningsteknik</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää manifestaation menetelmään, jota on käytetty äänen tallentamiseksi äänentoistoa varten.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m480"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m702"/>
     <skos:prefLabel xml:lang="en">type of recording</skos:prefLabel>
@@ -43922,7 +43942,9 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Tallentamisen tapa, jossa sisältö on taltioitu tallenteeseen jatkuvina muuttuvina suureina.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/typeRec/1001"/>
+    <skos:prefLabel xml:lang="en">analog</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">analog</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">analoginen</skos:prefLabel>
   </owl:Class>
@@ -45536,8 +45558,10 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Ääniraita, joka on sijoitettu filmirullan keskelle.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/trackConfig/1001"/>
     <skos:prefLabel xml:lang="sv">centralspår</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">centre track</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">centre track</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m889">
@@ -46267,8 +46291,6 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">rengaskirja</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">ringpärm</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">manifestaation tunnisteen lisäys</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">tillägg till manifestationens identifikator</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m963">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
