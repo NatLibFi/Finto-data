@@ -141,6 +141,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m43,
         mts:m4372,
         mts:m4400,
+        mts:m4402,
         mts:m476,
         mts:m50,
         mts:m537,
@@ -1125,6 +1126,10 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi,
 
 <http://rdaregistry.info/termList/RDATerms/1005> skos:exactMatch mts:m1521 .
 
+<http://rdaregistry.info/termList/RDATypeOfBinding/1001> skos:exactMatch mts:m1420 .
+
+<http://rdaregistry.info/termList/RDATypeOfBinding/1002> skos:exactMatch mts:m1477 .
+
 <http://rdaregistry.info/termList/RDAbaseMaterial/1001> skos:exactMatch mts:m115 .
 
 <http://rdaregistry.info/termList/RDAbaseMaterial/1002> skos:exactMatch mts:m1445 .
@@ -1372,9 +1377,17 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi,
 
 <http://rdaregistry.info/termList/layout/1006> skos:exactMatch mts:m582 .
 
+<http://rdaregistry.info/termList/layout/1007> skos:exactMatch mts:m536 .
+
+<http://rdaregistry.info/termList/layout/1008> skos:exactMatch mts:m85 .
+
 <http://rdaregistry.info/termList/layout/1009> skos:exactMatch mts:m1606 .
 
 <http://rdaregistry.info/termList/layout/1010> skos:exactMatch mts:m1516 .
+
+<http://rdaregistry.info/termList/layout/1012> skos:exactMatch mts:m4403 .
+
+<http://rdaregistry.info/termList/layout/1013> skos:exactMatch mts:m1638 .
 
 <http://rdaregistry.info/termList/layout/1016> skos:exactMatch mts:m1512 .
 
@@ -2069,7 +2082,7 @@ mts:m1149 a skos:Concept ;
     skos:prefLabel "variant title for work"@en,
         "erottuva nimeke"@fi,
         "titelvariant"@sv ;
-    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella."@fi,
+    skos:scopeNote "Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella.                   Musiikkiteosten kontekstissa nimeke, joka on muutakin kuin vain muoto tai musiikinlaji, tempomerkintä, esittäjien lukumäärä tai liturgisen teoksen tyyppi"@fi,
         "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään. Ao. teksti voidaan tuottaa myös automaattisesti indikaattoreilla."@fi,
         "Anges i MARC 21-formatets fält 246, delfält i. Ifrågavarande text kan också produceras automatiskt med indikatorer."@sv,
         "Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna."@sv .
@@ -2998,15 +3011,6 @@ mts:m1317 a isothes:ConceptGroup,
     skos:prefLabel "equivalent manifestation relationship"@en,
         "Manifestaation vastaavuussuhde"@fi .
 
-mts:m1318 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "luonnos"@fi,
-        "utkast"@sv .
-
 mts:m1319 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -3395,15 +3399,6 @@ mts:m142 a skos:Concept ;
         "kattoyhteisö"@fi,
         "överordnad institution"@sv .
 
-mts:m1420 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "nidottu"@fi,
-        "häftad"@sv ;
-    skos:scopeNote "manifestaation tunnisteen lisäys pehmeäkantiselle kirjalle"@fi,
-        "tillägg till manifestationens identifikator för en bok med mjuka pärmar"@sv .
-
 mts:m1426 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -3463,6 +3458,7 @@ mts:m1432 a isothes:ConceptGroup,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30161 ;
     skos:altLabel "Spårkonfiguration (ljudfilm)"@sv ;
+    skos:definition "Liittää manifestaation ääniraidan sijaintiin äänifilmissä."@fi ;
     skos:member mts:m1140,
         mts:m214,
         mts:m888 ;
@@ -3584,15 +3580,6 @@ mts:m1475 a skos:Concept ;
         "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään."@fi,
         "Anges i MARC 21-formatets fält 246, delfält i."@sv,
         "Titel som är förknippad med materialet och som inte är densamma som den beskrivna huvudtiteln, parallell huvudtitel, övrig titelinformation, övrig parallell titelinformation, tidigare huvudtitel, senare huvudtitel, nyckeltitel eller förkortad titel."@sv .
-
-mts:m1477 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sidottu"@fi,
-        "inbunden"@sv ;
-    skos:scopeNote "manifestaation tunnisteen lisäys kovakantiselle kirjalle"@fi,
-        "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv .
 
 mts:m1480 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -4286,15 +4273,6 @@ mts:m1635 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "levy"@fi,
         "skiva"@sv .
-
-mts:m1638 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kappaleittain"@fi,
-        "styckevis"@sv .
 
 mts:m1640 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -6633,6 +6611,7 @@ mts:m191 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30104 ;
+    skos:definition "Liittää manifestaation analogisen videon koodaukseen käytettyyn standardiin tms."@fi ;
     skos:member mts:m1089,
         mts:m1263,
         mts:m1269,
@@ -11958,31 +11937,21 @@ mts:m364 a isothes:ConceptGroup,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30004 ;
     skos:altLabel "Manifestationens identifikator"@sv ;
-    skos:member mts:m1017,
-        mts:m1047,
-        mts:m1050,
-        mts:m1420,
-        mts:m1477,
+    skos:definition """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta. Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.\r
+\r
+Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi,
+        "Manifestationens identifikator är en teckensträng med anknytning till manifestationen och skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv e.d. och som följer scheman ämnat för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer."@sv ;
+    skos:member mts:m1047,
         mts:m1679,
-        mts:m186,
-        mts:m2097,
-        mts:m2307,
         mts:m3443,
         mts:m3444,
         mts:m410,
         mts:m54,
-        mts:m606,
         mts:m751,
-        mts:m921,
-        mts:m946,
-        mts:m962 ;
+        mts:m946 ;
     skos:prefLabel "identifier for manifestation"@en,
         "Manifestaation tunniste"@fi,
-        "Identifikator för manifestationen."@sv ;
-    skos:scopeNote """Manifestaation tunniste on merkkijono, joka liittyy manifestaatioon ja joka erottaa manifestaation toisesta manifestaatiosta.\r\r
-Manifestaation tunnisteisiin kuuluvat rekisteröidyt tunnisteet, joiden skeemat ovat kansainvälisesti hyväksyttyjä (esim. ISBN, ISSN, URN), sekä tunnisteet, joita kustantajat, jakajat, julkishallinnolliset yhteisöt, dokumentaatiopalvelut, arkistot tms. antavat ja jotka noudattavat sisäiseen tarkoitukseen laadittuja skeemoja.\r\r
-Manifestaation tunnisteisiin kuuluu myös musiikin kustantajien numerot ja musiikkiaineiston laatan numerot. Tunnisteisiin liittyy yksilöiviä lisäyksiä."""@fi,
-        "Manifestationens identifikator är en teckensträng med anknytning till manifestationen och skiljer den från andra manifestationer. Till en manifestations identifikatorer hör registrerade identifikatorer, vars scheman är internationellt godkända (t.ex. ISBN, ISSN, URN) samt identifikatorer som ges av förlag, distributörer, offentliga institutioner, dokumentationstjänster, arkiv e.d. och som följer scheman ämnat för internt syfte. Till en manifestations identifikatorer hör även musikförlags nummer och musikmaterials plåtnummer."@sv .
+        "Identifikator för manifestationen."@sv .
 
 mts:m3640 a isothes:ConceptGroup,
         skos:Collection ;
@@ -14329,6 +14298,25 @@ mts:m4400 a isothes:ConceptGroup,
     skos:prefLabel "reduction ratio"@en,
         "Aluekoodi"@fi .
 
+mts:m4402 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdam:P30309 ;
+    skos:definition "Liittää manifestaation menetelmään, jota käytetään sitomaan julkaistu tai julkaisematon manifestaatio."@fi ;
+    skos:member mts:m1017,
+        mts:m1050,
+        mts:m1420,
+        mts:m1477,
+        mts:m186,
+        mts:m2097,
+        mts:m2307,
+        mts:m606,
+        mts:m921,
+        mts:m962 ;
+    skos:prefLabel "type of binding"@en,
+        "Sidostyyppi"@fi .
+
 mts:m45 a skos:Concept ;
     skos:altLabel "maanmittari (suhde)"@fi,
         "lantmätare (relation)"@sv ;
@@ -14775,15 +14763,6 @@ mts:m535 a skos:Concept ;
     skos:prefLabel "kielletty alle 18-vuotiailta"@fi,
         "förbjuden under 18 år"@sv .
 
-mts:m536 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "nuottiviivat peräkkäin"@fi,
-        "line by line"@sv .
-
 mts:m537 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
@@ -15079,9 +15058,9 @@ mts:m58 a isothes:ConceptGroup,
         mts:m161,
         mts:m1638,
         mts:m217,
+        mts:m4403,
         mts:m536,
         mts:m582,
-        mts:m59,
         mts:m679,
         mts:m692,
         mts:m786,
@@ -15146,15 +15125,6 @@ mts:m581 a skos:Concept ;
         "Översättarbjörnen"@sv ;
     skos:scopeNote "Vuoden paras käännöskokoelma. Jaettu vuodesta 1994 alkaen."@fi,
         "Pris för årets bästa översättning. Utdelat sedan år 1994."@sv .
-
-mts:m59 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jaksot peräkkäin"@fi,
-        "stycke efter stycke"@sv .
 
 mts:m591 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15320,11 +15290,11 @@ mts:m632 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdam:P30128 ;
+    rdfs:seeAlso <http://rdaregistry.info/termList/RDATerms/1014> ;
     skos:definition "Nimeke, joka esiintyy julkaisussa tekstin ensimmäisen sivun alussa."@fi,
         "Titel, som finns i början av den första textsidan i publikationen."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "variant title"@en,
+    skos:prefLabel "caption title"@en,
         "otsikkonimeke"@fi,
         "rubriktitel"@sv ;
     skos:scopeNote "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään. Ao. teksti voidaan tuottaa myös automaattisesti indikaattoreilla."@fi,
@@ -15361,6 +15331,7 @@ mts:m645 a isothes:ConceptGroup,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30172 ;
     skos:altLabel "Inspelningsteknik"@sv ;
+    skos:definition "Liittää manifestaation menetelmään, jota on käytetty äänen tallentamiseksi äänentoistoa varten."@fi ;
     skos:member mts:m480,
         mts:m702 ;
     skos:prefLabel "type of recording"@en,
@@ -16321,15 +16292,6 @@ mts:m846 a skos:Concept ;
     skos:prefLabel "Esitysoikeus nidekohtainen."@fi,
         "Bandspecifik visningsrätt."@sv .
 
-mts:m85 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "nuottiviivat päällekkäin"@fi,
-        "line over line"@sv .
-
 mts:m853 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -16871,7 +16833,8 @@ mts:m921 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Aineiston säilyttämiseen tarkoitettu kotelo."@fi,
+    rdfs:seeAlso <http://rdaregistry.info/termList/RDATerms/1026> ;
+    skos:definition "Aineiston säilyttämiseen tarkoitettu kotelo, josta säilytettävä tallenne on fyysisesti erotettavissa."@fi,
         "Fodral avsett för förvaring av material."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "kotelo"@fi,
@@ -17035,9 +16998,7 @@ mts:m962 a skos:Concept ;
         "RDA-term"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "rengaskirja"@fi,
-        "ringpärm"@sv ;
-    skos:scopeNote "manifestaation tunnisteen lisäys"@fi,
-        "tillägg till manifestationens identifikator"@sv .
+        "ringpärm"@sv .
 
 mts:m963 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -19794,6 +19755,9 @@ rdam:P30038 skos:exactMatch mts:m7 .
 <http://rdaregistry.info/termList/frequency/1014> skos:exactMatch mts:m1625,
         mts:m4367 .
 
+<http://rdaregistry.info/termList/layout/1011> skos:related mts:m1318 ;
+    skos:relatedMatch mts:m1318 .
+
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -20984,6 +20948,16 @@ mts:m1419 a skos:Concept ;
     skos:prefLabel "julkaistu myös verkkoaineistona"@fi,
         "även utkommit som onlineresurs"@sv .
 
+mts:m1420 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:definition "Pehmeäkantisen kirjan sidostyyppi."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDATypeOfBinding/1001> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "paperback"@en,
+        "nidottu"@fi,
+        "häftad"@sv .
+
 mts:m1421 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -21165,6 +21139,17 @@ mts:m1476 a skos:Concept ;
     skos:prefLabel "puppeteer of"@en,
         "nukettaja"@fi,
         "dockspelare"@sv .
+
+mts:m1477 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:definition "Kovakantisen kirjan sidostyyppi."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/RDATypeOfBinding/1002> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "hardback"@en,
+        "sidottu"@fi,
+        "inbunden"@sv ;
+    skos:scopeNote "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv .
 
 mts:m1479 a skos:Concept ;
     skos:broader mts:m4253 ;
@@ -21564,6 +21549,17 @@ mts:m1625 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "yksi-kaksi kertaa vuodessa"@fi,
         "en-två gånger om året"@sv .
+
+mts:m1638 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Layout, joka koostuu käsi- tai stemmamerkeistä, jotka on ryhmitelty vasemmassa marginaalissa."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/layout/1013> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "section by section"@en,
+        "osat peräkkäin"@fi .
 
 mts:m1645 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -22877,9 +22873,11 @@ mts:m214 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "edge track"@sv ;
+    skos:definition "Ääniraita, joka on sijoitettu lähelle filmirullan reunaa."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/trackConfig/1002> ;
     skos:inScheme mts: ;
-    skos:prefLabel "edge track"@fi,
+    skos:prefLabel "edge track"@en,
+        "edge track"@fi,
         "kantspår"@sv .
 
 mts:m2141 a skos:Concept ;
@@ -34195,6 +34193,18 @@ mts:m4401 a skos:Concept ;
     skos:prefLabel "region B"@en,
         "alue B"@fi .
 
+mts:m4403 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Pistekirjoituslayout, joka koostuu kappaleittain esitetystä nuottikirjoituksesta, yksi stemma kappaletta kohden."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/layout/1012> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "paragraph"@en,
+        "paragrafi"@fi,
+        "paragraf"@sv .
+
 mts:m447 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -34299,9 +34309,11 @@ mts:m480 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:definition "Tallentamisen tapa, jossa aineiston sisältö tallennetaan binääristen arvojen jaksoina."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/typeRec/1002> ;
     skos:inScheme mts: ;
-    skos:prefLabel "digitaalinen"@fi,
+    skos:prefLabel "digital"@en,
+        "digitaalinen"@fi,
         "digital"@sv .
 
 mts:m486 a skos:Concept ;
@@ -34426,6 +34438,18 @@ mts:m53 a skos:Concept ;
     skos:prefLabel "original"@en,
         "originaali"@fi,
         "original"@sv .
+
+mts:m536 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Layout, joka koostuu tekstisäkeistä, jotka vuorottelevat edeltävään tekstiin liittyvien nuottisäkeiden kanssa."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/layout/1007> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "line by line"@en,
+        "säkeet peräkkäin"@fi,
+        "line by line"@sv .
 
 mts:m545 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -34933,9 +34957,11 @@ mts:m702 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:definition "Tallentamisen tapa, jossa sisältö on taltioitu tallenteeseen jatkuvina muuttuvina suureina."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/typeRec/1001> ;
     skos:inScheme mts: ;
-    skos:prefLabel "analoginen"@fi,
+    skos:prefLabel "analog"@en,
+        "analoginen"@fi,
         "analog"@sv .
 
 mts:m704 a skos:Concept ;
@@ -35386,6 +35412,18 @@ mts:m847 a skos:Concept ;
     skos:scopeNote "Teokseen liittyvä muu toimija"@fi,
         "Annan aktör relaterad till verk"@sv .
 
+mts:m85 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Layout, joka koostuu rinnakkaisina esitetyistä tahdeista, mutta tahteja ei ole välttämättä tasattu."@fi ;
+    skos:exactMatch <http://rdaregistry.info/termList/layout/1008> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "line over line"@en,
+        "säkeet allekkain"@fi,
+        "line over line"@sv .
+
 mts:m850 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -35471,9 +35509,11 @@ mts:m888 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:definition "Ääniraita, joka on sijoitettu filmirullan keskelle."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/trackConfig/1001> ;
     skos:inScheme mts: ;
-    skos:prefLabel "centre track"@fi,
+    skos:prefLabel "centre track"@en,
+        "centre track"@fi,
         "centralspår"@sv .
 
 mts:m89 a skos:Concept ;
@@ -35976,6 +36016,18 @@ mts:m1303 a skos:Concept ;
         "DVD-skiva"@sv ;
     skos:scopeNote "(DVD Digital Versatile Disc tai Digital Video Disc) tiedontallennukseen käytettävä optisesti luettava levy, DVD:n yleisimmät käyttötavat ovat videokuvan ja tiedon tallennus (Tietotekniikan termitalkoot, Wikipedia 15.1.2013)"@fi,
         "DVD (Digital Versatile Disc eller Digital Video Disc) är en optiskt läsbar skiva för lagring av data. De vanligaste användningsområden för DVD är video- och datalagring."@sv .
+
+mts:m1318 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Layout, joka koostuu outline-muotoisesta nuottikirjoituksesta."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "outline"@en,
+        "outline"@fi ;
+    skos:related <http://rdaregistry.info/termList/layout/1011> ;
+    skos:relatedMatch <http://rdaregistry.info/termList/layout/1011> .
 
 mts:m1354 a skos:Concept ;
     skos:altLabel "miks. (miksaaja)"@fi,
@@ -49769,7 +49821,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-04-30T02:53:56+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-01T01:15:42+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
