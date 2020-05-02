@@ -363,6 +363,36 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Ajanjakso">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Ajanjakso</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10010"/>
+    <skos:definition xml:lang="fi">Aikaväli, jolla on alku, loppu ja kesto.</skos:definition>
+    <skos:prefLabel xml:lang="en">timespan</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:Paikka">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Paikka</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10009"/>
+    <skos:definition xml:lang="fi">Sijainti, joka tunnetaan nimellä.</skos:definition>
+    <skos:prefLabel xml:lang="en">place</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:assistentti">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
+    <skos:definition xml:lang="fi">Liittää henkilön toista henkilöä avustavaan kollegaan.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/a/P50275"/>
+    <skos:prefLabel xml:lang="en">assistant</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">assistentti</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiTiedossa">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">sukupuoli ei tiedossa</skos:altLabel>
@@ -7262,8 +7292,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50274"/>
     <skos:definition xml:lang="fi">Liittää henkilön samaan ammattikuntaan, henkilöstöön tai tiedekuntaan/tieteenalaan kuuluvaan henkilöön.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/a/P50274"/>
     <skos:prefLabel xml:lang="en">colleague</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kollega</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kollega</skos:prefLabel>
@@ -7373,6 +7403,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50316"/>
     <skos:altLabel xml:lang="fi">Henkilöiden väliset suhteet</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää henkilön henkilöön, joka liittyy kuvailtavaan henkilöön.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:assistentti"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1802"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4339"/>
@@ -10851,7 +10882,6 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2107"/>
     <skos:definition xml:lang="sv">Samlingstitel som innefattar alla libretton som skrivits av samma aktör.</skos:definition>
     <skos:definition xml:lang="fi">Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat libretot.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/CollTitle/1010"/>
@@ -10949,10 +10979,10 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2114"/>
     <skos:definition xml:lang="sv">Samlingstitel som innefattar alla sångtexter skrivna av samma aktör.</skos:definition>
     <skos:definition xml:lang="fi">Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat sanoitukset.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/CollTitle/1011"/>
+    <skos:prefLabel xml:lang="en">lyrics</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sanoitukset</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">sångtexter</skos:prefLabel>
   </owl:Class>
@@ -18738,6 +18768,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdfs:label xml:lang="sv">Familj/släkt</rdfs:label>
     <rdfs:label xml:lang="fi">Suku</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10008"/>
+    <skos:definition xml:lang="fi">Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä.</skos:definition>
     <skos:prefLabel xml:lang="en">family</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2580">
@@ -22064,6 +22095,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdfs:label xml:lang="sv">Institution</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteisö</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10005"/>
+    <skos:definition xml:lang="fi">Organisaatio tai ryhmä henkilöitä ja/tai organisaatioita, joka tunnetaan tietyllä nimellä, ja joka toimii tai voi toimia yhtenä kokonaisuutena.</skos:definition>
     <skos:prefLabel xml:lang="en">corporate body</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2810">
@@ -30431,6 +30463,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Aktör</rdfs:label>
     <rdfs:label xml:lang="fi">Toimija</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10002"/>
     <skos:altLabel xml:lang="sv">Agent</skos:altLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3417">
@@ -39094,6 +39127,7 @@ Vastavuoroinen suhde: elokuvaversion perustana (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50116"/>
     <skos:definition xml:lang="fi">Henkilön sukupuoli-identiteetti.</skos:definition>
     <skos:definition xml:lang="fi">Liittää henkilön sukupuoleen, jota henkilö kokee edustavansa.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:eiTiedossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4224"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4232"/>
     <skos:prefLabel xml:lang="fi">sukupuoli</skos:prefLabel>
@@ -42483,6 +42517,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="fi">Henkilö</rdfs:label>
     <rdfs:label xml:lang="sv">Person</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10004"/>
+    <skos:definition xml:lang="fi">Yksilö tai yksilön (yksin tai yhdessä yhden tai useamman muun yksilön kanssa) luoma identiteetti.</skos:definition>
     <skos:prefLabel xml:lang="en">person</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m552">
