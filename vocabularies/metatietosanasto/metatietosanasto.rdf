@@ -387,11 +387,21 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50275"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
     <skos:definition xml:lang="fi">Liittää henkilön toista henkilöä avustavaan kollegaan.</skos:definition>
-    <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/a/P50275"/>
     <skos:prefLabel xml:lang="en">assistant</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">assistentti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:avustettu">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50276"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
+    <skos:definition xml:lang="fi">Liittää henkilön toisen henkilön avustamaan kollegaan.</skos:definition>
+    <skos:prefLabel xml:lang="en">assistant to</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">avustettu</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:eiTiedossa">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -401,6 +411,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
     <skos:prefLabel xml:lang="fi">ei tiedossa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">not known</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kumppani">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50278"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
+    <skos:definition xml:lang="fi">Liittää henkilön kollegaan, joka toimii toisen henkilön kanssa yhteiseksi hyväksi, useimmiten yrityskumppanina.</skos:definition>
+    <skos:prefLabel xml:lang="fi">kumppani</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">partner</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -7292,8 +7312,8 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50274"/>
     <skos:definition xml:lang="fi">Liittää henkilön samaan ammattikuntaan, henkilöstöön tai tiedekuntaan/tieteenalaan kuuluvaan henkilöön.</skos:definition>
-    <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/a/P50274"/>
     <skos:prefLabel xml:lang="en">colleague</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kollega</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kollega</skos:prefLabel>
@@ -7404,9 +7424,12 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:altLabel xml:lang="fi">Henkilöiden väliset suhteet</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää henkilön henkilöön, joka liittyy kuvailtavaan henkilöön.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:assistentti"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:avustettu"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kumppani"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1802"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4339"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:opiskelija/oppilas"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tyotoveri"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1805">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -44328,8 +44351,11 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Henkilöiden ja yhteisöjen väliset suhteet</rdfs:label>
-    <rdfs:label xml:lang="sv">Relationer mellan personer och institutioner</rdfs:label>
+    <rdfs:label xml:lang="en">Related person of corporate body</rdfs:label>
+    <rdfs:label xml:lang="fi">Yhteisöön liittyvä henkilö</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50334"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön henkilöön, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4339"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m746"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m908"/>
   </owl:Class>
@@ -46803,5 +46829,24 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:opiskelija/oppilas">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50281"/>
+    <skos:definition xml:lang="fi">Liittää henkilön henkilöön, joka saa opetusta toiselta henkilöltä.</skos:definition>
+    <skos:prefLabel xml:lang="fi">opiskelija/oppilas</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">student</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tyotoveri">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50277"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1801"/>
+    <skos:definition xml:lang="fi">Liittää henkilön kollegaan, joka työskentelee tai jakaa tehtävän toisen henkilön kanssa.</skos:definition>
+    <skos:prefLabel xml:lang="en">coworker</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">työtoveri</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
