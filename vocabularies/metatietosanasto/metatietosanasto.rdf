@@ -363,6 +363,18 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SukuunLiittyvaHenkilo">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="en">Related person of family</rdfs:label>
+    <rdfs:label xml:lang="fi">Sukuun liittyvä henkilö</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50325"/>
+    <skos:definition xml:lang="fi">Liittää suvun henkilöön, joka liittyy kuvailtavaan sukuun.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:suvunJasen"/>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -7371,6 +7383,10 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4408"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4409"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4410"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:opiskelutoveri"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:todellinenIdentiteetti"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:toinenIdentiteetti"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ystava"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1805">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -46848,5 +46864,50 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:opiskelutoveri">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50279"/>
+    <skos:definition xml:lang="fi">Liittää henkilön toisen opiskelijan kollegaan, joka myös virallisesti opiskelee.</skos:definition>
+    <skos:prefLabel xml:lang="en">fellow student</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">opiskelutoveri</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:suvunJasen">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50056"/>
+    <skos:definition xml:lang="fi">Liittää suvun henkilöön, joka on suvun jäsen.</skos:definition>
+    <skos:prefLabel xml:lang="en">person member of family</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">suvun jäsen</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:todellinenIdentiteetti">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50106"/>
+    <skos:definition xml:lang="fi">Liittää henkilön toisen identiteetin omaksuneen henkilön todelliseen identiteettiin.</skos:definition>
+    <skos:prefLabel xml:lang="en">real identity</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">todellinen identiteetti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:toinenIdentiteetti">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50105"/>
+    <skos:definition xml:lang="fi">Liittää henkilön henkilön omaksumaan toiseen identiteettiiin.</skos:definition>
+    <skos:prefLabel xml:lang="en">alternate identity</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">toinen identiteetti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ystava">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50280"/>
+    <skos:definition xml:lang="fi">"Liittää henkilön henkilöön, jolla on molemminpuolinen kiintymys- tai kunnioitussuhde toiseen henkilöön.</skos:definition>
+    <skos:prefLabel xml:lang="en">friend</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">ystävä</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
