@@ -5518,7 +5518,11 @@ mts:m1804 a isothes:ConceptGroup,
         mts:m4405,
         mts:m4408,
         mts:m4409,
-        mts:m4410 ;
+        mts:m4410,
+        mts:m4411,
+        mts:m4412,
+        mts:m4413,
+        mts:m4417 ;
     skos:prefLabel "related person of person"@en,
         "Henkilöön liittyvä henkilö"@fi,
         "Relationer mellan personer"@sv .
@@ -14259,6 +14263,62 @@ mts:m4409 a skos:Concept ;
     skos:prefLabel "student"@en,
         "opiskelija/oppilas"@fi .
 
+mts:m4411 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50280 ;
+    skos:definition "\"Liittää henkilön henkilöön, jolla on molemminpuolinen kiintymys- tai kunnioitussuhde toiseen henkilöön."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "friend"@en,
+        "ystävä"@fi .
+
+mts:m4412 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50105 ;
+    skos:definition "Liittää henkilön henkilön omaksumaan toiseen identiteettiiin."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "alternate identity"@en,
+        "toinen identiteetti"@fi .
+
+mts:m4413 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50106 ;
+    skos:definition "Liittää henkilön toisen identiteetin omaksuneen henkilön todelliseen identiteettiin."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "real identity"@en,
+        "todellinen identiteetti"@fi .
+
+mts:m4414 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50055 ;
+    skos:broader mts:m4415 ;
+    skos:definition "Liittää suvun henkilöön, josta suku polveutuu."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "descendant family of person of"@en,
+        "kantaisä"@fi .
+
+mts:m4416 a isothes:ConceptGroup,
+        skos:Collection ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50325 ;
+    skos:definition "Liittää suvun henkilöön, joka liittyy kuvailtavaan sukuun."@fi ;
+    skos:member mts:m4415 ;
+    skos:prefLabel "Related person of family"@en,
+        "Sukuun liittyvä henkilö"@fi .
+
+mts:m4417 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50279 ;
+    skos:definition "Liittää henkilön toisen opiskelijan kollegaan, joka myös virallisesti opiskelee."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "fellow student"@en,
+        "opiskelutoveri"@fi .
+
 mts:m45 a skos:Concept ;
     skos:altLabel "maanmittari (suhde)"@fi,
         "lantmätare (relation)"@sv ;
@@ -16417,6 +16477,7 @@ mts:m875 a isothes:ConceptGroup,
         "Avser relation mellan en aktör (person, släkt, institution) och en annan entitet."@sv ;
     skos:member mts:m1776,
         mts:m1804,
+        mts:m4416,
         mts:m697,
         mts:m747 ;
     skos:prefLabel "Toimijoiden väliset suhteet"@fi,
@@ -34444,6 +34505,16 @@ mts:m4410 a skos:Concept ;
     skos:prefLabel "assistant to"@en,
         "avustettu"@fi .
 
+mts:m4415 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50056 ;
+    skos:definition "Liittää suvun henkilöön, joka on suvun jäsen."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4414 ;
+    skos:prefLabel "person member of family"@en,
+        "suvun jäsen"@fi .
+
 mts:m447 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -49999,7 +50070,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-03T02:16:44+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-04T02:25:07+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
