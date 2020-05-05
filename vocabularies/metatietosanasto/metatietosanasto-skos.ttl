@@ -2091,7 +2091,8 @@ mts:m1140 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "magneettinen ääniraita"@fi,
+    skos:prefLabel "magnetic sound track"@en,
+        "magneettinen ääniraita"@fi,
         "magnetiskt ljudspår"@sv .
 
 mts:m1143 a skos:Concept ;
@@ -5011,6 +5012,9 @@ mts:m1758 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40015 ;
+    skos:altLabel "huomautuksen kirjoittaja"@fi,
+        "huomautuksen tekijä"@fi,
+        "huomautusten tekijä"@fi ;
     skos:definition "Henkilö, joka on tehnyt omakätisesti huomautuksia kappaleeseen."@fi,
         "Person som egenhändigt gjort anmärkningar i ett exemplar."@sv ;
     skos:inScheme mts: ;
@@ -5859,6 +5863,7 @@ mts:m184 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10067 ;
+    skos:altLabel "sponsori (suhde)"@fi ;
     skos:definition "henkilö tai yhteisö, joka sponsoroi teosta esim. rahoittamalla tutkimusta tai tukemalla tapahtumaa"@fi,
         "person eller institution som sponsorerar ett verk, t.ex. genom att finansiera forskningen eller understödja ett evenemang"@sv ;
     skos:inScheme mts: ;
@@ -10796,8 +10801,10 @@ mts:m291 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30056,
         rdam:P30168 ;
     skos:altLabel "note on frequency"@en,
-        "Huomautus ilmestymistiheydestä"@fi ;
-    skos:definition "Liittää manifestaation ilmestymistiheyteen, joka ilmaisee, millaisin aikavälein sarja-aineiston numerot tai osat ilmestyvät tai päivittyvän aineiston päivitykset tapahtuvat."@fi ;
+        "Huomautus ilmestymistiheydestä"@fi,
+        "Anmärkning om utgivningsfrekvens"@sv ;
+    skos:definition "Liittää manifestaation ilmestymistiheyteen, joka ilmaisee, millaisin aikavälein sarja-aineiston numerot tai osat ilmestyvät tai päivittyvän aineiston päivitykset tapahtuvat."@fi,
+        "Sammankopplar manifestation med en utgivningsfrekvens som anger med hurudana intervall nummer eller delar i en seriell resurs utkommer eller uppdateringar i en integrerande resurs sker."@sv ;
     skos:member mts:m1049,
         mts:m1091,
         mts:m1332,
@@ -14258,10 +14265,12 @@ mts:m4409 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50281 ;
-    skos:definition "Liittää henkilön henkilöön, joka saa opetusta toiselta henkilöltä."@fi ;
+    skos:definition "Liittää henkilön henkilöön, joka saa opetusta toiselta henkilöltä."@fi,
+        "Sammankopplar person med en person som undervisas av en annan person."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "student"@en,
-        "opiskelija/oppilas"@fi .
+        "opiskelija/oppilas"@fi,
+        "studerande/elev"@sv .
 
 mts:m4411 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14290,23 +14299,14 @@ mts:m4413 a skos:Concept ;
     skos:prefLabel "real identity"@en,
         "todellinen identiteetti"@fi .
 
-mts:m4414 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50055 ;
-    skos:broader mts:m4415 ;
-    skos:definition "Liittää suvun henkilöön, josta suku polveutuu."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "descendant family of person of"@en,
-        "kantaisä"@fi .
-
 mts:m4416 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50325 ;
     skos:definition "Liittää suvun henkilöön, joka liittyy kuvailtavaan sukuun."@fi ;
-    skos:member mts:m4415 ;
+    skos:member mts:m4414,
+        mts:m4415 ;
     skos:prefLabel "Related person of family"@en,
         "Sukuun liittyvä henkilö"@fi .
 
@@ -14318,6 +14318,24 @@ mts:m4417 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "fellow student"@en,
         "opiskelutoveri"@fi .
+
+mts:m4418 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50028 ;
+    skos:definition "Liittää yhteisön henkilöön, joka rahoittaa tai tukee yhteisöä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sponsoring person of corporate body"@en,
+        "sponsori"@fi .
+
+mts:m4421 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50252 ;
+    skos:definition "Liittää yhteisön henkilöön, jolle laitos tai tiedekunta on myöntänyt akateemisen loppututkinnon."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "graduate"@en,
+        "loppututkinnon suorittanut"@fi .
 
 mts:m45 a skos:Concept ;
     skos:altLabel "maanmittari (suhde)"@fi,
@@ -15761,12 +15779,13 @@ mts:m746 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50030 ;
-    skos:definition "Viitataan yhteisön jäseneen/ jäseniin (henkilö/t). Esim. yhteisö: Eppu Normaali (yhtye) ; yhteisön jäsen: Syrjä, Martti"@fi,
-        "Vid beskrivning av institution görs hänvisning till institutionens medlem/mar (person/er). Ex. institution: Gjallarhorn (ensemble) ; institutionens medlem: Wilhelms, Jenny."@sv ;
+    skos:definition "Liittää yhteisön henkilöön, joka on yhteisön jäsen."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "member"@en,
         "jäsen"@fi,
-        "medlem"@sv .
+        "medlem"@sv ;
+    skos:scopeNote "Viitataan yhteisön jäseneen/ jäseniin (henkilö/t). Esim. yhteisö: Eppu Normaali (yhtye) ; yhteisön jäsen: Syrjä, Martti"@fi,
+        "Vid beskrivning av institution görs hänvisning till institutionens medlem/mar (person/er). Ex. institution: Gjallarhorn (ensemble) ; institutionens medlem: Wilhelms, Jenny."@sv .
 
 mts:m747 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15774,7 +15793,13 @@ mts:m747 a isothes:ConceptGroup,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50334 ;
     skos:definition "Liittää yhteisön henkilöön, joka liittyy kuvailtavaan yhteisöön."@fi ;
-    skos:member mts:m4339,
+    skos:member mts:m3928,
+        mts:m4339,
+        mts:m4418,
+        mts:m4419,
+        mts:m4420,
+        mts:m4421,
+        mts:m4422,
         mts:m746,
         mts:m908 ;
     skos:prefLabel "Related person of corporate body"@en,
@@ -20934,7 +20959,7 @@ mts:m1398 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "music for motion picture (work)"@en,
         "musiikki elokuvaan (teos)"@fi,
-        "musik till film (verk)"@sv .
+        "musik till filmen (verk)"@sv .
 
 mts:m1400 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -23665,7 +23690,7 @@ Vastavuoroinen suhde: musikaaliversion perustana (teos)."""@fi,
     skos:inScheme mts: ;
     skos:prefLabel "adapted as musical theatre (work)"@en,
         "musikaaliversio (teos)"@fi,
-        "musikalversion"@sv .
+        "musikalversion (verk)"@sv .
 
 mts:m2282 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -25401,6 +25426,7 @@ mts:m2775 a skos:Concept ;
 mts:m278 a skos:Concept ;
     rdfs:seeAlso rdae:P20296 ;
     skos:altLabel "DJ-miks. (DJ-miksaaja)"@fi,
+        "DJ-miksaaja"@fi,
         "DJ-mix. (DJ-mixer)"@sv ;
     skos:broader mts:m1354 ;
     skos:definition "Liittää ekspression toimijaan, joka miksaa ääniraitoja yhteen yhtäjaksoiseksi raidaksi live-esityksessä tai äänitysstudiossa."@fi,
@@ -32600,10 +32626,12 @@ mts:m4214 a skos:Concept ;
     rdfs:seeAlso rdae:P20060 ;
     skos:broader mts:m4199 ;
     skos:definition """Liittää ekspression radio-ohjelmaan, joka perustuu lähteenä olevaan ekspressioon.\r
-Vastavuoroinen suhde: radiosovituksen perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: radiosovituksen perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett radioprogram som baserar sig på uttrycket som är källa. Parallell relation: radiobearbetning baserad på (uttryck)"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "adapted as radio program expression"@en,
-        "radiosovitus (ekspressio)"@fi .
+        "radiosovitus (ekspressio)"@fi,
+        "radiobearbetning (uttryck)"@sv .
 
 mts:m4215 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32707,10 +32735,12 @@ mts:m4225 a skos:Concept ;
     rdfs:seeAlso rdae:P20170 ;
     skos:broader mts:m731 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka systemaattisesti, kokonaisuudessaan ja mukaillen tiivistää lähteenä olevan ekspression\r
-Vastavuoroinen suhde: mukautetun lyhennelmän perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: mukautetun lyhennelmän perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck som systematiskt, i sin helhet och genom omarbetning sammanfattar uttrycket som är källa.  Parallell relation: anpassad förkortad version baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "digested as expression"@en,
-        "mukautettu lyhennelmä (ekspressio)"@fi .
+        "mukautettu lyhennelmä (ekspressio)"@fi,
+        "anpassad förkortad version (uttryck)"@sv .
 
 mts:m4226 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32718,10 +32748,12 @@ mts:m4226 a skos:Concept ;
     rdfs:seeAlso rdae:P20066 ;
     skos:broader mts:m4199 ;
     skos:definition """Liittää ekspression televisio-ohjelmaan, joka perustuu lähteenä olevaan ekspressioon.\r
-Vastavuoroinen suhde: televisiosovituksen perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: televisiosovituksen perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett tv-program, som baserar sig på uttrycket som är källa. Parallell relation: tv-bearbetning baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "adapted as television program expression"@en,
-        "televisiosovitus (ekspressio)"@fi .
+        "televisiosovitus (ekspressio)"@fi,
+        "tv-bearbetning (uttryck)"@sv .
 
 mts:m4227 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32871,10 +32903,12 @@ mts:m4240 a skos:Concept ;
     rdfs:seeAlso rdae:P20147 ;
     skos:broader mts:m4236 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, jota täydentää toinen teos, joka sisältää materiaalia, jonka avulla on tarkoitus käyttää pääteosta, kuten muistiinpanoja, opiskelumateriaaleja, tehtäviä, kysymyksiä ja vastauksia, opettajan ja oppilaan aineistoja, jne.\r
-Vastavuoroinen suhde: opas (ekspressio)."""@fi ;
+Vastavuoroinen suhde: opas (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck som kompletteras av det andra verket och som innehåller material, med hjälp av vilket det är meningen att man ska använda huvudverket. Parallell relation: guide (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "guide to expression"@en,
-        "opas ekspressioon"@fi .
+        "opas ekspressioon"@fi,
+        "guide till uttrycket"@sv .
 
 mts:m4243 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -32894,10 +32928,12 @@ mts:m4244 a skos:Concept ;
     rdfs:seeAlso rdae:P20248 ;
     skos:broader mts:m4305 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka käyttää musiikkiteosta televisio-ohjelmassa.\r
-Vastavuoroinen suhde: televisio-ohjelman musiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: televisio-ohjelman musiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, i vilket ett musikverk används i tv-program. Parallell relation: musik till tv-program (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for television program expression"@en,
-        "musiikki televisio-ohjelmaan (ekspressio)"@fi .
+        "musiikki televisio-ohjelmaan (ekspressio)"@fi,
+        "musik till tv-programmet (uttryck)"@sv .
 
 mts:m4245 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -32916,10 +32952,12 @@ mts:m4246 a skos:Concept ;
     rdfs:seeAlso rdae:P20247 ;
     skos:broader mts:m4326 ;
     skos:definition """Liittää ekspression musiikkiteoksen ekspressioon, jota käytetään televisio-ohjelmassa.\r
-Vastavuoroinen suhde: musiikki televisio-ohjelmaan (ekspressio)."""@fi ;
+Vastavuoroinen suhde: musiikki televisio-ohjelmaan (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett musikverks uttryck, som används i tv-program. Parallell relation: musik till tv-programmet (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "television program music expression"@en,
-        "televisio-ohjelman musiikki (ekspressio)"@fi .
+        "televisio-ohjelman musiikki (ekspressio)"@fi,
+        "musik till tv-program (uttryck)"@sv .
 
 mts:m4248 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -32984,10 +33022,12 @@ mts:m4254 a skos:Concept ;
     rdfs:seeAlso rdae:P20252 ;
     skos:broader mts:m4305 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka käyttää musiikkiteosta elokuvassa.\r
-Vastavuoroinen suhde: elokuvamusiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: elokuvamusiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, i vilket musikverket används. Parallell relation: filmmusik (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for motion picture expression"@en,
-        "musiikki elokuvaan (ekspressio)"@fi .
+        "musiikki elokuvaan (ekspressio)"@fi,
+        "musik till filmen (uttryck)"@sv .
 
 mts:m4255 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33185,10 +33225,12 @@ mts:m4275 a skos:Concept ;
     rdfs:seeAlso rdae:P20249 ;
     skos:broader mts:m4326 ;
     skos:definition """Liittää ekspression musiikkiteoksen ekspressioon, jota käytetään radio-ohjelmassa.\r
-Vastavuoroinen suhde: musiikki radio-ohjelmaan (ekspressio)."""@fi ;
+Vastavuoroinen suhde: musiikki radio-ohjelmaan (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett musikverks uttryck, som används i radioprogram. Parallell relation: musik till radioprogrammet (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "radio program music expression"@en,
-        "radiomusiikki (ekspressio)"@fi .
+        "radiomusiikki (ekspressio)"@fi,
+        "radiomusik (uttryck)"@sv .
 
 mts:m4276 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -33482,10 +33524,12 @@ mts:m4304 a skos:Concept ;
     rdfs:seeAlso rdae:P20103 ;
     skos:broader mts:m4305 ;
     skos:definition """Liittää ekspression näytelmän tai muun puhutun näyttämöteoksen ekspressioon, joka käyttää musiikkiteosta näytelmämusiikkina.\r
-Vastavuoroinen suhde: näytelmämusiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: näytelmämusiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett uttryck för skådespel eller annat talat sceniskt verk, som använder musikverket som skådespelsmusik. Parallell relation: skådespelsmusik (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "incidental music for expression"@en,
-        "näytelmämusiikki näyttämöekspressioon"@fi .
+        "näytelmämusiikki näyttämöekspressioon"@fi,
+        "skådespelsmusik till det sceniska uttrycket"@sv .
 
 mts:m4306 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33515,10 +33559,12 @@ mts:m4309 a skos:Concept ;
     rdfs:seeAlso rdae:P20085 ;
     skos:broader mts:m4326 ;
     skos:definition """Liittää ekspression musiikkiteoksen ekspressioon, joka toimii näytelmän tai muun puhutun näyttämöteoksen taustamusiikkina.\r
-Vastavuoroinen suhde: näytelmämusiikki näytelmäekspressioon."""@fi ;
+Vastavuoroinen suhde: näytelmämusiikki näytelmäekspressioon."""@fi,
+        "Sammankopplar uttryck med ett musikverks uttryck, som fungerar som bakgrundsmusik i ett skådespel eller annat talat sceniskt verk. Parallell relation: skådespelsmusik till det sceniska uttrycket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "incidental music expression"@en,
-        "näytelmämusiikki (ekspressio)"@fi .
+        "näytelmämusiikki (ekspressio)"@fi,
+        "skådespelsmusik (uttryck)"@sv .
 
 mts:m4310 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33561,10 +33607,12 @@ mts:m4315 a skos:Concept ;
     rdfs:seeAlso rdae:P20120 ;
     skos:broader mts:m4285 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka opastaa käyttäjää vallitsevan teoksen käytössä huomautusten, harjoitusten, kysymysten ja vastausten, harjoitus- tai oppimateriaalin tms. avulla.\r
-Vastavuoroinen suhde: opas ekspressioon."""@fi ;
+Vastavuoroinen suhde: opas ekspressioon."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck som handleder användaren i användningen av ett verk, med hjälp av anmärkningar, övningar, frågor och svar, övnings- eller läromaterial e.d. Parallell relation: guide till uttrycket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "guide expression"@en,
-        "opas (ekspressio)"@fi .
+        "opas (ekspressio)"@fi,
+        "guide (uttryck)"@sv .
 
 mts:m4316 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33585,10 +33633,12 @@ mts:m4317 a skos:Concept ;
     rdfs:seeAlso rdae:P20250 ;
     skos:broader mts:m4305 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka käyttää musiikkiteosta radio-ohjelmassa.\r
-Vastavuoroinen suhde: radiomusiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: radiomusiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, i vilket musikverket används i radioprogram. Parallell relation: radiomusik (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for radio program expression"@en,
-        "musiikki radio-ohjelmaan (ekspressio)"@fi .
+        "musiikki radio-ohjelmaan (ekspressio)"@fi,
+        "musik till radioprogrammet (uttryck)"@sv .
 
 mts:m4318 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33746,10 +33796,12 @@ mts:m4331 a skos:Concept ;
     rdfs:seeAlso rdae:P20246 ;
     skos:broader mts:m4305 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka käyttää musiikkiteosta videossa.\r
-Vastavuoroinen suhde: videon musiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: videon musiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, som används i video. Parallell relation: videomusik (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for video expression"@en,
-        "musiikki videoon (ekspressio)"@fi .
+        "musiikki videoon (ekspressio)"@fi,
+        "musik till videon (uttryck)"@sv .
 
 mts:m4332 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -34020,12 +34072,13 @@ mts:m4360 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "neljännesvuosittain"@fi ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy neljä kertaa vuodessa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy neljä kertaa vuodessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras fyra gånger per år."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1010> ;
     skos:inScheme mts: ;
     skos:prefLabel "quuarterly"@en,
         "neljä kertaa vuodessa"@fi,
-        "fyra gånger per året"@sv .
+        "fyra gånger per år"@sv .
 
 mts:m4361 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -34112,22 +34165,26 @@ mts:m4368 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ei-magneettinen metallinen alkuaine, joka on taipuisa ja muokattava, väriltään harmaan tai hopean sävyinen."@fi ;
+    skos:definition "Ei-magneettinen metallinen alkuaine, joka on taipuisa ja muokattava, väriltään harmaan tai hopean sävyinen."@fi,
+        "Icke-magnetiskt metalliskt grundämne som är böjligt och formbart, till sin färg grått eller silverskiftande."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMaterial/1003> ;
     skos:inScheme mts: ;
-    skos:prefLabel "aluminium\""@en,
-        "alumiini"@fi .
+    skos:prefLabel "aluminium"@en,
+        "alumiini"@fi,
+        "aluminium"@sv .
 
 mts:m4369 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Materiaali, joka koostuu synteettisistä tai orgaanisista polymeereistä ja jolla on suuri joustavuus ja kimmoisuus."@fi ;
+    skos:definition "Materiaali, joka koostuu synteettisistä tai orgaanisista polymeereistä ja jolla on suuri joustavuus ja kimmoisuus."@fi,
+        "Material som består av syntetiska eller organiska polymerer och har stor elasticitet och spänst."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMaterial/1032> ;
     skos:inScheme mts: ;
     skos:prefLabel "rubber"@en,
-        "kumi"@fi .
+        "kumi"@fi,
+        "gummi"@sv .
 
 mts:m4370 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -34505,6 +34562,16 @@ mts:m4410 a skos:Concept ;
     skos:prefLabel "assistant to"@en,
         "avustettu"@fi .
 
+mts:m4414 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50055 ;
+    skos:broader mts:m4415 ;
+    skos:definition "Liittää suvun henkilöön, josta suku polveutuu."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "descendant family of person of"@en,
+        "kantaisä"@fi .
+
 mts:m4415 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -34514,6 +34581,26 @@ mts:m4415 a skos:Concept ;
     skos:narrower mts:m4414 ;
     skos:prefLabel "person member of family"@en,
         "suvun jäsen"@fi .
+
+mts:m4420 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50284 ;
+    skos:broader mts:m4419 ;
+    skos:definition "\"Liittää yhteisön virkamieheen, joka on yhteisön ylin viranhaltija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "chief executive"@en,
+        "pääjohtaja"@fi .
+
+mts:m4422 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50285 ;
+    skos:broader mts:m4419 ;
+    skos:definition "Liittää yhteisön virkamieheen, jolla on valtuudet tehdä päätöksiä yhteisön eduksi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "trustee"@en,
+        "edunvalvoja"@fi .
 
 mts:m447 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -41263,6 +41350,7 @@ mts:m2943 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
     skos:altLabel "directors general"@en,
+        "pääjohtaja (ammatti)"@fi,
         "pääjohtajat"@fi,
         "generaldirektörer"@sv ;
     skos:broader mts:m2334 ;
@@ -45171,11 +45259,13 @@ mts:m4178 a skos:Concept ;
     rdfs:seeAlso rdae:P20127 ;
     skos:broader mts:m1117 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, josta elokuvan, televisio-ohjelman tai videon käsikirjoitus on muokattu.\r
-Vastavuoroinen suhde: käsikirjoitus (ekspressio)."""@fi ;
+Vastavuoroinen suhde: käsikirjoitus (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, från vilket ett film-, tv-, eller videomanuskript har bearbetats. Parallell relation: manuskript (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m3551 ;
     skos:prefLabel "radio adaptation of expression"@en,
-        "radiosovituksen perustana (ekspressio)"@fi .
+        "radiosovituksen perustana (ekspressio)"@fi,
+        "radiobearbetning baserad på (uttryck)"@sv .
 
 mts:m4179 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -45252,11 +45342,13 @@ mts:m4191 a skos:Concept ;
     rdfs:seeAlso rdae:P20128 ;
     skos:broader mts:m1117 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, josta televisiosovitus on tehty.\r
-Vastavuoroinen suhde: televisiosovitus (ekspressio)."""@fi ;
+Vastavuoroinen suhde: televisiosovitus (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, från vilket en tv-bearbetning har gjorts. Parallell relation: tv-bearbetning (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m3551 ;
     skos:prefLabel "television adaptation of expression"@en,
-        "televisiosovituksen perustana (ekspressio)"@fi .
+        "televisiosovituksen perustana (ekspressio)"@fi,
+        "tv-bearbetning baserad på (uttryck)"@sv .
 
 mts:m4193 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -45383,6 +45475,17 @@ mts:m4266 a skos:Concept ;
     skos:prefLabel "facsimile of manifestation of"@en,
         "näköispainoksen alkuperä"@fi,
         "faksimilupplaga av"@sv .
+
+mts:m4419 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50027 ;
+    skos:definition "Liittää yhteisön henkilöön, joka saa opetusta oppilaitoksessa."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4420,
+        mts:m4422 ;
+    skos:prefLabel "officer"@en,
+        "virkamies"@fi .
 
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -48048,7 +48151,8 @@ mts:m4305 a skos:Concept ;
     rdfs:seeAlso rdae:P20244 ;
     skos:broader mts:m4218 ;
     skos:definition """Liittää ekspression teoksen ekspressioon kuten elokuvaan, teatteriesitykseen, televisio-ohjelmaan tms., joka käyttää musiikkiteosta.\r
-Vastavuoroinen suhde: musiikki (ekspressio)."""@fi ;
+Vastavuoroinen suhde: musiikki (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, såsom film, teaterföreställning, tv-program e.d., som använder musikverket. Parallell relation: musik (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4244,
         mts:m4254,
@@ -48056,7 +48160,8 @@ Vastavuoroinen suhde: musiikki (ekspressio)."""@fi ;
         mts:m4317,
         mts:m4331 ;
     skos:prefLabel "music for expression"@en,
-        "musiikki ekspressioon"@fi .
+        "musiikki ekspressioon"@fi,
+        "musik till uttrycket"@sv .
 
 mts:m4326 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -48064,7 +48169,8 @@ mts:m4326 a skos:Concept ;
     rdfs:seeAlso rdae:P20243 ;
     skos:broader mts:m4218 ;
     skos:definition """Liittää ekspression musiikkiteoksen ekspressioon, jota on käytetty elokuvassa, teatteriesityksessä, televisio-ohjelmassa jne.\r
-Vastavuoroinen suhde: musiikki ekspressioon."""@fi ;
+Vastavuoroinen suhde: musiikki ekspressioon."""@fi,
+        "Sammankopplar uttryck med ett musikverks uttryck, som har använts i film, teaterföreställning, tv-program etc. Parallell relation: musik till uttrycket."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4246,
         mts:m4252,
@@ -48072,7 +48178,8 @@ Vastavuoroinen suhde: musiikki ekspressioon."""@fi ;
         mts:m4297,
         mts:m4309 ;
     skos:prefLabel "music expression"@en,
-        "musiikki (ekspressio)"@fi .
+        "musiikki (ekspressio)"@fi,
+        "musik (uttryck)"@sv .
 
 mts:m552 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -49051,7 +49158,8 @@ mts:m4199 a skos:Concept ;
     rdfs:seeAlso rdae:P20153 ;
     skos:broader mts:m731 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka on muokattu kuvailun kohteena olevasta ekspressiosta jotain muuta kuin alkuperäistä tarkoitusta, käyttöä tai esitysmuotoa varten. Kattaa sekä teoksen muotoon kohdistuvat muutokset että samassa muodossa kokonaan uudelleenmuokatut teokset.\r
-Vastavuoroinen suhde: mukaelman perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: mukaelman perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck som har bearbetats från uttrycket som är föremål för beskrivning, till något annat än det ursprungliga ändamålet, användningen eller framställningssättet. Omfattar både förändringar gällande verkets form och helt omarbetade verk i samma form. Parallell relation: omarbetning baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4200,
         mts:m4202,
@@ -49069,7 +49177,8 @@ Vastavuoroinen suhde: mukaelman perustana (ekspressio)."""@fi ;
         mts:m4226,
         mts:m4228 ;
     skos:prefLabel "adapted as expression"@en,
-        "mukaelma (ekspressio)"@fi .
+        "mukaelma (ekspressio)"@fi,
+        "omarbetning (uttryck)"@sv .
 
 mts:m1060 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -49110,6 +49219,7 @@ mts:m2452 a skos:Concept ;
         "public servants"@en,
         "valtion virkamiehet"@fi,
         "virkamiehet"@fi,
+        "virkamies (ammatti)"@fi,
         "statstjänstemän"@sv,
         "tjänstemän"@sv ;
     skos:exactMatch yso:p212 ;
@@ -49966,8 +50076,14 @@ mts:m2433 a skos:Concept ;
         "chef"@sv .
 
 mts:m3928 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
+    dc:source "RDA-termi"@fi,
+        "YSO-termi"@fi,
+        "ALLFO-term"@sv,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50026 ;
+    skos:altLabel "public servant"@en,
+        "työntekijä (ammatti)"@fi ;
+    skos:definition "Liittää yhteisön henkilöön, joka on työntekijänä yhteisössä."@fi ;
     skos:exactMatch yso:p212 ;
     skos:inScheme mts: ;
     skos:narrower mts:m2362,
@@ -50025,7 +50141,7 @@ mts:m3928 a skos:Concept ;
         mts:m4109,
         mts:m4110,
         mts:m4112 ;
-    skos:prefLabel "public servant"@en,
+    skos:prefLabel "employee"@en,
         "työntekijä"@fi,
         "arbetstagare"@sv .
 
@@ -50070,7 +50186,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-04T02:25:07+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-05T01:14:50+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
