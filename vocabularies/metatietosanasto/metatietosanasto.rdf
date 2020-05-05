@@ -375,6 +375,43 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:altLabel xml:lang="fi">Henkilöiden ja sukujen väliset suhteet</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää henkilön sukuun, joka liittyy kuvailtavaan henkilöön.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:jalkelaiset"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:suku"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:HenkiloonLiittyvaYhteiso">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="fi">Henkilöön liittyvä yhteisö</rdfs:label>
+    <rdfs:label xml:lang="en">Related corporate body of person</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50318"/>
+    <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, joka liittyy kuvailtavaan henkilöön.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SukuunLiittyvaSuku">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="en">Related family of family</rdfs:label>
+    <rdfs:label xml:lang="fi">Sukuun liittyvä suku</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50326"/>
+    <skos:definition xml:lang="fi">Liittää suvun sukuun, joka liittyy kuvailtavaan sukuun.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:polveutuvaSuku"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:SukuunLiittyvaYhteiso">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="en">Related corporate body of family</rdfs:label>
+    <rdfs:label xml:lang="fi">Sukuun liittyvä yhteisö</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50327"/>
+    <skos:definition xml:lang="fi">Liittää suvun yhteisöön, joka liittyy kuvailtavaan sukuun.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sponsoroivaSuku"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:suku_1"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jalkelaiset">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -1085,11 +1122,12 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Tillverkningsmetod, i vilken kopior av en manifestation som registreras med känselsinnet tillverkas av antingen metall- eller plastplattor.</skos:definition>
     <skos:definition xml:lang="fi">Valmistusmenetelmä, jossa joko metalli- tai muovilevystä valmistetaan tuntoaistilla havainnoitavan manifestaation kopioita.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAproductionMethod/1018"/>
     <skos:prefLabel xml:lang="en">embossing</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kohopaino</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">reliefmönstrad</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">relieftryck</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1082">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -1097,10 +1135,12 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Illustrativt innehåll som vanligen består av en tvådimensionell karta i skala, som i sin helhet eller delvis är en beskrivning av ytan av ett objekt på jorden, stjärnhimlen eller en fiktiv plats.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasisältö, joka koostuu yleensä mittakaavassa ja kaksiulotteisena esitetystä kartasta, joka on maan tai muun tähtitaivaan kappaleen tai kuvitteellisen paikan pinnan kuvaus kokonaisuudessaan tai osittain.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/IllusContent/1008"/>
-    <skos:prefLabel xml:lang="sv">kartor</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">karta</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kartta</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">I plural: kartor, xx kartor</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monikossa: karttoja, xx karttaa</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1083">
@@ -3819,7 +3859,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">används i första hand som ersättande band</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">används i första hand som ersättande bärare</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">käytettävissä ensisijaisesti korvaavana tallenteena</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1416">
@@ -4549,13 +4589,14 @@ Ei käytetä äänitetystä musiikista [ks. musiikki] tai äänitetystä ihmisen
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="sv">Kartografiskt innehåll uttryckt som digitalt kodade data och som är avsett att användas med hjälp av dator. Se även kartografisk bild, kartografisk rörlig bild, kartografisk taktil bild, kartografisk taktil tredimensionell form och kartografisk tredimensionell form.</skos:definition>
+    <skos:altLabel xml:lang="sv">kartografiskt dataset</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää manifestaation tietokoneen käsiteltäväksi tarkoitettuun digitaaliseen kartografiseen sisältöön.&#xD;
 Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen taktiili kuva, kartografinen taktiili kolmiulotteinen muoto tai kartografinen kolmiulotteinen muoto.</skos:definition>
+    <skos:definition xml:lang="sv">Sammankopplar manifestation med digitalt kartografiskt innehåll som är avsett att behandlas med dator. Se även kartografisk bild, kartografisk rörlig bild, kartografisk taktil bild, kartografisk taktil tredimensionell form och kartografisk tredimensionell form.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/m/P30261"/>
     <skos:prefLabel xml:lang="en">cartographic data type</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kartografinen datatyyppi</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">kartografiskt dataset</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">kartografisk datatyp</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m151">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -38075,6 +38116,7 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:prefLabel xml:lang="fi">kohokuva</skos:prefLabel>
     <skos:prefLabel xml:lang="en">relief</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">relief</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">I plural: reliefer, xx reliefer</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monikossa: kohokuvia, xx kohokuvaa</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4126">
@@ -45328,7 +45370,7 @@ Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita kats
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">bruksexemplar i referensbiblioteket</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">bruksexemplar i referensbibliotek</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">käyttökappale käsikirjastossa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m822">
@@ -47095,6 +47137,24 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:polveutuvaSuku">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50053"/>
+    <skos:definition xml:lang="fi">Liittää suvun sukuun, joka polveutuu toisesta suvusta.</skos:definition>
+    <skos:prefLabel xml:lang="en">descendant family of family</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">polveutuva suku</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sponsoroivaSuku">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50021"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön sukuun, joka sponsoroi yhteisöä.</skos:definition>
+    <skos:prefLabel xml:lang="en">spnsoring family of corporate body</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sponsoroiva suku</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:suku">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -47103,5 +47163,14 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää henkilön sukuun, johon henkilö kuuluu.</skos:definition>
     <skos:prefLabel xml:lang="en">family</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">suku</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:suku_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50020"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön sukuun, joka perusti yhteisön.</skos:definition>
+    <skos:prefLabel xml:lang="en">founding family of corporate body</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">perustajasuku</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
