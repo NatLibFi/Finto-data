@@ -363,12 +363,23 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:YhteisoonLiittyvaSuku">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="en">Related family of corporate body</rdfs:label>
+    <rdfs:label xml:lang="fi">Yhteisöön liittyvä suku</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50335"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön sukuun, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:edunvalvojanaYhteisossa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50287"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4419"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4419_1"/>
     <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, jossa virkamiehellä on valtuudet tehdä päätöksiä yhteisön eduksi.</skos:definition>
     <skos:prefLabel xml:lang="fi">edunvalvojana yhteisössä</skos:prefLabel>
     <skos:prefLabel xml:lang="en">trustee of</skos:prefLabel>
@@ -4022,11 +4033,13 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Illustrativt innehåll som utgörs av en bild som uppstår från ljus som träffar på ljuskänsligt material, vanligen fotografisk film eller i något elektroniskt lagringsmedium.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasisältö, joka muodostuu valoherkälle pinnalle, tavallisesti valokuvafilmille tai elektroniseen tallennusvälineeseen, osuvan valon muodostamasta kuvasta.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/IllusContent/1010"/>
-    <skos:prefLabel xml:lang="sv">fotografier</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">fotografi</skos:prefLabel>
     <skos:prefLabel xml:lang="en">photograph</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">valokuva</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">I plural: fotografier, xx fotografier</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monikossa: valokuvia, xx valokuvaa</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1437">
@@ -20397,6 +20410,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Polariteetti, jossa kuvan värit ja valoisuus ovat yhdistelmä ihmissilmin nähtäviä värejä ja valoisuutta sekä ihmissilmin nähtävien värien ja valoisuuden vastakohtia.</skos:definition>
+    <skos:definition xml:lang="sv">Polaritet i vilken bildens färger och ljus är en blandning av dem som kan ses med blotta ögat och motsatserna till vad som kan ses med blotta ögat.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDAPolarity/1003"/>
     <skos:prefLabel xml:lang="sv">blandad polaritet</skos:prefLabel>
     <skos:prefLabel xml:lang="en">mixed polarity</skos:prefLabel>
@@ -32681,7 +32695,7 @@ Vastavuoroinen suhde: järjestäjänä tapahtumassa.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10299"/>
     <skos:altLabel xml:lang="sv">grundare av verk</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka on vastuussa sarja-aineiston, päivittyvän aineiston tai moniosaisen monografian perustamisesta.</skos:definition>
-    <skos:definition xml:lang="sv">Sammankopplar ett verk med en aktör som har grundat en seriell eller uppdaterad resurs eller en monografi i flera delar.</skos:definition>
+    <skos:definition xml:lang="sv">Sammankopplar ett verk med en aktör som har grundat en seriell eller uppdaterad resurs, eller en monografi i flera delar.</skos:definition>
     <skos:prefLabel xml:lang="en">founder of resource</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">teoksen perustaja</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">verkets grundare</skos:prefLabel>
@@ -42005,11 +42019,11 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="fi">Henkilöön liittyvä yhteisö</rdfs:label>
     <rdfs:label xml:lang="sv">Institution relaterad till person</rdfs:label>
-    <rdfs:label xml:lang="en">Related corporate body of person</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50318"/>
-    <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, joka liittyy kuvailtavaan henkilöön.</skos:definition>
+    <rdfs:label xml:lang="en">Related person body of corporate body</rdfs:label>
+    <rdfs:label xml:lang="fi">Yhteisöön liittyvä henkilö</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50334"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön henkilöön, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
     <skos:definition xml:lang="sv">Sammankopplar person med en institution som är relaterad till den beskrivna perosnen.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:edunvalvojanaYhteisossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:loppututkinnonMyontaja"/>
@@ -42018,6 +42032,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:paajohtajanaYhteisossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:perustanutYhteison"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tyonantaja"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:yhteisö"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4427">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -43030,8 +43045,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1488"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m269"/>
     <skos:prefLabel xml:lang="en">polarity</skos:prefLabel>
-    <skos:scopeNote xml:lang="sv">Information om huruvida ett fotografi, en spelfilm eller mikrolagring är positiv eller negativ anges ifall den anses viktig för identifikation och urval. En lämplig term från följande lista:</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Liittää manifestaation suhteeseen, joka kuvan väreillä ja valoisuudella on kuvan kohteen väreihin ja valoisuuteen.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Sammankopplar manifestation med det förhållande som färger och ljushet i en bild har till bildobjektets färger och ljushet.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m561">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -44762,10 +44777,10 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="en">Related person of corporate body</rdfs:label>
-    <rdfs:label xml:lang="fi">Yhteisöön liittyvä henkilö</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50334"/>
-    <skos:definition xml:lang="fi">Liittää yhteisön henkilöön, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
+    <rdfs:label xml:lang="fi">Henkilöön liittyvä yhteisö</rdfs:label>
+    <rdfs:label xml:lang="en">Related corporate body of person</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50318"/>
+    <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, joka liittyy kuvailtavaan henkilöön.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3928"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4339"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4418"/>
@@ -45041,7 +45056,8 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:prefLabel xml:lang="sv">karta</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kartta</skos:prefLabel>
     <skos:prefLabel xml:lang="en">map</skos:prefLabel>
-    <skos:scopeNote>Monikossa: xx karttaa, karttoja</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">I plural: xx kartor, kartor</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Monikossa: xx karttaa, karttoja</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m781">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -47262,7 +47278,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50286"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4419"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4419_1"/>
     <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, jossa virkamies on ylin viranhaltija.</skos:definition>
     <skos:prefLabel xml:lang="en">chief executive of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">pääjohtajana yhteisössä</skos:prefLabel>
@@ -47284,5 +47300,14 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, joka työllistää henkilön.</skos:definition>
     <skos:prefLabel xml:lang="en">employer</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">työnantaja</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:yhteisö">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50095"/>
+    <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, jossa henkilö on jäsenenä.</skos:definition>
+    <skos:prefLabel xml:lang="en">peron member of coporate body</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">yhteisö</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
