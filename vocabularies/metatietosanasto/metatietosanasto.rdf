@@ -373,6 +373,38 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:label xml:lang="fi">Yhteisöön liittyvä suku</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50335"/>
     <skos:definition xml:lang="fi">Liittää yhteisön sukuun, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:perustanutYhteison"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:suvunSponsoromaYhteiso"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:YhteisoonLiittyvaYhteiso">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m875"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
+    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
+    <rdfs:label xml:lang="en">Related corporate body of corporate body</rdfs:label>
+    <rdfs:label xml:lang="fi">Yhteisöön liittyvä yhteisö</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50336"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön yhteisöön, joka liittyy kuvailtavaan yhteisöön.</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:alayhteiso"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:alayhteiso">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50010"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön yhteisöön, joka on hierarkkisesti toisen yhteisön alainen.</skos:definition>
+    <skos:prefLabel xml:lang="fi">alayhteisö</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">hierarchical subordinate</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:edeltaja">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50012"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön yhteisöön, joka edelsi toista yhteisöä.</skos:definition>
+    <skos:prefLabel xml:lang="fi">edeltäjä</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">predecesser of corporate body</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:edunvalvojanaYhteisossa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -383,6 +415,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, jossa virkamiehellä on valtuudet tehdä päätöksiä yhteisön eduksi.</skos:definition>
     <skos:prefLabel xml:lang="fi">edunvalvojana yhteisössä</skos:prefLabel>
     <skos:prefLabel xml:lang="en">trustee of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jakautumisestaMuodostunut">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50014"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön yhteisöön, joka on seuraus toisen yhteisön jakautumisesta.</skos:definition>
+    <skos:prefLabel xml:lang="fi">jakautumisesta muodostunut</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">product of split</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jakautunutYhteiso">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50229"/>
+    <skos:definition xml:lang="fi">Liittää yhteisön yhteisöön, joka on jakautunut toiseen yhteisöön.</skos:definition>
+    <skos:prefLabel xml:lang="fi">jakautunut yhteisö</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">predecessor of split</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:loppututkinnonMyontaja">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -1602,7 +1652,7 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <skos:scopeNote xml:lang="sv">Anges i MARC 21-formatets fält 246, delfält i. Ifrågavarande text kan också produceras automatiskt med indikatorer.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Erottuva nimeke näkyy tavallisen nimekkeen lisäksi yksittäisissä numeroissa ja numero voi olla tunnettu sen perusteella.                   Musiikkiteosten kontekstissa nimeke, joka on muutakin kuin vain muoto tai musiikinlaji, tempomerkintä, esittäjien lukumäärä tai liturgisen teoksen tyyppi</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Merkitään MARC 21 -formaatin 246-kentän i-osakenttään. Ao. teksti voidaan tuottaa myös automaattisesti indikaattoreilla.</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Titelvarianten syns utöver den vanliga titeln i enskilda nummer och numret kan vara känt utgående från denna. I kontexten för musikverk titel som är  något annat än endast form eller musikgenre, tempomarkering, framförarnas antal eller typ av liturgiskt verk.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m115">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -5841,10 +5891,12 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">faksimiler</skos:altLabel>
     <skos:altLabel xml:lang="sv">faksimiltryck</skos:altLabel>
+    <skos:definition xml:lang="sv">Illustrativt innehåll som är en exakt reproduktion, vanligen också till sina mått, av ett original. Särskilt om böcker, dokument, tryckta bilder och ritningar.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasisältö, joka on tarkka jäljennös alkuperäisestä, yleensä myös mitoiltaan alkuperäistä vastaava, erityisesti kirjoista, asiakirjoista, painokuvista ja piirustuksista.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/IllusContent/1002"/>
     <skos:prefLabel xml:lang="sv">faksimil</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">faksimilejäljennös</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">I plural: faksimil, xx faksimil.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monikossa: faksimilejäljennöksiä, xx faksimilejäljennöstä.</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1672">
@@ -5853,6 +5905,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Illustrativt innehåll som vanligen består av en- eller flerfärgad dekoration och som är handgjord med målfärg, bläck eller folie.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasisältö, joka koostuu yleensä yksi- tai monivärisestä koristelusta ja joka on tehty käsin maalilla, musteella tai folioiden avulla.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/IllusContent/1006"/>
     <skos:prefLabel xml:lang="sv">illumination</skos:prefLabel>
@@ -6457,6 +6510,7 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="fi">asemakaava</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">detaljplan</skos:prefLabel>
     <skos:prefLabel xml:lang="en">town plan</skos:prefLabel>
+    <skos:scopeNote xml:lang="sv">I plural: detaljplaner, xx detaljplaner</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Monikossa: asemakaavoja, xx asemakaavaa</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1737">
@@ -9890,7 +9944,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="sv">Bildinnehåll som i grafisk form beskriver kvantitativa eller kvalitativa faktorer i ett faktamaterial.</skos:definition>
+    <skos:definition xml:lang="sv">Märkning som baserar sig på känselsinnet och i vilket en upphöjd version av en tryckt bild används.</skos:definition>
     <skos:definition xml:lang="fi">Tuntoaistiin perustuva merkintätapa, jossa käytetään kohotettua versiota painetusta kuvasta.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/TacNotation/1007"/>
     <skos:prefLabel xml:lang="fi">kohokuva</skos:prefLabel>
@@ -12726,7 +12780,7 @@ Vastavuoroinen suhde: esiosa teokselle.</skos:definition>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10128"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m837"/>
-    <skos:definition xml:lang="fi">Liittää teoksen teokseen, josta runomukaelma on tehty. Vastavuoroinen suhde: runomukaelma (teos)</skos:definition>
+    <skos:definition xml:lang="fi">Liittää teoksen teokseen, josta runomukaelma on tehty. Vastavuoroinen suhde: runomukaelma (teos).</skos:definition>
     <skos:definition xml:lang="sv">Sammankopplar verket med ett verk som omarbetats till vers. Parallell relation: versbearbetning (verk).</skos:definition>
     <skos:prefLabel xml:lang="fi">runomukaelman perustana (teos)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">versbearbetning baserad på (verk)</skos:prefLabel>
@@ -38665,7 +38719,7 @@ Vastavuoroinen suhde: dramatisointi (ekspressio).</skos:definition>
     <skos:prefLabel xml:lang="sv">versbearbetning baserad på (uttryck)</skos:prefLabel>
     <skos:prefLabel xml:lang="en">verse adaptation of expression</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Liittää ekspression teoksen ekspressioon, josta runomukaelma on tehty.&#xD;
-Vastavuoroinen suhde: rounomukaelma (ekspressio).</skos:scopeNote>
+Vastavuoroinen suhde: runomukaelma (ekspressio).</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Sammankopplar uttryck med ett verks uttryck, från vilket en versbearbetning är gjord. Parallell relation: versbearbetning (uttryck).</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4172">
@@ -42028,7 +42082,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:edunvalvojanaYhteisossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:loppututkinnonMyontaja"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4419_1"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:opiskelijana"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:oppilaitos"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:paajohtajanaYhteisossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:perustanutYhteison"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tyonantaja"/>
@@ -47264,13 +47318,13 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:opiskelijana">
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:oppilaitos">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50288"/>
     <skos:definition xml:lang="fi">Liittää henkilön oppilaitokseen, joka antaa opetusta henkilölle.</skos:definition>
-    <skos:prefLabel xml:lang="fi">opiskelijana</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">oppilaitos</skos:prefLabel>
     <skos:prefLabel xml:lang="en">student at</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:paajohtajanaYhteisossa">
@@ -47292,6 +47346,24 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="en">founded corporate body of corporate body</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">perustanut yhteisön</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:suvunPerustamaYhteiso">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50062"/>
+    <skos:definition xml:lang="fi">Liittää suvun yhteisöön, jonka suku perusti.</skos:definition>
+    <skos:prefLabel xml:lang="en">founded corporate body of family</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">suvun perustama yhteisö</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:suvunSponsoromaYhteiso">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50063"/>
+    <skos:definition xml:lang="fi">Liittää suvun yhteisöön, jota suku sponsoroi.</skos:definition>
+    <skos:prefLabel xml:lang="en">sponsored corporate body of family</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">suvun sponsoroima yhteisö</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tyonantaja">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -47308,6 +47380,6 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50095"/>
     <skos:definition xml:lang="fi">Liittää henkilön yhteisöön, jossa henkilö on jäsenenä.</skos:definition>
     <skos:prefLabel xml:lang="en">peron member of coporate body</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">yhteisö</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">yhteisön henkilöjäsen yhteisössä</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
