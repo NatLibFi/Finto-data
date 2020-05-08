@@ -108,6 +108,17 @@ isothes:plusUse rdfs:subPropertyOf skos:member .
 <http://rdvocab.info/termList/fontSize/1002> skos:prefLabel "isotekstinen"@fi,
         "stor stil"@sv .
 
+mts:m1333 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50301 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön."@fi,
+        "Sammankopplar institution med en institution som uppgått i en annan institution."@sv ;
+    skos:example "Yhteisö: Metsänhoitoyhdistys Ylä-Savo ; yhteisöön sulautunut: Iisalmen metsänhoitoyhdistys"@fi,
+        "Institution: Metsänhoitoyhdistys Ylä-Savo ; institution som uppgått: Iisalmen metsänhoitoyhdistys"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "absorbed corporate body"@en,
+        "sulautunut yhteisö"@fi,
+        "institution som uppgått"@sv .
+
 mts:m138 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
@@ -182,6 +193,31 @@ mts:m1525 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "toinen sukupolvi, masterkopio"@fi,
         "andra generation, masterkopia"@sv .
+
+mts:m1618 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50232 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka muodosti uuden yhteisön yhdistymällä yhden tai useamman muun yhteisön kanssa"@fi,
+        "institution som bildat en nya institution genom sammanslagning med en eller flera andra institutioner"@sv ;
+    skos:example "Yhteisö: Suomi. Työministeriö ; yhdistynyt yhteisöön: Suomi. Kauppa- ja teollisuusministeriö"@fi,
+        "Institution: Finland. Arbetsministeriet ; sammanslagits med institutionen: Finland. Handels- och industriministeriet"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "component of merger"@en,
+        "yhdistynyt yhteisöön"@fi,
+        "sammanslagits med institutionen"@sv .
+
+mts:m1777 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50013 ;
+    skos:definition "Liittää yhteisön kahden tai useamman yhteisön yhdistymisestä muodostuneeseen yhteisöön."@fi,
+        "kahden tai useamman yhteisön yhdistymisestä muodostunut yhteisö"@fi,
+        "institution som bildats genom sammanslagning av två eller flera institutioner"@sv ;
+    skos:example "Yhdistymisestä muodostunut: Suomi. Työ- ja elinkeinoministeriö"@fi,
+        "Bildats genom sammanslagning : Finland. Arbets- och näringsministeriet"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "product of merger"@en,
+        "yhdistymisestä muodostunut"@fi,
+        "bildats genom sammanslagning"@sv .
 
 mts:m2103 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -513,41 +549,17 @@ mts:m4407 a isothes:ConceptGroup,
     skos:prefLabel "place"@en,
         "Paikka"@fi .
 
-mts:m4432 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50014 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on seuraus toisen yhteisön jakautumisesta."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "product of split"@en,
-        "jakautumisesta muodostunut"@fi .
-
 mts:m4434 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50302 ;
     skos:definition "Liittää yhteisön yhteisöön, johon toinen yhteisö on sulautunut."@fi ;
+    skos:example "Yhteisö: Iisalmen metsänhoitoyhdistys ; sulautunut yhteisöön: Metsänhoitoyhdistys Ylä-Savo"@fi,
+        "Institution: Iisalmen metsänhoitoyhdistys ; uppgått i institution: Metsänhoitoyhdistys Ylä-Savo"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "absorbing corporate body"@en,
-        "sulautunut yhteisöön"@fi .
-
-mts:m4437 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50008 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on hierarkkisesti ylempänä toista yhteisöä."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "hierarchical superior"@en,
-        "kattoyhteisö"@fi .
-
-mts:m4439 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50230 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on muodostunut muiden yhteisöjen jäsenyydestä."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "corporate body member of corporate body"@en,
-        "laajempi jäsenyhteisö"@fi .
+        "sulautunut yhteisöön"@fi,
+        "uppgått i institutionen"@sv .
 
 mts:m4446 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -558,15 +570,6 @@ mts:m4446 a skos:Concept ;
     skos:prefLabel "founding corporate body of corporate body"@en,
         "perustajayhteisö"@fi .
 
-mts:m4448 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50232 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka muodosti uuden yhteisön yhdistymällä yhden tai useamman muun yhteisön kanssa."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "component of merger"@en,
-        "yhdistynyt yhteisöön"@fi .
-
 mts:m4449 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -575,15 +578,6 @@ mts:m4449 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "sponsoring corporate body of corporate body"@en,
         "sponsoroiva yhteisö"@fi .
-
-mts:m4450 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50240 ;
-    skos:definition "Liittää yhteisön laajempaan yhteisöön, jolla on yhteys paikallisiin tytäryhtiöihin organisaatiorakenteen kautta."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "broader affiliated body"@en,
-        "laajempi emoyhtiö"@fi .
 
 mts:m4451 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -612,14 +606,41 @@ mts:m4453 a skos:Concept ;
     skos:prefLabel "successor of corporate body"@en,
         "seuraaja"@fi .
 
-mts:m4455 a skos:Concept ;
+mts:m4456 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50012 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka edelsi toista yhteisöä."@fi ;
+    rdfs:seeAlso rdaa:P50241 ;
+    skos:definition "Liittää yhteisön paikalliseen yhteisöön, jolla on yhteys emoyhtiön edustamaan laajempaan organisaatioon."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "predecesser of corporate body"@en,
-        "edeltäjä"@fi .
+    skos:prefLabel "local affiliate"@en,
+        "paikallinen tytäryhtiö"@fi .
+
+mts:m4457 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50011 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön muodostaakseen kolmannen yhteisön."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mergee"@en,
+        "yhteisöön yhdistynyt"@fi .
+
+mts:m4458 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50231 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on toisen yhteisön jäsenyhteisö."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "corporate body member of corporate body"@en,
+        "yhteisön jäsenyhteisö"@fi .
+
+mts:m4459 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50303 ;
+    skos:definition "Liittää konferenssin konferenssiin, joka järjestetään yhdessä toisen konferenssin kanssa."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "jointly held conference"@en,
+        "yhteiskonferenssi"@fi .
 
 mts:m588 skos:prefLabel "Ord i textbilaga:"@sv .
 
@@ -1005,6 +1026,8 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi,
 <http://rdaregistry.info/termList/RDACarrierType/1070> skos:exactMatch mts:m1704 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1071> skos:exactMatch mts:m1710 .
+
+<http://rdaregistry.info/termList/RDACartoDT/1001> skos:exactMatch mts:m4347 .
 
 <http://rdaregistry.info/termList/RDACartoDT/1002> skos:exactMatch mts:m4349 .
 
@@ -2309,15 +2332,6 @@ mts:m1161 a skos:Concept ;
     skos:scopeNote "Teoksen tekijä"@fi,
         "Verkets skapare"@sv .
 
-mts:m1162 a skos:Concept ;
-    skos:definition "yhteisö, joka on seuraus toisen yhteisön jaukautumisesta"@fi,
-        "institution som är en följd av en annan institutions uppdelning"@sv ;
-    skos:example "Yhteisö: Hyvinkään kunta ; jakautumisesta muodostunut: Hyvinkään kauppala ; jakautumisesta muodostunut: Hyvinkään maalaiskunta"@fi,
-        "Institution: Hyvinge kommun ; bildats genom uppdelning: Hyvinge köping ; bildats genom uppdelning: Hyvinge landskommun"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "jakautumisesta muodostunut"@fi,
-        "bildats genom uppdelning"@sv .
-
 mts:m1163 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
@@ -3214,16 +3228,6 @@ mts:m1328 a skos:Concept ;
     skos:scopeNote "Teoksen tekijä"@fi,
         "Verkets skapare"@sv .
 
-mts:m1333 a skos:Concept ;
-    rdfs:seeAlso rdaa:P50301 ;
-    skos:example "Yhteisö: Metsänhoitoyhdistys Ylä-Savo ; yhteisöön sulautunut: Iisalmen metsänhoitoyhdistys"@fi,
-        "Institution: Metsänhoitoyhdistys Ylä-Savo ; institution som uppgått: Iisalmen metsänhoitoyhdistys"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sulautunut yhteisö"@fi,
-        "institution som uppgått"@sv ;
-    skos:scopeNote "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön."@fi,
-        "Sammankopplar institution med en institution som uppgått i en annan institution."@sv .
-
 mts:m1335 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -3509,19 +3513,6 @@ mts:m1418 a skos:Concept ;
         "titel på andra titelskärm"@sv ;
     skos:scopeNote "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään."@fi,
         "Anges i MARC 21-formatets fält 246, delfält i."@sv .
-
-mts:m142 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50008 ;
-    skos:definition "yhteisö, joka on hierarkkisesti ylempänä toista yhteisöä"@fi,
-        "Institution som har en högre hierarkisk rang."@sv ;
-    skos:example "Yhteisö: Tuokko tilintarkastus ; kattoyhteisö: Tuokko yhtiöt"@fi,
-        "Institution: Mosho Ab ; överordnad institution: Dermoshop Ab"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "hierarchical superior"@en,
-        "kattoyhteisö"@fi,
-        "överordnad institution"@sv .
 
 mts:m1426 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4271,15 +4262,6 @@ mts:m1617 a skos:Concept ;
         "filmfotograf"@sv ;
     skos:scopeNote "Teokseen liittyvä muu toimija"@fi,
         "Annan aktör relaterad till verk"@sv .
-
-mts:m1618 a skos:Concept ;
-    skos:definition "yhteisö, joka muodosti uuden yhteisön yhdistymällä yhteen tai useampaan muuhun yhteisöön"@fi,
-        "institution som bildat en nya institution genom sammanslagning med en eller flera andra institutioner"@sv ;
-    skos:example "Yhteisö: Suomi. Työministeriö ; yhdistynyt yhteisöön: Suomi. Kauppa- ja teollisuusministeriö"@fi,
-        "Institution: Finland. Arbetsministeriet ; sammanslagits med institutionen: Finland. Handels- och industriministeriet"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "yhdistynyt yhteisöön"@fi,
-        "sammanslagits med institutionen"@sv .
 
 mts:m1619 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -5228,35 +5210,6 @@ mts:m1773 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "nimikirjoituksen kirjoittaja"@fi,
         "signatur"@sv .
-
-mts:m1776 a isothes:ConceptGroup,
-        skos:Collection ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:member mts:m1162,
-        mts:m1333,
-        mts:m142,
-        mts:m1618,
-        mts:m1777,
-        mts:m3642,
-        mts:m874,
-        mts:m925 ;
-    skos:prefLabel "Yhteisöjen väliset suhteet"@fi,
-        "Relationer mellan institutioner"@sv .
-
-mts:m1777 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50013 ;
-    skos:definition "Liittää yhteisön kahden tai useamman yhteisön yhdistymisestä muodostuneeseen yhteisöön."@fi,
-        "kahden tai useamman yhteisön yhdistymisestä muodostunut yhteisö"@fi,
-        "institution som bildats genom sammanslagning av två eller flera institutioner"@sv ;
-    skos:example "Yhdistymisestä muodostunut: Suomi. Työ- ja elinkeinoministeriö"@fi,
-        "Bildats genom sammanslagning : Finland. Arbets- och näringsministeriet"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "product of merger"@en,
-        "yhdistymisestä muodostunut"@fi,
-        "bildats genom sammanslagning"@sv .
 
 mts:m1795 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -14359,7 +14312,7 @@ mts:m4400 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30006 ;
-    skos:definition "Liittää manifestaation mikrotallenteen kuvan suhteeseen alkuperäiseen kuvaan."@fi ;
+    skos:definition "Liittää manifestaation koodiin, jolla tunnistetaan videolevyn käyttöalue ja estetään sen käyttäminen eri alueella myydyllä soittimella."@fi ;
     skos:member mts:m4381,
         mts:m4383,
         mts:m4385,
@@ -14375,7 +14328,7 @@ mts:m4400 a isothes:ConceptGroup,
         mts:m4398,
         mts:m4399,
         mts:m4401 ;
-    skos:prefLabel "reduction ratio"@en,
+    skos:prefLabel "regional encoding"@en,
         "Aluekoodi"@fi .
 
 mts:m4402 a isothes:ConceptGroup,
@@ -14575,6 +14528,17 @@ mts:m4431 a isothes:ConceptGroup,
         "Henkilöön liittyvä suku"@fi,
         "Släkt relaterad till person"@sv .
 
+mts:m4432 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50014 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on seuraus toisen yhteisön jakautumisesta."@fi ;
+    skos:example "Yhteisö: Hyvinkään kunta ; jakautumisesta muodostunut: Hyvinkään kauppala ; jakautumisesta muodostunut: Hyvinkään maalaiskunta"@fi,
+        "Institution: Hyvinge kommun ; bildats genom uppdelning: Hyvinge köping ; bildats genom uppdelning: Hyvinge landskommun"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "product of split"@en,
+        "jakautumisesta muodostunut"@fi .
+
 mts:m4435 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
@@ -14591,9 +14555,21 @@ mts:m4436 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50010 ;
     skos:definition "Liittää yhteisön yhteisöön, joka on hierarkkisesti toisen yhteisön alainen."@fi ;
+    skos:example "Mosho Ab"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "hierarchical subordinate"@en,
         "alayhteisö"@fi .
+
+mts:m4437 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50008 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on hierarkkisesti ylempänä toista yhteisöä."@fi ;
+    skos:example "Yhteisö: Tuokko tilintarkastus ; kattoyhteisö: Tuokko yhtiöt"@fi,
+        "Institution: Mosho Ab ; överordnad institution: Dermoshop Ab"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "hierarchical superior"@en,
+        "kattoyhteisö"@fi .
 
 mts:m4438 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14604,13 +14580,28 @@ mts:m4438 a skos:Concept ;
     skos:prefLabel "student at"@en,
         "oppilaitos"@fi .
 
+mts:m4439 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50230 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on muodostunut muiden yhteisöjen jäsenyydestä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "corporate body member of corporate body"@en,
+        "laajempi jäsenyhteisö"@fi .
+
 mts:m4440 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50336 ;
     skos:definition "Liittää yhteisön yhteisöön, joka liittyy kuvailtavaan yhteisöön."@fi ;
-    skos:member mts:m4436 ;
+    skos:member mts:m3642,
+        mts:m4432,
+        mts:m4436,
+        mts:m4437,
+        mts:m4439,
+        mts:m4450,
+        mts:m4455 ;
     skos:prefLabel "Related corporate body of corporate body"@en,
         "Yhteisöön liittyvä yhteisö"@fi .
 
@@ -14641,14 +14632,32 @@ mts:m4445 a skos:Concept ;
     skos:prefLabel "graduate of"@en,
         "loppututkinnon myöntäjä"@fi .
 
+mts:m4450 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50240 ;
+    skos:definition "Liittää yhteisön laajempaan yhteisöön, jolla on yhteys paikallisiin tytäryhtiöihin organisaatiorakenteen kautta."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "broader affiliated body"@en,
+        "laajempi emoyhtiö"@fi .
+
 mts:m4454 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50095 ;
     skos:definition "Liittää henkilön yhteisöön, jossa henkilö on jäsenenä."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "peron member of coporate body"@en,
+    skos:prefLabel "person member of coporate body of"@en,
         "yhteisön henkilöjäsen yhteisössä"@fi .
+
+mts:m4455 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50012 ;
+    skos:definition "Liittää yhteisön yhteisöön, joka edelsi toista yhteisöä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "predecessor of corporate body"@en,
+        "edeltäjä"@fi .
 
 mts:m45 a skos:Concept ;
     skos:altLabel "maanmittari (suhde)"@fi,
@@ -16096,8 +16105,8 @@ mts:m746 a skos:Concept ;
     rdfs:seeAlso rdaa:P50030 ;
     skos:definition "Liittää yhteisön henkilöön, joka on yhteisön jäsen."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "member"@en,
-        "jäsen"@fi,
+    skos:prefLabel "personmember of corporate body"@en,
+        "yhteisön henkilöjäsen"@fi,
         "medlem"@sv ;
     skos:scopeNote "Viitataan yhteisön jäseneen/ jäseniin (henkilö/t). Esim. yhteisö: Eppu Normaali (yhtye) ; yhteisön jäsen: Syrjä, Martti"@fi,
         "Vid beskrivning av institution görs hänvisning till institutionens medlem/mar (person/er). Ex. institution: Gjallarhorn (ensemble) ; institutionens medlem: Wilhelms, Jenny."@sv .
@@ -16798,15 +16807,6 @@ mts:m872 a skos:Concept ;
     skos:prefLabel "xx kierr./min"@fi,
         "xx varv/min"@sv .
 
-mts:m874 a skos:Concept ;
-    skos:example "Yhteisö: Iisalmen metsänhoitoyhdistys ; sulautunut yhteisöön: Metsänhoitoyhdistys Ylä-Savo"@fi,
-        "Institution: Iisalmen metsänhoitoyhdistys ; uppgått i institution: Metsänhoitoyhdistys Ylä-Savo"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sulautunut yhteisöön"@fi,
-        "uppgått i institutionen"@sv ;
-    skos:scopeNote "Viitataan yhteisöön, johon kuvailtava yhteisö on sulautunut."@fi,
-        "Vid beskrivning av institutionen görs en hänvisning till den institution som  den beskrivna institutionen uppgått i."@sv .
-
 mts:m875 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
@@ -16816,8 +16816,7 @@ mts:m875 a isothes:ConceptGroup,
         "Entitet relaterad till aktör"@sv ;
     skos:definition "Liittää toimijan entiteettiin, joka liittyy kuvailtavaan toimijaan."@fi,
         "Sammankopplar aktör med en entitet som sammanhör med den beskrivna aktören."@sv ;
-    skos:member mts:m1776,
-        mts:m1804,
+    skos:member mts:m1804,
         mts:m4416,
         mts:m4425,
         mts:m4426,
@@ -17177,19 +17176,6 @@ mts:m921 a skos:Concept ;
         "fodral"@sv ;
     skos:scopeNote "Manifestaation tunnisteen lisäys."@fi,
         "Tillägg till manifestationens identifikator."@sv .
-
-mts:m925 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50010 ;
-    skos:definition "yhteisö, joka on hierarkkisesti toisen yhteisön alainen"@fi,
-        "Institution som har lägre hierarisk rang."@sv ;
-    skos:example "Tuokko tilintarkastus"@fi,
-        "Mosho Ab"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "hierarchical subordinate"@en,
-        "alayhteisö"@fi,
-        "underordnad institution"@sv .
 
 mts:m928 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -19502,7 +19488,7 @@ yso:p2981 skos:exactMatch mts:m2615 .
 
 yso:p29810 skos:exactMatch mts:m2641 .
 
-yso:p29833 skos:exactMatch mts:m4155 .
+yso:p29833 skos:closeMatch mts:m4155 .
 
 yso:p29861 skos:exactMatch mts:m3123 .
 
@@ -20078,9 +20064,6 @@ rdam:P30038 skos:exactMatch mts:m7 .
 <http://rdaregistry.info/termList/RDACarrierEU/1001> skos:exactMatch mts:m1212 .
 
 <http://rdaregistry.info/termList/RDACarrierType/1006> skos:exactMatch mts:m650 .
-
-<http://rdaregistry.info/termList/RDACartoDT/1001> skos:exactMatch mts:m4347,
-        mts:m4348 .
 
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
@@ -34358,18 +34341,6 @@ mts:m4347 a skos:Concept ;
     skos:prefLabel "point"@en,
         "rasteri"@fi .
 
-mts:m4348 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:broader mts:m1509 ;
-    skos:definition "Kartografinen datatyyppi, joka käyttää pistematriisitietorakennetta esittämään tavallisesti suorakulmaisessa pikseleiden verkossa esiintyviä ominaisuuksia."@fi ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDACartoDT/1001> ;
-    skos:inScheme mts: ;
-    skos:prefLabel "raster"@en,
-        "rasteri"@fi .
-
 mts:m4349 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -36929,6 +36900,21 @@ mts:m1486 a skos:Concept ;
         "designer"@sv ;
     skos:scopeNote "Teoksen tekijä"@fi,
         "Verkets skapare"@sv .
+
+mts:m1509 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:altLabel "kartografiskt dataset"@sv ;
+    skos:definition """Liittää manifestaation tietokoneen käsiteltäväksi tarkoitettuun digitaaliseen kartografiseen sisältöön.\r
+Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen taktiili kuva, kartografinen taktiili kolmiulotteinen muoto tai kartografinen kolmiulotteinen muoto."""@fi,
+        "Sammankopplar manifestation med digitalt kartografiskt innehåll som är avsett att behandlas med dator. Se även kartografisk bild, kartografisk rörlig bild, kartografisk taktil bild, kartografisk taktil tredimensionell form och kartografisk tredimensionell form."@sv ;
+    skos:exactMatch rdam:P30261 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4347,
+        mts:m4349 ;
+    skos:prefLabel "cartographic data type"@en,
+        "kartografinen datatyyppi"@fi,
+        "kartografisk datatyp"@sv .
 
 mts:m1528 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -45575,7 +45561,7 @@ mts:m4155 a skos:Concept ;
         "MC"@sv,
         "rappare"@sv ;
     skos:broader mts:m2356 ;
-    skos:exactMatch yso:p29833 ;
+    skos:closeMatch yso:p29833 ;
     skos:inScheme mts: ;
     skos:prefLabel "rap artist"@en,
         "rap-artisti"@fi,
@@ -46128,22 +46114,6 @@ mts:m1466 a skos:Concept ;
         "puu"@fi,
         "trä"@sv .
 
-mts:m1509 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:altLabel "kartografiskt dataset"@sv ;
-    skos:definition """Liittää manifestaation tietokoneen käsiteltäväksi tarkoitettuun digitaaliseen kartografiseen sisältöön.\r
-Katso myös kartografinen kuva, kartografinen liikkuva kuva, kartografinen taktiili kuva, kartografinen taktiili kolmiulotteinen muoto tai kartografinen kolmiulotteinen muoto."""@fi,
-        "Sammankopplar manifestation med digitalt kartografiskt innehåll som är avsett att behandlas med dator. Se även kartografisk bild, kartografisk rörlig bild, kartografisk taktil bild, kartografisk taktil tredimensionell form och kartografisk tredimensionell form."@sv ;
-    skos:exactMatch rdam:P30261 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4347,
-        mts:m4348,
-        mts:m4349 ;
-    skos:prefLabel "cartographic data type"@en,
-        "kartografinen datatyyppi"@fi,
-        "kartografisk datatyp"@sv .
-
 mts:m1577 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -46276,12 +46246,11 @@ mts:m2276 a skos:Concept ;
     skos:broader mts:m2274,
         mts:m2286 ;
     skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota.                                                                 Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
-        "Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta."@fi,
-        "Verk som delvis uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk."@sv ;
+        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
+Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "absorbed in part by (work)"@en,
-        "sulautunut osittain teokseen"@fi,
-        "delvis uppgått i verket"@sv .
+        "sulautunut osittain teokseen"@fi .
 
 mts:m2335 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -50623,7 +50592,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-07T02:23:09+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-08T02:38:25+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
