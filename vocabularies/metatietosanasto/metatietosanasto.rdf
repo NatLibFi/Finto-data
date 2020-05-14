@@ -382,6 +382,21 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:prefLabel xml:lang="en">designer of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">designerina teoksessa</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:dramaturginaEkspressiossa">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <dc11:source xml:lang="sv">Nationell term</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Liittää toimijan ekspressioon jossa on sovitettu draamallinen teos esitykseksi.</skos:definition>
+    <skos:prefLabel xml:lang="fi">dramaturgina ekspressiossa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:dramaturginaTeoksessa">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <dc11:source xml:lang="sv">Nationell term</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kirjoittajanaTeoksessa"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää aineiston sovituksen esitykseksi. Vastavuoroinen suhde: dramaturgi.</skos:definition>
+    <skos:prefLabel xml:lang="fi">dramaturgina teoksessa</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:haastateltavanaHaastattelussa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -434,7 +449,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50186"/>
     <skos:definition xml:lang="fi">Liittää toimijan kartografiseen teokseen, joka sisältää luovaa panosta karttojen, kartastojen, karttapallojen tms. teossa. Vastavuoroinen suhde: kartantekijä.</skos:definition>
     <skos:prefLabel xml:lang="en">cartographer of</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">kartantekijänä aineistossa</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kartantekijänä kartta-aineistossa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kirjoittajanaTeoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50195"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää ensisijaisesti tekstiä missä tahansa mediatyypissä tai genressä.  Vastavuoroinen suhde: kirjoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">author of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kirjoittajana teoksessa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -3222,6 +3246,15 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">uppfinnare</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen tekijä</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets skapare</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1328_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50188"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää luovaa panosta uuden laitteen tai prosessien keksimisessä. Vastavuoroinen suhde: keksijä.</skos:definition>
+    <skos:prefLabel xml:lang="en">inventor of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">keksintö</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1332">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -42486,6 +42519,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:definition xml:lang="fi">Liittää toimijan ekspressioon, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Ekspression ja toimijan välinen suhde</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastateltavanaHaastattelussa(Ekspressio)"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa(Ekspressio)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kartantekijanaKartassa(Ekspressio)"/>
     <skos:prefLabel xml:lang="en">related expression of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4463">
@@ -42526,6 +42560,8 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:designerinaTeoksessa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastateltavanaHaastattelussa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kartantekijanaKartta-aineistossa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1328_1"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m986_1"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:maisema-arkkitehtinaMaisemasuunnitelmassa"/>
     <skos:prefLabel xml:lang="en">related work of agent</skos:prefLabel>
@@ -43044,7 +43080,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20042"/>
-    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen täydentämällä teosta kartta-aineistolla tai muokkaamalla aiempaa karttateosta. Vastavuoroinen suhde: kartta (ekspressio).</skos:definition>
+    <skos:definition xml:lang="fi">Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen täydentämällä teosta kartta-aineistolla tai muokkaamalla aiempaa karttateosta. Vastavuoroinen suhde: kartantekijänä kartassa (ekspressio).</skos:definition>
     <skos:definition xml:lang="sv">person, släkt eller institution som deltar i utförandet av ett uttryck genom att komplettera ett verk med kartmaterial eller genom att bearbeta ett tidigare kartverk</skos:definition>
     <skos:prefLabel xml:lang="en">cartographer (expression)</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kartantekijä (ekspressio)</skos:prefLabel>
