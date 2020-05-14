@@ -370,8 +370,44 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50196"/>
     <skos:altLabel xml:lang="fi">arkkitehtina teoksessa</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää rakennustaiteellisen suunnitelman (mukaan lukien kuvaesitykset) siitä, miltä rakennus tms. näyttää valmiina. Vastavuoroinen suhde: arkkitehti.</skos:definition>
-    <skos:prefLabel xml:lang="en">architect agent of</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">architect of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">arkkitehtinä teoksessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:designerinaTeoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50185"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää luovaa panosta objektin suunnittelussa. Vastavuoroinen suhde: designer.</skos:definition>
+    <skos:prefLabel xml:lang="en">designer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">designerina teoksessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:haastateltavanaHaastattelussa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50193"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää haastattelijan, toimittajan, mielipidetutkijan tms. luovan toiminnan. Vastavuoroinen suhde: haastateltava.</skos:definition>
+    <skos:prefLabel xml:lang="fi">haastateltavana haastattelussa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">interviewee of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50191"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää haastattelijan, toimittajan, mielipidetutkijan tms. luovan toiminnan. Vastavuoroinen suhde: haastattelija.</skos:definition>
+    <skos:prefLabel xml:lang="fi">haastattelijana haastattelussa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">interviewer of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa(Ekspressio)">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50140"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teoksen ekspressioon, joka sisältää haastattelijan, toimittajan, mielipidetutkijan tms. toiminnan. Vastavuoroinen suhde: haastattelija (ekspressio).</skos:definition>
+    <skos:prefLabel xml:lang="fi">haastattelijana haastattelussa (ekspressio)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">interviewer of</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -42421,6 +42457,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50306"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä ekspressio</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan ekspressioon, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Ekspression ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa(Ekspressio)"/>
     <skos:prefLabel xml:lang="en">related expression of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4463">
@@ -42457,6 +42494,10 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50305"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä teos</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:arkkitehtinaTeoksessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:designerinaTeoksessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:haastattelijanaHaastattelussa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:maisema-arkkitehtinaMaisemasuunnitelmassa"/>
     <skos:prefLabel xml:lang="en">related work of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4466">
@@ -47664,5 +47705,17 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:maisema-arkkitehtinaMaisemasuunnitelmassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50221"/>
+    <skos:altLabel xml:lang="sv">landskapsarkitekt (relation)</skos:altLabel>
+    <skos:altLabel xml:lang="fi">maisema-arkkitehtina maisemasuunnitelmassa</skos:altLabel>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1086"/>
+    <skos:definition xml:lang="fi">Liittää toimijan maisemasuunnitelmaan, johon sisältyy arkkitehtoonista suunnittelua. Vastavuoroinen suhde: maisema-arkkitehti.</skos:definition>
+    <skos:prefLabel xml:lang="en">landscape architect of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">maisema-arkkitehtinä maisemasuunnitelmassa</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
