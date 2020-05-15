@@ -363,6 +363,35 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kokoajanaTeoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50189"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää tiedon järjestämistä, valintaa, koostamista, editointia tms. uuden teoksen (kuten bibliografian tai hakemiston) luomiseksi. Vastavuoroinen suhde: kokoaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">compiler of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kokoajana teoksessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:koreografinaKoreografiassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50194"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää koreografian luomisen. Vastavuoroinen suhde: koreografi.</skos:definition>
+    <skos:prefLabel xml:lang="en">choreographer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">koreografina koreografiassa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:libretistinaMusiikkiteoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50225"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4471"/>
+    <skos:definition xml:lang="fi">Liittää tekijän teokseen, johon liittyy oopperan, muun musiikillisen näyttämöteoksen tai oratorion sanojen kirjoittamisvastuu. Vastavuoroinen suhde: libretisti.</skos:definition>
+    <skos:prefLabel xml:lang="fi">libretistinä musiikkiteoksessa</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">librettist</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">librettist of</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -684,8 +713,6 @@ Mikroskooppilaitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">sammanställare</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen tekijä</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets skapare</skos:scopeNote>
-    <skos:scopeNote xml:lang="fi">kokousten raportoija</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">mötesrapportör</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1040">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -6729,6 +6756,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10255"/>
+    <skos:altLabel xml:lang="fi">kokouksen raportoija</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m552"/>
     <skos:definition xml:lang="fi">Liittää teoksen kirjoittajaan, joka on saanut organisaatiolta tehtäväkseen raportoida kokousten asiakirjoista. Henkilö, suku tai yhteisö, jonka tehtävät on rajattu pöytäkirjan laatimiseen, katso pöytäkirjan laatija. Vastavuoroinen suhde:  raportoijana kokouksessa.</skos:definition>
     <skos:definition xml:lang="sv">person som av någon organisation fått i uppgift att rapportera om protokoll från möten. Se protokollförare för person, släkt eller institution, vars uppgifter har avgränsats till att sammanställa protokoll</skos:definition>
@@ -6737,6 +6765,16 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="en">rapporteur</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen tekijä</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets skapare</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1762_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50248"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4471"/>
+    <skos:definition xml:lang="fi">Liittää tekijän teokseen, johon kuuluu raportointi organisaation kokouksista. Vastavuoroinen suhde:  kokousten raportoija.</skos:definition>
+    <skos:prefLabel xml:lang="fi">raportoijana kokouksessa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">rapporteur of</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1763">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -35552,6 +35590,16 @@ Tunnustuspalkinto myönnetään vuosittain keväällä Tampere Kuplii -sarjakuva
     <skos:prefLabel xml:lang="sv">konstmagister</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">taiteen maisteri</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m384_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50224"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4471"/>
+    <skos:definition xml:lang="fi">Liittää sanoittajan teokseen, joka sisältää sanoituksen polaarimusiikkiin, mukaan lukien musikaalin laulujen sanoituksen. Vastavuoroinen suhde: sanoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">lyricist of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sanoittajana teoksessa</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3850">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="fi">ETT</skos:altLabel>
@@ -42453,6 +42501,10 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50305"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä teos</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kokoajanaTeoksessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:libretistinaMusiikkiteoksessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1762_1"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m384_1"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4471"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4472"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4473"/>
