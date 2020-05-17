@@ -363,6 +363,34 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:animaatio">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50136"/>
+    <skos:definition xml:lang="fi">Liittää toimijan elokuvan tai tietokoneohjelman ekspressioon, joka sisältää animoituja esineitä tai piirroksia. Vastavuoroinen suhde: animaattori.</skos:definition>
+    <skos:prefLabel xml:lang="fi">animaatio</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">animator of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuva">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50048"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa"/>
+    <skos:definition xml:lang="fi">Liittää ohjaajan elokuvaan, joka sisältää vastuun filmatun esityksen yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: elokuvaohjaaja.</skos:definition>
+    <skos:prefLabel xml:lang="fi">elokuva</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">film director of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:entisoijanaEkspressiossa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50273"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teoksen ekspressioon, johon kuuluu aikaisempien ekspressioiden, jotka voivat olla vaurioituneita tai fragmentaarisia, restaurointia ja/tai yhdistelemistä uuden ekspression luomiseksi. Vastavuoroinen suhde: entisöijä (ekspressio).</skos:definition>
+    <skos:prefLabel xml:lang="fi">entisöijänä ekspressiossa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">restorationist of</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -2830,7 +2858,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10064"/>
     <skos:altLabel xml:lang="sv">prod. (producent)</skos:altLabel>
     <skos:altLabel xml:lang="fi">tuott. (tuottaja)</skos:altLabel>
-    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Vastavuoroinen suhde: tuottajana teoksessa.  Vastavuoroinen suhde: tuottajana teoksessa.</skos:definition>
+    <skos:definition xml:lang="fi">Liittää teoksen toimijaan, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Vastavuoroinen suhde: tuottajana teoksessa.</skos:definition>
     <skos:definition xml:lang="sv">person eller institution som ansvarar för de kommersiella uppdrag som hör till produktionen av film, ljudupptagning, tv-program, direktsändning e.d. Producenten ansvarar i regel för finansieringsanskaffning, produktionsledning, anställning av nyckelpersoner, organisering av distribution o.s.v.</skos:definition>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1170"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1216"/>
@@ -6721,6 +6749,7 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:definition xml:lang="sv">person, släkt eller institution som deltar i ett verks uttryck genom att restaurera och/eller kombinera tidigare uttryck, vilka kan vara skadade eller fragmentariska, för att skapa ett nytt uttryck</skos:definition>
     <skos:prefLabel xml:lang="fi">entisöijä (ekspressio)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">konservator (uttryck)</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">restorationist (ekspression)</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1762">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -42402,6 +42431,8 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50306"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä ekspressio</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan ekspressioon, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Ekspression ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:animaatio"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:entisoijanaEkspressiossa"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4470"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4475"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4477"/>
@@ -42444,6 +42475,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50305"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä teos</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuva"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3567"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4471"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4472"/>
@@ -42477,6 +42509,18 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4506"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4507"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4509"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m813_1"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaOpinnäytteessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:perustajanaTeoksessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelma"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tarkastajanaOpinnaytteessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:teettajanaTeokselle"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelma"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaAanitteessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaRadio-ohjelmassa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTelevisio-ohjelmassa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa"/>
     <skos:prefLabel xml:lang="en">related work of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4466">
@@ -45278,16 +45322,6 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m699_1">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50048"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa"/>
-    <skos:definition xml:lang="fi">Liittää ohjaajan elokuvaan, joka sisältää vastuun filmatun esityksen yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: elokuvaohjaaja.</skos:definition>
-    <skos:prefLabel xml:lang="fi">elokuva</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">film director of</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m7">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -46261,6 +46295,16 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
     <skos:prefLabel xml:lang="sv">filmproducent</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m813_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50213"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää elokuvatuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: elokuvatuottaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">film producer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuottajana elokuvassa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m814">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -48062,6 +48106,15 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaOpinnäytteessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50091"/>
+    <skos:definition xml:lang="fi">Liittää henkilön teokseen, joka sisältää vastuun akateemisten opinnäytteen tai väitöskirjan ohjaamisesta. Vastavuoroinen suhde: opinnäytteen ohjaaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">degree supervisor of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">ohjaajana opinnäytteessä</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -48070,5 +48123,91 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää elokuva-, radio- tai televisiotaltioinnin tms. yleistä johtamista. Vastavuoroinen suhde: ohjaaja.</skos:definition>
     <skos:prefLabel xml:lang="en">director of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">ohjaajana taltioinnissa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:perustajanaTeoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50290"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää vastuun sarja-aineiston, päivittyvän aineiston tai moniosaisen monografianperustamisesta.  Vastavuoroinen suhde: teoksen perustaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">founder of resource of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">perustajana teoksessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelma">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50049"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa"/>
+    <skos:definition xml:lang="fi">Liittää ohjaajan radio-ohjelmaan, johon sisältyy vastuu radio-ohjelman yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: radio-ohjelman ohjaaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">radio director of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">radio-ohjelma</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tarkastajanaOpinnaytteessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50257"/>
+    <skos:definition xml:lang="fi">Liittää henkilön akateemiseen opinnäytteeseen tai väitöskirjaan, jonka komitea on tarkastanut. Vastavuoroinen suhde: opinnäytteen tarkastaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">degree committee member of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tarkastajana opinnäytteessä</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:teettajanaTeokselle">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50262"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, johon liittyy vastuu teoksen teettämisestä. Vastavuoroinen suhde: toimeksiantaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">commissioning body of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">teettäjänä teokselle</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelma">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50050"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:ohjaajanaTaltioinnissa"/>
+    <skos:definition xml:lang="fi">Liittää ohjaajan televisio-ohjelmaan, johon sisältyy vastuu televisio-ohjelman yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: televisio-ohjelman ohjaaja.</skos:definition>
+    <skos:prefLabel xml:lang="fi">televisio-ohjelma</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">television director of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaAanitteessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50295"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa"/>
+    <skos:definition xml:lang="fi">Liittää teoksen tuottajaan, joka huolehtii äänitallentamiseen liittyvistä liiketoiminnallisista tehtävistä.  Vastavuoroinen suhde: tuottajana äänitteessä.</skos:definition>
+    <skos:prefLabel xml:lang="en">audio producer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuottajana äänitteessä</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaRadio-ohjelmassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50214"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää radio-ohjelman tuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: radiotuottaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">radio producer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuottajana radio-ohjelmassa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTelevisio-ohjelmassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50215"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää televio-ohjelman tuotannon liiketoiminnallisia tehtäviä.  Vastavuoroinen suhde: televisiotuottaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">television producer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuottajana televisio-ohjelmassa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tuottajanaTeoksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50201"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka sisältää elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: tuottaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">producer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tuottajana teoksessa</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
