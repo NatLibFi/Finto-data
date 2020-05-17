@@ -10748,19 +10748,6 @@ mts:m258 a isothes:ConceptGroup,
         "Suku"@fi,
         "Familj/släkt"@sv .
 
-mts:m262 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaw:P10017 ;
-    skos:definition "Liittää teoksen lainkäyttöalueeseen, jossa säädetään laki, asetus, perustuslaki, tuomioistuinta koskeva sääntö tms. Vastavuoroinen suhde: säätävän lainkäyttöalueen päätös."@fi,
-        "jurisdiktionsområde för den lagstiftare som stiftar en lag, stadganden, grundlag, regel som gäller för domstolar o.s.v."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "enacting jurisdiction"@en,
-        "säätävä lainkäyttöalue"@fi,
-        "lagstiftande jurisdiktion"@sv ;
-    skos:scopeNote "Teoksen tekijä"@fi,
-        "Verkets skapare"@sv .
-
 mts:m263 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -11125,7 +11112,6 @@ mts:m34 a isothes:ConceptGroup,
         mts:m2306,
         mts:m25,
         mts:m253,
-        mts:m262,
         mts:m308,
         mts:m32,
         mts:m322,
@@ -11144,6 +11130,7 @@ mts:m34 a isothes:ConceptGroup,
         mts:m420,
         mts:m4460,
         mts:m4461,
+        mts:m4499,
         mts:m511,
         mts:m518,
         mts:m534,
@@ -11430,15 +11417,6 @@ mts:m3564 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "käsikirjoitus"@fi,
         "handsskrift"@sv .
-
-mts:m3567 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:definition "Luovan musiikillisen työn tulos."@fi,
-        "Resultat av kreativt musikaliskt arbete."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sävellys"@fi,
-        "komposition"@sv .
 
 mts:m3571 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -14781,7 +14759,8 @@ mts:m4462 a isothes:ConceptGroup,
         mts:m4475,
         mts:m4477,
         mts:m4480,
-        mts:m4497 ;
+        mts:m4497,
+        mts:m4508 ;
     skos:prefLabel "related expression of agent"@en,
         "Toimijan ja ekspression välinen suhde"@fi .
 
@@ -14812,7 +14791,8 @@ mts:m4465 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50305 ;
     skos:altLabel "Toimijaan liittyvä teos"@fi ;
     skos:definition "Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde"@fi ;
-    skos:member mts:m4471,
+    skos:member mts:m3567,
+        mts:m4471,
         mts:m4472,
         mts:m4473,
         mts:m4474,
@@ -14834,7 +14814,16 @@ mts:m4465 a isothes:ConceptGroup,
         mts:m4493,
         mts:m4494,
         mts:m4495,
-        mts:m4496 ;
+        mts:m4496,
+        mts:m4499,
+        mts:m4500,
+        mts:m4501,
+        mts:m4502,
+        mts:m4504,
+        mts:m4505,
+        mts:m4506,
+        mts:m4507,
+        mts:m4509 ;
     skos:prefLabel "related work of agent"@en,
         "Toimijan ja teoksen välinen suhde"@fi .
 
@@ -15026,6 +15015,60 @@ mts:m45 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "maanmittari"@fi,
         "lantmätare"@sv .
+
+mts:m4500 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50211 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää asiantuntijapalveluiden ja suositusten antamisen henkilölle, suvulle tai yhteisölle, joka on teoksen tekijä. Vastavuoroinen suhde: asiantuntija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "consultant of"@en,
+        "asiantuntijana teoksessa"@fi ;
+    skos:scopeNote "Teokseen liittyvä muu toimija"@fi,
+        "Annan aktör relaterad till verk"@sv .
+
+mts:m4501 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50190 ;
+    skos:definition "Liittää toimijan valokuvateokseen, joka sisältää luovaa työtä. Vastavuoroinen suhde: valokuvaaja."@fi,
+        "person eller institution som ansvarar för skapandet av ett fotografiskt verk"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "photographer of"@en,
+        "valokuvaajana teoksessa"@fi .
+
+mts:m4504 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50293 ;
+    skos:definition "Liittää toimijan ääniteokseen, joka on luotu käsittelemällä, yhdistelemällä uudelleen, miksaamalla ja uudistamalla aiemmin äänitettyjä ääniä. Vastavuoroinen suhde: äänitaiteilija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "äänitaiteilijana ääniteoksessa"@fi .
+
+mts:m4506 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50130 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää vastuullisuuden (kuten virallisena toimielimenä) teoksen julkaisemisesta. Vastavuoroinen suhde: julkaisija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "issuing body of"@en,
+        "julkaisijana teoksessa"@fi .
+
+mts:m4508 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50134 ;
+    skos:definition "Liittää toimijan ekspressioon, johon on lisätty musiikkia, joka ei aikaisemmin sisältynyt teokseen, tai johon on sävelletty uutta musiikkia korvaamaan teoksen aikaisemman musiikin tai täydentämään olemassa olevaa musiikkia. Vastavuoroinen suhde: säveltäjä (ekspressio)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "composer of"@en,
+        "sävellys (ekspressio)"@fi .
+
+mts:m4509 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:definition "Liittää toimijan laulunoppaan tekemiseen. Vastavuoroinen suhde: soitonoppaan tekijä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "soitonoppaan tekijänä teoksessa"@fi .
 
 mts:m456 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -22594,7 +22637,7 @@ mts:m1775 a skos:Concept ;
     skos:definition "Liittää teoksen taiteilijaan, joka on vastuussa taideteosten luomisesta, jonka sisällössä on hyödynnetty kirjan muotoa tai rakennetta. Vastavuoroinen suhde: kirjataiteilijana taideteoksessa."@fi,
         "konstnär som svarar för skapandet av konstverk som har bearbetats genom att använda en boks form eller struktur"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "sculptor"@en,
+    skos:prefLabel "book artist"@en,
         "kirjataiteilija"@fi,
         "bokkonstnär"@sv ;
     skos:scopeNote "Teoksen tekijä"@fi,
@@ -30386,6 +30429,18 @@ mts:m3560 a skos:Concept ;
         "joikaaja"@fi,
         "joikare"@sv .
 
+mts:m3567 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50187 ;
+    skos:definition "Liittää toimijan musiikkiteokseen, joka sisältää luovaa työtä. Vastavuoroinen suhde: säveltäjä."@fi,
+        "Luovan musiikillisen työn tulos."@fi,
+        "Resultat av kreativt musikaliskt arbete."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "composer of"@en,
+        "sävellys"@fi,
+        "komposition"@sv .
+
 mts:m3578 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -35326,6 +35381,15 @@ mts:m4496 a skos:Concept ;
     skos:prefLabel "screenwriter of"@en,
         "käsikirjoittajana teoksessa"@fi .
 
+mts:m4499 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50068 ;
+    skos:definition "Liittää säätävän lainkäyttöalueen lainsäädännölliseen teokseen kuten lakiin, asetukseen, perustuslakiin, tuomioistuinta koskevaan sääntöön tms. Vastavuoroinen suhde: säätävä lainkäyttöalue."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "enacting jurisdiction of"@en,
+        "säätävän lainkäyttöalueen päätös"@fi .
+
 mts:m450 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -35337,6 +35401,36 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     skos:prefLabel "three-dimensional form"@en,
         "kolmiulotteinen muoto"@fi,
         "tredimensionell form"@sv .
+
+mts:m4502 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50247 ;
+    skos:broader mts:m4503 ;
+    skos:definition "Liittää taiteilijan teokseen, johon sisältyy taiteellinen vastuu sellaisten taideteosten luomisesta, jotka hyödyntävät kirjan muotoa tai muuttavat sen fyysistä muotoa osana sisältöä. Vastavuoroinen suhde: kirjataiteilija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "book artist of"@en,
+        "kirjataiteilijana taideteoksessa"@fi .
+
+mts:m4505 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50246 ;
+    skos:broader mts:m4503 ;
+    skos:definition "Liittää taiteilijan kalligrafiseen teokseen, johon sisältyy taiteellinen vastuu käsin kirjoittamisen tai graafisen taiteen esteettisistä arvoista, huolimatta siitä, onko sama henkilö myös vastuussa kyseisen tekstin sisällöstä. Vastavuoroinen suhde: kalligrafi."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "calligrapher of"@en,
+        "kalligrafina kalligrafiassa"@fi .
+
+mts:m4507 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50222 ;
+    skos:broader mts:m4503 ;
+    skos:definition "Liittää taiteilijan kolmiulotteiseen teokseen, joka sisältää veistämällä, muovaamalla tai muulla vastaavalla tekniikalla tehtyä taidetta. Vastavuoroinen suhde: kuvanveistäjä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sculptor of"@en,
+        "kuvanveistäjänä teoksessa"@fi .
 
 mts:m455 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -46285,6 +46379,18 @@ mts:m4491 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "sarjakuvantekijänä teoksessa"@fi .
 
+mts:m4503 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50192 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää taidegrafiikan, piirroksen, maalauksen tms. luomisen ja yleensä myös toteutus. Vastavuoroinen suhde: taiteilija."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4502,
+        mts:m4505,
+        mts:m4507 ;
+    skos:prefLabel "artist of"@en,
+        "taiteilijana teoksessa"@fi .
+
 mts:m527 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -51120,7 +51226,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-16T02:56:58+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-17T01:55:17+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
