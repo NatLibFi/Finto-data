@@ -363,6 +363,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esiintyjanaEsityksessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50071"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: näyttelijä.</skos:definition>
+    <skos:prefLabel xml:lang="en">actor of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">esiintyjänä esityksessä</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esitys">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -395,6 +405,16 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:definition xml:lang="fi">Liittää kertojan teoksen ekspressioon, joka sisältää ääneen lukemista tai tapahtuman, toiminnan tms. selostamista. Vastavuoroinen suhde: kertoja.</skos:definition>
     <skos:prefLabel xml:lang="fi">kertojana tilaisuudessa</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kommentaattorinaOhjelmassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50080"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">"Liittää kommentaattorin teoksen ekspressioon, joka sisältää audiovisuaalisen aineiston aiheen tulkitsemista ja analysointia keskustelemalla. Vastavuoroinen suhde: kommantaattori.</skos:definition>
+    <skos:prefLabel xml:lang="en">commentator of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kommentaattorina ohjelmassa</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuoronjohtajanaEkspressiossa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -404,6 +424,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:definition xml:lang="fi">Liittää johtajan musiikkiteoksen ekspressioon, jossa kuoroa johdetaan musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: kuoronjohtaja.</skos:definition>
     <skos:prefLabel xml:lang="en">choral conductor of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kuoronjohtajana ekspressiossa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laulu">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50084"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää laulajan teoksen ekspressioon, joka sisältää lauluesityksen, joko soitinsäestyksellä tai ilman Vastavuoroinen suhde: laulaja.</skos:definition>
+    <skos:prefLabel xml:lang="fi">laulu</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">singer of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lukijanaEsityksessa">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <dc11:source xml:lang="sv">Nationell term</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää lukijan teoksen ekspressioon, joka sisältää ääneen lukemista. Vastavuoroinen suhde: lukija.</skos:definition>
+    <skos:prefLabel xml:lang="fi">lukijana esityksessä</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -808,7 +846,9 @@ Mikroskooppilaitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">tre gånger i året</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa vuodessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i året.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1011"/>
     <skos:prefLabel xml:lang="fi">kolme kertaa vuodessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">three times a year</skos:prefLabel>
@@ -1200,11 +1240,13 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">tre gånger i veckan</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa viikossa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i veckan.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1002"/>
     <skos:prefLabel xml:lang="fi">kolme kertaa viikossa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">three times a week</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">tre gånger i veckan</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">tre gånger per vecka</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1093">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -2401,10 +2443,9 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:altLabel xml:lang="sv">skåd. (skådespelare)</skos:altLabel>
     <skos:altLabel xml:lang="sv">skådespelare (relation)</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
-    <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: näyttelijänä esityksessä.</skos:definition>
-    <skos:definition xml:lang="sv">framförande person som deltar i utförandet av ett uttryck genom att uppträda i ett musikuppförande, skådespel e.d.</skos:definition>
+    <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: esittäjänä esityksessä.</skos:definition>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m17"/>
-    <skos:prefLabel xml:lang="en">actor of</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">actor</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">näyttelijä</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">skådespelare</skos:prefLabel>
   </owl:Class>
@@ -3196,10 +3237,13 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">en gång i månaden</skos:altLabel>
     <skos:altLabel xml:lang="fi">kerran kuukaudessa</skos:altLabel>
+    <skos:altLabel xml:lang="sv">månatligen</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kuukaudessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång i månaden.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1008"/>
-    <skos:prefLabel xml:lang="sv">en gång i månaden</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">en gång per månad</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kuukausittain</skos:prefLabel>
     <skos:prefLabel xml:lang="en">monthly</skos:prefLabel>
   </owl:Class>
@@ -4253,8 +4297,9 @@ Katso myös kartografinen liikkuva kuva.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">kontinuerlig uppdatering</skos:prefLabel>
+    <skos:altLabel xml:lang="sv">kontinuerlig uppdatering</skos:altLabel>
     <skos:prefLabel xml:lang="fi">päivitetään jatkuvasti</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">uppdateras kontinuerligt</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1464">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -5622,6 +5667,7 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy epäsäännöllisesti.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras oregelbundet.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1016"/>
     <skos:prefLabel xml:lang="fi">epäsäännöllinen</skos:prefLabel>
     <skos:prefLabel xml:lang="en">irregular</skos:prefLabel>
@@ -5723,10 +5769,12 @@ Katso myös taktiili teksti.</skos:definition>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">en gång i veckan</skos:altLabel>
     <skos:altLabel xml:lang="fi">kerran viikossa</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran viikossa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång i veckan.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1004"/>
-    <skos:prefLabel xml:lang="sv">en gång i veckan</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">en gång per vecka</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">viikottain</skos:prefLabel>
     <skos:prefLabel xml:lang="en">weekly</skos:prefLabel>
   </owl:Class>
@@ -7112,6 +7160,16 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">näyttelylainassa</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">utlånad till utställning</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m17_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50217"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esiintyjanaEsityksessa"/>
+    <skos:definition xml:lang="fi">"Liittää toimijan ekspressioon, joka sisältää hahmojen ääninäyttelemisen radio- tai muissa äänituotannoissa, animaatioelokuvissa, radio- ja TV-mainoksissa, dubatuissa aineistoissa tms. Vastavuoroinen suhde: ääninäyttelijä.</skos:definition>
+    <skos:prefLabel xml:lang="en">voice actor of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">ääninäyttelijänä tallenteessa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m180">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -41206,12 +41264,13 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">två gånger i månaden</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa kuukaudessa.</skos:definition>
     <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för matieral som utkommer eller uppdateras två gånger i månaden.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1009"/>
     <skos:prefLabel xml:lang="fi">kaksi kertaa kuukaudessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">semimonthly</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">två gånger i månaden</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">två gånger per månad</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4355">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41219,11 +41278,13 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">tre gånger i månaden</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa kuussa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i månaden.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1006"/>
     <skos:prefLabel xml:lang="fi">kolme kertaa kuukaudessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">three times a month</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">tre gånger i månaden</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">tre gånger per månad</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4356">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41232,27 +41293,33 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa viikossa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras varannan vecka.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1003"/>
     <skos:prefLabel xml:lang="en">biweekly</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kerran kahdessa viikossa</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">varannan vecka</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4357">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">två gånger i veckan</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa viikossa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras två gånger i veckan.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1005"/>
     <skos:prefLabel xml:lang="fi">kaksi kertaa viikossa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">semiweekly</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">två gånger i veckan</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">två gånger per vecka</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4358">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">en gång per dag</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran päivässä, yleensä arkipäivisin.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång per dag, vanligen vardagar.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1001"/>
     <skos:prefLabel xml:lang="sv">dagligen</skos:prefLabel>
     <skos:prefLabel xml:lang="en">daily</skos:prefLabel>
@@ -41265,9 +41332,11 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa kuukaudessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras varannan månad.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1007"/>
     <skos:prefLabel xml:lang="en">bimonthly</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kerran kahdessa kuukaudessa</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">varannan månad</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4360">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41275,13 +41344,14 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">fyra gånger i året</skos:altLabel>
     <skos:altLabel xml:lang="fi">neljännesvuosittain</skos:altLabel>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy neljä kertaa vuodessa.</skos:definition>
     <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras fyra gånger per år.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1010"/>
     <skos:prefLabel xml:lang="sv">fyra gånger per år</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">neljä kertaa vuodessa</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">quuarterly</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">quarterly</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4361">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41290,9 +41360,11 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kolmessa vuodessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras vart tredje år.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1015"/>
     <skos:prefLabel xml:lang="fi">kerran kolmessa vuodessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">triennial</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">vart tredje år</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4362">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41312,6 +41384,7 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa vuodessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras två gånger i året.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1012"/>
     <skos:prefLabel xml:lang="fi">kaksi kertaa vuodessa</skos:prefLabel>
     <skos:prefLabel xml:lang="en">semiannual</skos:prefLabel>
@@ -41359,9 +41432,11 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition xml:lang="fi">Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa vuodessa.</skos:definition>
+    <skos:definition xml:lang="sv">Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras vartannat år.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/frequency/1014"/>
     <skos:prefLabel xml:lang="en">biennial</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kerran kahdessa vuodessa</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">vartannat år</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4368">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -43727,7 +43802,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen laulamalla joko soitinsäestyksellä tai ilman. Laulajan esitys voi olla myös sanaton. Vastavuoroinen suhde: laulu.</skos:definition>
     <skos:definition xml:lang="sv">framförande person som deltar i utförandet av ett uttryck genom att sjunga antingen med eller utan ackompanjemang. Sångarens framförande kan vara med eller utan ord</skos:definition>
     <skos:prefLabel xml:lang="fi">laulaja</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">singer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">singer</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">sångare</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m528">
@@ -44454,11 +44529,11 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50080"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20021"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
     <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tulkitsemalla tai analysoimalla äänitteen, elokuvan tms. audiovisuaalisen aineiston aihetta tai keskustelemalla siitä. Vastavuoroinen suhde: kommantaattorina ohjelmassa.</skos:definition>
     <skos:definition xml:lang="sv">framförande person som deltar i utförandet av ett uttryck genom att tolka, analysera eller diskutera ämnet för ett audiovisuellt medium</skos:definition>
-    <skos:prefLabel xml:lang="en">commentator of</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">commentator</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kommentaattori</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">kommentator</skos:prefLabel>
   </owl:Class>
@@ -46765,9 +46840,9 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:label xml:lang="en">Derivative espression</rdfs:label>
+    <rdfs:label xml:lang="en">Derivative expression</rdfs:label>
     <rdfs:label xml:lang="fi">Ekspression johdannaissuhde</rdfs:label>
-    <rdfs:label xml:lang="sv">Härledda relationer (uttryck</rdfs:label>
+    <rdfs:label xml:lang="sv">Härledda relationer (uttryck)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20233"/>
     <skos:definition xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka perustuu toiseen ekspressioon tai on johdettu toisesta ekspressiosta.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1117"/>
@@ -48181,7 +48256,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <dc11:source xml:lang="sv">Nationell term</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1060"/>
-    <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspressioon lukemalla tekstin ääneen. Vastavuoroinen suhde: lukijana ekspressiossa.</skos:definition>
+    <skos:definition xml:lang="fi">Liittää ekspression esittäjään, joka osallistuu teoksen ekspressioon lukemalla tekstin ääneen. Vastavuoroinen suhde: lukijana esityksessä.</skos:definition>
     <skos:definition xml:lang="sv">aktör som högläser en text</skos:definition>
     <skos:prefLabel xml:lang="fi">lukija</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">uppläsare</skos:prefLabel>
@@ -48227,6 +48302,36 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää toimijan teoksen ekspressioon, joka sisältää säveltäjän, äänileikkaajan ja äänimiksaajien toiminnan koordinointia elokuvatuotannossa tai musiikki- tai näytelmäesityksessä. Vastavuoroinen suhde: musiikkijohtaja.</skos:definition>
     <skos:prefLabel xml:lang="en">musical director of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">musiikkijohtajana musiikkiesityksessä</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:paneeli-ohjelma">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50078"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää panelistin teoksen ekspressioon, joka sisältää esiintymisen esiintyjänä ohjelmassa, usein lähetetyssä, jossa keskustellaan eri aiheista ja johon yleensä osallistuu näiden aiheiden asiantuntijoita. Vastavuoroinen suhde: panelisti.</skos:definition>
+    <skos:prefLabel xml:lang="fi">paneeli-ohjelma</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">panelist of</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:soittajanaOhjelmassa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50079"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää soittajan teoksen ekspressioon, joka sisältää soitinesityksen. Vastavuoroinen suhde: soittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">instrumentalist of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">soittajana ohjelmassa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tanssiesitys">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50073"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:esitys"/>
+    <skos:definition xml:lang="fi">Liittää tanssijan teoksen ekspressioon, joka sisältää esiintymistä tanssimalla musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: tanssija.</skos:definition>
+    <skos:prefLabel xml:lang="en">dancer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">tanssiesitys</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:tarinankertojanaEsityksessa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
