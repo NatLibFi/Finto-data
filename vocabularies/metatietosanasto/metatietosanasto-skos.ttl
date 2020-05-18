@@ -540,6 +540,15 @@ mts:m4468 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "teokset"@fi .
 
+mts:m4510 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50147 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, yleensä musiikki- tai näytelmäesitys tms., joka sisältää esitettyä musiikkia, näyttelemistä, tanssia, puhetta jne. Vastavuoroinen suhde: esittäjä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "performer of"@en,
+        "esittys"@fi .
+
 mts:m588 skos:prefLabel "Ord i textbilaga:"@sv .
 
 mts:m61 a isothes:ConceptGroup,
@@ -5120,7 +5129,8 @@ mts:m1761 a skos:Concept ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspressioon restauroimalla ja/tai yhdistelemällä aikaisempia ekspressioita, jotka voivat olla vaurioituneita tai fragmentaarisia, uuden ekspression luomiseksi. Vastavuoroinen suhde: entisöijänä ekspressiossa."@fi,
         "person, släkt eller institution som deltar i ett verks uttryck genom att restaurera och/eller kombinera tidigare uttryck, vilka kan vara skadade eller fragmentariska, för att skapa ett nytt uttryck"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "entisöijä (ekspressio)"@fi,
+    skos:prefLabel "restorationist (ekspression)"@en,
+        "entisöijä (ekspressio)"@fi,
         "konservator (uttryck)"@sv .
 
 mts:m1765 a skos:Concept ;
@@ -7522,13 +7532,6 @@ mts:m2003 a isothes:ConceptGroup,
         "Taktiilin merkkijärjestelmän tyyppi"@fi,
         "Typ av taktil notation"@sv .
 
-mts:m2004 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "elokuva"@fi,
-        "film"@sv .
-
 mts:m202 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -7660,26 +7663,12 @@ mts:m2045 a skos:Concept ;
     skos:scopeNote "Manifestaation kuvailussa issn merkitään aineistossa merkityssä muodossa. Jos se on virheellinen, oikeasta issn-numerosta tehdään huomautus."@fi,
         "Issn anges på samma sätt som i den beskrivna resursen. Ifall issn är felaktigt, görs anmärkning med korrekt issn."@sv .
 
-mts:m2048 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "televisio-ohjelma"@fi,
-        "tv-program"@sv .
-
 mts:m2049 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "romaani"@fi,
         "roman"@sv .
-
-mts:m2050 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "radio-ohjelma"@fi,
-        "radioprogram"@sv .
 
 mts:m2051 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14760,7 +14749,9 @@ mts:m4462 a isothes:ConceptGroup,
         mts:m4477,
         mts:m4480,
         mts:m4497,
-        mts:m4508 ;
+        mts:m4508,
+        mts:m4512,
+        mts:m4517 ;
     skos:prefLabel "related expression of agent"@en,
         "Toimijan ja ekspression välinen suhde"@fi .
 
@@ -14791,7 +14782,10 @@ mts:m4465 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50305 ;
     skos:altLabel "Toimijaan liittyvä teos"@fi ;
     skos:definition "Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde"@fi ;
-    skos:member mts:m3567,
+    skos:member mts:m2004,
+        mts:m2048,
+        mts:m2050,
+        mts:m3567,
         mts:m4471,
         mts:m4472,
         mts:m4473,
@@ -14823,7 +14817,17 @@ mts:m4465 a isothes:ConceptGroup,
         mts:m4505,
         mts:m4506,
         mts:m4507,
-        mts:m4509 ;
+        mts:m4509,
+        mts:m4511,
+        mts:m4513,
+        mts:m4514,
+        mts:m4515,
+        mts:m4516,
+        mts:m4518,
+        mts:m4519,
+        mts:m4520,
+        mts:m4521,
+        mts:m4522 ;
     skos:prefLabel "related work of agent"@en,
         "Toimijan ja teoksen välinen suhde"@fi .
 
@@ -15069,6 +15073,60 @@ mts:m4509 a skos:Concept ;
     skos:definition "Liittää toimijan laulunoppaan tekemiseen. Vastavuoroinen suhde: soitonoppaan tekijä."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "soitonoppaan tekijänä teoksessa"@fi .
+
+mts:m4512 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50273 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, johon kuuluu aikaisempien ekspressioiden, jotka voivat olla vaurioituneita tai fragmentaarisia, restaurointia ja/tai yhdistelemistä uuden ekspression luomiseksi. Vastavuoroinen suhde: entisöijä (ekspressio)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "restorationist of"@en,
+        "entisöijänä ekspressiossa"@fi .
+
+mts:m4513 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50257 ;
+    skos:definition "Liittää henkilön akateemiseen opinnäytteeseen tai väitöskirjaan, jonka komitea on tarkastanut. Vastavuoroinen suhde: opinnäytteen tarkastaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "degree committee member of"@en,
+        "tarkastajana opinnäytteessä"@fi .
+
+mts:m4514 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50091 ;
+    skos:definition "Liittää henkilön teokseen, joka sisältää vastuun akateemisten opinnäytteen tai väitöskirjan ohjaamisesta. Vastavuoroinen suhde: opinnäytteen ohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "degree supervisor of"@en,
+        "ohjaajana opinnäytteessä"@fi .
+
+mts:m4515 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50290 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää vastuun sarja-aineiston, päivittyvän aineiston tai moniosaisen monografianperustamisesta.  Vastavuoroinen suhde: teoksen perustaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "founder of resource of"@en,
+        "perustajana teoksessa"@fi .
+
+mts:m4517 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50136 ;
+    skos:definition "Liittää toimijan elokuvan tai tietokoneohjelman ekspressioon, joka sisältää animoituja esineitä tai piirroksia. Vastavuoroinen suhde: animaattori."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "animator of"@en,
+        "animaatio"@fi .
+
+mts:m4521 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50262 ;
+    skos:definition "Liittää toimijan teokseen, johon liittyy vastuu teoksen teettämisestä. Vastavuoroinen suhde: toimeksiantaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "commissioning body of"@en,
+        "teettäjänä teokselle"@fi .
 
 mts:m456 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -35432,6 +35490,46 @@ mts:m4507 a skos:Concept ;
     skos:prefLabel "sculptor of"@en,
         "kuvanveistäjänä teoksessa"@fi .
 
+mts:m4516 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50215 ;
+    skos:broader mts:m4520 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää televio-ohjelman tuotannon liiketoiminnallisia tehtäviä.  Vastavuoroinen suhde: televisiotuottaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "television producer of"@en,
+        "tuottajana televisio-ohjelmassa"@fi .
+
+mts:m4518 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50214 ;
+    skos:broader mts:m4520 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää radio-ohjelman tuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: radiotuottaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "radio producer of"@en,
+        "tuottajana radio-ohjelmassa"@fi .
+
+mts:m4519 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50295 ;
+    skos:broader mts:m4520 ;
+    skos:definition "Liittää teoksen tuottajaan, joka huolehtii äänitallentamiseen liittyvistä liiketoiminnallisista tehtävistä.  Vastavuoroinen suhde: tuottajana äänitteessä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "audio producer of"@en,
+        "tuottajana äänitteessä"@fi .
+
+mts:m4522 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50213 ;
+    skos:broader mts:m4520 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää elokuvatuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: elokuvatuottaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "film producer of"@en,
+        "tuottajana elokuvassa"@fi .
+
 mts:m455 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -37467,6 +37565,17 @@ mts:m2 a skos:Concept ;
     skos:prefLabel "selostaja"@fi,
         "referent"@sv .
 
+mts:m2004 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50048 ;
+    skos:broader mts:m4511 ;
+    skos:definition "Liittää ohjaajan elokuvaan, joka sisältää vastuun filmatun esityksen yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: elokuvaohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "film director of"@en,
+        "elokuva"@fi,
+        "film"@sv .
+
 mts:m2020 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -37565,6 +37674,28 @@ mts:m2037 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "soolonuotti"@fi,
         "solostämma"@sv .
+
+mts:m2048 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50050 ;
+    skos:broader mts:m4511 ;
+    skos:definition "Liittää ohjaajan televisio-ohjelmaan, johon sisältyy vastuu televisio-ohjelman yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: televisio-ohjelman ohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "television director of"@en,
+        "televisio-ohjelma"@fi,
+        "tv-program"@sv .
+
+mts:m2050 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50049 ;
+    skos:broader mts:m4511 ;
+    skos:definition "Liittää ohjaajan radio-ohjelmaan, johon sisältyy vastuu radio-ohjelman yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: radio-ohjelman ohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "radio director of"@en,
+        "radio-ohjelma"@fi,
+        "radioprogram"@sv .
 
 mts:m2277 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -47950,6 +48081,18 @@ mts:m434 a skos:Concept ;
         "peli"@fi,
         "spel"@sv .
 
+mts:m4511 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50299 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää elokuva-, radio- tai televisiotaltioinnin tms. yleistä johtamista. Vastavuoroinen suhde: ohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m2004,
+        mts:m2048,
+        mts:m2050 ;
+    skos:prefLabel "director of"@en,
+        "ohjaajana taltioinnissa"@fi .
+
 mts:m546 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -48156,7 +48299,7 @@ mts:m1298 a skos:Concept ;
     rdfs:seeAlso rdaw:P10064 ;
     skos:altLabel "tuott. (tuottaja)"@fi,
         "prod. (producent)"@sv ;
-    skos:definition "Liittää teoksen toimijaan, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Vastavuoroinen suhde: tuottajana teoksessa.  Vastavuoroinen suhde: tuottajana teoksessa."@fi,
+    skos:definition "Liittää teoksen toimijaan, joka vastaa elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisista tehtävistä. Vastavuoroinen suhde: tuottajana teoksessa."@fi,
         "person eller institution som ansvarar för de kommersiella uppdrag som hör till produktionen av film, ljudupptagning, tv-program, direktsändning e.d. Producenten ansvarar i regel för finansieringsanskaffning, produktionsledning, anställning av nyckelpersoner, organisering av distribution o.s.v."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1170,
@@ -48623,6 +48766,19 @@ Vastavuoroinen suhde: käsikirjoitus ekspressioon."""@fi,
     skos:prefLabel "screenplay expression"@en,
         "käsikirjoitus (ekspressio)"@fi,
         "manuskript (uttryck)"@sv .
+
+mts:m4520 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50201 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää elokuvan, äänitallenteen, televisio-ohjelman, suoratoistolähetyksen tms. tuotannon liiketoiminnallisia tehtäviä. Vastavuoroinen suhde: tuottaja."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4516,
+        mts:m4518,
+        mts:m4519,
+        mts:m4522 ;
+    skos:prefLabel "producer of"@en,
+        "tuottajana teoksessa"@fi .
 
 mts:m608 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -51226,7 +51382,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-17T01:55:17+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-18T02:04:30+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
