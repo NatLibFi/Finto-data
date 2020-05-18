@@ -374,6 +374,15 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <skos:prefLabel xml:lang="fi">aiempana omistajana kappaleelle</skos:prefLabel>
     <skos:prefLabel xml:lang="en">former owner of</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:entisoijaKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50206"/>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, johon kohdistetaan teknisiä, toimituksellisia ja tiedollisia toimenpiteitä, joiden tarkoitus on palauttaa kappale mahdollisimman lähelle sen alkuperäistä tilaa tai kuntoa. Vastavuoroinen suhde: entisöijä (kappale).</skos:definition>
+    <skos:prefLabel xml:lang="fi">entisöijänä kappaleelle</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">restorationalist of</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:esiintyjanaEsityksessa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -399,6 +408,15 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50177"/>
     <skos:definition>Liittää toimijan manifestaatioon, jonka valmistamiseen toimija on osallistunut etsaamalla metallia, lasia tms. hapon tai muun syövyttävän aineen avulla. { Vastavuoroinen suhde: etsaaja. @fi}</skos:definition>
     <skos:prefLabel xml:lang="fi">etsaajana etsauksessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:huomautustenKirjoittajanaKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50128"/>
+    <skos:definition xml:lang="fi">Liittää henkilön kappaleeseen, joka sisältää käsinkirjoitettuja huomautuksia. Vastavuoroinen suhde: huomautusten kirjoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">annotator of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">huomautusten kirjoittajana kappaleessa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:jakajanaAineistossa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -503,7 +521,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50066"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1743"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aiempanaOmistajanaKappaleelle"/>
     <skos:definition xml:lang="fi">Liittää aiemman omistajan kappaleeseen, joka on lahjoitettu toiselle omistajalle. Vastavuoroinen suhde: lahjoittaja</skos:definition>
     <skos:prefLabel xml:lang="en">donor of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">lahjoitus</skos:prefLabel>
@@ -42681,6 +42699,10 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä kappale</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Kappaleen ja toimijan välinen suhde</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aiempanaOmistajanaKappaleelle"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:entisoijaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:huomautustenKirjoittajanaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nykyisenaOmistajanaKappaleelle"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:omistajanaKappaleelle"/>
     <skos:prefLabel xml:lang="en">related item of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4464">
@@ -48450,7 +48472,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50162"/>
     <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka tällä hetkellä on laillisesti toimijan omistuksessa. Vastavuoroinen suhde: nykyinen omistaja.</skos:definition>
     <skos:prefLabel xml:lang="en">current owner of</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">nykyisenä omistajana kappeleelle</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">nykyisenä omistajana kappaleelle</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:omistajanaKappaleelle">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
