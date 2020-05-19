@@ -549,6 +549,16 @@ mts:m4510 a skos:Concept ;
     skos:prefLabel "performer of"@en,
         "esittys"@fi .
 
+mts:m4550 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50145 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää teoksen kielellisen sisällön ilmaisun teoksen aiemmista ekspressioista poikkeavalla kielellä. Vastavuoroinen suhde: kääntäjä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "translator of"@en,
+        "käännös"@fi,
+        "översättning"@sv .
+
 mts:m588 skos:prefLabel "Ord i textbilaga:"@sv .
 
 mts:m61 a isothes:ConceptGroup,
@@ -3592,9 +3602,10 @@ mts:m1463 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "kontinuerlig uppdatering"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "päivitetään jatkuvasti"@fi,
-        "kontinuerlig uppdatering"@sv .
+        "uppdateras kontinuerligt"@sv .
 
 mts:m1467 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -4958,7 +4969,7 @@ mts:m1746 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30076 ;
-    skos:definition "Henkilö, suku tai yhteisö, joka osallistuu manifestaation valmistamiseen etsaamalla metallia, lasia tms. hapon tai muun syövyttävän aineen avulla."@fi,
+    skos:definition "Liittää manifestaation toimijaan, joka osallistuu manifestaation valmistamiseen etsaamalla metallia, lasia tms. hapon tai muun syövyttävän aineen avulla. Vastavuoroinen suhde: etsaajana etsauksessa."@fi,
         "Person eller institution som deltar i framställningen av en manifestation genom att etsa metall, glas e.d. med hjälp av syra eller annat frätande medel."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "etsaaja"@fi,
@@ -5037,12 +5048,12 @@ mts:m1755 a skos:Concept ;
     rdfs:seeAlso rdam:P30078 ;
     skos:altLabel "kirjanpainaja (suhde)"@fi,
         "boktryckare (relation)"@sv ;
+    skos:definition "Liittää manifestaation toimijaan, joka osallistuu painetun tekstin, nuottijulkaisun tms. manifestaation valmistamiseen painolaatalta tai -levyltä, esim. kirjan, sanomalehden, aikakauslehden, julisteen, partituurin tms. painaja. Vastavuoroinen suhde: painajana painotuotteessa."@fi,
+        "person eller institution som deltar i framställningen av manifestationen för en tryckt text, musikalie e.d. från en tryckplåt. Avser t.ex. tryckare av bok, dagstidning, tidskrift, affisch, partitur o.s.v."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "printer"@en,
         "kirjanpainaja"@fi,
-        "boktryckare"@sv ;
-    skos:scopeNote "Liittää manifestaation toimijaan, joka osallistuu painetun tekstin, nuottijulkaisun tms. manifestaation valmistamiseen painolaatalta tai -levyltä, esim. kirjan, sanomalehden, aikakauslehden, julisteen, partituurin tms. painaja. Vastavuoroinen suhde: painajana painotuotteessa."@fi,
-        "person eller institution som deltar i framställningen av manifestationen för en tryckt text, musikalie e.d. från en tryckplåt. Avser t.ex. tryckare av bok, dagstidning, tidskrift, affisch, partitur o.s.v."@sv .
+        "boktryckare"@sv .
 
 mts:m1756 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -13720,15 +13731,6 @@ mts:m4134 a skos:Concept ;
     skos:prefLabel "Julkaisussa irrotettavia sivuja."@fi,
         "Publikationen innehåller löstagbara sidor."@sv .
 
-mts:m4139 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:definition "Ihmisäänelle sävelletty tai sillä esitettävä sävellys."@fi,
-        "Komposition komponerad för eller framförd av människoröst."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "laulu"@fi,
-        "sång"@sv .
-
 mts:m414 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "Kaunokki-termi"@fi,
@@ -14200,13 +14202,14 @@ mts:m4354 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv ;
+    skos:altLabel "två gånger i månaden"@sv ;
     skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa kuukaudessa."@fi,
         "Utgivnings- eller uppdateringsfrekvens för matieral som utkommer eller uppdateras två gånger i månaden."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1009> ;
     skos:inScheme mts: ;
     skos:prefLabel "semimonthly"@en,
         "kaksi kertaa kuukaudessa"@fi,
-        "två gånger i månaden"@sv .
+        "två gånger per månad"@sv .
 
 mts:m437 a isothes:ConceptGroup,
         skos:Collection ;
@@ -14744,14 +14747,38 @@ mts:m4462 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50306 ;
     skos:altLabel "Toimijaan liittyvä ekspressio"@fi ;
     skos:definition "Liittää toimijan ekspressioon, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Ekspression ja toimijan välinen suhde"@fi ;
-    skos:member mts:m4470,
+    skos:member mts:m4139,
+        mts:m4470,
         mts:m4475,
         mts:m4477,
         mts:m4480,
         mts:m4497,
         mts:m4508,
         mts:m4512,
-        mts:m4517 ;
+        mts:m4517,
+        mts:m4523,
+        mts:m4524,
+        mts:m4525,
+        mts:m4528,
+        mts:m4529,
+        mts:m4530,
+        mts:m4531,
+        mts:m4532,
+        mts:m4534,
+        mts:m4536,
+        mts:m4537,
+        mts:m4538,
+        mts:m4539,
+        mts:m4540,
+        mts:m4543,
+        mts:m4544,
+        mts:m4546,
+        mts:m4547,
+        mts:m4548,
+        mts:m4551,
+        mts:m4554,
+        mts:m4555,
+        mts:m4557 ;
     skos:prefLabel "related expression of agent"@en,
         "Toimijan ja ekspression välinen suhde"@fi .
 
@@ -14762,6 +14789,11 @@ mts:m4463 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50308 ;
     skos:altLabel "Toimijaan liittyvä kappale"@fi ;
     skos:definition "Liittää toimijan kappaleeseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Kappaleen ja toimijan välinen suhde"@fi ;
+    skos:member mts:m4527,
+        mts:m4549,
+        mts:m4553,
+        mts:m4558,
+        mts:m4560 ;
     skos:prefLabel "related item of agent"@en,
         "Toimijan ja kappaleen välinen suhde"@fi .
 
@@ -14772,6 +14804,14 @@ mts:m4464 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50307 ;
     skos:altLabel "Toimijaan liittyvä teos"@fi ;
     skos:definition "Liittää toimijan manifestaatioon, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Manifestaation ja toimijan välinen suhde"@fi ;
+    skos:member mts:m4533,
+        mts:m4535,
+        mts:m4541,
+        mts:m4542,
+        mts:m4545,
+        mts:m4552,
+        mts:m4556,
+        mts:m4559 ;
     skos:prefLabel "related manifestation of agent"@en,
         "Toimijan ja manifestaation välinen suhde"@fi .
 
@@ -15128,6 +15168,166 @@ mts:m4521 a skos:Concept ;
     skos:prefLabel "commissioning body of"@en,
         "teettäjänä teokselle"@fi .
 
+mts:m4523 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50139 ;
+    skos:definition "\"Liittää toimijan näyttämöteoksen ekspressioon, johon sisältyy yleisjohtaminen tai esityksen valvominen. Vastavuoroinen suhde: näyttämöohjaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "stage director of"@en,
+        "näyttämöohjaus"@fi .
+
+mts:m4525 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50183 ;
+    skos:definition "Liittää toimijan ekspressioon, joka sisältää elokuvan, videoteoksen tms. kokoamista, järjestämistä ja leikkausta sekä kuvan että äänen osalta. Vastavuoroinen suhde: leikkaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "editor of moving image work of"@en,
+        "leikkaus"@fi .
+
+mts:m4526 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50066 ;
+    skos:broader mts:m4527 ;
+    skos:definition "Liittää aiemman omistajan kappaleeseen, joka on lahjoitettu toiselle omistajalle. Vastavuoroinen suhde: lahjoittaja"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "donor of"@en,
+        "lahjoitus"@fi .
+
+mts:m4533 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50170 ;
+    skos:definition "Liittää toimijan manifestaatioon, jossa toimija vastaa kirjan graafisesta suunnittelusta, taitosta, materiaalien valinnasta ja käytetyistä valmistusmenetelmistä. Vastavuoroinen suhde: graafinen suunnittelijana."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "book designer of"@en,
+        "kirjan graafinen suunnittelu"@fi .
+
+mts:m4535 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50202 ;
+    skos:definition "Liittää toimijan manifestaatioon, jota painetaan, monistetaan, valetaan tms Vastavuoroinen suhde: valmistaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "manufacturer of"@en,
+        "valmistajana aineistossa"@fi .
+
+mts:m4541 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50169 ;
+    skos:definition "Liittää toimijan elokuvan manifestaatio, joka jaetaan elokuvateattereille tai muille jakelukanaville. Vastavuoroinen suhde: elokuvan jakelija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "film distributor of"@en,
+        "jakelijana elokuvassa"@fi .
+
+mts:m4542 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50179 ;
+    skos:definition "Liittää toimijan manifestaatioon, joka on painettua tekstiä, nuottijulkaisu tms. ja jonka toimija on valmistanut painolaatalta, esim. kirja, sanomalehti, aikakauslehti, juliste, partituuri tms. Vastavuoroinen suhde: kirjanpainaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "printer of"@en,
+        "painajana painotuotteessa"@fi .
+
+mts:m4543 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50156 ;
+    skos:definition "Liittää tomijan teoksen ekspressioon, joka on syntynyt tarkistamalla tai selkeyttämällä aiempaa sisältöä, tai valitsemalla ja kokoamalla yhden tai useamman teoksen tekijän teoksia tai niiden osia. Vastavuoroinen suhde: toimittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "editor of"@en,
+        "toimittajana aineistossa"@fi .
+
+mts:m4545 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50171 ;
+    skos:definition "Liittää toimijan manifestaatioon, jonka valmistamiseen toimija on osallistunut kaivertamalla kirjaimia, kuvioita tms., esim. puu- tai metallipinnalle, painamista varten. Vastavuoroinen suhde: kaivertaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "engraver of"@en,
+        "kaivertajana painotuotteessa"@fi .
+
+mts:m4547 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50137 ;
+    skos:definition "Liittää toimijan musiikkiteoksen ekspressioon, joka on muokattu sävellyksen alkuperäisteoksesta poikkeavalle esityskokoonpanolle. Vastavuoroinen suhde: sovittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "arranger of music of"@en,
+        "sovittajana musiikissa"@fi .
+
+mts:m4549 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50162 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka tällä hetkellä on laillisesti toimijan omistuksessa. Vastavuoroinen suhde: nykyinen omistaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "current owner of"@en,
+        "nykyisenä omistajana kappaleelle"@fi .
+
+mts:m4552 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50199 ;
+    skos:definition "Liittää toimijan manifestaatioon, jota jaetaan. Vastavuoroinen suhde: jakaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "distributer of"@en,
+        "jakajana aineistossa"@fi .
+
+mts:m4553 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50206 ;
+    skos:definition "Liittää toimijan kappaleeseen, johon kohdistetaan teknisiä, toimituksellisia ja tiedollisia toimenpiteitä, joiden tarkoitus on palauttaa kappale mahdollisimman lähelle sen alkuperäistä tilaa tai kuntoa. Vastavuoroinen suhde: entisöijä (kappale)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "restorationalist of"@en,
+        "entisöijänä kappaleelle"@fi .
+
+mts:m4555 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50143 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää säveltäjän, äänileikkaajan ja äänimiksaajien toiminnan koordinointia elokuvatuotannossa tai musiikki- tai näytelmäesityksessä. Vastavuoroinen suhde: musiikkijohtaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "musical director of"@en,
+        "musiikkijohtajana musiikkiesityksessä"@fi .
+
+mts:m4556 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50203 ;
+    skos:definition "Liittää toimijan manifestaatioon, jota julkaistaan. Vastavuoroinen suhde: kustantaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "publisher of"@en,
+        "kustantajana aineistossa"@fi .
+
+mts:m4557 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50261 ;
+    skos:definition "Liittää toimijan ei-fiktiivisen liikuvan kuvan teokseen, joka sisältää osallistumista ekspression tekemiseen aktiivisena osallistujana. Vastavuoroinen suhde: osallistuja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "onscreen participant of"@en,
+        "osallistujana ohjelmassa"@fi .
+
+mts:m4558 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50128 ;
+    skos:definition "Liittää henkilön kappaleeseen, joka sisältää käsinkirjoitettuja huomautuksia. Vastavuoroinen suhde: huomautusten kirjoittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "annotator of"@en,
+        "huomautusten kirjoittajana kappaleessa"@fi .
+
+mts:m4559 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50177 ;
+    skos:definition "Liittää toimijan manifestaatioon, jonka valmistamiseen toimija on osallistunut etsaamalla metallia, lasia tms. hapon tai muun syövyttävän aineen avulla. { Vastavuoroinen suhde: etsaaja. @fi}"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "etsaajana etsauksessa"@fi .
+
 mts:m456 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -15140,6 +15340,15 @@ mts:m456 a skos:Concept ;
         "utskriven titel"@sv ;
     skos:scopeNote "Merkitään MARC 21 -formaatissa kenttään 246."@fi,
         "Anges i MARC 21-formatets fält 246."@sv .
+
+mts:m4560 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50165 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on laillisesti toimijan omistuksessa. Vastavuoroinen suhde: omistaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "owner of"@en,
+        "omistajana kappaleelle"@fi .
 
 mts:m457 a isothes:ConceptGroup,
         skos:Collection ;
@@ -17194,9 +17403,9 @@ mts:m858 a isothes:ConceptGroup,
         mts:m669,
         mts:m731,
         mts:m877 ;
-    skos:prefLabel "Derivative espression"@en,
+    skos:prefLabel "Derivative expression"@en,
         "Ekspression johdannaissuhde"@fi,
-        "Härledda relationer (uttryck"@sv .
+        "Härledda relationer (uttryck)"@sv .
 
 mts:m859 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20711,7 +20920,9 @@ mts:m1049 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa vuodessa."@fi ;
+    skos:altLabel "tre gånger i året"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa vuodessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i året."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1011> ;
     skos:inScheme mts: ;
     skos:prefLabel "three times a year"@en,
@@ -20879,12 +21090,14 @@ mts:m1091 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa viikossa."@fi ;
+    skos:altLabel "tre gånger i veckan"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa viikossa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i veckan."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "three times a week"@en,
         "kolme kertaa viikossa"@fi,
-        "tre gånger i veckan"@sv .
+        "tre gånger per vecka"@sv .
 
 mts:m1105 a skos:Concept ;
     skos:definition "Kuunneltavaksi tarkoitettu kielellinen sisältö. Sisältää esim. puheäänitteet, runonlausunnat, puheet, haastattelut, suulliset tarinat, tietokoneella tuotetun puheen jne."@fi,
@@ -20909,6 +21122,18 @@ mts:m1116 a skos:Concept ;
     skos:prefLabel "magnetic particles"@en,
         "magneettijauhe"@fi,
         "magnetpulver"@sv .
+
+mts:m1118 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20019 ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen vierailemalla ohjelmassa, jossa keskustellaan eri aiheista ja johon yleensä osallistuu näiden aiheiden asiantuntijoita. Vastavuoroinen suhde: paneeliohjelma."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att gästa ett program, där olika ämnen diskuteras och där experter på dessa ämnen ofta deltar"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "panelist"@en,
+        "panelisti"@fi,
+        "deltagare i paneldiskussion"@sv .
 
 mts:m1125 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -21028,6 +21253,18 @@ mts:m1153 a skos:Concept ;
     skos:prefLabel "ylempi AMK-opinnäytetyö"@fi,
         "högre YH-examensarbete"@sv .
 
+mts:m1154 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20014 ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tanssimalla musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: tanssiesitys."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att dansa i ett musikuppförande, skådespel etc."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "dancer"@en,
+        "tanssija"@fi,
+        "dansare"@sv .
+
 mts:m1155 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -21104,6 +21341,18 @@ mts:m1190 a skos:Concept ;
     skos:prefLabel "magneto-optical"@en,
         "magneto-optinen"@fi,
         "magnet-optisk"@sv .
+
+mts:m1201 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20024 ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen puhumalla, esim. luennoimalla tai pitämällä puheen. Vastavuoroinen suhde: puhe (ekspressio)."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att tala, t.ex. genom att föreläsa eller hålla ett tal"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "speaker"@en,
+        "puhuja"@fi,
+        "talare"@sv .
 
 mts:m1202 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -21451,13 +21700,16 @@ mts:m1332 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:altLabel "kerran kuukaudessa"@fi ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kuukaudessa."@fi ;
+    skos:altLabel "kerran kuukaudessa"@fi,
+        "en gång i månaden"@sv,
+        "månatligen"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kuukaudessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång i månaden."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "monthly"@en,
         "kuukausittain"@fi,
-        "en gång i månaden"@sv .
+        "en gång per månad"@sv .
 
 mts:m1336 a skos:Concept ;
     rdfs:comment "Kansallinen termi"@fi,
@@ -21684,6 +21936,19 @@ mts:m1400 a skos:Concept ;
         "loppusanojen kirjoittaja"@fi,
         "författare till efterord"@sv .
 
+mts:m1407 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50075 ;
+    skos:altLabel "juont. (juontaja)"@fi,
+        "juontaja (suhde)"@fi,
+        "programledare (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen juontamalla (usein lähetettyä) ohjelmaa, johon osallistuu vieraita, esiintyjiä tms. (esim. talk show’n juontaja). Vastavuoroinen suhde: juontajana ohjelmassa."@fi,
+        "Framförande person som deltar i utförandet av ett uttryck genom att leda ett program, i vilket gäster, artister e.d. deltar (t.ex.  programledare för en talkshow), eller i vilket olika ämnen diskuteras, ofta med bidrag av experter i dessa ämnen (t.ex. programledare för valdebatt)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "host"@en,
+        "juontaja"@fi,
+        "programledare"@sv .
+
 mts:m1411 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -21898,6 +22163,18 @@ mts:m1468 a skos:Concept ;
         "piirustus"@fi,
         "teckning"@sv .
 
+mts:m1476 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20018 ;
+    skos:broader mts:m1060 ;
+    skos:definition "\"Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen ohjaamalla tai käsittelemällä nukkeja tai marionetteja elokuvassa tms. tai musiikki- tai näytelmäesityksessä. Vastavuoroinen suhde: nukettajana esityksessä."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att styra eller hantera dockor eller marionetter i en film e.d. eller i ett musikuppförande eller skådespel"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "puppeteer of"@en,
+        "nukettaja"@fi,
+        "dockspelare"@sv .
+
 mts:m1477 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -21919,7 +22196,7 @@ mts:m148 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30082 ;
-    skos:definition "Liittää manifestaation toimijaan,joka on vastuussa julkaistun manifestaation painamisesta, monistamisesta, kirjasinten valamisesta jne. Vastavuoroinen suhde: vaalmistajana aineistossa."@fi,
+    skos:definition "Liittää manifestaation toimijaan,joka on vastuussa julkaistun manifestaation painamisesta, monistamisesta, kirjasinten valamisesta jne. Vastavuoroinen suhde: valmistajana aineistossa."@fi,
         "Aktör som ansvarar för manifestationens tryckning, mångfaldigande, gjutning av trycktyp m.m."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "manufacturer"@en,
@@ -22383,7 +22660,8 @@ mts:m1645 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy epäsäännöllisesti."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy epäsäännöllisesti."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras oregelbundet."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1016> ;
     skos:inScheme mts: ;
     skos:prefLabel "irregular"@en,
@@ -22409,13 +22687,15 @@ mts:m1658 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv ;
-    skos:altLabel "kerran viikossa"@fi ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran viikossa."@fi ;
+    skos:altLabel "kerran viikossa"@fi,
+        "en gång i veckan"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran viikossa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång i veckan."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1004> ;
     skos:inScheme mts: ;
     skos:prefLabel "weekly"@en,
         "viikottain"@fi,
-        "en gång i veckan"@sv .
+        "en gång per vecka"@sv .
 
 mts:m167 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -23077,6 +23357,18 @@ mts:m1998 a skos:Concept ;
     skos:prefLabel "solmization"@en,
         "solmisaatio"@fi,
         "solmisation"@sv .
+
+mts:m2 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:altLabel "selostaja (suhde)"@fi,
+        "referent (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Esittäjä, joka osallistuu ekspression tekemiseen selostamalla, esim. urheiluselostaja. Vastavuoroinen suhde: selostajana ekspressiossa."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att referera, t.ex. sportkommentator"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "selostaja"@fi,
+        "referent"@sv .
 
 mts:m2000 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -26014,12 +26306,14 @@ mts:m276 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Äänitteen sukupolven määrite originaalilevyn kovametalliselle negatiivikopiolle, joka voidaan asentaa puristimeen ja käyttää urakuvion painamiseen levyjen tuotantoerän valmistuksessa."@fi ;
+    skos:altLabel "pressmatris"@sv ;
+    skos:definition "Äänitteen sukupolven määrite originaalilevyn kovametalliselle negatiivikopiolle, joka voidaan asentaa puristimeen ja käyttää urakuvion painamiseen levyjen tuotantoerän valmistuksessa."@fi,
+        "Attribut för en ljudupptagnings generation, för negativ metallkopia av originalskiva, som kan sättas i press och användas för att trycka spårmönster vid tillverkning av ett parti skivor."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAGeneration/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "stamper"@en,
         "isiö"@fi,
-        "pressmatris"@sv .
+        "patris"@sv .
 
 mts:m2760 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -27058,12 +27352,14 @@ mts:m30 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Äänitteen sukupolven määrite originaalilevyn positiiviselle metallikopiolle, jota on käytetty yhden tai useamman isiön tuottamiseen."@fi ;
+    skos:altLabel "pressmatris (modermatrisens negativ)"@sv ;
+    skos:definition "Äänitteen sukupolven määrite originaalilevyn positiiviselle metallikopiolle, jota on käytetty yhden tai useamman isiön tuottamiseen."@fi,
+        "Attribut för en ljudupptagnings generation, för positiv metallkopia av originalskiva, som har använts för att producera en eller flera patriser."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAGeneration/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "mother"@en,
         "äitiö"@fi,
-        "pressmatris (modermatrisens negativ)"@sv .
+        "matris"@sv .
 
 mts:m3008 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -27559,6 +27855,16 @@ mts:m3127 a skos:Concept ;
     skos:prefLabel "blogger"@en,
         "bloggaaja"@fi,
         "bloggare"@sv .
+
+mts:m313 a skos:Concept ;
+    rdfs:seeAlso rdae:P20022 ;
+    skos:altLabel "kert. (kertoja)"@fi ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen lukemalla ääneen tai kertomalla tapahtumasta, toiminnasta tms. Vastavuoroinen suhde: kertojana tilaisuudessa."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att läsa eller berätta om en händelse, handling o.s.v."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kertoja"@fi,
+        "berättare"@sv .
 
 mts:m3135 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -34727,40 +35033,48 @@ mts:m4355 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa kuussa."@fi ;
+    skos:altLabel "tre gånger i månaden"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kolme kertaa kuussa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras tre gånger i månaden."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1006> ;
     skos:inScheme mts: ;
     skos:prefLabel "three times a month"@en,
         "kolme kertaa kuukaudessa"@fi,
-        "tre gånger i månaden"@sv .
+        "tre gånger per månad"@sv .
 
 mts:m4356 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa viikossa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa viikossa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras varannan vecka."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1003> ;
     skos:inScheme mts: ;
     skos:prefLabel "biweekly"@en,
-        "kerran kahdessa viikossa"@fi .
+        "kerran kahdessa viikossa"@fi,
+        "varannan vecka"@sv .
 
 mts:m4357 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa viikossa."@fi ;
+    skos:altLabel "två gånger i veckan"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa viikossa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras två gånger i veckan."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1005> ;
     skos:inScheme mts: ;
     skos:prefLabel "semiweekly"@en,
         "kaksi kertaa viikossa"@fi,
-        "två gånger i veckan"@sv .
+        "två gånger per vecka"@sv .
 
 mts:m4358 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran päivässä, yleensä arkipäivisin."@fi ;
+    skos:altLabel "en gång per dag"@sv ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran päivässä, yleensä arkipäivisin."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång per dag, vanligen vardagar."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1001> ;
     skos:inScheme mts: ;
     skos:prefLabel "daily"@en,
@@ -34772,23 +35086,26 @@ mts:m4359 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa kuukaudessa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa kuukaudessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras varannan månad."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1007> ;
     skos:inScheme mts: ;
     skos:prefLabel "bimonthly"@en,
-        "kerran kahdessa kuukaudessa"@fi .
+        "kerran kahdessa kuukaudessa"@fi,
+        "varannan månad"@sv .
 
 mts:m4360 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:altLabel "neljännesvuosittain"@fi ;
+    skos:altLabel "neljännesvuosittain"@fi,
+        "fyra gånger i året"@sv ;
     skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy neljä kertaa vuodessa."@fi,
         "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras fyra gånger per år."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1010> ;
     skos:inScheme mts: ;
-    skos:prefLabel "quuarterly"@en,
+    skos:prefLabel "quarterly"@en,
         "neljä kertaa vuodessa"@fi,
         "fyra gånger per år"@sv .
 
@@ -34797,11 +35114,13 @@ mts:m4361 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kolmessa vuodessa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kolmessa vuodessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras vart tredje år."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "triennial"@en,
-        "kerran kolmessa vuodessa"@fi .
+        "kerran kolmessa vuodessa"@fi,
+        "vart tredje år"@sv .
 
 mts:m4362 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -34819,7 +35138,8 @@ mts:m4363 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa vuodessa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kaksi kertaa vuodessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras två gånger i året."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1012> ;
     skos:inScheme mts: ;
     skos:prefLabel "semiannual"@en,
@@ -34866,11 +35186,13 @@ mts:m4367 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa vuodessa."@fi ;
+    skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa vuodessa."@fi,
+        "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras vartannat år."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/frequency/1014> ;
     skos:inScheme mts: ;
     skos:prefLabel "biennial"@en,
-        "kerran kahdessa vuodessa"@fi .
+        "kerran kahdessa vuodessa"@fi,
+        "vartannat år"@sv .
 
 mts:m4368 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35373,6 +35695,20 @@ mts:m4478 a skos:Concept ;
     skos:prefLabel "landscape architect of"@en,
         "maisema-arkkitehtinä maisemasuunnitelmassa"@fi .
 
+mts:m448 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20015 ;
+    skos:altLabel "opettaja (suhde)"@fi,
+        "lärare (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen opettamalla tai esittelemällä. Vastavuoroinen suhde: opetustilanne."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att undervisa eller presentera"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "instructor"@en,
+        "opettaja"@fi,
+        "lärare"@sv .
+
 mts:m4483 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
         "Nationell term"@sv ;
@@ -35530,6 +35866,130 @@ mts:m4522 a skos:Concept ;
     skos:prefLabel "film producer of"@en,
         "tuottajana elokuvassa"@fi .
 
+mts:m4524 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50245 ;
+    skos:broader mts:m4530 ;
+    skos:definition "Liittää kuvittajan sarjakuvan, sarjakuvaromaanin tms. ekspressioon, joka sisältää kuvituksen. Vastavuotoinen suhde: tekstaaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "letterer of"@en,
+        "tekstaajana ekspressiossa"@fi .
+
+mts:m4527 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50163 ;
+    skos:definition "\"Liittää toimijan kappaleeseen, joka aiemmin on laillisesti ollut toimijan omistuksessa. Vastavuoroinen suhde: aiempi omistaja."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4526 ;
+    skos:prefLabel "former owner of"@en,
+        "aiempana omistajana kappaleelle"@fi .
+
+mts:m4528 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50078 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää panelistin teoksen ekspressioon, joka sisältää esiintymisen esiintyjänä ohjelmassa, usein lähetetyssä, jossa keskustellaan eri aiheista ja johon yleensä osallistuu näiden aiheiden asiantuntijoita. Vastavuoroinen suhde: panelisti."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "panelist of"@en,
+        "paneeliohjelma"@fi .
+
+mts:m4529 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50073 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää tanssijan teoksen ekspressioon, joka sisältää esiintymistä tanssimalla musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: tanssija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "dancer of"@en,
+        "tanssiesitys"@fi .
+
+mts:m4531 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50217 ;
+    skos:broader mts:m4532 ;
+    skos:definition "\"Liittää toimijan ekspressioon, joka sisältää hahmojen ääninäyttelemisen radio- tai muissa äänituotannoissa, animaatioelokuvissa, radio- ja TV-mainoksissa, dubatuissa aineistoissa tms. Vastavuoroinen suhde: ääninäyttelijä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "voice actor of"@en,
+        "ääninäyttelijänä tallenteessa"@fi .
+
+mts:m4534 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50081 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää kertojan teoksen ekspressioon, joka sisältää ääneen lukemista tai tapahtuman, toiminnan tms. selostamista. Vastavuoroinen suhde: kertoja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kertojana tilaisuudessa"@fi .
+
+mts:m4537 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50082 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää tarinankertojan teoksen ekspressioon, joka sisältää alkuperäisen tarinan kertomisen draamatulkintaa käyttäen. Vastavuoroinen suhde: tarinankertoja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "storyteller of"@en,
+        "tarinankertojana esityksessä"@fi .
+
+mts:m4538 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50075 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää juontajan teoksen ekspressioon, joka sisältää esiintymistä vetäjänä ohjelmassa, usein lähetetyssä, johon osallistuu vieraita, esiintyjiä tms. Vastavuoroinen suhde: juontaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "host of"@en,
+        "juontajana ohjelmassa"@fi .
+
+mts:m4539 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50269 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää johtajan musiikkiteoksen ekspressioon, jossa soitinryhmää johdetaan musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: kapellimestari."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kapellimestarina ekspressiossa"@fi .
+
+mts:m4540 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50268 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää johtajan musiikkiteoksen ekspressioon, jossa kuoroa johdetaan musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: kuoronjohtaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "choral conductor of"@en,
+        "kuoronjohtajana ekspressiossa"@fi .
+
+mts:m4544 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50272 ;
+    skos:broader mts:m4530 ;
+    skos:definition "Liittää ekspression kuvittajaan, joka osallistuu teoksen ekspression tekemiseen tarjoamalla täydentävää valokuvasisältöä alkuperäiseen teokseen. Ei koske ensisijaisesti taiteellisen sisällön luomistLiittää kuvittajan teoksen ekspressioon, joka sisältää alkuperäistä teosta täydentävää valokuvasisältöäa. Vastavuoroinen suhde: valokuvaaja (ekspressio)."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "photographer of"@en,
+        "valokuva (ekspressio)"@fi .
+
+mts:m4546 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:broader mts:m629 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka siältää päätoimitettun aineiston . Vastavuoroinen suhde: päätoimittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "päätoimittajana aineistossa"@fi .
+
+mts:m4548 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50080 ;
+    skos:broader mts:m4536 ;
+    skos:definition "\"Liittää kommentaattorin teoksen ekspressioon, joka sisältää audiovisuaalisen aineiston aiheen tulkitsemista ja analysointia keskustelemalla. Vastavuoroinen suhde: kommantaattori."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "commentator of"@en,
+        "kommentaattorina ohjelmassa"@fi .
+
 mts:m455 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -35544,6 +36004,24 @@ mts:m455 a skos:Concept ;
         "släkttavla"@sv ;
     skos:scopeNote "Monikossa: sukutauluja, xx sukutaulua"@fi,
         "I plural: släkttavlor, xx släkttavlor"@sv .
+
+mts:m4551 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää lukijan teoksen ekspressioon, joka sisältää ääneen lukemista. Vastavuoroinen suhde: lukija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lukijana esityksessä"@fi .
+
+mts:m4554 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50079 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää soittajan teoksen ekspressioon, joka sisältää soitinesityksen. Vastavuoroinen suhde: soittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "instrumentalist of"@en,
+        "soittajana ohjelmassa"@fi .
 
 mts:m466 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35692,6 +36170,20 @@ mts:m512 a skos:Concept ;
     skos:prefLabel "DVD-videolevy"@fi,
         "DVD-videoskiva"@sv .
 
+mts:m527 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50084 ;
+    skos:altLabel "laulaja (suhde)"@fi,
+        "sångare (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen laulamalla joko soitinsäestyksellä tai ilman. Laulajan esitys voi olla myös sanaton. Vastavuoroinen suhde: laulu."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att sjunga antingen med eller utan ackompanjemang. Sångarens framförande kan vara med eller utan ord"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "singer"@en,
+        "laulaja"@fi,
+        "sångare"@sv .
+
 mts:m528 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -35809,6 +36301,18 @@ mts:m569 a skos:Concept ;
         "maalaus"@fi,
         "målning"@sv .
 
+mts:m572 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20023 ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen kertomalla alkuperäisen tarinan ja tulkitsemalla sitä draamallisin keinoin. Vastavuoroinen suhde: tarinankertojana esityksessä."@fi,
+        "Sammankopplar ett uttryck med en framförande person som deltar i utförandet av ett uttryck genom att återberätta en historia på ett dramatiskt sätt."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "storyteller"@en,
+        "tarinankertoja"@fi,
+        "historieberättare"@sv .
+
 mts:m574 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -35907,6 +36411,18 @@ mts:m592 a skos:Concept ;
     skos:prefLabel "specimen"@en,
         "näyte"@fi,
         "prov"@sv .
+
+mts:m595 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20021 ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tulkitsemalla tai analysoimalla äänitteen, elokuvan tms. audiovisuaalisen aineiston aihetta tai keskustelemalla siitä. Vastavuoroinen suhde: kommantaattorina ohjelmassa."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att tolka, analysera eller diskutera ämnet för ett audiovisuellt medium"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "commentator"@en,
+        "kommentaattori"@fi,
+        "kommentator"@sv .
 
 mts:m596 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -36009,20 +36525,6 @@ mts:m624 a skos:Concept ;
     skos:scopeNote "äänitallenne"@fi,
         "ljudbärare"@sv .
 
-mts:m629 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20048 ;
-    skos:altLabel "toim. (toimittaja)"@fi,
-        "red. (redaktör)"@sv ;
-    skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen tarkistamalla tai selkeyttämällä sisältöä, tai valitsemalla ja kokoamalla yhden tai useamman teoksen tekijän teoksia tai niiden osia julkaistavaksi. Vastavuoroinen suhde: toimittajana aineistossa.                                                                              Suurista muutoksista, muokkaamisesta jne. joka merkittävästi muuttaa alkuteoksen sisältöä ja luonnetta niin että syntyy uusi teos katso tekijä/kirjoittaja."@fi,
-        "person eller institution som deltar i utförandet av ett uttryck genom att granska eller förtydliga innehållet, t.ex. genom att tillfoga en introduktion, anmärkningar eller annat kritiskt innehåll. Redaktören kan även förbereda verkets uttryck för produktion, utgivning eller distribution. Se upphovsman/författare om stora förändringar såsom bearbetning o.s.v., som avsevärt förändrar originalverkets innehåll och karaktär så att ett nytt verk skapas."@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1686 ;
-    skos:prefLabel "editor"@en,
-        "toimittaja"@fi,
-        "redaktör"@sv .
-
 mts:m631 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -36032,6 +36534,19 @@ mts:m631 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "DVD-ROM-levy"@fi,
         "DVD-ROM-skiva"@sv .
+
+mts:m633 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:altLabel "lausuja (suhde)"@fi,
+        "recit. (recitatör)"@sv,
+        "recitatör (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "kaunokirjallisen lyriikan esittäjä"@fi,
+        "uppläsare av skönlitterär lyrik"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lausuja"@fi,
+        "recitatör"@sv .
 
 mts:m634 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -36386,6 +36901,20 @@ mts:m752 a skos:Concept ;
         "stereografisk skiva"@sv ;
     skos:scopeNote "stereografinen tallenne"@fi,
         "stereografisk bärare"@sv .
+
+mts:m779 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20020 ;
+    skos:altLabel "soittaja (suhde)"@fi,
+        "instrumentalist (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen soittamalla soitinta. Vastavuoroinen suhde: soittajana ohjelmassa."@fi,
+        "framförande person som deltar i utförandet av ett uttryck genom att spela ett instrument"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "instrumentalist"@en,
+        "soittaja"@fi,
+        "instrumentalist"@sv .
 
 mts:m780 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -37108,6 +37637,16 @@ mts:m988 a skos:Concept ;
     skos:prefLabel "ruhtinatar"@fi,
         "furstinna"@sv .
 
+mts:m994 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspressioon lukemalla tekstin ääneen. Vastavuoroinen suhde: lukijana esityksessä."@fi,
+        "aktör som högläser en text"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lukija"@fi,
+        "uppläsare"@sv .
+
 yso:p11775 skos:closeMatch mts:m3926 ;
     skos:exactMatch mts:m3090 .
 
@@ -37218,45 +37757,6 @@ mts:m1100 a skos:Concept ;
     skos:prefLabel "yhtye"@fi,
         "musikgrupp"@sv .
 
-mts:m1118 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20019 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen vierailemalla ohjelmassa, jossa keskustellaan eri aiheista ja johon yleensä osallistuu näiden aiheiden asiantuntijoita. Vastavuoroinen suhde: paneeliohjelma."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att gästa ett program, där olika ämnen diskuteras och där experter på dessa ämnen ofta deltar"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "panelist"@en,
-        "panelisti"@fi,
-        "deltagare i paneldiskussion"@sv .
-
-mts:m1154 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20014 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tanssimalla musiikki- tai näyttämöesityksessä tms. Vastavuoroinen suhde: tanssiesitys."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att dansa i ett musikuppförande, skådespel etc."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "dancer"@en,
-        "tanssija"@fi,
-        "dansare"@sv .
-
-mts:m1201 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20024 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen puhumalla, esim. luennoimalla tai pitämällä puheen. Vastavuoroinen suhde: puhe (ekspressio)."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att tala, t.ex. genom att föreläsa eller hålla ett tal"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "speaker"@en,
-        "puhuja"@fi,
-        "talare"@sv .
-
 mts:m1228 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -37271,6 +37771,22 @@ mts:m1228 a skos:Concept ;
     skos:prefLabel "television adaptation of (work)"@en,
         "televisiosovituksen perustana (teos)"@fi,
         "tv-bearbetning baserad på (verk)"@sv .
+
+mts:m1241 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20012 ;
+    skos:altLabel "näytt. (näyttelijä)"@fi,
+        "näyttelijä (suhde)"@fi,
+        "skåd. (skådespelare)"@sv,
+        "skådespelare (relation)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: esittäjänä esityksessä."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m17 ;
+    skos:prefLabel "actor"@en,
+        "näyttelijä"@fi,
+        "skådespelare"@sv .
 
 mts:m1301 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -37353,33 +37869,6 @@ mts:m1405 a skos:Concept ;
     skos:prefLabel "skin"@en,
         "vuota"@fi,
         "hud"@sv .
-
-mts:m1407 a skos:Concept ;
-    rdfs:seeAlso rdaa:P50075 ;
-    skos:altLabel "juont. (juontaja)"@fi,
-        "juontaja (suhde)"@fi,
-        "programledare (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen juontamalla (usein lähetettyä) ohjelmaa, johon osallistuu vieraita, esiintyjiä tms. (esim. talk show’n juontaja). Vastavuoroinen suhde: juontajana ohjelmassa."@fi,
-        "Framförande person som deltar i utförandet av ett uttryck genom att leda ett program, i vilket gäster, artister e.d. deltar (t.ex.  programledare för en talkshow), eller i vilket olika ämnen diskuteras, ofta med bidrag av experter i dessa ämnen (t.ex. programledare för valdebatt)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "host of"@en,
-        "juontaja"@fi,
-        "programledare"@sv .
-
-mts:m1476 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20018 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "\"Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen ohjaamalla tai käsittelemällä nukkeja tai marionetteja elokuvassa tms. tai musiikki- tai näytelmäesityksessä. Vastavuoroinen suhde: nukettajana esityksessä."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att styra eller hantera dockor eller marionetter i en film e.d. eller i ett musikuppförande eller skådespel"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "puppeteer of"@en,
-        "nukettaja"@fi,
-        "dockspelare"@sv .
 
 mts:m1486 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -37551,19 +38040,6 @@ mts:m1999 a skos:Concept ;
         "chorus score"@en,
         "kuoropartituuri"@fi,
         "körpartitur"@sv .
-
-mts:m2 a skos:Concept ;
-    dc:source "Kansallinen termi"@fi,
-        "Nationell term"@sv ;
-    skos:altLabel "selostaja (suhde)"@fi,
-        "referent (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Esittäjä, joka osallistuu ekspression tekemiseen selostamalla, esim. urheiluselostaja. Vastavuoroinen suhde: selostajana ekspressiossa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att referera, t.ex. sportkommentator"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "selostaja"@fi,
-        "referent"@sv .
 
 mts:m2004 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -43739,17 +44215,6 @@ mts:m3129 a skos:Concept ;
         "valtakunnansyyttäjä"@fi,
         "riksåklagare"@sv .
 
-mts:m313 a skos:Concept ;
-    rdfs:seeAlso rdae:P20022 ;
-    skos:altLabel "kert. (kertoja)"@fi ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen lukemalla ääneen tai kertomalla tapahtumasta, toiminnasta tms. Vastavuoroinen suhde: kertojana tilaisuudessa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att läsa eller berätta om en händelse, handling o.s.v."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kertoja"@fi,
-        "berättare"@sv .
-
 mts:m3130 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -46108,6 +46573,19 @@ mts:m3903 a skos:Concept ;
     skos:prefLabel "kauppatieteiden tohtori"@fi,
         "ekonomie doktor"@sv .
 
+mts:m4139 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50084 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Ihmisäänelle sävelletty tai sillä esitettävä sävellys."@fi,
+        "Liittää laulajan teoksen ekspressioon, joka sisältää lauluesityksen, joko soitinsäestyksellä tai ilman Vastavuoroinen suhde: laulaja."@fi,
+        "Komposition komponerad för eller framförd av människoröst."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "singer of"@en,
+        "laulu"@fi,
+        "sång"@sv .
+
 mts:m4155 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -46475,21 +46953,6 @@ mts:m4447 a skos:Concept ;
     skos:prefLabel "founded corporate body of corporate body"@en,
         "perustanut yhteisön"@fi .
 
-mts:m448 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20015 ;
-    skos:altLabel "opettaja (suhde)"@fi,
-        "lärare (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen opettamalla tai esittelemällä. Vastavuoroinen suhde: opetustilanne."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att undervisa eller presentera"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "instructor"@en,
-        "opettaja"@fi,
-        "lärare"@sv .
-
 mts:m4481 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -46522,46 +46985,26 @@ mts:m4503 a skos:Concept ;
     skos:prefLabel "artist of"@en,
         "taiteilijana teoksessa"@fi .
 
-mts:m527 a skos:Concept ;
+mts:m4530 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50084 ;
-    skos:altLabel "laulaja (suhde)"@fi,
-        "sångare (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen laulamalla joko soitinsäestyksellä tai ilman. Laulajan esitys voi olla myös sanaton. Vastavuoroinen suhde: laulu."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att sjunga antingen med eller utan ackompanjemang. Sångarens framförande kan vara med eller utan ord"@sv ;
+    rdfs:seeAlso rdaa:P50159 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, jonka pääasiallista sisältöä on täydennetty piirroksilla, valokuvilla, kaavioilla tms. Vastavuoroinen suhde: kuvittaja."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "singer of"@en,
-        "laulaja"@fi,
-        "sångare"@sv .
+    skos:narrower mts:m4524,
+        mts:m4544 ;
+    skos:prefLabel "kuvittajana kuvituksessa"@fi .
 
-mts:m572 a skos:Concept ;
+mts:m4532 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20023 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen kertomalla alkuperäisen tarinan ja tulkitsemalla sitä draamallisin keinoin. Vastavuoroinen suhde: tarinankertojana esityksessä."@fi,
-        "Sammankopplar ett uttryck med en framförande person som deltar i utförandet av ett uttryck genom att återberätta en historia på ett dramatiskt sätt."@sv ;
+    rdfs:seeAlso rdaa:P50071 ;
+    skos:broader mts:m4536 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: näyttelijä."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "storyteller"@en,
-        "tarinankertoja"@fi,
-        "historieberättare"@sv .
-
-mts:m595 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50080 ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tulkitsemalla tai analysoimalla äänitteen, elokuvan tms. audiovisuaalisen aineiston aihetta tai keskustelemalla siitä. Vastavuoroinen suhde: kommantaattorina ohjelmassa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att tolka, analysera eller diskutera ämnet för ett audiovisuellt medium"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "commentator of"@en,
-        "kommentaattori"@fi,
-        "kommentator"@sv .
+    skos:narrower mts:m4531 ;
+    skos:prefLabel "actor of"@en,
+        "esiintyjänä esityksessä"@fi .
 
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -46578,6 +47021,21 @@ mts:m627 a skos:Concept ;
     skos:prefLabel "yhteisö"@fi,
         "institution"@sv .
 
+mts:m629 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20048 ;
+    skos:altLabel "toim. (toimittaja)"@fi,
+        "red. (redaktör)"@sv ;
+    skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen tarkistamalla tai selkeyttämällä sisältöä, tai valitsemalla ja kokoamalla yhden tai useamman teoksen tekijän teoksia tai niiden osia julkaistavaksi. Vastavuoroinen suhde: toimittajana aineistossa.                                                                              Suurista muutoksista, muokkaamisesta jne. joka merkittävästi muuttaa alkuteoksen sisältöä ja luonnetta niin että syntyy uusi teos katso tekijä/kirjoittaja."@fi,
+        "person eller institution som deltar i utförandet av ett uttryck genom att granska eller förtydliga innehållet, t.ex. genom att tillfoga en introduktion, anmärkningar eller annat kritiskt innehåll. Redaktören kan även förbereda verkets uttryck för produktion, utgivning eller distribution. Se upphovsman/författare om stora förändringar såsom bearbetning o.s.v., som avsevärt förändrar originalverkets innehåll och karaktär så att ett nytt verk skapas."@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1686,
+        mts:m4546 ;
+    skos:prefLabel "editor"@en,
+        "toimittaja"@fi,
+        "redaktör"@sv .
+
 mts:m630 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -46590,35 +47048,6 @@ mts:m630 a skos:Concept ;
     skos:prefLabel "glass"@en,
         "lasi"@fi,
         "glas"@sv .
-
-mts:m633 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:altLabel "lausuja (suhde)"@fi,
-        "recit. (recitatör)"@sv,
-        "recitatör (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "kaunokirjallisen lyriikan esittäjä"@fi,
-        "uppläsare av skönlitterär lyrik"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "lausuja"@fi,
-        "recitatör"@sv .
-
-mts:m779 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20020 ;
-    skos:altLabel "soittaja (suhde)"@fi,
-        "instrumentalist (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen soittamalla soitinta. Vastavuoroinen suhde: soittajana ohjelmassa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att spela ett instrument"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "instrumentalist"@en,
-        "soittaja"@fi,
-        "instrumentalist"@sv .
 
 mts:m848 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -46633,17 +47062,6 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     skos:prefLabel "vesicular emulsion"@en,
         "vesikulaari"@fi,
         "vesikulär"@sv .
-
-mts:m994 a skos:Concept ;
-    dc:source "Kansallinen termi"@fi,
-        "Nationell term"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspressioon lukemalla tekstin ääneen. Vastavuoroinen suhde: lukijana ekspressiossa."@fi,
-        "aktör som högläser en text"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "lukija"@fi,
-        "uppläsare"@sv .
 
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -46687,24 +47105,6 @@ mts:m115 a skos:Concept ;
     skos:prefLabel "Bristol board"@en,
         "Bristol-paperi"@fi,
         "bristolpapper"@sv .
-
-mts:m1241 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20012 ;
-    skos:altLabel "näytt. (näyttelijä)"@fi,
-        "näyttelijä (suhde)"@fi,
-        "skåd. (skådespelare)"@sv,
-        "skådespelare (relation)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: näyttelijänä esityksessä."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att uppträda i ett musikuppförande, skådespel e.d."@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m17 ;
-    skos:prefLabel "actor of"@en,
-        "näyttelijä"@fi,
-        "skådespelare"@sv .
 
 mts:m125 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -46810,6 +47210,23 @@ mts:m1466 a skos:Concept ;
     skos:prefLabel "wood"@en,
         "puu"@fi,
         "trä"@sv .
+
+mts:m1577 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20011 ;
+    skos:altLabel "joht. (johtaja)"@fi,
+        "johtaja (suhde)"@fi,
+        "dir. (dirigent)"@sv ;
+    skos:broader mts:m1060 ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu musiikkiteoksen ekspression tekemiseen johtamalla esittäjäryhmää (orkesteria, kuoroa, oopperaa tms.) musiikki- tai näyttämöesityksessä tms."@fi,
+        "artist som deltar i utförandet av ett uttryck för ett musikaliskt verk genom att leda artister (t.ex. orkester, kör, opera) i ett musikuppförande, skådespel el. dyl"@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3589,
+        mts:m3593 ;
+    skos:prefLabel "conductor"@en,
+        "johtaja"@fi,
+        "dirigent"@sv .
 
 mts:m1652 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -48311,24 +48728,6 @@ mts:m1298 a skos:Concept ;
         "producent"@sv ;
     skos:scopeNote "Teokseen liittyvä muu toimija"@fi .
 
-mts:m1577 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20011 ;
-    skos:altLabel "joht. (johtaja)"@fi,
-        "johtaja (suhde)"@fi,
-        "dir. (dirigent)"@sv ;
-    skos:broader mts:m1060,
-        mts:m4466 ;
-    skos:definition "esiintyjä, joka osallistuu musiikkiteoksen ekspression tekemiseen johtamalla esiintyjiä (orkesteria, kuoroa, oopperaa jne.) musiikki- tai näytelmäesityksessä jne."@fi,
-        "artist som deltar i utförandet av ett uttryck för ett musikaliskt verk genom att leda artister (t.ex. orkester, kör, opera) i ett musikuppförande, skådespel el. dyl"@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m3589,
-        mts:m3593 ;
-    skos:prefLabel "conductor"@en,
-        "johtaja"@fi,
-        "dirigent"@sv .
-
 mts:m1743 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -48341,7 +48740,7 @@ mts:m1743 a skos:Concept ;
     skos:narrower mts:m1769,
         mts:m1772,
         mts:m3583 ;
-    skos:prefLabel "former ownee"@en,
+    skos:prefLabel "former owner"@en,
         "aikaisempi omistaja"@fi,
         "tidigare ägare"@sv .
 
@@ -49980,6 +50379,26 @@ mts:m3004 a skos:Concept ;
         "kirjailija"@fi,
         "författare"@sv .
 
+mts:m4536 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50147 ;
+    skos:definition "\"Liittää toimijan teoksen ekspressioon, yleensä musiikki- tai näytelmäesitys tms., joka sisältää esitettyä musiikkia, näyttelemistä, tanssia, puhetta jne. Vastavuoroinen suhde: esittäjä."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4139,
+        mts:m4528,
+        mts:m4529,
+        mts:m4532,
+        mts:m4534,
+        mts:m4537,
+        mts:m4538,
+        mts:m4539,
+        mts:m4540,
+        mts:m4548,
+        mts:m4551,
+        mts:m4554 ;
+    skos:prefLabel "esitys"@fi .
+
 mts:m2349 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -50235,36 +50654,6 @@ Vastavuoroinen suhde: mukaelma (ekspressio)."""@fi,
     skos:prefLabel "adaptation of (expression)"@en,
         "mukaelman perustana (ekspressio)"@fi,
         "omarbetning baserad på (uttryck)"@sv .
-
-mts:m4466 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20054 ;
-    skos:altLabel "esitt. (esittäjä)"@fi,
-        "esittäjä (suhde)"@fi,
-        "artist"@sv,
-        "artist (relation)"@sv ;
-    skos:definition "Liittää ekspression toimijaan, joka mainitaan elokuvan tms. alku- tai lopputeksteissä, ja joka liittyy todennäköisesti tuotantoon, rahoitukseen tai jakeluun. Vastavuoroinen suhde: esittämisestä vastaavana produktiossa."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1118,
-        mts:m1154,
-        mts:m1201,
-        mts:m1241,
-        mts:m1407,
-        mts:m1476,
-        mts:m1577,
-        mts:m2,
-        mts:m313,
-        mts:m448,
-        mts:m527,
-        mts:m572,
-        mts:m595,
-        mts:m633,
-        mts:m779,
-        mts:m994 ;
-    skos:prefLabel "presenter agent"@en,
-        "esittäjä"@fi,
-        "framförande person"@sv .
 
 mts:m2084 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -51382,7 +51771,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-18T02:04:30+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-19T02:22:24+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
