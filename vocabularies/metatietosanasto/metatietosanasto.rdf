@@ -363,6 +363,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kunnianosoituksena(Kappale)">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50167"/>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on kunnianosoitus toimijalle. Vastavuoroinen suhde: kappaleella kunnioitettu.</skos:definition>
+    <skos:prefLabel xml:lang="en">honouree of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kunnianosoituksena (kappale)</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kuratoijanaKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50133"/>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on hankittu, koottu ja/tai järjestetty näyttelyyn, kokoelmaan tms. Vastavuoroinen suhde: kuraattori.</skos:definition>
+    <skos:prefLabel xml:lang="en">curator of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kuratoijana kappaleelle</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -6823,7 +6841,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40017"/>
     <skos:altLabel xml:lang="fi">kuraattori (suhde)</skos:altLabel>
     <skos:altLabel xml:lang="sv">kurator (relation)</skos:altLabel>
-    <skos:definition xml:lang="fi">Liittää kappaleen toimijaan, joka on suunnitellut, koonnut ja/tai järjestänyt näyttelyn, kokoelman tms. Vastavuoroinen suhde: kokoelma.</skos:definition>
+    <skos:definition xml:lang="fi">Liittää kappaleen toimijaan, joka on suunnitellut, koonnut ja/tai järjestänyt näyttelyn, kokoelman tms. Vastavuoroinen suhde: kuratoijana kappaleelle.</skos:definition>
     <skos:definition xml:lang="sv">person eller institution som har planerat, sammanställt och/eller anordnat en konstutställning, -samling e.d.</skos:definition>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1763"/>
     <skos:narrower rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1764"/>
@@ -48587,5 +48605,14 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:omistuskirjoituksenKohteenaKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50210"/>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on omistettu toimijalle. Vastavuoroinen suhde: kappale omistettu.</skos:definition>
+    <skos:prefLabel xml:lang="en">dedicatee of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohteena kappaleessa</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
