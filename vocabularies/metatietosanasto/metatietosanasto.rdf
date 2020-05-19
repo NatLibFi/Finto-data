@@ -363,6 +363,24 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:gratulaationKirjoittajanaKappaleessa">
+    <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
+    <dc11:source xml:lang="sv">Nationell term</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">onnittelun kirjoittajana kappaleessa</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, jossa toimija on gratulaation kirjoittajana. Vastavuoroinen suhde: gratulaation kirjoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="fi">gratulaation kirjoittajana kappaleessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kokoelmarekisteri">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50046"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kuratoijanaKappaleessa"/>
+    <skos:definition xml:lang="fi">Liittää kuraattorin kappaleeseen, joka on listattu tai inventoitu osaksi aggregaattiteosta, kuten kappaleiden tai teosten kokoelmaa. Vastavuoroinen suhde: kokoelman luetteloija.</skos:definition>
+    <skos:prefLabel xml:lang="en">collection registrar of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kokoelmarekisteri</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kunnianosoituksena(Kappale)">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -379,7 +397,7 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50133"/>
     <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on hankittu, koottu ja/tai järjestetty näyttelyyn, kokoelmaan tms. Vastavuoroinen suhde: kuraattori.</skos:definition>
     <skos:prefLabel xml:lang="en">curator of</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">kuratoijana kappaleelle</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kuratoijana kappaleessa</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -6789,6 +6807,16 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:prefLabel xml:lang="en">collector</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">kokoelman muodostaja</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">samlare</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1764_1">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50045"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kuratoijanaKappaleessa"/>
+    <skos:definition xml:lang="fi">Liittää kuraattorin kappaleeseen, joka on yhdessä toisten eri lähteistä olevien kappaleiden kanssa koottu järjestetyksi, kuvatuksi ja luetteloiduksi kokoelmaksi. Vastavuoroinen suhde: kokoelman muodostaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">collector of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kokoelma</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1765">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -42511,11 +42539,20 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50308"/>
     <skos:altLabel xml:lang="fi">Toimijaan liittyvä kappale</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Kappaleen ja toimijan välinen suhde</skos:definition>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:gratulaationKirjoittajanaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kokoelmarekisteri"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kunnianosoituksena(Kappale)"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kuratoijanaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1764_1"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4527"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4549"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4553"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4558"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4560"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nimikirjoituksenKirjoittajanaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:omistuskirjoituksenKohteenaKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:omistuskirjoitusKappaleessa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sailyttajanaKappaleelle"/>
     <skos:prefLabel xml:lang="en">related item of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4464">
@@ -48606,6 +48643,15 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:nimikirjoituksenKirjoittajanaKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50129"/>
+    <skos:definition xml:lang="fi">Liittää henkilön kappaleeseen, jossa on käsinkirjoitettu nimikirjoitus. Vastavuoroinen suhde: nimikirjoituksen kirjoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">autographer of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">nimikirjoituksen kirjoittajana kappaleessa</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:omistuskirjoituksenKohteenaKappaleessa">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -48614,5 +48660,23 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on omistettu toimijalle. Vastavuoroinen suhde: kappale omistettu.</skos:definition>
     <skos:prefLabel xml:lang="en">dedicatee of</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">omistuskirjoituksen kohteena kappaleessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:omistuskirjoitusKappaleessa">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50125"/>
+    <skos:definition xml:lang="fi">Liittää henkilön kappaleeseen, jossa on omistuskirjoitus tai merkintä lahjoituksesta. Vastavuoroinen suhde: omistuskirjoituksen kirjoittaja.</skos:definition>
+    <skos:prefLabel xml:lang="en">inscriber of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">omistuskirjoitus kappaleessa</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sailyttajanaKappaleelle">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50164"/>
+    <skos:definition xml:lang="fi">Liittää toimijan kappaleeseen, joka on laillisesti toimijan säilytyksessä. Vastavuoroinen suhde: säilyttäjä.</skos:definition>
+    <skos:prefLabel xml:lang="en">custodian of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">säilyttäjänä kappaleelle</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
