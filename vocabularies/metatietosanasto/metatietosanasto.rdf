@@ -363,6 +363,34 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:PublicDomein">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="fi">MARC 21: 540 ## ‡c Public domain ‡u https://creativecommons.org/publicdomain/zero/1.0/deed.fi</skos:example>
+    <skos:prefLabel xml:lang="fi">public domein</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:aineistoOnKaytettavissaTutkimus-jaMuihinTarkoituksiin">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:example xml:lang="fi">MARC 21: &#xD;
+540 ## ‡a Aineisto on käytettävissä tutkimus- ja muihin tarkoituksiin; ‡b Kansalliskirjasto; ‡c Laki kulttuuriaineistojen tallettamisesta ja säilyttämisestä ‡u http://www.finlex.fi/fi/laki/ajantasa/2007/20071433 ‡5 FI-Vapaa ‡9FENNI&lt;KEEP&gt;</skos:example>
+    <skos:prefLabel xml:lang="fi">aineisto on käytettävissä tutkimus- ja muihin tarkoituksiin</skos:prefLabel>
+    <skos:scopeNote>Käyttöoikeuksien metatieto</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:aineistoOnKaytettavissaVapaakappalekirjastoissa">
+    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
+    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">aineisto on käytettävissä vapaakappalekirjastoissa</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:gratulaationKirjoittajanaKappaleessa">
     <dc11:source xml:lang="fi">Kansallinen termi</dc11:source>
     <dc11:source xml:lang="sv">Nationell term</dc11:source>
@@ -2181,7 +2209,7 @@ Katso myös liikenotaatio, nuottikirjoitus, stillkuva, teksti, kolmiulotteinen m
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">käytettävissä lisenssin hankkineissa organisaatioissa</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">käytettävissä lisenssin hankkineiden organisaatioiden verkossa</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">tillgänglig i organisationer som har skaffat licens</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1216">
@@ -43585,6 +43613,9 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <rdfs:label xml:lang="fi">Aineiston saatavuuden rajoitukset  (kappale)</rdfs:label>
     <rdfs:label xml:lang="sv">Åtkomstrestriktioner (exemplar)</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/i/P40047"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aineistoOnKaytettavissaTutkimus-jaMuihinTarkoituksiin"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:aineistoOnKaytettavissaVapaakappalekirjastoissa"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1214"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1415"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1523"/>
     <skos:prefLabel xml:lang="en">restriction on access to item</skos:prefLabel>
@@ -44947,7 +44978,6 @@ Vastavuoroinen suhde: elokuvaversion perustana (teos).</skos:definition>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30145"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1028"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1069"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1214"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1559"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1730"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2238"/>
