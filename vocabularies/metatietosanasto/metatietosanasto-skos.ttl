@@ -2552,7 +2552,7 @@ mts:m1214 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "käytettävissä lisenssin hankkineissa organisaatioissa"@fi,
+    skos:prefLabel "käytettävissä lisenssin hankkineiden organisaatioiden verkossa"@fi,
         "tillgänglig i organisationer som har skaffat licens"@sv .
 
 mts:m122 a skos:Concept ;
@@ -14793,7 +14793,16 @@ mts:m4463 a isothes:ConceptGroup,
         mts:m4549,
         mts:m4553,
         mts:m4558,
-        mts:m4560 ;
+        mts:m4560,
+        mts:m4561,
+        mts:m4563,
+        mts:m4564,
+        mts:m4565,
+        mts:m4567,
+        mts:m4568,
+        mts:m4569,
+        mts:m4570,
+        mts:m4573 ;
     skos:prefLabel "related item of agent"@en,
         "Toimijan ja kappaleen välinen suhde"@fi .
 
@@ -15350,18 +15359,112 @@ mts:m4560 a skos:Concept ;
     skos:prefLabel "owner of"@en,
         "omistajana kappaleelle"@fi .
 
+mts:m4561 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50129 ;
+    skos:definition "Liittää henkilön kappaleeseen, jossa on käsinkirjoitettu nimikirjoitus. Vastavuoroinen suhde: nimikirjoituksen kirjoittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "autographer of"@en,
+        "nimikirjoituksen kirjoittajana kappaleessa"@fi .
+
+mts:m4562 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example """MARC 21: \r
+540 ## ‡a Aineisto on käytettävissä tutkimus- ja muihin tarkoituksiin; ‡b Kansalliskirjasto; ‡c Laki kulttuuriaineistojen tallettamisesta ja säilyttämisestä ‡u http://www.finlex.fi/fi/laki/ajantasa/2007/20071433 ‡5 FI-Vapaa ‡9FENNI<KEEP>"""@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "aineisto on käytettävissä tutkimus- ja muihin tarkoituksiin"@fi ;
+    skos:scopeNote "Käyttöoikeuksien metatieto"@fi .
+
+mts:m4566 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example """MARC 21: \r
+542 1# ‡i 1873 ‡l Tekijänoikeuksia voimassa ‡o 20150126 ‡r FI ‡5 FI-NL"""@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekijänoikeus voimassa"@fi .
+
+mts:m4567 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:altLabel "onnittelun kirjoittajana kappaleessa"@fi ;
+    skos:definition "Liittää toimijan kappaleeseen, jossa toimija on gratulaation kirjoittajana. Vastavuoroinen suhde: gratulaation kirjoittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "gratulaation kirjoittajana kappaleessa"@fi .
+
+mts:m4568 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50164 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on laillisesti toimijan säilytyksessä. Vastavuoroinen suhde: säilyttäjä."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "custodian of"@en,
+        "säilyttäjänä kappaleelle"@fi .
+
+mts:m4569 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50210 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on omistettu toimijalle. Vastavuoroinen suhde: kappale omistettu."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "dedicatee of"@en,
+        "omistuskirjoituksen kohteena kappaleessa"@fi .
+
 mts:m457 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40047 ;
-    skos:member mts:m1415,
-        mts:m1523 ;
+    skos:member mts:m1214,
+        mts:m1415,
+        mts:m1523,
+        mts:m4562,
+        mts:m4572 ;
     skos:prefLabel "restriction on access to item"@en,
         "Aineiston saatavuuden rajoitukset  (kappale)"@fi,
         "Åtkomstrestriktioner (exemplar)"@sv ;
     skos:scopeNote "Kappaleen saatavuudelle asetettuja rajoituksia."@fi,
         "Restriktioner uppställda för exemplarets åtkomst."@sv .
+
+mts:m4570 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50167 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on kunnianosoitus toimijalle. Vastavuoroinen suhde: kappaleella kunnioitettu."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "honouree of"@en,
+        "kunnianosoituksena (kappale)"@fi .
+
+mts:m4571 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "MARC 21: 540 ## ‡c Public domain ‡u https://creativecommons.org/publicdomain/zero/1.0/deed.fi"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "public domein"@fi .
+
+mts:m4572 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "aineisto on käytettävissä vapaakappalekirjastoissa"@fi .
+
+mts:m4573 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50125 ;
+    skos:definition "Liittää henkilön kappaleeseen, jossa on omistuskirjoitus tai merkintä lahjoituksesta. Vastavuoroinen suhde: omistuskirjoituksen kirjoittaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "inscriber of"@en,
+        "omistuskirjoitus kappaleessa"@fi .
 
 mts:m463 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16186,7 +16289,6 @@ mts:m600 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30145 ;
     skos:member mts:m1028,
         mts:m1069,
-        mts:m1214,
         mts:m1559,
         mts:m1730,
         mts:m2238,
@@ -16200,6 +16302,8 @@ mts:m600 a isothes:ConceptGroup,
         mts:m4167,
         mts:m4168,
         mts:m4169,
+        mts:m4566,
+        mts:m4571,
         mts:m48,
         mts:m535,
         mts:m601,
@@ -18204,7 +18308,7 @@ mts:m991 a isothes:ConceptGroup,
     skos:altLabel "Category of work"@en,
         "Teoksen kategoria"@fi,
         "Verkets kategori"@sv ;
-    skos:definition "Luokka tai genre, johon teos kuuluu."@fi,
+    skos:definition "Liittää teoksen tyyppiin, johon teos kuuluu."@fi,
         "Klass eller genre, till vilket ett verk hör."@sv ;
     skos:member mts:m2004,
         mts:m2048,
@@ -36023,6 +36127,26 @@ mts:m4554 a skos:Concept ;
     skos:prefLabel "instrumentalist of"@en,
         "soittajana ohjelmassa"@fi .
 
+mts:m4563 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50046 ;
+    skos:broader mts:m4564 ;
+    skos:definition "Liittää kuraattorin kappaleeseen, joka on listattu tai inventoitu osaksi aggregaattiteosta, kuten kappaleiden tai teosten kokoelmaa. Vastavuoroinen suhde: kokoelman luetteloija."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "collection registrar of"@en,
+        "kokoelmarekisteri"@fi .
+
+mts:m4565 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50045 ;
+    skos:broader mts:m4564 ;
+    skos:definition "Liittää kuraattorin kappaleeseen, joka on yhdessä toisten eri lähteistä olevien kappaleiden kanssa koottu järjestetyksi, kuvatuksi ja luetteloiduksi kokoelmaksi. Vastavuoroinen suhde: kokoelman muodostaja."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "collector of"@en,
+        "kokoelma"@fi .
+
 mts:m466 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -38003,7 +38127,7 @@ mts:m1770 a skos:Concept ;
     rdfs:seeAlso rdai:P40017 ;
     skos:altLabel "kuraattori (suhde)"@fi,
         "kurator (relation)"@sv ;
-    skos:definition "Liittää kappaleen toimijaan, joka on suunnitellut, koonnut ja/tai järjestänyt näyttelyn, kokoelman tms. Vastavuoroinen suhde: kokoelma."@fi,
+    skos:definition "Liittää kappaleen toimijaan, joka on suunnitellut, koonnut ja/tai järjestänyt näyttelyn, kokoelman tms. Vastavuoroinen suhde: kuratoijana kappaleelle."@fi,
         "person eller institution som har planerat, sammanställt och/eller anordnat en konstutställning, -samling e.d."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1763,
@@ -47006,6 +47130,17 @@ mts:m4532 a skos:Concept ;
     skos:prefLabel "actor of"@en,
         "esiintyjänä esityksessä"@fi .
 
+mts:m4564 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50133 ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on hankittu, koottu ja/tai järjestetty näyttelyyn, kokoelmaan tms. Vastavuoroinen suhde: kuraattori."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4563,
+        mts:m4565 ;
+    skos:prefLabel "curator of"@en,
+        "kuratoijana kappaleessa"@fi .
+
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -51771,7 +51906,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-05-19T02:22:24+00:00"^^xsd:dateTime ;
+    dct:modified "2020-05-20T01:17:22+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
