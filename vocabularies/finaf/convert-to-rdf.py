@@ -123,6 +123,12 @@ def main():
         # modified timestamp
         modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
         g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
+
+        # ISNI
+        for f in rec.get_fields('024'):
+            if '2' in f and f['2'] == 'isni' and 'a' in f:
+                isni = ISNI[f['a'].replace(' ', '')]
+                g.add((uri, SKOS.closeMatch, isni))
         
         # birth and death years
         if '046' in rec:
