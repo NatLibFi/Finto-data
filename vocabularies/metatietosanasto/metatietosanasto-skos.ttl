@@ -142,6 +142,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m4372,
         mts:m4400,
         mts:m4402,
+        mts:m4574,
         mts:m476,
         mts:m50,
         mts:m537,
@@ -539,15 +540,6 @@ mts:m4468 a skos:Concept ;
 243 10 ‡a Teokset"""@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "teokset"@fi .
-
-mts:m4510 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50147 ;
-    skos:definition "Liittää toimijan teoksen ekspressioon, yleensä musiikki- tai näytelmäesitys tms., joka sisältää esitettyä musiikkia, näyttelemistä, tanssia, puhetta jne. Vastavuoroinen suhde: esittäjä."@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "performer of"@en,
-        "esittys"@fi .
 
 mts:m4550 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14102,14 +14094,10 @@ mts:m43 a isothes:ConceptGroup,
     rdfs:seeAlso rdam:P30164 ;
     skos:definition "Liittää manifestaation analogisen levyn uran leveyteen tai analogisen äänilieriön urajakoon."@fi,
         "Sammankopplar manifestation med spårbredd i en analog skiva eller spårfördelning i en analog ljudcylinder."@sv ;
-    skos:member mts:m1344,
-        mts:m145,
-        mts:m15,
-        mts:m395,
+    skos:member mts:m15,
         mts:m428,
         mts:m808,
-        mts:m850,
-        mts:m920 ;
+        mts:m850 ;
     skos:prefLabel "groove characteristic"@en,
         "Uran ominaisuudet"@fi,
         "Spårkarakteristika"@sv .
@@ -15133,10 +15121,12 @@ mts:m4508 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50134 ;
-    skos:definition "Liittää toimijan ekspressioon, johon on lisätty musiikkia, joka ei aikaisemmin sisältynyt teokseen, tai johon on sävelletty uutta musiikkia korvaamaan teoksen aikaisemman musiikin tai täydentämään olemassa olevaa musiikkia. Vastavuoroinen suhde: säveltäjä (ekspressio)."@fi ;
+    skos:definition "Liittää toimijan ekspressioon, johon on lisätty musiikkia, joka ei aikaisemmin sisältynyt teokseen, tai johon on sävelletty uutta musiikkia korvaamaan teoksen aikaisemman musiikin tai täydentämään olemassa olevaa musiikkia. Vastavuoroinen suhde: säveltäjä (ekspressio)."@fi,
+        "Sammankopplar aktör med ett uttryck, till vilket musik som tidigare inte ingått i verket har lagts till eller till vilket ny musik har komponerats för att ersätta verkets tidigare musik eller komplettera existerande musik. Parallell relation: kompositör (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "composer of"@en,
-        "sävellys (ekspressio)"@fi .
+        "sävellys (ekspressio)"@fi,
+        "komposition (uttryck)"@sv .
 
 mts:m4509 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -15489,6 +15479,19 @@ mts:m4573 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "inscriber of"@en,
         "omistuskirjoitus kappaleessa"@fi .
+
+mts:m4574 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdam:P30184 ;
+    skos:definition "Liittää manifestaation äänityksessä käytettyjen äänikanavien määrään."@fi ;
+    skos:member mts:m1344,
+        mts:m145,
+        mts:m395,
+        mts:m920 ;
+    skos:prefLabel "configuration of playback channels"@en,
+        "Toistokanavien määrä"@fi .
 
 mts:m463 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17944,7 +17947,7 @@ mts:m918 a skos:Concept ;
     rdfs:seeAlso rdae:P20026 ;
     skos:altLabel "tonsättare (uttryck)"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu ekspression tekemiseen lisäämällä musiikkia teokseen, johon ei aikaisemmin sisältynyt musiikkia tai säveltämällä uutta musiikkia korvaamaan teoksen aikaisemman musiikin tai täydentämään olemassa olevaa musiikkia. Vastavuoroinen suhde: sävellys (ekspressio)."@fi,
-        "person eller institution som deltar i utförandet av ett uttryck genom att tillfoga musik i ett verk som tidigare inte innefattat musik eller komponera ny musik för att ersätta tidigare musik i ett verk eller komplettera existerande musik."@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att tillfoga musik i ett verk som tidigare inte innefattat musik, eller komponera ny musik för att ersätta tidigare musik i ett verk eller komplettera existerande musik. Parallell relation: komposition (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "composer (expression)"@en,
         "säveltäjä (ekspressio)"@fi,
@@ -24014,7 +24017,7 @@ mts:m2096 a skos:Concept ;
     rdfs:seeAlso rdae:P20288 ;
     skos:broader mts:m179 ;
     skos:definition "Liittää ekspression kuvittajaan, joka osallistuu teoksen ekspression tekemiseen tarjoamalla täydentävää valokuvasisältöä alkuperäiseen teokseen. Ei koske ensisijaisesti taiteellisen sisällön luomista. Vastavuoroinen suhde: valokuva (ekspressio)."@fi,
-        "Illustratör som bidrar till utförandet av ett uttryck genom att erbjuda kompletterande fotografiskt innehåll till det originala verket. Gäller i första hand inte skapande av konstnärligt innehåll."@sv ;
+        "Sammankopplar uttryck med en aktör som bidrar till utförandet av ett uttryck genom att erbjuda kompletterande fotografiskt innehåll till det originala verket. Gäller i första hand inte skapande av konstnärligt innehåll. Parallell relation: fotografi (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "valokuvaaja (ekspressio)"@fi,
         "fotograf (uttryck)"@sv .
@@ -36116,10 +36119,12 @@ mts:m4544 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50272 ;
     skos:broader mts:m4530 ;
-    skos:definition "Liittää ekspression kuvittajaan, joka osallistuu teoksen ekspression tekemiseen tarjoamalla täydentävää valokuvasisältöä alkuperäiseen teokseen. Ei koske ensisijaisesti taiteellisen sisällön luomistLiittää kuvittajan teoksen ekspressioon, joka sisältää alkuperäistä teosta täydentävää valokuvasisältöäa. Vastavuoroinen suhde: valokuvaaja (ekspressio)."@fi ;
+    skos:definition "Liittää kuvittajan teoksen ekspressioon, joka sisältää alkuperäistä teosta täydentävää valokuvasisältöä. Vastavuoroinen suhde: valokuvaaja (ekspressio)."@fi,
+        "Sammankopplar aktör med ett verks uttryck som innehåller kompletterande fotografiskt innehåll till det originala verket. Parallell relation: fotograf (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "photographer of"@en,
-        "valokuva (ekspressio)"@fi .
+        "valokuva (ekspressio)"@fi,
+        "fotografi (uttryck)"@sv .
 
 mts:m4546 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -51957,7 +51962,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-06-03T01:55:52+00:00"^^xsd:dateTime ;
+    dct:modified "2020-06-04T01:41:06+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
