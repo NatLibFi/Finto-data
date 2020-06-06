@@ -968,6 +968,8 @@ rdaw:P10217 rdfs:label "kohderyhmä"@fi,
 
 <http://rdaregistry.info/termList/RDAContentType/1010> skos:exactMatch mts:m362 .
 
+<http://rdaregistry.info/termList/RDAContentType/1012> skos:exactMatch mts:m478 .
+
 <http://rdaregistry.info/termList/RDAContentType/1013> skos:exactMatch mts:m1105 .
 
 <http://rdaregistry.info/termList/RDAContentType/1014> skos:exactMatch mts:m447 .
@@ -5108,10 +5110,17 @@ mts:m176 a isothes:ConceptGroup,
     rdfs:seeAlso rdaw:P10217 ;
     skos:definition "Kohderyhmä tarkoittaa käyttäjäryhmää, jolle aineiston sisältö on tarkoitettu tai jolle sisällön on katsottu sopivan, kuten tiettyä ikäryhmää (esim. lapset, nuoret, aikuiset), opiskelutasoa (esim. peruskoulu, lukio), esteellisyyttä (esim. näkörajoitteiset) tai muuta ryhmittelyä."@fi,
         "Målgrupp avser den användargrupp som resursen riktar sig till eller för vilken resursen ansetts lämplig, såsom en viss åldersgrupp (t.ex. barn, unga, vuxna), utbildningsnivå (t.ex. grundskola, gymnasium) funktionsvariation (t.ex. synskadade) eller annan gruppindelning."@sv ;
-    skos:member mts:m2194,
+    skos:member mts:m1735,
+        mts:m2194,
         mts:m2195,
         mts:m2196,
-        mts:m3585 ;
+        mts:m3585,
+        mts:m4209,
+        mts:m4575,
+        mts:m4576,
+        mts:m4577,
+        mts:m4578,
+        mts:m4579 ;
     skos:prefLabel "intended audience"@en,
         "Kohderyhmä"@fi,
         "Målgrupp"@sv .
@@ -8724,13 +8733,16 @@ mts:m2194 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Opiskelutaso ‡n edu ‡a alakoululaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p38259"""@fi ;
     skos:member mts:m1564,
         mts:m2214,
         mts:m2215,
         mts:m2216,
         mts:m2217,
         mts:m2218 ;
-    skos:prefLabel "Opiskelutaso"@fi,
+    skos:prefLabel "Educational level"@en,
+        "Opiskelutaso"@fi,
         "Utbildningsnivå"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten opiskelutasoa kuvaavia termejä (esim. aikuisopiskelu, peruskoulu, lukio)."@fi,
         "Används för att bestämma termer som beskriver utbildningsnivå hos medlemmar av grupp (t.ex. vuxenstudier, grundskola, gymnasium)"@sv .
@@ -8739,7 +8751,10 @@ mts:m2195 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:prefLabel "Kieli"@fi,
+    skos:example """MARC 21\r
+385 ## ‡m Kieli ‡n lng ‡a espanjankieliset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p2199"""@fi ;
+    skos:prefLabel "Language"@en,
+        "Kieli"@fi,
         "Språk"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kielellisyyttä kuvaavia termejä (esim. englanninkieliset, ruotsinkieliset, suomenkieliset) YSO-sanastosta <a href='http://www.yso.fi/onto/yso/p2200'>kieleen liittyvä rooli</a>."@fi,
         "Används för att bestämma termer som beskriver språk hos medlemmar av en grupp (t.ex. engelskspråkiga, svenskspråkiga, finskspråkiga). Ur ALLFO <a href='http://www.yso.fi/onto/yso/p2200'>roll relaterad till språk</a>."@sv .
@@ -8748,9 +8763,12 @@ mts:m2196 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m  Ikä ‡n age ‡a aikuiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p5590"""@fi ;
     skos:member mts:m1088,
         mts:m1245 ;
-    skos:prefLabel "Ikä"@fi,
+    skos:prefLabel "Age"@en,
+        "Ikä"@fi,
         "Ålder"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kronologista ikää kuvaavia termejä (esim. Ikäsuositus 3+) Voidaan käyttää myös YSOn termejä <a href='http://www.yso.fi/onto/yso/p5591'>ikään liittyvä rooli</a>."@fi,
         "Används för att bestämma termer som beskriver kronologisk ålder hos medlemmar av en grupp (t.ex. Åldersrekommendation 3+). Även termer ur ALLFO kan användas <a href='http://www.yso.fi/onto/yso/p5591'>roll relaterad till ålder</a>."@sv .
@@ -11522,7 +11540,10 @@ mts:m3585 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:prefLabel "Ammatti/harrastus"@fi,
+    skos:example """MARC 21: \r
+385## ‡m Ammatti/harrastus ‡n  occ ‡a  fysioterapeutit ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p2469"""@fi ;
+    skos:prefLabel "Occupation/field of activity"@en,
+        "Ammatti/harrastus"@fi,
         "Yrke/intresse"@sv ;
     skos:scopeNote "Harrastusryhmistä voidaan käyttää YSOn termejä <a href='http://www.yso.fi/onto/yso/p2901'>harrastukset</a>. Ammateista Metatietosanaston termejä ryhmästä <a href='http://urn.fi/URN:NBN:fi:au:mts:m2332'>ammatti tai tehtävä</a>."@fi,
         "Om hobbygrupper kan ALLFO-termerna <a href='http://www.yso.fi/onto/yso/p2901'>hobbyer</a> användas. Om yrken termer ur gruppen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2332'>yrke eller uppgift</a> i Metadataordlistan."@sv .
@@ -13979,19 +14000,6 @@ mts:m4208 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "tehtävien tekijä"@fi .
 
-mts:m4209 a isothes:ConceptGroup,
-        skos:Collection ;
-    rdfs:seeAlso rdaa:P50116 ;
-    skos:definition "Henkilön sukupuoli-identiteetti."@fi,
-        "Liittää henkilön sukupuoleen, jota henkilö kokee edustavansa."@fi,
-        "En persons könsidentitet."@sv,
-        "Sammankopplar person med det kön som personen upplever sig tillhöra."@sv ;
-    skos:member mts:m4224,
-        mts:m4231,
-        mts:m4232 ;
-    skos:prefLabel "sukupuoli"@fi,
-        "kön"@sv .
-
 mts:m421 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
@@ -15495,6 +15503,61 @@ mts:m4574 a isothes:ConceptGroup,
         mts:m920 ;
     skos:prefLabel "configuration of playback channels"@en,
         "Toistokanavien määrä"@fi .
+
+mts:m4575 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Seksuaalinen suuntautuneisuus ‡n sxo ‡a homoseksuaalit ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p20826"""@fi ;
+    skos:prefLabel "Sexual orientation"@en,
+        "Seksuaalinen suuntautuneisuus"@fi,
+        "Sexuell läggning"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten seksuaalista suuntautumista kuvaavia termejä (esim. biseksuaalit, heteroseksuaalit, homot, lesbot). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
+
+mts:m4576 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21 \r
+385 ## ‡m Terveys/toimintakyky ‡n  mpd ‡a  näkövammaiset ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p78"""@fi ;
+    skos:prefLabel "Medical, psychological, and disability"@en,
+        "Terveys/toimintakysy"@fi,
+        "Hälsa/fuktionsförmåga"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten terveydellistä tilaa tai toimintakykyä kuvaavia termejä (esim. kuulovammaiset, psyykkisesti sairaat, päihdekuntoutujat, sokeat)."@fi .
+
+mts:m4577 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Kansallisuus/asuinalue ‡n nat ‡a kaakkoissuomalaiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p12768"""@fi ;
+    skos:prefLabel "National/regional"@en,
+        "Kansallisuus/asuinalue"@fi,
+        "Nationalitet/bosättningsområde"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kansallisuutta tai maantieteellistä asuinaluetta kuvaavia termejä (esim. keskisuomalaiset, neuvostoliittolaiset, romanialaiset, suomalaiset, yhdysvaltalaiset). Mikäli ryhmän etnisyyttä kuvaava termi ei ole samalla maantieteellinen termi, valitaan kokoavaksi yleistermiksi Etnisyys [eth].. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
+
+mts:m4578 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Uskonto ‡n rel ‡a buddhalaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p19029"""@fi ;
+    skos:prefLabel "Religion"@en,
+        "Uskonto"@fi,
+        "Religion"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten uskonnolliseen ryhmään kuulumista kuvaavia termejä (esim. buddhalaiset, katoliset, luterilaiset, sikhit). Yksittäisiä termejä oteaan YSO-sanaston termejä ryhmästä uskontoon liittyvä rooli http://finto.fi/yso/fi/page/p27550"@fi .
+
+mts:m4579 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Etnisyys ‡n eth ‡a suomenvenäläiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p38384"""@fi ;
+    skos:prefLabel "Ethnic/cultural"@en,
+        "Etnisyys"@fi,
+        "Etnicitet"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten etnistä identiteettiä kuvaavia termejä (esim. baskit, kanadansuomalaiset, romanit, sorbit, suomenruotsalaiset, tuaregit, vironruotsalaiset). Mikäli ryhmän etnisyyttä kuvaava termi on myös maantieteellinen termi, valitaan kokoavaksi yleistermiksi Kansallisuus/asuinalue [nat]. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
 
 mts:m463 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -20869,9 +20932,6 @@ rdam:P30038 skos:exactMatch mts:m7 .
 <http://rdaregistry.info/termList/RDAContentType/1011> skos:exactMatch mts:m1699,
         mts:m549 .
 
-<http://rdaregistry.info/termList/RDAContentType/1012> skos:exactMatch mts:m1735,
-        mts:m478 .
-
 <http://rdaregistry.info/termList/broadcastStand/1004> skos:exactMatch mts:m1084 .
 
 <http://rdaregistry.info/termList/frequency/1014> skos:exactMatch mts:m1625,
@@ -23050,15 +23110,22 @@ mts:m173 a skos:Concept ;
     skos:scopeNote "videotallenne"@fi,
         "videobärare"@sv .
 
-mts:m1735 a skos:Concept ;
+mts:m1735 a isothes:ConceptGroup,
+        skos:Collection,
+        skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
+    skos:altLabel "muu"@fi,
+        "Övrig"@sv ;
     skos:definition "Jos mikään yllä olevan RDA:n  taulukon 6.1 sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu ."@fi,
         "Då ingen innehållstyp passar in på det innehåll som beskrivs, anges termen annan."@sv ;
-    skos:exactMatch <http://rdaregistry.info/termList/RDAContentType/1012> ;
+    skos:example """MARC 21\r
+385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "muu"@fi,
-        "annan"@sv .
+    skos:prefLabel "Social"@en,
+        "Muu"@fi,
+        "annan"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi .
 
 mts:m1749 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -33720,6 +33787,27 @@ Vastavuoroinen suhde: elokuvaversion perustana (ekspressio)."""@fi,
     skos:prefLabel "adapted as motion picture expression"@en,
         "elokuvaversio (ekspressio)"@fi,
         "filmversion (uttryck)"@sv .
+
+mts:m4209 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50116 ;
+    skos:altLabel "sukupuoli"@fi,
+        "kön"@sv ;
+    skos:definition "Henkilön sukupuoli-identiteetti."@fi,
+        "Liittää henkilön sukupuoleen, jota henkilö kokee edustavansa."@fi,
+        "En persons könsidentitet."@sv,
+        "Sammankopplar person med det kön som personen upplever sig tillhöra."@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Sukupuoli ‡n gdr ‡a tytöt ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p7196"""@fi ;
+    skos:member mts:m4224,
+        mts:m4231,
+        mts:m4232 ;
+    skos:prefLabel "Gender"@en,
+        "Sukupuoli"@fi,
+        "Kön"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten sukupuolisuutta kuvaavia termejä (esim. miehet, naiset, transihmiset). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä sukupuoleen liittyvä rooli sukupuoleen liittyvä rooli  http://www.yso.fi/onto/yso/p22231"@fi .
 
 mts:m4210 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -51965,7 +52053,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-06-05T01:56:53+00:00"^^xsd:dateTime ;
+    dct:modified "2020-06-06T02:04:07+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
