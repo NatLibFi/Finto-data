@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# coding=utf-8
 import urllib, sys, pickle, rdflib, json
 import requests, time, calendar, datetime, sys
 from rdflib import Graph, Namespace,RDF ,XSD ,OWL , URIRef, plugin, Literal
