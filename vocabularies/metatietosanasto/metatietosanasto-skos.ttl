@@ -14882,6 +14882,7 @@ mts:m4465 a isothes:ConceptGroup,
         mts:m4500,
         mts:m4501,
         mts:m4502,
+        mts:m4503,
         mts:m4504,
         mts:m4505,
         mts:m4506,
@@ -15565,7 +15566,8 @@ mts:m463 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "muu"@fi,
+    skos:prefLabel "unspecified"@en,
+        "muu"@fi,
         "annan"@sv ;
     skos:scopeNote "Jos mikään yllä olevista termeistä ei sovellu kuvailtavan kohteen tallenteeseen tai tallenteisiin, merkitään muu."@fi,
         "Då ingen av ovanstående termer passar in på den eller de bärare som beskrivs, anges termen annan."@sv .
@@ -23115,15 +23117,13 @@ mts:m1735 a isothes:ConceptGroup,
         skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:altLabel "muu"@fi,
-        "Övrig"@sv ;
     skos:definition "Jos mikään yllä olevan RDA:n  taulukon 6.1 sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu ."@fi,
         "Då ingen innehållstyp passar in på det innehåll som beskrivs, anges termen annan."@sv ;
     skos:example """MARC 21\r
 385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Social"@en,
-        "Muu"@fi,
+    skos:prefLabel "unspecified"@en,
+        "muu"@fi,
         "annan"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi .
 
@@ -47239,18 +47239,6 @@ mts:m4491 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "sarjakuvantekijänä teoksessa"@fi .
 
-mts:m4503 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50192 ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää taidegrafiikan, piirroksen, maalauksen tms. luomisen ja yleensä myös toteutus. Vastavuoroinen suhde: taiteilija."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4502,
-        mts:m4505,
-        mts:m4507 ;
-    skos:prefLabel "artist of"@en,
-        "taiteilijana teoksessa"@fi .
-
 mts:m4530 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -48774,6 +48762,18 @@ mts:m434 a skos:Concept ;
     skos:prefLabel "game"@en,
         "peli"@fi,
         "spel"@sv .
+
+mts:m4503 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50192 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää taidegrafiikan, piirroksen, maalauksen tms. luomisen ja yleensä myös toteutus. Vastavuoroinen suhde: taiteilija."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4502,
+        mts:m4505,
+        mts:m4507 ;
+    skos:prefLabel "artist of"@en,
+        "taiteilijana teoksessa"@fi .
 
 mts:m4511 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -52053,7 +52053,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-06-08T01:18:19+00:00"^^xsd:dateTime ;
+    dct:modified "2020-06-09T02:05:42+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
