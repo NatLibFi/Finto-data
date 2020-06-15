@@ -3275,7 +3275,8 @@ mts:m1374 a isothes:ConceptGroup,
         mts:m2117,
         mts:m2120,
         mts:m2122,
-        mts:m2209 ;
+        mts:m2209,
+        mts:m4580 ;
     skos:prefLabel "conventional collective title"@en,
         "Vakiintunut kokoava nimeke"@fi,
         "Samlingstitel"@sv ;
@@ -15612,6 +15613,18 @@ mts:m4579 a isothes:ConceptGroup,
         "Etnicitet"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten etnistä identiteettiä kuvaavia termejä (esim. baskit, kanadansuomalaiset, romanit, sorbit, suomenruotsalaiset, tuaregit, vironruotsalaiset). Mikäli ryhmän etnisyyttä kuvaava termi on myös maantieteellinen termi, valitaan kokoavaksi yleistermiksi Kansallisuus/asuinalue [nat]. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
 
+mts:m4580 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät saarnat. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi ;
+    skos:example """MARC 21 -formaantissa \r
+243 10 ‡a Saarnat. ‡k Valikoima"""@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sermons"@en,
+        "saarnat"@fi .
+
 mts:m463 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -24239,9 +24252,11 @@ mts:m2109 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät puheet."@fi,
+    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät puheet. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi,
         "Samlingstitel som innefattar alla tal (föredrag) skrivna av samma aktör."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/CollTitle/1008> ;
+    skos:example """MARC 21 -formaantissa \r
+243 10 ‡a Puheet. ‡k Valikoima"""@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "speeches"@en,
         "puheet"@fi,
@@ -52105,7 +52120,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-06-14T02:43:04+00:00"^^xsd:dateTime ;
+    dct:modified "2020-06-15T03:41:00+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
