@@ -13,6 +13,7 @@
 @prefix skosmos: <http://purl.org/net/skosmos#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mdrtype: <http://publications.europa.eu/resource/authority/dataset-type/> .
+@prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix : <#> .
 
 # Skosmos main configuration
@@ -165,6 +166,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:cn:";
 	skosmos:language "fi";
         skosmos:useModifiedDate "true";
+	skosmos:propertyOrder :rda-order ;
 	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
 	void:dataDump <http://dev.finto.fi/download/cn/cn-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/cn/cn-skos.rdf> ;
@@ -1315,6 +1317,27 @@
                           schema:propertyID 	"msg";
 			schema:value "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn  käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon ehdotusjärjestelmässä."@fi , "MUSO - ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via förslagssystemet."@sv, "Vocabulary is no longer in use." ;
 			] .
+
+:rda-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# type of jurisdiction
+		rdaa:P50022	# field of activity for corporate body
+		rdaa:P50033	# other designation for corporate body
+		rdaa:P50041	# preferred name of corporate body
+		rdaa:P50025	# variant name for corporate body
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50218	# related corporate body
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50023	# language of corporate body
+		rdaa:P50031	# place associated with corporate body
+		rdaa:P50037	# date of establishment
+		rdaa:P50038	# date of termination
+		rdaa:P50035	# corporate history
+	) .
+
 
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,
