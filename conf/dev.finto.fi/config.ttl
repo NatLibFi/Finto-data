@@ -881,6 +881,28 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/ponduskategorier/> .
 
+:pto-testi a skosmos:Vocabulary, void:Dataset ;
+	dc:title "PTO - Finnish Geospatial Domain Ontology Test Version"@en,
+	        "PTO - Paikkatieto-ontologian testiversio"@fi,
+	        "PTO - Ontologi för geografisk information, testversion"@sv ;
+	skosmos:shortName "PTO-test";
+	dc:subject :cat_geo ;
+	void:uriSpace "http://paikkatiedot.fi/def/1001001/";
+	skosmos:language "fi", "sv", "en" ;
+        skosmos:useModifiedDate "true";
+	skosmos:defaultLanguage "fi" ;
+	skosmos:showTopConcepts "true";
+	skosmos:feedbackRecipient "Inspire@maanmittauslaitos.fi";
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/PaikhakConcept> ;
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/TskConcept> ;
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/InspireConcept> ;
+	skosmos:hasMultiLingualProperty <http://paikkatiedot.fi/def/1001000/deprecatedLabel> ;
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	void:dataDump <http://dev.finto.fi/download/pto/pto-skos-test.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/pto/> .
+	
 :pto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "PTO - Finnish Geospatial Domain Ontology"@en,
 	        "PTO - Paikkatieto-ontologia"@fi,
