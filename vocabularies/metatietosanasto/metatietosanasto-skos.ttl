@@ -550,7 +550,8 @@ mts:m4550 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50145 ;
-    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää teoksen kielellisen sisällön ilmaisun teoksen aiemmista ekspressioista poikkeavalla kielellä. Vastavuoroinen suhde: kääntäjä."@fi ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää teoksen kielellisen sisällön ilmaisun teoksen aiemmista ekspressioista poikkeavalla kielellä. Vastavuoroinen suhde: kääntäjä."@fi,
+        "Sammankopplar aktör med ett verks uttryck, som innehåller en framställning av ett verks språkliga innehåll på ett språk som avviker från verkets tidigare uttryck. Parallell relation: översättare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "translator of"@en,
         "käännös"@fi,
@@ -1749,7 +1750,7 @@ mts:m1037 a skos:Concept ;
     skos:altLabel "kok. (kokoaja)"@fi,
         "utarb. (sammanställare)"@sv ;
     skos:definition "Liittää teoksen toimijaan, joka on vastuussa uuden teoksen (esim. bibliografia, hakemisto) luomisesta valitsemalla, järjestämällä, koostamalla ja toimittamalla tietoa ym. Vastavuoroinen suhde: kokoajana teoksessa."@fi,
-        "person eller institution, som ansvarar för skapandet av ett nytt verk (t.ex. bibliografi, katalog) genom att välja ut, organisera, sammanställa och redigera information m.m."@sv ;
+        "Sammankopplar verk med en aktör, som ansvarar för skapandet av ett nytt verk (t.ex. bibliografi, förteckning) genom att välja ut, organisera, sammanställa och redigera information m.m. Parallell relation: sammanställare av verket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "compiler"@en,
         "kokoaja"@fi,
@@ -2087,7 +2088,8 @@ mts:m1129 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi,
+    skos:altLabel "utgivarens namn"@sv ;
+    skos:definition "Aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä vastuussa olevan henkilön, suvun tai yhteisön nimi. Vanhojen painettujen aineistojen kirjanpainajia ja kirjakauppiaita pidetään kustantajina"@fi,
         "Namnet på den person, släkt eller institution som är ansvarig för ett verks förläggning, publikation och utgivning. Utgivare avser även boktryckare och bokhandlare som givit ut gamla tryckta verk."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "kustantajan nimi"@fi,
@@ -2802,7 +2804,7 @@ mts:m1277 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20043 ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen täydentämällä teosta koreografialla tai muokkaamalla aiempaa koreografista teosta. Vastavuoroinen suhde: koreografina koreografiassa (ekspressio)."@fi,
-        "person, släkt eller institution som deltar i utförandet av ett uttryck genom att komplettera ett verk med koreografi eller genom att bearbeta ett tidigare koreografiskt verk."@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att komplettera ett verk med koreografi eller genom att bearbeta ett tidigare koreografiskt verk. Parallell relation: koreograf till koreografin (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreographer (expression)"@en,
         "koreografi (ekspressio)"@fi,
@@ -8333,7 +8335,7 @@ mts:m2150 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30095 ;
     skos:definition "Liittää manifestaation kustantajan nimeen toisella kielellä ja/tai kirjoitusjärjestelmällä."@fi,
-        "Uttrycker relation mellan manifestationen och utgivarens namn på ett annat språk och/eller skriftsystem."@sv ;
+        "Sammankopplar manifestation med en utgivares namn på ett annat språk och/eller skriftsystem."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "parallel publisher's name"@en,
         "kustantajan rinnakkainen nimi"@fi,
@@ -8613,12 +8615,15 @@ mts:m2174 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #1 ‡a [kustantaja tuntematon]"""@fi ;
+264 #1 ‡a [kustantaja tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #1 ‡a [utgivare okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "publisher not identified"@en,
         "kustantaja tuntematon"@fi,
         "utgivare okänd"@sv ;
-    skos:scopeNote "Kuvailuun merkitään kustantaja tuntematon, jos manifestaatiossa ei esiinny kustantajan nimeä eikä kustantajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Kuvailuun merkitään kustantaja tuntematon, jos manifestaatiossa ei esiinny kustantajan nimeä eikä kustantajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Vid beskrivning anges \"utgivare okänd\", om utgivarens namn inte framkommer i manifestationen eller ur andra informationskällor. Därtill markeras att informationen är tagen utanför materialet."@sv .
 
 mts:m2175 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8653,7 +8658,7 @@ mts:m2178 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40022 ;
     skos:definition "Liittää kappaleen toimijaan, jolle kappale on lahjoitettu kunnianosoituksena. Vastavuoroinen suhde: kunnianosoituksena (kappale)."@fi,
-        "Person eller institution som donerats ett exemplar som en hedersbetygelse"@sv ;
+        "Sammankopplar exemplar med en aktör, till vilken exemplaret har donerats som hedersbetygelse."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "honouree (item)"@en,
         "kappaleella kunnioitettu"@fi,
@@ -9275,7 +9280,7 @@ mts:m23 a skos:Concept ;
         "övers. (översättare)"@sv,
         "översättare (relation)"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen ilmaisemalla teoksen kielellisen sisällön alkuperäisen teoksen aiemmista ekspressioista poikkeavalla kielellä. Vastavuoroinen suhde: käännös."@fi,
-        "person eller institution som deltar i utförandet av ett uttryck genom att översätta en originaltext till ett annat språk"@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck, genom att översätta verkets språkliga innehåll till ett språk som avviker från originalverkets tidigare uttryck. Parallell relation: översättning."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "translator"@en,
         "kääntäjä"@fi,
@@ -10782,7 +10787,7 @@ mts:m25 a skos:Concept ;
         "koreografi (suhde)"@fi,
         "koreograf (relation)"@sv ;
     skos:definition "Liittää teoksen toimijaan, joka on vastuussa koreografisen teoksen luomisesta. Vastavuoroinen suhde: koreografina koreografiassa."@fi,
-        "person eller institution som ansvarar för skapandet av ett koreografiskt verk"@sv ;
+        "Sammankopplar verk med en aktör som ansvarar för skapandet av ett koreografiskt verk. Parallell relation: koreograf till koreografin."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreographer"@en,
         "koreografi"@fi,
@@ -15146,10 +15151,12 @@ mts:m4486 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50194 ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää koreografian luomisen. Vastavuoroinen suhde: koreografi."@fi ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää koreografian luomisen. Vastavuoroinen suhde: koreografi."@fi,
+        "Sammankopplar aktör med ett verk som innehåller skapandet av koreografi. Parallell relation: koreograf."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreographer of"@en,
-        "koreografina koreografiassa"@fi .
+        "koreografina koreografiassa"@fi,
+        "koreograf till koreografin"@sv .
 
 mts:m4487 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -15164,10 +15171,12 @@ mts:m4492 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50189 ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää tiedon järjestämistä, valintaa, koostamista, editointia tms. uuden teoksen (kuten bibliografian tai hakemiston) luomiseksi. Vastavuoroinen suhde: kokoaja."@fi ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää tiedon järjestämistä, valintaa, koostamista, editointia tms. uuden teoksen (kuten bibliografian tai hakemiston) luomiseksi. Vastavuoroinen suhde: kokoaja."@fi,
+        "Sammankopplar aktör med ett verk, som innehåller urval, ordnande, sammanställande, redigering e.d. av information, för att skapa ett nytt verk (såsom bibliografi eller förteckning). Parallell relation: sammanställare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "compiler of"@en,
-        "kokoajana teoksessa"@fi .
+        "kokoajana teoksessa"@fi,
+        "sammanställare av verket"@sv .
 
 mts:m4494 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -15189,10 +15198,12 @@ mts:m4497 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50151 ;
-    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää teoksen täydennetyn koreografian tai aiemman koreografisen teoksen muokkauksen. Vastavuoroinen suhde: koreografi  (ekspressio)."@fi ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää teoksen täydennetyn koreografian tai aiemman koreografisen teoksen muokkauksen. Vastavuoroinen suhde: koreografi  (ekspressio)."@fi,
+        "Sammankopplar uttryck med ett verks uttryck, som innehåller ett verks kompletterade koreografi eller bearbetning av ett tidigare koreografiskt verk. Parallell relation: koreografi (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreographer of"@en,
-        "koreografina koreografiassa (ekspressio)"@fi .
+        "koreografina koreografiassa (ekspressio)"@fi,
+        "koreograf till koreografin (uttryck)"@sv .
 
 mts:m4498 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -15471,10 +15482,12 @@ mts:m4556 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50203 ;
-    skos:definition "Liittää toimijan manifestaatioon, jota julkaistaan. Vastavuoroinen suhde: kustantaja."@fi ;
+    skos:definition "Liittää toimijan manifestaatioon, jota julkaistaan. Vastavuoroinen suhde: kustantaja."@fi,
+        "Sammankopplar aktör med en manifestation som utges. Parallell relation: utgivare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "publisher of"@en,
-        "kustantajana aineistossa"@fi .
+        "kustantajana aineistossa"@fi,
+        "utgivare av materialet"@sv .
 
 mts:m4557 a skos:Concept ;
     rdfs:seeAlso rdaa:P50261 ;
@@ -15607,7 +15620,8 @@ mts:m4570 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50167 ;
-    skos:definition "Liittää toimijan kappaleeseen, joka on kunnianosoitus toimijalle. Vastavuoroinen suhde: kappaleella kunnioitettu."@fi ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on kunnianosoitus toimijalle. Vastavuoroinen suhde: kappaleella kunnioitettu."@fi,
+        "Sammankopplar aktör med ett exemplar som är en hedersbetygelse till aktören. Parallell relation: exemplar tillägnat."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "honouree of"@en,
         "kunnianosoituksena (kappale)"@fi .
@@ -15644,80 +15658,102 @@ mts:m4574 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30184 ;
-    skos:definition "Liittää manifestaation äänityksessä käytettyjen äänikanavien määrään."@fi ;
+    skos:definition "Liittää manifestaation äänityksessä käytettyjen äänikanavien määrään."@fi,
+        "Sammankopplar manifestation med det antal ljudkanaler som använts vid inspelning."@sv ;
     skos:member mts:m1344,
         mts:m145,
         mts:m395,
         mts:m920 ;
     skos:prefLabel "configuration of playback channels"@en,
-        "Toistokanavien määrä"@fi .
+        "Toistokanavien määrä"@fi,
+        "Antal ljudkanaler"@sv .
 
 mts:m4575 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Seksuaalinen suuntautuneisuus ‡n sxo ‡a homoseksuaalit ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p20826"""@fi ;
+385 ## ‡m Seksuaalinen suuntautuneisuus ‡n sxo ‡a homoseksuaalit ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p20826"""@fi,
+        """MARC 21\r
+385 ## ‡m Sexuell läggning ‡n sxo ‡a homosexuella ‡2 yso/swe ‡0 http://www.yso.fi/onto/yso/p20826"""@sv ;
     skos:prefLabel "Sexual orientation"@en,
         "Seksuaalinen suuntautuneisuus"@fi,
         "Sexuell läggning"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten seksuaalista suuntautumista kuvaavia termejä (esim. biseksuaalit, heteroseksuaalit, homot, lesbot). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten seksuaalista suuntautumista kuvaavia termejä (esim. biseksuaalit, heteroseksuaalit, homot, lesbot). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
+        "Används för att ange sexuell läggning hos medlemmar i en grupp (t.ex. bisexuella, heterosexuella, homosexuella män, lesbiska). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4576 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21 \r
-385 ## ‡m Terveys/toimintakyky ‡n  mpd ‡a  näkövammaiset ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p78"""@fi ;
+385 ## ‡m Terveys/toimintakyky ‡n  mpd ‡a  näkövammaiset ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p78"""@fi,
+        """MARC 21 \r
+385 ## ‡m Hälsa/funktionsförmåga ‡n  mpd ‡a personer med synskada ‡2  yso/swe ‡0  http://www.yso.fi/onto/yso/p78"""@sv ;
     skos:prefLabel "Medical, psychological, and disability"@en,
         "Terveys/toimintakysy"@fi,
-        "Hälsa/fuktionsförmåga"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten terveydellistä tilaa tai toimintakykyä kuvaavia termejä (esim. kuulovammaiset, psyykkisesti sairaat, päihdekuntoutujat, sokeat)."@fi .
+        "Hälsa/funktionsförmåga"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten terveydellistä tilaa tai toimintakykyä kuvaavia termejä (esim. kuulovammaiset, psyykkisesti sairaat, päihdekuntoutujat, sokeat)."@fi,
+        "Används för att ange hälsotillstånd eller funktionsförmåga hos medlemmar av en grupp. Vid val av enskilda termer används ALLFO-termer som beskriver detta (t.ex. personer med hörselskada, psykiskt sjuka, klienter i missbrukarrehabilitering, blinda)."@sv .
 
 mts:m4577 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Kansallisuus/asuinalue ‡n nat ‡a kaakkoissuomalaiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p12768"""@fi ;
+385 ## ‡m Kansallisuus/asuinalue ‡n nat ‡a kaakkoissuomalaiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p12768"""@fi,
+        """MARC 21\r
+385 ## ‡m Nationalitet/bosättningsområde ‡n nat ‡a invånare i Sydöstra Finland ‡2 yso/swe ‡0 http://www.yso.fi/onto/yso/p12768"""@sv ;
     skos:prefLabel "National/regional"@en,
         "Kansallisuus/asuinalue"@fi,
         "Nationalitet/bosättningsområde"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kansallisuutta tai maantieteellistä asuinaluetta kuvaavia termejä (esim. keskisuomalaiset, neuvostoliittolaiset, romanialaiset, suomalaiset, yhdysvaltalaiset). Mikäli ryhmän etnisyyttä kuvaava termi ei ole samalla maantieteellinen termi, valitaan kokoavaksi yleistermiksi Etnisyys [eth].. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kansallisuutta tai maantieteellistä asuinaluetta kuvaavia termejä (esim. keskisuomalaiset, neuvostoliittolaiset, romanialaiset, suomalaiset, yhdysvaltalaiset). Mikäli ryhmän etnisyyttä kuvaava termi ei ole samalla maantieteellinen termi, valitaan kokoavaksi yleistermiksi Etnisyys [eth].. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
+        "Används för att ange nationalitet eller geografiskt bosättningsområde för medlemmar i en grupp (t.ex. invånare i Mellersta Finland, sovjetmedborgare, rumäner, finländare, amerikanska medborgare). Om termen som beskriver gruppens etnicitet inte samtidigt är en geografisk term, väljs Etnicitet [eth] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4578 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Uskonto ‡n rel ‡a buddhalaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p19029"""@fi ;
+385 ## ‡m Uskonto ‡n rel ‡a buddhalaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p19029"""@fi,
+        """MARC 21\r
+385 ## ‡m Religion ‡n rel ‡a buddhister ‡2 yso/swe ‡0  http://www.yso.fi/onto/yso/p19029"""@sv ;
     skos:prefLabel "Religion"@en,
         "Uskonto"@fi,
         "Religion"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten uskonnolliseen ryhmään kuulumista kuvaavia termejä (esim. buddhalaiset, katoliset, luterilaiset, sikhit). Yksittäisiä termejä oteaan YSO-sanaston termejä ryhmästä uskontoon liittyvä rooli http://finto.fi/yso/fi/page/p27550"@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten uskonnolliseen ryhmään kuulumista kuvaavia termejä (esim. buddhalaiset, katoliset, luterilaiset, sikhit). Yksittäisiä termejä oteaan YSO-sanaston termejä ryhmästä uskontoon liittyvä rooli http://www.yso.fi/onto/yso/p687"@fi,
+        "Används för att ange tillhörighet till en religiös grupp hos medlemmar i en grupp (t.ex. buddhister, katoliker, lutheraner, sikher). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till religion: http://www.yso.fi/onto/yso/p687"@sv .
 
 mts:m4579 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Etnisyys ‡n eth ‡a suomenvenäläiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p38384"""@fi ;
+385 ## ‡m Etnisyys ‡n eth ‡a suomenvenäläiset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p38384"""@fi,
+        """MARC 21\r
+385 ## ‡m Etnicitet ‡n eth ‡a ryssar i Finland ‡2 yso/swe ‡0 http://www.yso.fi/onto/yso/p38384"""@sv ;
     skos:prefLabel "Ethnic/cultural"@en,
         "Etnisyys"@fi,
         "Etnicitet"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten etnistä identiteettiä kuvaavia termejä (esim. baskit, kanadansuomalaiset, romanit, sorbit, suomenruotsalaiset, tuaregit, vironruotsalaiset). Mikäli ryhmän etnisyyttä kuvaava termi on myös maantieteellinen termi, valitaan kokoavaksi yleistermiksi Kansallisuus/asuinalue [nat]. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten etnistä identiteettiä kuvaavia termejä (esim. baskit, kanadansuomalaiset, romanit, sorbit, suomenruotsalaiset, tuaregit, vironruotsalaiset). Mikäli ryhmän etnisyyttä kuvaava termi on myös maantieteellinen termi, valitaan kokoavaksi yleistermiksi Kansallisuus/asuinalue [nat]. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
+        "Används för att ange termer som beskriver etnisk identitet hos medlemmar av en grupp (t.ex. basker, finländare i Kanada, romer, sorber, finlandssvenskar, tuareger, estlandssvenskar). Om termen som beskriver en grupps etnicitet också är en geografisk term, väljs Nationalitet/bosättningsområde [nat] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4580 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät saarnat. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi ;
+    skos:altLabel "predikosamlingar"@sv ;
+    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät saarnat. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi,
+        "Samlingstitel för en samling som omfattar alla predikningar en aktör har hållit. Om samlingen inte innehåller alla predikningar läggs termen Urval till."@sv ;
     skos:example """MARC 21 -formaantissa \r
-243 10 ‡a Saarnat. ‡k Valikoima"""@fi ;
+243 10 ‡a Saarnat. ‡k Valikoima"""@fi,
+        """I MARC 21 -formatet\r
+243 10 ‡a Predikningar. ‡k Urval"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "sermons"@en,
-        "saarnat"@fi .
+        "saarnat"@fi,
+        "predikningar"@sv .
 
 mts:m463 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16664,15 +16700,17 @@ mts:m64 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30083 ;
     skos:altLabel "kustantaja (suhde)"@fi,
+        "förlag"@sv,
+        "förläggare"@sv,
         "utgivare (relation)"@sv ;
     skos:definition "Liittää manifestaation toimijaan, joka on vastuussa aineiston kustantamisesta, julkaisemisesta tai ilmestymisestä. Vastavuoroinen suhde: kustantajana aineistossa."@fi,
-        "Person, släkt eller institution som är ansvarig för materialets förläggning, publikation eller utgivning."@sv ;
+        "Sammankopplar manifestation med en aktör som är ansvarig för materialets förläggning, publikation eller utgivning. Parallell relation: utgivare av materialet."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "publisher"@en,
         "kustantaja"@fi,
         "utgivare"@sv ;
     skos:scopeNote "Jos kuvaileva yhteisö katsoo suhde-elementin itsessään olevan riittävä, ei suhteen määritettä käytetä kuvaamaan suhteen luonnetta."@fi,
-        "Om den beskrivande institutionen anser att relationselmentet i sig är tillräckligt, så används inte relationsattributet för att beskriva relationens natur."@sv .
+        "Om den beskrivande institutionen anser att relationselementet i sig är tillräckligt, så används inte relationsattributet för att beskriva relationens natur."@sv .
 
 mts:m644 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -23326,7 +23364,7 @@ mts:m1763 a skos:Concept ;
     rdfs:seeAlso rdai:P40005 ;
     skos:broader mts:m1770 ;
     skos:definition "Liittää kappaleen kuraattoriin, joka luetteloi tai inventoi agregaattiteokseen eli esine- tai teoskokoelmaan kuuluvat kappaleet. Vastavuoroinen suhde: kokoelmarekisteri."@fi,
-        "kurator som förtecknar eller inventerar exemplar som ingår i en föremåls- eller verksamling"@sv ;
+        "Sammankopplar exemplar med en kurator som katalogiserar eller inventerar exemplar som ingår i en föremåls- eller verksamling. Parallell relation: samlingsregister."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "collection registrar"@en,
         "kokoelman luetteloija"@fi,
@@ -23350,7 +23388,7 @@ mts:m1775 a skos:Concept ;
     rdfs:seeAlso rdaw:P10202 ;
     skos:broader mts:m511 ;
     skos:definition "Liittää teoksen taiteilijaan, joka on vastuussa taideteosten luomisesta, jonka sisällössä on hyödynnetty kirjan muotoa tai rakennetta. Vastavuoroinen suhde: kirjataiteilijana taideteoksessa."@fi,
-        "konstnär som svarar för skapandet av konstverk som har bearbetats genom att använda en boks form eller struktur"@sv ;
+        "Sammankopplar verk med en konstnär som är ansvarig för skapandet av ett konstverk, i vars innehåll bokens form eller struktur har begagnats. Parallell relation: bokkonstnär till konstverket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "book artist"@en,
         "kirjataiteilija"@fi,
@@ -28241,7 +28279,7 @@ mts:m313 a skos:Concept ;
     skos:altLabel "kert. (kertoja)"@fi ;
     skos:broader mts:m1060 ;
     skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen lukemalla ääneen tai kertomalla tapahtumasta, toiminnasta tms. Vastavuoroinen suhde: kertojana tilaisuudessa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att läsa eller berätta om en händelse, handling o.s.v."@sv ;
+        "Sammankopplar uttryck med en framförande person som deltar i utförandet av ett verks uttryck genom att läsa eller berätta om en händelse, handling e.d."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "kertoja"@fi,
         "berättare"@sv .
@@ -30389,7 +30427,7 @@ mts:m3485 a skos:Concept ;
     skos:broader mts:m783 ;
     skos:definition """Koreografiateos, jota käytetään toisissa teoksissa.\r
 Vastavuoroinen suhde: koreografia teokseen."""@fi,
-        "Koreografiskt verk som används i andra verk. Parallell relation: koreografi för verket."@sv ;
+        "Koreografiskt verk som används i andra verk. Parallell relation: koreografi till verket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreography (work)"@en,
         "koreografia (teos)"@fi,
@@ -34192,7 +34230,7 @@ mts:m4229 a skos:Concept ;
     skos:broader mts:m4218 ;
     skos:definition """Teoksen ekspressio, joka tarjoaa koreografian käytettäväksi liittyvässä ekspressiossa.\r
 Vastavuoroinen suhde: koreografia ekspressioon."""@fi,
-        "Ett verks uttryck som anger koreografi för användning i ett relaterat uttryck. Parallell relation: koreografi till uttrycket."@sv ;
+        "Ett verks uttryck som ger koreografi för användning i ett relaterat uttryck. Parallell relation: koreografi till uttrycket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "choreography expression"@en,
         "koreografia (ekspressio)"@fi,
@@ -36070,11 +36108,14 @@ mts:m4405 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50278 ;
+    skos:altLabel "kompanjon"@sv ;
     skos:broader mts:m1801 ;
-    skos:definition "Liittää henkilön kollegaan, joka toimii toisen henkilön kanssa yhteiseksi hyväksi, useimmiten yrityskumppanina."@fi ;
+    skos:definition "Liittää henkilön kollegaan, joka toimii toisen henkilön kanssa yhteiseksi hyväksi, useimmiten yrityskumppanina."@fi,
+        "Sammankopplar person med en kollega som fungerar tillsammans med den andra personen för det gemensamma bästa, oftast som företagspartner."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "partner"@en,
-        "kumppani"@fi .
+        "kumppani"@fi,
+        "partner"@sv .
 
 mts:m4408 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -36304,10 +36345,12 @@ mts:m4502 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50247 ;
     skos:broader mts:m4503 ;
-    skos:definition "Liittää taiteilijan teokseen, johon sisältyy taiteellinen vastuu sellaisten taideteosten luomisesta, jotka hyödyntävät kirjan muotoa tai muuttavat sen fyysistä muotoa osana sisältöä. Vastavuoroinen suhde: kirjataiteilija."@fi ;
+    skos:definition "Liittää taiteilijan teokseen, johon sisältyy taiteellinen vastuu sellaisten taideteosten luomisesta, jotka hyödyntävät kirjan muotoa tai muuttavat sen fyysistä muotoa osana sisältöä. Vastavuoroinen suhde: kirjataiteilija."@fi,
+        "Sammankopplar konstnär med ett verk, i vilket ingår konstnärligt ansvar för skapandet av sådana konstverk som begagna bokens form eller ändrar dess fysiska form som en del av innehållet. Parallell relation: bokkonstnär."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "book artist of"@en,
-        "kirjataiteilijana taideteoksessa"@fi .
+        "kirjataiteilijana taideteoksessa"@fi,
+        "bokkonstnär till konstverket"@sv .
 
 mts:m4505 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -36326,10 +36369,12 @@ mts:m4507 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50222 ;
     skos:broader mts:m4503 ;
-    skos:definition "Liittää taiteilijan kolmiulotteiseen teokseen, joka sisältää veistämällä, muovaamalla tai muulla vastaavalla tekniikalla tehtyä taidetta. Vastavuoroinen suhde: kuvanveistäjä."@fi ;
+    skos:definition "Liittää taiteilijan kolmiulotteiseen teokseen, joka sisältää veistämällä, muovaamalla tai muulla vastaavalla tekniikalla tehtyä taidetta. Vastavuoroinen suhde: kuvanveistäjä."@fi,
+        "Sammankopplar konstnär med ett tredimensionellt verk, som innehåller konst gjord genom att tälja, forma eller annan motsvarande teknik. Parallell relation: skulptör."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "sculptor of"@en,
-        "kuvanveistäjänä teoksessa"@fi .
+        "kuvanveistäjänä teoksessa"@fi,
+        "skulptör till verket"@sv .
 
 mts:m4516 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -36500,10 +36545,12 @@ mts:m4548 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50080 ;
     skos:broader mts:m4536 ;
-    skos:definition "\"Liittää kommentaattorin teoksen ekspressioon, joka sisältää audiovisuaalisen aineiston aiheen tulkitsemista ja analysointia keskustelemalla. Vastavuoroinen suhde: kommantaattori."@fi ;
+    skos:definition "\"Liittää kommentaattorin teoksen ekspressioon, joka sisältää audiovisuaalisen aineiston aiheen tulkitsemista ja analysointia keskustelemalla. Vastavuoroinen suhde: kommantaattori."@fi,
+        "Sammankopplar kommentator med ett verks uttryck, som innehåller tolkning och analys genom diskussion av ämnet i ett audiovisuellt material. Parallell relation: kommentator."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "commentator of"@en,
-        "kommentaattorina ohjelmassa"@fi .
+        "kommentaattorina ohjelmassa"@fi,
+        "kommentator i programmet"@sv .
 
 mts:m455 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -36542,21 +36589,26 @@ mts:m4563 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50046 ;
+    skos:altLabel "samlingsförteckning"@sv ;
     skos:broader mts:m4564 ;
-    skos:definition "Liittää kuraattorin kappaleeseen, joka on listattu tai inventoitu osaksi aggregaattiteosta, kuten kappaleiden tai teosten kokoelmaa. Vastavuoroinen suhde: kokoelman luetteloija."@fi ;
+    skos:definition "Liittää kuraattorin kappaleeseen, joka on listattu tai inventoitu osaksi aggregaattiteosta, kuten kappaleiden tai teosten kokoelmaa. Vastavuoroinen suhde: kokoelman luetteloija."@fi,
+        "Sammankopplar kurator med ett exemplar, som är förtecknat eller inventerat som en del av ett aggregerat verk, såsom en samling av exemplar eller verk. Parallell relation: samlingsregistrator."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "collection registrar of"@en,
-        "kokoelmarekisteri"@fi .
+        "kokoelmarekisteri"@fi,
+        "samlingsregister"@sv .
 
 mts:m4565 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50045 ;
     skos:broader mts:m4564 ;
-    skos:definition "Liittää kuraattorin kappaleeseen, joka on yhdessä toisten eri lähteistä olevien kappaleiden kanssa koottu järjestetyksi, kuvatuksi ja luetteloiduksi kokoelmaksi. Vastavuoroinen suhde: kokoelman muodostaja."@fi ;
+    skos:definition "Liittää kuraattorin kappaleeseen, joka on yhdessä toisten eri lähteistä olevien kappaleiden kanssa koottu järjestetyksi, kuvatuksi ja luetteloiduksi kokoelmaksi. Vastavuoroinen suhde: kokoelman muodostaja."@fi,
+        "Sammankopplar kurator med ett exemplar, som tillsammans med andra exemplar från olika källor har samlats till en ordnad, beskriven och katalogiserad samling. Parallell relation: samlare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "collector of"@en,
-        "kokoelma"@fi .
+        "kokoelma"@fi,
+        "samling"@sv .
 
 mts:m466 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -36801,7 +36853,7 @@ mts:m555 a skos:Concept ;
         "skulptör (relation)"@sv ;
     skos:broader mts:m511 ;
     skos:definition "Liittää teoksen taiteilijaan, joka on vastuussa kolmiulotteisen teoksen luomisesta, joka on tehty veistämällä, muovaamalla tai muulla vastaavalla tekniikalla. Vastavuoroinen suhde: kuvanveistäjänä teoksessa."@fi,
-        "konstnär som skapar ett tredimensionellt verk genom täljning, formning eller motsvarande teknik"@sv ;
+        "Sammankopplar verk med en konstnär som skapar ett tredimensionellt verk genom täljning, formning eller annan motsvarande teknik. Parallell relation: skulptör till verket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "sculptor"@en,
         "kuvanveistäjä"@fi,
@@ -36953,7 +37005,7 @@ mts:m595 a skos:Concept ;
     rdfs:seeAlso rdae:P20021 ;
     skos:broader mts:m1060 ;
     skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen tulkitsemalla tai analysoimalla äänitteen, elokuvan tms. audiovisuaalisen aineiston aihetta tai keskustelemalla siitä. Vastavuoroinen suhde: kommantaattorina ohjelmassa."@fi,
-        "framförande person som deltar i utförandet av ett uttryck genom att tolka, analysera eller diskutera ämnet för ett audiovisuellt medium"@sv ;
+        "Sammankopplar uttryck med en framförande person, som deltar i utförandet av ett verks uttryck genom att tolka, analysera eller diskutera ämnet i en ljudinspelning, en film e.d. audiovisuellt material. Parallell relation: kommentator i programmet."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "commentator"@en,
         "kommentaattori"@fi,
@@ -38539,7 +38591,7 @@ mts:m1770 a skos:Concept ;
     skos:altLabel "kuraattori (suhde)"@fi,
         "kurator (relation)"@sv ;
     skos:definition "Liittää kappaleen toimijaan, joka on suunnitellut, koonnut ja/tai järjestänyt näyttelyn, kokoelman tms. Vastavuoroinen suhde: kuratoijana kappaleelle."@fi,
-        "person eller institution som har planerat, sammanställt och/eller anordnat en konstutställning, -samling e.d."@sv ;
+        "Sammankopplar exemplar med en aktör som har planerat, sammanställt och/eller ordnat en konstutställning, -samling e.d. Parallell relation: kurator till exemplaret."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1763,
         mts:m1764 ;
@@ -41280,14 +41332,14 @@ mts:m2667 a skos:Concept ;
         "musiikkikustantamot"@fi,
         "nuottikustantajat"@fi,
         "nuottikustantamot"@fi,
-        "musikförlag"@sv,
+        "musikförläggare"@sv,
         "notförlag"@sv ;
     skos:broader mts:m2666 ;
     skos:exactMatch yso:p18860 ;
     skos:inScheme mts: ;
     skos:prefLabel "music publisher"@en,
         "musiikkikustantaja"@fi,
-        "musikförläggare"@sv .
+        "musikförlag"@sv .
 
 mts:m2668 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -42102,7 +42154,8 @@ mts:m2786 a skos:Concept ;
         "lehtikustantamot"@fi,
         "lehtitalot"@fi,
         "tidningsförläggare"@sv,
-        "tidningshus"@sv ;
+        "tidningshus"@sv,
+        "tidningsutgivare"@sv ;
     skos:broader mts:m2666 ;
     skos:exactMatch yso:p16772 ;
     skos:inScheme mts: ;
@@ -47228,7 +47281,8 @@ mts:m4177 a skos:Concept ;
     rdfs:seeAlso rdae:P20171 ;
     skos:broader mts:m731 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka kääntää lähteenä olevan ekspression muulle kielelle kuin alkuperäisen teoksen kieli.\r
-Vastavuoroinen suhde: käännöksen perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: käännöksen perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, som översätter uttrycket som är källa till ett annat språk än det ursprungliga verkets språk. Parallell relation: översättning baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4185 ;
     skos:prefLabel "translated as (expression)"@en,
@@ -47515,11 +47569,14 @@ mts:m4530 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50159 ;
-    skos:definition "Liittää toimijan teoksen ekspressioon, jonka pääasiallista sisältöä on täydennetty piirroksilla, valokuvilla, kaavioilla tms. Vastavuoroinen suhde: kuvittaja."@fi ;
+    skos:altLabel "illustratör till illustrationen"@sv ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, jonka pääasiallista sisältöä on täydennetty piirroksilla, valokuvilla, kaavioilla tms. Vastavuoroinen suhde: kuvittaja."@fi,
+        "Sammankopplar aktör med ett verks uttryck, vars huvudsakliga innehåll har kompletterats med teckningar, bilder, scheman e.d. Parallell relation: illustratör."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4524,
         mts:m4544 ;
-    skos:prefLabel "kuvittajana kuvituksessa"@fi .
+    skos:prefLabel "kuvittajana kuvituksessa"@fi,
+        "illustratör av illustrationen"@sv .
 
 mts:m4532 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -47536,12 +47593,14 @@ mts:m4564 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50133 ;
-    skos:definition "Liittää toimijan kappaleeseen, joka on hankittu, koottu ja/tai järjestetty näyttelyyn, kokoelmaan tms. Vastavuoroinen suhde: kuraattori."@fi ;
+    skos:definition "Liittää toimijan kappaleeseen, joka on hankittu, koottu ja/tai järjestetty näyttelyyn, kokoelmaan tms. Vastavuoroinen suhde: kuraattori."@fi,
+        "Sammankopplar aktör med ett exemplar, som är inskaffat, samlat och/eller ordnat till utställning, samling e.d. Parallell relation: kurator."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4563,
         mts:m4565 ;
     skos:prefLabel "curator of"@en,
-        "kuratoijana kappaleessa"@fi .
+        "kuratoijana kappaleessa"@fi,
+        "kurator till exemplaret"@sv .
 
 mts:m627 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -47800,7 +47859,7 @@ mts:m179 a skos:Concept ;
         "ill. (illustratör)"@sv,
         "illustratör (relation)"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen täydentämällä pääasiallista sisältöä piirroksilla, valokuvilla, kaavioilla tms. Jos piirrokset tms. muodostavat teoksen pääsisällön katso taiteilija tai valokuvaaja. Vastavuoroinen suhde: kuvittajana kuvituksessa."@fi,
-        "person eller institution som deltar i utförandet av ett uttryck genom att komplettera ett huvudsakligt innehåll med teckningar, fotografier, diagram o.s.v. Se konstnär eller fotograf om teckningarna e.d. utgör verkets huvudsakliga innehåll"@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att komplettera ett huvudsakligt innehåll med teckningar, fotografier, diagram e.d. Se konstnär eller fotograf om teckningarna e.d. utgör verkets huvudsakliga innehåll. Parallell relation: illustratör av illustrationen."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m158,
         mts:m1682,
@@ -50053,7 +50112,8 @@ mts:m4471 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50195 ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää ensisijaisesti tekstiä missä tahansa mediatyypissä tai genressä.  Vastavuoroinen suhde: kirjoittaja."@fi ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää ensisijaisesti tekstiä missä tahansa mediatyypissä tai genressä.  Vastavuoroinen suhde: kirjoittaja."@fi,
+        "Sammankopplar aktör med ett verk, som innehåller i första hand text, i vilken medietyp eller genre som helst. Parallell relation: författare."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4483,
         mts:m4488,
@@ -50061,7 +50121,8 @@ mts:m4471 a skos:Concept ;
         mts:m4493,
         mts:m4496 ;
     skos:prefLabel "author of"@en,
-        "kirjoittajana teoksessa"@fi .
+        "kirjoittajana teoksessa"@fi,
+        "författare till verket"@sv .
 
 mts:m197 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -50401,7 +50462,7 @@ mts:m552 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10061 ;
     skos:definition "Liittää teoksen toimijaan, joka on vastuussa pääasiassa tekstimuotoisen teoksen luomisesta riippumatta teoksen mediatyypistä (esim. painettu, puhuttu, digitaalinen tai kosketeltava teksti) tai lajityypistä (esim. runo, romaani, käsikirjoitus, blogi). Käytetään myös henkilöistä jne., jotka ovat luoneet uuden teoksen mukailemalla, uudelleen kirjoittamalla tai sovittamalla toisen tekijän teoksia, mikäli muokkaaminen on selvästi muuttanut alkuperäisen teoksen luonnetta tai sisältöä, tai ilmaisuväline on muuttunut. Vastavuoroinen suhde: kirjoittajana teoksessa."@fi,
-        "person eller institution som ansvarar för skapandet av ett i huvudsak textformat verk, oberoende av verkets medietyp (t.ex. tryckt, talad, digital eller taktil text) eller genre (dikt, roman, manuskript, blogg). Används även om personer o.s.v. som skapat ett nytt verk genom bearbetning, återberättande eller anpassning av en annan författares verk, såvitt bearbetningen har märkbart förändrat originalverkets karaktär eller innehåll, eller ifall uttrycksmedlet har förändrats."@sv ;
+        "Sammankopplar verk med en aktör som  ansvarar för skapandet av ett i huvudsak textformat verk, oberoende av verkets medietyp (t.ex. tryckt, talad, digital eller taktil text), eller genre (dikt, roman, manuskript, blogg). Används även om personer o.s.v. som skapat ett nytt verk genom bearbetning, återberättande eller anpassning av en annan författares verk, såvitt bearbetningen har märkbart förändrat originalverkets karaktär eller innehåll, eller ifall uttrycksmedlet har förändrats. Pararallell relation: författare till verket."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m1301,
         mts:m1762,
@@ -52333,7 +52394,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-07-02T01:57:40+00:00"^^xsd:dateTime ;
+    dct:modified "2020-07-03T01:45:31+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
