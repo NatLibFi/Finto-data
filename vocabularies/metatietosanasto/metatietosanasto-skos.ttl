@@ -2518,7 +2518,7 @@ mts:m1205 a skos:Concept ;
         "arr. (arrangör av musikalisk komposition)"@sv,
         "arrangör av musikalisk komposition (relation)"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu musiikkiteoksen ekspression tekemiseen muokkaamalla sävellyksen alkuperäisteoksesta poikkeavalle esityskokoonpanolle. Sovittaja voi myös muokata teosta samalle esityskokoonpanolle tms. säilyttäen alkuperäisen sävellyksen musiikillisen sisällön olennaisilta osin muuttumattomana. Laajasta muokkaamisesta, joka johtaa käytännössä uuden musiikkiteoksen luontiin, katso säveltäjä. Vastavuoroinen suhde: sovittajana musiikissa."@fi,
-        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck för ett musikaliskt verk genom att bearbeta tonsättningen till en sammansättning som avviker från originalverket. Arrangören kan även bearbeta verket till den urpsrungliga sammansättningen e.d. och på så vis bevara den ursprungliga tonsättningens musikaliska innehåll i stort sett oförändrad. Se tonsättare om omfattande bearbetning som i praktiken leder till skapandet av ett nytt musikaliskt verk."@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck av ett musikverk genom att bearbeta tonsättningen till en sammansättning som avviker från originalverket. Arrangören kan även bearbeta verket till den urpsrungliga sammansättningen e.d. och på så vis bevara den ursprungliga tonsättningens musikaliska innehåll i stort sett oförändrad. Se tonsättare om omfattande bearbetning som i praktiken leder till skapandet av ett nytt musikverk."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "arranger of music"@en,
         "sovittaja"@fi,
@@ -4168,7 +4168,7 @@ mts:m1604 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "käsikirjoitus (valmistusmenetelmä)"@fi,
-        "handskrifter"@sv,
+        "handskrift"@sv,
         "manus"@sv ;
     skos:definition "Termi käsikirjoitus merkitään mistä tahansa käsikirjoitusaineistosta, jota vastuullisuustekijä ei ole itse kirjoittanut."@fi ;
     skos:inScheme mts: ;
@@ -7453,7 +7453,7 @@ mts:m1978 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
         "Nationell term"@sv ;
     skos:definition "Liittää teoksen toimijaan, joka on vastuussa ääniteoksen luomisesta (esim. äänimaisemataide). Vastavuoroinen suhde: äänitaiteilijana teoksessa."@fi,
-        "Person eller institution som är ansvarig för skapandet av ett ljudverk (t.ex. ljudlandskapskonst)"@sv ;
+        "Sammankopplar verk med en aktör som är ansvarig för skapandet av ett ljudverk (t.ex. ljudlandskapskonst). Parallell relation: ljudkonstnär till verket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "äänitaiteilija"@fi,
         "ljudkonstnär"@sv ;
@@ -8267,12 +8267,15 @@ mts:m2143 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #3 ‡b [valmistaja tuntematon]"""@fi ;
+264 #3 ‡b [valmistaja tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #3 ‡b [tillverkare okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "manufacturer not identified"@en,
         "valmistaja tuntematon"@fi,
         "tillverkare okänd"@sv ;
-    skos:scopeNote "Kuvailuun merkitään valmistaja tuntematon. jos manifestaatiossa ei esiinny valmistajan nimeä eikä valmistajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu manifestaation ulkopuolelta."@fi .
+    skos:scopeNote "Kuvailuun merkitään valmistaja tuntematon. jos manifestaatiossa ei esiinny valmistajan nimeä eikä valmistajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu manifestaation ulkopuolelta."@fi,
+        "Vid beskrivning anges tillverkare okänd om tillverkarens namn inte framkommer i manifestationen och inte heller hittas i andra informationskällor. Därtill visas att informationen är tagen utanför manifestationen."@sv .
 
 mts:m2145 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8293,12 +8296,15 @@ mts:m2146 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #0 ‡c [tuotantoaika tuntematon]"""@fi ;
+264 #0 ‡c [tuotantoaika tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #0 ‡c [produktionstid okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "date of production not identified"@en,
         "tuotantoaika tuntematon"@fi,
         "produktionstid okänd"@sv ;
-    skos:scopeNote "Jos yksiosaisen manifestaation tuotantoaikaa tai arvioitua tuotantoaikaa ei voida määritellä, merkitään kuvailuun tuotantoaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Jos yksiosaisen manifestaation tuotantoaikaa tai arvioitua tuotantoaikaa ei voida määritellä, merkitään kuvailuun tuotantoaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Om produktionstid eller uppskattad produktionstid för en manifestation i ett band inte kan bestämmas, anges i beskrivningen produktionstid okänd. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2147 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8306,25 +8312,31 @@ mts:m2147 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #3 ‡c [valmistusaika tuntematon]"""@fi ;
+264 #3 ‡c [valmistusaika tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #3 ‡c [tillverkningstid okänd ]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "date of manufacture not identified"@en,
         "valmistusaika tuntematon"@fi,
         "tillverkningstid okänd"@sv ;
-    skos:scopeNote "Jos yksiosaisen manifestaation valmistusaikaa tai arvioitua valmistusaikaa ei voida määritellä, merkitään kuvailuun  valmistusaika tuntematon. Osoitetaan, että tieto on otettu manifestaation ulkopuolelta."@fi .
+    skos:scopeNote "Jos yksiosaisen manifestaation valmistusaikaa tai arvioitua valmistusaikaa ei voida määritellä, merkitään kuvailuun  valmistusaika tuntematon. Osoitetaan, että tieto on otettu manifestaation ulkopuolelta."@fi,
+        "Om tillverkningstid eller uppskattad tillverkningstid för en manifestation i ett band inte kan bestämmas, anges i beskrivningen tillverkningstid okänd. Därtill visas att informationen är tagen utanför manifestationen."@sv .
 
 mts:m2148 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:example """MARC 21 -formaatissa \r
+    skos:example """I MARC 21-formatet\r
+264 #0 ‡b [producent okänd]"""@fi,
+        """MARC 21 -formaatissa \r
 264 #0 ‡b [tuottaja tuntematon]"""@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "producer not identified"@en,
         "tuottaja tuntematon"@fi,
         "producent okänd"@sv ;
-    skos:scopeNote "Kuvailuun merkitään tuottaja tuntematon, jos manifestaatiossa ei esiinny tuottajan nimeä eikä tuottajan nimeä löydy muista tiedonlähteistä Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Kuvailuun merkitään tuottaja tuntematon, jos manifestaatiossa ei esiinny tuottajan nimeä eikä tuottajan nimeä löydy muista tiedonlähteistä Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Vid beskrivning anges producent okänd om producentens namn inte framkommer i manifestationen och inte heller hittas i andra informationskällor. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2149 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8358,12 +8370,15 @@ mts:m2151 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #3 ‡a [Valmistuspaikka tuntematon]"""@fi ;
+264 #3 ‡a [Valmistuspaikka tuntematon]"""@fi,
+        """I MARC 21 -formatet\r
+264 #3 ‡a [Tillverkningsort okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "place of manufacture not identified"@en,
         "valmistuspaikka tuntematon"@fi,
         "tillverkningsort okänd"@sv ;
-    skos:scopeNote "Jollei tunnettua tai todennäköistä valmistuspaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun valmistuspaikka tuntematon. Osoitetaan että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Jollei tunnettua tai todennäköistä valmistuspaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun valmistuspaikka tuntematon. Osoitetaan että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Om ingen känd eller sannolik tillverkningsort eller -land , -delstat, -landskap e.d. kan bestämmas, anges tillverkningsort okänd i beskrivningen. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2152 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8384,12 +8399,15 @@ mts:m2154 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #2 ‡a [Jakelupaikka tuntematon]"""@fi ;
+264 #2 ‡a [Jakelupaikka tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #2 ‡a [Distributionsort okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "place of distribution not identified"@en,
         "jakelupaikka tuntematon"@fi,
         "distributionsort okänd"@sv ;
-    skos:scopeNote "Jollei tunnettua tai todennäköistä jakelupaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun jakelupaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi .
+    skos:scopeNote "Jollei tunnettua tai todennäköistä jakelupaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun jakelupaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi,
+        "Om ingen känd eller sannolik distributionsort eller -land , -delstat, -landskap e.d. kan bestämmas, anges distributionsort okänd i beskrivningen. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2155 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8397,12 +8415,15 @@ mts:m2155 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #0 ‡a [Tuotantopaikka tuntematon]"""@fi ;
+264 #0 ‡a [Tuotantopaikka tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #0 ‡a [Produktionsort okänd ]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "place of production not identified"@en,
         "tuotantopaikka tuntematon"@fi,
         "produktionsort okänd"@sv ;
-    skos:scopeNote "Jollei tunnettua tai todennäköistä tuotantopaikkakuntaa, -maata, -maakuntaa tms. voida määritellä, merkitään kuvailuun tuotantopaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Jollei tunnettua tai todennäköistä tuotantopaikkakuntaa, -maata, -maakuntaa tms. voida määritellä, merkitään kuvailuun tuotantopaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Om ingen känd eller sannolik produktionsort eller -land , -delstat, -landskap e.d. kan bestämmas, anges produktionsort okänd i beskrivningen. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2156 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8423,12 +8444,15 @@ mts:m2157 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #2 ‡c [jakeluaika tuntematon]"""@fi ;
+264 #2 ‡c [jakeluaika tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #2 ‡c [distributionstid okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "date of distribution not identified"@en,
         "jakeluaika tuntematon"@fi,
         "distributionstid okänd"@sv ;
-    skos:scopeNote "Jos yksiosaisen manifestaation jakeluaikaa tai arvioitua jakeluaikaa ei voida määritellä, merkitään kuvailuun jakeluaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi .
+    skos:scopeNote "Jos yksiosaisen manifestaation jakeluaikaa tai arvioitua jakeluaikaa ei voida määritellä, merkitään kuvailuun jakeluaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi,
+        "Om distributionstid eller uppskattad distributionstid för en manifestation i ett band inte kan bestämmas, anges i beskrivningen distributionstid okänd. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2158 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8509,11 +8533,14 @@ mts:m2165 dc:source "ISBD-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #1 ‡c [julkaisuaika tuntematon]"""@fi ;
+264 #1 ‡c [julkaisuaika tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #1 ‡c [utgivningstid okänd]"""@sv ;
     skos:prefLabel "date of publication not identified"@en,
         "julkaisuaika tuntematon"@fi,
         "utgivningstid okänd"@sv ;
-    skos:scopeNote "Jos yksiosaisen manifestaation julkaisuaikaa tai arvioitua julkaisuaikaa ei voida määritellä, merkitään kuvailuun julkaisuaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi .
+    skos:scopeNote "Jos yksiosaisen manifestaation julkaisuaikaa tai arvioitua julkaisuaikaa ei voida määritellä, merkitään kuvailuun julkaisuaika tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta"@fi,
+        "Om utgivningstid eller uppskattad utgivningstid för en manifestation i ett band inte kan bestämmas, anges i beskrivningen utgivningstid okänd. Därtill visas att informationen är tagen utanför publikationen."@sv .
 
 mts:m2166 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8521,12 +8548,15 @@ mts:m2166 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #2 ‡b [jakaja tuntematon]"""@fi ;
+264 #2 ‡b [jakaja tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #2 ‡b [distributör okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "distributor not identified"@en,
         "jakaja tuntematon"@fi,
         "distributör okänd"@sv ;
-    skos:scopeNote "Kuvailuun merkitään jakaja tuntematon, jos manifestaatiossa ei esiinny jakajan nimeä eikä jakajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Kuvailuun merkitään jakaja tuntematon, jos manifestaatiossa ei esiinny jakajan nimeä eikä jakajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Vid beskrivning anges distributör okänd om distributörens namn inte framkommer i manifestationen och inte heller hittas i andra informationskällor. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2167 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8634,7 +8664,7 @@ mts:m2174 a skos:Concept ;
         "kustantaja tuntematon"@fi,
         "utgivare okänd"@sv ;
     skos:scopeNote "Kuvailuun merkitään kustantaja tuntematon, jos manifestaatiossa ei esiinny kustantajan nimeä eikä kustantajan nimeä löydy muista tiedonlähteistä. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
-        "Vid beskrivning anges \"utgivare okänd\", om utgivarens namn inte framkommer i manifestationen eller ur andra informationskällor. Därtill markeras att informationen är tagen utanför materialet."@sv .
+        "Vid beskrivning anges utgivare okänd om utgivarens namn inte framkommer i manifestationen eller ur andra informationskällor. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2175 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8657,12 +8687,15 @@ mts:m2177 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:example """MARC 21 -formaatissa \r
-264 #1 ‡a [Kustannuspaikka tuntematon]"""@fi ;
+264 #1 ‡a [Kustannuspaikka tuntematon]"""@fi,
+        """I MARC 21-formatet\r
+264 #1 ‡a [Utgivningsort okänd]"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "place of publication not identified"@en,
         "kustannuspaikka tuntematon"@fi,
         "utgivningsort okänd"@sv ;
-    skos:scopeNote "Jollei tunnettua tai todennäköistä kustannuspaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun kustannuspaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi .
+    skos:scopeNote "Jollei tunnettua tai todennäköistä kustannuspaikkakuntaa tai -maata, -osavaltiota, -maakuntaa tms. voida määritellä, merkitään kuvailuun kustannuspaikka tuntematon. Osoitetaan, että tieto on otettu aineiston ulkopuolelta."@fi,
+        "Om ingen känd eller sannolik utgivningsort eller -land , -delstat, -landskap e.d. kan bestämmas, anges utgivningsort okänd i beskrivningen. Därtill visas att informationen är tagen utanför materialet."@sv .
 
 mts:m2178 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -8814,7 +8847,9 @@ mts:m2194 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Opiskelutaso ‡n edu ‡a alakoululaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p38259"""@fi ;
+385 ## ‡m Opiskelutaso ‡n edu ‡a alakoululaiset ‡2 yso/fin ‡0  http://www.yso.fi/onto/yso/p38259"""@fi,
+        """MARC 21\r
+385 ## ‡m Utbildningsnivå ‡n edu ‡a lågstadieelever ‡2 yso/swe ‡0  http://www.yso.fi/onto/yso/p38259"""@sv ;
     skos:member mts:m1564,
         mts:m2214,
         mts:m2215,
@@ -8825,14 +8860,16 @@ mts:m2194 a isothes:ConceptGroup,
         "Opiskelutaso"@fi,
         "Utbildningsnivå"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten opiskelutasoa kuvaavia termejä (esim. aikuisopiskelu, peruskoulu, lukio)."@fi,
-        "Används för att bestämma termer som beskriver utbildningsnivå hos medlemmar av grupp (t.ex. vuxenstudier, grundskola, gymnasium)"@sv .
+        "Används för att bestämma termer som beskriver utbildningsnivå hos medlemmar av en grupp (t.ex. vuxenstudier, grundskola, gymnasium)."@sv .
 
 mts:m2195 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Kieli ‡n lng ‡a espanjankieliset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p2199"""@fi ;
+385 ## ‡m Kieli ‡n lng ‡a espanjankieliset ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p2199"""@fi,
+        """MARC 21\r
+385 ## ‡m Språk ‡n lng ‡a spanskspråkiga ‡2 yso/swe ‡0 http://www.yso.fi/onto/yso/p2199"""@sv ;
     skos:prefLabel "Language"@en,
         "Kieli"@fi,
         "Språk"@sv ;
@@ -11492,7 +11529,7 @@ mts:m356 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20292 ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu ekspression tekemiseen valvomalla  videotallennuksen teknistä toteutusta. Vastavuoroinen suhde: videoteknikkona tallenteessa."@fi,
-        "person eller institution som deltar i utförandet av ett uttryck genom att övervaka det tekniska förverkligandet av en ljud- eller videoinspelning"@sv ;
+        "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att övervaka det tekniska förverkligandet av en ljud- eller videoinspelning."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "audio engineer"@en,
         "videoteknikko"@fi,
@@ -13991,7 +14028,10 @@ mts:m417 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30187 ;
-    skos:definition "Liittää manifestaation manifestaation tuottamiseksi käytettyyn menetelmään."@fi ;
+    skos:altLabel "Framställningsmetod"@sv,
+        "Tillverkningsmetod"@sv ;
+    skos:definition "Liittää manifestaation manifestaation tuottamiseksi käytettyyn menetelmään."@fi,
+        "Sammankopplar manifestation med en metod som använts för att framställa manifestationen."@sv ;
     skos:member mts:m106,
         mts:m1070,
         mts:m108,
@@ -14694,12 +14734,14 @@ mts:m4437 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50008 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on hierarkkisesti ylempänä toista yhteisöä."@fi ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on hierarkkisesti ylempänä toista yhteisöä."@fi,
+        "Sammankopplar institution med en institution som hierarkiskt står högre än den andra institutionen."@sv ;
     skos:example "Yhteisö: Tuokko tilintarkastus ; kattoyhteisö: Tuokko yhtiöt"@fi,
         "Institution: Mosho Ab ; överordnad institution: Dermoshop Ab"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "hierarchical superior"@en,
-        "kattoyhteisö"@fi .
+        "kattoyhteisö"@fi,
+        "överordnad institution"@sv .
 
 mts:m4438 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14841,10 +14883,12 @@ mts:m4454 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50095 ;
-    skos:definition "Liittää henkilön yhteisöön, jossa henkilö on jäsenenä."@fi ;
+    skos:definition "Liittää henkilön yhteisöön, jossa henkilö on jäsenenä."@fi,
+        "Sammankopplar person med en institution, i vilken personen är medlem."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "person member of coporate body of"@en,
-        "yhteisön henkilöjäsen yhteisössä"@fi .
+        "yhteisön henkilöjäsen yhteisössä"@fi,
+        "personmedlem i institutionen"@sv .
 
 mts:m4455 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14870,28 +14914,34 @@ mts:m4457 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50011 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön muodostaakseen kolmannen yhteisön."@fi ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on sulautunut toiseen yhteisöön muodostaakseen kolmannen yhteisön."@fi,
+        "Sammankopplar institution med en institution, som har sammanslagits med en annan institution för att bilda en tredje institution."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "mergee"@en,
-        "yhteisöön yhdistynyt"@fi .
+        "yhteisöön yhdistynyt"@fi,
+        "sammanslagits med institution"@sv .
 
 mts:m4458 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50231 ;
-    skos:definition "Liittää yhteisön yhteisöön, joka on toisen yhteisön jäsenyhteisö."@fi ;
+    skos:definition "Liittää yhteisön yhteisöön, joka on toisen yhteisön jäsenyhteisö."@fi,
+        "Sammankopplar institution med en institution som är medlemsinstitution i den andra institutionen."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "corporate body member of corporate body"@en,
-        "yhteisön jäsenyhteisö"@fi .
+        "yhteisön jäsenyhteisö"@fi,
+        "medlemsinstitution i institution"@sv .
 
 mts:m4459 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50303 ;
-    skos:definition "Liittää konferenssin konferenssiin, joka järjestetään yhdessä toisen konferenssin kanssa."@fi ;
+    skos:definition "Liittää konferenssin konferenssiin, joka järjestetään yhdessä toisen konferenssin kanssa."@fi,
+        "Sammankopplar konferens med en konferens som ordnas tillsammans med den andra konferensen."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "jointly held conference"@en,
-        "yhteiskonferenssi"@fi .
+        "yhteiskonferenssi"@fi,
+        "gemensam konferens"@sv .
 
 mts:m4461 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -15160,10 +15210,12 @@ mts:m4479 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50196 ;
     skos:altLabel "arkkitehtina teoksessa"@fi ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää rakennustaiteellisen suunnitelman (mukaan lukien kuvaesitykset) siitä, miltä rakennus tms. näyttää valmiina. Vastavuoroinen suhde: arkkitehti."@fi ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää rakennustaiteellisen suunnitelman (mukaan lukien kuvaesitykset) siitä, miltä rakennus tms. näyttää valmiina. Vastavuoroinen suhde: arkkitehti."@fi,
+        "Sammankopplar aktör med ett verk som inbegriper en arkitektonisk plan (inklusive bildframställning) över hur en byggnad e.d. ser ut som färdig. Parallell relation: arkitekt."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "architect of"@en,
-        "arkkitehtinä teoksessa"@fi .
+        "arkkitehtinä teoksessa"@fi,
+        "arkitekt till verket"@sv .
 
 mts:m4480 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -15302,9 +15354,11 @@ mts:m4504 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50293 ;
-    skos:definition "Liittää toimijan ääniteokseen, joka on luotu käsittelemällä, yhdistelemällä uudelleen, miksaamalla ja uudistamalla aiemmin äänitettyjä ääniä. Vastavuoroinen suhde: äänitaiteilija."@fi ;
+    skos:definition "Liittää toimijan ääniteokseen, joka on luotu käsittelemällä, yhdistelemällä uudelleen, miksaamalla ja uudistamalla aiemmin äänitettyjä ääniä. Vastavuoroinen suhde: äänitaiteilija."@fi,
+        "Sammankopplar aktör med ett ljudverk som har skapats genom att behandla, kombinera på nytt, mixa, och förnya ljud som tidigare spelats in. Parallell relation: ljudkonstnär."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "äänitaiteilijana ääniteoksessa"@fi .
+    skos:prefLabel "äänitaiteilijana ääniteoksessa"@fi,
+        "ljudkonstnär till ljudverket"@sv .
 
 mts:m4506 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -15780,7 +15834,7 @@ mts:m4575 a isothes:ConceptGroup,
         "Seksuaalinen suuntautuneisuus"@fi,
         "Sexuell läggning"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten seksuaalista suuntautumista kuvaavia termejä (esim. biseksuaalit, heteroseksuaalit, homot, lesbot). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
-        "Används för att ange sexuell läggning hos medlemmar i en grupp (t.ex. bisexuella, heterosexuella, homosexuella män, lesbiska). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
+        "Används för att bestämma termer som beskriver sexuell läggning hos medlemmar i en grupp (t.ex. bisexuella, heterosexuella, homosexuella män, lesbiska). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4576 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15794,7 +15848,7 @@ mts:m4576 a isothes:ConceptGroup,
         "Terveys/toimintakysy"@fi,
         "Hälsa/funktionsförmåga"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten terveydellistä tilaa tai toimintakykyä kuvaavia termejä (esim. kuulovammaiset, psyykkisesti sairaat, päihdekuntoutujat, sokeat)."@fi,
-        "Används för att ange hälsotillstånd eller funktionsförmåga hos medlemmar av en grupp. Vid val av enskilda termer används ALLFO-termer som beskriver detta (t.ex. personer med hörselskada, psykiskt sjuka, klienter i missbrukarrehabilitering, blinda)."@sv .
+        "Används för att bestämma termer som anger hälsotillstånd eller funktionsförmåga hos medlemmar av en grupp. Vid val av enskilda termer används ALLFO-termer som beskriver detta (t.ex. personer med hörselskada, psykiskt sjuka, klienter i missbrukarrehabilitering, blinda)."@sv .
 
 mts:m4577 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15808,7 +15862,7 @@ mts:m4577 a isothes:ConceptGroup,
         "Kansallisuus/asuinalue"@fi,
         "Nationalitet/bosättningsområde"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten kansallisuutta tai maantieteellistä asuinaluetta kuvaavia termejä (esim. keskisuomalaiset, neuvostoliittolaiset, romanialaiset, suomalaiset, yhdysvaltalaiset). Mikäli ryhmän etnisyyttä kuvaava termi ei ole samalla maantieteellinen termi, valitaan kokoavaksi yleistermiksi Etnisyys [eth].. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
-        "Används för att ange nationalitet eller geografiskt bosättningsområde för medlemmar i en grupp (t.ex. invånare i Mellersta Finland, sovjetmedborgare, rumäner, finländare, amerikanska medborgare). Om termen som beskriver gruppens etnicitet inte samtidigt är en geografisk term, väljs Etnicitet [eth] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
+        "Används för att bestämma termer som beskriver nationalitet eller geografiskt bosättningsområde för medlemmar i en grupp (t.ex. invånare i Mellersta Finland, sovjetmedborgare, rumäner, finländare, amerikanska medborgare). Om termen som beskriver gruppens etnicitet inte samtidigt är en geografisk term, väljs Etnicitet [eth] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4578 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15822,7 +15876,7 @@ mts:m4578 a isothes:ConceptGroup,
         "Uskonto"@fi,
         "Religion"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten uskonnolliseen ryhmään kuulumista kuvaavia termejä (esim. buddhalaiset, katoliset, luterilaiset, sikhit). Yksittäisiä termejä oteaan YSO-sanaston termejä ryhmästä uskontoon liittyvä rooli http://www.yso.fi/onto/yso/p687"@fi,
-        "Används för att ange tillhörighet till en religiös grupp hos medlemmar i en grupp (t.ex. buddhister, katoliker, lutheraner, sikher). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till religion: http://www.yso.fi/onto/yso/p687"@sv .
+        "Används för att bestämma termer som beskriver tillhörighet till en religiös grupp hos medlemmar i en grupp (t.ex. buddhister, katoliker, lutheraner, sikher). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till religion: http://www.yso.fi/onto/yso/p687"@sv .
 
 mts:m4579 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15836,7 +15890,7 @@ mts:m4579 a isothes:ConceptGroup,
         "Etnisyys"@fi,
         "Etnicitet"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten etnistä identiteettiä kuvaavia termejä (esim. baskit, kanadansuomalaiset, romanit, sorbit, suomenruotsalaiset, tuaregit, vironruotsalaiset). Mikäli ryhmän etnisyyttä kuvaava termi on myös maantieteellinen termi, valitaan kokoavaksi yleistermiksi Kansallisuus/asuinalue [nat]. Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä väestöryhmään liittyvä rooli http://finto.fi/yso/fi/page/p487"@fi,
-        "Används för att ange termer som beskriver etnisk identitet hos medlemmar av en grupp (t.ex. basker, finländare i Kanada, romer, sorber, finlandssvenskar, tuareger, estlandssvenskar). Om termen som beskriver en grupps etnicitet också är en geografisk term, väljs Nationalitet/bosättningsområde [nat] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
+        "Används för att bestämma termer som beskriver etnisk identitet hos medlemmar av en grupp (t.ex. basker, finländare i Kanada, romer, sorber, finlandssvenskar, tuareger, estlandssvenskar). Om termen som beskriver en grupps etnicitet också är en geografisk term, väljs Nationalitet/bosättningsområde [nat] som samlande allmänterm. Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till befolkningsgrupp: http://finto.fi/yso/fi/page/p487"@sv .
 
 mts:m4580 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17057,7 +17111,7 @@ mts:m695 a skos:Concept ;
         "kompositör (relation)"@sv,
         "tonsättare"@sv ;
     skos:definition "Liittää teoksen toimijaan, joka on vastuussa musiikkiteoksen luomisesta. Käytetään myös henkilöistä jne., jotka ovat toista teosta muokkaamalla luoneet erottuvan musiikillisen muunnoksen (esim. vapaa transkriptio), mukailleet olemassa olevaa teosta tai luoneet toisen säveltäjän tyyliä muistuttavan uuden teoksen, tai luoneet teoksen joka perustuu toisen säveltäjän musiikkiin (esim. muunnelmia teemasta). Vastavuoroinen suhde: sävellys."@fi,
-        "person eller institution som ansvarar för skapandet av ett musikaliskt verk. Används även om personer o.s.v. som genom bearbetning av ett annat verk skapat en urskiljbar musikalisk variant (t.ex. fri transkription), bearbetat ett existerande verk eller skapat ett nytt verk som påminner om en tonsättares stil, eller som skapat ett verk utgående från en annan tonsättares musik (t.ex. variant på ett tema)"@sv ;
+        "Sammankopplar verk med en aktör som ansvarar för skapandet av ett musikverk. Används även om personer o.s.v. som genom bearbetning av ett annat verk skapat en urskiljbar musikalisk variant (t.ex. fri transkription), bearbetat ett existerande verk eller skapat ett nytt verk som påminner om en tonsättares stil, eller som skapat ett verk utgående från en annan tonsättares musik (t.ex. variant på ett tema). Parallell relation: komposition."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "composer"@en,
         "säveltäjä"@fi,
@@ -18436,13 +18490,15 @@ mts:m949 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40051 ;
-    skos:definition "Liittää kappaleen sellaiseen kappaleeseen, johon on yhdistetty toinen kappale tai joka on yhdistetty toiseen kappaleeseen."@fi ;
+    skos:definition "Liittää kappaleen sellaiseen kappaleeseen, johon on yhdistetty toinen kappale tai joka on yhdistetty toiseen kappaleeseen."@fi,
+        "Sammankopplar exemplar med ett sådant exemplar, med vilket ett annat exemplar förenats, eller som har förenats med ett annat exemplar."@sv ;
     skos:member mts:m4276,
         mts:m4286,
         mts:m4298,
         mts:m4299 ;
     skos:prefLabel "accompanying item relationship with"@en,
-        "Suhde yhdistettyyn kappaleeseen"@fi .
+        "Suhde yhdistettyyn kappaleeseen"@fi,
+        "Relation till förenat exemplar"@sv .
 
 mts:m95 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -21499,7 +21555,8 @@ mts:m1070 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Fotomekaaninen menetelmä kemiallisesti syövytettyjen painolaattojen valmistamiseksi."@fi ;
+    skos:definition "Fotomekaaninen menetelmä kemiallisesti syövytettyjen painolaattojen valmistamiseksi."@fi,
+        "Fotomekanisk metod för att framställa kemiskt etsade tryckplåtar."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1009> ;
     skos:inScheme mts: ;
     skos:prefLabel "photoengraving"@en,
@@ -21545,7 +21602,7 @@ mts:m108 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Valmistusmenetelmä, jossa joko metalli- tai muovilevystä valmistetaan tuntoaistilla havainnoitavan manifestaation kopioita."@fi,
-        "Tillverkningsmetod, i vilken kopior av en manifestation som registreras med känselsinnet tillverkas av antingen metall- eller plastplattor."@sv ;
+        "Produktionsmetod, i vilken kopior av en manifestation som registreras med känselsinnet tillverkas av antingen metall- eller plastplattor."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1018> ;
     skos:inScheme mts: ;
     skos:prefLabel "embossing"@en,
@@ -21660,19 +21717,21 @@ mts:m1127 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa valmistetaan kopioita valoherkässä prosessissa, joka toistaa läpinäkymättömät sävyt tai värit mustana tai värinä valkoisella taustalla."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa valmistetaan kopioita valoherkässä prosessissa, joka toistaa läpinäkymättömät sävyt tai värit mustana tai värinä valkoisella taustalla."@fi,
+        "Produktionsmetod, i vilken kopior framställs i en ljuskänslig process, som återger opaka toner eller färger som svarta eller färg på vit botten."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1011> ;
     skos:inScheme mts: ;
     skos:prefLabel "white print process"@en,
         "white print -menetelmä"@fi,
-        "white print"@sv .
+        "white print-metod"@sv .
 
 mts:m1130 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Laakapainomenetelmä, jossa kivi tai laatta käsitellään vettähylkivällä aineella, joka tekee osan laatasta vastaanottavaiseksi musteelle."@fi ;
+    skos:definition "Laakapainomenetelmä, jossa kivi tai laatta käsitellään vettähylkivällä aineella, joka tekee osan laatasta vastaanottavaiseksi musteelle."@fi,
+        "Plantrycksmetod, i vilken en sten eller en platta behandlas med vattenavstötande ämne som gör en del av plattan mottagglig för bläck."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1007> ;
     skos:inScheme mts: ;
     skos:prefLabel "lithography"@en,
@@ -21706,7 +21765,8 @@ mts:m1137 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "gravering"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa tehdään kuvioita kovan materiaalin pintaan terävällä työkalulla kaivertamalla."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa tehdään kuvioita kovan materiaalin pintaan terävällä työkalulla kaivertamalla."@fi,
+        "Produktionsmetod, i vilken figurer i ett hårt materials yta görs genom att gravera med ett vasst redskap."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1005> ;
     skos:inScheme mts: ;
     skos:prefLabel "engraving"@en,
@@ -22084,7 +22144,8 @@ mts:m1269 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Analogisen ja digitaalisen nauhan videoformaatti, johon sisältyvät Video8, Hi-8 sekä Digital8 -formaatit."@fi ;
+    skos:definition "Analogisen ja digitaalisen nauhan videoformaatti, johon sisältyvät Video8, Hi-8 sekä Digital8 -formaatit."@fi,
+        "Videoformat för analogt och digitalt band, i vilket ingår Video8, Hi-8 och Digital8-format."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/videoFormat/1007> ;
     skos:inScheme mts: ;
     skos:prefLabel "8 mm"@en,
@@ -22195,9 +22256,11 @@ mts:m132 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10129 ;
-    skos:altLabel "filmatisoinnin perustana (teos)"@fi ;
+    skos:altLabel "filmatisoinnin perustana (teos)"@fi,
+        "filmatisering baserad på (verk)"@sv ;
     skos:broader mts:m1399 ;
-    skos:definition "Liittää teoksen teokseen, josta elokuvaversio on tehty.                                        Vastavuoroinen suhde: elokuvaversio (teos)."@fi ;
+    skos:definition "Liittää teoksen teokseen, josta elokuvaversio on tehty. Vastavuoroinen suhde: elokuvaversio (teos)."@fi,
+        "Sammankopplar verk med ett verk, från vilket en filmversion är gjord. Parallell relation: filmversion (verk)"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "motion picture adaptation of (work)"@en,
         "elokuvaversion perustana (teos)"@fi,
@@ -22413,7 +22476,7 @@ mts:m1395 a skos:Concept ;
     rdfs:seeAlso rdae:P20068 ;
     skos:broader mts:m336 ;
     skos:definition "Liittää ekspression musiikkiteoksen ekspressioon lisättyjen sanojen kirjoittajaan. Vastavuoroinen suhde: lisätyn sanoituksen kirjoittajana ekspressiossa."@fi,
-        "författare till kompletterande text till uttrycket för ett musikaliskt verk. Angående sångtext, som gjorts i samarbete med en tonsättare för ett originalverk, se sångtextförfattare"@sv ;
+        "Sammankopplar uttryck med en författare till kompletterande text i ett musikverks uttryck."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "writer of added lyrics"@en,
         "lisätyn sanoituksen kirjoittaja"@fi,
@@ -22686,13 +22749,13 @@ mts:m1476 a skos:Concept ;
 mts:m1477 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:definition "Kovakantisen kirjan sidostyyppi."@fi ;
+    skos:definition "Kovakantisen kirjan sidostyyppi."@fi,
+        "Bandtyp för bok med hårda pärmar."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDATypeOfBinding/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "hardback"@en,
         "sidottu"@fi,
-        "inbunden"@sv ;
-    skos:scopeNote "tillägg till manifestationens identifikator för bok med hårda pärmar"@sv .
+        "inbunden"@sv .
 
 mts:m1479 a skos:Concept ;
     skos:broader mts:m4253 ;
@@ -22983,7 +23046,8 @@ mts:m155 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Analogisen nauhan videoformaatti joka on osa 8 mm -formaattia."@fi ;
+    skos:definition "Analogisen nauhan videoformaatti joka on osa 8 mm -formaattia."@fi,
+        "Videoformat för analogt band, som är en del av 8 mm-formatet."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/videoFormat/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "Hi-8 mm"@en,
@@ -22996,7 +23060,7 @@ mts:m1552 a skos:Concept ;
         "remix. (remixer)"@sv ;
     skos:broader mts:m1354 ;
     skos:definition "Ns. taiteellinen uudelleenmiksaaja, joka luo alkuperäislevytyksestä äänikuvaltaan poikkeavan uuden miksausversion lisäämällä uusia (tai muokkaamalla alkuperäisiä) musiikillisia elementtejä. Luonteeltaan lähellä sovittamista ja tuottamista. Vastavuoroinen suhde: äänitaiteilijana ääniteoksessa."@fi,
-        "Konstnärlig remixer som skapar en ny remixversion som avviker från originalinspelningen, genom att lägga till nya (eller bearbeta ursprungliga) musikaliska element. Till sin karaktär nära arrangemang och produktion. Parallell relation: ljudkonstnär i ljudverket."@sv ;
+        "Konstnärlig remixer som skapar en ny remixversion som avviker från originalinspelningen, genom att lägga till nya (eller bearbeta ursprungliga) musikaliska element. Till sin karaktär nära arrangemang och produktion. Parallell relation: ljudkonstnär till ljudverket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "uudelleenmiksaaja"@fi,
         "remixer"@sv ;
@@ -23008,7 +23072,8 @@ mts:m1574 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa tuotetaan makromuotoinen valojäljitelmä suoraan läpinäkymättömälle materiaalille säteilyenergialla, kosketuksen tai heijastamisen kautta."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa tuotetaan makromuotoinen valojäljitelmä suoraan läpinäkymättömälle materiaalille säteilyenergialla, kosketuksen tai heijastamisen kautta."@fi,
+        "Produktionsmetod, i vilken en fotoreproduktion i makroform framställs med strålningsenergi via beröring eller reflektion direkt på ett ogenomskinligt material."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "photocopying"@en,
@@ -23310,7 +23375,7 @@ mts:m17 a skos:Concept ;
     rdfs:seeAlso rdae:P20070 ;
     skos:broader mts:m1241 ;
     skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen hahmojen äänenä radio- tai muissa äänituotannoissa, animaatioelokuvissa tms., radio- ja TV-mainoksissa, dubatuissa aineistoissa tms. Vastavuoroinen suhde: ääninäyttelijänä tallenteessa."@fi,
-        "artist som deltar i utförandet av ett uttryck genom att ge sin röst åt figurer i radio- eller andra ljudproduktioner, tecknade filmer, radio- och tv-reklamer, dubbat material o.s.v."@sv ;
+        "Sammankopplar uttryck med en framförande person som deltar i utförandet av ett verks uttryck genom att ge sin röst åt gestalter i radio- eller andra ljudproduktioner, tecknade filmer, radio- och tv-reklamer, dubbat material o.s.v. Parallell relation: röstskådespelare i upptagningen."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "voice actor"@en,
         "ääninäyttelijä"@fi,
@@ -23361,19 +23426,22 @@ mts:m1710 a skos:Concept ;
 mts:m1711 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:definition "Kuvasisältö, joka koostuu stillkuvasta."@fi ;
+    skos:definition "Kuvasisältö, joka koostuu stillkuvasta."@fi,
+        "Illustrativt innehåll som består av stillbild."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/IllusContent/1014> ;
     skos:inScheme mts: ;
     skos:prefLabel "kuvitus"@fi,
         "illustrationer"@sv ;
-    skos:scopeNote "MARC 21 300 ‡b-kentässä: kuvitettu"@fi .
+    skos:scopeNote "MARC 21 300 ‡b-kentässä: kuvitettu"@fi,
+        "MARC 21 i 300 ‡b-fältet: illustrationer"@sv .
 
 mts:m1714 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Aineiston sisältöön liittyvä värillisyys, joka koostuu yhden värin sävyistä, tai mustasta ja valkoisesta, tai mustasta tai valkoisesta ja muusta väristä."@fi ;
+    skos:definition "Aineiston sisältöön liittyvä värillisyys, joka koostuu yhden värin sävyistä, tai mustasta ja valkoisesta, tai mustasta tai valkoisesta ja muusta väristä."@fi,
+        "Kulörthet i samband med ett materials innehåll, som kan vara enfärgat, svart och vitt eller någon annan färg."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAColourContent/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "monochrome"@en,
@@ -23426,12 +23494,15 @@ mts:m1735 a isothes:ConceptGroup,
     skos:definition "Jos mikään yllä olevan RDA:n  taulukon 6.1 sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu ."@fi,
         "Då ingen innehållstyp passar in på det innehåll som beskrivs, anges termen annan."@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi ;
+385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi,
+        """MARC 21\r
+385 ## ‡m Annan ‡|n  soc ‡a företagskunder ‡2  yso/swe ‡0  http://www.yso.fi/onto/yso/p19047"""@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "unspecified"@en,
         "muu"@fi,
         "annan"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi,
+        "Används för att bestämma termer som beskriver annan social inbördes likhet hos medlemmar av en grupp (t.ex. skilsmässobarn, socialister, krigsänkor, utbytesstuderande, fångar)."@sv .
 
 mts:m1749 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -28415,7 +28486,8 @@ mts:m314 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa hopeapäällysteinen kuparilevy valotetaan kamerassa, kehitetään (yleisimmin elohopeahöyryllä) ja kiinnitetään suolalla. Näin saadaan positiivikuva."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa hopeapäällysteinen kuparilevy valotetaan kamerassa, kehitetään (yleisimmin elohopeahöyryllä) ja kiinnitetään suolalla. Näin saadaan positiivikuva."@fi,
+        "Produktionsmetod, i vilken en silverbelagd kopparplatta exponeras i en kamera, framkallas (vanligen med kvicksilverånga) och fixeras med salt. På så vis fås en positivbild."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1004> ;
     skos:inScheme mts: ;
     skos:prefLabel "daguerreotype process"@en,
@@ -29889,7 +29961,8 @@ mts:m342 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "puukaiverrus"@fi ;
-    skos:definition "Valmistusmenetelmä, jossa kuvio leikataan puukappaleen pintaan ja painetaan puukappaleen pinnasta."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa kuvio leikataan puukappaleen pintaan ja painetaan puukappaleen pinnasta."@fi,
+        "Produktionsmetod, i vilken en figur skärs in i ett trästyckes yta som används för trycka."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1012> ;
     skos:inScheme mts: ;
     skos:prefLabel "woodcut making"@en,
@@ -30045,7 +30118,7 @@ mts:m3435 a skos:Concept ;
     skos:broader mts:m530 ;
     skos:definition """Musiikkiteos, jonka melodinen, temaattinen tai harmoninen aines on otettu lähdeteoksesta erillisen, toistettavan ja muunneltavan teeman muodostamiseksi\r
 Vastavuoroinen suhde: variaation perustana (teos)."""@fi,
-        "Musikaliskt verk som utformats genom omarbetning av ett källverks melodiska, tematiska eller harmoniska element. Parallell relation: variation baserad på (verk)."@sv ;
+        "Musikverk, vars melodiska, tematiska eller harmoniska stoff har tagits ur ett källverk för att bilda ett skilt, upprepbart och förändringsbart tema. Parallell relation: variation baserad på (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "modified by variation as (work)"@en,
         "variaatio (teos)"@fi,
@@ -30383,7 +30456,7 @@ mts:m3472 a skos:Concept ;
     skos:broader mts:m837 ;
     skos:definition """Musiikkiteos, josta melodinen, temaattinen tai harmoninen aines on otettu erillisen, toistettavan ja muunneltavan teeman muodostamiseksi.\r
 Vastavuoroinen suhde: variaatio (teos)."""@fi,
-        "Musikaliskt verk, vars melodiska, tematiska eller harmoniska element omarbetats i ett senare verk. Parallell relation: variation (verk)."@sv ;
+        "Musikverk, vars melodiska, tematiska eller harmoniska element omarbetats i ett senare verk. Parallell relation: variation (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "variations based on (work)"@en,
         "variaation perustana (teos)"@fi,
@@ -30477,7 +30550,7 @@ mts:m3480 a skos:Concept ;
     skos:broader mts:m837 ;
     skos:definition """Teos, josta ei-näytelmällisen (muun kuin oratorion) musiikkiteoksen teksti on peräisin.\r
 Vastavuoroinen suhde: tekstiin perustuva musiikki (teos)."""@fi,
-        "Verk, från vilket texten till ett icke-dramatiskt (förutom oratorium) musikaliskt verk härstammar. Parallell relation: musik baserad på text (verk)."@sv ;
+        "Verk, från vilket texten till ett icke-dramatiskt (förutom oratorium) musikverk härstammar. Parallell relation: musik baserad på text (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "musical setting of (work)"@en,
         "musiikkiteoksen teksti (teos)"@fi,
@@ -30594,7 +30667,7 @@ mts:m3490 a skos:Concept ;
     skos:broader mts:m783 ;
     skos:definition """Musiikkiteos, kuten ooppera, muuhun musiikillinen näyttämöteos tai oratorio, jonka libretto teos on.\r
 Vastavuoroinen suhde: libretto (teos)."""@fi,
-        "Musikaliskt verk, såsom opera, sceniskt verk eller oratorium, till vilket verket är libretto."@sv ;
+        "Musikverk, såsom opera, sceniskt verk eller oratorium, till vilket verket är libretto. Parallell relation: libretto (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "libretto for (work)"@en,
         "libretto teokseen"@fi,
@@ -30633,7 +30706,7 @@ mts:m3493 a skos:Concept ;
     skos:broader mts:m3507 ;
     skos:definition """Videoteos, jossa käytetään musiikkiteosta.\r
 Vastavuoroinen suhde: videon musiikki (teos)."""@fi,
-        "Videoverk, i vilket ett musikaliskt verk används. Parallell relation: videomusik (verk)."@sv ;
+        "Videoverk, i vilket ett musikverk används. Parallell relation: videomusik (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for video (work)"@en,
         "musiikki videoon (teos)"@fi,
@@ -30646,7 +30719,7 @@ mts:m3494 a skos:Concept ;
     skos:broader mts:m3522 ;
     skos:definition """Musiikkiteos, jota käytetään radio-ohjelmassa.\r
 Vastavuoroinen suhde: musiikki radio-ohjelmaan (teos)."""@fi,
-        "Musikaliskt verk som används i radio-program. Parallell relation: musik till radioprogrammet (verk)."@sv ;
+        "Musikverk som används i radio-program. Parallell relation: musik till radioprogrammet (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "radio program music (work)"@en,
         "radio-ohjelman musiikki (teos)"@fi,
@@ -30659,7 +30732,7 @@ mts:m3495 a skos:Concept ;
     skos:broader mts:m3522 ;
     skos:definition """Musiikkiteos, jota käytetään videossa.\r
 Vastavuoroinen suhde: musiikki videoon (teos)."""@fi,
-        "Musikaliskt verk som används i video. Parallell relation: musik till videon (verk)"@sv ;
+        "Musikverk som används i video. Parallell relation: musik till videon (verk)"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "video music (work)"@en,
         "videon musiikki (teos)"@fi,
@@ -30698,7 +30771,7 @@ mts:m3498 a skos:Concept ;
     skos:broader mts:m3522 ;
     skos:definition """Musiikkiteos, joka toimii näytelmän tai muun puhutun näyttämöteoksen taustamusiikkina\r
 Vastavuoroinen suhde: näytelmämusiikki näyttämöteokseen."""@fi,
-        "Musikaliskt verk som fungerar som bakgrundsmusik i skådespel eller annat talat sceniskt verk. Parallell relation: skådespelsmusik till det sceniska verket."@sv ;
+        "Musikverk som fungerar som bakgrundsmusik i skådespel eller annat talat sceniskt verk. Parallell relation: skådespelsmusik till det sceniska verket."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "incidental music (work)"@en,
         "näytelmämusiikki (teos)"@fi,
@@ -30725,7 +30798,7 @@ mts:m3500 a skos:Concept ;
     skos:broader mts:m3507 ;
     skos:definition """Televisio-ohjelma, jossa käytetään musiikkiteosta.\r
 Vastavuoroinen suhde: televisio-ohjelman musiikki (teos)."""@fi,
-        "Tv-program, i vilket ett musikaliskt verk används. Parallell relation: musik till tv-program (verk)."@sv ;
+        "Tv-program, i vilket ett musikverk används. Parallell relation: musik till tv-program (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for television program (work)"@en,
         "musiikki televisio-ohjelmaan (teos)"@fi,
@@ -30738,7 +30811,7 @@ mts:m3502 a skos:Concept ;
     skos:broader mts:m1443 ;
     skos:definition """Musiikkiteos, kuten konsertto, johon sama tai eri säveltäjä on säveltänyt solistille tarkoitetun koristeellisen osan\r
 Vastavuoroinen suhde: kadenssi (teos)."""@fi,
-        "Musikaliskt verk för vilket samma eller en annan kompositör har komponerat en dekorativ del avsedd för en solist. Parallell relation: kadens (verk)."@sv ;
+        "Musikverk för vilket samma eller en annan kompositör har komponerat en dekorativ del avsedd för en solist. Parallell relation: kadens (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "cadenza composed for (work)"@en,
         "kadenssi sävellykseen (teos)"@fi,
@@ -30830,7 +30903,7 @@ mts:m3511 a skos:Concept ;
     skos:broader mts:m3507 ;
     skos:definition """Radio-ohjelma, jossa käytetään musiikkiteosta.\r
 Vastavuoroinen suhde: radio-ohjelman musiikki (teos)."""@fi,
-        "Radio-program i vilket ett musikaliskt verk används. Parallell relation: musik till radioprogram (verk)."@sv ;
+        "Radio-program i vilket ett musikverk används. Parallell relation: musik till radioprogram (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "music for radio program (work)"@en,
         "musiikki radio-ohjelmaan (teos)"@fi,
@@ -30950,7 +31023,7 @@ mts:m3523 a skos:Concept ;
     skos:broader mts:m3522 ;
     skos:definition """Musiikkiteos, jota käytetään televisio-ohjelmassa.\r
 Vastavuoroinen suhde: musiikki televisio-ohjelmaan (teos)."""@fi,
-        "Musikaliskt verk som används i tv-program. Parallell relation: musik till tv-programmet (verk)."@sv ;
+        "Musikverk som används i tv-program. Parallell relation: musik till tv-programmet (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "television program music (work)"@en,
         "televisio-ohjelman musiikki (teos)"@fi,
@@ -30990,7 +31063,7 @@ mts:m3526 a skos:Concept ;
     skos:broader mts:m3522 ;
     skos:definition """Musiikkiteos, jota käytetään elokuvassa.\r
 Vastavuoroinen suhde: musiikki elokuvaan (teos)."""@fi,
-        "Musikaliskt verk som används i en film. Parallell relation: musik till filmen (verk)."@sv ;
+        "Musikverk som används i en film. Parallell relation: musik till filmen (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "motion picture music (work)"@en,
         "elokuvamusiikki (teos)"@fi,
@@ -31042,7 +31115,7 @@ mts:m3530 a skos:Concept ;
     skos:broader mts:m3521 ;
     skos:definition """Musiikkiteos, joka muodostuu solistille tarkoitetusta koristeellisesta osasta. Liittyy saman tai eri säveltäjän musiikkiteokseen, kuten konserttoon\r
 Vastavuoroinen suhde: kadenssi sävellykseen (teos)."""@fi,
-        "Musikaliskt verk som utgörs av en dekorativ del avsedd för en solist. Relaterat till ett musikaliskt verk av samma eller en annan kompositör. Parallell relation: kadens till kompositionen (verk)."@sv ;
+        "Musikverk som utgörs av en dekorativ del avsedd för en solist. Relaterat till ett musikverk av samma eller en annan kompositör. Parallell relation: kadens till kompositionen (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "cadenza (work)"@en,
         "kadenssi (teos)"@fi,
@@ -31055,7 +31128,7 @@ mts:m3531 a skos:Concept ;
     skos:broader mts:m3507 ;
     skos:definition """Näytelmä tai muu puhuttu näyttämöteos, joka käyttää musiikkiteosta näytelmämusiikkina.\r
 Vastavuoroinen suhde: näytelmämusiikki (teos)."""@fi,
-        "Skådespel eller annat talat sceniskt verk, i vilket ett musikaliskt verk används som skådespelsmusik. Parallell relation: skådespelsmusik (verk)."@sv ;
+        "Skådespel eller annat talat sceniskt verk, i vilket ett musikverk används som skådespelsmusik. Parallell relation: skådespelsmusik (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "incidental music for (work)"@en,
         "näytelmämusiikki näyttämöteokseen"@fi,
@@ -31130,7 +31203,7 @@ mts:m3537 a skos:Concept ;
     skos:broader mts:m1117 ;
     skos:definition """Teoksen ekspressio, joka on ei-näytelmällisen musiikkiteoksen (muun kuin oratorion) teksti.\r
 Vastavuoroinen suhde: tekstiin perustuva musiikki (ekspressio)."""@fi,
-        "Ett verks uttryck som är text till ett icke-dramatiskt (förtutom oratorium) musikaliskt verk. Parallell relation: musik baserad på text (uttryck)."@sv ;
+        "Ett verks uttryck som är text till ett icke-dramatiskt (förtutom oratorium) musikverk. Parallell relation: musik baserad på text (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "musical setting of (expression)"@en,
         "musiikkiteoksen teksti (ekspressio)"@fi,
@@ -31224,7 +31297,7 @@ mts:m3545 a skos:Concept ;
     skos:broader mts:m1117 ;
     skos:definition """Musiikkiteoksen ekspressio, josta melodinen, temaattinen tai harmoninen aines on otettu erillisen, toistettavan ja muunneltavan teeman muodostamiseksi.\r
 Vastavuoroinen suhde: variaatio (ekspressio)."""@fi,
-        "Ett musikaliskt verks uttryck, vars melodiska, tematiska eller harmoniska element har använts för att bilda ett skilt, upprepbart och förvandlingsbart tema. Parallell relation: variation (uttryck)."@sv ;
+        "Ett musikverks uttryck, vars melodiska, tematiska eller harmoniska element har använts för att bilda ett skilt, upprepbart och förvandlingsbart tema. Parallell relation: variation (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "variations based on (expression)"@en,
         "variaation perustana (ekspressio)"@fi,
@@ -33552,11 +33625,13 @@ mts:m41 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa lämmön avulla tuotetaan jälkiä materiaalin pintaan."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa lämmön avulla tuotetaan jälkiä materiaalin pintaan."@fi,
+        "Produktionsmetod, i vilken ett avtryck framställs i ett materials yta med hjälp av värme."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "burning"@en,
-        "polttomenetelmä"@fi .
+        "polttomenetelmä"@fi,
+        "bränning"@sv .
 
 mts:m4101 a skos:Concept ;
     skos:broader mts:m3928 ;
@@ -34110,14 +34185,17 @@ mts:m4209 a isothes:ConceptGroup,
         "En persons könsidentitet."@sv,
         "Sammankopplar person med det kön som personen upplever sig tillhöra."@sv ;
     skos:example """MARC 21\r
-385 ## ‡m Sukupuoli ‡n gdr ‡a tytöt ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p7196"""@fi ;
+385 ## ‡m Sukupuoli ‡n gdr ‡a tytöt ‡2 yso/fin ‡0 http://www.yso.fi/onto/yso/p7196"""@fi,
+        """MARC 21\r
+385 ## ‡m Kön ‡n gdr ‡a flickor ‡2 yso/swe ‡0 http://www.yso.fi/onto/yso/p7196"""@sv ;
     skos:member mts:m4224,
         mts:m4231,
         mts:m4232 ;
     skos:prefLabel "Gender"@en,
         "Sukupuoli"@fi,
         "Kön"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten sukupuolisuutta kuvaavia termejä (esim. miehet, naiset, transihmiset). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä sukupuoleen liittyvä rooli sukupuoleen liittyvä rooli  http://www.yso.fi/onto/yso/p22231"@fi .
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten sukupuolisuutta kuvaavia termejä (esim. miehet, naiset, transihmiset). Yksittäisten termien valinnassa käytetään YSO-termejä ryhmästä sukupuoleen liittyvä rooli sukupuoleen liittyvä rooli  http://www.yso.fi/onto/yso/p22231"@fi,
+        "Används för att bestämma termer som beskriver kön hos medlemmar av en grupp (t.ex. män, kvinnor, transpersoner). Vid val av enskilda termer används ALLFO-termer ur gruppen roll relaterad till kön http://www.yso.fi/onto/yso/p22231"@sv .
 
 mts:m4210 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -34203,10 +34281,12 @@ mts:m4217 a skos:Concept ;
     rdfs:seeAlso rdae:P20082 ;
     skos:broader mts:m731 ;
     skos:definition """Liittää ekspression musiikkiteoksen ekspressioon, jonka melodinen, temaattinen tai harmoninen aines on otettu lähteenä olevasta teoksesta erillisen, toistettavan ja muunneltavan teeman muodostamiseksi.\r
-Vastavuoroinen suhde: variaation perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: variaation perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett musikverks uttryck, vars melodiska, tematiska eller harmoniska stoff har tagits ur ett källverk för att bilda ett skilt, upprepbart och förändringsbart tema. Parallell relation: variation baserad på (verk)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "modified by variation as expression"@en,
-        "variaatio (ekspressio)"@fi .
+        "variaatio (ekspressio)"@fi,
+        "variation (uttryck)"@sv .
 
 mts:m4219 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -34368,10 +34448,12 @@ mts:m4233 a skos:Concept ;
     rdfs:seeAlso rdae:P20164 ;
     skos:broader mts:m731 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, johon sisällön toisintaminen perustuu.\r
-Vastavuoroinen suhde: parafraasin perustana (ekspressio)."""@fi ;
+Vastavuoroinen suhde: parafraasin perustana (ekspressio)."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, på vilket en återgivelse av innehåll baserar sig. Parallell relation: parafras baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "paraphrased as expression"@en,
-        "parafraasi (ekspressio)"@fi .
+        "parafraasi (ekspressio)"@fi,
+        "parafras (uttryck)"@sv .
 
 mts:m4234 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -35846,11 +35928,13 @@ mts:m4375 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa tehdään merkkejä ja symboleja pohjamateriaaliin sen pintaa leikkaamalla."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa tehdään merkkejä ja symboleja pohjamateriaaliin sen pintaa leikkaamalla."@fi,
+        "Produktionsmetod, i vilken tecken och symboler i ett bottenmaterial görs genom att skära i dess yta."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1016> ;
     skos:inScheme mts: ;
     skos:prefLabel "inscribing"@en,
-        "inscribing"@fi .
+        "inscribing"@fi,
+        "inscribing"@sv .
 
 mts:m4376 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -35858,7 +35942,7 @@ mts:m4376 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Valmistusmenetelmä tuntoaistiin perustuville aineistoille, joissa kuva on painettu erikoispaperille. Paperissa on alkoholia sisältäviä mikrokapseleita, jotka reagoivat lämpöön laajenemalla."@fi,
-        "Tillverkningsmetod för material som grundar sig på känselsinnet och i vilka en bild är tryckt på specialpapper. I pappret finns mikrokapslar som innehåller alkohol och som reagerar på värme med att utvidga sig."@sv ;
+        "Produktionsmetod för material som grundar sig på känselsinnet och i vilka en bild är tryckt på specialpapper. I pappret finns mikrokapslar som innehåller alkohol och som reagerar på värme genom att utvidga sig."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1021> ;
     skos:inScheme mts: ;
     skos:prefLabel "thermoform"@en,
@@ -35871,7 +35955,7 @@ mts:m4377 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Valmistusmenetelmä, jossa paineen avulla painetaan jälki materiaalin pintaan"@fi,
-        "Tillverkningsmetod, i vilken tryck påförs för att lämna ett avtryck i materialets yta."@sv ;
+        "Produktionsmetod, i vilken tryck påförs för att lämna ett avtryck i ett materials yta."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1017> ;
     skos:inScheme mts: ;
     skos:prefLabel "stamping"@en,
@@ -35885,7 +35969,7 @@ mts:m4378 a skos:Concept ;
         "RDA-term"@sv ;
     skos:altLabel "kollotypi"@sv ;
     skos:definition "Valmistusmenetelmä, jossa painatus perustuu dikromaattiluoksen kemialliseen reaktioon, joka kovettaa gelatiinin sen altistuessa ultraviolettivalolle ja tuottaa positiivisen alkuperäislaatan, jota käytetään myöhemmin litografiaprosessissa."@fi,
-        "Tillverkningsmetod, i vilken tryckningen grundar sig på en dikromatlösnings kemiska reaktion, som härdar gelatinet när det utsätts för ultaviolettljus och producerar en positiv originalplatta, som används senare i litografiprocessen."@sv ;
+        "Produktionsmetod, i vilken tryckningen grundar sig på en dikromatlösnings kemiska reaktion, som härdar gelatinet när det utsätts för ultaviolettljus och producerar en positiv originalplatta, som används senare i litografiprocessen."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1003> ;
     skos:inScheme mts: ;
     skos:prefLabel "collotype"@en,
@@ -35898,7 +35982,7 @@ mts:m4379 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Valmistusmenetelmä, jossa kuva tai teksti siirretään tallenteelta toisen aineiston pinnalle, usein siirrettävällä materiaalilla katetun laatan, kiven tai kuvapinnan avulla. Sisältää valokuvavedosten sekä tallennetun tietokoneaineiston paperitulosteiden valmistamisen."@fi,
-        "Tillverkningsmetod, i vilken bild eller text överförs från en upptagning till ett annat materials yta, ofta med hjälp av överförbart material, platta, sten eller bildyta. Inkluderar tillverkningen av fotokopior och pappersutskrifter av lagrat datormaterial."@sv ;
+        "Produktionsmetod, i vilken bild eller text överförs från en upptagning till ett annat materials yta, ofta med hjälp av överförbart material, platta, sten eller bildyta. Inkluderar tillverkningen av fotokopior och pappersutskrifter av lagrat datormaterial."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1010> ;
     skos:inScheme mts: ;
     skos:prefLabel "printing"@en,
@@ -35911,7 +35995,7 @@ mts:m4380 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:definition "Valmistusmenetelmä, jossa painatus perustuu diatsoniumsuolan ja atsovärin kemialliseen reaktioon, joka muuttaa läpikuultamattomat sävyt tai värit siniseksi neutraalilla taustalla."@fi,
-        "Tillverkningsmetod, i vilken tryckning grundar sig på en kemisk reaktion mellan diazoniumsalt och azofärg, som ändrar opaka nyanser eller färger till blått på en neutral bakgrund."@sv ;
+        "Produktionsmetod, i vilken tryckning grundar sig på en kemisk reaktion mellan diazoniumsalt och azofärg, som ändrar opaka nyanser eller färger till blått på en neutral bakgrund."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1001> ;
     skos:inScheme mts: ;
     skos:prefLabel "blueline process"@en,
@@ -36318,7 +36402,8 @@ mts:m4460 a skos:Concept ;
         "Sammankopplar verk med en producent som sköter affärsmässiga uppgifter kring ljudinspelning. Parallell relation: producent för ljudupptagningen."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "audio producer"@en,
-        "äänituottaja"@fi ;
+        "äänituottaja"@fi,
+        "ljudproducent"@sv ;
     skos:scopeNote "Teokseen liittyvä muu toimija"@fi,
         "Annan aktör relaterad till verk"@sv .
 
@@ -36338,8 +36423,7 @@ mts:m4478 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50221 ;
-    skos:altLabel "maisema-arkkitehtina maisemasuunnitelmassa"@fi,
-        "landskapsarkitekt (relation)"@sv ;
+    skos:altLabel "maisema-arkkitehtina maisemasuunnitelmassa"@fi ;
     skos:broader mts:m1086 ;
     skos:definition "Liittää toimijan maisemasuunnitelmaan, johon sisältyy arkkitehtoonista suunnittelua. Vastavuoroinen suhde: maisema-arkkitehti."@fi ;
     skos:inScheme mts: ;
@@ -36601,10 +36685,12 @@ mts:m4531 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50217 ;
     skos:broader mts:m4532 ;
-    skos:definition "\"Liittää toimijan ekspressioon, joka sisältää hahmojen ääninäyttelemisen radio- tai muissa äänituotannoissa, animaatioelokuvissa, radio- ja TV-mainoksissa, dubatuissa aineistoissa tms. Vastavuoroinen suhde: ääninäyttelijä."@fi ;
+    skos:definition "\"Liittää toimijan ekspressioon, joka sisältää hahmojen ääninäyttelemisen radio- tai muissa äänituotannoissa, animaatioelokuvissa, radio- ja TV-mainoksissa, dubatuissa aineistoissa tms. Vastavuoroinen suhde: ääninäyttelijä."@fi,
+        "Sammankopplar aktör med ett uttryck som inbegriper röstskådespelande i en radio- eller annan ljudproduktion, tecknade filmer, radio- och tv-reklam, dubbade material etc. Parallell relation: röstskådespelare."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "voice actor of"@en,
-        "ääninäyttelijänä tallenteessa"@fi .
+        "ääninäyttelijänä tallenteessa"@fi,
+        "röstskådespelare i upptagningen"@sv .
 
 mts:m4534 a skos:Concept ;
     rdfs:seeAlso rdaa:P50081 ;
@@ -37281,7 +37367,8 @@ mts:m634 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "\"Valmistusmenetelmä tuntoaistiin perustuvalle aineistolle, jossa ohuen ja kestävän paperin pintaan lämpöliimataan kiinteitä muovisia pisteitä."@fi ;
+    skos:definition "\"Valmistusmenetelmä tuntoaistiin perustuvalle aineistolle, jossa ohuen ja kestävän paperin pintaan lämpöliimataan kiinteitä muovisia pisteitä."@fi,
+        "Produktionsmetod för material som grundar sig på känselsinnet, i vilken fasta punkter i plast värmelimmas på ett tunt och hållbart pappers yta."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1019> ;
     skos:inScheme mts: ;
     skos:prefLabel "solid dot"@en,
@@ -37346,12 +37433,13 @@ mts:m656 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "blueprint"@sv ;
-    skos:definition "Valmistusmenetelmä, jossa painatus perustuu rautasuolan kemialliseen reaktioon, joka muuttaa läpikuultamattomat sävyt tai värit valkoisiksi sinisellä pohjalla."@fi ;
+    skos:definition "Valmistusmenetelmä, jossa painatus perustuu rautasuolan kemialliseen reaktioon, joka muuttaa läpikuultamattomat sävyt tai värit valkoisiksi sinisellä pohjalla."@fi,
+        "Produktionsmetod, i vilken tryckning grundar sig på en kemisk reaktion i järnsalt, som ändrar opaka toner eller färger till vita på blå botten."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1002> ;
     skos:inScheme mts: ;
     skos:prefLabel "blueprint process"@en,
         "sinikopiomenetelmä"@fi,
-        "blåkopia"@sv .
+        "blåkopia-metod"@sv .
 
 mts:m66 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -37999,7 +38087,8 @@ mts:m876 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Valmistusmenetelmä tuntoaistiin perustuville aineistoille, joissa kuva on painettu erikoispaperille. Paperissa on alkoholia sisältäviä mikrokapseleita, jotka reagoivat lämpöön laajenemalla."@fi ;
+    skos:definition "Valmistusmenetelmä tuntoaistiin perustuville aineistoille, joissa kuva on painettu erikoispaperille. Paperissa on alkoholia sisältäviä mikrokapseleita, jotka reagoivat lämpöön laajenemalla."@fi,
+        "Produktionsmetod för material som grundar sig på känselsinnet, i vilken en bild har tryckts på specialpapper. I pappret finns mikrokapslar som innehåller alkohol och som reagerar på värme genom att utvidga sig."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1020> ;
     skos:inScheme mts: ;
     skos:prefLabel "swell paper"@en,
@@ -38548,10 +38637,12 @@ mts:m1318 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Layout, joka koostuu outline-muotoisesta nuottikirjoituksesta."@fi ;
+    skos:definition "Layout, joka koostuu outline-muotoisesta nuottikirjoituksesta."@fi,
+        "Layout som består av notskrift i outline-form."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "outline"@en,
-        "outline"@fi ;
+        "outline"@fi,
+        "outline"@sv ;
     skos:related <http://rdaregistry.info/termList/layout/1011> ;
     skos:relatedMatch <http://rdaregistry.info/termList/layout/1011> .
 
@@ -47964,7 +48055,7 @@ mts:m1577 a skos:Concept ;
         "dir. (dirigent)"@sv ;
     skos:broader mts:m1060 ;
     skos:definition "Liittää ekspression esittäjään, joka osallistuu musiikkiteoksen ekspression tekemiseen johtamalla esittäjäryhmää (orkesteria, kuoroa, oopperaa tms.) musiikki- tai näyttämöesityksessä tms."@fi,
-        "Sammankopplar uttryck med en framförande person som deltar i utförandet av ett uttryck för ett musikaliskt verk, genom att leda en artistgrupp (t.ex. orkester, kör, opera) i ett musik- eller scenuppförande e.d."@sv ;
+        "Sammankopplar uttryck med en framförande person som deltar i utförandet av ett uttryck av ett musikverk, genom att leda en artistgrupp (t.ex. orkester, kör, opera) i ett musik- eller scenuppförande e.d."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m3589,
         mts:m3593 ;
@@ -49203,13 +49294,15 @@ mts:m4299 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40029 ;
-    skos:definition "Liittää kappaleen kappaleeseen, joka on yhdistetty toiseen kappaleeseen julkaisemisen jälkeen.                                                                                   Vastavuoroinen suhde: yhdistetty kappaleeseen"@fi ;
+    skos:definition "Liittää kappaleen kappaleeseen, joka on yhdistetty toiseen kappaleeseen julkaisemisen jälkeen.                                                                                   Vastavuoroinen suhde: yhdistetty kappaleeseen"@fi,
+        "Sammankopplar exemplar med ett exemplar som har förenats med det andra exemplaret efter publikation. Parallell relation: förenat med exemplaret."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4276,
         mts:m4286,
         mts:m4298 ;
     skos:prefLabel "accompanied by item"@en,
-        "yhdistetty kappaleeseen"@fi .
+        "yhdistetty kappaleeseen"@fi,
+        "förenat med exemplaret"@sv .
 
 mts:m4314 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -50206,7 +50299,7 @@ mts:m3507 a skos:Concept ;
     skos:broader mts:m783 ;
     skos:definition """Elokuva, teatteriesitys, televisio-ohjelma tms.teos, jossa käytetään musiikkiteosta.\r
 Vastavuoroinen suhde: musiikki (teos)."""@fi,
-        "Film, teaterföreställning, tv-program e.d. verk, i vilket ett musikaliskt verk används. Parallell relation: musik (verk)."@sv ;
+        "Film, teaterföreställning, tv-program e.d. verk, i vilket ett musikverk används. Parallell relation: musik (verk)."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m3493,
         mts:m3500,
@@ -50426,7 +50519,7 @@ mts:m3522 a skos:Concept ;
     skos:broader mts:m783 ;
     skos:definition """Musiikkiteos, jota on käytetty elokuvassa, teatteriesityksessä, televisio-ohjelmassa tms.\r
 Vastavuoroinen suhde: musiikki teokseen."""@fi,
-        "Musikaliskt verk som har använts i film, teaterföreställning, tv-program e.d. Parallell relation: musik till verket."@sv ;
+        "Musikverk som har använts i film, teaterföreställning, tv-program e.d. Parallell relation: musik till verket."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m3494,
         mts:m3495,
@@ -52549,7 +52642,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-07-07T01:55:57+00:00"^^xsd:dateTime ;
+    dct:modified "2020-07-08T01:51:51+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
