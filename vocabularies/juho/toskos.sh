@@ -1,12 +1,12 @@
 #!/bin/sh
 
-#cp ../yso/ysoKehitys.rdf yso-import.rdf
+cp ../yso/releases/2020.1.Diotima/ysoKehitys.rdf yso-import.rdf
 
 INFILE="juho.ttl"
 INFILES="juho-metadata.ttl yso-import.rdf $INFILE"
 OUTFILE=juho-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../../Skosify/"
 CONFFILE=../../conf/skosify/finnonto.cfg
 LOGFILE=skosify.log
 OPTS="-l fi"
