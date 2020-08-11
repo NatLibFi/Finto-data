@@ -3026,7 +3026,6 @@ mts:m1315 a isothes:ConceptGroup,
         mts:m2273,
         mts:m2274,
         mts:m2275,
-        mts:m2276,
         mts:m2279,
         mts:m2280,
         mts:m2282,
@@ -15393,7 +15392,7 @@ mts:m4508 a skos:Concept ;
 mts:m4509 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
         "Nationell term"@sv ;
-    skos:definition "Liittää toimijan laulunoppaan tekemiseen. Vastavuoroinen suhde: soitonoppaan tekijä."@fi,
+    skos:definition "Liittää toimijan sotonoppaan tekemiseen. Vastavuoroinen suhde: soitonoppaan tekijä."@fi,
         "Sammankopplar aktör med utarbetandet av en instrumentskola. Parallell relation: författare till instrumentskola."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "soitonoppaan tekijänä teoksessa"@fi,
@@ -15793,7 +15792,7 @@ mts:m4571 a skos:Concept ;
     skos:example "MARC 21: 540 ## ‡c Public domain ‡u https://creativecommons.org/publicdomain/zero/1.0/deed.fi"@fi,
         "MARC 21: 540 ## ‡c Public domain ‡u https://creativecommons.org/publicdomain/zero/1.0/deed.sv"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "public domein"@fi,
+    skos:prefLabel "public domain"@fi,
         "public domain"@sv .
 
 mts:m4572 a skos:Concept ;
@@ -15854,7 +15853,7 @@ mts:m4576 a isothes:ConceptGroup,
         """MARC 21 \r
 385 ## ‡m Hälsa/funktionsförmåga ‡n  mpd ‡a personer med synskada ‡2  yso/swe ‡0  http://www.yso.fi/onto/yso/p78"""@sv ;
     skos:prefLabel "Medical, psychological, and disability"@en,
-        "Terveys/toimintakysy"@fi,
+        "Terveys/toimintakyky"@fi,
         "Hälsa/funktionsförmåga"@sv ;
     skos:scopeNote "Käytetään määrittämään ryhmän jäsenten terveydellistä tilaa tai toimintakykyä kuvaavia termejä (esim. kuulovammaiset, psyykkisesti sairaat, päihdekuntoutujat, sokeat)."@fi,
         "Används för att bestämma termer som anger hälsotillstånd eller funktionsförmåga hos medlemmar av en grupp. Vid val av enskilda termer används ALLFO-termer som beskriver detta (t.ex. personer med hörselskada, psykiskt sjuka, klienter i missbrukarrehabilitering, blinda)."@sv .
@@ -36439,8 +36438,8 @@ mts:m4460 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdaw:P10304 ;
     skos:broader mts:m1298 ;
-    skos:definition "Liittää teoksen tuottajaan, joka huolehtii äänitallentamiseen liittyvistä liiketoiminnallisista tehtävistä.  Vastavuoroinen suhde: tuottajana äänitteessä."@fi,
-        "Sammankopplar verk med en producent som sköter affärsmässiga uppgifter kring ljudinspelning. Parallell relation: producent för ljudupptagningen."@sv ;
+    skos:definition "Liittää teoksen tuottajaan, joka huolehtii äänitallentamiseen liittyvistä liiketoiminnallisista tehtävistä.  Vastavuoroinen suhde: äänituottaja."@fi,
+        "Sammankopplar verk med en producent som sköter affärsmässiga uppgifter kring ljudinspelning. Parallell relation: ljudproducent."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "audio producer"@en,
         "äänituottaja"@fi,
@@ -39045,6 +39044,21 @@ mts:m2050 a skos:Concept ;
     skos:prefLabel "radio director of"@en,
         "radio-ohjelma"@fi,
         "radioprogram"@sv .
+
+mts:m2276 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20144 ;
+    skos:altLabel "absorbed in part by expression"@en,
+        "sulautunut osittain ekspressioon"@fi ;
+    skos:broader mts:m2274,
+        mts:m2286 ;
+    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
+        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
+Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "absorbed in part by (work)"@en,
+        "sulautunut osittain teokseen"@fi .
 
 mts:m2277 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -48225,22 +48239,6 @@ mts:m2062 a skos:Concept ;
         "liite"@fi,
         "bilaga"@sv .
 
-mts:m2276 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20144,
-        rdaw:P10146 ;
-    skos:altLabel "absorbed in part by expression"@en,
-        "sulautunut osittain ekspressioon"@fi ;
-    skos:broader mts:m2274,
-        mts:m2286 ;
-    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota.                                                                 Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
-        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
-Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "absorbed in part by (work)"@en,
-        "sulautunut osittain teokseen"@fi .
-
 mts:m2335 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -52706,7 +52704,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-08-10T02:22:18+00:00"^^xsd:dateTime ;
+    dct:modified "2020-08-11T02:44:08+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
