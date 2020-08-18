@@ -22,7 +22,9 @@ FINAF=Namespace("http://urn.fi/URN:NBN:fi:au:finaf:")
 Person=RDAC.C10004
 CorporateBody=RDAC.C10005
 preferredNameOfPerson=RDAA.P50117
+variantNameOfPerson=RDAA.P50103
 preferredNameOfCorporateBody=RDAA.P50041
+variantNameOfCorporateBody=RDAA.P50025
 birthYear=RDAA.P50121
 deathYear=RDAA.P50120
 typeOfCorporateBody=RDAA.P50237
@@ -169,6 +171,24 @@ def main():
                     obj = mtsuri
 
             g.add((uri, prop, obj))
+
+        for f in rec.get_fields('400'):
+            varname = format_label(f)
+            if varname is None:
+                print >>sys.stderr, "Empty 400 value for <%s>, skipping" % uri
+                continue
+            varlit = Literal(varname)
+            g.add((uri, SKOS.altLabel, varlit))
+            g.add((uri, variantNameOfPerson, varlit))
+
+        for f in rec.get_fields('410') + rec.get_fields('411'):
+            varname = format_label(f)
+            if varname is None:
+                print >>sys.stderr, "Empty 410/411 value for <%s>, skipping" % uri
+                continue
+            varlit = Literal(varname)
+            g.add((uri, SKOS.altLabel, varlit))
+            g.add((uri, variantNameOfCorporateBody, varlit))
 
     # serialize output RDF as Turtle
     g.serialize(destination=sys.stdout.buffer, format='turtle')
