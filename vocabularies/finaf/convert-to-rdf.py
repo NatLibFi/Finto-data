@@ -3,6 +3,7 @@
 import sys
 import io
 import functools
+import logging
 
 import requests
 import pymarc.marcxml
@@ -94,9 +95,11 @@ def format_timestamp(ts):
 
 @functools.lru_cache(maxsize=1000)
 def lookup_mts(label):
+    logging.debug('looking up MTS label "%s"', label)
     payload = {'label': label, 'lang': 'fi'}
     req = requests.get(FINTO_API_BASE + 'mts/lookup', params=payload)
     if req.status_code != 200:
+        logging.debug('MTS lookup for "%s" failed', label)
         return None
 
     return URIRef(req.json()['result'][0]['uri'])
@@ -104,29 +107,35 @@ def lookup_mts(label):
 
 @functools.lru_cache(maxsize=10000)
 def lookup_yso_place(label):
+    logging.debug('looking up YSO place "%s"', label)
     if ', ' in label:
         place, country = label.rsplit(', ', 1)
         country_uri = lookup_yso_place(country)
         if isinstance(country_uri, BNode):
+            logging.debug('YSO place lookup for country "%s" failed', country)
             return BNode()
         payload = {'query': place, 'parent': str(country_uri), 'lang': 'fi'}
         req = requests.get(FINTO_API_BASE + 'yso-paikat/search', params=payload)
         if req.status_code != 200:
+            logging.debug('YSO place lookup for place "%s" failed (error)', place)
             return BNode()
         results = req.json()['results']
         if results:
             return URIRef(results[0]['uri'])
+        logging.debug('YSO place lookup for place "%s" failed (no results)', place)
         return BNode()
 
     payload = {'label': label, 'lang': 'fi'}
     req = requests.get(FINTO_API_BASE + 'yso-paikat/lookup', params=payload)
     if req.status_code != 200:
+        logging.debug('YSO place lookup for place "%s" failed', label)
         return BNode()
 
     return URIRef(req.json()['result'][0]['uri'])
 
 @functools.lru_cache(maxsize=1000)
 def lookup_language(langcode):
+    logging.debug('looking up language code "%s"', langcode)
     sparql = SPARQLWrapper(FINTO_SPARQL_ENDPOINT)
     sparql.setQuery("""
         SELECT ?lang
@@ -137,27 +146,35 @@ def lookup_language(langcode):
     results = sparql.query().convert()
     for result in results["results"]["bindings"]:
         return URIRef(result["lang"]["value"])
+    logging.debug('Language code lookup for "%s" failed', langcode)
     return None
 
 def main():
+    logging.basicConfig(level=logging.DEBUG)
+
     g = initialize_graph()
 
     for line in sys.stdin:
         file = io.StringIO(line)
         rec = pymarc.marcxml.parse_xml_to_array(file)[0]
         
+        recid = rec['001'].value()
+        uri = FINAF[recid]
+
+        logging.info("Starting conversion of record %s", recid)
+
         # sanity check
         if '100' not in rec and '110' not in rec and '111' not in rec:
+            logging.warning('no 100/110/111 field, skipping record %s', rec['001'].value())
             continue
         
-        id = rec['001'].value()
-        uri = FINAF[id]
-
         if '100' in rec: # person name
             # don't include living persons for now
             if '046' not in rec:
+                logging.debug('skipping person record without 046 field')
                 continue  # no information about birth/death years
             if 'g' not in rec['046']:
+                logging.debug('skipping person record without death year in 046')
                 continue  # death year not set
         
             g.add((uri, RDF.type, Person))
@@ -174,7 +191,8 @@ def main():
         literal = Literal(label, lang='fi') # prefLabel is always Finnish
         g.add((uri, SKOS.prefLabel, literal))
         g.add((uri, labelprop, literal))
-        
+        logging.debug("Preferred label: '%s'", label)
+
         # created timestamp
         created = rec['008'].value()[:6]
         g.add((uri, DCT.created, Literal(format_timestamp(created), datatype=XSD.date)))
@@ -236,7 +254,7 @@ def main():
                 prop = titleOfPerson
                 val = f['d']
             else:
-                print("Could not parse 368 value for <%s>, skipping" % uri, file=sys.stderr)
+                logging.warning("Could not parse 368 value for <%s>, skipping", uri)
                 continue
 
             obj = Literal(val, lang='fi') # by default, use a literal value
@@ -303,7 +321,7 @@ def main():
             if 'a' in f:
                 lang_uri = lookup_language(f['a'])
                 if not lang_uri:
-                    print("Unknown 377 language value '%s' for <%s>, skipping" % (f['a'], uri), file=sys.stderr)
+                    logging.warning("Unknown 377 language value '%s' for <%s>, skipping", f['a'], uri)
                     continue
 
                 if is_person:
@@ -315,7 +333,7 @@ def main():
         for f in rec.get_fields('400'):
             varname = format_label(f)
             if varname is None:
-                print("Empty 400 value for <%s>, skipping" % uri, file=sys.stderr)
+                logging.warning("Empty 400 value for <%s>, skipping", uri)
                 continue
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
@@ -324,7 +342,7 @@ def main():
         for f in rec.get_fields('410') + rec.get_fields('411'):
             varname = format_label(f)
             if varname is None:
-                print("Empty 410/411 value for <%s>, skipping" % uri, file=sys.stderr)
+                logging.warning("Empty 410/411 value for <%s>, skipping", uri)
                 continue
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
