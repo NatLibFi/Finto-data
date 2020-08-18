@@ -7,6 +7,7 @@ import functools
 import requests
 import pymarc.marcxml
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 OWL=Namespace("http://www.w3.org/2002/07/owl#")
@@ -36,10 +37,13 @@ categoryOfGovernment=RDAA.P50238
 otherDesignationAssociatedWithPerson=RDAA.P50108
 otherDesignationAssociatedWithCorporateBody=RDAA.P50033
 titleOfPerson=RDAA.P50110
+languageOfPerson=RDAA.P50102
+languageOfCorporateBody=RDAA.P50023
 
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
 FINTO_API_BASE="http://api.finto.fi/rest/v1/"
+FINTO_SPARQL_ENDPOINT="http://api.finto.fi/sparql"
 
 def initialize_graph():
     g = Graph()
@@ -87,6 +91,20 @@ def lookup_mts(label):
         return None
 
     return URIRef(req.json()['result'][0]['uri'])
+
+@functools.lru_cache(maxsize=1000)
+def lookup_language(langcode):
+    sparql = SPARQLWrapper(FINTO_SPARQL_ENDPOINT)
+    sparql.setQuery("""
+        SELECT ?lang
+        FROM <http://lexvo.org/id/iso639-3/>
+        WHERE { ?lang <http://lexvo.org/ontology#iso6392BCode> "%s" }
+    """ % langcode)
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert()
+    for result in results["results"]["bindings"]:
+        return URIRef(result["lang"]["value"])
+    return None
 
 def main():
     g = initialize_graph()
@@ -200,10 +218,23 @@ def main():
 
             g.add((uri, prop, obj))
 
+        for f in rec.get_fields('377'):
+            if 'a' in f:
+                lang_uri = lookup_language(f['a'])
+                if not lang_uri:
+                    print("Unknown 377 language value '%s' for <%s>, skipping" % (f['a'], uri), file=sys.stderr)
+                    continue
+
+                if is_person:
+                    prop = languageOfPerson
+                else:
+                    prop = languageOfCorporateBody
+                g.add((uri, prop, lang_uri))
+
         for f in rec.get_fields('400'):
             varname = format_label(f)
             if varname is None:
-                print >>sys.stderr, "Empty 400 value for <%s>, skipping" % uri
+                print("Empty 400 value for <%s>, skipping" % uri, file=sys.stderr)
                 continue
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
@@ -212,7 +243,7 @@ def main():
         for f in rec.get_fields('410') + rec.get_fields('411'):
             varname = format_label(f)
             if varname is None:
-                print >>sys.stderr, "Empty 410/411 value for <%s>, skipping" % uri
+                print("Empty 410/411 value for <%s>, skipping" % uri, file=sys.stderr)
                 continue
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
