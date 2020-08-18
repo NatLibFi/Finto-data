@@ -27,11 +27,17 @@ preferredNameOfCorporateBody=RDAA.P50041
 variantNameOfCorporateBody=RDAA.P50025
 birthYear=RDAA.P50121
 deathYear=RDAA.P50120
+periodOfActivityOfPerson=RDAA.P50098
+dateOfEstablishment=RDAA.P50037
+dateOfTermination=RDAA.P50038
+periodOfActivityOfCorporateBody=RDAA.P50236
 typeOfCorporateBody=RDAA.P50237
 categoryOfGovernment=RDAA.P50238
 otherDesignationAssociatedWithPerson=RDAA.P50108
 otherDesignationAssociatedWithCorporateBody=RDAA.P50033
 titleOfPerson=RDAA.P50110
+
+EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
 FINTO_API_BASE="http://api.finto.fi/rest/v1/"
 
@@ -132,13 +138,35 @@ def main():
                 isni = ISNI[f['a'].replace(' ', '')]
                 g.add((uri, SKOS.closeMatch, isni))
         
-        # birth and death years
+        # dates
         if '046' in rec:
             fld = rec['046']
             if 'f' in fld:
                 g.add((uri, birthYear, Literal(str(fld['f'])[:4], datatype=XSD.gYear, normalize=False)))
             if 'g' in fld:
-                g.add((uri, deathYear, Literal(fld['g'][:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, deathYear, Literal(str(fld['g'])[:4], datatype=XSD.gYear, normalize=False)))
+            if 'q' in fld:
+                g.add((uri, birthYear, Literal(str(fld['q'])[:4], datatype=XSD.gYear, normalize=False)))
+            if 'r' in fld:
+                g.add((uri, deathYear, Literal(str(fld['r'])[:4], datatype=XSD.gYear, normalize=False)))
+            if 's' in fld or 't' in fld:
+                # period of activity - encode as EDTF
+                if 's' in fld:
+                    start = str(fld['s'])[:4]
+                else:
+                    start = '..'
+
+                if 't' in fld:
+                    end = str(fld['t'])[:4]
+                else:
+                    end = '..'
+
+                if is_person:
+                    prop = periodOfActivityOfPerson
+                else:
+                    prop = periodOfActivityOfCorporateBody
+
+                g.add((uri, prop, Literal('{}/{}'.format(start,end), datatype=EDTF)))
 
         for f in rec.get_fields('368'):
             if 'a' in f:
