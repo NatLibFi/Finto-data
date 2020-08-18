@@ -6,7 +6,7 @@ import functools
 
 import requests
 import pymarc.marcxml
-from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
+from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, BNode
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -15,6 +15,7 @@ DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 RDAA=Namespace("http://rdaregistry.info/Elements/a/")
 RDAC=Namespace("http://rdaregistry.info/Elements/c/")
+RDAP=Namespace("http://rdaregistry.info/Elements/p/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 ISNI=Namespace("http://isni.org/isni/")
 FINAF=Namespace("http://urn.fi/URN:NBN:fi:au:finaf:")
@@ -34,11 +35,18 @@ dateOfTermination=RDAA.P50038
 periodOfActivityOfCorporateBody=RDAA.P50236
 typeOfCorporateBody=RDAA.P50237
 categoryOfGovernment=RDAA.P50238
+placeOfBirth=RDAA.P50119
+placeOfDeath=RDAA.P50118
+countryAssociatedWithPerson=RDAA.P50097
+placeOfResidence=RDAA.P50109
+placeAssociatedWithPerson=RDAA.P50346
+placeAssociatedWithCorporateBody=RDAA.P50350
 otherDesignationAssociatedWithPerson=RDAA.P50108
 otherDesignationAssociatedWithCorporateBody=RDAA.P50033
 titleOfPerson=RDAA.P50110
 languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
+nameOfPlace=RDAP.P70001
 
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
@@ -53,6 +61,7 @@ def initialize_graph():
     g.namespace_manager.bind('dct', DCT)
     g.namespace_manager.bind('rdaa', RDAA)
     g.namespace_manager.bind('rdac', RDAC)
+    g.namespace_manager.bind('rdap', RDAP)
     return g
 
 def format_label(fld, skip_last=False):
@@ -89,6 +98,30 @@ def lookup_mts(label):
     req = requests.get(FINTO_API_BASE + 'mts/lookup', params=payload)
     if req.status_code != 200:
         return None
+
+    return URIRef(req.json()['result'][0]['uri'])
+
+
+@functools.lru_cache(maxsize=10000)
+def lookup_yso_place(label):
+    if ', ' in label:
+        place, country = label.rsplit(', ', 1)
+        country_uri = lookup_yso_place(country)
+        if isinstance(country_uri, BNode):
+            return BNode()
+        payload = {'query': place, 'parent': str(country_uri), 'lang': 'fi'}
+        req = requests.get(FINTO_API_BASE + 'yso-paikat/search', params=payload)
+        if req.status_code != 200:
+            return BNode()
+        results = req.json()['results']
+        if results:
+            return URIRef(results[0]['uri'])
+        return BNode()
+
+    payload = {'label': label, 'lang': 'fi'}
+    req = requests.get(FINTO_API_BASE + 'yso-paikat/lookup', params=payload)
+    if req.status_code != 200:
+        return BNode()
 
     return URIRef(req.json()['result'][0]['uri'])
 
@@ -217,6 +250,54 @@ def main():
                     obj = mtsuri
 
             g.add((uri, prop, obj))
+
+        for f in rec.get_fields('370'):
+            if 'a' in f:
+                place = lookup_yso_place(f['a'])
+                g.add((uri, placeOfBirth, place))
+                if isinstance(place, BNode):
+                    g.add((place, nameOfPlace, Literal(f['a'], lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(f['a'], lang='fi')))
+
+            if 'b' in f:
+                place = lookup_yso_place(f['b'])
+                g.add((uri, placeOfDeath, place))
+                if isinstance(place, BNode):
+                    g.add((place, nameOfPlace, Literal(f['b'], lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(f['b'], lang='fi')))
+
+            if 'c' in f:
+                place = lookup_yso_place(f['c'])
+                g.add((uri, countryAssociatedWithPerson, place))
+                if isinstance(place, BNode):
+                    g.add((place, nameOfPlace, Literal(f['c'], lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(f['c'], lang='fi')))
+
+            if 'e' in f:
+                place = lookup_yso_place(f['e'])
+
+                if is_person:
+                    prop = placeOfResidence
+                else:
+                    prop = placeAssociatedWithCorporateBody
+
+                g.add((uri, prop, place))
+                if isinstance(place, BNode):
+                    g.add((place, nameOfPlace, Literal(f['e'], lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(f['e'], lang='fi')))
+
+            if 'f' in f:
+                place = lookup_yso_place(f['f'])
+
+                if is_person:
+                    prop = placeAssociatedWithPerson
+                else:
+                    prop = placeAssociatedWithCorporateBody
+
+                g.add((uri, prop, place))
+                if isinstance(place, BNode):
+                    g.add((place, nameOfPlace, Literal(f['f'], lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(f['f'], lang='fi')))
 
         for f in rec.get_fields('377'):
             if 'a' in f:
