@@ -29,6 +29,7 @@ preferredNameOfPerson=RDAA.P50117
 variantNameOfPerson=RDAA.P50103
 preferredNameOfCorporateBody=RDAA.P50041
 variantNameOfCorporateBody=RDAA.P50025
+fullerFormOfName=RDAA.P50115
 birthYear=RDAA.P50121
 deathYear=RDAA.P50120
 periodOfActivityOfPerson=RDAA.P50098
@@ -337,6 +338,9 @@ def main():
                 else:
                     prop = languageOfCorporateBody
                 g.add((uri, prop, lang_uri))
+
+        for f in rec.get_fields('378'):
+            g.add((uri, fullerFormOfName, Literal(f.format_field(), lang='fi')))
 
         for f in rec.get_fields('400'):
             varname = format_label(f)
