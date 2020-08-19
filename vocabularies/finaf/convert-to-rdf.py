@@ -17,6 +17,7 @@ DCT=Namespace("http://purl.org/dc/terms/")
 RDAA=Namespace("http://rdaregistry.info/Elements/a/")
 RDAC=Namespace("http://rdaregistry.info/Elements/c/")
 RDAP=Namespace("http://rdaregistry.info/Elements/p/")
+RDAU=Namespace("http://rdaregistry.info/Elements/u/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 ISNI=Namespace("http://isni.org/isni/")
 FINAF=Namespace("http://urn.fi/URN:NBN:fi:au:finaf:")
@@ -51,6 +52,7 @@ biographicalInformation=RDAA.P50113
 corporateHistory=RDAA.P50035
 noteOnPerson=RDAA.P50395
 noteOnCorporateBody=RDAA.P50393
+sourceConsulted=RDAU.P61101
 
 nameOfPlace=RDAP.P70001
 
@@ -68,6 +70,7 @@ def initialize_graph():
     g.namespace_manager.bind('rdaa', RDAA)
     g.namespace_manager.bind('rdac', RDAC)
     g.namespace_manager.bind('rdap', RDAP)
+    g.namespace_manager.bind('rdau', RDAU)
     return g
 
 def format_label(fld, skip_last=False):
@@ -352,6 +355,26 @@ def main():
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfCorporateBody, varlit))
+
+        for f in rec.get_fields('670'):
+            if 'u' in f: # has URL - try to build a link
+                if 'a' in f:
+                    if ', katsottu' in f['a']:
+                        srcname, delim, rest = f['a'].partition(', katsottu')
+                        link = "<a href='{}'>{}</a>{}{}".format(f['u'], srcname, delim, rest)
+                    else:
+                        link = "<a href='{}'>{}</a>".format(f['u'], f['a'])
+                else: # only a URL without explanation
+                    link = "<a href='{}'>{}</a>".format(f['u'], f['u'])
+
+                if 'b' in f:
+                    text = link + " " + f['b']
+                else:
+                    text = link
+            else:
+                text = f.format_field()
+
+            g.add((uri, sourceConsulted, Literal(text, lang='fi')))
 
         for f in rec.get_fields('678'):
             if is_person:
