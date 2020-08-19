@@ -362,6 +362,9 @@ def main():
                     if ', katsottu' in f['a']:
                         srcname, delim, rest = f['a'].partition(', katsottu')
                         link = "<a href='{}'>{}</a>{}{}".format(f['u'], srcname, delim, rest)
+                    elif ', luettu' in f['a']:
+                        srcname, delim, rest = f['a'].partition(', luettu')
+                        link = "<a href='{}'>{}</a>{}{}".format(f['u'], srcname, delim, rest)
                     else:
                         link = "<a href='{}'>{}</a>".format(f['u'], f['a'])
                 else: # only a URL without explanation
