@@ -218,9 +218,9 @@ def main():
             if 'g' in fld:
                 g.add((uri, deathYear, Literal(str(fld['g'])[:4], datatype=XSD.gYear, normalize=False)))
             if 'q' in fld:
-                g.add((uri, birthYear, Literal(str(fld['q'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, dateOfEstablishment, Literal(str(fld['q'])[:4], datatype=XSD.gYear, normalize=False)))
             if 'r' in fld:
-                g.add((uri, deathYear, Literal(str(fld['r'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, dateOfTermination, Literal(str(fld['r'])[:4], datatype=XSD.gYear, normalize=False)))
             if 's' in fld or 't' in fld:
                 # period of activity - encode as EDTF
                 if 's' in fld:
