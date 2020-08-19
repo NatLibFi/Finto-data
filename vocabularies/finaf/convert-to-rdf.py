@@ -47,6 +47,9 @@ otherDesignationAssociatedWithCorporateBody=RDAA.P50033
 titleOfPerson=RDAA.P50110
 languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
+biographicalInformation=RDAA.P50113
+corporateHistory=RDAA.P50035
+
 nameOfPlace=RDAP.P70001
 
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
@@ -347,6 +350,15 @@ def main():
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfCorporateBody, varlit))
+
+        for f in rec.get_fields('678'):
+            if is_person:
+                prop = biographicalInformation
+            else:
+                prop = corporateHistory
+
+            g.add((uri, prop, Literal(f.format_field(), lang='fi')))
+
 
     # serialize output RDF as Turtle
     g.serialize(destination=sys.stdout.buffer, format='turtle')
