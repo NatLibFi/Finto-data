@@ -49,6 +49,8 @@ languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
 biographicalInformation=RDAA.P50113
 corporateHistory=RDAA.P50035
+noteOnPerson=RDAA.P50395
+noteOnCorporateBody=RDAA.P50393
 
 nameOfPlace=RDAP.P70001
 
@@ -356,6 +358,14 @@ def main():
                 prop = biographicalInformation
             else:
                 prop = corporateHistory
+
+            g.add((uri, prop, Literal(f.format_field(), lang='fi')))
+
+        for f in rec.get_fields('680'):
+            if is_person:
+                prop = noteOnPerson
+            else:
+                prop = noteOnCorporateBody
 
             g.add((uri, prop, Literal(f.format_field(), lang='fi')))
 
