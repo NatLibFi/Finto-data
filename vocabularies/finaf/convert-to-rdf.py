@@ -347,7 +347,9 @@ def main():
             if '0' in f:
                 value = URIRef(f['0'])
             elif '2' in f and f['2'] == 'yso':
-                value = lookup_yso(f['a'])
+                ysouri = lookup_yso(f['a'])
+                if ysouri:
+                    value = ysouri
 
             if is_person:
                 prop = fieldOfActivityOfPerson
@@ -365,7 +367,9 @@ def main():
             if '0' in f:
                 value = URIRef(f['0'])
             elif '2' in f and f['2'] == 'mts':
-                value = lookup_mts(f['a'])
+                mtsuri = lookup_mts(f['a'])
+                if mtsuri:
+                    value = mtsuri
 
             g.add((uri, professionOrOccupation, value))
 
