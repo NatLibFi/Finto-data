@@ -36,6 +36,7 @@ periodOfActivityOfPerson=RDAA.P50098
 dateOfEstablishment=RDAA.P50037
 dateOfTermination=RDAA.P50038
 periodOfActivityOfCorporateBody=RDAA.P50236
+professionOrOccupation=RDAA.P50104
 typeOfCorporateBody=RDAA.P50237
 categoryOfGovernment=RDAA.P50238
 placeOfBirth=RDAA.P50119
@@ -341,20 +342,27 @@ def main():
                     g.add((place, SKOS.prefLabel, Literal(f['f'], lang='fi')))
 
         for f in rec.get_fields('372'):
+            value = Literal(f.format_field(), lang='fi')
             if '0' in f:
                 value = URIRef(f['0'])
             elif '2' in f and f['2'] == 'yso':
                 value = lookup_yso(f['a'])
-            else:
-                value = Literal(f.format_field(), lang='fi')
 
             if is_person:
                 prop = fieldOfActivityOfPerson
             else:
                 prop = fieldOfActivityOfCorporateBody
 
-            if value:
-                g.add((uri, prop, value))
+            g.add((uri, prop, value))
+
+        for f in rec.get_fields('374'):
+            value = Literal(f.format_field(), lang='fi')
+            if '0' in f:
+                value = URIRef(f['0'])
+            elif '2' in f and f['2'] == 'mts':
+                value = lookup_mts(f['a'])
+
+            g.add((uri, professionOrOccupation, value))
 
         for f in rec.get_fields('377'):
             if 'a' in f:
