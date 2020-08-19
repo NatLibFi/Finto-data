@@ -44,6 +44,8 @@ countryAssociatedWithPerson=RDAA.P50097
 placeOfResidence=RDAA.P50109
 placeAssociatedWithPerson=RDAA.P50346
 placeAssociatedWithCorporateBody=RDAA.P50350
+fieldOfActivityOfPerson=RDAA.P50100
+fieldOfActivityOfCorporateBody=RDAA.P50022
 otherDesignationAssociatedWithPerson=RDAA.P50108
 otherDesignationAssociatedWithCorporateBody=RDAA.P50033
 titleOfPerson=RDAA.P50110
@@ -109,6 +111,18 @@ def lookup_mts(label):
     req = requests.get(FINTO_API_BASE + 'mts/lookup', params=payload)
     if req.status_code != 200:
         logging.debug('MTS lookup for "%s" failed', label)
+        return None
+
+    return URIRef(req.json()['result'][0]['uri'])
+
+
+@functools.lru_cache(maxsize=1000)
+def lookup_yso(label):
+    logging.debug('looking up YSO label "%s"', label)
+    payload = {'label': label, 'lang': 'fi'}
+    req = requests.get(FINTO_API_BASE + 'yso/lookup', params=payload)
+    if req.status_code != 200:
+        logging.debug('YSO lookup for "%s" failed', label)
         return None
 
     return URIRef(req.json()['result'][0]['uri'])
@@ -325,6 +339,22 @@ def main():
                 if isinstance(place, BNode):
                     g.add((place, nameOfPlace, Literal(f['f'], lang='fi')))
                     g.add((place, SKOS.prefLabel, Literal(f['f'], lang='fi')))
+
+        for f in rec.get_fields('372'):
+            if '0' in f:
+                value = URIRef(f['0'])
+            elif '2' in f and f['2'] == 'yso':
+                value = lookup_yso(f['a'])
+            else:
+                value = Literal(f.format_field(), lang='fi')
+
+            if is_person:
+                prop = fieldOfActivityOfPerson
+            else:
+                prop = fieldOfActivityOfCorporateBody
+
+            if value:
+                g.add((uri, prop, value))
 
         for f in rec.get_fields('377'):
             if 'a' in f:
