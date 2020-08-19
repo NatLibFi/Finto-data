@@ -49,6 +49,7 @@ fieldOfActivityOfPerson=RDAA.P50100
 fieldOfActivityOfCorporateBody=RDAA.P50022
 otherDesignationAssociatedWithPerson=RDAA.P50108
 otherDesignationAssociatedWithCorporateBody=RDAA.P50033
+isPersonMemberOfCorporateBody=RDAA.P50095
 titleOfPerson=RDAA.P50110
 languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
@@ -354,6 +355,10 @@ def main():
                 prop = fieldOfActivityOfCorporateBody
 
             g.add((uri, prop, value))
+
+        for f in rec.get_fields('373'):
+            for val in f.get_subfields('a'):
+                g.add((uri, isPersonMemberOfCorporateBody, Literal(val, lang='fi')))
 
         for f in rec.get_fields('374'):
             value = Literal(f.format_field(), lang='fi')
