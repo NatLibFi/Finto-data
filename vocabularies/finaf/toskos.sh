@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="finaf-metadata.ttl rdaa.rdf rdac.rdf finaf.ttl"
+INFILES="finaf-metadata.ttl rdaa.rdf rdac.rdf rdap.rdf rdau.rdf finaf.ttl"
 OUTFILE=finaf-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify"
