@@ -68,6 +68,20 @@ noteOnPerson=RDAA.P50395
 noteOnCorporateBody=RDAA.P50393
 sourceConsulted=RDAU.P61101
 
+# properties whose values should be converted to resources if possible
+LITERAL_TO_RESOURCE = (
+    isPersonMemberOfCorporateBody,
+    alternateIdentity,
+    realIdentity,
+    relatedPersonOfPerson,
+    relatedPersonOfCorporateBody,
+    relatedCorporateBodyOfPerson,
+    relatedCorporateBodyOfCorporateBody,
+    predecessor,
+    successor,
+    hierarchicalSuperior
+)
+
 nameOfPlace=RDAP.P70001
 
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
@@ -188,6 +202,9 @@ def main():
 
     g = initialize_graph()
 
+    label_to_uri = {}
+
+    # Pass 1: convert MARC data to basic RDF
     for line in sys.stdin:
         file = io.StringIO(line)
         rec = pymarc.marcxml.parse_xml_to_array(file)[0]
@@ -225,6 +242,7 @@ def main():
         literal = Literal(label, lang='fi') # prefLabel is always Finnish
         g.add((uri, SKOS.prefLabel, literal))
         g.add((uri, labelprop, literal))
+        label_to_uri[label] = uri
         logging.debug("Preferred label: '%s'", label)
 
         # created timestamp
@@ -431,6 +449,7 @@ def main():
                 target_recid = f['0'].replace('(FI-ASTERI-N)', '')
                 target = FINAF[target_recid]
             else:  # no ID - use a literal value for now
+                logging.debug("Using literal value for <%s> 500", uri)
                 target = Literal(format_label(f), lang='fi')
             g.add((uri, prop, target))
 
@@ -453,6 +472,7 @@ def main():
                 target_recid = f['0'].replace('(FI-ASTERI-N)', '')
                 target = FINAF[target_recid]
             else:  # no ID - use a literal value for now
+                logging.debug("Using literal value for <%s> 51X", uri)
                 target = Literal(format_label(f), lang='fi')
             g.add((uri, prop, target))
 
@@ -495,6 +515,18 @@ def main():
 
             g.add((uri, prop, Literal(f.format_field(), lang='fi')))
 
+    # Pass 2: convert literal values to resources
+    for prop in LITERAL_TO_RESOURCE:
+        for s,o in g.subject_objects(prop):
+            if not isinstance(o, Literal):
+                continue
+            resource = label_to_uri.get(str(o))
+            if not resource:
+                logging.warning("no resource found for '%s' (subject <%s>)", str(o), s)
+            else:
+                logging.debug("converting literal '%s' to resource '%s' (subject <%s>)", str(o), resource, s)
+                g.remove((s, prop, o))
+                g.add((s, prop, resource))
 
     # serialize output RDF as Turtle
     g.serialize(destination=sys.stdout.buffer, format='turtle')
