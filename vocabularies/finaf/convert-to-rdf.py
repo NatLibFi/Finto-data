@@ -53,6 +53,15 @@ isPersonMemberOfCorporateBody=RDAA.P50095
 titleOfPerson=RDAA.P50110
 languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
+relatedPersonOfPerson=RDAA.P50316
+relatedPersonOfCorporateBody=RDAA.P50334
+alternateIdentity=RDAA.P50428
+realIdentity=RDAA.P50429
+relatedCorporateBodyOfPerson=RDAA.P50318
+relatedCorporateBodyOfCorporateBody=RDAA.P50218
+predecessor=RDAA.P50012
+successor=RDAA.P50016
+hierarchicalSuperior=RDAA.P50008
 biographicalInformation=RDAA.P50113
 corporateHistory=RDAA.P50035
 noteOnPerson=RDAA.P50395
@@ -406,6 +415,46 @@ def main():
             varlit = Literal(varname)
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfCorporateBody, varlit))
+
+        for f in rec.get_fields('500'):
+            if is_person:
+                prop = relatedPersonOfPerson  # default relationship
+                if 'w' in f and f['w'] == 'r' and 'i' in f:
+                    if f['i'].startswith('Toinen identiteetti'):
+                        prop = alternateIdentity
+                    elif f['i'].startswith('Todellinen identiteetti'):
+                        prop = realIdentity
+            else:
+                prop = relatedPersonOfCorporateBody
+
+            if '0' in f and f['0'].startswith('(FI-ASTERI-N)'):  # has ID, use it
+                target_recid = f['0'].replace('(FI-ASTERI-N)', '')
+                target = FINAF[target_recid]
+            else:  # no ID - use a literal value for now
+                target = Literal(format_label(f), lang='fi')
+            g.add((uri, prop, target))
+
+        for f in rec.get_fields('510') + rec.get_fields('511'):
+            if is_person:
+                prop = relatedCorporateBodyOfPerson
+            else:
+                prop = relatedCorporateBodyOfCorporateBody  # default relationship
+                if 'w' in f:
+                    if f['w'] == 'a':
+                        prop = predecessor
+                    elif f['w'] == 'b':
+                        prop = successor
+                    elif f['w'] == 't':
+                        prop = hierarchicalSuperior
+                    else:
+                        logging.warning("Unknown 51X $w value for <%s>: %s", uri, f['w'])
+
+            if '0' in f and f['0'].startswith('(FI-ASTERI-N)'):  # has ID, use it
+                target_recid = f['0'].replace('(FI-ASTERI-N)', '')
+                target = FINAF[target_recid]
+            else:  # no ID - use a literal value for now
+                target = Literal(format_label(f), lang='fi')
+            g.add((uri, prop, target))
 
         for f in rec.get_fields('670'):
             if 'u' in f: # has URL - try to build a link
