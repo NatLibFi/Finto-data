@@ -12,7 +12,7 @@
 <h4>Information</h4>
 <p>Finto.fi är en öppen service för publicering och användning av samverkansfrämjande tesaurer, ontologier och klassifikationer. Finto.fi erbjuder ett användargränssnitt för bläddring i vokabulärerna, samt <a href="http://api.finto.fi/">öppna gränssnitt</a> för användning av vokabulärerna i andra applikationer.</p>
 
-<p>Finto.fi utvecklas som en del av Nationalbibliotekets Finto-service. Mer information samt kontaktuppgifter finns i <a href="https://www.kiwi.fi/display/Finto">Finto-servicens kundwiki</a> och i kundwikin för tesaurer och ontologier. Kontakta utvecklarna av Finto om du stöter på problem eller om du har utvecklingsidéer för servicen.</p>
+<p>Finto.fi utvecklas som en del av Nationalbibliotekets Finto-service. Mer information samt kontaktuppgifter finns i <a href="https://www.kiwi.fi/display/Finto">Finto-servicens kundwiki</a>. Kontakta utvecklarna av Finto om du stöter på problem eller om du har utvecklingsidéer för servicen.</p>
 
 <p>Finto-servicen är i utbredd användning inom finländska organisationer för kulturarv och för offentlig förvaltning. Till den internationella användarkretsen av Fintos verktyg hör bl.a. UNESCO och FN:s livsmedels- och jordbruksorganisation FAO. Du kan läsa Fintos användarberättelser <a href="https://www.kiwi.fi/x/hgKEBw">här</a>. Dela också din egen berättelse med oss och med andra!</p>
 
