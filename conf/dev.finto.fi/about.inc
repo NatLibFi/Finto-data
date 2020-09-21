@@ -8,6 +8,8 @@
 
 <p>Voit ehdottaa uusia käsitteitä ja muutoksia Yleiseen suomalaiseen ontologiaan ja YSO-paikkoihin <a href="http://ehdotus.finto.fi">Ehdotusjärjestelmän</a> avulla. Käsittelyssä olevia käsite-ehdotuksia voit selata <a href="https://finto.fi/yse/fi">Finton YSE-sanastossa</a>. Muita sanastoja koskevaa palautetta voit lähettää <a href="http://finto.fi/fi/feedback">Palaute-sivun</a> kautta.</p>
 
+<p><a href="https://www.kiwi.fi/pages/viewpage.action?pageId=187729020" about="_blank">Saavutettavuusseloste</a></p>
+
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
 <p>Finto.fi är en öppen service för publicering och användning av samverkansfrämjande tesaurer, ontologier och klassifikationer. Finto.fi erbjuder ett användargränssnitt för bläddring i vokabulärerna, samt <a href="http://api.finto.fi/">öppna gränssnitt</a> för användning av vokabulärerna i andra applikationer.</p>
