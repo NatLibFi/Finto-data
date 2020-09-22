@@ -20,7 +20,7 @@
 
 <p>Du kan föreslå nya begrepp och ändringar till Allmän finländsk ontologi och ALLFO-orter via <a href="http://ehdotus.finto.fi">Förslagssystemet</a>. Begreppsförslag som är under behandling kan du söka i <a href="http://finto.fi/yse">YSE-vokabulären</a> i Finto. Förslag gällande andra vokabulärer och ontologier i Finto kan du skicka via <a href="http://finto.fi/sv/feedback">Respons-sidan</a>.</p>
 
-<p><a href="https://www.kiwi.fi/pages/viewpage.action?pageId=187729065" target="_blank">Tillgänglighetsutlåtande</a></p>
+<p><a href="https://www.kiwi.fi/x/qYQwCw" target="_blank">Tillgänglighetsutlåtande</a></p>
 
 {% elseif request.lang == 'en' %}
 <h4>Information</h4>
