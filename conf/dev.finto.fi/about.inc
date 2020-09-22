@@ -8,7 +8,7 @@
 
 <p>Voit ehdottaa uusia käsitteitä ja muutoksia Yleiseen suomalaiseen ontologiaan ja YSO-paikkoihin <a href="http://ehdotus.finto.fi">Ehdotusjärjestelmän</a> avulla. Käsittelyssä olevia käsite-ehdotuksia voit selata <a href="https://finto.fi/yse/fi">Finton YSE-sanastossa</a>. Muita sanastoja koskevaa palautetta voit lähettää <a href="http://finto.fi/fi/feedback">Palaute-sivun</a> kautta.</p>
 
-<p><a href="https://www.kiwi.fi/display/Finto/Saavutettavuusseloste" target="_blank">Saavutettavuusseloste</a></p>
+<p><a href="https://www.kiwi.fi/x/fIQwCw" target="_blank">Saavutettavuusseloste</a></p>
 
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
