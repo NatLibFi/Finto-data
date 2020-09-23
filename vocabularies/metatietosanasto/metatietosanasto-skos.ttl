@@ -4901,6 +4901,22 @@ mts:m1734 a skos:Concept ;
     skos:prefLabel "sanat"@fi,
         "ord"@sv .
 
+mts:m1735 a isothes:ConceptGroup,
+        skos:Collection,
+        skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:example """MARC 21\r
+385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi,
+        """MARC 21\r
+385 ## ‡m Annan ‡|n  soc ‡a företagskunder ‡2  yso/swe ‡0  http://www.yso.fi/onto/yso/p19047"""@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "unspecified"@en,
+        "muu"@fi,
+        "annan"@sv ;
+    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi,
+        "Används för att bestämma termer som beskriver annan social inbördes likhet hos medlemmar av en grupp (t.ex. skilsmässobarn, socialister, krigsänkor, utbytesstuderande, fångar)."@sv .
+
 mts:m1736 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -5302,7 +5318,7 @@ mts:m180 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30001 ;
-    skos:definition "Liittää manifestaation jaotteluun, joka ilmaisee tallennusvälineen muotoa yhdessä manifestaation sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitetyypin kanssa."@fi,
+    skos:definition "Liittää manifestaation jaotteluun, joka ilmaisee tallennusvälineen muotoa yhdessä manifestaation sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitetyypin kanssa. Jos mikään yllä olevan RDA:ntallennetyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään 'muu'."@fi,
         "Sammankopplar manifestation med en uppdelning som anger lagringsmediets form tillsammans med apparattypen som behövs för att titta på, spela upp, utföra e.d. innehållet i en manifestation."@sv ;
     skos:member mts:m1007,
         mts:m1045,
@@ -5342,7 +5358,6 @@ mts:m180 a isothes:ConceptGroup,
         mts:m348,
         mts:m407,
         mts:m425,
-        mts:m463,
         mts:m466,
         mts:m486,
         mts:m553,
@@ -8491,15 +8506,6 @@ mts:m2159 a skos:Concept ;
         "tuotantoaika"@fi,
         "produktionstid"@sv .
 
-mts:m216 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "muu"@fi,
-        "annan"@sv ;
-    skos:scopeNote "Jos mikään mediatyypin termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään muu."@fi,
-        "Då ingen medietyp passar in på den inspelning som beskrivs, anges termen annan."@sv .
-
 mts:m2160 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -11404,8 +11410,8 @@ mts:m346 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20001 ;
-    skos:altLabel "RDA Content Type"@en ;
-    skos:definition "Liittää ekspression jaotteluun, joka ilmaisee sisällön esitysmuodon ja sen, minkä aistin välityksellä sisältö on tarkoitus vastaanottaa."@fi,
+    skos:altLabel "RDA Content Type (RDA)"@en ;
+    skos:definition "Liittää ekspression jaotteluun, joka ilmaisee sisällön esitysmuodon ja sen, minkä aistin välityksellä sisältö on tarkoitus vastaanottaa. Jos mikään yllä olevan RDA:n sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään 'muu'."@fi,
         "Anger visningsform för innehållet och med vilket sinne innehållet är avsett att mottagas. Innehållstypen berättar också om två- eller tredimensionalitet i bilder och om det är frågan om rörlig bild eller stillbild."@sv ;
     skos:member mts:m1019,
         mts:m1065,
@@ -11416,7 +11422,6 @@ mts:m346 a isothes:ConceptGroup,
         mts:m1440,
         mts:m1592,
         mts:m1620,
-        mts:m1735,
         mts:m187,
         mts:m201,
         mts:m362,
@@ -11431,7 +11436,7 @@ mts:m346 a isothes:ConceptGroup,
         mts:m912,
         mts:m938,
         mts:m948 ;
-    skos:prefLabel "content type"@en,
+    skos:prefLabel "content type (RDA)"@en,
         "Sisältötyyppi (RDA)"@fi,
         "Innehållstyp (RDA)"@sv .
 
@@ -16013,18 +16018,6 @@ mts:m4583 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Kuvailutiedot kannesta."@fi .
 
-mts:m463 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "unspecified"@en,
-        "muu"@fi,
-        "annan"@sv ;
-    skos:scopeNote "Jos mikään yllä olevista termeistä ei sovellu kuvailtavan kohteen tallenteeseen tai tallenteisiin, merkitään muu."@fi,
-        "Då ingen av ovanstående termer passar in på den eller de bärare som beskrivs, anges termen annan."@sv .
-
 mts:m467 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -17602,13 +17595,12 @@ mts:m777 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30002 ;
-    skos:definition "Jaottelu, joka ilmaisee aineiston sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitteen tyyppiä."@fi,
-        "Indelning som uttrycker vilken typ av apparat som behövs för att titta på, spela upp eller utföra ett materials innehåll."@sv ;
+    skos:definition "Jaottelu, joka ilmaisee aineiston sisällön katsomiseen, toistamiseen, suorittamiseen ym. tarvittavan laitteen tyyppiä. Jos mikään mediatyypin termeistä ei sovellu kuvailun kohteen tallenteeseen, merkitään 'muu'."@fi,
+        "Indelning som uttrycker vilken typ av apparat som behövs för att titta på, spela upp eller utföra ett materials innehåll. Då ingen medietyp passar in på den inspelning som beskrivs, anges termen 'annan'."@sv ;
     skos:member mts:m1012,
         mts:m1062,
         mts:m1288,
         mts:m1515,
-        mts:m216,
         mts:m355,
         mts:m502,
         mts:m545,
@@ -23651,24 +23643,6 @@ mts:m173 a skos:Concept ;
         "videokassett"@sv ;
     skos:scopeNote "videotallenne"@fi,
         "videobärare"@sv .
-
-mts:m1735 a isothes:ConceptGroup,
-        skos:Collection,
-        skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    skos:definition "Jos mikään yllä olevan RDA:n  taulukon 6.1 sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään muu ."@fi,
-        "Då ingen innehållstyp passar in på det innehåll som beskrivs, anges termen annan."@sv ;
-    skos:example """MARC 21\r
-385 ## ‡m Muu ‡|n  soc ‡a  yritysasiakkaat ‡2  yso/fin ‡0  http://www.yso.fi/onto/yso/p19047"""@fi,
-        """MARC 21\r
-385 ## ‡m Annan ‡|n  soc ‡a företagskunder ‡2  yso/swe ‡0  http://www.yso.fi/onto/yso/p19047"""@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "unspecified"@en,
-        "muu"@fi,
-        "annan"@sv ;
-    skos:scopeNote "Käytetään määrittämään ryhmän jäsenten muuta sosiaalista keskinäistä samankaltaisuutta kuvaavia termejä (esim. erolapset, sosialistit, sotalesket, vaihto-opiskelijat, vangit)."@fi,
-        "Används för att bestämma termer som beskriver annan social inbördes likhet hos medlemmar av en grupp (t.ex. skilsmässobarn, socialister, krigsänkor, utbytesstuderande, fångar)."@sv .
 
 mts:m1749 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -52974,7 +52948,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-09-22T01:29:00+00:00"^^xsd:dateTime ;
+    dct:modified "2020-09-23T02:06:04+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
