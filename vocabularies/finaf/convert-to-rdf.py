@@ -68,7 +68,7 @@ noteOnPerson=RDAA.P50395
 noteOnCorporateBody=RDAA.P50393
 sourceConsulted=RDAU.P61101
 hasIdentifierForPerson=RDAA.P50094
-hasIdentifierForCollectiveAgent=RDAA.P50384
+hasIdentifierForCorporateBody=RDAA.P50006
 
 # properties whose values should be converted to resources if possible
 LITERAL_TO_RESOURCE = (
@@ -263,7 +263,7 @@ def main():
                 if is_person:
                     prop = hasIdentifierForPerson
                 else:
-                    prop = hasIdentifierForCollectiveAgent
+                    prop = hasIdentifierForCorporateBody
                 label = Literal("ISNI {} {} {} {}".format(isni[:4], isni[4:8], isni[8:12], isni[12:]))
                 g.add((uri, prop, isni_uri))
                 g.add((isni_uri, RDFS.label, label))
