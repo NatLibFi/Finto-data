@@ -67,6 +67,8 @@ corporateHistory=RDAA.P50035
 noteOnPerson=RDAA.P50395
 noteOnCorporateBody=RDAA.P50393
 sourceConsulted=RDAU.P61101
+hasIdentifierForPerson=RDAA.P50094
+hasIdentifierForCollectiveAgent=RDAA.P50384
 
 # properties whose values should be converted to resources if possible
 LITERAL_TO_RESOURCE = (
@@ -256,8 +258,15 @@ def main():
         # ISNI
         for f in rec.get_fields('024'):
             if '2' in f and f['2'] == 'isni' and 'a' in f:
-                isni = ISNI[f['a'].replace(' ', '')]
-                g.add((uri, SKOS.closeMatch, isni))
+                isni = f['a'].replace(' ', '')
+                isni_uri = ISNI[isni]
+                if is_person:
+                    prop = hasIdentifierForPerson
+                else:
+                    prop = hasIdentifierForCollectiveAgent
+                label = Literal("ISNI {} {} {} {}".format(isni[:4], isni[4:8], isni[8:12], isni[12:]))
+                g.add((uri, prop, isni_uri))
+                g.add((isni_uri, RDFS.label, label))
         
         # dates
         if '046' in rec:
