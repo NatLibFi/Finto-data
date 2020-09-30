@@ -25,6 +25,8 @@ FINAF=Namespace("http://urn.fi/URN:NBN:fi:au:finaf:")
 # mnemonics for RDA URIs
 Person=RDAC.C10004
 CorporateBody=RDAC.C10005
+authorizedAccessPointForPerson=RDAA.P50411
+authorizedAccessPointForCorporateBody=RDAA.P50407
 preferredNameOfPerson=RDAA.P50117
 variantNameOfPerson=RDAA.P50103
 preferredNameOfCorporateBody=RDAA.P50041
@@ -232,13 +234,13 @@ def main():
         
             g.add((uri, RDF.type, Person))
             label = format_label(rec['100'])
-            labelprop = preferredNameOfPerson
+            labelprop = authorizedAccessPointForPerson
             is_person = True
         else: # corporate or meeting names
             g.add((uri, RDF.type, CorporateBody))
             f = rec.get_fields('110', '111')[0]
             label = format_label(f)
-            labelprop = preferredNameOfCorporateBody
+            labelprop = authorizedAccessPointForCorporateBody
             is_person = False
         g.add((uri, RDF.type, SKOS.Concept))
         literal = Literal(label, lang='fi') # prefLabel is always Finnish
