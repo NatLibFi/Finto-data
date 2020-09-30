@@ -67,8 +67,8 @@ corporateHistory=RDAA.P50035
 noteOnPerson=RDAA.P50395
 noteOnCorporateBody=RDAA.P50393
 sourceConsulted=RDAU.P61101
-hasIdentifierForPerson=RDAA.P50094
-hasIdentifierForCorporateBody=RDAA.P50006
+identifierForPerson=RDAA.P50094
+identifierForCorporateBody=RDAA.P50006
 
 # properties whose values should be converted to resources if possible
 LITERAL_TO_RESOURCE = (
@@ -255,18 +255,25 @@ def main():
         modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
         g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
 
-        # ISNI
+        # ISNI & ORCID iD
         for f in rec.get_fields('024'):
+            if is_person:
+                prop = identifierForPerson
+            else:
+                prop = identifierForCorporateBody
+
             if '2' in f and f['2'] == 'isni' and 'a' in f:
                 isni = f['a'].replace(' ', '')
                 isni_uri = ISNI[isni]
-                if is_person:
-                    prop = hasIdentifierForPerson
-                else:
-                    prop = hasIdentifierForCorporateBody
                 label = Literal("ISNI {} {} {} {}".format(isni[:4], isni[4:8], isni[8:12], isni[12:]))
                 g.add((uri, prop, isni_uri))
                 g.add((isni_uri, RDFS.label, label))
+            if '2' in f and f['2'] == 'orcid' and 'a' in f:
+                orcid = f['a'].replace(' ', '')
+                orcid_uri = URIRef(orcid)
+                label = Literal("ORCID iD {}".format(orcid))
+                g.add((uri, prop, orcid_uri))
+                g.add((orcid_uri, RDFS.label, label))
         
         # dates
         if '046' in rec:
