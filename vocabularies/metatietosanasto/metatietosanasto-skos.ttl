@@ -18062,6 +18062,8 @@ mts:m858 a isothes:ConceptGroup,
         mts:m4230,
         mts:m4233,
         mts:m4234,
+        mts:m4584,
+        mts:m4585,
         mts:m669,
         mts:m731,
         mts:m877 ;
@@ -37048,6 +37050,29 @@ mts:m4565 a skos:Concept ;
         "kokoelma"@fi,
         "samling"@sv .
 
+mts:m4584 a skos:Concept ;
+    rdfs:comment "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:altLabel "intertextuell hänvisning baserad på (uttryck)"@sv ;
+    skos:broader mts:m1117 ;
+    skos:definition "Vastavuoroinen suhde: intertekstuaalinen suhde (ekspressio)"@fi,
+        "Parallell relation: intertextuell relation (uttryck)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "intertekstuaalisen viittauksen perustana (ekspressio)"@fi,
+        "intertextuell referens baserad på (uttryck)"@sv .
+
+mts:m4585 a skos:Concept ;
+    rdfs:comment "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:broader mts:m731 ;
+    skos:definition "Vastavuoroinen suhde: intertekstuaalisen viittauksen perustana (ekspressio)."@fi,
+        "Parallell relation: intertextuell referens baserad på (uttryck)."@sv ;
+    skos:example """MARC 21 -formaatissa:\r
+700 1# ‡i Intertekstuaalinen suhde (ekspressio): ‡a Perec, Georges. ‡t Talvinen matka, ‡l suomi."""@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "intertekstuaalinen suhde (ekspressio)"@fi,
+        "intertextuell relation (uttryck)"@sv .
+
 mts:m466 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -52238,34 +52263,6 @@ mts:m2505 a skos:Concept ;
         "taiteilija"@fi,
         "konstnär"@sv .
 
-mts:m731 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20203 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1585,
-        mts:m3547,
-        mts:m4177,
-        mts:m4179,
-        mts:m4182,
-        mts:m4189,
-        mts:m4198,
-        mts:m4199,
-        mts:m4215,
-        mts:m4217,
-        mts:m4221,
-        mts:m4222,
-        mts:m4225,
-        mts:m4227,
-        mts:m4230,
-        mts:m4233,
-        mts:m4234,
-        mts:m669,
-        mts:m877 ;
-    skos:prefLabel "derivative (expression)"@en,
-        "johdettu ekspressio"@fi,
-        "härlett uttryck"@sv .
-
 mts:m2565 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -52303,6 +52300,35 @@ mts:m2565 a skos:Concept ;
     skos:prefLabel "journalist"@en,
         "toimittaja"@fi,
         "journalist"@sv .
+
+mts:m731 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20203 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1585,
+        mts:m3547,
+        mts:m4177,
+        mts:m4179,
+        mts:m4182,
+        mts:m4189,
+        mts:m4198,
+        mts:m4199,
+        mts:m4215,
+        mts:m4217,
+        mts:m4221,
+        mts:m4222,
+        mts:m4225,
+        mts:m4227,
+        mts:m4230,
+        mts:m4233,
+        mts:m4234,
+        mts:m4585,
+        mts:m669,
+        mts:m877 ;
+    skos:prefLabel "derivative (expression)"@en,
+        "johdettu ekspressio"@fi,
+        "härlett uttryck"@sv .
 
 mts:m3797 a skos:Concept ;
     skos:inScheme mts: ;
@@ -52614,48 +52640,6 @@ mts:m2619 a skos:Concept ;
         "soittaja"@fi,
         "instrumentalist"@sv .
 
-mts:m1117 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20204 ;
-    skos:definition "Liittää ekspression teoksen ekspressioon, johon johdettu ekspressio perustuu."@fi,
-        "Sammankopplar ett uttryck med ett verks uttryck, på vilket det härledda uttrycket baserar sig."@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m3492,
-        mts:m3534,
-        mts:m3535,
-        mts:m3536,
-        mts:m3537,
-        mts:m3538,
-        mts:m3539,
-        mts:m3540,
-        mts:m3541,
-        mts:m3542,
-        mts:m3544,
-        mts:m3545,
-        mts:m3546,
-        mts:m3548,
-        mts:m3549,
-        mts:m3550,
-        mts:m4170,
-        mts:m4171,
-        mts:m4172,
-        mts:m4173,
-        mts:m4174,
-        mts:m4175,
-        mts:m4178,
-        mts:m4180,
-        mts:m4181,
-        mts:m4184,
-        mts:m4186,
-        mts:m4191,
-        mts:m4193,
-        mts:m4194,
-        mts:m4195 ;
-    skos:prefLabel "based on (expression)"@en,
-        "ekspression perustana"@fi,
-        "uttryck baserat på"@sv .
-
 mts:m2532 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -52734,6 +52718,49 @@ mts:m3792 a skos:Concept ;
         mts:m3904 ;
     skos:prefLabel "kandidaatti"@fi,
         "kandidat"@sv .
+
+mts:m1117 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20204 ;
+    skos:definition "Liittää ekspression teoksen ekspressioon, johon johdettu ekspressio perustuu."@fi,
+        "Sammankopplar ett uttryck med ett verks uttryck, på vilket det härledda uttrycket baserar sig."@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3492,
+        mts:m3534,
+        mts:m3535,
+        mts:m3536,
+        mts:m3537,
+        mts:m3538,
+        mts:m3539,
+        mts:m3540,
+        mts:m3541,
+        mts:m3542,
+        mts:m3544,
+        mts:m3545,
+        mts:m3546,
+        mts:m3548,
+        mts:m3549,
+        mts:m3550,
+        mts:m4170,
+        mts:m4171,
+        mts:m4172,
+        mts:m4173,
+        mts:m4174,
+        mts:m4175,
+        mts:m4178,
+        mts:m4180,
+        mts:m4181,
+        mts:m4184,
+        mts:m4186,
+        mts:m4191,
+        mts:m4193,
+        mts:m4194,
+        mts:m4195,
+        mts:m4584 ;
+    skos:prefLabel "based on (expression)"@en,
+        "ekspression perustana"@fi,
+        "uttryck baserat på"@sv .
 
 mts:m2368 a skos:Concept ;
     dc:source "YSO-termi"@fi ;
@@ -52948,7 +52975,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-09-29T02:09:10+00:00"^^xsd:dateTime ;
+    dct:modified "2020-09-30T01:49:29+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
