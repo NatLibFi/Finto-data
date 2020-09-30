@@ -14,6 +14,7 @@
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mdrtype: <http://publications.europa.eu/resource/authority/dataset-type/> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix : <#> .
 
 # Skosmos main configuration
@@ -196,6 +197,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:finaf:";
 	skosmos:language "fi";
         skosmos:useModifiedDate "true";
+	skosmos:propertyOrder :finaf-order ;
 	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
 	void:dataDump <http://dev.finto.fi/download/finaf/finaf-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/finaf/finaf-skos.rdf> ;
@@ -1379,6 +1381,53 @@
 		dc:source	# source information
 	) .
 
+:finaf-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdf:type	# type
+		rdaa:P50094	# identifier for person
+		rdaa:P50006	# identifier for corporate body
+		rdaa:P50121	# date of birth
+		rdaa:P50037	# date of establishment
+		rdaa:P50120	# date of death
+		rdaa:P50038	# date of termination
+		rdaa:P50098	# period of activity of person
+		rdaa:P50236	# period of activity of corporate body
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# category of government
+		rdaa:P50103	# variant name of person
+		rdaa:P50025	# variant name of corporate body
+		rdaa:P50119	# place of birth
+		rdaa:P50118	# place of death
+		rdaa:P50109	# place of residence
+		rdaa:P50097	# country associated with person
+		rdaa:P50346	# related place of person
+		rdaa:P50350	# related place of corporate body
+		rdaa:P50115	# fuller form of name
+		rdaa:P50104	# profession or occupation
+		rdaa:P50110	# term of rank, honour or office
+		rdaa:P50108	# other designation of person
+		rdaa:P50033	# other designation of corporate body
+		rdaa:P50100	# field of activity of person
+		rdaa:P50022	# field of activity of corporate body
+		rdaa:P50102	# language of person
+		rdaa:P50023	# language of corporate body
+		rdaa:P50428	# alternate identity of person
+		rdaa:P50429	# real identity of person
+		rdaa:P50113	# biographical information
+		rdaa:P50035	# corporate history
+		rdaa:P50395	# note on person
+		rdaa:P50393	# note on corporate body
+		rdau:P61101	# source consulted
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50095	# is person member of corporate body
+		rdaa:P50318	# related corporate body of person
+		rdaa:P50316	# related person of person
+		rdaa:P50336	# related corporate body of corporate body
+		rdaa:P50334	# related person of corporate body
+	) .
 
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,
