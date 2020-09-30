@@ -9,6 +9,7 @@
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix rdaw: <http://rdaregistry.info/Elements/w/> .
 
 finaf: a skos:ConceptScheme ;
     dc:creator "National Library of Finland"@en,
@@ -33,10 +34,12 @@ rdac:C10005
 
 # authorized access point for person
 rdaa:P50411
+    rdfs:label "käytettävä nimenmuoto"@fi ;
     rdfs:subPropertyOf skos:prefLabel .
 
 # authorized access point for corporate body
 rdaa:P50407
+    rdfs:label "käytettävä nimenmuoto"@fi ;
     rdfs:subPropertyOf skos:prefLabel .
 
 # variant name of person
@@ -63,3 +66,23 @@ rdaa:P50102
 # language of corporate body
 rdaa:P50023
     rdfs:subPropertyOf dct:language .
+
+# has note on person
+rdaa:P50395
+    rdfs:label "huomautus henkilöstä"@fi .
+
+# has note on corporate body
+rdaa:P50393
+    rdfs:label "huomautus yhteisöstä"@fi .
+
+# has alternate identity of person
+rdaa:P50428
+    rdfs:label "henkilön toinen identiteetti"@fi .
+
+# has real identity of person
+rdaa:P50429
+    rdfs:label "henkilön todellinen identiteetti"@fi .
+
+# has source consulted
+rdaw:P10404
+    rdfs:label "tiedonlähde"@fi .
