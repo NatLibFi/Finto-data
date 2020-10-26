@@ -267,15 +267,11 @@ def main():
             if '2' in f and f['2'] == 'isni' and 'a' in f:
                 isni = f['a'].replace(' ', '')
                 isni_uri = ISNI[isni]
-                label = Literal("ISNI {} {} {} {}".format(isni[:4], isni[4:8], isni[8:12], isni[12:]))
                 g.add((uri, prop, isni_uri))
-                g.add((isni_uri, RDFS.label, label))
             if '2' in f and f['2'] == 'orcid' and 'a' in f:
                 orcid = f['a'].replace(' ', '')
                 orcid_uri = URIRef(orcid)
-                label = Literal("ORCID iD {}".format(orcid))
                 g.add((uri, prop, orcid_uri))
-                g.add((orcid_uri, RDFS.label, label))
         
         # dates
         if '046' in rec:
