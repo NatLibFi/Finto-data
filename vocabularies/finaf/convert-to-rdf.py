@@ -20,6 +20,7 @@ RDAP=Namespace("http://rdaregistry.info/Elements/p/")
 RDAU=Namespace("http://rdaregistry.info/Elements/u/")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 ISNI=Namespace("http://isni.org/isni/")
+VIAF=Namespace("http://viaf.org/viaf/")
 FINAF=Namespace("http://urn.fi/URN:NBN:fi:au:finaf:")
 
 # mnemonics for RDA URIs
@@ -264,14 +265,21 @@ def main():
             else:
                 prop = identifierForCorporateBody
 
-            if '2' in f and f['2'] == 'isni' and 'a' in f:
+            if '2' not in f or 'a' not in f:
+                continue
+
+            if f['2'] == 'isni':
                 isni = f['a'].replace(' ', '')
                 isni_uri = ISNI[isni]
                 g.add((uri, prop, isni_uri))
-            if '2' in f and f['2'] == 'orcid' and 'a' in f:
+            elif f['2'] == 'orcid':
                 orcid = f['a'].replace(' ', '')
                 orcid_uri = URIRef(orcid)
                 g.add((uri, prop, orcid_uri))
+            elif f['2'] == 'viaf':
+                viaf = f['a'].replace(' ', '')
+                viaf_uri = VIAF[viaf]
+                g.add((uri, prop, viaf_uri))
         
         # dates
         if '046' in rec:
