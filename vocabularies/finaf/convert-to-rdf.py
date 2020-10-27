@@ -215,13 +215,18 @@ def main():
         rec = pymarc.marcxml.parse_xml_to_array(file)[0]
         
         recid = rec['001'].value()
-        uri = FINAF[recid]
-
         logging.info("Starting conversion of record %s", recid)
+
+        uri = FINAF[recid]  # default unless URN found in record
+        # see if the record contains a URN/URI
+        for f in rec.get_fields('024'):
+            if '2' in f and 'a' in f and f['2'] == 'finaf':
+                logging.info('using URN from 024 field')
+                uri = URIRef(f['a'])
 
         # sanity check
         if '100' not in rec and '110' not in rec and '111' not in rec:
-            logging.warning('no 100/110/111 field, skipping record %s', rec['001'].value())
+            logging.warning('no 100/110/111 field, skipping record %s', recid)
             continue
         
         if '100' in rec: # person name
