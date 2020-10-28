@@ -2,8 +2,10 @@
 
 import sys
 import io
+import re
 import functools
 import logging
+import csv
 
 import requests
 import pymarc.marcxml
@@ -58,8 +60,6 @@ languageOfPerson=RDAA.P50102
 languageOfCorporateBody=RDAA.P50023
 relatedPersonOfPerson=RDAA.P50316
 relatedPersonOfCorporateBody=RDAA.P50334
-alternateIdentity=RDAA.P50428
-realIdentity=RDAA.P50429
 relatedCorporateBodyOfPerson=RDAA.P50318
 relatedCorporateBodyOfCorporateBody=RDAA.P50336
 predecessor=RDAA.P50012
@@ -74,10 +74,8 @@ identifierForPerson=RDAA.P50094
 identifierForCorporateBody=RDAA.P50006
 
 # properties whose values should be converted to resources if possible
-LITERAL_TO_RESOURCE = (
+literal_to_resource = [
     isPersonMemberOfCorporateBody,
-    alternateIdentity,
-    realIdentity,
     relatedPersonOfPerson,
     relatedPersonOfCorporateBody,
     relatedCorporateBodyOfPerson,
@@ -85,7 +83,7 @@ LITERAL_TO_RESOURCE = (
     predecessor,
     successor,
     hierarchicalSuperior
-)
+]
 
 nameOfPlace=RDAP.P70001
 
@@ -93,6 +91,27 @@ EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
 FINTO_API_BASE="http://api.finto.fi/rest/v1/"
 FINTO_SPARQL_ENDPOINT="http://api.finto.fi/sparql"
+
+def normalize_relterm(term):
+    return re.sub(r'[.,: ]*$', '', term.lower().strip())
+
+def load_relations(filename):
+    rels = {}
+    with open(filename) as relf:
+        reader = csv.reader(relf)
+        for idx, row in enumerate(reader):
+            if idx == 0:
+                continue # skip header
+            term = normalize_relterm(row[0])
+            if not term:
+                continue
+            rdacurie = row[2].strip()
+            if not rdacurie:
+                continue
+            rdauri = RDAA[rdacurie.replace('rdaa:', '')]
+            literal_to_resource.append(rdauri)
+            rels[term] = rdauri
+    return rels
 
 def initialize_graph():
     g = Graph()
@@ -208,6 +227,8 @@ def main():
     g = initialize_graph()
 
     label_to_uri = {}
+    rel500i = load_relations('500i-to-rda.csv')
+    rel510i = load_relations('510i-to-rda.csv')
 
     # Pass 1: convert MARC data to basic RDF
     for line in sys.stdin:
@@ -465,10 +486,9 @@ def main():
             if is_person:
                 prop = relatedPersonOfPerson  # default relationship
                 if 'w' in f and f['w'] == 'r' and 'i' in f:
-                    if f['i'].startswith('Toinen identiteetti'):
-                        prop = alternateIdentity
-                    elif f['i'].startswith('Todellinen identiteetti'):
-                        prop = realIdentity
+                    term = normalize_relterm(f['i'])
+                    if term in rel500i:
+                        prop = rel500i[term]
             else:
                 prop = relatedPersonOfCorporateBody
 
@@ -492,6 +512,11 @@ def main():
                         prop = successor
                     elif f['w'] == 't':
                         prop = hierarchicalSuperior
+                    elif f['w'] == 'r':
+                        if 'i' in f:
+                            term = normalize_relterm(f['i'])
+                            if term in rel510i:
+                                prop = rel510i[term]
                     else:
                         logging.warning("Unknown 51X $w value for <%s>: %s", uri, f['w'])
 
@@ -543,7 +568,7 @@ def main():
             g.add((uri, prop, Literal(f.format_field(), lang='fi')))
 
     # Pass 2: convert literal values to resources
-    for prop in LITERAL_TO_RESOURCE:
+    for prop in literal_to_resource:
         for s,o in g.subject_objects(prop):
             if not isinstance(o, Literal):
                 continue
