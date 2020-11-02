@@ -16,6 +16,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xml="http://www.w3.org/XML/1998/namespace"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
@@ -362,58 +363,6 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:animaatioelokuva">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="sv">animationsfilm</skos:altLabel>
-    <skos:prefLabel xml:lang="fi">animaatioelokuva</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">animerad film</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:dubbausohjaajanaProduktiossa">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50299"/>
-    <skos:definition xml:lang="fi">Liittää toimijan teoksen ekspressioon, joka sisältää vastuun uuden dialogin tai muiden äänien lisäämisprosessista ja sen valvonnasta ääniraidan täydentämiseksi. Vastavuoroinen suhde: dubbausohjaaja.</skos:definition>
-    <skos:definition xml:lang="sv">Sammankopplar aktör med ett verks uttryck som inbegriper ansvar för processen att lägga till ny dialog eller andra jud och övervakningen av den, för att komplettera ljudspår. Parallell relation: dubbningsregissör.</skos:definition>
-    <skos:prefLabel xml:lang="fi">dubbausohjaajana produktiossa</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">dubbing director agent of</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">dubbningsregissör för produktionen</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:elokuva">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">elokuva</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">film</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:kunnianosoituksena">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50166"/>
-    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka on kunnianosoitus toimijalle.&#xD;
-Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
-    <skos:definition xml:lang="sv">Sammankopplar aktör med ett verk som är tillägnat aktören. Parallell relation: verk tillägnat.</skos:definition>
-    <skos:prefLabel xml:lang="en">honouree of</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">kunnianosoituksena</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">tillägnad</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:laulu">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">laulu</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">sång</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:lyhytelokuva">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">kortfilm</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">lyhytelokuva</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3087,13 +3036,13 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2273"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2275"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2276"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2279"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2280"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2282"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2285"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2291"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m960"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:sulautunutOsittainTeokseen"/>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1316">
     <dc11:source xml:lang="sv">Bella-term</dc11:source>
@@ -13267,12 +13216,20 @@ Vastavuoroinen suhde: myöhempi teos.</skos:definition>
     <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
     <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20144"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10146"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2286"/>
     <skos:definition xml:lang="fi">Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut.</skos:definition>
+    <skos:definition xml:lang="fi">Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.&#xD;
+Vastavuoroinen suhde: teokseen osittain sulautunut.</skos:definition>
     <skos:definition xml:lang="sv">Sammankopplar uttryck med ett verks uttryck, som delvis uppgått som en del i ett annat uttryck. Parallell relation: delvis uppgått i uttryck.</skos:definition>
+    <skos:definition xml:lang="sv">Sammankopplar verk med ett verk uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk.</skos:definition>
+    <skos:prefLabel xml:lang="en">absorbed in part by (work)</skos:prefLabel>
     <skos:prefLabel xml:lang="en">absorbed in part by expression</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sulautunut osittain ekspressioon</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">sulautunut osittain teokseen</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">uppgått delvis i uttrycket</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">uppgått delvis i verket</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2277">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -30644,6 +30601,7 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m420"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4460"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4461"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4590"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m511"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m518"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m534"/>
@@ -30666,7 +30624,6 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m986"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m997"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m999"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:saatavaLainkayttoalue"/>
     <skos:scopeNote xml:lang="fi">Jos mikään luetelluista termeistä ei ole sopiva tai riittävän tarkka, käytetään jotain muuta ytimekästä suhteen luonnetta kuvaavaa termiä. Tee lisäysehdotus Metatietosanaston ylläpitäjille, met-sanasto@helsinki.fi</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Om ingen av de uppräknade termerna passar eller är tillräckligt exakt används någon annan kärnfull term som beskriver relationens karaktär. Föreslå en ny term till Metadataordlistans redaktörer, met-sanasto@helsinki.fi</skos:scopeNote>
   </owl:Class>
@@ -43197,8 +43154,6 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:altLabel xml:lang="sv">Verk relaterat till aktör</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde Teoksen ja toimijan välinen suhde</skos:definition>
     <skos:definition xml:lang="sv">Sammankopplar aktör med ett verk som är relaterat till aktören som beskrivs. Parallell relation: Relation mellan verk och aktör.</skos:definition>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:dubbausohjaajanaProduktiossa"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:kunnianosoituksena"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2004"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2048"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2050"/>
@@ -43246,7 +43201,9 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4520"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4521"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4522"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:valtiosopimus"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4587"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4588"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4591"/>
     <skos:prefLabel xml:lang="en">related work of agent</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4467">
@@ -44729,6 +44686,72 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
 700 1# ‡i Intertekstuaalinen suhde (ekspressio): ‡a Perec, Georges. ‡t Talvinen matka, ‡l suomi.</skos:example>
     <skos:prefLabel xml:lang="fi">intertekstuaalinen suhde (ekspressio)</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">intertextuell relation (uttryck)</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4586">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">animationsfilm</skos:altLabel>
+    <skos:prefLabel xml:lang="fi">animaatioelokuva</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">animerad film</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4587">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50264"/>
+    <skos:definition xml:lang="fi">Teos, joka on allekirjoitettu, ratifioitu tai liitetty valtiosopimukseen.&#xD;
+Vastavuoroinen suhde: valtiosopimuksen allekirjoittaja.</skos:definition>
+    <skos:definition xml:lang="sv">Verk som är undertecknat, ratifierat eller bifogat till ett fördrag. Parallell relation: undertecknare av fördrag.</skos:definition>
+    <skos:prefLabel xml:lang="sv">fördrag</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">participant in treaty of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">valtiosopimus</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4588">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50299"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teoksen ekspressioon, joka sisältää vastuun uuden dialogin tai muiden äänien lisäämisprosessista ja sen valvonnasta ääniraidan täydentämiseksi. Vastavuoroinen suhde: dubbausohjaaja.</skos:definition>
+    <skos:definition xml:lang="sv">Sammankopplar aktör med ett verks uttryck som inbegriper ansvar för processen att lägga till ny dialog eller andra jud och övervakningen av den, för att komplettera ljudspår. Parallell relation: dubbningsregissör.</skos:definition>
+    <skos:prefLabel xml:lang="fi">dubbausohjaajana produktiossa</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">dubbing director agent of</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">dubbningsregissör för produktionen</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4589">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="fi">nettiohjelma</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4590">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="sv">Jurisdiktion i vilken en lag, förordning, grundlag, stadga för domstol e.d. stiftas. Parallell relation: verkställande jurisdiktions beslut.</skos:definition>
+    <skos:definition xml:lang="fi">Lainkäyttöalue, jossa säädetään laki, asetus, perustuslaki, tuomioistuinta koskeva sääntö tms. Vastavuoroinen suhde: säätävän lainkäyttöalueen päätös.</skos:definition>
+    <skos:prefLabel xml:lang="en">enacting jurisdiction</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">säätävä lainkäyttöalue</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">verkställande jurisdiktion</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4591">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50166"/>
+    <skos:definition xml:lang="fi">Liittää toimijan teokseen, joka on kunnianosoitus toimijalle.&#xD;
+Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
+    <skos:definition xml:lang="sv">Sammankopplar aktör med ett verk som är tillägnat aktören. Parallell relation: verk tillägnat.</skos:definition>
+    <skos:prefLabel xml:lang="en">honouree of</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kunnianosoituksena</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">tillägnad</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4592">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">kortfilm</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">lyhytelokuva</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m466">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -49776,11 +49799,10 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:altLabel xml:lang="sv">Verkets kategori</skos:altLabel>
     <skos:definition xml:lang="sv">Klass eller genre, till vilket ett verk hör.</skos:definition>
     <skos:definition xml:lang="fi">Liittää teoksen tyyppiin, johon teos kuuluu.</skos:definition>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:animaatioelokuva"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:elokuva"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:laulu"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:lyhytelokuva"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2004"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2048"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2049"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2050"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2051"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2052"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2053"/>
@@ -49805,16 +49827,17 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3562"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3563"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3564"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3567"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3573"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3576"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4133"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4139"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4147"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4149"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4150"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:nettiohjelma"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelma"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:savellys"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelma"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4586"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4589"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4592"/>
     <skos:prefLabel xml:lang="en">form of work</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset. Kun tarvitset tarkempaa genrejaottelua käytä Suomalaista lajityyppi- ja muotosanastoa (slm) http://finto.fi/slm/fi/</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Verkets form-termer används för att skilja två olika verk med samma namn från varandra. För att ange mer detaljerad genreindelning, använd termer ur Finlands genre- och formlista (FGF) https://finto.fi/slm/sv/.</skos:scopeNote>
@@ -49870,67 +49893,5 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:prefLabel xml:lang="sv">verket dedicerat till</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Annan aktör relaterad till verk</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Teokseen liittyvä muu toimija</skos:scopeNote>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:nettiohjelma">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">nettiohjelma</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:radio-ohjelma">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">radio-ohjelma</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">radioprogram</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:saatavaLainkayttoalue">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="sv">Jurisdiktion i vilken en lag, förordning, grundlag, stadga för domstol e.d. stiftas. Parallell relation: verkställande jurisdiktions beslut.</skos:definition>
-    <skos:definition xml:lang="fi">Lainkäyttöalue, jossa säädetään laki, asetus, perustuslaki, tuomioistuinta koskeva sääntö tms. Vastavuoroinen suhde: säätävän lainkäyttöalueen päätös.</skos:definition>
-    <skos:prefLabel xml:lang="en">enacting jurisdiction</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">säätävä lainkäyttöalue</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">verkställande jurisdiktion</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:savellys">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">komposition</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">sävellys</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:sulautunutOsittainTeokseen">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:comment xml:lang="sv">RDA-term</rdfs:comment>
-    <rdfs:comment xml:lang="fi">RDA-termi</rdfs:comment>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10146"/>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2274"/>
-    <skos:definition xml:lang="fi">Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.&#xD;
-Vastavuoroinen suhde: teokseen osittain sulautunut.</skos:definition>
-    <skos:definition xml:lang="sv">Sammankopplar verk med ett verk uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk.</skos:definition>
-    <skos:prefLabel xml:lang="en">absorbed in part by (work)</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">sulautunut osittain teokseen</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">uppgått delvis i verket</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:televisio-ohjelma">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="fi">televisio-ohjelma</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">tv-program</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:valtiosopimus">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50264"/>
-    <skos:definition xml:lang="fi">Teos, joka on allekirjoitettu, ratifioitu tai liitetty valtiosopimukseen.&#xD;
-Vastavuoroinen suhde: valtiosopimuksen allekirjoittaja.</skos:definition>
-    <skos:definition xml:lang="sv">Verk som är undertecknat, ratifierat eller bifogat till ett fördrag. Parallell relation: undertecknare av fördrag.</skos:definition>
-    <skos:prefLabel xml:lang="sv">fördrag</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">participant in treaty of</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">valtiosopimus</skos:prefLabel>
   </owl:Class>
 </rdf:RDF>
