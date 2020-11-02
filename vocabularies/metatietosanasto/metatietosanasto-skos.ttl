@@ -1,22 +1,16 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix flow: <http://www.w3.org/2005/01/wf/flow#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mts: <http://urn.fi/URN:NBN:fi:au:mts:> .
-@prefix ns: <http://www.w3.org/2006/vcard/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
 @prefix rdae: <http://rdaregistry.info/Elements/e/> .
 @prefix rdai: <http://rdaregistry.info/Elements/i/> .
 @prefix rdam: <http://rdaregistry.info/Elements/m/> .
-@prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix rdaw: <http://rdaregistry.info/Elements/w/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 
@@ -3029,6 +3023,7 @@ mts:m1315 a isothes:ConceptGroup,
         mts:m2273,
         mts:m2274,
         mts:m2275,
+        mts:m2276,
         mts:m2279,
         mts:m2280,
         mts:m2282,
@@ -8746,7 +8741,7 @@ mts:m2181 a skos:Concept ;
     skos:altLabel "kunnianosoituksen kohde"@fi,
         "festskriftsföremål"@sv ;
     skos:definition "Liittää teoksen toimijaan, jonka kunniaksi teos on tehty. Vastavuoroinen suhde: kunnianosoituksena."@fi,
-        "Sammankopplar ett verk med en aktör, till vars ära ett verk har gjorts. Parallell relation: tillägnad verket."@sv ;
+        "Sammankopplar ett verk med en aktör, till vars ära ett verk har gjorts. Parallell relation: tillägnad."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "honouree"@en,
         "teoksella kunnioitettu"@fi,
@@ -11294,7 +11289,7 @@ mts:m34 a isothes:ConceptGroup,
         mts:m420,
         mts:m4460,
         mts:m4461,
-        mts:m4499,
+        mts:m4590,
         mts:m511,
         mts:m518,
         mts:m534,
@@ -13061,6 +13056,7 @@ mts:m38 a skos:Concept ;
     rdfs:seeAlso rdaw:P10071 ;
     skos:altLabel "asiantuntija (suhde)"@fi,
         "expert (relation)"@sv,
+        "sakkunnig"@sv,
         "specialist"@sv ;
     skos:definition "Liittää teoksen toimijaan, joka tarjoaa asiantuntijapalveluita ja usein antaa suosituksia henkilölle tai yhteisölle joka on teoksen tekijä. Vastavuoroinen suhde: asiantuntijana teoksessa."@fi,
         "Sammankopplar verk med en aktör som erbjuder experttjänster och som ofta ger rekommendationer åt en person eller institution som är upphovsman till ett verk. Parallell relation: expert för verket."@sv ;
@@ -14629,7 +14625,8 @@ mts:m4424 a skos:Concept ;
         "Sammankopplar person med en släkt, till vilken personen hör."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "family"@en,
-        "suku"@fi .
+        "suku"@fi,
+        "släkt"@sv .
 
 mts:m4425 a isothes:ConceptGroup,
         skos:Collection ;
@@ -15160,7 +15157,10 @@ mts:m4465 a isothes:ConceptGroup,
         mts:m4519,
         mts:m4520,
         mts:m4521,
-        mts:m4522 ;
+        mts:m4522,
+        mts:m4587,
+        mts:m4588,
+        mts:m4591 ;
     skos:prefLabel "related work of agent"@en,
         "Toimijan ja teoksen välinen suhde"@fi,
         "Relation mellan aktör och verk"@sv .
@@ -15180,6 +15180,9 @@ mts:m4469 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40020 ;
+    skos:altLabel "bevarare"@sv,
+        "depositarie"@sv,
+        "förvaltare"@sv ;
     skos:definition "Liittää kappaleen toimijaan, jolla on kappaleen laillinen säilyttämisoikeus. Vastavuoroinen suhde: säilyttäjänä kappaleelle."@fi,
         "Sammankopplar exemplar med en aktör som innehar juridisk rätt att förvara exemplaret. Parallell relation: förvarare av exemplaret."@sv ;
     skos:inScheme mts: ;
@@ -15384,6 +15387,17 @@ mts:m4498 a skos:Concept ;
     skos:prefLabel "yhteisöpedagogi"@fi,
         "samhällspedagog"@sv .
 
+mts:m4499 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50068 ;
+    skos:definition "Liittää säätävän lainkäyttöalueen lainsäädännölliseen teokseen kuten lakiin, asetukseen, perustuslakiin, tuomioistuinta koskevaan sääntöön tms. Vastavuoroinen suhde: säätävä lainkäyttöalue."@fi,
+        "Sammankopplar verkställande jurisdiktion med ett legislativt verk, såsom en lag, en förordning, en grundlag eller en stadga som gäller för domstol. Parallell relation: verkställande jurisdiktion."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "enacting jurisdiction of"@en,
+        "säätävän lainkäyttöalueen päätös"@fi,
+        "verkställande jurisdiktions beslut"@sv .
+
 mts:m45 a skos:Concept ;
     rdfs:seeAlso rdae:P20027 ;
     skos:altLabel "maanmittari (suhde)"@fi,
@@ -15398,6 +15412,7 @@ mts:m4500 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50211 ;
+    skos:altLabel "sakkunnig för verket"@sv ;
     skos:definition "Liittää toimijan teokseen, joka sisältää asiantuntijapalveluiden ja suositusten antamisen henkilölle, suvulle tai yhteisölle, joka on teoksen tekijä. Vastavuoroinen suhde: asiantuntija."@fi,
         "Sammankopplar aktör med ett verk, som inbegriper bidragande med experttjänster eller rekommendationer till den person, släkt eller institution som är upphovsman till verket. Parallell relation: expert."@sv ;
     skos:inScheme mts: ;
@@ -16000,7 +16015,7 @@ mts:m4582 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kertomat sadut. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi,
+    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kertomat sadut. Jos kokoelmassa ei ole kaikkia satuja. tietoon lisätään termi Valikoima."@fi,
         "Samlingstitel för en samling som innehåller alla sagor som en aktör skrivit. Om samlingen inte omfattar alla sagor anges termen Urval."@sv ;
     skos:example """MARC 21 -formaantissa \r
 243 10 ‡a Sadut. ‡k Valikoima"""@fi,
@@ -16016,7 +16031,75 @@ mts:m4583 a skos:Concept ;
         "RDA-term"@sv ;
     skos:example "MARC 21 -formaatissa: 588 ## Kuvailutiedot kannesta."@fi ;
     skos:inScheme mts: ;
-    skos:prefLabel "Kuvailutiedot kannesta."@fi .
+    skos:prefLabel "Kuvailutiedot kannesta."@fi ;
+    skos:scopeNote "Kansi on kirjan, vihkon, pakkauksen tms. päällysosa."@fi,
+        "Omslag är det yttre höljet på en bok, ett häfte, en förpackning e.d."@sv .
+
+mts:m4586 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:altLabel "animationsfilm"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "animaatioelokuva"@fi,
+        "animerad film"@sv .
+
+mts:m4587 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50264 ;
+    skos:definition """Teos, joka on allekirjoitettu, ratifioitu tai liitetty valtiosopimukseen.\r
+Vastavuoroinen suhde: valtiosopimuksen allekirjoittaja."""@fi,
+        "Verk som är undertecknat, ratifierat eller bifogat till ett fördrag. Parallell relation: undertecknare av fördrag."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "participant in treaty of"@en,
+        "valtiosopimus"@fi,
+        "fördrag"@sv .
+
+mts:m4588 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50299 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää vastuun uuden dialogin tai muiden äänien lisäämisprosessista ja sen valvonnasta ääniraidan täydentämiseksi. Vastavuoroinen suhde: dubbausohjaaja."@fi,
+        "Sammankopplar aktör med ett verks uttryck som inbegriper ansvar för processen att lägga till ny dialog eller andra jud och övervakningen av den, för att komplettera ljudspår. Parallell relation: dubbningsregissör."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "dubbing director agent of"@en,
+        "dubbausohjaajana produktiossa"@fi,
+        "dubbningsregissör för produktionen"@sv .
+
+mts:m4589 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "nettiohjelma"@fi .
+
+mts:m4590 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:definition "Lainkäyttöalue, jossa säädetään laki, asetus, perustuslaki, tuomioistuinta koskeva sääntö tms. Vastavuoroinen suhde: säätävän lainkäyttöalueen päätös."@fi,
+        "Jurisdiktion i vilken en lag, förordning, grundlag, stadga för domstol e.d. stiftas. Parallell relation: verkställande jurisdiktions beslut."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "enacting jurisdiction"@en,
+        "säätävä lainkäyttöalue"@fi,
+        "verkställande jurisdiktion"@sv .
+
+mts:m4591 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50166 ;
+    skos:definition """Liittää toimijan teokseen, joka on kunnianosoitus toimijalle.\r
+Vastavuoroinen suhde: teoksella kunnioitettu."""@fi,
+        "Sammankopplar aktör med ett verk som är tillägnat aktören. Parallell relation: verk tillägnat."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "honouree of"@en,
+        "kunnianosoituksena"@fi,
+        "tillägnad"@sv .
+
+mts:m4592 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "lyhytelokuva"@fi,
+        "kortfilm"@sv .
 
 mts:m467 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17140,8 +17223,10 @@ mts:m672 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "lyhenne avattuna kannessa"@fi,
         "förkortning utskriven på omslaget"@sv ;
-    skos:scopeNote "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään."@fi,
-        "Anges i MARC 21-formatets fält 246, delfält i."@sv .
+    skos:scopeNote "Kansi on kirjan, vihkon, pakkauksen tms. päällysosa."@fi,
+        "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään."@fi,
+        "Anges i MARC 21-formatets fält 246, delfält i."@sv,
+        "Omslag är det yttre höljet på en bok, ett häfte, en förpackning e.d."@sv .
 
 mts:m677 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18602,7 +18687,7 @@ mts:m949 a isothes:ConceptGroup,
         mts:m4299 ;
     skos:prefLabel "accompanying item relationship with"@en,
         "Suhde yhdistettyyn kappaleeseen"@fi,
-        "Relation till förenat exemplar"@sv .
+        "Relation till medföljande exemplar"@sv .
 
 mts:m95 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -18615,9 +18700,11 @@ mts:m95 a skos:Concept ;
     skos:prefLabel "variant title"@en,
         "kansinimeke"@fi,
         "omslagstitel"@sv ;
-    skos:scopeNote "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään. Ao. teksti voidaan tuottaa myös automaattisesti indikaattoreilla."@fi,
+    skos:scopeNote "Kansi on kirjan, vihkon, pakkauksen tms. päällysosa."@fi,
+        "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään. Ao. teksti voidaan tuottaa myös automaattisesti indikaattoreilla."@fi,
         "Nimeke, joka on painettu julkaisun alkuperäiseen etukanteen, (engl. cover title)"@fi,
         "Anges i MARC 21-formatets fält 246, delfält i. Ifrågavarande text kan också produceras automatiskt med indikatorer."@sv,
+        "Omslag är det yttre höljet på en bok, ett häfte, en förpackning e.d."@sv,
         "Titel som är tryckt på publikationens ursprungliga framsida (eng. cover title)"@sv .
 
 mts:m950 a skos:Concept ;
@@ -18911,7 +18998,10 @@ mts:m991 a isothes:ConceptGroup,
         mts:m4139,
         mts:m4147,
         mts:m4149,
-        mts:m4150 ;
+        mts:m4150,
+        mts:m4586,
+        mts:m4589,
+        mts:m4592 ;
     skos:prefLabel "form of work"@en,
         "Teoksen muoto"@fi,
         "Verkets form"@sv ;
@@ -22795,13 +22885,14 @@ mts:m1449 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "takter efter varandra"@sv ;
     skos:definition "Layout, joka koostuu sisennetyissä kappaleissa esitetystä nuottikirjoituksesta, ja jossa jokaisen tahdin stemmat on merkitty peräkkäin."@fi,
         "Layout, som består av notskrift förevisad i indragna stycken, och i vilken varje takts stämmor har angetts i följd efter varandra."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/layout/1004> ;
     skos:inScheme mts: ;
     skos:prefLabel "bar by bar"@en,
         "tahdit peräkkäin"@fi,
-        "takter efter varandra"@sv .
+        "takt för takt"@sv .
 
 mts:m145 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -23083,8 +23174,9 @@ mts:m1516 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Layout, joka koostuu outline-muotoisesta nuottikirjoituksesta."@fi,
-        "Layout som består av notskrift i paralleller."@sv ;
+    skos:definition """Layout, joka koostuu rinnakkain esitetystä nuottikirjoituksesta.\r
+Open score muistuttaa tahdit allekkain -layoutia, mutta sitä käytetään yhtyenuoteissa. Tämä termi koskee taktiileja musiikkiaineistoja."""@fi,
+        "Layout som består av notskrift presenterad parallellt. Termen gäller taktila musikmaterial."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/layout/1010> ;
     skos:inScheme mts: ;
     skos:prefLabel "open score"@en,
@@ -24725,7 +24817,7 @@ mts:m2109 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:altLabel "tal (föredrag)"@sv ;
-    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät puheet. Jos kokoelmassa ei ole kaikkia puheita. tietoon lisätään termi Valikoima."@fi,
+    skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät puheet. Jos kokoelmassa ei ole kaikkia puheita, tietoon lisätään termi Valikoima."@fi,
         "Samlingstitel för samling som innefattar alla tal skrivna av samma aktör. Om samlingen inte innehåller alla tal anges även termen Urval."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/CollTitle/1008> ;
     skos:example """MARC 21 -formaantissa \r
@@ -26498,8 +26590,8 @@ mts:m260 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "http://rdaregistry.info/termList/fileType/1006"@fi,
-        "http://rdaregistry.info/termList/fileType/1006"@sv ;
+    skos:definition "Tiedostotyyppi elektronisesti taltioidun liikkuvan kuvasisällön taltioimiseksi."@fi,
+        "Filtyp för lagring av elektroniskt inspelat rörligt bildinnehåll."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/fileType/1006> ;
     skos:inScheme mts: ;
     skos:prefLabel "video file"@en,
@@ -33811,13 +33903,14 @@ mts:m41 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "bränning"@sv ;
     skos:definition "Valmistusmenetelmä, jossa lämmön avulla tuotetaan jälkiä materiaalin pintaan."@fi,
         "Produktionsmetod, i vilken ett avtryck framställs i ett materials yta med hjälp av värme."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAproductionMethod/1015> ;
     skos:inScheme mts: ;
     skos:prefLabel "burning"@en,
         "polttomenetelmä"@fi,
-        "bränning"@sv .
+        "brännmetod"@sv .
 
 mts:m4101 a skos:Concept ;
     skos:broader mts:m3928 ;
@@ -36728,17 +36821,6 @@ mts:m4496 a skos:Concept ;
         "käsikirjoittajana teoksessa"@fi,
         "manusförfattare till verket"@sv .
 
-mts:m4499 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50068 ;
-    skos:definition "Liittää säätävän lainkäyttöalueen lainsäädännölliseen teokseen kuten lakiin, asetukseen, perustuslakiin, tuomioistuinta koskevaan sääntöön tms. Vastavuoroinen suhde: säätävä lainkäyttöalue."@fi,
-        "Sammankopplar verkställande jurisdiktion med ett legislativt verk, såsom en lag, en förordning, en grundlag eller en stadga som gäller för domstol. Parallell relation: verkställande jurisdiktion."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "enacting jurisdiction of"@en,
-        "säätävän lainkäyttöalueen päätös"@fi,
-        "verkställande jurisdiktions beslut"@sv .
-
 mts:m450 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -37271,14 +37353,15 @@ mts:m536 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:altLabel "linje för linje"@sv ;
+    skos:altLabel "line by line"@sv,
+        "linje för linje"@sv ;
     skos:definition "Layout, joka koostuu tekstisäkeistä, jotka vuorottelevat edeltävään tekstiin liittyvien nuottisäkeiden kanssa."@fi,
         "Layout som består av textrader som varvas med notrader sammanhörande med föregående text."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/layout/1007> ;
     skos:inScheme mts: ;
     skos:prefLabel "line by line"@en,
         "säkeet peräkkäin"@fi,
-        "line by line"@sv .
+        "rad för rad {@sv}"@sv .
 
 mts:m545 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -37748,13 +37831,14 @@ mts:m679 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "takter på varandra"@sv ;
     skos:definition "Layout, joka koostuu rinnakkaisissa yksiköissä esitetyistä tahdeista siten, että kunkin stemman tahdin alku on pystysuuntaisesti tasattu toisen stemman tai stemmojen saman tahdin alun kanssa."@fi,
         "Layout som består av takter som visas i parallella enheter, på så vis att början av varje stämmas takt är i vertikal linje med början av en annan stämma för samma takt."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/layout/1005> ;
     skos:inScheme mts: ;
     skos:prefLabel "bar over bar"@en,
         "tahdit päällekkäin"@fi,
-        "takter på varandra"@sv .
+        "takt över takt"@sv .
 
 mts:m685 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38279,13 +38363,14 @@ mts:m85 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "line over line"@sv ;
     skos:definition "Layout, joka koostuu rinnakkaisina esitetyistä tahdeista, mutta tahteja ei ole välttämättä tasattu."@fi,
         "Layout som består av parallellt visade takter, dock inte nödvändigtvis på linje."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/layout/1008> ;
     skos:inScheme mts: ;
     skos:prefLabel "line over line"@en,
         "säkeet allekkain"@fi,
-        "line over line"@sv .
+        "rad över rad"@sv .
 
 mts:m850 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38877,8 +38962,8 @@ mts:m1241 a skos:Concept ;
         "skåd. (skådespelare)"@sv,
         "skådespelare (relation)"@sv ;
     skos:broader mts:m1060 ;
-    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: esittäjänä esityksessä."@fi,
-        "Sammankopplar uttryck med en framförande person, som deltar i utförandet av ett verks uttryck genom att skådespela eller spela/framträda i en musik- eller dramaföreställning e.d."@sv ;
+    skos:definition "Liittää ekspression esittäjään, joka osallistuu teoksen ekspression tekemiseen näyttelemällä tai soittamalla/esiintymällä musiikki- tai näytelmäesityksessä tms. Vastavuoroinen suhde: esiintyjänä esityksessä."@fi,
+        "Sammankopplar uttryck med en framförande person, som deltar i utförandet av ett verks uttryck genom att skådespela eller spela/framträda i en musik- eller dramaföreställning e.d. Parallell relation: uppträdande i framförandet."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m17 ;
     skos:prefLabel "actor"@en,
@@ -39161,7 +39246,7 @@ mts:m2020 a skos:Concept ;
         "RDA-term"@sv ;
     skos:altLabel "score"@en ;
     skos:definition "Sellaisen nuottiaineiston muoto, joka koostuu graafisesta, symbolisesta tai sanallisesta nuottikirjoituksesta, ja johon sisältyy kokoonpanon kaikkien stemmojen sisältö. Nuottiaineistosta, joka edustaa teosta yhdelle soittimelle tai yhdelle soittajalle, käytetään termiä soolonuotti."@fi,
-        "Nottryck som består av grafisk, symbolisk eller verbal notskrift, och i vilken hela orkesterbesättningens stämmor ingår. För notskrift för ett instrument eller för en musiker används termen solostämma."@sv ;
+        "Nottryck som består av grafisk, symbolisk eller verbal notskrift, och i vilken hela orkesterbesättningens stämmor ingår. För notskrift för ett instrument eller för en musiker används termen solonot."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/formatNoteMus/1007> ;
     skos:inScheme mts: ;
     skos:prefLabel "(full) score"@en,
@@ -39246,12 +39331,13 @@ mts:m2037 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso mts:m2019 ;
     skos:altLabel "soolonuotinnos"@fi,
-        "solonoter"@sv ;
+        "solonoter"@sv,
+        "solostämma"@sv ;
     skos:definition "Nuottiaineisto, joka sisältää yhdelle soittimelle tai yhdelle esittäjälle tarkoitetun musiikkiteoksen nuotinnoksen (esimerkiksi Beethovenin Für Elise (pianolle), Messiaenin Le banquet céleste (uruille), Xenakiksen Pléïades (lyömäsoittimille) ja Debussyn Syrinx (huilulle))"@fi,
         "Nottryck som består av notskrift för ett instrument eller en framförare, t.ex. Beethovens Für Elise (för piano), Messiaens Le banquet céleste (för orgel), Xenakis Pléïades (för slaginstrument) och Debussys Syrinx (för flöjt)."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "soolonuotti"@fi,
-        "solostämma"@sv .
+        "solonot"@sv .
 
 mts:m2048 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -39276,21 +39362,6 @@ mts:m2050 a skos:Concept ;
     skos:prefLabel "radio director of"@en,
         "radio-ohjelma"@fi,
         "radioprogram"@sv .
-
-mts:m2276 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20144 ;
-    skos:altLabel "absorbed in part by expression"@en,
-        "sulautunut osittain ekspressioon"@fi ;
-    skos:broader mts:m2274,
-        mts:m2286 ;
-    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
-        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
-Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi ;
-    skos:inScheme mts: ;
-    skos:prefLabel "absorbed in part by (work)"@en,
-        "sulautunut osittain teokseen"@fi .
 
 mts:m2277 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -48492,6 +48563,26 @@ mts:m2062 a skos:Concept ;
         "liite"@fi,
         "bilaga"@sv .
 
+mts:m2276 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20144,
+        rdaw:P10146 ;
+    skos:altLabel "absorbed in part by expression"@en,
+        "sulautunut osittain ekspressioon"@fi,
+        "uppgått delvis i uttrycket"@sv ;
+    skos:broader mts:m2274,
+        mts:m2286 ;
+    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
+        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
+Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi,
+        "Sammankopplar uttryck med ett verks uttryck, som delvis uppgått som en del i ett annat uttryck. Parallell relation: delvis uppgått i uttryck."@sv,
+        "Sammankopplar verk med ett verk uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "absorbed in part by (work)"@en,
+        "sulautunut osittain teokseen"@fi,
+        "uppgått delvis i verket"@sv .
+
 mts:m2335 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -49606,14 +49697,14 @@ mts:m4299 a skos:Concept ;
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40029 ;
     skos:definition "Liittää kappaleen kappaleeseen, joka on yhdistetty toiseen kappaleeseen julkaisemisen jälkeen.                                                                                   Vastavuoroinen suhde: yhdistetty kappaleeseen"@fi,
-        "Sammankopplar exemplar med ett exemplar som har förenats med det andra exemplaret efter publikation. Parallell relation: förenat med exemplaret."@sv ;
+        "Sammankopplar exemplar med ett exemplar som har förenats med det andra exemplaret efter publikation."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m4276,
         mts:m4286,
         mts:m4298 ;
     skos:prefLabel "accompanied by item"@en,
         "yhdistetty kappaleeseen"@fi,
-        "förenat med exemplaret"@sv .
+        "medföljande exemplar"@sv .
 
 mts:m4314 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -52977,7 +53068,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-10-07T02:27:47+00:00"^^xsd:dateTime ;
+    dct:modified "2020-11-02T14:11:18+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
