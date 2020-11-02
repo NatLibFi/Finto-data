@@ -7,9 +7,6 @@
 @prefix slm: <http://urn.fi/URN:NBN:fi:au:slm:> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
-@prefix yso-update: <http://www.yso.fi/onto/yso-update/> .
-@prefix ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 
 slm:s1 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -379,7 +376,8 @@ slm:s1070 a skos:Concept ;
 
 slm:s1079 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s241 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027123> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "taarab"@fi,
@@ -879,16 +877,16 @@ slm:s1206 a skos:Concept ;
 
 slm:s1207 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-09-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:altLabel "vykort"@sv ;
-    skos:inScheme slm:s285 ;
+    skos:inScheme slm: ;
     skos:prefLabel "postikortit"@fi,
         "postkort"@sv ;
     skos:scopeNote """Termillä kuvaillaan ainoastaan konkreettisia postikortteja. Postikortteja esittelevistä\r
 kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-\r
 asiasanaa (esim. pääsiäiskortit)."""@fi,
         "Termen används endast för att beskriva konkreta postkort. Om bildverk med bilder på postkort används FGF-termen bildverk, illustrerade kataloger e.d. och lämplig ALLFO-term (t.ex. påskkort)."@sv ;
-    skos:topConceptOf slm:s285 .
+    skos:topConceptOf slm: .
 
 slm:s1208 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -1155,7 +1153,8 @@ slm:s1246 a skos:Concept ;
 
 slm:s1248 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s241 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026806> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "flamenco"@fi,
@@ -1163,9 +1162,10 @@ slm:s1248 a skos:Concept ;
 
 slm:s1249 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:altLabel "avkopplingsmusik"@sv ;
     skos:broader slm:s1377 ;
+    skos:definition "Musiikki, joka on sävelletty tai jonka julkaisuyhteydestä käy ilmi, että se on tarkoitettu rentoutusmusiikiksi."@fi ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "rentoutusmusiikki"@fi,
         "avslappningsmusik"@sv .
@@ -1766,13 +1766,14 @@ slm:s1373 a skos:Concept ;
 
 slm:s1378 a skos:Concept ;
     dct:created "2020-08-22"^^xsd:date ;
-    dct:modified "2020-09-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "solostämmor"@sv ;
     skos:broader slm:s409 ;
     skos:definition "Nuottiaineisto, joka sisältää yhdelle soittimelle tai yhdelle esittäjälle tarkoitetun musiikkiteoksen nuotinnoksen."@fi,
         "Notmaterial som innehåller ett musikverks noter avsedda för ett instrument eller en framförare."@sv ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "soolonuotit"@fi,
-        "solostämmor"@sv .
+        "solonoter"@sv .
 
 slm:s1379 a skos:Concept ;
     dct:created "2020-08-22"^^xsd:date ;
@@ -1883,6 +1884,58 @@ slm:s1389 a skos:Concept ;
     skos:prefLabel "stemmat"@fi,
         "stämmor"@sv .
 
+slm:s1390 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "äänimaisemat"@fi,
+        "ljudlandskap"@sv ;
+    skos:topConceptOf slm:s861 .
+
+slm:s1391 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "ex librikset"@fi,
+        "bokägarmärken"@sv ;
+    skos:inScheme slm: ;
+    skos:prefLabel "exlibrikset"@fi,
+        "exlibris"@sv ;
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia exlibriksiä. Exlibriksiä esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja YSO-asiasanaa exlibrikset."@fi,
+        "Termen används endast för att beskriva konkreta exlibris. För bildverk som presenterar exlibris används FGF-termen bildverk, illustrerade kataloger e.d., samt ALLFO-ämnesordet exlibris."@sv ;
+    skos:topConceptOf slm: .
+
+slm:s1393 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1218 ;
+    skos:definition "Pohjois-amerikkalaisen musiikkiperinteen lajeista kuten kantrista, bluesista, gospelista, bluegrassista ja rock and rollista ammentava musiikkityyli, jossa käytetään usein sähkösoittimien sijaan tai ohella akustisia soittimia."@fi,
+        "Musikstil med influenser ur den nordamerikanska musiktraditionens genrer såsom country, blues, gospel, bluegrass och rock and roll. Ofta används i stället för eller utöver elektriska instrument akustiska instrument."@sv ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "americana"@fi,
+        "americana (musik)"@sv .
+
+slm:s1394 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "studioäänitykset"@fi,
+        "studioupptagningar"@sv ;
+    skos:definition "Studio-olosuhteissa ilman yleisöä tehdyt äänitteet."@fi,
+        "Inspelningar gjorda i studiomiljö utan publik."@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2019026116> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "studioäänitteet"@fi,
+        "studioinspelningar"@sv ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1395 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "metafiktiva verk"@sv ;
+    skos:broader slm:s975 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "metafiktio"@fi,
+        "metafiktion"@sv .
+
 slm:s14 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s606 ;
@@ -1896,6 +1949,26 @@ slm:s140 a skos:Concept ;
     skos:prefLabel "näyttelyjulkaisut"@fi,
         "utställningskataloger"@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s1400 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "drömtolkningsböcker"@sv,
+        "drömtydningsböcker"@sv ;
+    skos:definition "Tarkoittaa unien tulkintaa käsitteleviä teoksia."@fi ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "unikirjat"@fi,
+        "drömböcker"@sv ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1401 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1398 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2015026045> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "evankeliumit"@fi,
+        "evangelier"@sv .
 
 slm:s142 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -1974,13 +2047,6 @@ slm:s151 a skos:Concept ;
     skos:inScheme slm:s593 ;
     skos:prefLabel "maakuntalehdet"@fi,
         "landskapstidningar"@sv .
-
-slm:s152 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "inkamusiikki"@fi,
-        "inkamusik"@sv .
 
 slm:s157 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2716,7 +2782,8 @@ slm:s300 a skos:Concept ;
 
 slm:s301 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s241 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "gamelanmusiikki"@fi,
         "gamelanmusik"@sv .
@@ -3012,13 +3079,6 @@ slm:s349 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "resitatiivit"@fi,
         "recitativ"@sv .
-
-slm:s350 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s266 ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "säveltäjien teosluettelot"@fi,
-        "opusförteckningar"@sv .
 
 slm:s351 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3413,8 +3473,9 @@ slm:s431 a skos:Concept ;
 
 slm:s438 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:broader slm:s1377 ;
+    skos:definition "Kuunnelman ja elektroakustisen musiikin keinoin toteutettu äänitaidemuoto."@fi ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "radiofonia"@fi,
         "radiofoni"@sv .
@@ -3831,8 +3892,9 @@ slm:s533 a skos:Concept ;
 
 slm:s535 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:broader slm:s1377 ;
+    skos:definition "Taide, joka perustuu erilaisten äänten yhdistelyyn. Äänitaideteos ei sisällä välttämättä musiikkia."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2017026022> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "äänitaide"@fi,
@@ -4261,7 +4323,8 @@ slm:s62 a skos:Concept ;
 
 slm:s620 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s241 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026896> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "klezmer-musiikki"@fi,
@@ -4922,7 +4985,8 @@ slm:s758 a skos:Concept ;
 
 slm:s759 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s241 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "qawwali"@fi,
         "qawwali"@sv .
@@ -5886,15 +5950,6 @@ slm:s971 a skos:Concept ;
     skos:prefLabel "tuokiokuvat"@fi,
         "ögonblicksbilder"@sv .
 
-slm:s972 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
-    skos:broader slm:s1377 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027023> ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "psalmit (musiikki)"@fi,
-        "psaltarpsalmer (musik)"@sv .
-
 slm:s973 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2020-08-14"^^xsd:date ;
@@ -5999,8 +6054,14 @@ slm:s996 a skos:Concept ;
 
 slm:s998 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "atlaser"@sv,
-        "kartböcker"@sv ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "atlakset"@fi,
+        "karttakirjat"@fi,
+        "maailmankartastot"@fi,
+        "atlaser"@sv,
+        "kartböcker"@sv,
+        "världsatlaser"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026058> ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "kartastot"@fi,
         "kartverk"@sv ;
@@ -6927,6 +6988,62 @@ slm:s1386 a skos:Concept ;
         "språkprov (exempel)"@sv ;
     skos:topConceptOf slm:s285 .
 
+slm:s1392 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "kenttä-äänitykset"@fi,
+        "fältupptagningar"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026253> ;
+    skos:inScheme slm:s285,
+        slm:s861 ;
+    skos:prefLabel "kenttätallenteet"@fi,
+        "fältinspelningar"@sv ;
+    skos:topConceptOf slm:s285,
+        slm:s861 .
+
+slm:s1396 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1398 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "psalmit (tekstit)"@fi,
+        "psaltarpsalmer (bibeltexter)"@sv ;
+    skos:related slm:s972 .
+
+slm:s1397 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "apokryfikirjat"@fi,
+        "apokryfiset kirjat"@fi,
+        "apokryfiska böcker"@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2015026025> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "apokryfit"@fi,
+        "apokryfer"@sv ;
+    skos:related slm:s1398 ;
+    skos:topConceptOf slm:s285 .
+
+slm:s1399 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1209 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "luonto-ohjelmat"@fi,
+        "naturprogram"@sv ;
+    skos:related slm:s359 .
+
+slm:s1402 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "teemaluettelot"@fi,
+        "tematiska kataloger (musik)"@sv ;
+    skos:broader slm:s266 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027136> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "temaattiset luettelot (musiikki)"@fi,
+        "tematiska förteckningar (musik)"@sv ;
+    skos:related slm:s350 .
+
 slm:s149 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "utopistiset romaanit"@fi,
@@ -6947,6 +7064,15 @@ slm:s15 a skos:Concept ;
     skos:prefLabel "psykologiset kertomukset"@fi,
         "psykologiska berättelser"@sv ;
     skos:related slm:s604 .
+
+slm:s152 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s421 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "inkamusiikki"@fi,
+        "inkamusik"@sv ;
+    skos:related slm:s1188 .
 
 slm:s153 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7111,17 +7237,6 @@ slm:s261 a skos:Concept ;
     skos:prefLabel "eroottiset televisiosarjat"@fi,
         "erotiska tv-serier"@sv ;
     skos:related slm:s290 .
-
-slm:s266 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-09-06"^^xsd:date ;
-    skos:altLabel "catalogue raisonnét"@fi,
-        "catalogue raisonné"@sv ;
-    skos:broader slm:s435 ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s350 ;
-    skos:prefLabel "teosluettelot"@fi,
-        "verkförteckningar"@sv .
 
 slm:s269 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7291,6 +7406,15 @@ slm:s342 a skos:Concept ;
     skos:related slm:s1317 ;
     skos:topConceptOf slm:s593 .
 
+slm:s350 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s266 ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "säveltäjien teosluettelot"@fi,
+        "opusförteckningar"@sv ;
+    skos:related slm:s1402 .
+
 slm:s355 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "politisk spänningslitteratur"@sv ;
@@ -7308,15 +7432,6 @@ slm:s357 a skos:Concept ;
     skos:prefLabel "makossa"@fi,
         "makossa"@sv ;
     skos:related slm:s1188 .
-
-slm:s359 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p22705> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "luontoelokuvat"@fi,
-        "naturfilmer"@sv ;
-    skos:related slm:s85 .
 
 slm:s362 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7843,8 +7958,10 @@ slm:s573 a skos:Concept ;
 
 slm:s579 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-22"^^xsd:date ;
-    skos:altLabel "kasettikirjat"@fi,
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "e-äänikirjat"@fi,
+        "kasettikirjat"@fi,
+        "e-ljudböcker"@sv,
         "kassettböcker"@sv ;
     skos:inScheme slm:s285 ;
     skos:narrower slm:s58 ;
@@ -8068,8 +8185,9 @@ slm:s725 a skos:Concept ;
 
 slm:s728 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:broader slm:s1377 ;
+    skos:definition "Liikekeskuksissa, työpaikoilla, lentokentillä yms. julkisissa tiloissa soitettava musiikki, jonka tarkoituksena on usein edistää haluttua mielialaa tai tunnelmaa (esim. ostohalukkuus, tarmokkuus työssä, rauhallisuus tms.). Taustamusiikki on yleensä staattista, toisteista ja tasaisen harmonista, joten siihen ei kiinnitetä tietoista huomiota."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027186> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "taustamusiikki"@fi,
@@ -8267,7 +8385,8 @@ slm:s807 a skos:Concept ;
 
 slm:s808 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s662 ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1377 ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "arabialainen musiikki"@fi,
         "arabisk musik"@sv ;
@@ -8662,6 +8781,16 @@ slm:s969 a skos:Concept ;
     skos:narrower slm:s1388 ;
     skos:prefLabel "kantaatit"@fi,
         "kantater"@sv .
+
+slm:s972 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1377 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027023> ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "psalmit (musiikki)"@fi,
+        "psaltarpsalmer (musik)"@sv ;
+    skos:related slm:s1396 .
 
 slm:s978 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9268,6 +9397,18 @@ slm:s259 a skos:Concept ;
     skos:related slm:s1073,
         slm:s158 .
 
+slm:s266 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "catalogue raisonnét"@fi,
+        "catalogue raisonné"@sv ;
+    skos:broader slm:s435 ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1402,
+        slm:s350 ;
+    skos:prefLabel "teosluettelot"@fi,
+        "verkförteckningar"@sv .
+
 slm:s267 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s354 ;
@@ -9348,6 +9489,22 @@ slm:s353 a skos:Concept ;
         slm:s78 ;
     skos:prefLabel "näyttämömusiikki"@fi,
         "scenmusik"@sv .
+
+slm:s359 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "luontodokumenttielokuvat"@fi,
+        "luontoelokuvat"@fi,
+        "luontofilmit"@fi,
+        "naturdokumentärfilmer"@sv,
+        "naturfilmer"@sv ;
+    skos:broader slm:s432 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p22705> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "luontodokumentit"@fi,
+        "naturdokumentärer"@sv ;
+    skos:related slm:s1399,
+        slm:s85 .
 
 slm:s364 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9899,8 +10056,10 @@ slm:s760 a skos:Concept ;
 
 slm:s761 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:altLabel "allmogeromaner"@sv,
-        "bonderomaner"@sv ;
+        "bonderomaner"@sv,
+        "landsbygdsromaner"@sv ;
     skos:broader slm:s518 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "maaseuturomaanit"@fi,
@@ -10497,6 +10656,18 @@ slm:s139 a skos:Concept ;
         slm:s316 ;
     skos:topConceptOf slm:s285 .
 
+slm:s1398 a skos:Concept ;
+    dct:created "2020-11-02"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "heliga böcker"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1396,
+        slm:s1401 ;
+    skos:prefLabel "pyhät kirjat"@fi,
+        "heliga skrifter"@sv ;
+    skos:related slm:s1397 ;
+    skos:topConceptOf slm:s285 .
+
 slm:s162 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "tjejböcker"@sv ;
@@ -10569,18 +10740,6 @@ slm:s239 a skos:Concept ;
     skos:related slm:s1102,
         slm:s13,
         slm:s80 .
-
-slm:s241 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-03-22"^^xsd:date ;
-    skos:broader slm:s662 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s203,
-        slm:s468 ;
-    skos:prefLabel "kansanmusiikki"@fi,
-        "folkmusik"@sv ;
-    skos:related slm:s1315 .
 
 slm:s274 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10686,18 +10845,6 @@ slm:s43 a skos:Concept ;
     skos:related slm:s168,
         slm:s660,
         slm:s875 .
-
-slm:s432 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-02-25"^^xsd:date ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "dokumenttielokuvat"@fi,
-        "dokumentärfilmer"@sv ;
-    skos:related slm:s1354,
-        slm:s1362,
-        slm:s958 .
 
 slm:s433 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -11196,6 +11343,8 @@ slm:s918 a skos:Concept ;
 
 slm:s958 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "personporträtt (skriftliga alster)"@sv ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p5400> ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "henkilökuvat"@fi,
@@ -11683,6 +11832,19 @@ slm:s423 a skos:Concept ;
         slm:s479,
         slm:s842 .
 
+slm:s432 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s359 ;
+    skos:prefLabel "dokumenttielokuvat"@fi,
+        "dokumentärfilmer"@sv ;
+    skos:related slm:s1354,
+        slm:s1362,
+        slm:s958 .
+
 slm:s445 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s518 ;
@@ -12117,19 +12279,6 @@ slm:s418 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat tieteen ja tekniikan todellisia tai kuviteltuja saavutuksia ja ihmisen elämää tulevaisuudessa tai uudessa ympäristössä."@fi,
         "Används om verk som beskriver vetenskapens och teknikens verkliga eller fiktiva resultat och människans liv i framtiden eller i en ny omgivning."@sv .
 
-slm:s421 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-03-22"^^xsd:date ;
-    skos:broader slm:s1218 ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1254,
-        slm:s1313,
-        slm:s360,
-        slm:s818,
-        slm:s924 ;
-    skos:prefLabel "viihdemusiikki"@fi,
-        "underhållningsmusik"@sv .
-
 slm:s476 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2020-08-14"^^xsd:date ;
@@ -12451,6 +12600,20 @@ slm:s230 a skos:Concept ;
         slm:s869,
         slm:s928 .
 
+slm:s421 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1218 ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1254,
+        slm:s1313,
+        slm:s152,
+        slm:s360,
+        slm:s818,
+        slm:s924 ;
+    skos:prefLabel "viihdemusiikki"@fi,
+        "underhållningsmusik"@sv .
+
 slm:s865 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "farssit (elokuvat)"@fi,
@@ -12482,25 +12645,6 @@ slm:s1092 a skos:Concept ;
         slm:s607,
         slm:s680,
         slm:s696 .
-
-slm:s1209 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2019-11-09"^^xsd:date ;
-    skos:altLabel "tv-ohjelmat"@fi,
-        "TV-program"@sv,
-        "televisionsprogram"@sv,
-        "teveprogram"@sv ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1142,
-        slm:s1331,
-        slm:s1342,
-        slm:s354,
-        slm:s549,
-        slm:s925,
-        slm:s940 ;
-    skos:prefLabel "televisio-ohjelmat"@fi,
-        "tv-program"@sv ;
-    skos:topConceptOf slm: .
 
 slm:s168 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12629,6 +12773,47 @@ slm:s1066 a skos:Concept ;
         slm:s607,
         slm:s82 .
 
+slm:s1209 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "tv-ohjelmat"@fi,
+        "TV-program"@sv,
+        "televisionsprogram"@sv,
+        "teveprogram"@sv ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1142,
+        slm:s1331,
+        slm:s1342,
+        slm:s1399,
+        slm:s354,
+        slm:s549,
+        slm:s925,
+        slm:s940 ;
+    skos:prefLabel "televisio-ohjelmat"@fi,
+        "tv-program"@sv ;
+    skos:topConceptOf slm: .
+
+slm:s241 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:altLabel "perinnemusiikki"@fi,
+        "traditionell musik"@sv ;
+    skos:broader slm:s1377 ;
+    skos:definition "Tietyn yhteisön kansanperinnettä edustava tai siihen pohjautuva musiikki."@fi,
+        "Musik som representerar eller grundar sig på folktradition inom ett visst samhälle."@sv ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026809> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1079,
+        slm:s1248,
+        slm:s203,
+        slm:s301,
+        slm:s468,
+        slm:s620,
+        slm:s759 ;
+    skos:prefLabel "kansanmusiikki"@fi,
+        "folkmusik"@sv ;
+    skos:related slm:s1315 .
+
 slm:s27 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s975 ;
@@ -12689,22 +12874,6 @@ slm:s560 a skos:Concept ;
     skos:prefLabel "heavy metal"@fi,
         "heavy metal"@sv ;
     skos:related slm:s828 .
-
-slm:s662 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
-    skos:broader slm:s1377 ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1079,
-        slm:s1248,
-        slm:s152,
-        slm:s241,
-        slm:s301,
-        slm:s620,
-        slm:s759,
-        slm:s808 ;
-    skos:prefLabel "perinnemusiikki"@fi,
-        "traditionell musik"@sv .
 
 slm:s69 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12930,23 +13099,6 @@ slm:s1165 a skos:Concept ;
         slm:s778,
         slm:s981 .
 
-slm:s1188 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1218 ;
-    skos:inScheme slm:s861 ;
-    skos:prefLabel "maailmanmusiikki"@fi,
-        "världsmusik"@sv ;
-    skos:related slm:s1056,
-        slm:s1124,
-        slm:s117,
-        slm:s246,
-        slm:s277,
-        slm:s357,
-        slm:s60,
-        slm:s715,
-        slm:s734,
-        slm:s794 .
-
 slm:s1332 a skos:Concept ;
     dct:created "2019-06-28"^^xsd:date ;
     dct:modified "2020-02-21"^^xsd:date ;
@@ -13053,6 +13205,25 @@ slm:s1140 a skos:Concept ;
         slm:s981 ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat yliluonnollista, tuonpuoleista maailmaa tai maailmaa, jossa meidän todellisuutemme lait eivät päde."@fi,
         "Används om verk, som beskriver en övernaturlig hinsidesverklighet eller en värld, där lagarna för vår verklighet inte gäller."@sv .
+
+slm:s1188 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1218 ;
+    skos:inScheme slm:s861 ;
+    skos:prefLabel "maailmanmusiikki"@fi,
+        "världsmusik"@sv ;
+    skos:related slm:s1056,
+        slm:s1124,
+        slm:s117,
+        slm:s152,
+        slm:s246,
+        slm:s277,
+        slm:s357,
+        slm:s60,
+        slm:s715,
+        slm:s734,
+        slm:s794 .
 
 slm:s190 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13605,41 +13776,6 @@ slm:s1186 a skos:Concept ;
     skos:prefLabel "rock"@fi,
         "rock"@sv .
 
-slm:s1218 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
-    skos:broader slm:s1377 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027009> ;
-    skos:inScheme slm:s861 ;
-    skos:narrower slm:s1007,
-        slm:s1056,
-        slm:s1124,
-        slm:s117,
-        slm:s1188,
-        slm:s1189,
-        slm:s1260,
-        slm:s1265,
-        slm:s246,
-        slm:s247,
-        slm:s248,
-        slm:s249,
-        slm:s357,
-        slm:s401,
-        slm:s421,
-        slm:s436,
-        slm:s441,
-        slm:s444,
-        slm:s507,
-        slm:s547,
-        slm:s586,
-        slm:s60,
-        slm:s715,
-        slm:s734,
-        slm:s792,
-        slm:s794 ;
-    skos:prefLabel "populaarimusiikki"@fi,
-        "populärmusik"@sv .
-
 slm:s170 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2019-09-04"^^xsd:date ;
@@ -13674,6 +13810,42 @@ slm:s170 a skos:Concept ;
     skos:prefLabel "pelit"@fi,
         "spel"@sv ;
     skos:topConceptOf slm: .
+
+slm:s1218 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
+    skos:broader slm:s1377 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014027009> ;
+    skos:inScheme slm:s861 ;
+    skos:narrower slm:s1007,
+        slm:s1056,
+        slm:s1124,
+        slm:s117,
+        slm:s1188,
+        slm:s1189,
+        slm:s1260,
+        slm:s1265,
+        slm:s1393,
+        slm:s246,
+        slm:s247,
+        slm:s248,
+        slm:s249,
+        slm:s357,
+        slm:s401,
+        slm:s421,
+        slm:s436,
+        slm:s441,
+        slm:s444,
+        slm:s507,
+        slm:s547,
+        slm:s586,
+        slm:s60,
+        slm:s715,
+        slm:s734,
+        slm:s792,
+        slm:s794 ;
+    skos:prefLabel "populaarimusiikki"@fi,
+        "populärmusik"@sv .
 
 slm:s1081 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13906,7 +14078,7 @@ slm:s1150 a skos:Concept ;
 
 slm:s975 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-04-23"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4> ;
     skos:inScheme slm:s285 ;
     skos:narrower slm:s108,
@@ -13917,6 +14089,7 @@ slm:s975 a skos:Concept ;
         slm:s1201,
         slm:s126,
         slm:s1288,
+        slm:s1395,
         slm:s27,
         slm:s287,
         slm:s322,
@@ -14148,7 +14321,7 @@ slm:s298 a skos:Concept ;
 
 slm:s1175 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p1235> ;
     skos:inScheme slm: ;
     skos:narrower slm:s1002,
@@ -14187,7 +14360,6 @@ slm:s1175 a skos:Concept ;
         slm:s3,
         slm:s302,
         slm:s305,
-        slm:s359,
         slm:s368,
         slm:s397,
         slm:s432,
@@ -14257,7 +14429,7 @@ slm:s593 a skos:ConceptScheme ;
 
 slm:s1377 a skos:Concept ;
     dct:created "2020-06-27"^^xsd:date ;
-    dct:modified "2020-08-14"^^xsd:date ;
+    dct:modified "2020-11-02"^^xsd:date ;
     skos:inScheme slm:s861 ;
     skos:narrower slm:s1,
         slm:s1008,
@@ -14332,6 +14504,7 @@ slm:s1377 a skos:Concept ;
         slm:s232,
         slm:s233,
         slm:s238,
+        slm:s241,
         slm:s242,
         slm:s251,
         slm:s256,
@@ -14409,7 +14582,6 @@ slm:s1377 a skos:Concept ;
         slm:s629,
         slm:s636,
         slm:s642,
-        slm:s662,
         slm:s667,
         slm:s671,
         slm:s687,
@@ -14435,6 +14607,7 @@ slm:s1377 a skos:Concept ;
         slm:s798,
         slm:s803,
         slm:s804,
+        slm:s808,
         slm:s810,
         slm:s814,
         slm:s823,
@@ -14481,13 +14654,14 @@ Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.f
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2020-10-07T02:29:57+00:00"^^xsd:dateTime ;
+    dct:modified "2020-11-02T13:44:29+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
     skos:hasTopConcept slm:s109,
         slm:s1149,
         slm:s1175,
+        slm:s1207,
         slm:s1209,
         slm:s1237,
         slm:s1269,
@@ -14503,6 +14677,7 @@ Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.f
         slm:s1356,
         slm:s1361,
         slm:s1362,
+        slm:s1391,
         slm:s170,
         slm:s236,
         slm:s312,
@@ -14517,7 +14692,9 @@ Förslag till nya termer och ändringar i FGF ges med <a href="//ehdotus.finto.f
 
 slm:s861 a skos:ConceptScheme ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:hasTopConcept slm:s1377 ;
+    skos:hasTopConcept slm:s1377,
+        slm:s1390,
+        slm:s1392 ;
     skos:prefLabel "Musiikin lajityyppi- ja muototermit"@fi,
         "Genretermer för musik"@sv .
 
@@ -14554,7 +14731,6 @@ slm:s285 a skos:ConceptScheme ;
         slm:s1167,
         slm:s1181,
         slm:s1206,
-        slm:s1207,
         slm:s1213,
         slm:s122,
         slm:s1230,
@@ -14571,7 +14747,12 @@ slm:s285 a skos:ConceptScheme ;
         slm:s1343,
         slm:s1386,
         slm:s139,
+        slm:s1392,
+        slm:s1394,
+        slm:s1397,
+        slm:s1398,
         slm:s140,
+        slm:s1400,
         slm:s149,
         slm:s153,
         slm:s155,
