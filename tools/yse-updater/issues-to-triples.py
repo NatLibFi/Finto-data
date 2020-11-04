@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # coding=utf-8
-import csv, urllib, sys, pickle, rdflib, json
+import csv, urllib.request, urllib.parse, urllib.error, sys, pickle, rdflib, json
 import requests, time, calendar, datetime
-from urllib import urlencode
+from urllib.parse import urlencode
 from rdflib import Graph, Namespace,RDF ,XSD, URIRef, plugin, Literal
 from github import Github
 
@@ -25,7 +25,7 @@ newtriples.bind('ysa', ysa)
 newtriples.bind('ysa-meta', ysameta)
 
 if len(sys.argv) < 2:
-    print >>sys.stderr, "Usage: %s GitHub-credentials-file" % sys.argv[0]
+    print("Usage: %s GitHub-credentials-file" % sys.argv[0], file=sys.stderr)
     sys.exit()
 
 edit_issues = True
@@ -75,7 +75,7 @@ def guessLang(block):
 
 # creates new triples from the given block and adds them to the newtriples graph
 def addPropertyValueTriples(prop, block, uri):
-    vals = filter(None, block.split('\n')[1:])
+    vals = [_f for _f in block.split('\n')[1:] if _f]
     for value in vals:
         value = value.strip()
         if value == '': # skipping empty lines
