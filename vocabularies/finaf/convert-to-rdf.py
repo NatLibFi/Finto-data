@@ -311,13 +311,13 @@ def main():
         if '046' in rec:
             fld = rec['046']
             if 'f' in fld:
-                g.add((uri, birthYear, Literal(str(fld['f'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, birthYear, Literal(str(fld['f'])[:4])))
             if 'g' in fld:
-                g.add((uri, deathYear, Literal(str(fld['g'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, deathYear, Literal(str(fld['g'])[:4])))
             if 'q' in fld:
-                g.add((uri, dateOfEstablishment, Literal(str(fld['q'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, dateOfEstablishment, Literal(str(fld['q'])[:4])))
             if 'r' in fld:
-                g.add((uri, dateOfTermination, Literal(str(fld['r'])[:4], datatype=XSD.gYear, normalize=False)))
+                g.add((uri, dateOfTermination, Literal(str(fld['r'])[:4])))
             if 's' in fld or 't' in fld:
                 # period of activity - encode as EDTF
                 if 's' in fld:
