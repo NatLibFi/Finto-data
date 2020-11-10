@@ -386,7 +386,13 @@ def main():
 
             if 'c' in f:
                 place = lookup_yso_place(f['c'])
-                g.add((uri, countryAssociatedWithPerson, place))
+                
+                if is_person:
+                    prop = countryAssociatedWithPerson
+                else:
+                    prop = placeAssociatedWithCorporateBody
+
+                g.add((uri, prop, place))
                 if isinstance(place, BNode):
                     g.add((place, nameOfPlace, Literal(f['c'], lang='fi')))
                     g.add((place, SKOS.prefLabel, Literal(f['c'], lang='fi')))
