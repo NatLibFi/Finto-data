@@ -475,7 +475,7 @@ def main():
             if varname is None:
                 logging.warning("Empty 400 value for <%s>, skipping", uri)
                 continue
-            varlit = Literal(varname)
+            varlit = Literal(varname, 'fi')
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfPerson, varlit))
 
@@ -484,7 +484,7 @@ def main():
             if varname is None:
                 logging.warning("Empty 410/411 value for <%s>, skipping", uri)
                 continue
-            varlit = Literal(varname)
+            varlit = Literal(varname, 'fi')
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfCorporateBody, varlit))
 
