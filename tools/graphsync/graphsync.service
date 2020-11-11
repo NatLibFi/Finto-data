@@ -1,0 +1,11 @@
+[Unit]
+Description=graphsync
+[Service]
+User=graphsync
+Environment=SECRET=/etc/graphsync/secret
+ExecStart=/var/www/Finto-data/tools/graphsync/graphsync.py /etc/graphsync/graphsync.cfg
+Restart=on-failure
+RestartSec=15
+[Install]
+WantedBy=multi-user.target
+
