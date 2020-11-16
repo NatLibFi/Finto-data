@@ -6,6 +6,7 @@ import re
 import functools
 import logging
 import csv
+import unicodedata
 
 import requests
 import pymarc.marcxml
@@ -125,6 +126,10 @@ def initialize_graph():
     g.namespace_manager.bind('rdau', RDAU)
     return g
 
+def normalize(label):
+    """normalize string to unicode Normal Form C (composed)"""
+    return unicodedata.normalize('NFC', label)
+
 def format_label(fld, skip_last=False):
     """return a label consisting of subfields in a Field, properly formatted"""
     subfields = fld.get_subfields('a','b','n','d','c')
@@ -132,7 +137,7 @@ def format_label(fld, skip_last=False):
     if len(subfields) > 0:
         if skip_last:
             subfields = subfields[:-1]
-        return ' '.join(subfields)
+        return normalize(' '.join(subfields))
     else:
         return None
 
@@ -357,7 +362,7 @@ def main():
                 logging.warning("Could not parse 368 value for <%s>, skipping", uri)
                 continue
 
-            obj = Literal(val, lang='fi') # by default, use a literal value
+            obj = Literal(normalize(val), lang='fi') # by default, use a literal value
             if '0' in f:
                 # use a URI value given in subfield 0 (likely from MTS) instead
                 obj = URIRef(f['0'])
@@ -374,15 +379,15 @@ def main():
                 place = lookup_yso_place(f['a'])
                 g.add((uri, placeOfBirth, place))
                 if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(f['a'], lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(f['a'], lang='fi')))
+                    g.add((place, nameOfPlace, Literal(normalize(f['a']), lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(normalize(f['a']), lang='fi')))
 
             if 'b' in f:
                 place = lookup_yso_place(f['b'])
                 g.add((uri, placeOfDeath, place))
                 if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(f['b'], lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(f['b'], lang='fi')))
+                    g.add((place, nameOfPlace, Literal(normalize(f['b']), lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(normalize(f['b']), lang='fi')))
 
             if 'c' in f:
                 place = lookup_yso_place(f['c'])
@@ -394,8 +399,8 @@ def main():
 
                 g.add((uri, prop, place))
                 if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(f['c'], lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(f['c'], lang='fi')))
+                    g.add((place, nameOfPlace, Literal(normalize(f['c']), lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(normalize(f['c']), lang='fi')))
 
             if 'e' in f:
                 place = lookup_yso_place(f['e'])
@@ -407,8 +412,8 @@ def main():
 
                 g.add((uri, prop, place))
                 if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(f['e'], lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(f['e'], lang='fi')))
+                    g.add((place, nameOfPlace, Literal(normalize(f['e']), lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(normalize(f['e']), lang='fi')))
 
             if 'f' in f:
                 place = lookup_yso_place(f['f'])
@@ -420,11 +425,11 @@ def main():
 
                 g.add((uri, prop, place))
                 if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(f['f'], lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(f['f'], lang='fi')))
+                    g.add((place, nameOfPlace, Literal(normalize(f['f']), lang='fi')))
+                    g.add((place, SKOS.prefLabel, Literal(normalize(f['f']), lang='fi')))
 
         for f in rec.get_fields('372'):
-            value = Literal(f.format_field(), lang='fi')
+            value = Literal(normalize(f.format_field()), lang='fi')
             if '0' in f:
                 value = URIRef(f['0'])
             elif '2' in f and f['2'] == 'yso':
@@ -441,10 +446,10 @@ def main():
 
         for f in rec.get_fields('373'):
             for val in f.get_subfields('a'):
-                g.add((uri, isPersonMemberOfCorporateBody, Literal(val, lang='fi')))
+                g.add((uri, isPersonMemberOfCorporateBody, Literal(normalize(val), lang='fi')))
 
         for f in rec.get_fields('374'):
-            value = Literal(f.format_field(), lang='fi')
+            value = Literal(normalize(f.format_field()), lang='fi')
             if '0' in f:
                 value = URIRef(f['0'])
             elif '2' in f and f['2'] == 'mts':
@@ -468,7 +473,7 @@ def main():
                 g.add((uri, prop, lang_uri))
 
         for f in rec.get_fields('378'):
-            g.add((uri, fullerFormOfName, Literal(f.format_field(), lang='fi')))
+            g.add((uri, fullerFormOfName, Literal(normalize(f.format_field()), lang='fi')))
 
         for f in rec.get_fields('400'):
             varname = format_label(f)
@@ -555,7 +560,7 @@ def main():
             else:
                 text = f.format_field()
 
-            g.add((uri, sourceConsulted, Literal(text, lang='fi')))
+            g.add((uri, sourceConsulted, Literal(normalize(text), lang='fi')))
 
         for f in rec.get_fields('678'):
             if is_person:
@@ -563,7 +568,7 @@ def main():
             else:
                 prop = corporateHistory
 
-            g.add((uri, prop, Literal(f.format_field(), lang='fi')))
+            g.add((uri, prop, Literal(normalize(f.format_field()), lang='fi')))
 
         for f in rec.get_fields('680'):
             if is_person:
@@ -571,7 +576,7 @@ def main():
             else:
                 prop = noteOnCorporateBody
 
-            g.add((uri, prop, Literal(f.format_field(), lang='fi')))
+            g.add((uri, prop, Literal(normalize(f.format_field()), lang='fi')))
 
     # Pass 2: convert literal values to resources
     for prop in literal_to_resource:
