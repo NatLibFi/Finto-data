@@ -296,6 +296,11 @@ def main():
             else:
                 prop = identifierForCorporateBody
 
+            if 'q' in f and f['q'].lower().startswith('yritys- ja yhteisötunnus') and 'a' in f:
+                yt = f['a'].replace(' ', '')
+                yt_str = 'Y-tunnus: {}'.format(yt)
+                g.add((uri, prop, Literal(yt_str)))
+
             if '2' not in f or 'a' not in f:
                 continue
 
