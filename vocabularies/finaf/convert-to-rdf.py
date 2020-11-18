@@ -289,17 +289,20 @@ def main():
         modified = rec['005'].value()[2:14] # FIXME ugly...discards century info
         g.add((uri, DCT.modified, Literal(format_timestamp(modified), datatype=XSD.dateTime)))
 
-        # ISNI & ORCID iD
-        for f in rec.get_fields('024'):
-            if is_person:
-                prop = identifierForPerson
-            else:
-                prop = identifierForCorporateBody
+        if is_person:
+            id_prop = identifierForPerson
+        else:
+            id_prop = identifierForCorporateBody
 
+        asteri_str = 'Asteri ID: {}'.format(recid)
+        g.add((uri, id_prop, Literal(asteri_str)))
+
+        # ISNI, ORCID, VIAF etc. identifiers
+        for f in rec.get_fields('024'):
             if 'q' in f and f['q'].lower().startswith('yritys- ja yhteisötunnus') and 'a' in f:
                 yt = f['a'].replace(' ', '')
                 yt_str = 'Y-tunnus: {}'.format(yt)
-                g.add((uri, prop, Literal(yt_str)))
+                g.add((uri, id_prop, Literal(yt_str)))
 
             if '2' not in f or 'a' not in f:
                 continue
@@ -307,15 +310,15 @@ def main():
             if f['2'] == 'isni':
                 isni = f['a'].replace(' ', '')
                 isni_uri = ISNI[isni]
-                g.add((uri, prop, isni_uri))
+                g.add((uri, id_prop, isni_uri))
             elif f['2'] == 'orcid':
                 orcid = f['a'].replace(' ', '')
                 orcid_uri = URIRef(orcid)
-                g.add((uri, prop, orcid_uri))
+                g.add((uri, id_prop, orcid_uri))
             elif f['2'] == 'viaf':
                 viaf = f['a'].replace(' ', '')
                 viaf_uri = VIAF[viaf]
-                g.add((uri, prop, viaf_uri))
+                g.add((uri, id_prop, viaf_uri))
         
         # dates
         if '046' in rec:
