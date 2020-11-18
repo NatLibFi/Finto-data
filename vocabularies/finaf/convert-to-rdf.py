@@ -256,14 +256,6 @@ def main():
             continue
         
         if '100' in rec: # person name
-            # don't include living persons for now
-            if '046' not in rec:
-                logging.debug('skipping person record without 046 field')
-                continue  # no information about birth/death years
-            if 'g' not in rec['046']:
-                logging.debug('skipping person record without death year in 046')
-                continue  # death year not set
-        
             g.add((uri, RDF.type, Person))
             label = format_label(rec['100'])
             labelprop = authorizedAccessPointForPerson
