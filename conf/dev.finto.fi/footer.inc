@@ -143,9 +143,7 @@ function createObjectsFromNarrowers(narrowerResponse) {
 <script type="text/javascript">
 $( document ).ready(function() {
     $(".prop-rdaa_P50094 li, .prop-rdaa_P50006 li").each(function(index) {
-        console.log("index " + index);
-        $li = $(this);
-        $li.find('a').each(function(aIndex) {
+        $(this).find('a').each(function(aIndex) {
             href = $(this).attr('href');
             if (href.startsWith('http://isni.org/isni/')) {
                 $("<span>ISNI: </span>").insertBefore($(this));
