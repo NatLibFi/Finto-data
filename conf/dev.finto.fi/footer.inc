@@ -138,3 +138,32 @@ function createObjectsFromNarrowers(narrowerResponse) {
   return childArray;
 }
 </script>
+
+<!-- KANTO/finaf tweaks -->
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(".prop-rdaa_P50094 li, .prop-rdaa_P50006 li").each(function(index) {
+        console.log("index " + index);
+        $li = $(this);
+        $li.find('a').each(function(aIndex) {
+            href = $(this).attr('href');
+            if (href.startsWith('http://isni.org/isni/')) {
+                $("<span>ISNI: </span>").insertBefore($(this));
+                isni = href.replace('http://isni.org/isni/', '')
+                isnistr = isni.substr(0, 4) + " " + isni.substr(4, 4) + " " + isni.substr(8, 4) + " " + isni.substr(12, 4);
+                $(this).text(isnistr);
+            }
+            if (href.startsWith('https://orcid.org/')) {
+                $('<span class="orcid">ORCID:</span>').insertBefore($(this));
+                orcid = href.replace('https://orcid.org/', '')
+                $(this).text(orcid);
+            }
+            if (href.startsWith('http://viaf.org/viaf/')) {
+                $('<span>VIAF ID: </span>').insertBefore($(this));
+                viaf = href.replace('http://viaf.org/viaf/', '')
+                $(this).text(viaf);
+            }
+        });
+    });
+});
+</script>
