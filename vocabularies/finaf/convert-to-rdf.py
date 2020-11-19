@@ -132,8 +132,8 @@ def normalize(label):
 
 def format_label(fld, skip_last=False):
     """return a label consisting of subfields in a Field, properly formatted"""
-    subfields = fld.get_subfields('a','b','n','d','c')
-  
+    subfields = fld.get_subfields('a','b','n','c','d','q')
+
     if len(subfields) > 0:
         if skip_last:
             subfields = subfields[:-1]
