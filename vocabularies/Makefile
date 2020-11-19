@@ -1,6 +1,9 @@
 # Convert all */*-skos.ttl files to RDF/XML
 
-all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) yso/yso-fin.mrcx yso/yso-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
+all: $(patsubst %.ttl.gz,%.ttl,$(wildcard */*-skos.ttl.gz)) $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) yso/yso-fin.mrcx yso/yso-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
+
+%-skos.ttl: %-skos.ttl.gz
+	zcat $^ >$@
 
 %-skos.rdf: %-skos.ttl
 	rapper -i turtle -o rdfxml-abbrev $^ >$@ || rm $@
