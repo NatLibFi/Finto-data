@@ -1,16 +1,13 @@
 #!/bin/sh
 
-JENAHOME="$HOME/ontology/sw/apache-jena"
-INFILE="paikkatieto_FintoJulkaisu_2015_12.ttl"
-MERGEHIER="../../Finto-tools/merge-hierarchy/merge-hierarchy.sparql"
+#Skosify installed with "sudo pip3 install --upgrade skosify"
 
-$JENAHOME/bin/arq --data=$INFILE --data=yso-paikkatieto.ttl --query=$MERGEHIER --results=NT >pto-hierarchy.nt
-
-INFILES="pto-metadata.ttl pto-hierarchy.nt $INFILE yso-paikkatieto.ttl"
+INFILES="pto.ttl pto-metadata.ttl ysoKehitys-Cicero-2019.ttl"
 OUTFILE=pto-skos.ttl
 
-SKOSIFYHOME="../../SKOSIFY/"
+CONFFILE="finnonto.cfg"
 LOGFILE=skosify.log
-OPTS="-D -c pto2skos.cfg"
 
-$SKOSIFYHOME/skosify.py $OPTS -o $OUTFILE $INFILES 2>$LOGFILE
+#skosify -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+../../../Skosify/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+
