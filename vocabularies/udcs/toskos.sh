@@ -3,7 +3,7 @@
 INFILES="udcs-metadata.ttl udc-scheme.rdf udk-skos.ttl"
 OUTFILE=udcs-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYHOME="../../../Skosify"
 LOGFILE=skosify.log
 OPTS="--namespace http://udcdata.info/ -c udcs.cfg"
 
