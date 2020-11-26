@@ -181,6 +181,13 @@ function finaf_tweak() {
                 copyObject.attr("for", "#finaf-adjusted-" + index + "s" + sIndex).css("margin-left", "4px");
                 $(this).after(copyObject).after(asteriSpan);
             }
+            if (this.textContent.startsWith("Y-tunnus:")) {
+                var yTunnusSpan = $("<span id='finaf-adjusted-" + index + "s" + sIndex + "'>" + this.textContent.substr(10) + "</span>");
+                $(this).text("Y-tunnus: ");
+                var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
+                copyObject.attr("for", "#finaf-adjusted-" + index + "s" + sIndex).css("margin-left", "4px");
+                $(this).after(copyObject).after(yTunnusSpan);
+            }
         });
         $(this).find('a').each(function(aIndex) {
             var href = $(this).attr('href');
