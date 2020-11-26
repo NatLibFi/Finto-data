@@ -169,27 +169,59 @@ function createObjectsFromNarrowers(narrowerResponse) {
 
 <!-- KANTO/finaf tweaks -->
 <script type="text/javascript">
-$( document ).ready(function() {
-    $(".prop-rdaa_P50094 li, .prop-rdaa_P50006 li").each(function(index) {
+
+function finaf_tweak() {
+    $(".prop-rdaa_P50094 li:not(.finaf-adjusted), .prop-rdaa_P50006 li:not(.finaf-adjusted)").each(function(index) {
+        $(this).addClass("finaf-adjusted"); // prevent infinity loop
+        $(this).find('> span').each(function(sIndex) {
+            if (this.textContent.startsWith("Asteri ID:")) {
+                var asteriSpan = $("<span id='finaf-adjusted-" + index + "s" + sIndex + "'>" + this.textContent.substr(11) + "</span>");
+                $(this).text("Asteri ID: ");
+                var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
+                copyObject.attr("for", "#finaf-adjusted-" + index + "s" + sIndex).css("margin-left", "4px");
+                $(this).after(copyObject).after(asteriSpan);
+            }
+        });
         $(this).find('a').each(function(aIndex) {
-            href = $(this).attr('href');
-            if (href.startsWith('http://isni.org/isni/')) {
+            var href = $(this).attr('href');
+            if (href.startsWith('http:\/\/isni.org/isni/')) {
                 $("<span>ISNI: </span>").insertBefore($(this));
-                isni = href.replace('http://isni.org/isni/', '')
+                isni = href.replace('http:\/\/isni.org/isni/', '');
                 isnistr = isni.substr(0, 4) + " " + isni.substr(4, 4) + " " + isni.substr(8, 4) + " " + isni.substr(12, 4);
                 $(this).text(isnistr);
+                $(this).attr("id", "finaf-adjusted-" + index + "a" + aIndex);
+                var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
+                copyObject.attr("for", "#finaf-adjusted-" + index + "a" + aIndex).css("margin-left", "4px");
+                $(this).after(copyObject);
             }
-            if (href.startsWith('https://orcid.org/')) {
+            if (href.startsWith('https:\/\/orcid.org/')) {
                 $('<span class="orcid">ORCID:</span>').insertBefore($(this));
-                orcid = href.replace('https://orcid.org/', '')
+                orcid = href.replace('https:\/\/orcid.org/', '');
                 $(this).text(orcid);
+                $(this).attr("id", "finaf-adjusted-" + index + "a" + aIndex);
+                var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
+                copyObject.attr("for", "#finaf-adjusted-" + index + "a" + aIndex).css("margin-left", "4px");
+                $(this).after(copyObject);
             }
-            if (href.startsWith('http://viaf.org/viaf/')) {
+            if (href.startsWith('http:\/\/viaf.org/viaf/')) {
                 $('<span>VIAF ID: </span>').insertBefore($(this));
-                viaf = href.replace('http://viaf.org/viaf/', '')
+                viaf = href.replace('http:\/\/viaf.org/viaf/', '');
                 $(this).text(viaf);
+                $(this).attr("id", "finaf-adjusted-" + index + "a" + aIndex);
+                var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
+                copyObject.attr("for", "#finaf-adjusted-" + index + "a" + aIndex).css("margin-left", "4px");
+                $(this).after(copyObject);
             }
         });
     });
+}
+
+$( document ).ready(function() {
+    if (vocab === "finaf") {
+        finaf_tweak(); // do immediately
+        const mainContentNode = document.getElementById("maincontent");
+        const observer = new MutationObserver(finaf_tweak);
+        observer.observe(mainContentNode, {childList: true, subtree: true});
+    }
 });
 </script>
