@@ -1,7 +1,6 @@
 #!/bin/sh
 
 INFILES="hero.ttl"
-#INFILES="hero-combined.ttl"
 OUTFILE=hero-skos.ttl
 
 LOGFILE=skosify.log
