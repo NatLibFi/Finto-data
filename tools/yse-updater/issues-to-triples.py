@@ -95,7 +95,7 @@ def addPropertyValueTriples(prop, block, uri):
 def issueToTriple(issue):
     md_blocks = issue.body.split('#### ')
     uri = ysa + 'Y' + str(issue.number + 500000)
-    if ('Käsitteen tyyppi   \n\nGEO \n\n'.decode('utf-8') in md_blocks):
+    if ('Käsitteen tyyppi   \n\nGEO \n\n' in md_blocks):
         newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysameta + 'GeographicalConcept')) )
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(skos + 'Concept')) )
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysemeta + 'Concept')) )
