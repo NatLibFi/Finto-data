@@ -244,8 +244,8 @@
 	dc:subject :cat_culture ;
 	void:uriSpace "http://www.yso.fi/onto/hero/";
 	skosmos:feedbackRecipient "yrjo.kotivuori@arkisto.fi" ;
-	skosmos:language "fi", "en", "sv", "de", "fr", "sq", "es", "nl", "is", "it", "hr", "lv", "lt", "pl", "ro",
-      "sr", "da", "cs", "uk", "hu", "be", "ru", "et", "ca", "el", "la", "nb", "nn", "pt", "sk", "bg", "sl";
+	skosmos:language "fi", "en", "sv", "de", "fr", "sq", "es", "nl", "it", "hr", "lv", "lt", "pl", "ro",
+      "sr", "da", "cs", "uk", "hu", "be", "ru", "et", "ca", "el", "la", "nb", "pt", "sk", "bg", "sl";
         skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:defaultLanguage "fi";
@@ -1361,6 +1361,24 @@
                           schema:propertyID 	"msg";
 			schema:value "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn  käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon ehdotusjärjestelmässä."@fi , "MUSO - ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via förslagssystemet."@sv, "Vocabulary is no longer in use." ;
 			] .
+
+:cn skosmos:useParamPlugin :cnMessage .
+
+:cnMessage  a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
+<br/><br/>
+Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
+        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
+</br></br>
+För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
+        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
+<br/><br/>
+For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
+    ] .
 
 :rda-order a skosmos:PropertyOrder;
 	rdf:value (

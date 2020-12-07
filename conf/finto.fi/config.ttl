@@ -7,6 +7,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
+@prefix schema: <http://schema.org/> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosmos: <http://purl.org/net/skosmos#> .
@@ -187,7 +188,6 @@
         skosmos:searchByNotation true ;
         skosmos:defaultSidebarView "hierarchy";
 	skosmos:showTopConcepts "true";
-        skosmos:usePlugin "hklj";
 #	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	void:dataDump <http://api.finto.fi/download/hklj/hklj-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/hklj/hklj-skos.rdf> ;
@@ -870,7 +870,6 @@
 	skosmos:sortByNotation true ;
         skosmos:alphabeticalListQualifier skos:notation ;
         skosmos:searchByNotation true ;
-        skosmos:usePlugin "ykl";
 #	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	void:dataDump <http://api.finto.fi/download/ykl/ykl-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/ykl/ykl-skos.rdf> ;
@@ -980,6 +979,24 @@
     void:dataDump <http://api.finto.fi/download/yse/yse-skos.ttl> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yse/> .
+
+:cn skosmos:useParamPlugin :cnMessage .
+
+:cnMessage  a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
+<br/><br/>
+Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
+        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
+</br></br>
+För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
+        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
+<br/><br/>
+For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
+    ] .
 
 :finaf-order a skosmos:PropertyOrder;
 	rdf:value (
