@@ -254,6 +254,11 @@ def main():
         if '100' not in rec and '110' not in rec and '111' not in rec:
             logging.warning('no 100/110/111 field, skipping record %s', recid)
             continue
+
+        # exclude test records
+        if 'STA' in rec and 'a' in rec['STA'] and rec['STA']['a'] == 'TEST':
+            logging.info('skipping TEST record %s', recid)
+            continue
         
         if '100' in rec: # person name
             g.add((uri, RDF.type, Person))
