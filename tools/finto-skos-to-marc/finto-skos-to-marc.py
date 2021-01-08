@@ -6,6 +6,7 @@ from rdflib.namespace import SKOS, XSD, OWL, DC
 from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 import socket
+import time
 from pymarc import Record, Field, XMLWriter, MARCReader, parse_xml_to_array
 from lxml import etree as ET
 import shutil
@@ -18,7 +19,7 @@ import unicodedata
 from configparser import ConfigParser, ExtendedInterpolation
 import sys
 import logging
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import subprocess
 import urllib
 from collections import namedtuple
@@ -463,7 +464,8 @@ def convert(cs, vocabulary_name, language, g, g2):
     deprecated_counter = 0
     writer_records_counter = 0
     ysoATagParser = ConvertHTMLYSOATags()
-    ET_namespaces = {"marcxml": "http://www.loc.gov/MARC21/slim"}
+    ET_namespaces = {"marcxml": "http://www.loc.gov/MARC21/slim",
+                     "atom": "http://www.w3.org/2005/Atom"}
 
     handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     writer = XMLWriter(handle)
@@ -476,12 +478,62 @@ def convert(cs, vocabulary_name, language, g, g2):
 
     concs = []
     
+    
+
+    # haetaan Kongressin kirjaston päivitykset viimeisen viikon ajalta, 
+    # jos ohjelmaa ei ole ajettu aiemmin samana päivänä
+    loc_update_dict = {}
+    update_loc_concepts = True
+    loc_update_file = os.path.join(cs.get("locDirectory"), "updates.pkl")
+    if os.path.exists(loc_update_file):
+        timestamp = os.path.getmtime(loc_update_file)
+        file_date = date.fromtimestamp(timestamp)
+        if file_date == date.today():
+            update_loc_concepts = False
+        with open(loc_update_file, 'rb') as input_file: 
+            try:     
+                loc_update_dict = pickle.load(input_file)
+            except EOFError:
+                logging.error("EOFError in "%loc_update_file)
+
+    limit_date = date.today() - timedelta(days=7)
+    lc_namespaces = [LCGF, LCSH]
+    feed_prefix = "feed/"
+    for ns in lc_namespaces:
+        limit_reached = False
+        for idx in range(1,100):
+            if limit_reached:
+                break
+            file_path = os.path.join(str(ns), feed_prefix, str(idx))
+            try:
+                with urllib.request.urlopen(file_path, timeout=5) as atom_xml:
+                    recordNode = ET.parse(atom_xml)
+                    root = recordNode.getroot()
+                    for entry in root.findall("atom:entry", ET_namespaces):
+                        label = None
+                        for updated in entry.findall("atom:updated", ET_namespaces):
+                            updated = datetime.strptime(updated.text, "%Y-%m-%dT%H:%M:%S%z").date()
+                            if updated >= limit_date:
+                                for link in entry.findall("atom:link", ET_namespaces):
+                                    if not 'type' in link.attrib:
+                                        uri = link.attrib['href']
+                                        if uri in loc_update_dict:
+                                            if loc_update_dict[uri]['date'] < updated:
+                                                loc_update_dict[uri]['date'] = updated
+                                                loc_update_dict[uri]['updatable'] = True
+                            else:
+                                limit_reached = True
+            except ET.ParseError as e:
+                logging.warning("Failed to parse Library of Congress update feed")
+        if not limit_reached:
+            logging.warning("More than 10 000 updates in Library of Congress feed %s"%ns)
+        
     if helper_variables['keepModified']:
         # käydään läpi vain muuttuneet käsitteet
         for uri in modified_dates:
             if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:  
                 concs.append(URIRef(uri))
-    else:
+    else:    
         concs = g.subjects(RDF.type, SKOS.Concept)
 
     for concept in sorted(concs):
@@ -502,6 +554,8 @@ def convert(cs, vocabulary_name, language, g, g2):
         
         rec = Record()   
         deprecatedString = ""
+
+        loc_concept_downloaded = False
 
         # dct:modified -> 005 EI TULOSTETA, 688 
         # tutkitaan, onko käsite muuttunut vai alkuperäinen
@@ -1023,17 +1077,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     ]
                 )
             )
-            try:
-                if type(modified) == datetime:
-                    if created > modified.date():
-                        logging.warning("Created date later than modified for concept %s" % concept)
-                else:
-                    if created > modified:
-                        logging.warning("Created date later than modified for concept %s" % concept)
-            except Exception:
-                logging.warning("Date comparison failed for concept %s", concept)
-
-                        
+                  
         # all skos:match*es -> 7XX linkkikenttiin
         # halutaan linkit kaikkiin kieliversioihin
         # lisäksi saman sanaston erikieliset preflabelit tulevat tänne
@@ -1160,31 +1204,38 @@ def convert(cs, vocabulary_name, language, g, g2):
                     continue
                 recordNode = None
                 local_loc_source = os.path.join(cs.get("locDirectory"), loc_object["id"] + ".marcxml.xml")
-                downloaded = False
-                try:
-                    #recordNode = lcshRecordNodes[loc_object["id"]]
-                    with open(local_loc_source, encoding="utf-8") as f:
-                        recordNode = ET.parse(f)
-                except OSError as e:
-                    # haetaan kongressin kirjastosta tarvittava tiedosto ja tallennetaan se
+                if matchURIRef not in loc_update_dict:
+                    loc_update_dict[matchURIRef] = {'date': date.today()}
+                    if os.path.exists(local_loc_source):
+                        loc_update_dict[matchURIRef]['updatable'] = False
+                    else:
+                        loc_update_dict[matchURIRef]['updatable'] = True
+                if not loc_update_dict[matchURIRef]['updatable'] and os.path.exists(local_loc_source):
                     try:
+                        with open(local_loc_source, encoding="utf-8") as f:
+                            recordNode = ET.parse(f)
+                    except ET.ParseError as e:
+                        logging.warning("Failed to parse the following file: %s. Skipping the property for concept %s." %
+                                (local_loc_source, concept))
+                elif update_loc_concepts:
+                    try:
+                        # Kongressin kirjastosta voi ladata 120 käsitettä minuutissa, varmistetaan aikaviiveellä, ettei raja ylity
+                        time.sleep(0.5)
                         with urllib.request.urlopen(loc_object["prefix"] + loc_object["id"] + ".marcxml.xml", timeout=5) as marcxml, \
                             open(local_loc_source, 'wb') as out_file:
                             shutil.copyfileobj(marcxml, out_file)
                             logging.info("Downloaded LCSH link to %s." %
                                 (local_loc_source))
-                            downloaded = True
+                            loc_concept_downloaded = True
+                            loc_update_dict[matchURIRef]['updatable'] = False
                     except urllib.error.URLError as e:
                         logging.warning('Unable to load the marcxml for %s. Reason: %s. Skipping the property for concept %s.' %
                             (loc_object["id"], e.reason, concept))
                     except OSError as e:
                         logging.warning("Failed to create a file for %s under %s directory. Skipping the property for concept %s." %
                             (loc_object["id"], cs.get("locDirectory"), concept))
-                except ET.ParseError as e:
-                    logging.warning("Failed to parse the following file: %s. Skipping the property for concept %s." %
-                            (local_loc_source, concept))
                 
-                if downloaded:
+                if loc_concept_downloaded:
                     try:
                         with open(local_loc_source, encoding="utf-8") as f:
                             recordNode = ET.parse(f)
@@ -1313,7 +1364,7 @@ def convert(cs, vocabulary_name, language, g, g2):
             md5.update(str.encode(str(rec)))
             hash = md5.hexdigest()
             if str(concept) in modified_dates:
-                if not hash == modified_dates[str(concept)][1]:
+                if not hash == modified_dates[str(concept)][1] or loc_concept_downloaded:
                     modified_dates[str(concept)] = (date.today(), hash)
             else:  
                 modified_dates[str(concept)] = (date.today(), hash)
@@ -1324,6 +1375,11 @@ def convert(cs, vocabulary_name, language, g, g2):
     if helper_variables['modificationDates']:
         with open(helper_variables['modificationDates'], 'wb') as output:
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
+
+    if update_loc_concepts:
+        print("updated")
+        with open(loc_update_file, 'wb') as output:
+            pickle.dump(loc_update_dict, output, pickle.HIGHEST_PROTOCOL)
 
     # tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
     parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
