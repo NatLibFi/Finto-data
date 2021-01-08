@@ -5,7 +5,7 @@ html, body {
 /* Font definitions
  *****************************************/
 
-#vocab-info h1, .prefLabel, .versal-pref, #vocab-info h1, .prefLabel, .versal-pref a {
+#vocab-info h2, .prefLabel, .versal-pref, .versal-pref a {
   color: #62729f !important;
 }
 
@@ -84,6 +84,27 @@ p {
   background-color: #75889F !important;
 }
 
+#topbar-language-navigation::before {
+  margin-top: 20px;
+}
+
+#topbar-language-navigation {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#navigation, #language {
+  margin-bottom: 0px;
+}
+
+#language .navigation-font {
+  margin-left: 8px;
+}
+
+#navigation .navigation-font {
+  margin: auto 12px;
+}
+
 #navi1, #navi2, #navi3, #navi4 {
   padding-left: 26px;
   padding-top: 6px;
@@ -93,6 +114,11 @@ p {
 
 #navi1 {
   margin-left: 0 !important;
+  background-position-y: initial;
+}
+
+#navi4 {
+  margin-left: 6px !important;
 }
 
 .service-fi h1, .service-sv h1, .service-en h1, #service-name {
@@ -122,14 +148,14 @@ p {
   width: 465px;
 }
 
-#navi1 { background-image: url('../finto-pics/vocabularies.png'); padding-top: 10px; }
+#navi1 { background-image: url('../finto-pics/vocabularies.png'); }
 #navi2 { background-image: url('../finto-pics/about.png'); }
 #navi3 { background-image: url('../finto-pics/feedback.png'); }
 #navi4 { background-image: url('../finto-pics/help.png'); }
 
 #navi4 > span {
   border-bottom: 2px dotted #394554;
-  margin: 0;
+  margin: 0 !important;
 }
 
 #navi4:hover > span {
@@ -143,6 +169,10 @@ p {
 #navi4:hover { 
   background-image: url('../finto-pics/help-mouseover.png'); 
   color: #0078d4 !important; 
+}
+
+.headerbar {
+  margin-bottom: 19px;
 }
 
 #lang-dropdown-toggle, .headerbar .multiselect {
@@ -173,6 +203,10 @@ p {
   border-top-color: #474b4f !important;
 }
 
+#vocab-info hr {
+  margin-bottom: 10px !important;	
+}
+
 /* front page stuff 
  ***************************/
 .logo-header {
@@ -186,6 +220,17 @@ p {
   background-image: url('../finto-pics/finto.png');
   width: 240px;
   height: 315px;
+}
+
+.frontpage-logo .main-container.frontpage::before {
+  content: " ";
+  position: absolute;
+  width: 240px;
+  height: 315px;
+  background-image: url('../finto-pics/finto.png');
+  background-repeat: no-repeat;
+  top: -245px;
+  left: -30px;
 }
 
 .vocabularies {
@@ -205,6 +250,10 @@ p {
 }
 
 .frontpage-spacing {
+  margin-bottom: 95px;
+}
+
+.frontpage-spacing .header-float {
   margin-bottom: 110px;
 }
 
@@ -243,7 +292,6 @@ p {
 
 .feedback-box {
   width: 600px;
-  float: left;
 }
 
 #send-feedback {
@@ -382,7 +430,7 @@ hr {
 }
 
 .property-divider {
-  border-bottom: 2px solid #3bc2bd !important;
+  border-top: 2px solid #3bc2bd !important;
 }
 
 .property-divider hr {
@@ -394,6 +442,10 @@ hr {
 }
 
 .nav-tabs > li > a {
+  background-color: #bbe3de;
+}
+
+.nav-tabs #hier-trigger {
   background-color: #bbe3de;
 }
 
@@ -410,60 +462,84 @@ hr {
   color: #474b4f !important;
 }
 
-@media (max-width: 800px) {
-  #service-logo {
-    margin-top: -80px;
-    margin-left: -8px;
-  }
-}
-
-@media (max-width: 700px) {
-
+@media (max-width: 620px) {
   #navi1, #navi2, #navi3, #navi4 {
     background-image: none !important;
     padding-left: 0 !important;
   }
 
-  #service-logo {
-    position: absolute !important;
+  .topbar.frontpage #navigation > a, .topbar.frontpage #language > a, .topbar.frontpage #navi4 > span {
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 700px) {
+  /* Counter styles.css declaration */
+  .frontpage #navigation > a, .frontpage #language > a, .frontpage #navi4 > span {
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 710px) {
+  .topbar-white #navi1, .topbar-white #navi2, .topbar-white #navi3, .topbar-white #navi4 {
+    background-image: none !important;
+    padding-left: 0 !important;
+  }
+
+  .topbar-white #navigation > a, .topbar-white #language > a, .topbar-white #navi4 > span {
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 799.99px) {
+  .frontpage #service-logo {
     margin-top: -90px;
     background-image: url('../finto-pics/finto-mobile.png');
     width: 333px;
     height: 210px !important;
+    margin-left: auto;
+    margin-bottom: 14px;
   }
-  
-  .frontpage-spacing {
-    top: 95px !important;
+
+  .frontpage-logo .frontpage #topbar-language-navigation {
+    width: 100%;
+    justify-content: space-between;
   }
-  
-  .main-container.frontpage {
-    top: 100px !important;
+
+  .frontpage #navi1 {
+    margin-left: 0 !important;
   }
-  
-  .frontpage #navigation {
-    top: 110px !important;
+
+  .frontpage #language > span {
+    margin-right: 6px;
   }
-  
-  .frontpage #language {
-    top: 110px !important;
+  .frontpage #language > a {
+    margin-left: 4px !important;
   }
+
+  .headerbar.frontpage-spacing {
+    margin-bottom: 70px;
+  }
+
+  .frontpage-spacing .header-float {
+    margin-bottom: 0;
+  }
+
 
 }
 
-@media (max-width: 500px) {
+@media (min-width: 800px) {
 
-  #navi4 {
-    display: none;
+  #service-logo {
+    display: none !important;
   }
-
-}
-
-@media (min-width: 801px) {
 
   .global-content {
     margin-left: 150px;
   }
-  
+
   .welcome-box, .right-box {
     margin-left: 150px !important;
   }
@@ -473,46 +549,40 @@ hr {
   }
 }
 
-@media (max-width: 1050px) {
+@media (min-width: 800px) and (max-width: 1270px) {
+  body.frontpage-logo {
+    background-image: url('../finto-pics/finto.png');
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 1150px) {
   .service-fi, .service-sv, .service-en {
     width: 120px !important;
   }
 }
 
-@media (max-width: 1259px) {
-  .right-box {
-    top: 395px !important;
-  }
-  
-  .service-fi, .service-sv, .service-en {
-    margin-left: -15px !important;
-  }
-
-  #navigation {
-    padding-right: 15px;
-  }
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1168px) {
   #navigation {
     padding-right: 10px;
   }
-  
+
   #navigation > a, #navigation > span {
-    margin: 0 1px 0 1px;
+    margin: 0 1px 0 5px !important;
   }
 }
 
-@media (min-width: 1260px) {
+@media (max-width: 1259.99px) {
+  .right-box {
+    top: 395px !important;
+  }
 
+}
+
+@media (min-width: 1260px) {
   .welcome-box {
     margin-left: 140px !important;
     padding-bottom: 0px;
-  }
-
-  body.frontpage-logo {
-    background-image: url('../finto-pics/finto.png');
-    background-repeat: no-repeat;
   }
 
   #vocabulary-list {
@@ -522,18 +592,19 @@ hr {
   .nav-tabs > li.active > a {
     height: 41px;
   }
-  
+
   .nav-tabs > li > a  {
     height: 43px;
   }
 
-  #service-logo {
-    //margin-left: -35px;
-    display: none !important;
-  }
-
   .alphabetical-search-results li, li, .versal, .versal-bold, p, .search-result > .prefLabel, .search-result > .notation, .property-values > .prefLabel, td > a {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .frontpage-logo .main-container.frontpage::before {
+    display: none !important;
   }
 }
 
@@ -543,26 +614,29 @@ hr {
   }
 }
 
-@media (min-width: 1360px) {
-  body.frontpage-logo {
-    background-position: 5% 0;
-  }
+
+/* Disable prefLabel copy to clipboard button for classifications */
+/* Due to HTML element structure, we first need to hide both buttons,
+   then bring back the URI copy button
+.vocab-udcs button.copy-clipboard { display: none; }
+.vocab-udcs .property-value-wrapper button.copy-clipboard { display: inline; }
+.vocab-ykl button.copy-clipboard { display: none; }
+.vocab-ykl .property-value-wrapper button.copy-clipboard { display: inline; }
+.vocab-hklj button.copy-clipboard { display: none; }
+.vocab-hklj .property-value-wrapper button.copy-clipboard { display: inline; }
+*/
+
+/* KANTO / finaf specific styles */
+
+.vocab-finaf .prop-rdaa_P50025 span, .vocab-finaf .prop-rdaa_P50103 span {
+  /* variant names should be shown in italic */
+  font-style: italic;
 }
 
-@media (min-width: 1520px) {
-  body.frontpage-logo {
-    background-position: 0 0;
-  }
-}
-
-@media (min-width: 1650px) {
-  body.frontpage-logo {
-    background-position: 3% 0;
-  }
-}
-
-@media (min-width: 1900px) {
-  body.frontpage-logo {
-    background-position: 120px 0;
-  }
+.vocab-finaf .orcid {
+  padding-right: 22px;
+  margin-right: 6px;
+  background-image: url(../finto-pics/orcid_16x16.png);
+  background-position: center right;
+  background-repeat: no-repeat;
 }

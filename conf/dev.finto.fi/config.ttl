@@ -13,6 +13,8 @@
 @prefix skosmos: <http://purl.org/net/skosmos#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mdrtype: <http://publications.europa.eu/resource/authority/dataset-type/> .
+@prefix rdaa: <http://rdaregistry.info/Elements/a/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix : <#> .
 
 # Skosmos main configuration
@@ -165,6 +167,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:cn:";
 	skosmos:language "fi";
         skosmos:useModifiedDate "true";
+	skosmos:propertyOrder :rda-order ;
 	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
 	void:dataDump <http://dev.finto.fi/download/cn/cn-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/cn/cn-skos.rdf> ;
@@ -185,6 +188,22 @@
 	void:dataDump <http://dev.finto.fi/download/eos/eos-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://iow.csc.fi/skos/eos#> .
+
+:finaf a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KANTO - Kansalliset toimijatiedot"@fi, "KANTO - Nationella aktörsnamn"@sv;
+	skosmos:shortName "KANTO";
+	dc:subject :cat_general ;
+        skosmos:usePlugin "finaf" ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:finaf:";
+	skosmos:language "fi";
+        skosmos:useModifiedDate "true";
+        skosmos:showStatistics "false";
+	skosmos:propertyOrder :finaf-order ;
+	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
+	void:dataDump <http://dev.finto.fi/download/finaf/finaf-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/finaf/finaf-skos.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:finaf:> .
 
 :geo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "GEO - Geologian ontologia"@fi, "GEO - Geologian ontologia"@sv, "GEO - Geologian ontologia"@en ;
@@ -225,8 +244,8 @@
 	dc:subject :cat_culture ;
 	void:uriSpace "http://www.yso.fi/onto/hero/";
 	skosmos:feedbackRecipient "yrjo.kotivuori@arkisto.fi" ;
-	skosmos:language "fi", "en", "sv", "de", "fr", "sq", "es", "nl", "is", "it", "hr", "lv", "lt", "pl", "ro",
-      "sr", "da", "cs", "uk", "hu", "be", "ru", "et", "ca", "el", "la", "nb", "nn", "pt", "sk", "bg", "sl";
+	skosmos:language "fi", "en", "sv", "de", "fr", "sq", "es", "nl", "it", "hr", "lv", "lt", "pl", "ro",
+      "sr", "da", "cs", "uk", "hu", "be", "ru", "et", "ca", "el", "la", "nb", "pt", "sk", "bg", "sl";
         skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:defaultLanguage "fi";
@@ -476,6 +495,7 @@
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:showTopConcepts "true";
+    skosmos:showChangeList "true" ;
 	skosmos:arrayClass isothes:ThesaurusArray ;
 	skosmos:usePlugin "finna" ;
 	void:dataDump <http://dev.finto.fi/download/koko/koko-skos.ttl> ;
@@ -740,6 +760,22 @@
         dct:format "application/marcxml+xml";
         dct:language "sv" .
 
+:slmtest a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Suomalainen lajityyppi- ja muotosanasto - käsiteskeemat piilotettu (testi)"@fi , "Finländsk genre- och formlista (experiment)"@sv ;
+	skosmos:shortName "SLM (test)";
+	dc:subject :cat_general ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:slm:";
+	skosmos:language "fi", "sv";
+	skosmos:useModifiedDate "true";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:showChangeList "true" ;
+	skosmos:useModifiedDate "true";
+	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi";
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:mainConceptScheme <http://urn.fi/URN:NBN:fi:au:slm:> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/slmtest/> .
+
 :musa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "MUSA - Musiikin asiasanasto"@fi,
 	"CILLA - Specialtesaurus för musik"@sv,
@@ -848,6 +884,29 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/ponduskategorier/> .
 
+:pto-testi a skosmos:Vocabulary, void:Dataset ;
+	dc:title "PTO - Finnish Geospatial Domain Ontology Test Version"@en,
+	        "PTO - Paikkatieto-ontologian testiversio"@fi,
+	        "PTO - Ontologi för geografisk information, testversion"@sv ;
+	skosmos:shortName "PTO-test";
+	dc:subject :cat_geo ;
+	void:uriSpace "http://paikkatiedot.fi/def/1001001/";
+	skosmos:language "fi", "sv", "en" ;
+        skosmos:useModifiedDate "true";
+	skosmos:defaultLanguage "fi" ;
+	skosmos:showTopConcepts "true";
+	skosmos:feedbackRecipient "Inspire@maanmittauslaitos.fi";
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/PaikhakConcept> ;
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/TskConcept> ;
+	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/InspireConcept> ;
+	skosmos:hasMultiLingualProperty <http://paikkatiedot.fi/def/1001000/deprecatedLabel> ;
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:mainConceptScheme <http://paikkatiedot.fi/def/1001000/> ;
+	void:dataDump <http://dev.finto.fi/download/pto/pto-skos-test.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/pto-test/> .
+	
 :pto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "PTO - Finnish Geospatial Domain Ontology"@en,
 	        "PTO - Paikkatieto-ontologia"@fi,
@@ -866,6 +925,7 @@
 	skosmos:hasMultiLingualProperty <http://paikkatiedot.fi/def/1001000/deprecatedLabel> ;
 	skosmos:groupClass isothes:ConceptGroup ;
 	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:mainConceptScheme <http://paikkatiedot.fi/def/1001000/> ;
 	void:dataDump <http://dev.finto.fi/download/pto/pto-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/pto/pto-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
@@ -1169,6 +1229,7 @@
 	skosmos:groupClass isothes:ConceptGroup ;
 	skosmos:arrayClass isothes:ThesaurusArray ;
 	skosmos:showChangeList "true" ;
+	skosmos:feedbackRecipient "kk-info@helsinki.fi" ;
         skosmos:showPropertyInSearch skos:note ;
 	skosmos:useModifiedDate "true";
 	skosmos:usePlugin "finna" ;
@@ -1300,6 +1361,94 @@
                           schema:propertyID 	"msg";
 			schema:value "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn  käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon ehdotusjärjestelmässä."@fi , "MUSO - ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via förslagssystemet."@sv, "Vocabulary is no longer in use." ;
 			] .
+
+:cn skosmos:useParamPlugin :cnMessage .
+
+:cnMessage  a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
+<br/><br/>
+Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
+        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
+</br></br>
+För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
+        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
+<br/><br/>
+For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
+    ] .
+
+:rda-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdf:type	# type
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# type of jurisdiction
+		rdaa:P50022	# field of activity for corporate body
+		rdaa:P50033	# other designation for corporate body
+		rdaa:P50041	# preferred name of corporate body
+		rdaa:P50025	# variant name for corporate body
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50218	# related corporate body
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50023	# language of corporate body
+		rdaa:P50031	# place associated with corporate body
+		rdaa:P50037	# date of establishment
+		rdaa:P50038	# date of termination
+		rdaa:P50035	# corporate history
+		dc:source	# source information
+	) .
+
+:finaf-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdf:type	# type
+		rdaa:P50094	# identifier for person
+		rdaa:P50006	# identifier for corporate body
+		rdaa:P50121	# date of birth
+		rdaa:P50037	# date of establishment
+		rdaa:P50120	# date of death
+		rdaa:P50038	# date of termination
+		rdaa:P50098	# period of activity of person
+		rdaa:P50236	# period of activity of corporate body
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# category of government
+		rdaa:P50103	# variant name of person
+		rdaa:P50025	# variant name of corporate body
+		rdaa:P50119	# place of birth
+		rdaa:P50118	# place of death
+		rdaa:P50109	# place of residence
+		rdaa:P50097	# country associated with person
+		rdaa:P50346	# related place of person
+		rdaa:P50350	# related place of corporate body
+		rdaa:P50115	# fuller form of name
+		rdaa:P50104	# profession or occupation
+		rdaa:P50110	# term of rank, honour or office
+		rdaa:P50108	# other designation of person
+		rdaa:P50033	# other designation of corporate body
+		rdaa:P50100	# field of activity of person
+		rdaa:P50022	# field of activity of corporate body
+		rdaa:P50102	# language of person
+		rdaa:P50023	# language of corporate body
+		rdaa:P50428	# alternate identity of person
+		rdaa:P50429	# real identity of person
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50095	# is person member of corporate body
+		rdaa:P50318	# related corporate body of person
+		rdaa:P50316	# related person of person
+		rdaa:P50336	# related corporate body of corporate body
+		rdaa:P50334	# related person of corporate body
+		rdaa:P50113	# biographical information
+		rdaa:P50035	# corporate history
+		rdaa:P50395	# note on person
+		rdaa:P50393	# note on corporate body
+		rdau:P61101	# source consulted
+	) .
 
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,

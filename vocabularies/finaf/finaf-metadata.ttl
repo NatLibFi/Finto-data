@@ -1,0 +1,243 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix finaf: <http://urn.fi/URN:NBN:fi:au:finaf:>.
+@prefix mts: <http://urn.fi/URN:NBN:fi:au:mts:>.
+@prefix rdaa: <http://rdaregistry.info/Elements/a/> .
+@prefix rdac: <http://rdaregistry.info/Elements/c/> .
+@prefix rdae: <http://rdaregistry.info/Elements/e/> .
+@prefix rdam: <http://rdaregistry.info/Elements/m/> .
+@prefix rdan: <http://rdaregistry.info/Elements/n/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix rdaw: <http://rdaregistry.info/Elements/w/> .
+@prefix rdax: <http://rdaregistry.info/Elements/x/> .
+
+finaf: a skos:ConceptScheme ;
+    dc:creator "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:title "KANTO - Kansalliset toimijatiedot"@fi, "KANTO - Nationella aktörsnamn"@sv ;
+    dc:description """KANTO kattaa kansallisbibliografian kuvailun yhteydessä tuottamat ohjeelliset nimenmuodot Suomessa julkaistujen aineistojen tekijänä ja kohteena olevista toimijoista mukaan lukien musiikkiaineiston tekijät. Kotimaiseen julkaisutuotantoon liittyvien henkilöiden ja yhteisöjen kuvailujen lisäksi KANTO sisältää tietoja ulkomaalaisista henkilöistä ja yhteisöistä ja niihin liittyvistä aineistoista.
+
+Kuvailussa käytettävien nimenmuotojen lisäksi haettavissa ovat mm. tekijän käyttämät pseudonyymit ja nimen erikieliset versiot tai eri kirjoitusmuodot (ns. varianttinimet). Myös toimijaan liittyvät tunnukset (mm. ISNI, ORCID) ja toimijoihin liittyvät aineistot ovat nähtävissä. Tietoja tekijään liittyvistä aineistosta haetaan kansallisbibliografiasta Finnan kautta. Linkitykset musiikkiaineistoon ovat toistaiseksi puutteellisia.
+
+Toimijanimien kuvailussa on noudatettu RDA:n kuvailusääntöjä ja suomalaisten kirjastojen tekemiä linjauksia vuodesta 2016.
+
+Lisätietoja henkilöiden ja yhteisöjen nimenmuodoista, puutteellisten tai virheellisten tietojen korjauspyyntöjä ja muuta palautetta voi lähettää sähköpostitse osoitteeseen <a href="mailto:toimijakuvailu-posti@helsinki.fi">toimijakuvailu-posti@helsinki.fi</a>.
+
+Kansallisiin toimijatietoihin viitataan lyhenteellä <em>finaf</em> (kts. <a href="http://finto.fi/koko/fi/page/p45839">Kongressin kirjaston nimiauktoriteettikoodisto</a>). Myös muissa kuin MARC 21 -pohjaisissa tietojärjestelmissä suositellaan saman lyhenteen käyttöä.
+
+Lisätietoja tietosuojasta katso <a href="https://www.kiwi.fi/x/PIGnC">Tietosuoja - Asteri, KANTO, ISNI ja Melindan kuvailutiedot</a>."""@fi ,
+        """KANTO täcker de namnformer som anges i samband med beskrivningsarbetet i nationalbibliografin. I KANTO ingår de aktörer som är upphov till material eller som behandlas som ämne i material som getts ut i Finland. I KANTO ingår även de personer och organisationer som är upphov till musikmaterial eller har en annan relation till utgivet musikmaterial. KANTO täcker främst inhemska personer och organisationer, men en del utländska namn förekommer också i KANTO.
+
+Sök av namn täcker de namnformer som förekommer i beskrivningen av materialet, men även pseudonymer och olika språkversioner eller skriftarter av namnet. De identifikatorer (t.ex. ISNI, ORCID) som relaterar till agenten anges i KANTO. Informationen om materialet som relaterar till upphovspersonen har sökts från nationalbibliografin med Finna. Länkarna till musikmaterialet är tills vidare bristfälliga.
+
+Beskrivningen av agenter har gjorts enligt beskrivningsreglerna RDA och de finländska bibliotekens riktlinjer från år 2016.
+
+Frågor angående namnformer för personer och organisationer, korrigeringar av bristfällig information och övrig respons kan skickas per e-post till <a href="mailto:toimijakuvailu-posti@helsinki.fi">toimijakuvailu-posti@helsinki.fi</a>.
+
+Förkortningen <em>finaf</em> (<a href="http://www.loc.gov/standards/sourcelist/name-title.html">http://www.loc.gov/standards/sourcelist/name-title.html</a>) hänvisar till den information som finns i KANTO. Vi rekommenderar att använda förkortningen i informationssystem, även i system som inte baserar sig på MARC 21 -formatet.
+
+För mer information on dataskydd se <a href="https://www.kiwi.fi/x/PIGnC">Tietosuoja - Asteri, KANTO, ISNI ja Melindan kuvailutiedot</a> (på finska)."""@sv ;
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:subject yso:p26023, yso:p1272, yso:p3835 ;
+    foaf:homepage <https://www.kiwi.fi/display/Toimijakuvailupalvelu/KANTO> ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> .
+
+# Person
+rdac:C10004
+    rdfs:subClassOf skos:Concept .
+
+# Corporate body
+rdac:C10005
+    rdfs:subClassOf skos:Concept .
+
+# authorized access point for person
+rdaa:P50411
+    rdfs:label "käytettävä nimenmuoto"@fi, "auktoriserad sökingång"@sv ;
+    skos:definition "Liittää henkilön henkilön hakutietoon, joka on valittu ensisijaiseksi tietyssä sanaston merkintäjärjestelmässä."@fi ;
+    rdfs:subPropertyOf skos:prefLabel .
+
+# authorized access point for corporate body
+rdaa:P50407
+    rdfs:label "käytettävä nimenmuoto"@fi, "auktoriserad sökingång"@sv ;
+    skos:definition "Liittää yhteisön yhteisön hakutietoon, joka on valittu ensisijaiseksi tietyssä sanaston merkintäjärjestelmässä."@fi ;
+    rdfs:subPropertyOf skos:prefLabel .
+
+rdaa:P50008
+    rdfs:label "har överordnad institution"@sv .
+
+rdaa:P50010
+    rdfs:label "har underordnad institution"@sv .
+
+rdaa:P50110
+    rdfs:label "har titel"@sv .
+
+rdaa:P50100
+    rdfs:label "har verksamhetsområde för personen"@sv .
+
+rdaa:P50102
+    rdfs:label "har språk för personen"@sv .
+
+rdaa:P50012
+    rdfs:label "har föregående institution"@sv .
+
+rdaa:P50016
+    rdfs:label "har efterföljande institution"@sv .
+
+rdaa:P50112
+    rdfs:label "personen har grundat institutionen"@sv .
+
+# variant name of person
+rdaa:P50103
+    rdfs:subPropertyOf skos:altLabel .
+
+# variant name of corporate body
+rdaa:P50025
+    rdfs:subPropertyOf skos:altLabel .
+
+rdaa:P50218
+    rdfs:subPropertyOf skos:related .
+
+rdaa:P50008
+    rdfs:subPropertyOf skos:broader .
+
+rdaa:P50010
+    rdfs:subPropertyOf skos:narrower .
+
+rdaa:P50011
+    rdfs:label "ansluten till institutionen"@sv .
+
+rdaa:P50017
+    rdfs:label "institutionen har grundat institutionen"@sv .
+
+rdaa:P50013
+    rdfs:label "av fusionen har uppstått"@sv .
+
+rdaa:P50014
+    rdfs:label "av delningen har uppstått"@sv .
+
+rdaa:P50022
+    rdfs:label "har verksamhetsområde för institutionen"@sv .
+
+rdaa:P50023
+    rdfs:label "har språk för institutionen"@sv .
+
+rdaa:P50229
+    rdfs:label "delad institution"@sv .
+
+rdaa:P50232
+    rdfs:label "deltagit i fusionen" .
+
+rdaa:P50238
+    rdfs:label "typ av administrativ enhet"@sv .
+
+rdaa:P50240
+    rdfs:label "större moderbolag"@sv .
+
+rdaa:P50241
+    rdfs:label "lokalt dotterbolag"@sv .
+
+rdaa:P50301
+    rdfs:label "ansluten institution"@sv .
+
+rdaa:P50302
+    rdfs:label "anslutit till institutionen"@sv .
+
+rdaa:P50393
+    rdfs:label "anmärkning om institutionen"@sv .
+
+rdaa:P50395
+    rdfs:label "anmärkning om personen"@sv .
+
+rdaa:P50428
+    rdfs:label "annan identitet för personen"@sv .
+
+rdaa:P50429
+    rdfs:label "verklig identitet för personen"@sv .
+
+rdaa:P50007
+    rdfs:label "institution som grundat institutionen"@sv .
+
+rdaa:P50029
+    rdfs:label "person som grundat institutionen"@sv .
+
+rdaa:P50230
+    rdfs:label "större medlemsorganisation"@sv .
+
+rdaa:P50231
+    rdfs:label "medlem i organisationen"@sv .
+
+rdaa:P50012
+    rdfs:label "föregående institution"@sv .
+
+rdaa:P50016
+    rdfs:label "efterföljande institution"@sv .
+
+rdaa:P50095
+    rdfs:label "institution"@sv .
+
+rdaa:P50237
+    rdfs:label "typ av institution"@sv .
+
+rdaa:P70001
+    rdfs:label "namn på ort"@sv .
+
+rdaa:P50350
+    rdfs:label "ort förknippad med institutionen"@sv .
+
+rdaa:P50316
+    rdfs:label "person assosierad med personen"@sv .
+
+rdaa:P50318
+    rdfs:lael "institution assosierad med personen"@sv .
+
+rdaa:P50346
+    rdfs:label "ort förknippad med personen"@sv .
+
+rdaa:P50346
+    rdfs:label "person assosierad med institutionen"@sv .
+
+rdaa:P50336
+    rdfs:label "institution assosierad med institutionen"@sv .
+
+# language of person
+rdaa:P50102
+    rdfs:subPropertyOf dct:language .
+
+# language of corporate body
+rdaa:P50023
+    rdfs:subPropertyOf dct:language .
+
+# has note on person
+rdaa:P50395
+    rdfs:label "huomautus henkilöstä"@fi ;
+    skos:definition "Liittää henkilön yhden tai useamman attribuutin laajaan rakenteistamattomaan henkilöä koskevaan kuvailuun."@fi .
+
+# has note on corporate body
+rdaa:P50393
+    rdfs:label "huomautus yhteisöstä"@fi ;
+    skos:definition "Liittää yhteisön yhden tai useamman attribuutin laajaan rakenteistamattomaan yhteisöä koskevaan kuvailuun."@fi .
+
+
+# has alternate identity of person
+rdaa:P50428
+    rdfs:label "henkilön toinen identiteetti"@fi ;
+    skos:definition "Liittää henkilön nomeniin, joka on pseudonyymi tai muu henkilön käyttämä nimitys."@fi .
+
+# has real identity of person
+rdaa:P50429
+    rdfs:label "henkilön todellinen identiteetti"@fi ;
+    skos:definition "Liittää henkilön nomeniin, joka on toista nomenia käyttävän henkilön todellinen nimitys."@fi .
+
+# has source consulted
+rdau:P61101
+    rdfs:label "tiedonlähde"@fi, "källa"@sv .
+    skos:definition "Liittää tiedonlähteen sellaiseen tiedonlähteeseen, jossa on metatietoteoksessa käytettäviä tietoja."@fi .

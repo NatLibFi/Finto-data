@@ -20,7 +20,7 @@ g.namespace_manager.bind('tero',TERO)
 g.namespace_manager.bind('terometa',TEROMETA)
 
 for conc in g.subjects(RDF.type, SKOS.Concept):
-  if not conc.startswith(TEROYSO) and not conc.startswith(YSO):
+  if not conc.startswith(YSO):
     g.add((conc, RDF.type, TEROMETA.Concept))
 
 g.serialize(destination=sys.stdout.buffer, format='turtle')

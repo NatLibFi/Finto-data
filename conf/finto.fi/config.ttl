@@ -7,10 +7,12 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
+@prefix schema: <http://schema.org/> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosmos: <http://purl.org/net/skosmos#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#>.
+@prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix : <#> .
 
@@ -77,6 +79,7 @@
 	void:uriSpace "http://www.yso.fi/onto/afo/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "AFO";
 	skosmos:indexShowClass <http://www.yso.fi/onto/afo-meta/Concept>;
 	skosmos:indexShowClass <http://www.yso.fi/onto/luke-meta/Concept>;
@@ -95,6 +98,7 @@
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/allars/";
 	skosmos:language "sv";
+        skosmos:useModifiedDate "true";
 	skosmos:groupClass skos:Collection;
 	skosmos:showChangeList "true"; 
 	skosmos:showPropertyInSearch skos:exactMatch, 
@@ -132,12 +136,29 @@
 	dc:subject :cat_general ;
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:cn:";
 	skosmos:language "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "Yhteisöt";
 #	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
 	void:dataDump <http://api.finto.fi/download/cn/cn-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/cn/cn-skos.rdf> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:cn:> .
+
+:finaf a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KANTO - Kansalliset toimijatiedot"@fi, "KANTO - Nationella aktörsnamn"@sv;
+	skosmos:shortName "KANTO";
+	dc:subject :cat_general ;
+        skosmos:usePlugin "finaf" ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:finaf:";
+	skosmos:language "fi";
+        skosmos:useModifiedDate "true";
+        skosmos:showStatistics "false";
+	skosmos:propertyOrder :finaf-order ;
+	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
+	void:dataDump <http://api.finto.fi/download/finaf/finaf-skos.ttl> ;
+	void:dataDump <http://api.finto.fi/download/finaf/finaf-skos.rdf> ;
+	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:finaf:> .
 
 :geo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "GEO - Geologian ontologia"@fi, "GEO - Geologian ontologia"@sv, "GEO - Geologian ontologia"@en ;
@@ -167,7 +188,6 @@
         skosmos:searchByNotation true ;
         skosmos:defaultSidebarView "hierarchy";
 	skosmos:showTopConcepts "true";
-        skosmos:usePlugin "hklj";
 #	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	void:dataDump <http://api.finto.fi/download/hklj/hklj-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/hklj/hklj-skos.rdf> ;
@@ -179,6 +199,7 @@
 	dc:subject :cat_culture ;
 	void:uriSpace "http://iconclass.org/";
 	skosmos:language "fi", "en", "fr", "de", "it";
+        skosmos:useModifiedDate "true";
 	skosmos:defaultLanguage "en";
 	skosmos:shortName "Iconclass";
 	void:dataDump <http://api.finto.fi/download/ic/ic-skos.ttl> ;
@@ -231,6 +252,7 @@
 	void:uriSpace "http://www.yso.fi/onto/jupo/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:shortName "JUPO";
 	skosmos:marcSourceCode "jupo";
@@ -267,6 +289,7 @@
 	void:uriSpace "http://www.yso.fi/onto/kauno/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "KAUNO";
 	skosmos:marcSourceCode "kauno/fin"@fi, "kauno/swe"@sv;
 	skosmos:indexShowClass <http://www.yso.fi/onto/kauno-meta/Concept>;
@@ -289,6 +312,7 @@
         void:uriSpace "http://urn.fi/URN:NBN:fi:au:kaunokki:";
         skosmos:language "fi", "sv";
         skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
         skosmos:indexShowClass <http://www.yso.fi/onto/kaunokki-meta/Concept>;
         skosmos:groupClass <http://www.yso.fi/onto/kaunokki-meta/ConceptGroup> ;
 #        skosmos:feedbackRecipient "marjut.puominen@hel.fi";
@@ -306,6 +330,7 @@
   dc:subject :cat_society ;
   void:uriSpace "http://www.yso.fi/onto/keko/";
   skosmos:language "fi", "sv", "en";
+  skosmos:useModifiedDate "true";
   skosmos:defaultLanguage "fi";
   skosmos:indexShowClass <http://www.yso.fi/onto/keko-meta/Concept>;
   skosmos:arrayClass isothes:ThesaurusArray ;
@@ -357,6 +382,7 @@
 	void:uriSpace "http://www.yso.fi/onto/kto/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "KTO";
 	skosmos:marcSourceCode "kto";
 	skosmos:indexShowClass <http://www.yso.fi/onto/kto-meta/Concept>;
@@ -376,6 +402,7 @@
 	void:uriSpace "http://www.yso.fi/onto/kulo/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "KULO";
 	skosmos:marcSourceCode "kulo";
 	skosmos:indexShowClass <http://www.yso.fi/onto/kulo-meta/Concept>;
@@ -393,6 +420,7 @@
 #	skosmos:feedbackRecipient "marjut.kokko@oikeus.fi";
     skosmos:language "fi";
     skosmos:defaultLanguage "fi";
+    skosmos:useModifiedDate "true";
     skosmos:shortName "OIKO";
     skosmos:arrayClass isothes:ThesaurusArray ;
     skosmos:showTopConcepts "true";
@@ -410,6 +438,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:lapponica:";
 	skosmos:language "fi", "se";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "Lapponica";
 	skosmos:marcSourceCode "lapponica";
 	void:dataDump <http://api.finto.fi/download/lapponica/lapponica-skos.ttl> ;
@@ -425,6 +454,7 @@
 	void:uriSpace "http://lexvo.org/id/iso639-3/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "en";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "Lexvo";
 	void:dataDump <http://api.finto.fi/download/lexvo/lexvo-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/lexvo/lexvo-skos.rdf> ;
@@ -457,6 +487,7 @@
 	void:uriSpace "http://www.yso.fi/onto/liito/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:shortName "LIITO";
 	skosmos:marcSourceCode "liito";
@@ -477,6 +508,7 @@
 	void:uriSpace "http://www.yso.fi/onto/tao/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:shortName "MAO/TAO";
 	skosmos:marcSourceCode "maotao";
@@ -496,6 +528,7 @@
 	void:uriSpace "http://www.yso.fi/onto/mesh/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "MeSH";
 #	skosmos:feedbackRecipient "rosa.venalainen@helsinki.fi";
 	void:dataDump <http://api.finto.fi/download/mesh/mesh-skos.ttl> ;
@@ -511,6 +544,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:mts:";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:defaultSidebarView "groups";
 	skosmos:groupClass skos:Collection ;
 #	skosmos:feedbackRecipient "kiti.vilkki-eriksson@helsinki.fi";
@@ -527,6 +561,7 @@
 	void:uriSpace "http://www.yso.fi/onto/musa/";
 	skosmos:language "fi", "sv";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "MUSA";
 	skosmos:marcSourceCode "musa/fin"@fi, "cilla/swe"@sv;
 	skosmos:showChangeList "true" ;
@@ -545,6 +580,7 @@
 	void:uriSpace "http://www.yso.fi/onto/muso/";
 	skosmos:language "fi", "sv";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "MUSO";
 	skosmos:marcSourceCode "muso";
 	skosmos:indexShowClass <http://www.yso.fi/onto/muso-meta/Concept>;
@@ -596,6 +632,7 @@
 	void:uriSpace "http://paikkatiedot.fi/def/1001001/";
 	skosmos:language "fi", "sv", "en" ;
 	skosmos:defaultLanguage "fi" ;
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 #	skosmos:feedbackRecipient "inspire@maanmittauslaitos.fi";
 	skosmos:indexShowClass <http://paikkatiedot.fi/def/1001000/PaikhakConcept> ;
@@ -604,6 +641,7 @@
 	skosmos:groupClass isothes:ConceptGroup ;
 	skosmos:arrayClass isothes:ThesaurusArray ;
 	skosmos:hasMultiLingualProperty <http://paikkatiedot.fi/def/1001000/deprecatedLabel> ;
+	skosmos:mainConceptScheme <http://paikkatiedot.fi/def/1001000/> ;
 	void:dataDump <http://api.finto.fi/download/pto/pto-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/pto/pto-skos.rdf> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
@@ -616,6 +654,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:ptvl:";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts true ;
 	skosmos:sortByNotation true ;
 	skosmos:fullAlphabeticalIndex "true";
@@ -634,6 +673,7 @@
 	void:uriSpace "http://www.yso.fi/onto/puho/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "PUHO";
 	skosmos:marcSourceCode "puho";
 	skosmos:indexShowClass <http://www.yso.fi/onto/puho-meta/Concept>;
@@ -653,6 +693,7 @@
 	void:uriSpace "http://urn.fi/urn:nbn:fi:au:seko:";
 	skosmos:language "fi";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
         skosmos:showChangeList "true" ;
 #	skosmos:feedbackRecipient "tapani.moisio@helsinki.fi";
 	void:dataDump <http://api.finto.fi/download/seko/seko-skos.ttl> ;
@@ -670,7 +711,9 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:slm:";
 	skosmos:language "fi", "sv";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
+        skosmos:showChangeList "true" ;
 #	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi";
 	void:dataDump <http://api.finto.fi/download/slm/slm-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/slm/slm-skos.rdf> ;
@@ -716,6 +759,7 @@
 	void:uriSpace "http://www.yso.fi/onto/tero/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "TERO";
 	skosmos:marcSourceCode "tero";
 #	skosmos:feedbackRecipient "johanna.eerola@thl.fi";
@@ -735,6 +779,7 @@
 	void:uriSpace "http://www.yso.fi/onto/tsr/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "TSR";
 	skosmos:marcSourceCode "tsr";
 	skosmos:indexShowClass <http://www.yso.fi/onto/tsr-meta/Concept>;
@@ -753,6 +798,7 @@
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:tt:";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:usePlugin "tieto" ;
 #	skosmos:feedbackRecipient "sanastot@lingsoft.fi";
 	void:dataDump <http://api.finto.fi/download/tt/tieto-skos.ttl> ;
@@ -781,6 +827,7 @@
 	void:uriSpace "http://udcdata.info/";
 	skosmos:language "fi", "en", "sv";
 	skosmos:defaultLanguage "en";
+        skosmos:useModifiedDate "true";
 	skosmos:showTopConcepts "true";
 	skosmos:sortByNotation true ;
         skosmos:alphabeticalListQualifier skos:notation ;
@@ -799,6 +846,7 @@
 	void:uriSpace "http://www.yso.fi/onto/valo/";
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
 	skosmos:shortName "VALO";
 	skosmos:marcSourceCode "valo";
 	skosmos:indexShowClass <http://www.yso.fi/onto/valo-meta/Concept>;
@@ -822,7 +870,6 @@
 	skosmos:sortByNotation true ;
         skosmos:alphabeticalListQualifier skos:notation ;
         skosmos:searchByNotation true ;
-        skosmos:usePlugin "ykl";
 #	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	void:dataDump <http://api.finto.fi/download/ykl/ykl-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/ykl/ykl-skos.rdf> ;
@@ -840,6 +887,7 @@
 	skosmos:shortName "YSA";
 	skosmos:marcSourceCode "ysa";
 	skosmos:showChangeList "true"; 
+        skosmos:useModifiedDate "true";
     skosmos:usePlugin "finna", "ysallars";
 #	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi";
 	skosmos:showPropertyInSearch skos:exactMatch, 
@@ -867,6 +915,7 @@
 	skosmos:shortName "YSO", "Allfo"@sv;
     	skosmos:usePlugin "finna";
 	skosmos:showChangeList "true"; 
+        skosmos:useModifiedDate "true";
 	skosmos:showPropertyInSearch skos:note, 
     rdau:P60683, 
     rdau:P60686; 
@@ -896,6 +945,7 @@
 	skosmos:language "fi", "sv", "en";
 	skosmos:usePlugin "finna", "wiki" ;
 	skosmos:showChangeList "true"; 
+        skosmos:useModifiedDate "true";
 	skosmos:defaultLanguage "fi";
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.rdf> ;
@@ -929,6 +979,74 @@
     void:dataDump <http://api.finto.fi/download/yse/yse-skos.ttl> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yse/> .
+
+:cn skosmos:useParamPlugin :cnMessage .
+
+:cnMessage  a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
+<br/><br/>
+Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
+        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
+</br></br>
+För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
+        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
+<br/><br/>
+For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
+    ] .
+
+:finaf-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdf:type	# type
+		rdaa:P50094	# identifier for person
+		rdaa:P50006	# identifier for corporate body
+		rdaa:P50121	# date of birth
+		rdaa:P50037	# date of establishment
+		rdaa:P50120	# date of death
+		rdaa:P50038	# date of termination
+		rdaa:P50098	# period of activity of person
+		rdaa:P50236	# period of activity of corporate body
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# category of government
+		rdaa:P50103	# variant name of person
+		rdaa:P50025	# variant name of corporate body
+		rdaa:P50119	# place of birth
+		rdaa:P50118	# place of death
+		rdaa:P50109	# place of residence
+		rdaa:P50097	# country associated with person
+		rdaa:P50346	# related place of person
+		rdaa:P50350	# related place of corporate body
+		rdaa:P50115	# fuller form of name
+		rdaa:P50104	# profession or occupation
+		rdaa:P50110	# term of rank, honour or office
+		rdaa:P50108	# other designation of person
+		rdaa:P50033	# other designation of corporate body
+		rdaa:P50100	# field of activity of person
+		rdaa:P50022	# field of activity of corporate body
+		rdaa:P50102	# language of person
+		rdaa:P50023	# language of corporate body
+		rdaa:P50428	# alternate identity of person
+		rdaa:P50429	# real identity of person
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50095	# is person member of corporate body
+		rdaa:P50318	# related corporate body of person
+		rdaa:P50316	# related person of person
+		rdaa:P50336	# related corporate body of corporate body
+		rdaa:P50334	# related person of corporate body
+		rdaa:P50113	# biographical information
+		rdaa:P50035	# corporate history
+		rdaa:P50395	# note on person
+		rdaa:P50393	# note on corporate body
+		rdau:P61101	# source consulted
+	) .
+
+
 
 :categories a skos:ConceptScheme;
 	skos:prefLabel "Sanastot ja ontologiat"@fi,

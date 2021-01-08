@@ -1,8 +1,10 @@
-import urllib, sys, pickle, rdflib, json
+#!/usr/bin/python3
+# coding=utf-8
+import urllib.request, urllib.parse, urllib.error, sys, pickle, rdflib, json
 import requests, time, calendar, datetime, sys
 from rdflib import Graph, Namespace,RDF ,XSD ,OWL , URIRef, plugin, Literal
 from github import Github
-from urllib import urlencode
+from urllib.parse import urlencode
 
 ysans = "http://www.yso.fi/onto/ysa/"
 skosns = "http://www.w3.org/2004/02/skos/core#"
@@ -14,7 +16,7 @@ foaf = Namespace('http://xmlns.com/foaf/0.1/')
 ysa = Namespace('http://www.yso.fi/onto/ysa/')
 
 if len(sys.argv) < 3:
-    print >>sys.stderr, "Usage: %s GitHub-credentials-file Finto-data-path" % sys.argv[0]
+    print("Usage: %s GitHub-credentials-file Finto-data-path" % sys.argv[0], file=sys.stderr)
     sys.exit()
 
 secrets = json.load(open(sys.argv[1]))
@@ -48,9 +50,9 @@ for issue in need_inspection:
             yselab = yse_skos.preferredLabel(suggestion_uri, lang='fi')
             ysalab = yse_skos.preferredLabel(suggestion_uri, lang='fi')
             if yselab != '' and yselab == ysalab: # the suggestion has been taken into YSA with the same prefLabel
-                print "deleting: " + issue.title
+                print("deleting: " + issue.title)
                 delete_triples(suggestion_uri)
             else:
-                print('add replacedBy to:' + suggestion_uri)
+                print(('add replacedBy to:' + suggestion_uri))
 
 yse_skos.serialize(destination=yse_file, format='turtle')
