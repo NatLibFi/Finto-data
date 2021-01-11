@@ -512,7 +512,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     for entry in root.findall("atom:entry", ET_namespaces):
                         label = None
                         for updated in entry.findall("atom:updated", ET_namespaces):
-                            updated = datetime.strptime(updated.text, "%Y-%m-%dT%H:%M:%S%z").date()
+                            updated = datetime.strptime(updated.text[:10], "%Y-%m-%d").date()
                             if updated >= limit_date:
                                 for link in entry.findall("atom:link", ET_namespaces):
                                     if not 'type' in link.attrib:
@@ -1376,10 +1376,8 @@ def convert(cs, vocabulary_name, language, g, g2):
         with open(helper_variables['modificationDates'], 'wb') as output:
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
 
-    if update_loc_concepts:
-        print("updated")
-        with open(loc_update_file, 'wb') as output:
-            pickle.dump(loc_update_dict, output, pickle.HIGHEST_PROTOCOL)
+    with open(loc_update_file, 'wb') as output:
+        pickle.dump(loc_update_dict, output, pickle.HIGHEST_PROTOCOL)
 
     # tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
     parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
