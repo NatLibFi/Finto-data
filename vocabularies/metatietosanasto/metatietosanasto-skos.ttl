@@ -14287,7 +14287,7 @@ mts:m4241 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdai:P40046 ;
-    skos:definition "Liittää kappaleen kappaleeseen, joka liittyy kuvailun kohteena olevaan kappaleeseen. {@fi}"@fi,
+    skos:definition "Liittää kappaleen kappaleeseen, joka liittyy kuvailun kohteena olevaan kappaleeseen."@fi,
         "Sammankopplar exemplar med ett exemplar som relaterar till exemplaret som är objekt för beskrivning."@sv ;
     skos:member mts:m4242,
         mts:m4248,
@@ -14613,8 +14613,8 @@ mts:m4409 a skos:Concept ;
         "Sammankopplar person med en person som undervisas av en annan person."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "student"@en,
-        "opiskelija/oppilas"@fi,
-        "studerande/elev"@sv .
+        "oppilas"@fi,
+        "elev"@sv .
 
 mts:m4411 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -14740,14 +14740,15 @@ mts:m4426 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50334 ;
     skos:definition "Liittää yhteisön henkilöön, joka liittyy kuvailtavaan yhteisöön."@fi,
         "Sammankopplar institution med en person som är relaterad till den beskrivna institutionen."@sv ;
-    skos:member mts:m4433,
-        mts:m4438,
-        mts:m4442,
-        mts:m4443,
-        mts:m4444,
-        mts:m4445,
-        mts:m4447,
-        mts:m4454 ;
+    skos:member mts:m4339,
+        mts:m4418,
+        mts:m4419,
+        mts:m4420,
+        mts:m4421,
+        mts:m4422,
+        mts:m4596,
+        mts:m746,
+        mts:m908 ;
     skos:prefLabel "Related person body of corporate body"@en,
         "Yhteisöön liittyvä henkilö"@fi,
         "Person relaterad till institution"@sv .
@@ -16234,6 +16235,20 @@ mts:m4595 a skos:Concept ;
     skos:scopeNote "Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset."@fi,
         "Verkets form -termer används för att åtskilja verk med samma namn."@sv .
 
+mts:m4596 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50026 ;
+    skos:altLabel "public servant"@en,
+        "työntekijä (suhde)"@fi,
+        "anställd (relation)"@sv ;
+    skos:definition "Liittää yhteisön henkilöön, joka on työntekijänä yhteisössä."@fi,
+        "Sammankopplar institution med en person som arbetar i institutionen."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "employee"@en,
+        "työntekijä"@fi,
+        "arbetstagare"@sv .
+
 mts:m467 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -17672,15 +17687,14 @@ mts:m747 a isothes:ConceptGroup,
     rdfs:seeAlso rdaa:P50318 ;
     skos:definition "Liittää henkilön yhteisöön, joka liittyy kuvailtavaan henkilöön."@fi,
         "Sammankopplar person med en institution som är relaterad till personen som beskrivs."@sv ;
-    skos:member mts:m3928,
-        mts:m4339,
-        mts:m4418,
-        mts:m4419,
-        mts:m4420,
-        mts:m4421,
-        mts:m4422,
-        mts:m746,
-        mts:m908 ;
+    skos:member mts:m4433,
+        mts:m4438,
+        mts:m4442,
+        mts:m4443,
+        mts:m4444,
+        mts:m4445,
+        mts:m4447,
+        mts:m4454 ;
     skos:prefLabel "Related corporate body of person"@en,
         "Henkilöön liittyvä yhteisö"@fi,
         "Institution relaterad till person"@sv .
@@ -24234,7 +24248,7 @@ mts:m1991 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Tanssinotaatio, jossa kehon ja raajojen asentoja ja liikkeitä esitetään abstrakteilla symboleilla. {@fi}"@fi ;
+    skos:definition "Tanssinotaatio, jossa kehon ja raajojen asentoja ja liikkeitä esitetään abstrakteilla symboleilla."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/noteMove/1009> ;
     skos:inScheme mts: ;
     skos:prefLabel "action stroke dance notation"@en,
@@ -34076,11 +34090,11 @@ mts:m4101 a skos:Concept ;
         "glasarbetare"@sv .
 
 mts:m4102 a skos:Concept ;
-    skos:altLabel "laboratorieanställd"@sv ;
+    skos:altLabel "laboratoriearbetare"@sv ;
     skos:broader mts:m3928 ;
     skos:inScheme mts: ;
     skos:prefLabel "laboratoriotyöntekijä"@fi,
-        "laboratoriearbetare"@sv .
+        "laboratorieanställd"@sv .
 
 mts:m4103 a skos:Concept ;
     skos:altLabel "platschef"@sv ;
@@ -34700,13 +34714,13 @@ mts:m4216 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20067 ;
-    skos:altLabel "adapted as video expression\""@fi ;
     skos:broader mts:m4199 ;
     skos:definition """Liittää ekspression videoon, joka perustuu lähteenä olevaan ekspressioon.\r
 Vastavuoroinen suhde: videosovituksen perustana (ekspressio)."""@fi,
         "Sammankopplar uttryck med en video, som baserar sig på uttrycket som är källa. Parallell relation: videobearbetning baserad på (uttryck)."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "videosovitus (ekspressio)"@fi,
+    skos:prefLabel "adapted as video expression"@en,
+        "videosovitus (ekspressio)"@fi,
         "videobearbetning (uttryck)"@sv .
 
 mts:m4217 a skos:Concept ;
@@ -37518,7 +37532,7 @@ mts:m536 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "line by line"@en,
         "säkeet peräkkäin"@fi,
-        "rad för rad {@sv}"@sv .
+        "rad för rad"@sv .
 
 mts:m545 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -48528,7 +48542,7 @@ mts:m1290 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
-    skos:definition "Materiaali, joka valmistetaan kutomalla, huovuttamalla, sitomalla, punomalla tai muulla tavalla käsittelemällä luonnollisia tai synteettisiä kuituja niin että ne kiinnittyvät toisiinsa. {@fi"@fi ;
+    skos:definition "Materiaali, joka valmistetaan kutomalla, huovuttamalla, sitomalla, punomalla tai muulla tavalla käsittelemällä luonnollisia tai synteettisiä kuituja niin että ne kiinnittyvät toisiinsa."@fi ;
     skos:exactMatch <http://rdaregistry.info/termList/RDAMaterial/1039>,
         <http://rdaregistry.info/termList/RDAbaseMaterial/1020> ;
     skos:inScheme mts: ;
@@ -53125,16 +53139,11 @@ mts:m2433 a skos:Concept ;
         "chef"@sv .
 
 mts:m3928 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "YSO-termi"@fi,
-        "ALLFO-term"@sv,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50026 ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
     skos:altLabel "public servant"@en,
         "työntekijä (ammatti)"@fi,
-        "anställd"@sv ;
-    skos:definition "Liittää yhteisön henkilöön, joka on työntekijänä yhteisössä."@fi,
-        "Sammankopplar institution med en person som arbetar i institutionen."@sv ;
+        "anställd (yrke)"@sv ;
     skos:exactMatch yso:p212 ;
     skos:inScheme mts: ;
     skos:narrower mts:m2362,
@@ -53237,7 +53246,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-01-26T04:26:48+00:00"^^xsd:dateTime ;
+    dct:modified "2021-01-27T04:27:48+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
