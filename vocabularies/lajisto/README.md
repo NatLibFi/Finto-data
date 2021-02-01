@@ -1,6 +1,3 @@
-Tiedosto FINTO_Mammalia.ttl saatu Lajitietokeskukselta 12.3.2020
-Muokattu tiedostoa siten, että skos-nimiavaruuden tunnisteilta poistettu
-hakasulkeet ympäriltä, jotta ne tulkittaisiin oikein.
+Tiedosto finto_biota.ttl saatu Lajitietokeskukselta 1.12.2020. Tiedoston
+alkuperäinen nimi oli finto_biota.txt, vain tiedostopääte vaihdettu.
 
-lajisto-metadata.ttl:ssä määritelty datassa käytetyt taksonomiset tasot,
-jotka on tässä sanastossa mallinnettu skos:Conceptin alaluokkina.
