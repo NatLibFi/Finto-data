@@ -236,9 +236,12 @@ def main():
     rel510i = load_relations('510i-to-rda.csv')
 
     # Pass 1: convert MARC data to basic RDF
-    for line in sys.stdin:
+    for lineidx, line in enumerate(sys.stdin):
         file = io.StringIO(line)
-        rec = pymarc.marcxml.parse_xml_to_array(file)[0]
+        try:
+            rec = pymarc.marcxml.parse_xml_to_array(file)[0]
+        except Exception as e:
+            logging.warning("Parse error on line %d, skipping record: %s", lineidx+1, e)
         
         recid = rec['001'].value()
         logging.info("Starting conversion of record %s", recid)
