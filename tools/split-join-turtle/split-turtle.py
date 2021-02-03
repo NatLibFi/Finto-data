@@ -12,10 +12,10 @@ def can_split(last_block, blockiness):
     checksum = zlib.crc32(last_block.encode('UTF-8'))
     return (checksum % blockiness) == 0
 
-def open_slice(slice, prefixes):
+def open_slice(slice, headers):
     outfile = open("{}{:03d}.ttl".format(args.basename, slice), 'w')
-    for prefix in prefixes:
-        print(prefix, file=outfile)
+    for header in headers:
+        print(header, file=outfile)
     print("", file=outfile)
     return outfile
 
@@ -27,7 +27,7 @@ args = parser.parse_args()
 
 data = sys.stdin.read()
 
-prefixes = []
+headers = []
 idx = 0
 
 # prefix extraction
@@ -37,7 +37,13 @@ while idx < len(data):
         idx += len('@prefix')
         while data[idx] != '\n':
             idx += 1
-        prefixes.append(data[start:idx])
+        headers.append(data[start:idx])
+    elif matches('@base', data, idx):
+        start = idx
+        idx += len('@base')
+        while data[idx] != '\n':
+            idx += 1
+        headers.append(data[start:idx])
     elif data[idx] == '#':
         while data[idx] != '\n':
             idx += 1
@@ -50,7 +56,7 @@ while idx < len(data):
 slice = 1
 last_split = last_block = idx
 
-outfile = open_slice(slice, prefixes)
+outfile = open_slice(slice, headers)
     
 # actual data
 while idx < len(data):
@@ -62,7 +68,7 @@ while idx < len(data):
             outfile.close()
             last_split = idx
             slice += 1
-            outfile = open_slice(slice, prefixes)
+            outfile = open_slice(slice, headers)
         else:
             last_block = idx
             print("\n", file=outfile)
