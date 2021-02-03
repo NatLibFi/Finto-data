@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
 import argparse
-import re
+import zlib
 
 def matches(string, datastr, index):
     substr = datastr[index:index+len(string)]
     return substr.lower() == string.lower()
+
+def can_split(last_block, blockiness):
+    checksum = zlib.crc32(last_block.encode('UTF-8'))
+    return (checksum % blockiness) == 0
 
 def open_slice(slice, prefixes):
     outfile = open("{}{:03d}.ttl".format(args.basename, slice), 'w')
@@ -16,6 +20,7 @@ def open_slice(slice, prefixes):
 
 parser = argparse.ArgumentParser(description="Split a Turtle file into slices")
 parser.add_argument("-c", "--chars", type=int, help="approximate number of characters per slice", default=10000000)
+parser.add_argument("-b", "--blockiness", type=int, help="blockiness factor - larger values result in fewer splits", default=32)
 parser.add_argument("input", type=str, help="input file name")
 parser.add_argument("basename", type=str, help="output file base name")
 args = parser.parse_args()
@@ -44,7 +49,7 @@ while idx < len(data):
     idx += 1
 
 slice = 1
-last_split = idx
+last_split = last_block = idx
 
 outfile = open_slice(slice, prefixes)
     
@@ -52,13 +57,15 @@ outfile = open_slice(slice, prefixes)
 while idx < len(data):
     if matches('\n\n', data, idx):
         
-        if (idx - last_split) >= args.chars:
+        if (idx - last_split) >= args.chars \
+           and can_split(data[last_block:idx], args.blockiness):
             print("", file=outfile)
             outfile.close()
             last_split = idx
             slice += 1
             outfile = open_slice(slice, prefixes)
         else:
+            last_block = idx
             print("\n", file=outfile)
         idx += len("\n\n")
     elif matches('"""', data, idx):
