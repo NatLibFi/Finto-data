@@ -2,6 +2,7 @@
 
 import argparse
 import zlib
+import sys
 
 def matches(string, datastr, index):
     substr = datastr[index:index+len(string)]
@@ -21,12 +22,10 @@ def open_slice(slice, prefixes):
 parser = argparse.ArgumentParser(description="Split a Turtle file into slices")
 parser.add_argument("-c", "--chars", type=int, help="approximate number of characters per slice", default=10000000)
 parser.add_argument("-b", "--blockiness", type=int, help="blockiness factor - larger values result in fewer splits", default=32)
-parser.add_argument("input", type=str, help="input file name")
 parser.add_argument("basename", type=str, help="output file base name")
 args = parser.parse_args()
 
-with open(args.input) as infile:
-    data = infile.read()
+data = sys.stdin.read()
 
 prefixes = []
 idx = 0
