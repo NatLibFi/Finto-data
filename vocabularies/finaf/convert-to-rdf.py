@@ -10,7 +10,7 @@ import unicodedata
 
 import requests
 import pymarc.marcxml
-from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, BNode
+from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -184,29 +184,30 @@ def lookup_yso(label):
 
 @functools.lru_cache(maxsize=10000)
 def lookup_yso_place(label):
+    label = normalize(label)
     logging.debug('looking up YSO place "%s"', label)
     if ', ' in label:
         place, country = label.rsplit(', ', 1)
         country_uri = lookup_yso_place(country)
-        if isinstance(country_uri, BNode):
+        if isinstance(country_uri, Literal):
             logging.debug('YSO place lookup for country "%s" failed', country)
-            return BNode()
+            return Literal(label, 'fi')
         payload = {'query': place, 'parent': str(country_uri), 'lang': 'fi'}
         req = requests.get(FINTO_API_BASE + 'yso-paikat/search', params=payload)
         if req.status_code != 200:
             logging.debug('YSO place lookup for place "%s" failed (error)', place)
-            return BNode()
+            return Literal(label, 'fi')
         results = req.json()['results']
         if results:
             return URIRef(results[0]['uri'])
         logging.debug('YSO place lookup for place "%s" failed (no results)', place)
-        return BNode()
+        return Literal(label, 'fi')
 
     payload = {'label': label, 'lang': 'fi'}
     req = requests.get(FINTO_API_BASE + 'yso-paikat/lookup', params=payload)
     if req.status_code != 200:
         logging.debug('YSO place lookup for place "%s" failed', label)
-        return BNode()
+        return Literal(label, 'fi')
 
     return URIRef(req.json()['result'][0]['uri'])
 
@@ -386,16 +387,10 @@ def main():
             if 'a' in f:
                 place = lookup_yso_place(f['a'])
                 g.add((uri, placeOfBirth, place))
-                if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(normalize(f['a']), lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(normalize(f['a']), lang='fi')))
 
             if 'b' in f:
                 place = lookup_yso_place(f['b'])
                 g.add((uri, placeOfDeath, place))
-                if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(normalize(f['b']), lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(normalize(f['b']), lang='fi')))
 
             if 'c' in f:
                 place = lookup_yso_place(f['c'])
@@ -406,9 +401,6 @@ def main():
                     prop = placeAssociatedWithCorporateBody
 
                 g.add((uri, prop, place))
-                if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(normalize(f['c']), lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(normalize(f['c']), lang='fi')))
 
             if 'e' in f:
                 place = lookup_yso_place(f['e'])
@@ -419,9 +411,6 @@ def main():
                     prop = placeAssociatedWithCorporateBody
 
                 g.add((uri, prop, place))
-                if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(normalize(f['e']), lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(normalize(f['e']), lang='fi')))
 
             if 'f' in f:
                 place = lookup_yso_place(f['f'])
@@ -432,9 +421,6 @@ def main():
                     prop = placeAssociatedWithCorporateBody
 
                 g.add((uri, prop, place))
-                if isinstance(place, BNode):
-                    g.add((place, nameOfPlace, Literal(normalize(f['f']), lang='fi')))
-                    g.add((place, SKOS.prefLabel, Literal(normalize(f['f']), lang='fi')))
 
         for f in rec.get_fields('372'):
             value = Literal(normalize(f.format_field()), lang='fi')
