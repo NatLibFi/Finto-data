@@ -2,34 +2,26 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResourceFactory;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.vocabulary.DC;
-import com.hp.hpl.jena.vocabulary.DCTerms;
-import com.hp.hpl.jena.vocabulary.OWL;
-import com.hp.hpl.jena.vocabulary.RDF;
-import com.hp.hpl.jena.vocabulary.RDFS;
+import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.vocabulary.*;
+
 
 public class Kokoaja2 {
 
@@ -37,33 +29,37 @@ public class Kokoaja2 {
 	private final String skosextNs = "http://purl.org/finnonto/schema/skosext#";
 	private final String kokoNs ="http://www.yso.fi/onto/koko/";
 	private final String kokoMetaNs ="http://www.yso.fi/onto/koko-meta/";
+	private final String XSDNs = "http://www.w3.org/2001/XMLSchema#";
 
 	private Model koko;
 	private Model onto;
+	private Model aikaLeimat;
 
-	private HashMap<Resource, String> ontologioidenTyypitPolutMap;
-	private HashMap<String, Resource> kokoFiLabelitResurssitMap;
-	private HashMap<Resource, String> ontoFiResurssitLabelitMap;
-	private HashMap<Resource, Resource> ontoKokoResurssivastaavuudetMap;
-	private HashMap<Resource, Resource> ontoKokoResurssivastaavuudetJotkaNykyKokossaMap;
+	private Map<Resource, String> ontologioidenTyypitPolutMap;
+	private Map<String, Resource> kokoFiLabelitResurssitMap;
+	private Map<Resource, Resource> ontoKokoResurssivastaavuudetMap;
+	private Map<Resource, Resource> ontoKokoResurssivastaavuudetJotkaNykyKokossaMap;
 
-	private HashSet<String> sallittujenPropertyjenNimiavaruudet;
-	private HashSet<Resource> mustaLista;
+	private Set<String> sallittujenPropertyjenNimiavaruudet;
+	private Set<Resource> mustaLista;
+
+	private Set<String> deprekoidut;
 
 	private int viimeisinKokoUrinLoppuosa;
 
 	private int romautetut;
-	private int labelinPerusteellaMuuhunKuinYsoonYhdistyneet;
 
 	public Kokoaja2(String uriVastaavuuksiePolku) {
 		this.romautetut = 0;
-		this.labelinPerusteellaMuuhunKuinYsoonYhdistyneet = 0;
+
 		this.taytaSallittujenPropertyjenNimiavaruudet();
 		this.koko = this.luoAihio();
+		this.aikaLeimat = this.luoAihio();
 		this.lueUriVastaavuudetTiedostosta(uriVastaavuuksiePolku);
 
 		this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap = new HashMap<Resource, Resource>();
 		this.kokoFiLabelitResurssitMap = new HashMap<String, Resource>();
+		this.deprekoidut = new HashSet<String>();
 	}
 
 	public Model luoAihio() {
@@ -72,6 +68,7 @@ public class Kokoaja2 {
 		aihio.setNsPrefix("skosext", this.skosextNs);
 		aihio.setNsPrefix("koko", this.kokoNs);
 		aihio.setNsPrefix("koko-meta", this.kokoMetaNs);
+		aihio.setNsPrefix("xsd", this.XSDNs);
 		return aihio;
 	}
 
@@ -146,6 +143,13 @@ public class Kokoaja2 {
 				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(subject, object);
 			}
 		}
+
+		//Jos uusin YSO sanoo että tätä käsitettä ei enää käytetä, otetaan siitä tieto talteen
+		Resource deprecatedScheme = this.onto.createResource("http://www.yso.fi/onto/yso/deprecatedconceptscheme");
+		StmtIterator i = this.onto.listStatements(null, skosInScheme, deprecatedScheme);
+		while (i.hasNext()) {
+			this.deprekoidut.add(i.next().getSubject().getURI());
+		}
 	}
 
 	private void luoYSOConceptTyyppiLuokkaKokoon() {
@@ -195,13 +199,17 @@ public class Kokoaja2 {
 		propertytJoitaEiHalutaKokoon.add(DCTerms.modified);
 		propertytJoitaEiHalutaKokoon.add(DCTerms.created);
 
+		//otetaan aikaleimat talteen
+		this.aikaLeimat.add(ontoSubj.listProperties(DCTerms.modified));
+		this.aikaLeimat.add(ontoSubj.listProperties(DCTerms.created));
+
 		this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(ontoSubj, kokoSubj);
 		//this.kokoFiLabelitResurssitMap.put(this.ontoFiResurssitLabelitMap.get(ontoSubj), kokoSubj);
 		this.koko.add(kokoSubj, skosExactMatch, ontoSubj);
 		StmtIterator iter = this.onto.listStatements(ontoSubj, (Property)null, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
-			if (!(stmt.getObject().isURIResource() && this.mustaLista.contains(stmt.getObject()))) {
+			if (!(stmt.getObject().isURIResource() && this.mustaLista.contains(stmt.getObject()) && this.deprekoidut.contains(stmt.getResource().toString()))) {
 				if (this.sallittujenPropertyjenNimiavaruudet.contains(stmt.getPredicate().getNameSpace()))
 					if (stmt.getPredicate().equals(skosPrefLabel)) {
 						if (primaryLabelSource) {
@@ -217,7 +225,7 @@ public class Kokoaja2 {
 							if ( !((Resource)stmt.getObject()).getNameSpace().equals(this.kokoNs) )
 								this.koko.add(kokoSubj, stmt.getPredicate(), stmt.getObject());
 						} else {
-							//Literaaleille ei tällaista terkistusta tehdä
+							//Literaaleille ei tällaista tarkistusta tehdä
 							this.koko.add(kokoSubj, stmt.getPredicate(), stmt.getObject());
 						}
 					}
@@ -239,7 +247,7 @@ public class Kokoaja2 {
 		// kaivetaan HashSettiin kaikki erikoisontologian oman tyyppiset kasitteet
 		HashSet<Resource> ontonOntoTyyppisetResurssit = new HashSet<Resource>();
 		ResIterator resIter = this.onto.listResourcesWithProperty(RDF.type, ontoTyyppi);
-		Resource deprecated = this.onto.getResource(skosextNs+"DeprecatedConcept");
+		Resource deprecated = this.onto.createResource(skosextNs+"DeprecatedConcept");
 
 		while (resIter.hasNext()) {
 			Resource ontoSubj = resIter.nextResource();
@@ -249,7 +257,7 @@ public class Kokoaja2 {
 				ontonOntoTyyppisetResurssit.add(ontoSubj);
 			}
 		}
-		System.out.println("Lisataan KOKOon " + ontonOntoTyyppisetResurssit.size() + " " + ontoTyyppi.getURI() + " -tyyppista resurssia.");
+		System.out.println("Lisätään KOKOon " + ontonOntoTyyppisetResurssit.size() + " " + ontoTyyppi.getURI() + " -tyyppistä resurssia.");
 
 		// kaivetaan HashMappiin kaikki erikoisontologian suorat skos:exactMatchit
 		HashMap<Resource, HashSet<Resource>> ontonExactMatchitMap = new HashMap<Resource, HashSet<Resource>>();
@@ -262,7 +270,7 @@ public class Kokoaja2 {
 			//Lisätty tarkistus siitä ettei exactMatcheja kokoon haeta ontologioista (ts. Koko kootaan ysoon osoittavien exactMatchien perusteella)
 			if (ontonOntoTyyppisetResurssit.contains(subj) && !obj.getNameSpace().equals(this.kokoNs)) {
 				//lisätty tarkistus siitä ettei linkata deprekoituihin resursseihin
-				if ( !obj.hasProperty(DCTerms.isReplacedBy) ) {
+				if ( !obj.hasProperty(DCTerms.isReplacedBy) && !this.deprekoidut.contains(obj.getURI())) {
 					HashSet<Resource> matchitSet = new HashSet<Resource>();
 					if (ontonExactMatchitMap.containsKey(subj)) {
 						matchitSet = ontonExactMatchitMap.get(subj);
@@ -273,11 +281,6 @@ public class Kokoaja2 {
 			}
 		}
 
-		/* Ei kayteta tata, koska romautus tehdaan prefLabelin lisaksi vanhemman perusteella ja hoidetaan myohemmin
-		// kaivetaan HashMappiin kaikki erikoisontologian fiLabelit
-		Property skosPrefLabel = this.onto.createProperty(this.skosNs + "prefLabel");
-		this.ontoFiResurssitLabelitMap = this.haeTietynTyyppistenResurssienLabelitMappiin(this.onto, skosPrefLabel, ontonOntoTyyppisetResurssit, "fi");
-		 */
 		Vector<String> ontoUritVektori = new Vector<String>();
 		resIter = this.onto.listResourcesWithProperty(RDF.type, ontoTyyppi);
 		while (resIter.hasNext()) {
@@ -292,7 +295,7 @@ public class Kokoaja2 {
 			Resource ontoSubj = this.onto.createResource(uri);
 			Resource kokoSubj = null;
 
-			// Tutkitaan mika on resurssia vastaava resurssi kokossa tai jos moista ei ole, paatetaan sailotaanko vai ei
+			// Tutkitaan mikä on resurssia vastaava resurssi kokossa tai jos moista ei ole, päätetään säilötäänkö vai ei
 			if (this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.containsKey(ontoSubj)) {
 				kokoSubj = ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.get(ontoSubj);
 			} else if (ontonExactMatchitMap.containsKey(ontoSubj)) {
@@ -302,24 +305,10 @@ public class Kokoaja2 {
 					}
 				}
 			}
-			/* Ei kayteta tata, koska romautus tehdaan prefLabelin lisaksi vanhemman perusteella ja hoidetaan myohemmin
-				if (kokoSubj == null && this.ontoFiResurssitLabelitMap.containsKey(ontoSubj)) {
-					String ontoLabel = ontoFiResurssitLabelitMap.get(ontoSubj);
-					if (this.kokoFiLabelitResurssitMap.containsKey(ontoLabel)) {
-						kokoSubj = this.kokoFiLabelitResurssitMap.get(ontoLabel);
-						kasiteltavanOntologianLabelinPerusteellaRomautetutKasitteet++;
-						if (kokoSubj.getNameSpace().equals("http://www.yso.fi/onto/yso/")) {
-							this.labelinPerusteellaYsoonYhdistyneet++;
-							//System.out.println(kasiteltavanOntologianLabelinPerusteellaRomautetutKasitteet + ";ye;" + this.labelinPerusteellaYsoonYhdistyneet + ";" + kokoSubj.getURI() + ";" + ontoSubj.getURI() + ";" + ontoLabel);
-						} else {
-							this.labelinPerusteellaMuuhunKuinYsoonYhdistyneet++;
-							//System.out.println(kasiteltavanOntologianLabelinPerusteellaRomautetutKasitteet + ";ee;" + this.labelinPerusteellaMuuhunKuinYsoonYhdistyneet+ ";" + kokoSubj.getURI() + ";" + ontoSubj.getURI() + ";" + ontoLabel);
-						}
-					}
-				}*/
+
 			if (kokoSubj == null) kokoSubj = ontoSubj;
 
-			// laitetaan kasite ja siihen liittyvat triplet KOKOon					
+			// laitetaan käsite ja siihen liittyvat triplet KOKOon
 			this.lisaaResurssiKokoon(ontoSubj, kokoSubj, false);
 			if (ontonExactMatchitMap.containsKey(ontoSubj)) {
 				for (Resource matchRes:ontonExactMatchitMap.get(ontoSubj)) {
@@ -428,7 +417,7 @@ public class Kokoaja2 {
 				}
 			} else {
 				// Ei loytynyt mitaan jarkevia labeleita, joten poistetaan kokonaan KOKOsta
-				System.out.println("Kasitteella " + subj.getURI() + " ei ollut jarkevia labeleita eika sita lisatty KOKOon.");
+				System.out.println("Käsitteellä " + subj.getURI() + " ei ollut jarkeviä labeleita eikä sitä lisätty KOKOon.");
 				iter = this.koko.listStatements(subj, (Property)null, (RDFNode)null);
 				while (iter.hasNext()) poistettavat.add(iter.nextStatement());	
 			}
@@ -589,7 +578,11 @@ public class Kokoaja2 {
 				if (stmt.getLanguage().equals("fi")) {
 					String prefLabelString = ((Literal)stmt.getObject()).getLexicalForm();
 					poistettavat.add(stmt);
-					prefLabelString += " (" + tarkenne + ")";
+					if (tarkenne.length() > 0) {
+						tarkenne = "(" + tarkenne + ")";
+						if (!prefLabelString.contains(tarkenne))
+								prefLabelString += " " + tarkenne;
+					}
 					lisattavat.add(this.koko.createStatement(subj, skosPrefLabel, this.koko.createLiteral(prefLabelString, "fi")));
 				}
 			}
@@ -628,46 +621,46 @@ public class Kokoaja2 {
 		//testataan käsitteiden määrää 1.
 		System.out.println("Kokossa käsitteitä: " + this.koko.listSubjects().toList().size());
 
-		HashMap<Resource, HashSet<Resource>> ryhmäIndeksi = new HashMap<>();
+		HashMap<Resource, HashSet<Resource>> ryhmaIndeksi = new HashMap<>();
 		Property skosExactMatch = this.koko.createProperty(this.skosNs + "exactMatch");
 
 		// Muodosta käsiterymiä jotka linkittyvät toisiinsa skos:exactMatchien avulla
-		HashSet<Statement> kaikkiLinkitetytKäsitteet = new HashSet<Statement>();
+		HashSet<Statement> kaikkiLinkitetytKasitteet = new HashSet<Statement>();
 
 		StmtIterator iter1 = this.koko.listStatements(null, skosExactMatch, (RDFNode)null);
-		kaikkiLinkitetytKäsitteet.addAll(iter1.toSet());
+		kaikkiLinkitetytKasitteet.addAll(iter1.toSet());
 
-		System.out.println("Linkitettyjä käsitteitä oli " + kaikkiLinkitetytKäsitteet.size());
-		this.siivoaPoisTuplaVastaavuudet(kaikkiLinkitetytKäsitteet);
-		System.out.println("Siivouksen jälkeen linkitettyjä on " + kaikkiLinkitetytKäsitteet.size());
+		System.out.println("Linkitettyjä käsitteitä oli " + kaikkiLinkitetytKasitteet.size());
+		this.siivoaPoisTuplaVastaavuudet(kaikkiLinkitetytKasitteet);
+		System.out.println("Siivouksen jälkeen linkitettyjä on " + kaikkiLinkitetytKasitteet.size());
 
-		for (Statement linkki : kaikkiLinkitetytKäsitteet) {
+		for (Statement linkki : kaikkiLinkitetytKasitteet) {
 
 			Resource A = linkki.getSubject();
 			Resource B = linkki.getResource();
 
-			if ( ryhmäIndeksi.containsKey(A) &&
-					ryhmäIndeksi.containsKey(B) &&
-					ryhmäIndeksi.get(A) != ryhmäIndeksi.get(B) ) {
+			if ( ryhmaIndeksi.containsKey(A) &&
+					ryhmaIndeksi.containsKey(B) &&
+					ryhmaIndeksi.get(A) != ryhmaIndeksi.get(B) ) {
 
 				//yhdistä ryhmät
-				ryhmäIndeksi.get(A).addAll(ryhmäIndeksi.get(B));
-				ryhmäIndeksi.remove(B);
-				ryhmäIndeksi.put(B, ryhmäIndeksi.get(A));
+				ryhmaIndeksi.get(A).addAll(ryhmaIndeksi.get(B));
+				ryhmaIndeksi.remove(B);
+				ryhmaIndeksi.put(B, ryhmaIndeksi.get(A));
 
-			} else if ( ryhmäIndeksi.containsKey(A) ) {
+			} else if ( ryhmaIndeksi.containsKey(A) ) {
 				//lisää olemassaolevaan
-				ryhmäIndeksi.get(A).add(B);
-			} else if ( ryhmäIndeksi.containsKey(B) ) {
+				ryhmaIndeksi.get(A).add(B);
+			} else if ( ryhmaIndeksi.containsKey(B) ) {
 				//lisää olemassaolevaan
-				ryhmäIndeksi.get(B).add(A);
+				ryhmaIndeksi.get(B).add(A);
 			} else {
-				//luo uusi ryhmä
+				//luo uusi ryhma
 				HashSet<Resource> uusi = new HashSet<Resource>();
 				uusi.add(A);
 				uusi.add(B);
-				ryhmäIndeksi.put(A, uusi);
-				ryhmäIndeksi.put(B, uusi);
+				ryhmaIndeksi.put(A, uusi);
+				ryhmaIndeksi.put(B, uusi);
 			}
 		}
 		
@@ -677,47 +670,74 @@ public class Kokoaja2 {
 		while (iter3.hasNext()) {
 			Resource subj = iter3.next().getSubject();
 
-			if (!ryhmäIndeksi.containsKey(subj)) {
+			if (!ryhmaIndeksi.containsKey(subj)) {
 				HashSet<Resource> newSet = new HashSet<Resource>();
 				newSet.add(subj);
-				ryhmäIndeksi.put(subj, newSet);
+				ryhmaIndeksi.put(subj, newSet);
 			}		
 
 		}
 
-		//Jokaiselle käsiteryhmälle, listaa kaikki käsitteet ja valitse niistä pienin kokourivastaavuus vanhasta kokosta
-		for (HashSet<Resource> ryhmä : ryhmäIndeksi.values()) {
+		//Väliaikainen säätö, kirjaitetaan kokoryhmät tiedostoon:
+//		BufferedWriter tmpWriter = null;
+//		try {
+//			tmpWriter = new BufferedWriter(new FileWriter("kokon-pussukat.txt"));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
-			Vector<Resource> ryhmänKokot = new Vector<Resource>();
-			for (Resource r : ryhmä) {
+		//Jokaiselle käsiteryhmalle, listaa kaikki käsitteet ja valitse niistä pienin kokourivastaavuus vanhasta kokosta
+		for (HashSet<Resource> ryhma : ryhmaIndeksi.values()) {
+
+			Vector<Resource> ryhmanKokot = new Vector<Resource>();
+			for (Resource r : ryhma) {
 				Resource uusiKoko = this.ontoKokoResurssivastaavuudetMap.get(r);
 				if (uusiKoko != null) {
-					ryhmänKokot.add(uusiKoko);
+					ryhmanKokot.add(uusiKoko);
 				} 
 			}
 			//Jos kokourivastaavuutta ei löydy, luo uusi kokouri
-			if (ryhmänKokot.size() == 0 || ryhmänKokot.get(0) == null) {
-				ryhmänKokot.add(luoUusiKokoResurssi());
+			if (ryhmanKokot.size() == 0 || ryhmanKokot.get(0) == null) {
+				ryhmanKokot.add(luoUusiKokoResurssi());
 			} else {
 
-				Collections.sort(ryhmänKokot, new ResourceComparator());
+				Collections.sort(ryhmanKokot, new ResourceComparator());
 			}
-			Resource kokoSubj = ryhmänKokot.get(0);
-			for (Resource ontoSubj:ryhmä) {
-
-				//Miksi tämä tehdään kummallekin?
+			Resource kokoSubj = ryhmanKokot.get(0);
+			Statement tmpSt = kokoSubj.getProperty(SKOS.prefLabel, "fi");
+			String tmpLabel = (tmpSt != null ? tmpSt.getLiteral().getLexicalForm() : "null");
+			String tmpString = kokoSubj.getURI() + " ("+ tmpLabel +") :   ";
+			for (Resource ontoSubj:ryhma) {
+				Statement tmpSt2 = ontoSubj.getProperty(SKOS.prefLabel, "fi");
+				String ontoLiteral = (tmpSt2 != null ? tmpSt2.getLiteral().getLexicalForm() : "null");
+				tmpString += ontoSubj + "(" + ontoLiteral + ") , ";
+				//Miksi tama tehdaan kummallekin?
 				this.ontoKokoResurssivastaavuudetJotkaNykyKokossaMap.put(ontoSubj, kokoSubj);
+
+				//tämä päätyy tiedostoon:
 				this.ontoKokoResurssivastaavuudetMap.put(ontoSubj, kokoSubj);
 			}
-			for (Resource r : ryhmä) {
+//			try {
+//				tmpWriter.write(tmpString+"\n");
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+			for (Resource r : ryhma) {
 				this.muutaKokoSubj(r, kokoSubj);
 			}
 			//Poista muut viittaukset kokoureihin ?
-			for (int i=1 ; i<ryhmänKokot.size(); i++) {
-				if (!kokoSubj.equals(ryhmänKokot.get(i)))
-					this.koko.add(ryhmänKokot.get(i), DCTerms.isReplacedBy, kokoSubj);
+			for (int i=1 ; i<ryhmanKokot.size(); i++) {
+				if (!kokoSubj.equals(ryhmanKokot.get(i)))
+					this.koko.add(ryhmanKokot.get(i), DCTerms.isReplacedBy, kokoSubj);
 			}
+			//lisätään kokon käsitteelle aikaleimat
+			this.haeAikaleimat(ryhma, kokoSubj);
 		}
+//		try {
+//			tmpWriter.close();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		//Siivotaan lopuksi hierarkiasta erikoisonto- ja ysourit joihin on saatettu viitata exactMatcheilla
 		Property broader = this.koko.getProperty(this.skosNs+"broader");
@@ -753,24 +773,73 @@ public class Kokoaja2 {
 
 	}
 
+	private void haeAikaleimat(HashSet<Resource> ryhma, Resource kokoRes) {
+		ArrayList<Date> created = new ArrayList<Date>();
+		ArrayList<Date> modified = new ArrayList<Date>();
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat vaihtoehtoFormat = new SimpleDateFormat("yyyyMMdd");
+
+		for (Resource res : ryhma) {
+			StmtIterator i = this.aikaLeimat.listStatements(res, null, (RDFNode)null);
+			while (i.hasNext()) {
+				Statement s = i.next();
+				if (s.getPredicate().equals(DCTerms.created)) {
+					try {
+						created.add(  format.parse(s.getLiteral().getString())  );
+					} catch (ParseException e1) {
+						try {
+							created.add(  vaihtoehtoFormat.parse(s.getLiteral().getString())  );
+						} catch (ParseException e2) {
+							System.out.println("Ongelma: Aikaleimaa ei voitu jäsentää " + s.toString());
+						}
+					}
+				}
+				else if (s.getPredicate().equals(DCTerms.modified)) {
+					try {
+						modified.add(  format.parse(s.getLiteral().getString()) );
+					} catch (ParseException e1) {
+						try {
+							modified.add(  vaihtoehtoFormat.parse(s.getLiteral().getString())  );
+						} catch (ParseException e2) {
+							System.out.println("Ongelma: Aikaleimaa ei voitu jäsentää " + s.toString());
+						}
+					}
+				}
+			}
+		}
+		Collections.sort(created);
+		Collections.sort(modified, Collections.reverseOrder());
+
+		if (!created.isEmpty()) {
+			String dateString = format.format(created.get(0));
+			this.koko.add(kokoRes, DCTerms.created, this.koko.createTypedLiteral(dateString, XSDDatatype.XSDdate));
+		}
+		if (!modified.isEmpty()) {
+			String dateString = format.format(modified.get(0));
+			this.koko.add(kokoRes, DCTerms.modified, this.koko.createTypedLiteral(dateString, XSDDatatype.XSDdate));
+		}
+
+	}
+
 	private void valiTarkistus(String filename) {
 
-		//Tehdään välitallennus kokosta tässä kohtaa:
+		//Tehdaan valitallennus kokosta tassa kohtaa:
 		try {
 			System.out.println("Kirjoitetaan välikoko...");
-			this.koko.write((new FileWriter(filename)), "TTL");
+			this.koko.write(new FileWriter(filename), "TTL");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	/* 
-	 * Tämä metodi hakee koko-uri-vastaavuudet erikoisontologian käsiteille, tai jos sellaisia ei löydy, luo uudet koko-urit
+	 * Tama metodi hakee koko-uri-vastaavuudet erikoisontologian käsiteille, tai jos sellaisia ei loydy, luo uudet koko-urit
 	 * 
 	 */
 
 	public void muutaUritKokoUreiksi() {
-		System.out.println("Kokossa käsitteitä ennen kurittamista: " + this.koko.listSubjects().toList().size());
+		System.out.println("Kokossa käsitteita ennen kurittamista: " + this.koko.listSubjects().toList().size());
 		HashSet<Resource> kokonSubjektitSet = new HashSet<Resource>();
 		HashSet<Resource> kokossaOlevatKokoUritTaiOikeamminResurssit = new HashSet<Resource>();
 		Vector<HashSet<Resource>> kokonKasitteetSittenReplacedBytVektori = new Vector<HashSet<Resource>>();
@@ -804,14 +873,14 @@ public class Kokoaja2 {
 			kokoSubjektitVektori.addAll(eiYsoVektori);
 
 
-			//kokonSubjektiVektorissa on nyt kaikki yhteen kokokäsitteeseen viittaavat urit ysosta ja erikoisontologioista
-			//Tällä hetkellä kokoaja suosii liikaa yson kautta tulevia kokokäsitteitä. Kannattaa muuttaa muotoon, jossa otetaan kaikkien subjektivektorin kautta linkittyvien kokourien pienin
+			//kokonSubjektiVektorissa on nyt kaikki yhteen kokokasitteeseen viittaavat urit ysosta ja erikoisontologioista
+			//Talla hetkella kokoaja suosii liikaa yson kautta tulevia kokokasitteita. Kannattaa muuttaa muotoon, jossa otetaan kaikkien subjektivektorin kautta linkittyvien kokourien pienin
 
 			for (String uri:kokoSubjektitVektori) {
 				Resource subj = this.koko.createResource(uri);
 				Vector<Resource> ontoSubjSet = new Vector<Resource>();
 				ontoSubjSet.add(subj);
-				Vector<String> eiYsoSubjSet = new Vector<String>(); //sisältää myös yso-subjektin silloin kun käydään tätä läpi erikoisontologian käsitteille
+				Vector<String> eiYsoSubjSet = new Vector<String>(); //sisaltaa myos yso-subjektin silloin kun kaydaan tata lapi erikoisontologian kasitteille
 				iter = this.koko.listStatements(subj, skosExactMatch, (RDFNode)null);
 				while (iter.hasNext()) {
 					Statement stmt = iter.nextStatement();
@@ -826,39 +895,19 @@ public class Kokoaja2 {
 
 				Resource kokoSubj = null;
 				for (Resource ontoSubj:ontoSubjSet) {
-					/*
-				if (this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj)) {
-					Resource kandidaattiSubj = this.ontoKokoResurssivastaavuudetMap.get(ontoSubj);
-					if (kokoSubj == null) kokoSubj = kandidaattiSubj;
-					else if (kokoSubj.getURI().compareTo(kandidaattiSubj.getURI()) > 1) {
-						this.koko.add(kokoSubj, DCTerms.isReplacedBy, kandidaattiSubj);
-						kokoSubj = kandidaattiSubj;
-					}
-					if (kokossaOlevatKokoUritTaiOikeamminResurssit.contains(kokoSubj)) {
-						//laskuri++;
-						//System.out.println(laskuri + ". DEBUG: KOKOssa on jo " + kokoSubj.getURI() + " <-- " + ontoSubj.getURI());
-						kokoSubj = this.luoUusiKokoResurssi();
-					}
-				}*/
-
-					//Tästä eteenpäin loopin sisällä saattaa esiintyä virheitä:
-
-
-
 					if (kokoSubj == null && this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj)) { 
-
 
 						if (!kokossaOlevatKokoUritTaiOikeamminResurssit.contains(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) { 
 							//jos pääkäsitettä ei ole valittu,
 							//vuorossa oleva käsite löytyy kokosta
-							//ja jos sitä ei ole tämänkertaisessa ajossa ajettu kokoon
+							//ja jos sita ei ole tamankertaisessa ajossa ajettu kokoon
 							//luodaan uusi pääkäsite
 							kokoSubj = this.luoUusiKokoResurssi(); 
 						} else {
 							//jos pääkäsitettä ei ole valittu,
 							//vuorossa oleva käsite löytyy kokosta,
-							//ja vuorossa olevaa käsitettä on tämänkertaisessa ajossa ajettu kokoon,
-							//tehdään vuorossa olevasta käsitteestä pääkäsite
+							//ja vuorossa olevaa käsitettä on tamankertaisessa ajossa ajettu kokoon,
+							//tehdään vuorossa olevasta kasitteesta pääkäsite
 							kokoSubj = this.ontoKokoResurssivastaavuudetMap.get(ontoSubj); 
 						}
 					} else if (kokoSubj != null && this.ontoKokoResurssivastaavuudetMap.containsKey(ontoSubj) && !kokoSubj.equals(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj))) { 
@@ -866,9 +915,7 @@ public class Kokoaja2 {
 						//jos pääkäsite on valittu
 						this.koko.add(this.ontoKokoResurssivastaavuudetMap.get(ontoSubj), DCTerms.isReplacedBy, kokoSubj); 
 					}
-
 				}
-
 
 				if (kokoSubj == null) {
 					kokoSubj = this.luoUusiKokoResurssi();
@@ -945,7 +992,7 @@ public class Kokoaja2 {
 	}
 
 	public void tulostaPrefLabelMuutoksetEdelliseenVerrattuna(Model aiempiKoko, String lang) {
-		System.out.println("KOKOn prefLabel muutokset edelliseen versioon verrattuna kielella " + lang + ":");
+		System.out.println("KOKOn prefLabel muutokset edelliseen versioon verrattuna kielellä " + lang + ":");
 		Property skosPrefLabel = aiempiKoko.createProperty(this.skosNs + "prefLabel");
 		int i = 0;
 
@@ -1009,7 +1056,7 @@ public class Kokoaja2 {
 		while (resIter.hasNext()) {
 			uudenKokonResurssit.remove(resIter.nextResource());
 		}
-		System.out.println("Uudessa KOKOssa on " + uudenKokonResurssit.size() + " uutta kasitetta.");
+		System.out.println("Uudessa KOKOssa on " + uudenKokonResurssit.size() + " uutta käsitettä.");
 		i = 0; 
 		for (Resource uusi:uudenKokonResurssit) {
 			i++;
@@ -1018,7 +1065,7 @@ public class Kokoaja2 {
 	}
 
 	public void lisaaExactMatchitAiemmassaKokossaOlleisiin(String aiemmanKokonpolku) {
-		System.out.println("Lisataan linkit aiemmassa KOKOssa olleisiin kasitteisiin.");		
+		System.out.println("Lisätään linkit aiemmassa KOKOssa olleisiin käsitteisiin.");
 		int i = 0;
 		Model aiempiKoko = JenaHelpers.lueMalliModeliksi(aiemmanKokonpolku);
 		Property skosPrefLabel = aiempiKoko.createProperty(this.skosNs + "prefLabel");
@@ -1086,9 +1133,9 @@ public class Kokoaja2 {
 			if (!loytyiVastine) {
 				i++;
 				if (aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.containsKey(subj)) {
-					System.out.println(i + ". ongelma: Edellisessa KOKOssa oli kasite, jolle ei loytynyt vastinetta uuteen KOKOon: " + aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.get(subj) + " -- " + subj.getURI());
+					System.out.println(i + ". ongelma: Edellisessä KOKOssa oli käsite, jolle ei loytynyt vastinetta uuteen KOKOon: " + aiemmanKokonNykyKokostaPuuttuvienFiLabelitMap.get(subj) + " -- " + subj.getURI());
 				} else {
-					System.out.println(i + ". ongelma: Edellisessa KOKOssa oli kasite, jolle ei loytynyt vastinetta uuteen KOKOon: " + subj.getURI());
+					System.out.println(i + ". ongelma: Edellisessä KOKOssa oli käsite, jolle ei loytynyt vastinetta uuteen KOKOon: " + subj.getURI());
 				}
 			}
 		}
@@ -1130,7 +1177,7 @@ public class Kokoaja2 {
 			}
 		}
 		for (Statement s:lisattavat) this.koko.add(s);
-		System.out.println("Lisattiin " + j + " replacedByta aiemmasta KOKOsta.");
+		System.out.println("Lisättiin " + j + " replacedByta aiemmasta KOKOsta.");
 		//JenaHelpers.testaaMallinLabelienKielet(aiempiKoko, skosPrefLabel);
 	}
 
@@ -1149,9 +1196,10 @@ public class Kokoaja2 {
 
 			poistettavat.add(stmt);
 
-			/*Ei otetakaan huomioon korvaavuussuhteita kahden koko-käsitteen välillä
-			 * jos korvattava koko-käsite on korvattu useammalla koko-käsitteellä 
+			/* Ei otetakaan huomioon korvaavuussuhteita kahden koko-käsitteen välillä,
+			 * jos korvattava koko-käsite on korvattu useammalla koko-käsitteellä
 			 */
+
 			if (this.koko.listStatements(korvattava, DCTerms.isReplacedBy, (RDFNode)null).toSet().size() > 1) {
 				continue;
 			}
@@ -1163,7 +1211,7 @@ public class Kokoaja2 {
 				StmtIterator iter2 = this.koko.listStatements(korvaava, DCTerms.isReplacedBy, (RDFNode)null);
 				if (iter2.hasNext()) {
 					Statement stmt2 = iter2.nextStatement();
-					//lisätty tarkistus ikuisten looppien ehkäisemiseksi
+					//lisatty tarkistus ikuisten looppien ehkäisemiseksi
 					if (poistettavat.contains(stmt2))
 						jatka = false;
 					poistettavat.add(stmt2);
@@ -1183,7 +1231,7 @@ public class Kokoaja2 {
 
 		System.out.println("poistettiin:");
 		for (Statement s:poistettavat) this.koko.remove(s);
-		System.out.println("lisattiin:");
+		System.out.println("lisättiin:");
 		for (Statement s:lisattavat) this.koko.add(s);
 
 
@@ -1205,7 +1253,7 @@ public class Kokoaja2 {
 		System.out.println("triplet korvattuihin muutettu");
 		System.out.println("poistettiin:");
 		for (Statement s:poistettavat) this.koko.remove(s);
-		System.out.println("lisattiin:");
+		System.out.println("lisättiin:");
 		for (Statement s:lisattavat) this.koko.add(s);
 
 		System.out.println("Tarkistettu.");
@@ -1255,14 +1303,15 @@ public class Kokoaja2 {
 			String polku = this.ontologioidenTyypitPolutMap.get(ontonTyyppi);
 			this.lueOnto(polku, ontonTyyppi);
 		}
-		this.valiTarkistus("koko-0-ontot.ttl");
+		this.korjaaYlataso();
+		//this.valiTarkistus("koko-0-ontot.ttl");
 		this.muutaCandidateLabelitPrefJaAltLabeleiksi();
-		this.valiTarkistus("koko-1-candidate.ttl");
+		//this.valiTarkistus("koko-1-candidate.ttl");
 		this.romautaFiPrefLabelienJaVanhempienPerusteella();
-		this.valiTarkistus("koko-2-romautettu.ttl");
+		//this.valiTarkistus("koko-2-romautettu.ttl");
 		//this.muutaUritKokoUreiksi();
 		this.vaihtoehtoinenMuutaUritKokoUreiksi();
-		this.valiTarkistus("koko-3-kuritettu.ttl");
+		//this.valiTarkistus("koko-3-kuritettu.ttl");
 		this.korjaaLopuksiObjectit();
 		//this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
@@ -1274,9 +1323,27 @@ public class Kokoaja2 {
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
 		//this.valiTarkistus("koko-8-uudetUriVastaavuudet.ttl");
 		
-		this.korjaaHierarkia();
+		this.korjaaHierarkia(edellisenKokonPolku);
+		//this.korjaaSulkutarkenteet();
 				
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
+	}
+
+	/*
+	 * Varmistetaan erikoisontologioiden sisäänlukemisen jälkeen,
+	 * ettei mikään niistä sisällä vanhanmallisen YSO-hierarkian
+	 * lauseita jotka sotkisivat nyky-YSOn ylätason hierarkiaa
+	 */
+	private void korjaaYlataso() {
+		HashSet<Resource> sallittuYlataso = new HashSet<Resource>();
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/yso/p4762")); //oliot
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/yso/p8691")); //ominaisuudet
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/yso/p15238")); //tapahtumat ja toiminta
+
+		for (Resource r : sallittuYlataso) {
+			this.koko.removeAll(r, SKOS.broader, (RDFNode)null);
+		}
+
 	}
 
 	public void kokoaJaTuotaDebugKoko(String ysonPolku, String erikoisontologiaTxtnPolku, String edellisenKokonPolku, String uusienUrivastaavuuksienPolku, String mustanListanPolku, String debugKokonPolku) {
@@ -1298,7 +1365,7 @@ public class Kokoaja2 {
 		this.tulostaMuutoksetEdelliseenVerrattuna(edellisenKokonPolku);
 		this.kirjoitaUudetUriVastaavuudet(uusienUrivastaavuuksienPolku);
 		
-		this.korjaaHierarkia();
+		this.korjaaHierarkia(edellisenKokonPolku);
 		
 		System.out.println("Labelin perusteella romautettiin " + this.romautetut + ".");
 	}
@@ -1308,8 +1375,9 @@ public class Kokoaja2 {
 	 * Näitä käsitteitä kerätään kokon "Hierarkian ulkopuoliset"@fi -käsitteen alle.
 	 *
 	 */
-	private void korjaaHierarkia() {
+	private void korjaaHierarkia(String edellisenKokonPolku) {
 		Resource ulkopuoliset;
+		Model aiempiKoko = JenaHelpers.lueMalliModeliksi(edellisenKokonPolku);
 
 		Property prefLabel =  this.koko.getProperty(skosNs+"prefLabel");
 		Property broader = this.koko.getProperty(skosNs+"broader");
@@ -1317,38 +1385,83 @@ public class Kokoaja2 {
 
 		Literal ulkopNimi = this.koko.createLiteral("hierarkian ulkopuoliset", "fi");
 
-		StmtIterator ulkopuolisenNimi = this.koko.listStatements(null, prefLabel, ulkopNimi);
-		if ( ulkopuolisenNimi.hasNext() ) ulkopuoliset = ulkopuolisenNimi.next().getSubject();
+		StmtIterator ulkopuolisenNimi = aiempiKoko.listStatements(null, prefLabel, ulkopNimi);
+		if ( ulkopuolisenNimi.hasNext() ) {
+			ulkopuoliset = ulkopuolisenNimi.next().getSubject();
+			this.koko.add(ulkopuoliset.listProperties(prefLabel));
+			this.koko.add(ulkopuoliset.listProperties(definition));
+			this.koko.add(ulkopuoliset.listProperties(RDF.type));
+			this.koko.add(ulkopuoliset, this.koko.getProperty(skosNs+"topConceptOf"), this.koko.createResource(kokoNs));
+
+		}
 		else  {
 			ulkopuoliset = this.luoUusiKokoResurssi();
 			this.ontoKokoResurssivastaavuudetMap.put(ulkopuoliset, ulkopuoliset);
 			ulkopuoliset.addProperty(prefLabel, ulkopNimi);
 			ulkopuoliset.addProperty(definition, "Käsitteet joille ei löytynyt yläkäsitettä päätyvät tänne.", "fi");
-			ulkopuoliset.addProperty(RDF.type, this.koko.getResource(skosNs+"Concept"));
-			ulkopuoliset.addProperty(this.koko.getProperty(skosNs+"topConceptOf"), this.koko.getResource(kokoNs));
+			ulkopuoliset.addProperty(RDF.type, this.koko.createResource(skosNs+"Concept"));
+			ulkopuoliset.addProperty(this.koko.getProperty(skosNs+"topConceptOf"), this.koko.createResource(kokoNs));
 		}
 
 		Set<Resource> jonkunLapset = this.koko.listResourcesWithProperty(broader).toSet();
-		Set<Resource> ylätasonResurssit = this.koko.listResourcesWithProperty(RDF.type, this.koko.getResource(skosNs+"Concept") ).toSet();
-		ylätasonResurssit.removeAll(jonkunLapset);
+		Set<Resource> ylatasonResurssit = this.koko.listResourcesWithProperty(RDF.type, this.koko.createResource(skosNs+"Concept") ).toSet();
+		ylatasonResurssit.removeAll(jonkunLapset);
 		
-		HashSet<Resource> sallittuYlätaso = new HashSet<Resource>();
-		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p37038")); //oliot
-		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p34034")); //ominaisuudet
-		sallittuYlätaso.add(this.koko.getResource("http://www.yso.fi/onto/koko/p35417")); //tapahtumat ja toiminta
-		sallittuYlätaso.add(ulkopuoliset);
+		HashSet<Resource> sallittuYlataso = new HashSet<Resource>();
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/koko/p37038")); //oliot
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/koko/p34034")); //ominaisuudet
+		sallittuYlataso.add(this.koko.createResource("http://www.yso.fi/onto/koko/p35417")); //tapahtumat ja toiminta
+		sallittuYlataso.add(ulkopuoliset); //hierarkian ulkopuoliset
+
+		ArrayList<Statement> poistot = new ArrayList<Statement>();
+		ArrayList<Statement> lisat = new ArrayList<Statement>();
 		
-		for (Resource r : ylätasonResurssit) {
-			
-			if (!sallittuYlätaso.contains(r))
+		for (Resource r : ylatasonResurssit) {
+
+			if (!sallittuYlataso.contains(r)) {
 				r.addProperty(broader, ulkopuoliset);
+
+				/*  Toivottuna korjauksena muokataan hierarkian ulkopuolisten käsitteiden prefLabeleita
+				 *  siten että niiden sulkutarkenteeksi merkitään lähtösanaston lyhenne
+				 */
+
+				StmtIterator prefLabelIter = r.listProperties(SKOS.prefLabel);
+				while (prefLabelIter.hasNext()) {
+					Statement s = prefLabelIter.next();
+					String lang = s.getLanguage();
+					String literal = s.getLiteral().getLexicalForm();
+					String sulkuTarkenteetonLiteral = literal;
+					if (literal.contains("("))
+						sulkuTarkenteetonLiteral = literal.substring(0, literal.lastIndexOf("(")).trim();
+
+					String sanastoTunnus = "";
+					StmtIterator tunnusIter = r.listProperties(RDF.type);
+					while (tunnusIter.hasNext()) {
+						Statement tunnusSt = tunnusIter.next();
+						String typeUri = tunnusSt.getResource().getURI();
+						if (typeUri.endsWith("-meta/Concept")) {
+							sanastoTunnus = typeUri.substring(0, typeUri.indexOf("-meta/Concept"));
+							sanastoTunnus = sanastoTunnus.substring(sanastoTunnus.lastIndexOf("/")+1).toUpperCase();
+							break;
+						}
+
+					}
+					Literal newLiteral = this.koko.createLiteral(sulkuTarkenteetonLiteral + " (" + sanastoTunnus + ")", lang);
+					lisat.add(this.koko.createStatement(r, SKOS.prefLabel, newLiteral));
+					poistot.add(s);
+				}
+			}
 		}
-		
-		
+
+		//poistetaan hierarkian ulkopuolisilta sulkutarkenteet
+		this.koko.remove(poistot);
+
+		//lisätään hierarkian ulkopuolisille sulkutarkenteeksi lähtösanaston tunnus
+		this.koko.add(lisat);
+
+		//varataan lopuksi hierarkian ulkopuolisten resurssiuri kokon urivastaavuustiedostoon
+		this.ontoKokoResurssivastaavuudetMap.put(ulkopuoliset, ulkopuoliset);
 	}
-
-
-
 
 	public void kirjoitaKoko(String kokonPolku) {
 
@@ -1387,21 +1500,22 @@ public class Kokoaja2 {
 	 */
 	public static void main(String[] args) {
 		Kokoaja2 kokoaja = new Kokoaja2(args[0]);
+
 		if (args.length == 7)
 			kokoaja.kokoa(args[1], args[2], args[4], args[3], args[6]);
 		else if (args.length == 8)
 			kokoaja.kokoaJaTuotaDebugKoko(args[1], args[2], args[4], args[3], args[6], args[7]);
 		else
-			System.out.println("Vaara maara argumentteja");
+			System.out.println("Väärä määrä argumentteja");
 
 		kokoaja.kirjoitaKoko(args[5]);
 	}
 
 
-	private void siivoaPoisTuplaVastaavuudet(HashSet<Statement> kaikkiLinkitetytKäsitteet) {
+	private void siivoaPoisTuplaVastaavuudet(HashSet<Statement> kaikkiLinkitetytKasitteet) {
 
 		HashMap<Resource, HashSet<Statement>> kaikkiLinkitMap = new HashMap<Resource, HashSet<Statement>>();
-		for (Statement s : kaikkiLinkitetytKäsitteet) {
+		for (Statement s : kaikkiLinkitetytKasitteet) {
 
 			Resource r1 = s.getSubject();
 			Resource r2 = s.getResource();
@@ -1441,36 +1555,36 @@ public class Kokoaja2 {
 		//Käy läpi kaikki pussukat (niitä on noin 55000)
 		for (HashSet<Statement> pussukka : valueSet) {
 
-			HashMap<String, HashSet<Statement>> tämänPussukanRomahtaneet = new HashMap<>();
+			HashMap<String, HashSet<Statement>> tamanPussukanRomahtaneet = new HashMap<>();
 
 			for (Statement s : pussukka) {
 				String ns1 = s.getSubject().getNameSpace();
 				String ns2 = s.getResource().getNameSpace();
 
-				if (s.getSubject().getURI().equals(s.getResource().getURI())) continue; //ei huomioida exactMatcheja itsensä kanssa
+				if (s.getSubject().getURI().equals(s.getResource().getURI())) continue; //ei huomioida exactMatcheja itsensa kanssa
 
-				HashSet<Statement> set1 =  tämänPussukanRomahtaneet.containsKey(ns1) ? tämänPussukanRomahtaneet.get(ns1) : new HashSet<Statement>(); 
+				HashSet<Statement> set1 =  tamanPussukanRomahtaneet.containsKey(ns1) ? tamanPussukanRomahtaneet.get(ns1) : new HashSet<Statement>(); 
 				set1.add(s);
-				tämänPussukanRomahtaneet.put(ns1, set1);
-				HashSet<Statement> set2 =  tämänPussukanRomahtaneet.containsKey(ns2) ? tämänPussukanRomahtaneet.get(ns2) : new HashSet<Statement>(); 
+				tamanPussukanRomahtaneet.put(ns1, set1);
+				HashSet<Statement> set2 =  tamanPussukanRomahtaneet.containsKey(ns2) ? tamanPussukanRomahtaneet.get(ns2) : new HashSet<Statement>(); 
 				set2.add(s);
-				tämänPussukanRomahtaneet.put(ns2, set2);
+				tamanPussukanRomahtaneet.put(ns2, set2);
 
 			}
 
 
-			for (HashSet<Statement> set : tämänPussukanRomahtaneet.values()) {
+			for (HashSet<Statement> set : tamanPussukanRomahtaneet.values()) {
 				if (set.size() > 1) {
 
 					//jos pussukka romauttaa yhteen useamman käsitteen samasta nimiavaruudesta, valitaan vain yksi sopiva
-					kaikkiLinkitetytKäsitteet.removeAll(poistaNäistäTuplat(set));
+					kaikkiLinkitetytKasitteet.removeAll(poistaNaistaTuplat(set));
 
 				}
 			}
 		}
 	}
 
-	private HashSet<Statement> poistaNäistäTuplat(HashSet<Statement> set) {
+	private HashSet<Statement> poistaNaistaTuplat(HashSet<Statement> set) {
 
 		HashSet<Statement> result = new HashSet<>();
 
@@ -1491,7 +1605,7 @@ public class Kokoaja2 {
 				result.add(s);
 		}
 
-		// Tähän voi lisäksi lisätä hyvänä lisänä lisää lisäsääntöjä, kuten vertailua prefLabeleiden kesken yms.
+		// Tähän voi lisäksi lisätä hyvänä lisäna lisaa lisäsääntöja, kuten vertailua prefLabeleiden kesken yms.
 		// ...
 
 
@@ -1499,6 +1613,8 @@ public class Kokoaja2 {
 			//jos näyttää siltä että poistolistan koko ei riitä yksiselitteisen käsitteen löytämiseen
 			ArrayList<Statement> list = new ArrayList<>(set);
 			int pieninIndeksi = 0;
+
+			//valitaan ryppään ylimmän tason käsite:
 			for (int i = 1 ; i<list.size(); i++) {
 				int levelCurrent = ResourceHierarchyComparator.hierarchyLevel(list.get(i).getResource());
 				int levelReference = ResourceHierarchyComparator.hierarchyLevel(list.get(pieninIndeksi).getResource());
@@ -1509,7 +1625,9 @@ public class Kokoaja2 {
 			for (Statement s : set)
 				if (!s.equals(list.get(pieninIndeksi)))
 					result.add(s);
-		} 
+		}
+
+		//System.out.println("Debuggailua: Poistetaan ryppäästä " + set.toString() + " seuraavat: " + result.toString());
 		return result;
 	}
 
@@ -1567,7 +1685,7 @@ class ResourceHierarchyComparator implements Comparator<Resource> {
 
 		int dist = 0;
 		Set<Statement> isot = res.listProperties(broader).toSet();
-		while (isot.size() > 0) {
+		while (!isot.isEmpty()) {
 
 			Set<Statement> tmp = new HashSet<Statement>();
 			for (Statement s :isot) {

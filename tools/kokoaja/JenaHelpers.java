@@ -5,20 +5,11 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.ontology.OntModelSpec;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.RDFWriter;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.util.FileManager;
-import com.hp.hpl.jena.vocabulary.RDF;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.util.FileManager;
+import org.apache.jena.vocabulary.*;
 
 public class JenaHelpers {
 
@@ -83,10 +74,16 @@ public class JenaHelpers {
 			//kirjuri.setProperty("xmlbase", "http://yso.fi/mao");
 
 			kirjuri.write(malli, bs, null);
+			bs.flush();
+			bs.close();
+			os.flush();
+			os.close();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Malli kirjoitettu tiedostoon " + mallinPolku);
+
 	}
 	
 	public static void testaaMallinLabelienKielet(Model malli, Property labelProp) {
