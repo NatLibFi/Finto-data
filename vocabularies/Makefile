@@ -1,12 +1,12 @@
 # Convert all */*-skos.ttl files to RDF/XML
 
-all: $(patsubst %.ttl.gz,%.ttl,$(wildcard */*-skos.ttl.gz)) $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) yso/yso-fin.mrcx yso/yso-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
-
-%-skos.ttl: %-skos.ttl.gz
-	zcat $^ >$@
+all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/yso-fin.mrcx yso/yso-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
 
 %-skos.rdf: %-skos.ttl
 	rapper -i turtle -o rdfxml-abbrev $^ >$@ || rm $@
+
+finaf/finaf-skos.ttl: $(shell find finaf/finaf-skos/ -type f | sort)
+	python3 ../tools/split-join-turtle/join-turtle.py $^ >$@
 
 yso/yso-fin.mrcx: yso/yso-skos.ttl
 	python3 ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-fi.pkl" 2>yso/yso-fin.log
