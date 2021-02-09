@@ -3,7 +3,7 @@
 INFILES="finaf-metadata.ttl rdaa.rdf rdac.rdf rdap.rdf rdau.rdf finaf.ttl"
 OUTFILE=finaf-skos.ttl
 
-SKOSIFYCMD="skosify"
+SKOSIFYCMD="/usr/local/bin/skosify"
 LOGFILE=skosify.log
 OPTS="--config finaf.cfg --namespace http://urn.fi/URN:NBN:fi:au:finaf:"
 
