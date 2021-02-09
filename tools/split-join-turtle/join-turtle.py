@@ -37,7 +37,7 @@ def extract_headers(data):
 
 headers_written = False
 for filename in sys.argv[1:]:
-    with open(filename) as infile:
+    with open(filename, encoding='utf-8') as infile:
         data = infile.read()
         headers, idx = extract_headers(data)
         if not headers_written:
