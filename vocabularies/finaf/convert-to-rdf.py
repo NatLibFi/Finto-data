@@ -143,7 +143,7 @@ def format_label(fld, skip_last=False):
 
 def format_timestamp(ts):
     year = int(ts[0:2])
-    if year >= 90:
+    if year >= 68:  # see https://www.loc.gov/marc/yr2000.html
         year += 1900
     else:
         year += 2000
