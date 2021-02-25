@@ -48,7 +48,7 @@ window.cookieconsent.initialise({
 function createConceptObject(conceptUri, conceptData) {
   var newNode = { 
     text: getLabel(conceptData), 
-    a_attr: getConceptHref(conceptData),
+    a_attr: getHrefForUri(conceptData.uri),
     uri: conceptUri,
     parents: conceptData.broader,
     state: { opened: true },
@@ -76,7 +76,7 @@ function createObjectsFromChildren(conceptData, conceptUri) {
   for (var i = 0; i < conceptData.narrower.length; i++) {
     var childObject = {
       text: getLabel(conceptData.narrower[i]), 
-      a_attr: getConceptHref(conceptData.narrower[i]),
+      a_attr: getHrefForUri(conceptData.narrower[i].uri),
       uri: conceptData.narrower[i].uri,
       parents: conceptUri,
       state: { opened: true }
@@ -102,7 +102,7 @@ function vocabRoot(topConcepts) {
     var conceptData = topConcepts[i];
     var childObject = {
       text: conceptData.label, 
-      a_attr : getConceptHref(conceptData),
+      a_attr : getHrefForUri(conceptData.uri),
       uri: conceptData.uri,
       state: { opened: false } 
     };
@@ -124,7 +124,7 @@ function createObjectsFromNarrowers(narrowerResponse) {
     var conceptObject = narrowerResponse.narrower[i];
     var childObject = {
       text : getLabel(conceptObject), 
-      a_attr : getConceptHref(conceptObject),
+      a_attr : getHrefForUri(conceptObject.uri),
       uri: conceptObject.uri,
       parents: narrowerResponse.uri,
       state: { opened: false, disabled: false, selected: false }
