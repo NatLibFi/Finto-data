@@ -3886,6 +3886,7 @@ mts:m153 a isothes:ConceptGroup,
         mts:m633,
         mts:m700,
         mts:m779,
+        mts:m910,
         mts:m918,
         mts:m935,
         mts:m952,
@@ -8239,7 +8240,7 @@ mts:m2130 a skos:Concept ;
         "RDA-term"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "lisämateriaalia saatavana verkosta"@fi,
-        "härtill kompletterande material på Internet"@sv .
+        "härtill kompletterande material på internet"@sv .
 
 mts:m2131 a isothes:ConceptGroup,
         skos:Collection ;
@@ -18761,6 +18762,16 @@ mts:m91 a isothes:ConceptGroup,
     skos:prefLabel "dissertation or thesis information"@en,
         "Väitöskirja tai muu akateeminen opinnäyte"@fi,
         "Doktorsavhandling eller annat akademiskt lärdomsprov"@sv .
+
+mts:m910 a skos:Concept ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
+    skos:altLabel "taiteellinen tuottaja"@fi ;
+    skos:definition "henkilö tai yhteisö, joka on vastuussa ekspression taiteellisen sisällön tuottamisesta (esim. äänitteen tuottaja)."@fi,
+        "person eller institution som är ansvarig för produktionen av ett uttrycks konstnärliga innehåll (t.ex. producent för en ljudinspelning)."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tuottaja (ekspressio)"@fi,
+        "producent (uttryck)"@sv .
 
 mts:m911 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -37598,6 +37609,8 @@ mts:m4605 a skos:Concept ;
 
 mts:m4607 a skos:Concept ;
     dc:source "AgRelOn, an Agent Relationship Ontology" ;
+    skos:altLabel "styvdotter"@sv,
+        "styvson"@sv ;
     skos:closeMatch <https://d-nb.info/standards/elementset/agrelon#hasStepChild> ;
     skos:definition "Henkilön (subjekti) puolisolla on lapsi (objekti)."@fi ;
     skos:inScheme mts: ;
@@ -37713,7 +37726,12 @@ mts:m4615 a skos:Concept ;
 mts:m4616 a skos:Concept ;
     dc:source "AgRelOn, an Agent Relationship Ontology" ;
     skos:altLabel "kummisetä"@fi,
-        "kummitäti"@fi ;
+        "kummitäti"@fi,
+        "gudfader"@sv,
+        "gudfar"@sv,
+        "gudförälder"@sv,
+        "gudmoder"@sv,
+        "gudmor"@sv ;
     skos:closeMatch <https://d-nb.info/standards/elementset/agrelon#hasGodParent> ;
     skos:definition "Henkilö (subjekti) saa kummiksi henkilön (objekti) kummilapsen kasteen yhteydessä."@fi ;
     skos:inScheme mts: ;
@@ -37764,7 +37782,9 @@ mts:m4620 a skos:Concept ;
         "naimaton isä"@fi,
         "naimaton äiti"@fi,
         "ogift fader"@sv,
-        "ogift moder"@sv ;
+        "ogift mamma"@sv,
+        "ogift moder"@sv,
+        "ogift pappa"@sv ;
     skos:closeMatch <https://d-nb.info/standards/elementset/agrelon#hasIllegitimateParent> ;
     skos:definition "Henkilön (subjekti) synnytti/siitti henkilö (objekti), kun biologiset vanhemmat eivät olleet naimisissa lapsen syntyhetkellä."@fi ;
     skos:inScheme mts: ;
@@ -37797,7 +37817,9 @@ mts:m4622 a skos:Concept ;
 mts:m4624 a skos:Concept ;
     dc:source "AgRelOn, an Agent Relationship Ontology" ;
     skos:altLabel "sisarpuoli"@fi,
-        "velipuoli"@fi ;
+        "velipuoli"@fi,
+        "halvbror"@sv,
+        "halvsyster"@sv ;
     skos:closeMatch <https://d-nb.info/standards/elementset/agrelon#hasHalfSibling> ;
     skos:definition "Henkilöllä (subjekti) on sisaruksena henkilö (objekti) ja sisaruksilla on vain yksi yhteinen biologinen vanhempi."@fi ;
     skos:inScheme mts: ;
@@ -37945,10 +37967,10 @@ mts:m4636 a skos:Concept ;
         "lanko"@fi,
         "nato"@fi,
         "sisaruksen puoliso"@fi,
+        "makas/makes syskon"@sv,
         "svägerska"@sv,
-        "svärdotter"@sv,
-        "svärson"@sv,
-        "svåger"@sv ;
+        "svåger"@sv,
+        "syskons partner"@sv ;
     skos:closeMatch <https://d-nb.info/standards/elementset/agrelon#hasSiblingInlaw> ;
     skos:definition "Henkilön (subjekti) puolisolla on sisarus (objekti)."@fi ;
     skos:inScheme mts: ;
@@ -54119,7 +54141,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-03-02T01:03:11+00:00"^^xsd:dateTime ;
+    dct:modified "2021-03-04T01:02:45+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
