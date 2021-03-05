@@ -855,7 +855,8 @@
 	skosmos:language "fi", "sv", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:useModifiedDate "true";
-	skosmos:usePlugin "wiki", "suggestions" ;
+	skosmos:usePlugin "wiki", "suggestions", "map" ;
+	skosmos:propertyOrder :yso-paikat-order ;
 	void:dataDump <http://dev.finto.fi/download/yso-paikat/yso-paikat-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/yso-paikat/yso-paikat-skos.rdf> ;
 	void:dataDump <http://dev.finto.fi/download/yso/yso-paikat-fin.mrcx> ;
@@ -871,22 +872,7 @@
         dct:format "application/marcxml+xml";
         dct:language "sv" .
 
-:yso-paikat-coordinates a skosmos:Vocabulary, void:Dataset ;
-	dc:title "YSO-paikat koordinaateilla"@fi ,
-		"ALLFO-orter med koordinater"@sv,
-		"YSO places with coordinates"@en ;
-	dc:subject :cat_geo ;
-	skosmos:shortName "YSO-paikat"@fi, "ALLFO-orter"@sv, "YSO places"@en ;
-	void:uriSpace "http://www.yso.fi/onto/yso/";
-	skosmos:language "fi", "sv", "en";
-	skosmos:defaultLanguage "fi";
-	skosmos:useModifiedDate "true";
-	skosmos:usePlugin "wiki", "suggestions", "map" ;
-	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:propertyOrder :yso-paikat-coordinates-order ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-paikat-coordinates/> .
-
-:yso-paikat-coordinates-order a skosmos:PropertyOrder ;
+:yso-paikat-order a skosmos:PropertyOrder ;
     rdf:value (
         rdf:type
         dc:isReplacedBy
