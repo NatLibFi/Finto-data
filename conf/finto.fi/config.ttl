@@ -12,6 +12,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosmos: <http://purl.org/net/skosmos#> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#>.
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix : <#> .
@@ -957,6 +958,7 @@
 	skosmos:showChangeList "true"; 
         skosmos:useModifiedDate "true";
 	skosmos:defaultLanguage "fi";
+	skosmos:propertyOrder :yso-paikat-order ;
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.ttl> ;
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-skos.rdf> ;
 	void:dataDump <http://api.finto.fi/download/yso-paikat/yso-paikat-fin.mrcx> ;
@@ -973,6 +975,28 @@
         dct:format "application/marcxml+xml";
         dct:language "sv" .
         
+:yso-paikat-order a skosmos:PropertyOrder ;
+    rdf:value (
+        rdf:type
+        dc:isReplacedBy
+        skos:definition
+        isothes:broaderPartitive
+        skos:broader
+        isothes:narrowerPartitive
+        skos:narrower
+        skos:related
+        skos:altLabel
+        skosmos:memberOf
+        skos:note
+        skos:scopeNote
+        skos:historyNote
+        rdfs:comment
+        dc:source
+        skos:prefLabel
+        wgs84:lat
+        wgs84:long
+    ) .
+
 :yse a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSAn ja YSOn käsite-ehdotukset"@fi,
 		"Allärs och ALLFO begreppsförslag"@sv,
