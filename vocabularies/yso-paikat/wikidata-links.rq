@@ -2,9 +2,11 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
 CONSTRUCT {
     ?ysoc skos:closeMatch ?item .
     ?ysoc skos:prefLabel ?itemLabel .
+    ?item wdt:P625 ?point .
 }
 WHERE
 {
@@ -14,5 +16,8 @@ WHERE
     OPTIONAL {
       ?item rdfs:label ?itemLabel .
       FILTER(LANG(?itemLabel)='en')
+    }
+    OPTIONAL {
+      ?item wdt:P625 ?point .
     }
 }
