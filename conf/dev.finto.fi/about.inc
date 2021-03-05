@@ -9,6 +9,7 @@
 <p>Voit ehdottaa uusia käsitteitä ja muutoksia Yleiseen suomalaiseen ontologiaan ja YSO-paikkoihin <a href="http://ehdotus.finto.fi">Ehdotusjärjestelmän</a> avulla. Käsittelyssä olevia käsite-ehdotuksia voit selata <a href="https://finto.fi/yse/fi">Finton YSE-sanastossa</a>. Muita sanastoja koskevaa palautetta voit lähettää <a href="http://finto.fi/fi/feedback">Palaute-sivun</a> kautta.</p>
 
 <p><a href="https://www.kiwi.fi/x/fIQwCw" target="_blank">Saavutettavuusseloste</a></p>
+<div class="kk-logo-fi-sv"></div>
 
 {% elseif request.lang == 'sv' %}
 <h4>Information</h4>
@@ -21,6 +22,7 @@
 <p>Du kan föreslå nya begrepp och ändringar till Allmän finländsk ontologi och ALLFO-orter via <a href="http://ehdotus.finto.fi">Förslagssystemet</a>. Begreppsförslag som är under behandling kan du söka i <a href="http://finto.fi/yse">YSE-vokabulären</a> i Finto. Förslag gällande andra vokabulärer och ontologier i Finto kan du skicka via <a href="http://finto.fi/sv/feedback">Respons-sidan</a>.</p>
 
 <p><a href="https://www.kiwi.fi/x/qYQwCw" target="_blank">Tillgänglighetsutlåtande</a></p>
+<div class="kk-logo-fi-sv"></div>
 
 {% elseif request.lang == 'en' %}
 <h4>Information</h4>
@@ -31,5 +33,6 @@
 <p>Finto service has a wide range of users in Finland from culture heritage organizations to public administration. International users include UNESCO and FAO. Read more about Finto's users <a href="https://www.kiwi.fi/x/hgKEBw">here</a>. To share your own user story, please contact us.</p>
 
 <p>Suggestions to General Finnish Ontology YSO and YSO places for new additions or changes can be made from this page. To find all such suggestions still in process, please see the <a href="http://finto.fi/yse">suggestion vocabulary YSE</a>. Suggestions or feedback to other vocabularies and ontologies can be sent via the <a href="http://finto.fi/en/feedback">feedback</a> form.</p>
+<div class="kk-logo-en"></div>
 
 {% endif %}
