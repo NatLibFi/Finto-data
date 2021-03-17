@@ -801,6 +801,7 @@ def convert(cs, vocabulary_name, language, g, g2):
         # TODO: ysoon lisätään myöhemmin partOf-suhteiden käänteinen suhde
         # TODO: useat erityyppiset i-kentät eivät toimi tällä hetkellä
         fields = list()
+
         for prop, wval in SEEALSOPROPS.items():
             for target in sorted(g.objects(concept, prop)):
                 if not helper_variables['keepDeprecated'] and \
@@ -842,27 +843,25 @@ def convert(cs, vocabulary_name, language, g, g2):
                                      "i", TRANSLATIONS[prop][language]
                                     ))
                 else:
-                    # yso-paikoissa on sekä ISOTHES.broaderPartitive, että
-                    # SKOS.broader redundanttina, jätetään j. pois
-                    # samoin ISOTHES.narrowerPartitive - SKOS.narrower
-                    if (target, SKOS.inScheme, YSO.places) in g and \
-                        (prop == SKOS.broader or prop == SKOS.narrower):
-                        continue
                     subfields.extend(('w', wval))
-                
+                    
                 subfields.extend(('a', 
                                   decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label)))
                                   #str(label)
                                  ))
                 subfields.extend(('0', target))
-                
-                fields.append(
-                    Field(
-                        tag = tag,
-                        indicators = [' ', ' '],
-                        subfields = subfields
+                # yso-paikoissa on sekä ISOTHES.broaderPartitive, että
+                # SKOS.broader redundanttina, 
+                # samoin ISOTHES.narrowerPartitive - SKOS.narrower
+                # Otetaan kuitenkin toistaiseksi varmuudeksi kummatkin konversioon mukaan 
+                # ja poistetaan tuplakentät tässä
+                see_also_field = Field(
+                    tag = tag,
+                    indicators = [' ', ' '],
+                    subfields = subfields
                     )
-                )
+                if not any(str(see_also_field) == str(f) for f in fields):
+                    fields.append(see_also_field)
         # järjestä 5XX-kentät ja lisää ne tietueeseen
         for sorted_field in sorted(fields, key=lambda o: (
             o.tag, 
@@ -887,7 +886,9 @@ def convert(cs, vocabulary_name, language, g, g2):
                     if len(geographical_type) > 1:
                         geographical_type = geographical_type[1]
                         geographical_types.add(geographical_type)
-                elif not "Wikidata" in valueProp.value:
+                elif not any(substring in valueProp.value for substring in ["Wikidata", 
+                                                                            "Sijaintitietojen lähde", 
+                                                                            "Källa för positionsinformation"]):
                     # dc:sourcessa on ollut myös URLeja. Siivotaan ne tässä pois
                     if not valueProp.value.startswith("http"):
                         subfield_list.append([
