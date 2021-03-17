@@ -22,13 +22,6 @@
 @prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 @prefix ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 
-<http://www.yso.fi/onto/hybridiuhat>
-  rdf:type ysometa:Concept ;
-  rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p13955 ;
-  skos:prefLabel "hybridhot"@sv ;
-  skos:prefLabel "hybridiuhat"@fi ;
-.
 juho-meta:Class
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Class ;
@@ -957,7 +950,9 @@ juho:p10160
   skos:altLabel "hemsidor"@sv ;
   skos:altLabel "internetsidor"@sv ;
   skos:altLabel "kotisivut"@fi ;
+  skos:altLabel "nettisivut"@fi ;
   skos:altLabel "nätsidor"@sv ;
+  skos:altLabel "verkkosivut"@fi ;
   skos:altLabel "www-sidor"@sv ;
   skos:prefLabel "WWW-sivut"@fi ;
   skos:prefLabel "web pages"@en ;
@@ -973,6 +968,7 @@ juho:p10160
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p84 ;
   juho-meta:related juho:p6270 ;
+  juho-meta:related yso:p4047 ;
 .
 juho:p10161
   rdf:type juho-meta:Concept ;
@@ -1008,7 +1004,7 @@ juho:p10173
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1911 ;
   skos:prefLabel "control (steering)"@en ;
-  skos:prefLabel "ohjaus (suuntaaminen)"@fi ;
+  skos:prefLabel "ohjaus (hallinta)"@fi ;
   skos:prefLabel "styrning"@sv ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:related juho:p2810 ;
@@ -1300,7 +1296,7 @@ juho:p10232
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p10628 ;
   juho-meta:related juho:p3616 ;
-  juho-meta:related juho:p6113 ;
+  juho-meta:related juho:p5282 ;
 .
 juho:p10233
   rdf:type skos:Concept ;
@@ -1818,7 +1814,7 @@ juho:p10383
   owl:equivalentClass yso:p19475 ;
   skos:altLabel "fusion (kärnreaktioner)"@sv ;
   skos:altLabel "ydinfuusiot"@fi ;
-  skos:prefLabel "fuusioreaktiot"@fi ;
+  skos:prefLabel "fuusioreaktio"@fi ;
   skos:prefLabel "kärnfusion"@sv ;
   skos:prefLabel "nuclear fusion"@en ;
   juho-meta:hasPaivitetty "20010820" ;
@@ -2020,7 +2016,7 @@ juho:p10439
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011217" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p4724 ;
+  juho-meta:related juho:p14142 ;
 .
 juho:p10440
   rdf:type juho-meta:Concept ;
@@ -2541,7 +2537,7 @@ juho:p10558
 juho:p10559
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p721 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:prefLabel "military justice"@en ;
   skos:prefLabel "militär rättsvård"@sv ;
   skos:prefLabel "sotilasoikeudenhoito"@fi ;
@@ -3893,15 +3889,30 @@ juho:p10790
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2041 ;
+  skos:altLabel "föreningar för idrott och motion"@sv ;
+  skos:altLabel "gymnastik- och idrottsföreningar"@sv ;
+  skos:altLabel "idrotts- och motionsföreningar"@sv ;
+  skos:altLabel "idrotts- och sportföreningar"@sv ;
+  skos:altLabel "idrotts- och sportsällskap"@sv ;
+  skos:altLabel "idrottsföreningar"@sv ;
   skos:altLabel "idrottssällskap"@sv ;
-  skos:prefLabel "idrottsföreningar"@sv ;
+  skos:altLabel "liikuntaseurat"@fi ;
+  skos:altLabel "motionsföreningar"@sv ;
+  skos:altLabel "sport- och idrottssällskap"@sv ;
+  skos:altLabel "sportföreningar"@sv ;
+  skos:altLabel "urheiluseurat"@fi ;
+  skos:hiddenLabel "liikuntaseura"@fi ;
+  skos:hiddenLabel "sport- och idrottsförening"@sv ;
+  skos:hiddenLabel "sports club"@en ;
+  skos:hiddenLabel "urheilu- ja liikuntaseura"@fi ;
+  skos:hiddenLabel "urheiluseura"@fi ;
+  skos:prefLabel "sport- och idrottsföreningar"@sv ;
   skos:prefLabel "sports clubs"@en ;
-  skos:prefLabel "urheiluseurat"@fi ;
+  skos:prefLabel "urheilu- ja liikuntaseurat"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031021" ;
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p22 ;
-  juho-meta:related juho:p6850 ;
 .
 juho:p108
   rdf:type juho-meta:Concept ;
@@ -4513,8 +4524,8 @@ juho:p10899
   skos:altLabel "ljus (fysik)"@sv ;
   skos:altLabel "synligt ljus"@sv ;
   skos:prefLabel "light (electromagnetic radiation)"@en ;
-  skos:prefLabel "ljus (strålning)"@sv ;
-  skos:prefLabel "valo (sähkömangneettinen säteily)"@fi ;
+  skos:prefLabel "ljus"@sv ;
+  skos:prefLabel "valo"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010319" ;
   juho-meta:hasPoiminta "stm" ;
@@ -5370,20 +5381,6 @@ juho:p11072
   juho-meta:hasPoiminta "eurodoc" ;
   juho-meta:hasThematicGroup juho:p26 ;
   juho-meta:hasThematicGroup juho:p3473 ;
-.
-juho:p11073
-  rdf:type ysometa:DeprecatedConcept ;
-  rdfs:subClassOf ysometa:deprecatedConcepts ;
-  owl:deprecated "true"^^xsd:boolean ;
-  skos:prefLabel "anstaltsvård"@sv ;
-  skos:prefLabel "institutional treatment (social services)"@en ;
-  skos:prefLabel "laitoshoito"@fi ;
-  juho-meta:hasLahde "ysa" ;
-  juho-meta:hasPaivitetty "20010228" ;
-  juho-meta:hasPoiminta "stm" ;
-  ysometa:comment "deprecated on 08.12.2017" ;
-  ysometa:deprecatedExactMatch yso:p1306 ;
-  ysometa:deprecatedHasThematicGroup juho:p67 ;
 .
 juho:p1108
   rdf:type juho-meta:Concept ;
@@ -7353,7 +7350,7 @@ juho:p11487
   juho-meta:hasPaivitetty "20010228" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p11489
   rdf:type juho-meta:Concept ;
@@ -7766,10 +7763,14 @@ juho:p1155
 juho:p11558
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p1432 ;
-  skos:prefLabel "stil (egenskaper)"@sv ;
-  skos:prefLabel "style (properties)"@en ;
-  skos:prefLabel "tyyli (ominaisuudet)"@fi ;
+  owl:equivalentClass yso:p421 ;
+  skos:altLabel "stil"@sv ;
+  skos:altLabel "stilriktningar"@sv ;
+  skos:altLabel "tyyli"@fi ;
+  skos:altLabel "tyylisuunnat"@fi ;
+  skos:prefLabel "stilar"@sv ;
+  skos:prefLabel "style (phenomena)"@en ;
+  skos:prefLabel "tyylit"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010307" ;
   juho-meta:hasPoiminta "vnk" ;
@@ -8132,7 +8133,8 @@ juho:p11619
 juho:p1162
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p772 ;
+  owl:equivalentClass yso:p37818 ;
+  skos:altLabel "puutarhamansikka"@fi ;
   skos:prefLabel "jordgubbe"@sv ;
   skos:prefLabel "mansikka"@fi ;
   skos:prefLabel "strawberry"@en ;
@@ -8637,7 +8639,7 @@ juho:p11702
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20031022" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p4724 ;
+  juho-meta:related juho:p14142 ;
 .
 juho:p11714
   rdf:type juho-meta:Concept ;
@@ -8694,9 +8696,9 @@ juho:p11730
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p8835 ;
   skos:altLabel "kyrka"@sv ;
-  skos:prefLabel "church (phenomena)"@en ;
-  skos:prefLabel "kirkko (ilmiöt)"@fi ;
-  skos:prefLabel "kyrkan (fenomen)"@sv ;
+  skos:prefLabel "church (institution)"@en ;
+  skos:prefLabel "kirkko (instituutio)"@fi ;
+  skos:prefLabel "kyrkan (institution)"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040701" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -8728,7 +8730,7 @@ juho:p11732
   skos:altLabel "sterilisation"@sv ;
   skos:prefLabel "sterilisation (medical procedures)"@en ;
   skos:prefLabel "sterilisering (medicinska åtgärder)"@sv ;
-  skos:prefLabel "sterilointi (lääketieteelliset toimenpiteet)"@fi ;
+  skos:prefLabel "sterilointi (lääketieteellinen toimenpide)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010306" ;
   juho-meta:hasPoiminta "stm" ;
@@ -9459,7 +9461,7 @@ juho:p1193
   skos:altLabel "kanaler (vattenvägar)"@sv ;
   skos:prefLabel "canals"@en ;
   skos:prefLabel "kanaler"@sv ;
-  skos:prefLabel "kanavat"@fi ;
+  skos:prefLabel "kanavat (vesiväylät)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010227" ;
   juho-meta:hasPoiminta "hare" ;
@@ -9714,7 +9716,7 @@ juho:p11971
   juho-meta:hasPaivitetty "20010305" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p39 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p1198
   rdf:type juho-meta:Concept ;
@@ -10094,13 +10096,13 @@ juho:p12001
   juho-meta:hasThematicGroup juho:p22 ;
 .
 juho:p12002
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1546 ;
   skos:altLabel "kulturformer"@sv ;
   skos:altLabel "kultursystem"@sv ;
   skos:prefLabel "cultures (cultural systems)"@en ;
-  skos:prefLabel "kulttuurit"@fi ;
+  skos:prefLabel "kulttuurit (kulttuurimuodot)"@fi ;
   skos:prefLabel "kulturer"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020807" ;
@@ -10110,6 +10112,7 @@ juho:p12002
   juho-meta:hasThematicGroup juho:p22 ;
   juho-meta:related juho:p6875 ;
   juho-meta:related juho:p984 ;
+  ysometa:deprecatedReplacedBy juho:p984 ;
 .
 juho:p12003
   rdf:type juho-meta:Concept ;
@@ -10199,7 +10202,7 @@ juho:p12008
 juho:p12009
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p3094 ;
+  owl:equivalentClass yso:p29497 ;
   skos:altLabel "handikapp-OS"@sv ;
   skos:altLabel "paralympiader"@sv ;
   skos:prefLabel "Paralympic Games"@en ;
@@ -11117,6 +11120,7 @@ juho:p12067
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p12085 ;
   juho-meta:related juho:p3094 ;
+  juho-meta:related juho:p3211 ;
   juho-meta:related juho:p5035 ;
 .
 juho:p12068
@@ -11212,7 +11216,7 @@ juho:p12071
 juho:p12072
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p649 ;
+  rdfs:subClassOf yso:p38218 ;
   skos:prefLabel "halkning"@sv ;
   skos:prefLabel "liukastuminen"@fi ;
   skos:prefLabel "slipping (falling)"@en ;
@@ -11422,7 +11426,7 @@ juho:p12085
 juho:p12086
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p721 ;
+  rdfs:subClassOf yso:p14 ;
   owl:equivalentClass yso:p22621 ;
   skos:altLabel "TYKY-verksamhet"@sv ;
   skos:altLabel "friskvård på arbetsplatsen"@sv ;
@@ -12229,9 +12233,9 @@ juho:p12139
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2240 ;
-  skos:prefLabel "science (phenomena)"@en ;
-  skos:prefLabel "tiede (ilmiöt)"@fi ;
-  skos:prefLabel "vetenskap (fenomen)"@sv ;
+  skos:prefLabel "science"@en ;
+  skos:prefLabel "tiede"@fi ;
+  skos:prefLabel "vetenskap"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -12267,9 +12271,11 @@ juho:p12141
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p19559 ;
+  skos:altLabel "sisäinen tiedotus"@fi ;
+  skos:altLabel "yhteisöviestintä"@fi ;
   skos:prefLabel "intern information"@sv ;
   skos:prefLabel "internal communication"@en ;
-  skos:prefLabel "sisäinen tiedotus"@fi ;
+  skos:prefLabel "sisäinen viestintä"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
   juho-meta:hasPoiminta "opm" ;
@@ -12305,19 +12311,6 @@ juho:p12143
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p84 ;
   juho-meta:related juho:p3738 ;
-.
-juho:p12144
-  rdf:type ysometa:DeprecatedConcept ;
-  rdfs:subClassOf ysometa:deprecatedConcepts ;
-  owl:deprecated "true"^^xsd:boolean ;
-  skos:altLabel "julkaiseminen"@fi ;
-  skos:prefLabel "julkaisutoiminta"@fi ;
-  juho-meta:hasPaivitetty "20020806" ;
-  juho-meta:hasPoiminta "opm" ;
-  juho-meta:hasPoiminta "vm" ;
-  ysometa:comment "deprecated on 08.12.2017" ;
-  ysometa:deprecatedExactMatch yso:p2700 ;
-  ysometa:deprecatedHasThematicGroup juho:p84 ;
 .
 juho:p12145
   rdf:type juho-meta:Concept ;
@@ -12568,10 +12561,10 @@ juho:p1216
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2538 ;
-  skos:altLabel "staten"@sv ;
+  skos:altLabel "staten (offentlig makt)"@sv ;
   skos:prefLabel "state (public sector entities)"@en ;
-  skos:prefLabel "staten (offentlig makt)"@sv ;
-  skos:prefLabel "valtio (julkisyhteisöt)"@fi ;
+  skos:prefLabel "staten"@sv ;
+  skos:prefLabel "valtio (instituutio)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020809" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -13467,7 +13460,7 @@ juho:p12399
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p35 ;
-  juho-meta:related juho:p4431 ;
+  juho-meta:related juho:p14121 ;
 .
 juho:p1240
   rdf:type juho-meta:Concept ;
@@ -13797,7 +13790,7 @@ juho:p12488
   juho-meta:hasPoiminta "stm" ;
 .
 juho:p12489
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p1051 ;
   owl:equivalentClass yso:p25097 ;
@@ -13807,6 +13800,8 @@ juho:p12489
   juho-meta:hasPaivitetty "20010815" ;
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasThematicGroup juho:p104 ;
+  ysometa:deprecatedReplacedBy juho:p8822 ;
+  ysometa:deprecatedReplacedBy yso:p37840 ;
 .
 juho:p12494
   rdf:type juho-meta:Concept ;
@@ -13976,7 +13971,7 @@ juho:p12550
   juho-meta:hasPoiminta "um" ;
 .
 juho:p12551
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p10670 ;
   skos:altLabel "musikologi"@sv ;
@@ -13987,6 +13982,7 @@ juho:p12551
   juho-meta:hasPaivitetty "20000427" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:related juho:p600 ;
+  ysometa:deprecatedReplacedBy yso:p21685 ;
 .
 juho:p12557
   rdf:type juho-meta:Concept ;
@@ -14599,7 +14595,7 @@ juho:p12670
 juho:p12671
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p821 ;
+  rdfs:subClassOf yso:p4035 ;
   skos:prefLabel "ajoaika"@fi ;
   skos:prefLabel "driving time"@en ;
   skos:prefLabel "körtid"@sv ;
@@ -14723,7 +14719,7 @@ juho:p12680
   juho-meta:hasPaivitetty "20010704" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p12681
   rdf:type juho-meta:Concept ;
@@ -17970,9 +17966,9 @@ juho:p13857
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p24074 ;
   skos:altLabel "social anpassning"@sv ;
-  skos:prefLabel "individual integration"@en ;
-  skos:prefLabel "integration (invandrare)"@sv ;
-  skos:prefLabel "kotoutuminen"@fi ;
+  skos:prefLabel "integration hos invandrare"@sv ;
+  skos:prefLabel "integration of migrants"@en ;
+  skos:prefLabel "kotoutuminen (maahanmuuttajat)"@fi ;
   juho-meta:hasPaivitetty "20100909" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "stm" ;
@@ -18097,7 +18093,7 @@ juho:p13865
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p721 ;
+  rdfs:subClassOf yso:p38218 ;
   skos:altLabel "self-preparedness"@en ;
   skos:altLabel "självskydd"@sv ;
   skos:prefLabel "egen beredskap"@sv ;
@@ -18855,13 +18851,16 @@ juho:p13919
   owl:equivalentClass yso:p24839 ;
   skos:altLabel "dataläckage"@sv ;
   skos:altLabel "informationsläcka"@sv ;
+  skos:hiddenLabel "tietovuoto"@fi ;
   skos:prefLabel "information leakage"@en ;
   skos:prefLabel "informationsläckage"@sv ;
-  skos:prefLabel "tietovuoto"@fi ;
+  skos:prefLabel "tietovuodot"@fi ;
   juho-meta:hasPaivitetty "20110812" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "tem" ;
+  juho-meta:hasSelite "Tarkoittaa salassa pidettävän tiedon vuotoa ulkopuolisille."@fi ;
   juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:hasThematicGroup juho:p25 ;
 .
 juho:p1392
   rdf:type juho-meta:Concept ;
@@ -19637,12 +19636,13 @@ juho:p13973
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p23048 ;
   skos:altLabel "Internet surveillance"@en ;
+  skos:altLabel "nettivalvonta"@fi ;
   skos:altLabel "network control"@en ;
   skos:altLabel "nätövervakning"@sv ;
   skos:altLabel "webbövervakning"@sv ;
   skos:prefLabel "Internetövervakning"@sv ;
-  skos:prefLabel "nettivalvonta"@fi ;
   skos:prefLabel "network surveillance"@en ;
+  skos:prefLabel "verkkovalvonta"@fi ;
   juho-meta:hasPaivitetty "20090211" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasPoiminta "sm" ;
@@ -20067,6 +20067,7 @@ juho:p14000
   juho-meta:hasPaivitetty "20110812" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasThematicGroup juho:p75 ;
+  juho-meta:hasThematicGroup juho:p84 ;
 .
 juho:p14001
   rdf:type ysometa:DeprecatedConcept ;
@@ -20848,7 +20849,7 @@ juho:p14064
   skos:prefLabel "räddningstjänst"@sv ;
   juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:related juho:p12399 ;
-  juho-meta:related juho:p4431 ;
+  juho-meta:related juho:p14121 ;
 .
 juho:p14065
   rdf:type skos:Concept ;
@@ -20973,7 +20974,6 @@ juho:p14075
   skos:prefLabel "parliamentary seasons"@en ;
   skos:prefLabel "riksmöten"@sv ;
   skos:prefLabel "valtiopäivät (istuntokaudet)"@fi ;
-  skos:prefLabel "valtiopäivät (poliittinen historia)"@fi ;
   juho-meta:hasPaivitetty "20160419" ;
   juho-meta:hasThematicGroup juho:p511 ;
   juho-meta:related juho:p2598 ;
@@ -21549,11 +21549,18 @@ juho:p14121
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p13838 ;
-  rdfs:subClassOf juho:p2533 ;
+  owl:equivalentClass yso:p10189 ;
   skos:prefLabel "pelastustoiminta"@fi ;
   skos:prefLabel "rescue operations"@en ;
   skos:prefLabel "räddningsverksamhet"@sv ;
   juho-meta:hasThematicGroup juho:p35 ;
+  juho-meta:related juho:p12399 ;
+  juho-meta:related juho:p14064 ;
+  juho-meta:related juho:p4430 ;
+  juho-meta:related juho:p5758 ;
+  juho-meta:related juho:p6535 ;
+  juho-meta:related juho:p8725 ;
+  juho-meta:related juho:p8953 ;
 .
 juho:p14122
   rdf:type skos:Concept ;
@@ -21655,7 +21662,7 @@ juho:p14131
   rdfs:subClassOf juho:p13838 ;
   rdfs:subClassOf juho:p2533 ;
   skos:prefLabel "Ahvenanmaan poliisilaitos"@fi ;
-  skos:prefLabel "Åland Police"@en ;
+  skos:prefLabel "Police Authority of The Åland Islands"@en ;
   skos:prefLabel "Ålands polismyndighet"@sv ;
   juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:hasThematicGroup juho:p35 ;
@@ -21665,9 +21672,10 @@ juho:p14132
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p3809 ;
   rdfs:subClassOf juho:p8974 ;
   skos:prefLabel "väylänalitus"@fi ;
-  juho-meta:hasSelite "Tarkoittaa vesialueen alitusta."@fi ;
+  juho-meta:hasSelite "Tarkoittaa kulkuväylän alitusta."@fi ;
 .
 juho:p14133
   rdf:type juho-meta:Concept ;
@@ -21734,6 +21742,144 @@ juho:p14138
   juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:hasThematicGroup juho:p35 ;
 .
+juho:p14139
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p26592 ;
+  skos:altLabel "adb-program"@sv ;
+  skos:altLabel "atk-ohjelmat"@fi ;
+  skos:altLabel "dataprogram"@sv ;
+  skos:altLabel "mjukvara"@sv ;
+  skos:altLabel "ohjelmistot (tietotekniikka)"@fi ;
+  skos:altLabel "program (datorer)"@sv ;
+  skos:altLabel "software"@en ;
+  skos:prefLabel "computer programmes"@en ;
+  skos:prefLabel "datorprogram"@sv ;
+  skos:prefLabel "tietokoneohjelmat"@fi ;
+  juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:related juho:p10118 ;
+  juho-meta:related juho:p8024 ;
+  juho-meta:related juho:p8955 ;
+.
+juho:p14140
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p2584 ;
+  skos:prefLabel "Agenda 2030"@en ;
+  skos:prefLabel "Agenda 2030"@fi ;
+  skos:prefLabel "Agenda 2030"@sv ;
+  juho-meta:hasSelite "YK:n kestävän kehityksen toimintaohjelma vuosille 2016-2030. Ohjelma sisältää 17 tavoitetta (SDG1-SDG17)."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14141
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 15"@en ;
+  skos:prefLabel "SDG 15"@fi ;
+  skos:prefLabel "SDG 15"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 15.	Suojella maaekosysteemejä, palauttaa niitä ennalleen ja edistää niiden kestävää käyttöä; edistää metsien kestävää käyttöä; taistella aavikoitumista vastaan; pysäyttää maaperän köyhtyminen ja luonnon monimuotoisuuden häviäminen."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14142
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  owl:equivalentClass yso:p30185 ;
+  skos:altLabel "advisors"@en ;
+  skos:altLabel "instruktörer"@sv ;
+  skos:hiddenLabel "instructor (guidance and education)"@en ;
+  skos:hiddenLabel "ohjaaja (kasvatus ja opastus"@fi ;
+  skos:prefLabel "handledare"@sv ;
+  skos:prefLabel "instructors (guidance and education)"@en ;
+  skos:prefLabel "ohjaajat (kasvatus ja opastus)"@fi ;
+  juho-meta:hasAsiasanalaji "amm" ;
+  juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:hasThematicGroup juho:p80 ;
+  juho-meta:related juho:p10439 ;
+  juho-meta:related juho:p11702 ;
+  juho-meta:related juho:p4723 ;
+  juho-meta:related juho:p6851 ;
+.
+juho:p14143
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 8"@en ;
+  skos:prefLabel "SDG 8"@fi ;
+  skos:prefLabel "SDG 8"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 8. Edistää kaikkia koskevaa kestävää talouskasvua, täyttä ja tuottavaa työllisyyttä sekä säällisiä työpaikkoja."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14144
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 11"@en ;
+  skos:prefLabel "SDG 11"@fi ;
+  skos:prefLabel "SDG 11"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 11. Taata turvalliset ja kestävät kaupungit sekä asuinyhdyskunnat."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14145
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 6"@en ;
+  skos:prefLabel "SDG 6"@fi ;
+  skos:prefLabel "SDG 6"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 6. Varmistaa veden saanti ja kestävä käyttö sekä sanitaatio kaikille."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14146
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 9"@en ;
+  skos:prefLabel "SDG 9"@fi ;
+  skos:prefLabel "SDG 9"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 9. Rakentaa kestävää infrastruktuuria sekä edistää kestävää teollisuutta ja innovaatioita."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14147
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 14"@en ;
+  skos:prefLabel "SDG 14"@fi ;
+  skos:prefLabel "SDG 14"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 14.	Säilyttää meret ja merten tarjoamat luonnonvarat sekä edistää niiden kestävää käyttöä."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14148
+  rdf:type skos:Concept ;
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p4521 ;
+  skos:prefLabel "hyvinvointialueet"@fi ;
+  juho-meta:hasSelite "Hyvinvointialue on kunnista ja valtiosta erillinen julkisoikeudellinen yhteisö, jolla on alueellaan itsehallinto."@fi ;
+  juho-meta:hasThematicGroup juho:p30 ;
+  juho-meta:hasThematicGroup juho:p771 ;
+  ysometa:singularPrefLabel "hyvinvointialue"@fi ;
+.
+juho:p14149
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p5739 ;
+  skos:prefLabel "maakuntavero"@fi ;
+  juho-meta:hasSelite "Maakuntavero tarkoittaa käytännössä sitä sitä, että myös maakunnat tekisivät veropäätöksiä valtion ja kuntien ohella."@fi ;
+  juho-meta:hasThematicGroup juho:p63 ;
+  juho-meta:hasThematicGroup juho:p771 ;
+.
 juho:p1415
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
@@ -21753,6 +21899,151 @@ juho:p1415
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasPoiminta "vm" ;
+.
+juho:p14150
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf yso:p38217 ;
+  skos:altLabel "targeting"@en ;
+  skos:altLabel "trakasserikampanj"@sv ;
+  skos:prefLabel "maalittaminen"@fi ;
+  skos:prefLabel "online targeting and shaming"@en ;
+  skos:prefLabel "riktade trakasserier"@sv ;
+  juho-meta:hasSelite """Maalittaminen on yleensä tietoverkossa tapahtuvaa järjestelmällistä toimintaa, jossa
+kohdetta uhataan tai loukataan esimerkiksi levittämällä hänen yksityiselämäänsä kuuluvia tietoja tai esittämällä hänestä perättömiä tai muuten halventavia tietoja. Maalittamisella pyritään vaientamaan kohde tai muuten vaikuttamaan hänen toimintaansa."""@fi ;
+  juho-meta:hasThematicGroup juho:p35 ;
+  juho-meta:hasThematicGroup juho:p84 ;
+.
+juho:p14151
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 10"@en ;
+  skos:prefLabel "SDG 10"@fi ;
+  skos:prefLabel "SDG 10"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 10.	Vähentää eriarvoisuutta maiden sisällä ja niiden välillä."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14152
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 3"@en ;
+  skos:prefLabel "SDG 3"@fi ;
+  skos:prefLabel "SDG 3"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 3. Taata terveellinen elämä ja hyvinvointi kaiken ikäisille."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14153
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 17"@en ;
+  skos:prefLabel "SDG 17"@fi ;
+  skos:prefLabel "SDG 17"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 17.	Tukea vahvemmin kestävän kehityksen toimeenpanoa ja globaalia kumppanuutta."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14154
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 16"@en ;
+  skos:prefLabel "SDG 16"@fi ;
+  skos:prefLabel "SDG 16"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 16.	Edistää rauhanomaisia yhteiskuntia ja taata kaikille pääsy oikeuspalveluiden pariin; rakentaa tehokkaita ja vastuullisia instituutioita kaikilla tasoilla."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14155
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 5"@en ;
+  skos:prefLabel "SDG 5"@fi ;
+  skos:prefLabel "SDG 5"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 5. Saavuttaa sukupuolten välinen tasa-arvo sekä vahvistaa naisten ja tyttöjen oikeuksia ja mahdollisuuksia."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14156
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 13"@en ;
+  skos:prefLabel "SDG 13"@fi ;
+  skos:prefLabel "SDG 13"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 13. Toimia kiireellisesti ilmastonmuutosta ja sen vaikutuksia vastaan."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14157
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 12"@en ;
+  skos:prefLabel "SDG 12"@fi ;
+  skos:prefLabel "SDG 12"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 12.	Varmistaa kulutus- ja tuotantotapojen kestävyys."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14158
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 7"@en ;
+  skos:prefLabel "SDG 7"@fi ;
+  skos:prefLabel "SDG 7"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 7. Varmistaa edullinen, luotettava, kestävä ja uudenaikainen energia kaikille."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14159
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 2"@en ;
+  skos:prefLabel "SDG 2"@fi ;
+  skos:prefLabel "SDG 2"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 2. Poistaa nälkä, saavuttaa ruokaturva, parantaa ravitsemusta ja edistää kestävää maataloutta."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14160
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p2812 ;
+  skos:prefLabel "parlamentaariset komiteat"@fi ;
+  juho-meta:hasThematicGroup juho:p30 ;
+  ysometa:singularPrefLabel "parlamentaariset komiteat"@fi ;
+.
+juho:p14161
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 4"@en ;
+  skos:prefLabel "SDG 4"@fi ;
+  skos:prefLabel "SDG 4"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 4. Taata kaikille avoin, tasa-arvoinen ja laadukas koulutus sekä elinikäiset oppimismahdollisuudet."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
+.
+juho:p14162
+  rdf:type juho-meta:Concept ;
+  rdfs:subClassOf juho-meta:juho-kasitteet ;
+  rdfs:subClassOf juho:p13838 ;
+  rdfs:subClassOf juho:p14140 ;
+  skos:prefLabel "SDG 1"@en ;
+  skos:prefLabel "SDG 1"@fi ;
+  skos:prefLabel "SDG 1"@sv ;
+  juho-meta:hasSelite "Agenda 2030 tavoite 1. Poistaa köyhyys sen kaikissa muodoissa kaikkialta."@fi ;
+  juho-meta:hasThematicGroup juho:p26 ;
 .
 juho:p1419
   rdf:type juho-meta:Concept ;
@@ -23118,7 +23409,7 @@ juho:p1557
 juho:p1558
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p101 ;
+  rdfs:subClassOf yso:p42 ;
   skos:altLabel "upplåning"@sv ;
   skos:prefLabel "borrowing"@en ;
   skos:prefLabel "lainanotto"@fi ;
@@ -23207,7 +23498,8 @@ juho:p1560
 juho:p1561
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p8375 ;
+  owl:equivalentClass yso:p37846 ;
+  skos:altLabel "lautat (matkustaja-alukset)"@fi ;
   skos:prefLabel "ferries"@en ;
   skos:prefLabel "flottar"@sv ;
   skos:prefLabel "lautat"@fi ;
@@ -23581,7 +23873,7 @@ juho:p1583
 juho:p1584
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2978 ;
+  owl:equivalentClass yso:p2978 ;
   skos:altLabel "regeringen"@sv ;
   skos:prefLabel "Government"@en ;
   skos:prefLabel "statsrådet"@sv ;
@@ -24643,9 +24935,9 @@ juho:p1694
   skos:altLabel "trossamfund"@sv ;
   skos:altLabel "uskontokunnat"@fi ;
   skos:altLabel "världsreligioner"@sv ;
-  skos:prefLabel "religioner (trossystem)"@sv ;
-  skos:prefLabel "religions (belief systems)"@en ;
-  skos:prefLabel "uskonnot (opit)"@fi ;
+  skos:prefLabel "religioner"@sv ;
+  skos:prefLabel "religions"@en ;
+  skos:prefLabel "uskonnot"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031021" ;
   juho-meta:hasPoiminta "hare" ;
@@ -26256,7 +26548,7 @@ juho:p1797
   juho-meta:hasThematicGroup juho:p8 ;
   juho-meta:related juho:p1459 ;
   juho-meta:related juho:p1803 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p1798
   rdf:type juho-meta:Concept ;
@@ -27020,7 +27312,7 @@ juho:p1843
   skos:altLabel "leikkokukat"@fi ;
   skos:prefLabel "blommor (växter)"@sv ;
   skos:prefLabel "flowers (plants)"@en ;
-  skos:prefLabel "kukat"@fi ;
+  skos:prefLabel "kukat (kasvit)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010309" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -29703,7 +29995,7 @@ juho:p2004
   juho-meta:hasPoiminta "eurodoc" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p49 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p2005
   rdf:type juho-meta:Concept ;
@@ -29755,6 +30047,7 @@ juho:p2008
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p2862 ;
+  owl:equivalentClass yso:p34410 ;
   skos:altLabel "piratvaror"@sv ;
   skos:prefLabel "piraattituotteet"@fi ;
   skos:prefLabel "pirated products"@en ;
@@ -31805,12 +32098,12 @@ juho:p212
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p938 ;
-  skos:altLabel "kirkkokunnat"@fi ;
-  skos:altLabel "kyrkor"@sv ;
-  skos:altLabel "kyrkosamfund"@sv ;
-  skos:prefLabel "churches (organisations)"@en ;
-  skos:prefLabel "kirkot"@fi ;
-  skos:prefLabel "kyrkor (organisationer)"@sv ;
+  skos:altLabel "Christian denominations"@en ;
+  skos:altLabel "kirkot (organisaatiot)"@fi ;
+  skos:altLabel "kyrkor (organisationer)"@sv ;
+  skos:prefLabel "Christian sects"@en ;
+  skos:prefLabel "kirkkokunnat"@fi ;
+  skos:prefLabel "kyrkosamfund"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
   juho-meta:hasPoiminta "opm" ;
@@ -32111,9 +32404,8 @@ juho:p2137
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13611 ;
-  skos:altLabel "elinkaariarviointi"@fi ;
-  skos:altLabel "livscykelvärdering"@sv ;
-  skos:prefLabel "elinkaarianalyysi"@fi ;
+  skos:altLabel "elinkaarianalyysi"@fi ;
+  skos:prefLabel "elinkaariarviointi"@fi ;
   skos:prefLabel "life cycle analysis"@en ;
   skos:prefLabel "livscykelanalys"@sv ;
   juho-meta:hasLahde "ysa" ;
@@ -33569,7 +33861,7 @@ juho:p2219
 juho:p2220
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p8670 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "reciprocal recognition"@en ;
   skos:prefLabel "mutual recognition"@en ;
   skos:prefLabel "vastavuoroinen tunnustaminen"@fi ;
@@ -33584,8 +33876,7 @@ juho:p2220
 juho:p2221
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:Y97787 ;
-  owl:equivalentClass yso:p3585 ;
+  owl:equivalentClass yso:p38423 ;
   skos:altLabel "justering av vågar"@sv ;
   skos:prefLabel "inspection of weights and measures"@en ;
   skos:prefLabel "justering av mätningsredskap"@sv ;
@@ -33950,7 +34241,7 @@ juho:p2240
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p2329 ;
+  owl:equivalentClass yso:p37944 ;
   skos:prefLabel "countervailing duties"@en ;
   skos:prefLabel "tasoitustullit"@fi ;
   skos:prefLabel "utjämningstullar"@sv ;
@@ -33974,7 +34265,7 @@ juho:p2241
   skos:altLabel "sähköinen kauppa"@fi ;
   skos:prefLabel "electronic commerce"@en ;
   skos:prefLabel "näthandel"@sv ;
-  skos:prefLabel "verkkokauppa (verkkoliiketoiminta)"@fi ;
+  skos:prefLabel "verkkokauppa"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040518" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -34188,8 +34479,9 @@ juho:p2255
   skos:altLabel "asuntokauppa"@fi ;
   skos:altLabel "bostadsköp"@sv ;
   skos:altLabel "fastighetshandel"@sv ;
+  skos:altLabel "kiinteistön kauppa"@fi ;
   skos:prefLabel "fastighetsköp"@sv ;
-  skos:prefLabel "kiinteistönkauppa"@fi ;
+  skos:prefLabel "kiinteistökauppa"@fi ;
   skos:prefLabel "purchase of real property"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040517" ;
@@ -34287,7 +34579,7 @@ juho:p2261
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p976 ;
+  rdfs:subClassOf juho:p3061 ;
   skos:altLabel "marknadsorganisering"@sv ;
   skos:altLabel "organisation av marknaderna"@sv ;
   skos:prefLabel "market organisation"@en ;
@@ -34301,10 +34593,11 @@ juho:p2262
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p621 ;
+  owl:equivalentClass yso:p37966 ;
   skos:altLabel "customs benefits"@en ;
-  skos:altLabel "förmånstullar"@sv ;
+  skos:altLabel "förmånsbehandlingar"@sv ;
   skos:altLabel "tariff preferences"@en ;
+  skos:altLabel "tullietuuskohtelut"@fi ;
   skos:prefLabel "customs preferences"@en ;
   skos:prefLabel "tullförmåner"@sv ;
   skos:prefLabel "tullietuudet"@fi ;
@@ -34588,7 +34881,7 @@ juho:p2280
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p6561 ;
+  rdfs:subClassOf juho:p3061 ;
   skos:prefLabel "customs operations"@en ;
   skos:prefLabel "tullitoiminta"@fi ;
   skos:prefLabel "tullverksamhet"@sv ;
@@ -35714,7 +36007,7 @@ juho:p2344
 juho:p2345
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p6561 ;
+  rdfs:subClassOf juho:p3061 ;
   skos:altLabel "transitering"@sv ;
   skos:altLabel "tulltransitering"@sv ;
   skos:prefLabel "passitus (tullimenettely)"@fi ;
@@ -35780,11 +36073,12 @@ juho:p2349
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p6813 ;
-  skos:altLabel "indrivning"@sv ;
+  skos:altLabel "indrivning av fordringar"@sv ;
   skos:altLabel "indrivningsverksamhet"@sv ;
+  skos:altLabel "perintä"@fi ;
   skos:prefLabel "collection of charges"@en ;
-  skos:prefLabel "perintä"@fi ;
-  skos:prefLabel "uppbörd"@sv ;
+  skos:prefLabel "indrivning"@sv ;
+  skos:prefLabel "saatavien perintä"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20021210" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -37913,7 +38207,8 @@ juho:p2461
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "extradition of offenders"@en ;
   skos:altLabel "utlämning av brottslingar"@sv ;
   skos:altLabel "utlämning"@sv ;
@@ -38019,7 +38314,6 @@ juho:p2467
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:hasThematicGroup juho:p63 ;
-  juho-meta:related juho:p2549 ;
   juho-meta:related juho:p2563 ;
   juho-meta:related juho:p764 ;
 .
@@ -38218,7 +38512,7 @@ juho:p2478
 juho:p2479
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p193 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "kodifikation"@sv ;
   skos:prefLabel "codification"@en ;
   skos:prefLabel "kodifiering"@sv ;
@@ -38376,7 +38670,7 @@ juho:p2488
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p5408 ;
+  rdfs:subClassOf juho:p3119 ;
   skos:altLabel "draft legislation"@en ;
   skos:altLabel "författningsprojekt"@sv ;
   skos:prefLabel "lagberedningsprojekt"@sv ;
@@ -38865,7 +39159,7 @@ juho:p2512
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasPoiminta "vnk" ;
-  juho-meta:hasThematicGroup juho:p25 ;
+  juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:related juho:p11188 ;
   juho-meta:related juho:p11189 ;
   juho-meta:related juho:p2522 ;
@@ -39278,6 +39572,11 @@ juho:p2538
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p10768 ;
+  skos:altLabel "EG-direktiv"@sv ;
+  skos:altLabel "EY-direktiivit"@fi ;
+  skos:altLabel "directives"@en ;
+  skos:altLabel "direktiivit"@fi ;
+  skos:altLabel "direktiv"@sv ;
   skos:prefLabel "directives"@en ;
   skos:prefLabel "direktiivit"@fi ;
   skos:prefLabel "direktiv"@sv ;
@@ -39296,8 +39595,8 @@ juho:p2538
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:related juho:p1089 ;
+  juho-meta:related juho:p1313 ;
   juho-meta:related juho:p2807 ;
-  juho-meta:related juho:p620 ;
 .
 juho:p2539
   rdf:type juho-meta:Concept ;
@@ -39495,7 +39794,6 @@ juho:p2549
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p25 ;
   juho-meta:hasThematicGroup juho:p63 ;
-  juho-meta:related juho:p2467 ;
   juho-meta:related juho:p764 ;
 .
 juho:p2550
@@ -41964,11 +42262,10 @@ juho:p2687
   owl:equivalentClass yso:p2978 ;
   skos:altLabel "hallitus"@fi ;
   skos:altLabel "regeringar (förvaltningsmyndigheter)"@sv ;
-  skos:prefLabel "governments (administrative authorities)"@en ;
-  skos:prefLabel "hallitukset (hallintoviranomaiset)"@fi ;
+  skos:prefLabel "governments (countries)"@en ;
+  skos:prefLabel "hallitukset (valtiot)"@fi ;
   skos:prefLabel "regeringar"@sv ;
   juho-meta:hasLahde "ysa" ;
-  juho-meta:hasPaivitetty "20020805" ;
   juho-meta:hasPoiminta "eurodoc" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasPoiminta "opm" ;
@@ -41979,6 +42276,7 @@ juho:p2687
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasPoiminta "vnk" ;
+  juho-meta:hasSelite "Valtion ylintä toimeenpanovaltaa käyttävät viranomaiset. Kielitoimiston sanakirja"@fi ;
   juho-meta:hasThematicGroup juho:p511 ;
   juho-meta:related juho:p1584 ;
 .
@@ -42178,7 +42476,7 @@ juho:p2698
   juho-meta:hasThematicGroup juho:p30 ;
 .
 juho:p2699
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p12522 ;
   skos:prefLabel "arbetskraftsförvaltning"@sv ;
@@ -42190,7 +42488,7 @@ juho:p2699
   juho-meta:hasSelite "Työhallinnosta vuoteen 1989 käytetty nimitys " ;
   juho-meta:hasThematicGroup juho:p30 ;
   juho-meta:hasThematicGroup juho:p80 ;
-  juho-meta:related juho:p5329 ;
+  ysometa:deprecatedReplacedBy juho:p5329 ;
 .
 juho:p27
   rdf:type juho-meta:Concept ;
@@ -42323,7 +42621,7 @@ juho:p2703
 juho:p2704
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p8334 ;
+  rdfs:subClassOf yso:p14 ;
   skos:altLabel "tjänstemannautbyte"@sv ;
   skos:prefLabel "exchange of civil servants"@en ;
   skos:prefLabel "tjänstemannautbyte (offentliga sektorn)"@sv ;
@@ -43037,7 +43335,7 @@ juho:p2740
 juho:p2741
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p3882 ;
+  owl:equivalentClass yso:p37847 ;
   skos:altLabel "administrative action"@en ;
   skos:altLabel "förvaltningshandling"@sv ;
   skos:altLabel "förvaltningsåtgärd"@sv ;
@@ -43092,7 +43390,7 @@ juho:p2743
 juho:p2744
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p13053 ;
+  rdfs:subClassOf juho:p3253 ;
   skos:altLabel "matriklar"@sv ;
   skos:prefLabel "matriklar (förvaltning)"@sv ;
   skos:prefLabel "nimikirjat"@fi ;
@@ -43660,7 +43958,7 @@ juho:p2772
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p1051 ;
   skos:altLabel "appointments (nominations)"@en ;
   skos:prefLabel "appointments (nominations)"@en ;
   skos:prefLabel "nimitykset"@fi ;
@@ -43737,7 +44035,7 @@ juho:p2776
 juho:p2777
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p193 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:prefLabel "development work"@en ;
   skos:prefLabel "kehittämistoiminta"@fi ;
   skos:prefLabel "utvecklingsverksamhet"@sv ;
@@ -43961,7 +44259,8 @@ juho:p2786
 juho:p2787
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:prefLabel "avstängning från tjänsteutövning"@sv ;
   skos:prefLabel "suspension (public service)"@en ;
   skos:prefLabel "virantoimituksesta pidättäminen"@fi ;
@@ -45036,7 +45335,8 @@ juho:p2844
 juho:p2845
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:prefLabel "entledigande"@sv ;
   skos:prefLabel "release from office"@en ;
   skos:prefLabel "virasta vapauttaminen"@fi ;
@@ -46493,7 +46793,7 @@ juho:p2923
   juho-meta:related juho:p3335 ;
 .
 juho:p2924
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p18699 ;
   skos:altLabel "avgöranden"@sv ;
@@ -46508,6 +46808,7 @@ juho:p2924
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:related juho:p621 ;
+  ysometa:deprecatedReplacedBy juho:p621 ;
 .
 juho:p2925
   rdf:type juho-meta:Concept ;
@@ -46721,7 +47022,7 @@ juho:p2933
 juho:p2934
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p994 ;
+  rdfs:subClassOf yso:p207 ;
   skos:altLabel "strukturer"@sv ;
   skos:prefLabel "konstruktioner (strukturer)"@sv ;
   skos:prefLabel "rakenteet"@fi ;
@@ -47048,14 +47349,18 @@ juho:p2951
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13459 ;
   skos:altLabel "upplysning"@sv ;
+  skos:altLabel "valistus (tiedon jakaminen)"@fi ;
+  skos:altLabel "valistus"@fi ;
   skos:prefLabel "raising awareness"@en ;
   skos:prefLabel "upplysningsverksamhet"@sv ;
-  skos:prefLabel "valistus"@fi ;
+  skos:prefLabel "valistustoiminta"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20021017" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasThematicGroup juho:p115 ;
   juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:related juho:p7643 ;
+  juho-meta:related juho:p7644 ;
 .
 juho:p2952
   rdf:type juho-meta:Concept ;
@@ -47322,7 +47627,7 @@ juho:p2965
   juho-meta:hasPaivitetty "20060929" ;
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasPoiminta "tem" ;
-  juho-meta:hasSelite "Tietotekniikan yhteydessä käytä atk-ohjelmat " ;
+  juho-meta:hasSelite "Tietotekniikan yhteydessä käytä tietokoneohjelmat."@fi ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:related juho:p3033 ;
 .
@@ -48106,7 +48411,7 @@ juho:p3007
   skos:altLabel "mallar"@sv ;
   skos:altLabel "modeller (samhälleliga objekt)"@sv ;
   skos:altLabel "modeller"@sv ;
-  skos:prefLabel "mallit (tuotokset)"@fi ;
+  skos:prefLabel "mallit (mallintaminen)"@fi ;
   skos:prefLabel "modeller (alster)"@sv ;
   skos:prefLabel "models (objects)"@en ;
   juho-meta:hasLahde "ysa" ;
@@ -48987,14 +49292,16 @@ juho:p3051
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p19608 ;
-  skos:prefLabel "rejoinders"@en ;
-  skos:prefLabel "vastineet"@fi ;
+  skos:prefLabel "rejoinders (procedural law)"@en ;
+  skos:prefLabel "svaromål"@sv ;
+  skos:prefLabel "vastineet (prosessioikeus)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010307" ;
   juho-meta:hasPoiminta "om" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p25 ;
-  juho-meta:hasThematicGroup juho:p84 ;
+  ysometa:singularPrefLabel "rejoinder (procedural law)"@en ;
+  ysometa:singularPrefLabel "vastine (prosessioikeus)"@fi ;
 .
 juho:p3052
   rdf:type juho-meta:Concept ;
@@ -50304,8 +50611,8 @@ juho:p3120
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p836 ;
-  skos:altLabel "contests (events)"@en ;
-  skos:prefLabel "competitions (events)"@en ;
+  skos:altLabel "contests"@en ;
+  skos:prefLabel "competitions"@en ;
   skos:prefLabel "kilpailut"@fi ;
   skos:prefLabel "tävlingar"@sv ;
   juho-meta:hasLahde "ysa" ;
@@ -51397,11 +51704,10 @@ juho:p3177
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p3462 ;
   skos:altLabel "bibliografier (verk)"@sv ;
-  skos:altLabel "bibliografier"@sv ;
   skos:altLabel "litteraturförteckningar"@sv ;
   skos:altLabel "publikationsförteckningar"@sv ;
-  skos:prefLabel "bibliografiat (luettelot)"@fi ;
-  skos:prefLabel "bibliografier (förteckningar)"@sv ;
+  skos:prefLabel "bibliografiat"@fi ;
+  skos:prefLabel "bibliografier"@sv ;
   skos:prefLabel "bibliographies (catalogues and directories)"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
@@ -52076,6 +52382,8 @@ juho:p3211
   juho-meta:hasPaivitetty "20020806" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:related juho:p12067 ;
+  juho-meta:related juho:p12085 ;
 .
 juho:p3212
   rdf:type juho-meta:Concept ;
@@ -52176,7 +52484,7 @@ juho:p3216
 juho:p3217
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p5440 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "återkallelse"@sv ;
   skos:prefLabel "cancelling"@en ;
   skos:prefLabel "peruuttaminen"@fi ;
@@ -52488,11 +52796,11 @@ juho:p3231
   juho-meta:hasThematicGroup juho:p210 ;
 .
 juho:p3232
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p9729 ;
   skos:altLabel "organisation"@sv ;
-  skos:prefLabel "organisaatio"@fi ;
+  skos:prefLabel "organisaatio (ilmiöt)"@fi ;
   skos:prefLabel "organisation (fenomen)"@sv ;
   skos:prefLabel "organisation (societal objects)"@en ;
   juho-meta:hasLahde "ysa" ;
@@ -52504,6 +52812,7 @@ juho:p3232
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:related juho:p2883 ;
   juho-meta:related juho:p465 ;
+  ysometa:deprecatedReplacedBy juho:p465 ;
 .
 juho:p3233
   rdf:type juho-meta:Concept ;
@@ -52549,7 +52858,7 @@ juho:p3235
   skos:altLabel "självständighetsprocess (statsvetenskap)"@sv ;
   skos:altLabel "självständighetsprocess"@sv ;
   skos:prefLabel "becoming independent (states and communities)"@en ;
-  skos:prefLabel "itsenäistyminen (valtiot ja yhteisöt)"@fi ;
+  skos:prefLabel "itsenäistyminen (valtiot)"@fi ;
   skos:prefLabel "självständighetsprocess (samhällsförändring)"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
@@ -54919,11 +55228,9 @@ juho:p3418
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1992 ;
-  skos:altLabel "transportation services"@en ;
-  skos:altLabel "transportservice"@sv ;
-  skos:prefLabel "kuljetuspalvelut"@fi ;
-  skos:prefLabel "transport services"@en ;
-  skos:prefLabel "transporttjänster"@sv ;
+  skos:prefLabel "fjärdtjänster"@sv ;
+  skos:prefLabel "kuljetuspalvelut (sosiaalihuolto)"@fi ;
+  skos:prefLabel "transport services (social services)"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010228" ;
   juho-meta:hasPoiminta "lvm" ;
@@ -55032,6 +55339,7 @@ juho:p3425
   juho-meta:related juho:p4421 ;
   juho-meta:related juho:p4905 ;
   juho-meta:related juho:p6058 ;
+  juho-meta:related juho:p7672 ;
 .
 juho:p3427
   rdf:type juho-meta:Concept ;
@@ -55614,7 +55922,8 @@ juho:p3489
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p42 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "systems of ownership"@en ;
   skos:prefLabel "omistusjärjestelyt"@fi ;
   skos:prefLabel "ownership arrangements"@en ;
@@ -55878,12 +56187,13 @@ juho:p3500
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p84 ;
+  juho-meta:related juho:p10290 ;
   juho-meta:related juho:p3499 ;
   juho-meta:related juho:p3502 ;
-  juho-meta:related juho:p4304 ;
   juho-meta:related juho:p5201 ;
   juho-meta:related juho:p5271 ;
   juho-meta:related juho:p5274 ;
+  juho-meta:related juho:p6092 ;
   juho-meta:related juho:p6229 ;
 .
 juho:p3501
@@ -57084,7 +57394,7 @@ juho:p3622
   rdfs:subClassOf juho:p1686 ;
   skos:altLabel "CKP"@sv ;
   skos:prefLabel "Centralkriminalpolisen"@sv ;
-  skos:prefLabel "National Bureau of Investigation"@en ;
+  skos:prefLabel "The National Bureau of Investigation"@en ;
   skos:prefLabel "keskusrikospoliisi"@fi ;
   juho-meta:hasAsiasanalaji "kotim.org" ;
   juho-meta:hasPaivitetty "20011025" ;
@@ -57157,7 +57467,7 @@ juho:p3635
 juho:p3637
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2630 ;
+  owl:equivalentClass yso:p38117 ;
   skos:prefLabel "kieltenopetus"@fi ;
   skos:prefLabel "language teaching"@en ;
   skos:prefLabel "språkundervisning"@sv ;
@@ -57262,7 +57572,7 @@ juho:p3656
   juho-meta:hasPoiminta "um" ;
 .
 juho:p3657
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p16062 ;
   skos:prefLabel "ammattioppilaitokset"@fi ;
@@ -57273,6 +57583,7 @@ juho:p3657
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p115 ;
   juho-meta:related juho:p291 ;
+  ysometa:deprecatedReplacedBy juho:p291 ;
 .
 juho:p3658
   rdf:type juho-meta:Concept ;
@@ -57365,7 +57676,7 @@ juho:p3662
   juho-meta:related juho:p3665 ;
 .
 juho:p3663
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p15671 ;
   skos:altLabel "husmodersskolor"@sv ;
@@ -57379,6 +57690,7 @@ juho:p3663
   juho-meta:hasSelite "Koti- ja laitostalousoppilaitoksista vuoteen 1987 käytetty nimitys " ;
   juho-meta:hasThematicGroup juho:p115 ;
   juho-meta:related juho:p291 ;
+  ysometa:deprecatedReplacedBy yso:p19831 ;
 .
 juho:p3664
   rdf:type juho-meta:Concept ;
@@ -57876,7 +58188,6 @@ juho:p3703
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p26 ;
-  juho-meta:related juho:p3704 ;
   juho-meta:related juho:p3705 ;
 .
 juho:p3704
@@ -57885,7 +58196,7 @@ juho:p3704
   owl:equivalentClass yso:p4130 ;
   skos:altLabel "krig"@sv ;
   skos:prefLabel "krigföring"@sv ;
-  skos:prefLabel "sota (toiminta)"@fi ;
+  skos:prefLabel "sodankäynti"@fi ;
   skos:prefLabel "warfare"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
@@ -57896,11 +58207,6 @@ juho:p3704
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p104 ;
   juho-meta:hasThematicGroup juho:p26 ;
-  juho-meta:related juho:p3703 ;
-  juho-meta:related juho:p6978 ;
-  juho-meta:related juho:p7096 ;
-  juho-meta:related juho:p7097 ;
-  juho-meta:related juho:p7098 ;
 .
 juho:p3705
   rdf:type juho-meta:Concept ;
@@ -58721,6 +59027,7 @@ juho:p3791
   juho-meta:related juho:p4456 ;
 .
 juho:p3792
+  rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2947 ;
   skos:altLabel "tiemerkinnät"@fi ;
@@ -58842,7 +59149,7 @@ juho:p3799
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p2108 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p38
   rdf:type juho-meta:Concept ;
@@ -59491,9 +59798,13 @@ juho:p3869
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13189 ;
+  skos:altLabel "kansalaispalkka"@fi ;
+  skos:altLabel "kansalaistulo"@fi ;
+  skos:altLabel "medborgarinkomst"@sv ;
+  skos:altLabel "medborgarlön"@sv ;
   skos:prefLabel "basic income guarantee"@en ;
-  skos:prefLabel "kansalaispalkka"@fi ;
-  skos:prefLabel "medborgarlön"@sv ;
+  skos:prefLabel "basinkomst"@sv ;
+  skos:prefLabel "perustulo"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020806" ;
   juho-meta:hasPoiminta "stm" ;
@@ -59501,7 +59812,7 @@ juho:p3869
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p63 ;
   juho-meta:hasThematicGroup juho:p67 ;
-  juho-meta:related juho:p3865 ;
+  juho-meta:related juho:p4058 ;
   juho-meta:related juho:p8817 ;
 .
 juho:p3870
@@ -62581,9 +62892,9 @@ juho:p4214
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p481 ;
-  skos:prefLabel "förluster"@sv ;
+  skos:prefLabel "förluster (ekonomi) ("@sv ;
   skos:prefLabel "losses (economy)"@en ;
-  skos:prefLabel "tappiot"@fi ;
+  skos:prefLabel "tappiot (talous)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010316" ;
   juho-meta:hasPoiminta "tem" ;
@@ -63046,7 +63357,6 @@ juho:p426
   juho-meta:related juho:p425 ;
   juho-meta:related juho:p5077 ;
   juho-meta:related juho:p5147 ;
-  juho-meta:related juho:p7507 ;
 .
 juho:p4260
   rdf:type juho-meta:Concept ;
@@ -63236,13 +63546,11 @@ juho:p4289
 juho:p4290
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p413 ;
-  skos:altLabel "experiment"@sv ;
-  skos:altLabel "experiments"@en ;
-  skos:altLabel "trials (tests)"@en ;
-  skos:prefLabel "examinations"@en ;
-  skos:prefLabel "kokeet"@fi ;
-  skos:prefLabel "prov"@sv ;
+  owl:equivalentClass yso:p30146 ;
+  skos:altLabel "prov (utvärdering)"@sv ;
+  skos:prefLabel "examinations (evaluation)"@en ;
+  skos:prefLabel "kokeet (arviointi)"@fi ;
+  skos:prefLabel "prov (bedömning)"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031015" ;
   juho-meta:hasPoiminta "opm" ;
@@ -63436,16 +63744,16 @@ juho:p4303
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p259 ;
   juho-meta:hasThematicGroup juho:p39 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p4304
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1586 ;
   skos:altLabel "teknik (verksamhetssfär)"@sv ;
   skos:altLabel "teknik"@sv ;
   skos:prefLabel "technology (sciences)"@en ;
-  skos:prefLabel "tekniikka (erikoisala)"@fi ;
+  skos:prefLabel "tekniikka (tieteet)"@fi ;
   skos:prefLabel "teknik (vetenskaper)"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
@@ -63468,9 +63776,9 @@ juho:p4304
   juho-meta:related juho:p3799 ;
   juho-meta:related juho:p4303 ;
   juho-meta:related juho:p5875 ;
-  juho-meta:related juho:p6092 ;
   juho-meta:related juho:p9008 ;
   juho-meta:related juho:p9342 ;
+  ysometa:deprecatedReplacedBy juho:p6092 ;
 .
 juho:p4305
   rdf:type skos:Concept ;
@@ -64126,7 +64434,7 @@ juho:p4358
   juho-meta:related juho:p984 ;
 .
 juho:p4359
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p8477 ;
   skos:prefLabel "sed"@sv ;
@@ -64137,6 +64445,7 @@ juho:p4359
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p22 ;
   juho-meta:related juho:p4358 ;
+  ysometa:deprecatedReplacedBy yso:p7037 ;
 .
 juho:p4360
   rdf:type juho-meta:Concept ;
@@ -64502,6 +64811,7 @@ juho:p4420
   juho-meta:related juho:p4421 ;
   juho-meta:related juho:p4422 ;
   juho-meta:related juho:p4423 ;
+  juho-meta:related juho:p7672 ;
 .
 juho:p4421
   rdf:type juho-meta:Concept ;
@@ -64522,6 +64832,7 @@ juho:p4421
   juho-meta:related juho:p4423 ;
   juho-meta:related juho:p4904 ;
   juho-meta:related juho:p4905 ;
+  juho-meta:related juho:p7672 ;
 .
 juho:p4422
   rdf:type juho-meta:Concept ;
@@ -64555,6 +64866,7 @@ juho:p4423
   juho-meta:related juho:p4421 ;
   juho-meta:related juho:p4422 ;
   juho-meta:related juho:p4905 ;
+  juho-meta:related juho:p7672 ;
 .
 juho:p4424
   rdf:type juho-meta:Concept ;
@@ -64639,33 +64951,8 @@ juho:p4430
   juho-meta:hasPaivitetty "20020102" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
+  juho-meta:related juho:p14121 ;
   juho-meta:related juho:p4196 ;
-  juho-meta:related juho:p4431 ;
-.
-juho:p4431
-  rdf:type juho-meta:Concept ;
-  rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p13838 ;
-  owl:equivalentClass yso:p10189 ;
-  skos:altLabel "pelastustoiminta"@fi ;
-  skos:prefLabel "pelastustoiminta"@fi ;
-  skos:prefLabel "rescue operations"@en ;
-  skos:prefLabel "räddningsverksamhet"@sv ;
-  juho-meta:hasPaivitetty "20040701" ;
-  juho-meta:hasPoiminta "eurodocvp" ;
-  juho-meta:hasPoiminta "lvm" ;
-  juho-meta:hasPoiminta "sm" ;
-  juho-meta:hasPoiminta "stm" ;
-  juho-meta:hasPoiminta "tem" ;
-  juho-meta:hasPoiminta "um" ;
-  juho-meta:hasThematicGroup juho:p35 ;
-  juho-meta:related juho:p12399 ;
-  juho-meta:related juho:p14064 ;
-  juho-meta:related juho:p4430 ;
-  juho-meta:related juho:p5758 ;
-  juho-meta:related juho:p6535 ;
-  juho-meta:related juho:p8725 ;
-  juho-meta:related juho:p8953 ;
 .
 juho:p4432
   rdf:type juho-meta:Concept ;
@@ -64882,9 +65169,11 @@ juho:p4479
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p3573 ;
+  skos:hiddenLabel "valuta"@sv ;
+  skos:hiddenLabel "valuutta"@fi ;
   skos:prefLabel "currency"@en ;
-  skos:prefLabel "valuta"@sv ;
-  skos:prefLabel "valuutta"@fi ;
+  skos:prefLabel "valutor"@sv ;
+  skos:prefLabel "valuutat"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020812" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -65888,6 +66177,7 @@ juho:p457
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p11309 ;
   skos:altLabel "frö"@sv ;
+  skos:hiddenLabel "siemen"@fi ;
   skos:prefLabel "frön"@sv ;
   skos:prefLabel "seed"@en ;
   skos:prefLabel "siemenet"@fi ;
@@ -66808,6 +67098,7 @@ juho:p465
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p272 ;
+  skos:altLabel "organisaatio (ilmiöt)"@fi ;
   skos:prefLabel "organisaatiot"@fi ;
   skos:prefLabel "organisationer {system)"@sv ;
   skos:prefLabel "organisations (systems)"@en ;
@@ -66825,7 +67116,6 @@ juho:p465
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p30 ;
   juho-meta:related juho:p2902 ;
-  juho-meta:related juho:p3232 ;
   juho-meta:related juho:p464 ;
 .
 juho:p4650
@@ -67393,9 +67683,9 @@ juho:p4717
   owl:equivalentClass yso:p5700 ;
   skos:altLabel "förflyttning"@sv ;
   skos:altLabel "transfer"@en ;
-  skos:prefLabel "förflyttning (rörelse)"@sv ;
-  skos:prefLabel "siirto (liikuttaminen)"@fi ;
-  skos:prefLabel "transfer (moving)"@en ;
+  skos:prefLabel "förflyttning"@sv ;
+  skos:prefLabel "siirto"@fi ;
+  skos:prefLabel "transfer"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010223" ;
   juho-meta:hasPoiminta "um" ;
@@ -67483,27 +67773,22 @@ juho:p4723
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011217" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p4724 ;
+  juho-meta:related juho:p14142 ;
 .
 juho:p4724
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf juho:p13838 ;
-  rdfs:subClassOf juho:p1455 ;
-  rdfs:subClassOf yso:p418 ;
   owl:equivalentClass yso:p12705 ;
-  skos:prefLabel "ohjaajat (kasvatus ja opastus)"@fi ;
+  skos:hiddenLabel "director"@en ;
+  skos:hiddenLabel "ohjaaja (taiteet ja media)"@fi ;
+  skos:hiddenLabel "regissör"@sv ;
+  skos:prefLabel "directors"@en ;
   skos:prefLabel "ohjaajat (taiteet ja media)"@fi ;
+  skos:prefLabel "regissörer"@sv ;
   juho-meta:hasAsiasanalaji "amm" ;
-  juho-meta:hasPaivitetty "20031014" ;
   juho-meta:hasThematicGroup juho:p22 ;
-  juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:hasThematicGroup juho:p80 ;
-  juho-meta:related juho:p10439 ;
-  juho-meta:related juho:p11283 ;
-  juho-meta:related juho:p11702 ;
-  juho-meta:related juho:p4723 ;
-  juho-meta:related juho:p6851 ;
 .
 juho:p4725
   rdf:type juho-meta:Concept ;
@@ -67593,6 +67878,7 @@ juho:p474
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p210 ;
+  juho-meta:hasThematicGroup juho:p84 ;
   juho-meta:related juho:p11414 ;
   juho-meta:related juho:p2975 ;
   juho-meta:related juho:p2984 ;
@@ -68273,12 +68559,11 @@ juho:p4809
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1235 ;
-  skos:altLabel "filmer (alster)"@sv ;
   skos:altLabel "filmer"@sv ;
   skos:altLabel "spelfilmer"@sv ;
-  skos:prefLabel "elokuvat (teokset)"@fi ;
-  skos:prefLabel "filmer (verk)"@sv ;
-  skos:prefLabel "films (works)"@en ;
+  skos:prefLabel "elokuvat"@fi ;
+  skos:prefLabel "filmer"@sv ;
+  skos:prefLabel "films"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
   juho-meta:hasPoiminta "um" ;
@@ -68453,13 +68738,15 @@ juho:p4829
   skos:altLabel "brödrakriget"@sv ;
   skos:altLabel "frihetskriget"@sv ;
   skos:altLabel "inbördeskriget"@sv ;
+  skos:altLabel "kansalaissota"@fi ;
   skos:altLabel "medborgarkriget"@sv ;
+  skos:altLabel "punakapina"@fi ;
   skos:altLabel "röda upproret"@sv ;
-  skos:altLabel "vapaussota"@fi ;
+  skos:altLabel "vapaussota (Suomi)"@fi ;
   skos:altLabel "veljessota"@fi ;
   skos:prefLabel "Finnish Civil War"@en ;
+  skos:prefLabel "Suomen sisällissota"@fi ;
   skos:prefLabel "finska inbördeskriget"@sv ;
-  skos:prefLabel "kansalaissota"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20011116" ;
   juho-meta:hasPoiminta "vnk" ;
@@ -68585,8 +68872,9 @@ juho:p4837
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2492 ;
   skos:altLabel "prat"@sv ;
+  skos:altLabel "puhuminen"@fi ;
   skos:altLabel "speaking"@en ;
-  skos:prefLabel "puhe"@fi ;
+  skos:prefLabel "puhe (puhuminen)"@fi ;
   skos:prefLabel "speech (phenomena)"@en ;
   skos:prefLabel "tal (prat)"@sv ;
   juho-meta:hasLahde "ysa" ;
@@ -69118,6 +69406,7 @@ juho:p4887
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "tem" ;
+  juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:hasThematicGroup juho:p84 ;
   juho-meta:related juho:p4888 ;
   juho-meta:related juho:p4889 ;
@@ -69370,8 +69659,8 @@ juho:p4901
   owl:equivalentClass yso:p3203 ;
   skos:altLabel "institutionsteatrar"@sv ;
   skos:altLabel "laitosteatterit"@fi ;
-  skos:prefLabel "teatrar"@sv ;
-  skos:prefLabel "teatterit"@fi ;
+  skos:prefLabel "teatrar (organisationer)"@sv ;
+  skos:prefLabel "teatterit (organisatiot)"@fi ;
   skos:prefLabel "theatres"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031028" ;
@@ -69700,11 +69989,12 @@ juho:p4933
 juho:p4934
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p871 ;
+  owl:equivalentClass yso:p37743 ;
+  skos:altLabel "arbetsfärd"@sv ;
   skos:altLabel "way to work"@en ;
-  skos:prefLabel "arbetsresor"@sv ;
-  skos:prefLabel "journey to work"@en ;
-  skos:prefLabel "työmatkat"@fi ;
+  skos:prefLabel "arbetsväg"@sv ;
+  skos:prefLabel "commute"@en ;
+  skos:prefLabel "työmatkat (työpaikalle)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031120" ;
   juho-meta:hasPoiminta "hare" ;
@@ -70310,7 +70600,8 @@ juho:p5025
 juho:p5026
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "begränsning av fri rörlighet"@sv ;
   skos:prefLabel "begränsning av rörelsefrihet"@sv ;
   skos:prefLabel "liikkumisen rajoittaminen"@fi ;
@@ -70945,26 +71236,22 @@ juho:p508
   juho-meta:related juho:p114 ;
 .
 juho:p5080
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p485 ;
   skos:altLabel "handarbete"@sv ;
   skos:prefLabel "handarbeten och hantverk (arbete)"@sv ;
   skos:prefLabel "handcrafting"@en ;
   skos:prefLabel "käsityöt (työ)"@fi ;
   juho-meta:related juho:p5081 ;
+  ysometa:deprecatedReplacedBy yso:p11934 ;
 .
 juho:p5081
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p4923 ;
-  skos:altLabel "handarbeten (objekt)"@sv ;
-  skos:altLabel "handiwork"@en ;
-  skos:altLabel "hantverk (objekt)"@sv ;
-  skos:altLabel "hantverk och handarbeten (objekt)"@sv ;
-  skos:prefLabel "handarbeten och hantverk (objekt)"@sv ;
-  skos:prefLabel "handicrafts"@en ;
-  skos:prefLabel "käsityöt (objektit)"@fi ;
+  owl:equivalentClass yso:p5559 ;
+  skos:prefLabel "handarbete och hantverk (aktivitet)"@sv ;
+  skos:prefLabel "handcrafting"@en ;
+  skos:prefLabel "käsityö (toiminta)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031009" ;
   juho-meta:hasPoiminta "opm" ;
@@ -72117,7 +72404,7 @@ juho:p5214
   juho-meta:hasThematicGroup juho:p39 ;
 .
 juho:p5215
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p11216 ;
   skos:altLabel "skolan"@sv ;
@@ -72131,13 +72418,14 @@ juho:p5215
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p5216 ;
   juho-meta:related juho:p5217 ;
+  ysometa:deprecatedReplacedBy juho:p5217 ;
 .
 juho:p5216
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p386 ;
   skos:altLabel "skolor"@sv ;
-  skos:prefLabel "koulut (oppilaitokset)"@fi ;
+  skos:prefLabel "koulut"@fi ;
   skos:prefLabel "schools (educational institutions)"@en ;
   skos:prefLabel "skolor (läroinrättningar)"@sv ;
   juho-meta:hasLahde "ysa" ;
@@ -72739,6 +73027,8 @@ juho:p5272
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p84 ;
+  juho-meta:related juho:p10290 ;
+  juho-meta:related juho:p3500 ;
   juho-meta:related juho:p5271 ;
 .
 juho:p5273
@@ -72822,6 +73112,7 @@ juho:p5282
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p17068 ;
   skos:altLabel "arbetssjukdomar"@sv ;
+  skos:altLabel "työperäiset sairaudet"@fi ;
   skos:prefLabel "ammattitaudit"@fi ;
   skos:prefLabel "occupational diseases"@en ;
   skos:prefLabel "yrkessjukdomar"@sv ;
@@ -72833,7 +73124,7 @@ juho:p5282
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:hasThematicGroup juho:p80 ;
-  juho-meta:related juho:p6113 ;
+  juho-meta:related juho:p10232 ;
   juho-meta:related juho:p8582 ;
   juho-meta:related juho:p975 ;
 .
@@ -74149,7 +74440,8 @@ juho:p5443
 juho:p5444
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p2375 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "uppsägning från den anställdas sida"@sv ;
   skos:prefLabel "irtisanoutuminen"@fi ;
   skos:prefLabel "resignation"@en ;
@@ -74873,9 +75165,9 @@ juho:p5557
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p9789 ;
-  skos:altLabel "avskrivningar"@sv ;
-  skos:prefLabel "avdrag"@sv ;
-  skos:prefLabel "poistot"@fi ;
+  skos:altLabel "avdrag"@sv ;
+  skos:prefLabel "avskrivningar (ekonomi)"@sv ;
+  skos:prefLabel "poistot (talous)"@fi ;
   skos:prefLabel "write-offs"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20040701" ;
@@ -75043,6 +75335,7 @@ juho:p5584
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2301 ;
+  skos:altLabel "kotihoidon tuki"@fi ;
   skos:prefLabel "hemvårdsstöd"@sv ;
   skos:prefLabel "home care subsidy"@en ;
   skos:prefLabel "kotihoidontuki"@fi ;
@@ -75964,7 +76257,7 @@ juho:p5700
 juho:p5701
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p338 ;
+  rdfs:subClassOf yso:p1945 ;
   skos:altLabel "bli rehabiliterad"@sv ;
   skos:prefLabel "kuntoutuminen"@fi ;
   skos:prefLabel "recovering"@en ;
@@ -76297,7 +76590,6 @@ juho:p5743
   rdf:type juho-meta:Concept ;
   rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf ysometa:deprecatedConcepts ;
-  owl:deprecated "true"^^xsd:boolean ;
   skos:altLabel "publicering"@sv ;
   skos:altLabel "utgivning"@sv ;
   skos:prefLabel "julkaisutoiminta"@fi ;
@@ -76311,7 +76603,6 @@ juho:p5743
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasPoiminta "vnk" ;
-  ysometa:comment "deprecated on 08.12.2017" ;
   ysometa:deprecatedExactMatch yso:p2700 ;
   ysometa:deprecatedHasThematicGroup juho:p84 ;
 .
@@ -76423,7 +76714,6 @@ juho:p5758
   juho-meta:hasPoiminta "vm" ;
   juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:related juho:p3751 ;
-  juho-meta:related juho:p4431 ;
   juho-meta:related juho:p6535 ;
 .
 juho:p576
@@ -76433,7 +76723,7 @@ juho:p576
   skos:altLabel "sterilisation"@sv ;
   skos:prefLabel "sterilisation (hygiene)"@en ;
   skos:prefLabel "sterilisering (rengöring)"@sv ;
-  skos:prefLabel "sterilointi (puhdistaminen)"@fi ;
+  skos:prefLabel "sterilointi (puhdistus)"@fi ;
 .
 juho:p5761
   rdf:type juho-meta:Concept ;
@@ -77204,7 +77494,7 @@ juho:p5875
   juho-meta:hasPaivitetty "20010713" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p5876
   rdf:type juho-meta:Concept ;
@@ -78185,13 +78475,18 @@ juho:p6024
 juho:p6025
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p4608 ;
-  skos:prefLabel "fears (specific)"@en ;
-  skos:prefLabel "pelot"@fi ;
-  skos:prefLabel "rädslor"@sv ;
+  owl:equivalentClass yso:p10848 ;
+  skos:altLabel "fruktan"@sv ;
+  skos:altLabel "pelko (tunteet)"@fi ;
+  skos:altLabel "pelot"@fi ;
+  skos:altLabel "rädslor"@sv ;
+  skos:prefLabel "fear (emotions)"@en ;
+  skos:prefLabel "pelko"@fi ;
+  skos:prefLabel "rädsla"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031020" ;
   juho-meta:hasPoiminta "plm" ;
+  juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:hasThematicGroup juho:p35 ;
   juho-meta:related juho:p3022 ;
 .
@@ -78566,7 +78861,10 @@ juho:p6092
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2339 ;
-  skos:prefLabel "technology (information)"@en ;
+  skos:altLabel "tekniikka (erikoisalat)"@fi ;
+  skos:altLabel "tekniikka (laitteet)"@fi ;
+  skos:altLabel "tekniikka (tieteet)"@fi ;
+  skos:prefLabel "technology"@en ;
   skos:prefLabel "teknologi"@sv ;
   skos:prefLabel "teknologia"@fi ;
   juho-meta:hasLahde "ysa" ;
@@ -78583,11 +78881,18 @@ juho:p6092
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p39 ;
   juho-meta:related juho:p11140 ;
+  juho-meta:related juho:p11487 ;
   juho-meta:related juho:p1173 ;
+  juho-meta:related juho:p11971 ;
+  juho-meta:related juho:p12680 ;
+  juho-meta:related juho:p1797 ;
   juho-meta:related juho:p3556 ;
+  juho-meta:related juho:p3799 ;
   juho-meta:related juho:p412 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p4303 ;
+  juho-meta:related juho:p5875 ;
   juho-meta:related juho:p7649 ;
+  juho-meta:related juho:p9008 ;
   juho-meta:related juho:p9342 ;
 .
 juho:p6096
@@ -78709,7 +79014,7 @@ juho:p6110
   juho-meta:related juho:p3740 ;
 .
 juho:p6113
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p5843 ;
   skos:prefLabel "arbetsrelaterade sjukdomar"@sv ;
@@ -78725,6 +79030,7 @@ juho:p6113
   juho-meta:related juho:p5282 ;
   juho-meta:related juho:p8582 ;
   juho-meta:related juho:p975 ;
+  ysometa:deprecatedReplacedBy juho:p5282 ;
 .
 juho:p6118
   rdf:type juho-meta:Concept ;
@@ -79361,6 +79667,7 @@ juho:p621
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2868 ;
+  skos:altLabel "ratkaisut (päätökset)"@fi ;
   skos:prefLabel "beslut"@sv ;
   skos:prefLabel "decisions"@en ;
   skos:prefLabel "päätökset"@fi ;
@@ -79377,10 +79684,10 @@ juho:p621
   juho-meta:hasPoiminta "vnk" ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:hasThematicGroup juho:p25 ;
+  juho-meta:related juho:p13895 ;
   juho-meta:related juho:p1572 ;
   juho-meta:related juho:p2524 ;
   juho-meta:related juho:p2661 ;
-  juho-meta:related juho:p2924 ;
   juho-meta:related juho:p619 ;
 .
 juho:p6210
@@ -80123,6 +80430,7 @@ juho:p63
 .
 juho:p6300
   rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2342 ;
   skos:prefLabel "ahtaus"@fi ;
@@ -80134,6 +80442,7 @@ juho:p6300
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p12672 ;
+  ysometa:deprecatedReplacedBy juho:p7571 ;
 .
 juho:p6307
   rdf:type juho-meta:Concept ;
@@ -81458,9 +81767,8 @@ juho:p6535
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasThematicGroup juho:p35 ;
+  juho-meta:related juho:p14121 ;
   juho-meta:related juho:p3751 ;
-  juho-meta:related juho:p4431 ;
-  juho-meta:related juho:p5758 ;
 .
 juho:p6536
   rdf:type juho-meta:Concept ;
@@ -83950,7 +84258,7 @@ juho:p6710
   owl:equivalentClass yso:p975 ;
   skos:prefLabel "stabilisation (economy and society)"@en ;
   skos:prefLabel "stabilisering (ekonomi och samhälle)"@sv ;
-  skos:prefLabel "vakauttaminen"@fi ;
+  skos:prefLabel "vakauttaminen (talous ja yhteiskunta)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010307" ;
   juho-meta:hasPoiminta "um" ;
@@ -84048,7 +84356,7 @@ juho:p6716
 juho:p6717
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p821 ;
+  rdfs:subClassOf yso:p4035 ;
   skos:altLabel "medellång period"@sv ;
   skos:altLabel "medellångt tidsintervall"@sv ;
   skos:prefLabel "keskipitkä aikaväli"@fi ;
@@ -84988,7 +85296,8 @@ juho:p6773
 juho:p6774
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p42 ;
+  rdfs:subClassOf yso:p14 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "skuldförvaltning"@sv ;
   skos:altLabel "skuldskötsel"@sv ;
   skos:prefLabel "debt servicing"@en ;
@@ -85649,7 +85958,7 @@ juho:p685
   juho-meta:related juho:p688 ;
 .
 juho:p6850
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2043 ;
   skos:altLabel "gymnastik- och idrottsföreningar"@sv ;
@@ -85663,6 +85972,7 @@ juho:p6850
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p22 ;
   juho-meta:related juho:p10790 ;
+  ysometa:deprecatedReplacedBy juho:p10790 ;
 .
 juho:p6851
   rdf:type skos:Concept ;
@@ -85676,7 +85986,9 @@ juho:p6851
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011218" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p4724 ;
+  juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:hasThematicGroup juho:p80 ;
+  juho-meta:related juho:p14142 ;
 .
 juho:p686
   rdf:type juho-meta:Concept ;
@@ -86480,7 +86792,7 @@ juho:p6960
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p9223 ;
+  rdfs:subClassOf yso:p50 ;
   skos:altLabel "genskador"@sv ;
   skos:altLabel "reproductive damage"@en ;
   skos:prefLabel "genetiska skador"@sv ;
@@ -86718,7 +87030,6 @@ juho:p6978
   juho-meta:hasPaivitetty "20010227" ;
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasThematicGroup juho:p104 ;
-  juho-meta:related juho:p3704 ;
 .
 juho:p6979
   rdf:type juho-meta:Concept ;
@@ -87651,7 +87962,6 @@ juho:p7096
   juho-meta:hasPaivitetty "20010402" ;
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasThematicGroup juho:p104 ;
-  juho-meta:related juho:p3704 ;
 .
 juho:p7097
   rdf:type juho-meta:Concept ;
@@ -87666,7 +87976,6 @@ juho:p7097
   juho-meta:hasPaivitetty "20010305" ;
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasThematicGroup juho:p104 ;
-  juho-meta:related juho:p3704 ;
 .
 juho:p7098
   rdf:type juho-meta:Concept ;
@@ -87679,7 +87988,6 @@ juho:p7098
   juho-meta:hasPaivitetty "20010305" ;
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasThematicGroup juho:p104 ;
-  juho-meta:related juho:p3704 ;
 .
 juho:p710
   rdf:type juho-meta:Concept ;
@@ -87873,7 +88181,7 @@ juho:p7132
   juho-meta:related juho:p7133 ;
 .
 juho:p7133
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p26592 ;
   skos:altLabel "adb-program"@sv ;
@@ -87906,6 +88214,7 @@ juho:p7133
   juho-meta:related juho:p7132 ;
   juho-meta:related juho:p8955 ;
   juho-meta:related juho:p8956 ;
+  ysometa:deprecatedReplacedBy juho:p14139 ;
 .
 juho:p7135
   rdf:type juho-meta:Concept ;
@@ -88598,9 +88907,9 @@ juho:p7225
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p178 ;
   skos:altLabel "handledande"@sv ;
-  skos:prefLabel "direction (guidance)"@en ;
+  skos:prefLabel "direction (instruction and guidance)"@en ;
   skos:prefLabel "handledning"@sv ;
-  skos:prefLabel "ohjaus (neuvominen)"@fi ;
+  skos:prefLabel "ohjaus (neuvonta ja opastus)"@fi ;
   juho-meta:hasThematicGroup juho:p210 ;
   juho-meta:related juho:p10995 ;
   juho-meta:related juho:p3674 ;
@@ -89786,11 +90095,13 @@ juho:p7403
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p17342 ;
-  skos:altLabel "anpassning (integrering)"@sv ;
-  skos:altLabel "immigrant integration"@en ;
+  skos:altLabel "integarationsfrämjande (invandrare)"@sv ;
+  skos:altLabel "integration invandrare"@sv ;
+  skos:altLabel "integration of migrants"@en ;
+  skos:altLabel "integrative measures"@en ;
   skos:prefLabel "integrationsfrämjande"@sv ;
-  skos:prefLabel "integrative measures"@en ;
-  skos:prefLabel "kotouttaminen"@fi ;
+  skos:prefLabel "kotouttaminen (maahanmuuttajat)"@fi ;
+  skos:prefLabel "migrant ntegration"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031006" ;
   juho-meta:hasPoiminta "om" ;
@@ -89811,8 +90122,6 @@ juho:p7405
   juho-meta:hasPaivitetty "20011214" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p214 ;
-  juho-meta:related juho:p7470 ;
 .
 juho:p7407
   rdf:type juho-meta:Concept ;
@@ -90088,9 +90397,10 @@ juho:p7432
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p14902 ;
+  skos:altLabel "rivning"@sv ;
+  skos:prefLabel "demontering"@sv ;
   skos:prefLabel "dismantling"@en ;
-  skos:prefLabel "purkaminen (rakennusala)"@fi ;
-  skos:prefLabel "rivning"@sv ;
+  skos:prefLabel "purkaminen (osiin)"@fi ;
   juho-meta:hasThematicGroup juho:p8 ;
 .
 juho:p7435
@@ -90363,8 +90673,6 @@ juho:p7470
   juho-meta:hasPaivitetty "20020515" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "stm" ;
-  juho-meta:related juho:p214 ;
-  juho-meta:related juho:p7405 ;
 .
 juho:p7472
   rdf:type juho-meta:Concept ;
@@ -90561,7 +90869,7 @@ juho:p7507
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p8670 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "recognition of degrees"@en ;
   skos:prefLabel "erkännande av examina"@sv ;
   skos:prefLabel "recognition of qualifications"@en ;
@@ -91069,7 +91377,7 @@ juho:p7550
   juho-meta:related juho:p7549 ;
 .
 juho:p7551
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p2777 ;
   skos:altLabel "företagskommunikation"@sv ;
@@ -91083,6 +91391,7 @@ juho:p7551
   juho-meta:hasPoiminta "opm" ;
   juho-meta:hasThematicGroup juho:p84 ;
   juho-meta:related juho:p7552 ;
+  ysometa:deprecatedReplacedBy yso:p26123 ;
 .
 juho:p7552
   rdf:type juho-meta:Concept ;
@@ -91236,8 +91545,9 @@ juho:p7570
 juho:p7571
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p56 ;
   owl:equivalentClass yso:p2342 ;
+  skos:altLabel "ahtaus"@fi ;
+  skos:altLabel "lastaus"@fi ;
   skos:prefLabel "ahtaustyö"@fi ;
   skos:prefLabel "stevedoring work"@en ;
   skos:prefLabel "stuveriarbete"@sv ;
@@ -91871,6 +92181,7 @@ juho:p7643
   juho-meta:hasPaivitetty "20031015" ;
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasThematicGroup juho:p67 ;
+  juho-meta:related juho:p2951 ;
   juho-meta:related juho:p7644 ;
   juho-meta:related juho:p990 ;
 .
@@ -91893,6 +92204,7 @@ juho:p7644
   juho-meta:hasPoiminta "stm" ;
   juho-meta:hasThematicGroup juho:p67 ;
   juho-meta:related juho:p1270 ;
+  juho-meta:related juho:p2951 ;
   juho-meta:related juho:p7643 ;
   juho-meta:related juho:p990 ;
 .
@@ -92135,6 +92447,7 @@ juho:p7672
   owl:equivalentClass yso:p3205 ;
   skos:altLabel "interchange of persons"@en ;
   skos:altLabel "personbyte"@sv ;
+  skos:altLabel "virkamiesvaihto"@fi ;
   skos:prefLabel "exchange of persons"@en ;
   skos:prefLabel "henkilövaihto"@fi ;
   skos:prefLabel "personutbyte"@sv ;
@@ -92145,6 +92458,10 @@ juho:p7672
   juho-meta:hasThematicGroup juho:p115 ;
   juho-meta:hasThematicGroup juho:p80 ;
   juho-meta:related juho:p2704 ;
+  juho-meta:related juho:p3425 ;
+  juho-meta:related juho:p4420 ;
+  juho-meta:related juho:p4421 ;
+  juho-meta:related juho:p4423 ;
   juho-meta:related juho:p4905 ;
 .
 juho:p7673
@@ -93491,7 +93808,7 @@ juho:p788
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p976 ;
+  rdfs:subClassOf juho:p3061 ;
   skos:prefLabel "redeployment of public servants"@en ;
   skos:prefLabel "tjänstearrangemang"@sv ;
   skos:prefLabel "virkajärjestelyt"@fi ;
@@ -93522,9 +93839,9 @@ juho:p7889
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p10957 ;
-  skos:prefLabel "modersmål (språk)"@sv ;
+  skos:prefLabel "modersmål"@sv ;
   skos:prefLabel "mother tongue"@en ;
-  skos:prefLabel "äidinkieli (kieli)"@fi ;
+  skos:prefLabel "äidinkieli"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031024" ;
   juho-meta:hasPoiminta "sm" ;
@@ -93611,7 +93928,7 @@ juho:p7893
 juho:p7894
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p3279 ;
+  rdfs:subClassOf juho:p7892 ;
   skos:altLabel "civilflyg"@sv ;
   skos:altLabel "civilluftfart"@sv ;
   skos:prefLabel "civil aviation"@en ;
@@ -93621,7 +93938,6 @@ juho:p7894
   juho-meta:hasPoiminta "eurodocvp" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p7892 ;
 .
 juho:p7899
   rdf:type juho-meta:Concept ;
@@ -93810,13 +94126,14 @@ juho:p7911
   juho-meta:hasThematicGroup juho:p67 ;
 .
 juho:p7912
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p3456 ;
   skos:altLabel "teknik"@sv ;
   skos:prefLabel "technics (devices)"@en ;
   skos:prefLabel "tekniikka (laitteet)"@fi ;
   skos:prefLabel "teknik (apparater)"@sv ;
+  ysometa:deprecatedReplacedBy juho:p6092 ;
 .
 juho:p7913
   rdf:type juho-meta:Concept ;
@@ -94232,9 +94549,9 @@ juho:p7980
   owl:equivalentClass yso:p13992 ;
   skos:altLabel "kasettikirjat"@fi ;
   skos:altLabel "kassettböcker"@sv ;
-  skos:prefLabel "talböcker"@sv ;
-  skos:prefLabel "talking books"@en ;
-  skos:prefLabel "äänikirjat (lukemisesteisille)"@fi ;
+  skos:prefLabel "audiobooks"@en ;
+  skos:prefLabel "ljudböcker"@sv ;
+  skos:prefLabel "äänikirjat"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031022" ;
   juho-meta:hasPoiminta "opm" ;
@@ -94977,7 +95294,10 @@ juho:p8097
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13453 ;
+  skos:altLabel "erotuomarit"@fi ;
   skos:altLabel "idrottsdomare"@sv ;
+  skos:altLabel "kilpailutuomarit"@fi ;
+  skos:altLabel "palkintotuomarit"@fi ;
   skos:altLabel "referees (sports)"@en ;
   skos:altLabel "skiljedomare"@sv ;
   skos:altLabel "sportdomare"@sv ;
@@ -94985,7 +95305,7 @@ juho:p8097
   skos:altLabel "umpires"@en ;
   skos:altLabel "urheilutuomarit"@fi ;
   skos:prefLabel "domare (tävlingar)"@sv ;
-  skos:prefLabel "tuomarit (urheilu)"@fi ;
+  skos:prefLabel "tuomarit (kilpailut)"@fi ;
   skos:prefLabel "umpires and referees"@en ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031028" ;
@@ -95933,11 +96253,13 @@ juho:p821
 juho:p8210
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  owl:equivalentClass yso:p2506 ;
-  skos:altLabel "executive committees"@en ;
-  skos:prefLabel "boards of directors"@en ;
-  skos:prefLabel "hallitukset (hallintoelimet)"@fi ;
+  owl:equivalentClass yso:p37875 ;
+  skos:prefLabel "executive boards"@en ;
+  skos:prefLabel "hallitukset (yhteisöt)"@fi ;
   skos:prefLabel "styrelser"@sv ;
+  ysometa:singularPrefLabel "executive board"@en ;
+  ysometa:singularPrefLabel "hallitus (yhteisöt)"@fi ;
+  ysometa:singularPrefLabel "styrelse"@sv ;
 .
 juho:p8211
   rdf:type juho-meta:Concept ;
@@ -96168,7 +96490,7 @@ juho:p8233
 juho:p8234
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p721 ;
+  rdfs:subClassOf yso:p38218 ;
   owl:equivalentClass yso:p22460 ;
   skos:altLabel "contingency planning"@en ;
   skos:altLabel "emergency preparedness"@en ;
@@ -96292,9 +96614,10 @@ juho:p8265
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p13810 ;
   skos:altLabel "opera"@sv ;
-  skos:prefLabel "ooppera (taiteet)"@fi ;
+  skos:altLabel "oppera"@fi ;
+  skos:prefLabel "oopperataide"@fi ;
   skos:prefLabel "opera (arts)"@en ;
-  skos:prefLabel "opera (konstarter)"@sv ;
+  skos:prefLabel "operakonst"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031029" ;
   juho-meta:hasPoiminta "opm" ;
@@ -96976,12 +97299,14 @@ juho:p8317
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p9101 ;
-  skos:altLabel "etiketter (kulturella alster)"@sv ;
+  skos:altLabel "etiketit (tuotteet)"@fi ;
   skos:altLabel "etiketter (lappar)"@sv ;
-  skos:altLabel "etiketter"@sv ;
-  skos:prefLabel "etiketit (tuotokset)"@fi ;
-  skos:prefLabel "etiketter (objekt)"@sv ;
+  skos:altLabel "etiketter (objekt)"@sv ;
+  skos:altLabel "etiketter (produkter)"@sv ;
+  skos:altLabel "varuetiketter"@sv ;
   skos:prefLabel "product labels"@en ;
+  skos:prefLabel "produktetiketter"@sv ;
+  skos:prefLabel "tuote-etiketit"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010309" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -98895,13 +99220,14 @@ juho:p8651
   juho-meta:hasPoiminta "tem" ;
 .
 juho:p8653
-  rdf:type juho-meta:Concept ;
+  rdf:type ysometa:DeprecatedConcept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p10087 ;
   skos:altLabel "överföring"@sv ;
   skos:prefLabel "siirto (viestintä)"@fi ;
   skos:prefLabel "transfer (communication)"@en ;
   skos:prefLabel "överföring (kommunikation)"@sv ;
+  ysometa:deprecatedReplacedBy juho:p482 ;
 .
 juho:p8655
   rdf:type juho-meta:Concept ;
@@ -99439,7 +99765,7 @@ juho:p8725
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasPoiminta "um" ;
   juho-meta:hasThematicGroup juho:p35 ;
-  juho-meta:related juho:p4431 ;
+  juho-meta:related juho:p14121 ;
 .
 juho:p8728
   rdf:type juho-meta:Concept ;
@@ -99800,13 +100126,14 @@ juho:p8792
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p16327 ;
-  skos:altLabel "elokuvataide"@fi ;
+  skos:altLabel "elokuva (taiteet)"@fi ;
+  skos:altLabel "elokuva"@fi ;
+  skos:altLabel "film (konstart)"@sv ;
   skos:altLabel "film"@sv ;
-  skos:altLabel "filmkonst"@sv ;
   skos:altLabel "spelfilm"@sv ;
   skos:prefLabel "cinema (art forms)"@en ;
-  skos:prefLabel "elokuva (taiteet)"@fi ;
-  skos:prefLabel "film (konstart)"@sv ;
+  skos:prefLabel "elokuvataide"@fi ;
+  skos:prefLabel "filmkonst"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031023" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -100052,7 +100379,7 @@ juho:p8822
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p12489 ;
+  owl:equivalentClass yso:p37792 ;
   skos:altLabel "fredsbevarande insatser"@sv ;
   skos:prefLabel "fredsbevarande operationer"@sv ;
   skos:prefLabel "peacekeeping operations"@en ;
@@ -100693,7 +101020,7 @@ juho:p8918
   skos:altLabel "tidningsmän"@sv ;
   skos:prefLabel "journalister"@sv ;
   skos:prefLabel "journalists"@en ;
-  skos:prefLabel "toimittajat"@fi ;
+  skos:prefLabel "toimittajat (media)"@fi ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20020104" ;
   juho-meta:hasPoiminta "stm" ;
@@ -100903,7 +101230,6 @@ juho:p8953
   juho-meta:hasPaivitetty "20020102" ;
   juho-meta:hasPoiminta "sm" ;
   juho-meta:hasThematicGroup juho:p35 ;
-  juho-meta:related juho:p4431 ;
 .
 juho:p8954
   rdf:type juho-meta:Concept ;
@@ -101381,7 +101707,7 @@ juho:p9008
   juho-meta:hasPoiminta "plm" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p39 ;
-  juho-meta:related juho:p4304 ;
+  juho-meta:related juho:p6092 ;
 .
 juho:p9012
   rdf:type juho-meta:Concept ;
@@ -101853,7 +102179,7 @@ juho:p9105
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p355 ;
+  rdfs:subClassOf yso:p38217 ;
   skos:altLabel "beredskapshöjning"@sv ;
   skos:altLabel "förstärkning av beredskapen"@sv ;
   skos:altLabel "intensifying of response"@en ;
@@ -102433,7 +102759,7 @@ juho:p92
   owl:equivalentClass yso:p18321 ;
   skos:altLabel "forest protection (nature conservation)"@en ;
   skos:prefLabel "forest conservation"@en ;
-  skos:prefLabel "metsien suojelu"@fi ;
+  skos:prefLabel "metsiensuojelu"@fi ;
   skos:prefLabel "skogsskydd (naturskydd)"@sv ;
   juho-meta:hasPaivitetty "20040701" ;
   juho-meta:hasPoiminta "eurodoc" ;
@@ -102639,7 +102965,7 @@ juho:p9240
   rdf:type skos:Concept ;
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p9246 ;
+  rdfs:subClassOf yso:p1340 ;
   skos:prefLabel "ajovalot"@fi ;
   skos:prefLabel "headlights"@en ;
   skos:prefLabel "körljus"@sv ;
@@ -102720,6 +103046,8 @@ juho:p9256
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20000428" ;
   juho-meta:hasPoiminta "um" ;
+  juho-meta:hasSelite "Ulosliputuksella tarkoitetaan sitä, että aluksen omistava varustamo rekisteröi aluksen jonkin muun kuin oman kotivaltionsa alusrekisteriin."@fi ;
+  juho-meta:hasThematicGroup juho:p262 ;
 .
 juho:p926
   rdf:type juho-meta:Concept ;
@@ -102980,7 +103308,7 @@ juho:p9304
 juho:p9305
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf juho:p4920 ;
+  owl:equivalentClass yso:p37815 ;
   skos:prefLabel "taksiliikenne"@fi ;
   skos:prefLabel "taxi traffic"@en ;
   skos:prefLabel "taxitrafik"@sv ;
@@ -103236,7 +103564,6 @@ juho:p9342
   juho-meta:hasPaivitetty "20020123" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p39 ;
-  juho-meta:related juho:p4304 ;
   juho-meta:related juho:p6092 ;
 .
 juho:p9343
@@ -103736,9 +104063,9 @@ juho:p9483
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p11977 ;
-  skos:prefLabel "gränsvärden"@sv ;
-  skos:prefLabel "limiting values"@en ;
-  skos:prefLabel "raja-arvot"@fi ;
+  skos:prefLabel "gränsvärden (begränsningar)"@sv ;
+  skos:prefLabel "limiting values (restrictions)"@en ;
+  skos:prefLabel "raja-arvot (rajoitukset)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20010305" ;
   juho-meta:hasPoiminta "stm" ;
@@ -104078,7 +104405,6 @@ juho:p953
   juho-meta:hasPaivitetty "20010306" ;
   juho-meta:hasPoiminta "lvm" ;
   juho-meta:hasThematicGroup juho:p262 ;
-  juho-meta:related juho:p1193 ;
 .
 juho:p9534
   rdf:type skos:Concept ;
@@ -105071,9 +105397,14 @@ juho:p9698
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   rdfs:subClassOf yso:p10363 ;
-  skos:prefLabel "customs foremen"@en ;
-  skos:prefLabel "tullipäällysmiehet"@fi ;
-  skos:prefLabel "tulluppsyningsmän"@sv ;
+  skos:altLabel "customs officers"@en ;
+  skos:altLabel "tullimies"@fi ;
+  skos:hiddenLabel "customs official"@en ;
+  skos:hiddenLabel "tullivirkamies"@fi ;
+  skos:hiddenLabel "tulltjänsteman"@sv ;
+  skos:prefLabel "customs officials"@en ;
+  skos:prefLabel "tullivirkamiehet"@fi ;
+  skos:prefLabel "tulltjänstemän"@sv ;
   juho-meta:hasAsiasanalaji "amm" ;
   juho-meta:hasPaivitetty "20011031" ;
   juho-meta:hasPoiminta "stm" ;
@@ -105681,7 +106012,7 @@ juho:p976
   skos:altLabel "betyg"@sv ;
   skos:prefLabel "diplomas (certificates)"@en ;
   skos:prefLabel "intyg"@sv ;
-  skos:prefLabel "todistukset"@fi ;
+  skos:prefLabel "todistukset (asiakirjat)"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020808" ;
   juho-meta:hasPoiminta "eurodocvp" ;
@@ -106038,9 +106369,9 @@ juho:p982
   skos:altLabel "maat"@fi ;
   skos:altLabel "nationer"@sv ;
   skos:altLabel "stater"@sv ;
-  skos:prefLabel "stater (länder)"@sv ;
-  skos:prefLabel "states (territorial entities)"@en ;
-  skos:prefLabel "valtiot (alueelliset kokonaisuudet)"@fi ;
+  skos:prefLabel "stater"@sv ;
+  skos:prefLabel "states"@en ;
+  skos:prefLabel "valtiot"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020812" ;
   juho-meta:hasPaivitetty "20160419" ;
@@ -106283,13 +106614,16 @@ juho:p9866
 juho:p9867
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
-  rdfs:subClassOf yso:p4811 ;
+  rdfs:subClassOf yso:p38217 ;
+  skos:altLabel "opiskelupaikan haku"@fi ;
   skos:prefLabel "applying for education"@en ;
   skos:prefLabel "koulutukseen hakeutuminen"@fi ;
   skos:prefLabel "sökande till utbildning"@sv ;
   juho-meta:hasPaivitetty "20010711" ;
   juho-meta:hasPoiminta "tem" ;
   juho-meta:hasThematicGroup juho:p115 ;
+  juho-meta:related juho:p4288 ;
+  juho-meta:related juho:p4289 ;
 .
 juho:p9868
   rdf:type juho-meta:Concept ;
@@ -106376,10 +106710,11 @@ juho:p989
   rdf:type juho-meta:Concept ;
   rdfs:subClassOf juho-meta:juho-kasitteet ;
   owl:equivalentClass yso:p1912 ;
-  skos:altLabel "regi (aktivitet)"@sv ;
+  skos:altLabel "ohjaaminen (taiteet ja media)"@fi ;
+  skos:altLabel "ohjaus (esityksen)"@fi ;
   skos:altLabel "regi"@sv ;
-  skos:prefLabel "direction (artistic creation)"@en ;
-  skos:prefLabel "ohjaus (taide)"@fi ;
+  skos:prefLabel "direction (arts and media)"@en ;
+  skos:prefLabel "ohjaus (taiteet ja media)"@fi ;
   skos:prefLabel "regi (konstnärligt skapande)"@sv ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20031014" ;
@@ -106936,8 +107271,8 @@ juho:p998
   skos:altLabel "julkiset kuulutukset"@fi ;
   skos:altLabel "offentliga tillkännagivanden"@sv ;
   skos:prefLabel "kungörelser"@sv ;
-  skos:prefLabel "kuulutukset"@fi ;
   skos:prefLabel "public notices"@en ;
+  skos:prefLabel "viralliset kuulutukset"@fi ;
   juho-meta:hasLahde "ysa" ;
   juho-meta:hasPaivitetty "20020807" ;
   juho-meta:hasPoiminta "tem" ;
