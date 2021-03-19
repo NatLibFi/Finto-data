@@ -1,4 +1,4 @@
-Ohjeistus YSO-paikkojen PNR-koordinaattitietojen ekstrahointiin:
+## Ohjeistus YSO-paikkojen PNR-koordinaattitietojen ekstrahointiin:
 
 Aloita lataamalla tarvittava .gkpg-tiedosto osoitteesta
 http://www.nic.funet.fi/index/geodata/mml/paikannimet/
@@ -8,7 +8,7 @@ Maanmittauslaitoksen .gpkg-tiedostossa ESPG:3067 - ETRS89 / TM35FIN(E,N) -muodos
 nämä täytyy muuntaa WGS84-koordinaattitason mukaisiksi koordinaattipisteiksi.
 Tämä tapahtuu esimerkiksi seuraavasti:
 
-Avaa QGIS 3.16.1 -ohjelma (saatavilla HY:n Software Centeristä)
+### Avaa QGIS 3.16.1 -ohjelma (saatavilla HY:n Software Centeristä)
 
 1) Avaa Database -> Database Manager
 2) GeoPackage -> New Connection
@@ -25,7 +25,7 @@ Layers-paneelista (jos tämä ei ole näkyvissä, saat sen näkyviin valitsemall
 View -> Panels -> Layers).
 Ohjelman tulisi piirtää Suomen muotoinen kartta koordinaattipisteistä.
 
-Seuraavaksi tavoitteena on ekstrahoida vain haluamamme tiedot haluamassamme muodossa.
+### Seuraavaksi tavoitteena on ekstrahoida vain haluamamme tiedot haluamassamme muodossa.
 Tämä tapahtuu seuraavasti:
 
 1) Valitse WGS84-muotoinen kerros
@@ -43,7 +43,7 @@ jossa on viiden desimaalin tarkkuudella määritetty itäinen WGS84-koordinaatti
 11) Toista edelliset kohdat käyttäen arvoja "WGS84_N" ja round($y, 5) luodaksesi
 pohjoisen WGS84-koordinaattisarakkeen.
 
-Lopuksi haluamme tallentaa .csv-tiedostoon tarvitsemamme arvot. Tämä tapahtuu seuraavasti:
+### Lopuksi haluamme tallentaa .csv-tiedostoon tarvitsemamme arvot. Tämä tapahtuu seuraavasti:
 
 1) Paina oikealla painikkeella WGS84-muotoista kerrosta -> Export -> Save Features As..
 2) Format: Comma Separated Value [CSV]
@@ -65,7 +65,7 @@ Voit poistaa duplikaatit tiedostosta, esimerkiksi Excelissä tämän voi tehdä 
 4) "Remove Duplicates...". Järjestelmä poistaa duplikaattiarvot.
 5) Voit tämän jälkeen tallentaa tämän duplikaatteja sisältämättömän taulukon.
 
-Seuraavaksi voit vielä normalisoida kaikki arvot viiteen desimaaliin seuraavasti (ensimmäinen vaihe oli typistänyt päättyvät nollat):
+### Seuraavaksi voit vielä normalisoida kaikki arvot viiteen desimaaliin seuraavasti (ensimmäinen vaihe oli typistänyt päättyvät nollat):
 
 1) Valitse edellinen taulukko ja sieltä B- ja C-sarakkeet (WGS84_N, WGS84_E) ja paina oikeaa nappia
 2) Valitse "Format Cells" avautuva ikkunasta
@@ -81,7 +81,7 @@ Huom2! Suurinta osaa PNR:n paikoista ei ole käytetty YSO-paikoissa. Tämä on o
 
 Jokaisella sanaston julkaisukerralla tehtävää (sisältyy toskos.sh-komentosarjaan):
 
-Edellisestä taulukosta voidaan ottaa vain käytetyt arvot seuraavasti (nopeuttaa skosify-ohjelman ajoa):
+### Edellisestä taulukosta voidaan ottaa vain käytetyt arvot seuraavasti (nopeuttaa skosify-ohjelman ajoa):
 
 1) Haetaan käytetyt paikkaID:t seuraavasti ja tallennetaan ne tiedostoon:
 grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" /srv/Finto-data/vocabularies/yso-paikat/yso-paikat-vb-dump.rdf | sort -u > yso-paikat-usedPNRs.txt
