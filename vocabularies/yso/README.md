@@ -30,6 +30,9 @@ WHERE {
   FILTER(!STRSTARTS(STR(?p),STR(yso-meta:developmentComment))) .
 }
 ```
+* Samalla on hyvä kopioida kehitysversiota vastaava julkaisuversio jäädytetyn version kansioon ja luoda tälle oma graafi kehityspalvelimen Skosmoksen config-tiedostoon selaamista varten
+* Kopioi myös kehitysversion ajanhetkeä vastaava yso-paikat ja yhdistä se yson julkaisuversioon, esim ```riot -out Turtle yso-skos.ttl yso-paikat.ttl > yso-combined.ttl```
+* Katso että yson kehitysversiosta, yso-paikoista ja yso-combinedista on versiot sekä turtlena ja rdf/xml:nä
 
 ### Ratkaisuja yleisiin ongelmatilanteisiin
 
