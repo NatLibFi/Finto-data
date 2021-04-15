@@ -474,7 +474,7 @@ def convert(cs, vocabulary_name, language, g, g2):
     for conc in g.subjects(RDF.type, SKOS.Concept):
         pref_label = g.preferredLabel(conc, lang=language)
         if pref_label:
-            pref_labels.add(str(pref_label[0][1]))
+            pref_labels.add(str(pref_label[0][1]).lower())
 
     concs = []
     
@@ -770,8 +770,10 @@ def convert(cs, vocabulary_name, language, g, g2):
         
         for valueProp in sorted(getValues(g, concept, [SKOS.altLabel, YSOMETA.singularPrefLabel,
                                                 YSOMETA.singularAltLabel, SKOS.hiddenLabel], language=language),
-                                key=lambda o: str(o.value)): 
-            if valueProp.prop != SKOS.altLabel and str(valueProp.value) in pref_labels:
+                                key=lambda o: str(o.value)):
+            #  singularPrefLabel, singularAltLabel ja hiddenLabel jätetään pois 45X-kentistä,
+            #  jos ne kirjainkoosta riippumatta ovat jossain 15X-kentässä
+            if valueProp.prop != SKOS.altLabel and str(valueProp.value.lower()) in pref_labels:
                 continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
