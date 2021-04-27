@@ -2,6 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 @prefix mts: <http://urn.fi/URN:NBN:fi:au:mts:> .
+@prefix ns1: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
@@ -22298,14 +22299,6 @@ mts:m1202 a skos:Concept ;
     skos:scopeNote "heijastettava kuvatallenne"@fi,
         "bärare för projicerbara bilder"@sv .
 
-mts:m1203 a skos:Concept ;
-    skos:exactMatch yso:p14340 ;
-    skos:example "F19 (rykmentti)"@fi,
-        "IR 61:an (regemente)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "rykmentti"@fi,
-        "regemente"@sv .
-
 mts:m1207 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -39530,14 +39523,6 @@ mts:m87 a skos:Concept ;
         "käytettävissä ilman laitetta"@fi,
         "omedierad"@sv .
 
-mts:m870 a skos:Concept ;
-    skos:exactMatch yso:p5046 ;
-    skos:example "Cont Rideau (työryhmä)"@fi,
-        "Cont Rideau (arbetsgrupp)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "työryhmä"@fi,
-        "arbetsgrupp"@sv .
-
 mts:m876 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -40105,6 +40090,15 @@ mts:m1100 a skos:Concept ;
     skos:prefLabel "yhtye"@fi,
         "musikgrupp"@sv .
 
+mts:m1203 a skos:Concept ;
+    skos:broader mts:m4678 ;
+    skos:exactMatch yso:p14340 ;
+    skos:example "F19 (rykmentti)"@fi,
+        "IR 61:an (regemente)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "rykmentti"@fi,
+        "regemente"@sv .
+
 mts:m1228 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -40249,20 +40243,6 @@ mts:m1405 a skos:Concept ;
     skos:prefLabel "skin"@en,
         "vuota"@fi,
         "hud"@sv .
-
-mts:m1431 a skos:Concept ;
-    skos:altLabel "työkeskus"@fi,
-        "arbetscentral"@sv,
-        "verksamhetscentral"@sv ;
-    skos:definition "Vammaisille ja vajaakuntoisille päivätoimintaa tarjoava sosiaalihuollon yksikkö."@fi,
-        "Enhet inom socialvård, som erbjuder dagverksamhet för personer med funktionsnedsättning eller nedsatt arbetsförmåga."@sv ;
-    skos:exactMatch yso:p10358,
-        yso:p800 ;
-    skos:example "Auraamo (toimintakeskus)"@fi,
-        "Vägskäl (verksamhetscenter)"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "toimintakeskus"@fi,
-        "verksamhetscenter"@sv .
 
 mts:m1486 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -50338,6 +50318,15 @@ mts:m853 a skos:Concept ;
     skos:prefLabel "projekti"@fi,
         "projekt"@sv .
 
+mts:m870 a skos:Concept ;
+    skos:broader mts:m4691 ;
+    skos:exactMatch yso:p5046 ;
+    skos:example "Cont Rideau (työryhmä)"@fi,
+        "Cont Rideau (arbetsgrupp)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "työryhmä"@fi,
+        "arbetsgrupp"@sv .
+
 mts:m1045 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -50453,6 +50442,21 @@ mts:m1402 a skos:Concept ;
     skos:prefLabel "vellum"@en,
         "veliini"@fi,
         "veläng"@sv .
+
+mts:m1431 a skos:Concept ;
+    skos:altLabel "työkeskus"@fi,
+        "arbetscentral"@sv,
+        "verksamhetscentral"@sv ;
+    skos:broader mts:m4668 ;
+    skos:definition "Vammaisille ja vajaakuntoisille päivätoimintaa tarjoava sosiaalihuollon yksikkö."@fi,
+        "Enhet inom socialvård, som erbjuder dagverksamhet för personer med funktionsnedsättning eller nedsatt arbetsförmåga."@sv ;
+    skos:exactMatch yso:p10358,
+        yso:p800 ;
+    skos:example "Auraamo (toimintakeskus)"@fi,
+        "Vägskäl (verksamhetscenter)"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "toimintakeskus"@fi,
+        "verksamhetscenter"@sv .
 
 mts:m1445 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -53434,19 +53438,6 @@ mts:m337 a skos:Concept ;
         "oheistekstin kirjoittaja"@fi,
         "författare till presentationstext"@sv .
 
-mts:m4668 a skos:Concept ;
-    skos:altLabel "hoitolaitos"@fi ;
-    skos:closeMatch yso:p6034 ;
-    skos:definition "Sosiaalihuoltopalveluja tarjoava laitos."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4695,
-        mts:m4705,
-        mts:m4741,
-        mts:m4745,
-        mts:m4763,
-        mts:m4766 ;
-    skos:prefLabel "sosiaalihuoltolaitos"@fi .
-
 mts:m4764 a skos:Concept ;
     skos:altLabel "aikuisopisto"@fi,
         "kansalaisopisto"@fi,
@@ -53676,6 +53667,20 @@ mts:m3285 a skos:Concept ;
     skos:prefLabel "poet"@en,
         "runoilija"@fi,
         "diktare"@sv .
+
+mts:m4668 a skos:Concept ;
+    skos:altLabel "hoitolaitos"@fi ;
+    skos:closeMatch yso:p6034 ;
+    skos:definition "Sosiaalihuoltopalveluja tarjoava laitos."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1431,
+        mts:m4695,
+        mts:m4705,
+        mts:m4741,
+        mts:m4745,
+        mts:m4763,
+        mts:m4766 ;
+    skos:prefLabel "sosiaalihuoltolaitos"@fi .
 
 mts:m2443 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -54102,28 +54107,6 @@ mts:m4536 a skos:Concept ;
     skos:prefLabel "esitys"@fi,
         "framförande"@sv .
 
-mts:m4691 a skos:Concept ;
-    skos:altLabel "asiamies (yhteisötyyppi)"@fi,
-        "jaosto"@fi,
-        "seurantaryhmä"@fi,
-        "yksikkö (toimielin)"@fi ;
-    skos:closeMatch yso:p4052 ;
-    skos:definition "Jonkin yhteisön määrätehtäviä hoitava yksikkö, elin (Kielitoimiston sanakirja)."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4658,
-        mts:m4666,
-        mts:m4667,
-        mts:m4682,
-        mts:m4690,
-        mts:m4697,
-        mts:m4710,
-        mts:m4729,
-        mts:m4758,
-        mts:m4760,
-        mts:m4785 ;
-    skos:prefLabel "toimielin"@fi ;
-    skos:scopeNote "Valtionhallinnon osalta käytetään vain määräaikaisista toimielimistä; pysyvistä käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m4669'>viranomainen</a>."@fi .
-
 mts:m2349 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -54228,6 +54211,29 @@ mts:m4438 a skos:Concept ;
     skos:prefLabel "student at"@en,
         "oppilaitos"@fi,
         "läroanstalt"@sv .
+
+mts:m4691 a skos:Concept ;
+    skos:altLabel "asiamies (yhteisötyyppi)"@fi,
+        "jaosto"@fi,
+        "seurantaryhmä"@fi,
+        "yksikkö (toimielin)"@fi ;
+    skos:closeMatch yso:p4052 ;
+    skos:definition "Jonkin yhteisön määrätehtäviä hoitava yksikkö, elin (Kielitoimiston sanakirja)."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4658,
+        mts:m4666,
+        mts:m4667,
+        mts:m4682,
+        mts:m4690,
+        mts:m4697,
+        mts:m4710,
+        mts:m4729,
+        mts:m4758,
+        mts:m4760,
+        mts:m4785,
+        mts:m870 ;
+    skos:prefLabel "toimielin"@fi ;
+    skos:scopeNote "Valtionhallinnon osalta käytetään vain määräaikaisista toimielimistä; pysyvistä käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m4669'>viranomainen</a>."@fi .
 
 mts:m611 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -54890,38 +54896,6 @@ mts:m731 a skos:Concept ;
         "johdettu ekspressio"@fi,
         "härlett uttryck"@sv .
 
-mts:m4678 a skos:Concept ;
-    skos:altLabel "joukko-osasto"@fi,
-        "joukkue"@fi,
-        "sotilaspartio"@fi,
-        "sotilasryhmä"@fi,
-        "taisteluosasto"@fi ;
-    skos:closeMatch yso:p22577,
-        yso:p3948 ;
-    skos:definition "Asevoimien organisaatio."@fi ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4664,
-        mts:m4671,
-        mts:m4675,
-        mts:m4685,
-        mts:m4692,
-        mts:m4708,
-        mts:m4713,
-        mts:m4726,
-        mts:m4730,
-        mts:m4738,
-        mts:m4744,
-        mts:m4750,
-        mts:m4762,
-        mts:m4773,
-        mts:m4781,
-        mts:m4782,
-        mts:m4783,
-        mts:m4786,
-        mts:m4787 ;
-    skos:prefLabel "sotilasyksikkö"@fi ;
-    skos:scopeNote "Käytetään kun tarkempaa sotilasyksikköä kuvaavaa termiä ei ole tai sitä ei nähdä tarpeelliseksi käyttää."@fi .
-
 mts:m3797 a skos:Concept ;
     skos:inScheme mts: ;
     skos:narrower mts:m3770,
@@ -54982,6 +54956,39 @@ mts:m4253 a skos:Concept ;
     skos:prefLabel "also issued as"@en,
         "julkaistu myös"@fi,
         "utgiven även"@sv .
+
+mts:m4678 a skos:Concept ;
+    skos:altLabel "joukko-osasto"@fi,
+        "joukkue"@fi,
+        "sotilaspartio"@fi,
+        "sotilasryhmä"@fi,
+        "taisteluosasto"@fi ;
+    skos:closeMatch yso:p22577,
+        yso:p3948 ;
+    skos:definition "Asevoimien organisaatio."@fi ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1203,
+        mts:m4664,
+        mts:m4671,
+        mts:m4675,
+        mts:m4685,
+        mts:m4692,
+        mts:m4708,
+        mts:m4713,
+        mts:m4726,
+        mts:m4730,
+        mts:m4738,
+        mts:m4744,
+        mts:m4750,
+        mts:m4762,
+        mts:m4773,
+        mts:m4781,
+        mts:m4782,
+        mts:m4783,
+        mts:m4786,
+        mts:m4787 ;
+    skos:prefLabel "sotilasyksikkö"@fi ;
+    skos:scopeNote "Käytetään kun tarkempaa sotilasyksikköä kuvaavaa termiä ei ole tai sitä ei nähdä tarpeelliseksi käyttää."@fi .
 
 mts:m2370 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -55562,7 +55569,7 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-04-24T00:02:34+00:00"^^xsd:dateTime ;
+    dct:modified "2021-04-27T00:02:29+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
@@ -55579,5 +55586,6 @@ Metadataordlistan innehåller inte terminologi som beskriver ett verks ämne, t.
         <http://rdvocab.info/termList/RDAMediaType.rdf>,
         <http://rdvocab.info/termList/fontSize.rdf>,
         <http://www.w3.org/2000/01/rdf-schema>,
-        <http://www.w3.org/2004/02/skos/core> .
+        <http://www.w3.org/2004/02/skos/core> ;
+    ns1:homepage <https://www.kiwi.fi/display/Finto/Metatietosanasto> .
 
