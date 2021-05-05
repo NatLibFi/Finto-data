@@ -71,14 +71,7 @@ def get_member_groups(g, group, uris):
         get_member_groups(g, m[1], uris)
 
 def readCommandLineArguments():
-    parser = argparse.ArgumentParser(description="Program for converting Finto SKOS-vocabularies into MARC (.mrcx).")
-    parser.add_argument("-c", "--config",
-        help="Config file location. The key/value pairs defined in the config file are overwritten with possible CLI key/value pairs.")
-    parser.add_argument("-cs", "--config_section",
-        help="Config section identifier. Set if vocabulary code is different from section identifier.")    
-    parser.add_argument("-e", "--endpoint", help="Endpoint address to be used for querying linked concepts.")
-    parser.add_argument("-eg", "--endpoint_graphs",
-        help="The graphs one wants to query from the endpoint, e.g., http://www.yso.fi/onto/yso/. In case of multiple, separate them with space.")
+    parser = argparse.ArgumentParser(description="Program for converting Finto SKOS-vocabularies into MARC (.mrcx).") 
     parser.add_argument("-ignoreOtherGraphWarnings", "--ignore_other_graph_warnings",
         help="Do you want ignore warnings produced whilst processing other graphs? Set this flag only if you want to ignore.", action="store_true")
     parser.add_argument("-i", "--input", help="Input file location, e.g., yso-skos.ttl")
@@ -90,16 +83,11 @@ def readCommandLineArguments():
     parser.add_argument("-m", "--multilanguage_vocabulary", action='store_true',
         help="Is the vocabulary using language specified vocabulary codes, e.g., yso/fin? Set this flag only if it is.")
     parser.add_argument("-log", "--log_file", help="Log file location.")
-    parser.add_argument("-pv", "--pickle_vocabulary",
-        help="File location for the vocabulary in Python's pickle format for faster execution. \
-        If file's modification date is earlier than today, the file is overwritten. Else the vocabulary is loaded from this file.")
     parser.add_argument("-modificationDates", "--modification_dates",
         help="File location for pickle file, which contains latest modification dates for concepts (e. g. {'concept uri': 'YYYY-MM-DD'}) \
         The file is updated after new records are created, if keepModifiedAfter is left out of command line arguments") 
     parser.add_argument("-keepModifiedAfter", "--keep_modified_after",
         help="Create separate batch of MARC21 files for concepts modified after the date given (set in YYYY-MM-DD format).")
-    parser.add_argument("-keepDeprecatedAfter", "--keep_deprecated_after",
-        help="Keep deprecated concepts deprecated after (not inclusive) the date given (set in YYYY-MM-DD format). Set to 'ALL' for no limits and 'NONE' to discard all.")
         
     args = parser.parse_args()
     return args
@@ -248,8 +236,14 @@ def convert(cs, language, g):
     # vain nämä mts-käsiteryhmät otetaan mukaan, ryhmän nimestä ei tehdä MARC21-tietuetta
     ids = {"occupations": ['m2332'],
         "titles": ['m121', 
-                    'm3764']
+                   'm3764'],
+        "organisation types": ['m196']            
         }
+    marc21_locations = {"occupations": {'code suffix': '74', 'subfield code': 'a'},
+                        "titles": {'code suffix': '68', 'subfield code': 'd'},
+                        "organisation types": {'code suffix': '68', 'subfield code': 'a'}
+
+    }
 
     uris = {}
     for key in ids:
@@ -261,7 +255,7 @@ def convert(cs, language, g):
         for key in uris:
             if any(str(group).endswith(uri) for uri in uris[key]):
                 get_member_groups(g, group, uris[key])
-    
+       
     concs = []
     if helper_variables['keepModified']:
         concs = []    
@@ -277,7 +271,7 @@ def convert(cs, language, g):
 
     for concept in concs:
         #vain ammateista ja arvonimistä luodaan MARC21-tietueet         
-        if not (concept in uris['occupations'] or concept in uris['titles']):
+        if not any(concept in uris[key] for key in uris):
             continue
         created_concepts.add(str(concept))
         incrementor += 1
@@ -327,13 +321,11 @@ def convert(cs, language, g):
         elif len(valueProps) != 1:
             logging.warning("Multiple prefLabels detected for concept %s in language %s. Choosing the first." %
                   (concept, language)) 
-            
-        if concept in uris['occupations']:
-            tag = "174"
-            subfield_code = "a"
-        elif concept in uris['titles']:
-            tag = "168"
-            subfield_code = "d"
+
+        for key in uris:
+            if concept in uris[key]:
+                tag = "1" + marc21_locations[key]['code suffix']
+                subfield_code = marc21_locations[key]['subfield code']
 
         rec.add_field(
             Field(
@@ -358,12 +350,10 @@ def convert(cs, language, g):
                 if str(valueProp.value) in seen_values:
                     continue            
             seen_values.add(str(valueProp.value))
-            if concept in uris['occupations']:
-                tag = "474"
-                subfield_code = "a"
-            elif concept in uris['titles']:
-                tag = "468"
-                subfield_code = "d"
+            for key in uris:
+                if concept in uris[key]:
+                    tag = "4" + marc21_locations[key]['code suffix']
+                    subfield_code = marc21_locations[key]['subfield code']
 
             rec.add_field(
                 Field(
@@ -393,12 +383,10 @@ def convert(cs, language, g):
                 # otetaan vain viittaukset samaan sanastoon
                 continue
 
-            if concept in uris['occupations']:
-                tag = "774"
-                subfield_code = "a"
-            elif concept in uris['titles']:
-                tag = "768"
-                subfield_code = "d" 
+            for key in uris:
+                if concept in uris[key]:
+                    tag = "7" + marc21_locations[key]['code suffix']
+                    subfield_code = marc21_locations[key]['subfield code']
             
             sub2 = "mts" + "/" + LANGUAGES[valueProp.value.language]
             fields.append(
@@ -420,7 +408,7 @@ def convert(cs, language, g):
             o.value().lower()
             )):
             rec.add_field(sorted_field)
-
+          
         writer_records_counter += 1
         writer.write(rec)
 
@@ -442,7 +430,7 @@ def convert(cs, language, g):
     if helper_variables['keepModified']:
         concs = []
         for conc in g.subjects(RDF.type, SKOS.Concept):
-            if conc in uris['occupations'] or conc in uris['titles']:
+            if any(conc in uris[key] for key in uris):
                 concs.append(str(conc))   
         for conc in modified_dates:
             if conc not in concs:
