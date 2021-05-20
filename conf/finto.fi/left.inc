@@ -1,13 +1,40 @@
 {# This is the template for the front page welcome box. You can enter any html here and show different language versions by using the lang value in a twig conditional as demonstrated below. #}
 <div class="welcome-box">
 {% if request.lang == 'fi' %}
-<h1>Tervetuloa Finto-palveluun!</h1>
-<p>Finto on suomalainen sanasto- ja ontologiapalvelu, joka mahdollistaa sanastojen julkaisun ja selailun. Palvelu tarjoaa myös <a href="http://api.finto.fi/">rajapinnat</a> sanastojen ja ontologioiden hyödyntämiseen muissa ohjelmistoissa.</p>
+
+<h1>Tervetuloa Finto.fi:hin!</h1>
+
+<p>Finto.fi on keskitetty palvelu eri alojen yhteentoimiville sanastoille,
+ontologioille ja luokituksille. Voit hyödyntää Finto.fi:tä sanastojen
+selailuun tai integroida Finton sanastot omaan järjestelmääsi <a
+href="https://api.finto.fi">avoimien rajapintojen</a> avulla.</p>
+
+<p><a href="https://ai.finto.fi">Finto AI</a>:sta löydät myös
+käyttöliittymän ja rajapinnat automaattiseen sisällönkuvailuun.</p>
+
 {% elseif request.lang == 'sv' %}
-<h1>Välkommen till Finto-service!</h1>
-<p>Finto är en finländsk tesaurus- och ontologiservice som erbjuder möjlighet att publicera och använda terminologier. Servicen erbjuder också <a href="http://api.finto.fi/">gränssnitt</a> för utnyttjande av ontologier i andra program.</p>
+
+<h1>Välkommen till Finto.fi!</h1>
+
+<p>Finto.fi är en centraliserad service för samverkansfrämjande tesaurer,
+ontologier och klassifikationer inom olika områden. Du kan utnyttja Finto.fi
+för bläddring i vokabulärer eller integrera vokabulärerna i Finto med ditt
+eget system genom <a href="https://api.finto.fi">öppna gränssnitt</a>.</p>
+
+<p>På <a href="https://ai.finto.fi">Finto AI</a> hittar du också ett
+användargränssnitt och ett API för automatisk innehållsbeskrivning.</p>
+
 {% elseif request.lang == 'en' %}
-<h1>Welcome to the Finto service!</h1>
-<p>Finto is a Finnish thesaurus and ontology service, which enables both the publication and browsing of vocabularies. The service also offers <a href="http://api.finto.fi/">interfaces</a> for integrating the thesauri and ontologies into other applications and systems.</p>
+
+<h1>Welcome to Finto.fi!</h1>
+
+<p>Finto.fi is a centralized service for interoperable thesauri, ontologies and
+classification schemes for different subject areas. You can use Finto.fi to
+browse vocabularies or integrate the vocabularies into your own system using
+the <a href="https://api.finto.fi">open APIs</a>.</p>
+
+<p><a href="https://ai.finto.fi">Finto AI</a> provides a user interface and
+API for automated subject indexing.</p>
+
 {% endif %}
 </div>
