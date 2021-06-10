@@ -298,12 +298,17 @@ def main():
         asteri_str = 'Asteri ID: {}'.format(recid)
         g.add((uri, id_prop, Literal(asteri_str)))
 
-        # ISNI, ORCID, VIAF etc. identifiers
+        # ISNI, ORCID, VIAF etc. identifiers & deprecated URNs
         for f in rec.get_fields('024'):
             if 'q' in f and f['q'].lower().startswith('yritys- ja yhteisötunnus') and 'a' in f:
                 yt = f['a'].replace(' ', '')
                 yt_str = 'Y-tunnus: {}'.format(yt)
                 g.add((uri, id_prop, Literal(yt_str)))
+
+            if 'z' in f and '2' in f and f['2'] == 'urn':
+                urn = f['z'].replace(' ', '')
+                urn_uri = URIRef(urn)
+                g.add((urn_uri, DCT.isReplacedBy, uri))
 
             if '2' not in f or 'a' not in f:
                 continue
