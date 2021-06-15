@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="cn-metadata.ttl rdaa.ttl rdac.ttl cn.ttl"
+INFILES="cn-metadata.ttl rdaa.ttl rdac.ttl cn.ttl cn-finaf-replacedby.nt"
 OUTFILE=cn-skos.ttl
 
 LOGFILE=skosify.log
