@@ -12,8 +12,11 @@ TEROsta poistettiin loppuvuonna 2017 sellaiset TERO-käsitteet, jotka oli muodos
 * Mututus
 
 1) Ajamalla skriptin cleanAndFixTero.py toimitetulle lähdetiedostolle (turtle)
+
 -> poistat Termieditorin käyttämät ylimääräiset triplet
+
 -> lisäät määrittelyt:
+
 - terometa.Concept rdfs.subClassOf owl.Class
 - terometa.Class rdfs.subClassOf owl.Class
 - tero:[xyz] rdf:type terometa.Concept
@@ -72,9 +75,13 @@ c) Muutostyypin tunnus
 4) Tuo erikoisontologian ja uusimman jäädytetyn yson kehitysversion yhdistävä tiedosto TBC:hen
 
 5) Aseta tarvittaessa TBC:ssä:
+
 -> näytettävien käsitteiden määrä
+
 -> fi sv en -kieliasetukset
+
 -> tarvittavat SKOS-importtaukset
+
 -> käyttöön 'human readable labels'
 
 6) Jos tiedosto näyttää TBC:ssä tarkasteltuna oikeelliselta, erikoisontologian kehitystiedosto on valmis
