@@ -9,7 +9,7 @@ TEROsta poistettiin loppuvuonna 2017 sellaiset TERO-käsitteet, jotka oli muodos
 
 ### Näin tuotat mutu-raportin ja luot uuden kehitystiedoston
 
-# Mututus
+* Mututus
 
 1) Ajamalla skriptin cleanAndFixTero.py toimitetulle lähdetiedostolle (turtle)
 
@@ -64,7 +64,7 @@ b) Linkki erikoisontologian YSO-käsitteeseen
 c) Muutostyypin tunnus
 
 
-# Erikoisontologian kehitystiedoston luominen
+* Erikoisontologian kehitystiedoston luominen
 
 1) poista mututusta varten luomastasi ontoripillä_tuotettu_ja_tarkistettu_erikoisontologia.ttl-tiedostosta kaikki yso-triplet, joita ontorip ei saanut poistettua.
 
