@@ -9011,8 +9011,8 @@ mts:m2221 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "Kuvailun perustana versio 21.10.1999."@fi,
-        "Beskrivningen baserad på version 21.10.1999."@sv .
+    skos:prefLabel "Kuvailun perustana versio PP.KK.VVVV."@fi,
+        "Beskrivningen baserad på version DD.MM.ÅÅÅÅ."@sv .
 
 mts:m2222 a isothes:ConceptGroup,
         skos:Collection ;
@@ -14899,7 +14899,12 @@ mts:m4462 a isothes:ConceptGroup,
         mts:m4551,
         mts:m4554,
         mts:m4555,
-        mts:m4557 ;
+        mts:m4557,
+        mts:m4800,
+        mts:m4801,
+        mts:m4803,
+        mts:m4804,
+        mts:m4806 ;
     skos:prefLabel "related expression of agent"@en,
         "Toimijan ja ekspression välinen suhde"@fi,
         "Relation mellan aktör och uttryck"@sv .
@@ -15017,7 +15022,12 @@ mts:m4465 a isothes:ConceptGroup,
         mts:m4522,
         mts:m4587,
         mts:m4588,
-        mts:m4591 ;
+        mts:m4591,
+        mts:m4799,
+        mts:m4802,
+        mts:m4805,
+        mts:m4807,
+        mts:m4808 ;
     skos:prefLabel "related work of agent"@en,
         "Toimijan ja teoksen välinen suhde"@fi,
         "Relation mellan aktör och verk"@sv .
@@ -15483,7 +15493,7 @@ mts:m4543 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50156 ;
-    skos:definition "Liittää tomijan teoksen ekspressioon, joka on syntynyt tarkistamalla tai selkeyttämällä aiempaa sisältöä, tai valitsemalla ja kokoamalla yhden tai useamman teoksen tekijän teoksia tai niiden osia. Vastavuoroinen suhde: toimittaja."@fi,
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka on syntynyt tarkistamalla tai selkeyttämällä aiempaa sisältöä, tai valitsemalla ja kokoamalla yhden tai useamman teoksen tekijän teoksia tai niiden osia. Vastavuoroinen suhde: toimittaja."@fi,
         "Sammankopplar aktör med ett verks uttryck, som har skapats genom att granska eller förtydliga tidigare innehåll, eller genom att välja ut och samla en eller flera författares verk eller delar av deras verk. Parallell relation: redaktör."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "editor of"@en,
@@ -16251,7 +16261,7 @@ mts:m4798 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50242 ;
-    skos:definition "Liittää toimijan manifestaatioon, jossa käytettävän paperin valmistamisesta toimija on vastuussa. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m1742'>paperinvalmistaja."@fi ;
+    skos:definition "Liittää toimijan manifestaatioon, jossa käytettävän paperin valmistamisesta toimija on vastuussa. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m1742'>paperinvalmistaja</a>"@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "paperinvalmistajana manifestaatiossa"@fi .
 
@@ -16265,6 +16275,76 @@ mts:m48 a skos:Concept ;
         "tillgänglig även som avgiftsbelagd onlinesurs"@sv ;
     skos:scopeNote "Painetun julkaisun kuvailun yhteydessä annetaan tieto saatavuudesta verkossa, mutta saatavuus verkon kautta on  maksullista."@fi,
         "Vid beskrivning av en tryckt publikation uppger man att den finns tillgänglig på nätet men är avgiftsbelagd."@sv .
+
+mts:m4800 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50146 ;
+    skos:definition "Liittää toimijan ekspressioon, jonka tekemisessä toimija on osallisena valvomalla taiteilijoita ja käsityöläisiä, jotka rakentavat lavasteita elokuva- tms. tuotantoihin. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3594'>art director</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "art directorina produktiossa"@fi .
+
+mts:m4801 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50149 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää kirjoitetun esipuheen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m952'>esipuheen kirjoittaja</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esipuheen kirjoittajana ekspressiossa"@fi .
+
+mts:m4802 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50085 ;
+    skos:definition "Liittää henkilön juridiseen teokseen, jolla haetaan muutosta alemman oikeusasteen päätökseen ja joka kohdistuu henkilöön. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3568'>henkilö muutoksenhakijan vastapuolena</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "henkilöön kohdistuva muutoshakemus"@fi .
+
+mts:m4803 a skos:Concept ;
+    rdfs:seeAlso rdaa:P50244 ;
+    skos:definition "Liittää toimijan ekspressioon, jossa toimija on osallisena liikkuvan kuvan tai ääniteoksen ekspression tekemisessä suunnittelemalla ja luomalla taltioinnin aikana tapahtuvat erikoistehosteet, kuten mekaaniset tehosteet ja kameralla toteutettavat optiset tehosteet. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3587'>erikoistehosteiden tekijä</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "erikoistehosteiden tekijänä ekspressiossa"@fi .
+
+mts:m4804 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50072 ;
+    skos:definition "Liittää toimijan ekspressioon, jonka tekemisessä toimija on osallisena esiintymällä televisiossa tai elokuvassa taustatiedon antajana. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3586'>esittelijä</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esittelijänä ohjelmassa"@fi .
+
+mts:m4805 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50122 ;
+    skos:definition "Liittää henkilön juridiseen teokseen, jolla henkilö hakee muutosta alemman oikeusasteen päätökseen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3565'>henkilö muutoksenhakijana</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "henkilön muutoshakemus"@fi .
+
+mts:m4806 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50254 ;
+    skos:definition "Liittää toimijan teoksen ekspressioon, joka sisältää alkuperäiseen teokseen kirjoitetun esipuheen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3596'>alkusanojen kirjoittaja</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "alkusanojen kirjoittajana ekspressiossa"@fi .
+
+mts:m4807 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50259 ;
+    skos:definition "Liittää henkilön teokseen, joka sisältää henkilöön kohdistuvan syytteen rikosoikeudenkäynnissä tai haasteen siviilioikeudenkäynnissä. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3579'>henkilövastaaja</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "henkilö vastaajana kanteessa"@fi .
+
+mts:m4808 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50124 ;
+    skos:definition "Liittää henkilön teokseen, jossa henkilö on vastuussa haasteen tuomisesta siviilioikeudenkäyntiin. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m3572'>henkilökantaja</a>."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "henkilön tekemä kanne"@fi .
 
 mts:m482 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38517,6 +38597,14 @@ mts:m4791 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "oikeussihteeri"@fi .
 
+mts:m4799 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:broader mts:m4503 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "graafikkona teoksessa"@fi ;
+    skos:scopeNote "Katso myös kirjan graafinen suunnittelu toimijan ja manifestaation välisenä suhteena. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m308'>graafikko</a>."@fi .
+
 mts:m480 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -52328,20 +52416,6 @@ mts:m434 a skos:Concept ;
         "peli"@fi,
         "spel"@sv .
 
-mts:m4503 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdaa:P50192 ;
-    skos:definition "Liittää toimijan teokseen, joka sisältää taidegrafiikan, piirroksen, maalauksen tms. luomisen ja yleensä myös toteutus. Vastavuoroinen suhde: taiteilija."@fi,
-        "Sammankopplar aktör med ett verk, som inbegriper skapandet och vanligen också förverkligandet av konstgrafik, teckning, målning e.d. Parallell relation: konstnär."@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m4502,
-        mts:m4505,
-        mts:m4507 ;
-    skos:prefLabel "artist of"@en,
-        "taiteilijana teoksessa"@fi,
-        "konstnär till verket"@sv .
-
 mts:m4511 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -53112,6 +53186,21 @@ Vastavuoroinen suhde: käsikirjoitus ekspressioon."""@fi,
     skos:prefLabel "screenplay expression"@en,
         "käsikirjoitus (ekspressio)"@fi,
         "manuskript (uttryck)"@sv .
+
+mts:m4503 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50192 ;
+    skos:definition "Liittää toimijan teokseen, joka sisältää taidegrafiikan, piirroksen, maalauksen tms. luomisen ja yleensä myös toteutus. Vastavuoroinen suhde: taiteilija."@fi,
+        "Sammankopplar aktör med ett verk, som inbegriper skapandet och vanligen också förverkligandet av konstgrafik, teckning, målning e.d. Parallell relation: konstnär."@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m4502,
+        mts:m4505,
+        mts:m4507,
+        mts:m4799 ;
+    skos:prefLabel "artist of"@en,
+        "taiteilijana teoksessa"@fi,
+        "konstnär till verket"@sv .
 
 mts:m4520 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -56223,7 +56312,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-06-21T23:49:23+00:00"^^xsd:dateTime ;
+    dct:modified "2021-06-22T23:50:18+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
