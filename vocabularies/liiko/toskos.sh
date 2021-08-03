@@ -1,14 +1,11 @@
 #!/bin/sh
 
-cp ../yso/releases/2017.1.Aristoteles/ysoKehitys.rdf ./yso-import.rdf
-
-
-YSOFILE="yso-import.rdf"
-INFILES="mero-metadata.ttl mero.ttl $YSOFILE"
+INFILES="mero.ttl mero-metadata.ttl ysoKehitys-2021-Epikuros.ttl"
 OUTFILE=mero-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
-CONFFILE=../../conf/skosify/finnonto.cfg
+SKOSIFYHOME="/home/terminologi/ontology/SKOSIFY"
+CONFFILE=finnonto.cfg
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYHOME/Skosify-master/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+
