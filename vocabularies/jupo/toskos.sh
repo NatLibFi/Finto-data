@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="jupo.ttl jupo-metadata.ttl ysoKehitys-Cicero-2019.ttl"
+INFILES="jupo.ttl jupo-metadata.ttl ysoKehitys-2021-Epikuros.ttl"
 OUTFILE=jupo-skos.ttl
 
 SKOSIFYHOME="/home/terminologi/ontology/SKOSIFY/Skosify-master"
