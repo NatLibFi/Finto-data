@@ -62,7 +62,7 @@
     skosmos:feedbackSender "" ;
     # email address to set as the envelope sender for feedback messages
     skosmos:feedbackEnvelopeSender "" ;
-    # whether to display the ui language selection as a dropdown (useful for cases where there are more than 3 languages) 
+    # whether to display the ui language selection as a dropdown (useful for cases where there are more than 3 languages)
     skosmos:uiLanguageDropdown false ;
     # whether to enable the spam honey pot or not, enabled by default
     skosmos:uiHoneypotEnabled true ;
@@ -100,7 +100,7 @@
     skosmos:showTopConcepts "true";
 	void:uriSpace "http://www.yso.fi/onto/aika/";
 	skosmos:language "fi", "sv", "en";
-	skosmos:showChangeList "true"; 
+	skosmos:showChangeList "true";
 	skosmos:defaultLanguage "fi";
 	void:dataDump <http://dev.finto.fi/download/aika/aika-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/aika/aika-skos.rdf> ;
@@ -118,8 +118,8 @@
 	skosmos:language "sv";
         skosmos:useModifiedDate "true";
 	skosmos:groupClass skos:Collection;
-	skosmos:showPropertyInSearch skos:exactMatch, 
-    skos:broadMatch, 
+	skosmos:showPropertyInSearch skos:exactMatch,
+    skos:broadMatch,
     skos:narrowMatch;
 	skosmos:showChangeList "true" ;
 	skosmos:usePlugin "finna", "ysallars" ;
@@ -405,6 +405,18 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/jupo/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/jupo/> .
+  
+  :jupo skosmos:useParamPlugin :jupoMessage .
+  :jupoMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+            """Liikentoimintaontolgia LIITO on yhdistetty Julkisen hallinnon palveluontologia JUPOon kesällä 2021."""@fi,
+            """Affärsverksamhetsontologin LIITO har integrerats med JUPO-ontologin under sommaren 2021."""@sv,
+            """The Business Ontology LIITO has been merged into the JUPO ontology during summer 2021."""@en ;
+      ] .
 
 :kassu a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Kassu - Kasvien suomenkieliset nimet"@fi,
@@ -945,7 +957,7 @@
 	void:dataDump <http://dev.finto.fi/download/pto/pto-skos-test.ttl> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/pto-test/> .
-	
+
 :pto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "PTO - Finnish Geospatial Domain Ontology"@en,
 	        "PTO - Paikkatieto-ontologia"@fi,
@@ -984,7 +996,7 @@
 	skosmos:feedbackRecipient "marko.latvanen@vrk.fi";
 	void:dataDump <http://dev.finto.fi/download/ptvl/ptvl-skos.ttl> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ptvl:> ; 
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ptvl:> ;
 	skosmos:mainConceptScheme <http://urn.fi/URN:NBN:fi:au:ptvl:> .
 
 :ptvl skosmos:useParamPlugin :ptvlMessage .
@@ -994,14 +1006,14 @@
         a schema:PropertyValue ;
         schema:propertyID "msg";
         schema:value
-          """Julkisten palvelujen luokitus -aineistokokonaisuutta ei enää ylläpidetä eikä päivitetä Finto.fi-palvelussa, eikä Suomi.fi-palvelutietovaranto enää nouda tätä aineistoa Fintosta. Aineisto poistuu Fintosta kokonaan 31.12.2021. 
+          """Julkisten palvelujen luokitus -aineistokokonaisuutta ei enää ylläpidetä eikä päivitetä Finto.fi-palvelussa, eikä Suomi.fi-palvelutietovaranto enää nouda tätä aineistoa Fintosta. Aineisto poistuu Fintosta kokonaan 31.12.2021.
           <br/><br/>
           Aineistossa olevat luokitukset ja niiden ylläpito on siirretty Yhteentoimivuusalustan Koodistot-työkaluun, josta Palvelutietovaranto noutaa ne PTV-palvelukuvausten käyttöön. Luokitusten nykyiset osoitteet ovat: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'>Julkiset palvelut</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhma'>Kohderyhmät</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvtuotanto'>Tuotantotavat</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaj'>Tuottajatyypit</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Elämäntilanteet</a>. Luokitukset ovat vapaasti ladattavissa fi/sv/en-kieliversioina yllä annetuista osoitteista."""@fi,
-          """Sektionen ”Klassifikation av offentliga tjänster” är inte längre underhållit och uppdaterad i den finländska tesaurus- och ontologiservicen Finto. Suomi.fi-servicedatalagret inte längre söker denna material från Finto. ”Klassifikation av offentliga tjänster” försvinner helt och hållet från Finto den 31 december 2021. 
+          """Sektionen ”Klassifikation av offentliga tjänster” är inte längre underhållit och uppdaterad i den finländska tesaurus- och ontologiservicen Finto. Suomi.fi-servicedatalagret inte längre söker denna material från Finto. ”Klassifikation av offentliga tjänster” försvinner helt och hållet från Finto den 31 december 2021.
           <br/><br/>
           Klassificeringarna i materialet och deras underhåll har flyttats till Kodlistor-verktyget på Interoperabilitetsplattformen som Suomi.fi-servicedatalagret nu använder för att söka serviceklassificeringarna som användas i servicedatalagret. De nya adresserna av serviceklassificeringarna är: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'> Klassifikation av offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhmat'>Målgrupper för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Livssituationer för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Producenttyper för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvtuotanto'>Realiseringssätt för offentliga tjänster</a>. Klassificeringarna på finska, svenska och engelska kan laddas ner fritt från dessa adresser."""@sv,
           """The contents of the Classification of Public Services section in Finto are no longer managed and updated in Finto. They are now actively managed and freely available in the Reference Data tool (https://koodistot.suomi.fi) of the Interoperability Platform. The Finnish Service Catalogue (PTV) now uses these classifications from the Platform. The entire Classification of Public Services section will be removed from Finto on December 31, 2021.
-          <br/><br/>   
+          <br/><br/>
           The relevant URL's for these classifications are: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'>Service classification</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhmat'>Classification of public services target groups</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Classification of public service production types</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Classification of public service producer organization types</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Life events classes of citizens’ public services</a>. The classifications are freely available for download in Finnish, Swedish and English in these URL's."""@en ;
     ] .
 
@@ -1144,8 +1156,8 @@
 	skosmos:sparqlGraph <http://udcdata.info/> .
 
 :valo a skosmos:Vocabulary, void:Dataset ;
-	dc:title "VALO - Valokuvausalan ontologia"@fi , 
-		"VALO - Fotografiska ontologin"@sv , 
+	dc:title "VALO - Valokuvausalan ontologia"@fi ,
+		"VALO - Fotografiska ontologin"@sv ,
 		"VALO - The Finnish Ontology of Photography"@en ;
 	skosmos:shortName "VALO";
 	skosmos:marcSourceCode "valo";
@@ -1191,8 +1203,8 @@
 	void:uriSpace "http://www.yso.fi/onto/ysa/";
 	skosmos:groupClass skos:Collection;
 	skosmos:language "fi";
-	skosmos:showPropertyInSearch skos:exactMatch, 
-    skos:broadMatch, 
+	skosmos:showPropertyInSearch skos:exactMatch,
+    skos:broadMatch,
     skos:narrowMatch;
 	skosmos:showChangeList "true" ;
 	skosmos:useModifiedDate "true";
@@ -1213,8 +1225,8 @@
 	void:uriSpace "http://www.yso.fi/onto/ysa/";
 	skosmos:groupClass skos:Collection;
 	skosmos:language "fi";
-	skosmos:showPropertyInSearch skos:exactMatch, 
-    skos:broadMatch, 
+	skosmos:showPropertyInSearch skos:exactMatch,
+    skos:broadMatch,
     skos:narrowMatch;
 	skosmos:showChangeList "true" ;
 	skosmos:feedbackRecipient "vesa-posti@helsinki.fi" ;
@@ -1277,7 +1289,7 @@
 		"ALLFO - Allmän finländsk ontologi, Aristoteles version"@sv,
 		"YSO - General Finnish ontology, Aristotle version"@en ;
 	skosmos:shortName "YSO-A"@fi, "ALLFO-A"@sv, "YSO-A"@en;
-	
+
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/yso/";
 	skosmos:language "fi", "sv", "en";
@@ -1302,7 +1314,7 @@
 		"ALLFO - Allmän finländsk ontologi, Boethius version"@sv,
 		"YSO - General Finnish ontology, Boethius version"@en ;
 	skosmos:shortName "YSO-B"@fi, "ALLFO-B"@sv, "YSO-B"@en;
-	
+
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/yso/";
 	skosmos:language "fi", "sv", "en";
@@ -1341,7 +1353,7 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-cicero/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
-	
+
 :ysodiotima a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, Diotima-versio"@fi,
 		"ALLFO - Allmän finländsk ontologi, Diotima version"@sv,
@@ -1363,7 +1375,7 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-diotima/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
-	
+
 :ysoepikuros a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, Epikuros-versio"@fi,
 		"ALLFO - Allmän finländsk ontologi, Epikuros version"@sv,
@@ -1445,10 +1457,10 @@
 
 :musoMessage  a skosmos:ParameterizedPlugin ;
                 skosmos:usePlugin "message";
-                skosmos:parameters 
+                skosmos:parameters
 			[ a			schema:PropertyValue ;
                           schema:propertyID 	"msg";
-			schema:value 
+			schema:value
 			  "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>ehdotusjärjestelmässä</a>."@fi,
 			  "MUSO - Ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>förslagssystemet</a>."@sv,
 			  "Vocabulary is no longer in use." ;
@@ -1550,7 +1562,7 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 :cat_general a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
-	skos:prefLabel "Yleiset"@fi, 
+	skos:prefLabel "Yleiset"@fi,
 		"Allmän"@sv,
 		"General"@en .
 
@@ -1564,7 +1576,7 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 :cat_geo a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
-	skos:prefLabel "Maantiede ja paikkatieto"@fi, 
+	skos:prefLabel "Maantiede ja paikkatieto"@fi,
 		"Geografi och geografisk information"@sv,
 		"Geography and geoinformation"@en .
 
@@ -1588,4 +1600,3 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skos:prefLabel "Kielet ja kirjallisuus"@fi,
 	"Språk och litteratur"@sv,
 	"Languages and literature"@en .
-
