@@ -36,6 +36,15 @@ Tehdyt tekniset työt:
 - löytyi importoinnin estävä ongelma riviltä 8775 (ykl-skos.ttl) eli: "<http://urn.fi/URN:NBN:fi:au:ykl:00.6>" skos:related ykl:02 .
 - edellinen muutettiin käsin muotoon: ykl:00.6 skos:related ykl:02 .
 - RDFLib toimii spesifikaation vastaisesti, kun hyväksyy subjektiksi urin lisäksi myös literaalin. Tehty issue RDFLib-projektin repoon (https://github.com/RDFLib/rdflib/issues/1389).
+
+-- luokan ykl:36.09 notaatio oli väärin:
+skos:notation "36" -> skos:notation "36.09"
+
+-- luokka 36.09 oli hierarkiassa väärässä kohdassa, korjattiin:
+- skos:broader ykl:3 -> skos:broader ykl:36
+- luokassa ykl:36 lisätty: skos:narrower ykl:36.09;
+- luokassa ykl:3 poistettu: skos:narrower ykl:36.09
+
 -- päivityksessä tarvitut tai muodostetut tiedostot:
 
 - ykl-orig_2021-08-10.ttl
@@ -43,4 +52,5 @@ Tehdyt tekniset työt:
 - ykl-metadata.ttl
 - ykl-hklj.ttl
 - ykl-skos.ttl
+
 
