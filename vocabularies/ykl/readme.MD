@@ -27,12 +27,12 @@ Tehdyt tekniset työt:
 - ei deprekointeja
 - YKL:n URIn loppuosa itsessään sisältää semantiikkaa ja sillä on tosielämässä vastine, joten tavanomaista URIn purittamista ei pidä tehdä
 - skossattu julkaisutiedosto testattu paikallisessa Fusekissa sekä Skosmoksessa:
-> löytyi importoinnin estävä ongelma riviltä 8775 (ykl-skos.ttl) eli: "<http://urn.fi/URN:NBN:fi:au:ykl:00.6>" skos:related ykl:02 .
-> edellinen muutettiin käsin muotoon: ykl:00.6 skos:related ykl:02 .
-> RDFLib toimii spesifikaation vastaisesti, kun hyväksyy subjektiksi urin lisäksi myös literaalin. Tehty issue RDFLib-projektin repoon (https://github.com/RDFLib/rdflib/issues/1389).
+-- löytyi importoinnin estävä ongelma riviltä 8775 (ykl-skos.ttl) eli: "<http://urn.fi/URN:NBN:fi:au:ykl:00.6>" skos:related ykl:02 .
+-- edellinen muutettiin käsin muotoon: ykl:00.6 skos:related ykl:02 .
+-- RDFLib toimii spesifikaation vastaisesti, kun hyväksyy subjektiksi urin lisäksi myös literaalin. Tehty issue RDFLib-projektin repoon (https://github.com/RDFLib/rdflib/issues/1389).
 - päivityksessä tarvitut tai muodostetut tiedostot:
-> ykl-orig_2021-08-10.ttl
-> ykl-2021-08-10-processed.ttl
-> ykl-metadata.ttl
-> ykl-hklj.ttl
-> ykl-skos.ttl
+-- ykl-orig_2021-08-10.ttl
+-- ykl-2021-08-10-processed.ttl
+-- ykl-metadata.ttl
+-- ykl-hklj.ttl
+-- ykl-skos.ttl
