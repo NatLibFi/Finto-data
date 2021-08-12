@@ -4,8 +4,8 @@
 
 # step 2: set $RAWFILE to be the file processed in step 1
 
-RAWFILE="ykl.ttl"
-PROCESSEDFILE="ykl-processed.ttl"
+RAWFILE="ykl-orig_2021-08-10.ttl"
+PROCESSEDFILE="ykl-2021-08-10-processed.ttl"
 
 SKOSIFYCMD="skosify"
 
