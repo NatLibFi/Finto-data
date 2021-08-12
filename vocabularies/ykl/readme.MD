@@ -34,7 +34,7 @@ Tehdyt tekniset työt:
 -- skossattu julkaisutiedosto testattu paikallisessa Fusekissa sekä Skosmoksessa:
 
 - löytyi importoinnin estävä ongelma riviltä 8775 (ykl-skos.ttl) eli: "<http://urn.fi/URN:NBN:fi:au:ykl:00.6>" skos:related ykl:02 .
-- edellinen muutettiin käsin muotoon: ykl:00.6 skos:related ykl:02 .
+- edellinen muutettiin käsin muotoon: ykl:00.6 skos:related ykl:02 . (poistettiin hipsut)
 - RDFLib toimii spesifikaation vastaisesti, kun hyväksyy subjektiksi urin lisäksi myös literaalin. Tehty issue RDFLib-projektin repoon (https://github.com/RDFLib/rdflib/issues/1389).
 
 -- luokan ykl:36.09 notaatio oli väärin:
