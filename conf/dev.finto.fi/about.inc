@@ -20,7 +20,7 @@
 
 <p>Finto-servicen är i utbredd användning inom finländska organisationer för kulturarv och för offentlig förvaltning. Till den internationella användarkretsen av Fintos verktyg hör bl.a. UNESCO och FN:s livsmedels- och jordbruksorganisation FAO. Du kan läsa Fintos användarberättelser <a href="https://www.kiwi.fi/x/hgKEBw">här</a>. Dela också din egen berättelse med oss och med andra!</p>
 
-<p>Du kan föreslå nya begrepp och ändringar till Allmän finländsk ontologi och ALLFO-orter via <a href="http://ehdotus.finto.fi">Förslagssystemet</a>. Begreppsförslag som är under behandling kan du söka i <a href="http://finto.fi/yse">YSE-vokabulären</a> i Finto. Förslag gällande andra vokabulärer och ontologier i Finto kan du skicka via <a href="http://finto.fi/sv/feedback">Respons-sidan</a>.</p>
+<p>Du kan föreslå nya begrepp till ALLFO - Allmän finländsk ontologi och ALLFO-orter med förslagsblanketten längst ner på ontologiernas framsidor. Du kan också föreslå ändringar till begrepp i ALLFO och ALLFO-orter via den ändringsblankett som finns på varje begreppssida i dessa ontologier. Begreppsförslag som är under behandling kan du söka i <a href="http://finto.fi/yse">YSE-vokabulären</a> i Finto. Förslag gällande andra vokabulärer och ontologier i Finto kan du skicka via <a href="http://finto.fi/sv/feedback">Respons-sidan</a>.</p>
 
 <p><a href="https://www.kiwi.fi/x/qYQwCw" target="_blank">Tillgänglighetsutlåtande</a></p>
 <div class="kk-logo-fi-sv"></div>
