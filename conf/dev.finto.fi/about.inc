@@ -7,7 +7,7 @@
 
 <p>Finto-palvelua hyödynnetään laajasti Suomessa kulttuuriperintöorganisaatioista julkishallinnon organisaatioihin. Finton työkalujen kansainväliseen käyttäjäkuntaan lukeutuvat mm. UNESCO ja YK:n elintarvike- ja maatalousjärjestö FAO. Finton käyttäjätarinoita voit lukea <a href="https://www.kiwi.fi/x/hgKEBw">täältä</a>. Jaa myös oma tarinasi meille ja muille!</p>
 
-<p>Voit ehdottaa uusia käsitteitä ja muutoksia Yleiseen suomalaiseen ontologiaan ja YSO-paikkoihin <a href="http://ehdotus.finto.fi">Ehdotusjärjestelmän</a> avulla. Käsittelyssä olevia käsite-ehdotuksia voit selata <a href="https://finto.fi/yse/fi">Finton YSE-sanastossa</a>. Muita sanastoja koskevaa palautetta voit lähettää <a href="http://finto.fi/fi/feedback">Palaute-sivun</a> kautta.</p>
+<p>Voit ehdottaa uusia käsitteitä YSOon tai YSO-paikkoihin niiden etusivun alalaidasta löytyvällä lomakkeella. Jos haluat ehdottaa muutosta YSOn tai YSO-paikkojen käsitteisiin, muutosehdotuslomake löytyy jokaisen käsitteen tietojen yhteydestä. Käsittelyssä olevia käsite-ehdotuksia voit selata <a href="https://finto.fi/yse/fi">Finton YSE-sanastossa</a>. Muita sanastoja koskevaa palautetta voit lähettää <a href="http://finto.fi/fi/feedback">Palaute-sivun</a> kautta.</p>
 
 <p><a href="https://www.kiwi.fi/x/fIQwCw" target="_blank">Saavutettavuusseloste</a></p>
 <div class="kk-logo-fi-sv"></div>
