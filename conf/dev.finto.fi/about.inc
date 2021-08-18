@@ -33,7 +33,8 @@
 
 <p>Finto service has a wide range of users in Finland from culture heritage organizations to public administration. International users include UNESCO and FAO. Read more about Finto's users <a href="https://www.kiwi.fi/x/hgKEBw">here</a>. To share your own user story, please contact us.</p>
 
-<p>Suggestions to General Finnish Ontology YSO and YSO places for new additions or changes can be made from this page. To find all such suggestions still in process, please see the <a href="http://finto.fi/yse">suggestion vocabulary YSE</a>. Suggestions or feedback to other vocabularies and ontologies can be sent via the <a href="http://finto.fi/en/feedback">feedback</a> form.</p>
+<p>You can suggest new concepts to General Finnish Ontology YSO or YSO Places using the form at the bottom of their front pages. You can also suggest changes to existing concepts; there's a form for this on each YSO and YSO Places concept page. To find all such suggestions still in process, please see the <a href="http://finto.fi/yse">suggestion vocabulary YSE</a>. Suggestions or feedback to other vocabularies and ontologies can be sent via the <a href="http://finto.fi/en/feedback">feedback</a> form.</p>
+
 <div class="kk-logo-en"></div>
 
 {% endif %}
