@@ -68,6 +68,14 @@ slm:s950  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "aluelehdet"@fi , "regiontidningar"@sv .
 
+slm:s1429  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1186 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "bluesrock"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026666> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "blues rock"@fi ;
+        skos:related     slm:s977 .
+
 slm:s741  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1148 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -372,6 +380,13 @@ slm:s1423  a              owl:Class , skos:Concept ;
         skos:prefLabel    "true crime"@sv , "true crime"@fi ;
         skos:related      slm:s911 , slm:s563 , slm:s858 , slm:s1161 .
 
+slm:s1425  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s334 , yso-update:uudetmuuttuneetSv , slm:s474 ;
+        skos:definition  "Maallinen laulusävellys, tavallisimmin ooppera- tai kantaattiaaria, jonka teksti on aiheeltaan surullinen tai valittava ja joka musiikillisesti perustuu laskevaan basso ostinatoon."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "lamentot"@fi ;
+        skos:related     slm:s1368 , slm:s1216 .
+
 slm:s1226  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s499 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -429,11 +444,12 @@ slm:s788  a              owl:Class , skos:Concept ;
         skos:prefLabel   "bebop"@sv , "bebop"@fi .
 
 slm:s1404  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s709 , slm:s1077 ;
+        rdfs:subClassOf  slm:s709 ;
         skos:altLabel    "filmmusikaler"@sv , "elokuvamusikaalit"@fi ;
         skos:definition  "Elokuva, jossa hahmojen laulamat laulut ja musiikki kuljettavat tarinaa eteenpäin ja joka voi perustua teatterimusikaaliin tai josta on tehty teatteriversioita."@fi , "Film, i vilken sånger framförda av olika gestalter och musik för berättelsen framåt, och som kan grunda sig på en teatermusikal, eller utifrån vilken teaterversioner har gjorts."@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2011026414> ;
         skos:prefLabel   "musikalfilmer"@sv , "musikaalielokuvat"@fi ;
+        skos:related     slm:s1077 ;
         skos:scopeNote   "Videoidusta teatterimusikaalista käytetään SLM-termejä [http://urn.fi/URN:NBN:fi:au:slm:s1077] ja [http://urn.fi/URN:NBN:fi:au:slm:s1336]."@fi , "Om videofilmade teatermusikaler används FGF-termerna [http://urn.fi/URN:NBN:fi:au:slm:s1077] och [http://urn.fi/URN:NBN:fi:au:slm:s1336]."@sv .
 
 slm:s22  a               owl:Class , skos:Concept ;
@@ -505,11 +521,12 @@ slm:s83  a               owl:Class , skos:Concept ;
         skos:prefLabel   "canzoner"@sv , "canzonat"@fi .
 
 slm:s709  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1175 ;
+        rdfs:subClassOf  slm:s1412 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p14501> ;
         skos:prefLabel   "musiikkielokuvat"@fi , "musikfilmer"@sv ;
-        skos:related     slm:s899 , slm:s216 , slm:s1095 .
+        skos:related     slm:s899 , slm:s216 , slm:s1095 ;
+        skos:scopeNote   "Käytetään vain fiktioelokuvista."@fi .
 
 slm:s450  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -741,7 +758,7 @@ slm:s1359  a             owl:Class , skos:Concept ;
         skos:prefLabel   "lokikirjat"@fi , "loggböcker"@sv .
 
 slm:s280  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s353 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026976> ;
         skos:inScheme    slm:s861 ;
@@ -2268,7 +2285,7 @@ slm:s1368  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026767> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "valituslaulut"@fi , "klagosånger"@sv ;
-        skos:related     slm:s1216 .
+        skos:related     slm:s1425 , slm:s1216 .
 
 slm:s1231  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s505 ;
@@ -2994,7 +3011,13 @@ slm:s977  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026665> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "blues"@sv , "blues"@fi ;
-        skos:related     slm:s1265 .
+        skos:related     slm:s1429 , slm:s1265 .
+
+slm:s1430  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1081 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "uudestisanoitetut laulut"@fi , "uudelleensanoitukset"@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "uudelleensanoitetut laulut"@fi .
 
 slm:s524  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -5211,7 +5234,7 @@ slm:s1384  a             owl:Class , skos:Concept ;
         skos:prefLabel   "murrenäytteet"@fi , "dialektprov"@sv .
 
 slm:s1010  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s353 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "operetter"@sv , "operetit"@fi ;
@@ -5332,6 +5355,13 @@ slm:s1138  a             owl:Class , skos:Concept ;
 yso-update:ongelmatfi
         a               ysometa:StructuringClass ;
         skos:prefLabel  "ongelmatfig"@fi , "ongelmatfig"@sv .
+
+slm:s1428  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s474 ;
+        skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2019026036> ;
+        skos:definition  "Lyhyt itsenäinen soitinmusiikkiteos."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "interludit"@fi .
 
 slm:s1170  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s918 ;
@@ -6716,6 +6746,13 @@ slm:s1223  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "viittomalaulut"@fi , "sånger på teckenspråk"@sv .
 
+slm:s1426  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1377 , yso-update:uudetmuuttuneetSv ;
+        skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2014026876> ;
+        skos:definition  "Laajemman teoksen osien välissä esitettävä orkesterimusiikkiosuus."@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "välisoitot"@fi .
+
 slm:s660  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s875 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -7611,7 +7648,7 @@ slm:s1216  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "elegiat (musiikki)"@fi , "elegier (musik)"@sv ;
-        skos:related     slm:s1368 .
+        skos:related     slm:s1425 , slm:s1368 .
 
 slm:s598  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s618 ;
@@ -8000,8 +8037,9 @@ slm:s50  a              owl:Class , skos:Concept ;
         skos:prefLabel  "verkkolehdet"@fi , "elektroniska tidskrifter"@sv .
 
 slm:s146  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s1377 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "potpourrit"@fi , "medleyt"@fi , "sikermäsävellykset"@fi , "kimarat"@fi , "potpurit"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026932> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "sikermät"@fi , "potpurrier"@sv .
@@ -9049,13 +9087,16 @@ slm:s500  a              owl:Class , skos:Concept ;
         skos:prefLabel   "motetit"@fi , "motetter"@sv .
 
 slm:s1077  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s353 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "teatterimusikaalit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11693> ;
+        skos:definition  "Näyttämömusiikkiteos, jossa viihteellisillä lauluilla ja usein myös tanssinumeroilla on merkittävä rooli tarinan kuljettamisessa."@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026957> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "musikaler"@sv , "musikaalit"@fi ;
-        skos:related     slm:s1010 , slm:s470 .
+        skos:related     slm:s1404 , slm:s1010 , slm:s470 ;
+        skos:scopeNote   "Elokuvaksi sovitetuista musikaaleista käytetään SLM-termiä [http://urn.fi/URN:NBN:fi:au:slm:s1404]."@fi .
 
 slm:s1367  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s169 ;
@@ -9439,6 +9480,14 @@ slm:s145  a              owl:Class , skos:Concept ;
         skos:altLabel    "memoryspel"@sv , "muistipeli"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p28687> ;
         skos:prefLabel   "muistipelit"@fi , "minnesspel"@sv .
+
+slm:s1427  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s474 ;
+        skos:altLabel    "spektraalimusiikki"@fi ;
+        skos:definition  "1970-luvulta lähtien sävellettyä taidemusiikkia, jossa äänen yläsävelspektriä käytetään sävellysteknisten ratkaisujen pohjana."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027109> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "spektrimusiikki"@fi .
 
 slm:s463  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
