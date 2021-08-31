@@ -18,6 +18,10 @@ kto: a skos:ConceptScheme ;
         "Nationalbiblioteket i Finland"@sv ,
         "National Library of Finland"@en ,
 
+        "Kotimaisten kielten keskus"@fi ,
+        "Institutet för de inhemska språken"@sv ,
+        "Institute for the Languages of Finland"@en ;
+
         "Sanastokeskus TSK"@fi ,
         "Terminologicentralen TSK"@sv ,
         "The Finnish Terminology Centre TSK"@en ,
@@ -26,28 +30,30 @@ kto: a skos:ConceptScheme ;
         "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
         "Semantic Computing Research Group (SeCo)"@en,
 
-        "Kotimaisten kielten keskus"@fi ,
-        "Institutet för de inhemska språken"@sv ,
-        "Institute for the Languages of Finland"@en ;
 
     dc:title "KTO - Kielitieteen ontologia"@fi,
-        "KTO - Kielitieteen ontologia"@en,
-        "KTO - Kielitieteen ontologia"@sv ;
+        "KTO - Ontology for Linguistics"@en,
+        "KTO - Ontologi för språkvetenskap"@sv ;
 
     dc:description
+"""Kielitieteen ontologia on alun perin laadittu suomen kielen ja suomalais-ugrilaisen kielentutkimuksen tarpeisiin. Ontologia pohjautuu Kielitieteen asiasanastoon (2003). Ontologian käsitteillä on suomen-, viron-, saksan- ja englanninkieliset nimitykset.
 
-"""Uralistiikan tutkimuksen bibliografian asiasanaluettelon pohjalta on tehty alan julkaisujen sisällönkuvailuun soveltuva Kielitieteen asiasanasto (2003), johon tämä ontologia pohjaa. Käsitteillä on sekä suomen-, viron-, saksan- että englanninkieliset nimitykset. 
+Kielitieteen ontologia kehitettiin Aalto- ja Helsingin yliopiston johtamassa FinnONTO (2003-2012) -hankkeessa yhteistyössä Kotimaisten kielten keskuksen ja Sanastokeskus TSK:n kanssa. Sisällön ylläpidosta vastaa Kotimaisten kielten keskus. Aktiivista kehitystyötä ei tällä hetkellä tehdä, mutta ontologiaa päivitetään tarvittaessa.
 
-Alla on eritelty ontologian sisältämät käsitteet ja kokoelmat tyypeittäin. Käsitteiden kokonaislukumäärään sisältyvät KTO-käsitteiden ja kokoelmakäsitteiden lisäksi myös YSOn käsitteet, koska KTO on linkitetty YSOon ja YSO täydentää sitä mm. ylähierarkian osalta. Varsinaisten KTO-käsitteiden lukumäärä on esitetty erillisenä lukuna. Kokonaisuuteen sisältyy myös kokoelmia. Näillä on tietty erityistehtävänsä (ryhmittelevät käsitteet ja koostekäsitteet) eikä niitä ole tarkoitettu käytettäväksi kuvailussa tai tiedonhaussa. Termien lukumäärätieto koskee sen sijaan vain KTOa eli näissä luvuissa ei ole YSOn termejä mukana. Jokaisella ontologian käsitteellä on päätermi ja sen lisäksi mahdollisesti myös korvattuja termejä eli ohjaustermejä.
+Alla on eritelty ontologian sisältämät käsitteet ja kokoelmat tyypeittäin. Käsitteiden kokonaislukumäärään sisältyvät KTO-käsitteiden ja kokoelmakäsitteiden lisäksi myös YSOn käsitteet, koska KTO on linkitetty YSOon ja YSO täydentää sitä mm. ylähierarkian osalta. Varsinaisten KTO-käsitteiden lukumäärä on esitetty erillisenä lukuna. Kokonaisuuteen sisältyy myös kokoelmia. Näillä on tietty erityistehtävänsä (ryhmittelevät käsitteet ja koostekäsitteet) eikä niitä ole tarkoitettu käytettäväksi kuvailussa tai tiedonhaussa. Termien lukumäärätieto koskee sen sijaan vain KTOa eli näissä luvuissa ei ole YSOn termejä mukana. Jokaisella ontologian käsitteellä on päätermi ja sen lisäksi mahdollisesti myös korvattuja termejä eli ohjaustermejä."""@fi ,
+"""KTO is an ontology for linguistics originally prepared for the needs of Finnish and Finno-Ugric linguistics. The ontology is based on the Thesaurus for linguistics (2003). The languages of the ontology are Finnish, Estonian, German, and English.
 
-KTO-ontologia on alunperin kehitetty Aalto- ja Helsingin yliopiston johtamassa FinnONTO (2003-2012) -hankkeessa yhteistyössä Kotimaisten kielten keskuksen ja Sanastokeskus TSK:n kanssa.
-"""@fi ;
+KTO was established in the FinnONTO project (2003–2012), led by Aalto University and the University of Helsinki in cooperation with the Institute for the Languages of Finland (Kotus) ​​and the Finnish Terminology Centre TSK. Institute for the Languages of Finland is responsible for maintaining the content. No active development is currently being done, but the ontology is updated when necessary."""@en ;
 
-    dct:language <http://lexvo.org/id/iso639-3/fin> ;
-    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+dct:language <http://lexvo.org/id/iso639-3/fin>,
+         <http://lexvo.org/id/iso639-3/est>,
+         <http://lexvo.org/id/iso639-3/deu>,
+         <http://lexvo.org/id/iso639-3/eng>  ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/deed.fi> ;
     dct:relation <http://www.yso.fi/onto/yso/> ;
-    foaf:homepage <http://www.seco.tkk.fi/ontologies/kto/> ;
-    owl:versionInfo "$Id$" .
+    owl:versionInfo "2019-01-02" ;
+foaf:homepage <https://www.kotus.fi/sanakirjat/muut_sanakirjat/kielitieteen_asiasanasto_ja_kielitieteen_ontologia>,
+<http://www.seco.tkk.fi/ontologies/kto/> .
 
 kto-meta:Concept a owl:Class;
     rdfs:subClassOf skos:Concept ;
