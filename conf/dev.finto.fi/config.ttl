@@ -601,6 +601,20 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/kulo/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/kulo/> .
 
+:kulo skosmos:useParamPlugin :kuloMessage .
+:kuloMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+	  """Kulttuurien tutkimuksen ontologia KULO on yhdistetty yleiseen suomalaiseen ontologiaan YSOon. KULOa ei enää ylläpidetä eikä sen termejä päivitetä. Kulttuurien tutkimuksen kuvailussa käytetään YSOn käsitteitä. Uusia tämän aihealueen termejä voi ehdottaa YSOn ehdotusjärjestelmässä."""@fi,
+          """The Finnish ontology of cultural research KULO has been included into the General Finnish Ontology (YSO). KULO is no longer maintained and the terms are not updated. For content description in cultural research use YSO-concepts. New concepts and terms in this subject area can be suggested for YSO through a form linked on its homepage."""@en,
+          """Ontologi för kulturforskning KULO har uppgått i den allmänna finländska ontologin ALLFO. KULO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av kulturforskning används ALLFO-begrepp. Nya termer för kulturforskning föreslås till ALLFO via förslagssystemet."""@sv ;
+      ] .
+
+
+
 :lajisto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "LAJISTO - Lajitietokeskuksen lajiluettelo"@fi,
 		"LAJISTO - Artdatacentrets artlista"@sv,
