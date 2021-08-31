@@ -511,6 +511,20 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/kito/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/kito/> .
 
+:kito skosmos:useParamPlugin :kitoMessage .
+:kitoMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+	    """Kirjallisuudentutkimuksen ontologia KITO on yhdistetty yleiseen suomalaiseen ontologiaan YSOon. KITOa ei enää ylläpidetä eikä sen termejä päivitetä. Kirjallisuudentutkimuksen kuvailussa käytetään YSOn käsitteitä. Uusia tämän aihealueen termejä voi ehdottaa YSOon ehdotusjärjestelmässä."""@fi,
+            """The Finnish Ontology of Literature Research KITO has been included into the General Finnish Ontology (YSO). KITO is no longer maintained and the terms are not updated. For content description in literature research use YSO-concepts. New concepts and terms in this subject area can be suggested for YSO through a form linked on its homepage."""@en,
+            """Ontologi för litteraturforskning KITO har uppgått i den allmänna finländska ontologin ALLFO. KITO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av litteraturforskning används ALLFO-begrepp. Nya termer föreslås till ALLFO via förslagssystemet."""@sv ;
+      ] .
+
+
+
 :koko a skosmos:Vocabulary, void:Dataset ;
 	dc:title "KOKO-ontologia"@fi,
 		"KOKO-ontologin"@sv,
