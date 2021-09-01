@@ -399,6 +399,18 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/kito/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/kito/> .
 
+:kito skosmos:useParamPlugin :kitoMessage .
+:kitoMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+	    """Kirjallisuudentutkimuksen ontologia KITOn ylläpito on päättynyt. KITOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi YSOsta ja KOKOsta."""@fi,
+            """The Finnish Ontology of Literature Research KITO is no longer maintained. KITO is not recommended for content description. Concepts and terms in this subject area can be found in the General Finnish Ontology (YSO) and the KOKO ontology."""@en,
+            """Ontologi för litteraturforskning KITO upprätthålls inte längre. Vid beskrivning av litteraturforskning kan användas den allmänna finländska ontologin ALLFO och KOKO ontologin."""@sv ;
+      ] .
+
 :koko a skosmos:Vocabulary, void:Dataset ;
 	dc:title "KOKO-ontologia"@fi,
 		"KOKO-ontologin"@sv,
@@ -454,6 +466,20 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/kulo/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/kulo/> .
+
+
+:kulo skosmos:useParamPlugin :kuloMessage .
+:kuloMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+	    """Kulttuurien tutkimuksen ontologian (KULO) ylläpito on päättynyt. KULOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi YSOsta ja KOKOsta."""@fi,
+            """The Finnish ontology of cultural research KULO is no longer maintained. KULO is not recommended for content description. Concepts and terms in this subject area can be found in the General Finnish Ontology (YSO) and the KOKO ontology."""@en,
+            """Ontologi för kulturforskning KULO upprätthålls inte längre. Vid beskrivning av kulturforskning kan användas den allmänna finländska ontologin ALLFO och KOKO ontologin."""@sv ;
+      ] .
+
 
 :oiko a skosmos:Vocabulary, void:Dataset ;
     dc:title "OIKO - Oikeushallinnon ontologia"@fi ;
