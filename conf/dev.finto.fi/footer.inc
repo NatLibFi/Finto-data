@@ -50,6 +50,7 @@ function createConceptObject(conceptUri, conceptData) {
     text: getLabel(conceptData), 
     a_attr: getHrefForUri(conceptData.uri),
     uri: conceptUri,
+    notation: conceptData.notation,
     parents: conceptData.broader,
     state: { opened: true },
     children: []
@@ -78,6 +79,7 @@ function createObjectsFromChildren(conceptData, conceptUri) {
       text: getLabel(conceptData.narrower[i]), 
       a_attr: getHrefForUri(conceptData.narrower[i].uri),
       uri: conceptData.narrower[i].uri,
+      notation: conceptData.narrower[i].notation,
       parents: conceptUri,
       state: { opened: true }
     };
@@ -104,6 +106,7 @@ function vocabRoot(topConcepts) {
       text: conceptData.label, 
       a_attr : getHrefForUri(conceptData.uri),
       uri: conceptData.uri,
+      notation: conceptData.notation,
       state: { opened: false } 
     };
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
@@ -126,6 +129,7 @@ function createObjectsFromNarrowers(narrowerResponse) {
       text : getLabel(conceptObject), 
       a_attr : getHrefForUri(conceptObject.uri),
       uri: conceptObject.uri,
+      notation: conceptObject.notation,
       parents: narrowerResponse.uri,
       state: { opened: false, disabled: false, selected: false }
     };
