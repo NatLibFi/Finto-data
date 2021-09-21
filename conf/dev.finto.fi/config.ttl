@@ -272,8 +272,23 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/hero/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/hero/> .
 
+  :hero skosmos:useParamPlugin :heroMessage .
+  :heroMessage a skosmos:ParameterizedPlugin ;
+      skosmos:usePlugin "message";
+      skosmos:parameters [
+          a schema:PropertyValue ;
+          schema:propertyID "msg";
+          schema:value
+	  """This is a test version. Please, use the published HERO ontology at <a href="https://finto.fi/hero/en/">http://www.yso.fi/onto/hero/</a>"""@en,
+          """Tämä on testiversio. Ole hyvä ja käytä HERO ontologiaa osoitteessa <a href="https://finto.fi/hero/fi/">http://www.yso.fi/onto/hero/</a>"""@fi,
+          """Denna är en testversion. Var så god och använd HERO ontologi vid address <a href="https://finto.fi/hero/sv/">http://www.yso.fi/onto/hero/</a>"""@sv;
+      ] .
+
+
 :hklj a skosmos:Vocabulary, void:Dataset ;
-	dc:title "HKLJ -  Helsingin kaupunginkirjaston luokitusjärjestelmä"@fi, "HSKS - Helsingfors stadsbiblioteks klassifikationssystem"@sv, "HCLCS - Helsinki City Library Classification System"@en ;
+	dc:title "HKLJ -  Helsingin kaupunginkirjaston luokitusjärjestelmä"@fi,
+                 "HSKS - Helsingfors stadsbiblioteks klassifikationssystem"@sv, 
+                 "HCLCS - Helsinki City Library Classification System"@en ;
 	skosmos:shortName "HKLJ";
 	dc:subject :cat_general ;
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:hklj:";
