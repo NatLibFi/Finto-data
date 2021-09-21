@@ -54,6 +54,7 @@ ISOTHES=Namespace('http://purl.org/iso25964/skos-thes#')
 SKOSEXT=Namespace('http://purl.org/finnonto/schema/skosext#')
 SLM=Namespace("http://urn.fi/URN:NBN:fi:au:slm:")
 UDC=Namespace("http://udcdata.info/")
+WIKIDATA=Namespace("http://www.wikidata.org/entity/")
 
 LANGUAGES = {
     'fi': 'fin',
@@ -907,11 +908,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                             'b', subfield_b,
                             'u', valueProp.value
                         ])
-                else:
-                    subfield_list.append([
-                        'a', 'Wikidata',
-                        'u', valueProp.value
-                    ])
 
             for subfields in subfield_list:
                 rec.add_field(
@@ -1129,6 +1125,7 @@ def convert(cs, vocabulary_name, language, g, g2):
             # Comment: if we want to direct queries to spesific graphs, one per vocab,
             # that graph needs to be selected here based on the void:uriSpace
             
+            sub0 = concept
             sub2 = ""
             if matchURIRef.startswith(LCSH):
                 second_indicator = "0"
@@ -1180,21 +1177,33 @@ def convert(cs, vocabulary_name, language, g, g2):
                 # kovakoodattu yso ja slm - muuten niiden tulisi olla jossain globaalissa muuttujassa
                 if sub2 == "yso" or sub2 == "slm" or cs.getboolean("multilanguage", fallback=False):
                     sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
-                
-                
-                fields.append(
-                    Field(
-                        tag=tag,
-                        indicators = [' ', second_indicator],
-                        subfields = [
-                            'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))), 
-                            #'a', str(valueProp.value),
-                            '4', sub4,
-                            '2', sub2,
-                            '0', concept
-                        ]
+                    # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
+                    if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
+                        wdEntities = []
+                        closeMatches = getValues(g, concept, [SKOS.closeMatch])
+                        for closeMatch in closeMatches:
+                            if closeMatch.value.startswith(WIKIDATA):
+                                wdEntities.append(URIRef(closeMatch.value))
+                        if len(wdEntities) == 1:
+                            sub0 = wdEntities[0]
+                            sub2 = "wikidata"
+                            sub4 = "~EQ"
+                        else:
+                            sub2 = None
+                            sub4 = None
+                if sub2 and sub4:
+                    fields.append(
+                        Field(
+                            tag=tag,
+                            indicators = [' ', second_indicator],
+                            subfields = [
+                                'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))),
+                                '4', sub4,
+                                '2', sub2,
+                                '0', sub0
+                            ]
+                        )
                     )
-                )
                 continue
             elif valueProp.prop == SKOS.closeMatch:
                 sub4 = "~EQ"
