@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="lvont-defs.ttl lexvo*.rdf"
+INFILES="lexvo-metadata.ttl lvont-defs.ttl lexvo*.rdf"
 OUTFILE=lexvo-skos.ttl
 
 SKOSIFYCMD="skosify"
