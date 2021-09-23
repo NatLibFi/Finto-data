@@ -10750,7 +10750,7 @@ mts:m291 a isothes:ConceptGroup,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30056,
         rdam:P30168 ;
-    skos:altLabel "note on frequency"@en,
+    skos:altLabel "Note on frequency"@en,
         "Huomautus ilmestymistiheydestä"@fi,
         "Anmärkning om utgivningsfrekvens"@sv ;
     skos:definition "Liittää manifestaation ilmestymistiheyteen, joka ilmaisee, millaisin aikavälein sarja-aineiston numerot tai osat ilmestyvät tai päivittyvän aineiston päivitykset tapahtuvat."@fi,
@@ -10776,7 +10776,7 @@ mts:m291 a isothes:ConceptGroup,
         mts:m4367,
         mts:m4651,
         mts:m915 ;
-    skos:prefLabel "frequency"@en,
+    skos:prefLabel "Frequency"@en,
         "Ilmestymistiheys"@fi,
         "Utgivningsfrekvens"@sv .
 
@@ -11106,7 +11106,6 @@ mts:m346 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20001 ;
-    skos:altLabel "RDA Content Type (RDA)"@en ;
     skos:definition "Liittää ekspression jaotteluun, joka ilmaisee sisällön esitysmuodon ja sen, minkä aistin välityksellä sisältö on tarkoitus vastaanottaa. Jos mikään yllä olevan RDA:n sisältötyypeistä ei sovellu kuvaamaan aineiston sisältöä, merkitään 'muu'."@fi,
         "Sammankopplar uttryck med en indelning som anger visningsform för innehållet och med vilket sinne innehållet är avsett att mottagas. Om ingen av RDA-innehållstyperna ovan kan användas för att beskriva materialets innehåll anges \"annan\"."@sv ;
     skos:member mts:m1019,
@@ -11132,7 +11131,7 @@ mts:m346 a isothes:ConceptGroup,
         mts:m912,
         mts:m938,
         mts:m948 ;
-    skos:prefLabel "content type (RDA)"@en,
+    skos:prefLabel "Content type (RDA)"@en,
         "Sisältötyyppi (RDA)"@fi,
         "Innehållstyp (RDA)"@sv .
 
@@ -18483,7 +18482,6 @@ mts:m977 a isothes:ConceptGroup,
         mts:m1585,
         mts:m2265,
         mts:m2267,
-        mts:m2276,
         mts:m2286,
         mts:m2295,
         mts:m3492,
@@ -18625,10 +18623,11 @@ mts:m977 a isothes:ConceptGroup,
         mts:m4337,
         mts:m4584,
         mts:m4585,
+        mts:m4816,
         mts:m669,
         mts:m731,
         mts:m877 ;
-    skos:prefLabel "Ekspressioiden suhteet ekspressioon"@fi,
+    skos:prefLabel "Ekspression suhteet ekspressioon"@fi,
         "Relationer mellan uttryck"@sv .
 
 mts:m983 a skos:Concept ;
@@ -25480,6 +25479,19 @@ Vastavuoroinen suhde: teokseen yhdistyjä."""@fi,
     skos:prefLabel "merged to form (work)"@en,
         "yhdistynyt teokseksi"@fi,
         "sammanslagen till verket"@sv .
+
+mts:m2276 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaw:P10146 ;
+    skos:broader mts:m2274 ;
+    skos:definition """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
+Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi,
+        "Sammankopplar verk med ett verk uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "absorbed in part by (work)"@en,
+        "sulautunut osittain teokseen"@fi,
+        "uppgått delvis i verket"@sv .
 
 mts:m2278 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
@@ -33849,11 +33861,11 @@ mts:m4080 a skos:Concept ;
 
 mts:m4081 a skos:Concept ;
     skos:altLabel "ordförande för stadsfullmäktige"@sv,
-        "stadsfullmäktiges ordförande"@sv ;
+        "stadsfullmäktigeordförande"@sv ;
     skos:broader mts:m2798 ;
     skos:inScheme mts: ;
     skos:prefLabel "kaupunginhallituksen puheenjohtaja"@fi,
-        "stadsfullmäktigeordförande"@sv .
+        "stadsfullmäktiges ordförande"@sv .
 
 mts:m4082 a skos:Concept ;
     skos:broader mts:m3945 ;
@@ -33986,11 +33998,11 @@ mts:m4101 a skos:Concept ;
         "glasarbetare"@sv .
 
 mts:m4102 a skos:Concept ;
-    skos:altLabel "laboratoriearbetare"@sv ;
+    skos:altLabel "laboratorieanställd"@sv ;
     skos:broader mts:m3928 ;
     skos:inScheme mts: ;
     skos:prefLabel "laboratoriotyöntekijä"@fi,
-        "laboratorieanställd"@sv .
+        "laboratoriearbetare"@sv .
 
 mts:m4103 a skos:Concept ;
     skos:altLabel "platschef"@sv ;
@@ -34444,7 +34456,6 @@ mts:m4201 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdae:P20097 ;
-    skos:altLabel "televisiokäsikirjoitus  (ekspressio)"@fi ;
     skos:broader mts:m4202 ;
     skos:definition """Liittää ekspression teoksen ekspressioon, joka sisältää lähteenä olevaan teokseen perustuvan televisio-ohjelman käsikirjoituksen.\r
 Vastavuoroinen suhde: televisiokäsikirjoituksen perustana  (ekspressio)."""@fi,
@@ -38435,6 +38446,18 @@ mts:m480 a skos:Concept ;
         "digitaalinen"@fi,
         "digital"@sv .
 
+mts:m4816 a skos:Concept ;
+    rdfs:comment "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20144 ;
+    skos:broader mts:m2286 ;
+    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
+        "Sammankopplar uttryck med ett verks uttryck, som delvis uppgått som en del i ett annat uttryck. Parallell relation: delvis uppgått i uttryck."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "absorbed in part by expression"@en,
+        "sulautunut osittain ekspressioon"@fi,
+        "uppgått delvis i uttrycket"@sv .
+
 mts:m486 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -39094,7 +39117,7 @@ mts:m699 a skos:Concept ;
     skos:altLabel "elokuvaohjaaja (suhde)"@fi,
         "filmregissör (relation)"@sv ;
     skos:broader mts:m397 ;
-    skos:definition "Liittää teoksen ohjaajaajaan, joka on vastuussa elokuvataltioinnin yleisestä johtamisesta. Vastavuoroinen suhde: elokuva."@fi,
+    skos:definition "Liittää teoksen ohjaajaan, joka on vastuussa elokuvataltioinnin yleisestä johtamisesta. Vastavuoroinen suhde: elokuva."@fi,
         "Sammankopplar verk med en regissör som ansvarar för och leder arbetet vid en filminspelning. Parallell relation: film."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "film director"@en,
@@ -40591,7 +40614,6 @@ mts:m2004 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdaa:P50048 ;
-    skos:altLabel "film director of"@en ;
     skos:broader mts:m4511 ;
     skos:definition "Liittää ohjaajan elokuvaan, joka sisältää vastuun filmatun esityksen yleisestä johtamisesta ja valvonnasta. Vastavuoroinen suhde: elokuvaohjaaja."@fi,
         "Sammankopplar regissör med en film, som inbegriper ansvar för allmän ledning och övervakning av en filmad föreställning. Parallell relation: filmregissör."@sv ;
@@ -51068,26 +51090,6 @@ mts:m2062 a skos:Concept ;
         "liite"@fi,
         "bilaga"@sv .
 
-mts:m2276 a skos:Concept ;
-    rdfs:comment "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20144,
-        rdaw:P10146 ;
-    skos:altLabel "absorbed in part by expression"@en,
-        "sulautunut osittain ekspressioon"@fi,
-        "uppgått delvis i uttrycket"@sv ;
-    skos:broader mts:m2274,
-        mts:m2286 ;
-    skos:definition "Liittää ekspression teoksen ekspressioon, joka on osittain sulautunut osaksi toista ekspressiota. Vastavuoroinen suhde: ekspressioon osittain sulautunut."@fi,
-        """Liittää teoksen teokseen, joka on sulautunut osittain osaksi toista teosta.\r
-Vastavuoroinen suhde: teokseen osittain sulautunut."""@fi,
-        "Sammankopplar uttryck med ett verks uttryck, som delvis uppgått som en del i ett annat uttryck. Parallell relation: delvis uppgått i uttryck."@sv,
-        "Sammankopplar verk med ett verk uppgått som en del i ett annat verk. Parallell relation: delvis uppgått i verk."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "absorbed in part by (work)"@en,
-        "sulautunut osittain teokseen"@fi,
-        "uppgått delvis i verket"@sv .
-
 mts:m2335 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -54070,13 +54072,13 @@ Vastavuoroinen suhde: aiempi ekspressio."""@fi,
         "Ett verks uttryck som intrigmässigt eller kronologiskt placerar sig efter ett föregående uttryck. Parallell relation: föregående uttryck."@sv ;
     skos:inScheme mts: ;
     skos:narrower mts:m2267,
-        mts:m2276,
         mts:m4257,
         mts:m4260,
         mts:m4272,
         mts:m4308,
         mts:m4310,
-        mts:m4336 ;
+        mts:m4336,
+        mts:m4816 ;
     skos:prefLabel "succeeded by (expression)"@en,
         "myöhempi ekspressio"@fi,
         "efterföljande uttryck"@sv .
@@ -56120,7 +56122,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-09-23T10:34:23+00:00"^^xsd:dateTime ;
+    dct:modified "2021-09-23T12:35:05+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
