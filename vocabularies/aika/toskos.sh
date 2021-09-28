@@ -1,14 +1,13 @@
 #!/bin/sh
 
-INFILES="aika.rdf"
+INFILES="aika.rdf aika-meta.ttl"
 OUTFILE=aika-skos.ttl
 
 
 SKOSIFYCMD="skosify"
 LOGFILE=skosify.log
-OPTS="--no-enrich-mappings --set-modified --namespace http://www.yso.fi/onto/aika/"
+OPTS="--no-enrich-mappings --no-mark-top-concepts --set-modified --namespace http://urn.fi/URN:NBN:fi:au:krono:"
 
 $SKOSIFYCMD $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
 
-#Uudenmalliselle YSO-paikoille ei ole testejä. Vielä.
-#bats test.bats
+
