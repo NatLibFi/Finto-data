@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JENAHOME="$HOME/sw/apache-jena"
+JENAHOME="/opt/apache-jena"
 INFILE="keko-skos.orig.ttl"
 HIERFILE="keko-hierarchy.nt"
 MERGEHIER="../../tools/merge-hierarchy/merge-hierarchy-skos.sparql"

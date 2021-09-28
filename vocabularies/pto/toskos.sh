@@ -5,7 +5,7 @@
 INFILES="pto.ttl pto-metadata.ttl ysoKehitys-Cicero-2019.ttl"
 OUTFILE=pto-skos.ttl
 
-CONFFILE="finnonto.cfg"
+CONFFILE="../../conf/skosify/finnonto.cfg"
 LOGFILE=skosify.log
 
 #skosify -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE

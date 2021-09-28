@@ -3,8 +3,8 @@
 INFILES="kto-metadata.ttl kto.rdf-xml-ONKIin.owl"
 OUTFILE=kto-skos.ttl
 
-SKOSIFYHOME="../../tools/skosify/"
+SKOSIFYCMD="skosify"
 CONFFILE=../../conf/skosify/finnonto.cfg
 LOGFILE=skosify.log
 
-$SKOSIFYHOME/skosify.py -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+$SKOSIFYCMD -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
