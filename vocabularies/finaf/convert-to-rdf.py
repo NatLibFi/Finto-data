@@ -459,10 +459,10 @@ def main():
             g.add((uri, professionOrOccupation, value))
 
         for f in rec.get_fields('377'):
-            if 'a' in f:
-                lang_uri = lookup_language(f['a'])
+            for lang in f.get_subfields('a'):
+                lang_uri = lookup_language(lang)
                 if not lang_uri:
-                    logging.warning("Unknown 377 language value '%s' for <%s>, skipping", f['a'], uri)
+                    logging.warning("Unknown 377 language value '%s' for <%s>, skipping", lang, uri)
                     continue
 
                 if is_person:
