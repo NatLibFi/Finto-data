@@ -1,0 +1,46 @@
+@prefix lajisto: <http://www.yso.fi/onto/lajisto/> .
+@prefix lajisto-meta: <http://www.yso.fi/onto/lajisto-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
+
+puho: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+
+    dc:creator 
+
+        "Suomen Lajitietokeskus"@fi ,
+        "Finlands Artdatacenter"@sv ,
+        "Finnish Biodiversity Information Facility (FinBIF)"@en ;
+
+    dc:title "LAJISTO - Lajitietokeskuksen lajiluettelo"@fi,
+        "LAJISTO - artlistan av Finlands Artdatacenter"@en,
+        "LAJISTO - Species list of FinBIF"@sv ;
+
+    dc:description
+"""LAJISTO on Suomen lajitietokeskuksen tietokannasta poimittu lajiluettelo, jonka käsitteitä voi käyttää kuvailutarjoituksiin."""@fi ,
+"""LAJISTO is species list based on the open access data repository of the Finnish Biodiversity Information Facility (FinBIF) and can be used for content description purposes.
+FinBIF 2021. Lajiluettelo. https://laji.fi/en/taxon/list? (accessed 02.02.2021)."""@en ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe> ;
+    dct:license <http://creativecommons.org/licenses/by/3.0/> ;
+    foaf:homepage <https://laji.fi/> .
+
+lajisto-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "LAJISTO-käsite"@fi, 
+        "LAJISTO-begrepp"@sv, 
+        "LAJISTO Concept"@en .
+
+yso-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "YSO-käsite"@fi,
+        "ALLFO-begrepp"@sv,
+        "YSO Concept"@en .
