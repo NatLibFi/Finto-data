@@ -2496,7 +2496,8 @@ mts:m1246 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "DAISY"@fi,
         "DAISY"@sv ;
-    skos:scopeNote "Äänen koodausmuoto."@fi,
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
+        "Äänen koodausmuoto."@fi,
         "Äänikirjastandardi"@fi,
         "Kodningsformat för ljud."@sv,
         "Ljudboksstandard"@sv .
@@ -2659,11 +2660,8 @@ mts:m1282 a isothes:ConceptGroup,
         mts:m1976,
         mts:m2026,
         mts:m2028,
-        mts:m2033,
         mts:m2226,
         mts:m2239,
-        mts:m2240,
-        mts:m2241,
         mts:m2245,
         mts:m387,
         mts:m548,
@@ -7362,8 +7360,7 @@ mts:m2003 a isothes:ConceptGroup,
         mts:m2000,
         mts:m2005,
         mts:m2016,
-        mts:m2017,
-        mts:m2018 ;
+        mts:m2017 ;
     skos:prefLabel "form of tactile notation"@en,
         "Taktiilin merkkijärjestelmän tyyppi"@fi,
         "Typ av taktil notation"@sv .
@@ -7419,6 +7416,23 @@ mts:m2031 a skos:Concept ;
         "teoribok"@sv ;
     skos:scopeNote "Musiikinteorian aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona."@fi,
         "Musikteoretiskt material, i vilket notmaterialets andel är liten jämfört med textmaterialets, behandlas som textmaterial."@sv .
+
+mts:m2033 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi,
+        "Lättläst språk är mer läsligt och begripligt än allmänspråket vad gäller innehåll, ordförråd och struktur. Språket är anpassat till personer med svårigheter att läsa eller förstå allmänspråket."@sv ;
+    skos:example "MARC 21: 341 0# ‡a tekstiin perustuva ‡b selkokielinen ‡2 mts"@fi,
+        "MARC 21: 546 ## ‡a Selkokielinen."@fi,
+        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi,
+        "MARC 21: 546 ## ‡a Lättläst."@sv,
+        "MARC 21: 546 ## ‡a lättläst ‡2 mdo"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "selkokielinen"@fi,
+        "lättläst"@sv ;
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
 
 mts:m2035 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -8931,6 +8945,7 @@ mts:m2224 a isothes:ConceptGroup,
         mts:m2220,
         mts:m2222,
         mts:m333,
+        mts:m4823,
         mts:m571 ;
     skos:prefLabel "note on manifestation"@en,
         "Huomautus manifestaatiosta"@fi,
@@ -8953,6 +8968,30 @@ mts:m2238 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "kielletty alle 3-vuotiailta"@fi,
         "förbjuden under 3 år"@sv .
+
+mts:m2240 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska."@fi,
+        "Textning för hörselskadade: finska, svenska, engelska, tyska, franska."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstitys kuulovammaisille"@fi,
+        "textning för hörselskadade"@sv ;
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
+
+mts:m2241 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "Kuvailutulkkaus englanniksi."@fi,
+        "Syntolkning på engelska"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kuvailutulkkaus"@fi,
+        "syntolkning"@sv ;
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
 
 mts:m2242 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16317,6 +16356,27 @@ mts:m4815 a isothes:ConceptGroup,
         mts:m491 ;
     skos:prefLabel "Manifestaation suhteet"@fi .
 
+mts:m4817 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstiin perustuva"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4818 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstivastine"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4819 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstiversio"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
 mts:m482 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -16325,6 +16385,106 @@ mts:m482 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "Internet-yhteys"@fi,
         "Internetanslutning"@sv .
+
+mts:m4820 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaatii lukuohjelman"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4821 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tuntoaistiin perustuva"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4822 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekstiä ja ääntä sisältävä e-kirja"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4823 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso <http://www.rdaregistry.info/Elements/m/#P30452> ;
+    skos:member mts:m1246,
+        mts:m2018,
+        mts:m2033,
+        mts:m2240,
+        mts:m2241,
+        mts:m4817,
+        mts:m4818,
+        mts:m4819,
+        mts:m4820,
+        mts:m4821,
+        mts:m4822,
+        mts:m4824,
+        mts:m4825,
+        mts:m4826,
+        mts:m4827,
+        mts:m4828,
+        mts:m4829,
+        mts:m4830,
+        mts:m4831,
+        mts:m4832,
+        mts:m4833,
+        mts:m4834,
+        mts:m4835,
+        mts:m4836,
+        mts:m4837,
+        mts:m4838,
+        mts:m4839,
+        mts:m4840,
+        mts:m4841,
+        mts:m4842 ;
+    skos:prefLabel "Huomautus saavutettavuudesta"@fi .
+
+mts:m4824 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Luetus-kirja"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4825 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaatii kuuntelulaitteen"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4826 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pistetiheys: tiheää harvalla"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4827 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kuuloon perustuva"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4828 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Luetaan yhdessä -kirja"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4829 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "navigointi hakemiston avulla"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
 
 mts:m483 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -16340,6 +16500,97 @@ mts:m483 a skos:Concept ;
         "Årets historieverk"@sv ;
     skos:scopeNote "Historian Ystäväin Liiton vuodesta 1973 palkitsema teos, joka on ”erittäin ansiokkaasti edistänyt historiallisen tietämyksen laajenemista ja syvenemistä suomalaisen yleisön keskuudessä”. Vuoden historiateos julkistetaan helmikuisilla Historiapäiville."@fi,
         "Sedan 1973 har Historievännernas förbund premierat verk som förtjänstfullt bidragit till en ökad och fördjupad historisk insikt hos den finska publiken. Årets historieverk tillkännages i februari under Historiedagarna."@sv .
+
+mts:m4830 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "viittomakieli"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4831 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pistetiheys: harvaa harvalla"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4832 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "viittomakieli kuva kuvassa -tilassa"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4833 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaatii kuunteluohjelman"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4834 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "synkronoitu ääni"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4835 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "näköön perustuva"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4836 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mukana musiikki"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4837 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "navigointi sisällysluettelon avulla"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4838 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "mukana äänitehosteita"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4839 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "äänikirjalle on saatavissa kuvaliite"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 500."@fi .
+
+mts:m4840 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vaatii kuunteluohjelman tai kuuntelulaitteen"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
+
+mts:m4841 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "pistekirjoitus"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 341."@fi .
+
+mts:m4842 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "sisältää pistetekstin lisäksi painetun tekstin"@fi ;
+    skos:scopeNote "Käytetään MARC 21 -kentässä 532."@fi .
 
 mts:m490 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -17980,7 +18231,6 @@ mts:m88 a isothes:ConceptGroup,
         mts:m1150,
         mts:m1178,
         mts:m1238,
-        mts:m1246,
         mts:m1267,
         mts:m1283,
         mts:m1291,
@@ -24528,7 +24778,8 @@ mts:m2018 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "tactile graphic"@en,
         "kohokuva"@fi,
-        "relief"@sv .
+        "relief"@sv ;
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
 
 mts:m2024 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -24581,22 +24832,6 @@ mts:m2028 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "osittain selkokielinen"@fi,
         "delvis lättläst"@sv .
-
-mts:m2033 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:broader mts:m611 ;
-    skos:definition "Selkokieli on sisällöltään, sanastoltaan ja rakenteeltaan yleiskieltä luettavammaksi ja ymmärrettävämmäksi muokattua kieltä niitä ihmisiä varten, joilla on vaikeuksia lukemisessa tai/ja ymmärtämisesssä. (Lähde: Kielikello 3/2002)"@fi,
-        "Lättläst språk är mer läsligt och begripligt än allmänspråket vad gäller innehåll, ordförråd och struktur. Språket är anpassat till personer med svårigheter att läsa eller förstå allmänspråket."@sv ;
-    skos:example "MARC 21: 546 ## ‡a Selkokielinen."@fi,
-        "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi,
-        "MARC 21: 546 ## ‡a Lättläst."@sv,
-        "MARC 21: 546 ## ‡a lättläst ‡2 mdo"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "selkokielinen"@fi,
-        "lättläst"@sv .
 
 mts:m2038 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -25223,30 +25458,6 @@ mts:m2239 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "vaihtoehtoiset ääniraidat"@fi,
         "valbara ljudspår"@sv .
-
-mts:m2240 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:broader mts:m611 ;
-    skos:example "Tekstitys kuulovammaisille: suomi, ruotsi, englanti, saksa, ranska."@fi,
-        "Textning för hörselskadade: finska, svenska, engelska, tyska, franska."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "tekstitys kuulovammaisille"@fi,
-        "textning för hörselskadade"@sv .
-
-mts:m2241 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:broader mts:m611 ;
-    skos:example "Kuvailu näkövammaisille englanniksi."@fi,
-        "Syntolkning på engelska"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "kuvailu näkövammaisille"@fi,
-        "syntolkning"@sv .
 
 mts:m2245 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -54364,6 +54575,29 @@ mts:m4218 a skos:Concept ;
         "liittyy ekspressioon"@fi,
         "relaterat uttryck"@sv .
 
+mts:m611 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "Av-aineistossa: Teksti: suomi, ruotsi."@fi,
+        "Teksti suomeksi ja ruotsiksi."@fi,
+        "För AV-material: Text: finska, svenska."@sv,
+        "Text på finska och svenska."@sv ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m1016,
+        mts:m1727,
+        mts:m1976,
+        mts:m2026,
+        mts:m2028,
+        mts:m2226,
+        mts:m2239,
+        mts:m2245,
+        mts:m387,
+        mts:m730 ;
+    skos:prefLabel "teksti"@fi,
+        "text"@sv .
+
 mts:m1443 a skos:Concept ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -54764,32 +54998,6 @@ mts:m4691 a skos:Concept ;
         "organ"@sv ;
     skos:scopeNote "Valtionhallinnon osalta käytetään vain määräaikaisista toimielimistä; pysyvistä käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m4669'>viranomainen</a>."@fi,
         "Gällande statsförvaltning används termen endast om tidsbestämda organ; om bestående används termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m4669'>myndighet</a>."@sv .
-
-mts:m611 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:example "Av-aineistossa: Teksti: suomi, ruotsi."@fi,
-        "Teksti suomeksi ja ruotsiksi."@fi,
-        "För AV-material: Text: finska, svenska."@sv,
-        "Text på finska och svenska."@sv ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m1016,
-        mts:m1727,
-        mts:m1976,
-        mts:m2026,
-        mts:m2028,
-        mts:m2033,
-        mts:m2226,
-        mts:m2239,
-        mts:m2240,
-        mts:m2241,
-        mts:m2245,
-        mts:m387,
-        mts:m730 ;
-    skos:prefLabel "teksti"@fi,
-        "text"@sv .
 
 mts:m2445 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -56126,7 +56334,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-10-05T23:51:17+00:00"^^xsd:dateTime ;
+    dct:modified "2021-10-11T23:51:16+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
