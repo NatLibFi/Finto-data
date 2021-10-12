@@ -193,7 +193,7 @@ slm:s353  a              owl:Class , skos:Concept ;
 slm:s1021  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "enpersonsspel"@sv , "enmansspel"@sv ;
+        skos:altLabel    "enspelarspel"@sv , "enpersonsspel"@sv , "enmansspel"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p28159> ;
         skos:prefLabel   "yksinpelit"@fi , "ensamspel"@sv ;
         skos:related     slm:s603 .
@@ -803,12 +803,6 @@ slm:s695  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "musiikkilehdet"@fi , "musiktidskrifter"@sv .
 
-slm:s370  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s861 ;
-        skos:prefLabel   "sävellykset"@fi , "kompositioner"@sv .
-
 slm:s1180  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s409 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -980,9 +974,10 @@ slm:s21  a               owl:Class , skos:Concept ;
 slm:s173  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s739 , slm:s1150 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "bildverk med dikter"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "runokuvakirjat"@fi , "diktbilderböcker"@sv ;
-        skos:scopeNote   "Käytetään kuvateoksista, joiden teksti on runomuodossa."@fi , "Används om bilderböcker med texten i versform."@sv .
+        skos:scopeNote   "Käytetään kuvateoksista, joiden teksti on runomuodossa."@fi , "Används om bilderböcker med texten i diktform."@sv .
 
 slm:s347  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -1552,6 +1547,11 @@ slm:s143  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "äänirunous"@fi , "ljudpoesi"@sv .
 
+slm:s1434  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s603 , yso-update:uudetmuuttuneetSv ;
+        skos:note        "Peli, joka soveltuu neljälle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan neljälle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi ;
+        skos:prefLabel   "nelinpelit"@fi .
+
 slm:s219  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s499 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1675,10 +1675,11 @@ slm:s199  a              owl:Class , skos:Concept ;
         skos:related     slm:s681 , slm:s1173 , slm:s452 .
 
 slm:s603  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s170 ;
+        rdfs:subClassOf  slm:s170 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "spel för flera spelare"@sv , "flerpersonsspel"@sv , "flerspelarspel"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26475> ;
-        skos:note        "Konsolspel som kan spelas av flera spelare samtidigt."@sv , "Konsolipeli, jota voi pelata usea pelaaja yhtä aikaa."@fi ;
+        skos:note        "Konsolspel som kan spelas av flera spelare samtidigt."@sv , "Peli, jota voi pelata useampi kuin yksi pelaaja yhtä aikaa."@fi ;
         skos:prefLabel   "moninpelit"@fi , "multiplayerspel"@sv .
 
 slm:s1318  a             owl:Class , skos:Concept ;
@@ -2433,6 +2434,13 @@ slm:s681  a              owl:Class , skos:Concept ;
         skos:related     slm:s199 , slm:s1173 , slm:s452 ;
         skos:scopeNote   "Käytetään jonkin kansan muinaisuutta ja mytologiaa kuvaavista eepoksista. \nTaide-eepoksen ohella eeposten toinen päälaji. Kansaneepoksia ovat esim. Gilgames, Mahabharata, Ramayana, Edda, Rolandin laulu ja Popol Vuh."@fi , "Används om episka verk som beskriver ett folks forntid och mytologi, t.ex. Gilgamesheposet, Mahabharata, Ramayana, Edda, Rolandssången och Popol Vuh."@sv .
 
+slm:s1431  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s241 , yso-update:uudetmuuttuneetSv , slm:s476 ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027043> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "reelit"@fi ;
+        skos:related     slm:s629 .
+
 slm:s1376  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027071> ;
@@ -2935,9 +2943,11 @@ slm:s336  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26233> ;
         skos:prefLabel   "sportspel"@sv , "urheilupelit"@fi .
 
-slm:s1377  a            owl:Class , skos:Concept ;
-        skos:inScheme   slm:s861 ;
-        skos:prefLabel  "musik"@sv , "musiikki"@fi .
+slm:s1377  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "musiikkiteokset"@fi , "sävelteokset"@fi , "sävellykset"@fi ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "musik"@sv , "musiikki"@fi .
 
 slm:s1240  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s505 ;
@@ -3255,12 +3265,13 @@ slm:s92  a               owl:Class , skos:Concept ;
         skos:related     slm:s519 , slm:s793 .
 
 slm:s1172  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s170 ;
+        rdfs:subClassOf  slm:s603 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "tvåmansspel"@sv , "tvåpersonsspel"@sv ;
+        skos:altLabel    "tvåspelarspel"@sv , "tvåmansspel"@sv , "tvåpersonsspel"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p27751> ;
+        skos:note        "Peli, joka soveltuu kahdelle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan kahdelle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi ;
         skos:prefLabel   "tvåpersonersspel"@sv , "kaksinpelit"@fi ;
-        skos:related     slm:s1021 , slm:s603 .
+        skos:related     slm:s1021 .
 
 slm:s448  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -3680,6 +3691,11 @@ slm:s750  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "klavövningar"@sv , "klaaviharjoitukset"@fi .
+
+slm:s1433  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s603 , yso-update:uudetmuuttuneetSv ;
+        skos:note        "Peli, joka soveltuu kuudelle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan kuudelle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi ;
+        skos:prefLabel   "kuusinpelit"@fi .
 
 slm:s875  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
@@ -4547,7 +4563,8 @@ slm:s629  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "kontradanser"@sv , "kontratanssit"@fi .
+        skos:prefLabel   "kontradanser"@sv , "kontratanssit"@fi ;
+        skos:related     slm:s1431 .
 
 slm:s786  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
@@ -4690,6 +4707,11 @@ slm:s458  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "wienervalser"@sv , "wieninvalssit"@fi .
+
+slm:s1432  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s603 , yso-update:uudetmuuttuneetSv ;
+        skos:note        "Peli, joka soveltuu kolmelle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan kolmelle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi ;
+        skos:prefLabel   "kolminpelit"@fi .
 
 slm:s605  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -5670,6 +5692,11 @@ slm:s694  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "kritiska utgåvor"@sv , "kriittiset editiot"@fi .
 
+slm:s1435  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s603 , yso-update:uudetmuuttuneetSv ;
+        skos:note        "Peli, joka soveltuu viidelle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan viidelle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi ;
+        skos:prefLabel   "viisinpelit"@fi .
+
 slm:s779  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1007 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5941,6 +5968,7 @@ slm:s1283  a             owl:Class , skos:Concept ;
 
 slm:s544  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "asiat-amerikansk litteratur"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p21825> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "aasialaisamerikkalainen kirjallisuus"@fi , "asiatisk-amerikansk litteratur"@sv ;
