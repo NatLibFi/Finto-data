@@ -14,7 +14,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -377,26 +376,6 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <ns1:homepage rdf:resource="https://www.kiwi.fi/display/Finto/Metatietosanasto"/>
   </owl:Ontology>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211015t1">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="en">hardback</skos:altLabel>
-    <skos:definition xml:lang="fi">Taipumaton, usein sidottu. Kovat kannet. Kovakantisen kirjan kannet ovat päällystettyä pahvia. Sisältää myös pahvisivuiset kirjat.</skos:definition>
-    <skos:prefLabel xml:lang="en">hardcover</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">hårda pärmar</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">kovakantinen</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211015t2">
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="en">paperback</skos:altLabel>
-    <skos:definition xml:lang="fi">Taipuisa, usein nidottu. Pehmeät kannet. Pehmeäkantisen kirjan kannet ovat esim. pintakäsiteltyä paperia tai kartonkia. Sisältää myös kangaskirjat, kylpykirjat ja pehmokirjat.</skos:definition>
-    <skos:prefLabel xml:lang="sv">mjuka pärmar</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">pehmeäkantinen</skos:prefLabel>
-    <skos:prefLabel xml:lang="en">softcover</skos:prefLabel>
-  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -41245,8 +41224,6 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:altLabel xml:lang="sv">Bindningstyp</skos:altLabel>
     <skos:definition xml:lang="fi">Liittää manifestaation menetelmään, jota käytetään sitomaan julkaistu tai julkaisematon manifestaatio.</skos:definition>
     <skos:definition xml:lang="sv">Sammankopplar manifestation med en metod som används för att binda in en publicerad eller opublicerad manifestation.</skos:definition>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:20211015t1"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:20211015t2"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1017"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1050"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1420"/>
@@ -41254,6 +41231,8 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m186"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2097"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2307"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4843"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4844"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m606"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m921"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m962"/>
@@ -47165,6 +47144,26 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="fi">sisältää pistetekstin lisäksi painetun tekstin</skos:prefLabel>
     <skos:scopeNote xml:lang="fi">Käytetään MARC 21 -kentässä 532.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4843">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="en">paperback</skos:altLabel>
+    <skos:definition xml:lang="fi">Taipuisa, usein nidottu. Pehmeät kannet. Pehmeäkantisen kirjan kannet ovat esim. pintakäsiteltyä paperia tai kartonkia. Sisältää myös kangaskirjat, kylpykirjat ja pehmokirjat.</skos:definition>
+    <skos:prefLabel xml:lang="sv">mjuka pärmar</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">pehmeäkantinen</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">softcover</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4844">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="en">hardback</skos:altLabel>
+    <skos:definition xml:lang="fi">Taipumaton, usein sidottu. Kovat kannet. Kovakantisen kirjan kannet ovat päällystettyä pahvia. Sisältää myös pahvisivuiset kirjat.</skos:definition>
+    <skos:prefLabel xml:lang="en">hardcover</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">hårda pärmar</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kovakantinen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m486">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
