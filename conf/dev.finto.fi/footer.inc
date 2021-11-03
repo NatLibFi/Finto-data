@@ -103,7 +103,7 @@ function vocabRoot(topConcepts) {
   for (var i = 0; i < topConcepts.length; i++) {
     var conceptData = topConcepts[i];
     var childObject = {
-      text: conceptData.label, 
+      text: getLabel(conceptData),
       a_attr : getHrefForUri(conceptData.uri),
       uri: conceptData.uri,
       notation: conceptData.notation,
@@ -113,8 +113,6 @@ function vocabRoot(topConcepts) {
       childObject.a_attr['class'] = 'yso-concept';
     if (conceptData.hasChildren)
       childObject.children = true;
-    if (window.showNotation && conceptData.notation)
-      childObject.text = '<span class="tree-notation">' + conceptData.notation + '</span> ' + childObject.text;
     setNode(childObject);
     topArray.push(childObject);
   }
