@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # TODO: also support simple list of URLs as dataset file format?
 
@@ -10,13 +10,16 @@ import email.utils
 import datetime
 import time
 import argparse
-import ConfigParser
+import configparser
 import logging
 import subprocess
+import importlib
 from contextlib import closing
 
+# internal imports
+import daemon
+
 # external library imports
-import daemon.runner
 import pyinotify
 import requests
 from rdflib import Graph, URIRef, Literal, RDF, RDFS, Namespace, plugin
@@ -173,17 +176,10 @@ class Handler (pyinotify.ProcessEvent):
     self.syncer.sync()
 
 class App:
-  def __init__(self, args, cfg, pidfile, wdir):
+  def __init__(self, args, cfg, wdir):
     self.args = args
     self.cfg = cfg
-    self.wdir = wdir 
-    
-    # fields required by DaemonRunner
-    self.stdin_path = '/dev/null'
-    self.stdout_path = '/dev/null'
-    self.stderr_path = '/dev/null'
-    self.pidfile_path = pidfile
-    self.pidfile_timeout = 5
+    self.wdir = wdir
 
   def run(self, singleshot=False):
     datasetfile = self.cfg.get('graphsync', 'dataset_file')
@@ -220,7 +216,7 @@ class App:
       fh.setFormatter(formatter)
       logger.addHandler(fh)
     
-    logger.info("graphsync $Rev: 1293 $ starting up")
+    logger.info("graphsync $Rev: 1294 $ starting up")
     logger.debug("watching dataset file %s", datasetfile)
     logger.debug("check_interval set to %s seconds", check_interval)
     logger.debug("wait_after_update set to %s seconds", wait_after_update)
@@ -240,26 +236,36 @@ class App:
 parser = argparse.ArgumentParser(description='Synchronize RDF graphs from source URLs to a SPARQL endpoint.')
 group = parser.add_mutually_exclusive_group()
 group.add_argument('-D', '--debug', action='store_true', help='enable debug output')
-parser.add_argument('config', type=file, help='configuration file')
+parser.add_argument('config', type=argparse.FileType('r'), help='configuration file')
 parser.add_argument('command', type=str, choices=['start','stop','restart'], nargs='?', help='daemon command; if not given, run as foreground process')
 args = parser.parse_args()
 
 # read configuration file
-cfg = ConfigParser.ConfigParser()
+cfg = configparser.ConfigParser()
 cfg.readfp(args.config)
 
-# initialize App instance for DaemonRunner
+# initialize App instance
 pidfile = cfg.get('graphsync', 'pidfile')
-app = App(args, cfg, os.path.abspath(pidfile), os.getcwd())
+app = App(args, cfg, os.getcwd())
+
+class GraphsyncDaemon(daemon.Daemon):
+    def __init__(self, pidfile, stdin='/dev/null', stdout='/dev/null', stderr='/dev/null'):
+        super().__init__(pidfile=pidfile, stdin=stdin, stdout=stdout, stderr=stderr)
+    def run(self):
+        app.run()
+
+    def quit(self):
+        pass
 
 if args.command:
-  sys.argv[1:] = [args.command] # do_action reads command directly from sys.argv
-  runner = daemon.runner.DaemonRunner(app)
-  try:
-    runner.do_action()
-  except:
-    f = open('error', 'w')
-    print >>f, "ERROR"
+  daemon = GraphsyncDaemon(pidfile=pidfile)
+  if 'start' == args.command:
+    daemon.start()
+  elif 'stop' == args.command:
+    daemon.stop()
+  elif 'restart' == args.command:
+    daemon.restart()
+
 else:
   # single-shot mode
   app.run(singleshot=True)
