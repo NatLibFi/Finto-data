@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -3584,6 +3585,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
     <skos:prefLabel xml:lang="sv">häftad</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">nidottu</skos:prefLabel>
     <skos:prefLabel xml:lang="en">paperback</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">"Liittää manifestaation ilmaukseen niistä ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita."</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1421">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -4013,6 +4015,7 @@ Ei käytetä digitaalisesti äänitetystä musiikista [ks. musiikki], kielinäyt
     <skos:prefLabel xml:lang="en">hardback</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">inbunden</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sidottu</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">"Liittää manifestaation ilmaukseen niistä ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita."</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1479">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -7845,19 +7848,6 @@ Katso myös taktiili teksti.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="sv">fugor</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">fuugat</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m186">
-    <dc11:source xml:lang="sv">ISBD-term</dc11:source>
-    <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
-    <dc11:source xml:lang="sv">RDA-term</dc11:source>
-    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="sv">flexband</skos:altLabel>
-    <skos:altLabel xml:lang="fi">flexikantinen</skos:altLabel>
-    <skos:definition xml:lang="sv">Inbunden bok med böjbara pärmar.</skos:definition>
-    <skos:definition xml:lang="fi">Sidottu kirja, jossa taipuisa kansi.</skos:definition>
-    <skos:prefLabel xml:lang="sv">inbunden, mjuka pärmar</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">sidottu, pehmeäkantinen</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1860">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -41230,7 +41220,6 @@ Vastavuoroinen suhde: kadenssi (ekspressio).</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1050"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1420"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1477"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m186"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2097"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2307"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4843"/>
@@ -47151,7 +47140,11 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">flexband</skos:altLabel>
+    <skos:altLabel xml:lang="fi">flexikantinen</skos:altLabel>
+    <skos:altLabel xml:lang="sv">inbunden, mjuka pärmar</skos:altLabel>
     <skos:altLabel xml:lang="en">paperback</skos:altLabel>
+    <skos:altLabel xml:lang="fi">sidottu, pehmeäkantinen</skos:altLabel>
     <skos:definition xml:lang="sv">Böjlig, ofta häftad. Mjuka pärmar, gjorda av t.ex. ytbehandlat papper eller kartong. Inkluderar också tyg-, bad- och mjukisböcker.</skos:definition>
     <skos:definition xml:lang="fi">Taipuisa, usein nidottu. Pehmeät kannet. Pehmeäkantisen kirjan kannet ovat esim. pintakäsiteltyä paperia tai kartonkia. Sisältää myös kangaskirjat, kylpykirjat ja pehmokirjat.</skos:definition>
     <skos:prefLabel xml:lang="sv">mjuka pärmar</skos:prefLabel>
