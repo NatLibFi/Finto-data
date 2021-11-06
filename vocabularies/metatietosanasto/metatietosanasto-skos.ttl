@@ -138,6 +138,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m4400,
         mts:m4402,
         mts:m4574,
+        mts:m4849,
         mts:m50,
         mts:m537,
         mts:m558,
@@ -556,6 +557,34 @@ mts:m83 a isothes:ConceptGroup,
     skos:prefLabel "work"@en,
         "Teos"@fi,
         "Verk"@sv .
+
+<http://id.loc.gov/vocabulary/msupplcont/bibliography> skos:exactMatch mts:m4854 .
+
+<http://id.loc.gov/vocabulary/msupplcont/creatorbio> skos:exactMatch mts:m4851 .
+
+<http://id.loc.gov/vocabulary/msupplcont/discography> skos:exactMatch mts:m4852 .
+
+<http://id.loc.gov/vocabulary/msupplcont/ethnologicinfo> skos:exactMatch mts:m4859 .
+
+<http://id.loc.gov/vocabulary/msupplcont/film> skos:exactMatch mts:m4858 .
+
+<http://id.loc.gov/vocabulary/msupplcont/historicalinfo> skos:exactMatch mts:m4850 .
+
+<http://id.loc.gov/vocabulary/msupplcont/index> skos:exactMatch mts:m4855 .
+
+<http://id.loc.gov/vocabulary/msupplcont/instructmaterial> skos:exactMatch mts:m4862 .
+
+<http://id.loc.gov/vocabulary/msupplcont/libretto> skos:exactMatch mts:m4853 .
+
+<http://id.loc.gov/vocabulary/msupplcont/music> skos:exactMatch mts:m4857 .
+
+<http://id.loc.gov/vocabulary/msupplcont/performerhistory> skos:exactMatch mts:m4847 .
+
+<http://id.loc.gov/vocabulary/msupplcont/techinstruments> skos:exactMatch mts:m4860 .
+
+<http://id.loc.gov/vocabulary/msupplcont/techmusic> skos:exactMatch mts:m4846 .
+
+<http://id.loc.gov/vocabulary/msupplcont/thematicindex> skos:exactMatch mts:m4861 .
 
 <http://iflastandards.info/ns/isbd/terms/contentform/T1001> skos:exactMatch mts:m1464 .
 
@@ -1621,7 +1650,8 @@ mts:m1015 a isothes:ConceptGroup,
         "Lista över utrustnings- och systemkrav: https://gamemetadata.soe.ucsc.edu/platform"@sv .
 
 mts:m1017 a skos:Concept ;
-    dc:source "RDA-termi ; ISBD-termi"@fi,
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     skos:inScheme mts: ;
@@ -2148,7 +2178,7 @@ mts:m1157 a isothes:ConceptGroup,
     skos:altLabel "Kappaleeseen liittyvä toimija"@fi,
         "Aktör relaterad till exemplar"@sv ;
     skos:definition "Liittää kappaleen toimijaan, joka liittyy kuvailtavaan kappaleeseen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4463'>Toimijan suhteet kappaleeseen</a>"@fi,
-        "Sammankopplar exemplar med en aktör som är relaterad till exemplaret som beskrivs."@sv ;
+        "Sammankopplar exemplar med en aktör som är relaterad till exemplaret som beskrivs. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4463'>Aktörers relationer till exemplar</a>"@sv ;
     skos:member mts:m1743,
         mts:m1757,
         mts:m1758,
@@ -2499,6 +2529,7 @@ mts:m1246 a skos:Concept ;
     skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
         "Äänen koodausmuoto."@fi,
         "Äänikirjastandardi"@fi,
+        "Används i MARC 21-fälten 341 och 546."@sv,
         "Kodningsformat för ljud."@sv,
         "Ljudboksstandard"@sv .
 
@@ -3495,7 +3526,7 @@ mts:m153 a isothes:ConceptGroup,
     skos:altLabel "Ekspressioon liittyvä toimija"@fi,
         "Aktör relaterad till uttryck"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka liittyy kuvailtavaan ekspressioon. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4462'>Toimijan suhteet ekspressioon</a>"@fi,
-        "Sammankopplar uttryck med en aktör som är relaterad till uttrycket som beskrivs."@sv ;
+        "Sammankopplar uttryck med en aktör som är relaterad till uttrycket som beskrivs. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4462'>Aktörers relationer till uttryck</a>"@sv ;
     skos:member mts:m1043,
         mts:m1060,
         mts:m1096,
@@ -5824,19 +5855,6 @@ mts:m1859 a skos:Concept ;
     skos:prefLabel "fuugat"@fi,
         "fugor"@sv .
 
-mts:m186 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:altLabel "flexikantinen"@fi,
-        "flexband"@sv ;
-    skos:definition "Sidottu kirja, jossa taipuisa kansi."@fi,
-        "Inbunden bok med böjbara pärmar."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "sidottu, pehmeäkantinen"@fi,
-        "inbunden, mjuka pärmar"@sv .
-
 mts:m1860 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -7428,12 +7446,14 @@ mts:m2033 a skos:Concept ;
     skos:example "MARC 21: 341 0# ‡a tekstiin perustuva ‡b selkokielinen ‡2 mts"@fi,
         "MARC 21: 546 ## ‡a Selkokielinen."@fi,
         "MARC 21: 546 ## ‡a selkokielinen ‡2 mts"@fi,
+        "MARC 21: 341 0# ‡a baserad på text ‡b lättläst ‡2 mdo"@sv,
         "MARC 21: 546 ## ‡a Lättläst."@sv,
         "MARC 21: 546 ## ‡a lättläst ‡2 mdo"@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "selkokielinen"@fi,
         "lättläst"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
+        "Används i MARC 21-fälten 341 och 546."@sv .
 
 mts:m2035 a skos:Concept ;
     dc:source "Kansallinen termi"@fi,
@@ -8980,7 +9000,8 @@ mts:m2240 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "tekstitys kuulovammaisille"@fi,
         "textning för hörselskadade"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
+        "Används i MARC 21-fälten 341 och 546."@sv .
 
 mts:m2241 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -8992,7 +9013,8 @@ mts:m2241 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "kuvailutulkkaus"@fi,
         "syntolkning"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
+        "Används i MARC 21-fälten 341 och 546."@sv .
 
 mts:m2242 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10632,7 +10654,7 @@ mts:m245 a isothes:ConceptGroup,
         mts:m845,
         mts:m922,
         mts:m933 ;
-    skos:prefLabel "generation"@en,
+    skos:prefLabel "Generation"@en,
         "Sukupolvi"@fi,
         "Generation"@sv .
 
@@ -10974,7 +10996,8 @@ mts:m34 a isothes:ConceptGroup,
         skos:Collection ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:definition "Liittää teoksen toimijaan, joka liittyy kuvailtavaan teokseen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4465'>Toimijan suhteet teokseen</a>"@fi ;
+    skos:definition "Liittää teoksen toimijaan, joka liittyy kuvailtavaan teokseen. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4465'>Toimijan suhteet teokseen</a>"@fi,
+        "Sammankopplar verk med en aktör som är relaterad till verket som beskrivs. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4465'>Aktörers relationer till verk</a>"@sv ;
     skos:member mts:m103,
         mts:m1037,
         mts:m1042,
@@ -13831,8 +13854,8 @@ mts:m4167 a skos:Concept ;
         "utgången"@sv,
         "utgången bok"@sv,
         "utsåld"@sv ;
-    skos:example "MARC 21 -formaatissa: 506 1# ‡a Loppuunmyyty."@fi,
-        "I MARC 21-formatet: 506 1# ‡a Slutsåld."@sv ;
+    skos:example "MARC 21 -formaatissa: 366 ## ‡e Loppuunmyyty."@fi,
+        "I MARC 21-formatet: 366 ## ‡e Slutsåld."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "out of print"@en,
         "loppuunmyyty"@fi,
@@ -14283,7 +14306,6 @@ mts:m4402 a isothes:ConceptGroup,
         mts:m1050,
         mts:m1420,
         mts:m1477,
-        mts:m186,
         mts:m2097,
         mts:m2307,
         mts:m4843,
@@ -14719,7 +14741,7 @@ mts:m4463 a isothes:ConceptGroup,
     skos:altLabel "Toimijaan liittyvä kappale"@fi,
         "Exemplar relaterat till aktör"@sv ;
     skos:definition "Liittää toimijan kappaleeseen, joka liittyy kuvailtavaan toimijaan. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m1157'>Kappaleen suhteet toimijaan</a>"@fi,
-        "Sammankopplar aktör med ett exemplar som är relaterat till aktören som bekrivs. Parallell relation: http://urn.fi/URN:NBN:fi:au:mts:m1157]"@sv ;
+        "Sammankopplar aktör med ett exemplar som är relaterat till aktören som bekrivs. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m1157'>Exemplars relationer till aktörer</a>"@sv ;
     skos:member mts:m4527,
         mts:m4549,
         mts:m4553,
@@ -16620,7 +16642,11 @@ mts:m4842 a skos:Concept ;
 mts:m4843 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    skos:altLabel "paperback"@en ;
+    skos:altLabel "paperback"@en,
+        "flexikantinen"@fi,
+        "sidottu, pehmeäkantinen"@fi,
+        "flexband"@sv,
+        "inbunden, mjuka pärmar"@sv ;
     skos:definition "Taipuisa, usein nidottu. Pehmeät kannet. Pehmeäkantisen kirjan kannet ovat esim. pintakäsiteltyä paperia tai kartonkia. Sisältää myös kangaskirjat, kylpykirjat ja pehmokirjat."@fi,
         "Böjlig, ofta häftad. Mjuka pärmar, gjorda av t.ex. ytbehandlat papper eller kartong. Inkluderar också tyg-, bad- och mjukisböcker."@sv ;
     skos:inScheme mts: ;
@@ -16639,6 +16665,54 @@ mts:m4844 a skos:Concept ;
         "kovakantinen"@fi,
         "hårda pärmar"@sv .
 
+mts:m4845 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "MARC 21 -formaatissa: 366 ## ‡e Ei ilmesty."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ei ilmesty"@fi .
+
+mts:m4848 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vain lukemisesteisille"@fi ;
+    skos:scopeNote "Käytetään Celian äänikirjoissa."@fi .
+
+mts:m4849 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdam:P30455 ;
+    skos:member mts:m4846,
+        mts:m4847,
+        mts:m4850,
+        mts:m4851,
+        mts:m4852,
+        mts:m4853,
+        mts:m4854,
+        mts:m4855,
+        mts:m4857,
+        mts:m4858,
+        mts:m4859,
+        mts:m4860,
+        mts:m4861,
+        mts:m4862 ;
+    skos:prefLabel "Täydentävän tietosisällön tyyppi"@fi .
+
+mts:m4856 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    skos:example "MARC 21 -formaatissa: 366 ## ‡e Ennakkotieto."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "ennakkotieto"@fi .
+
 mts:m490 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -16656,7 +16730,7 @@ mts:m491 a isothes:ConceptGroup,
     skos:altLabel "Manifestaatioon liittyvä toimija"@fi,
         "Aktör relaterad till manifestation"@sv ;
     skos:definition "Liittää manifestaation toimijaan, joka liittyy kuvailtavaan manifestaatioon. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4464'>Toimijan suhteet manifestaatioon</a>"@fi,
-        "Sammankopplar manifestation med en aktör som är relaterad till manifestationen som beskrivs."@sv ;
+        "Sammankopplar manifestation med en aktör som är relaterad till manifestationen som beskrivs. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4464'>Aktörers relationer till manifestationer</a>"@sv ;
     skos:member mts:m148,
         mts:m1741,
         mts:m1742,
@@ -17305,6 +17379,9 @@ mts:m600 a isothes:ConceptGroup,
         mts:m4566,
         mts:m4571,
         mts:m48,
+        mts:m4845,
+        mts:m4848,
+        mts:m4856,
         mts:m535,
         mts:m601,
         mts:m740 ;
@@ -23207,7 +23284,8 @@ mts:m1420 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "paperback"@en,
         "nidottu"@fi,
-        "häftad"@sv .
+        "häftad"@sv ;
+    skos:scopeNote "\"Liittää manifestaation ilmaukseen niistä ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita.\""@fi .
 
 mts:m1421 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -23408,7 +23486,8 @@ mts:m1477 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "hardback"@en,
         "sidottu"@fi,
-        "inbunden"@sv .
+        "inbunden"@sv ;
+    skos:scopeNote "\"Liittää manifestaation ilmaukseen niistä ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita.\""@fi .
 
 mts:m1479 a skos:Concept ;
     skos:broader mts:m4253 ;
@@ -24825,6 +24904,7 @@ mts:m2018 a skos:Concept ;
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
+    skos:altLabel "taktil grafik"@sv ;
     skos:definition "Tuntoaistiin perustuva merkintätapa, jossa käytetään kohotettua versiota painetusta kuvasta."@fi,
         "Märkning som baserar sig på känselsinnet och i vilket en upphöjd version av en tryckt bild används."@sv ;
     skos:exactMatch <http://rdaregistry.info/termList/TacNotation/1007> ;
@@ -24832,7 +24912,8 @@ mts:m2018 a skos:Concept ;
     skos:prefLabel "tactile graphic"@en,
         "kohokuva"@fi,
         "relief"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi .
+    skos:scopeNote "Käytetään MARC 21 -kentissä 341 ja 546."@fi,
+        "Används i MARC 21-fälten 341 och 546."@sv .
 
 mts:m2024 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38723,6 +38804,72 @@ mts:m4816 a skos:Concept ;
         "sulautunut osittain ekspressioon"@fi,
         "uppgått delvis i uttrycket"@sv .
 
+mts:m4846 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/techmusic> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teknistä tietoa musiikista"@fi .
+
+mts:m4847 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/performerhistory> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esittäjän tai esittäjäryhmän historia"@fi .
+
+mts:m4850 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/historicalinfo> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "julkaisuhistoria"@fi .
+
+mts:m4851 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/creatorbio> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "tekijän elämäkerta"@fi .
+
+mts:m4852 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/discography> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "diskografia"@fi .
+
+mts:m4853 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/libretto> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "libretto tai teksti"@fi .
+
+mts:m4854 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/bibliography> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "bibliografia"@fi .
+
+mts:m4855 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/index> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "aakkosellinen hakemisto"@fi .
+
+mts:m4857 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/music> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "nuottiaineisto"@fi .
+
+mts:m4858 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/film> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "filmografia"@fi .
+
+mts:m4859 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/ethnologicinfo> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kansatieteellistä lisätietoa"@fi .
+
 mts:m486 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -38737,6 +38884,24 @@ mts:m486 a skos:Concept ;
         "filmspole"@sv ;
     skos:scopeNote "heijastettava kuvatallenne"@fi,
         "bärare för projicerbara bilder"@sv .
+
+mts:m4860 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/techinstruments> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "teknistä/historiallista tietoa soittimista"@fi .
+
+mts:m4861 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/thematicindex> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "temaattinen teosluettelo"@fi .
+
+mts:m4862 a skos:Concept ;
+    dc:source "ID.LOC.GOV: Supplementary Content" ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/msupplcont/instructmaterial> ;
+    skos:inScheme mts: ;
+    skos:prefLabel "oppimateriaali"@fi .
 
 mts:m487 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -56387,7 +56552,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-11-03T00:51:12+00:00"^^xsd:dateTime ;
+    dct:modified "2021-11-06T00:49:44+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
