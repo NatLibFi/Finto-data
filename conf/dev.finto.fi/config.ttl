@@ -1194,6 +1194,17 @@
 	skosmos:showTopConcepts "true";
 	skosmos:sortByNotation "lexical" ;
         skosmos:searchByNotation "true" ;
+    skosmos:propertyLabelOverride
+    [ skosmos:property skos:prefLabel ;
+          rdfs:label "luokka"@fi, "klass"@sv, "caption"@en ] ,
+    [ skosmos:property skos:notation ;
+          rdfs:label "notaatio"@fi, "notation"@sv, "notation"@en ] ,
+    [ skosmos:property skos:broader ;
+          rdfs:label "yläluokka"@fi, "överklass"@sv, "superclass"@en ] ,
+    [ skosmos:property skos:narrower ;
+          rdfs:label "alaluokat"@fi, "underklasser"@sv, "subclasses"@en ] ,
+    [ skosmos:property skos:related ;
+          rdfs:label "katso myös"@fi, "se även"@sv, "see also"@en ] ;
 	skosmos:mainConceptScheme <http://udcdata.info/udc-schema> ;
 	void:dataDump <http://dev.finto.fi/download/udcs/udcs-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/udcs/udcs-skos.rdf> ;
@@ -1233,6 +1244,21 @@
         skosmos:searchByNotation "true" ;
 	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
 	skosmos:alphabeticalListQualifier skos:notation ;
+	skosmos:propertyLabelOverride
+    [ skosmos:property skos:prefLabel ;
+          rdfs:label "luokka"@fi, "klass"@sv, "class"@en ] ,
+    [ skosmos:property skos:notation ;
+          rdfs:label "luokkatunnus"@fi, "klassindex"@sv, "notation"@en ] ,
+    [ skosmos:property skos:altLabel ;
+          rdfs:label "Hakusanat"@fi, "nyckelord"@sv, "keywords"@en ] ,
+    [ skosmos:property skos:broader ;
+          rdfs:label "yläluokka"@fi, "överklass"@sv, "superclass"@en ] ,
+    [ skosmos:property skos:narrower ;
+          rdfs:label "alaluokat"@fi, "underklasser"@sv, "subclasses"@en ] ,
+    [ skosmos:property skos:related ;
+          rdfs:label "assosiatiiviset luokat"@fi, "relaterade klasser"@sv, "related classes"@en ] ,
+    [ skosmos:property skos:closeMatch ;
+          rdfs:label "lähes vastaavat luokat"@fi, "nästan motsvarande klasser"@sv, "closely matching classes"@en ] ;
 	void:dataDump <http://dev.finto.fi/download/ykl/ykl-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/ykl/ykl-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
