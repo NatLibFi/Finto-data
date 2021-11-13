@@ -10615,7 +10615,9 @@ mts:m2332 a isothes:ConceptGroup,
         mts:m4163,
         mts:m4164,
         mts:m4165,
-        mts:m4791 ;
+        mts:m4791,
+        mts:m4863,
+        mts:m4864 ;
     skos:prefLabel "ammatti tai tehtävä"@fi,
         "yrke eller uppgift"@sv .
 
@@ -16712,6 +16714,10 @@ mts:m4856 a skos:Concept ;
     skos:example "MARC 21 -formaatissa: 366 ## ‡e Ennakkotieto."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "ennakkotieto"@fi .
+
+mts:m4864 a skos:Concept ;
+    skos:inScheme mts: ;
+    skos:prefLabel "koordinaattori"@fi .
 
 mts:m490 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38903,6 +38909,11 @@ mts:m4862 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "oppimateriaali"@fi .
 
+mts:m4863 a skos:Concept ;
+    skos:broader mts:m2807 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "erityisasiantuntija"@fi .
+
 mts:m487 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -53769,22 +53780,6 @@ mts:m2423 a skos:Concept ;
         "juoksija"@fi,
         "löpare"@sv .
 
-mts:m2807 a skos:Concept ;
-    dc:source "YSO-termi"@fi,
-        "ALLFO-term"@sv ;
-    skos:altLabel "asiantuntija (ammatti)"@fi,
-        "expert (yrke)"@sv,
-        "specialist"@sv ;
-    skos:exactMatch yso:p12104 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m3979,
-        mts:m3983,
-        mts:m3998,
-        mts:m4055 ;
-    skos:prefLabel "specialist (experts)"@en,
-        "asiantuntija"@fi,
-        "expert"@sv .
-
 mts:m2842 a skos:Concept ;
     dc:source "YSO-termi"@fi,
         "ALLFO-term"@sv ;
@@ -54147,6 +54142,23 @@ mts:m2684 a skos:Concept ;
     skos:prefLabel "art-craft professional"@en,
         "taidekäsityöläinen"@fi,
         "konsthantverkare"@sv .
+
+mts:m2807 a skos:Concept ;
+    dc:source "YSO-termi"@fi,
+        "ALLFO-term"@sv ;
+    skos:altLabel "asiantuntija (ammatti)"@fi,
+        "expert (yrke)"@sv,
+        "specialist"@sv ;
+    skos:exactMatch yso:p12104 ;
+    skos:inScheme mts: ;
+    skos:narrower mts:m3979,
+        mts:m3983,
+        mts:m3998,
+        mts:m4055,
+        mts:m4863 ;
+    skos:prefLabel "specialist (experts)"@en,
+        "asiantuntija"@fi,
+        "expert"@sv .
 
 mts:m2827 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -56552,7 +56564,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-11-11T00:50:12+00:00"^^xsd:dateTime ;
+    dct:modified "2021-11-13T00:50:09+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
