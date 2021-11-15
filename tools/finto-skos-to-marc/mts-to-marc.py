@@ -255,7 +255,6 @@ def convert(cs, language, g):
         for key in uris:
             if any(str(group).endswith(uri) for uri in uris[key]):
                 get_member_groups(g, group, uris[key])
-       
     concs = []
     if helper_variables['keepModified']:
         concs = []    
@@ -431,12 +430,12 @@ def convert(cs, language, g):
         concs = []
         for conc in g.subjects(RDF.type, SKOS.Concept):
             if any(conc in uris[key] for key in uris):
-                concs.append(str(conc))   
+                concs.append(str(conc))
         for conc in modified_dates:
             if conc not in concs:
                 #jos ei ole hajautussummaa (tuplen 2. arvo), luodaan deprekoitu käsite
                 if modified_dates[conc][1]:
-                    rec = Record()   
+                    rec = Record()
                     rec.leader = cs.get("leaderDeleted0", fallback=LEADERDELETED0)
                     rec.add_field(
                         Field(
@@ -445,6 +444,17 @@ def convert(cs, language, g):
                             subfields = [
                                 'a', conc,
                                 '2', "uri"
+                            ]
+                        )
+                    )
+                    rec.add_field(
+                        Field(
+                            tag='040',
+                            indicators = [' ', ' '],
+                            subfields = [
+                                'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
+                                'b', LANGUAGES[language],
+                                'f', helper_variables["vocCode"]
                             ]
                         )
                     )

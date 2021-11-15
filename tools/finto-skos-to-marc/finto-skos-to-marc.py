@@ -1380,7 +1380,40 @@ def convert(cs, vocabulary_name, language, g, g2):
                     modified_dates[str(concept)] = (date.today(), hash)
             else:  
                 modified_dates[str(concept)] = (date.today(), hash)
-
+    
+    if helper_variables['keepModified']:
+        concs = []
+        for conc in g.subjects(RDF.type, SKOS.Concept):
+            concs.append(str(conc))
+        for conc in modified_dates:
+            if conc not in concs:
+                #jos muokkauspäivämäärissä oleva käsite puuttuu, luodaan deprekoitu käsite
+                rec = Record()
+                rec.leader = cs.get("leaderDeleted0", fallback=LEADERDELETED0)
+                rec.add_field(
+                    Field(
+                        tag='024',
+                        indicators = ['7', ' '],
+                        subfields = [
+                            'a', conc,
+                            '2', "uri"
+                        ]
+                    )
+                )
+                rec.add_field(
+                    Field(
+                        tag='040',
+                        indicators = [' ', ' '],
+                        subfields = [
+                            'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
+                            'b', LANGUAGES[language],
+                            'f', helper_variables["vocCode"]
+                        ]
+                )
+        )
+                writer_records_counter += 1
+                writer.write(rec)
+    
     if handle is not sys.stdout:
         writer.close()
 
