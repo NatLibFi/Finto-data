@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -301,6 +302,27 @@ Projektorilla käytettävät aineistot. Liikkuva kuva tai stillkuvat, joita kats
     <skos:prefLabel xml:lang="fi">isotekstinen</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">stor stil</skos:prefLabel>
   </rdf:Description>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:20211125_002">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">aatelisperhe</skos:altLabel>
+    <skos:altLabel xml:lang="fi">aatelissuku</skos:altLabel>
+    <skos:altLabel xml:lang="fi">pappissuku</skos:altLabel>
+    <skos:altLabel xml:lang="fi">perhe</skos:altLabel>
+    <skos:altLabel xml:lang="fi">perhekunta</skos:altLabel>
+    <skos:altLabel xml:lang="fi">porvarisperhe</skos:altLabel>
+    <skos:altLabel xml:lang="fi">porvarissuku</skos:altLabel>
+    <skos:altLabel xml:lang="fi">ruhtinassuku</skos:altLabel>
+    <skos:altLabel xml:lang="fi">sisarukset (suku)</skos:altLabel>
+    <skos:altLabel xml:lang="fi">sukulaiset</skos:altLabel>
+    <skos:altLabel xml:lang="fi">talonpoikaissuku</skos:altLabel>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p409"/>
+    <skos:definition xml:lang="fi">Samasta esivanhemmasta polveutuvat henkilöt (ja joissakin yhteyksissä myös heidän puolisonsa) (Kielitoimiston sanakirja).</skos:definition>
+    <skos:example xml:lang="fi">Gummerus (suku); Romanov (suku); Sinebrychoff (suku); Sursill (suku)</skos:example>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="en">family</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">släkt</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">suku</skos:prefLabel>
+  </owl:Class>
   <owl:Ontology rdf:about="http://urn.fi/URN:NBN:fi:au:mts:">
     <dc11:creator xml:lang="fi">Kansalliskirjasto</dc11:creator>
     <dc11:creator xml:lang="sv">Nationalbiblioteket i Finland</dc11:creator>
@@ -376,6 +398,17 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <ns1:homepage rdf:resource="https://www.kiwi.fi/display/Finto/Metatietosanasto"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211125_001">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m258"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="en">Category of family</rdfs:label>
+    <rdfs:label xml:lang="fi">Suvun kategoria</rdfs:label>
+    <rdfs:label xml:lang="sv">Typ av familj/släkt</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50051"/>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -18360,13 +18393,13 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Familj/släkt</rdfs:label>
+    <rdfs:label xml:lang="en">Family</rdfs:label>
     <rdfs:label xml:lang="fi">Suku</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10008"/>
-    <skos:altLabel xml:lang="sv">familj</skos:altLabel>
-    <skos:altLabel xml:lang="sv">släkt</skos:altLabel>
+    <skos:altLabel xml:lang="sv">Familj</skos:altLabel>
+    <skos:altLabel xml:lang="sv">Släkt</skos:altLabel>
     <skos:definition xml:lang="fi">Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä.</skos:definition>
     <skos:definition xml:lang="sv">Två eller flera personer, som förenas av släktband, äktenskap, adoption, registrerat partnerskap eller annan dylik juridisk ställning, eller som annars uppträder som familj.</skos:definition>
-    <skos:prefLabel xml:lang="en">family</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2580">
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
@@ -21503,12 +21536,12 @@ Vastavuoroinen suhde: oratoriosovituksen perustana (teos).</skos:definition>
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3415"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="en">Corporate body</rdfs:label>
     <rdfs:label xml:lang="sv">Institution</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteisö</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10005"/>
     <skos:definition xml:lang="fi">Organisaatio tai ryhmä henkilöitä ja/tai organisaatioita, joka tunnetaan tietyllä nimellä, ja joka toimii tai voi toimia yhtenä kokonaisuutena.</skos:definition>
     <skos:definition xml:lang="sv">Organisation eller grupp personer och/eller organisationer, som är känd med ett visst namn, och som fungerar eller kan fungera som en helhet.</skos:definition>
-    <skos:prefLabel xml:lang="en">corporate body</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2810">
     <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
@@ -47895,11 +47928,11 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Henkilö</rdfs:label>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
     <rdfs:label xml:lang="sv">Person</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/c/C10004"/>
     <skos:definition xml:lang="sv">Person eller identitet skapad av person (ensam eller tillsammans med en eller flera andra individer).</skos:definition>
     <skos:definition xml:lang="fi">Yksilö tai yksilön (yksin tai yhdessä yhden tai useamman muun yksilön kanssa) luoma identiteetti.</skos:definition>
-    <skos:prefLabel xml:lang="en">person</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m552">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
