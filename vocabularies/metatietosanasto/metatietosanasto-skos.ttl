@@ -10672,11 +10672,13 @@ mts:m258 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     rdfs:seeAlso rdac:C10008 ;
-    skos:altLabel "familj"@sv,
-        "släkt"@sv ;
+    skos:altLabel "Suku (toimijaryhmä)"@fi,
+        "Familj"@sv,
+        "Släkt"@sv ;
     skos:definition "Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä."@fi,
         "Två eller flera personer, som förenas av släktband, äktenskap, adoption, registrerat partnerskap eller annan dylik juridisk ställning, eller som annars uppträder som familj."@sv ;
-    skos:prefLabel "family"@en,
+    skos:member mts:m4865 ;
+    skos:prefLabel "Family"@en,
         "Suku"@fi,
         "Familj/släkt"@sv .
 
@@ -10745,7 +10747,7 @@ mts:m281 a isothes:ConceptGroup,
         "Organisation eller grupp personer och/eller organisationer, som är känd med ett visst namn, och som fungerar eller kan fungera som en helhet."@sv ;
     skos:member mts:m196,
         mts:m3661 ;
-    skos:prefLabel "corporate body"@en,
+    skos:prefLabel "Corporate body"@en,
         "Yhteisö"@fi,
         "Institution"@sv .
 
@@ -16718,6 +16720,19 @@ mts:m4864 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "koordinaattori"@fi .
 
+mts:m4865 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdaa:P50051 ;
+    skos:member <http://urn.fi/URN:NBN:fi:au:20211125_002>,
+        <http://urn.fi/URN:NBN:fi:au:20211125_003>,
+        <http://urn.fi/URN:NBN:fi:au:20211125_004>,
+        <http://urn.fi/URN:NBN:fi:au:20211125_005> ;
+    skos:prefLabel "Category of family"@en,
+        "Suvun kategoria"@fi,
+        "Typ av familj/släkt"@sv .
+
 mts:m490 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -17080,7 +17095,7 @@ mts:m551 a isothes:ConceptGroup,
         mts:m2332,
         mts:m3764,
         mts:m4209 ;
-    skos:prefLabel "person"@en,
+    skos:prefLabel "Person"@en,
         "Henkilö"@fi,
         "Person"@sv .
 
@@ -20510,6 +20525,8 @@ yso:p21929 skos:exactMatch mts:m2425 .
 
 yso:p21972 skos:exactMatch mts:m2434 .
 
+yso:p22042 skos:closeMatch <http://urn.fi/URN:NBN:fi:au:20211125_003> .
+
 yso:p22073 skos:closeMatch mts:m4730 .
 
 yso:p22076 skos:closeMatch mts:m3793 .
@@ -21356,6 +21373,8 @@ yso:p4071 skos:exactMatch mts:m2469 .
 
 yso:p4084 skos:closeMatch mts:m4740 .
 
+yso:p409 skos:closeMatch <http://urn.fi/URN:NBN:fi:au:20211125_002> .
+
 yso:p4092 skos:exactMatch mts:m3146 .
 
 yso:p4104 skos:closeMatch mts:m4704 .
@@ -21842,9 +21861,13 @@ yso:p9601 skos:exactMatch mts:m3391 .
 
 yso:p9639 skos:exactMatch mts:m2841 .
 
+yso:p9662 skos:closeMatch <http://urn.fi/URN:NBN:fi:au:20211125_004> .
+
 yso:p9664 skos:exactMatch mts:m939 .
 
 yso:p9665 skos:exactMatch mts:m1500 .
+
+yso:p9666 skos:closeMatch <http://urn.fi/URN:NBN:fi:au:20211125_005> .
 
 yso:p9667 skos:exactMatch mts:m295 .
 
@@ -21999,6 +22022,58 @@ rdam:P30038 skos:exactMatch mts:m7 .
 
 <http://rdaregistry.info/termList/layout/1011> skos:related mts:m1318 ;
     skos:relatedMatch mts:m1318 .
+
+<http://urn.fi/URN:NBN:fi:au:20211125_002> a skos:Concept ;
+    skos:altLabel "aatelisperhe"@fi,
+        "aatelissuku"@fi,
+        "pappissuku"@fi,
+        "perhe"@fi,
+        "perhekunta"@fi,
+        "porvarisperhe"@fi,
+        "porvarissuku"@fi,
+        "ruhtinassuku"@fi,
+        "sisarukset (suku)"@fi,
+        "suku (suvun kategoria)"@fi,
+        "sukulaiset"@fi,
+        "talonpoikaissuku"@fi ;
+    skos:closeMatch yso:p409 ;
+    skos:definition "Samasta esivanhemmasta polveutuvat henkilöt (ja joissakin yhteyksissä myös heidän puolisonsa) (Kielitoimiston sanakirja)."@fi ;
+    skos:example "Gummerus (suku); Romanov (suku); Sinebrychoff (suku); Sursill (suku)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "family"@en,
+        "suku"@fi,
+        "släkt"@sv .
+
+<http://urn.fi/URN:NBN:fi:au:20211125_003> a skos:Concept ;
+    skos:altLabel "sukuyhteisö (klaani)"@fi ;
+    skos:closeMatch yso:p22042 ;
+    skos:definition "Sukuyhteisö, jota kutsutaan klaaniksi ja joka polveutuu tai katsoo polveutuvansa yhteisestä kantaisästä (Kielitoimiston sanakirja)."@fi ;
+    skos:example "Donald (klaani); Ramsay (klaani)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "clan"@en,
+        "klaani"@fi,
+        "klan"@sv .
+
+<http://urn.fi/URN:NBN:fi:au:20211125_004> a skos:Concept ;
+    skos:altLabel "kuningasperhe"@fi,
+        "kuningassuku"@fi ;
+    skos:closeMatch yso:p9662 ;
+    skos:definition "Kuningasperhe tai -suku (Kielitoimiston sanakirja). Termiä käytetään, kun viitataan hallitsevassa asemassa olevaan kuningasperheeseen tai -sukuun. Kuningashuoneen mahdollisesti muodostamasta dynastiasta käytetään termiä @dynastia."@fi ;
+    skos:example "Bernadotte (kuningashuone : 1818- : Ruotsi); Bourbon (kuningashuone); Windsor (kuningashuone : 1917- : Iso-Britannia)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "royal house"@en,
+        "kuningashuone"@fi,
+        "kungahus"@sv .
+
+<http://urn.fi/URN:NBN:fi:au:20211125_005> a skos:Concept ;
+    skos:altLabel "kuningasperhe"@fi ;
+    skos:closeMatch yso:p9666 ;
+    skos:definition "Hallitsijasuku, jota kutsutaan dynastiaksi. Laajemmin hallitsevasta, määräävässä asemassa olevasta ryhmästä (Kielitoimiston sanakirja)."@fi ;
+    skos:example "Pahlavi (dynastia : 1925-1979); Romanov (dynastia : 1613-1917)"@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "dynasty"@en,
+        "dynastia"@fi,
+        "dynasti"@sv .
 
 mts:m10 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -56563,7 +56638,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2021-11-19T00:51:31+00:00"^^xsd:dateTime ;
+    dct:modified "2021-11-26T00:50:40+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
