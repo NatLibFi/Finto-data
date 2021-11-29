@@ -237,12 +237,13 @@ def convert(cs, language, g):
     ids = {"occupations": ['m2332'],
         "titles": ['m121', 
                    'm3764'],
-        "organisation types": ['m196']            
+        "organisation types": ['m196'],
+        "family categories": ['m4865']
         }
     marc21_locations = {"occupations": {'code suffix': '74', 'subfield code': 'a'},
                         "titles": {'code suffix': '68', 'subfield code': 'd'},
-                        "organisation types": {'code suffix': '68', 'subfield code': 'a'}
-
+                        "organisation types": {'code suffix': '68', 'subfield code': 'a'},
+                        "family categories": {'code suffix': '76', 'subfield code': 'a'}
     }
 
     uris = {}
@@ -250,7 +251,6 @@ def convert(cs, language, g):
         uris[key] = set()
         for id in ids[key]:
             uris[key].add(MTS + id)
-    
     for group in g.subjects(RDF.type, ISOTHES.ConceptGroup):
         for key in uris:
             if any(str(group).endswith(uri) for uri in uris[key]):
