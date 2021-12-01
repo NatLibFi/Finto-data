@@ -1,13 +1,9 @@
 @prefix lajisto: <http://www.yso.fi/onto/lajisto/> .
-@prefix lajisto-meta: <http://www.yso.fi/onto/lajisto-meta/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
-@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 lajisto: a skos:ConceptScheme ;
 
@@ -28,7 +24,7 @@ lajisto: a skos:ConceptScheme ;
 """Suomen Lajitietokeskus (<a href=https://laji.fi/>https://laji.fi/</a>) ylläpitää kansallista luetteloa Suomessa tavatuista eliölajeista. Luettelo on rakenteeltaan hierarkkinen ja kuvastaa nykynäkemystä eliölajien keskinäisistä sukulaisuussuhteista. Luettelon ovat koonneet ja sitä ylläpitävät eri eliöryhmien suomalaiset asiantuntijat. Kerran vuodessa luettelosta julkaistaan viittauskelpoinen muuttumaton versio, joka on ladattavissa Lajitietokeskuksen verkkosivuilta (<a href=https://laji.fi/lajiluettelo>https://laji.fi/lajiluettelo</a>).
 Finton LAJISTO-luettelo perustuu lajiluettelon 2020-versioon, joka on julkaistu tammikuussa 2021. Lajien lisäksi luettelossa ovat mukana lajia ylemmistä taksonomisista tasoista suvut, alaheimot, heimot, alalahkot, lahkot, luokat, pääjaksot, kunnat ja yläkunnat. Mukana olevat lajia alemmat tasot ovat alalajit, muunnokset ja muodot.
 Valtaosalla taksoneista on tieteellinen nimi, joka lajeilla on kaksiosainen, lajia ylemmillä taksoneilla yksiosainen. Tieteellisen nimen lisäksi luettelossa on suositeltu suomen- ja ruotsinkielinen nimi niille taksoneille, joille sellainen on olemassa. Monilla lajeilla ja etenkin lajia ylemmillä taksoneilla on edelleen ainoastaan tieteellinen nimi.
-LAJISTO-luettelo päivitetään kerran vuodessa synkronoidusti Lajitietokeskuksen lajiluettelon julkaisun kanssa. 
+LAJISTO-luettelo päivitetään kerran vuodessa synkronoidusti Lajitietokeskuksen lajiluettelon julkaisun kanssa.
 Julkaisun pysyvä osoite on <a href=http://urn.fi/URN:ISSN:2490-0907>http://urn.fi/URN:ISSN:2490-0907</a>."""@fi,
 
 """Finlands Artdatacenter (<a href=https://laji.fi/sv>https://laji.fi/sv</a>) upprätthåller den nationella listan över finska arter. Listan är till sin struktur hierarkisk och återspeglar den aktuella synen på arternas släktskapsförhållanden. Listan har sammanställts och uppdaterats av finska experter för de olika organismgrupperna. En gång om året publiceras en oförändrad version av artlistan som kan citeras. Denna kan laddas ner från Artdatacentrets webbplats (<a href=https://laji.fi/artlistan>https://laji.fi/artlistan</a>).
@@ -49,15 +45,3 @@ Permanent address of the publication: <a href=http://urn.fi/URN:ISSN:2490-0907>h
     dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe> ;
     dct:license  <https://creativecommons.org/licenses/by/4.0/>  ;
     foaf:homepage <https://laji.fi/> .
-   
-lajisto-meta:Concept a owl:Class;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label "LAJISTO-käsite"@fi, 
-        "LAJISTO-begrepp"@sv, 
-        "LAJISTO Concept"@en .
-
-yso-meta:Concept a owl:Class;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label "YSO-käsite"@fi,
-        "ALLFO-begrepp"@sv,
-        "YSO Concept"@en .
