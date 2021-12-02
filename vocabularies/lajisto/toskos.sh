@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="finto_biota.ttl"
+INFILES="lajisto-metadata.ttl finto_biota.ttl"
 OUTFILE=lajisto-skos.ttl
 
 SKOSIFYCMD="skosify"
