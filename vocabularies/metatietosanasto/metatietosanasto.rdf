@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -376,6 +377,20 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <ns1:homepage rdf:resource="https://www.kiwi.fi/display/Finto/Metatietosanasto"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211203_002">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m281"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:20211203_003"/>
+    <skos:prefLabel xml:lang="fi">Hallintoalueen tyyppi</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211203_003">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Voudin toimialue Ruotsin hallinnossa 1500-luvun alkupuolelta 1630-luvulle, jolloin siirryttiin läänin- ja kihlakuntahallintoon ja voutikunnat lakkasivat olemasta.</skos:definition>
+    <skos:example xml:lang="fi">Pohjanmaan eteläinen voutikunta</skos:example>
+    <skos:prefLabel xml:lang="fi">voutikunta</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Termiä voidaan käyttää sekä yhteisön että hallintoalueen tyyppinä. Yhteisön tyyppinä termiä käytetään voutikunnista historiallisina hallintoyksikköinä.</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -8930,6 +8945,7 @@ Katso myös taktiili teksti.</skos:definition>
     <rdfs:label xml:lang="sv">Typ av institution</rdfs:label>
     <rdfs:label xml:lang="fi">Yhteisön tyyppi</rdfs:label>
     <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/a/P50237"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:20211203_003"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1100"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1203"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1247"/>
@@ -45229,7 +45245,6 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <skos:altLabel xml:lang="fi">provinssi</skos:altLabel>
     <skos:altLabel xml:lang="sv">självstyrelseområde</skos:altLabel>
     <skos:altLabel xml:lang="fi">vapaaherrakunta</skos:altLabel>
-    <skos:altLabel xml:lang="fi">voutikunta</skos:altLabel>
     <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p6818"/>
     <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
     <skos:prefLabel xml:lang="sv">förvaltningsområde</skos:prefLabel>
@@ -47415,13 +47430,6 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <skos:prefLabel xml:lang="fi">Dolby A</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Dolby A</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Dolby-A encoded</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4871">
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m196"/>
-    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
-    <skos:prefLabel xml:lang="fi">Hallintoalueen tyyppi</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m490">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
