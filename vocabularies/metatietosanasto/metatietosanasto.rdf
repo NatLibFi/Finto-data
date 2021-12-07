@@ -377,6 +377,32 @@ Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa n
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <ns1:homepage rdf:resource="https://www.kiwi.fi/display/Finto/Metatietosanasto"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211207_001">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Valtion hallinnollinen tai valtiosta riippuvainen alue, jolle on määritelty jonkinasteinen itsehallinto tai autonomia (Wikipedia). Myös alueella oleva itsehallinnollinen yhteisö.</skos:definition>
+    <skos:example xml:lang="fi">Ahvenanmaa; Grönlanti</skos:example>
+    <skos:prefLabel xml:lang="fi">itsehallintoalue</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Termiä voidaan käyttää sekä yhteisön että hallintoalueen tyyppinä. Yhteisön tyyppinä termiä käytetään itsehallintoaluetta hallinnoivasta yhteisöstä.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211207_002">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">linnalääni</skos:altLabel>
+    <skos:altLabel xml:lang="fi">sotilaslääni</skos:altLabel>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p6817"/>
+    <skos:definition xml:lang="fi">Aluehallinnon yksikkö tai sen toimialue, jota kutsutaan lääniksi. Suomessa valtion ylin aluehallinto järjestettiin lääninhallintona vuoden 2009 loppuun asti ja puolustusvoimien aluehallinto sotilaslääneinä eri muodoissa vuosina 1932-2014.</skos:definition>
+    <skos:example xml:lang="fi">Vaasan lääni; Käkisalmen lääni; Pohjois-Suomen sotilaslääni</skos:example>
+    <skos:prefLabel xml:lang="fi">lääni</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Termiä voidaan käyttää sekä yhteisön että hallintoalueen tyyppinä. Yhteisön tyyppinä termiä käytetään, kun hallintoyksikön nimenä on läänin nimi. Lääninhallituksesta lääninhallinnon yksikkönä käytä yhteisön tyyppinä historiallista termiä [http://urn.fi/URN:NBN:fi:au:mts:m4700].</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:20211207_003">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kantoni</skos:altLabel>
+    <skos:altLabel xml:lang="fi">oblasti</skos:altLabel>
+    <skos:definition xml:lang="fi">Aluehallinnon yksikkö tai sen toimialue, jota kutsutaan alueeksi. Myös alueeksi kutsuttu liittovaltion osa. Suomen valtion ylimmiksi aluehallinnnon yksiköiksi perustettin vuonna 2010 aluehallintovirastoja.</skos:definition>
+    <skos:example xml:lang="fi">Itä-Suomen aluehallintovirasto</skos:example>
+    <skos:prefLabel xml:lang="fi">alue (hallintoalue)</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">Termiä voidaan käyttää sekä yhteisön että hallintoalueen tyyppinä. Yhteisön tyyppinä termiä käytetään, kun aluehallinnon yksikkö on saanut nimensä alueen nimen mukaan tai kun on tarpeen valitun yhteisön tyypin lisäksi täsmentää, että yhteisö on aluetason organisaatio. Alueiksi nimetyistä paikallishallinnon yksiköistä käytä termiä [http://urn.fi/URN:NBN:fi:au:mts:m4778].</skos:scopeNote>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -9019,7 +9045,6 @@ Katso myös taktiili teksti.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4693"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4694"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4695"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4696"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4697"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4698"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4700"/>
@@ -45175,24 +45200,6 @@ Vastavuoroinen suhde: teoksella kunnioitettu.</skos:definition>
     <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
     <skos:prefLabel xml:lang="sv">institution för missbrukarvård</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">päihdehuoltolaitos</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4696">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="sv">biskopsstift</skos:altLabel>
-    <skos:altLabel xml:lang="fi">hiippakunta</skos:altLabel>
-    <skos:altLabel xml:lang="fi">patriarkaatti</skos:altLabel>
-    <skos:altLabel xml:lang="sv">patriarkat</skos:altLabel>
-    <skos:altLabel xml:lang="sv">prosteri</skos:altLabel>
-    <skos:altLabel xml:lang="fi">rovastikunta</skos:altLabel>
-    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p17660"/>
-    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p20938"/>
-    <skos:definition xml:lang="sv">Administrativ enhet som är större än församling eller kyrklig samfällighet.</skos:definition>
-    <skos:definition xml:lang="fi">Seurakuntaa ja seurakuntayhtymää suurempi kirkollinen hallinnollinen yksikkö.</skos:definition>
-    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
-    <skos:prefLabel xml:lang="fi">kirkollinen hallintoalue</skos:prefLabel>
-    <skos:prefLabel xml:lang="sv">kyrkligt förvaltningsområde</skos:prefLabel>
-    <skos:scopeNote xml:lang="sv">Om församlingar eller kyrkliga samfälligheter som förvaltningsenheter används termerna [http://urn.fi/URN:NBN:fi:au:mts:m4676] och [http://urn.fi/URN:NBN:fi:au:mts:m4747].</skos:scopeNote>
-    <skos:scopeNote xml:lang="fi">Seurakunnista ja seurakuntayhtymistä hallintoyksikköinä käytä termejä [http://urn.fi/URN:NBN:fi:au:mts:m4676] ja [http://urn.fi/URN:NBN:fi:au:mts:m4747].</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4697">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
