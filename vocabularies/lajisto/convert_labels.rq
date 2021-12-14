@@ -1,0 +1,50 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?s ?p ?o .
+  ?c skos:prefLabel ?pref_label_fi, ?pref_label_sv .
+  ?c skos:hiddenLabel ?hidden_label_fi, ?hidden_label_sv .
+} WHERE {
+  {
+    ?s ?p ?o .
+    FILTER(isIRI(?o) || LANG(?o) != 'zxx-x-taxon')
+  } UNION {
+    ?c skos:prefLabel ?sciname .
+    FILTER(LANG(?sciname) = 'zxx-x-taxon')
+    # see if we can find existing prefLabels in Finnish and/or Swedish
+    OPTIONAL {
+      ?c skos:prefLabel ?fiLabel .
+      FILTER(LANG(?fiLabel)='fi')
+    }
+    OPTIONAL {
+      ?c skos:prefLabel ?svLabel .
+      FILTER(LANG(?svLabel)='sv')
+    }
+    # set scientific name as prefLabel(fi,sv) if there is no prefLabel already
+    BIND(
+      IF(
+        BOUND(?fiLabel),
+ 	?unbound,
+	STRLANG(STR(?sciname), 'fi')
+    ) AS ?pref_label_fi)
+    BIND(
+      IF(
+        BOUND(?svLabel),
+ 	?unbound,
+	STRLANG(STR(?sciname), 'sv')
+    ) AS ?pref_label_sv)
+    # set scientific name as hiddenLabel(fi,sv) if a prefLabel exists
+    BIND(
+      IF(
+        BOUND(?fiLabel),
+	STRLANG(STR(?sciname), 'fi'),
+ 	?unbound
+    ) AS ?hidden_label_fi)
+    BIND(
+      IF(
+        BOUND(?svLabel),
+	STRLANG(STR(?sciname), 'sv'),
+ 	?unbound
+    ) AS ?hidden_label_sv)
+  }
+}
