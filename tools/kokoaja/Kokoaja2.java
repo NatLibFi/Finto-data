@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -209,6 +210,11 @@ public class Kokoaja2 {
 		StmtIterator iter = this.onto.listStatements(ontoSubj, (Property)null, (RDFNode)null);
 		while (iter.hasNext()) {
 			Statement stmt = iter.nextStatement();
+
+			if (this.eiToivottuViittaus(stmt)) {
+				continue;
+			}
+
 			if (!(stmt.getObject().isURIResource() && this.mustaLista.contains(stmt.getObject()) && this.deprekoidut.contains(stmt.getResource().toString()))) {
 				if (this.sallittujenPropertyjenNimiavaruudet.contains(stmt.getPredicate().getNameSpace()))
 					if (stmt.getPredicate().equals(skosPrefLabel)) {
@@ -268,16 +274,21 @@ public class Kokoaja2 {
 			Resource subj = stmt.getSubject();
 			Resource obj = (Resource)stmt.getObject();
 			//Lisätty tarkistus siitä ettei exactMatcheja kokoon haeta ontologioista (ts. Koko kootaan ysoon osoittavien exactMatchien perusteella)
-			if (ontonOntoTyyppisetResurssit.contains(subj) && !obj.getNameSpace().equals(this.kokoNs)) {
-				//lisätty tarkistus siitä ettei linkata deprekoituihin resursseihin
-				if ( !obj.hasProperty(DCTerms.isReplacedBy) && !this.deprekoidut.contains(obj.getURI())) {
-					HashSet<Resource> matchitSet = new HashSet<Resource>();
-					if (ontonExactMatchitMap.containsKey(subj)) {
-						matchitSet = ontonExactMatchitMap.get(subj);
+			try {
+				if (ontonOntoTyyppisetResurssit.contains(subj) &&
+						!obj.getNameSpace().equals(this.kokoNs)) {
+					//lisätty tarkistus siitä ettei linkata deprekoituihin resursseihin
+					if ( !obj.hasProperty(DCTerms.isReplacedBy) && !this.deprekoidut.contains(obj.getURI())) {
+						HashSet<Resource> matchitSet = new HashSet<Resource>();
+						if (ontonExactMatchitMap.containsKey(subj)) {
+							matchitSet = ontonExactMatchitMap.get(subj);
+						}
+						matchitSet.add((Resource)(stmt.getObject()));
+						ontonExactMatchitMap.put(subj, matchitSet);
 					}
-					matchitSet.add((Resource)(stmt.getObject()));
-					ontonExactMatchitMap.put(subj, matchitSet);
 				}
+			} catch (NullPointerException e) { //jos data on virheellistä
+				System.out.println("Tyhjä node : " + subj.getURI() + " skos:exactMatch");
 			}
 		}
 
@@ -1098,6 +1109,8 @@ public class Kokoaja2 {
 			StmtIterator iter = aiempiKoko.listStatements(subj, skosExactMatch, (RDFNode)null);
 			while (iter.hasNext()) {
 				Statement stmt = iter.nextStatement();
+				if (eiToivottuViittaus(stmt))
+					continue;
 				Resource obj = (Resource)(stmt.getObject());
 				subjinAiemmassaKokossaOlevatExactMatchit.add(obj);
 			}
@@ -1304,16 +1317,16 @@ public class Kokoaja2 {
 			this.lueOnto(polku, ontonTyyppi);
 		}
 		this.korjaaYlataso();
-		//this.valiTarkistus("koko-0-ontot.ttl");
+		this.valiTarkistus("koko-0-ontot.ttl");
 		this.muutaCandidateLabelitPrefJaAltLabeleiksi();
-		//this.valiTarkistus("koko-1-candidate.ttl");
+		this.valiTarkistus("koko-1-candidate.ttl");
 		this.romautaFiPrefLabelienJaVanhempienPerusteella();
-		//this.valiTarkistus("koko-2-romautettu.ttl");
+		this.valiTarkistus("koko-2-romautettu.ttl");
 		//this.muutaUritKokoUreiksi();
 		this.vaihtoehtoinenMuutaUritKokoUreiksi();
-		//this.valiTarkistus("koko-3-kuritettu.ttl");
+		this.valiTarkistus("koko-3-kuritettu.ttl");
 		this.korjaaLopuksiObjectit();
-		//this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
+		this.valiTarkistus("koko-4-obejktitkorjattu.ttl");
 		this.lisaaExactMatchitAiemmassaKokossaOlleisiin(edellisenKokonPolku);
 		//this.valiTarkistus("koko-5-exactMatch.ttl");
 		this.tarkistaEtteiKorvattuihinMeneSuhteitaJaPuraMahdollisetKorvaavuusKetjut();
@@ -1582,6 +1595,34 @@ public class Kokoaja2 {
 				}
 			}
 		}
+	}
+
+	/*
+	 * Filtteröi viittaukset ei-haluttuihin nimiavaruuksiin
+	 * - YSA
+	 * - Allars
+	 * - Liito
+	 * - STAMETA
+	 */
+	private boolean eiToivottuViittaus(Statement viittaus) {
+		List<String> poisMatchNs = Arrays.asList("http://www.yso.fi/onto/liito/" ,
+												 "http://www.yso.fi/onto/allars/" ,
+												 "http://www.yso.fi/onto/ysa/",
+												 "http://www.yso.fi/onto/stameta/");
+
+		//poistetaan exactMatch-viittaukset
+		if ( viittaus.getPredicate().equals(SKOS.exactMatch) && poisMatchNs.contains(viittaus.getResource().getNameSpace()) )
+				return true;
+
+		//poistetaan viittaukset itseensä
+		if ( viittaus.getPredicate().equals(SKOS.exactMatch) && viittaus.getSubject().getURI().equals(viittaus.getResource().getURI()))
+			return true;
+
+		//poistetaan vanhentuneet tyypit
+		if ( viittaus.getPredicate().equals(RDF.type) && viittaus.getResource().getURI().startsWith("http://www.yso.fi/onto/liito-meta"))
+			return true;
+
+		return false;
 	}
 
 	private HashSet<Statement> poistaNaistaTuplat(HashSet<Statement> set) {
