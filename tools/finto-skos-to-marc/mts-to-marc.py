@@ -238,11 +238,13 @@ def convert(cs, language, g):
         "titles": ['m121', 
                    'm3764'],
         "organisation types": ['m196'],
+        "jurisdiction types": ['m4872'],
         "family categories": ['m4865']
         }
     marc21_locations = {"occupations": {'code suffix': '74', 'subfield code': 'a'},
                         "titles": {'code suffix': '68', 'subfield code': 'd'},
                         "organisation types": {'code suffix': '68', 'subfield code': 'a'},
+                        "jurisdiction types": {'code suffix': '68', 'subfield code': 'b'},
                         "family categories": {'code suffix': '76', 'subfield code': 'a'}
     }
 
