@@ -446,7 +446,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                 helper_variables["outputFileName"] = output + "-" + language
     if not "outputFileName" in helper_variables:
         helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
-
     #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja 
     #arvona tuplen, jossa on tietueen viimeinen muokkauspäivämäärä ja tietueen sisältö MD5-tiivisteenä
     if helper_variables['modificationDates']:
@@ -459,7 +458,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                     sys.exit(2)
         else:
             modified_dates = {}
-
     logging.info("Processing vocabulary with vocabulary code '%s' in language '%s'" % (vocId, language))
     incrementor = 0
     deprecated_counter = 0
@@ -1380,14 +1378,16 @@ def convert(cs, vocabulary_name, language, g, g2):
                     modified_dates[str(concept)] = (date.today(), hash)
             else:  
                 modified_dates[str(concept)] = (date.today(), hash)
-    
-    if helper_variables['keepModified']:
-        concs = []
-        for conc in g.subjects(RDF.type, SKOS.Concept):
-            concs.append(str(conc))
-        for conc in modified_dates:
-            if conc not in concs:
-                #jos muokkauspäivämäärissä oleva käsite puuttuu, luodaan deprekoitu käsite
+
+    concs = []
+    for conc in g.subjects(RDF.type, SKOS.Concept):
+        concs.append(str(conc))
+    for conc in modified_dates:
+        if conc not in concs:
+            if modified_dates[conc][1]:
+                modified_dates[conc] = (date.today(), None)
+            #jos muokkauspäivämäärissä oleva käsite puuttuu, luodaan deprekoitu käsite
+            if helper_variables['keepModified'] and modified_dates[conc][0] >= helper_variables['keepModifiedLimit']:
                 rec = Record()
                 rec.leader = cs.get("leaderDeleted0", fallback=LEADERDELETED0)
                 rec.add_field(
@@ -1409,11 +1409,11 @@ def convert(cs, vocabulary_name, language, g, g2):
                             'b', LANGUAGES[language],
                             'f', helper_variables["vocCode"]
                         ]
+                    )
                 )
-        )
                 writer_records_counter += 1
                 writer.write(rec)
-    
+
     if handle is not sys.stdout:
         writer.close()
 
