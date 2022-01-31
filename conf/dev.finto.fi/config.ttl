@@ -1487,6 +1487,28 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-epikuros/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+	
+:ysofilolaos a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia, Filolaos-versio"@fi,
+		"ALLFO - Allmän finländsk ontologi, Filolaos version"@sv,
+		"YSO - General Finnish ontology, Philolaus version"@en ;
+	skosmos:shortName "YSO-F"@fi, "ALLFO-F"@sv, "YSO-F"@en;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:showChangeList "true" ;
+        skosmos:showPropertyInSearch skos:note ;
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "finna" ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2022.1.Filolaos/yso-skos.ttl> ;
+	void:dataDump <http://dev.finto.fi/download/yso/releases/2022.1.Filolaos/ysoKehitys.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-filolaos/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
 
 :ysotietomalliuudistus a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, tietomalliuudistus (testi)"@fi,
