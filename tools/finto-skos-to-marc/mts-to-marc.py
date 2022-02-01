@@ -235,8 +235,7 @@ def convert(cs, language, g):
     
     # vain nämä mts-käsiteryhmät otetaan mukaan, ryhmän nimestä ei tehdä MARC21-tietuetta
     ids = {"occupations": ['m2332'],
-        "titles": ['m121', 
-                   'm3764'],
+        "titles": ['m121'],
         "organisation types": ['m196'],
         "jurisdiction types": ['m4872'],
         "family categories": ['m4865']
