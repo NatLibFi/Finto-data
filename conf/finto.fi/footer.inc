@@ -44,7 +44,6 @@ window.cookieconsent.initialise({
 <!-- End Cookie consent -->
 
 <!-- Piwik -->
-<!--
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["trackPageView"]);
@@ -57,7 +56,6 @@ window.cookieconsent.initialise({
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
 </script>
--->
 <!-- End Piwik Code -->
 
 <!-- Browser Update -->
