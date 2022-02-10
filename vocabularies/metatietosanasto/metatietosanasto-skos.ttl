@@ -469,9 +469,7 @@ mts:m4407 a isothes:ConceptGroup,
         "Namngivet läge."@sv ;
     skos:prefLabel "Place"@en,
         "Paikka"@fi,
-        "Plats"@sv ;
-    skos:scopeNote "Tämä on sama linkki toisella tavalla <http://fi.wikipedia.org/wiki/Sijainti>"@fi,
-        "Täällä on <a href=\"http://fi.wikipedia.org/wiki/Sijainti\">paikkaa käsittelevä artikkeli</a> (tämä on testihuomautus, poistetaan)."@fi .
+        "Plats"@sv .
 
 mts:m4451 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -3239,11 +3237,11 @@ mts:m1475 a skos:Concept ;
 mts:m1480 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20050 ;
+    rdfs:seeAlso rdae:P20292 ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu ekspression tekemiseen valvomalla äänitallennuksen teknistä toteutusta. Vastavuoroinen suhde: ääniteknikkona ekspressiossa."@fi,
         "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att övervaka det tekniska genomförandet av en ljud- eller videoinspelning."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "recording engineer"@en,
+    skos:prefLabel "audio engineer"@en,
         "ääniteknikko"@fi,
         "ljudtekniker"@sv .
 
@@ -3575,6 +3573,7 @@ mts:m153 a isothes:ConceptGroup,
         mts:m4208,
         mts:m448,
         mts:m45,
+        mts:m4891,
         mts:m495,
         mts:m504,
         mts:m527,
@@ -7843,15 +7842,6 @@ mts:m211 a skos:Concept ;
         "haastateltava (ekspressio)"@fi,
         "intervjuobjekt (uttryck)"@sv .
 
-mts:m2111 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Nimekkeessä yliviivattu sana ei."@fi,
-        "Ordet nej i titeln är överstreckat."@sv .
-
 mts:m2112 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -7865,28 +7855,10 @@ mts:m2112 a skos:Concept ;
     skos:scopeNote "Merkitään MARC 21 -formaatin 246-kentän i-osakenttään."@fi,
         "Anges i MARC 21-formatets fält 246, delfält i."@sv .
 
-mts:m2115 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Nimekkeessä osa kirjaimista ylösalaisin."@fi,
-        "En del av bokstäverna i titeln är upp och nervända."@sv .
-
 mts:m2116 rdfs:label "standardin tunnus"@fi,
         "standardens beteckning"@sv ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv .
-
-mts:m2118 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "Sana sydän nimekkeessä symbolina."@fi,
-        "Ordet hjärta i titeln återges som symbol."@sv .
 
 mts:m2119 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10624,13 +10596,13 @@ mts:m2332 a isothes:ConceptGroup,
 mts:m240 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20052 ;
+    rdfs:seeAlso rdae:P20050 ;
     skos:altLabel "äänitt. (äänittäjä)"@fi,
         "ljudtekn. (ljudtekniker)"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu teoksen ekspression tekemiseen käyttämällä tallennuslaitetta äänen taltioimiseen tallennustilanteessa, mukaan lukien luonnonäänten, folklorististen tapahtumien, musiikin tms. kenttätallennukset. Vastavuoroinen suhde: äänittäjänä taltioinnissa."@fi,
         "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att använda en inspelningsapparat för upptagning av ljud i en inspelningssituation, inbegripande fältinspelning av naturljud, folkloristiska evenemang, musik o.s.v."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "recordist"@en,
+    skos:prefLabel "recording engineer"@en,
         "äänittäjä"@fi,
         "ljudtekniker"@sv .
 
@@ -10981,9 +10953,6 @@ mts:m333 a isothes:ConceptGroup,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     rdfs:seeAlso rdam:P30063 ;
-    skos:member mts:m2111,
-        mts:m2115,
-        mts:m2118 ;
     skos:prefLabel "Note on title"@en,
         "Huomautus nimekkeestä"@fi,
         "Anmärkning om titel"@sv .
@@ -11311,13 +11280,12 @@ mts:m3558 a skos:Concept ;
         "sammanfattningsdel"@sv .
 
 mts:m356 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    rdfs:seeAlso rdae:P20292 ;
+    dc:source "Kansallinen termi"@fi,
+        "Nationell term"@sv ;
     skos:definition "Liittää ekspression toimijaan, joka osallistuu ekspression tekemiseen valvomalla  videotallennuksen teknistä toteutusta. Vastavuoroinen suhde: videoteknikkona tallenteessa."@fi,
         "Sammankopplar uttryck med en aktör som deltar i utförandet av ett uttryck genom att övervaka det tekniska förverkligandet av en ljud- eller videoinspelning."@sv ;
     skos:inScheme mts: ;
-    skos:prefLabel "audio engineer"@en,
+    skos:prefLabel "video engineer"@en,
         "videoteknikko"@fi,
         "videotekniker"@sv .
 
@@ -16881,6 +16849,15 @@ mts:m4889 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "sisustusarkkitehtinä sisustussuunnitelmassa"@fi,
         "inredningsarkitekt för inredningsplanen"@sv .
+
+mts:m4891 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    rdfs:seeAlso rdae:P20052 ;
+    skos:definition "Liittää ekspression toimijaan, joka osallistuu ekspression tekemiseen käyttämällä tallennuslaitetta äänen tai videon taltioimiseen tallennustilanteessa."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "recordist"@en,
+        "taltioija"@fi .
 
 mts:m490 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -38708,7 +38685,7 @@ mts:m4736 a skos:Concept ;
         "slott"@sv ;
     skos:closeMatch yso:p1786 ;
     skos:inScheme mts: ;
-    skos:prefLabel "talo (yhteisötyyppi)"@fi,
+    skos:prefLabel "talo (yhteisö)"@fi,
         "hus (institutionstyp)"@sv .
 
 mts:m4742 a skos:Concept ;
@@ -57065,7 +57042,9 @@ Termi suku viittaa kahteen tai useampaan henkilöön, joita yhdistää sukulaisu
 \r
 Käsitemallin mukaiset kategoriat ja niihin kuuluvat kuvailuelementit ovat Metatietosanastossa ryhmiä, joihin yksi tai useampi käsite kuuluu. Jokainen käsite on sisällytetty johonkin ryhmään.\r
 \r
-Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit."""@fi,
+Haku kohdistuu sekä ryhmiin että käsitteisiin. aakkosellisessa listauksessa näkyvät vain käsitteiden termit.\r
+\r
+Ehdotuksia uusiksi termeiksi voi lähettää tämän sivun ylälaidan palautelomakkeella."""@fi,
         """Metadataordlistan är en helhet av termer och uttryck som behövs vid beskrivning av material, och den innehåller terminologi både i enlighet med ISBD- och RDA-beskrivningsanvisningar. Användning av vokabulären standardiserar produktionen av beskrivande metadata och förenhetligar beskrivningen för att främja effektiv informationssökning.\r
 \r
 Den strukturella hierarkin i Metadataordlistan grundar sig på de kategorier som finns i FRBR (Functional Requirements for Bibliographic Description) -begreppsmodellen: verk, uttryck, manifestation, exemplar, person, institution, familj/släkt, samt relationer mellan dessa. \r
@@ -57093,7 +57072,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2022-02-09T01:06:00+00:00"^^xsd:dateTime ;
+    dct:modified "2022-02-10T01:03:55+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
