@@ -456,8 +456,8 @@ def convert(cs, vocabulary_name, language, g, g2):
                 except EOFError:
                     logging.error("The file %s for modification dates is empty "%helper_variables['modificationDates'])
                     sys.exit(2)
-        else:
-            modified_dates = {}
+    else:
+        modified_dates = {}
     logging.info("Processing vocabulary with vocabulary code '%s' in language '%s'" % (vocId, language))
     incrementor = 0
     deprecated_counter = 0
@@ -1174,21 +1174,25 @@ def convert(cs, vocabulary_name, language, g, g2):
 
                 # kovakoodattu yso ja slm - muuten niiden tulisi olla jossain globaalissa muuttujassa
                 if sub2 == "yso" or sub2 == "slm" or cs.getboolean("multilanguage", fallback=False):
-                    sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
-                    # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
-                    if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
-                        wdEntities = []
-                        closeMatches = getValues(g, concept, [SKOS.closeMatch])
-                        for closeMatch in closeMatches:
-                            if closeMatch.value.startswith(WIKIDATA):
-                                wdEntities.append(URIRef(closeMatch.value))
-                        if len(wdEntities) == 1:
-                            sub0 = wdEntities[0]
-                            sub2 = "wikidata"
-                            sub4 = "~EQ"
-                        else:
-                            sub2 = None
-                            sub4 = None
+                    if not valueProp.value.language:
+                        sub2 = ""
+                        logging.error("Language information missing from prefLabel of %s"% (str(matchURIRef)))
+                    else:
+                        sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
+                        # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
+                        if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
+                            wdEntities = []
+                            closeMatches = getValues(g, concept, [SKOS.closeMatch])
+                            for closeMatch in closeMatches:
+                                if closeMatch.value.startswith(WIKIDATA):
+                                    wdEntities.append(URIRef(closeMatch.value))
+                            if len(wdEntities) == 1:
+                                sub0 = wdEntities[0]
+                                sub2 = "wikidata"
+                                sub4 = "~EQ"
+                            else:
+                                sub2 = None
+                                sub4 = None
                 if sub2 and sub4:
                     fields.append(
                         Field(
