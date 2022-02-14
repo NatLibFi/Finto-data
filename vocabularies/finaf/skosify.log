@@ -27,14 +27,18 @@ Traceback (most recent call last):
     return evalJoin(ctx, part)
   File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/evaluate.py", line 115, in evalJoin
     b = set(evalPart(ctx, join.p2))
-  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/evaluate.py", line 55, in evalBGP
-    c = ctx.push()
-  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 342, in push
-    r = self.clone(Bindings(self.bindings))
-  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 257, in clone
-    self._dataset if self._dataset is not None else self.graph, bindings or self.bindings, initBindings=self.initBindings)
-  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 236, in __init__
-    self.bindings = Bindings(d=bindings or [])
-  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 54, in __init__
-    self._d = dict(d)
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/evaluate.py", line 74, in evalBGP
+    for x in evalBGP(c, bgp[1:]):
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/evaluate.py", line 44, in evalBGP
+    yield ctx.solution()
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 328, in solution
+    return FrozenBindings(self, iteritems(self.bindings))
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 165, in __init__
+    FrozenDict.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 107, in __init__
+    self._d = dict(*args, **kwargs)
+  File "/usr/lib/python3.6/_collections_abc.py", line 743, in __iter__
+    for key in self._mapping:
+  File "/usr/local/lib/python3.6/dist-packages/rdflib/plugins/sparql/sparql.py", line 87, in __iter__
+    for i in dict.__iter__(d._d):
 MemoryError
