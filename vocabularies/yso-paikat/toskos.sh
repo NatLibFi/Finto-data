@@ -1,5 +1,7 @@
 #!/bin/sh
 
+EXPANDURIS="../../tools/expand-note-uris/expand-note-uris.py"
+
 # fetch mappings from Wikidata and store them in a sorted NT file, so version control works
 rsparql --results NT --service https://query.wikidata.org/sparql --query wikidata-links.rq | sort >wikidata-links.nt
 
@@ -12,7 +14,10 @@ grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-pa
 # create wgs84 lat/long literals for used PNR places
 ./extractUsedPNRs.py --input pnr-complete-paikkaid-wgs84-coordinates-table-2020-12-02.csv --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
 
-INFILES="yso-paikat-vb-dump.rdf yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl yso-paikat-metadata.ttl"
+# expand URIs in notes and definitions
+$EXPANDURIS yso-paikat-vb-dump.ttl >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
+
+INFILES="yso-paikat-expanded.rdf yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl yso-paikat-metadata.ttl"
 OUTFILE=yso-paikat-skos.ttl
 CFGFILE=yso-paikat-vb.cfg
 
