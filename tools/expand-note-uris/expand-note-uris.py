@@ -6,6 +6,7 @@
 from __future__ import print_function
 from rdflib import Graph, URIRef, Literal
 from rdflib.namespace import SKOS
+from rdflib.util import guess_format
 import re
 import sys
 
@@ -13,7 +14,7 @@ inputfile = sys.argv[1]
 URIRE = re.compile(r'\[http([^\]]+)\]')
 
 g = Graph()
-g.parse(inputfile, format='turtle')
+g.parse(inputfile, format=guess_format(inputfile))
 
 def uri_to_link(sub, prop, lang, matchobj):
     uri = 'http' + matchobj.group(1)
