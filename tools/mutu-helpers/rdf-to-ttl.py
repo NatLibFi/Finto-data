@@ -1,5 +1,5 @@
-#!peekolmonen/bin/python3
-#/usr/bin/python3
+#!/usr/bin/python3
+#my_activated_python_env/bin/python3
 # coding=utf-8
 # You may need to install rdflib. If so, run pip install rdflib. 
 # If you are working in a Python virtual environment:
