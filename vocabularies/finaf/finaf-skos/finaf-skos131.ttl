@@ -748,6 +748,23 @@ finaf:000029379 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Turun kauppakorkeakoulu"@fi .
 
+rdac:C10009 a owl:Class ;
+    rdfs:label "place"@en,
+        "paikka"@fi ;
+    rdakit:toolkitDefinition "A given extent of space."@en,
+        "Sijainti, joka tunnetaan nimellä."@fi ;
+    rdakit:toolkitLabel "Place"@en,
+        "paikka"@fi ;
+    reg:lexicalAlias rdac:Paikka.fi,
+        rdac:Place.en ;
+    reg:name "Place"@en,
+        "Paikka"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdac: ;
+    rdfs:subClassOf rdac:C10013 ;
+    skos:definition "A given extent of space."@en,
+        "Sijainti, joka tunnetaan nimellä."@fi .
+
 finaf:000033504 a rdac:C10005,
         skos:Concept ;
     dct:created "1990-04-07"^^xsd:date ;
@@ -770,23 +787,6 @@ finaf:000033504 a rdac:C10005,
         "Espoo"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Espoon kaupunki"@fi .
-
-rdac:C10009 a owl:Class ;
-    rdfs:label "place"@en,
-        "paikka"@fi ;
-    rdakit:toolkitDefinition "A given extent of space."@en,
-        "Sijainti, joka tunnetaan nimellä."@fi ;
-    rdakit:toolkitLabel "Place"@en,
-        "paikka"@fi ;
-    reg:lexicalAlias rdac:Paikka.fi,
-        rdac:Place.en ;
-    reg:name "Place"@en,
-        "Paikka"@fi ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:isDefinedBy rdac: ;
-    rdfs:subClassOf rdac:C10013 ;
-    skos:definition "A given extent of space."@en,
-        "Sijainti, joka tunnetaan nimellä."@fi .
 
 finaf:000037110 a rdac:C10005,
         skos:Concept ;
@@ -986,43 +986,6 @@ finaf:000000960 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Helsingin yliopisto. Maatalous-metsätieteellinen tiedekunta"@fi .
 
-finaf:000035073 a rdac:C10005,
-        skos:Concept ;
-    dct:created "1990-06-17"^^xsd:date ;
-    dct:modified "2021-07-19T17:45:08"^^xsd:dateTime ;
-    rdaa:P50006 <http://isni.org/isni/0000000122538678>,
-        "Asteri ID: 000035073" ;
-    rdaa:P50012 finaf:000035292 ;
-    rdaa:P50025 "FMI"@fi,
-        "Finland. Meteorologiska institutet"@fi,
-        "Finnisches meteorologisches Institut"@fi,
-        "Finnish Meteorological Institute"@fi,
-        "Finnish Meteorological Office"@fi,
-        "Finskij meteorologičeskij institut"@fi,
-        "IL (Ilmatieteen laitos)"@fi,
-        "Liikenne- ja viestintäministeriö. Ilmatieteen laitos"@fi,
-        "Meteorologiska institutet (Finland)"@fi,
-        "Suomi. Ilmatieteen laitos"@fi,
-        "Финский метеорологический институт"@fi ;
-    rdaa:P50236 "1968/.."^^<http://id.loc.gov/datatypes/edtf> ;
-    rdaa:P50237 mts:m237 ;
-    rdaa:P50407 "Ilmatieteen laitos"@fi ;
-    rdau:P61101 "<a href='http://www.ilmatieteenlaitos.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi,
-        "Ruosteenoja, Kimmo. Climate scenarios for FINADAPT studies of climate change adaptation / Kimmo Ruosteenoja, Kirsti Jylhä, Heikki Tuomenvirta, 2005"@fi ;
-    skos:altLabel "FMI"@fi,
-        "Finland. Meteorologiska institutet"@fi,
-        "Finnisches meteorologisches Institut"@fi,
-        "Finnish Meteorological Institute"@fi,
-        "Finnish Meteorological Office"@fi,
-        "Finskij meteorologičeskij institut"@fi,
-        "IL (Ilmatieteen laitos)"@fi,
-        "Liikenne- ja viestintäministeriö. Ilmatieteen laitos"@fi,
-        "Meteorologiska institutet (Finland)"@fi,
-        "Suomi. Ilmatieteen laitos"@fi,
-        "Финский метеорологический институт"@fi ;
-    skos:inScheme finaf: ;
-    skos:prefLabel "Ilmatieteen laitos"@fi .
-
 finaf:000035114 a rdac:C10005,
         skos:Concept ;
     dct:created "1995-03-03"^^xsd:date ;
@@ -1064,6 +1027,43 @@ finaf:000035114 a rdac:C10005,
         "Институт окружающей среды Финляндии"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Suomen ympäristökeskus"@fi .
+
+finaf:000035073 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-06-17"^^xsd:date ;
+    dct:modified "2021-07-19T17:45:08"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000122538678>,
+        "Asteri ID: 000035073" ;
+    rdaa:P50012 finaf:000035292 ;
+    rdaa:P50025 "FMI"@fi,
+        "Finland. Meteorologiska institutet"@fi,
+        "Finnisches meteorologisches Institut"@fi,
+        "Finnish Meteorological Institute"@fi,
+        "Finnish Meteorological Office"@fi,
+        "Finskij meteorologičeskij institut"@fi,
+        "IL (Ilmatieteen laitos)"@fi,
+        "Liikenne- ja viestintäministeriö. Ilmatieteen laitos"@fi,
+        "Meteorologiska institutet (Finland)"@fi,
+        "Suomi. Ilmatieteen laitos"@fi,
+        "Финский метеорологический институт"@fi ;
+    rdaa:P50236 "1968/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m237 ;
+    rdaa:P50407 "Ilmatieteen laitos"@fi ;
+    rdau:P61101 "<a href='http://www.ilmatieteenlaitos.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi,
+        "Ruosteenoja, Kimmo. Climate scenarios for FINADAPT studies of climate change adaptation / Kimmo Ruosteenoja, Kirsti Jylhä, Heikki Tuomenvirta, 2005"@fi ;
+    skos:altLabel "FMI"@fi,
+        "Finland. Meteorologiska institutet"@fi,
+        "Finnisches meteorologisches Institut"@fi,
+        "Finnish Meteorological Institute"@fi,
+        "Finnish Meteorological Office"@fi,
+        "Finskij meteorologičeskij institut"@fi,
+        "IL (Ilmatieteen laitos)"@fi,
+        "Liikenne- ja viestintäministeriö. Ilmatieteen laitos"@fi,
+        "Meteorologiska institutet (Finland)"@fi,
+        "Suomi. Ilmatieteen laitos"@fi,
+        "Финский метеорологический институт"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Ilmatieteen laitos"@fi .
 
 finaf:000002280 a rdac:C10005,
         skos:Concept ;
@@ -1362,6 +1362,30 @@ finaf:000000856 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Deprecated"@en .
 
+finaf:000018917 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2003-01-30"^^xsd:date ;
+    dct:modified "2020-11-05T20:15:44"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000018917" ;
+    rdaa:P50012 finaf:000002451 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Lappeenranta University of Technology"@fi,
+        "Universitas Lappeenrantaensis"@fi,
+        "University of Technology (Lappeenranta)"@fi,
+        "Villmanstrands tekniska universitet"@fi ;
+    rdaa:P50236 "2003/2018"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 "yliopisto"@fi ;
+    rdaa:P50350 yso:p94255 ;
+    rdaa:P50393 "Nimimuoto Lappeenrannan teknillinen yliopisto 1.1.2003 -"@fi ;
+    rdaa:P50407 "Lappeenrannan teknillinen yliopisto"@fi ;
+    rdau:P61101 "Yliopiston kotisivu 30.01.2003"@fi ;
+    skos:altLabel "Lappeenranta University of Technology"@fi,
+        "Universitas Lappeenrantaensis"@fi,
+        "University of Technology (Lappeenranta)"@fi,
+        "Villmanstrands tekniska universitet"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Lappeenrannan teknillinen yliopisto"@fi .
+
 finaf:000037056 a rdac:C10005,
         skos:Concept ;
     dct:created "1992-12-29"^^xsd:date ;
@@ -1388,30 +1412,6 @@ finaf:000037056 a rdac:C10005,
         "Åbo universitetscentralsjukhus"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Turun yliopistollinen keskussairaala"@fi .
-
-finaf:000018917 a rdac:C10005,
-        skos:Concept ;
-    dct:created "2003-01-30"^^xsd:date ;
-    dct:modified "2020-11-05T20:15:44"^^xsd:dateTime ;
-    rdaa:P50006 "Asteri ID: 000018917" ;
-    rdaa:P50012 finaf:000002451 ;
-    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
-    rdaa:P50025 "Lappeenranta University of Technology"@fi,
-        "Universitas Lappeenrantaensis"@fi,
-        "University of Technology (Lappeenranta)"@fi,
-        "Villmanstrands tekniska universitet"@fi ;
-    rdaa:P50236 "2003/2018"^^<http://id.loc.gov/datatypes/edtf> ;
-    rdaa:P50237 "yliopisto"@fi ;
-    rdaa:P50350 yso:p94255 ;
-    rdaa:P50393 "Nimimuoto Lappeenrannan teknillinen yliopisto 1.1.2003 -"@fi ;
-    rdaa:P50407 "Lappeenrannan teknillinen yliopisto"@fi ;
-    rdau:P61101 "Yliopiston kotisivu 30.01.2003"@fi ;
-    skos:altLabel "Lappeenranta University of Technology"@fi,
-        "Universitas Lappeenrantaensis"@fi,
-        "University of Technology (Lappeenranta)"@fi,
-        "Villmanstrands tekniska universitet"@fi ;
-    skos:inScheme finaf: ;
-    skos:prefLabel "Lappeenrannan teknillinen yliopisto"@fi .
 
 finaf:000019212 a rdac:C10005,
         skos:Concept ;
@@ -2108,7 +2108,7 @@ För mer information on dataskydd och svar på vanliga frågor se sidan <a href=
         "KANTO - Nationella aktörsnamn"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2022-02-22T00:49:45+00:00"^^xsd:dateTime ;
+    dct:modified "2022-02-23T00:51:05+00:00"^^xsd:dateTime ;
     dct:subject yso:p1272,
         yso:p26023,
         yso:p3835 ;
