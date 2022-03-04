@@ -1,0 +1,17 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+
+CONSTRUCT {
+  ?s ?p ?o .
+  ?c skos:hiddenLabel ?hidden_label_fi, ?hidden_label_sv .
+} WHERE {
+  {
+    ?s ?p ?o .
+    FILTER(isIRI(?o) || ?p != skos:hiddenLabel || LANG(?o) != '')
+  } UNION {
+    ?c skos:hiddenLabel ?label .
+    FILTER(LANG(?label) = '')
+    BIND(STRLANG(STR(?label), 'fi') AS ?hidden_label_fi)
+    BIND(STRLANG(STR(?label), 'sv') AS ?hidden_label_sv)
+  }
+}
