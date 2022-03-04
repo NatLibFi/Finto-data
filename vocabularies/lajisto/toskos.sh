@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="lajisto-metadata.ttl finto_biota.ttl"
+INFILES="lajisto-metadata.ttl LAJILUETTELO2021.ttl"
 OUTFILE=lajisto-skos.ttl
 
 SKOSIFYCMD="skosify"
