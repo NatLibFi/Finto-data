@@ -1046,40 +1046,6 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/pto/> .
 
-:ptvl a skosmos:Vocabulary, void:Dataset ;
-	dc:title "Julkisten palvelujen luokitus"@fi, "Julkisten palvelujen luokitus"@sv, "Julkisten palvelujen luokitus"@en ;
-	skosmos:shortName "PTVL";
-	void:uriSpace "http://urn.fi/URN:NBN:fi:au:ptvl:";
-	skosmos:language "fi", "sv", "en";
-        skosmos:useModifiedDate "true";
-	skosmos:defaultLanguage "fi";
-	skosmos:showTopConcepts true ;
-	skosmos:sortByNotation "natural" ;
-	skosmos:fullAlphabeticalIndex "true";
-	skosmos:feedbackRecipient "marko.latvanen@vrk.fi";
-	void:dataDump <http://dev.finto.fi/download/ptvl/ptvl-skos.ttl> ;
-	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ptvl:> ;
-	skosmos:mainConceptScheme <http://urn.fi/URN:NBN:fi:au:ptvl:> .
-
-:ptvl skosmos:vocabularyPlugins :ptvlMessage .
-:ptvlMessage a skosmos:ParameterizedPlugin ;
-    skosmos:usePlugin "message";
-    skosmos:parameters [
-        a schema:PropertyValue ;
-        schema:propertyID "msg";
-        schema:value
-          """Julkisten palvelujen luokitus -aineistokokonaisuutta ei enää ylläpidetä eikä päivitetä Finto.fi-palvelussa, eikä Suomi.fi-palvelutietovaranto enää nouda tätä aineistoa Fintosta. Aineisto poistuu Fintosta kokonaan 31.12.2021.
-          <br/><br/>
-          Aineistossa olevat luokitukset ja niiden ylläpito on siirretty Yhteentoimivuusalustan Koodistot-työkaluun, josta Palvelutietovaranto noutaa ne PTV-palvelukuvausten käyttöön. Luokitusten nykyiset osoitteet ovat: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'>Julkiset palvelut</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhma'>Kohderyhmät</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvtuotanto'>Tuotantotavat</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaj'>Tuottajatyypit</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Elämäntilanteet</a>. Luokitukset ovat vapaasti ladattavissa fi/sv/en-kieliversioina yllä annetuista osoitteista."""@fi,
-          """Sektionen ”Klassifikation av offentliga tjänster” är inte längre underhållit och uppdaterad i den finländska tesaurus- och ontologiservicen Finto. Suomi.fi-servicedatalagret inte längre söker denna material från Finto. ”Klassifikation av offentliga tjänster” försvinner helt och hållet från Finto den 31 december 2021.
-          <br/><br/>
-          Klassificeringarna i materialet och deras underhåll har flyttats till Kodlistor-verktyget på Interoperabilitetsplattformen som Suomi.fi-servicedatalagret nu använder för att söka serviceklassificeringarna som användas i servicedatalagret. De nya adresserna av serviceklassificeringarna är: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'> Klassifikation av offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhmat'>Målgrupper för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Livssituationer för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Producenttyper för offentliga tjänster</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvtuotanto'>Realiseringssätt för offentliga tjänster</a>. Klassificeringarna på finska, svenska och engelska kan laddas ner fritt från dessa adresser."""@sv,
-          """The contents of the Classification of Public Services section in Finto are no longer managed and updated in Finto. They are now actively managed and freely available in the Reference Data tool (https://koodistot.suomi.fi) of the Interoperability Platform. The Finnish Service Catalogue (PTV) now uses these classifications from the Platform. The entire Classification of Public Services section will be removed from Finto on December 31, 2021.
-          <br/><br/>
-          The relevant URL's for these classifications are: <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvserclass'>Service classification</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvkohderyhmat'>Classification of public services target groups</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Classification of public service production types</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvjultuottaja'>Classification of public service producer organization types</a>, <a href='https://koodistot.suomi.fi/codescheme;registryCode=ptv;schemeCode=ptvelti'>Life events classes of citizens’ public services</a>. The classifications are freely available for download in Finnish, Swedish and English in these URL's."""@en ;
-    ] .
-
 :puho a skosmos:Vocabulary, void:Dataset ;
 	dc:title "PUHO - Puolustushallinnon ontologia"@fi,
 		"PUHO - Puolustushallinnon ontologia"@sv,
@@ -1357,7 +1323,7 @@
 	skosmos:showDeprecatedChanges "true" ;
         skosmos:showPropertyInSearch skos:note ;
 	skosmos:useModifiedDate "true";
-	skosmos:usePlugin "finna", "suggestions" ;
+	skosmos:usePlugin "finna" ;
 	void:dataDump <http://dev.finto.fi/download/yso/yso-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/yso/yso-skos.rdf> ;
 	void:dataDump <http://dev.finto.fi/download/yso/yso-fin.mrcx> ;
