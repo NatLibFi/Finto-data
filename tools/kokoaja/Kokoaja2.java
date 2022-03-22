@@ -257,9 +257,9 @@ public class Kokoaja2 {
 
 		while (resIter.hasNext()) {
 			Resource ontoSubj = resIter.nextResource();
-			//lisättiin tarkistus deprekoitujen käsitteiden välttämiseksi
+			//lisättiin tarkistus deprekoitujen käsitteiden välttämiseksi -> tämä pois, tällainen tarkistus tulisi koskea vain YSOa - muutoin erikoisontologian käsitteen koko-vastine (siis vanha) putoaa pois kokosta
 
-			if (!this.mustaLista.contains(ontoSubj) && !this.onto.contains(ontoSubj, RDF.type, deprecated)) {
+			if (!this.mustaLista.contains(ontoSubj)) {
 				ontonOntoTyyppisetResurssit.add(ontoSubj);
 			}
 		}
@@ -296,7 +296,7 @@ public class Kokoaja2 {
 		resIter = this.onto.listResourcesWithProperty(RDF.type, ontoTyyppi);
 		while (resIter.hasNext()) {
 			Resource ontoSubj = resIter.nextResource();
-			if (!this.mustaLista.contains(ontoSubj) && !this.onto.contains(ontoSubj, RDF.type, deprecated)) {
+			if (!this.mustaLista.contains(ontoSubj)) {
 				ontoUritVektori.add(ontoSubj.getURI());
 			}
 		}
@@ -339,6 +339,8 @@ public class Kokoaja2 {
 			Resource object = this.haeKorvaava(subject, this.onto);
 			this.koko.add(subject, DCTerms.isReplacedBy, object);
 		}
+		
+		//TODO: otetaanko mukaan deprekoidut käsitteet jotka on linkitetty johonkin toiseen sanastoon?
 	}
 
 	public Model teeExactMatcheistaKaksisuuntaisia(Model ontologia) {
@@ -645,6 +647,35 @@ public class Kokoaja2 {
 		this.siivoaPoisTuplaVastaavuudet(kaikkiLinkitetytKasitteet);
 		System.out.println("Siivouksen jälkeen linkitettyjä on " + kaikkiLinkitetytKasitteet.size());
 
+		//Tähän väliin otetaan mukaan kaikki KOKOn käsitteet, joilla on dct:isReplacedBY, koska se on ainoa tieto mitä otamme mukaan deprekoiduista erikoisontologiakäsitteistä
+		
+		StmtIterator kaikkiKorvatutKasitteet = this.koko.listStatements(null, DCTerms.isReplacedBy, (RDFNode)null);
+		while (kaikkiKorvatutKasitteet.hasNext()) {
+			kaikkiLinkitetytKasitteet.add(kaikkiKorvatutKasitteet.next());
+		}
+		
+		//Tehdään sama vielä skos:relatedMatch, skos:broadMatch ja skos:narrowMatch -ominaisuuksille, joita deprekoiduilla käsitteillä saattaa olla
+		
+		kaikkiKorvatutKasitteet.close();
+		HashSet<Statement> muutSuhteet = new HashSet<Statement>();
+		
+		kaikkiKorvatutKasitteet = this.koko.listStatements(null, SKOS.relatedMatch, (RDFNode)null);
+		while (kaikkiKorvatutKasitteet.hasNext()) {
+			muutSuhteet.add(kaikkiKorvatutKasitteet.next());
+		}
+		kaikkiKorvatutKasitteet = this.koko.listStatements(null, SKOS.broadMatch, (RDFNode)null);
+		while (kaikkiKorvatutKasitteet.hasNext()) {
+			muutSuhteet.add(kaikkiKorvatutKasitteet.next());
+		}
+		kaikkiKorvatutKasitteet = this.koko.listStatements(null, SKOS.narrowMatch, (RDFNode)null);
+		while (kaikkiKorvatutKasitteet.hasNext()) {
+			muutSuhteet.add(kaikkiKorvatutKasitteet.next());
+		}
+		for (Statement s : muutSuhteet) {
+			if (!this.koko.contains(s.getSubject(), DCTerms.isReplacedBy, (RDFNode)null))
+				kaikkiLinkitetytKasitteet.add(s);
+		}
+
 		for (Statement linkki : kaikkiLinkitetytKasitteet) {
 
 			Resource A = linkki.getSubject();
@@ -781,6 +812,9 @@ public class Kokoaja2 {
 
 		//testataan käsitteiden määrää 2.
 		System.out.println("Kokossa käsitteitä urittamisen jälkeen: " + this.koko.listSubjects().toList().size());
+		
+		
+		//TODO: tarkistetaan tähän väliin väliaikaisena tarkistuksena koko.listSubjects() -tyyliin vielä kaikki sellaiset käsitteet jotka jäivät tämän funktion kohdalla käsittelemättä, ja listataan ne erilliseen tiedostoon
 
 	}
 
