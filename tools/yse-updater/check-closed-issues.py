@@ -24,8 +24,8 @@ finto_data = sys.argv[2]
 ysa_file = finto_data + '/vocabularies/ysa/ysa-skos.ttl'
 yse_file = finto_data + '/vocabularies/yse/yse-skos.ttl'
 
-g = Github(secrets['username'], secrets['password'])
-repo = g.get_user('Finto-ehdotus').get_repo('YSE')
+gh = Github(secrets['username'], secrets['password'])
+repo = gh.get_user('Finto-ehdotus').get_repo('YSE')
 label = repo.get_label('uusi')
 need_inspection = repo.get_issues(state='closed', labels=[label])
 ysa_skos = Graph().parse(ysa_file, format='turtle')
@@ -47,9 +47,9 @@ for issue in need_inspection:
         md_href = issue.body.split("**Termiehdotus Fintossa:**")[1]
         if md_href:
             suggestion_uri = ysa + md_href.split('page/')[1].replace(')', '')
+            ysalab = ysa_skos.preferredLabel(suggestion_uri, lang='fi')
             yselab = yse_skos.preferredLabel(suggestion_uri, lang='fi')
-            ysalab = yse_skos.preferredLabel(suggestion_uri, lang='fi')
-            if yselab != '' and yselab == ysalab: # the suggestion has been taken into YSA with the same prefLabel
+            if yselab != '' and ysalab == yselab: # the suggestion has been taken into YSA with the same prefLabel
                 print("deleting: " + issue.title)
                 delete_triples(suggestion_uri)
             else:
