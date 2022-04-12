@@ -2,6 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 @prefix mesh: <http://www.yso.fi/onto/mesh/> .
+@prefix meshv: <http://id.nlm.nih.gov/mesh/vocab#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -27,16 +28,16 @@ mesh: a skos:ConceptScheme ;
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv,
         "The National Library of Finland"@en;
-    dc:description """Medical Subject Headings eli MeSH on lääketieteellinen tesaurus eli jäsennelty asiasanasto. Tämä SKOS-muotoinen versio perustuu vuoden 2021 MeSHiin ja sisältää myös suomenkielisen käännöksen MeSHistä (FinMeSH).
+    dc:description """Medical Subject Headings eli MeSH on lääketieteellinen tesaurus eli jäsennelty asiasanasto. Tämä SKOS-muotoinen versio perustuu vuoden 2022 MeSHiin ja sisältää myös suomenkielisen käännöksen MeSHistä (FinMeSH).
 MeSHin on alunperin julkaissut National Library of Medicine (USA), joka edelleen ylläpitää ja päivittää sanastoa.
-FinMeSH on alunperin Lääkäriseura Duodecimin tuottama, mutta nykyisin vuosittainen ylläpito tapahtuu Helsingin yliopiston Meilahden kampuskirjasto Terkossa. Lisäksi mukana ovat ruotsinkieliset termit SweMeSH 2021:stä, jonka on tuottanut Karolinska Institutet."""@fi ,
-        """Medical Subject Headings (MeSH) är kontrollerad vokabulär inom disciplinet medicin. Denna SKOS-version baserar sig på 2021 versionen av MeSH och innehåller också den finska översättningen av MeSH (FinMeSH).
+FinMeSH on alunperin Lääkäriseura Duodecimin tuottama, mutta nykyisin vuosittainen ylläpito tapahtuu Helsingin yliopiston Meilahden kampuskirjasto Terkossa. Lisäksi mukana ovat ruotsinkieliset termit SweMeSH 2022:stä, jonka on tuottanut Karolinska Institutet."""@fi ,
+        """Medical Subject Headings (MeSH) är kontrollerad vokabulär inom disciplinet medicin. Denna SKOS-version baserar sig på 2022 versionen av MeSH och innehåller också den finska översättningen av MeSH (FinMeSH).
 MeSH är ursprungligen publicerad av National Library of Medicine (USA), som uppdaterar den årligen.
 FinMeSH är ursprungligen producerad av Finska Läkarföreningen Duodecim, senare årliga uppdateringar sker vid Helsingfors universitet Campusbiblioteket i Mejlans.
-Svenskspråkiga termer från SweMeSH 2021 finns med, som är producerad av Karolinska Institutet."""@sv ,
-        """Medical Subject Headings (MeSH) is a structured thesaurus in the domain of medicine. This version of MeSH in SKOS format is based on the year 2021 version of MeSH and includes the Finnish translation of MeSH (FinMeSH).
+Svenskspråkiga termer från SweMeSH 2022 finns med, som är producerad av Karolinska Institutet."""@sv ,
+        """Medical Subject Headings (MeSH) is a structured thesaurus in the domain of medicine. This version of MeSH in SKOS format is based on the year 2022 version of MeSH and includes the Finnish translation of MeSH (FinMeSH).
 MeSH is originally published by the US National Library of Medicine (NLM) and annually updated by NLM.
-FinMeSH was originally produced by the Finnish Medical Society Duodecim and has been later updated annually at the Meilahti Campus Library of University of Helsinki. The vocabulary also includes Swedish terms from the SweMeSH 2021 thesaurus created by Karolinska Institute."""@en ;
+FinMeSH was originally produced by the Finnish Medical Society Duodecim and has been later updated annually at the Meilahti Campus Library of University of Helsinki. The vocabulary also includes Swedish terms from the SweMeSH 2022 thesaurus created by Karolinska Institute."""@en ;
     dc:source <http://mesh.kib.ki.se/>,
         <http://www.duodecim.fi>,
         <https://www.terkko.helsinki.fi/termix/>,
@@ -44,4 +45,22 @@ FinMeSH was originally produced by the Finnish Medical Society Duodecim and has 
     dc:title "Medical Subject Headings (MeSH)" ;
     foaf:homepage <https://www.terkko.helsinki.fi/termix/> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/>  .
+
+meshv:PublicationType a owl:Class ;
+    rdfs:label "Julkaisutyyppi"@fi,
+               "Publikationstyp"@sv,
+               "Publication Type"@en ;
+    rdfs:subClassOf skos:Concept .
+
+meshv:TopicalDescriptor a owl:Class ;
+    rdfs:label "Aihe"@fi,
+               "Ämne"@sv,
+               "Topical Descriptor"@en ;
+    rdfs:subClassOf skos:Concept .
+
+meshv:GeographicalDescriptor a owl:Class ;
+    rdfs:label "Maantieteellinen käsite"@fi,
+               "Geografiskt begrepp"@sv,
+               "Geographical Descriptor"@en ;
+    rdfs:subClassOf skos:Concept .
 
