@@ -1,4 +1,5 @@
 @prefix void: <http://rdfs.org/ns/void#> .
+
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -818,6 +819,19 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/soto/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/soto/> .
+
+:soto skosmos:vocabularyPlugins :sotoMessage .
+
+:sotoMessage  a skosmos:ParameterizedPlugin ;
+                skosmos:usePlugin "message";
+                skosmos:parameters
+			[ a			schema:PropertyValue ;
+                          schema:propertyID 	"msg";
+			schema:value
+			  "Sotatieteen ontologiaa (SOTO) ei enää päivitetä. SOTOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi <a href='http://finto.fi/yso/fi/'>YSOsta</a> ja <a href='http://finto.fi/koko/fi/'> KOKOsta</a>."@fi,
+			  "The Ontology for Military Science (SOTO) is not updated anymore and it is not recommended to use it in describing resources. The domain specific terminology can be found, for example in <a href='http://finto.fi/yso/fi/'>YSO - General Finnish ontology </a> and <a href='http://finto.fi/koko/fi/'>KOKO Ontology</a>."@en, 
+				"Sotatieteen ontologiaa (SOTO) ei enää päivitetä. SOTOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi <a href='http://finto.fi/yso/fi/'>YSOsta</a> ja <a href='http://finto.fi/koko/fi/'> KOKOsta</a>."@sv;
+			] .
 
 :tero a skosmos:Vocabulary, void:Dataset ;
 	dc:title "TERO - Terveyden ja hyvinvoinnin ontologia"@fi,
