@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="mero.ttl mero-metadata.ttl ysoKehitys-2021-Epikuros.ttl"
+INFILES="mero.ttl mero-metadata.ttl ysoKehitys-2022-Filolaos.ttl"
 OUTFILE=mero-skos.ttl
 
 SKOSIFYHOME="/home/terminologi/ontology/SKOSIFY"
