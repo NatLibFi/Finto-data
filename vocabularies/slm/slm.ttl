@@ -953,10 +953,9 @@ slm:s120  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "elokuvakäsikirjoitukset"@fi , "filmmanuskript"@sv .
 
-slm:s1446  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
-        skos:altLabel    "tietokilpailukysymykset"@fi ;
-        skos:prefLabel   "visailukysymykset"@fi .
+slm:s1446  a            owl:Class , skos:Concept ;
+        skos:altLabel   "tietokilpailukysymykset"@fi , "quizfrågor"@sv ;
+        skos:prefLabel  "visailukysymykset"@fi , "frågesportsfrågor"@sv .
 
 slm:s863  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -1062,9 +1061,9 @@ slm:s1312  a             owl:Class , skos:Concept ;
         skos:related     slm:s764 .
 
 slm:s1447  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        rdfs:subClassOf  slm:s1442 ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "luokituskaavat"@fi .
+        skos:prefLabel   "klassifikationsscheman"@sv , "luokituskaavat"@fi .
 
 slm:s1020  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1173,8 +1172,7 @@ slm:s1083  a             owl:Class , skos:Concept ;
         skos:prefLabel   "science fiction-serier (tecknade serier)"@sv , "tieteissarjakuvat"@fi .
 
 slm:s1442  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
-        skos:altLabel    "tietoaineistot"@fi , "icke-fiktiva material"@sv , "informativa verk"@sv ;
+        skos:altLabel    "informationsmaterial"@sv , "tietoaineistot"@fi , "icke-fiktiva material"@sv , "informativa verk"@sv ;
         skos:definition  "Verk, vars huvudsakliga syfte är att lagra och förmedla information."@sv , "Teokset, joiden päätarkoitus on tallentaa ja välittää tietoa."@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026113> ;
         skos:prefLabel   "icke-fiktivt material"@sv , "ei-fiktiiviset aineistot"@fi .
@@ -1188,9 +1186,9 @@ slm:s637  a              owl:Class , skos:Concept ;
         skos:related     slm:s47 , slm:s295 .
 
 slm:s362  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s474 ;
+        rdfs:subClassOf  slm:s474 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "sävelrunot"@fi , "sinfoniset runoelmat"@fi ;
+        skos:altLabel    "tondikter"@sv , "sävelrunot"@fi , "sinfoniset runoelmat"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027120> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "sinfoniset runot"@fi , "symfoniska dikter"@sv ;
@@ -1512,11 +1510,12 @@ ysometa:StructuringClass
         rdfs:subClassOf  owl:Class .
 
 slm:s1440  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 , yso-update:uudetmuuttuneetSv ;
+        rdfs:subClassOf  slm:s1377 ;
+        skos:altLabel    "soundscape-verk"@sv , "soundscape"@sv , "ljudlandskap (verk)"@sv ;
         skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2014027107> ;
-        skos:definition  "Luonnollisen tai keinotekoisesti tuotetun äänimaiseman pohjalta luodut musiikkiteokset."@fi ;
+        skos:definition  "Luonnollisen tai keinotekoisesti tuotetun äänimaiseman pohjalta luodut musiikkiteokset."@fi , "Musikverk som skapats utifrån ett naturligt eller artificiellt skapat ljudlandskap."@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "äänimaisemateokset"@fi ;
+        skos:prefLabel   "soundscapeverk"@sv , "äänimaisemateokset"@fi ;
         skos:related     slm:s1249 , slm:s728 , slm:s438 , slm:s689 , slm:s535 .
 
 slm:s1422  a             owl:Class , skos:Concept ;
@@ -2658,14 +2657,13 @@ slm:s778  a              owl:Class , skos:Concept ;
         skos:prefLabel   "satukuunnelmat"@fi , "sagohörspel"@sv ;
         skos:related     slm:s1165 .
 
-slm:s812  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "jubileumspublikationer"@sv , "juhlakirjat"@fi , "festpublikationer"@sv ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "festskrifter"@sv , "juhlajulkaisut"@fi ;
-        skos:related     slm:s1343 ;
-        skos:scopeNote   "Kun juhlajulkaisun kohteena on yhteisö, genretermi merkitään vain jos julkaisussa on tabula gratulatoria. Muussa tapauksessa käytä esimerkiksi (http://urn.fi/URN:NBN:fi:au:slm:s606], [http://urn.fi/URN:NBN:fi:au:slm:s14], [http://urn.fi/URN:NBN:fi:au:slm:s403] tai [http://urn.fi/URN:NBN:fi:au:slm:s255]."@fi .
+slm:s812  a             owl:Class , skos:Concept ;
+        dct:created     "2018-05-16"^^xsd:date ;
+        skos:altLabel   "jubileumspublikationer"@sv , "juhlakirjat"@fi , "festpublikationer"@sv ;
+        skos:inScheme   slm:s285 ;
+        skos:prefLabel  "festskrifter"@sv , "juhlajulkaisut"@fi ;
+        skos:related    slm:s1343 ;
+        skos:scopeNote  "Då en institution är föremål för festskriften, används termen endast om det finns en tabula gratulatoria i publikationen. I annat fall används t.ex. [http://urn.fi/URN:NBN:fi:au:slm:s606], [http://urn.fi/URN:NBN:fi:au:slm:s14], [http://urn.fi/URN:NBN:fi:au:slm:s403] eller [http://urn.fi/URN:NBN:fi:au:slm:s255]."@sv , "Kun juhlajulkaisun kohteena on yhteisö, genretermi merkitään vain jos julkaisussa on tabula gratulatoria. Muussa tapauksessa käytä esimerkiksi [http://urn.fi/URN:NBN:fi:au:slm:s606], [http://urn.fi/URN:NBN:fi:au:slm:s14], [http://urn.fi/URN:NBN:fi:au:slm:s403] tai [http://urn.fi/URN:NBN:fi:au:slm:s255]."@fi .
 
 slm:s201  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
@@ -5795,8 +5793,8 @@ slm:s779  a              owl:Class , skos:Concept ;
         skos:prefLabel   "bossa nova"@fi , "bossa nova"@sv .
 
 slm:s1449  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1318 , yso-update:uudetmuuttuneetSv ;
-        skos:prefLabel   "psykologiset kauhupelit"@fi .
+        rdfs:subClassOf  slm:s1318 ;
+        skos:prefLabel   "psykologiska skräckspel"@sv , "psykologiset kauhupelit"@fi .
 
 slm:s1388  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s969 ;
@@ -7919,10 +7917,11 @@ slm:s882  a              owl:Class , skos:Concept ;
         skos:prefLabel   "bysantisk kyrkomusik"@sv , "bysanttilainen kirkkomusiikki"@fi .
 
 slm:s1441  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s518 ;
-        skos:definition  "Käytetään romaaneista, joissa todellisella tai fiktiivisellä kaupungilla on merkittävä rooli."@fi ;
+        rdfs:subClassOf  slm:s518 ;
+        skos:altLabel    "stadsskildringar (romaner)"@sv ;
+        skos:definition  "Käytetään romaaneista, joissa todellisella tai fiktiivisellä kaupungilla on merkittävä rooli."@fi , "Används om romaner, i vilka verkliga eller fiktiva städer har en betydande roll."@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "kaupunkiromaanit"@fi .
+        skos:prefLabel   "kaupunkiromaanit"@fi , "stadsromaner"@sv .
 
 slm:s566  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
