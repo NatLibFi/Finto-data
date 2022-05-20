@@ -1,14 +1,17 @@
 #!/bin/sh
 
-JENABIN="/data/apache-jena/bin"
+SKOSIFYCMD="skosify"
+TIMESTAMPER="./metatietosanasto-timestamper.py"
+EXPANDURIS="../../tools/expand-note-uris/expand-note-uris.py"
 
-$JENABIN/update --data=metatietosanasto.rdf --update=fix-types.rq --dump >metatietosanasto.nt
+# expand URIs in notes and definitions
+$EXPANDURIS metatietosanasto.rdf >metatietosanasto-expanded.ttl 2>metatietosanasto-expanded.log
 
-INFILES="metatietosanasto-meta.ttl metatietosanasto.nt"
+INFILES="metatietosanasto-meta.ttl metatietosanasto-expanded.ttl"
 OUTFILE=metatietosanasto-skos.ttl
 
-SKOSIFYHOME="../../../Skosify/skosify/"
 LOGFILE=skosify.log
-OPTS="-c metatietosanasto.cfg -f turtle --update-query @supergroup-to-member.rq"
+TIMESTAMPFILE=timestamps.tsv
+OPTS="-c metatietosanasto.cfg -f turtle -F turtle --update-query @supergroup-to-member-and-fix-types.rq --post-update-query @prepare-for-publishing.rq"
 
-$SKOSIFYHOME/skosify.py $OPTS -o $OUTFILE $INFILES 2>$LOGFILE
+$SKOSIFYCMD $OPTS $INFILES 2>$LOGFILE |$TIMESTAMPER $TIMESTAMPFILE >$OUTFILE

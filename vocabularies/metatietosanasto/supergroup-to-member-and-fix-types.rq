@@ -5,12 +5,20 @@ PREFIX owl:     <http://www.w3.org/2002/07/owl#>
 DELETE {
   ?group isothes:superGroup ?super .
   ?x a owl:Class .
+  ?a ?b ?c .
 }
 INSERT {
   ?super skos:member ?group .
+  ?a ?b ?c2 .
 }
 WHERE {
   { ?group isothes:superGroup ?super . }
   UNION
   { ?x a owl:Class . }
+  UNION
+  {
+    ?a ?b ?c .
+    FILTER(CONTAINS(?c, '\r'))
+    BIND(REPLACE(REPLACE(?c, '\r\r', '\n'), '\r', '') AS ?c2)
+  }
 }

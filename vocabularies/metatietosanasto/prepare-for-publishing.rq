@@ -1,0 +1,10 @@
+PREFIX mts:     <http://urn.fi/URN:NBN:fi:au:mts:>
+
+DELETE {
+  ?x ?y ?z .
+}
+WHERE {
+    ?x ?y ?z .
+    FILTER NOT EXISTS {?x a ?a.}
+    FILTER (!STRSTARTS(STR(?x), STR(mts:)))
+}
