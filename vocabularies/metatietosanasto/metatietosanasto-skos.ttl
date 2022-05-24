@@ -117,12 +117,6 @@ mts:m138 a isothes:ConceptGroup,
         "Manifestaatio"@fi,
         "Manifestation"@sv .
 
-mts:m1401 a owl:AnnotationProperty ;
-    dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2017-06-07"^^xsd:date ;
-    skos:prefLabel "vakioidut fraasit"@fi,
-        "standardiserade fraser"@sv .
-
 mts:m1430 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -587,10 +581,6 @@ mts:m494 a skos:Concept ;
         "masternauha"@fi,
         "masterband"@sv .
 
-mts:m588 dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2017-02-23"^^xsd:date ;
-    skos:prefLabel "Ord i textbilaga:"@sv .
-
 mts:m61 a isothes:ConceptGroup,
         skos:Collection ;
     dc:source "RDA-termi"@fi,
@@ -638,16 +628,6 @@ mts:m83 a isothes:ConceptGroup,
     skos:prefLabel "Work"@en,
         "Teos"@fi,
         "Verk"@sv .
-
-isbdmt:useitavalittavialaitteita a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "ISBD-term"@sv ;
-    skos:definition "Aineistot, joihin liittyy vähintään kolme eri mediatyyppiä."@fi,
-        "Resurser som anknyter till minst tre olika medietyper."@sv ;
-    skos:exactMatch isbdmt:T1008 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "useita välittäviä laitteita"@fi,
-        "flera medietyper"@sv .
 
 mts:m0 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10380,22 +10360,6 @@ mts:m206 a skos:Concept ;
     skos:prefLabel "isä"@fi,
         "fader"@sv .
 
-mts:m2061 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    dct:created "2017-07-06"^^xsd:date ;
-    dct:modified "2020-04-17"^^xsd:date ;
-    isothes:broaderGeneric mts:m92 ;
-    skos:example "Esseeväitöskirjan yhteenveto-osa ja 3 eripainosta."@fi,
-        "Essäavhandlingens sammanfattningsdel och 3 särtryck."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "esseeväitöskirja"@fi,
-        "essäavhandling"@sv ;
-    skos:scopeNote "Yleinen huomautus"@fi,
-        "Allmän anmärkning"@sv .
-
 mts:m2063 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -10413,20 +10377,6 @@ mts:m2063 a skos:Concept ;
         "uppdragsgivare"@sv ;
     skos:scopeNote "Teokseen liittyvä muu toimija."@fi,
         "Annan aktör relaterad till verk."@sv .
-
-mts:m2064 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    dct:created "2017-07-06"^^xsd:date ;
-    dct:modified "2020-04-17"^^xsd:date ;
-    isothes:broaderGeneric mts:m92 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "monografiaväitöskirja"@fi,
-        "monografiavhandling"@sv ;
-    skos:scopeNote "Yleinen huomautus"@fi,
-        "Allmän anmärkning"@sv .
 
 mts:m2065 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -10803,12 +10753,14 @@ mts:m2114 a skos:Concept ;
         "Sanoitukset"@fi,
         "Sångtexter"@sv .
 
-mts:m2116 rdfs:label "standardin tunnus"@fi,
-        "standardens beteckning"@sv ;
+mts:m2116 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2019-11-23"^^xsd:date .
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:inScheme mts: ;
+    skos:prefLabel "standardin tunnus"@fi,
+        "standardens beteckning"@sv .
 
 mts:m2117 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -11476,16 +11428,18 @@ mts:m2164 a skos:Concept ;
         "valmistajan rinnakkainen nimi"@fi,
         "parallellt tillverkarnamn"@sv .
 
-mts:m2165 dc:source "ISBD-termi"@fi,
+mts:m2165 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     dct:created "2018-04-07"^^xsd:date ;
-    dct:modified "2020-07-08"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
     skos:example """MARC 21 -formaatissa 
 264 #1 ‡c [julkaisuaika tuntematon]"""@fi,
         """I MARC 21-formatet
 264 #1 ‡c [utgivningstid okänd]"""@sv ;
+    skos:inScheme mts: ;
     skos:prefLabel "date of publication not identified"@en,
         "julkaisuaika tuntematon"@fi,
         "utgivningstid okänd"@sv ;
@@ -15635,6 +15589,21 @@ mts:m2697 a skos:Concept ;
     skos:prefLabel "real estate manager"@en,
         "kiinteistönhoitaja"@fi,
         "fastighetsskötare"@sv .
+
+mts:m27 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    dct:created "2016-01-08"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:definition "Tiedostotyyppi elektronisesti taltioidun äänisisällön tallentamiseksi."@fi,
+        "Filformat för lagring av ljudinnehåll som är elektroniskt inspelat."@sv ;
+    skos:exactMatch rdaft:1001 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "audio file"@en,
+        "äänitiedosto"@fi,
+        "ljudfil"@sv .
 
 mts:m2700 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -23690,15 +23659,15 @@ mts:m404 a isothes:ConceptGroup,
     dc:source "ISBD-termi"@fi,
         "ISBD-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2019-11-27"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
     rdfs:seeAlso isbd:P1003 ;
-    skos:member isbdmt:useitavalittavialaitteita,
-        mts:m1027,
+    skos:member mts:m1027,
         mts:m1134,
         mts:m1223,
         mts:m1271,
         mts:m1457,
         mts:m1534,
+        mts:m4953,
         mts:m577,
         mts:m815,
         mts:m822 ;
@@ -29505,8 +29474,8 @@ mts:m4823 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2021-10-12"^^xsd:date ;
-    dct:modified "2021-12-09"^^xsd:date ;
-    rdfs:seeAlso <http://www.rdaregistry.info/Elements/m/#P30452> ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    rdfs:seeAlso rdam:P30452 ;
     skos:member mts:m1246,
         mts:m2018,
         mts:m2033,
@@ -30650,6 +30619,18 @@ mts:m495 a skos:Concept ;
     skos:prefLabel "abridger"@en,
         "lyhentäjä"@fi,
         "förkortad av"@sv .
+
+mts:m4953 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "ISBD-term"@sv ;
+    dct:created "2022-05-24"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:definition "Aineistot, joihin liittyy vähintään kolme eri mediatyyppiä."@fi,
+        "Resurser som anknyter till minst tre olika medietyper."@sv ;
+    skos:exactMatch isbdmt:T1008 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "useita välittäviä laitteita"@fi,
+        "flera medietyper"@sv .
 
 mts:m499 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -33555,16 +33536,12 @@ mts:m88 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2021-12-18"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
     rdfs:seeAlso rdam:P30124 ;
     skos:altLabel "Tiedostomuoto"@fi,
         "Tiedoston muoto"@fi,
         "Kodningsformat"@sv ;
-    skos:member <http://rdvocab.info/termList/fileType/1001>,
-        <http://rdvocab.info/termList/fileType/1002>,
-        <http://rdvocab.info/termList/fileType/1004>,
-        <http://rdvocab.info/termList/fileType/1006>,
-        mts:m1056,
+    skos:member mts:m1056,
         mts:m1058,
         mts:m1068,
         mts:m1077,
@@ -34409,23 +34386,6 @@ mts:m963 a skos:Concept ;
         "Glasnyckeln"@sv ;
     skos:scopeNote "Vuosittain myönettävä palkinto parhaalle pohjoismaiselle rikosromaanille. Palkinto on myönetty vuoden 1992 alkaen. Kirja hyväksytään ehdokkaaksi vain, mikäli se on luettavissa joko alkuperäisenä tai käännöksenä ruotsiksi, norjaksi tai tanskaksi. Palkinnon myöntää Skandinaviska Kriminalsällskapet."@fi,
         "Glasnyckeln-priset delas årligen ut till den bästa nordiska kriminalromanen. Priset har delats ut sedan 1992. För att nomineras bör en bok vara tillgänglig på svenska, norska eller danska i originalspråk eller som översättning. Priset delas ut av Skandinaviska Kriminalsällskapet."@sv .
-
-mts:m964 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2020-12-01"^^xsd:date ;
-    isothes:broaderGeneric mts:m92 ;
-    skos:altLabel "sammanläggningsavhandling"@sv ;
-    skos:example "Artikkeliväitöskirjan yhteenveto-osa ja 3 eripainosta."@fi,
-        "Artikelavhandling med sammanfattningsdel och 3 särtryck."@sv ;
-    skos:inScheme mts: ;
-    skos:prefLabel "artikkeliväitöskirja"@fi,
-        "artikelavhandling"@sv ;
-    skos:scopeNote "Yleinen huomautus"@fi,
-        "Allmän anmärkning"@sv .
 
 mts:m965 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -36114,6 +36074,36 @@ mts:m2034 a skos:Concept ;
         "pienoispartituuri"@fi,
         "Partition de poche"@fr,
         "studiepartitur"@sv .
+
+mts:m2061 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    dct:created "2017-07-06"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:broader mts:m92 ;
+    skos:example "Esseeväitöskirjan yhteenveto-osa ja 3 eripainosta."@fi,
+        "Essäavhandlingens sammanfattningsdel och 3 särtryck."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "esseeväitöskirja"@fi,
+        "essäavhandling"@sv ;
+    skos:scopeNote "Yleinen huomautus"@fi,
+        "Allmän anmärkning"@sv .
+
+mts:m2064 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    dct:created "2017-07-06"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:broader mts:m92 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "monografiaväitöskirja"@fi,
+        "monografiavhandling"@sv ;
+    skos:scopeNote "Yleinen huomautus"@fi,
+        "Allmän anmärkning"@sv .
 
 mts:m2068 a skos:Concept ;
     dct:created "2017-10-06"^^xsd:date ;
@@ -40178,22 +40168,6 @@ mts:m2699 a skos:Concept ;
     skos:prefLabel "industrial counsellor"@en,
         "teollisuusneuvos"@fi,
         "industriråd"@sv .
-
-mts:m27 a skos:Concept ;
-    dc:source "ISBD-termi"@fi,
-        "RDA-termi"@fi,
-        "ISBD-term"@sv,
-        "RDA-term"@sv ;
-    dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2020-07-10"^^xsd:date ;
-    rdfs:seeAlso mts:m27 ;
-    skos:definition "Tiedostotyyppi elektronisesti taltioidun äänisisällön tallentamiseksi."@fi,
-        "Filformat för lagring av ljudinnehåll som är elektroniskt inspelat."@sv ;
-    skos:exactMatch rdaft:1001 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "audio file"@en,
-        "äänitiedosto"@fi,
-        "ljudfil"@sv .
 
 mts:m2702 a skos:Concept ;
     dc:source "YSO-termi"@fi,
@@ -50637,10 +50611,10 @@ Vastavuoroinen suhde: abstraktien perustana (ekspressio)."""@fi,
 
 mts:m4190 a skos:Concept ;
     dct:created "2020-03-07"^^xsd:date ;
-    dct:modified "2021-09-23"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
     rdfs:comment "RDA-termi"@fi,
         "RDA-term"@sv ;
-    rdfs:seeAlso <http://www.rdaregistry.info/Elements/e/#P20078> ;
+    rdfs:seeAlso rdae:P20078 ;
     skos:broader mts:m3546 ;
     skos:definition """Liittää ekspression elokuvateoksen ekspressioon, josta kuvailun kohteena olevan elokuvan dialogi on käännetty alkuperäisestä poikkeavalle kielelle.
 Vastavuoroinen suhde: dubattu versio."""@fi,
@@ -55195,6 +55169,23 @@ mts:m960 a skos:Concept ;
         "edeltäjä (teos)"@fi,
         "föregående (verk)"@sv .
 
+mts:m964 a skos:Concept ;
+    dc:source "ISBD-termi"@fi,
+        "RDA-termi"@fi,
+        "ISBD-term"@sv,
+        "RDA-term"@sv ;
+    dct:created "2016-01-08"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
+    skos:altLabel "sammanläggningsavhandling"@sv ;
+    skos:broader mts:m92 ;
+    skos:example "Artikkeliväitöskirjan yhteenveto-osa ja 3 eripainosta."@fi,
+        "Artikelavhandling med sammanfattningsdel och 3 särtryck."@sv ;
+    skos:inScheme mts: ;
+    skos:prefLabel "artikkeliväitöskirja"@fi,
+        "artikelavhandling"@sv ;
+    skos:scopeNote "Yleinen huomautus"@fi,
+        "Allmän anmärkning"@sv .
+
 mts:m98 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
         "RDA-termi"@fi,
@@ -58467,12 +58458,15 @@ mts:m92 a skos:Concept ;
         "ISBD-term"@sv,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2020-07-07"^^xsd:date ;
+    dct:modified "2022-05-24"^^xsd:date ;
     skos:altLabel "diss."@fi,
         "väitösk."@fi,
         "diss."@sv,
         "dissertation"@sv ;
     skos:inScheme mts: ;
+    skos:narrower mts:m2061,
+        mts:m2064,
+        mts:m964 ;
     skos:prefLabel "väitöskirja"@fi,
         "doktorsavhandling"@sv .
 
@@ -62077,7 +62071,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2022-05-20T12:43:44+00:00"^^xsd:dateTime ;
+    dct:modified "2022-05-24T00:04:46+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
