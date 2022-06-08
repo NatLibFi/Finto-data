@@ -37,20 +37,7 @@ schema:startDate a owl:DatatypeProperty ;
         xsd:DateTime ;
     rdfs:subPropertyOf rdf:Property .
 
-krono: a owl:Ontology,
-        skos:ConceptScheme ;
-    rdfs:label "Krono"@fi ;
-    dc:creator "National Library of Finland"@en,
-        "Kansalliskirjasto"@fi,
-        "Nationalbiblioteket i Finland"@sv ;
-    dc:description "Aikaontologia on yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot vuosikymmenen tarkkuudella. Se on tarkoitettu vakioimaan sisällönkuvailussa käytettyjä ajankuvauksia."@fi ;
-    dc:publisher "National Library of Finland"@en,
-        "Kansalliskirjasto"@fi,
-        "Nationalbiblioteket i Finland"@sv ;
-    dct:language <http://lexvo.org/id/iso639-3/fin>,
-        <http://lexvo.org/id/iso639-3/swe> ;
-    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2022-06-08T08:48:50+00:00"^^xsd:dateTime .
+krono: a owl:Ontology .
 
 isothes:narrowerPartitive a owl:ObjectProperty ;
     rdfs:label "narrower term (partitive)"@en ;
@@ -4322,7 +4309,8 @@ isothes:narrowerPartitive a owl:ObjectProperty ;
         "2990-talet"@sv .
 
 yso-meta:Millennium a owl:Class ;
-    rdfs:subClassOf skos:Concept ;
+    rdfs:subClassOf owl:Class,
+        skos:Concept ;
     skos:prefLabel "Vuosituhat"@fi,
         "Årtusende"@sv .
 
@@ -5506,17 +5494,31 @@ yso-meta:Millennium a owl:Class ;
         "2900-talet"@sv .
 
 yso-meta:Century a owl:Class ;
-    rdfs:subClassOf skos:Concept ;
+    rdfs:subClassOf owl:Class,
+        skos:Concept ;
     skos:prefLabel "Vuosisata"@fi,
         "Århundrade"@sv .
 
 yso-meta:Decade a owl:Class ;
-    rdfs:subClassOf skos:Concept ;
+    rdfs:subClassOf owl:Class,
+        skos:Concept ;
     skos:prefLabel "Vuosikymmen"@fi,
         "Årtionde"@sv .
 
 yso:aika a owl:Ontology,
         skos:ConceptScheme ;
+    rdfs:label "YSO-aika"@fi ;
+    dc:creator "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:description "YSO-aika on yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot vuosikymmenen tarkkuudella. Se on tarkoitettu vakioimaan sisällönkuvailussa käytettyjä ajankuvauksia."@fi ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dct:language <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2022-06-08T08:55:10+00:00"^^xsd:dateTime ;
     skos:hasTopConcept <http://www.yso.fi/onto/p1099910001>,
         <http://www.yso.fi/onto/p1199911000>,
         <http://www.yso.fi/onto/p1299912000>,
