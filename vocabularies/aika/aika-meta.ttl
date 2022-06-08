@@ -5,35 +5,35 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skosext: <http://purl.org/finnonto/schema/skosext#> .
-@prefix krono: <http://urn.fi/URN:NBN:fi:au:krono:> .
 @prefix rdau:  <http://rdaregistry.info/Elements/u/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml:   <http://www.w3.org/XML/1998/namespace> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
-@prefix krono-meta: <http://www.yso.fi/onto/krono-meta/> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-krono-meta:Century a owl:Class ;
+yso-meta:Century a owl:Class ;
     rdfs:subClassOf owl:Class ;
     skos:prefLabel "Vuosisata"@fi, "Århundrade"@sv .
 
-krono-meta:Decade a owl:Class ;
+yso-meta:Decade a owl:Class ;
     rdfs:subClassOf owl:Class ;
     skos:prefLabel "Vuosikymmen"@fi, "Årtionde"@sv .
 
-krono-meta:Millennium a owl:Class ;
+yso-meta:Millennium a owl:Class ;
     rdfs:subClassOf owl:Class ;
     skos:prefLabel "Vuosituhat"@fi, "Årtusende"@sv .
 
-krono: a skos:ConceptScheme ;
+yso:aika a skos:ConceptScheme ;
     dc:creator "National Library of Finland"@en,
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    dc:description """Aikaontologia on yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot vuosikymmenen tarkkuudella. Se on tarkoitettu vakioimaan sisällönkuvailussa käytettyjä ajankuvauksia."""@fi ;
+    dc:description """YSO-aika on yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot vuosikymmenen tarkkuudella. Se on tarkoitettu vakioimaan sisällönkuvailussa käytettyjä ajankuvauksia."""@fi ;
     dc:publisher "National Library of Finland"@en,
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    rdfs:label "Krono"@fi ;
+    rdfs:label "YSO-aika"@fi ;
     dct:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> .
