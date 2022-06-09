@@ -66,7 +66,7 @@ mts:m138 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2021-12-18"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
     rdfs:seeAlso rdac:C10007 ;
     skos:definition "Teoksen ekspression saama ilmiasu."@fi,
         "Den fysiska gestaltningen av ett uttryck för ett verk."@sv ;
@@ -99,6 +99,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m4402,
         mts:m4574,
         mts:m4849,
+        mts:m4955,
         mts:m50,
         mts:m537,
         mts:m558,
@@ -30149,10 +30150,10 @@ mts:m4889 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2021-12-18"^^xsd:date ;
-    dct:modified "2022-01-21"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
     skos:altLabel "sisustusarkkitehtina sisustussuunnitelmassa"@fi ;
-    skos:definition "Liittää toimijan sisustussuunnitelmaan, johon sisältyy arkkitehtonista suunnittelua. Vastavuoroinen suhde: sisustusarkkitehti."@fi,
-        "Sammankopplar aktör med en inredningsplan, som inbegriper arkitektonisk planering. Parallell relation: inredningsarkitekt."@sv ;
+    skos:definition "Liittää toimijan sisustussuunnitelmaan, johon sisältyy arkkitehtonista suunnittelua. Vastavuoroinen suhde: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4887'>sisustusarkkitehti</a>."@fi,
+        "Sammankopplar aktör med en inredningsplan, som inbegriper arkitektonisk planering. Parallell relation: <a href='http://urn.fi/URN:NBN:fi:au:mts:m4887'>inredningsarkitekt</a>."@sv ;
     skos:inScheme mts: ;
     skos:prefLabel "sisustusarkkitehtinä sisustussuunnitelmassa"@fi,
         "inredningsarkitekt för inredningsplanen"@sv .
@@ -30682,6 +30683,72 @@ mts:m4954 a skos:Concept ;
     skos:definition "Kirjan sisältö on toteutettu pistekirjoituksella."@fi ;
     skos:inScheme mts: ;
     skos:prefLabel "pistekirja"@fi .
+
+mts:m4955 a isothes:ConceptGroup,
+        skos:Collection ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    rdfs:seeAlso rdam:P30125 ;
+    skos:definition "Miten ääni alun perin taltioitiin ja tallennettiin. Uudelleenjulkaistu äänite koodataan sen mukaan, miten ääni alun perin taltioitiin ja tallennettiin."@fi ;
+    skos:member mts:m4956,
+        mts:m4957,
+        mts:m4958,
+        mts:m4959,
+        mts:m4960 ;
+    skos:prefLabel "Original capture and storage technique"@en,
+        "Alkuperäinen taltiointi- ja tallennustekniikka"@fi .
+
+mts:m4956 a skos:Concept ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    skos:definition "Mikrofonilla tai vastaavalla laitteella tehty taltiointi suoraan masterlevylle. Tätä tekniikkaa käytettiin kaikilla äänitteillä, jotka taltioitiin mikrofoneilla tai vastaavilla laitteilla vuodesta 1925 aina 1940-luvun lopulle asti. Tätä tekniikkaa on käytetty myös uudemmissa äänitteissä, joissa on \"direct to disc\" tai vastaava merkintä. Tunnetaan myös nimellä sähkömekaaninen äänitys."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Electrical capture, analog direct storage"@en,
+        "Sähköinen taltiointi, analoginen suora tallennus"@fi .
+
+mts:m4957 a skos:Concept ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    skos:definition "Äänitteiden digitaalinen tallennus tuli käyttöön 1980-luvulla. Näissä äänitteissä voi olla \"digitally recorded\" tai vastaava merkintä. Merkinnät \"digital remastering\" tai \"digital mixing\" koskevat taltioinnin ja tallennuksen jälkeisiä prosesseja. Tällaiset merkinnät eivät osoita, että alkuperäinen taltiointi tai tallennus olisivat olleet digitaalisia."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Electrical capture, digital storage"@en,
+        "Sähköinen taltiointi, digitaalinen tallennus"@fi .
+
+mts:m4958 a skos:Concept ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    skos:definition "Levy- tai lieriöäänite, joka on taltioitu käyttäen kuulotorvea ja välikalvoa sekä tallennettu suoraan masterin pinnalle. Ensimmäiset kaupalliset akustiset äänityslaitteet tulivat käyttöön 1877 alkaen ja niitä hyödynnettiin 1920-luvun loppupuolelle. 1925 alkaen niitä käytettiin rinnan sähköisten äänityslaitteiden kanssa."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Acoustical capture, analog direct storage"@en,
+        "Akustinen taltiointi, analoginen suora tallennus"@fi .
+
+mts:m4959 a skos:Concept ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    skos:definition "Sähköisesti taltioitu äänite, joka on tallennettu magneettinauhalle tai vastaavalle medialle. Tähän ryhmään kuuluu suurin osa äänitteistä, jotka on tehty 1940-luvun lopulta siirtymävaiheeseen asti. Siirtymä digitaaliseen tallennukseen kesti noin kymmenen vuotta, 1980-luvun alusta 1990-luvun alkuun."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Electrical capture, analog electrical storage"@en,
+        "Sähköinen taltiointi, analoginen sähköinen tallennus"@fi .
+
+mts:m4960 a skos:Concept ;
+    dc:source "MARC 21"@fi,
+        "MARC 21"@sv ;
+    dct:created "2022-06-09"^^xsd:date ;
+    dct:modified "2022-06-09"^^xsd:date ;
+    skos:definition "Alkuperäistä taltiointi- ja tallennustekniikkaa ei tunneta."@fi ;
+    skos:inScheme mts: ;
+    skos:prefLabel "Unknown capture and storage"@en,
+        "Tuntematon taltiointi ja tallennus"@fi .
 
 mts:m499 a skos:Concept ;
     dc:source "ISBD-termi"@fi,
@@ -61907,7 +61974,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2022-06-08T00:03:08+00:00"^^xsd:dateTime ;
+    dct:modified "2022-06-09T00:02:58+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
