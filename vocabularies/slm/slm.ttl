@@ -430,7 +430,8 @@ slm:s471  a              owl:Class , skos:Concept ;
 slm:s719  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
-        skos:prefLabel  "läromedel"@sv , "oppimateriaali"@fi .
+        skos:prefLabel  "läromedel"@sv , "oppimateriaali"@fi ;
+        skos:related    slm:s943 .
 
 slm:s1334  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s775 ;
@@ -650,7 +651,8 @@ slm:s174  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014027141> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "tonadilla"@sv , "tonadillat"@fi .
+        skos:prefLabel   "tonadilla"@sv , "tonadillat"@fi ;
+        skos:related     slm:s1452 .
 
 slm:s124  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -867,14 +869,6 @@ slm:s761  a              owl:Class , skos:Concept ;
         skos:related     slm:s453 , slm:s498 ;
         skos:scopeNote   "Käytetään teoksista, jotka kuvaavat maaseutua ja maalaiselämää."@fi , "Används om verk som skildrar landsbygden och lantliv."@sv .
 
-slm:s380  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s523 , slm:s939 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "tjejserier (tecknade serier)"@sv ;
-        skos:inScheme    slm:s593 , slm:s285 ;
-        skos:prefLabel   "flickserier (tecknade serier)"@sv , "tyttösarjakuvat"@fi ;
-        skos:related     slm:s953 .
-
 slm:s317  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s562 , slm:s1075 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -905,13 +899,6 @@ slm:s24  a               owl:Class , skos:Concept ;
         skos:prefLabel   "fotoserier"@sv , "valokuvasarjakuvat"@fi ;
         skos:related     slm:s847 ;
         skos:scopeNote   "Avser bildberättelser i serieform, där fotografier används istället för teckningar."@sv .
-
-slm:s953  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s523 , slm:s939 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s593 , slm:s285 ;
-        skos:prefLabel   "pojkserier (tecknade serier)"@sv , "poikasarjakuvat"@fi ;
-        skos:related     slm:s380 .
 
 slm:s328  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s919 ;
@@ -953,9 +940,11 @@ slm:s120  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "elokuvakäsikirjoitukset"@fi , "filmmanuskript"@sv .
 
-slm:s1446  a            owl:Class , skos:Concept ;
-        skos:altLabel   "tietokilpailukysymykset"@fi , "quizfrågor"@sv ;
-        skos:prefLabel  "visailukysymykset"@fi , "frågesportsfrågor"@sv .
+slm:s1446  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 ;
+        skos:altLabel    "tietokilpailukysymykset"@fi , "quizfrågor"@sv ;
+        skos:prefLabel   "visailukysymykset"@fi , "frågesportsfrågor"@sv ;
+        skos:related     slm:s170 .
 
 slm:s863  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -2018,9 +2007,9 @@ slm:s366  a              owl:Class , skos:Concept ;
         skos:related     slm:s923 , slm:s901 .
 
 slm:s816  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s382 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s382 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "psykologisk spänningslitteratur"@sv , "psykologiset jännitysromaanit"@fi , "psykologiska spänningsromaner"@sv ;
+        skos:altLabel    "psykologisk spänningslitteratur"@sv , "psykologiset trillerit"@fi , "psykologiset jännitysromaanit"@fi , "psykologiska spänningsromaner"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "psykologiska thrillers (litteratur)"@sv , "psykologinen jännityskirjallisuus"@fi ;
         skos:related     slm:s73 , slm:s911 , slm:s287 , slm:s1111 , slm:s926 , slm:s121 , slm:s41 , slm:s171 , slm:s905 , slm:s69 , slm:s194 ;
@@ -3746,10 +3735,12 @@ slm:s845  a              owl:Class , skos:Concept ;
         skos:prefLabel   "äventyrsserier (tecknade serier)"@sv , "seikkailusarjakuvat"@fi ;
         skos:related     slm:s905 .
 
-slm:s623  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "predikningar"@sv , "saarnat"@fi .
+slm:s623  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s775 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "postillat"@fi , "saarnakokoelmat"@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "predikningar"@sv , "saarnat"@fi .
 
 slm:s23  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
@@ -4230,11 +4221,14 @@ slm:s1414  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "goottilaiset romaanit"@fi , "gotiska romaner"@sv .
 
-slm:s943  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "harjoituskirjat"@fi , "övningsböcker"@sv .
+slm:s943  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
+        skos:definition  "Harjoitustehtäviä sisältävä kirja."@fi ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "harjoituskirjat"@fi , "övningsböcker"@sv ;
+        skos:related     slm:s719 .
 
 slm:s11  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -4253,7 +4247,8 @@ slm:s780  a              owl:Class , skos:Concept ;
 slm:s170  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6062> ;
-        skos:prefLabel   "spel"@sv , "pelit"@fi .
+        skos:prefLabel   "spel"@sv , "pelit"@fi ;
+        skos:related     slm:s1446 .
 
 slm:s975  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4806,11 +4801,12 @@ slm:s413  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "barkaroller"@sv , "barkarolit"@fi .
 
-slm:s409  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "notpublikationer"@sv , "nottryck"@sv , "noter"@sv ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "nuottijulkaisut"@fi , "musikalier"@sv .
+slm:s409  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "notpublikationer"@sv , "nottryck"@sv , "sävelmäjulkaisut"@fi , "noter"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "nuottijulkaisut"@fi , "musikalier"@sv .
 
 slm:s1344  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -4954,8 +4950,9 @@ slm:s460  a              owl:Class , skos:Concept ;
         skos:prefLabel   "teatertidningar"@sv , "teatterilehdet"@fi .
 
 slm:s1181  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "barnböcker"@sv , "lastenkirjat"@fi ;
+        skos:altLabel    "barnböcker"@sv , "lastenkirjat"@fi , "lastenromaanit"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p4742> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "barnlitteratur"@sv , "lastenkirjallisuus"@fi ;
@@ -5529,6 +5526,12 @@ slm:s548  a              owl:Class , skos:Concept ;
         skos:related     slm:s826 , slm:s1181 ;
         skos:scopeNote   "Används om böcker med ett hål, \"fönster\", övertäckt med plast e.d."@sv , "Käytetään teoksista, joissa on muovilla tms. peitetty aukko, \"ikkuna\"."@fi .
 
+slm:s1454  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1127 ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026830> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "gangsta rap"@fi .
+
 slm:s1049  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5920,8 +5923,9 @@ slm:s1061  a             owl:Class , skos:Concept ;
         skos:prefLabel   "webbserier (tecknade serier)"@sv , "verkkosarjakuvat"@fi .
 
 slm:s168  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "ungdomsromaner"@sv , "tonårsromaner"@sv , "ungdomsböcker"@sv , "teiniromaanit"@fi , "nuorisoromaanit"@fi , "nuorisokirjallisuus"@fi , "nuortenkirjat"@fi ;
+        skos:altLabel    "ungdomsromaner"@sv , "tonårsromaner"@sv , "nuortenromaanit"@fi , "ungdomsböcker"@sv , "teiniromaanit"@fi , "nuorisoromaanit"@fi , "nuorisokirjallisuus"@fi , "nuortenkirjat"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5398> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "ungdomslitteratur"@sv , "nuortenkirjallisuus"@fi ;
@@ -6106,6 +6110,8 @@ slm:s234  a              owl:Class , skos:Concept ;
 
 slm:s1451  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1054 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "fillerit (pelit)"@fi ;
+        skos:definition  "Lyhytkestoinen, helposti opittava lautapeli."@fi ;
         skos:prefLabel   "filleripelit"@fi .
 
 slm:s54  a               owl:Class , skos:Concept ;
@@ -8399,6 +8405,11 @@ slm:s1355  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "elämäkertasarjakuvat"@fi , "biografiska tecknade serier"@sv .
 
+slm:s1453  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s304 , yso-update:uudetmuuttuneetSv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "kansallisdiskografiat"@fi .
+
 slm:s107  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -9378,6 +9389,14 @@ slm:s1403  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2018026029> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "glam rock"@fi , "glamrock"@sv .
+
+slm:s1452  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s280 , yso-update:uudetmuuttuneetSv ;
+        skos:definition  "Barokin aikana kehittynyt espanjalainen oopperatyyli, jonka kansanomaisempi muoto alkoi kehittyä 1850-luvulta lähtien."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2016026059> ;
+        skos:inScheme    slm:s861 ;
+        skos:prefLabel   "zarzuelat"@fi ;
+        skos:related     slm:s174 .
 
 slm:s1212  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s435 ;
