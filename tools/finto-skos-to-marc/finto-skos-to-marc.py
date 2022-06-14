@@ -331,14 +331,13 @@ class ConvertHTMLYSOATags(HTMLParser):
     Korvaa mahdolliset yso-linkit $a-osakenttämerkillä siten, että käytettävä termi
     jää näkyviin. Muu osa tekstistä on $i-osakentissä. Käytetään mm. kentässä 680
     
-    TODO: Virheiden käsittely ja HTML-erikoisentiteettien/kommenttien käsittely
+    TODO: HTML-erikoisentiteettien/kommenttien käsittely
     '''
-    merkkijono = ["$i"]
     in_a_yso = False
     ended_a_yso = False
     
     def initialize(self):
-        self.merkkijono = ["$i"]
+        self.merkkijono = []
         self.in_a_yso = False
         self.ended_a_yso = False
     
@@ -349,14 +348,14 @@ class ConvertHTMLYSOATags(HTMLParser):
                     link = attr[1]
                     if link.startswith(YSO):
                         self.in_a_yso = True
-                        self.merkkijono[-1] = self.merkkijono[-1].rstrip()
+                        if self.merkkijono:
+                            self.merkkijono[-1] = self.merkkijono[-1].rstrip()
                         self.merkkijono.append("$a")
                         return
         
         self.merkkijono.append("<" + tag)
         for attr in attrs:
             self.merkkijono.append(" " + attr[0] + "='" + attr[1] + "'")
-        
         self.merkkijono.append(">")
         
     def handle_endtag(self, tag):
@@ -365,22 +364,20 @@ class ConvertHTMLYSOATags(HTMLParser):
             self.ended_a_yso = True
         else:
             self.merkkijono.append("</" + tag + ">")
-        
-        
+
     def handle_data(self, data):
         if self.ended_a_yso:
             self.merkkijono.append("$i")
             self.ended_a_yso = False
-        
-        # korjaa normaalien tekstistä löytyvien '<'-merkkien käsittely
-        # TODO: Selvitä, tarvitseeko samanlainen korjaus tehdä myös alla
-        # määritellyille funktioille
          
-        if self.merkkijono[-1] != "$i" and self.merkkijono[-1] != "$a":
-            self.merkkijono[-1] += data
+        if self.merkkijono:
+            if self.merkkijono[-1] != "$i" and self.merkkijono[-1] != "$a":
+                self.merkkijono[-1] += data
+            else:
+                # tavallinen tapaus - lisätään vain käsitelty teksti uuteen osioon
+                self.merkkijono.append(data)
         else:
-            # tavallinen tapaus - lisätään vain käsitelty teksti uuteen osioon
-            self.merkkijono.append(data)
+            self.merkkijono.extend(["$i", data])
         
 
     def handle_comment(self, data):
@@ -476,8 +473,6 @@ def convert(cs, vocabulary_name, language, g, g2):
             pref_labels.add(str(pref_label[0][1]).lower())
 
     concs = []
-    
-    
 
     # haetaan Kongressin kirjaston päivitykset viimeisen viikon ajalta, 
     # jos ohjelmaa ei ole ajettu aiemmin samana päivänä
@@ -953,12 +948,14 @@ def convert(cs, vocabulary_name, language, g, g2):
                                 key=lambda o: str(o.value)):
             
             ysoATagParser.initialize()
-            ysoATagParser.feed(valueProp.value)
-            
+            try:
+                ysoATagParser.feed(valueProp.value)
+            except TypeError:
+                logging.error("Malformed HTML in concept %s in %s" % (concept, valueProp.value))
             if len(ysoATagParser.merkkijono)%2 == 1:
                 logging.warning("Parsing the property %s for concept %s into seperate subfields failed. Continuing with complete value." % (valueProp.prop, concept))
-                subfieldCodeValuePair = ("i", valueProp.value.strip())
-                if len(subfieldCodeValuePair[1]) == 0:
+                subfieldCodeValuePair = [("i", valueProp.value.strip())]
+                if len(subfieldCodeValuePair[0][1]) == 0:
                     subfieldCodeValuePair = []
             else:
                 subfieldCodeValuePair = [[x[1], ysoATagParser.merkkijono[ind+1].strip()] for (ind,x) in enumerate(ysoATagParser.merkkijono) if ind%2 == 0]
@@ -968,13 +965,12 @@ def convert(cs, vocabulary_name, language, g, g2):
                     subfieldCodeValuePair = subfieldCodeValuePair[:-1]
             
             subfield_values = []
-            
+           
             for subfield in subfieldCodeValuePair:
                 subfield_values.extend(
                     (subfield[0], decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, subfield[1])))
-                    #(subfield[0], subfield[1])
                 )
-            
+
             rec.add_field(
                 Field(
                     tag='680',
