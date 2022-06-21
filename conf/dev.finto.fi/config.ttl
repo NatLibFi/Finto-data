@@ -97,15 +97,27 @@
 	dc:subject :cat_general ;
 	skosmos:showTopConcepts "true";
 	skosmos:defaultSidebarView "hierarchy";
+	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv ;
 	skosmos:sortByNotation "true";
 	skosmos:showNotation "false";
 	void:uriSpace "http://www.yso.fi/onto/yso/";
 	skosmos:language "fi", "sv";
 	skosmos:defaultLanguage "fi";
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/aika> ;
 	void:dataDump <http://dev.finto.fi/download/aika/aika-skos.ttl> ;
 	void:dataDump <http://dev.finto.fi/download/aika/aika-skos.rdf> ;
+	void:dataDump <http://dev.finto.fi/download/aika/yso-aika-fin.mrcx> ;
+	void:dataDump <http://dev.finto.fi/download/aika/yso-aika-swe.mrcx> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/aika/> .
+
+<http://dev.finto.fi/download/aika/yso-aika-fin.mrcx>
+	dct:format "application/marcxml+xml";
+	dct:language "fi" .
+
+<http://dev.finto.fi/download/aika/yso-aika-swe.mrcx>
+	dct:format "application/marcxml+xml";
+	dct:language "sv" .
 
 :allars a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Allärs - Allmän tesaurus på svenska"@fi,
