@@ -1,6 +1,6 @@
 # Convert all */*-skos.ttl files to RDF/XML
 
-all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/yso-fin.mrcx yso/yso-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
+all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/yso-fin.mrcx yso/yso-swe.mrcx aika/yso-aika-fin.mrcx aika/yso-aika-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
 
 %-skos.rdf: %-skos.ttl
 	rapper -i turtle -o rdfxml-abbrev $^ >$@ || rm $@
@@ -13,6 +13,12 @@ yso/yso-fin.mrcx: yso/yso-skos.ttl
 	
 yso/yso-swe.mrcx: yso/yso-skos.ttl
 	python3 ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl" 2>yso/yso-swe.log
+
+aika/yso-aika-fin.mrcx: aika/aika-skos.ttl
+	python3 ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --config_section="yso-aika" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc"
+
+aika/yso-aika-swe.mrcx: aika/aika-skos.ttl
+	python3 ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --config_section="yso-aika" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc"
 
 yso-paikat/yso-paikat-fin.mrcx: yso-paikat/yso-paikat-skos.ttl
 	python3 ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --config_section="yso-paikat" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-paikat/modified-yso-paikat-fi.pkl" 2>yso-paikat/yso-paikat-fin.log
