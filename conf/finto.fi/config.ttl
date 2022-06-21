@@ -695,6 +695,27 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/okm-tieteenala/> .
 
+:oma a skosmos:Vocabulary, void:Dataset ;
+    dc:title "OMA-ontologia (M-Cult)"@fi,
+        "OMA-ontologi (M-Cult)"@sv,
+        "OMA Ontology (M-Cult)"@en ;
+    dc:subject :cat_general ;
+    void:uriSpace "http://www.yso.fi/onto/oma/";
+    skosmos:language "fi", "sv", "en";
+    skosmos:defaultLanguage "fi";
+    skosmos:useModifiedDate "true";
+    skosmos:shortName "OMA";
+    skosmos:showTopConcepts "true";
+    skosmos:feedbackRecipient "kuka@missa.dom";
+    skosmos:indexShowClass <http://www.yso.fi/onto/oma-meta/Concept>;
+    skosmos:arrayClass isothes:ThesaurusArray ;
+    skosmos:showNotationAsProperty "false";
+    void:dataDump <http://api.finto.fi/download/oma/oma-skos.ttl> ;
+    void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+    skosmos:sparqlGraph <http://www.yso.fi/onto/oma/> ;
+    skosmos:mainConceptScheme <http://www.yso.fi/onto/oma/> .
+
+
 :ponduskategorier a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Pondus-kategoriat"@fi,
 	"Ponduskategorier"@sv,
@@ -1111,27 +1132,6 @@ dc:description """Tämä on testi
     void:dataDump <http://api.finto.fi/download/yse/yse-skos.ttl> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yse/> .
-
-#:oma a skosmos:Vocabulary, void:Dataset ;
-#    dc:title "OMA-ontologia (M-Cult)"@fi,
-#        "OMA-ontologi (M-Cult)"@sv,
-#        "OMA Ontology (M-Cult)"@en ;
-#    dc:subject :cat_general ;
-#    void:uriSpace "http://www.yso.fi/onto/oma/";
-#    skosmos:language "fi", "sv", "en";
-#    skosmos:defaultLanguage "fi";
-#    skosmos:useModifiedDate "true";
-#    skosmos:shortName "OMA";
-#    skosmos:showTopConcepts "true";
-#    skosmos:feedbackRecipient "kuka@missa.dom";
-#    skosmos:indexShowClass <http://www.yso.fi/onto/oma-meta/Concept>;
-#    skosmos:arrayClass isothes:ThesaurusArray ;
-#    skosmos:showNotationAsProperty "false";
-#    void:dataDump <http://api.finto.fi/download/oma/oma-skos.ttl> ;
-#    void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-#    skosmos:sparqlGraph <http://www.yso.fi/onto/oma/> ;
-#    skosmos:mainConceptScheme <http://www.yso.fi/onto/oma/> .
-
 
 :muso skosmos:vocabularyPlugins :musoMessage .
 
