@@ -737,6 +737,8 @@ def convert(cs, vocabulary_name, language, g, g2):
         # -> 148, 150, 151, 155, 162
         # tukee tällä hetkellä tavallisia asiasanoja (150), YSO-paikkoja (151) & SLM:ää (155)
         tag = "150"
+        if (concept, SKOS.inScheme, YSO.aika) in g:
+            tag = "148"
         if (concept, SKOS.inScheme, YSO.places) in g:
             tag = "151"
         elif vocId == "slm":
@@ -761,10 +763,14 @@ def convert(cs, vocabulary_name, language, g, g2):
         # skos:prefLabelia näihin kenttiin, sillä sen oletetaan jo olevan skos:altLabelina kun siihen
         # on haluttu viitata vanhalla muodolla
         seen_values = set()
-        
-        for valueProp in sorted(getValues(g, concept, [SKOS.altLabel, YSOMETA.singularPrefLabel,
-                                                YSOMETA.singularAltLabel, SKOS.hiddenLabel], language=language),
-                                key=lambda o: str(o.value)):
+
+
+        valueProps = getValues(g, concept, [SKOS.altLabel, YSOMETA.singularPrefLabel, YSOMETA.singularAltLabel,
+                               SKOS.hiddenLabel], language=language)
+        if (concept, SKOS.inScheme, YSO.aika) in g:
+            valueProps.extend(getValues(g, concept, [SKOS.notation]))
+        valueProps = sorted(valueProps, key=lambda o: str(o.value))
+        for valueProp in valueProps:
             #  singularPrefLabel, singularAltLabel ja hiddenLabel jätetään pois 45X-kentistä,
             #  jos ne kirjainkoosta riippumatta ovat jossain 15X-kentässä
             if valueProp.prop != SKOS.altLabel and str(valueProp.value.lower()) in pref_labels:
@@ -775,6 +781,8 @@ def convert(cs, vocabulary_name, language, g, g2):
             seen_values.add(str(valueProp.value))
             
             tag = "450"
+            if (concept, SKOS.inScheme, YSO.aika) in g:
+                tag = "448"
             if (concept, SKOS.inScheme, YSO.places) in g:
                 tag = "451"
             elif vocId == "slm":
@@ -815,6 +823,8 @@ def convert(cs, vocabulary_name, language, g, g2):
                 label = valueProps[0].value
                 
                 tag = "550" # alustetaan 550-arvoon
+                if (target, SKOS.inScheme, YSO.aika) in g:
+                    tag = "548"
                 if (target, SKOS.inScheme, YSO.places) in g:
                     tag = "551"
                 elif vocId == "slm":
@@ -1115,6 +1125,9 @@ def convert(cs, vocabulary_name, language, g, g2):
             if (matchURIRef, SKOS.inScheme, YSO.places) in g2 or \
             (matchURIRef, SKOS.inScheme, YSO.places) in g: #or matchType == DCT.spatial:
                 tag = "751"
+            if (matchURIRef, SKOS.inScheme, YSO.aika) in g2 or \
+                (matchURIRef, SKOS.inScheme, YSO.aika) in g:
+                tag = "748"
             # TODO: nimetyt graafit, kohdista kyselyt niihin?
             # Comment: if we want to direct queries to spesific graphs, one per vocab,
             # that graph needs to be selected here based on the void:uriSpace
