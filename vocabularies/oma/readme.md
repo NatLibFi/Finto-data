@@ -10,3 +10,12 @@ Tämä hakemisto sisältää seuraavat tiedostot:
 - oma-skos.ttl (julkaisuversio)
 - toskos.sh (tällä generoidaan oma-skos.ttl)
 - skosify.log (toskos.sh-skriptin lokitiedosto)
+
+Päivitysprosessi lyhyesti:
+
+- validoi saamasi kehitystiedoston oikeellisuus (mehi.ttl)
+- aja purify
+- aja General Deprecator
+- aja toskos.sh
+- git diff .
+- commitoi ja pushaa muuttuneet tiedostot
