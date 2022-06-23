@@ -1,6 +1,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix krono: <http://urn.fi/URN:NBN:fi:au:krono:> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -35,6 +36,8 @@ schema:startDate a owl:DatatypeProperty ;
     rdfs:range xsd:Date,
         xsd:DateTime ;
     rdfs:subPropertyOf rdf:Property .
+
+krono: a owl:Ontology .
 
 yso:p1009910001 a skos:Concept,
         yso-meta:Century ;
@@ -5688,9 +5691,7 @@ yso:aika a owl:Ontology,
     dc:creator "National Library of Finland"@en,
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
-    dc:description """YSO-aika on kaksikielinen yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot ajanlaskun alun jälkeen vuosikymmenen tarkkuudella, ja ennen
-ajanlaskun alkua vuosisadan tarkkuudella vuoteen 3000 eaa. asti. Kulttuuris-kontekstuaalisesti aikaa kuvaavat asiasanat (esim. autonomian
- aika, varhaiskeskiaika) sisältyvät YSO-ontologiaan.
+    dc:description """YSO-aika on kaksikielinen yleiskäyttöinen aikakäsitteistö, joka sisältää ajanjaksot ajanlaskun alun jälkeen vuosikymmenen tarkkuudella, ja ennen ajanlaskun alkua vuosisadan tarkkuudella vuoteen 3000 eaa. asti. Kulttuuris-kontekstuaalisesti aikaa kuvaavat asiasanat (esim. autonomian aika, varhaiskeskiaika) sisältyvät YSO-ontologiaan.
 YSO-aika on rakenteeltaan hierarkkinen kokonaisuus, joka perustuu käsitteiden välisille osa-kokonaisuus-suhteille. Käytettävien termimuotojen lisäksi sanasto sisältää ohjaustermejä, sekä ajanjaksojen alku- ja loppupäivät."""@fi,
         """ALLFO-tid är en tvåspråkig allmän begreppsapparat för kronologiska termer. Vokabulären innehåller tidsavsnitt efter vår tideräknings början med årtiondens exakthet fram till år 3000, och tidsavsnitt före vår tideräknings början med århundradens exakthet fram till år 3000 f.Kr. Ämnesord som beskriver kultur- kontextuell tid (t.ex. autonoma tiden, tidig medeltid) ingår i ALLFO-ontologin.
 ALLFO-tid är till sin struktur en hierarkisk helhet som bygger på del-helhetsrelationer mellan begreppen. Utöver de föredragna termformerna inkluderar vokabulären även hänvisningstermer, samt begynnelse- och slutdatum för tidsavsnitten."""@sv ;
@@ -5700,7 +5701,7 @@ ALLFO-tid är till sin struktur en hierarkisk helhet som bygger på del-helhetsr
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2022-06-22T00:27:59+00:00"^^xsd:dateTime ;
+    dct:modified "2022-06-23T00:29:19+00:00"^^xsd:dateTime ;
     skos:hasTopConcept yso:p1099910001,
         yso:p1199911000,
         yso:p1299912000,
