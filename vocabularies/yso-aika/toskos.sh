@@ -1,7 +1,7 @@
 #!/bin/sh
 
-INFILES="aika.rdf aika-meta.ttl"
-OUTFILE=aika-skos.ttl
+INFILES="yso-aika.rdf yso-aika-meta.ttl"
+OUTFILE=yso-aika-skos.ttl
 
 SKOSIFYCMD="skosify"
 LOGFILE=skosify.log
