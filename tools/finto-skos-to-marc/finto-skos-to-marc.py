@@ -443,8 +443,13 @@ def convert(cs, vocabulary_name, language, g, g2):
                 helper_variables["outputFileName"] = output + "-" + language
     if not "outputFileName" in helper_variables:
         helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
+    
+    if cs.get("locDirectory", fallback=None) != None:
+        if not os.path.exists(cs.get("locDirectory")):
+            os.mkdir(cs.get("locDirectory"))
     #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja 
     #arvona tuplen, jossa on tietueen viimeinen muokkauspäivämäärä ja tietueen sisältö MD5-tiivisteenä
+    modified_dates = {}
     if helper_variables['modificationDates']:
         if os.path.isfile(helper_variables['modificationDates']):
             with open(helper_variables['modificationDates'], 'rb') as pickle_file: 
@@ -453,8 +458,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                 except EOFError:
                     logging.error("The file %s for modification dates is empty "%helper_variables['modificationDates'])
                     sys.exit(2)
-    else:
-        modified_dates = {}
     logging.info("Processing vocabulary with vocabulary code '%s' in language '%s'" % (vocId, language))
     incrementor = 0
     deprecated_counter = 0
@@ -478,17 +481,19 @@ def convert(cs, vocabulary_name, language, g, g2):
     # jos ohjelmaa ei ole ajettu aiemmin samana päivänä
     loc_update_dict = {}
     update_loc_concepts = True
-    loc_update_file = os.path.join(cs.get("locDirectory"), "updates.pkl")
-    if os.path.exists(loc_update_file):
-        timestamp = os.path.getmtime(loc_update_file)
-        file_date = date.fromtimestamp(timestamp)
-        if file_date == date.today():
-            update_loc_concepts = False
-        with open(loc_update_file, 'rb') as input_file: 
-            try:     
-                loc_update_dict = pickle.load(input_file)
-            except EOFError:
-                logging.error("EOFError in "%loc_update_file)
+    loc_update_file = None
+    if cs.get("locDirectory", fallback=None) != None:
+        loc_update_file = os.path.join(cs.get("locDirectory"), "updates.pkl")
+        if os.path.exists(loc_update_file):
+            timestamp = os.path.getmtime(loc_update_file)
+            file_date = date.fromtimestamp(timestamp)
+            if file_date == date.today():
+                update_loc_concepts = False
+            with open(loc_update_file, 'rb') as input_file:
+                try:
+                    loc_update_dict = pickle.load(input_file)
+                except EOFError:
+                    logging.error("EOFError in "%loc_update_file)
 
     limit_date = date.today() - timedelta(days=7)
     lc_namespaces = [LCGF, LCSH]
@@ -1434,8 +1439,9 @@ def convert(cs, vocabulary_name, language, g, g2):
         with open(helper_variables['modificationDates'], 'wb') as output:
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
 
-    with open(loc_update_file, 'wb') as output:
-        pickle.dump(loc_update_dict, output, pickle.HIGHEST_PROTOCOL)
+    if loc_update_file:
+        with open(loc_update_file, 'wb') as output:
+            pickle.dump(loc_update_dict, output, pickle.HIGHEST_PROTOCOL)
 
     # tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
     parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
