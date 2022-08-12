@@ -17,6 +17,8 @@ if [ $COUNTER -lt 100000 ]; then
 
   # '-C auto' parameter is not a documented feature of purify.py - it is needed for setting the yso-paikat puri number range of 100000+
   $PURIFY -c $CONTEXT -s $PURICHAR -f $FORMAT -t $FORMAT -C auto $PAIKATFILE $PAIKATNS $PAIKATPURIBASE >$OUTFILE
+  sed -i 's/:p508540/:places/g' $OUTFILE # Prevent purify from changing the conceptScheme
+
   if [ -s $OUTFILE ]; then
     mv $OUTFILE $PAIKATFILE
     echo "Done, replaced $PAIKATFILE with purified version."
