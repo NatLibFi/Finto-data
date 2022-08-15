@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -8012,6 +8013,7 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1875">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m20220815_002"/>
     <skos:prefLabel xml:lang="fi">musiikkikustantamo</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">musikförlag</skos:prefLabel>
   </owl:Class>
@@ -8933,6 +8935,7 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1875"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1881"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m197"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m20220815_001"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2068"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2076"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2077"/>
@@ -9975,6 +9978,18 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:prefLabel xml:lang="fi">soitonopas</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Resurser som påminner om instrumentskolor, men har mindre notmaterial än textmaterial, bör behandlas på samma sätt som textresurser.</skos:scopeNote>
     <skos:scopeNote xml:lang="fi">Soitonoppaan kaltaiset aineistot, joissa nuottiaineiston osuus on tekstiaineistoon verrattuna vähäinen, käsitellään tekstiaineistona.</skos:scopeNote>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20220815_001">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p2041"/>
+    <skos:definition xml:lang="fi">Yhteisö, joka on perustettu jäsentensä yhteisellä sopimuksella urheilun harjoittamiseksi. Urheiluseura voi olla rekisteröity tai rekisteröimätön yhdistys tai yhtiö.</skos:definition>
+    <skos:inScheme rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:"/>
+    <skos:prefLabel xml:lang="fi">urheiluseura</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20220815_002">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="fi">kustantaja (yhteisö)</skos:altLabel>
+    <skos:prefLabel xml:lang="fi">kustantamo</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2023">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
@@ -22650,8 +22665,8 @@ textning för hörselskadade ‡2 mts/swe</skos:example>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m29">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="sv">firma</skos:altLabel>
+    <skos:definition xml:lang="fi">Elinkeinotoimintaa harjoittava luonnollinen henkilö erotukseksi vastaavaa toimintaa harjoittavasta yhtiöstä.</skos:definition>
     <skos:definition xml:lang="sv">Ett namn som antecknats i handelsregistret och som en näringsidkare använder i sin verksamhet; avser även själva företaget.</skos:definition>
-    <skos:definition xml:lang="fi">Kaupparekisteriin merkitty nimi, jota elinkeinonharjoittaja käyttää toiminnassaan, ”firma”; myös itse liikkeestä (Kielitoimiston sanakirja).</skos:definition>
     <skos:example xml:lang="fi">Vaasan osoitteet (toiminimi)</skos:example>
     <skos:example xml:lang="sv">Vasa adresser (firmanamn)</skos:example>
     <skos:prefLabel xml:lang="sv">firmanamn</skos:prefLabel>
@@ -44981,6 +44996,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:altLabel xml:lang="sv">kreditanstalt</skos:altLabel>
     <skos:altLabel xml:lang="fi">liikepankki</skos:altLabel>
     <skos:altLabel xml:lang="fi">osuuspankki</skos:altLabel>
+    <skos:altLabel xml:lang="fi">pankki</skos:altLabel>
     <skos:altLabel xml:lang="sv">sparbank</skos:altLabel>
     <skos:altLabel xml:lang="fi">säästöpankki</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m941"/>
@@ -45530,8 +45546,8 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:altLabel xml:lang="fi">ekoyhteisö</skos:altLabel>
     <skos:altLabel xml:lang="fi">kibbutsi</skos:altLabel>
     <skos:altLabel xml:lang="sv">kibbutz</skos:altLabel>
-    <skos:altLabel xml:lang="fi">kollektiivi</skos:altLabel>
-    <skos:altLabel xml:lang="sv">kollektiv</skos:altLabel>
+    <skos:altLabel xml:lang="fi">kollektiivi (asuinyhteisö)</skos:altLabel>
+    <skos:altLabel xml:lang="sv">kollektiv (boendegemenskap)</skos:altLabel>
     <skos:altLabel xml:lang="fi">kommuuni</skos:altLabel>
     <skos:altLabel xml:lang="fi">kylä (yhteisötyyppi)</skos:altLabel>
     <skos:altLabel xml:lang="fi">kyläyhteisö</skos:altLabel>
@@ -49586,11 +49602,9 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
     <skos:altLabel xml:lang="fi">salaseura (rekisteröity)</skos:altLabel>
     <skos:altLabel xml:lang="fi">seura (rekisteröity yhdistys)</skos:altLabel>
     <skos:altLabel xml:lang="sv">släktförening (registrerad)</skos:altLabel>
-    <skos:altLabel xml:lang="sv">sportförening (registrerad)</skos:altLabel>
     <skos:altLabel xml:lang="fi">sukuseura (rekisteröity)</skos:altLabel>
     <skos:altLabel xml:lang="sv">sällskap (registrerad förening)</skos:altLabel>
     <skos:altLabel xml:lang="sv">ungdomsförening (registrerad)</skos:altLabel>
-    <skos:altLabel xml:lang="fi">urheiluseura (rekisteröity)</skos:altLabel>
     <skos:definition xml:lang="sv">Registrerade föreningar som följer föreningslagen.</skos:definition>
     <skos:definition xml:lang="fi">Rekisteröidyt yhdistykset, jotka noudattavat yhdistyslakia.</skos:definition>
     <skos:prefLabel xml:lang="sv">förening (registrerad)</skos:prefLabel>
@@ -49902,7 +49916,7 @@ Katso myös kartografinen kolmiulotteinen muoto, taktiili kolmiulotteinen muoto.
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m627">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">Elämänmuodon, taloudellisten tai aatteellisten päämäärien tms. perusteella kokonaisuuden muodostava ihmisryhmä tai yhteenliittymä. Perhe, suku, kansa, ammattikunta, urheiluseura ym. yhteisöt. Taloudellinen, aatteellinen yhteisö. Kansainvälinen yhteisö. Euroopan yhteisö, yhteisöt (lyhenne: EY). Perhe-, kaupunki-, kyläyhteisö. Pienyhteisö. Kieli-, tiede-, työyhteisö (Kielitoimiston sanakirja). Eroaa yhdistyksestä parhaiten uskonnollisten yhteisöjen kohdalla.</skos:definition>
+    <skos:definition xml:lang="fi">Elämänmuodon, taloudellisten tai aatteellisten päämäärien tms. perusteella kokonaisuuden muodostava ihmisryhmä tai yhteenliittymä. Perhe, suku, kansa, ammattikunta, urheiluseura ym. yhteisöt. Taloudellinen, aatteellinen yhteisö. Kansainvälinen yhteisö. Euroopan yhteisö, yhteisöt (lyhenne: EY). Perhe-, kaupunki-, kyläyhteisö. Pienyhteisö. Kieli-, tiede-, työyhteisö (Kielitoimiston sanakirja). Eroaa yhdistyksestä parhaiten uskonnollisten yhteisöjen kohdalla. Termiä käytetään, kun tarkempaa soveltuvaa termiä ei löydy.</skos:definition>
     <skos:definition xml:lang="sv">Grupp av människor eller sammanslutning som bildar en helhet utgående från levnadssätt, ekonomiska eller ideella mål e.d. Familj, släkt, folk, yrkeskår, idrottsförening m.fl. samfund. Ekonomiskt, ideellt samfund. Internationellt samfund. Europeiska gemenskapen, gemenskaperna (förkortning: EG). Familje-, stads-, bysamfund. Småsamfund. Språk-, vetenskaps-, arbetssamfund.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/a/P50095"/>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/Elements/c/C10005"/>
@@ -52526,7 +52540,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m941">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:definition xml:lang="fi">Kahden tai useamman henkilön yhteenliittymä, joka on muodostettu liiketoiminnan harjoittamista varten (Kielitoimiston sanakirja).</skos:definition>
+    <skos:definition xml:lang="fi">Kahden tai useamman henkilön yhteenliittymä, joka on muodostettu liiketoiminnan harjoittamista varten (Kielitoimiston sanakirja). Yhtiöstä, jota ei ole alun perin perustettu harjoittamaan liiketoimintaa, käytetään myös muuta soveltuvaa termiä, esim. urheiluseura.</skos:definition>
     <skos:definition xml:lang="sv">Sammanslutning av två eller flera personer, som har bildats i syfte att bedriva affärsverksamhet.</skos:definition>
     <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p7393"/>
     <skos:example xml:lang="sv">Kajaani (bolag)</skos:example>
@@ -52562,6 +52576,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:altLabel xml:lang="fi">kirjallisuuspiiri (ryhmä)</skos:altLabel>
     <skos:altLabel xml:lang="fi">kirjoittajaryhmä</skos:altLabel>
     <skos:altLabel xml:lang="sv">klubb (grupp)</skos:altLabel>
+    <skos:altLabel xml:lang="fi">kollektiivi (ryhmä)</skos:altLabel>
     <skos:altLabel xml:lang="sv">konstnärsgrupp</skos:altLabel>
     <skos:altLabel xml:lang="sv">lag</skos:altLabel>
     <skos:altLabel xml:lang="fi">miehistö</skos:altLabel>
@@ -52573,6 +52588,7 @@ Esimerkiksi karttapallot, pienoismallit jne.</skos:definition>
     <skos:altLabel xml:lang="sv">skrivargrupp</skos:altLabel>
     <skos:altLabel xml:lang="fi">sosiaalisen median palvelun käyttäjäryhmä</skos:altLabel>
     <skos:altLabel xml:lang="sv">sällskap</skos:altLabel>
+    <skos:altLabel xml:lang="fi">taiteilijakollektiivi</skos:altLabel>
     <skos:altLabel xml:lang="fi">taiteilijaryhmä</skos:altLabel>
     <skos:altLabel xml:lang="fi">tanssiryhmä</skos:altLabel>
     <skos:altLabel xml:lang="sv">team</skos:altLabel>
