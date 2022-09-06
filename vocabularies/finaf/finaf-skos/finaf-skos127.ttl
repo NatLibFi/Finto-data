@@ -20,6 +20,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 
+rdaa:P50602 a rdf:Property ;
+    rdfs:label "is singer person of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by a person of performance of voice, with or without instrumental accompaniment, to produce music."@en ;
+    rdakit:toolkitLabel "singer person of"@en ;
+    reg:hasSubproperty <http://rdaregistry.info/Elements/a/object/P50602> ;
+    reg:hasUnconstrained rdau:P60031 ;
+    reg:lexicalAlias rdaa:singerPersonOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10004 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50084,
+        rdaa:P50603 ;
+    skos:definition "Relates a person to an expression that includes a contribution by a person of performance of voice, with or without instrumental accompaniment, to produce music."@en ;
+    skos:scopeNote "A performance of a singer may or may not include actual words."@en .
+
 rdaa:P50604 a rdf:Property ;
     rdfs:label "is instrumentalist person of"@en ;
     rdakit:hasElementType "2" ;
@@ -10589,6 +10605,30 @@ finaf:000005102 a rdac:C10005,
         "Society of Planning Geography"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Suunnittelumaantieteen yhdistys"@fi .
+
+finaf:000005123 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1992-12-17"^^xsd:date ;
+    dct:modified "2020-11-04T20:09:01"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000095330678>,
+        "Asteri ID: 000005123" ;
+    rdaa:P50025 "RKP"@fi,
+        "Ruotsalainen kansanpuolue"@fi,
+        "SFP"@fi,
+        "Schwedische Volkspartei"@fi,
+        "Svenska folkpartiet i Finland"@fi,
+        "Swedish People's Party"@fi ;
+    rdaa:P50237 mts:m318 ;
+    rdaa:P50393 "Yhteisön ainoa virallinen kieli on ruotsi. Tieto saatu puolueen toimistosta 17.12.1992"@fi ;
+    rdaa:P50407 "Svenska folkpartiet"@fi ;
+    skos:altLabel "RKP"@fi,
+        "Ruotsalainen kansanpuolue"@fi,
+        "SFP"@fi,
+        "Schwedische Volkspartei"@fi,
+        "Svenska folkpartiet i Finland"@fi,
+        "Swedish People's Party"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Svenska folkpartiet"@fi .
 
 finaf:000005127 a rdac:C10005,
         skos:Concept ;
