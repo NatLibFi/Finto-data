@@ -1,0 +1,107 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dsv: <http://purl.org/iso25964/DataSet/Versioning#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sh: <http://purl.org/skos-history/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX zbwext: <http://zbw.eu/namespaces/zbw-extensions/>
+#
+# Added/changed definitions to already existing concepts
+#
+SELECT DISTINCT ?concept (STR(?conceptLabelFi) AS ?conceptLabel) ?oldNote ?newNote (?newModified AS ?modDate)
+WHERE {
+  GRAPH ?versionHistoryGraph {
+    # parameters
+    VALUES ( ?versionHistoryGraph ?conceptType ?oldVersion ?newVersion ) {
+      ( <http://www.yso.fi/onto/ysa/version> skos:Concept  "20150408" "20150508" )
+    }
+    # get the current and the previous version as default versions
+    ?versionset dsv:currentVersionRecord/xhv:prev/dc:identifier ?previousVersion .
+    ?versionset dsv:currentVersionRecord/dc:identifier ?latestVersion .
+    # select the versions to actually use
+    BIND(coalesce(?oldVersion, ?previousVersion) AS ?oldVersionSelected)
+    BIND(coalesce(?newVersion, ?latestVersion) AS ?newVersionSelected)
+    # get the delta and via that the relevant graphs
+    ?delta a sh:SchemeDelta ;
+      sh:deltaFrom/dc:identifier ?oldVersionSelected ;
+      sh:deltaTo/dc:identifier ?newVersionSelected ;
+      sh:deltaFrom/sh:usingNamedGraph/sd:name ?oldVersionGraph ;
+      sh:deltaTo/sh:usingNamedGraph/sd:name ?newVersionGraph ;
+      dcterms:hasPart ?insertions ;
+      dcterms:hasPart ?deletions .
+    ?deletions a sh:SchemeDeltaDeletions ;
+      sh:usingNamedGraph/sd:name ?deletionsGraph .
+    ?insertions a sh:SchemeDeltaInsertions ;
+      sh:usingNamedGraph/sd:name ?insertionsGraph .
+  }
+
+  # prepare typed old version date (to be used in filtering out results)
+  BIND(STRDT(?oldVersion, xsd:date) AS ?oldVersionDate)
+  
+  OPTIONAL {
+    # newly inserted definitions
+    GRAPH ?insertionsGraph {
+      ?concept skos:definition ?newNote .
+    }
+  }
+
+  OPTIONAL {
+    # deleted definitions
+    GRAPH ?deletionsGraph {
+      ?concept skos:definition ?oldNote .
+    }
+  }
+  
+  FILTER (BOUND(?newNote) || BOUND(?oldNote))
+  FILTER (LANG(?newNote) = LANG(?oldNote) || !(BOUND(?oldNote)) || !(BOUND(?newNote)))
+  
+  # ... for already existing concepts
+  FILTER exists {
+    GRAPH ?oldVersionGraph {
+      ?concept ?p []
+    }
+  }
+  
+  GRAPH ?newVersionGraph {
+    ?concept skos:prefLabel ?conceptLabelFi .
+    FILTER(LANG(?conceptLabelFi) = 'fi')
+
+    OPTIONAL {
+      ?concept dcterms:modified ?newModified .
+    }
+  }
+
+  OPTIONAL {
+    GRAPH ?oldVersionGraph {
+      ?concept dcterms:modified ?oldModified .
+    }
+  }
+
+  # Drop results that have happened "before" the old version
+  # (happens e.g., in the case where massive programmitical
+  # changes have been applied without changing the modified
+  # date via timestamp information fabrication)
+  #
+  # Checks
+  # 1. if modified exists in both graphs, modified values must differ
+  # 2. if oldVersion is not of form 'YYYY-MM-DD' (lazily tested), let it pass
+  # 3. if only bound newModified and oldVersion can be typed into a date, compare dates
+  # 4. if neither oldModified nor newModified is bound, let it pass
+  # 5. if newModified is not bound, let it pass (added here for data issues)
+  FILTER (
+    BOUND(?oldModified) && BOUND(?newModified) && ?oldModified != ?newModified
+    ||
+    STRLEN(?oldVersion) != 10
+    ||
+    !BOUND(?oldModified) && BOUND(?newModified) && ?newModified >= ?oldVersionDate
+    ||
+    !BOUND(?oldModified) && !BOUND(?newModified)
+    ||
+    !BOUND(?newModified)
+  )
+
+}
+ORDER BY ?modDate LCASE(?conceptLabel)
