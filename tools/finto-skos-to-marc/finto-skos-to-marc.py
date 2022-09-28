@@ -60,16 +60,6 @@ LANGUAGES = {
     'fi': 'fin',
     'sv': 'swe',
     'en': 'eng',
-    'de': 'ger',
-    'et': 'est',
-    'fr': 'fre',
-    'it': 'ita',
-    'ru': 'rus',
-    'sme': 'sme', # pohjoissaame
-    'sma': 'sma', # eteläsaame
-    'smn': 'smn', # inarinsaame
-    'sms': 'sms', # koltansaame
-    'smj': 'smj', # luulajansaame
 }
 
 #LCSH mäpättävät 1xx-kentät
@@ -443,7 +433,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                 helper_variables["outputFileName"] = output + "-" + language
     if not "outputFileName" in helper_variables:
         helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
-    
+
     if cs.get("locDirectory", fallback=None) != None:
         if not os.path.exists(cs.get("locDirectory")):
             os.mkdir(cs.get("locDirectory"))
@@ -530,11 +520,10 @@ def convert(cs, vocabulary_name, language, g, g2):
     if helper_variables['keepModified']:
         # käydään läpi vain muuttuneet käsitteet
         for uri in modified_dates:
-            if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:  
+            if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:
                 concs.append(URIRef(uri))
     else:    
         concs = g.subjects(RDF.type, SKOS.Concept)
-
     for concept in sorted(concs):
         incrementor += 1
         if incrementor % 1000 == 0:
@@ -1192,21 +1181,22 @@ def convert(cs, vocabulary_name, language, g, g2):
                         sub2 = ""
                         logging.error("Language information missing from prefLabel of %s"% (str(matchURIRef)))
                     else:
-                        sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
-                        # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
-                        if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
-                            wdEntities = []
-                            closeMatches = getValues(g, concept, [SKOS.closeMatch])
-                            for closeMatch in closeMatches:
-                                if closeMatch.value.startswith(WIKIDATA):
-                                    wdEntities.append(URIRef(closeMatch.value))
-                            if len(wdEntities) == 1:
-                                sub0 = wdEntities[0]
-                                sub2 = "wikidata"
-                                sub4 = "~EQ"
-                            else:
-                                sub2 = None
-                                sub4 = None
+                        if valueProp.value.language in LANGUAGES:
+                            sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
+                            # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
+                            if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
+                                wdEntities = []
+                                closeMatches = getValues(g, concept, [SKOS.closeMatch])
+                                for closeMatch in closeMatches:
+                                    if closeMatch.value.startswith(WIKIDATA):
+                                        wdEntities.append(URIRef(closeMatch.value))
+                                if len(wdEntities) == 1:
+                                    sub0 = wdEntities[0]
+                                    sub2 = "wikidata"
+                                    sub4 = "~EQ"
+                                else:
+                                    sub2 = None
+                                    sub4 = None
                 if sub2 and sub4:
                     fields.append(
                         Field(
