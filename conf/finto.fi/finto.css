@@ -2,6 +2,13 @@ html, body {
   background-color: #83CFC8 !important;
 }
 
+:root {
+  --scrollbarWidth: 14px;
+  --scrollbarBg: #c7e7e5;
+  --scrollbarThumb: #61c5b8;
+
+}
+
 /* Font definitions
  *****************************************/
 
@@ -419,29 +426,31 @@ hr {
 
 /* scrollbars
  ****************************/
-.mCSB_container {
-  margin-right: 15px !important;
+
+@-moz-document url-prefix() {
+  .sidebar-grey {
+    overflow-y: scroll;
+    scrollbar-width: auto;
+  }
 }
 
-.mCSB_scrollTools {
-  opacity: 1 !important;
-  width: 14px !important;
+.sidebar-grey, .tt-menu, .multiselect-container {
+  --scroll-bar-width: auto;
+  scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
 }
 
-.mCSB_draggerRail {
-  background-color: #c7e7e5 !important;
-  border-radius: 0 !important;
-  width: 14px !important;
+.sidebar-grey::-webkit-scrollbar, .tt-menu::-webkit-scrollbar, .multiselect-container::-webkit-scrollbar {
+  width: var(--scrollbarWidth);
 }
 
-.mCSB_dragger {
-  background-color: #61c5b8 !important;
-  border-radius: 0 !important;
-  width: 14px !important;
+.sidebar-grey::-webkit-scrollbar-track, .tt-menu::-webkit-scrollbar-track, .multiselect-container::-webkit-scrollbar-track {
+  background: var(--scrollbarBg);
 }
 
-.mCSB_dragger_bar {
-  display: none !important;
+.sidebar-grey::-webkit-scrollbar-thumb, .tt-menu::-webkit-scrollbar-thumb, .multiselect-container::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumb);
+  min-height: 40px;
+  -webkit-box-shadow: inset 0 0 0 #b9c1c6
 }
 
 /* concept
