@@ -1,7 +1,7 @@
 #!/bin/sh
 
-INFILE="juho.ttl"
-INFILES="juho-metadata.ttl juho-singular.ttl juhoDeprecated.ttl recoveredDeletedConcepts.ttl ../yso/releases/2020.1.Diotima/ysoKehitys.rdf $INFILE"
+INFILE="~/codes/RDFTools/juho-uusi-yritys-2022-10-21/juho-skripti-ajettu-1-puritettu-plus-manuaaliset.ttl"
+INFILES="juho-metadata.ttl juho-singular.ttl ../yso/releases/2020.1.Diotima/ysoKehitys.rdf $INFILE"
 OUTFILE=juho-skos.ttl
 
 SKOSIFYCMD=skosify
