@@ -1181,7 +1181,9 @@ def convert(cs, vocabulary_name, language, g, g2):
                         sub2 = ""
                         logging.error("Language information missing from prefLabel of %s"% (str(matchURIRef)))
                     else:
-                        if valueProp.value.language in LANGUAGES:
+                        if valueProp.value.language not in LANGUAGES:
+                            sub2 = None
+                        else:
                             sub2 = sub2 + "/" + LANGUAGES[valueProp.value.language]
                             # englanninkielisten YSO-paikkojen prefLabelit ovat Wikidatasta peräisin
                             if tag == "751" and LANGUAGES[valueProp.value.language] in ["en", "eng"]:
