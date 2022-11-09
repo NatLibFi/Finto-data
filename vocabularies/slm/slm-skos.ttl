@@ -7316,6 +7316,14 @@ slm:s1456 a skos:Concept ;
         "fulltextdatabaser"@sv ;
     skos:related slm:s1330 .
 
+slm:s1459 a skos:Concept ;
+    dct:created "2022-10-05"^^xsd:date ;
+    dct:modified "2022-10-05"^^xsd:date ;
+    skos:broader slm:s109,
+        slm:s432 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "ajankohtaisdokumentit"@fi .
+
 slm:s146 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2021-12-21"^^xsd:date ;
@@ -9379,17 +9387,6 @@ slm:s1086 a skos:Concept ;
     skos:topConceptOf slm:s285,
         slm:s593 .
 
-slm:s109 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2022-02-01"^^xsd:date ;
-    skos:broader slm:s1420,
-        slm:s930 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p28710> ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s815 ;
-    skos:prefLabel "dokumenttisarjat"@fi,
-        "dokumentärserier"@sv .
-
 slm:s1090 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "ljudeffektsböcker"@sv ;
@@ -9780,9 +9777,11 @@ slm:s1399 a skos:Concept ;
 
 slm:s1404 a skos:Concept ;
     dct:created "2021-01-05"^^xsd:date ;
-    dct:modified "2022-08-27"^^xsd:date ;
+    dct:modified "2022-10-05"^^xsd:date ;
     skos:altLabel "elokuvamusikaalit"@fi,
-        "filmmusikaler"@sv ;
+        "revyyelokuvat"@fi,
+        "filmmusikaler"@sv,
+        "revyfilmer"@sv ;
     skos:broader slm:s709 ;
     skos:definition "Elokuva, jossa hahmojen laulamat laulut ja musiikki kuljettavat tarinaa eteenpäin ja joka voi perustua teatterimusikaaliin tai josta on tehty teatteriversioita."@fi,
         "Film, i vilken sånger framförda av olika gestalter och musik för berättelsen framåt, och som kan grunda sig på en teatermusikal, eller utifrån vilken teaterversioner har gjorts."@sv ;
@@ -11147,6 +11146,18 @@ slm:s1077 a skos:Concept ;
         slm:s470 ;
     skos:scopeNote "Elokuvaksi sovitetuista musikaaleista käytetään SLM-termiä <a href='http://urn.fi/URN:NBN:fi:au:slm:s1404'>musikaalielokuvat</a>."@fi,
         "Om musikaler som omarbetats till film används FGF-termen <a href='http://urn.fi/URN:NBN:fi:au:slm:s1404'>musikalfilmer</a>."@sv .
+
+slm:s109 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2022-10-05"^^xsd:date ;
+    skos:broader slm:s1420,
+        slm:s930 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p28710> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1459,
+        slm:s815 ;
+    skos:prefLabel "dokumenttisarjat"@fi,
+        "dokumentärserier"@sv .
 
 slm:s1106 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13449,22 +13460,6 @@ slm:s409 a skos:Concept ;
         "musikalier"@sv ;
     skos:topConceptOf slm:s285 .
 
-slm:s432 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2022-02-01"^^xsd:date ;
-    skos:broader slm:s1175 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1354,
-        slm:s1362,
-        slm:s359,
-        slm:s815 ;
-    skos:prefLabel "dokumenttielokuvat"@fi,
-        "dokumentärfilmer"@sv ;
-    skos:related slm:s1078,
-        slm:s1420,
-        slm:s958 .
-
 slm:s455 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s1045,
@@ -13582,6 +13577,23 @@ slm:s168 a skos:Concept ;
     skos:scopeNote "Käytetään nuorille tarkoitetuista teoksista."@fi,
         "Används om verk avsedda för ungdomar."@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s432 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2022-10-05"^^xsd:date ;
+    skos:broader slm:s1175 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13105> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1354,
+        slm:s1362,
+        slm:s1459,
+        slm:s359,
+        slm:s815 ;
+    skos:prefLabel "dokumenttielokuvat"@fi,
+        "dokumentärfilmer"@sv ;
+    skos:related slm:s1078,
+        slm:s1420,
+        slm:s958 .
 
 slm:s499 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -15597,7 +15609,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2022-09-22T00:09:22+00:00"^^xsd:dateTime ;
+    dct:modified "2022-10-05T00:08:59+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;

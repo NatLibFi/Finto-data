@@ -432,6 +432,27 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/juho/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/juho/> .
 
+:juhotest a skosmos:Vocabulary, void:Dataset ;
+	dc:title "JUHOTEST - Julkishallinnon ontologia"@fi, "JUHOTEST - Julkishallinnon ontologia"@sv, "JUHOTEST - Julkishallinnon ontologia"@en ;
+	skosmos:shortName "JUHOTEST";
+	skosmos:marcSourceCode "juho";
+	dc:subject :cat_society ;
+	void:uriSpace "http://www.yso.fi/onto/juho/";
+	skosmos:indexShowClass <http://www.yso.fi/onto/juho-meta/Concept>;
+	skosmos:language "fi", "en", "sv";
+	skosmos:showTopConcepts "true";
+	skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:feedbackRecipient "mika.vaara@helsinki.fi";
+	void:dataDump <https://dev.finto.fi/download/juho/juho-skos_test.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/juho/juho-skos_test.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/juhotest/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/juho/> .
+
+
 :jupo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "JUPO - Julkisen hallinnon palveluontologia"@fi,
                 "JUPO - Ontologi för den offentliga sektorns tjänster"@sv,
@@ -592,11 +613,11 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/koko/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/koko/> .
 
-:kokotesti a skosmos:Vocabulary, void:Dataset ;
-	dc:title "KOKO-testi"@fi,
-		"KOKO-test"@sv,
-		"KOKO test"@en ;
-	skosmos:shortName "KOKOtest";
+:koko-ii-22 a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KOKO II/22"@fi,
+		"KOKO II/22"@sv,
+		"KOKO II/22"@en ;
+	skosmos:shortName "KOKO II/22";
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/koko/";
 	skosmos:language "fi", "sv", "en";
@@ -606,9 +627,28 @@
 	skosmos:showTopConcepts "true";
 	skosmos:arrayClass isothes:ThesaurusArray ;
 	skosmos:usePlugin "finna" ;
-	void:dataDump <https://dev.finto.fi/download/koko/koko-skos_test.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/koko/koko-skos-2022-II.ttl> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/kokotest/> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/koko-ii/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/koko/> .
+
+:koko-iii-22 a skosmos:Vocabulary, void:Dataset ;
+	dc:title "KOKO III/22"@fi,
+		"KOKO III/22"@sv,
+		"KOKO III/22"@en ;
+	skosmos:shortName "KOKO III/22";
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/koko/";
+	skosmos:language "fi", "sv", "en";
+	skosmos:defaultLanguage "fi";
+    skosmos:showChangeList "true" ;
+    skosmos:useModifiedDate "true";
+	skosmos:showTopConcepts "true";
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:usePlugin "finna" ;
+	void:dataDump <https://dev.finto.fi/download/koko/koko-skos-2022-III.ttl> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/koko-iii/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/koko/> .
 
 :kto a skosmos:Vocabulary, void:Dataset ;
@@ -1245,6 +1285,25 @@
     skosmos:sparqlGraph <http://www.yso.fi/onto/oma/> ;
     skosmos:mainConceptScheme <http://www.yso.fi/onto/oma/> .
 
+:omatest a skosmos:Vocabulary, void:Dataset ;
+    dc:title "OMA-ontologia (M-Cult) - test"@fi,
+        "OMA-ontologi (M-Cult) - test"@sv,
+        "OMA Ontology (M-Cult) - test"@en ;
+    dc:subject :cat_general ;
+    void:uriSpace "http://www.yso.fi/onto/oma/";
+    skosmos:language "fi", "sv", "en";
+    skosmos:defaultLanguage "fi";
+    skosmos:useModifiedDate "true";
+    skosmos:shortName "OMA-test";
+    skosmos:showTopConcepts "true";
+    skosmos:feedbackRecipient "mika.vaara@helsinki.fi";
+    skosmos:indexShowClass <http://www.yso.fi/onto/oma-meta/Concept>;
+    skosmos:arrayClass isothes:ThesaurusArray ;
+    skosmos:showNotationAsProperty "false";
+    void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+    skosmos:sparqlGraph <http://www.yso.fi/onto/omatest/> ;
+    skosmos:mainConceptScheme <http://www.yso.fi/onto/oma/> .    
+
 :valo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "VALO - Valokuvausalan ontologia"@fi ,
 		"VALO - Fotografiska ontologin"@sv ,
@@ -1364,7 +1423,7 @@
 	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv, "yso/eng"@en ;
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/yso/";
-	skosmos:language "fi", "sv", "en";
+	skosmos:language "fi", "sv", "se", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:showTopConcepts "true";
 	skosmos:groupClass isothes:ConceptGroup ;
