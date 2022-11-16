@@ -368,6 +368,46 @@ Ehdotuksia uusiksi termeiksi voi lähettää tämän sivun ylälaidan palautelom
     <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <foaf:homepage rdf:resource="https://www.kiwi.fi/display/Finto/Metatietosanasto"/>
   </owl:Ontology>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_muut"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">MARC 21</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21_auktoriteetit">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">MARC 21 -auktoriteetit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21_bibliografiset">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">MARC 21 -bibliografiset</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21_entiteetin_tyyppi">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_MARC21_auktoriteetit"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Entiteetin tyyppi</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA">
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">RDA-käsitteet</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_aineistotyyppi">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_muut"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Aineistotyyppi</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_muut">
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:label xml:lang="fi">Muut kuvailussa tarvittavat käsitteet</rdfs:label>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m0">
     <dc11:source xml:lang="sv">ISBD-term</dc11:source>
     <dc11:source xml:lang="fi">ISBD-termi</dc11:source>
@@ -3225,6 +3265,7 @@ Stereografisella laitteella käytettävät aineistot.</skos:scopeNote>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m138">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Manifestaatio</rdfs:label>
@@ -18621,6 +18662,7 @@ textning för hörselskadade ‡2 mts/swe</skos:example>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m261">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Ekspressio</rdfs:label>
@@ -29587,6 +29629,7 @@ textning för hörselskadade ‡2 mts/swe</skos:example>
     <skos:prefLabel xml:lang="fi">radioamatööri</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3414">
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Relationer</rdfs:label>
@@ -29595,6 +29638,7 @@ textning för hörselskadade ‡2 mts/swe</skos:example>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3415">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Aktör</rdfs:label>
@@ -40969,6 +41013,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4406">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Ajanjakso</rdfs:label>
@@ -40982,6 +41027,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m4407">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Paikka</rdfs:label>
@@ -49716,6 +49762,7 @@ Katso myös [http://urn.fi/URN:NBN:fi:au:mts:m905], [http://urn.fi/URN:NBN:fi:au
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m61">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="sv">Exemplar</rdfs:label>
@@ -51504,6 +51551,7 @@ Ei käytetä liikkuvasta kuvasta, kuten elokuvasta [ks. kuva].</skos:definition>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m83">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:hierarkiajako_RDA"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <rdfs:label xml:lang="fi">Teos</rdfs:label>
