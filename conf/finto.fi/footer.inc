@@ -77,6 +77,7 @@ catch(e){window.attachEvent("onload", $buo_f)}
 function createConceptObject(conceptUri, conceptData) {
   var newNode = { 
     text: getLabel(conceptData), 
+    label: pickLabel(conceptData),
     a_attr: getHrefForUri(conceptData.uri),
     uri: conceptUri,
     notation: conceptData.notation,
@@ -106,6 +107,7 @@ function createObjectsFromChildren(conceptData, conceptUri) {
   for (var i = 0; i < conceptData.narrower.length; i++) {
     var childObject = {
       text: getLabel(conceptData.narrower[i]), 
+      label: pickLabel(conceptData.narrower[i]),
       a_attr: getHrefForUri(conceptData.narrower[i].uri),
       uri: conceptData.narrower[i].uri,
       notation: conceptData.narrower[i].notation,
@@ -132,6 +134,7 @@ function vocabRoot(topConcepts) {
     var conceptData = topConcepts[i];
     var childObject = {
       text: getLabel(conceptData),
+      label: pickLabel(conceptData),
       a_attr : getHrefForUri(conceptData.uri),
       uri: conceptData.uri,
       notation: conceptData.notation,
@@ -152,8 +155,9 @@ function createObjectsFromNarrowers(narrowerResponse) {
   for (var i = 0; i < narrowerResponse.narrower.length; i++) {
     var conceptObject = narrowerResponse.narrower[i];
     var childObject = {
-      text : getLabel(conceptObject), 
-      a_attr : getHrefForUri(conceptObject.uri),
+      text: getLabel(conceptObject),
+      label: pickLabel(conceptObject),
+      a_attr: getHrefForUri(conceptObject.uri),
       uri: conceptObject.uri,
       notation: conceptObject.notation,
       parents: narrowerResponse.uri,
