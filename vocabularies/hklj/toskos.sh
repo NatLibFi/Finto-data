@@ -1,7 +1,8 @@
 #!/bin/sh
 
-INFILES="hklj-metadata.ttl hklj.ttl"
-OUTFILE=hklj-skos.ttl
+#INFILES="hklj-metadata.ttl hklj.ttl"
+INFILES="hklj-metadata.ttl hklj-tbc-validoitu.ttl"
+OUTFILE=hklj-skos-20221205-valmis.ttl
 
 SKOSIFYCMD="skosify"
 LOGFILE=skosify.log
