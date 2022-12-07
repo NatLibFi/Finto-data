@@ -242,7 +242,6 @@ cfg = configparser.ConfigParser()
 cfg.readfp(args.config)
 
 # initialize App instance
-pidfile = cfg.get('graphsync', 'pidfile')
 app = App(args, cfg, os.getcwd())
 
 app.run(singleshot=args.single)
