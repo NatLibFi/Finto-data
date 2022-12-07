@@ -92,7 +92,7 @@ class GraphSyncer:
   def update_graph(self, srcurl, graphuri, new_ts):
     self.logger.info("updating graph <%s> from <%s>, timestamp: %s", graphuri, srcurl, new_ts)
     # issue SPARQL LOAD command
-    loadcmd = "CLEAR GRAPH <%s>; LOAD <%s> INTO GRAPH <%s>" % (graphuri, srcurl, graphuri)
+    loadcmd = "CLEAR SILENT GRAPH <%s>; LOAD <%s> INTO GRAPH <%s>" % (graphuri, srcurl, graphuri)
     try:
       response = requests.post(self.update_endpoint, data=loadcmd, headers={'Content-Type': 'application/sparql-update'})
       response.raise_for_status()
