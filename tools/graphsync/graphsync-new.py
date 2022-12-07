@@ -16,9 +16,6 @@ import subprocess
 import importlib
 from contextlib import closing
 
-# internal imports
-import daemon
-
 # external library imports
 import pyinotify
 import requests
@@ -236,8 +233,8 @@ class App:
 parser = argparse.ArgumentParser(description='Synchronize RDF graphs from source URLs to a SPARQL endpoint.')
 group = parser.add_mutually_exclusive_group()
 group.add_argument('-D', '--debug', action='store_true', help='enable debug output')
+group.add_argument('-s', '--single', action='store_true', help='single shot mode (run once, then exit)')
 parser.add_argument('config', type=argparse.FileType('r'), help='configuration file')
-parser.add_argument('command', type=str, choices=['start','stop','restart'], nargs='?', help='daemon command; if not given, run as foreground process')
 args = parser.parse_args()
 
 # read configuration file
@@ -248,24 +245,4 @@ cfg.readfp(args.config)
 pidfile = cfg.get('graphsync', 'pidfile')
 app = App(args, cfg, os.getcwd())
 
-class GraphsyncDaemon(daemon.Daemon):
-    def __init__(self, pidfile, stdin='/dev/null', stdout='/dev/null', stderr='/dev/null'):
-        super().__init__(pidfile=pidfile, stdin=stdin, stdout=stdout, stderr=stderr)
-    def run(self):
-        app.run()
-
-    def quit(self):
-        pass
-
-if args.command:
-  daemon = GraphsyncDaemon(pidfile=pidfile)
-  if 'start' == args.command:
-    daemon.start()
-  elif 'stop' == args.command:
-    daemon.stop()
-  elif 'restart' == args.command:
-    daemon.restart()
-
-else:
-  # single-shot mode
-  app.run(singleshot=True)
+app.run(singleshot=args.single)
