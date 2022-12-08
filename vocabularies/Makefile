@@ -17,10 +17,10 @@ yso/yso-fin.mrcx: yso/yso-skos.ttl
 yso/yso-swe.mrcx: yso/yso-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl" 2>yso/yso-swe.log
 
-aika/yso-aika-fin.mrcx: aika/aika-skos.ttl
+yso-aika/yso-aika-fin.mrcx: yso-aika/yso-aika-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --config_section="yso-aika" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc"
 
-aika/yso-aika-swe.mrcx: aika/aika-skos.ttl
+yso-aika/yso-aika-swe.mrcx: yso-aika/yso-aika-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --config_section="yso-aika" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc"
 
 yso-paikat/yso-paikat-fin.mrcx: yso-paikat/yso-paikat-skos.ttl
