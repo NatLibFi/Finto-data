@@ -461,9 +461,9 @@ def convert(cs, vocabulary_name, language, g, g2):
     
     pref_labels = set()
     for conc in g.subjects(RDF.type, SKOS.Concept):
-        pref_label = g.preferredLabel(conc, lang=language)
+        pref_label = getValues(g, conc, [SKOS.prefLabel], language=language)
         if pref_label:
-            pref_labels.add(str(pref_label[0][1]).lower())
+            pref_labels.add(pref_label[0].value.lower())
 
     concs = []
 
@@ -1217,7 +1217,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                 sub4 = "~EQ"
             else:
                 sub4 = "RM"
-                
+
             # library of congress -viitteet käsitellään erikseen
             if loc_object:
                 if cs.get("locDirectory", fallback=None) == None:
@@ -1303,15 +1303,13 @@ def convert(cs, vocabulary_name, language, g, g2):
                     else:
                         logging.warning("Could not find any marcxml:datafield objects with a tag number in the following list: %s for the following record: %s. %s" %
                           (LCSH_1XX_FIELDS, loc_object["id"], "Skipping the property for concept " + concept + "."))
-                        #continue
 
             else:
                 #käsitellään kaikki muut sanastot paitsi lcsh & lcgf
                 prefLabel = None
                 multipleLanguages = False
                 languagesEncountered = set()
-                sortedPrefLabels = sorted(g2.preferredLabel(matchURIRef,
-                                        labelProperties=(SKOS.prefLabel)))
+                sortedPrefLabels = sorted(g2.objects(conc, SKOS.prefLabel))
                 for label in sortedPrefLabels:
                     languagesEncountered.add(label[1].language)
                     if len(languagesEncountered) > 1:
@@ -1356,7 +1354,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                         ))
                         
                     subfields.extend(("0", str(matchURIRef)))
-                    
                     fields.append(
                         Field(
                             tag=tag,

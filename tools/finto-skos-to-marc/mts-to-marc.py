@@ -12,11 +12,13 @@ import unicodedata
 from configparser import ConfigParser, ExtendedInterpolation
 import sys
 import logging
+import shutil
 from datetime import datetime, date
 from collections import namedtuple
 from collections.abc import Sequence
 from pymarc import Record, Field, XMLWriter, MARCReader, parse_xml_to_array
 from lxml import etree as ET
+from urllib.parse import urldefrag
 
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
@@ -65,10 +67,10 @@ ValueProp = namedtuple("ValueProp", ['value', 'prop'])
 
 #haetaan ryhmäkäsitteiden alakäsitteet
 def get_member_groups(g, group, uris):
-    members = g.preferredLabel(group, labelProperties=[SKOS.member])   
+    members = g.objects(group, SKOS.member)
     for m in members:
-        uris.add(m[1])
-        get_member_groups(g, m[1], uris)
+        uris.add(m)
+        get_member_groups(g, m, uris)
 
 def readCommandLineArguments():
     parser = argparse.ArgumentParser(description="Program for converting Finto SKOS-vocabularies into MARC (.mrcx).") 
@@ -104,6 +106,18 @@ def decomposedÅÄÖtoUnicodeCharacters(string):
     return (string.replace("A\u030a", "Å").replace("a\u030a", "å").
           replace("A\u0308", "Ä").replace("a\u0308", "ä").
           replace("O\u0308", "Ö").replace("o\u0308", "ö"))
+
+def defrag_iri(iri):
+    result = urldefrag(iri)
+    if result:
+        tag = result[0]
+        fragment = result[1]
+        if not fragment and ':' in iri:
+            # defrag URNs
+            idx = iri.rfind(":")
+            tag = iri[:idx + 1]
+            fragment = iri[idx + 1:]
+    return fragment
 
 def getValues(graph, target, props, language=None, literal_datatype=None):
     """Given a subject, get all values for a list of properties
@@ -229,22 +243,31 @@ def convert(cs, language, g):
     # listataan preflabelit, jotta voidaan karsia alt_labelit, jotka toisessa käsitteessä pref_labelina
     pref_labels = set()
     for conc in g.subjects(RDF.type, SKOS.Concept):
-        pref_label = g.preferredLabel(conc, lang=language)
+        pref_label = getValues(g, conc, [SKOS.prefLabel], language=language)
         if pref_label:
-            pref_labels.add(str(pref_label[0][1]))
+            pref_labels.add(pref_label[0].value)
     
     # vain nämä mts-käsiteryhmät otetaan mukaan, ryhmän nimestä ei tehdä MARC21-tietuetta
     ids = {"occupations": ['m2332'],
         "titles": ['m121'],
         "organisation types": ['m196'],
         "jurisdiction types": ['m4872'],
-        "family categories": ['m4865']
+        "family categories": ['m4865'],
+        "fields of activity": ['m3661'],
+        "other designation": ['m4972'],
+        "type of entity": ['m4986', 'm4983']
         }
+    # näiden mts-ryhmien nimet otetaan mukaan
+    groups = {"type of entity": ['m4986', 'm4983']}
+
     marc21_locations = {"occupations": {'code suffix': '74', 'subfield code': 'a'},
                         "titles": {'code suffix': '68', 'subfield code': 'd'},
                         "organisation types": {'code suffix': '68', 'subfield code': 'a'},
                         "jurisdiction types": {'code suffix': '68', 'subfield code': 'b'},
-                        "family categories": {'code suffix': '76', 'subfield code': 'a'}
+                        "family categories": {'code suffix': '76', 'subfield code': 'a'},
+                        "fields of activity": {'code suffix': '72', 'subfield code': 'a'},
+                        "other designation": {'code suffix': '68', 'subfield code': 'c'},
+                        "type of entity": {'code suffix': '75', 'subfield code': 'a'},
     }
 
     uris = {}
@@ -256,6 +279,9 @@ def convert(cs, language, g):
         for key in uris:
             if any(str(group).endswith(uri) for uri in uris[key]):
                 get_member_groups(g, group, uris[key])
+    for key in groups:
+        for id in groups[key]:
+            uris[key].add(URIRef(MTS + id))
     concs = []
     if helper_variables['keepModified']:
         concs = []    
@@ -265,12 +291,12 @@ def convert(cs, language, g):
     else:
         for conc in g.subjects(RDF.type, SKOS.Concept):
             concs.append(conc)
+        for group in g.subjects(RDF.type, ISOTHES.ConceptGroup):
+            concs.append(group)
 
     #luotujen käsitteiden tunnukset, joilla voidaan selvittää modification_dates-listan avulla poistetut käsitteet
     created_concepts = set()
-
     for concept in concs:
-        #vain ammateista ja arvonimistä luodaan MARC21-tietueet         
         if not any(concept in uris[key] for key in uris):
             continue
         created_concepts.add(str(concept))
@@ -278,13 +304,13 @@ def convert(cs, language, g):
         if incrementor % 1000 == 0:
             logging.info("Processing %sth concept" % (incrementor))
 
-        #skipataan ryhmittelevät käsitteet
+        #skipataan ryhmittelevät käsitteet paitsi jos ne on lisätty muuttujaan groups
         if not helper_variables['keepGroupingClasses']:
             if any (conceptType in helper_variables["groupingClasses"] for conceptType in g.objects(concept, RDF.type)):
-                continue
+                if not any(defrag_iri(concept) in groups[key] for key in groups):
+                    continue
 
         rec = Record()   
-
         rec.leader = cs.get("leaderNew", fallback=LEADERNEW)
 
         # 024 muut standarditunnukset - käsitteen URI tallennetaan tähän
@@ -408,7 +434,7 @@ def convert(cs, language, g):
             o.value().lower()
             )):
             rec.add_field(sorted_field)
-          
+
         writer_records_counter += 1
         writer.write(rec)
 
@@ -423,17 +449,16 @@ def convert(cs, language, g):
                 modified_dates[str(concept)] = (date.today(), hash)
 
     #tuotetaan poistetut käsitteet, kun haetaan muuttuneet käsitteet
-    #jos tietue on modified_dates-parametrillä määritettyssä tiedostossa, mutta ei graafissa, tulkitana poistetuksi tietueeksi
+    #jos tietue on modified_dates-parametrillä määritettyssä tiedostossa, mutta ei graafissa, tulkitaan poistetuksi tietueeksi
     #mts:ssä ei ole deprekointipäiviä
     #
-
     if helper_variables['keepModified']:
         concs = []
         for conc in g.subjects(RDF.type, SKOS.Concept):
             if any(conc in uris[key] for key in uris):
                 concs.append(str(conc))
         for conc in modified_dates:
-            if conc not in concs:
+            if conc not in concs and not any(defrag_iri(conc) in groups[key] for key in groups):
                 #jos ei ole hajautussummaa (tuplen 2. arvo), luodaan deprekoitu käsite
                 if modified_dates[conc][1]:
                     rec = Record()
