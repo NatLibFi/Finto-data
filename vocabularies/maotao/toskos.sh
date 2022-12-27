@@ -2,7 +2,7 @@
 
 #Skosify installed with "sudo pip3 install --upgrade skosify"
 
-INFILES="maotao.ttl maotao-metadata.ttl ysoKehitys-2021-Epikuros.ttl"
+INFILES="maotao.ttl maotao-metadata.ttl ysoKehitys-2022-1-Filolaos.ttl"
 OUTFILE=maotao-skos.ttl
 
 CONFFILE="finnonto.cfg"
