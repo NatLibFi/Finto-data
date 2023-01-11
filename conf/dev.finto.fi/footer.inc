@@ -19,6 +19,11 @@ cookieMessage = "Finto.fi uses cookies to store language preferences and compile
 cookieDismiss = "Got it!";
 cookieLink = "Learn more";
 cookieHref = "https://www.kiwi.fi/x/4DOOBQ";
+{% elseif request.lang == 'se' %} 
+cookieMessage = " Finto.fi-siidu geavaha gáhkožiid geavaheaddjiid giellaválljemiid muitima ja geavahanstatistihkaid várás. Go geavahat Finto.fi-siiddu, dohkkehat gáhkožiid geavaheami."; 
+cookieDismiss = "Čielggas!"; 
+cookieLink = "Loga lasi"; 
+cookieHref = "https://www.kiwi.fi/x/2zOOBQ"; 
 {% endif %}
 
 window.addEventListener("load", function(){
