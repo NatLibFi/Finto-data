@@ -37,4 +37,18 @@
 
 <div class="kk-logo-en"></div>
 
+{% elseif request.lang == 'se' %} 
+
+<h4>Dieđut</h4> 
+<p>Finto.fi lea rabas bálvalus ovttasdoaibmi sátnerájuid, ontologiijaid ja klassifikašuvnnaid almmustahttimii ja geavaheapmái. Finto.fi:s gávnnat geavahanlavtta sátnerájuid bláđemii, ja <a href="http://api.finto.fi/">rabas rádjeolggožat</a> sátnerájuid ávkkástallamii eará applikašuvnnain. <a href="https://ai.finto.fi">Finto AI</a>:s gávnnat maiddái geavahanlavtta ja rádjeolggožiid automáhtalaš sisdoalu govvideapmái.</p> 
+
+<p>Finto.fi ovddiduvvo oassin Álbmotgirjeráju Finto-bálvalusa. Lassidieđu ja oktavuođadieđuid gávnnat <a href="https://www.kiwi.fi/display/Finto">Finto-bálvalusa áššehaswikis</a>. Juos dus leat váttisvuođat dahje ovddidanjurdagat bálvalusa ektui, váldde oktavuođa Finto ovddideaddjiide.</p> 
+
+<p>Finto-bálvalus geavahuvvo viidásit Suomas álo kulturárbeorganisašuvnnain gitta almmolaš hálddahusa organisašuvnnaide. Finto bargoneavvuid geavaheaddjit leat ee. UNESCO ja ON:a FAO. Finto geavaheaddjiid vásáhusaid sáhtát lohkat <a href="https://www.kiwi.fi/x/hgKEBw">dáppe</a>. Juoge maiddái iežat vásáhusaid midjiide ja earáide!</p> 
+
+<p>Sáhtát evttohit ođđa doahpagiid YSOi dahje YSO-báikkiide skoviin, mii gávdno ovdasiiddu vuolleravddas. Juos háliidat evttohit rievdadusa YSO dahje YSO-báikkiid doahpagiidda, evttohanskovvi gávdno doahpaga dieđuin. Gieđahallanvuloš doabaevttohusaid sáhtát bláđet <a href="https://finto.fi/yse/fi">Finto YSE-sátnerájus</a>. Eará sátnerájuid guoski máhcahaga sáhtát sáddet <a href="http://finto.fi/fi/feedback">Máhcahat-siiddu</a> bokte.</p> 
+
+<p><a href="https://www.kiwi.fi/x/fIQwCw" target="_blank">Olahahttivuohta</a></p> 
+<div class="kk-logo-se"></div>
+
 {% endif %}
