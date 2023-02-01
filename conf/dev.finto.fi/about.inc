@@ -40,7 +40,7 @@
 {% elseif request.lang == 'se' %} 
 
 <h4>Dieđut</h4> 
-<p>Finto.fi lea rabas bálvalus ovttasdoaibmi sátnerájuid, ontologiijaid ja klassifikašuvnnaid almmustahttimii ja geavaheapmái. Finto.fi:s gávnnat geavahanlavtta sátnerájuid bláđemii, ja <a href="http://api.finto.fi/">rabas rádjeolggožat</a> sátnerájuid ávkkástallamii eará applikašuvnnain. <a href="https://ai.finto.fi">Finto AI</a>:s gávnnat maiddái geavahanlavtta ja rádjeolggožiid automáhtalaš sisdoalu govvideapmái.</p> 
+<p>Finto.fi lea rabas bálvalus ovttasdoaibmi sátnerájuid, ontologiijaid ja klassifikašuvnnaid almmustahttimii ja geavaheapmái. Finto.fi:s gávnnat geavahanlavtta sátnerájuid bláđemii, ja <a href="http://api.finto.fi/">rabas rádjeolggožiid</a> sátnerájuid ávkkástallamii eará applikašuvnnain. <a href="https://ai.finto.fi">Finto AI</a>:s gávnnat maiddái geavahanlavtta ja rádjeolggožiid automáhtalaš sisdoalu govvideapmái.</p> 
 
 <p>Finto.fi ovddiduvvo oassin Álbmotgirjeráju Finto-bálvalusa. Lassidieđu ja oktavuođadieđuid gávnnat <a href="https://www.kiwi.fi/display/Finto">Finto-bálvalusa áššehaswikis</a>. Juos dus leat váttisvuođat dahje ovddidanjurdagat bálvalusa ektui, váldde oktavuođa Finto ovddideaddjiide.</p> 
 
