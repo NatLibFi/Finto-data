@@ -433,27 +433,6 @@
 	skosmos:sparqlGraph <http://www.yso.fi/onto/juho/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/juho/> .
 
-:juhotest a skosmos:Vocabulary, void:Dataset ;
-	dc:title "JUHOTEST - Julkishallinnon ontologia"@fi, "JUHOTEST - Julkishallinnon ontologia"@sv, "JUHOTEST - Julkishallinnon ontologia"@en ;
-	skosmos:shortName "JUHOTEST";
-	skosmos:marcSourceCode "juho";
-	dc:subject :cat_society ;
-	void:uriSpace "http://www.yso.fi/onto/juho/";
-	skosmos:indexShowClass <http://www.yso.fi/onto/juho-meta/Concept>;
-	skosmos:language "fi", "en", "sv";
-	skosmos:showTopConcepts "true";
-	skosmos:defaultLanguage "fi";
-        skosmos:useModifiedDate "true";
-	skosmos:groupClass isothes:ConceptGroup ;
-	skosmos:arrayClass isothes:ThesaurusArray ;
-	skosmos:feedbackRecipient "mika.vaara@helsinki.fi";
-	void:dataDump <https://dev.finto.fi/download/juho/juho-skos_test.ttl> ;
-	void:dataDump <https://dev.finto.fi/download/juho/juho-skos_test.rdf> ;
-	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/juhotest/> ;
-	skosmos:mainConceptScheme <http://www.yso.fi/onto/juho/> .
-
-
 :jupo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "JUPO - Julkisen hallinnon palveluontologia"@fi,
                 "JUPO - Ontologi för den offentliga sektorns tjänster"@sv,
@@ -1571,6 +1550,29 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-filolaos/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
+:ysoghosha a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO - Yleinen suomalainen ontologia, Ghosha-versio"@fi,
+		"ALLFO - Allmän finländsk ontologi, Ghosha version"@sv,
+		"YSO - General Finnish ontology, Ghosha version"@en ;
+	skosmos:shortName "YSO-G"@fi, "ALLFO-G"@sv, "YSO-G"@en;
+	dc:subject :cat_general ;
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv", "en", "se";
+	skosmos:defaultLanguage "fi";
+	skosmos:showTopConcepts "true";
+	skosmos:groupClass isothes:ConceptGroup ;
+	skosmos:arrayClass isothes:ThesaurusArray ;
+	skosmos:showChangeList "true" ;
+        skosmos:showPropertyInSearch skos:note ;
+	skosmos:useModifiedDate "true";
+	skosmos:usePlugin "finna" ;
+	void:dataDump <https://dev.finto.fi/download/yso/releases/2023.1.Ghosha/yso-skos.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/yso/releases/2023.1.Ghosha/ysoKehitys.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-ghosha/> ;
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
+
 
 :ysotietomalliuudistus a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia, tietomalliuudistus (testi)"@fi,
