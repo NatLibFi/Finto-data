@@ -2,10 +2,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
 CONSTRUCT {
     ?ysoc skos:closeMatch ?item .
     ?ysoc skos:prefLabel ?itemLabel .
+    ?ysoc skosxl:prefLabel ?itemXlLabel .
+    ?itemXlLabel a skosxl:Label;
+                   skosxl:literalForm ?itemLabel ;
+                   dc:source "Wikidata"@fi, "Wikidata"@sv, "Wikidata"@en .
     ?item wdt:P625 ?point .
 }
 WHERE
@@ -13,6 +19,7 @@ WHERE
     ?item wdt:P2347 ?ysoid .
     FILTER(STRDT(?ysoid, xsd:integer) > 50000)
     BIND(IRI(CONCAT('http://www.yso.fi/onto/yso/p', ?ysoid)) AS ?ysoc)
+    BIND(IRI(CONCAT(STR(?ysoc), '#en_1')) AS ?itemXlLabel)
     OPTIONAL {
       ?item rdfs:label ?itemLabel .
       FILTER(LANG(?itemLabel)='en')
