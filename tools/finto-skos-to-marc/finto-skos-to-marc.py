@@ -75,16 +75,6 @@ TRANSLATIONS = {
         "fi": "Käytöstä poistetun termin korvaava termi",
         "sv": "Termen som ersättar den avlagda termen",
         "en": "Term replacing the deprecated term"
-    },
-    "688aCREATED": {
-        "fi": "Luotu",
-        "sv": "Skapad",
-        "en": "Created"
-    },
-    "688aMODIFIED": {
-        "fi": "Viimeksi muokattu",
-        "sv": "Senast editerad",
-        "en": "Last modified"
     }
 }
 
@@ -409,7 +399,6 @@ def convert(cs, vocabulary_name, language, g, g2):
         'keepModified' : cs.get("keepModifiedAfter", fallback=None),
         'keepDeprecated' : cs.get("keepDeprecatedAfter", fallback=KEEPDEPRECATEDAFTER).lower() != "none",
         'keepGroupingClasses' : cs.getboolean("keepGroupingClasses", fallback=False),
-        'write688created' : cs.get("defaultCreationDate", fallback=None) != None,
         'defaultOutputFileName' : "yso2marc-" + cs.name.lower() + "-" + language + ".mrcx"
     }
 
@@ -545,7 +534,7 @@ def convert(cs, vocabulary_name, language, g, g2):
 
         loc_concept_downloaded = False
 
-        # dct:modified -> 005 EI TULOSTETA, 688 
+        # dct:modified -> 005 EI TULOSTETA,
         # tutkitaan, onko käsite muuttunut vai alkuperäinen
         # ja valitaan leader sen perusteella
         mod = g.value(concept, DCT.modified, None)
@@ -613,10 +602,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                         except ValueError:
                             logging.warning("Converting deprecated date failed for concept %s. Proceeding." %
                           (concept))
-        
-        if not created and not helper_variables["write688created"]:
-            logging.warning("No explicit creation date defined for concept %s. Using default value '%s' for character positions 00-05 in tag 008." % (
-                concept, datetime.date(datetime.strptime(DEFAULTCREATIONDATE, "%Y-%m-%d")).strftime('%y%m%d')))
 
         rec.add_field(
             Field(
@@ -1052,28 +1037,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                         subfields = subfield_values
                     )
                 )
-        
-        if helper_variables["write688created"]:
-            rec.add_field(
-                Field(
-                    tag = '688',
-                    indicators = [' ', ' '],
-                    subfields = [
-                        'a',  TRANSLATIONS["688aCREATED"][language] + ": " + created.strftime('%Y-%m-%d')
-                    ]
-                )
-            )
-        
-        if mod and modified:
-            rec.add_field(
-                Field(
-                    tag = '688',
-                    indicators = [' ', ' '],
-                    subfields = [
-                        'a', TRANSLATIONS["688aMODIFIED"][language] + ": " + modified.strftime('%Y-%m-%d')
-                    ]
-                )
-            )
                   
         # all skos:match*es -> 7XX linkkikenttiin
         # halutaan linkit kaikkiin kieliversioihin
