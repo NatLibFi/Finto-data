@@ -20,6 +20,2573 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 
+rdaa:P50776 a rdf:Property ;
+    rdfs:label "is creator collective agent of expression of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that involves a responsibility of a collective agent for creation or contribution."@en ;
+    rdakit:toolkitLabel "creator collective agent of expression of"@en ;
+    reg:hasSubproperty rdaa:P50775,
+        rdaa:P50777,
+        rdaa:P50927,
+        rdaa:P51078,
+        <http://rdaregistry.info/Elements/a/object/P50776> ;
+    reg:hasUnconstrained rdau:P60672 ;
+    reg:lexicalAlias rdaa:creatorCollectiveAgentOfExpressionOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10011 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50161,
+        rdaa:P50361 ;
+    skos:definition "Relates a collective agent to an expression that involves a responsibility of a collective agent for creation or contribution."@en ;
+    skos:scopeNote "Editors, translators, arrangers of music, performers, etc., are included."@en .
+
+<http://rdaregistry.info/Elements/p/P70013> a rdf:Property ;
+    rdfs:label "has related RDA entity of place"@en,
+        "paikkaan liittyvä entiteetti"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An RDA entity that is associated with a place."@en ;
+    rdakit:toolkitLabel "related RDA entity of place"@en ;
+    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70004>,
+        <http://rdaregistry.info/Elements/p/P70005>,
+        <http://rdaregistry.info/Elements/p/P70006>,
+        <http://rdaregistry.info/Elements/p/P70007>,
+        <http://rdaregistry.info/Elements/p/P70008>,
+        <http://rdaregistry.info/Elements/p/P70010>,
+        <http://rdaregistry.info/Elements/p/P70011>,
+        <http://rdaregistry.info/Elements/p/P70012>,
+        <http://rdaregistry.info/Elements/p/datatype/P70013> ;
+    reg:hasUnconstrained rdau:P61036 ;
+    reg:lexicalAlias <http://rdaregistry.info/Elements/p/paikkaanLiittyvaEntiteetti.fi>,
+        <http://rdaregistry.info/Elements/p/relatedRDAEntityOfPlace.en> ;
+    reg:name "relatedRDAEntityOfPlace"@en,
+        "paikkaanLiittyvaEntiteetti"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10009 ;
+    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
+    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70053>,
+        rdax:P00001 ;
+    skos:definition "Relates a place to an RDA entity that is associated with a place."@en,
+        "Liittää paikan entiteettiin, johon kuvailun kohteena oleva paikka liittyy."@fi .
+
+rdau:P60016 a rdf:Property ;
+    rdfs:label "is conductor of"@en ;
+    reg:hasSubproperty rdaa:P50070,
+        rdaa:P50592,
+        rdaa:P50743,
+        rdaa:P50894,
+        rdaa:P51045,
+        rdau:P60843,
+        rdau:P60845 ;
+    reg:lexicalAlias rdau:conductorOf.en ;
+    reg:name "conductorOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60615 ;
+    owl:inverseOf rdau:P60141 ;
+    skos:definition "Relates an agent to a resource that includes a contribution by an agent of leading of a performing group in a musical or dramatic presentation, etc."@en .
+
+rdau:P60368 a rdf:Property ;
+    rdfs:label "has name of agent"@en ;
+    reg:hasSubproperty rdaa:P50032,
+        rdaa:P50061,
+        rdaa:P50111,
+        rdau:P60119,
+        rdau:P60549 ;
+    reg:lexicalAlias rdau:nameOfAgent.en ;
+    reg:name "nameOfAgent"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60909 ;
+    owl:inverseOf rdau:P60920 ;
+    skos:definition "Relates an agent to an appellation of agent in natural language and phrasing used in common discourse."@en .
+
+rdau:P60369 a rdf:Property ;
+    rdfs:label "has title"@en ;
+    reg:hasSubproperty rdam:P30134,
+        rdau:P60355,
+        rdau:P60357,
+        rdau:P60358,
+        rdau:P60359,
+        rdau:P60367,
+        rdau:P60493,
+        rdau:P60507,
+        rdau:P60515,
+        rdau:P60589,
+        rdau:P60597 ;
+    reg:lexicalAlias rdau:title.en ;
+    reg:name "title"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60909 ;
+    skos:definition "Relates a resource to a word, character, or group of words or characters that names a resource or a resource embodied in it."@en .
+
+rdau:P60434 a rdf:Property ;
+    rdfs:label "has author"@en ;
+    reg:hasSubproperty rdam:P30328,
+        rdau:P60476,
+        rdau:P60477,
+        rdau:P60478,
+        rdau:P60751,
+        rdaw:P10436,
+        rdaw:P10483,
+        rdaw:P10530,
+        rdaw:P10577 ;
+    reg:lexicalAlias rdau:author.en ;
+    reg:name "author"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60447 ;
+    owl:inverseOf rdau:P60663 ;
+    skos:definition "Relates a resource to an agent who is responsible for a textual resource."@en .
+
+rdau:P60604 a rdf:Property ;
+    rdfs:label "is curator of"@en ;
+    reg:hasSubproperty rdaa:P50133,
+        rdaa:P50630,
+        rdaa:P50781,
+        rdaa:P50932,
+        rdaa:P51083,
+        rdau:P60006,
+        rdau:P60007 ;
+    reg:lexicalAlias rdau:curatorOf.en ;
+    reg:name "curatorOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60602 ;
+    owl:inverseOf rdau:P60376 ;
+    skos:definition "Relates an agent to a resource that is aggregated or organized in an exhibition or collection."@en .
+
+rdau:P60620 a rdf:Property ;
+    rdfs:label "is writer of supplementary content of  (Deprecated)"@en ;
+    reg:hasSubproperty rdaa:P50154,
+        rdau:P60608,
+        rdau:P60617,
+        rdau:P60618,
+        rdau:P60619,
+        rdau:P60717,
+        rdau:P60718 ;
+    reg:lexicalAlias rdau:writerOfSupplementaryTextualContentOf.en ;
+    reg:name "writerOfSupplementaryTextualContentOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1008> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60626 ;
+    owl:inverseOf rdau:P60392 ;
+    skos:definition "Relates an agent to a resource that includes a contribution of providing supplementary textual content such as an introduction or a preface. (Deprecated)"@en .
+
+rdau:P60624 a rdf:Property ;
+    rdfs:label "is contributor agent of still image of"@en ;
+    rdakit:seeAlso rdau:P60660 ;
+    reg:hasSubproperty rdaa:P50159,
+        rdaa:P50469,
+        rdaa:P50516,
+        rdaa:P50667,
+        rdaa:P50818,
+        rdaa:P50969,
+        rdau:P60756 ;
+    reg:lexicalAlias rdau:contributorAgentOfStillImageOf.en ;
+    reg:name "contributorAgentOfStillImageOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60626 ;
+    owl:inverseOf rdau:P60396 ;
+    skos:definition "Relates an agent to a resource that is an aggregate that embodies a still image work created by an agent."@en .
+
+rdau:P60630 a rdf:Property ;
+    rdfs:label "is former owner of"@en ;
+    reg:hasSubproperty rdaa:P50163,
+        rdaa:P50632,
+        rdaa:P50783,
+        rdaa:P50934,
+        rdaa:P51085,
+        rdau:P60012,
+        rdau:P60013 ;
+    reg:lexicalAlias rdau:formerOwnerOf.en ;
+    reg:name "formerOwnerOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60632 ;
+    owl:inverseOf rdau:P60401 ;
+    skos:definition "Relates an agent to a resource that involves a responsibility of an agent for former legal possession."@en .
+
+rdau:P60654 a rdf:Property ;
+    rdfs:label "is cartographer of"@en ;
+    reg:hasSubproperty rdaa:P50525,
+        rdaa:P50676,
+        rdaa:P50827,
+        rdaa:P50978 ;
+    reg:lexicalAlias rdau:cartographerOf.en ;
+    reg:name "cartographerOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60672 ;
+    owl:inverseOf rdau:P60425 ;
+    skos:definition "Relates an agent to a resource that involves a responsibility of an agent for a cartographic work."@en .
+
+rdau:P60662 a rdf:Property ;
+    rdfs:label "is choreographer of"@en ;
+    reg:hasSubproperty rdaa:P50492,
+        rdaa:P50643,
+        rdaa:P50794,
+        rdaa:P50945 ;
+    reg:lexicalAlias rdau:choreographerOf.en ;
+    reg:name "choreographerOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60672 ;
+    owl:inverseOf rdau:P60433 ;
+    skos:definition "Relates an agent to a choreographic resource that involves a responsibility of an agent for choreography."@en .
+
+rdau:P60673 a rdf:Property ;
+    rdfs:label "is director of"@en ;
+    reg:hasSubproperty rdaa:P50205,
+        rdaa:P50561,
+        rdaa:P50712,
+        rdaa:P50863,
+        rdaa:P51014,
+        rdau:P60009,
+        rdau:P60010,
+        rdau:P60011 ;
+    reg:lexicalAlias rdau:directorOf.en ;
+    reg:name "directorOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60602 ;
+    owl:inverseOf rdau:P60449 ;
+    skos:definition "Relates an agent to a resource that involves a responsibility of an agent for the general management and supervision of a filmed performance, a radio or television program, etc."@en .
+
+rdau:P60707 a rdf:Property ;
+    rdfs:label "is lyricist of"@en ;
+    rdakit:seeAlso rdau:P60708 ;
+    reg:hasSubproperty rdaa:P50533,
+        rdaa:P50684,
+        rdaa:P50835,
+        rdaa:P50986 ;
+    reg:lexicalAlias rdau:lyricistOf.en ;
+    reg:name "lyricistOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60663 ;
+    owl:inverseOf rdau:P60477 ;
+    skos:definition "Relates an agent to a resource that involves a responsibility of an agent for authoring the words of a popular song, including a song from a musical."@en .
+
+rdau:P60708 a rdf:Property ;
+    rdfs:label "is librettist of"@en ;
+    rdakit:seeAlso rdau:P60707 ;
+    reg:hasSubproperty rdaa:P50534,
+        rdaa:P50685,
+        rdaa:P50836,
+        rdaa:P50987 ;
+    reg:lexicalAlias rdau:librettistOf.en ;
+    reg:name "librettistOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60663 ;
+    owl:inverseOf rdau:P60478 ;
+    skos:definition "Relates an agent to a resource that involves a responsibility of an agent for authoring the words of an opera or other musical stage resource, or an oratorio."@en .
+
+rdau:P61014 a rdf:Property ;
+    rdfs:label "has related place of resource"@en ;
+    reg:hasSubproperty rdae:P20306,
+        <http://rdaregistry.info/Elements/i/P40077>,
+        rdam:P30272,
+        rdau:P60160,
+        rdau:P60161,
+        rdau:P60162,
+        rdau:P60163,
+        rdau:P60523,
+        rdau:P60556,
+        rdau:P60987,
+        rdaw:P10316 ;
+    reg:lexicalAlias rdau:relatedPlaceOfResource.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P61034 ;
+    owl:inverseOf rdau:P61013 ;
+    skos:definition "Relates a resource to a place that is associated with a resource."@en .
+
+finaf:000001650 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2020-11-04T20:03:03"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000001650" ;
+    rdaa:P50012 finaf:000007873,
+        finaf:000012890 ;
+    rdaa:P50025 "Kokoomus"@fi,
+        "National Coalition Party"@fi,
+        "Nationale Sammlungspartei"@fi,
+        "Samlingspartiet"@fi ;
+    rdaa:P50393 "Suomalainen puolue 1905-, Kansallinen kokoomuspuolue 1918-, Kansallinen kokoomus 1950-"@fi ;
+    rdaa:P50407 "Kansallinen kokoomus"@fi ;
+    skos:altLabel "Kokoomus"@fi,
+        "National Coalition Party"@fi,
+        "Nationale Sammlungspartei"@fi,
+        "Samlingspartiet"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Kansallinen kokoomus"@fi .
+
+finaf:000002742 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1991-10-02"^^xsd:date ;
+    dct:modified "2021-06-18T19:00:57"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000002742" ;
+    rdaa:P50012 finaf:000022384 ;
+    rdaa:P50016 finaf:000001935,
+        finaf:000007645 ;
+    rdaa:P50037 "1908" ;
+    rdaa:P50038 "1965" ;
+    rdaa:P50237 mts:m318 ;
+    rdaa:P50407 "Maalaisliitto"@fi ;
+    rdau:P61101 "<a href='http://www.keskusta.fi/Suomeksi/KMA/Historia'>Yhteisön kotisivu (9.9.2005)</a>"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Maalaisliitto"@fi .
+
+finaf:000002878 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1996-05-29"^^xsd:date ;
+    dct:modified "2020-12-03T20:01:02"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000106858460>,
+        "Asteri ID: 000002878" ;
+    rdaa:P50012 finaf:000018056 ;
+    rdaa:P50025 "Institute of Marketing"@fi ;
+    rdaa:P50237 mts:m237 ;
+    rdaa:P50393 "Myynti- ja mainoskoulu perustettu 4.12.1930"@fi ;
+    rdaa:P50407 "Markkinointi-instituutti"@fi ;
+    rdau:P61101 "<a href='http://www.markinst.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi,
+        "Meni kuin häkä päähän. - Helsinki, 2000"@fi ;
+    skos:altLabel "Institute of Marketing"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Markkinointi-instituutti"@fi .
+
+finaf:000003311 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-10-06"^^xsd:date ;
+    dct:modified "2020-11-04T20:05:52"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000406246685>,
+        "Asteri ID: 000003311" ;
+    rdaa:P50025 "Oulun yliopiston luonnontieteellinen tiedekunta"@fi ;
+    rdaa:P50237 "tiedekunta"@fi ;
+    rdaa:P50407 "Oulun yliopisto. Luonnontieteellinen tiedekunta"@fi ;
+    skos:altLabel "Oulun yliopiston luonnontieteellinen tiedekunta"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Oulun yliopisto. Luonnontieteellinen tiedekunta"@fi .
+
+finaf:000004103 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1992-12-29"^^xsd:date ;
+    dct:modified "2020-11-04T20:07:10"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000406282870>,
+        "Asteri ID: 000004103" ;
+    rdaa:P50237 "keskussairaala"@fi,
+        "sairaala"@fi ;
+    rdaa:P50407 "Satakunnan keskussairaala"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Satakunnan keskussairaala"@fi .
+
+finaf:000004477 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-08-22T11:13:16"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000121667128>,
+        "Asteri ID: 000004477" ;
+    rdaa:P50025 "Eglise évangélique luthérienne de Finlande"@fi,
+        "Ev.-lut. kyrkan i Finland"@fi,
+        "Evangelical Lutheran Church of Finland"@fi,
+        "Evangelisch-lutherische Kirche Finnlands"@fi,
+        "Evangelisk-lutherska kyrkan i Finland"@fi,
+        "Finlands evangelisk-lutherska kyrka"@fi,
+        "Suomen ev.-lut. kirkko"@fi,
+        "Suomen ev.lut. kirkko"@fi,
+        "Suomen evankelisluterilainen kirkko"@fi ;
+    rdaa:P50035 "Suomen evankelis-luterilaisessa kirkossa on noin neljä miljoonaa jäsentä. Kirkon jäsen kuuluu siihen seurakuntaan, jonka alueella hänellä on kotikunta. Seurakunnat muodostavat hiippakuntia, joita on Suomessa yhdeksän. Jokaista hiippakuntaa johtaa piispa tuomiokapitulin kanssa. Kirkon ylin päättävä elin on kaksi kertaa vuodessa kokoontuva kirkolliskokous."@fi ;
+    rdaa:P50237 mts:m4734 ;
+    rdaa:P50407 "Suomen evankelis-luterilainen kirkko"@fi ;
+    rdau:P61101 "<a href='https://evl.fi/etusivu'>Verkkosivut</a>, katsottu 10.6.2019"@fi ;
+    skos:altLabel "Eglise évangélique luthérienne de Finlande"@fi,
+        "Ev.-lut. kyrkan i Finland"@fi,
+        "Evangelical Lutheran Church of Finland"@fi,
+        "Evangelisch-lutherische Kirche Finnlands"@fi,
+        "Evangelisk-lutherska kyrkan i Finland"@fi,
+        "Finlands evangelisk-lutherska kyrka"@fi,
+        "Suomen ev.-lut. kirkko"@fi,
+        "Suomen ev.lut. kirkko"@fi,
+        "Suomen evankelisluterilainen kirkko"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen evankelis-luterilainen kirkko"@fi .
+
+finaf:000004626 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2023-02-09T17:57:14"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000103970182>,
+        "Asteri ID: 000004626" ;
+    rdaa:P50013 finaf:000007031 ;
+    rdaa:P50014 finaf:000004627 ;
+    rdaa:P50022 yso:p450 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Finlands kommunistiska parti"@fi,
+        "Kommunistitšeskaja partija Finljandii"@fi,
+        "SKP (Suomen kommunistinen puolue)"@fi ;
+    rdaa:P50035 "SKP laillistettiin vuonna 1944. SKP kuului Kommunistiseen internationaaliin (1919–1943) ja puolue oli kielletty Suomessa vuoteen 1944. Puolueen poliittinen toiminta lopetettiin 1990-luvun alussa Vasemmistoliiton perustamisen jälkeen."@fi ;
+    rdaa:P50037 "1944" ;
+    rdaa:P50038 "1990" ;
+    rdaa:P50237 mts:m318 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Suomen kommunistinen puolue"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Suomen_Kommunistinen_Puolue'>Wikipedia</a>, katsottu 30.1.2019"@fi,
+        "Elämää arkistossa : Kansan arkisto 60 vuotta / toimittanut Marita Jalkanen, 2005"@fi ;
+    skos:altLabel "Finlands kommunistiska parti"@fi,
+        "Kommunistitšeskaja partija Finljandii"@fi,
+        "SKP (Suomen kommunistinen puolue)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen kommunistinen puolue"@fi .
+
+finaf:000004696 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2020-12-03T20:01:28"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000096881906>,
+        "Asteri ID: 000004696" ;
+    rdaa:P50012 finaf:000004698 ;
+    rdaa:P50022 yso:p11 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Finlands naturskyddsförbund"@fi,
+        "Finnischer Naturschutzverband"@fi,
+        "Finnish Association for Nature Conservation"@fi,
+        "Luonnonsuojeluliitto"@fi,
+        "Naturskyddsförbundet"@fi,
+        "SLL (järjestö)"@fi ;
+    rdaa:P50035 "Luonnonsuojeluliiton toiminnan kivijalka on alueellisessa ja paikallisessa luonnonsuojelutyössä. 15 alueellista luonnonsuojelupiiriä ja niihin kuuluvat yli 160 paikallisyhdistystä tekevät ruohonjuuritason luonnonsuojelutyötä."@fi ;
+    rdaa:P50037 "1969" ;
+    rdaa:P50237 mts:m401 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Suomen luonnonsuojeluliitto"@fi ;
+    rdau:P61101 "<a href='https://www.sll.fi/'>Verkkosivut</a>, katsottu 19.1.2018"@fi ;
+    skos:altLabel "Finlands naturskyddsförbund"@fi,
+        "Finnischer Naturschutzverband"@fi,
+        "Finnish Association for Nature Conservation"@fi,
+        "Luonnonsuojeluliitto"@fi,
+        "Naturskyddsförbundet"@fi,
+        "SLL (järjestö)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen luonnonsuojeluliitto"@fi .
+
+finaf:000006372 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-05-18"^^xsd:date ;
+    dct:modified "2020-11-04T20:11:11"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474410707>,
+        "Asteri ID: 000006372" ;
+    rdaa:P50025 "Skattebetalarnas centralförbund"@fi,
+        "Taxpayers' Association of Finland"@fi,
+        "Veronmaksajat"@fi ;
+    rdaa:P50237 mts:m401,
+        "yhdistys"@fi ;
+    rdaa:P50393 "Nimimuotoa Veronmaksajat käytetään Veronmaksajain keskusliiton julkaisuissa (Tieto saatu puhelimitse 10.7.1997). - Perustava kokous pidetty 30.12.1946. Liitetty yhdistysrekisteriin 1947 (pidetään yhdistyksen perustamisvuotena). Lähde: 50 vuotta veronmaksajan puolesta. - Helsinki, 1997"@fi ;
+    rdaa:P50407 "Veronmaksajain keskusliitto"@fi ;
+    skos:altLabel "Skattebetalarnas centralförbund"@fi,
+        "Taxpayers' Association of Finland"@fi,
+        "Veronmaksajat"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Veronmaksajain keskusliitto"@fi .
+
+finaf:000007139 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-06-11"^^xsd:date ;
+    dct:modified "2020-11-04T20:12:27"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474416738>,
+        "Asteri ID: 000007139" ;
+    rdaa:P50025 "Suomen evankelis-luterilainen kirkko. Ylöjärven seurakunta"@fi,
+        "Ylöjärven ev.lut. seurakunta"@fi ;
+    rdaa:P50237 "seurakunta"@fi ;
+    rdaa:P50407 "Ylöjärven seurakunta"@fi ;
+    skos:altLabel "Suomen evankelis-luterilainen kirkko. Ylöjärven seurakunta"@fi,
+        "Ylöjärven ev.lut. seurakunta"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Ylöjärven seurakunta"@fi .
+
+finaf:000007886 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1999-12-08"^^xsd:date ;
+    dct:modified "2021-06-18T19:02:30"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000007886" ;
+    rdaa:P50016 finaf:000014802 ;
+    rdaa:P50237 mts:m941 ;
+    rdaa:P50336 finaf:000016488,
+        finaf:000016489,
+        finaf:000016490,
+        finaf:000016491,
+        finaf:000016492,
+        finaf:000016493,
+        finaf:000016494 ;
+    rdaa:P50393 "Oy Sytytin, Oy Ammus, Oy Partaterä, Rafu Lönnström oy, Puuvalmiste oy ja Rauman kiinteistö oy muodostivat Lönnström-yhtiöt. Sytytin ja Ammus yhdistyivät Ammus-Sytytin oy:ksi, jonka nimi muuttui Lönnström oy:ksi"@fi ;
+    rdaa:P50407 "Lönnström-yhtiöt"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Lönnström-yhtiöt"@fi .
+
+finaf:000014687 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2001-04-23"^^xsd:date ;
+    dct:modified "2020-11-05T20:08:24"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000014687" ;
+    rdaa:P50013 finaf:000026586 ;
+    rdaa:P50022 yso:p84 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Helsingin ammattikorkeakoulu Stadia"@fi,
+        "Helsinki Polytechnic Stadia"@fi,
+        "Stadia - Helsingin ammattikorkeakoulu"@fi ;
+    rdaa:P50035 "Helsingin ammattikorkeakoulu Stadia oli Helsinkiin vuonna 1996 perustettu ammattikorkeakoulu. Vuonna 2008 se yhdistettiin EVTEKin kanssa Metropolia-ammattikorkeakouluksi."@fi ;
+    rdaa:P50037 "1996" ;
+    rdaa:P50038 "2008" ;
+    rdaa:P50237 "ammattikorkeakoulu"@fi ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Helsingin ammattikorkeakoulu"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Helsingin_ammattikorkeakoulu_Stadia'>Wikipedia</a>, katsottu 14.7.2020"@fi ;
+    skos:altLabel "Helsingin ammattikorkeakoulu Stadia"@fi,
+        "Helsinki Polytechnic Stadia"@fi,
+        "Stadia - Helsingin ammattikorkeakoulu"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Helsingin ammattikorkeakoulu"@fi .
+
+finaf:000016431 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1999-11-02"^^xsd:date ;
+    dct:modified "2022-04-13T16:04:55"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000016431" ;
+    rdaa:P50012 finaf:000016432 ;
+    rdaa:P50016 finaf:000004561 ;
+    rdaa:P50025 "Finska operan"@fi ;
+    rdaa:P50336 finaf:000028075 ;
+    rdaa:P50407 "Suomalainen ooppera"@fi ;
+    skos:altLabel "Finska operan"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomalainen ooppera"@fi .
+
+finaf:000017678 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1994-11-08"^^xsd:date ;
+    dct:modified "2020-11-05T20:13:38"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000121502892>,
+        "Asteri ID: 000017678" ;
+    rdaa:P50022 yso:p768 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Helsinki University Chorus"@fi,
+        "YL (Ylioppilaskunnan Laulajat)"@fi,
+        "YL Male Voice Choir"@fi ;
+    rdaa:P50037 "1883" ;
+    rdaa:P50237 mts:m2092,
+        "kuoro"@fi ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Ylioppilaskunnan Laulajat"@fi ;
+    rdau:P61101 "<a href='http://yl.fi/ylioppilaskunnan-laulajat/'>Kuoron kotisivut</a>, katsottu 9.3.2018"@fi ;
+    skos:altLabel "Helsinki University Chorus"@fi,
+        "YL (Ylioppilaskunnan Laulajat)"@fi,
+        "YL Male Voice Choir"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Ylioppilaskunnan Laulajat"@fi .
+
+finaf:000025356 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2007-09-12"^^xsd:date ;
+    dct:modified "2020-11-05T20:26:47"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474552764>,
+        "Asteri ID: 000025356" ;
+    rdaa:P50025 "Lohtajan ev.-lut. seurakunta"@fi,
+        "Suomen evankelis-luterilainen kirkko. Lohtajan seurakunta"@fi ;
+    rdaa:P50237 "seurakunta"@fi ;
+    rdaa:P50407 "Lohtajan seurakunta"@fi ;
+    rdau:P61101 "Himanka, Mikko. Lohtajan pappila 200 vuotta, 1803-2003, 2003: t.p. (Lohtajan pappila 200 vuotta, 1803-2003 [teksti: Mikko Himanka] [Lohtaja] Lohtajan ev.-lut. seurakunta)"@fi ;
+    skos:altLabel "Lohtajan ev.-lut. seurakunta"@fi,
+        "Suomen evankelis-luterilainen kirkko. Lohtajan seurakunta"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Lohtajan seurakunta"@fi .
+
+finaf:000026838 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1997-09-01"^^xsd:date ;
+    dct:modified "2020-11-05T20:29:17"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000026838" ;
+    rdaa:P50016 finaf:000030679 ;
+    rdaa:P50025 "South Carelia Polytechnic"@fi,
+        "South Karelia University of Applied Sciences"@fi,
+        "Ûžno-Karel'skij universitet prikladnyh nauk"@fi ;
+    rdaa:P50237 "korkeakoulu"@fi ;
+    rdaa:P50407 "Etelä-Karjalan ammattikorkeakoulu"@fi ;
+    skos:altLabel "South Carelia Polytechnic"@fi,
+        "South Karelia University of Applied Sciences"@fi,
+        "Ûžno-Karel'skij universitet prikladnyh nauk"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Etelä-Karjalan ammattikorkeakoulu"@fi .
+
+finaf:000027223 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2004-03-17"^^xsd:date ;
+    dct:modified "2020-12-03T20:09:09"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492943718>,
+        "Asteri ID: 000027223" ;
+    rdaa:P50012 finaf:000027221,
+        finaf:000027222 ;
+    rdaa:P50025 "Bund Freier Evangelischer Gemeinden in Finnland"@fi,
+        "Evangelical Free Church of Finland"@fi,
+        "Frikyrkan i Finland"@fi ;
+    rdaa:P50237 "kirkko"@fi ;
+    rdaa:P50393 "Suomen vapaa sisälähetys 1889-, Suomen vapaa lähetys 1902-. Suomen vapaa lähetys jakautui; syntyivät Fria missionsförbundet 1921 ja Suomen vapaakirkko 1923"@fi ;
+    rdaa:P50407 "Suomen vapaakirkko"@fi ;
+    rdau:P61101 "Göthelid, Olof: För Kristus och församlingen : med FMU genom 100 år, 2002"@fi,
+        "Suomen vapaakirkon kotisivu 8.6.2009"@fi ;
+    skos:altLabel "Bund Freier Evangelischer Gemeinden in Finnland"@fi,
+        "Evangelical Free Church of Finland"@fi,
+        "Frikyrkan i Finland"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen vapaakirkko"@fi .
+
+finaf:000027318 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2008-07-28"^^xsd:date ;
+    dct:modified "2022-12-07T12:31:39"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000509450865>,
+        "Asteri ID: 000027318" ;
+    rdaa:P50011 finaf:000010070,
+        finaf:000012097,
+        finaf:000015860,
+        finaf:000021573,
+        finaf:000027984 ;
+    rdaa:P50016 finaf:000220225 ;
+    rdaa:P50022 yso:p3673,
+        yso:p994 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Helsinki University of Technology. Department of Structural Engineering and Building Technology"@fi,
+        "Helsinki University of Technology. Faculty of Engineering and Architecture. Department of Structural Engineering and Building Technology"@fi,
+        "TKK. Rakenne- ja rakennustuotantotekniikan laitos"@fi,
+        "Teknillinen korkeakoulu. Insinööritieteiden ja arkkitehtuurin tiedekunta. Rakenne- ja rakennustuotantotekniikan laitos"@fi,
+        "Tekniska högskolan. Institutionen för konstruktions- och byggnadsproduktionsteknik"@fi ;
+    rdaa:P50035 "Myöhempi nimenmuoto: Aalto-yliopiston teknillinen korkeakoulu. Rakenne- ja rakennustuotantotekniikan laitos"@fi,
+        "Rakenne- ja rakennustuotantotekniikan laitokseen on yhdistynyt vuoden 2008 alusta sillanrakennustekniikan, talonrakennustekniikan, rakenteiden mekaniikan, rakentamistalouden, rakennusmateriaalitekniikan ja teräsrakennetekniikan laboratoriot sekä Talotekniikan instituutti"@fi ;
+    rdaa:P50236 "2008/2009"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m4661,
+        mts:m4680 ;
+    rdaa:P50350 yso:p94105 ;
+    rdaa:P50407 "Teknillinen korkeakoulu. Rakenne- ja rakennustuotantotekniikan laitos"@fi ;
+    rdau:P61101 "TKK Rakenne- ja rakennustuotantotekniikan laitoksen väitöskirjoja, 2008-"@fi,
+        "TKK:n kotisivut 28.7.08"@fi,
+        "Teknillinen korkeakoulu, puhelinluettelot 2007 ja 2008"@fi ;
+    skos:altLabel "Helsinki University of Technology. Department of Structural Engineering and Building Technology"@fi,
+        "Helsinki University of Technology. Faculty of Engineering and Architecture. Department of Structural Engineering and Building Technology"@fi,
+        "TKK. Rakenne- ja rakennustuotantotekniikan laitos"@fi,
+        "Teknillinen korkeakoulu. Insinööritieteiden ja arkkitehtuurin tiedekunta. Rakenne- ja rakennustuotantotekniikan laitos"@fi,
+        "Tekniska högskolan. Institutionen för konstruktions- och byggnadsproduktionsteknik"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Teknillinen korkeakoulu. Rakenne- ja rakennustuotantotekniikan laitos"@fi .
+
+finaf:000027809 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2009-10-26"^^xsd:date ;
+    dct:modified "2020-12-03T20:09:24"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492944112>,
+        "Asteri ID: 000027809" ;
+    rdaa:P50012 finaf:000027806,
+        finaf:000027808,
+        finaf:000027810,
+        finaf:000035792 ;
+    rdaa:P50393 "Oppilaitoksen nimenmuutokset: Viipurin musiikkikoulu 1918-1923, Viipurin musiikkikoulu 1923-1963, Lahden musiikkiopisto 1963-1977, Päijät-Hämeen konservatorio 1977-2003, Lahden konservatorio 2003-"@fi ;
+    rdaa:P50407 "Lahden konservatorio"@fi ;
+    rdau:P61101 "Häyrynen, Antti. Taidetta tulosvastuulla, 2008: t.p. (Taidetta tulosvastuulla : Lahden konservatorion tie Viipurista Lahteen / [teksti:] Antti Häyrynen ; [historiatoimikunta: Ville Marjomäki ... et al.]. [Lahti] : Lahden musiikkiopisto : Lahden konservatorio,)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Lahden konservatorio"@fi .
+
+finaf:000028691 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2010-05-17"^^xsd:date ;
+    dct:modified "2022-10-31T14:19:45"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000406476587>,
+        "Asteri ID: 000028691" ;
+    rdaa:P50012 finaf:000018041 ;
+    rdaa:P50022 yso:p10564 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Ammattikorkeakoulu Novia"@fi,
+        "Novia University of Applied Sciences"@fi ;
+    rdaa:P50035 "Ammattikorkeakoulu Novia perustettiin 1.8.2008, kun Yrkeshögskolan Sydväst ja Svenska yrkeshögskolan liitettiin yhteen. Novia on Suomen suurin ruotsinkielinen ammattikorkeakoulu."@fi ;
+    rdaa:P50037 "2008" ;
+    rdaa:P50237 "oppilaitos"@fi ;
+    rdaa:P50350 yso:p94466 ;
+    rdaa:P50407 "Yrkeshögskolan Novia"@fi ;
+    rdau:P61101 "<a href='https://www.novia.fi/'>Oppilaitoksen verkkosivut 18.4.2018</a>"@fi,
+        "Lärlust, 1993-: t.p. (Lärlust / Fortbildningscentralen vid Åbo Akademi. Åbo : Åbo Akademi,)"@fi ;
+    skos:altLabel "Ammattikorkeakoulu Novia"@fi,
+        "Novia University of Applied Sciences"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Yrkeshögskolan Novia"@fi .
+
+finaf:000029363 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-09-01T19:03:27"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474580933>,
+        "Asteri ID: 000029363",
+        "Y-tunnus: 0213681-7" ;
+    rdaa:P50022 yso:p13916,
+        yso:p26126 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Folkhälsans förbund"@fi,
+        "Samfundet Folkhälsan"@fi,
+        "Samfundet Folkhälsan i svenska Finland"@fi ;
+    rdaa:P50035 "Juridiset yksikköt: Samfundet Folkhälsan rf, Folkhälsan Välfärd Ab, Folkhälsans Förbund rf ja Folkhälsan Utbildning Ab. Samfundet Folkhälsan i svenska Finland rf vastaa koko Folkhälsanin toiminnan koordinoinnista."@fi ;
+    rdaa:P50037 "1921" ;
+    rdaa:P50237 mts:m401 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Folkhälsan"@fi ;
+    rdau:P61101 "<a href='https://www.folkhalsan.fi/'>Verkkosivut</a>, katsottu 10.6.2019"@fi,
+        "Yhdistyksen kotisivu 25.10.2010"@fi ;
+    skos:altLabel "Folkhälsans förbund"@fi,
+        "Samfundet Folkhälsan"@fi,
+        "Samfundet Folkhälsan i svenska Finland"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Folkhälsan"@fi .
+
+finaf:000031043 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2021-06-19T15:01:23"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000031043" ;
+    rdaa:P50012 finaf:000031045 ;
+    rdaa:P50016 finaf:000031044 ;
+    rdaa:P50025 "Helsingfors stads konstmuseum"@fi,
+        "Helsingin kaupunki. Taidemuseo"@fi,
+        "Helsinki City Art Museum"@fi ;
+    rdaa:P50035 "Helsingin kaupungin taidemuseo 15.4.2010 alkaen Helsingin taidemuseo."@fi ;
+    rdaa:P50237 mts:m1553,
+        "taidemuseo"@fi ;
+    rdaa:P50407 "Helsingin kaupungin taidemuseo"@fi ;
+    skos:altLabel "Helsingfors stads konstmuseum"@fi,
+        "Helsingin kaupunki. Taidemuseo"@fi,
+        "Helsinki City Art Museum"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Helsingin kaupungin taidemuseo"@fi .
+
+finaf:000031756 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2005-04-14"^^xsd:date ;
+    dct:modified "2020-12-03T20:11:07"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000118827370>,
+        "Asteri ID: 000031756" ;
+    rdaa:P50012 finaf:000031755 ;
+    rdaa:P50022 yso:p13806 ;
+    rdaa:P50025 "Tampere Philharmonic Orchestra"@fi,
+        "Tampereen filharmoninen orkesteri"@fi ;
+    rdaa:P50237 mts:m400 ;
+    rdaa:P50350 yso:p94436 ;
+    rdaa:P50393 "Orkesterin nimi vuodesta 2002: Tampere Filharmonia"@fi ;
+    rdaa:P50407 "Tampere Filharmonia"@fi ;
+    rdau:P61101 "<a href='https://tamperefilharmonia.fi/orkesteri/'>Orkesterin kotisivut</a>, katsottu 7.8.2017"@fi,
+        "Aplodi, 1990-"@fi ;
+    skos:altLabel "Tampere Philharmonic Orchestra"@fi,
+        "Tampereen filharmoninen orkesteri"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Tampere Filharmonia"@fi .
+
+finaf:000032609 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-09-01T19:03:46"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000032609" ;
+    rdaa:P50012 finaf:000009630 ;
+    rdaa:P50013 finaf:000028448 ;
+    rdaa:P50022 yso:p14072 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Association of Finnish Cities"@fi,
+        "Finlands stadsförbund"@fi,
+        "Sojuz gorodov Finljandii"@fi,
+        "Soome Linnade Liit"@fi,
+        "Stadsförbundet"@fi ;
+    rdaa:P50035 "Suomen kaupunkiliitto, Suomen kunnallisliitto, Finlands svenska kommunförbund, Sairaalaliitto, Suomen maakuntien liitto ja Suomen ammatillisten oppilaitosten liitto yhdistyneet Suomen kuntaliitto r.y:ksi. Muutos 1.6.1993"@fi ;
+    rdaa:P50237 "yhdistys"@fi ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Suomen kaupunkiliitto"@fi ;
+    skos:altLabel "Association of Finnish Cities"@fi,
+        "Finlands stadsförbund"@fi,
+        "Sojuz gorodov Finljandii"@fi,
+        "Soome Linnade Liit"@fi,
+        "Stadsförbundet"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen kaupunkiliitto"@fi .
+
+finaf:000034866 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-04-01"^^xsd:date ;
+    dct:modified "2020-11-05T20:42:27"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034866" ;
+    rdaa:P50012 finaf:000034867,
+        finaf:000034868 ;
+    rdaa:P50025 "Finland. Finnish Security Intelligence Service"@fi,
+        "Finland. Skyddspolisen"@fi,
+        "Finnish Security Intelligence Service"@fi,
+        "Sicherheitspolizei"@fi,
+        "Sisäasiainministeriö. Suojelupoliisi"@fi,
+        "Skyddspolisen"@fi,
+        "Suomi. Suojelupoliisi"@fi,
+        "Suopo"@fi,
+        "Supo"@fi ;
+    rdaa:P50236 "1949/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50393 "Etsivä keskuspoliisi 1919-1937, Valtiollinen poliisi 1937-1948 (ns. Valkoinen EK/Valpo 1919-1945, ns. Punainen Valpo 1945-1948), Suojelupoliisi 1949-"@fi ;
+    rdaa:P50407 "Suojelupoliisi"@fi ;
+    rdau:P61101 "Rusi, Alpo M. Kylmä tasavalta / Alpo Rusi, Olli Rehn, 2003"@fi ;
+    skos:altLabel "Finland. Finnish Security Intelligence Service"@fi,
+        "Finland. Skyddspolisen"@fi,
+        "Finnish Security Intelligence Service"@fi,
+        "Sicherheitspolizei"@fi,
+        "Sisäasiainministeriö. Suojelupoliisi"@fi,
+        "Skyddspolisen"@fi,
+        "Suomi. Suojelupoliisi"@fi,
+        "Suopo"@fi,
+        "Supo"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suojelupoliisi"@fi .
+
+finaf:000034872 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2021-06-19T15:02:53"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034872" ;
+    rdaa:P50016 finaf:000035043 ;
+    rdaa:P50025 "Finland. National Board of Taxes"@fi,
+        "Finland. Skattestyrelsen"@fi,
+        "National Board of Taxes"@fi,
+        "Oberste Finanzbehörde"@fi,
+        "Skattestyrelsen"@fi,
+        "Suomi. Verohallitus"@fi,
+        "Valtiovarainministeriö. Verohallitus"@fi ;
+    rdaa:P50237 mts:m4669 ;
+    rdaa:P50407 "Verohallitus"@fi ;
+    skos:altLabel "Finland. National Board of Taxes"@fi,
+        "Finland. Skattestyrelsen"@fi,
+        "National Board of Taxes"@fi,
+        "Oberste Finanzbehörde"@fi,
+        "Skattestyrelsen"@fi,
+        "Suomi. Verohallitus"@fi,
+        "Valtiovarainministeriö. Verohallitus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Verohallitus"@fi .
+
+finaf:000034936 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2021-06-19T15:02:55"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034936" ;
+    rdaa:P50012 finaf:000034910 ;
+    rdaa:P50016 finaf:000034933 ;
+    rdaa:P50025 "Finland. National Board of Waters"@fi,
+        "Glavnoje upravlenije vodnogo hozjaistva"@fi,
+        "Maa- ja metsätalousministeriö. Vesihallitus"@fi,
+        "National Board of Waters (Finland)"@fi,
+        "Suomi. Vattenstyrelsen"@fi,
+        "Suomi. Vesihallitus"@fi,
+        "Vattenstyrelsen (Finland)"@fi,
+        "Ćáhceráddehus"@fi ;
+    rdaa:P50236 "1970/1986"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50393 "Suomen ympäristökeskus 1.3.1995-"@fi ;
+    rdaa:P50407 "Vesihallitus"@fi ;
+    skos:altLabel "Finland. National Board of Waters"@fi,
+        "Glavnoje upravlenije vodnogo hozjaistva"@fi,
+        "Maa- ja metsätalousministeriö. Vesihallitus"@fi,
+        "National Board of Waters (Finland)"@fi,
+        "Suomi. Vattenstyrelsen"@fi,
+        "Suomi. Vesihallitus"@fi,
+        "Vattenstyrelsen (Finland)"@fi,
+        "Ćáhceráddehus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Vesihallitus"@fi .
+
+finaf:000034949 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2020-11-05T20:42:35"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034949" ;
+    rdaa:P50012 finaf:000188059 ;
+    rdaa:P50016 finaf:000035071 ;
+    rdaa:P50022 yso:p2049 ;
+    rdaa:P50025 "Finland. Sjöfartsstyrelsen"@fi,
+        "Finnish Board of Navigation"@fi,
+        "Finnland. Seefartsamt"@fi,
+        "MKH (Merenkulkuhallitus)"@fi,
+        "SJFS (Sjöfartsstyrelsen)"@fi,
+        "Seefartsamt"@fi,
+        "Sjöfartsstyrelsen (Finland)"@fi,
+        "Suomi. Merenkulkuhallitus"@fi ;
+    rdaa:P50236 "1917/1998"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m4669 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Merenkulkuhallitus"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Merenkulkulaitos'>Wikipedia</a>, katsottu 1.2.2019"@fi ;
+    skos:altLabel "Finland. Sjöfartsstyrelsen"@fi,
+        "Finnish Board of Navigation"@fi,
+        "Finnland. Seefartsamt"@fi,
+        "MKH (Merenkulkuhallitus)"@fi,
+        "SJFS (Sjöfartsstyrelsen)"@fi,
+        "Seefartsamt"@fi,
+        "Sjöfartsstyrelsen (Finland)"@fi,
+        "Suomi. Merenkulkuhallitus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Merenkulkuhallitus"@fi .
+
+finaf:000034959 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2021-06-19T15:02:56"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034959" ;
+    rdaa:P50016 finaf:000034960,
+        finaf:000035111 ;
+    rdaa:P50025 "Finland. Socialstyrelsen"@fi,
+        "Socialstyrelsen (Finland)"@fi,
+        "Sosiaali- ja terveysministeriö. Sosiaalihallitus"@fi,
+        "Suomi. Sosiaalihallitus"@fi ;
+    rdaa:P50035 "Sosiaalihallitus 28.12.1917-31.12.1922, 1.2.1968-28.2.1991, sosiaali- ja terveyshallitus 1.3.1991-30.11.1992, Sosiaali- ja terveysalan tutkimus- ja kehittämiskeskus 1.12.1992-. - Lähde: Haatanen, Pekka & Suonoja, Kyösti: Suuriruhtinaskunnasta hyvinvointivaltioon. 1992"@fi,
+        "Sosiaalihallitus oli Suomen valtion keskusvirasto, joka vastasi sosiaaliasioista. Se toimi Sosiaaliministeriön alaisuudessa vuosina 1918–1922 ja Sosiaali- ja terveysministeriön 1968–1991."@fi ;
+    rdaa:P50236 "1917/1922"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50407 "Sosiaalihallitus"@fi ;
+    skos:altLabel "Finland. Socialstyrelsen"@fi,
+        "Socialstyrelsen (Finland)"@fi,
+        "Sosiaali- ja terveysministeriö. Sosiaalihallitus"@fi,
+        "Suomi. Sosiaalihallitus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Sosiaalihallitus"@fi .
+
+finaf:000035008 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1995-05-05"^^xsd:date ;
+    dct:modified "2020-12-03T20:12:46"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492950176>,
+        "Asteri ID: 000035008" ;
+    rdaa:P50012 finaf:000032977,
+        finaf:000032978 ;
+    rdaa:P50025 "Roavvenjárga"@fi,
+        "Rovaniemi"@fi,
+        "Ruávinjargâ"@fi,
+        "Ruä'vnjargg"@fi ;
+    rdaa:P50035 "Rovaniemen kirkonkylä perustettiin vuonna 1875. Rovaniemen kirkonkylä sai kauppalanoikeudet vuonna 1929; samassa yhteydessä kauppala eriytettiin Rovaniemen maalaiskunnasta, joka ympäröi kauppalaa joka puolelta. Kauppalasta tehtiin vuonna 1938 Lapin läänin hallintokeskus, mutta kaupunkioikeudet Rovaniemi sai vasta vuonna 1960"@fi ;
+    rdaa:P50236 "1960/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50238 mts:m358 ;
+    rdaa:P50407 "Rovaniemen kaupunki"@fi ;
+    skos:altLabel "Roavvenjárga"@fi,
+        "Rovaniemi"@fi,
+        "Ruávinjargâ"@fi,
+        "Ruä'vnjargg"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Rovaniemen kaupunki"@fi .
+
+finaf:000035622 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1991-03-11"^^xsd:date ;
+    dct:modified "2021-06-19T15:03:08"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000035622" ;
+    rdaa:P50016 finaf:000035620 ;
+    rdaa:P50025 "Finland. Krigshögskolan"@fi,
+        "Militärakademie (Finnland)"@fi,
+        "SKK"@fi,
+        "Suomi. Sotakorkeakoulu"@fi,
+        "War College (Finland)"@fi ;
+    rdaa:P50035 "Suomen ensimmäinen maavoimien upseerikoulu oli Yrjö Maunu Sprengtportenin perustama Haapaniemen Kadettikoulu, joka toimi Kuopiossa vuonna 1780 ja Rantasalmella vuosina 1781–1819. Suomen kadettikoulu toimi Haminassa (Haminan kadettikoulu) ja koulutti upseereita Venäjän keisarikunnan tarpeisiin. Se lakkautettiin 1903 erinäisten I sortokauden aikana annettujen käskyjen vaikutuksesta. Itsenäistymisen jälkeen Suomen upseerikoulutus jakautui aina vuoteen 1992 asti kolmeen kouluun: peruskoulutuksen antaneeseen Kadettikouluun (perustettu 1919), yleisesikuntaupseerin koulutuksen antaneeseen Sotakorkeakouluun (perustettu 1924) ja esiupseeri- sekä jatkokoulutusta antaneeseen Taistelukouluun (perustettu 1927). Kaikki nämä koulut yhdistettiin vuoden 1993 alusta Maanpuolustuskorkeakouluksi, yhdeksi suureksi korkeakoulutason upseerikoulutusta antavaksi oppilaitokseksi."@fi ;
+    rdaa:P50236 "1924/1992"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 "korkeakoulu"@fi ;
+    rdaa:P50407 "Sotakorkeakoulu"@fi ;
+    skos:altLabel "Finland. Krigshögskolan"@fi,
+        "Militärakademie (Finnland)"@fi,
+        "SKK"@fi,
+        "Suomi. Sotakorkeakoulu"@fi,
+        "War College (Finland)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Sotakorkeakoulu"@fi .
+
+finaf:000037058 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2000-10-27"^^xsd:date ;
+    dct:modified "2020-11-05T20:46:10"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474631278>,
+        "Asteri ID: 000037058" ;
+    rdaa:P50025 "Pirkanmaan sairaanhoitopiirin kuntayhtymä"@fi,
+        "Suomi. Pirkanmaan sairaanhoitopiiri"@fi ;
+    rdaa:P50237 "sairaanhoitopiiri"@fi ;
+    rdaa:P50238 "kuntayhtymä"@fi ;
+    rdaa:P50407 "Pirkanmaan sairaanhoitopiiri"@fi ;
+    skos:altLabel "Pirkanmaan sairaanhoitopiirin kuntayhtymä"@fi,
+        "Suomi. Pirkanmaan sairaanhoitopiiri"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Pirkanmaan sairaanhoitopiiri"@fi .
+
+finaf:000037067 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2010-01-12"^^xsd:date ;
+    dct:modified "2020-12-03T20:14:12"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492951486>,
+        "Asteri ID: 000037067" ;
+    rdaa:P50012 finaf:000038264 ;
+    rdaa:P50025 "Eksote"@fi,
+        "Etelä-Karjalan sosiaali- ja terveydenhuollon kuntayhtymä"@fi,
+        "Suomi. Etelä-Karjalan sosiaali- ja terveyspiiri"@fi ;
+    rdaa:P50237 "sairaanhoitopiiri"@fi ;
+    rdaa:P50238 "kuntayhtymä"@fi ;
+    rdaa:P50407 "Etelä-Karjalan sosiaali- ja terveyspiiri"@fi ;
+    rdau:P61101 "<a href='http://www.eksote.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi,
+        "Miikkulainen, 2009-"@fi ;
+    skos:altLabel "Eksote"@fi,
+        "Etelä-Karjalan sosiaali- ja terveydenhuollon kuntayhtymä"@fi,
+        "Suomi. Etelä-Karjalan sosiaali- ja terveyspiiri"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Etelä-Karjalan sosiaali- ja terveyspiiri"@fi .
+
+finaf:000037086 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2012-11-14"^^xsd:date ;
+    dct:modified "2021-01-28T09:02:51"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000403680478>,
+        "Asteri ID: 000037086" ;
+    rdaa:P50025 "North Karelia Central Hospital"@fi,
+        "Pohjois-Karjalan sairaanhoito- ja sosiaalipalvelujen kuntayhtymä. Pohjois-Karjalan keskussairaala"@fi,
+        "Suomi. Pohjois-Karjalan sairaanhoito- ja sosiaalipalvelujen kuntayhtymä. Pohjois-Karjalan keskussairaala"@fi ;
+    rdaa:P50237 "sairaala"@fi ;
+    rdaa:P50350 yso:p94166 ;
+    rdaa:P50407 "Pohjois-Karjalan keskussairaala"@fi ;
+    rdau:P61101 "Pohjois-Karjalan keskussairaala 25 vuotta 1953-1978, 1978: t.p. (Pohjois-Karjalan keskussairaala)"@fi ;
+    skos:altLabel "North Karelia Central Hospital"@fi,
+        "Pohjois-Karjalan sairaanhoito- ja sosiaalipalvelujen kuntayhtymä. Pohjois-Karjalan keskussairaala"@fi,
+        "Suomi. Pohjois-Karjalan sairaanhoito- ja sosiaalipalvelujen kuntayhtymä. Pohjois-Karjalan keskussairaala"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Pohjois-Karjalan keskussairaala"@fi .
+
+finaf:000037127 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1995-03-07"^^xsd:date ;
+    dct:modified "2021-06-19T15:03:42"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000037127" ;
+    rdaa:P50012 finaf:000036501,
+        finaf:000036502 ;
+    rdaa:P50016 finaf:000037128 ;
+    rdaa:P50025 "Finland. Nylands miljöcentral"@fi,
+        "Finland. Uusimaa Regional Environment Centre"@fi,
+        "Suomi. Uudenmaan ympäristökeskus"@fi ;
+    rdaa:P50035 "Alueelliset ympäristökeskukset aloittivat toimintansa 1.3.1995 ja sulautettiin elinkeino-, liikenne- ja ympäristökeskuksiin vuonna 2010"@fi ;
+    rdaa:P50237 "hallintoelin"@fi,
+        "ympäristökeskus"@fi ;
+    rdaa:P50407 "Uudenmaan ympäristökeskus"@fi ;
+    skos:altLabel "Finland. Nylands miljöcentral"@fi,
+        "Finland. Uusimaa Regional Environment Centre"@fi,
+        "Suomi. Uudenmaan ympäristökeskus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Uudenmaan ympäristökeskus"@fi .
+
+finaf:000037139 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1996-09-23"^^xsd:date ;
+    dct:modified "2021-06-19T15:03:43"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000037139" ;
+    rdaa:P50016 finaf:000035090 ;
+    rdaa:P50025 "Finland. Västra Finlands miljöcentral"@fi,
+        "Suomi. Länsi-Suomen ympäristökeskus"@fi,
+        "Västra Finlands miljöcentral"@fi,
+        "West Finland Regional Environment Centre"@fi ;
+    rdaa:P50035 "Alueelliset ympäristökeskukset aloittivat toimintansa 1.3.1995. vuonna 2010 perustettiin Elinkeino-, liikenne- ja ympäristökeskukset, jotka korvasivat alueelliset ympäristökeskukset."@fi ;
+    rdaa:P50037 "1995" ;
+    rdaa:P50038 "2010" ;
+    rdaa:P50237 "hallintoelin"@fi,
+        "ympäristökeskus"@fi ;
+    rdaa:P50407 "Länsi-Suomen ympäristökeskus"@fi ;
+    skos:altLabel "Finland. Västra Finlands miljöcentral"@fi,
+        "Suomi. Länsi-Suomen ympäristökeskus"@fi,
+        "Västra Finlands miljöcentral"@fi,
+        "West Finland Regional Environment Centre"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Länsi-Suomen ympäristökeskus"@fi .
+
+finaf:000037141 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1995-03-08"^^xsd:date ;
+    dct:modified "2021-06-19T15:03:43"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000037141" ;
+    rdaa:P50012 finaf:000001893,
+        finaf:000001894 ;
+    rdaa:P50016 finaf:000037140 ;
+    rdaa:P50025 "Finland. Mellersta Finlands miljöcentral"@fi,
+        "Kesk-Soome keskkonnakeskus"@fi,
+        "Mellersta Finlands miljöcentral"@fi,
+        "Suomi. Keski-Suomen ympäristökeskus"@fi ;
+    rdaa:P50035 "Alueelliset ympäristökeskukset aloittivat toimintansa 1.3.1995. vuonna 2010 perustettiin Elinkeino-, liikenne- ja ympäristökeskukset, jotka korvasivat alueelliset ympäristökeskukset."@fi ;
+    rdaa:P50037 "1995" ;
+    rdaa:P50038 "2010" ;
+    rdaa:P50237 "hallintoelin"@fi,
+        "ympäristökeskus"@fi ;
+    rdaa:P50407 "Keski-Suomen ympäristökeskus"@fi ;
+    skos:altLabel "Finland. Mellersta Finlands miljöcentral"@fi,
+        "Kesk-Soome keskkonnakeskus"@fi,
+        "Mellersta Finlands miljöcentral"@fi,
+        "Suomi. Keski-Suomen ympäristökeskus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Keski-Suomen ympäristökeskus"@fi .
+
+finaf:000068366 a rdac:C10004,
+        skos:Concept ;
+    dct:created "2000-08-11"^^xsd:date ;
+    dct:modified "2023-02-21T15:47:08"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/0000000055194499>,
+        "Asteri ID: 000068366" ;
+    rdaa:P50095 "Trio Ohoi"@fi ;
+    rdaa:P50097 yso:p94426 ;
+    rdaa:P50100 yso:p1808,
+        yso:p8434 ;
+    rdaa:P50102 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/spa> ;
+    rdaa:P50103 "Ilmén, Oskari Olavi, 1915-1972"@fi,
+        "Joki, Oskari, 1915-1972"@fi,
+        "Ola, 1915-1972"@fi,
+        "Oskari, 1915-1972"@fi,
+        "Rio, Salvador, 1915-1972"@fi,
+        "Virta, Oskari Olavi, 1915-1972"@fi ;
+    rdaa:P50104 mts:m2355,
+        mts:m2356,
+        mts:m2517,
+        mts:m2589,
+        mts:m2933,
+        mts:m3166,
+        "musiikinjohtaja"@fi ;
+    rdaa:P50118 yso:p94436 ;
+    rdaa:P50119 yso:p115084 ;
+    rdaa:P50120 "1972" ;
+    rdaa:P50121 "1915" ;
+    rdaa:P50318 finaf:000019289,
+        finaf:000180747 ;
+    rdaa:P50395 "Syntymänimi vuoteen 1926: Oskari Olavi Ilmén"@fi,
+        "Täydellinen nimi: Oskari Olavi Virta"@fi ;
+    rdaa:P50411 "Virta, Olavi, 1915-1972"@fi ;
+    rdaa:P50428 finaf:000186199,
+        finaf:000186200,
+        finaf:000186201,
+        finaf:000191445,
+        finaf:000191446,
+        finaf:000200109,
+        finaf:000201421 ;
+    rdau:P61101 "<a href='http://pomus.net/001454'>Populaarimusiikin museo -verkkosivut</a>, katsottu 20.4.2018"@fi,
+        "<a href='http://vys.hypermedia.fi/salanimet.html'>VYS</a>"@fi,
+        "Auringonruusuja / Suzy, pieni neekerityttö. 1950"@fi,
+        "Suomen Äänitearkisto"@fi ;
+    skos:altLabel "Ilmén, Oskari Olavi, 1915-1972"@fi,
+        "Joki, Oskari, 1915-1972"@fi,
+        "Ola, 1915-1972"@fi,
+        "Oskari, 1915-1972"@fi,
+        "Rio, Salvador, 1915-1972"@fi,
+        "Virta, Oskari Olavi, 1915-1972"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Virta, Olavi, 1915-1972"@fi .
+
+finaf:000082317 a rdac:C10004,
+        skos:Concept ;
+    dct:created "1995-09-04"^^xsd:date ;
+    dct:modified "2022-11-01T13:32:10"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/0000000484517444>,
+        "Asteri ID: 000082317" ;
+    rdaa:P50103 "Soininen, Lauri, 1875-1919"@fi ;
+    rdaa:P50104 mts:m3004 ;
+    rdaa:P50118 yso:p94137 ;
+    rdaa:P50119 "Pielavesi, Suomi"@fi ;
+    rdaa:P50120 "1919" ;
+    rdaa:P50121 "1875" ;
+    rdaa:P50395 "Todellinen nimi: Lauri Soini, myöh. Soininen"@fi ;
+    rdaa:P50411 "Soini, Lauri, 1875-1919"@fi ;
+    rdaa:P50428 finaf:000039872,
+        finaf:000085295,
+        finaf:000085296,
+        finaf:000085297,
+        finaf:000085298,
+        finaf:000085299,
+        finaf:000085300,
+        finaf:000092533 ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Lauri_Soini'>Wikipedia</a>, katsottu 7.4.2020 (Lauri Soini (oikea nimi Lauri Soininen; 1. huhtikuuta 1875 Pielavesi – 2. syyskuuta 1919 Helsinki) oli suomalainen kirjailija, suomentaja ja lehtimies. Hän käytti myös nimimerkkejä Juho Ahava, Lauri Sauramo, Eräs osatoveri, Iku Turso, Sasu Punanen (käytti tätä nimimerkkiä ennen Yrjö Räisästä), L.Sininen, Smo, Nuorisoseuralainen, Tuomo, Monto ja Korven Tuomo.)"@fi ;
+    skos:altLabel "Soininen, Lauri, 1875-1919"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Soini, Lauri, 1875-1919"@fi .
+
+finaf:000083011 a rdac:C10004,
+        skos:Concept ;
+    dct:created "1994-11-13"^^xsd:date ;
+    dct:modified "2022-12-15T11:59:46"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/000000037293266X>,
+        "Asteri ID: 000083011" ;
+    rdaa:P50095 finaf:000177765,
+        finaf:000180791,
+        finaf:000181023,
+        "Dumari & Spuget"@fi,
+        "Dusty Ramblers"@fi,
+        "Kongontien orkesteri"@fi,
+        "Orpojen Tuki"@fi,
+        "The Barnhill Boys"@fi ;
+    rdaa:P50097 yso:p94426 ;
+    rdaa:P50100 yso:p1882,
+        yso:p8111 ;
+    rdaa:P50102 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50103 "Nurmio, Hande, 1950-"@fi,
+        "Nurmio, Hannu, 1950-"@fi,
+        "Tuomari Nurmio, 1950-"@fi ;
+    rdaa:P50104 mts:m2355,
+        mts:m2356,
+        mts:m2589,
+        mts:m2933,
+        mts:m3080 ;
+    rdaa:P50119 yso:p94137 ;
+    rdaa:P50121 "1950" ;
+    rdaa:P50318 finaf:000181181,
+        finaf:000181182,
+        finaf:000181183,
+        finaf:000181184,
+        finaf:000181185 ;
+    rdaa:P50395 "Todellinen nimi: Hannu Nurmio"@fi,
+        "Täydellinen nimi: Hannu Juhani Nurmio"@fi ;
+    rdaa:P50411 "Nurmio, Tuomari, 1950-"@fi ;
+    rdaa:P50428 finaf:000190019,
+        finaf:000190020,
+        finaf:000190021 ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Tuomari_Nurmio'>Wikipedia</a>, katsottu 31.5.2017"@fi,
+        "<a href='https://www.discogs.com/artist/383771'>Discogs</a>, katsottu 31.5.2018"@fi,
+        "Dumari, 2010"@fi ;
+    skos:altLabel "Nurmio, Hande, 1950-"@fi,
+        "Nurmio, Hannu, 1950-"@fi,
+        "Tuomari Nurmio, 1950-"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Nurmio, Tuomari, 1950-"@fi .
+
+finaf:000173163 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2017-11-01"^^xsd:date ;
+    dct:modified "2020-11-06T20:04:37"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/000000047466853X>,
+        "Asteri ID: 000173163",
+        "Y-tunnus: 0224960-0" ;
+    rdaa:P50008 finaf:000031943 ;
+    rdaa:P50022 yso:p14072,
+        yso:p1862 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "MTK-Satakunta"@fi ;
+    rdaa:P50035 "MTK-Satakunta (Maataloustuottajain Satakunnan liitto ry) on maanviljelijöiden, metsänomistajien ja maaseutuyrittäjien alueellinen etujärjestö ja vaikuttaja."@fi ;
+    rdaa:P50037 "1917" ;
+    rdaa:P50237 mts:m401 ;
+    rdaa:P50350 yso:p94351 ;
+    rdaa:P50407 "Maataloustuottajain Satakunnan liitto"@fi ;
+    rdau:P61101 "<a href='https://www.mtk.fi/liitot/satakunta/'>Yhteisön verkkosivut</a>, katsottu 8.1.2017"@fi,
+        "Kasvun kotipelto kantoi, 2017"@fi ;
+    skos:altLabel "MTK-Satakunta"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Maataloustuottajain Satakunnan liitto"@fi .
+
+finaf:000177927 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1999-12-15"^^xsd:date ;
+    dct:modified "2020-12-03T20:21:05"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000469374713>,
+        "Asteri ID: 000177927" ;
+    rdaa:P50012 finaf:000017463 ;
+    rdaa:P50025 "Kauko Röyhkä ja Narttu"@fi ;
+    rdaa:P50334 finaf:000057610 ;
+    rdaa:P50407 "Kauko Röyhkä & Narttu"@fi ;
+    skos:altLabel "Kauko Röyhkä ja Narttu"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Kauko Röyhkä & Narttu"@fi .
+
+finaf:000177994 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1994-11-08"^^xsd:date ;
+    dct:modified "2020-11-06T20:08:40"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000470453064>,
+        "Asteri ID: 000177994" ;
+    rdaa:P50022 yso:p29762 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50035 "Musta Paraati -yhtyeen jäsenet: Herra Ylppö (laulu), Panda (sähköbasso), Saku (kitara), Ykä (rummut), Kääriäinen (syntetisaattorit). Entiset jäsenet: Jore (laulu, kitara), General Njassa (laulu), Gabi (rummut), Epe (laulu), Sande (rummut), Jesu (syntetisaattori)."@fi ;
+    rdaa:P50037 "1981" ;
+    rdaa:P50038 "1985" ;
+    rdaa:P50237 mts:m1100 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Musta Paraati"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Musta_Paraati'>Wikipedia</a>, katsottu 27.5. 2017"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Musta Paraati"@fi .
+
+finaf:000179427 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2011-12-16"^^xsd:date ;
+    dct:modified "2023-02-20T14:58:22"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000446693156>,
+        "Asteri ID: 000179427" ;
+    rdaa:P50012 finaf:000032963 ;
+    rdaa:P50022 yso:p13449,
+        yso:p84 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/swe> ;
+    rdaa:P50025 "Helsingfors universitets övningsskola i Vik"@fi,
+        "Helsingin yliopisto. Viikin normaalikoulu"@fi,
+        "Helsingin yliopiston Viikin normaalikoulu"@fi,
+        "Normalskolan i Viks"@fi,
+        "Viikki TTS"@fi,
+        "Viikki Teacher Training School"@fi,
+        "Viks övningsskola"@fi ;
+    rdaa:P50035 "1869–1919 Helsingin suomalainen tyttökoulu, 1919–1934 Helsingin suomalainen tyttölyseo, 1934–1969 Tyttönormaalilyseo, 1969–1974 Helsingin yhteisnormaalilyseo, 1974–2003 Helsingin II normaalikoulu, 2003– Helsingin yliopiston Viikin normaalikoulu"@fi ;
+    rdaa:P50236 "2003/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m4715,
+        mts:m4735 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Viikin normaalikoulu"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Helsingin_yliopiston_Viikin_normaalikoulu'>Wikipedia</a>, katsottu 5.11.2020"@fi,
+        "<a href='https://www.helsinki.fi'>Yhteisön verkkosivut</a>, katsottu 20.2.2023"@fi ;
+    skos:altLabel "Helsingfors universitets övningsskola i Vik"@fi,
+        "Helsingin yliopisto. Viikin normaalikoulu"@fi,
+        "Helsingin yliopiston Viikin normaalikoulu"@fi,
+        "Normalskolan i Viks"@fi,
+        "Viikki TTS"@fi,
+        "Viikki Teacher Training School"@fi,
+        "Viks övningsskola"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Viikin normaalikoulu"@fi .
+
+finaf:000181180 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1995-05-23"^^xsd:date ;
+    dct:modified "2020-11-06T20:13:25"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000469114866>,
+        "Asteri ID: 000181180" ;
+    rdaa:P50022 yso:p1882 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50037 "1979" ;
+    rdaa:P50038 "1983" ;
+    rdaa:P50237 mts:m1100 ;
+    rdaa:P50334 finaf:000075225 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Pelle Miljoona Oy"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Pelle_Miljoona'>Wikipedia</a>, katsottu 3.4.2017"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Pelle Miljoona Oy"@fi .
+
+finaf:000190036 a rdac:C10004,
+        skos:Concept ;
+    dct:created "2002-10-11"^^xsd:date ;
+    dct:modified "2022-09-06T19:07:47"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/0000000407364720>,
+        "Asteri ID: 000190036" ;
+    rdaa:P50100 yso:p3064 ;
+    rdaa:P50102 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50103 "Blom, Artto, 1943-"@fi ;
+    rdaa:P50104 mts:m2933,
+        mts:m3166 ;
+    rdaa:P50119 yso:p94137 ;
+    rdaa:P50121 "1943" ;
+    rdaa:P50318 finaf:000023104,
+        finaf:000180876,
+        finaf:000180877,
+        finaf:000180878,
+        finaf:000180941,
+        finaf:000183053,
+        finaf:000183054 ;
+    rdaa:P50395 "Todellinen nimi: Artto Anders Blom"@fi ;
+    rdaa:P50411 "Blom, Atte, 1943-"@fi ;
+    rdaa:P50428 finaf:000190152 ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Atte_Blom'>Wikipedia</a>"@fi ;
+    skos:altLabel "Blom, Artto, 1943-"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Blom, Atte, 1943-"@fi .
+
+finaf:000204240 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2019-10-10"^^xsd:date ;
+    dct:modified "2022-02-04T12:49:05"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492970513>,
+        "Asteri ID: 000204240" ;
+    rdaa:P50022 yso:p21580 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "University of Vaasa. School of Management"@fi,
+        "Vaasan yliopisto. Johtamisen akateeminen yksikkö"@fi ;
+    rdaa:P50035 "Johtamisen akateemiseen yksikköön kuuluu kuusi oppiainetta: henkilöstöjohtaminen, julkisjohtaminen, strateginen johtaminen, julkisoikeus, aluetiede sekä sosiaali- ja terveyshallintotiede."@fi ;
+    rdaa:P50237 mts:m4680,
+        "yliopiston yksikkö"@fi ;
+    rdaa:P50350 yso:p94466 ;
+    rdaa:P50407 "Vaasan yliopisto. Johtamisen yksikkö"@fi ;
+    rdau:P61101 "<a href='https://www.univaasa.fi/fi/about/organisation/schools/management/'>Verkkosivut</a>, katsottu 10.10.2019 (yleistiedot)"@fi,
+        "Exploring interorganizational interaction in customer–supplier relationships, 2018"@fi ;
+    skos:altLabel "University of Vaasa. School of Management"@fi,
+        "Vaasan yliopisto. Johtamisen akateeminen yksikkö"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Vaasan yliopisto. Johtamisen yksikkö"@fi .
+
+rdaa:P50310 a rdf:Property ;
+    rdfs:label "has related RDA entity of person"@en,
+        "henkilöön liittyvä entiteetti"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An RDA entity that is associated with a person."@en,
+        "Entiteetti, joka liittyy kuvailtavaan henkilöön."@fi ;
+    rdakit:toolkitLabel "related RDA entity of person"@en,
+        "henkilöön liittyvä entiteetti"@fi ;
+    reg:hasSubproperty rdaa:P50311,
+        rdaa:P50312,
+        rdaa:P50313,
+        rdaa:P50314,
+        rdaa:P50315,
+        rdaa:P50346,
+        rdaa:P50347,
+        rdaa:P50348,
+        <http://rdaregistry.info/Elements/a/datatype/P50310>,
+        <http://rdaregistry.info/Elements/a/object/P50310> ;
+    reg:hasUnconstrained rdau:P61033 ;
+    reg:lexicalAlias rdaa:henkiloonLiittyvaEntiteetti.fi,
+        rdaa:relatedRDAEntityOfPerson.en ;
+    reg:name "relatedRDAEntityOfPerson"@en,
+        "henkiloonLiittyvaEntiteetti"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10004 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50304,
+        rdaa:P50482 ;
+    skos:definition "Relates a person to an RDA entity associated with a person."@en,
+        "Liittää henkilön entiteettiin, joka liittyy kuvailtavaan henkilöön."@fi .
+
+rdaa:P50319 a rdf:Property ;
+    rdfs:label "has related RDA entity of family"@en,
+        "sukuun liittyvä entiteetti"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An RDA entity that is associated with a family."@en,
+        "Entiteetti, joka liittyy kuvailtavaan sukuun."@fi ;
+    rdakit:toolkitLabel "related RDA entity of family"@en,
+        "sukuun liittyvä entiteetti"@fi ;
+    reg:hasSubproperty rdaa:P50320,
+        rdaa:P50321,
+        rdaa:P50322,
+        rdaa:P50323,
+        rdaa:P50324,
+        rdaa:P50354,
+        rdaa:P50355,
+        rdaa:P50356,
+        <http://rdaregistry.info/Elements/a/datatype/P50319>,
+        <http://rdaregistry.info/Elements/a/object/P50319> ;
+    reg:hasUnconstrained rdau:P61033 ;
+    reg:lexicalAlias rdaa:relatedRDAEntityOfFamily.en,
+        rdaa:sukuunLiittyvaEntiteetti.fi ;
+    reg:name "relatedRDAEntityOfFamily"@en,
+        "sukuunLiittyvaEntiteetti"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10008 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50360,
+        rdaa:P50481 ;
+    skos:definition "Relates a family to an RDA entity associated with a family."@en,
+        "Liittää suvun entiteettiin, joka liittyy kuvailtavaan sukuun."@fi .
+
+rdaa:P50328 a rdf:Property ;
+    rdfs:label "has related RDA entity of corporate body"@en,
+        "yhteisöön liittyvä entiteetti"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An RDA entity that is associated with a corporate body."@en,
+        "Entiteetti, joka liittyy kuvailtavaan yhteisöön."@fi ;
+    rdakit:toolkitLabel "related RDA entity of corporate body"@en,
+        "yhteisöön liittyvä entiteetti"@fi ;
+    reg:hasSubproperty rdaa:P50349,
+        rdaa:P50350,
+        rdaa:P50351,
+        rdaa:P50352,
+        <http://rdaregistry.info/Elements/a/datatype/P50328>,
+        <http://rdaregistry.info/Elements/a/object/P50328> ;
+    reg:hasUnconstrained rdau:P61033 ;
+    reg:lexicalAlias rdaa:relatedRDAEntityOfCorporateBody.en,
+        rdaa:yhteisoonLiittyvaEntiteetti.fi ;
+    reg:name "relatedRDAEntityOfCorporateBody"@en,
+        "yhteisoonLiittyvaEntiteetti"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10005 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50360,
+        rdaa:P50480 ;
+    skos:definition "Relates a corporate body to an RDA entity associated with a corporate body."@en,
+        "Liittää yhteisön entiteettiin, joka liittyy kuvailtavaan yhteisöön."@fi .
+
+rdaa:P50744 a rdf:Property ;
+    rdfs:label "is reviser collective agent of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by a collective agent of making changes to the content of another expression."@en ;
+    rdakit:toolkitLabel "reviser collective agent of"@en ;
+    reg:hasSubproperty rdaa:P50763,
+        rdaa:P50764,
+        rdaa:P50765,
+        rdaa:P50766,
+        rdaa:P50773,
+        rdaa:P50895,
+        rdaa:P51046,
+        <http://rdaregistry.info/Elements/a/object/P50744> ;
+    reg:hasUnconstrained rdau:P61077 ;
+    reg:lexicalAlias rdaa:reviserCollectiveAgentOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10011 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50447,
+        rdaa:P50776 ;
+    skos:definition "Relates a collective agent to an expression that includes a contribution by a collective agent of making changes to the content of another expression."@en .
+
+rdau:P60648 a rdf:Property ;
+    rdfs:label "has member of"@en ;
+    reg:lexicalAlias rdau:memberOf.en ;
+    reg:name "memberOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    owl:inverseOf rdau:P60697 ;
+    skos:definition "Relates an agent of which an agent is a member to an agent."@en .
+
+rdau:P60655 a rdf:Property ;
+    rdfs:label "is composer of"@en ;
+    reg:hasSubproperty rdaa:P50522,
+        rdaa:P50673,
+        rdaa:P50824,
+        rdaa:P50975 ;
+    reg:lexicalAlias rdau:composerOf.en ;
+    reg:name "composerOf"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60672 ;
+    owl:inverseOf rdau:P60426 ;
+    skos:definition "Relates an agent to a musical resource that involves a responsibility of an agent for music."@en .
+
+rdau:P60697 a rdf:Property ;
+    rdfs:label "has member"@en ;
+    reg:lexicalAlias rdau:member.en ;
+    reg:name "member"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    owl:inverseOf rdau:P60648 ;
+    skos:definition "Relates an agent who is a member of an agent to an agent."@en .
+
+rdau:P60906 a rdf:Property ;
+    rdfs:label "has access point for entity"@en ;
+    reg:hasSubproperty rdam:P30276,
+        rdau:P60916,
+        rdau:P60917 ;
+    reg:lexicalAlias rdau:accessPointForEntity.en ;
+    reg:name "accessPointForEntity"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P60909 ;
+    owl:inverseOf rdau:P60910 ;
+    skos:definition "Relates an entity to an appellation of entity in natural language that is taken from a vocabulary encoding scheme or is constructed using a string encoding scheme."@en .
+
+rdau:P61036 a rdf:Property ;
+    rdfs:label "has related entity of place"@en ;
+    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70013>,
+        <http://rdaregistry.info/Elements/p/P70053>,
+        rdau:P61011,
+        rdau:P61013,
+        rdau:P61016,
+        rdau:P61019,
+        rdau:P61025,
+        rdau:P61036 ;
+    reg:lexicalAlias rdau:relatedEntityOfPlace.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P61038 ;
+    owl:inverseOf rdau:P61040 ;
+    skos:definition "Relates a place to an entity that is associated with a place."@en .
+
+finaf:000007158 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1992-12-21"^^xsd:date ;
+    dct:modified "2022-10-21T11:44:02"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000007158" ;
+    rdaa:P50013 finaf:000036937 ;
+    rdaa:P50025 "EV (Elintarvikevirasto)"@fi,
+        "EVI (Elintarvikevirasto)"@fi,
+        "LV (Livsmedelsverket)"@fi,
+        "Lebensmittelbehörde"@fi,
+        "Livsmedelsverket (1990-2006)"@fi,
+        "National Food Administration"@fi ;
+    rdaa:P50035 "Eviran perustamisvaiheessa vuonna 2006 yhdistettiin Elintarvikevirasto, Eläinlääkintä- ja elintarviketutkimuslaitos (EELA) ja Kasvintuotannon tarkastuskeskus (KTTK)."@fi ;
+    rdaa:P50037 "1990" ;
+    rdaa:P50038 "2006" ;
+    rdaa:P50237 mts:m4669 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Elintarvikevirasto"@fi ;
+    skos:altLabel "EV (Elintarvikevirasto)"@fi,
+        "EVI (Elintarvikevirasto)"@fi,
+        "LV (Livsmedelsverket)"@fi,
+        "Lebensmittelbehörde"@fi,
+        "Livsmedelsverket (1990-2006)"@fi,
+        "National Food Administration"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Elintarvikevirasto"@fi .
+
+finaf:000010622 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-04-13"^^xsd:date ;
+    dct:modified "2021-08-13T13:57:40"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000010622" ;
+    rdaa:P50016 finaf:000000567,
+        finaf:000004826,
+        finaf:000004827,
+        finaf:000004828,
+        finaf:000005037,
+        finaf:000007472,
+        finaf:000008004,
+        finaf:000008252,
+        finaf:000010564,
+        finaf:000010623,
+        finaf:000010624,
+        finaf:000010625,
+        finaf:000010626,
+        finaf:000030902 ;
+    rdaa:P50025 "Finlands scoutförbund"@fi,
+        "Marttatyttöjen partioliitto"@fi ;
+    rdaa:P50237 mts:m401 ;
+    rdaa:P50407 "Suomen partioliitto"@fi ;
+    skos:altLabel "Finlands scoutförbund"@fi,
+        "Marttatyttöjen partioliitto"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen partioliitto"@fi .
+
+finaf:000015230 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1997-12-01"^^xsd:date ;
+    dct:modified "2022-10-03T10:42:01"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000123770081>,
+        "Asteri ID: 000015230" ;
+    rdaa:P50022 yso:p2040 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin>,
+        <http://lexvo.org/id/iso639-3/rus> ;
+    rdaa:P50025 "Aleksandrovskij institut"@fi,
+        "Aleksanteri Institute"@fi,
+        "Helsingin yliopisto. Aleksanteri-instituutti"@fi,
+        "Valtakunnallinen Venäjän ja itäisen Euroopan tutkimuskeskus"@fi ;
+    rdaa:P50035 "Aleksanteri-instituutti perustettiin opetusministeriön aloitteesta Helsingin yliopiston erillislaitoksena vuonna 1996."@fi ;
+    rdaa:P50037 "1996" ;
+    rdaa:P50237 mts:m4680,
+        mts:m806 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Aleksanteri-instituutti"@fi ;
+    rdau:P61101 "<a href='https://www2.helsinki.fi/fi/aleksanteri-instituutti'>Yhteisön verkkosivut</a>, katsottu 26.9.2022"@fi ;
+    skos:altLabel "Aleksandrovskij institut"@fi,
+        "Aleksanteri Institute"@fi,
+        "Helsingin yliopisto. Aleksanteri-instituutti"@fi,
+        "Valtakunnallinen Venäjän ja itäisen Euroopan tutkimuskeskus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Aleksanteri-instituutti"@fi .
+
+finaf:000017554 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1994-11-08"^^xsd:date ;
+    dct:modified "2020-11-05T20:13:26"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000469583566>,
+        "Asteri ID: 000017554" ;
+    rdaa:P50022 yso:p1882 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50035 "Ismo Alangon perustama yhtye."@fi,
+        "Yhtye esiintyi ulkomailla nimellä L'Amourder."@fi ;
+    rdaa:P50037 "1982" ;
+    rdaa:P50237 mts:m1100 ;
+    rdaa:P50336 finaf:000177458,
+        finaf:000178916,
+        finaf:000178917,
+        finaf:000178918,
+        finaf:000178919 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Sielun Veljet"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Sielun_Veljet'>Wikipedia</a>, katsottu 6.2.2018"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Sielun Veljet"@fi .
+
+finaf:000018807 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2002-12-09"^^xsd:date ;
+    dct:modified "2022-10-31T14:19:45"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000404149419>,
+        "Asteri ID: 000018807" ;
+    rdaa:P50025 "Kajaani Polytechnic"@fi ;
+    rdaa:P50237 "korkeakoulu"@fi ;
+    rdaa:P50407 "Kajaanin ammattikorkeakoulu"@fi ;
+    rdau:P61101 "ECTS, 2001"@fi ;
+    skos:altLabel "Kajaani Polytechnic"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Kajaanin ammattikorkeakoulu"@fi .
+
+finaf:000019110 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2003-03-31"^^xsd:date ;
+    dct:modified "2020-11-05T20:16:03"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000019110" ;
+    rdaa:P50012 finaf:000001474,
+        finaf:000001477 ;
+    rdaa:P50025 "Jyväskylä University. Department of History and Ethnology"@fi,
+        "University of Jyväskylä. Department of History and Ethnology"@fi ;
+    rdaa:P50237 "yliopisto"@fi ;
+    rdaa:P50407 "Jyväskylän yliopisto. Historian ja etnologian laitos"@fi ;
+    rdau:P61101 "Jyväskylän yliopiston historian laitos ja etnologian laitos yhdistyivät v. 2003"@fi ;
+    skos:altLabel "Jyväskylä University. Department of History and Ethnology"@fi,
+        "University of Jyväskylä. Department of History and Ethnology"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Jyväskylän yliopisto. Historian ja etnologian laitos"@fi .
+
+finaf:000019289 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1994-11-08"^^xsd:date ;
+    dct:modified "2020-11-05T20:16:21"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000469476314>,
+        "Asteri ID: 000019289" ;
+    rdaa:P50022 yso:p8434 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Kippari-kvartetti"@fi ;
+    rdaa:P50037 "1950" ;
+    rdaa:P50237 mts:m2088 ;
+    rdaa:P50334 finaf:000062043,
+        finaf:000064077,
+        finaf:000064312,
+        finaf:000068366,
+        finaf:000185983,
+        finaf:000192037 ;
+    rdaa:P50350 yso:p94426 ;
+    rdaa:P50407 "Kipparikvartetti"@fi ;
+    rdau:P61101 "<a href='http://pomus.net/001745'>Pomus.net</a>, katsottu 12.4.2017 (perustamisvuosi)"@fi,
+        "Käyhkö, Kauko.Voi veljet, Kipparikvartetti, 1971"@fi ;
+    skos:altLabel "Kippari-kvartetti"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Kipparikvartetti"@fi .
+
+finaf:000026360 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2008-07-04"^^xsd:date ;
+    dct:modified "2023-02-01T15:06:47"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492943267>,
+        "Asteri ID: 000026360" ;
+    rdaa:P50012 finaf:000026359 ;
+    rdaa:P50236 "1978/2009"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m4715,
+        mts:m4735 ;
+    rdaa:P50350 yso:p94166 ;
+    rdaa:P50393 "Joensuun normaalikoulun edeltäjät: Värtsilän suomalainen reaaliyhteiskoulu (1907-1915), Värtsilän yhteiskoulu (1915-1944), Värtsilän keskikoulu (1931-1940 ja 1943-1944), Joensuun keskikoulu (1944-1958), Pielisensuun yhteislyseo (1958-1973), Joensuun normaalilyseo (1962-1973). Joensuun korkeakoulun kansakoulu (1970-1973) ja Joensuun lnormaalilyseo sulautuivat v. 1973 Joensuun korkeakoulun harjoittelukouluksi (1973-1978), joka muutti nimensä v. 1978 Joensuun normaalikouluksi"@fi ;
+    rdaa:P50407 "Joensuun normaalikoulu"@fi ;
+    rdau:P61101 "Kuusisto, Alina. Aakkosista Alkukiviin, 2007: t.p. (Joensuun normaalikoulu)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Joensuun normaalikoulu"@fi .
+
+finaf:000026422 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2008-07-23"^^xsd:date ;
+    dct:modified "2021-06-18T19:08:20"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000026422" ;
+    rdaa:P50012 finaf:000026423 ;
+    rdaa:P50237 "sairaala"@fi ;
+    rdaa:P50393 "Siilinjärven piirimielisairaala, vuodesta 1955 Harjamäen sairaala, toimi 1926-1997. Vuonna 1990 Harjamäen sairaala liitettiin Pohjois-Savon sairaanhoitopiiriin."@fi ;
+    rdaa:P50407 "Harjamäen sairaala"@fi ;
+    rdau:P61101 "Ranta, Mauri. Omasta ja edustamani yhtymän puolesta, 2007: t.p. (Omasta ja edustamani yhtymän puolesta Mauri Ranta 5.8.1947-5.8.2007, 60 vuotta [Mauri Ranta] Kuopio (Ahkiotie 10 A 7) [Mauri Ranta])"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Harjamäen sairaala"@fi .
+
+finaf:000027828 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2000-10-05"^^xsd:date ;
+    dct:modified "2021-06-19T15:00:13"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000027828" ;
+    rdaa:P50012 finaf:000030384 ;
+    rdaa:P50016 finaf:000038390 ;
+    rdaa:P50025 "Aleksanterin yliopisto Suomessa"@fi,
+        "Alexanders-universitetet i Finland"@fi,
+        "Gel'singforsskij universitet"@fi,
+        "Imperatorskij Aleksandrovskij universitet"@fi,
+        "Keisarillinen Aleksanterin yliopisto"@fi,
+        "Keisarillinen Alexanterin akatemia Suomessa"@fi,
+        "Keisarillinen Alexanterin yliopisto Suomessa"@fi,
+        "Kejserliga Alexanders-universitetet i Finland"@fi,
+        "Suomen Aleksanterin yliopisto"@fi,
+        "Suomen yliopisto"@fi ;
+    rdaa:P50236 "1828/1918"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 "yliopisto"@fi ;
+    rdaa:P50393 "Kuninkaallinen Turun akatemia perustettiin vuonna 1640. Turun palon 1827 jälkeen yliopisto määrättiin Nikolai I:n keisarillisella käskykirjeellä 21. lokakuuta 1827 muuttamaan Helsinkiin. Keisarillinen Aleksanterin yliopisto aloitti toimintansa syksyllä 1828. Virallinen nimimuoto Helsingin yliopisto otettiin käyttöön 18.2.1919 asetuksen myötä."@fi ;
+    rdaa:P50407 "Suomen Keisarillinen Aleksanterin yliopisto"@fi ;
+    skos:altLabel "Aleksanterin yliopisto Suomessa"@fi,
+        "Alexanders-universitetet i Finland"@fi,
+        "Gel'singforsskij universitet"@fi,
+        "Imperatorskij Aleksandrovskij universitet"@fi,
+        "Keisarillinen Aleksanterin yliopisto"@fi,
+        "Keisarillinen Alexanterin akatemia Suomessa"@fi,
+        "Keisarillinen Alexanterin yliopisto Suomessa"@fi,
+        "Kejserliga Alexanders-universitetet i Finland"@fi,
+        "Suomen Aleksanterin yliopisto"@fi,
+        "Suomen yliopisto"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Suomen Keisarillinen Aleksanterin yliopisto"@fi .
+
+finaf:000031108 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1998-04-23"^^xsd:date ;
+    dct:modified "2020-11-05T20:35:55"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000403927346>,
+        "Asteri ID: 000031108" ;
+    rdaa:P50025 "Akateemis-ammatillinen valtuuskunta"@fi,
+        "Centralorganisationen för högutbildade i Finland Akava"@fi,
+        "Confederación de Sindicatos para Trabajadores Profesionales y Personal Directivo en Finlandia"@fi,
+        "Confederation of Unions for Professional and Managerial Staff in Finland"@fi,
+        "Confédération finlandaise des syndicats des salariés diplômés de l'enseignement supérieur"@fi,
+        "Soome kõrgharidusega palgatöötajate ja üksikettevõtjate keskorganisatsioon"@fi,
+        "Zentralveband akademischer Gewerkschaften in Finnland"@fi ;
+    rdaa:P50237 mts:m401 ;
+    rdaa:P50407 "Akava"@fi ;
+    skos:altLabel "Akateemis-ammatillinen valtuuskunta"@fi,
+        "Centralorganisationen för högutbildade i Finland Akava"@fi,
+        "Confederación de Sindicatos para Trabajadores Profesionales y Personal Directivo en Finlandia"@fi,
+        "Confederation of Unions for Professional and Managerial Staff in Finland"@fi,
+        "Confédération finlandaise des syndicats des salariés diplômés de l'enseignement supérieur"@fi,
+        "Soome kõrgharidusega palgatöötajate ja üksikettevõtjate keskorganisatsioon"@fi,
+        "Zentralveband akademischer Gewerkschaften in Finnland"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Akava"@fi .
+
+finaf:000033259 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2021-08-24T14:14:19"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474462224>,
+        "Asteri ID: 000033259" ;
+    rdaa:P50013 finaf:000033261 ;
+    rdaa:P50025 "Ekenäs"@fi,
+        "Ekenäs stad"@fi,
+        "Tammisaari"@fi ;
+    rdaa:P50035 "1. tammikuuta 1977 Tammisaareen yhdistettiin Tammisaaren maalaiskunta ja Snappertunan kunta. 1. tammikuuta 1993 kaupunkiin yhdistettiin Tenholan kunta. Vuoden 2009 alussa Tammisaari yhdistettiin Karjaan ja Pohjan kanssa Raaseporin kaupungiksi"@fi ;
+    rdaa:P50236 "1546/2008"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50238 mts:m358 ;
+    rdaa:P50301 finaf:000033260,
+        finaf:000033262 ;
+    rdaa:P50407 "Tammisaaren kaupunki"@fi ;
+    skos:altLabel "Ekenäs"@fi,
+        "Ekenäs stad"@fi,
+        "Tammisaari"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Tammisaaren kaupunki"@fi .
+
+finaf:000033404 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1994-12-09"^^xsd:date ;
+    dct:modified "2020-12-03T20:12:17"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492949212>,
+        "Asteri ID: 000033404" ;
+    rdaa:P50025 "City of Lappeenranta"@fi,
+        "Lappeenranta"@fi,
+        "Villmanstrand"@fi ;
+    rdaa:P50035 "Lappeenrantaan liitettyjä kuntia: Lappeen kunta ja Lauritsalan kauppala 1967, Nuijamaan kunta 1989, Joutsenon kaupunki 2009, Ylämaan kunta 2010"@fi ;
+    rdaa:P50236 "1649/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50238 mts:m358 ;
+    rdaa:P50301 finaf:000032980,
+        finaf:000032981,
+        finaf:000032982,
+        finaf:000032984,
+        finaf:000032985 ;
+    rdaa:P50407 "Lappeenrannan kaupunki"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Lappeenranta'>Wikipedia</a>, katsottu 5.11.2020"@fi ;
+    skos:altLabel "City of Lappeenranta"@fi,
+        "Lappeenranta"@fi,
+        "Villmanstrand"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Lappeenrannan kaupunki"@fi .
+
+finaf:000033595 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1992-11-25"^^xsd:date ;
+    dct:modified "2020-12-03T20:12:20"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492949423>,
+        "Asteri ID: 000033595" ;
+    rdaa:P50012 finaf:000032998,
+        finaf:000033596,
+        finaf:000033597 ;
+    rdaa:P50025 "City of Mikkeli"@fi,
+        "Mikkeli"@fi,
+        "S:t Michel"@fi ;
+    rdaa:P50035 "Mikkeli sai kaupunginoikeudet 1838. Mikkeli, Anttola ja Mikkelin maalaiskunta ja yhdistyivät vuonna 2001 uudeksi Mikkelin kaupungiksi, johon liitettiin vuonna 2007 myös Haukivuori"@fi ;
+    rdaa:P50236 "1838/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50238 mts:m358 ;
+    rdaa:P50407 "Mikkelin kaupunki"@fi ;
+    skos:altLabel "City of Mikkeli"@fi,
+        "Mikkeli"@fi,
+        "S:t Michel"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Mikkelin kaupunki"@fi .
+
+finaf:000034883 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-06-17"^^xsd:date ;
+    dct:modified "2020-11-05T20:42:29"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000034883" ;
+    rdaa:P50016 finaf:000034881 ;
+    rdaa:P50025 "AKH"@fi,
+        "Dirección general de educacion del gobierno de Finlandia"@fi,
+        "Fidnoskuvlenráddehus"@fi,
+        "Finland. National Board of Vocational Education"@fi,
+        "Finland. Yrkesutbildningsstyrelsen"@fi,
+        "National Board of Vocational Education (Finland)"@fi,
+        "National Board of Vocational Education in Finland"@fi,
+        "Opetusministeriö. Ammattikasvatushallitus"@fi,
+        "Suomi. Ammattikasvatushallitus"@fi,
+        "Yrkesutbildningsstyrelsen (Finland)"@fi ;
+    rdaa:P50035 "vuosina 1966–1991 toiminut suomalainen keskusvirasto, joka vastasi ammattikoulutuksen järjestämisestä. Se perustettiin vuoden 1966 alusta Kauppa- ja teollisuusministeriön ammattikasvatusosaston seuraajaksi ja siirettiin 1969 opetusministeriön alaisuuteen. Kouluhallitus ja Ammattikasvatushallitus yhdistettiin Opetushallitukseksi 1.4.1991"@fi ;
+    rdaa:P50236 "1966/1991"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50407 "Ammattikasvatushallitus"@fi ;
+    skos:altLabel "AKH"@fi,
+        "Dirección general de educacion del gobierno de Finlandia"@fi,
+        "Fidnoskuvlenráddehus"@fi,
+        "Finland. National Board of Vocational Education"@fi,
+        "Finland. Yrkesutbildningsstyrelsen"@fi,
+        "National Board of Vocational Education (Finland)"@fi,
+        "National Board of Vocational Education in Finland"@fi,
+        "Opetusministeriö. Ammattikasvatushallitus"@fi,
+        "Suomi. Ammattikasvatushallitus"@fi,
+        "Yrkesutbildningsstyrelsen (Finland)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Ammattikasvatushallitus"@fi .
+
+finaf:000035068 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-09-01T19:03:55"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000121510526>,
+        "Asteri ID: 000035068" ;
+    rdaa:P50013 finaf:000157839 ;
+    rdaa:P50025 "FGFRI (Finnish Game and Fisheries Research Institute)"@fi,
+        "Finland. Vilt- och fiskeriforskningsinstitutet"@fi,
+        "Finnish Game and Fisheries Research Institute"@fi,
+        "Forschungsinstitut für Wild- und Fischwirtschaft (Finnland)"@fi,
+        "Game and Fisheries Research (Finland)"@fi,
+        "Maa- ja metsätalousministeriö. Riista- ja kalatalouden tutkimuslaitos"@fi,
+        "NII Ohotnitšego i rybnogo hozjaistva Finljandii"@fi,
+        "NII Ohotnič'ego i rybnogo hozâjstva Finlândii"@fi,
+        "RKTL (Riista- ja kalatalouden tutkimuslaitos)"@fi,
+        "Riistan- ja kalantutkimus"@fi,
+        "Suomi. Riista- ja kalatalouden tutkimuslaitos"@fi,
+        "VFFI (Vilt- och fiskeriforskningsinstitutet)"@fi,
+        "Vilt- och fiskeriforskningsinstitutet (Finland)"@fi,
+        "НИИ охотничьего и рыбного хозяйства Финляндии"@fi ;
+    rdaa:P50035 "Luonnonvarakeskus muodostettiin yhdistämällä Maa- ja elintarviketalouden tutkimuskeskus MTT, Metsäntutkimuslaitos Metla, Riista- ja kalatalouden tutkimuslaitos RKTL sekä Maa- ja metsätalousministeriön tietopalvelukeskus Tiken tilastotuotanto. Se aloitti toimintansa 1.1.2015."@fi ;
+    rdaa:P50037 "1971" ;
+    rdaa:P50038 "2014" ;
+    rdaa:P50237 mts:m806 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Riista- ja kalatalouden tutkimuslaitos"@fi ;
+    skos:altLabel "FGFRI (Finnish Game and Fisheries Research Institute)"@fi,
+        "Finland. Vilt- och fiskeriforskningsinstitutet"@fi,
+        "Finnish Game and Fisheries Research Institute"@fi,
+        "Forschungsinstitut für Wild- und Fischwirtschaft (Finnland)"@fi,
+        "Game and Fisheries Research (Finland)"@fi,
+        "Maa- ja metsätalousministeriö. Riista- ja kalatalouden tutkimuslaitos"@fi,
+        "NII Ohotnitšego i rybnogo hozjaistva Finljandii"@fi,
+        "NII Ohotnič'ego i rybnogo hozâjstva Finlândii"@fi,
+        "RKTL (Riista- ja kalatalouden tutkimuslaitos)"@fi,
+        "Riistan- ja kalantutkimus"@fi,
+        "Suomi. Riista- ja kalatalouden tutkimuslaitos"@fi,
+        "VFFI (Vilt- och fiskeriforskningsinstitutet)"@fi,
+        "Vilt- och fiskeriforskningsinstitutet (Finland)"@fi,
+        "НИИ охотничьего и рыбного хозяйства Финляндии"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Riista- ja kalatalouden tutkimuslaitos"@fi .
+
+finaf:000035117 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-12-22T11:42:45"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492951582>,
+        "Asteri ID: 000035117" ;
+    rdaa:P50012 finaf:000034875 ;
+    rdaa:P50016 finaf:000035118 ;
+    rdaa:P50025 "Byggnadsstyrelsen"@fi,
+        "Finland. Byggnadsstyrelsen"@fi,
+        "Finnish National Board of Building"@fi,
+        "Finnland. Zentralamt für öffentliche Gebäude"@fi,
+        "Suomi. Rakennushallitus"@fi,
+        "Valtiovarainministeriö. Rakennushallitus"@fi,
+        "Zentralamt für öffentliche Gebäude"@fi ;
+    rdaa:P50236 "1936/1995"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50393 "Intendentinkonttori 1811-, Yleisten rakennusten ylihallitus 1865-, Rakennushallitus 1936-1995, Valtion kiinteistölaitos 1995-2001, Senaatti-kiinteistöt 2001-"@fi ;
+    rdaa:P50407 "Rakennushallitus"@fi ;
+    rdau:P61101 "Webfacta"@fi ;
+    skos:altLabel "Byggnadsstyrelsen"@fi,
+        "Finland. Byggnadsstyrelsen"@fi,
+        "Finnish National Board of Building"@fi,
+        "Finnland. Zentralamt für öffentliche Gebäude"@fi,
+        "Suomi. Rakennushallitus"@fi,
+        "Valtiovarainministeriö. Rakennushallitus"@fi,
+        "Zentralamt für öffentliche Gebäude"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Rakennushallitus"@fi .
+
+finaf:000036257 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2002-10-25"^^xsd:date ;
+    dct:modified "2020-12-03T20:13:14"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492950870>,
+        "Asteri ID: 000036257" ;
+    rdaa:P50012 finaf:000016464 ;
+    rdaa:P50025 "Age Institute"@fi,
+        "Kuntokallio-säätiö. Ikäinstituutti"@fi,
+        "Äldreinstitutet"@fi ;
+    rdaa:P50237 mts:m237,
+        mts:m257 ;
+    rdaa:P50336 finaf:000036256 ;
+    rdaa:P50393 "Nimimuoto -15.5.2002: Kuntokallio (vanhustyön koulutus- ja tutkimuskeskus), 16.5.2002-: Ikäinstituutti. - Kuntokallio-säätiö ylläpitää Ikäinstituuttia"@fi ;
+    rdaa:P50407 "Ikäinstituutti"@fi ;
+    rdau:P61101 "<a href='http://www.ikainstituutti.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi,
+        "Ikääntyvien elämäntyylit -seminaari (2005 : Helsinki). Ikääntyvien elämäntyylit : seminaariesityksiä 13.-14.10.2005 / toim. Pertti Pohjolainen ja Ilkka Syrén, 2006"@fi ;
+    skos:altLabel "Age Institute"@fi,
+        "Kuntokallio-säätiö. Ikäinstituutti"@fi,
+        "Äldreinstitutet"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Ikäinstituutti"@fi .
+
+finaf:000036484 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1996-10-11"^^xsd:date ;
+    dct:modified "2021-06-19T15:03:24"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000036484" ;
+    rdaa:P50012 finaf:000036487 ;
+    rdaa:P50016 finaf:000159760 ;
+    rdaa:P50025 "Maa- ja metsätalousministeriö. Metsätalouden kehittämiskeskus Tapio"@fi,
+        "Skogsbrukets utvecklingscentral Tapio"@fi,
+        "Suomi. Metsätalouden kehittämiskeskus Tapio"@fi,
+        "Tapio, metsätalouden kehittämiskeskus"@fi ;
+    rdaa:P50035 "Nimi vuosina 1996-2014 Metsätalouden kehittämiskeskus Tapio, vuodesta 2015 nimi muuttui muotoon Tapio Oy."@fi ;
+    rdaa:P50237 mts:m806 ;
+    rdaa:P50350 yso:p94426 ;
+    rdaa:P50407 "Metsätalouden kehittämiskeskus Tapio"@fi ;
+    skos:altLabel "Maa- ja metsätalousministeriö. Metsätalouden kehittämiskeskus Tapio"@fi,
+        "Skogsbrukets utvecklingscentral Tapio"@fi,
+        "Suomi. Metsätalouden kehittämiskeskus Tapio"@fi,
+        "Tapio, metsätalouden kehittämiskeskus"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Metsätalouden kehittämiskeskus Tapio"@fi .
+
+finaf:000036617 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-09-01T19:04:07"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/000000011012438X>,
+        "Asteri ID: 000036617" ;
+    rdaa:P50025 "Finland. Havsforskningsinstitutet"@fi,
+        "Finland. Institute of Marine Research"@fi,
+        "Finnish Institute of Marine Research"@fi,
+        "Finnland. Institut für Meeresforschung"@fi,
+        "Finskij institut morskih issledovanij"@fi,
+        "HFI"@fi,
+        "Liikenne- ja viestintäministeriö. Merentutkimuslaitos"@fi,
+        "MTL"@fi,
+        "Suomi. Merentutkimuslaitos"@fi,
+        "Финский институт морских исследований"@fi ;
+    rdaa:P50236 "1918/2008"^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m806 ;
+    rdaa:P50407 "Merentutkimuslaitos"@fi ;
+    skos:altLabel "Finland. Havsforskningsinstitutet"@fi,
+        "Finland. Institute of Marine Research"@fi,
+        "Finnish Institute of Marine Research"@fi,
+        "Finnland. Institut für Meeresforschung"@fi,
+        "Finskij institut morskih issledovanij"@fi,
+        "HFI"@fi,
+        "Liikenne- ja viestintäministeriö. Merentutkimuslaitos"@fi,
+        "MTL"@fi,
+        "Suomi. Merentutkimuslaitos"@fi,
+        "Финский институт морских исследований"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Merentutkimuslaitos"@fi .
+
+finaf:000037108 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1998-08-12"^^xsd:date ;
+    dct:modified "2022-09-01T19:04:12"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492934002>,
+        "Asteri ID: 000037108",
+        "Y-tunnus: 0679480-9" ;
+    rdaa:P50012 finaf:000003547 ;
+    rdaa:P50022 yso:p717 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Finland. Northern Ostrobothnia Hospital District"@fi,
+        "Northern Ostrobothnia Hospital District"@fi,
+        "Pohjois-Pohjanmaan sairaanhoitopiirin kuntainliitto"@fi,
+        "Pohjois-Pohjanmaan sairaanhoitopiirin kuntayhtymä"@fi,
+        "Suomi. Pohjois-Pohjanmaan sairaanhoitopiiri"@fi ;
+    rdaa:P50035 "Pohjois-Pohjanmaan sairaanhoitopiiri (PPSHP) on pohjoisin viidestä Suomen yliopistollisesta sairaanhoitopiiristä (tilanne 2018)."@fi ;
+    rdaa:P50037 "1991" ;
+    rdaa:P50238 "kuntayhtymä"@fi ;
+    rdaa:P50350 yso:p94320 ;
+    rdaa:P50407 "Pohjois-Pohjanmaan sairaanhoitopiiri"@fi ;
+    rdau:P61101 "<a href='https://www.ppshp.fi/Sairaanhoitopiiri/Pages/default.aspx'>Verkkosivut</a>, katsottu 29.8.2018"@fi ;
+    skos:altLabel "Finland. Northern Ostrobothnia Hospital District"@fi,
+        "Northern Ostrobothnia Hospital District"@fi,
+        "Pohjois-Pohjanmaan sairaanhoitopiirin kuntainliitto"@fi,
+        "Pohjois-Pohjanmaan sairaanhoitopiirin kuntayhtymä"@fi,
+        "Suomi. Pohjois-Pohjanmaan sairaanhoitopiiri"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Pohjois-Pohjanmaan sairaanhoitopiiri"@fi .
+
+finaf:000037290 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-08-25"^^xsd:date ;
+    dct:modified "2022-09-01T19:04:15"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492934096>,
+        "Asteri ID: 000037290" ;
+    rdaa:P50012 finaf:000005963 ;
+    rdaa:P50025 "Labour Institute for Economic Research"@fi,
+        "Löntagarnas forskningsinstitut"@fi ;
+    rdaa:P50237 mts:m806 ;
+    rdaa:P50407 "Palkansaajien tutkimuslaitos"@fi ;
+    rdau:P61101 "<a href='http://www.labour.fi'>Kotisivut</a>, katsottu 21.10.2020"@fi ;
+    skos:altLabel "Labour Institute for Economic Research"@fi,
+        "Löntagarnas forskningsinstitut"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Palkansaajien tutkimuslaitos"@fi .
+
+finaf:000037943 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2022-09-01T19:04:23"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000037943",
+        "Y-tunnus: 1093944-1" ;
+    rdaa:P50010 finaf:000037940,
+        finaf:000180392 ;
+    rdaa:P50012 finaf:000037941 ;
+    rdaa:P50022 yso:p10456,
+        yso:p28567,
+        yso:p5444 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "MTV (televisioyhtiö)"@fi ;
+    rdaa:P50035 "Oy Mainos-TV-Reklam Ab perustettiin 29.4.1957. Yhtiö muutti nimensä MTV Oy:ksi 1982."@fi ;
+    rdaa:P50037 "1982" ;
+    rdaa:P50237 mts:m515,
+        mts:m941 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "MTV Oy"@fi ;
+    rdau:P61101 "<a href='https://www.mtv.fi/yritys'>Verkkosivut 12.4.2018</a>"@fi ;
+    skos:altLabel "MTV (televisioyhtiö)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "MTV Oy"@fi .
+
+finaf:000038031 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2020-12-03T20:15:36"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000123593919>,
+        "Asteri ID: 000038031" ;
+    rdaa:P50012 finaf:000038032 ;
+    rdaa:P50025 "Bibliothèque du Parlement"@fi,
+        "Finland. Riksdagsbiblioteket"@fi,
+        "Library of Parliament"@fi,
+        "Riksdagsbiblioteket"@fi,
+        "Suomen eduskunnan kirjasto"@fi,
+        "Suomi. Eduskunnan kirjasto"@fi ;
+    rdaa:P50236 "1907/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 "kirjasto"@fi ;
+    rdaa:P50407 "Eduskunnan kirjasto"@fi ;
+    skos:altLabel "Bibliothèque du Parlement"@fi,
+        "Finland. Riksdagsbiblioteket"@fi,
+        "Library of Parliament"@fi,
+        "Riksdagsbiblioteket"@fi,
+        "Suomen eduskunnan kirjasto"@fi,
+        "Suomi. Eduskunnan kirjasto"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Eduskunnan kirjasto"@fi .
+
+finaf:000039639 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2013-09-11"^^xsd:date ;
+    dct:modified "2022-11-07T10:43:08"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000110165683>,
+        "Asteri ID: 000039639",
+        "Y-tunnus: 1097805-3" ;
+    rdaa:P50012 finaf:000014029 ;
+    rdaa:P50023 <http://lexvo.org/id/iso639-3/eng>,
+        <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50025 "Centria University of Applied Sciences"@fi,
+        "Centria yrkeshögskola"@fi ;
+    rdaa:P50236 "2012/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50237 mts:m4731 ;
+    rdaa:P50350 yso:p94217 ;
+    rdaa:P50407 "Centria-ammattikorkeakoulu"@fi ;
+    rdau:P61101 "<a href='https://fi.wikipedia.org/wiki/Centria-ammattikorkeakoulu'>Wikipedia</a>, katsottu 31.10.2022"@fi,
+        "<a href='https://net.centria.fi'>Yhteisön verkkosivut</a>, katsottu 31.10.2022"@fi,
+        "YTJ, 11.9.2013"@fi ;
+    skos:altLabel "Centria University of Applied Sciences"@fi,
+        "Centria yrkeshögskola"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Centria-ammattikorkeakoulu"@fi .
+
+finaf:000039683 a rdac:C10005,
+        skos:Concept ;
+    dct:created "2013-10-10"^^xsd:date ;
+    dct:modified "2022-10-31T14:19:43"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000417907610>,
+        "Asteri ID: 000039683" ;
+    rdaa:P50025 "Konstuniversitetet"@fi,
+        "University of the Arts Helsinki"@fi ;
+    rdaa:P50035 "Kuvataideakatemia, Sibelius-Akatemia ja Teatterikorkeakoulu yhdistyivät v. 2013 Taideyliopistoksi."@fi ;
+    rdaa:P50237 "yliopisto"@fi ;
+    rdaa:P50336 finaf:000039680,
+        finaf:000039681,
+        finaf:000039682 ;
+    rdaa:P50350 yso:p94137 ;
+    rdaa:P50407 "Taideyliopisto"@fi ;
+    rdau:P61101 "Unelmia tutkimuksesta, 2013: t.p. (Taideyliopisto)"@fi ;
+    skos:altLabel "Konstuniversitetet"@fi,
+        "University of the Arts Helsinki"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Taideyliopisto"@fi .
+
+finaf:000065121 a rdac:C10004,
+        skos:Concept ;
+    dct:created "1994-11-10"^^xsd:date ;
+    dct:modified "2022-09-02T19:01:23"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/0000000131148735>,
+        "Asteri ID: 000065121" ;
+    rdaa:P50095 finaf:000176513,
+        finaf:000176515,
+        "Harry Bergströmin filmiorkesteri"@fi ;
+    rdaa:P50100 yso:p8434 ;
+    rdaa:P50104 mts:m2334,
+        mts:m2356,
+        mts:m2434,
+        mts:m2589,
+        mts:m3287 ;
+    rdaa:P50118 yso:p94312 ;
+    rdaa:P50119 yso:p94436 ;
+    rdaa:P50120 "1989" ;
+    rdaa:P50121 "1910" ;
+    rdaa:P50318 finaf:000176513,
+        finaf:000176515 ;
+    rdaa:P50395 "Täydellinen nimi: Harry Lennart Yrjö Bergström"@fi ;
+    rdaa:P50411 "Bergström, Harry, 1910-1989"@fi ;
+    rdaa:P50428 finaf:000185471,
+        finaf:000189415,
+        finaf:000190739,
+        finaf:000192345,
+        finaf:000196196,
+        finaf:000200111,
+        finaf:000203759 ;
+    rdau:P61101 "<a href='http://pomus.net/001465'>Populaarimusiikin museo -nettisivusto</a>, katsottu 24.8.2018"@fi,
+        "<a href='https://fi.wikipedia.org/wiki/Harry_Bergstr%C3%B6m'>Wikipedia</a>, katsottu 19.2.2019 (päivämäärät)"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Bergström, Harry, 1910-1989"@fi .
+
+finaf:000075225 a rdac:C10004,
+        skos:Concept ;
+    dct:created "1994-11-13"^^xsd:date ;
+    dct:modified "2022-12-19T12:08:53"^^xsd:dateTime ;
+    rdaa:P50094 <http://isni.org/isni/0000000114488340>,
+        "Asteri ID: 000075225" ;
+    rdaa:P50095 finaf:000180982,
+        finaf:000180983,
+        finaf:000181175,
+        finaf:000181176,
+        finaf:000181177,
+        finaf:000181178,
+        finaf:000181179,
+        finaf:000181180 ;
+    rdaa:P50097 yso:p94426 ;
+    rdaa:P50100 yso:p12202,
+        yso:p1882,
+        yso:p2128,
+        yso:p29762 ;
+    rdaa:P50102 <http://lexvo.org/id/iso639-3/fin> ;
+    rdaa:P50103 "Miljoona, Pelle, 1955-"@fi ;
+    rdaa:P50104 mts:m2355,
+        mts:m2356,
+        mts:m2438,
+        mts:m3004 ;
+    rdaa:P50119 yso:p94124 ;
+    rdaa:P50121 "1955" ;
+    rdaa:P50318 finaf:000181175,
+        finaf:000181176,
+        finaf:000181177,
+        finaf:000181178,
+        finaf:000181179,
+        finaf:000181180 ;
+    rdaa:P50395 "Todellinen nimi: Petri Tiili"@fi ;
+    rdaa:P50411 "Pelle Miljoona, 1955-"@fi ;
+    rdaa:P50429 finaf:000192689 ;
+    rdau:P61101 "Mihin minä uskon, [2016]"@fi ;
+    skos:altLabel "Miljoona, Pelle, 1955-"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Pelle Miljoona, 1955-"@fi .
+
+rdaa:P50195 a rdf:Property ;
+    rdfs:label "is author agent of"@en,
+        "kirjoittajana teoksessa"@fi ;
+    rdakit:hasElementType "2" ;
+    rdakit:instructionNumber "18.5" ;
+    rdakit:toolkitDefinition "A work that involves a responsibility of an agent for creating a textual work."@en,
+        "Teos, joka sisältää ensisijaisesti tekstiä missä tahansa mediatyypissä tai genressä."@fi ;
+    rdakit:toolkitLabel "author agent of"@en,
+        "kirjoittajana teoksessa"@fi ;
+    reg:hasSubproperty rdaa:P50223,
+        rdaa:P50224,
+        rdaa:P50225,
+        rdaa:P50248,
+        rdaa:P50541,
+        rdaa:P50692,
+        <http://rdaregistry.info/Elements/a/datatype/P50195>,
+        <http://rdaregistry.info/Elements/a/datatype/P50223>,
+        <http://rdaregistry.info/Elements/a/datatype/P50224>,
+        <http://rdaregistry.info/Elements/a/datatype/P50225>,
+        <http://rdaregistry.info/Elements/a/datatype/P50248>,
+        <http://rdaregistry.info/Elements/a/object/P50195>,
+        <http://rdaregistry.info/Elements/a/object/P50248> ;
+    reg:hasUnconstrained rdau:P60663 ;
+    reg:lexicalAlias rdaa:authorAgentOf.en,
+        rdaa:kirjoittajanaTeoksessa.fi ;
+    reg:name "authorAgentOf"@en,
+        "kirjoittajanaTeoksessa"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10002 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50204 ;
+    skos:altLabel "author of"@en ;
+    skos:definition "Relates an agent to a work that involves a responsibility of an agent for creating a textual work."@en,
+        "Liittää toimijan teokseen, joka sisältää ensisijaisesti tekstiä missä tahansa mediatyypissä tai genressä."@fi .
+
+rdaa:P50304 a rdf:Property ;
+    rdfs:label "has related RDA entity of agent"@en,
+        "toimijaan liittyvä entiteetti"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An RDA entity that is associated with an agent."@en,
+        "Entiteetti, joka liittyy kuvailtavaan toimijaan."@fi ;
+    rdakit:toolkitLabel "related RDA entity of agent"@en,
+        "toimijaan liittyvä entiteetti"@fi ;
+    reg:hasSubproperty rdaa:P50305,
+        rdaa:P50306,
+        rdaa:P50307,
+        rdaa:P50308,
+        rdaa:P50309,
+        rdaa:P50310,
+        rdaa:P50319,
+        rdaa:P50328,
+        rdaa:P50338,
+        rdaa:P50339,
+        rdaa:P50340,
+        rdaa:P50360,
+        <http://rdaregistry.info/Elements/a/datatype/P50304>,
+        <http://rdaregistry.info/Elements/a/object/P50304> ;
+    reg:hasUnconstrained rdau:P61033 ;
+    reg:lexicalAlias rdaa:relatedRDAEntityOfAgent.en,
+        rdaa:toimijaanLiittyvaEntiteetti.fi ;
+    reg:name "relatedRDAEntityOfAgent"@en,
+        "toimijaanLiittyvaEntiteetti"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10002 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50478,
+        rdax:P00001 ;
+    skos:definition "Relates an agent to an RDA entity associated with an agent."@en,
+        "Liittää toimijan entiteettiin, joka liittyy kuvailtavaan toimijaan."@fi .
+
+rdaa:P50314 a rdf:Property ;
+    rdfs:label "has related item of person"@en,
+        "henkilöön liittyvä kappale"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An item that is associated with a person."@en,
+        "Kappale, joka liittyy kuvailtavaan henkilöön."@fi ;
+    rdakit:toolkitLabel "related item of person"@en,
+        "henkilöön liittyvä kappale"@fi ;
+    reg:hasSubproperty rdaa:P50627,
+        rdaa:P50628,
+        rdaa:P50629,
+        rdaa:P50630,
+        rdaa:P50633,
+        rdaa:P50634,
+        rdaa:P50636,
+        rdaa:P50637,
+        rdaa:P50642,
+        <http://rdaregistry.info/Elements/a/datatype/P50314>,
+        <http://rdaregistry.info/Elements/a/object/P50314> ;
+    reg:hasUnconstrained rdau:P61009 ;
+    reg:lexicalAlias rdaa:henkiloonLiittyvaKappale.fi,
+        rdaa:relatedItemOfPerson.en ;
+    reg:name "relatedItemOfPerson"@en,
+        "henkiloonLiittyvaKappale"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10004 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50308,
+        rdaa:P50310 ;
+    skos:definition "Relates a person to an item that is associated with a person."@en,
+        "Liittää henkilön kappaleeseen, joka liittyy kuvailtavaan henkilöön."@fi .
+
+rdaa:P50323 a rdf:Property ;
+    rdfs:label "has related item of family"@en,
+        "sukuun liittyvä kappale"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An item that is associated with a family."@en,
+        "Kappale, joka liittyy kuvailtavaan sukuun."@fi ;
+    rdakit:toolkitLabel "related item of family"@en,
+        "sukuun liittyvä kappale"@fi ;
+    reg:hasSubproperty rdaa:P51080,
+        rdaa:P51081,
+        rdaa:P51082,
+        rdaa:P51083,
+        rdaa:P51086,
+        rdaa:P51087,
+        rdaa:P51089,
+        rdaa:P51090,
+        rdaa:P51095,
+        <http://rdaregistry.info/Elements/a/datatype/P50323>,
+        <http://rdaregistry.info/Elements/a/object/P50323> ;
+    reg:hasUnconstrained rdau:P61009 ;
+    reg:lexicalAlias rdaa:relatedItemOfFamily.en,
+        rdaa:sukuunLiittyvaKappale.fi ;
+    reg:name "relatedItemOfFamily"@en,
+        "sukuunLiittyvaKappale"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10008 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50319,
+        rdaa:P50363 ;
+    skos:definition "Relates a family to an item that is associated with a family."@en,
+        "Liittää suvun kappaleeseen, joka liittyy kuvailtavaan sukuun."@fi .
+
+rdaa:P50332 a rdf:Property ;
+    rdfs:label "has related item of corporate body"@en,
+        "yhteisöön liittyvä kappale"@fi ;
+    rdakit:hasElementType "1" ;
+    rdakit:toolkitDefinition "An item that is associated with a corporate body."@en,
+        "Kappale, joka liittyy kuvailtavaan yhteisöön."@fi ;
+    rdakit:toolkitLabel "related item of corporate body"@en,
+        "yhteisöön liittyvä kappale"@fi ;
+    reg:hasSubproperty rdaa:P50929,
+        rdaa:P50930,
+        rdaa:P50931,
+        rdaa:P50932,
+        rdaa:P50935,
+        rdaa:P50936,
+        rdaa:P50938,
+        rdaa:P50939,
+        rdaa:P50944,
+        <http://rdaregistry.info/Elements/a/datatype/P50332>,
+        <http://rdaregistry.info/Elements/a/object/P50332> ;
+    reg:hasUnconstrained rdau:P61009 ;
+    reg:lexicalAlias rdaa:relatedItemOfCorporateBody.en,
+        rdaa:yhteisoonLiittyvaKappale.fi ;
+    reg:name "relatedItemOfCorporateBody"@en,
+        "yhteisoonLiittyvaKappale"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10005 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50328,
+        rdaa:P50363 ;
+    skos:definition "Relates a corporate body to an item that is associated with a corporate body."@en,
+        "Liittää yhteisön kappaleeseen, joka liittyy kuvailtavaan yhteisöön."@fi .
+
+rdaa:P50448 a rdf:Property ;
+    rdfs:label "is contributor agent to amalgamation of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by an agent to a seamless mix of kinds of content"@en ;
+    rdakit:toolkitLabel "contributor agent to amalgamation of"@en ;
+    reg:hasSubproperty rdaa:P50245,
+        rdaa:P50263,
+        rdaa:P50266,
+        rdaa:P50449,
+        rdaa:P50450,
+        rdaa:P50624,
+        rdaa:P50775,
+        <http://rdaregistry.info/Elements/a/datatype/P50448>,
+        <http://rdaregistry.info/Elements/a/object/P50448> ;
+    reg:hasUnconstrained rdau:P61078 ;
+    reg:lexicalAlias rdaa:contributorAgentToAmalgamationOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10002 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50161 ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent to a seamless mix of kinds of content"@en .
+
+rdaa:P50624 a rdf:Property ;
+    rdfs:label "is contributor person to amalgamation of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by a person to a seamless mix of kinds of content"@en ;
+    rdakit:toolkitLabel "contributor person to amalgamation of"@en ;
+    reg:hasSubproperty rdaa:P50569,
+        rdaa:P50571,
+        rdaa:P50584,
+        rdaa:P50594,
+        rdaa:P50605,
+        rdaa:P50609,
+        rdaa:P50610,
+        rdaa:P50623,
+        <http://rdaregistry.info/Elements/a/object/P50624> ;
+    reg:hasUnconstrained rdau:P61078 ;
+    reg:lexicalAlias rdaa:contributorPersonToAmalgamationOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10004 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50448,
+        rdaa:P50625 ;
+    skos:definition "Relates a person to an expression that includes a contribution by a person to a seamless mix of kinds of content"@en .
+
+rdaa:P50926 a rdf:Property ;
+    rdfs:label "is contributor corporate body to amalgamation of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by a corporate body to a seamless mix of kinds of content"@en ;
+    rdakit:toolkitLabel "contributor corporate body to amalgamation of"@en ;
+    reg:hasSubproperty rdaa:P50871,
+        rdaa:P50873,
+        rdaa:P50886,
+        rdaa:P50896,
+        rdaa:P50907,
+        rdaa:P50911,
+        rdaa:P50912,
+        rdaa:P50925,
+        <http://rdaregistry.info/Elements/a/object/P50926> ;
+    reg:hasUnconstrained rdau:P61078 ;
+    reg:lexicalAlias rdaa:contributorCorporateBodyToAmalgamationOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10005 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50775,
+        rdaa:P50927 ;
+    skos:definition "Relates a corporate body to an expression that includes a contribution by a corporate body to a seamless mix of kinds of content"@en .
+
+rdaa:P51077 a rdf:Property ;
+    rdfs:label "is contributor family to amalgamation of"@en ;
+    rdakit:hasElementType "2" ;
+    rdakit:toolkitDefinition "An expression that includes a contribution by a family to a seamless mix of kinds of content"@en ;
+    rdakit:toolkitLabel "contributor family to amalgamation of"@en ;
+    reg:hasSubproperty rdaa:P51022,
+        rdaa:P51024,
+        rdaa:P51037,
+        rdaa:P51047,
+        rdaa:P51058,
+        rdaa:P51062,
+        rdaa:P51063,
+        rdaa:P51076,
+        <http://rdaregistry.info/Elements/a/object/P51077> ;
+    reg:hasUnconstrained rdau:P61078 ;
+    reg:lexicalAlias rdaa:contributorFamilyToAmalgamationOf.en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:domain rdac:C10008 ;
+    rdfs:isDefinedBy rdaa: ;
+    rdfs:subPropertyOf rdaa:P50775,
+        rdaa:P51078 ;
+    skos:definition "Relates a family to an expression that includes a contribution by a family to a seamless mix of kinds of content"@en .
+
+rdau:P60324 a rdf:Property ;
+    rdfs:label "has date associated with agent"@en ;
+    reg:hasSubproperty rdaa:P50040,
+        rdaa:P50058,
+        rdaa:P50107,
+        rdau:P60076,
+        rdau:P60524,
+        rdau:P60525,
+        rdau:P60526,
+        rdau:P60598,
+        rdau:P60599 ;
+    reg:lexicalAlias rdau:dateAssociatedWithAgent.en ;
+    reg:name "dateAssociatedWithAgent"@en ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdau: ;
+    rdfs:subPropertyOf rdau:P61020 ;
+    owl:inverseOf rdau:P60974 ;
+    skos:definition "Relates a resource to a significant date associated with the history of an agent, or the date or range of dates on which a conference, etc., was held, or a date with which an agent is otherwise associated."@en .
+
 rdau:P60668 a rdf:Property ;
     rdfs:label "is producer of"@en ;
     reg:hasSubproperty rdaa:P50201,
@@ -124,6 +2691,21 @@ finaf:000001935 a rdac:C10005,
     rdau:P61101 "Yhteisön kotisivu (9.09.2005)"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Keskustapuolue"@fi .
+
+finaf:000003304 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1993-10-06"^^xsd:date ;
+    dct:modified "2020-11-04T20:05:51"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000405201629>,
+        "Asteri ID: 000003304" ;
+    rdaa:P50025 "Oulun yliopiston kasvatustieteiden tiedekunta"@fi,
+        "University of Oulu. Faculty of Education"@fi ;
+    rdaa:P50237 "tiedekunta"@fi ;
+    rdaa:P50407 "Oulun yliopisto. Kasvatustieteiden tiedekunta"@fi ;
+    skos:altLabel "Oulun yliopiston kasvatustieteiden tiedekunta"@fi,
+        "University of Oulu. Faculty of Education"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Oulun yliopisto. Kasvatustieteiden tiedekunta"@fi .
 
 finaf:000006926 a rdac:C10005,
         skos:Concept ;
@@ -878,21 +3460,6 @@ finaf:000001491 a rdac:C10005,
         "Université de Jyväskylä. Faculté des sciences de l'éducation physique"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Jyväskylän yliopisto. Liikuntatieteellinen tiedekunta"@fi .
-
-finaf:000003304 a rdac:C10005,
-        skos:Concept ;
-    dct:created "1993-10-06"^^xsd:date ;
-    dct:modified "2020-11-04T20:05:51"^^xsd:dateTime ;
-    rdaa:P50006 <http://isni.org/isni/0000000405201629>,
-        "Asteri ID: 000003304" ;
-    rdaa:P50025 "Oulun yliopiston kasvatustieteiden tiedekunta"@fi,
-        "University of Oulu. Faculty of Education"@fi ;
-    rdaa:P50237 "tiedekunta"@fi ;
-    rdaa:P50407 "Oulun yliopisto. Kasvatustieteiden tiedekunta"@fi ;
-    skos:altLabel "Oulun yliopiston kasvatustieteiden tiedekunta"@fi,
-        "University of Oulu. Faculty of Education"@fi ;
-    skos:inScheme finaf: ;
-    skos:prefLabel "Oulun yliopisto. Kasvatustieteiden tiedekunta"@fi .
 
 finaf:000005982 a rdac:C10005,
         skos:Concept ;
@@ -4301,30 +6868,6 @@ finaf:000027474 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Svenska handelshögskolan"@fi .
 
-finaf:000033447 a rdac:C10005,
-        skos:Concept ;
-    dct:created "1990-04-07"^^xsd:date ;
-    dct:modified "2020-12-03T20:12:18"^^xsd:dateTime ;
-    rdaa:P50006 <http://isni.org/isni/0000000492949247>,
-        "Asteri ID: 000033447" ;
-    rdaa:P50012 finaf:000033028,
-        finaf:000033029,
-        finaf:000033636 ;
-    rdaa:P50025 "City of Jyväskylä"@fi,
-        "Jyväskylä"@fi,
-        "Jyväskylä stad"@fi,
-        "Stadt Jyväskylä"@fi ;
-    rdaa:P50035 "Säynätsalo liitettiin Jyväskylään vuonna 1993. Jyväskylän maalaiskunta ja Korpilahti liitettiin vuonna 2009"@fi ;
-    rdaa:P50236 "1837/.."^^<http://id.loc.gov/datatypes/edtf> ;
-    rdaa:P50238 mts:m358 ;
-    rdaa:P50407 "Jyväskylän kaupunki"@fi ;
-    skos:altLabel "City of Jyväskylä"@fi,
-        "Jyväskylä"@fi,
-        "Jyväskylä stad"@fi,
-        "Stadt Jyväskylä"@fi ;
-    skos:inScheme finaf: ;
-    skos:prefLabel "Jyväskylän kaupunki"@fi .
-
 finaf:000034913 a rdac:C10005,
         skos:Concept ;
     dct:created "1991-01-28"^^xsd:date ;
@@ -4568,6 +7111,30 @@ finaf:000033386 a rdac:C10005,
         "Finlands Näringsliv rf"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Elinkeinoelämän keskusliitto"@fi .
+
+finaf:000033447 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1990-04-07"^^xsd:date ;
+    dct:modified "2020-12-03T20:12:18"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000492949247>,
+        "Asteri ID: 000033447" ;
+    rdaa:P50012 finaf:000033028,
+        finaf:000033029,
+        finaf:000033636 ;
+    rdaa:P50025 "City of Jyväskylä"@fi,
+        "Jyväskylä"@fi,
+        "Jyväskylä stad"@fi,
+        "Stadt Jyväskylä"@fi ;
+    rdaa:P50035 "Säynätsalo liitettiin Jyväskylään vuonna 1993. Jyväskylän maalaiskunta ja Korpilahti liitettiin vuonna 2009"@fi ;
+    rdaa:P50236 "1837/.."^^<http://id.loc.gov/datatypes/edtf> ;
+    rdaa:P50238 mts:m358 ;
+    rdaa:P50407 "Jyväskylän kaupunki"@fi ;
+    skos:altLabel "City of Jyväskylä"@fi,
+        "Jyväskylä"@fi,
+        "Jyväskylä stad"@fi,
+        "Stadt Jyväskylä"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Jyväskylän kaupunki"@fi .
 
 finaf:000033466 a rdac:C10005,
         skos:Concept ;
@@ -6814,27 +9381,6 @@ finaf:000035620 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Maanpuolustuskorkeakoulu"@fi .
 
-finaf:000037081 a rdac:C10005,
-        skos:Concept ;
-    dct:created "1992-09-10"^^xsd:date ;
-    dct:modified "2021-07-19T17:45:10"^^xsd:dateTime ;
-    rdaa:P50006 "Asteri ID: 000037081" ;
-    rdaa:P50012 finaf:000037080 ;
-    rdaa:P50025 "KYS (Kuopion yliopistollinen sairaala)"@fi,
-        "Kuopio University Hospital"@fi,
-        "Kuopio universitetssjukhus"@fi,
-        "Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi,
-        "Suomi. Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi ;
-    rdaa:P50237 "sairaala"@fi ;
-    rdaa:P50407 "Kuopion yliopistollinen sairaala"@fi ;
-    skos:altLabel "KYS (Kuopion yliopistollinen sairaala)"@fi,
-        "Kuopio University Hospital"@fi,
-        "Kuopio universitetssjukhus"@fi,
-        "Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi,
-        "Suomi. Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi ;
-    skos:inScheme finaf: ;
-    skos:prefLabel "Kuopion yliopistollinen sairaala"@fi .
-
 finaf:000035300 a rdac:C10005,
         skos:Concept ;
     dct:created "1990-04-07"^^xsd:date ;
@@ -6863,6 +9409,27 @@ finaf:000035300 a rdac:C10005,
         "Työ- ja elinkeinoministeriö. Valtion teknillinen tutkimuskeskus"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Valtion teknillinen tutkimuskeskus"@fi .
+
+finaf:000037081 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1992-09-10"^^xsd:date ;
+    dct:modified "2021-07-19T17:45:10"^^xsd:dateTime ;
+    rdaa:P50006 "Asteri ID: 000037081" ;
+    rdaa:P50012 finaf:000037080 ;
+    rdaa:P50025 "KYS (Kuopion yliopistollinen sairaala)"@fi,
+        "Kuopio University Hospital"@fi,
+        "Kuopio universitetssjukhus"@fi,
+        "Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi,
+        "Suomi. Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi ;
+    rdaa:P50237 "sairaala"@fi ;
+    rdaa:P50407 "Kuopion yliopistollinen sairaala"@fi ;
+    skos:altLabel "KYS (Kuopion yliopistollinen sairaala)"@fi,
+        "Kuopio University Hospital"@fi,
+        "Kuopio universitetssjukhus"@fi,
+        "Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi,
+        "Suomi. Pohjois-Savon sairaanhoitopiiri. Kuopion yliopistollinen sairaala"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Kuopion yliopistollinen sairaala"@fi .
 
 finaf:000014999 a rdac:C10005,
         skos:Concept ;
@@ -8491,7 +11058,7 @@ För mer information on dataskydd och svar på vanliga frågor se sidan <a href=
         "KANTO - Nationella aktörsnamn"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-03-06T00:45:22+00:00"^^xsd:dateTime ;
+    dct:modified "2023-03-07T00:44:04+00:00"^^xsd:dateTime ;
     dct:subject yso:p1272,
         yso:p26023,
         yso:p3835 ;
