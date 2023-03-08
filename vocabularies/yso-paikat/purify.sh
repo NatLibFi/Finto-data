@@ -11,7 +11,7 @@ CONTEXT=$PAIKATPURIBASE
 OUTFILE="${PAIKATFILE}.new"
 
 # Saving the current YSO maxcounter from puri.onki.fi, as we are about to use YSO-paikat counter range
-COUNTER=$(curl -s "http://puri.onki.fi/getcounter?purins=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fyso%2Fp")
+COUNTER=$(curl -s -H "Pragma: no-cache" "http://puri.onki.fi/getcounter?purins=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fyso%2Fp")
 
 if [ $COUNTER -lt 100000 ]; then
 
@@ -27,5 +27,7 @@ if [ $COUNTER -lt 100000 ]; then
   #Setting the old maxcounter back not to mess with YSOs puri counter
   curl "http://puri.onki.fi/setcounter?purins=http%3A%2F%2Fwww.yso.fi%2Fonto%2Fyso%2Fp&counter=$COUNTER"
 
-  else echo "puri.onki.fi counter not in the excepted range for YSO-puris ( < 100000)"
+  else
+    echo "puri.onki.fi counter not in the excepted range for YSO-puris ( < 100000)"
+    echo -e "puri.onki.fi counter not in the excepted range for YSO-puris ( < 100000)" | mail -s "Ongelma YSO-paikoissa" joeli.takala@helsinki.fi
 fi
