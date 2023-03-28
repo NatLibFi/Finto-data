@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PAIKATFILE=yso-paikat-purify.ttl
+PAIKATFILE=yso-paikat-vb-dump.ttl
 FORMAT=turtle
 
 PURIFY=../../tools/purify/purify.py
@@ -20,7 +20,7 @@ if [ $COUNTER -lt 100000 ]; then
   sed -i 's/:p508540/:places/g' $OUTFILE # Prevent purify from changing the conceptScheme
 
   if [ -s $OUTFILE ]; then
-    mv $OUTFILE $PAIKATFILE
+    mv -f $OUTFILE $PAIKATFILE
     echo "Done, replaced $PAIKATFILE with purified version."
   fi
 
