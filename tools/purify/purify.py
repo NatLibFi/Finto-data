@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 ## purify.py
 ## Kim Viljanen, 1.10.2010
@@ -12,14 +12,21 @@
 ## * add -t (TO_FORMAT) argument
 ## * more efficient serializing (output to sys.stdout directly, not via print)
 ## * avoid purifying the namespace URI itself (often a owl:Ontology instance)
+##
+## Modified 28.3.2023 by Joeli Takala <joeli.takala@helsinki.fi>:
+## * Changed Python 2 method calls to their Python 3 equivalents
+## * Changed Python 2 library imports to their Python 3 equivalents
+## * Changed Python 2 comparison operators to their Python 3 equivalents
+## * Changed the UTF-8 encoding from specific URIs to UTF-8 encoding of HTTP responses
+## * Changed the serialization destination of the rdflib model
 
 from optparse import OptionParser
 import sys
 try:
   from rdflib import URIRef, Literal, RDF, RDFS, Namespace
 except ImportError:
-  print >>sys.stderr, "You need to install the rdflib Python library (http://rdflib.net)."
-  print >>sys.stderr, "On Debian/Ubuntu, try: sudo apt-get install python-rdflib"
+  print("You need to install the rdflib Python library (http://rdflib.net).", file=sys.stderr)
+  print("On Debian/Ubuntu, try: sudo apt-get install python-rdflib", file=sys.stderr)
   sys.exit(1)
       
 try:
@@ -32,7 +39,7 @@ except ImportError:
   from rdflib import Graph
   m = Graph()
 
-import httplib, urllib
+import http.client, urllib.request, urllib.parse, urllib.error
 import re
 
 
@@ -43,8 +50,8 @@ def getpuri(uri, nsfrom, nsto, context, skippuris):
 
   if (isinstance(uri, URIRef) and uri.startswith(nsfrom) and len(uri) > len(nsfrom)):
 
-    if (skippuris is not None and uri.startswith(nsfrom+skippuris) and 
-        uri[len(nsfrom+skippuris):] is not "" and 
+    if (skippuris is not None and uri.startswith(nsfrom+skippuris) and
+        uri[len(nsfrom+skippuris):] != "" and
         uri[len(nsfrom+skippuris):].isdigit()):
 
       sys.stderr.write("s") 
@@ -56,7 +63,7 @@ def getpuri(uri, nsfrom, nsto, context, skippuris):
       if (uri in uricache and nsto in uricache[uri]):
         return uricache[uri][nsto]
 
-      res = puridb_call('getpuri', {'uri':uri.encode('UTF-8'), 'purins':nsto, 'context':context})
+      res = puridb_call('getpuri', {'uri':uri, 'purins':nsto, 'context':context})
       res = URIRef(res)
 
       ## caching
@@ -69,19 +76,19 @@ def getpuri(uri, nsfrom, nsto, context, skippuris):
 
 def puridb_call(method, params):
 
-  params = urllib.urlencode(params)
+  params = urllib.parse.urlencode(params)
 
-  conn = httplib.HTTPConnection(puridb)
+  conn = http.client.HTTPConnection(puridb)
   conn.request("GET", "/%s?%s" % (method, params))
 
   response = conn.getresponse()
 
   if (response.status != 200):
-    print "puridb_call: ERROR: "
-    print response.read()
+    print ("puridb_call: ERROR: ")
+    print (response.read())
     sys.exit(1)
 
-  res = response.read()
+  res = response.read().decode('utf8')
   conn.close()
 
   return res
@@ -114,7 +121,7 @@ parser.add_option('-c', '--context',
 
 if len(args) < 3:
   parser.print_help()
-  print "\nExample: purify.py -c \"http://www.yso.fi/onto/myonto/m\" myonto.owl \"http://www.yso.fi/onto/myonto/\" \"http://www.yso.fi/onto/myonto/m\""
+  print ("\nExample: purify.py -c \"http://www.yso.fi/onto/myonto/m\" myonto.owl \"http://www.yso.fi/onto/myonto/\" \"http://www.yso.fi/onto/myonto/m\"")
   sys.exit(1)
 
 file = args[0]
@@ -155,7 +162,7 @@ if (options.puri_counter_start_value is not None):
     for stmt in list(m.triples((None, None, None))):
       for uri in stmt:
         if (isinstance(uri, URIRef) and uri.startswith(nsto) and
-            uri[len(nsto):] is not "" and 
+            uri[len(nsto):] != "" and
             uri[len(nsto):].isdigit()):
           if (int(maxcounter) < int(uri[len(nsto):])):
             maxcounter = int(uri[len(nsto):])
@@ -212,4 +219,4 @@ for s,p,o in list(m.triples((None, None, None))):
 
 
 sys.stderr.write("\n")
-m.serialize(destination=sys.stdout, format=options.to_format)
+m.serialize(destination=sys.stdout.buffer, format=options.to_format)
