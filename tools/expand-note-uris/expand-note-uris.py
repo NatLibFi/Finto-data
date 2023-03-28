@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Expand references to concept URIs to HTML links with concept labels
 # in scope notes and definitions. Write the modified vocabulary on stdout.
@@ -16,19 +16,22 @@ URIRE = re.compile(r'\[http([^\]]+)\]')
 g = Graph()
 g.parse(inputfile, format=guess_format(inputfile))
 
+def concept_labels(graph, concept, lang):
+    return [label for label in graph.objects(concept, SKOS.prefLabel)
+            if label.language == lang]
+
 def uri_to_link(sub, prop, lang, matchobj):
     uri = 'http' + matchobj.group(1)
     concept = URIRef(uri)
-    labels = g.preferredLabel(concept, lang)
+    labels = concept_labels(g, concept, lang)
     try:
-        label = labels[0][1]
+        label = labels[0]
     except IndexError:
         try:
             g2 = Graph()
             g2.parse(uri)
-            g2.preferredLabel(concept, lang)
-            labels = g2.preferredLabel(concept, lang)
-            label = labels[0][1]
+            labels = concept_labels(g2, concept, lang)
+            label = labels[0]
             return "<a href='%s'>%s</a>" % (uri, label)
         except:
             print("Concept %s: could not retrieve label for '%s' found in %s in language %s" % (sub, concept, prop, lang), file=sys.stderr)
@@ -48,4 +51,4 @@ for prop in NOTEPROPS:
             g.add((s, prop, Literal(new, lang)))
             
 
-g.serialize(destination=sys.stdout, format='turtle')
+g.serialize(destination=sys.stdout.buffer, format='turtle')
