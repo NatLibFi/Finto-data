@@ -10,6 +10,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
 
 yso:places a skos:ConceptScheme ;
     dc:creator "National Library of Finland"@en,
@@ -57,3 +58,35 @@ Du kan föreslå nya begrepp till ALLFO-orter med förslagsblanketten längst ne
 
 iso-thes:broaderPartitive rdfs:subPropertyOf skos:broader .
 iso-thes:narrowerPartitive rdfs:subPropertyOf skos:narrower .
+
+yso-meta:placeType a rdf:Property ;
+    rdfs:label "place type"@en,
+        "paikkatyyppi"@fi,
+        "platstyp"@sv ;
+    rdfs:domain skos:Concept .
+
+yso-meta:MMLPlaceType a owl:Class ;
+    rdfs:label "NLS place type"@en,
+        "MML-paikkatyyppi"@fi,
+        "LMV platstyp"@sv .
+
+yso-meta:WikidataPlaceType a owl:Class ;
+    rdfs:label "Wikidata place type"@en,
+        "Wikidata-paikkatyyppi"@fi,
+        "Wikidata platstyp"@sv .
+
+yso-meta:mmlPlaceType a owl:ObjectProperty ;
+    rdfs:label "NLS place type"@en,
+        "MML-paikkatyyppi"@fi,
+        "LMV platstyp"@sv ;
+    rdfs:domain skos:Concept ;
+    rdfs:range yso-meta:MMLPlaceType ;
+    rdfs:subPropertyOf yso-meta:placeType .
+
+yso-meta:wikidataPlaceType a owl:ObjectProperty ;
+    rdfs:label "wikidata place type"@en,
+        "wikidata-paikkatyyppi"@fi,
+        "wikidata platstyp"@sv ;
+    rdfs:domain skos:Concept ;
+    rdfs:range yso-meta:WikidataPlaceType ;
+    rdfs:subPropertyOf yso-meta:placeType .

@@ -4,7 +4,6 @@
 import argparse
 import sys
 
-
 def printCoordinates(listing, current):
     point = sorted(listing, key=len)[-1].split()
     try:
@@ -22,26 +21,35 @@ def readCommandLineArguments():
     return args
 
 def main():
-        args = readCommandLineArguments()
-        sys.stdout = args.output
-        print("@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .")
+    args = readCommandLineArguments()
+    sys.stdout = args.output
 
-        current = None
-        listing = []
-        for row in [line.rstrip() for line in args.input]:
-            split = row.split()
-            if current != split[0]:
-                if len(listing):
-                    printCoordinates(listing, current)
-                listing = []
+    print("@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .")
+    print("@prefix ysometa: <http://www.yso.fi/onto/yso-meta/> .")
 
-            current = split[0]
-            if split[1] == "<http://www.wikidata.org/prop/direct/P625>":
-                listing.append(" ".join(split[2:4]))
-            else:
-                print(row)
-        if len(listing):
-            printCoordinates(listing, current)
+    coords = {}
+
+    current = None
+    listing = []
+    types = []
+    for row in [line.rstrip() for line in args.input]:
+        split = row.split()
+        if current != split[0]:
+            if len(listing):
+                printCoordinates(listing, current)
+            listing = []
+
+        current = split[0]
+
+        if split[1] == "<http://www.wikidata.org/prop/direct/P625>":
+            listing.append(" ".join(split[2:4]))
+        elif split[1] == "<http://www.wikidata.org/prop/direct/P31>":
+            qid = split[2].rsplit("/", 1)[1].rstrip(">")
+            print(split[0] + " ysometa:wikidataPlaceType ysometa:" + qid + " .")
+        else:
+            print(row)
+    if len(listing):
+        printCoordinates(listing, current)
 
 if __name__ == "__main__":
     main()
