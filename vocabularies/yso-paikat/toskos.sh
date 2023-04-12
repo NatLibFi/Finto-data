@@ -9,13 +9,13 @@ rsparql --results NT --service https://query.wikidata.org/sparql --query wikidat
 ./wkt2wgs84.py < wikidata-links.nt > wikidata-links-single-value-coordinates.ttl
 
 # grep used PNR places (their paikkaIDs)
-grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-paikat-vb-dump.rdf | sort -u > yso-paikat-usedPNRs.txt
+grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-paikat-vb-dump.ttl | sort -u > yso-paikat-usedPNRs.txt
 
 # create wgs84 lat/long literals for used PNR places
 ./extractUsedPNRs.py --input pnr-complete-paikkaid-wgs84-coordinates-table-2022-10-21.csv --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
 
 # expand URIs in notes and definitions
-$EXPANDURIS yso-paikat-vb-dump.rdf >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
+$EXPANDURIS yso-paikat-vb-dump.ttl >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
 
 INFILES="place-types.ttl yso-paikat-expanded.ttl yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl yso-paikat-metadata.ttl"
 OUTFILE=yso-paikat-skos.ttl
