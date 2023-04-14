@@ -1,14 +1,25 @@
 ## Ohjeistus YSO-paikkojen PNR-koordinaattitietojen ekstrahointiin:
 
-Aloita lataamalla tarvittava .gkpg-tiedosto osoitteesta
-http://www.nic.funet.fi/index/geodata/mml/paikannimet/
+Hae API-avain Maanmittauslaitoksen rajapintaan. Ohjeet sivulla https://www.maanmittauslaitos.fi/rajapinnat/api-avaimen-ohje.
+
+Aloita lataamalla tarvittava .gkpg-tiedosto paikkatyyppeineen esim. QGIS-ohjelmalla (pelkät koordinaattitiedot ilman paikkatyyppitietoja on saatu aiemmin osoitteesta http://www.nic.funet.fi/index/geodata/mml/paikannimet/)
+
+### Avaa QGIS -ohjelma (saatavilla HY:n Software Centeristä)
+
+1) Selain / Browser -valikkoikkunasta "WFS / OGC API - Features"
+2) Uusi yhteys / New connection -> avaa ikkunan "Luo uusi WFS-yhteys" / "Create a new WFS Connection"
+3) Autentikointi / Authentication -> Yksinkertainen todennus / Basic -> Käyttäjänimen kohdalle API-avain
+4) URL: https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/
+5) Sivun koko / Page size: 1000
+6) Selain / Browser -valikkoikkunan kohdan "WFS / OGC API - Features" alta tuplaklikkaa PlaceName
+7) Tasot / Layers -ikkunassa PlaceName -> "Export..." > "Save features as"
+8) Valitse tallennusikkunasta Tiedostomuoto: GeoPackage ja anna tiedostonimi
+9) Valitse vietävät kentät ja niiden vientivalinnat / Select fields to export and their export options: poista kenttävalinnoista muut kuin placeId ja placeType
 
 Huom. koordinaattitiedot on tallennettu oheisessa
 Maanmittauslaitoksen .gpkg-tiedostossa ESPG:3067 - ETRS89 / TM35FIN(E,N) -muodossa,
 nämä täytyy muuntaa WGS84-koordinaattitason mukaisiksi koordinaattipisteiksi.
-Tämä tapahtuu esimerkiksi seuraavasti:
-
-### Avaa QGIS 3.16.1 -ohjelma (saatavilla HY:n Software Centeristä)
+Tämä tapahtuu esimerkiksi QGIS-ohjelmalla seuraavasti:
 
 1) Avaa Database -> Database Manager
 2) GeoPackage -> New Connection
@@ -47,7 +58,7 @@ pohjoisen WGS84-koordinaattisarakkeen.
 
 1) Paina oikealla painikkeella WGS84-muotoista kerrosta -> Export -> Save Features As..
 2) Format: Comma Separated Value [CSV]
-3) Valitse vain kentät "paikkaID", "WGS84_N", "WGS84_E"
+3) Valitse vain kentät "placeID", "placeType", "WGS84_N", "WGS84_E"
 4) Voit ottaa pois valinnan "Add saved file to map"
 5) Valittuasi tiedostonimen voit painaa "OK"-painiketta. Järjestelmä luo halutut tiedot sisältävän
 .csv-tiedoston.
@@ -75,7 +86,7 @@ Voit poistaa duplikaatit tiedostosta, esimerkiksi Excelissä tämän voi tehdä 
 
 Nyt sinulla on valmis, kaikki PNR:n paikat/niiden koordinaatit sisältävä normalisoitu taulukko.
 Jos myöhemmin on tarvetta, voi taulukkoon ottaa myös muita sarakkeita.
-Huom! Moni skripti odottaa sarakkeiden olevan järjestyksessä 'paikkaID', 'WGS84_N', 'WGS84_E'.
+Huom! Moni skripti odottaa sarakkeiden olevan järjestyksessä 'placeID', 'placeType', 'WGS84_N', 'WGS84_E'.
 Huom2! Suurinta osaa PNR:n paikoista ei ole käytetty YSO-paikoissa. Tämä on otettu huomioon automaattisessa komentosarjassa (alla lyhyt kuvaus).
 
 
