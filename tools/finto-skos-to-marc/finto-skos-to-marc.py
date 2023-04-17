@@ -881,15 +881,6 @@ def convert(cs, vocabulary_name, language, g, g2):
                         ])
             if len(geographical_types) == 1:
                 subfield_b = next(iter(geographical_types))
-            # ruotsinkieliseen sanastoon ei laiteta paikanninimirekisterilinkkejä, koska ruotsinkielinen selite puuttuu
-            for valueProp in sorted(getValues(g, concept, SKOS.closeMatch, language=language), key=lambda o: str(o.value)):  
-                if "http://paikkatiedot.fi" in valueProp.value:
-                    if subfield_b:
-                        subfield_list.append([
-                            'a', 'Maanmittauslaitoksen paikannimirekisteri',
-                            'b', subfield_b,
-                            'u', valueProp.value
-                        ])
 
             for subfields in subfield_list:
                 rec.add_field(
