@@ -71,7 +71,7 @@ if os.path.exists(tsfile):
 
 # load SKOS file
 g = Graph()
-g.load(sys.stdin, format='turtle')
+g.parse(sys.stdin, format='turtle')
 
 # calculate hashes and timestamps for concepts
 def concept_hash(concept):
