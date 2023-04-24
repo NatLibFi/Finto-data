@@ -15,7 +15,7 @@ grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-pa
 ./extractUsedPNRs.py --input pnr-complete-paikkaid-wgs84-coordinates-table-2023-04-14.csv --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
 
 # expand URIs in notes and definitions
-$EXPANDURIS yso-paikat-vb-dump.ttl >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
+$EXPANDURIS yso-paikat-vb-dump.rdf >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
 
 INFILES="place-types.ttl yso-paikat-expanded.ttl yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl yso-paikat-metadata.ttl"
 OUTFILE=yso-paikat-skos.ttl
