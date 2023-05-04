@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Utility to generate dct:created and dct:modified timestamps (xsd:date) for
 # SKOS concepts.
@@ -38,7 +38,7 @@ SKOS = Namespace('http://www.w3.org/2004/02/skos/core#')
 DCT = Namespace('http://purl.org/dc/terms/')
 
 if len(sys.argv) != 2 and len(sys.argv) != 3:
-    print >>sys.stderr, "Usage: %s <timestampfile> [date]" % sys.argv[0]
+    print("Usage: %s <timestampfile> [date]" % sys.argv[0], file=sys.stderr)
     sys.exit(1)
 
 tsfile = sys.argv[1]
@@ -64,7 +64,7 @@ if os.path.exists(tsfile):
 
 # load SKOS file
 g = Graph()
-g.load(sys.stdin, format='turtle')
+g.parse(sys.stdin, format='turtle')
 
 # calculate hashes and timestamps for concepts
 def concept_hash(concept):
@@ -76,7 +76,7 @@ def concept_hash(concept):
     nt = cgraph.serialize(destination=None, format='nt')
     sorted_nt = ''.join(sorted(nt.splitlines(True)))
     md5 = hashlib.md5()
-    md5.update(sorted_nt)
+    md5.update(sorted_nt.encode('utf-8'))
     return md5.hexdigest()
 
 new_timestamps = {}
@@ -113,7 +113,7 @@ for concept in g.subjects(RDF.type, SKOS.Concept):
             new_timestamps[concept] = (hash, timestamp, ctime)
 
 # Add the new timestamps to the graph
-for concept, cdata in new_timestamps.items():
+for concept, cdata in list(new_timestamps.items()):
     hash, mtime, ctime = cdata
     if mtime != '-':
         g.add((concept, DCT.modified, Literal(mtime, datatype=XSD.date)))
@@ -130,6 +130,6 @@ for concept in old_timestamps:
 with open(tsfile, 'w') as f:
     for concept, cdata in sorted(new_timestamps.items()):
         hash, mtime, ctime = cdata
-        print >>f, "\t".join((concept, hash, mtime, ctime))
+        print("\t".join((concept, hash, mtime, ctime)), file=f)
 
-g.serialize(destination=sys.stdout, format='turtle')
+g.serialize(destination=sys.stdout.buffer, format='turtle')
