@@ -63,29 +63,6 @@ public class JenaHelpers {
 		return malli;
 	}
 	
-	public static void kirjoitaMalli(Model malli, String mallinPolku, boolean onTtl) {
-		try {
-			FileOutputStream os = new FileOutputStream(mallinPolku);
-			BufferedOutputStream bs = new BufferedOutputStream(os);
-			RDFWriter kirjuri;
-			if (onTtl) kirjuri = malli.getWriter("TTL");
-			else kirjuri = malli.getWriter();
-			kirjuri.setProperty("showXmlDeclaration", true);
-			//kirjuri.setProperty("xmlbase", "http://yso.fi/mao");
-
-			kirjuri.write(malli, bs, null);
-			bs.flush();
-			bs.close();
-			os.flush();
-			os.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Malli kirjoitettu tiedostoon " + mallinPolku);
-
-	}
-	
 	public static void testaaMallinLabelienKielet(Model malli, Property labelProp) {
 		HashMap<String, Integer> kieliLablienMaaraMap = new HashMap<String, Integer>();
 		StmtIterator iter = malli.listStatements((Resource)null, labelProp, (RDFNode)null);
