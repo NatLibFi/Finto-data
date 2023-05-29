@@ -9,7 +9,7 @@ rsparql --results NT --service https://query.wikidata.org/sparql --query wikidat
 ./wkt2wgs84.py < wikidata-links.nt > wikidata-links-single-value-coordinates.ttl
 
 # grep used PNR places (their paikkaIDs)
-grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-paikat-vb-dump.ttl | sort -u > yso-paikat-usedPNRs.txt
+grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-paikat-vb-dump.rdf | sort -u > yso-paikat-usedPNRs.txt
 
 # create wgs84 lat/long literals for used PNR places
 ./extractUsedPNRs.py --input pnr-complete-paikkaid-wgs84-coordinates-table-2023-04-14.csv --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
@@ -26,4 +26,3 @@ LOGFILE=skosify.log
 OPTS="--no-enrich-mappings --set-modified --namespace http://www.yso.fi/onto/yso/"
 
 $SKOSIFYCMD -c $CFGFILE $OPTS $INFILES -o $OUTFILE 2>$LOGFILE
-
