@@ -24,6 +24,8 @@
 ## * Modernized use of rdflib. No need to support rdflib < 6 anymore.
 ## * Removed the dependency on the puri.onki.fi service, using local TSV file instead.
 ## * Removed status output (printing of . and s symbols)
+## * Add output listing coined PURIs
+## * Use assigned PURIs to determine next PURI to assign, not RDF data
 
 
 from optparse import OptionParser
@@ -135,13 +137,12 @@ else:
   sys.stderr.write("Searching for PURI counter maximum...")
 
   maxcounter=-1
-  for stmt in list(m.triples((None, None, None))):
-    for uri in stmt:
-      if (isinstance(uri, URIRef) and uri.startswith(nsto) and
-          uri[len(nsto):] != "" and
-          uri[len(nsto):].isdigit()):
-        if (int(maxcounter) < int(uri[len(nsto):])):
-          maxcounter = int(uri[len(nsto):])
+  for puri, _ in puris.values():
+    if (puri.startswith(nsto) and
+        puri[len(nsto):] != "" and
+        puri[len(nsto):].isdigit()):
+      if (int(maxcounter) < int(puri[len(nsto):])):
+        maxcounter = int(puri[len(nsto):])
   maxcounter = maxcounter + 1
 
 sys.stderr.write("Set PURI counter to %s\n" % maxcounter)
