@@ -3,14 +3,14 @@
 YSOFILE=ysoKehitys-purify.ttl
 FORMAT=turtle
 
-PURIFY=../../tools/purify/purify.py
+PURIFY=../../tools/purify/purify-local.py
 YSONS=http://www.yso.fi/onto/yso/
 PURICHAR=p
 YSOPURIBASE="${YSONS}${PURICHAR}"
-CONTEXT=$YSOPURIBASE
+PURIFILE=puri-mappings.tsv
 OUTFILE="${YSOFILE}.new"
 
-$PURIFY -c $CONTEXT -s $PURICHAR -f $FORMAT -t $FORMAT $YSOFILE $YSONS $YSOPURIBASE >$OUTFILE
+$PURIFY -s $PURICHAR -f $FORMAT -t $FORMAT $YSOFILE $YSONS $YSOPURIBASE $PURIFILE >$OUTFILE
 if [ -s $OUTFILE ]; then
   mv $OUTFILE $YSOFILE
   echo "Done, replaced $YSOFILE with purified version."
