@@ -1322,6 +1322,40 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ykl:> .
 
+
+:ykl-demo a skosmos:Vocabulary, void:Dataset ;
+        dc:title "YKL - kokeiluversio"@fi, "KAB - testversion"@sv, "PLC - test version"@en ;
+        skosmos:shortName "YKL-demo";
+        dc:subject :cat_general ;
+        void:uriSpace "http://urn.fi/URN:NBN:fi:au:ykl:";
+        skosmos:language "fi", "en", "sv";
+        skosmos:defaultLanguage "fi";
+        skosmos:defaultSidebarView "hierarchy";
+        skosmos:showTopConcepts "true";
+        skosmos:sortByNotation "lexical" ;
+        skosmos:searchByNotation "true" ;
+        skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
+        skosmos:alphabeticalListQualifier skos:notation ;
+        skosmos:propertyLabelOverride
+    [ skosmos:property skos:prefLabel ;
+          rdfs:label "luokka"@fi, "klass"@sv, "class"@en ] ,
+    [ skosmos:property skos:notation ;
+          rdfs:label "luokkatunnus"@fi, "klassindex"@sv, "notation"@en ] ,
+    [ skosmos:property skos:altLabel ;
+          rdfs:label "Hakusanat"@fi, "nyckelord"@sv, "keywords"@en ; rdfs:comment "Luokan hakusanat."@fi, "Nyckelord för klassen."@sv, "Keywords for this class."@en ] ,
+    [ skosmos:property skos:broader ;
+          rdfs:label "yläluokka"@fi, "överordnad klass"@sv, "superclass"@en ; rdfs:comment "Merkitykseltään laajempi luokka."@fi, "Klass vars betydelse är vidare."@sv, "Superclass."@en ] ,
+    [ skosmos:property skos:narrower ;
+          rdfs:label "alaluokat"@fi, "underordnade klasser"@sv, "subclasses"@en ; rdfs:comment "Merkitykseltään rajatummat luokat."@fi, "Klasser vars betydelse är snävare."@sv, "Subclasses."@en ] ,
+    [ skosmos:property skos:related ;
+          rdfs:label "assosiatiiviset luokat"@fi, "relaterade klasser"@sv, "related classes"@en ; rdfs:comment "Läheisesti luokan aiheeseen liittyvät luokat."@fi, "Klasser som är nära relaterade till klassens ämne."@sv, "Classes related to this class."@en ] ,
+    [ skosmos:property skos:closeMatch ;
+          rdfs:label "lähes vastaavat luokat"@fi, "nästan motsvarande klasser"@sv, "closely matching classes"@en ] ;
+        void:dataDump <https://dev.finto.fi/download/ykl/ykl-skos-demo.ttl> ;
+        void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+        skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ykl-demo:> .
+
+
 :ysa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSA - Yleinen suomalainen asiasanasto"@fi,
 		"YSA - Yleinen suomalainen asiasanasto"@sv,
