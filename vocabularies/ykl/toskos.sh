@@ -4,8 +4,8 @@
 
 # step 2: set $RAWFILE to be the file processed in step 1
 
-RAWFILE="ykl-tbc-validoitu.ttl"
-PROCESSEDFILE="ykl-tbc-validoitu-processed.ttl"
+RAWFILE="ykl.ttl"
+PROCESSEDFILE="ykl-processed.ttl"
 
 SKOSIFYCMD="skosify"
 
@@ -13,7 +13,7 @@ SKOSIFYCMD="skosify"
 cat $RAWFILE | sed 's/[ ]\+/ /g' | sed 's/  //g' | sed -r 's/ \+[)]/\+\)/g' | sed -r 's/([0-9]) \+([^ ][^0-9])/\1\+\2/g' | sed 's/ *$//' | sed 's/^ *//' > $PROCESSEDFILE
 
 INFILES="ykl-metadata.ttl $PROCESSEDFILE ykl-hklj.ttl"
-OUTFILE=ykl-tbc-validoitu-processed-skossattu.ttl
+OUTFILE=ykl-skos.ttl
 
 LOGFILE=skosify.log
 OPTS="-c ykl.cfg --namespace http://urn.fi/URN:NBN:fi:au:ykl: --mark-top-concepts"
