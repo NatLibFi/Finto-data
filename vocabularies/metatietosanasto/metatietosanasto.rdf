@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -8709,6 +8710,18 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:prefLabel xml:lang="sv">violindirektion</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">viulujohtostemma</skos:prefLabel>
   </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20230621_001">
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p20463"/>
+    <skos:prefLabel xml:lang="fi">piika</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20230621_002">
+    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p2017"/>
+    <skos:prefLabel xml:lang="fi">palvelija</skos:prefLabel>
+  </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2024">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
@@ -11907,6 +11920,8 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m551"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m20230621_001"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m20230621_002"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2309"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2310"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2311"/>
@@ -12778,7 +12793,6 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3187"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3188"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3189"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3190"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3191"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3192"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3193"/>
@@ -22320,12 +22334,14 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
     <dc11:source xml:lang="fi">YSO-termi</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="sv">arbetarförfattare</skos:altLabel>
     <skos:altLabel xml:lang="en">authors</skos:altLabel>
     <skos:altLabel xml:lang="fi">kansalliskirjailija</skos:altLabel>
     <skos:altLabel xml:lang="fi">kirjailijat</skos:altLabel>
     <skos:altLabel xml:lang="en">national author</skos:altLabel>
     <skos:altLabel xml:lang="sv">nationalförfattare</skos:altLabel>
     <skos:altLabel xml:lang="sv">nationalskald</skos:altLabel>
+    <skos:altLabel xml:lang="fi">työläiskirjailija</skos:altLabel>
     <skos:altLabel xml:lang="en">writers</skos:altLabel>
     <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m2505"/>
     <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p8970"/>
@@ -24858,16 +24874,6 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:definition xml:lang="fi">Katolilaisen munkkiluostarin esimies.</skos:definition>
     <skos:prefLabel xml:lang="sv">abbot</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">apotti</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3190">
-    <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
-    <dc11:source xml:lang="fi">YSO-termi</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:altLabel xml:lang="fi">työläiskirjailijat</skos:altLabel>
-    <skos:broader rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3004"/>
-    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p16548"/>
-    <skos:prefLabel xml:lang="sv">arbetarförfattare</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">työläiskirjailija</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m3191">
     <dc11:source xml:lang="sv">ALLFO-term</dc11:source>
