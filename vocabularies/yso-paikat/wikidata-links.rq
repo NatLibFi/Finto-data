@@ -3,12 +3,13 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/>
 
 CONSTRUCT {
     ?ysoc skos:closeMatch ?item .
     ?ysoc skos:prefLabel ?itemLabel .
     ?item wdt:P625 ?point .
-    ?item wdt:P31 ?type .
+    ?item yso-meta:wikidataPlaceType ?type .
     ?type skos:prefLabel ?typeLabel .
 }
 WHERE

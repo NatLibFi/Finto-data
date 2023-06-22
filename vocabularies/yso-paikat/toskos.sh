@@ -12,7 +12,7 @@ rsparql --results NT --service https://query.wikidata.org/sparql --query wikidat
 grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-paikat-vb-dump.rdf | sort -u > yso-paikat-usedPNRs.txt
 
 # create wgs84 lat/long literals for used PNR places
-./extractUsedPNRs.py --input pnr-complete-paikkaid-wgs84-coordinates-table-2023-04-14.csv --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
+./extractUsedPNRs.py --pnr_input pnr-complete-paikkaid-wgs84-coordinates-table-2023-04-14.csv --wd_input place-types.ttl --selector yso-paikat-usedPNRs.txt > yso-paikat-pnr.ttl
 
 # expand URIs in notes and definitions
 $EXPANDURIS yso-paikat-vb-dump.rdf >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log

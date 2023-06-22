@@ -43,9 +43,6 @@ def main():
 
         if split[1] == "<http://www.wikidata.org/prop/direct/P625>":
             listing.append(" ".join(split[2:4]))
-        elif split[1] == "<http://www.wikidata.org/prop/direct/P31>":
-            qid = split[2].rsplit("/", 1)[1].rstrip(">")
-            print(split[0] + " ysometa:wikidataPlaceType ysometa:" + qid + " .")
         else:
             print(row)
     if len(listing):
