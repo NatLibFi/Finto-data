@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="koko-metadata.ttl koko.ttl"
+INFILES="koko-metadata.ttl koko.ttl koko-replacedby.ttl"
 OUTFILE=koko-skos.ttl
 
 SKOSIFYCMD="skosify"
