@@ -778,10 +778,10 @@ slm:s1081  a             owl:Class , skos:Concept ;
         skos:prefLabel   "laulut"@fi , "sånger"@sv .
 
 slm:s869  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s354 ;
+        rdfs:subClassOf  slm:s930 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "historiska dramaserier"@sv , "historiska programserier"@sv , "historialliset sarjat (sarjaohjelmat)"@fi , "historiska tv-serier"@sv ;
-        skos:prefLabel   "historiska serier (programserier)"@sv , "historialliset televisiosarjat"@fi ;
+        skos:altLabel    "historiska dramaserier"@sv , "historiska programserier"@sv , "historialliset sarjat (sarjaohjelmat)"@fi , "historialliset televisiosarjat"@fi , "historialliset draamasarjat"@fi , "historiska tv-serier"@sv ;
+        skos:prefLabel   "historiska serier (programserier)"@sv , "historialliset sarjaohjelmat"@fi ;
         skos:related     slm:s1353 , slm:s230 .
 
 slm:s1205  a             owl:Class , skos:Concept ;
@@ -832,11 +832,14 @@ slm:s490  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "menuetit"@fi , "menuetter"@sv .
 
-slm:s487  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "valokuvakirjat"@fi , "planschverk"@sv ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "kuvateokset"@fi , "bildverk"@sv .
+slm:s487  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "valokuvakirjat"@fi , "planschverk"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "kuvateokset"@fi , "bildverk"@sv ;
+        skos:related     slm:s739 ;
+        skos:scopeNote   "Lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin käytetään termiä [http://urn.fi/URN:NBN:fi:au:slm:s739]."@fi .
 
 slm:s1461  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1044 ;
@@ -986,7 +989,7 @@ slm:s1446  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         skos:altLabel    "tietokilpailukysymykset"@fi , "quizfrågor"@sv ;
         skos:prefLabel   "visailukysymykset"@fi , "frågesportsfrågor"@sv ;
-        skos:related     slm:s170 .
+        skos:related     slm:f5f2fef2-ac4d-4ced-8bd3-24700c8683a9 .
 
 slm:s863  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -2142,12 +2145,13 @@ slm:s1201  a             owl:Class , skos:Concept ;
         skos:related     slm:s437 , slm:s1150 .
 
 slm:s739  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11808> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "kuvakirjat"@fi , "bilderböcker"@sv ;
-        skos:related     slm:s1181 , slm:s989 , slm:s910 , slm:s1415 ;
-        skos:scopeNote   "Käytetään lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin."@fi , "Används om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text."@sv .
+        skos:related     slm:s487 , slm:s1181 , slm:s989 , slm:s910 , slm:s1415 ;
+        skos:scopeNote   "Käytetään lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin. Muista runsaasti kuvia sisältävistä kirjoista käytetään termiä [http://www.yso.fi/onto/yso/p2599]."@fi , "Används om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text."@sv .
 
 slm:s978  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s552 ;
@@ -2686,8 +2690,9 @@ slm:s515  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "maanpuolustuslehdet"@fi , "militärtidningar"@sv .
 
-slm:s1328  a            owl:Class , skos:Concept ;
-        skos:prefLabel  "programblad"@sv , "käsiohjelmat"@fi .
+slm:s1328  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:b827ec47-fa58-4a0e-9327-477f45b9bd4f ;
+        skos:prefLabel   "programblad"@sv , "käsiohjelmat"@fi .
 
 slm:s137  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
@@ -2800,6 +2805,12 @@ slm:s1373  a             owl:Class , skos:Concept ;
         skos:altLabel    "danslåtar"@sv ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "tanssilaulut"@fi , "danssånger"@sv .
+
+slm:6252b2da-9bd8-406b-b431-ff774ae03436
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "puuhakortit"@fi ;
+        skos:related     slm:s407 , slm:s1410 .
 
 dct:RightsStatement  rdfs:subClassOf  dct:Standard .
 
@@ -3851,10 +3862,10 @@ slm:s23  a               owl:Class , skos:Concept ;
         skos:prefLabel   "scherzon"@sv , "scherzot"@fi .
 
 slm:s318  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s202 ;
+        rdfs:subClassOf  slm:s202 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "socialhandledningar"@sv , "sosiaalioppaat"@fi .
+        skos:prefLabel   "socialhandledningar"@sv , "sosiaaliturvaoppaat"@fi .
 
 slm:s750  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -4356,8 +4367,7 @@ slm:s780  a              owl:Class , skos:Concept ;
 slm:s170  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6062> ;
-        skos:prefLabel   "spel"@sv , "pelit"@fi ;
-        skos:related     slm:s1446 .
+        skos:prefLabel   "spel"@sv , "pelit"@fi .
 
 slm:s975  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6297,7 +6307,8 @@ slm:s983  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "debattinlägg"@sv , "debattartiklar"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "mielipidekirjoitukset"@fi , "insändare"@sv .
+        skos:prefLabel   "mielipidekirjoitukset"@fi , "insändare"@sv ;
+        skos:related     slm:e3f93b71-2c0d-4ad1-8580-4e9904c7b754 .
 
 slm:s1052  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -7324,7 +7335,8 @@ slm:s407  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:altLabel   "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
         skos:inScheme   slm:s285 ;
-        skos:prefLabel  "pysselböcker"@sv , "puuhakirjat"@fi .
+        skos:prefLabel  "pysselböcker"@sv , "puuhakirjat"@fi ;
+        skos:related    slm:6252b2da-9bd8-406b-b431-ff774ae03436 .
 
 slm:s152  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s421 ;
@@ -8069,6 +8081,12 @@ slm:s377  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "inredningsguider"@sv , "sisustusoppaat"@fi .
 
+slm:b827ec47-fa58-4a0e-9327-477f45b9bd4f
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "tilapääjulkaisut"@fi , "tilapäispainatteet"@fi ;
+        skos:prefLabel   "pienpainatteet"@fi .
+
 slm:s789  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -8617,6 +8635,12 @@ slm:s1465  a             owl:Class , skos:Concept ;
         skos:altLabel    "musiikkielokuvat (dokumentit)"@fi , "musikfilmer (dokumentärer)"@sv ;
         skos:prefLabel   "musiikkidokumentit"@fi , "musikdokumentärer"@sv .
 
+slm:e3f93b71-2c0d-4ad1-8580-4e9904c7b754
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "vastineet"@fi ;
+        skos:related     slm:s983 .
+
 slm:s1453  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s304 ;
         skos:inScheme    slm:s285 ;
@@ -9145,6 +9169,13 @@ slm:s451  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "tragikomediat"@fi , "tragikomedier"@sv ;
         skos:related     slm:s919 , slm:s481 .
+
+slm:f5f2fef2-ac4d-4ced-8bd3-24700c8683a9
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s170 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "tietovisat (pelit)"@fi ;
+        skos:prefLabel   "tietopelit"@fi ;
+        skos:related     slm:s1446 .
 
 slm:s134  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
