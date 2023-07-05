@@ -867,6 +867,12 @@ slm:s753  a              owl:Class , skos:Concept ;
         skos:prefLabel   "poliittiset sarjakuvat"@fi , "politiska serier (tecknade serier)"@sv ;
         skos:related     slm:s1027 .
 
+slm:s1491  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s170 ;
+        skos:altLabel    "frågesporter (spel)"@sv , "tietovisat (pelit)"@fi , "frågespel"@sv ;
+        skos:prefLabel   "tietopelit"@fi , "kunskapsspel"@sv ;
+        skos:related     slm:s1446 .
+
 slm:s545  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s202 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -988,7 +994,7 @@ slm:s1446  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         skos:altLabel    "tietokilpailukysymykset"@fi , "quizfrågor"@sv ;
         skos:prefLabel   "visailukysymykset"@fi , "frågesportsfrågor"@sv ;
-        skos:related     slm:f5f2fef2-ac4d-4ced-8bd3-24700c8683a9 .
+        skos:related     slm:s1491 .
 
 slm:s863  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -1119,6 +1125,12 @@ slm:s925  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26398> ;
         skos:note        "Pseudodokumentti on televisio-ohjelma tai elokuva, jossa fiktiivinen tarina esitetään todellisista tapahtumista kertovien dokumenttien tyyliä jäljitellen tai parodioiden."@fi ;
         skos:prefLabel   "pseudodokumentit"@fi , "pseudodokumentärer"@sv .
+
+slm:s1493  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 ;
+        skos:altLabel    "pysselkort (aktivitetskort)"@sv ;
+        skos:prefLabel   "aktivitetskort"@sv , "puuhakortit"@fi ;
+        skos:related     slm:s407 , slm:s1410 .
 
 slm:s1211  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1150 ;
@@ -1353,6 +1365,12 @@ slm:s264  a              owl:Class , skos:Concept ;
         skos:altLabel    "inredningstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "inredningstidningar"@sv , "sisustuslehdet"@fi .
+
+slm:s1495  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 ;
+        skos:altLabel    "bemötanden (svar)"@sv , "repliker (genmälen)"@sv ;
+        skos:prefLabel   "genmälen"@sv , "vastineet"@fi ;
+        skos:related     slm:s983 .
 
 slm:s840  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s977 ;
@@ -1860,12 +1878,6 @@ slm:s330  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "septetot"@fi , "septetter (kompositioner)"@sv .
-
-slm:a80ddcec-0168-476e-becb-a0507a4fc6f6
-        a                owl:Class , skos:Concept ;
-        skos:altLabel    "separattryck"@sv , "separat (publikationer)"@sv ;
-        skos:definition  "Kokoomateoksessa tai lehdessä julkaistun itsenäisen kirjoituksen julkaisu erillisenä painotuotteena. Eripainos painetaan samalla ladelmalla kuin alkuperäinen julkaisu, mutta sivunumerointia voidaan muuttaa ja siihen voidaan lisätä oma kansilehti."@fi , "Självständig text publicerad i ett samlingsverk eller en tidskrift utgiven som en skild trycksak. Särtryck har samma sättning som den ursprungliga publikationen, men sidnumreringen kan ändras och ett eget omslag kan tillfogas."@sv ;
-        skos:prefLabel   "särtryck"@sv , "eripainokset"@fi .
 
 slm:s1383  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 , slm:s474 ;
@@ -2695,7 +2707,7 @@ slm:s515  a              owl:Class , skos:Concept ;
         skos:prefLabel   "maanpuolustuslehdet"@fi , "militärtidningar"@sv .
 
 slm:s1328  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:b827ec47-fa58-4a0e-9327-477f45b9bd4f ;
+        rdfs:subClassOf  slm:s1492 ;
         skos:prefLabel   "programblad"@sv , "käsiohjelmat"@fi .
 
 slm:s137  a              owl:Class , skos:Concept ;
@@ -2809,13 +2821,6 @@ slm:s1373  a             owl:Class , skos:Concept ;
         skos:altLabel    "danslåtar"@sv ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "tanssilaulut"@fi , "danssånger"@sv .
-
-slm:6252b2da-9bd8-406b-b431-ff774ae03436
-        a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
-        skos:altLabel    "pysselkort (aktivitetskort)"@sv ;
-        skos:prefLabel   "aktivitetskort"@sv , "puuhakortit"@fi ;
-        skos:related     slm:s407 , slm:s1410 .
 
 dct:RightsStatement  rdfs:subClassOf  dct:Standard .
 
@@ -6314,7 +6319,7 @@ slm:s983  a              owl:Class , skos:Concept ;
         skos:altLabel    "debattinlägg"@sv , "debattartiklar"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "mielipidekirjoitukset"@fi , "insändare"@sv ;
-        skos:related     slm:e3f93b71-2c0d-4ad1-8580-4e9904c7b754 .
+        skos:related     slm:s1495 .
 
 slm:s1052  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -7342,7 +7347,7 @@ slm:s407  a             owl:Class , skos:Concept ;
         skos:altLabel   "uppgiftsböcker"@sv , "tehtäväkirjat"@fi ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "pysselböcker"@sv , "puuhakirjat"@fi ;
-        skos:related    slm:6252b2da-9bd8-406b-b431-ff774ae03436 .
+        skos:related    slm:s1493 .
 
 slm:s152  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s421 ;
@@ -8087,11 +8092,6 @@ slm:s377  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "inredningsguider"@sv , "sisustusoppaat"@fi .
 
-slm:b827ec47-fa58-4a0e-9327-477f45b9bd4f
-        a               owl:Class , skos:Concept ;
-        skos:altLabel   "efemärt tryck"@sv , "accidenstryck"@sv , "tilapääjulkaisut"@fi , "tilapäispainatteet"@fi , "vardagstryck"@sv , "tillfällighetstryck"@sv ;
-        skos:prefLabel  "pienpainatteet"@fi , "småtryck"@sv .
-
 slm:s789  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -8163,6 +8163,11 @@ slm:s813  a              owl:Class , skos:Concept ;
         skos:definition  "Verk som har förkortats utan att betydelseinnehållet eller framställningsstilen har ändrats."@sv , "Teos, joka on lyhennetty lähdeteoksesta muuttamatta sen merkityssisältöä tai esitystyyliä."@fi ;
         skos:prefLabel   "lyhennelmät"@fi , "förkortade versioner"@sv ;
         skos:related     slm:s1058 , slm:s855 .
+
+slm:s1494  a             owl:Class , skos:Concept ;
+        skos:altLabel    "separattryck"@sv , "separat (publikationer)"@sv ;
+        skos:definition  "Kokoomateoksessa tai lehdessä julkaistun itsenäisen kirjoituksen julkaisu erillisenä painotuotteena. Eripainos painetaan samalla ladelmalla kuin alkuperäinen julkaisu, mutta sivunumerointia voidaan muuttaa ja siihen voidaan lisätä oma kansilehti."@fi , "Självständig text publicerad i ett samlingsverk eller en tidskrift utgiven som en skild trycksak. Särtryck har samma sättning som den ursprungliga publikationen, men sidnumreringen kan ändras och ett eget omslag kan tillfogas."@sv ;
+        skos:prefLabel   "särtryck"@sv , "eripainokset"@fi .
 
 slm:s2  a                owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -8248,6 +8253,10 @@ slm:s698  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:prefLabel   "gängfilmer"@sv , "jengielokuvat"@fi ;
         skos:related     slm:s968 .
+
+slm:s1492  a            owl:Class , skos:Concept ;
+        skos:altLabel   "efemärt tryck"@sv , "accidenstryck"@sv , "tilapääjulkaisut"@fi , "tilapäispainatteet"@fi , "vardagstryck"@sv , "tillfällighetstryck"@sv ;
+        skos:prefLabel  "pienpainatteet"@fi , "småtryck"@sv .
 
 slm:s656  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -8639,13 +8648,6 @@ slm:s1465  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1466 ;
         skos:altLabel    "musiikkielokuvat (dokumentit)"@fi , "musikfilmer (dokumentärer)"@sv ;
         skos:prefLabel   "musiikkidokumentit"@fi , "musikdokumentärer"@sv .
-
-slm:e3f93b71-2c0d-4ad1-8580-4e9904c7b754
-        a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
-        skos:altLabel    "bemötanden (svar)"@sv , "repliker (genmälen)"@sv ;
-        skos:prefLabel   "genmälen"@sv , "vastineet"@fi ;
-        skos:related     slm:s983 .
 
 slm:s1453  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s304 ;
@@ -9176,13 +9178,6 @@ slm:s451  a              owl:Class , skos:Concept ;
         skos:prefLabel   "tragikomediat"@fi , "tragikomedier"@sv ;
         skos:related     slm:s919 , slm:s481 .
 
-slm:f5f2fef2-ac4d-4ced-8bd3-24700c8683a9
-        a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s170 ;
-        skos:altLabel    "frågesporter (spel)"@sv , "tietovisat (pelit)"@fi , "frågespel"@sv ;
-        skos:prefLabel   "tietopelit"@fi , "kunskapsspel"@sv ;
-        skos:related     slm:s1446 .
-
 slm:s134  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -9195,7 +9190,7 @@ slm:s1410  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
         skos:altLabel    "lärandespel"@sv ;
         skos:prefLabel   "oppimispelit"@fi , "inlärningsspel"@sv ;
-        skos:related     slm:6252b2da-9bd8-406b-b431-ff774ae03436 .
+        skos:related     slm:s1493 .
 
 slm:s1006  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
