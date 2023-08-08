@@ -17,6 +17,16 @@ def deprecate_record(record):
         deprecated_record.add_field(record['040'])
         return deprecated_record
 
+def remove_extra_subfield_whitespaces(record):
+    for field in record.get_fields():
+        if hasattr(field, "subfields"):
+            for idx, elem in enumerate(field.subfields):
+                if '  ' in elem:
+                    while '  ' in elem:
+                        elem = elem.replace('  ', ' ')
+                    field.subfields[idx] = elem
+    return record
+
 def trim_record(record):
     # drops unnecessary data from record for comparing two records
     record_copy = copy.deepcopy(record)
@@ -26,10 +36,11 @@ def trim_record(record):
     for field in record_copy.get_fields('040'):
         field.delete_subfield('f')
     for field in record_copy.get_fields():
-        if not field.tag.isdigit(): #and field.tag != "LDR":
+        if not field.tag.isdigit():
             removable_fields.append(field.tag)
     for rf in removable_fields:
         record_copy.remove_fields(rf)
+    record_copy = remove_extra_subfield_whitespaces(record_copy)
     for field in record_copy.get_fields():
         for rf in removable_subfields:
             field.delete_subfield(rf)
