@@ -29,9 +29,9 @@ class AlephSeqReader:
             self.previous_line = self.current_line
             self.current_line = self.file.readline().rstrip()
             if self.current_line[0:9] != current_id:
-                if self.record['DEL']:
+                if 'DEL' in self.record:
                     return ""
-                elif self.record['STA']:
+                elif 'STA' in self.record:
                     for field in self.record.get_fields("STA"):
                         for sf in field.get_subfields('a'):
                             if sf == "DELETED":

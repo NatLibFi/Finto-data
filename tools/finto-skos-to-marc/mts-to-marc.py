@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from rdflib import Graph, Namespace, URIRef, BNode, Literal, RDF
-from rdflib.namespace import SKOS, XSD, OWL, DC
-from rdflib.namespace import DCTERMS as DCT
+from rdflib import Graph, Namespace, URIRef, BNode, RDF
+from rdflib.namespace import SKOS
 import pickle
 import os
 import argparse
@@ -16,7 +15,7 @@ import shutil
 from datetime import datetime, date
 from collections import namedtuple
 from collections.abc import Sequence
-from pymarc import Record, Field, XMLWriter, MARCReader, parse_xml_to_array
+from pymarc import Record, Field, Subfield, XMLWriter
 from lxml import etree as ET
 from urllib.parse import urldefrag
 
@@ -73,7 +72,7 @@ def get_member_groups(g, group, uris):
         get_member_groups(g, m, uris)
 
 def readCommandLineArguments():
-    parser = argparse.ArgumentParser(description="Program for converting Finto SKOS-vocabularies into MARC (.mrcx).") 
+    parser = argparse.ArgumentParser(description="Program for converting Finto SKOS-vocabularies into MARC (.mrcx).")
     parser.add_argument("-ignoreOtherGraphWarnings", "--ignore_other_graph_warnings",
         help="Do you want ignore warnings produced whilst processing other graphs? Set this flag only if you want to ignore.", action="store_true")
     parser.add_argument("-i", "--input", help="Input file location, e.g., yso-skos.ttl")
@@ -87,10 +86,10 @@ def readCommandLineArguments():
     parser.add_argument("-log", "--log_file", help="Log file location.")
     parser.add_argument("-modificationDates", "--modification_dates",
         help="File location for pickle file, which contains latest modification dates for concepts (e. g. {'concept uri': 'YYYY-MM-DD'}) \
-        The file is updated after new records are created, if keepModifiedAfter is left out of command line arguments") 
+        The file is updated after new records are created, if keepModifiedAfter is left out of command line arguments")
     parser.add_argument("-keepModifiedAfter", "--keep_modified_after",
         help="Create separate batch of MARC21 files for concepts modified after the date given (set in YYYY-MM-DD format).")
-        
+
     args = parser.parse_args()
     return args
 
@@ -129,7 +128,7 @@ def getValues(graph, target, props, language=None, literal_datatype=None):
         language (str, optional): Language of literals. Defaults to None (return all literals with languages).
             Set to empty string ("") for empty lang tag.
         literal_datatype (URIRef, optional): Datatype of datatyped literals. Defaults to None (return all literals with datatypes).
-        
+
     Returns:
         list(TypeValue): List containing TypeValue namedtuples
             prop (URIRef): Matched property
@@ -140,7 +139,7 @@ def getValues(graph, target, props, language=None, literal_datatype=None):
     if isinstance(props, URIRef):
         # cast to list in order to uniform code
         props = [props]
-    
+
     if not (isinstance(target, URIRef) or isinstance(target, BNode)):
         raise ValueError("Parameter 'target' must be of type URIRef or BNode.")
     elif isinstance(props, str) or not isinstance(props, Sequence):
@@ -149,10 +148,10 @@ def getValues(graph, target, props, language=None, literal_datatype=None):
     elif language is not None and not isinstance(language, str):
         raise ValueError("Parameter 'language' must be string if set.")
     elif literal_datatype is not None and not isinstance(literal_datatype, URIRef):
-        raise ValueError("Parameter 'datatype' must be URIRef if set.") 
-    
+        raise ValueError("Parameter 'datatype' must be URIRef if set.")
+
     v = []
-    
+
     # setup the language filtering
     if language is not None:
         if language == '':  # we only want not language-tagged literals
@@ -161,25 +160,25 @@ def getValues(graph, target, props, language=None, literal_datatype=None):
             langfilter = lambda l: l.language == language
     else:  # we don't care about language tags
         langfilter = lambda l: True
-    
+
     # setup the datatype filtering
     if literal_datatype is not None:
         typefilter = lambda l: l.datatype == literal_datatype
     else:
         typefilter = lambda l: True
-    
+
     for prop in props:
         if not isinstance(prop, URIRef):
             raise ValueError(
             "Types of properties must be URIRefs; got %s from property '%s'." % (type(prop), str(prop)))
-        
+
         # values that pass restrictions are returned
-        values = [l for l in graph.objects(target, prop) if 
-                  (isinstance(l, URIRef) or isinstance(l, BNode)) or 
+        values = [l for l in graph.objects(target, prop) if
+                  (isinstance(l, URIRef) or isinstance(l, BNode)) or
                   (l.datatype == None and langfilter(l)) or
                   (l.datatype != None and typefilter(l))
                  ]
-        
+
         # loop through the values and add them to the list
         for val in values:
             v.append(ValueProp(value=val, prop=prop))
@@ -219,11 +218,11 @@ def convert(cs, language, g):
     if not "outputFileName" in helper_variables:
         helper_variables["outputFileName"] = cs.get("output", fallback=helper_variables["defaultOutputFileName"])
 
-    #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja 
+    #modified_dates on dict-objekti, joka sisältää tietueen id:n avaimena ja
     #arvona tuplen, jossa on tietueen viimeinen muokkauspäivämäärä ja tietueen sisältö MD5-tiivisteenä
     if helper_variables['modificationDates']:
         if os.path.isfile(helper_variables['modificationDates']):
-            with open(helper_variables['modificationDates'], 'rb') as pickle_file: 
+            with open(helper_variables['modificationDates'], 'rb') as pickle_file:
                 try:
                     modified_dates = pickle.load(pickle_file)
                 except EOFError:
@@ -239,14 +238,14 @@ def convert(cs, language, g):
 
     handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     writer = XMLWriter(handle)
-    
+
     # listataan preflabelit, jotta voidaan karsia alt_labelit, jotka toisessa käsitteessä pref_labelina
     pref_labels = set()
     for conc in g.subjects(RDF.type, SKOS.Concept):
         pref_label = getValues(g, conc, [SKOS.prefLabel], language=language)
         if pref_label:
             pref_labels.add(pref_label[0].value)
-    
+
     # vain nämä mts-käsiteryhmät otetaan mukaan, ryhmän nimestä ei tehdä MARC21-tietuetta
     ids = {"occupations": ['m2332'],
         "titles": ['m121'],
@@ -284,9 +283,9 @@ def convert(cs, language, g):
             uris[key].add(URIRef(MTS + id))
     concs = []
     if helper_variables['keepModified']:
-        concs = []    
+        concs = []
         for uri in modified_dates:
-            if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:  
+            if modified_dates[uri][0] >= helper_variables['keepModifiedLimit']:
                 concs.append(URIRef(uri))
     else:
         for conc in g.subjects(RDF.type, SKOS.Concept):
@@ -310,7 +309,7 @@ def convert(cs, language, g):
                 if not any(defrag_iri(concept) in groups[key] for key in groups):
                     continue
 
-        rec = Record()   
+        rec = Record()
         rec.leader = cs.get("leaderNew", fallback=LEADERNEW)
 
         # 024 muut standarditunnukset - käsitteen URI tallennetaan tähän
@@ -319,21 +318,21 @@ def convert(cs, language, g):
                 tag='024',
                 indicators = ['7', ' '],
                 subfields = [
-                    'a', concept,
-                    '2', "uri"
+                    Subfield(code='a', value=concept),
+                    Subfield(code='2', value="uri")
                 ]
             )
         )
-   
+
         # 040 luetteloiva organisaatio
         rec.add_field(
             Field(
                 tag='040',
                 indicators = [' ', ' '],
                 subfields = [
-                    'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
-                    'b', LANGUAGES[language],
-                    'f', helper_variables["vocCode"]
+                    Subfield(code='a', value=cs.get("creatorAgency", fallback=CREATOR_AGENCY)),
+                    Subfield(code='b', value=LANGUAGES[language]),
+                    Subfield(code='f', value=helper_variables["vocCode"])
                 ]
             )
         )
@@ -346,7 +345,7 @@ def convert(cs, language, g):
             continue
         elif len(valueProps) != 1:
             logging.warning("Multiple prefLabels detected for concept %s in language %s. Choosing the first." %
-                  (concept, language)) 
+                  (concept, language))
 
         for key in uris:
             if concept in uris[key]:
@@ -358,7 +357,10 @@ def convert(cs, language, g):
                 tag=tag,
                 indicators = [' ', ' '],
                 subfields=[
-                            subfield_code, decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value)))
+                            Subfield(
+                                code=subfield_code,
+                                value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value)))
+                            )
                           ]
             )
         )
@@ -367,14 +369,14 @@ def convert(cs, language, g):
         # 450 katso-viittaus
         # jätetään tuottamatta 45X-kentät, jotka ovat toisessa käsitteessä 15X-kenttinä, paitsi altLabelein kohdalla
         seen_values = set()
-        
+
         for valueProp in sorted(getValues(g, concept, [SKOS.altLabel], language=language),
-                                key=lambda o: str(o.value)): 
+                                key=lambda o: str(o.value)):
             if valueProp.prop != SKOS.altLabel and str(valueProp.value) in pref_labels:
                 continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
-                    continue            
+                    continue
             seen_values.add(str(valueProp.value))
             for key in uris:
                 if concept in uris[key]:
@@ -386,13 +388,16 @@ def convert(cs, language, g):
                     tag=tag,
                     indicators = [' ', ' '],
                     subfields=[
-                                subfield_code, decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
+                                Subfield(
+                                    code=subfield_code,
+                                    value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
+                                )
                             ]
                 )
             )
 
         valueProps = getValues(g, concept, [SKOS.prefLabel, SKOS.exactMatch, SKOS.closeMatch,
-                            SKOS.broadMatch, SKOS.narrowMatch, 
+                            SKOS.broadMatch, SKOS.narrowMatch,
                             SKOS.relatedMatch])
 
         fields = list() # kerätään kentät tähän muuttujaan, joka sitten lopuksi järjestetään
@@ -404,7 +409,7 @@ def convert(cs, language, g):
                 # (vrt. kun muissa on solmu)
                 if valueProp.value.language == language:
                     continue
-               
+
             else:
                 # otetaan vain viittaukset samaan sanastoon
                 continue
@@ -413,17 +418,20 @@ def convert(cs, language, g):
                 if concept in uris[key]:
                     tag = "7" + marc21_locations[key]['code suffix']
                     subfield_code = marc21_locations[key]['subfield code']
-            
+
             sub2 = "mts" + "/" + LANGUAGES[valueProp.value.language]
             fields.append(
                 Field(
                     tag=tag,
                     indicators = [' ', ' '],
                     subfields = [
-                        subfield_code, decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))), 
-                        '4', 'EQ',
-                        '2', sub2,
-                        '0', concept
+                        Subfield(
+                            code=subfield_code,
+                            value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
+                            ),
+                        Subfield(code= '4', value='EQ'),
+                        Subfield(code='2', value=sub2),
+                        Subfield(code='0', value=concept)
                     ]
                 )
             )
@@ -439,13 +447,13 @@ def convert(cs, language, g):
         writer.write(rec)
 
         if helper_variables['modificationDates']:
-            md5 = hashlib.md5()        
+            md5 = hashlib.md5()
             md5.update(str.encode(str(rec)))
             hash = md5.hexdigest()
             if str(concept) in modified_dates:
                 if not hash == modified_dates[str(concept)][1]:
                     modified_dates[str(concept)] = (date.today(), hash)
-            else:  
+            else:
                 modified_dates[str(concept)] = (date.today(), hash)
 
     #tuotetaan poistetut käsitteet, kun haetaan muuttuneet käsitteet
@@ -468,8 +476,8 @@ def convert(cs, language, g):
                             tag='024',
                             indicators = ['7', ' '],
                             subfields = [
-                                'a', conc,
-                                '2', "uri"
+                                Subfield(code='a', value=conc),
+                                Subfield(code='2', value="uri")
                             ]
                         )
                     )
@@ -478,16 +486,18 @@ def convert(cs, language, g):
                             tag='040',
                             indicators = [' ', ' '],
                             subfields = [
-                                'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
-                                'b', LANGUAGES[language],
-                                'f', helper_variables["vocCode"]
+                                Subfield(code='a', value=cs.get("creatorAgency", fallback=CREATOR_AGENCY)),
+                                Subfield(code='b', value=LANGUAGES[language]),
+                                Subfield(code='f', value=helper_variables["vocCode"])
                             ]
                         )
                     )
-                    modified_dates[conc] = (date.today(), "")  
+                    if helper_variables['keepModifiedLimit']:
+                        print(helper_variables['keepModifiedLimit'])
+                        modified_dates[conc] = (date.today(), "")
                     writer_records_counter += 1
                     writer.write(rec)
-        
+
     if handle is not sys.stdout:
         writer.close()
 
@@ -496,7 +506,6 @@ def convert(cs, language, g):
             pickle.dump(modified_dates, output, pickle.HIGHEST_PROTOCOL)
 
     #jos luodaan kaikki käsitteet, tuotetaan tuotetaan lopuksi käsitteet laveassa XML-muodossa
-    #if not helper_variables['keepModified']:
     parser = ET.XMLParser(remove_blank_text=True,strip_cdata=False)
     file_path = helper_variables["outputFileName"]
     tree = ET.parse(file_path, parser)
@@ -522,33 +531,32 @@ def convert(cs, language, g):
 
     logging.info("Conversion completed: %s"%datetime.now().replace(microsecond=0).isoformat())
 
-      
-def main():    
+def main():
     settings = ConfigParser(interpolation=ExtendedInterpolation())
     args = readCommandLineArguments()
-    
+
     settings.add_section(args.vocabulary_code.upper())
-    
+
     # for extracting meaningful leading/trailing spaces
     # (removing double quotes around the string)
     for sec in settings.sections():
         for (key, val) in settings.items(sec):
             if len(val) > 0 and val[-1] == '"' and val[0] == '"':
                 settings.set(sec, key, val[1:-1])
-    
+
     cs = args.vocabulary_code.upper() # default config section to vocabulary code
     settings.set("DEFAULT", "vocabulary_code", cs.lower())
 
     loglevel = logging.INFO
-  
+
     if args.log_file:
         logging.basicConfig(filename=args.log_file, filemode="w")
-    
+
     logger = logging.getLogger()
     logger.setLevel(loglevel)
     logger.propagate = False
     logging.info("Conversion started: %s"%datetime.now().replace(microsecond=0).isoformat())
-    
+
     if args.ignore_other_graph_warnings:
         settings.set(cs, "ignoreOtherGraphWarnings", "true")
 
@@ -568,17 +576,17 @@ def main():
 
     if args.languages != None:
         settings.set(cs, "languages", ",".join(readConfigVariable(args.languages, " ")))
-    else: 
+    else:
         logging.error("Language is required. Set with --languages.")
         sys.exit(2)
 
     if args.multilanguage_vocabulary:
         settings.set(cs, "multilanguage", "true")
-     
+
     if args.keep_modified_after and not args.modification_dates:
         logging.error('Arguments required with --keep_modified_after: --modification_dates')
         sys.exit(2)
-    if args.modification_dates:    
+    if args.modification_dates:
         settings.set(cs, "modificationDates", args.modification_dates)
     if args.keep_modified_after:
         settings.set(cs, "keepModifiedAfter", args.keep_modified_after)
@@ -593,10 +601,10 @@ def main():
             except ValueError:
                 logging.error("Cannot interpret 'keepModifiedAfter' value set in configuration file or given as a CLI parameter. Possible values are 'ALL', 'NONE' and ISO 8601 format for dates.")
                 sys.exit(2)
-        
+
     for lang in settings.get(cs, "languages").split(","):
         convert(settings[cs], lang, graphi)
-    
+
 if __name__ == "__main__":
     try:
         main()

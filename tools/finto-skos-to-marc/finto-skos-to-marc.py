@@ -7,10 +7,9 @@ from rdflib.namespace import DCTERMS as DCT
 from SPARQLWrapper import SPARQLWrapper, SPARQLExceptions
 import socket
 import time
-from pymarc import Record, Field, XMLWriter, MARCReader, parse_xml_to_array
+from pymarc import Record, Field, Subfield, XMLWriter
 from lxml import etree as ET
 import shutil
-
 import pickle
 import os
 import argparse
@@ -20,7 +19,6 @@ from configparser import ConfigParser, ExtendedInterpolation
 import sys
 import logging
 from datetime import datetime, date, timedelta
-import subprocess
 import urllib
 from collections import namedtuple
 from collections.abc import Sequence
@@ -616,8 +614,8 @@ def convert(cs, vocabulary_name, language, g, g2):
                 tag='024',
                 indicators = ['7', ' '],
                 subfields = [
-                    'a', concept,
-                    '2', "uri"
+                    Subfield(code='a', value=concept),
+                    Subfield(code='2', value='uri')
                 ]
             )
         )
@@ -631,9 +629,9 @@ def convert(cs, vocabulary_name, language, g, g2):
                 tag='040',
                 indicators = [' ', ' '],
                 subfields = [
-                    'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
-                    'b', LANGUAGES[language],
-                    'f', helper_variables["vocCode"]
+                    Subfield(code='a', value=cs.get("creatorAgency", fallback=CREATOR_AGENCY)),
+                    Subfield(code='b', value=LANGUAGES[language]),
+                    Subfield(code='f', value=helper_variables["vocCode"])
                 ]
             )
         )
@@ -686,11 +684,10 @@ def convert(cs, vocabulary_name, language, g, g2):
                            tag='065',
                            indicators = [' ', ' '],
                            subfields = [
-                               'a', groupno,
-                               'c', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, groupname)),
-                               #'c', groupname,
-                               '0', group,
-                               '2', vocId
+                               Subfield(code='a', value=groupno),
+                               Subfield(code='c', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, groupname))),
+                               Subfield(code='0', value=group),
+                               Subfield(code='2', value=vocId)
                            ]
                     )
                 )
@@ -728,8 +725,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                 tag=tag,
                 indicators = [' ', ' '],
                 subfields=[
-                            'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value)))
-                            #'a', str(valueProps[0].value)
+                            Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value))))
                           ]
             )
         )
@@ -772,8 +768,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     tag = tag,
                     indicators = [' ', ' '],
                     subfields = [
-                        'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
-                        #'a', str(valueProp.value)
+                        Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
                     ]
                 )
             )
@@ -816,25 +811,24 @@ def convert(cs, vocabulary_name, language, g, g2):
                 if wval == "i":
                     if (target, SKOS.inScheme, YSO.places) in g:
                         if prop == SKOSEXT.partOf:
-                            subfields.extend(('w', 'g'))
+                            subfields.append(Subfield(code='w', value='g'))
                         elif prop == SKOSEXT.hasPart:
-                            subfields.extend(('w', 'h'))
+                            subfields.append(Subfield(code='w', value='h'))
                         else:
-                            subfields.extend(('w', wval,
-                                     "i", TRANSLATIONS[prop][language]
+                            subfields.extend((Subfield(code='w', value=wval),
+                                     Subfield(code="i", value=TRANSLATIONS[prop][language])
                                     ))
                     else:
-                        subfields.extend(('w', wval,
-                                     "i", TRANSLATIONS[prop][language]
+                        subfields.extend((Subfield(code='w', value=wval),
+                                     Subfield(code="i", value=TRANSLATIONS[prop][language])
                                     ))
                 else:
-                    subfields.extend(('w', wval))
+                    subfields.append(Subfield(code='w', value=wval))
                     
-                subfields.extend(('a', 
-                                  decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label)))
-                                  #str(label)
+                subfields.append(Subfield(code='a',
+                                  value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label)))
                                  ))
-                subfields.extend(('0', target))
+                subfields.append(Subfield(code='0', value=target))
                 # yso-paikoissa on sekä ISOTHES.broaderPartitive, että
                 # SKOS.broader redundanttina, 
                 # samoin ISOTHES.narrowerPartitive - SKOS.narrower
@@ -905,15 +899,13 @@ def convert(cs, vocabulary_name, language, g, g2):
         for valueProp in sorted(getValues(g, concept, SKOS.definition, language=language),
                                 key=lambda o: str(o.value)):
             subfields = [
-                'a', 
-                decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))
-                #str(valueProp.value)
+                Subfield(code='a',
+                value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
             ]
             # TODO: linkkien koodaus tarkistetaan/tehdään myöhemmin
             #urls = getURLs(valueProp.value)
             #for url in urls:
-            #    subfields.append("u")
-            #    subfields.append(url)
+            #    subfields.append(Subfield(code="u", value=url))
                 
             rec.add_field(
                 Field(
@@ -947,8 +939,8 @@ def convert(cs, vocabulary_name, language, g, g2):
             subfield_values = []
            
             for subfield in subfieldCodeValuePair:
-                subfield_values.extend(
-                    (subfield[0], decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, subfield[1])))
+                subfield_values.append(
+                    Subfield(code=subfield[0], value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, subfield[1])))
                 )
 
             rec.add_field(
@@ -964,7 +956,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                 Field(
                     tag='680',
                     indicators = [' ', ' '],
-                    subfields = ['i', deprecatedString]
+                    subfields = [Subfield(code='i', value=deprecatedString)]
                 )
             )
         # owl:deprecated -> 682 Huomautus poistetusta otsikkomuodosta (ei toistettava)
@@ -996,31 +988,17 @@ def convert(cs, vocabulary_name, language, g, g2):
                     continue
                 label = valueProps[0].value
                 labels.append(valueProps[0].value)
-                #rec.add_field(
-                #    Field(
-                #        tag = '682',
-                #        indicators = [' ', ' '],
-                #        subfields = [
-                #            'i', TRANSLATIONS["682iDEFAULT"][language],
-                #            'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label))),
-                #            #'a', str(label),
-                #            '0', target
-                #        ]
-                #    )
-                #)
             if len(labels) > 0:
-                subfield_values = ['i', TRANSLATIONS["682iDEFAULT"][language]]
+                subfield_values = [Subfield(code='i', value=TRANSLATIONS["682iDEFAULT"][language])]
 
                 for label in labels[:-1]:
-                    subfield_values.extend(('a', 
-                                      decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ","))
-                                      #str(label)
+                    subfield_values.append(Subfield(code='a',
+                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ",")
+                                     )))
+                subfield_values.append(Subfield(code='a',
+                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
                                      ))
-                subfield_values.extend(('a', 
-                                      decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
-                                      #str(label)
-                                     ))
-                #subfield_values.extend(('0', target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
+                #subfield_values.append(Subfield(code='0', value=target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
                 rec.add_field(
                     Field(
                         tag='682',
@@ -1159,10 +1137,10 @@ def convert(cs, vocabulary_name, language, g, g2):
                             tag=tag,
                             indicators = [' ', second_indicator],
                             subfields = [
-                                'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))),
-                                '4', sub4,
-                                '2', sub2,
-                                '0', sub0
+                                Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))),
+                                Subfield(code='4', value=sub4),
+                                Subfield(code='2', value=sub2),
+                                Subfield(code='0', value=sub0)
                             ]
                         )
                     )
@@ -1236,15 +1214,14 @@ def convert(cs, vocabulary_name, language, g, g2):
                         subfields = []
 
                         for child in tagNode:
-                            subfields.extend((child.attrib["code"], 
-                                              decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(child.text)))
-                                              #str(child.text)
-                                             ))
+                            subfields.append(Subfield(code=child.attrib["code"],
+                                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(child.text)))
+                                            ))
 
-                        subfields.extend(("4", sub4))
+                        subfields.append(Subfield(code="4", value=sub4))
                         if second_indicator == "7":
-                            subfields.extend(("2", sub2))
-                        subfields.extend(("0", str(matchURIRef)))
+                            subfields.append(Subfield(code="2", value=sub2))
+                        subfields.append(Subfield(code="0", value=str(matchURIRef)))
 
                         fields.append(
                             Field(
@@ -1291,9 +1268,8 @@ def convert(cs, vocabulary_name, language, g, g2):
                     processedLanguages.add(prefLabelLanguage)
                     
                     subfields = [
-                        'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(prefLabel))),
-                        #'a', str(prefLabel),
-                        '4', sub4
+                        Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(prefLabel)))),
+                        Subfield(code='4', value=sub4)
                     ]
                     
                     
@@ -1303,11 +1279,11 @@ def convert(cs, vocabulary_name, language, g, g2):
                         # kovakoodattu yso & slm tännekin
                         multipleLanguagesEnd = "/" + LANGUAGES[prefLabel.language] if sub2 in ["yso", "slm"] or multipleLanguages else ""
                     if second_indicator != "4":
-                        subfields.extend(("2", 
-                            sub2 + multipleLanguagesEnd
+                        subfields.append(Subfield(code="2",
+                            value=sub2 + multipleLanguagesEnd
                         ))
                         
-                    subfields.extend(("0", str(matchURIRef)))
+                    subfields.append(Subfield(code="0", value=str(matchURIRef)))
                     fields.append(
                         Field(
                             tag=tag,
@@ -1356,8 +1332,8 @@ def convert(cs, vocabulary_name, language, g, g2):
                         tag='024',
                         indicators = ['7', ' '],
                         subfields = [
-                            'a', conc,
-                            '2', "uri"
+                            Subfield(code='a', value=conc),
+                            Subfield(code='2', value='uri')
                         ]
                     )
                 )
@@ -1366,9 +1342,9 @@ def convert(cs, vocabulary_name, language, g, g2):
                         tag='040',
                         indicators = [' ', ' '],
                         subfields = [
-                            'a', cs.get("creatorAgency", fallback=CREATOR_AGENCY),
-                            'b', LANGUAGES[language],
-                            'f', helper_variables["vocCode"]
+                            Subfield(code='a', value=cs.get("creatorAgency", fallback=CREATOR_AGENCY)),
+                            Subfield(code='b', value=LANGUAGES[language]),
+                            Subfield(code='f', value=helper_variables["vocCode"])
                         ]
                     )
                 )

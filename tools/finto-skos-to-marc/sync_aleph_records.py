@@ -1,4 +1,4 @@
-from pymarc import Record, XMLWriter, parse_xml_to_array
+from pymarc import Record, Subfield, XMLWriter, parse_xml_to_array
 from aleph_seq_reader import AlephSeqReader
 from lxml import etree as ET
 import logging
@@ -20,11 +20,12 @@ def deprecate_record(record):
 def remove_extra_subfield_whitespaces(record):
     for field in record.get_fields():
         if hasattr(field, "subfields"):
-            for idx, elem in enumerate(field.subfields):
-                if '  ' in elem:
-                    while '  ' in elem:
-                        elem = elem.replace('  ', ' ')
-                    field.subfields[idx] = elem
+            for idx, sf in enumerate(field.subfields):
+                value = sf.value
+                if '  ' in value:
+                    while '  ' in value:
+                        value = value.replace('  ', ' ')
+                    field.subfields[idx] = Subfield(code=field.subfields[idx].code, value=value)
     return record
 
 def trim_record(record):
@@ -75,7 +76,7 @@ def compare_records(args):
     for record in reader:
         if record:
             if record['001']:
-                if not any(record[tag] for tag in voc_tags) or not any(field.tag.startswith('1') for field in record.get_fields()):
+                if not any(tag in record for tag in voc_tags) or not any(field.tag.startswith('1') for field in record.get_fields()):
                     continue
                 
                 language = None                               
@@ -89,7 +90,7 @@ def compare_records(args):
                     record_id = field['a']
                     if record_id in aleph_records:
                         aleph_record = aleph_records[record_id]
-                        if aleph_record['001']:
+                        if '001' in aleph_record:
                             aleph_id = record['001'].data
                             duplicate_id = aleph_record['001'].data
                             if record.leader[5] not in ['d', 's', 'x']:
