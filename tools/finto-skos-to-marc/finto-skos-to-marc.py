@@ -871,7 +871,9 @@ def convert(cs, vocabulary_name, language, g, g2):
                     # dc:sourcessa on ollut myös URLeja. Siivotaan ne tässä pois
                     if not valueProp.value.startswith("http"):
                         subfield_list.append([
-                            'a', decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, valueProp.value))
+                            Subfield(code='a',
+                                     value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, valueProp.value))
+                            )
                         ])
             if len(geographical_types) == 1:
                 subfield_b = next(iter(geographical_types))
@@ -900,7 +902,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                                 key=lambda o: str(o.value)):
             subfields = [
                 Subfield(code='a',
-                value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
+                         value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
             ]
             # TODO: linkkien koodaus tarkistetaan/tehdään myöhemmin
             #urls = getURLs(valueProp.value)
@@ -993,10 +995,10 @@ def convert(cs, vocabulary_name, language, g, g2):
 
                 for label in labels[:-1]:
                     subfield_values.append(Subfield(code='a',
-                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ",")
+                                                    value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ",")
                                      )))
                 subfield_values.append(Subfield(code='a',
-                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
+                                                value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
                                      ))
                 #subfield_values.append(Subfield(code='0', value=target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
                 rec.add_field(
