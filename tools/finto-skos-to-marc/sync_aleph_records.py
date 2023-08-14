@@ -1,3 +1,4 @@
+import enum
 from pymarc import Record, Subfield, XMLWriter, parse_xml_to_array
 from aleph_seq_reader import AlephSeqReader
 from lxml import etree as ET
@@ -100,7 +101,6 @@ def compare_records(args):
     fh.close()
 
     writer = XMLWriter(open(mrcx_file, "wb"))
-
     records = parse_xml_to_array(input_file_2)
 
     new_records = {}
@@ -135,7 +135,7 @@ def compare_records(args):
                     write_count += 1
 
     for uri in aleph_records:
-        if uri not in new_records:
+        if uri not in new_records and aleph_records[uri].leader[5] not in ['d', 's', 'x']:
             record = aleph_records[uri]
             if any(field.tag.startswith('1') for field in record.get_fields()):
                 record = deprecate_record(aleph_records[uri])
