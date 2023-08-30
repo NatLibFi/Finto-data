@@ -2466,13 +2466,13 @@ slm:s77  a               owl:Class , skos:Concept ;
         skos:prefLabel   "animerade filmer"@sv , "animaatioelokuvat"@fi .
 
 slm:s848  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "epookkiromaanit"@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "tidsskildringar (romaner)"@sv , "aikakausiromaanit"@fi ;
         skos:related     slm:s914 ;
-        skos:scopeNote   "Används om romaner som återger en viss tidsepok med dess seder och bruk."@sv , "Käytetään teoksista, joissa kuvataan jotakin aikakautta ja sen tapoja."@fi .
+        skos:scopeNote   "Används om romaner som återger en viss tidsepok med dess seder och bruk."@sv , "Käytetään teoksista, joissa kuvataan jotakin aikakautta ilmiöineen."@fi .
 
 slm:s1257  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -4795,8 +4795,9 @@ slm:s876  a             owl:Class , skos:Concept ;
         skos:related    slm:s985 .
 
 slm:s914  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "epookkiromaanit"@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "sederomaner"@sv , "taparomaanit"@fi ;
         skos:related     slm:s848 ;
@@ -7261,11 +7262,12 @@ slm:s539  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p16860> ;
         skos:prefLabel   "stockflottarfilmer"@sv , "tukkilaiselokuvat"@fi .
 
-slm:s1207  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "vykort"@sv ;
-        skos:prefLabel  "postikortit"@fi , "postkort"@sv ;
-        skos:scopeNote  "Termen används endast för att beskriva konkreta postkort. Om bildverk med bilder på postkort används FGF-termen bildverk, illustrerade kataloger e.d. och lämplig ALLFO-term (t.ex. påskkort)."@sv , "Termillä kuvaillaan ainoastaan konkreettisia postikortteja. Postikortteja esittelevistä\r\nkuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-\r\nasiasanaa (esim. pääsiäiskortit)."@fi .
+slm:s1207  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "vykort"@sv ;
+        skos:prefLabel   "postikortit"@fi , "postkort"@sv ;
+        skos:scopeNote   "Termen används endast för att beskriva konkreta postkort. Om bildverk med bilder på postkort används FGF-termen bildverk, illustrerade kataloger e.d. och lämplig ALLFO-term (t.ex. påskkort)."@sv , "Termillä kuvaillaan ainoastaan konkreettisia postikortteja. Postikortteja esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-asiasanaa (esim. pääsiäiskortit)."@fi .
 
 slm:s476  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -9006,6 +9008,11 @@ slm:s1462  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "raportit"@fi , "rapporter"@sv ;
         skos:related     slm:s319 , slm:s114 .
+
+slm:93c2c7fa-ad3a-42e3-a6c9-41d272d8c9e4
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s505 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "ravintola-arvostelut"@fi .
 
 slm:s474  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
