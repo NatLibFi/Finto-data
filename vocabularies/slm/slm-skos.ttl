@@ -855,16 +855,14 @@ slm:s1206 a skos:Concept ;
 
 slm:s1207 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-11-02"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
     skos:altLabel "vykort"@sv ;
+    skos:broader slm:s1492 ;
     skos:inScheme slm: ;
     skos:prefLabel "postikortit"@fi,
         "postkort"@sv ;
-    skos:scopeNote """Termillä kuvaillaan ainoastaan konkreettisia postikortteja. Postikortteja esittelevistä\r
-kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-\r
-asiasanaa (esim. pääsiäiskortit)."""@fi,
-        "Termen används endast för att beskriva konkreta postkort. Om bildverk med bilder på postkort används FGF-termen bildverk, illustrerade kataloger e.d. och lämplig ALLFO-term (t.ex. påskkort)."@sv ;
-    skos:topConceptOf slm: .
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia postikortteja. Postikortteja esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-asiasanaa (esim. pääsiäiskortit)."@fi,
+        "Termen används endast för att beskriva konkreta postkort. Om bildverk med bilder på postkort används FGF-termen bildverk, illustrerade kataloger e.d. och lämplig ALLFO-term (t.ex. påskkort)."@sv .
 
 slm:s1208 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2473,6 +2471,13 @@ slm:s1494 a skos:Concept ;
     skos:prefLabel "eripainokset"@fi,
         "särtryck"@sv ;
     skos:topConceptOf slm: .
+
+slm:s1496 a skos:Concept ;
+    dct:created "2023-08-31"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
+    skos:broader slm:s505 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "ravintola-arvostelut"@fi .
 
 slm:s150 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7629,21 +7634,6 @@ slm:s1491 a skos:Concept ;
         "kunskapsspel"@sv ;
     skos:related slm:s1446 .
 
-slm:s1492 a skos:Concept ;
-    dct:created "2023-08-04"^^xsd:date ;
-    dct:modified "2023-08-04"^^xsd:date ;
-    skos:altLabel "tilapäispainatteet"@fi,
-        "tilapääjulkaisut"@fi,
-        "accidenstryck"@sv,
-        "efemärt tryck"@sv,
-        "tillfällighetstryck"@sv,
-        "vardagstryck"@sv ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1328 ;
-    skos:prefLabel "pienpainatteet"@fi,
-        "småtryck"@sv ;
-    skos:topConceptOf slm: .
-
 slm:s1495 a skos:Concept ;
     dct:created "2023-08-04"^^xsd:date ;
     dct:modified "2023-08-04"^^xsd:date ;
@@ -9337,13 +9327,14 @@ slm:s847 a skos:Concept ;
 
 slm:s848 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
     skos:altLabel "epookkiromaanit"@fi ;
     skos:broader slm:s518 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "aikakausiromaanit"@fi,
         "tidsskildringar (romaner)"@sv ;
     skos:related slm:s914 ;
-    skos:scopeNote "Käytetään teoksista, joissa kuvataan jotakin aikakautta ja sen tapoja."@fi,
+    skos:scopeNote "Käytetään teoksista, joissa kuvataan jotakin aikakautta ilmiöineen."@fi,
         "Används om romaner som återger en viss tidsepok med dess seder och bruk."@sv .
 
 slm:s85 a skos:Concept ;
@@ -9494,6 +9485,8 @@ slm:s906 a skos:Concept ;
 
 slm:s914 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
+    skos:altLabel "epookkiromaanit"@fi ;
     skos:broader slm:s518 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "taparomaanit"@fi,
@@ -10336,6 +10329,22 @@ slm:s1488 a skos:Concept ;
         "undervisningsmaterial"@sv ;
     skos:related slm:s1276,
         slm:s719 ;
+    skos:topConceptOf slm: .
+
+slm:s1492 a skos:Concept ;
+    dct:created "2023-08-04"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
+    skos:altLabel "tilapäispainatteet"@fi,
+        "tilapääjulkaisut"@fi,
+        "accidenstryck"@sv,
+        "efemärt tryck"@sv,
+        "tillfällighetstryck"@sv,
+        "vardagstryck"@sv ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1207,
+        slm:s1328 ;
+    skos:prefLabel "pienpainatteet"@fi,
+        "småtryck"@sv ;
     skos:topConceptOf slm: .
 
 slm:s1493 a skos:Concept ;
@@ -14487,24 +14496,6 @@ slm:s171 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat oikeudenkäyntiä, jossa rikos selvitetään."@fi,
         "Används om verk som beskriver rättegångsförfarandet då ett brott utreds."@sv .
 
-slm:s505 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-03-29"^^xsd:date ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1093,
-        slm:s1229,
-        slm:s1231,
-        slm:s1238,
-        slm:s1239,
-        slm:s1240,
-        slm:s1241,
-        slm:s1243,
-        slm:s1275,
-        slm:s1481 ;
-    skos:prefLabel "arvostelut"@fi,
-        "recensioner"@sv ;
-    skos:topConceptOf slm:s285 .
-
 slm:s641 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2020-04-23"^^xsd:date ;
@@ -14642,6 +14633,25 @@ slm:s287 a skos:Concept ;
         slm:s926 ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat salapoliisin tai yksityisetsivän suorittamaa rikoksen selvittämistä."@fi,
         "Används om verk som beskriver detektivers utredning av brott."@sv .
+
+slm:s505 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2023-08-31"^^xsd:date ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1093,
+        slm:s1229,
+        slm:s1231,
+        slm:s1238,
+        slm:s1239,
+        slm:s1240,
+        slm:s1241,
+        slm:s1243,
+        slm:s1275,
+        slm:s1481,
+        slm:s1496 ;
+    skos:prefLabel "arvostelut"@fi,
+        "recensioner"@sv ;
+    skos:topConceptOf slm:s285 .
 
 slm:s816 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -16233,13 +16243,12 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-08-04T13:53:30+00:00"^^xsd:dateTime ;
+    dct:modified "2023-08-31T05:03:17+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
     skos:hasTopConcept slm:s1149,
         slm:s1175,
-        slm:s1207,
         slm:s1209,
         slm:s1237,
         slm:s1269,
