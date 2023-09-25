@@ -151,7 +151,7 @@ slm:s1179  a             owl:Class , skos:Concept ;
         skos:altLabel    "ungdomsserier (tecknade serier för ungdomar)"@sv ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "nuortensarjakuvat"@fi , "tecknade serier för ungdomar"@sv ;
-        skos:related     slm:s891 , slm:s523 ;
+        skos:related     slm:s891 ;
         skos:scopeNote   "Käytetään nuorille tarkoitetuista sarjakuvista."@fi , "Används om tecknade serier avsedda för ungdomar."@sv .
 
 slm:s175  a              owl:Class , skos:Concept ;
@@ -160,6 +160,13 @@ slm:s175  a              owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026747> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "csardas"@sv , "csárdásit"@fi .
+
+slm:0a5d4fdb-a85c-4dad-8d53-b9333bb16d13
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s356 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "manhuat"@fi ;
+        skos:related     slm:s903 , slm:s374 ;
+        skos:scopeNote   "Käytetään kiinalaisista manhuasarjakuvista."@fi .
 
 slm:s1288  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -435,14 +442,6 @@ slm:s519  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "commedia dell'arte"@sv , "commedia dell'arte"@fi ;
         skos:related     slm:s92 , slm:s865 , slm:s793 .
-
-slm:s471  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s27 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "mininovellit"@fi , "mininoveller"@sv ;
-        skos:inScheme    slm:s285 ;
-        skos:prefLabel   "pienoisnovellit"@fi , "kortnoveller"@sv ;
-        skos:related     slm:s479 .
 
 slm:s719  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3254,7 +3253,7 @@ slm:s479  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:note        "Lyhyt katkelmallinen proosateksti, joka ei ole novelli."@fi , "Kort fragmentarisk prosatext, som inte är en novell."@sv ;
         skos:prefLabel   "lyhytproosa"@fi , "kortprosa"@sv ;
-        skos:related     slm:s471 , slm:s388 , slm:s618 , slm:s27 , slm:s423 , slm:s215 , slm:s352 .
+        skos:related     slm:s388 , slm:s618 , slm:s27 , slm:s423 , slm:s215 , slm:s352 .
 
 slm:s1153  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -5066,7 +5065,7 @@ slm:s903  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p22675> ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "manhwat"@fi , "manhwa"@sv ;
-        skos:related     slm:s374 ;
+        skos:related     slm:0a5d4fdb-a85c-4dad-8d53-b9333bb16d13 , slm:s374 ;
         skos:scopeNote   "Käytetään korealaisista manhwasarjakuvista."@fi , "Används om koreanska tecknade manhwaserier."@sv .
 
 slm:s460  a              owl:Class , skos:Concept ;
@@ -6121,7 +6120,7 @@ slm:s891  a              owl:Class , skos:Concept ;
         skos:altLabel    "barnserier (tecknade serier för barn)"@sv ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "lastensarjakuvat"@fi , "tecknade serier för barn"@sv ;
-        skos:related     slm:s1179 , slm:s939 ;
+        skos:related     slm:s1179 ;
         skos:scopeNote   "Käytetään lapsille tarkoituista sarjakuvista."@fi , "Används om tecknade serier för barn."@sv .
 
 slm:s526  a              owl:Class , skos:Concept ;
@@ -6364,14 +6363,6 @@ slm:s1358  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "seriell musik"@sv , "sarjallinen musiikki"@fi .
 
-slm:s523  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s593 , slm:s285 ;
-        skos:prefLabel   "nuorisosarjakuvat"@fi , "tecknade serier om ungdomar"@sv ;
-        skos:related     slm:s1179 , slm:s939 ;
-        skos:scopeNote   "Används om tecknade serier med en ung person eller ett ungdomskollektiv som huvudperson."@sv , "Käytetään sarjakuvista, joiden päähenkilönä on nuori tai nuorisoyhteisö."@fi .
-
 slm:s704  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -6576,7 +6567,7 @@ slm:s374  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p13956> ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:prefLabel   "manga"@sv , "mangat"@fi ;
-        skos:related     slm:s903 , slm:s367 .
+        skos:related     slm:0a5d4fdb-a85c-4dad-8d53-b9333bb16d13 , slm:s903 , slm:s367 .
 
 slm:s850  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1332 ;
@@ -9394,14 +9385,6 @@ slm:s15  a               owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "psykologiset kertomukset"@fi , "psykologiska berättelser"@sv ;
         skos:related     slm:s604 .
-
-slm:s939  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm:s593 , slm:s285 ;
-        skos:prefLabel   "tecknade serier om barn"@sv , "lapsisarjakuvat"@fi ;
-        skos:related     slm:s891 , slm:s523 ;
-        skos:scopeNote   "Käytetään sarjakuvista, joiden päähenkilönä on lapsi tai lapsiyhteisö."@fi , "Används om tecknade serier med ett barn eller barnkollektiv som huvudperson."@sv .
 
 slm:s1273  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
