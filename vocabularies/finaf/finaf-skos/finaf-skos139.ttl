@@ -2779,14 +2779,18 @@ finaf:000010969 a rdac:C10005,
 finaf:000018807 a rdac:C10005,
         skos:Concept ;
     dct:created "2002-12-09"^^xsd:date ;
-    dct:modified "2022-10-31T14:19:45"^^xsd:dateTime ;
+    dct:modified "2023-09-25T13:18:38"^^xsd:dateTime ;
     rdaa:P50006 <http://isni.org/isni/0000000404149419>,
         "Asteri ID: 000018807" ;
-    rdaa:P50025 "Kajaani Polytechnic"@fi ;
+    rdaa:P50025 "KAMK"@fi,
+        "Kajaani Polytechnic"@fi,
+        "Kajaani University of Applied Sciences"@fi ;
     rdaa:P50237 "korkeakoulu"@fi ;
     rdaa:P50407 "Kajaanin ammattikorkeakoulu"@fi ;
     rdau:P61101 "ECTS, 2001"@fi ;
-    skos:altLabel "Kajaani Polytechnic"@fi ;
+    skos:altLabel "KAMK"@fi,
+        "Kajaani Polytechnic"@fi,
+        "Kajaani University of Applied Sciences"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Kajaanin ammattikorkeakoulu"@fi .
 
@@ -9804,6 +9808,9 @@ finaf:000034885 a rdac:C10005,
     skos:inScheme finaf: ;
     skos:prefLabel "Museovirasto"@fi .
 
+<http://rdaregistry.info/Elements/p/> dc:title "RDA Place properties"@en ;
+    skos:note "Properties derived from RDA elements with the domain of RDA Place."@en .
+
 finaf:000029379 a rdac:C10005,
         skos:Concept ;
     dct:created "1990-04-07"^^xsd:date ;
@@ -9836,9 +9843,6 @@ finaf:000029379 a rdac:C10005,
         "Åbo handelshögskola"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Turun kauppakorkeakoulu"@fi .
-
-<http://rdaregistry.info/Elements/p/> dc:title "RDA Place properties"@en ;
-    skos:note "Properties derived from RDA elements with the domain of RDA Place."@en .
 
 finaf:000037081 a rdac:C10005,
         skos:Concept ;
@@ -10784,6 +10788,24 @@ rdac:C10011 a owl:Class ;
     skos:scopeNote "A collective agent includes a corporate body and a family."@en,
         "Yhteisötoimija sisältää yhteisön ja suvun."@fi .
 
+rdac:C10008 a owl:Class ;
+    rdfs:label "family"@en,
+        "suku"@fi ;
+    rdakit:instructionNumber "8.1.2" ;
+    rdakit:toolkitDefinition "Two or more persons related by birth, marriage, adoption, civil union, or similar legal status, or who otherwise present themselves as a family."@en,
+        "Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä."@fi ;
+    rdakit:toolkitLabel "Family"@en,
+        "suku"@fi ;
+    reg:lexicalAlias rdac:Family.en,
+        rdac:Suku.fi ;
+    reg:name "Family"@en,
+        "Suku"@fi ;
+    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
+    rdfs:isDefinedBy rdac: ;
+    rdfs:subClassOf rdac:C10011 ;
+    skos:definition "Two or more persons related by birth, marriage, adoption, civil union, or similar legal status, or who otherwise present themselves as a family."@en,
+        "Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä."@fi .
+
 finaf:000009616 a rdac:C10005,
         skos:Concept ;
     dct:created "1993-10-05"^^xsd:date ;
@@ -10808,24 +10830,6 @@ finaf:000009616 a rdac:C10005,
         "University of Helsinki. Faculty of Science (Matemaattis-luonnontieteellinen tiedekunta)"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Helsingin yliopisto. Matemaattis-luonnontieteellinen tiedekunta"@fi .
-
-rdac:C10008 a owl:Class ;
-    rdfs:label "family"@en,
-        "suku"@fi ;
-    rdakit:instructionNumber "8.1.2" ;
-    rdakit:toolkitDefinition "Two or more persons related by birth, marriage, adoption, civil union, or similar legal status, or who otherwise present themselves as a family."@en,
-        "Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä."@fi ;
-    rdakit:toolkitLabel "Family"@en,
-        "suku"@fi ;
-    reg:lexicalAlias rdac:Family.en,
-        rdac:Suku.fi ;
-    reg:name "Family"@en,
-        "Suku"@fi ;
-    reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
-    rdfs:isDefinedBy rdac: ;
-    rdfs:subClassOf rdac:C10011 ;
-    skos:definition "Two or more persons related by birth, marriage, adoption, civil union, or similar legal status, or who otherwise present themselves as a family."@en,
-        "Kaksi tai useampi henkilö, joita yhdistää sukulaisuussuhde, avioliitto, adoptio, rekisteröity parisuhde tai vastaava oikeudellinen asema tai jotka muuten esiintyvät perheenä."@fi .
 
 rdac:C10002 a owl:Class ;
     rdfs:label "agent"@en,
@@ -11335,7 +11339,7 @@ För mer information on dataskydd och svar på vanliga frågor se sidan <a href=
         "KANTO - Nationella aktörsnamn"@sv ;
     dct:language <http://lexvo.org/id/iso639-3/fin> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-09-25T04:55:15+00:00"^^xsd:dateTime ;
+    dct:modified "2023-09-26T04:56:27+00:00"^^xsd:dateTime ;
     dct:subject yso:p1272,
         yso:p26023,
         yso:p3835 ;
