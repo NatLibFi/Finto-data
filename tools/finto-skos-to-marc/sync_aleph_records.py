@@ -57,6 +57,8 @@ def compare_records(args):
     voc_tags = []
     write_count = 0
     max_records = int(args.max_records) if args.max_records else None
+    if args.vocabulary_name == "yso-aika":
+        voc_tags = ["148"]
     if args.vocabulary_name == "yso":
         voc_tags = ["150"]
     if args.vocabulary_name == "yso-paikat":
@@ -161,7 +163,7 @@ def readCommandLineArguments():
     parser.add_argument("-a", "--aleph_dump_file", help="File path for Aleph records to be compared, file format aleph sequential", required=True)
     parser.add_argument("-i", "--input_marcxml", help="File path for records whose changes are to be detected, file format must me MARCXML", required=True)    
     parser.add_argument("-o", "--output_marcxml", help="Output file name for new, changed and deprecate MARC XML records", required=True)
-    parser.add_argument("-vn", "--vocabulary_name", help="Define vocabulary name ", choices=['yso', 'yso-paikat', 'slm', 'mts'], required=True)
+    parser.add_argument("-vn", "--vocabulary_name", help="Define vocabulary name ", choices=['yso', 'yso-aika', 'yso-paikat', 'slm', 'mts'], required=True)
     parser.add_argument("-vl", "--vocabulary_language", help="Define vocabulary language, e g. 'fin', 'swe'",required=True)
     parser.add_argument("-m", "--max_records", help="Maximum number of new records for output file")
     args = parser.parse_args()
