@@ -112,11 +112,6 @@ slm:s892  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "oratoriot"@fi , "oratorier"@sv .
 
-slm:s1268  a             owl:Class , skos:ConceptScheme ;
-        rdfs:subClassOf  yso-update:ongelmatfi ;
-        skos:altLabel    "Vardagstryck"@sv , "Pienjulkaisut"@fi , "Efemera"@fi , "Efemärt tryck"@sv , "Ephemera"@fi ;
-        skos:prefLabel   "Småtryck"@sv , "Pienpainatteet"@fi .
-
 slm:s552  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11598> ;
@@ -213,10 +208,11 @@ slm:s279  a              owl:Class , skos:Concept ;
         skos:prefLabel   "säädöskokoelmat"@fi , "författningssamlingar"@sv ;
         skos:related     slm:s1482 .
 
-slm:s1329  a            owl:Class , skos:Concept ;
-        skos:altLabel   "plakat"@sv ;
-        skos:prefLabel  "julisteet"@fi , "affischer"@sv ;
-        skos:scopeNote  "Termillä kuvaillaan ainoastaan konkreettisia julisteita. Julisteita esittelevistä\r\nkuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-asiasanaa."@fi , "Termen används endast för att beskriva konkreta affischer. Om bildverk med bilder på affischer används FGF-termen bildverk, illustrerade kataloger e.d. och en lämplig ALLFO-term."@sv .
+slm:s1329  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
+        skos:altLabel    "plakat"@sv ;
+        skos:prefLabel   "julisteet"@fi , "affischer"@sv ;
+        skos:scopeNote   "Termillä kuvaillaan ainoastaan konkreettisia julisteita. Julisteita esittelevistä\r\nkuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-asiasanaa."@fi , "Termen används endast för att beskriva konkreta affischer. Om bildverk med bilder på affischer används FGF-termen bildverk, illustrerade kataloger e.d. och en lämplig ALLFO-term."@sv .
 
 slm:s1475  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
@@ -681,9 +677,10 @@ slm:s124  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "oodit (runot)"@fi , "oden (dikter)"@sv .
 
-slm:s1237  a            owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:prefLabel  "broschyrer"@sv , "esitteet"@fi .
+slm:s1237  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:prefLabel   "broschyrer"@sv , "esitteet"@fi .
 
 slm:s1306  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -1249,7 +1246,7 @@ slm:s1055  a             owl:Class , skos:Concept ;
         skos:related     slm:s520 .
 
 slm:s281  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "produktkataloger"@sv , "tuoteluettelot"@fi .
@@ -1554,7 +1551,7 @@ ysometa:StructuringClass
         rdfs:subClassOf  owl:Class .
 
 slm:s1463  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "auktionskataloger"@sv , "huutokauppaluettelot"@fi .
 
@@ -1634,6 +1631,11 @@ slm:s226  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "burlesker"@sv , "burleskit"@fi .
+
+slm:5dea122c-b219-4809-bf9c-1046ae5534df
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "aikataulut"@fi .
 
 slm:s1346  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1273 ;
@@ -2043,10 +2045,11 @@ slm:s883  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "aleatorisk musik"@sv , "aleatorinen musiikki"@fi .
 
-slm:s342  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s593 ;
-        skos:prefLabel  "kalenterit"@fi , "kalendrar"@sv .
+slm:s342  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:inScheme    slm:s593 ;
+        skos:prefLabel   "kalenterit"@fi , "kalendrar"@sv .
 
 slm:s668  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s409 ;
@@ -2074,7 +2077,7 @@ slm:s570  a              owl:Class , skos:Concept ;
         skos:related     slm:s169 .
 
 slm:s1115  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s202 ;
+        rdfs:subClassOf  slm:s202 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "studiehandböcker"@sv , "opinto-oppaat"@fi .
@@ -2112,12 +2115,12 @@ slm:s965  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään teoksista, joissa sivut on leikattu liuskoiksi niin, että liuskoja yhdistelemällä voidaan vaihtaa hahmojen osat, esim. kasvot, toisiksi."@fi , "Används om verk, vars sidor är klippta i flikar så att man genom att kombinera flikar kan byta ut figurernas delar, t.ex. ansikten."@sv .
 
 slm:s324  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 , slm:s1051 ;
+        rdfs:subClassOf  slm:s435 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "henkilömatrikkelit"@fi , "personmatriklar"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "matrikkelit"@fi , "matriklar"@sv ;
-        skos:related     slm:s1221 .
+        skos:related     slm:s1221 , slm:s191 .
 
 slm:s626  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
@@ -2491,7 +2494,7 @@ slm:s1117  a             owl:Class , skos:Concept ;
         skos:prefLabel   "dainos"@sv , "dainat"@fi .
 
 slm:s319  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "delårsöversikter"@sv , "vuosikertomukset"@fi , "årsberättelser"@sv , "osavuosikatsaukset"@fi ;
         skos:inScheme    slm:s593 ;
@@ -2802,7 +2805,7 @@ slm:s735  a              owl:Class , skos:Concept ;
         skos:prefLabel   "käytösoppaat"@fi , "etiketthandböcker"@sv .
 
 slm:s1221  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "jäsenluettelot"@fi , "medlemsförteckningar"@sv ;
@@ -3632,6 +3635,12 @@ slm:s418  a              owl:Class , skos:Concept ;
         skos:related     slm:s1140 ;
         skos:scopeNote   "Används om verk som beskriver vetenskapens och teknikens verkliga eller fiktiva resultat och människans liv i framtiden eller i en ny omgivning."@sv , "Käytetään teoksista, jotka kuvaavat tieteen ja tekniikan todellisia tai kuviteltuja saavutuksia ja ihmisen elämää tulevaisuudessa tai uudessa ympäristössä."@fi .
 
+slm:a4f94349-af58-492e-bf0f-a2da4f76913f
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1328 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "elokuvaohjelmat (käsiohjelmat)"@fi ;
+        skos:prefLabel   "elokuvateatterien käsiohjelmat"@fi .
+
 slm:s581  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s641 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4455,10 +4464,13 @@ slm:s650  a              owl:Class , skos:Concept ;
         skos:related     slm:s465 , slm:s760 .
 
 slm:s326  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s597 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "rukouskirjat"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026049> ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "rukouskirjat"@fi , "bönböcker"@sv .
+        skos:prefLabel   "rukoukset"@fi , "bönböcker"@sv ;
+        skos:related     slm:s597 .
 
 slm:s900  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s618 ;
@@ -5002,7 +5014,8 @@ slm:s191  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1051 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "personregister (index)"@sv , "henkilöhakemistot"@fi .
+        skos:prefLabel   "personregister (index)"@sv , "henkilöhakemistot"@fi ;
+        skos:related     slm:s324 .
 
 slm:s111  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -5193,6 +5206,12 @@ slm:s765  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "föreläsningar"@sv , "luennot"@fi .
+
+slm:f58529f2-9b7d-4fb4-8f5a-ee8901251be9
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "säännöt (järjestöt)"@fi , "seurojen säännöt"@fi , "yhdistysten säännöt"@fi ;
+        skos:prefLabel   "järjestöjen säännöt"@fi .
 
 slm:s931  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -5584,10 +5603,6 @@ slm:s1138  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026973> ;
         skos:prefLabel   "offertorier"@sv , "offertoriumit"@fi .
 
-yso-update:ongelmatfi
-        a               ysometa:StructuringClass ;
-        skos:prefLabel  "ongelmatfig"@fi , "ongelmatfig"@sv .
-
 slm:s1428  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
         skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2019026036> ;
@@ -5852,6 +5867,12 @@ slm:s1014  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "pantomiimit"@fi , "pantomimer"@sv .
 
+slm:d8a30892-88e2-4c5f-a544-a39fea8d9574
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026186> ;
+        skos:prefLabel   "taulukot"@fi .
+
 slm:s1481  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s505 ;
         skos:inScheme    slm:s285 ;
@@ -5914,10 +5935,11 @@ slm:s1364  a             owl:Class , skos:Concept ;
         skos:related     slm:s222 .
 
 slm:s694  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "kritiska upplagor"@sv , "kritiska editioner"@sv , "kriittiset laitokset"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p27876> ;
-        skos:definition  "Tieteellisesti toimitettu julkaisu, joka pohjautuu teoksen alkuperäislähteisiin ja koostuu tekstikriittisin perustein valikoidusta ja toimitetusta alkuperäistekstistä tai nuottiaineistosta sekä sitä täydentävistä kommentaareista."@fi , "Vetenskapligt redigerad publikation som grundar sig på ett verks originalkällor, och består av en i enlighet med textkritiska grunder utvald och redigerad originaltext eller notmaterial, samt en kompletterande kommentar."@sv ;
+        skos:definition  "Kriittiset editiot ovat teosten alkuperäislähteisiin pohjautuvia julkaisuja, jotka koostuvat tekstikriittisin perustein valikoidusta ja toimitetusta tekstistä tai nuottiaineistosta sekä sitä täydentävästä kommentaariosiosta. -- SKS"@fi , "Vetenskapligt redigerad publikation som grundar sig på ett verks originalkällor, och består av en i enlighet med textkritiska grunder utvald och redigerad originaltext eller notmaterial, samt en kompletterande kommentar."@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "kritiska utgåvor"@sv , "kriittiset editiot"@fi .
 
@@ -6087,6 +6109,12 @@ slm:s599  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "arbetartidningar"@sv , "työväenlehdet"@fi .
+
+slm:f047bb43-24da-4985-a370-33c93e6495a2
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1335 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "uutuustiedotteet (kirjastot)"@fi ;
+        skos:prefLabel   "uutuusluettelot (kirjastot)"@fi .
 
 slm:s1289  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1311 ;
@@ -6372,10 +6400,13 @@ slm:s665  a              owl:Class , skos:Concept ;
         skos:prefLabel   "utvecklingsromaner"@sv , "kehitysromaanit"@fi ;
         skos:related     slm:s604 .
 
-slm:s276  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "tilastot"@fi , "statistik"@sv .
+slm:s276  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "taulukot (tilastot)"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026181> ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "tilastot"@fi , "statistik"@sv .
 
 slm:s30  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -6499,10 +6530,10 @@ slm:s917  a              owl:Class , skos:Concept ;
         skos:prefLabel   "symfonier"@sv , "sinfoniat"@fi .
 
 slm:s1279  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1328 ;
+        rdfs:subClassOf  slm:s1328 , yso-update:uudetmuuttuneetSv ;
         skos:definition  "Konsertin yleisölle laadittu luettelo konsertissa esitettävästä ohjelmasta."@fi , "Lista för publiken över programmet som framförs under en konsert."@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026065> ;
-        skos:prefLabel   "konserttiohjelmat"@fi , "konsertprogram"@sv .
+        skos:prefLabel   "konserttiohjelmat (käsiohjelmat)"@fi , "konsertprogram"@sv .
 
 slm:s952  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
@@ -7302,8 +7333,9 @@ slm:s732  a              owl:Class , skos:Concept ;
         skos:prefLabel   "ordlekar"@sv , "sanaleikit"@fi .
 
 slm:s606  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "kronikat (historiikit)"@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "historiker"@sv , "historiikit"@fi .
 
@@ -7532,6 +7564,11 @@ slm:s730  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "bylinat"@fi , "bylinor"@sv .
 
+slm:9842218f-4824-4dad-81cc-ea18cd3e00f2
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1237 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "asuntoesitteet"@fi .
+
 slm:s296  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1412 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -7680,11 +7717,11 @@ slm:s1089  a             owl:Class , skos:Concept ;
         skos:prefLabel   "gravinskrifter"@sv , "hautakirjoitukset"@fi .
 
 slm:s764  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s1377 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "soolot (soolosävellykset)"@fi , "solon"@sv ;
+        skos:altLabel    "soolosävellykset"@fi , "soolot (soolosävellykset)"@fi , "solon"@sv ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "soolosävellykset"@fi , "solokompositioner"@sv ;
+        skos:prefLabel   "soolomusiikki"@fi , "solokompositioner"@sv ;
         skos:related     slm:s1312 .
 
 slm:s1290  a             owl:Class , skos:Concept ;
@@ -7765,6 +7802,12 @@ slm:s1326  a             owl:Class , skos:Concept ;
         skos:altLabel    "gayfilmer"@sv , "sateenkaarielokuvat"@fi , "queer-filmer"@sv , "regnbågsfilmer"@sv ;
         skos:prefLabel   "queer-elokuvat"@fi , "queerfilmer"@sv .
 
+slm:adb49925-8ce3-4e20-8886-ac14209f2a18
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1328 , yso-update:uudetmuuttuneetSv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026193> ;
+        skos:prefLabel   "teatteriohjelmat (käsiohjelmat)"@fi .
+
 slm:s1019  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -7795,10 +7838,11 @@ slm:s423  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kaskut"@fi , "anekdoter"@sv ;
         skos:related     slm:s1128 , slm:s479 , slm:s842 .
 
-slm:s1271  a            owl:Class , skos:Concept ;
-        skos:altLabel   "reklam"@sv ;
-        skos:prefLabel  "reklamer"@sv , "mainokset"@fi ;
-        skos:scopeNote  "Termen används endast för att beskriva konkreta reklamer. För bildverk som presenterar reklam används FGF-termen bildverk, illustrerade kataloger e.d., samt ALLFO-ämnesordet reklamer."@sv , "Termillä kuvaillaan ainoastaan konkreettisia mainoksia. Mainoksia esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO- asiasanaa."@fi .
+slm:s1271  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
+        skos:altLabel    "reklam"@sv ;
+        skos:prefLabel   "reklamer"@sv , "mainokset"@fi ;
+        skos:scopeNote   "Termen används endast för att beskriva konkreta reklamer. För bildverk som presenterar reklam används FGF-termen bildverk, illustrerade kataloger e.d., samt ALLFO-ämnesordet reklamer."@sv , "Termillä kuvaillaan ainoastaan konkreettisia mainoksia. Mainoksia esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO- asiasanaa."@fi .
 
 slm:s1378  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s409 ;
@@ -8159,6 +8203,7 @@ slm:s813  a              owl:Class , skos:Concept ;
         skos:related     slm:s1058 , slm:s855 .
 
 slm:s1494  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1492 ;
         skos:altLabel    "separattryck"@sv , "separat (publikationer)"@sv ;
         skos:definition  "Kokoomateoksessa tai lehdessä julkaistun itsenäisen kirjoituksen julkaisu erillisenä painotuotteena. Eripainos painetaan samalla ladelmalla kuin alkuperäinen julkaisu, mutta sivunumerointia voidaan muuttaa ja siihen voidaan lisätä oma kansilehti."@fi , "Självständig text publicerad i ett samlingsverk eller en tidskrift utgiven som en skild trycksak. Särtryck har samma sättning som den ursprungliga publikationen, men sidnumreringen kan ändras och ett eget omslag kan tillfogas."@sv ;
         skos:prefLabel   "särtryck"@sv , "eripainokset"@fi .
@@ -8248,9 +8293,11 @@ slm:s698  a              owl:Class , skos:Concept ;
         skos:prefLabel   "gängfilmer"@sv , "jengielokuvat"@fi ;
         skos:related     slm:s968 .
 
-slm:s1492  a            owl:Class , skos:Concept ;
-        skos:altLabel   "efemärt tryck"@sv , "accidenstryck"@sv , "tilapääjulkaisut"@fi , "tilapäispainatteet"@fi , "vardagstryck"@sv , "tillfällighetstryck"@sv ;
-        skos:prefLabel  "pienpainatteet"@fi , "småtryck"@sv .
+slm:s1492  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "efemärt tryck"@sv , "accidenstryck"@sv , "tilapääjulkaisut"@fi , "tilapäispainatteet"@fi , "vardagstryck"@sv , "tillfällighetstryck"@sv ;
+        skos:definition  "Pienpainatteet ovat enimmäkseen käytännön elämään liittyviä, yleensä lyhytaikaiseen käyttöön tarkoitettuja ja ajankohtaisuutensa verrattain nopeasti menettäviä painotuotteita. Julkaisun kuuluminen pienpainatteisiin ei perustu painoksen suuruuteen tai julkaisun fyysiseen kokoon. -- Kansalliskirjasto, vapaakappaletoimisto"@fi ;
+        skos:prefLabel   "pienpainatteet"@fi , "småtryck"@sv .
 
 slm:s656  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -8347,7 +8394,7 @@ slm:s129  a              owl:Class , skos:Concept ;
         skos:related     slm:s1294 .
 
 slm:s1267  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         skos:altLabel    "adresskataloger"@sv , "adresskalendrar"@sv , "osoitehakemistot"@fi , "adresslistor"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "adressförteckningar"@sv , "osoiteluettelot"@fi .
@@ -8898,7 +8945,7 @@ slm:s667  a              owl:Class , skos:Concept ;
         skos:prefLabel   "versetit"@fi , "versetter"@sv .
 
 slm:s1123  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "hinnastot"@fi , "prislistor"@sv .
@@ -9350,7 +9397,8 @@ slm:s470  a              owl:Class , skos:Concept ;
 slm:s597  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
         skos:inScheme   slm:s285 ;
-        skos:prefLabel  "andaktsböcker"@sv , "hartauskirjat"@fi .
+        skos:prefLabel  "andaktsböcker"@sv , "hartauskirjat"@fi ;
+        skos:related    slm:s326 .
 
 slm:s1483  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1420 , slm:s432 ;
@@ -9653,7 +9701,7 @@ slm:s1452  a             owl:Class , skos:Concept ;
         skos:related     slm:s174 .
 
 slm:s1212  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s435 , slm:s1492 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "puhelinluettelot"@fi , "telefonkataloger"@sv .
@@ -9760,7 +9808,9 @@ slm:s194  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään teoksista, jotka yleensä kuvaavat yksityisetsivän työtä ja joissa rikoksen selvittämiseen liittyy yleensä yhteiskuntakuvausta ja kritiikkiä."@fi , "Används om verk som vanligen beskriver en privatdetektivs arbete, och i vilka samhällskildring och kritik framkommer i samband med utredning av brotten."@sv .
 
 slm:s215  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "kronikat (pakinat)"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5725> ;
         skos:definition  "Humoristinen ja henkevä lyhyehkö kirjoitelma tai vastaava suullinen esitys; koseria. Pakinalle on luonteenomaista ajankohtainen aihe sekä usein ironinen, parodinen tai satiirinen käsittelytapa."@fi ;
         skos:inScheme    slm:s285 ;
