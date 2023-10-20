@@ -1,7 +1,7 @@
 #!/bin/sh
 
 INFILE="kauno.ttl"
-INFILES="kauno-metadata.ttl ../yso/releases/2022.1.Filolaos/ysoKehitys.rdf $INFILE"
+INFILES="kauno-metadata.ttl ../yso/releases/2023.6.Hypatia/ysoKehitys.rdf $INFILE"
 OUTFILE=kauno-skos.ttl
 
 SKOSIFYCMD="skosify"
