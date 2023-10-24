@@ -1333,6 +1333,7 @@
         skosmos:language "fi", "en", "sv";
         skosmos:defaultLanguage "fi";
         skosmos:defaultSidebarView "hierarchy";
+        skosmos:propertyOrder :YklPropertyOrder ;
         skosmos:showTopConcepts "true";
         skosmos:sortByNotation "lexical" ;
         skosmos:searchByNotation "true" ;
@@ -1358,6 +1359,9 @@
         void:dataDump <https://dev.finto.fi/download/ykl/ykl-dev-skos.ttl> ;
         void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
         skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ykl-demo:> .
+
+:YklPropertyOrder a skosmos:PropertyOrder ;
+    rdf:value ( rdf:type skos:notation skos:broader skos:narrower skos:scopeNote skos:altLabel dc:references ) .
 
 :ysa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSA - Yleinen suomalainen asiasanasto"@fi,
