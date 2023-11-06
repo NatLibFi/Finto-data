@@ -1,5 +1,4 @@
 @prefix void: <http://rdfs.org/ns/void#> .
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -18,6 +17,7 @@
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 @prefix ysometa: <http://www.yso.fi/onto/yso-meta/> .
+@prefix ysoaika: <http://www.yso.fi/onto/yso-aika/> .
 @prefix : <#> .
 
 # Skosmos main configuration
@@ -73,7 +73,7 @@
     # plugins to activate for the whole installation (including all vocabularies)
     skosmos:globalPlugins ( "yse" ) .
 
-# Skosmos vocabularies
+# Skosmos vocabularies and related settings
 
 :afo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "AFO - Luonnonvara- ja ympäristöontologia"@fi,
@@ -120,6 +120,53 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/allars/> .
 
+:cat_culture a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Taide ja kulttuuri"@fi,
+	"Konst och kultur"@sv,
+	"Art and culture"@en .
+
+:categories a skos:ConceptScheme;
+	skos:prefLabel "Sanastot ja ontologiat"@fi,
+		"Tillgängliga tesaurusar och ontologier"@sv,
+		"Available vocabularies and ontologies"@en .
+
+:cat_general a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yleiset"@fi,
+		"Allmänt"@sv,
+		"General"@en .
+
+:cat_geo a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Maantiede ja paikkatieto"@fi,
+		"Geografi och geografisk information"@sv,
+		"Geography and geoinformation"@en .
+
+:cat_lang a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Kielet ja kirjallisuus"@fi,
+	"Språk och litteratur"@sv,
+	"Languages and literature"@en .
+
+:cat_science a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
+	"Naturvetenskap och medicin"@sv,
+	"Science and medicine"@en .
+
+:cat_society a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yhteiskunta"@fi,
+	"Samhälle"@sv,
+	"Society"@en .
+
 :cer a skosmos:Vocabulary, void:Dataset ;
         dc:title "Tieteen termipankin CER-ontologia"@fi,
         "Clean Energy Research ontology of The Bank of Finnish Terminology in Art and Sciences"@en ;
@@ -147,6 +194,24 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:cn:> .
 
+:cn skosmos:vocabularyPlugins :cnMessage .
+
+:cnMessage  a skosmos:ParameterizedPlugin ;
+    skosmos:usePlugin "message";
+    skosmos:parameters [
+        a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
+<br/><br/>
+Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
+        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
+</br></br>
+För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
+        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
+<br/><br/>
+For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
+    ] .
+
 :finaf a skosmos:Vocabulary, void:Dataset ;
 	dc:title "KANTO - Kansalliset toimijatiedot"@fi, "KANTO - Nationella aktörsnamn"@sv;
 	skosmos:shortName "KANTO";
@@ -161,7 +226,55 @@
 	void:dataDump <https://api.finto.fi/download/finaf/finaf-skos.ttl> ;
 	void:dataDump <https://api.finto.fi/download/finaf/finaf-skos.rdf> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:finaf:> .
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:finaf:> .	
+
+:finaf-order a skosmos:PropertyOrder;
+	rdf:value (
+		rdf:type	# type
+		rdaa:P50094	# identifier for person
+		rdaa:P50006	# identifier for corporate body
+		rdaa:P50121	# date of birth
+		rdaa:P50037	# date of establishment
+		rdaa:P50120	# date of death
+		rdaa:P50038	# date of termination
+		rdaa:P50098	# period of activity of person
+		rdaa:P50236	# period of activity of corporate body
+		rdaa:P50237	# type of corporate body
+		rdaa:P50238	# category of government
+		rdaa:P50103	# variant name of person
+		rdaa:P50025	# variant name of corporate body
+		rdaa:P50119	# place of birth
+		rdaa:P50118	# place of death
+		rdaa:P50109	# place of residence
+		rdaa:P50097	# country associated with person
+		rdaa:P50346	# related place of person
+		rdaa:P50350	# related place of corporate body
+		rdaa:P50115	# fuller form of name
+		rdaa:P50104	# profession or occupation
+		rdaa:P50110	# term of rank, honour or office
+		rdaa:P50108	# other designation of person
+		rdaa:P50033	# other designation of corporate body
+		rdaa:P50100	# field of activity of person
+		rdaa:P50022	# field of activity of corporate body
+		rdaa:P50102	# language of person
+		rdaa:P50023	# language of corporate body
+		rdaa:P50428	# alternate identity of person
+		rdaa:P50429	# real identity of person
+		rdaa:P50008	# hierarchical superior
+		rdaa:P50010	# hierarchical subordinate
+		rdaa:P50012	# predecessor
+		rdaa:P50016	# successor
+		rdaa:P50095	# is person member of corporate body
+		rdaa:P50318	# related corporate body of person
+		rdaa:P50316	# related person of person
+		rdaa:P50336	# related corporate body of corporate body
+		rdaa:P50334	# related person of corporate body
+		rdaa:P50113	# biographical information
+		rdaa:P50035	# corporate history
+		rdaa:P50395	# note on person
+		rdaa:P50393	# note on corporate body
+		rdau:P61101	# source consulted
+	) .
 
 :geo a skosmos:Vocabulary, void:Dataset ;
 	dc:title "GEO - Geologian ontologia"@fi, "GEO - Geologian ontologia"@sv, "GEO - Geologian ontologia"@en ;
@@ -504,7 +617,6 @@
             """Ontologi för kulturforskning KULO upprätthålls inte längre. Vid beskrivning av kulturforskning kan användas den allmänna finländska ontologin <a href='//finto.fi/yso/sv/'>ALLFO</a> och <a href='//finto.fi/koko/sv/'>KOKO</a> ontologin."""@sv ;
       ] .
 
-
 :lajisto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "LAJISTO - Lajitietokeskuksen lajiluettelo"@fi,
 		"LAJISTO - Artdatacentrets artlista"@sv,
@@ -519,26 +631,6 @@
 	void:dataDump <https://api.finto.fi/download/lajisto/lajisto-skos.rdf> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://tun.fi/> .
-
-
-:oiko a skosmos:Vocabulary, void:Dataset ;
-    dc:title "OIKO - Oikeushallinnon ontologia"@fi ;
-    dc:subject :cat_society ;
-    void:uriSpace "http://www.yso.fi/onto/oiko/";
-#	skosmos:feedbackRecipient "marjut.kokko@oikeus.fi";
-    skosmos:language "fi";
-    skosmos:defaultLanguage "fi";
-    skosmos:useModifiedDate "true";
-    skosmos:shortName "OIKO";
-    skosmos:arrayClass isothes:ThesaurusArray ;
-    skosmos:showTopConcepts "true";
-    skosmos:indexShowClass <http://www.yso.fi/onto/oiko-meta/Concept>, isothes:ThesaurusArray ;
-    skosmos:hasMultiLingualProperty <http://www.yso.fi/onto/oiko-meta/deprecatedLabel> ;
-    void:dataDump <https://api.finto.fi/download/oiko/oiko-skos.ttl> ;
-    void:dataDump <https://api.finto.fi/download/oiko/oiko-skos.rdf> ;
-    void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-    skosmos:sparqlGraph <http://www.yso.fi/onto/oiko/> ;
-    skosmos:mainConceptScheme <http://www.yso.fi/onto/oiko/> .
 
 :lapponica a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Lapponica"@fi, "Lapponica"@sv, "Lapponica"@en ;
@@ -679,6 +771,38 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/muso/> ;
         skosmos:mainConceptScheme <http://www.yso.fi/onto/muso/> .
+
+:muso skosmos:vocabularyPlugins :musoMessage .
+
+:musoMessage  a skosmos:ParameterizedPlugin ;
+                skosmos:usePlugin "message";
+                skosmos:parameters
+			[ a			schema:PropertyValue ;
+                          schema:propertyID 	"msg";
+			schema:value
+			  "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>ehdotusjärjestelmässä</a>."@fi,
+			  "MUSO - Ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>förslagssystemet</a>."@sv,
+			  "Vocabulary is no longer in use." ;
+			] .	        
+
+:oiko a skosmos:Vocabulary, void:Dataset ;
+    dc:title "OIKO - Oikeushallinnon ontologia"@fi ;
+    dc:subject :cat_society ;
+    void:uriSpace "http://www.yso.fi/onto/oiko/";
+#	skosmos:feedbackRecipient "marjut.kokko@oikeus.fi";
+    skosmos:language "fi";
+    skosmos:defaultLanguage "fi";
+    skosmos:useModifiedDate "true";
+    skosmos:shortName "OIKO";
+    skosmos:arrayClass isothes:ThesaurusArray ;
+    skosmos:showTopConcepts "true";
+    skosmos:indexShowClass <http://www.yso.fi/onto/oiko-meta/Concept>, isothes:ThesaurusArray ;
+    skosmos:hasMultiLingualProperty <http://www.yso.fi/onto/oiko-meta/deprecatedLabel> ;
+    void:dataDump <https://api.finto.fi/download/oiko/oiko-skos.ttl> ;
+    void:dataDump <https://api.finto.fi/download/oiko/oiko-skos.rdf> ;
+    void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+    skosmos:sparqlGraph <http://www.yso.fi/onto/oiko/> ;
+    skosmos:mainConceptScheme <http://www.yso.fi/onto/oiko/> .
 
 :okm-tieteenala a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Korkeakoulujen tutkimustiedonkeruussa käytettävä tieteenalaluokitus"@fi,
@@ -1028,6 +1152,24 @@
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/ysa/> .
 
+:yse a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSOn käsite-ehdotukset"@fi,
+		"ALLFO begreppsförslag"@sv,
+		"YSOn käsite-ehdotukset"@en ;
+	skosmos:shortName "YSE";
+	dc:subject :cat_general ;
+	#void:uriSpace "http://www.yso.fi/onto/ysa/";
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:groupClass isothes:ConceptGroup;
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	skosmos:showChangeList "true" ;
+	skosmos:usePlugin "yse" ;
+#	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi" ;
+    void:dataDump <https://api.finto.fi/download/yse/yse-skos.ttl> ;
+	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yse/> .
+
 :yso a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia"@fi,
 		"ALLFO - Allmän finländsk ontologi"@sv,
@@ -1063,6 +1205,33 @@
 <https://api.finto.fi/download/yso/yso-swe.mrcx>
         dct:format "application/marcxml+xml";
         dct:language "sv" .
+
+:yso-aika a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YSO-aika"@fi , "ALLFO-tid"@sv , "YSO-time"@en ;
+	dc:subject :cat_general ;
+	skosmos:showTopConcepts "true";
+	skosmos:defaultSidebarView "hierarchy";
+	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv ;
+	skosmos:sortByNotation "true";
+	skosmos:showNotation "false";
+	void:uriSpace "http://www.yso.fi/onto/yso/";
+	skosmos:language "fi", "sv";
+	skosmos:defaultLanguage "fi";
+	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/aika> ;
+	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-skos.ttl> ;
+	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-skos.rdf> ;
+	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-fin.mrcx> ;
+	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-swe.mrcx> ;
+	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-aika/> .
+
+<https://api.finto.fi/download/aika/yso-aika-fin.mrcx>
+	dct:format "application/marcxml+xml";
+	dct:language "fi" .
+
+<https://api.finto.fi/download/aika/yso-aika-swe.mrcx>
+	dct:format "application/marcxml+xml";
+	dct:language "sv" .        
 
 :yso-paikat a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO-paikat"@fi ,
@@ -1115,175 +1284,3 @@
         wgs84:long
     ) .
 
-:yso-aika a skosmos:Vocabulary, void:Dataset ;
-	dc:title "YSO-aika"@fi , "ALLFO-tid"@sv , "YSO-time"@en ;
-	dc:subject :cat_general ;
-	skosmos:showTopConcepts "true";
-	skosmos:defaultSidebarView "hierarchy";
-	skosmos:marcSourceCode "yso/fin"@fi, "yso/swe"@sv ;
-	skosmos:sortByNotation "true";
-	skosmos:showNotation "false";
-	void:uriSpace "http://www.yso.fi/onto/yso/";
-	skosmos:language "fi", "sv";
-	skosmos:defaultLanguage "fi";
-	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/aika> ;
-	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-skos.ttl> ;
-	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-skos.rdf> ;
-	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-fin.mrcx> ;
-	void:dataDump <https://api.finto.fi/download/yso-aika/yso-aika-swe.mrcx> ;
-	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-aika/> .
-
-<https://api.finto.fi/download/aika/yso-aika-fin.mrcx>
-	dct:format "application/marcxml+xml";
-	dct:language "fi" .
-
-<https://api.finto.fi/download/aika/yso-aika-swe.mrcx>
-	dct:format "application/marcxml+xml";
-	dct:language "sv" .
-
-:yse a skosmos:Vocabulary, void:Dataset ;
-	dc:title "YSOn käsite-ehdotukset"@fi,
-		"ALLFO begreppsförslag"@sv,
-		"YSOn käsite-ehdotukset"@en ;
-	skosmos:shortName "YSE";
-	dc:subject :cat_general ;
-	#void:uriSpace "http://www.yso.fi/onto/ysa/";
-	void:uriSpace "http://www.yso.fi/onto/yso/";
-	skosmos:groupClass isothes:ConceptGroup;
-	skosmos:language "fi", "sv";
-	skosmos:defaultLanguage "fi";
-	skosmos:showChangeList "true" ;
-	skosmos:usePlugin "yse" ;
-#	skosmos:feedbackRecipient "mirja.anttila@helsinki.fi" ;
-    void:dataDump <https://api.finto.fi/download/yse/yse-skos.ttl> ;
-	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://www.yso.fi/onto/yse/> .
-
-:muso skosmos:vocabularyPlugins :musoMessage .
-
-:musoMessage  a skosmos:ParameterizedPlugin ;
-                skosmos:usePlugin "message";
-                skosmos:parameters
-			[ a			schema:PropertyValue ;
-                          schema:propertyID 	"msg";
-			schema:value
-			  "Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>ehdotusjärjestelmässä</a>."@fi,
-			  "MUSO - Ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via <a href='//ehdotus.finto.fi/#!/list#%2Fnew'>förslagssystemet</a>."@sv,
-			  "Vocabulary is no longer in use." ;
-			] .
-
-:cn skosmos:vocabularyPlugins :cnMessage .
-
-:cnMessage  a skosmos:ParameterizedPlugin ;
-    skosmos:usePlugin "message";
-    skosmos:parameters [
-        a schema:PropertyValue ;
-        schema:propertyID "msg";
-        schema:value """<b>Suomalaisten yhteisönimien</b> päivittäminen loppui joulukuussa 2020. Uudet yhteisönimet päivittyvät KANTOon (<a href='http://finto.fi/finaf/fi/'>http://finto.fi/finaf/fi/</a>). KANTO - Kansalliset toimijatiedot on palvelu, jossa yhteisöjen ja henkilöiden tiedot ovat julkaistuja avoimena datana. Toimijoihin liittyvät aineistot ovat linkitettynä ja näkyvät erillisenä listauksena.
-<br/><br/>
-Jos on kysyttävää, ota yhteyttä meihin: toimijakuvailu-posti @ helsinki.fi.  """@fi,
-        """Uppdateringen av <b>Finländska samfundsnamn</b> (Suomalaiset yhteisönimet) upphörde i december 2020. Nya namn på samfund och övriga organisationer införs i KANTO (<a href='https://finto.fi/finaf/sv/'>Kansalliset toimijanimet - namnformer för finländska agenter</a>). KANTO är en tjänst, som erbjuder uppgifter om namnformer på personer och organisationer som öppen data. De publikationer som associeras med agenterna (dvs. personer eller organisationer) är länkade och syns i en egen tabell.
-</br></br>
-För eventuella frågor kontakta oss: toimijakuvailu-posti @ helsinki.fi."""@sv,
-        """Maintenance of <b>The Names of Finnish Corporate Bodies</b> (Suomalaiset yhteisönimet) ended in December 2020. You can find the names of the Finnish corporate bodies in KANTO (<a href='https://finto.fi/finaf/en/'>http://finto.fi/finaf/en/</a>), where you can see the names of persons associated with Finnish publications as well.
-<br/><br/>
-For further information, please contact us: toimijakuvailu-posti @ helsinki.fi.""" ;
-    ] .
-
-:finaf-order a skosmos:PropertyOrder;
-	rdf:value (
-		rdf:type	# type
-		rdaa:P50094	# identifier for person
-		rdaa:P50006	# identifier for corporate body
-		rdaa:P50121	# date of birth
-		rdaa:P50037	# date of establishment
-		rdaa:P50120	# date of death
-		rdaa:P50038	# date of termination
-		rdaa:P50098	# period of activity of person
-		rdaa:P50236	# period of activity of corporate body
-		rdaa:P50237	# type of corporate body
-		rdaa:P50238	# category of government
-		rdaa:P50103	# variant name of person
-		rdaa:P50025	# variant name of corporate body
-		rdaa:P50119	# place of birth
-		rdaa:P50118	# place of death
-		rdaa:P50109	# place of residence
-		rdaa:P50097	# country associated with person
-		rdaa:P50346	# related place of person
-		rdaa:P50350	# related place of corporate body
-		rdaa:P50115	# fuller form of name
-		rdaa:P50104	# profession or occupation
-		rdaa:P50110	# term of rank, honour or office
-		rdaa:P50108	# other designation of person
-		rdaa:P50033	# other designation of corporate body
-		rdaa:P50100	# field of activity of person
-		rdaa:P50022	# field of activity of corporate body
-		rdaa:P50102	# language of person
-		rdaa:P50023	# language of corporate body
-		rdaa:P50428	# alternate identity of person
-		rdaa:P50429	# real identity of person
-		rdaa:P50008	# hierarchical superior
-		rdaa:P50010	# hierarchical subordinate
-		rdaa:P50012	# predecessor
-		rdaa:P50016	# successor
-		rdaa:P50095	# is person member of corporate body
-		rdaa:P50318	# related corporate body of person
-		rdaa:P50316	# related person of person
-		rdaa:P50336	# related corporate body of corporate body
-		rdaa:P50334	# related person of corporate body
-		rdaa:P50113	# biographical information
-		rdaa:P50035	# corporate history
-		rdaa:P50395	# note on person
-		rdaa:P50393	# note on corporate body
-		rdau:P61101	# source consulted
-	) .
-
-
-
-:categories a skos:ConceptScheme;
-	skos:prefLabel "Sanastot ja ontologiat"@fi,
-		"Tillgängliga tesaurusar och ontologier"@sv,
-		"Available vocabularies and ontologies"@en .
-
-:cat_general a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Yleiset"@fi,
-		"Allmänt"@sv,
-		"General"@en .
-
-:cat_society a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Yhteiskunta"@fi,
-	"Samhälle"@sv,
-	"Society"@en .
-
-:cat_geo a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Maantiede ja paikkatieto"@fi,
-		"Geografi och geografisk information"@sv,
-		"Geography and geoinformation"@en .
-
-:cat_science a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
-	"Naturvetenskap och medicin"@sv,
-	"Science and medicine"@en .
-
-:cat_culture a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Taide ja kulttuuri"@fi,
-	"Konst och kultur"@sv,
-	"Art and culture"@en .
-
-:cat_lang a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Kielet ja kirjallisuus"@fi,
-	"Språk och litteratur"@sv,
-	"Languages and literature"@en .
