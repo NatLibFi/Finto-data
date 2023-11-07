@@ -146,60 +146,6 @@
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://avoindata.fi/onto/topic/> .
 
-:cat_culture a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Taide ja kulttuuri"@fi,
-	"Konst och kultur"@sv,
-	"Art and culture"@en, 
-	"Dáidda ja kultuvra"@se . 
-
-:categories a skos:ConceptScheme;
-	skos:prefLabel "Sanastot ja ontologiat"@fi,
-		"Tillgängliga tesaurusar och ontologier"@sv,
-		"Available vocabularies and ontologies"@en, 
-		"Sátnerájut ja ontologiijat"@se .
-
-:cat_general a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Yleiset"@fi,
-		"Allmän"@sv,
-		"General"@en,
-		"Almmolaš sátnerájut"@se . 
-
-:cat_geo a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Maantiede ja paikkatieto"@fi,
-		"Geografi och geografisk information"@sv,
-		"Geography and geoinformation"@en, 
-		"Eatnandieđa ja báikediehtu"@se . 
-
-:cat_lang a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Kielet ja kirjallisuus"@fi,
-	"Språk och litteratur"@sv,
-	"Languages and literature"@en, 
-	"Gielat ja girjjálašvuohta"@se . 			
-
-:cat_science a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
-	"Naturvetenskap och medicin"@sv,
-	"Science and medicine"@en, 
-	"Luonddudiehtagat ja dálkkasdieđa"@se . 
-
-:cat_society a skos:Concept ;
-	skos:topConceptOf :categories ;
-	skos:inScheme :categories ;
-	skos:prefLabel "Yhteiskunta"@fi,
-	"Samhälle"@sv,
-	"Society"@en, 
-	"Servodat"@se . 
-
 :cer a skosmos:Vocabulary, void:Dataset ;
         dc:title "Tieteen termipankin CER-ontologia"@fi,
         "Clean Energy Research ontology of The Bank of Finnish Terminology in Art and Sciences"@en ;
@@ -1842,15 +1788,58 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skosmos:sparqlGraph <http://www.yso.fi/onto/yso-tietomalliuudistus/> ;
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/> .
 
+# Categories
 
+:categories a skos:ConceptScheme;
+	skos:prefLabel "Sanastot ja ontologiat"@fi,
+		"Tillgängliga tesaurusar och ontologier"@sv,
+		"Available vocabularies and ontologies"@en, 
+		"Sátnerájut ja ontologiijat"@se .
 
+:cat_general a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yleiset"@fi,
+		"Allmän"@sv,
+		"General"@en,
+		"Almmolaš sátnerájut"@se . 
 
+:cat_society a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Yhteiskunta"@fi,
+	"Samhälle"@sv,
+	"Society"@en, 
+	"Servodat"@se . 
 
+:cat_geo a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Maantiede ja paikkatieto"@fi,
+		"Geografi och geografisk information"@sv,
+		"Geography and geoinformation"@en, 
+		"Eatnandieđa ja báikediehtu"@se . 
 
+:cat_science a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
+	"Naturvetenskap och medicin"@sv,
+	"Science and medicine"@en, 
+	"Luonddudiehtagat ja dálkkasdieđa"@se . 
 
+:cat_culture a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Taide ja kulttuuri"@fi,
+	"Konst och kultur"@sv,
+	"Art and culture"@en, 
+	"Dáidda ja kultuvra"@se . 
 
-
-
-
-
-
+:cat_lang a skos:Concept ;
+	skos:topConceptOf :categories ;
+	skos:inScheme :categories ;
+	skos:prefLabel "Kielet ja kirjallisuus"@fi,
+	"Språk och litteratur"@sv,
+	"Languages and literature"@en, 
+	"Gielat ja girjjálašvuohta"@se . 			
