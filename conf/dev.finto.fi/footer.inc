@@ -177,8 +177,10 @@ function finaf_tweak() {
             if (href.startsWith('http:\/\/isni.org/isni/')) {
                 $("<span>ISNI: </span>").insertBefore($(this));
                 isni = href.replace('http:\/\/isni.org/isni/', '');
-                isnistr = isni.substr(0, 4) + " " + isni.substr(4, 4) + " " + isni.substr(8, 4) + " " + isni.substr(12, 4);
-                $(this).text(isnistr);
+                $(this).empty();
+                for (var i = 0; i <= 12; i = i + 4) {
+                    $(this).append("<span class='isni-digit-block'>" + isni.substr(i, 4) + "</span>");
+                }
                 $(this).attr("id", "finaf-adjusted-" + index + "a" + aIndex);
                 var copyObject = $("#uri-input-box + button.copy-clipboard").clone(true);
                 copyObject.attr("for", "#finaf-adjusted-" + index + "a" + aIndex).css("margin-left", "4px");
