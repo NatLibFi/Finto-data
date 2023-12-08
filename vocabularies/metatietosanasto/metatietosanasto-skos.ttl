@@ -3307,14 +3307,15 @@ mts:m1509 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2023-12-08"^^xsd:date ;
     rdfs:seeAlso rdam:P30261 ;
     skos:altLabel "Kartografiskt dataset"@sv ;
     skos:definition """Liittää manifestaation tietokoneen käsiteltäväksi tarkoitettuun digitaaliseen kartografiseen sisältöön.
 Katso myös <a href='http://urn.fi/URN:NBN:fi:au:mts:m201'>kartografinen kuva</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m1356'>kartografinen liikkuva kuva</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m725'>kartografinen taktiili kuva</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m938'>kartografinen taktiili kolmiulotteinen muoto</a> tai <a href='http://urn.fi/URN:NBN:fi:au:mts:m905'>kartografinen kolmiulotteinen muoto</a>."""@fi,
         "Sammankopplar manifestation med digitalt kartografiskt innehåll som är avsett att behandlas med dator. Se även <a href='http://urn.fi/URN:NBN:fi:au:mts:m201'>kartografisk bild</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m1356'>kartografisk rörlig bild</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m725'>kartografisk taktil bild</a>, <a href='http://urn.fi/URN:NBN:fi:au:mts:m938'>kartografisk taktil tredimensionell form</a> och <a href='http://urn.fi/URN:NBN:fi:au:mts:m905'>kartografisk tredimensionell form</a>."@sv ;
     skos:member mts:m4347,
-        mts:m4349 ;
+        mts:m4349,
+        mts:m5066 ;
     skos:prefLabel "Cartographic data type"@en,
         "Kartografinen datatyyppi"@fi,
         "Kartografisk datatyp"@sv .
@@ -22404,12 +22405,11 @@ mts:m4347 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2020-04-20"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:definition "Kartografinen datatyyppi, joka käyttää pisteitä ominaisuuksien esittämiseksi."@fi,
-        "Kartografisk datatyp, i vilken punkter används för att presentera egenskaper."@sv ;
+    dct:modified "2023-12-08"^^xsd:date ;
+    skos:definition "Kartografinen tietotyyppi, joka käyttää pistematriisin tietorakennetta esittämään tavallisesti suorakulmaisessa pikseleiden verkossa esiintyviä geospatiaalisia ominaisuuksia."@fi ;
     skos:exactMatch rdacdt:1001 ;
     skos:inScheme mts: ;
-    skos:prefLabel "point"@en,
+    skos:prefLabel "raster"@en,
         "rasteri"@fi,
         "raster"@sv .
 
@@ -22417,9 +22417,9 @@ mts:m4349 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2020-04-20"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:definition "Kartografinen datatyyppi, joka käyttää vektoreiden määrittämiä polygoneja ominaisuuksien esittämiseksi."@fi,
-        "Kartografisk datatyp, som använder polygoner bestämda av vektorer för att visa egenskaper."@sv ;
+    dct:modified "2023-12-08"^^xsd:date ;
+    skos:definition "Kartografinen tietotyyppi, joka käyttää vektoreiden määrittämiä polygoneja esittämään geospatiaalisia ominaisuuksia."@fi,
+        "Kartografisk datatyp, som använder polygoner bestämda av vektorer för att visa geospatiala egenskaper."@sv ;
     skos:exactMatch rdacdt:1002 ;
     skos:inScheme mts: ;
     skos:prefLabel "vector"@en,
@@ -28950,6 +28950,17 @@ mts:m5065 a skos:Concept ;
     skos:prefLabel "artikkelikokoelma"@fi ;
     skos:scopeNote "Teoksen muoto -termejä käytetään erottamaan toisistaan samannimiset teokset."@fi,
         "Verkets form -termer används för att åtskilja verk med samma namn."@sv .
+
+mts:m5066 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    dct:created "2023-12-08"^^xsd:date ;
+    dct:modified "2023-12-08"^^xsd:date ;
+    skos:definition "Kartografinen tietotyyppi, joka käyttää pisteitä esittämään geospatiaalisia ominaisuuksia."@fi ;
+    skos:exactMatch rdacdt:1003 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "point"@en,
+        "piste"@fi .
 
 mts:m508 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -60186,7 +60197,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-12-02T06:01:19+00:00"^^xsd:dateTime ;
+    dct:modified "2023-12-08T06:05:24+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
