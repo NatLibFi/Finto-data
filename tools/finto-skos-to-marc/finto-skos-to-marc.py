@@ -214,11 +214,12 @@ def readConfigVariable(string, separator=None):
     else:
         return string.strip()
 
-# funktio åäöÅÄÖ-kirjainten muuttamiseksi takaisin UTF8-merkeiksi (decomposed -> composed)
-def decomposedÅÄÖtoUnicodeCharacters(string):
+# funktio åäöÅÄÖ-kirjainten muuttamiseksi takaisin UTF8-merkeiksi (decomposed -> composed) ja rivinvaihdon poistoon Aleph-kirjastojärjestelmää varten
+def convertStringForAleph(string):
     return (string.replace("A\u030a", "Å").replace("a\u030a", "å").
           replace("A\u0308", "Ä").replace("a\u0308", "ä").
-          replace("O\u0308", "Ö").replace("o\u0308", "ö"))
+          replace("O\u0308", "Ö").replace("o\u0308", "ö").
+          replace("\n", " "))
     
 def getValues(graph, target, props, language=None, literal_datatype=None):
     """Given a subject, get all values for a list of properties
@@ -449,7 +450,7 @@ def convert(cs, vocabulary_name, language, g, g2):
     pref_labels = set()
     for conc in g.subjects(RDF.type, SKOS.Concept):
         pref_label = getValues(g, conc, [SKOS.prefLabel], language=language)
-        if pref_label:
+        if pref_label and not (conc, OWL.deprecated, Literal(True)) in g:
             pref_labels.add(pref_label[0].value.lower())
 
     concs = []
@@ -685,7 +686,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                            indicators = [' ', ' '],
                            subfields = [
                                Subfield(code='a', value=groupno),
-                               Subfield(code='c', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, groupname))),
+                               Subfield(code='c', value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, groupname))),
                                Subfield(code='0', value=group),
                                Subfield(code='2', value=vocId)
                            ]
@@ -725,7 +726,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                 tag=tag,
                 indicators = [' ', ' '],
                 subfields=[
-                            Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value))))
+                            Subfield(code='a', value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(valueProps[0].value))))
                           ]
             )
         )
@@ -748,7 +749,7 @@ def convert(cs, vocabulary_name, language, g, g2):
         for valueProp in valueProps:
             #  singularPrefLabel, singularAltLabel ja hiddenLabel jätetään pois 45X-kentistä,
             #  jos ne kirjainkoosta riippumatta ovat jossain 15X-kentässä
-            if valueProp.prop != SKOS.altLabel and str(valueProp.value.lower()) in pref_labels:
+            if str(valueProp.value.lower()) in pref_labels:
                 continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
@@ -768,7 +769,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     tag = tag,
                     indicators = [' ', ' '],
                     subfields = [
-                        Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
+                        Subfield(code='a', value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
                     ]
                 )
             )
@@ -826,7 +827,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     subfields.append(Subfield(code='w', value=wval))
                     
                 subfields.append(Subfield(code='a',
-                                  value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label)))
+                                  value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(label)))
                                  ))
                 subfields.append(Subfield(code='0', value=target))
                 # yso-paikoissa on sekä ISOTHES.broaderPartitive, että
@@ -872,7 +873,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     if not valueProp.value.startswith("http"):
                         subfield_list.append([
                             Subfield(code='a',
-                                     value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, valueProp.value))
+                                     value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, valueProp.value))
                             )
                         ])
             if len(geographical_types) == 1:
@@ -902,7 +903,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                                 key=lambda o: str(o.value)):
             subfields = [
                 Subfield(code='a',
-                         value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
+                         value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value))))
             ]
             # TODO: linkkien koodaus tarkistetaan/tehdään myöhemmin
             #urls = getURLs(valueProp.value)
@@ -942,7 +943,7 @@ def convert(cs, vocabulary_name, language, g, g2):
            
             for subfield in subfieldCodeValuePair:
                 subfield_values.append(
-                    Subfield(code=subfield[0], value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, subfield[1])))
+                    Subfield(code=subfield[0], value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, subfield[1])))
                 )
 
             rec.add_field(
@@ -995,10 +996,10 @@ def convert(cs, vocabulary_name, language, g, g2):
 
                 for label in labels[:-1]:
                     subfield_values.append(Subfield(code='a',
-                                                    value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ",")
+                                                    value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(label) + ",")
                                      )))
                 subfield_values.append(Subfield(code='a',
-                                                value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
+                                                value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(labels[-1])))
                                      ))
                 #subfield_values.append(Subfield(code='0', value=target)) #TODO: seurataan kongressin kirjaston tulevia ohjeistuksia
                 rec.add_field(
@@ -1139,7 +1140,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                             tag=tag,
                             indicators = [' ', second_indicator],
                             subfields = [
-                                Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))),
+                                Subfield(code='a', value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(valueProp.value)))),
                                 Subfield(code='4', value=sub4),
                                 Subfield(code='2', value=sub2),
                                 Subfield(code='0', value=sub0)
@@ -1217,7 +1218,7 @@ def convert(cs, vocabulary_name, language, g, g2):
 
                         for child in tagNode:
                             subfields.append(Subfield(code=child.attrib["code"],
-                                                      value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(child.text)))
+                                                      value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(child.text)))
                                             ))
 
                         subfields.append(Subfield(code="4", value=sub4))
@@ -1270,7 +1271,7 @@ def convert(cs, vocabulary_name, language, g, g2):
                     processedLanguages.add(prefLabelLanguage)
                     
                     subfields = [
-                        Subfield(code='a', value=decomposedÅÄÖtoUnicodeCharacters(unicodedata.normalize(NORMALIZATION_FORM, str(prefLabel)))),
+                        Subfield(code='a', value=convertStringForAleph(unicodedata.normalize(NORMALIZATION_FORM, str(prefLabel)))),
                         Subfield(code='4', value=sub4)
                     ]
                     
