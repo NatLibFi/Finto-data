@@ -447,11 +447,11 @@ def convert(cs, vocabulary_name, language, g, g2):
     handle = open(cs.get("output", fallback=helper_variables["defaultOutputFileName"]), "wb")
     writer = XMLWriter(handle)
     
-    pref_labels = set()
+    pref_labels = dict()
     for conc in g.subjects(RDF.type, SKOS.Concept):
         pref_label = getValues(g, conc, [SKOS.prefLabel], language=language)
         if pref_label and not (conc, OWL.deprecated, Literal(True)) in g:
-            pref_labels.add(pref_label[0].value.lower())
+            pref_labels[pref_label[0].value.lower()] = conc
 
     concs = []
 
@@ -749,8 +749,14 @@ def convert(cs, vocabulary_name, language, g, g2):
         for valueProp in valueProps:
             #  singularPrefLabel, singularAltLabel ja hiddenLabel jätetään pois 45X-kentistä,
             #  jos ne kirjainkoosta riippumatta ovat jossain 15X-kentässä
-            if str(valueProp.value.lower()) in pref_labels:
-                continue
+            #  altLabel jätetään pois, jos se on kirjainkoosta riippumatta saman käsitteen 15X-kentässä
+            propValue = str(valueProp.value)
+            if propValue.lower() in pref_labels:
+                if valueProp.prop == SKOS.altLabel:
+                    if pref_labels[propValue.lower()] == concept:
+                        continue
+                else:
+                    continue
             if valueProp.prop == SKOS.hiddenLabel:
                 if str(valueProp.value) in seen_values:
                     continue            
