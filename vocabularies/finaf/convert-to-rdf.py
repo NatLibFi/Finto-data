@@ -577,6 +577,10 @@ def main():
 
             g.add((uri, prop, Literal(normalize(f.format_field()), lang='fi')))
 
+        for f in rec.get_fields('856'):
+            if 'u' in f:
+                g.add((uri, SKOS.closeMatch, URIRef(f['u'])))
+
     # Pass 2: convert literal values to resources
     for prop in literal_to_resource:
         for s,o in g.subject_objects(prop):
