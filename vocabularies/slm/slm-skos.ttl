@@ -1026,20 +1026,20 @@ slm:s1236 a skos:Concept ;
 
 slm:s1238 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-11-30"^^xsd:date ;
+    dct:modified "2024-01-12"^^xsd:date ;
     skos:altLabel "keikka-arvostelut"@fi,
         "konserttiarviot"@fi,
         "spelningsrecensioner"@sv ;
-    skos:broader slm:s505 ;
+    skos:broader slm:s1275 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "konserttiarvostelut"@fi,
         "konsertrecensioner"@sv .
 
 slm:s1239 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-11-30"^^xsd:date ;
+    dct:modified "2024-01-12"^^xsd:date ;
     skos:altLabel "levyarviot"@fi ;
-    skos:broader slm:s505 ;
+    skos:broader slm:s1275 ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "levyarvostelut"@fi,
         "skivrecensioner"@sv .
@@ -1238,16 +1238,6 @@ slm:s1274 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "näytelmämusiikki"@fi,
         "skådespelsmusik"@sv .
-
-slm:s1275 a skos:Concept ;
-    dct:modified "2023-12-08"^^xsd:date ;
-    skos:altLabel "musiikkiarviot"@fi,
-        "musikkritik (recensioner)"@sv ;
-    skos:broader slm:s505 ;
-    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "musiikkiarvostelut"@fi,
-        "musikrecensioner"@sv .
 
 slm:s1277 a skos:Concept ;
     dct:modified "2020-08-14"^^xsd:date ;
@@ -2429,8 +2419,9 @@ slm:s1490 a skos:Concept ;
 
 slm:s1494 a skos:Concept ;
     dct:created "2023-08-04"^^xsd:date ;
-    dct:modified "2023-10-20"^^xsd:date ;
-    skos:altLabel "separat (publikationer)"@sv,
+    dct:modified "2024-01-12"^^xsd:date ;
+    skos:altLabel "ylipainokset (eripainokset)"@fi,
+        "separat (publikationer)"@sv,
         "separattryck"@sv ;
     skos:broader slm:s1492 ;
     skos:definition "Kokoomateoksessa tai lehdessä julkaistun itsenäisen kirjoituksen julkaisu erillisenä painotuotteena. Eripainos painetaan samalla ladelmalla kuin alkuperäinen julkaisu, mutta sivunumerointia voidaan muuttaa ja siihen voidaan lisätä oma kansilehti."@fi,
@@ -3276,8 +3267,9 @@ slm:s315 a skos:Concept ;
 
 slm:s318 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-08-04"^^xsd:date ;
-    skos:altLabel "guider om social trygghet"@sv,
+    dct:modified "2024-01-12"^^xsd:date ;
+    skos:altLabel "sosiaalioppaat"@fi,
+        "guider om social trygghet"@sv,
         "socialhandledningar"@sv,
         "socialskyddsguider"@sv ;
     skos:broader slm:s202 ;
@@ -10171,6 +10163,18 @@ slm:s1258 a skos:Concept ;
     skos:related slm:s442,
         slm:s771 .
 
+slm:s1275 a skos:Concept ;
+    dct:modified "2024-01-12"^^xsd:date ;
+    skos:altLabel "musiikkiarviot"@fi,
+        "musikkritik (recensioner)"@sv ;
+    skos:broader slm:s505 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026130> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1238,
+        slm:s1239 ;
+    skos:prefLabel "musiikkiarvostelut"@fi,
+        "musikrecensioner"@sv .
+
 slm:s1280 a skos:Concept ;
     dct:modified "2023-10-20"^^xsd:date ;
     skos:altLabel "PM"@sv,
@@ -14591,6 +14595,25 @@ slm:s41 a skos:Concept ;
     skos:scopeNote "Käytetään rikoskirjoista, jotka kuvaavat poliisin työtä rikoksen selvittämiseksi."@fi,
         "Används om verk som beskriver polisens arbete och utredning av brott."@sv .
 
+slm:s505 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-01-12"^^xsd:date ;
+    skos:altLabel "arviot"@fi,
+        "kritik (recensioner)"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1093,
+        slm:s1229,
+        slm:s1231,
+        slm:s1240,
+        slm:s1241,
+        slm:s1243,
+        slm:s1275,
+        slm:s1481,
+        slm:s1496 ;
+    skos:prefLabel "arvostelut"@fi,
+        "recensioner"@sv ;
+    skos:topConceptOf slm:s285 .
+
 slm:s657 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2019-09-04"^^xsd:date ;
@@ -14805,27 +14828,6 @@ slm:s287 a skos:Concept ;
         slm:s926 ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat salapoliisin tai yksityisetsivän suorittamaa rikoksen selvittämistä."@fi,
         "Används om verk som beskriver detektivers utredning av brott."@sv .
-
-slm:s505 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-12-01"^^xsd:date ;
-    skos:altLabel "arviot"@fi,
-        "kritik (recensioner)"@sv ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1093,
-        slm:s1229,
-        slm:s1231,
-        slm:s1238,
-        slm:s1239,
-        slm:s1240,
-        slm:s1241,
-        slm:s1243,
-        slm:s1275,
-        slm:s1481,
-        slm:s1496 ;
-    skos:prefLabel "arvostelut"@fi,
-        "recensioner"@sv ;
-    skos:topConceptOf slm:s285 .
 
 slm:s816 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -16450,7 +16452,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-12-08T06:06:51+00:00"^^xsd:dateTime ;
+    dct:modified "2024-01-12T06:07:13+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
