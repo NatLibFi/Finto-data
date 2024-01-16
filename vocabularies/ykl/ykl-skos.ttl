@@ -2,18 +2,18 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix hklj: <http://urn.fi/URN:NBN:fi:au:hklj:> .
-@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
-@prefix kaunokki: <http://urn.fi/URN:NBN:au:kaunokki:> .
-@prefix kaunokkimeta: <http://www.yso.fi/onto/kaunokki-meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ykl: <http://urn.fi/URN:NBN:fi:au:ykl:> .
 @prefix ykl-meta: <http://www.yso.fi/onto/ykl-meta/> .
-@prefix yso: <http://www.yso.fi/onto/yso/> .
+
+dct:references a rdf:Property ;
+    rdfs:label "References"@en ;
+    rdfs:subPropertyOf dc:relation,
+        dct:relation .
 
 ykl:14.09 skos:altLabel "Psykologia, historia (14.09)"@fi,
         "Psykologi, historia (14.09)"@sv .
@@ -300,6 +300,8 @@ ykl:59.3209 skos:altLabel "Kylpylät, kulttuurihistoria (59.3209)"@fi,
         "Saunat, kulttuurihistoria (59.3209)"@fi,
         "Badanläggningar, kulturhistoria (59.3209)"@sv,
         "Bastur, kulturhistoria (59.3209)"@sv .
+
+<http://urn.fi/URN:NBN:fi:au:ykl:59.9.> skos:altLabel "Ksylitoli, hampaiden hoito (59.9.)"@fi .
 
 ykl:60.01 skos:altLabel "Tekniikka, filosofia (60.01)"@fi,
         "Teknik, filosofi (60.01)"@sv .
@@ -8854,7 +8856,7 @@ Häviää muotoluokille: 01, 02, 03+, 05+, 06+, 07, 08+"""@fi,
 Kommer före formtillägget: 04
 Kommer efter formtilläggen: 01, 02, 03+, 05+, 06+, 07, 08+"""@sv .
 
-ykl:00.6 skos:related ykl:02 .
+<http://urn.fi/URN:NBN:fi:au:ykl:00.6> skos:related ykl:02 .
 
 hklj:010.5 skos:closeMatch ykl:01.2,
         ykl:01.58 .
@@ -21376,7 +21378,7 @@ ykl:78.95 a skos:Concept,
     skos:inScheme ykl: ;
     skos:notation "78.95" ;
     skos:prefLabel "History of the music of the British Isles"@en,
-        "Brittein saarten musiikin historia"@fi,
+        "Britteinsaarten musiikin historia"@fi,
         "Brittiska öarnas musikhistoria"@sv .
 
 ykl:79.182 a skos:Concept,
@@ -35495,6 +35497,7 @@ ykl:59.58 a skos:Concept,
         ykl-meta:Concept ;
     skos:altLabel "Akne (59.58)"@fi,
         "Allergeenit (59.58)"@fi,
+        "Allergiat (59.58)"@fi,
         "Altisteet, allergia (59.58)"@fi,
         "Altistuminen, allergia (59.58)"@fi,
         "Astma (59.58)"@fi,
@@ -35521,6 +35524,7 @@ ykl:59.58 a skos:Concept,
         "Agens, allergi (59.58)"@sv,
         "Akne (59.58)"@sv,
         "Allergener (59.58)"@sv,
+        "Allergier (59.58)"@sv,
         "Andningsorgan, allergiska sjukdomar (59.58)"@sv,
         "Astma (59.58)"@sv,
         "Brandskador, dermatologi (59.58)"@sv,
@@ -39840,9 +39844,9 @@ ykl:37.41 a skos:Concept,
     skos:closeMatch hklj:371.52 ;
     skos:inScheme ykl: ;
     skos:notation "37.41" ;
-    skos:prefLabel "Day care"@en,
-        "Päivähoito"@fi,
-        "Dagvård."@sv ;
+    skos:prefLabel "Daycare services"@en,
+        "Päivähoitopalvelut"@fi,
+        "Dagvårdstjänster"@sv ;
     skos:related ykl:25.3,
         ykl:30.15,
         ykl:37.23,
@@ -40800,6 +40804,7 @@ ykl:60.2 a skos:Concept,
         "Lujuuskokeet, tekniikka (60.2)"@fi,
         "Lujuuslaskelmat, tekniikka (60.2)"@fi,
         "Lujuusoppi, tekniikka (60.2)"@fi,
+        "Materiaalitekniikka (60.2)"@fi,
         "Mekaniikka, tekniikka (60.2)"@fi,
         "Nesteet, tekninen mekaniikka (60.2)"@fi,
         "Osmoosi, tekninen mekaniikka (60.2)"@fi,
@@ -40834,6 +40839,7 @@ ykl:60.2 a skos:Concept,
         "Materiallära, allm. (60.2)"@sv,
         "Materialprovning, allm. (60.2)"@sv,
         "Materialskydd, allm. (60.2)"@sv,
+        "Materialteknik (60.2)"@sv,
         "Mekanik, teknik (60.2)"@sv,
         "Osmos, teknisk mekanik (60.2)"@sv,
         "Plasticitet, teknisk mekanik (60.2)"@sv,
@@ -42195,8 +42201,8 @@ Formtillägget 09 används inte i samband med klasserna 70-77.4985"""@sv .
 
 ykl:78.45 a skos:Concept,
         ykl-meta:Concept ;
-    skos:altLabel "Brittein saaret, etnomusiikki (78.45+)"@fi,
-        "Brittein saaret, perinnemusiikki (78.45+)"@fi,
+    skos:altLabel "Britteinsaaret, etnomusiikki (78.45+)"@fi,
+        "Britteinsaaret, perinnemusiikki (78.45+)"@fi,
         "Englannin kanaalin saaret, etnomusiikki (78.45)"@fi,
         "Englannin kanaalin saaret, perinnemusiikki (78.45)"@fi,
         "Guernsey, etnomusiikki (78.45)"@fi,
@@ -42230,11 +42236,11 @@ ykl:78.45 a skos:Concept,
         ykl:78.457 ;
     skos:notation "78.45" ;
     skos:prefLabel "Ethnic music. Folk music, British Isles"@en,
-        "Etnomusiikki. Kansanmusiikki, Brittein saaret"@fi,
+        "Etnomusiikki. Kansanmusiikki, Britteinsaaret"@fi,
         "Traditionell musik. Folkmusik, Brittiska öarna"@sv ;
     skos:related ykl:78.499 ;
     skos:scopeNote """Yleisteokset ja kokoelmat
-Tähän myös Englannin kanaalin saaret, samoin Brittein saarten kelttiläistä musiikkia sisältävät kokoelmat, muuten ao.maan kohdalle"""@fi,
+Tähän myös Englannin kanaalin saaret, samoin Britteinsaarten kelttiläistä musiikkia sisältävät kokoelmat, muuten ao.maan kohdalle"""@fi,
         """Allmänna verk och samlingar
 Hit även Kanalöarna och samlingar som innehåller Brittiska öarnas keltiska musik, för övrigt till respektive lands klass för traditionell musik"""@sv .
 
@@ -49707,7 +49713,7 @@ Pionjärtrupper. Ingenjörstrupper. Signaltruppen"""@sv .
 ykl:45 a skos:Concept,
         ykl-meta:Concept ;
     skos:altLabel "Arot, aluemaantiede (41 ... 48+)"@fi,
-        "Brittein saaret (45+)"@fi,
+        "Britteinsaaret (45+)"@fi,
         "Geysirit, aluemaantiede (41 ... 48+)"@fi,
         "Harjut, aluemaantiede (41 ... 48+)"@fi,
         "Joet, aluemaantiede (41 ... 48+)"@fi,
@@ -49747,7 +49753,7 @@ ykl:45 a skos:Concept,
         ykl:45.7 ;
     skos:notation "45" ;
     skos:prefLabel "BRITISH ISLES"@en,
-        "BRITTEIN SAARET"@fi,
+        "BRITTEINSAARET"@fi,
         "BRITTISKA ÖARNA"@sv ;
     skos:related ykl:40.7,
         ykl:41,
@@ -60261,6 +60267,7 @@ Om verket innehåller både praktiska inredningsguider och inredningskonst, ges 
 ykl:69.11 a skos:Concept,
         ykl-meta:Concept ;
     skos:altLabel "Delegointi (69.11)"@fi,
+        "Esihenkilötyö (69.11)"@fi,
         "Esimiestyö (69.11)"@fi,
         "Henkilöstöjohtaminen, johtamistaito (69.11)"@fi,
         "Johtaminen, liiketalous (69.11)"@fi,
@@ -63087,23 +63094,21 @@ ykl:56.411 a skos:Concept,
         ykl:58.11,
         ykl:58.9,
         ykl:59.1 ;
-    skos:scopeNote """Ihmisen alkuperä ja biologinen kehitys
-Antropogenia. Ihmisen evoluutio
-Ihmislajin ominaisuudet yleensä. Antropometria
-Ihmisen morfologia ja somatologia kehitysopin kannalta
-Ihmisrodut ja niiden väliset biologiset erot
-Esi-ihmiset. Alkuihmiset. Ihmistä koskeva paleontologia
-Ihmisen etologia. Sosiobiologia
-Ihmisen käyttäytymisen ja yhteiskuntaelämän kehitys etologiselta tai sosiobiologiselta kannalta
+    skos:scopeNote """Ihmisen alkuperä ja biologinen kehitys.
+Antropogenia. Ihmisen evoluutio.
+Ihmislajin ominaisuudet yleensä. Antropometria.
+Ihmisen morfologia ja somatologia kehitysopin kannalta.
+Esi-ihmiset. Alkuihmiset. Ihmistä koskeva paleontologia.
+Ihmisen etologia. Sosiobiologia.
+Ihmisen käyttäytymisen ja yhteiskuntaelämän kehitys etologiselta tai sosiobiologiselta kannalta.
 Jos teoksessa on sekä biologista että kulttuuri- tai sosiaaliantropologiaa, annetaan etusija luokalle 49+"""@fi,
-        """Människans ursprung och biologiska utveckling
-Antropogeni. Människans evolution
-Människoartens egenskaper i allmänhet. Antropometri
-Människans morfologi och somatologi ur utvecklingslärans synvinkel
-Människoraserna och de biologiska olikheterna dem emellan
-Förmänniskor. Urmänniskor. Paleontologi som rör människan
-Människans etologi. Sociobiologi
-Människans beteende och samhällslivets utveckling ur etologisk eller sociobiologisk synvinkel
+        """Människans ursprung och biologiska utveckling.
+Antropogeni. Människans evolution.
+Människoartens egenskaper i allmänhet. Antropometri.
+Människans morfologi och somatologi ur utvecklingslärans synvinkel.
+Förmänniskor. Urmänniskor. Paleontologi som rör människan.
+Människans etologi. Sociobiologi.
+Människans beteende och samhällslivets utveckling ur etologisk eller sociobiologisk synvinkel.
 Om verket innehåller både biologisk antropologi och kultur- eller socialantropologi, ges företräde åt klass 49+"""@sv .
 
 ykl:57.9 a skos:Concept,
@@ -72694,7 +72699,7 @@ Formtillägget 09 används inte i samband med klasserna 90-99.31"""@sv .
 ykl:95 a skos:Concept,
         ykl-meta:Concept ;
     skos:altLabel "Aseelliset vapautusrintamat (91 ... 98+)"@fi,
-        "Brittein saaret, historia (95+)"@fi,
+        "Britteinsaaret, historia (95+)"@fi,
         "Historia, maittain ja alueittain (91 ... 98+)"@fi,
         "Keltit, historia, Brittein saaret (95+)"@fi,
         "Siirtomaapolitiikka, historia (91 ... 98+)"@fi,
@@ -72720,7 +72725,7 @@ ykl:95 a skos:Concept,
         ykl:95.7 ;
     skos:notation "95" ;
     skos:prefLabel "HISTORY OF THE BRITISH ISLES"@en,
-        "BRITTEIN SAARTEN HISTORIA"@fi,
+        "BRITTEINSAARTEN HISTORIA"@fi,
         "BRITTISKA ÖARNAS HISTORIA"@sv ;
     skos:related ykl:30,
         ykl:32,
@@ -73986,7 +73991,7 @@ ykl:34.5 a skos:Concept,
         ykl:34.57 ;
     skos:notation "34.5" ;
     skos:prefLabel "Community planning. City planning. Environmental planning"@en,
-        "Yhdyskuntasuunnittelu. Kaupunkisuunnittelu Ympäristönsuunnittelu"@fi,
+        "Yhdyskuntasuunnittelu. Kaupunkisuunnittelu. Ympäristönsuunnittelu"@fi,
         "Samhällsplanering. Stadsplanering. Miljöplanering"@sv ;
     skos:related ykl:32.51,
         ykl:35.4,
@@ -85596,11 +85601,13 @@ Formtilläggen 01, 02, 03+, 06+, 07, 08+ och 09 används inte i samband med klas
 
 ykl:85.3 a skos:Concept,
         ykl-meta:Concept ;
-    skos:altLabel "Fantasiakirjallisuus, sarjakuvat (85.3+)"@fi,
+    skos:altLabel "Elämäkertasarjakuvat (85.3+)"@fi,
+        "Fantasiakirjallisuus, sarjakuvat (85.3+)"@fi,
         "Sarjakuvaromaanit (85.3+)"@fi,
         "Sarjakuvat, kaunokirjallisuus (85.3+)"@fi,
         "Scifi, sarjakuvat (85.3+)"@fi,
         "Tieteiskirjallisuus, sarjakuvat (85.3+)"@fi,
+        "Biografiska tecknade serier (85.3+)"@sv,
         "Fantasylitteratur, tecknade serier (85.3+)"@sv,
         "Science fiction, tecknade serier (85.3+)"@sv,
         "Scifi, tecknade serier (85.3+)"@sv,
@@ -85632,21 +85639,21 @@ ykl:85.3 a skos:Concept,
         ykl:85.2,
         ykl:86.11,
         ykl:86.13 ;
-    skos:scopeNote """Tähän ja alaluokkiin aikuisille tai lapsille tarkoitetut kaunokirjallisuuteen kuuluvat sarjakuvat
-Tähän ja alaluokkiin myös muiden kaunokirjallisuustyyppien pohjalta laaditut sarjakuvat
-Teokset luokitetaan julkaisun kielen, ei julkaisumaan tai alkuteoksen kielen mukaan
-Jos kaksikielisen teoksen toinen kieli on käännöskieli, luokitetaan teos käännöskielen mukaan
-Jos kaksi- tai useampikielisen teoksen tekstit eivät ole toistensa käännöksiä, luokitetaan teos julkaisun pääkielen mukaan
-Jos teoksella ei ole pääkieltä, se luokitetaan julkaisun ensimmäisen kielen mukaan
+    skos:scopeNote """Tähän ja alaluokkiin aikuisille tai lapsille tarkoitetut kaunokirjallisuuteen kuuluvat sarjakuvat.
+Tähän ja alaluokkiin myös muiden kaunokirjallisuustyyppien pohjalta laaditut sarjakuvat.
+Teokset luokitetaan julkaisun kielen, ei julkaisumaan tai alkuteoksen kielen mukaan.
+Jos kaksikielisen teoksen toinen kieli on käännöskieli, luokitetaan teos käännöskielen mukaan.
+Jos kaksi- tai useampikielisen teoksen tekstit eivät ole toistensa käännöksiä, luokitetaan teos julkaisun pääkielen mukaan.
+Jos teoksella ei ole pääkieltä, se luokitetaan julkaisun ensimmäisen kielen mukaan. Tietosarjakuvat luokitetaan aiheen mukaiseen luokkaan.
 Muotoluokkia 01, 02, 03+, 06+, 07, 08+ ja 09 ei käytetä luokkien 80-85+ yhteydessä"""@fi,
-        """Hit och till underklasserna tecknade serier för barn och vuxna som hänförs till skönlitteraturen
+        """Hit och till underklasserna tecknade serier för barn och vuxna som hänförs till skönlitteraturen.
 Hit och till underklasserna också tecknade serier med utgångspunkt i övriga
-skönlitterära genrer
+skönlitterära genrer.
 Verken klassificeras efter publikationens språk, inte efter originalspråk eller
-publikationsland
-Om ett av språken i en tvåspråkig publikation är översättningsspråk klassificeras verket efter detta språk
-Om texterna i ett två- eller flerspråkigt verk inte är översättningar av varandra klassificeras verket efter publikationens huvudspråk
-Om verket inte har något huvudspråk klassificeras det efter publikationens första språk
+publikationsland.
+Om ett av språken i en tvåspråkig publikation är översättningsspråk klassificeras verket efter detta språk.
+Om texterna i ett två- eller flerspråkigt verk inte är översättningar av varandra klassificeras verket efter publikationens huvudspråk.
+Om verket inte har något huvudspråk klassificeras det efter publikationens första språk. Faktaserier klassificeras enligt ämne.
 Formtilläggen 01, 02, 03+, 06+, 07, 08+ och 09 används inte i samband med klasserna 80-85+"""@sv .
 
 ykl:86.7 a skos:Concept,
@@ -86117,6 +86124,7 @@ ykl:32.5 a skos:Concept,
         "Rauhanvälitys (32.5+)"@fi,
         "Siirtomaapolitiikka (32.5)"@fi,
         "Sitoutumattomat valtiot, kansainvälinen politiikka (32.5+)"@fi,
+        "Siviilikriisinhallinta (32.5+)"@fi,
         "Sotilaallinen vakoilu (32.5+)"@fi,
         "Sotilasliitot (32.5+)"@fi,
         "Suojelupoliisi, kansainvälinen toiminta (32.5+)"@fi,
@@ -86138,6 +86146,7 @@ ykl:32.5 a skos:Concept,
         "Avspänning (32.5)"@sv,
         "Beskickningar utomlands (32.5+)"@sv,
         "CIA (32.5)"@sv,
+        "Civilkrishantering (32.5+)"@sv,
         "Diplomati (32.5+)"@sv,
         "FN, säkerhetsrådet (32.5)"@sv,
         "Fredsavtal (32.5+)"@sv,
@@ -91201,7 +91210,7 @@ ykl:02 a skos:Concept,
         ykl:38.542,
         ykl:72.29,
         ykl:86,
-        "ykl:00.6" ;
+        "<http://urn.fi/URN:NBN:fi:au:ykl:00.6>" ;
     skos:scopeNote """Tähän kirjastoja, kirjastotointa ja eri maiden kirjastolaitosta koskevat yleisteokset
 Kirjaston asema ja tehtävä
 Tähän ja alaluokkiin yleiset, yksityiset, tieteelliset ja erikoiskirjastot sekä informaatiopalvelulaitokset
@@ -91912,17 +91921,17 @@ ykl:91 a skos:Concept,
         ykl:96,
         ykl:97,
         ykl:98 ;
-    skos:scopeNote """Tähän ja alaluokkiin yleinen maailmanhistoria, yleinen poliittinen ja yhteiskuntahistoria sekä löytöretkien yleinen historia
-Tähän ja alaluokkiin myös Euroopan ja Länsi-Euroopan yleinen historia, yleinen kulttuurihistoria ja yleinen arkeologia
-Erikoisalojen historia luokitetaan alan mukaan
-Eri maiden ja alueiden yleinen historia luokitetaan maittain ja alueittain
-Tiettyyn maanosaan tai tietylle alueelle kohdistuneen löytöretken historia luokitetaan ko. maanosan tai alueen historiaan
+    skos:scopeNote """Tähän ja alaluokkiin yleinen maailmanhistoria, yleinen poliittinen ja yhteiskuntahistoria sekä löytöretkien yleinen historia.
+Tähän ja alaluokkiin myös Euroopan ja Länsi-Euroopan yleinen historia, yleinen kulttuurihistoria ja yleinen arkeologia.
+Erikoisalojen historia luokitetaan alan mukaan.
+Eri maiden ja alueiden yleinen historia luokitetaan maittain ja alueittain.
+Tiettyyn maanosaan tai tietylle alueelle kohdistuneen löytöretken historia luokitetaan ko. maanosan tai alueen historiaan. Peruskoulun ja lukion historian oppikirjat luokkaan 90.07.
 Muotoluokkaa 09 ei käytetä luokkien 90-99.31 yhteydessä"""@fi,
         """Hit och till underklasserna allmän världshistoria, politisk historia och
-samhällshistoria samt upptäcktsfärdernas allmänna historia
-Hit och till underklasserna också Europas och Västeuropas allmänna historia, kulturhistoria och arkeologi
-Specialområdens historia klassificeras enligt område
-Olika länders och regioners allmänna historia klassificeras enligt land och region Historia om upptäcktsfärder till enskilda världsdelar eller regioner klassificeras enligt ifrågavarande världsdels eller regions historia
+samhällshistoria samt upptäcktsfärdernas allmänna historia.
+Hit och till underklasserna också Europas och Västeuropas allmänna historia, kulturhistoria och arkeologi.
+Specialområdens historia klassificeras enligt område .
+Olika länders och regioners allmänna historia klassificeras enligt land och region. Historia om upptäcktsfärder till enskilda världsdelar eller regioner klassificeras enligt ifrågavarande världsdels eller regions historia. Läroböcker i historia för grundskolan och gymnasiet till klass 90.07.
 Formtillägget 09 används inte i samband med klasserna 90-99.31"""@sv .
 
 ykl:34 a skos:Concept,
@@ -95911,7 +95920,7 @@ ykl: a skos:ConceptScheme ;
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2023-06-20T11:55:03+00:00"^^xsd:dateTime ;
+    dct:modified "2024-01-16T14:15:32+00:00"^^xsd:dateTime ;
     skos:hasTopConcept ykl:0,
         ykl:1,
         ykl:2,
