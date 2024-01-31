@@ -43,6 +43,7 @@
         [ rdfs:label "fi" ; rdf:value "fi_FI.utf8" ]
         [ rdfs:label "sv" ; rdf:value "sv_SE.utf8" ]
         [ rdfs:label "en" ; rdf:value "en_GB.utf8" ]
+        [ rdfs:label "se" ; rdf:value "se_NO" ]
     ) ;
     # how many results (maximum) to load at a time on the search results page
     # skosmos:searchResultsSize ? ;
@@ -1127,15 +1128,16 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 :yso a skosmos:Vocabulary, void:Dataset ;
 	dc:title "YSO - Yleinen suomalainen ontologia"@fi,
 		"ALLFO - Allmän finländsk ontologi"@sv,
-		"YSO - General Finnish ontology"@en ;
+		"YSO - General Finnish ontology"@en,
+		"YSO - Almmolaš suopmelaš ontologiija"@se ;
 	dc:subject :cat_general ;
 	void:uriSpace "http://www.yso.fi/onto/yso/";
-	skosmos:language "fi", "sv", "en";
+	skosmos:language "fi", "sv", "se", "en";
 	skosmos:defaultLanguage "fi";
 	skosmos:showTopConcepts "true";
 	skosmos:groupClass isothes:ConceptGroup ;
 	skosmos:arrayClass isothes:ThesaurusArray ;
-	skosmos:shortName "YSO", "Allfo"@sv;
+	skosmos:shortName "YSO", "Allfo"@sv, "YSO"@se ;
     	skosmos:usePlugin "finna", "suggestions";
 	skosmos:showChangeList "true";
 	skosmos:showDeprecatedChanges "true" ;
@@ -1250,40 +1252,46 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skos:inScheme :categories ;
 	skos:prefLabel "Yleiset"@fi,
 		"Allmänt"@sv,
-		"General"@en .
+		"General"@en,
+		"Almmolaš sátnerájut"@se .
 
 :cat_society a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
 	skos:prefLabel "Yhteiskunta"@fi,
 	"Samhälle"@sv,
-	"Society"@en .
+	"Society"@en,
+	"Servodat"@se .
 
 :cat_geo a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
 	skos:prefLabel "Maantiede ja paikkatieto"@fi,
 		"Geografi och geografisk information"@sv,
-		"Geography and geoinformation"@en .
+		"Geography and geoinformation"@en,
+		"Eatnandieđa ja báikediehtu"@se .
 
 :cat_science a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
 	skos:prefLabel "Luonnontieteet ja lääketiede"@fi,
 	"Naturvetenskap och medicin"@sv,
-	"Science and medicine"@en .
+	"Science and medicine"@en,
+	"Luonddudiehtagat ja dálkkasdieđa"@se .
 
 :cat_culture a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
 	skos:prefLabel "Taide ja kulttuuri"@fi,
 	"Konst och kultur"@sv,
-	"Art and culture"@en .
+	"Art and culture"@en,
+	"Dáidda ja kultuvra"@se .
 
 :cat_lang a skos:Concept ;
 	skos:topConceptOf :categories ;
 	skos:inScheme :categories ;
 	skos:prefLabel "Kielet ja kirjallisuus"@fi,
 	"Språk och litteratur"@sv,
-	"Languages and literature"@en .
+	"Languages and literature"@en,
+	"Gielat ja girjjálašvuohta"@se .
 
