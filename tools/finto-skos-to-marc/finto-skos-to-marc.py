@@ -305,7 +305,7 @@ def getURLs(string):
             urls.append(word)
     return urls
     
-class ConvertHTMLYSOATags(HTMLParser):
+class ConvertHTMLAnchorTags(HTMLParser):
     '''
     Korvaa mahdolliset yso-linkit $a-osakenttämerkillä siten, että käytettävä termi
     jää näkyviin. Muu osa tekstistä on $i-osakentissä. Käytetään mm. kentässä 680
@@ -317,38 +317,36 @@ class ConvertHTMLYSOATags(HTMLParser):
     
     def initialize(self):
         self.merkkijono = []
-        self.in_a_yso = False
-        self.ended_a_yso = False
+        self.is_anchor = False
+        self.anchor_ended = False
     
     def handle_starttag(self, tag, attrs):
         if tag == "a":
             for attr in attrs:
                 if attr[0] == "href":
-                    link = attr[1]
-                    if link.startswith(YSO):
-                        self.in_a_yso = True
-                        if self.merkkijono:
-                            self.merkkijono[-1] = self.merkkijono[-1].rstrip()
-                        self.merkkijono.append("$a")
-                        return
-        
+                    self.is_anchor = True
+                    if self.merkkijono:
+                        self.merkkijono[-1] = self.merkkijono[-1]
+                    self.merkkijono.append("$a")
+                    return
+
         self.merkkijono.append("<" + tag)
         for attr in attrs:
             self.merkkijono.append(" " + attr[0] + "='" + attr[1] + "'")
         self.merkkijono.append(">")
-        
+
     def handle_endtag(self, tag):
-        if tag == "a" and self.in_a_yso:
-            self.in_a_yso = False
-            self.ended_a_yso = True
+        if tag == "a" and self.is_anchor:
+            self.is_anchor = False
+            self.anchor_ended = True
         else:
             self.merkkijono.append("</" + tag + ">")
 
     def handle_data(self, data):
-        if self.ended_a_yso:
+        if self.anchor_ended:
             self.merkkijono.append("$i")
-            self.ended_a_yso = False
-         
+            self.anchor_ended = False
+
         if self.merkkijono:
             if self.merkkijono[-1] != "$i" and self.merkkijono[-1] != "$a":
                 self.merkkijono[-1] += data
@@ -357,7 +355,6 @@ class ConvertHTMLYSOATags(HTMLParser):
                 self.merkkijono.append(data)
         else:
             self.merkkijono.extend(["$i", data])
-        
 
     def handle_comment(self, data):
         self.merkkijono.append(data)
@@ -440,7 +437,7 @@ def convert(cs, vocabulary_name, language, g, g2):
     incrementor = 0
     deprecated_counter = 0
     writer_records_counter = 0
-    ysoATagParser = ConvertHTMLYSOATags()
+    ATagParser = ConvertHTMLAnchorTags()
     ET_namespaces = {"marcxml": "http://www.loc.gov/MARC21/slim",
                      "atom": "http://www.w3.org/2005/Atom"}
 
@@ -928,18 +925,18 @@ def convert(cs, vocabulary_name, language, g, g2):
         for valueProp in sorted(getValues(g, concept, [SKOS.note, SKOS.scopeNote, SKOS.example], language=language),
                                 key=lambda o: str(o.value)):
             
-            ysoATagParser.initialize()
+            ATagParser.initialize()
             try:
-                ysoATagParser.feed(valueProp.value)
+                ATagParser.feed(valueProp.value)
             except TypeError:
                 logging.error("Malformed HTML in concept %s in %s" % (concept, valueProp.value))
-            if len(ysoATagParser.merkkijono)%2 == 1:
+            if len(ATagParser.merkkijono)%2 == 1:
                 logging.warning("Parsing the property %s for concept %s into seperate subfields failed. Continuing with complete value." % (valueProp.prop, concept))
-                subfieldCodeValuePair = [("i", valueProp.value.strip())]
+                subfieldCodeValuePair = [("i", valueProp.value)]
                 if len(subfieldCodeValuePair[0][1]) == 0:
                     subfieldCodeValuePair = []
             else:
-                subfieldCodeValuePair = [[x[1], ysoATagParser.merkkijono[ind+1].strip()] for (ind,x) in enumerate(ysoATagParser.merkkijono) if ind%2 == 0]
+                subfieldCodeValuePair = [[x[1], ATagParser.merkkijono[ind+1]] for (ind,x) in enumerate(ATagParser.merkkijono) if ind%2 == 0]
                 # poistetaan viimeinen i-tägi, jos se on vain 1 merkin mittainen (loppupisteet)
                 if subfieldCodeValuePair[-1][0] == "i" and len(subfieldCodeValuePair[-1][1]) <= 1 and len(subfieldCodeValuePair) > 1:
                     subfieldCodeValuePair[-2][1] = subfieldCodeValuePair[-2][1] + subfieldCodeValuePair[-1][1]
