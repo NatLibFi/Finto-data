@@ -2522,6 +2522,15 @@ slm:s1505 a skos:Concept ;
     skos:prefLabel "taulukot"@fi,
         "tabeller"@sv .
 
+slm:s1509 a skos:Concept ;
+    dct:created "2024-03-06"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "digitaaliset roolipelit"@fi,
+        "tietokoneroolipelit"@fi ;
+    skos:broader slm:s1177 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "roolipelit (digitaaliset pelit)"@fi .
+
 slm:s151 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2019-09-05"^^xsd:date ;
@@ -2529,6 +2538,13 @@ slm:s151 a skos:Concept ;
     skos:inScheme slm:s593 ;
     skos:prefLabel "maakuntalehdet"@fi,
         "landskapstidningar"@sv .
+
+slm:s1512 a skos:Concept ;
+    dct:created "2024-03-06"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:broader slm:s1510 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "systemaattiset kirjallisuuskatsaukset"@fi .
 
 slm:s157 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -3658,11 +3674,12 @@ slm:s403 a skos:Concept ;
 
 slm:s405 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2022-05-17"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "pöytäroolipelit"@fi ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p4295> ;
     skos:inScheme slm: ;
-    skos:prefLabel "roolipelit"@fi,
+    skos:prefLabel "roolipelit (pöytäroolipelit)"@fi,
         "rollspel"@sv .
 
 slm:s406 a skos:Concept ;
@@ -4913,16 +4930,6 @@ slm:s7 a skos:Concept ;
     skos:inScheme slm:s593 ;
     skos:prefLabel "selkolehdet"@fi,
         "lättlästa tidningar"@sv .
-
-slm:s70 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "pokkarit"@fi,
-        "pocket"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p13669> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "taskukirjat"@fi,
-        "pocketböcker"@sv ;
-    skos:topConceptOf slm:s285 .
 
 slm:s700 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -7749,20 +7756,25 @@ slm:s15 a skos:Concept ;
         "psykologiska berättelser"@sv ;
     skos:related slm:s604 .
 
-slm:s1508 a skos:Concept ;
-    dct:created "2023-11-30"^^xsd:date ;
-    dct:modified "2023-12-01"^^xsd:date ;
-    skos:altLabel "tieteelliset katsaukset"@fi,
-        "tilannekatsaukset"@fi,
-        "vuosikatsaukset"@fi,
-        "lägesöversikter"@sv,
-        "vetenskapliga översikter"@sv,
-        "årsöversikter"@sv ;
-    skos:broader slm:s1442 ;
+slm:s1510 a skos:Concept ;
+    dct:created "2024-03-06"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:broader slm:s1508 ;
     skos:inScheme slm: ;
-    skos:prefLabel "katsaukset"@fi,
-        "översikter"@sv ;
-    skos:related slm:s1462 .
+    skos:narrower slm:s1512 ;
+    skos:prefLabel "kirjallisuuskatsaukset"@fi .
+
+slm:s1511 a skos:Concept ;
+    dct:created "2024-03-06"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "miniatyyrikirjat"@fi,
+        "minikirjat"@fi,
+        "pienoiskokoiset kirjat"@fi ;
+    skos:definition "Tarkoittaa enintään 10 cm korkeita kirjoja."@fi ;
+    skos:inScheme slm: ;
+    skos:prefLabel "pienoiskirjat"@fi ;
+    skos:related slm:s70 ;
+    skos:topConceptOf slm: .
 
 slm:s152 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8463,9 +8475,11 @@ slm:s444 a skos:Concept ;
 
 slm:s45 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s27 ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "historialliset novellit"@fi ;
+    skos:broader slm:s618 ;
     skos:inScheme slm:s285 ;
-    skos:prefLabel "historialliset novellit"@fi,
+    skos:prefLabel "historialliset kertomukset"@fi,
         "historiska noveller"@sv ;
     skos:related slm:s445 ;
     skos:scopeNote "Käytetään teoksista, jotka tekijä on sijoittanut historialliseen aikaan."@fi,
@@ -9068,6 +9082,19 @@ slm:s698 a skos:Concept ;
     skos:prefLabel "jengielokuvat"@fi,
         "gängfilmer"@sv ;
     skos:related slm:s968 .
+
+slm:s70 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "pokkarit"@fi,
+        "pocket"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p13669> ;
+    skos:definition "Tarkoittaa 10-18 cm korkeita pehmeäkantisia kirjoja."@fi ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "taskukirjat"@fi,
+        "pocketböcker"@sv ;
+    skos:related slm:s1511 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s701 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10495,6 +10522,22 @@ slm:s1497 a skos:Concept ;
     skos:scopeNote "Käytetään kiinalaisista manhuasarjakuvista."@fi,
         "Används om kinesiska tecknade manhuaserier."@sv .
 
+slm:s1508 a skos:Concept ;
+    dct:created "2023-11-30"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "tieteelliset katsaukset"@fi,
+        "tilannekatsaukset"@fi,
+        "vuosikatsaukset"@fi,
+        "lägesöversikter"@sv,
+        "vetenskapliga översikter"@sv,
+        "årsöversikter"@sv ;
+    skos:broader slm:s1442 ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1510 ;
+    skos:prefLabel "katsaukset"@fi,
+        "översikter"@sv ;
+    skos:related slm:s1462 .
+
 slm:s154 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2021-12-21"^^xsd:date ;
@@ -11394,11 +11437,12 @@ slm:s80 a skos:Concept ;
 
 slm:s801 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
     skos:altLabel "meriromaanit"@fi ;
     skos:broader slm:s975 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p17807> ;
     skos:inScheme slm:s285 ;
-    skos:prefLabel "merikirjallisuus"@fi,
+    skos:prefLabel "merikirjallisuus (kaunokirjallisuus)"@fi,
         "sjöromaner"@sv ;
     skos:related slm:s453,
         slm:s905 ;
@@ -12042,10 +12086,11 @@ slm:s1425 a skos:Concept ;
 
 slm:s1507 a skos:Concept ;
     dct:created "2023-11-30"^^xsd:date ;
-    dct:modified "2023-12-01"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
     skos:altLabel "lakiaineistot"@fi,
         "juridiska material"@sv ;
     skos:broader slm:s1442 ;
+    skos:definition "Julkishallinnollisen tahon laatima lainkäyttöalueella voimassa olevaksi tarkoitettu laki, säädös, valtiosopimus tms."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026351> ;
     skos:inScheme slm: ;
     skos:narrower slm:s1482,
@@ -12092,6 +12137,18 @@ slm:s215 a skos:Concept ;
         slm:s352,
         slm:s479 ;
     skos:topConceptOf slm:s285 .
+
+slm:s227 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:broader slm:s1177 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p3453> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "tietokonepelit"@fi,
+        "datorspel"@sv ;
+    skos:related slm:s1015,
+        slm:s492,
+        slm:s588 .
 
 slm:s236 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12342,6 +12399,8 @@ slm:s49 a skos:Concept ;
 
 slm:s492 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "videopelit"@fi ;
     skos:broader slm:s1177 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21628> ;
     skos:inScheme slm: ;
@@ -12466,6 +12525,25 @@ slm:s577 a skos:Concept ;
     skos:related slm:s154,
         slm:s40,
         slm:s657 .
+
+slm:s588 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "Internet-pelit"@fi,
+        "nettipelit"@fi,
+        "virtuaalipelit"@fi,
+        "nätspel"@sv,
+        "onlinespel"@sv,
+        "virtuella spel"@sv,
+        "webbspel"@sv ;
+    skos:broader slm:s1177 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p22610> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "verkkopelit"@fi,
+        "internetspel"@sv ;
+    skos:related slm:s1015,
+        slm:s227,
+        slm:s492 .
 
 slm:s628 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12697,17 +12775,6 @@ slm:s869 a skos:Concept ;
         slm:s1353,
         slm:s230 .
 
-slm:s871 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1177 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p17281> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "videopelit"@fi,
-        "videospel"@sv ;
-    skos:related slm:s1015,
-        slm:s227,
-        slm:s588 .
-
 slm:s880 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "antiromaanit"@fi,
@@ -12837,6 +12904,19 @@ slm:s984 a skos:Concept ;
         "Genre inom fiktion som uppstod på 1980-talet och inom vilken datanät, befolkningsexplosion, samhällssplittring, ekologiska kriser och människans verksamhet i cyberrymden är centrala."@sv ;
     skos:prefLabel "kyberpunk"@fi,
         "cyberpunk"@sv .
+
+slm:s1015 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:broader slm:s1177 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p15342> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s996 ;
+    skos:prefLabel "mobiilipelit"@fi,
+        "mobilspel"@sv ;
+    skos:related slm:s227,
+        slm:s492,
+        slm:s588 .
 
 slm:s1022 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13148,18 +13228,6 @@ slm:s185 a skos:Concept ;
         slm:s639,
         slm:s784 .
 
-slm:s227 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1177 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p3453> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "tietokonepelit"@fi,
-        "datorspel"@sv ;
-    skos:related slm:s1015,
-        slm:s492,
-        slm:s588,
-        slm:s871 .
-
 slm:s235 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:broader slm:s641 ;
@@ -13209,6 +13277,20 @@ slm:s266 a skos:Concept ;
         slm:s46 ;
     skos:prefLabel "teosluettelot"@fi,
         "verkförteckningar"@sv .
+
+slm:s27 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:broader slm:s352 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p2126> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s185 ;
+    skos:note "Lyhyehkö suorasanainen fiktiivinen kertomus, jossa yleensä kuvataan kiinteässä muodossa keskitettyä tapahtumaa, erityistä mielentilaa tai yksilöllistä kehitystä."@fi ;
+    skos:prefLabel "novellit"@fi,
+        "noveller"@sv ;
+    skos:related slm:s388,
+        slm:s479,
+        slm:s618 .
 
 slm:s280 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13340,26 +13422,6 @@ slm:s532 a skos:Concept ;
     skos:prefLabel "reggae"@fi,
         "reggae"@sv ;
     skos:related slm:s1251 .
-
-slm:s588 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-01-06"^^xsd:date ;
-    skos:altLabel "Internet-pelit"@fi,
-        "nettipelit"@fi,
-        "virtuaalipelit"@fi,
-        "nätspel"@sv,
-        "onlinespel"@sv,
-        "virtuella spel"@sv,
-        "webbspel"@sv ;
-    skos:broader slm:s1177 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p22610> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "verkkopelit"@fi,
-        "internetspel"@sv ;
-    skos:related slm:s1015,
-        slm:s227,
-        slm:s492,
-        slm:s871 .
 
 slm:s606 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13500,19 +13562,6 @@ slm:s1006 a skos:Concept ;
         slm:s770,
         slm:s928 .
 
-slm:s1015 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:broader slm:s1177 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p15342> ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s996 ;
-    skos:prefLabel "mobiilipelit"@fi,
-        "mobilspel"@sv ;
-    skos:related slm:s227,
-        slm:s492,
-        slm:s588,
-        slm:s871 .
-
 slm:s103 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2022-11-19"^^xsd:date ;
@@ -13627,21 +13676,6 @@ slm:s155 a skos:Concept ;
         slm:s1086,
         slm:s286 ;
     skos:topConceptOf slm:s285 .
-
-slm:s27 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-09-26"^^xsd:date ;
-    skos:broader slm:s352 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p2126> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s185,
-        slm:s45 ;
-    skos:note "Lyhyehkö suorasanainen fiktiivinen kertomus, jossa yleensä kuvataan kiinteässä muodossa keskitettyä tapahtumaa, erityistä mielentilaa tai yksilöllistä kehitystä."@fi ;
-    skos:prefLabel "novellit"@fi,
-        "noveller"@sv ;
-    skos:related slm:s388,
-        slm:s479,
-        slm:s618 .
 
 slm:s274 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -14980,11 +15014,14 @@ slm:s1161 a skos:Concept ;
 
 slm:s1177 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
+    skos:altLabel "videopelit"@fi ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p22353> ;
     skos:inScheme slm: ;
     skos:narrower slm:s1015,
         slm:s1134,
+        slm:s1509,
         slm:s227,
         slm:s338,
         slm:s340,
@@ -14994,8 +15031,7 @@ slm:s1177 a skos:Concept ;
         slm:s503,
         slm:s588,
         slm:s589,
-        slm:s772,
-        slm:s871 ;
+        slm:s772 ;
     skos:prefLabel "digitaaliset pelit"@fi,
         "digitala spel"@sv .
 
@@ -15306,7 +15342,7 @@ slm:s436 a skos:Concept ;
 
 slm:s618 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-03-29"^^xsd:date ;
+    dct:modified "2024-03-06"^^xsd:date ;
     skos:altLabel "tarinat"@fi,
         "historier (berättelser)"@sv,
         "sägner"@sv ;
@@ -15320,6 +15356,7 @@ slm:s618 a skos:Concept ;
         slm:s15,
         slm:s315,
         slm:s316,
+        slm:s45,
         slm:s527,
         slm:s555,
         slm:s584,
@@ -16456,7 +16493,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2024-02-09T06:06:12+00:00"^^xsd:dateTime ;
+    dct:modified "2024-03-06T06:06:09+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
@@ -16478,6 +16515,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
         slm:s1488,
         slm:s1492,
         slm:s1506,
+        slm:s1511,
         slm:s170,
         slm:s236,
         slm:s320,
