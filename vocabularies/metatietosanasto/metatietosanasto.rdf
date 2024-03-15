@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -5262,10 +5263,9 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:definition xml:lang="sv">Illustrativt innehåll som består av stillbild.</skos:definition>
     <skos:definition xml:lang="fi">Kuvasisältö, joka koostuu stillkuvasta.</skos:definition>
     <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/IllusContent/1014"/>
-    <skos:prefLabel xml:lang="sv">illustrationer</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">kuvitettu</skos:prefLabel>
-    <skos:scopeNote xml:lang="fi">MARC 21 300 ‡b-kentässä: kuvitettu</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">MARC 21 i 300 ‡b-fältet: illustrationer</skos:scopeNote>
+    <skos:prefLabel xml:lang="en">illustration</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">illustration</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kuva</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1712">
     <dc11:source xml:lang="fi">Kansallinen RDA-termi</dc11:source>
@@ -8627,6 +8627,15 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:definition xml:lang="sv">Populärmusikaliskt notmaterial som innehåller förenklad notation för ett vokalt och/eller instrumentalt verk (innehåller vanligen endast melodi och ackordbeteckningar eller melodi med förenklat pianoackompanjemang).</skos:definition>
     <skos:prefLabel xml:lang="sv">melodinoter</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sävelmänuotti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240315_001">
+    <dc11:source xml:lang="fi">Kansalllinen RDA-termi</dc11:source>
+    <dc11:source xml:lang="sv">Nationell RDA-term</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="sv">illustrationer</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kuvitettu</skos:prefLabel>
+    <skos:scopeNote xml:lang="fi">MARC 21 300 ‡b-kentässä: kuvitettu</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">MARC 21 i 300 ‡b-fältet: illustrationer</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2025">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
@@ -38494,14 +38503,13 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m439">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
     <dc11:source xml:lang="fi">RDA-termi</dc11:source>
-    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m261"/>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m138"/>
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/e/P20207"/>
-    <skos:altLabel xml:lang="sv">Illustration</skos:altLabel>
-    <skos:altLabel xml:lang="fi">Kuvitus</skos:altLabel>
-    <skos:definition xml:lang="fi">Liittää ekspression kuvasisältöön, joka liittyy ekspression ensisijaiseen sisältöön.</skos:definition>
-    <skos:definition xml:lang="sv">Sammankopplar uttryck med ett illustrativt innehåll, som sammanhör med uttryckets primära innehåll.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/m/P30453"/>
+    <skos:altLabel xml:lang="sv">Illustration (illustrativt innehåll)</skos:altLabel>
+    <skos:altLabel xml:lang="fi">Kuvitus (kuvasisältö)</skos:altLabel>
+    <skos:definition xml:lang="fi">Liittää manifestaation ilmaukseen niistä kuvasisällön ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita.</skos:definition>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1082"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1378"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1436"/>
@@ -38510,6 +38518,7 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1672"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1673"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1711"/>
+    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m20240315_001"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m275"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m3417"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m4350"/>
