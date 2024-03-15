@@ -2041,10 +2041,10 @@ mts:m1287 a skos:Concept ;
         "bok med bildeffekter"@sv .
 
 mts:m1288 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
+    dc:source "Kansallinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
     skos:inScheme mts: ;
     skos:prefLabel "määrittelemätön"@fi,
         "ospecificerad"@sv ;
@@ -2768,15 +2768,17 @@ mts:m1420 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
+    skos:altLabel "paperback"@en,
+        "nidottu"@fi ;
     skos:definition "Pehmeäkantisen kirjan sidostyyppi."@fi,
         "Bandtyp för bok med mjuka pärmar."@sv ;
     skos:exactMatch rdatb:1001 ;
     skos:inScheme mts: ;
-    skos:prefLabel "paperback"@en,
-        "nidottu"@fi,
+    skos:prefLabel "perfect binding"@en,
+        "liimasidonta"@fi,
         "häftad"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentässä 563. Termi oli käytössä kentässä 020 q marraskuuhun 2021 asti."@fi,
+    skos:scopeNote "Käytetään MARC 21 -kentässä 563. Termi oli käytössä kentässä 020 q marraskuuhun 2021 asti muodossa nidottu."@fi,
         "Används i MARC 21-fältet 563. Termen användes i fältet 020 q fram till november 2021."@sv .
 
 mts:m1421 a skos:Concept ;
@@ -2847,10 +2849,10 @@ mts:m1432 a isothes:ConceptGroup,
         "Ljudspårskonfiguration för film"@sv .
 
 mts:m1435 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
+    dc:source "Kansallinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
     skos:inScheme mts: ;
     skos:prefLabel "väriliitu"@fi,
         "färgkrita"@sv .
@@ -3087,15 +3089,17 @@ mts:m1477 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
+    skos:altLabel "hardback"@en,
+        "sidottu"@fi ;
     skos:definition "Kovakantisen kirjan sidostyyppi."@fi,
         "Bandtyp för bok med hårda pärmar."@sv ;
     skos:exactMatch rdatb:1002 ;
     skos:inScheme mts: ;
-    skos:prefLabel "hardback"@en,
-        "sidottu"@fi,
+    skos:prefLabel "case binding"@en,
+        "ommeltu liimasidonta"@fi,
         "inbunden"@sv ;
-    skos:scopeNote "Käytetään MARC 21 -kentässä 563. Termi oli käytössä kentässä 020 q marraskuuhun 2021 asti."@fi,
+    skos:scopeNote "Käytetään MARC 21 -kentässä 563. Termi oli käytössä kentässä 020 q marraskuuhun 2021 asti muodossa sidottu."@fi,
         "Används i MARC 21-fältet 563. Termen användes i fältet 020 q fram till november 2021."@sv .
 
 mts:m1480 a skos:Concept ;
@@ -8159,7 +8163,7 @@ mts:m2002 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2017-02-28"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
     rdfs:seeAlso rdae:P20209 ;
     skos:definition "Liittää ekspression ekspressioon sisältyvän nuottikirjoituksen tyypin musiikilliseen tai fyysiseen taittoon."@fi,
         "Sammankopplar uttryck med en musikalisk eller fysisk layout för notskrift som ingår i uttrycket."@sv ;
@@ -8176,7 +8180,8 @@ mts:m2002 a isothes:ConceptGroup,
         mts:m2032,
         mts:m2034,
         mts:m2036,
-        mts:m2037 ;
+        mts:m2037,
+        mts:m5104 ;
     skos:prefLabel "Format of Notated Music"@en,
         "Nuottiaineiston muoto"@fi,
         "Notmaterialets form"@sv .
@@ -29314,6 +29319,17 @@ mts:m5103 a skos:Concept ;
     skos:prefLabel "duplicate negative"@en,
         "negatiivikopio"@fi .
 
+mts:m5104 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    dct:created "2024-03-15"^^xsd:date ;
+    dct:modified "2024-03-15"^^xsd:date ;
+    skos:definition "Nuottiaineiston muoto aineistolle, joka koostuu partituurista, jossa näytetään kaikki laulustemmat, ja jossa soitinsäestys on sovitettu joko kosketin- tai muulle sointusoittimelle tai -soittimille tai jätetty pois."@fi ;
+    skos:exactMatch rdafnm:1011 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "vocal score"@en,
+        "vokaalipartituuri"@fi .
+
 mts:m513 a skos:Concept ;
     dc:source "Kaunokki-termi"@fi,
         "RDA-termi"@fi,
@@ -33958,8 +33974,8 @@ mts:m1999 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2017-02-28"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:altLabel "vokaalipartituuri"@fi ;
+    dct:modified "2024-03-15"^^xsd:date ;
+    skos:altLabel "vokaalipartituuri (kuoropartituuri)"@fi ;
     skos:definition "Kuoron harjoituskäyttöön tarkoitettu, kuorolle ja soittimille, mahdollisesti myös solistisille lauluäänille sävelletyn teoksen partituuri, jossa kuoroäänet on merkitty omille viivastoilleen, ja josta soitinsäestys on joko jätetty kokonaan pois tai sisällytetty osittain ja pelkistetysti kosketinsoittimelle tai muille sointusoittimille sovitettuna. Jos soitinsäestys on merkitty täydellisenä, käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m2020'>partituuri</a>. Jos teos on alun perin sävelletty säestyksettömälle kuorolle, käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m2020'>partituuri</a>."@fi,
         "Partitur avsett för körövning, innehållande körens, instrumentens och möjligtvis även solistens stämmor. Körens stämmor är noterade i separata notsystem och ackompanjemanget är bortlämnat helt eller ingår delvis i arrangemang för tangent- eller andra instrument. Om ackompanjemanget är noterat i sin helhet, används termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2020'>partitur</a>. Ifall verket ursprungligen är komponerat för kör utan ackompanjemang, används termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2020'>partitur</a>."@sv ;
     skos:exactMatch rdafnm:1002 ;
@@ -34120,8 +34136,8 @@ mts:m2029 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2017-03-01"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:altLabel "vokaalipartituuri"@fi,
+    dct:modified "2024-03-15"^^xsd:date ;
+    skos:altLabel "vokaalipartituuri (pianopartituuri)"@fi,
         "klaverutdrag"@sv ;
     skos:definition "Ensisijaisesti harjoituskäyttöön tarkoitettu, soololauluäänille/kuorolle ja/tai solistisille soittimille ja orkesterille sävelletyn teoksen pelkistys versioksi, jossa laulu- ja soolosoitinäänet ovat partituurimuodossa ja koko teoksen orkesterisäestys on sovitettu kosketinsoittimelle. Kuoron harjoituskäyttöön tarkoitetusta partituurista käytetään termiä <a href='http://urn.fi/URN:NBN:fi:au:mts:m1999'>kuoropartituuri</a>. Termiä vokaalipartituuri ei käytetä nuottiaineiston muodon merkitsemisessä"@fi,
         "I första hand ämnad för övning, en förenklad version av ett verk komponerat för soloröst/kör och/eller soloinstrument/orkester i vilket sång- och soloinstrumentstämman är i partiturformat och hela verkets orkesterackompanjemang är anpassat till tangentinstrument. För partitur avsett för körövning används termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m1999'>körpartitur</a>."@sv ;
@@ -60341,7 +60357,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2024-03-14T06:03:47+00:00"^^xsd:dateTime ;
+    dct:modified "2024-03-15T06:07:12+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
