@@ -2504,7 +2504,7 @@ mts:m138 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2024-01-27"^^xsd:date ;
+    dct:modified "2024-03-16"^^xsd:date ;
     rdfs:seeAlso rdac:C10007 ;
     skos:definition "Teoksen ekspression saama ilmiasu."@fi,
         "Den fysiska gestaltningen av ett uttryck för ett verk."@sv ;
@@ -2533,6 +2533,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m421,
         mts:m43,
         mts:m4372,
+        mts:m439,
         mts:m4400,
         mts:m4402,
         mts:m4574,
@@ -4973,15 +4974,14 @@ mts:m1711 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-08-23"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-16"^^xsd:date ;
     skos:definition "Kuvasisältö, joka koostuu stillkuvasta."@fi,
         "Illustrativt innehåll som består av stillbild."@sv ;
     skos:exactMatch rdaill:1014 ;
     skos:inScheme mts: ;
-    skos:prefLabel "kuvitettu"@fi,
-        "illustrationer"@sv ;
-    skos:scopeNote "MARC 21 300 ‡b-kentässä: kuvitettu"@fi,
-        "MARC 21 i 300 ‡b-fältet: illustrationer"@sv .
+    skos:prefLabel "illustration"@en,
+        "kuva"@fi,
+        "illustration"@sv .
 
 mts:m1712 a skos:Concept ;
     dc:source "Kansallinen RDA-termi"@fi,
@@ -13067,7 +13067,7 @@ mts:m261 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
+    dct:modified "2024-03-16"^^xsd:date ;
     rdfs:seeAlso rdac:C10006 ;
     skos:definition "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi,
         "Det intellektuella eller konstnärliga förverkligandet av ett verk i form av ljud, bild, rörelse, bokstäver, musiknotation osv."@sv ;
@@ -13082,7 +13082,6 @@ mts:m261 a isothes:ConceptGroup,
         mts:m2244,
         mts:m2247,
         mts:m346,
-        mts:m439,
         mts:m4396,
         mts:m580 ;
     skos:prefLabel "Expression"@en,
@@ -23026,12 +23025,11 @@ mts:m439 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
-    rdfs:seeAlso rdae:P20207 ;
-    skos:altLabel "Kuvitus"@fi,
-        "Illustration"@sv ;
-    skos:definition "Liittää ekspression kuvasisältöön, joka liittyy ekspression ensisijaiseen sisältöön."@fi,
-        "Sammankopplar uttryck med ett illustrativt innehåll, som sammanhör med uttryckets primära innehåll."@sv ;
+    dct:modified "2024-03-16"^^xsd:date ;
+    rdfs:seeAlso rdam:P30453 ;
+    skos:altLabel "Kuvitus (kuvasisältö)"@fi,
+        "Illustration (illustrativt innehåll)"@sv ;
+    skos:definition "Liittää manifestaation ilmaukseen niistä kuvasisällön ekspressioista, jotka täydentävät laajennusaggregaatin sisältämiä pääekspressioita."@fi ;
     skos:member mts:m1082,
         mts:m1378,
         mts:m1436,
@@ -23045,7 +23043,8 @@ mts:m439 a isothes:ConceptGroup,
         mts:m4350,
         mts:m4352,
         mts:m440,
-        mts:m455 ;
+        mts:m455,
+        mts:m5105 ;
     skos:prefLabel "Illustrative content"@en,
         "Kuvasisältö"@fi,
         "Illustrativt innehåll"@sv .
@@ -29329,6 +29328,17 @@ mts:m5104 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "vocal score"@en,
         "vokaalipartituuri"@fi .
+
+mts:m5105 a skos:Concept ;
+    dc:source "Kansalllinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
+    dct:created "2024-03-16"^^xsd:date ;
+    dct:modified "2024-03-16"^^xsd:date ;
+    skos:inScheme mts: ;
+    skos:prefLabel "kuvitettu"@fi,
+        "illustrationer"@sv ;
+    skos:scopeNote "MARC 21 300 ‡b-kentässä: kuvitettu"@fi,
+        "MARC 21 i 300 ‡b-fältet: illustrationer"@sv .
 
 mts:m513 a skos:Concept ;
     dc:source "Kaunokki-termi"@fi,
@@ -60357,7 +60367,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2024-03-15T06:07:12+00:00"^^xsd:dateTime ;
+    dct:modified "2024-03-16T06:04:33+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
