@@ -12,7 +12,6 @@
 @prefix rdac: <http://rdaregistry.info/Elements/c/> .
 @prefix rdacarx: <http://rdaregistry.info/termList/RDACarrierEU/> .
 @prefix rdacc: <http://rdaregistry.info/termList/RDAColourContent/> .
-@prefix rdacct: <http://rdaregistry.info/termList/CollTitle/> .
 @prefix rdacdt: <http://rdaregistry.info/termList/RDACartoDT/> .
 @prefix rdaco: <http://rdaregistry.info/termList/RDAContentType/> .
 @prefix rdacpc: <http://rdaregistry.info/termList/configPlayback/> .
@@ -25,7 +24,6 @@
 @prefix rdafs: <http://rdaregistry.info/termList/fontSize/> .
 @prefix rdaft: <http://rdaregistry.info/termList/fileType/> .
 @prefix rdaftn: <http://rdaregistry.info/termList/TacNotation/> .
-@prefix rdagd: <http://rdaregistry.info/termList/gender/> .
 @prefix rdagen: <http://rdaregistry.info/termList/RDAGeneration/> .
 @prefix rdagrp: <http://rdaregistry.info/termList/groovePitch/> .
 @prefix rdagw: <http://rdaregistry.info/termList/grooveWidth/> .
@@ -310,15 +308,6 @@ mts:m1028 a skos:Concept ;
     skos:inScheme mts: ;
     skos:prefLabel "edellyttää käyttäjätunnuksen"@fi,
         "förutsätter användarnamn"@sv .
-
-mts:m1029 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:inScheme mts: ;
-    skos:prefLabel "profiili"@fi,
-        "profil"@sv .
 
 mts:m103 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -2504,7 +2493,7 @@ mts:m138 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2024-03-16"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     rdfs:seeAlso rdac:C10007 ;
     skos:definition "Teoksen ekspression saama ilmiasu."@fi,
         "Den fysiska gestaltningen av ett uttryck för ett verk."@sv ;
@@ -2523,6 +2512,7 @@ mts:m138 a isothes:ConceptGroup,
         mts:m2131,
         mts:m2133,
         mts:m2142,
+        mts:m2207,
         mts:m2224,
         mts:m245,
         mts:m291,
@@ -4266,8 +4256,7 @@ mts:m1625 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:exactMatch rdafr:1014 ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:inScheme mts: ;
     skos:prefLabel "yksi-kaksi kertaa vuodessa"@fi,
         "en-två gånger per år"@sv .
@@ -4446,15 +4435,15 @@ mts:m1658 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-02-05"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:altLabel "kerran viikossa"@fi,
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:altLabel "viikoittain"@fi,
         "en gång i veckan"@sv ;
     skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran viikossa."@fi,
         "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras en gång i veckan."@sv ;
     skos:exactMatch rdafr:1004 ;
     skos:inScheme mts: ;
     skos:prefLabel "weekly"@en,
-        "viikoittain"@fi,
+        "kerran viikossa"@fi,
         "en gång per vecka"@sv .
 
 mts:m166 a skos:Concept ;
@@ -8846,10 +8835,9 @@ mts:m2106 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat runot. Jos kokoelmassa ei ole kaikkia runoja, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla dikter skrivna av en aktör. Om samlingen inte innehåller alla dikter, anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>"@sv ;
-    skos:exactMatch rdacct:1005 ;
     skos:inScheme mts: ;
     skos:prefLabel "Poems"@en,
         "Runot"@fi,
@@ -8859,10 +8847,9 @@ mts:m2107 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat libretot. Jos kokoelmassa ei ole kaikkia librettoja, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla libretton som skrivits av samma aktör. Om samlingen inte innehåller alla libretton anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1010 ;
     skos:inScheme mts: ;
     skos:prefLabel "Libretot"@fi,
         "Libretton"@sv .
@@ -8871,10 +8858,9 @@ mts:m2108 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat kirjeet. Jos kokoelmassa ei ole kaikkia kirjeitä, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innehåller alla brev som en aktör skrivit. Om samlingen inte innehåller alla brev anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1001 ;
     skos:inScheme mts: ;
     skos:prefLabel "Correspondence"@en,
         "Kirjeet"@fi,
@@ -8884,11 +8870,10 @@ mts:m2109 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:altLabel "Tal (föredrag)"@sv ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan pitämät puheet. Jos kokoelmassa ei ole kaikkia puheita, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla tal skrivna av en aktör. Om samlingen inte innehåller alla tal anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1008 ;
     skos:example "MARC 21 -formaatissa 240 10 ‡a Puheet. ‡k Valikoima"@fi,
         "I MARC 21-formatet 240 10 ‡a Tal. ‡k Urval"@sv ;
     skos:inScheme mts: ;
@@ -8913,10 +8898,9 @@ mts:m2110 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat näytelmät. Jos kokoelmassa ei ole kaikkia näytelmiä, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla skådespel skrivna av en aktör. Om samlingen inte innehåller alla skådespel anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1004 ;
     skos:inScheme mts: ;
     skos:prefLabel "Plays"@en,
         "Näytelmät"@fi,
@@ -8937,10 +8921,9 @@ mts:m2113 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat proosateokset. Jos kokoelmassa ei ole kaikkia proosateoksia, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla prosaverk skrivna av samma aktör. Om samlingen inte innehåller alla prosaverk anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1006 ;
     skos:inScheme mts: ;
     skos:prefLabel "Prose works"@en,
         "Proosateokset"@fi,
@@ -8950,10 +8933,9 @@ mts:m2114 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat sanoitukset. Jos kokoelmassa ei ole kaikkia sanoituksia, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla sångtexter skrivna av en aktör. Om samlingen inte innehåller alla sångtexter anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1011 ;
     skos:inScheme mts: ;
     skos:prefLabel "Lyrics"@en,
         "Sanoitukset"@fi,
@@ -8963,10 +8945,9 @@ mts:m2117 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat romaanit. Jos kokoelmassa ei ole kaikkia romaaneja, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla romaner skrivna av en aktör. Om samlingen inte innehåller alla romaner anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1003 ;
     skos:inScheme mts: ;
     skos:prefLabel "Novels"@en,
         "Romaanit"@fi,
@@ -8996,10 +8977,9 @@ mts:m2120 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat esseet. Jos kokoelmassa ei ole kaikkia esseitä, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla essäer skrivna av en aktör. Om samlingen inte innehåller alla essäer anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1002 ;
     skos:inScheme mts: ;
     skos:prefLabel "Essays"@en,
         "Esseet"@fi,
@@ -9018,10 +8998,9 @@ mts:m2122 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-03-30"^^xsd:date ;
-    dct:modified "2023-06-30"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:definition "Vakiintunut kokoava nimeke kokoelmalle, joka käsittää kaikki toimijan kirjoittamat novellit. Jos kokoelmassa ei ole kaikkia novelleja, tietoon lisätään termi <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Valikoima</a>."@fi,
         "Grupptitel för en samling som innefattar alla noveller skrivna av samma aktör. Om samlingen inte innehåller alla noveller anges också termen <a href='http://urn.fi/URN:NBN:fi:au:mts:m2209'>Urval</a>."@sv ;
-    skos:exactMatch rdacct:1007 ;
     skos:inScheme mts: ;
     skos:prefLabel "Short stories"@en,
         "Novellit"@fi,
@@ -9085,13 +9064,13 @@ mts:m2128 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-04-04"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:definition "Laajuuden yksikkö, mittakaavassa oleva kartta-aineisto, joka on pystysuoran pinnan leikkauspisteen esitys mittakaavassa, joka voi olla yhdensuuntainen maanpinnan kanssa, tai tällaisen pystysuoran pinnan leikkaus kolmiulotteinen malli, joka edustaa jatkuvasti jakautuvia ilmiöitä."@fi,
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:definition "Laajuuden yksikkö on mittakaavassa esitetty poikkileikkaus pystysuorasta pinnasta, joka voi olla tasossa oleva kuvaus maanpinnasta tai liittyä jatkuvasti jakautuvien ilmiöiden kolmiulotteiseen malliin."@fi,
         "Enhet, kartresurs, en skalenlig framställning av skärningen mellan en vertikal yta (på ett plan eller flera) och markytan, eller skärningen mellan en sådan vertikal yta och en tredimensionell modell som representerar fenomen med kontinuerlig utbredning."@sv ;
     skos:exactMatch rdacarx:1031 ;
     skos:inScheme mts: ;
     skos:prefLabel "profile"@en,
-        "poikkileikkaus"@fi,
+        "profiili"@fi,
         "profil (kartresurs)"@sv .
 
 mts:m2129 a skos:Concept ;
@@ -9927,13 +9906,14 @@ mts:m2206 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-05-05"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
-    skos:definition "Aineisto, joka ei sisällä ääntä."@fi,
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:altLabel "äänetön"@fi ;
+    skos:definition "Äänisisältömerkintä aineistolle, joka ei sisällä ääntä."@fi,
         "Resurs som inte innehåller ljud."@sv ;
     skos:exactMatch rdasco:1002 ;
     skos:inScheme mts: ;
     skos:prefLabel "silent"@en,
-        "äänetön"@fi,
+        "mykkä"@fi,
         "ljudlös"@sv .
 
 mts:m2207 a isothes:ConceptGroup,
@@ -9941,10 +9921,9 @@ mts:m2207 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-05-05"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
-    rdfs:seeAlso rdae:P20225 ;
-    skos:definition "Liittää ekspression ekspression sisältämään ääneen tai äänen puuttumiseen."@fi,
-        "Sammankopplar uttryck med ljud eller avsaknad av ljud, som ett uttryck innehåller."@sv ;
+    dct:modified "2024-03-19"^^xsd:date ;
+    rdfs:seeAlso rdam:P30454 ;
+    skos:definition "Liittää manifestaation ilmaukseen manifestaation sisältämän äänen mukanaolosta tai puuttumisesta."@fi ;
     skos:member mts:m2206,
         mts:m2208 ;
     skos:prefLabel "Sound content"@en,
@@ -9955,8 +9934,8 @@ mts:m2208 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2018-05-05"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
-    skos:definition "Aineisto, joka sisältää ääntä."@fi,
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:definition "Äänisisältömerkintä aineistolle, joka sisältää ääntä."@fi,
         "Resurs som innehåller ljud."@sv ;
     skos:exactMatch rdasco:1001 ;
     skos:inScheme mts: ;
@@ -13067,7 +13046,7 @@ mts:m261 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2024-03-16"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     rdfs:seeAlso rdac:C10006 ;
     skos:definition "Teoksen tiedollinen tai taiteellinen toteutus, joka voi olla muodoltaan ääntä, kuvaa, liikettä, kirjaimista koostuva, musiikkinuotinnos jne."@fi,
         "Det intellektuella eller konstnärliga förverkligandet av ett verk i form av ljud, bild, rörelse, bokstäver, musiknotation osv."@sv ;
@@ -13078,7 +13057,6 @@ mts:m261 a isothes:ConceptGroup,
         mts:m1990,
         mts:m2002,
         mts:m2003,
-        mts:m2207,
         mts:m2244,
         mts:m2247,
         mts:m346,
@@ -22124,12 +22102,13 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
         "diazo"@sv .
 
 mts:m4224 a skos:Concept ;
+    dc:source "Kansallinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
     dct:created "2020-04-17"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:closeMatch yso:p16991 ;
     skos:definition "Sukupuolen nimitys naiselle tai tytölle."@fi,
         "Benämning på kön för kvinna eller flicka."@sv ;
-    skos:exactMatch rdagd:1002 ;
     skos:inScheme mts: ;
     skos:prefLabel "female"@en,
         "nainen"@fi,
@@ -22145,25 +22124,27 @@ mts:m423 a skos:Concept ;
         "Access"@sv .
 
 mts:m4231 a skos:Concept ;
+    dc:source "Kansallinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
     dct:created "2020-05-03"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:altLabel "sukupuoli ei tiedossa"@fi,
         "kön okänt"@sv ;
     skos:definition "Sukupuolen merkintä kun tarkempi tieto sukupuolesta puuttuu."@fi,
         "Angivelse av kön när uppgift om detta saknas."@sv ;
-    skos:exactMatch rdagd:1003 ;
     skos:inScheme mts: ;
     skos:prefLabel "not known"@en,
         "ei tiedossa"@fi,
         "okänt"@sv .
 
 mts:m4232 a skos:Concept ;
+    dc:source "Kansallinen RDA-termi"@fi,
+        "Nationell RDA-term"@sv ;
     dct:created "2020-04-17"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:closeMatch yso:p8173 ;
     skos:definition "Sukupuolen nimitys miehelle tai pojalle."@fi,
         "Benämning på kön för man eller pojke."@sv ;
-    skos:exactMatch rdagd:1002 ;
     skos:inScheme mts: ;
     skos:prefLabel "male"@en,
         "mies"@fi,
@@ -22559,13 +22540,14 @@ mts:m4356 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2020-04-25"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:altLabel "kerran kahdessa viikossa"@fi ;
     skos:definition "Ilmestymis- tai päivittymistiheys aineistolle, joka ilmestyy tai päivittyy kerran kahdessa viikossa."@fi,
         "Utgivnings- eller uppdateringsfrekvens för material som utkommer eller uppdateras varannan vecka."@sv ;
     skos:exactMatch rdafr:1003 ;
     skos:inScheme mts: ;
     skos:prefLabel "biweekly"@en,
-        "kerran kahdessa viikossa"@fi,
+        "joka toinen viikko"@fi,
         "varannan vecka"@sv .
 
 mts:m4357 a skos:Concept ;
@@ -29340,6 +29322,17 @@ mts:m5105 a skos:Concept ;
     skos:scopeNote "MARC 21 300 ‡b-kentässä: kuvitettu"@fi,
         "MARC 21 i 300 ‡b-fältet: illustrationer"@sv .
 
+mts:m5106 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    dct:created "2024-03-19"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:definition "Layout, jossa yksittäisten musiikki-instrumenttien stemmat tai soolot on esitetty nuottikirjoituksessa kahden-viiden rivin lohkoissa. Ensimmäinen rivi osoittaa tahdin numeron tai harjoitusnumeron."@fi ;
+    skos:exactMatch rdalay:1015 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "single line"@en,
+        "yksirivinen"@fi .
+
 mts:m513 a skos:Concept ;
     dc:source "Kaunokki-termi"@fi,
         "RDA-termi"@fi,
@@ -29709,14 +29702,14 @@ mts:m568 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     skos:altLabel "tvärsnittskarta"@sv ;
-    skos:definition "Laajuuden yksikkö, mittakaavassa oleva kartta-aineisto, joka kuvaa pystysuoran pinnan leikkauskohtaa maaperän pinnan kanssa tai jatkuvaa ilmiötä kuvaavan käsitteellisen kolmiulotteisen mallin kanssa."@fi,
+    skos:definition "Laajuuden yksikkö on mittakaavassa ja tavallisesti tasossa esitetty pystysuora pinta, joka kuvaa sekä taivaankappaleen pinnan tai käsitteellisen mallin poikkileikkaavan profiilin että poikkaleikatun tason alla olevat kerrokset."@fi,
         "Enhet, skalenlig kartresurs, som föreställer skärningspunkten mellan en vågrät yta och markytan eller skärningspunkten mellan en vågrät yta och en tredimensionell konceptuell modell av något fortgående fenomen."@sv ;
     skos:exactMatch rdacarx:1035 ;
     skos:inScheme mts: ;
     skos:prefLabel "section"@en,
-        "poikkileikkauskartta"@fi,
+        "poikkileikkaus"@fi,
         "kartsektion"@sv .
 
 mts:m569 a skos:Concept ;
@@ -29885,7 +29878,7 @@ mts:m58 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-05"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     rdfs:seeAlso rdam:P30155 ;
     skos:member mts:m1304,
         mts:m1318,
@@ -29897,6 +29890,7 @@ mts:m58 a isothes:ConceptGroup,
         mts:m1638,
         mts:m217,
         mts:m4403,
+        mts:m5106,
         mts:m536,
         mts:m582,
         mts:m679,
@@ -30627,14 +30621,15 @@ mts:m679 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-05-17"^^xsd:date ;
-    skos:altLabel "takter på varandra"@sv ;
+    dct:modified "2024-03-19"^^xsd:date ;
+    skos:altLabel "tahdit päällekkäin"@fi,
+        "takter på varandra"@sv ;
     skos:definition "Layout, joka koostuu rinnakkaisissa yksiköissä esitetyistä tahdeista siten, että kunkin stemman tahdin alku on pystysuuntaisesti tasattu toisen stemman tai stemmojen saman tahdin alun kanssa."@fi,
         "Layout som består av takter som visas i parallella enheter, på så vis att början av varje stämmas takt är i vertikal linje med början av en annan stämma för samma takt."@sv ;
     skos:exactMatch rdalay:1005 ;
     skos:inScheme mts: ;
     skos:prefLabel "bar over bar"@en,
-        "tahdit päällekkäin"@fi,
+        "tahdit allekkain"@fi,
         "takt över takt"@sv .
 
 mts:m682 a isothes:ConceptGroup,
@@ -31297,7 +31292,7 @@ mts:m8 a isothes:ConceptGroup,
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2023-12-19"^^xsd:date ;
+    dct:modified "2024-03-19"^^xsd:date ;
     rdfs:seeAlso rdam:P30182 ;
     skos:altLabel "Laajuuden yksikkö"@fi,
         "Enhet"@sv ;
@@ -31306,7 +31301,6 @@ mts:m8 a isothes:ConceptGroup,
     skos:member mts:m1001,
         mts:m1010,
         mts:m1024,
-        mts:m1029,
         mts:m1034,
         mts:m1053,
         mts:m1071,
@@ -60367,7 +60361,7 @@ Sökningar riktas mot både grupper och begrepp. I den alfabetiska listan syns e
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2024-03-16T06:04:33+00:00"^^xsd:dateTime ;
+    dct:modified "2024-03-19T06:06:06+00:00"^^xsd:dateTime ;
     owl:imports <http://metadataregistry.org/concept/show/id/1211.rdf>,
         <http://metadataregistry.org/vocabulary/show/id/114.rdf>,
         dc:,
