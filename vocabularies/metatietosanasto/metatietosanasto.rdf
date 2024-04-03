@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <owl:Class rdf:about="http://iflastandards.info/ns/isbd/terms/mediatype/T1001">
     <skos:scopeNote xml:lang="fi">Kuuntelemiseen tarkoitetulla välineellä käytettävät aineistot. Tallenteessa olevan äänen kuunteleminen soittovälineillä kuten levysoittimella, kasettisoittimella, CD-soittimella, MP3-soittimella tai muulla mediatoistimella. Audio sisältää sekä digitaalisesti että analogisesti tallennetun äänen.</skos:scopeNote>
@@ -8611,6 +8612,71 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <skos:definition xml:lang="sv">Populärmusikaliskt notmaterial som innehåller förenklad notation för ett vokalt och/eller instrumentalt verk (innehåller vanligen endast melodi och ackordbeteckningar eller melodi med förenklat pianoackompanjemang).</skos:definition>
     <skos:prefLabel xml:lang="sv">melodinoter</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">sävelmänuotti</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_001">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <isothes:superGroup rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m83"/>
+    <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:seeAlso rdf:resource="http://rdaregistry.info/Elements/w/P10404"/>
+    <skos:definition xml:lang="fi">Liittää teoksen metatietoteoksen tiedonlähteeseen, joka on rakenteistamaton kuvailu jäljennettynä manifestaatiosta, joka on kuvailtavana.</skos:definition>
+    <skos:prefLabel xml:lang="fi">Merkintälähde</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Recording source</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_002">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä kotelo, joka on fyysisesti erotettavissa manifestaatiosta.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1001"/>
+    <skos:prefLabel xml:lang="en">container</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">kotelo</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_003">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä filmiruutu, joka sisältää tietoa päänimekkeestä, vastuullisuudesta, julkaisusta tai muusta manifestaatioon liittyvästä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1002"/>
+    <skos:prefLabel xml:lang="fi">alku- ja/tai lopputekstit</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">title frame</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_004">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä niteeseen sisältyvä sivu, joka sisältää tietoa päänimekkeestä, vastuullisuudesta, julkaisusta tai muusta manifestaatioon liittyvästä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1003"/>
+    <skos:prefLabel xml:lang="fi">nimiösivu</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">title page</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_005">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä digitaalisen manifestaation näkymä, joka sisältää tietoa päänimekkeestä, vastuullisuudesta, julkaisusta tai muusta manifestaatioon liittyvästä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1004"/>
+    <skos:prefLabel xml:lang="fi">nimiönäyttö</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">title screen</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_006">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä arkki arkkikokoelmassa, joka sisältää tietoa päänimekkeestä, vastuullisuudesta, julkaisusta tai muusta manifestaatioon liittyvästä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1005"/>
+    <skos:prefLabel xml:lang="fi">nimiöarkki</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">title sheet</skos:prefLabel>
+  </owl:Class>
+  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m20240403_007">
+    <dc11:source xml:lang="sv">RDA-term</dc11:source>
+    <dc11:source xml:lang="fi">RDA-termi</dc11:source>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="fi">Manifestaatioon sisältyvänä tiedonlähteenä kortti korttikokoelmassa, joka sisältää tietoa päänimekkeestä, vastuullisuudesta, julkaisusta tai muusta manifestaatioon liittyvästä.</skos:definition>
+    <skos:exactMatch rdf:resource="http://rdaregistry.info/termList/RDARecordingSources/1006"/>
+    <skos:prefLabel xml:lang="fi">nimiökortti</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">title card</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m2025">
     <dc11:source xml:lang="sv">RDA-term</dc11:source>
