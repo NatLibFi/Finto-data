@@ -336,6 +336,11 @@ slm:s1420  a             owl:Class , skos:Concept ;
         skos:prefLabel   "dokumenttiohjelmat"@fi , "dokumentärprogram"@sv ;
         skos:related     slm:s1078 , slm:s432 .
 
+slm:s1515  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1181 , yso-update:uudetmuuttuneetSv , slm:s518 ;
+        skos:prefLabel   "lastenromaanit"@fi ;
+        skos:related     slm:s767 , slm:s981 .
+
 slm:s550  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -368,7 +373,7 @@ slm:s1272  a             owl:Class , skos:Concept ;
         skos:prefLabel   "intermezzon (kammaroperor)"@sv , "intermezzot (kamarioopperat)"@fi .
 
 slm:s1356  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:b6782709-0e70-4e84-9866-fd4eeac4a8fc ;
+        rdfs:subClassOf  slm:s1516 ;
         skos:altLabel    "videokonst"@sv , "videoverk"@sv , "videoteokset"@fi ;
         skos:prefLabel   "videokonstverk"@sv , "videotaideteokset"@fi ;
         skos:related     slm:s1336 , slm:s307 .
@@ -537,6 +542,12 @@ slm:s1444  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1054 ;
         skos:altLabel    "sticktagningsspel (brädspel)"@sv ;
         skos:prefLabel   "stickspel (brädspel)"@sv , "tikkipelit (lautapelit)"@fi .
+
+slm:s1516  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2017027218> ;
+        skos:prefLabel   "kuvataideteokset"@fi ;
+        skos:scopeNote   "Termillä kuvaillaan ainoastaan konkreettisia kuvataideteoksia. Taideteoksia esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja soveltuvaa YSO-asiasanaa."@fi .
 
 slm:s1203  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
@@ -2945,12 +2956,6 @@ slm:s51  a               owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "hartauspuheet"@fi , "andakter"@sv .
 
-slm:2c57dfe8-47f0-4331-bc14-f2c1423285e2
-        a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1181 , yso-update:uudetmuuttuneetSv , slm:s518 ;
-        skos:prefLabel   "lastenromaanit"@fi ;
-        skos:related     slm:s767 , slm:s981 .
-
 slm:s431  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3776,13 +3781,6 @@ slm:s1254  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "instrumentaalinen viihdemusiikki"@fi , "instrumental underhållningsmusik"@sv .
 
-slm:b6782709-0e70-4e84-9866-fd4eeac4a8fc
-        a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2017027218> ;
-        skos:prefLabel   "kuvataideteokset"@fi ;
-        skos:scopeNote   "Termillä kuvaillaan ainoastaan konkreettisia kuvataideteoksia. Taideteoksia esittelevistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja soveltuvaa YSO-asiasanaa."@fi .
-
 slm:s1009  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s96 , slm:s474 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4246,7 +4244,7 @@ slm:s1218  a             owl:Class , skos:Concept ;
         skos:prefLabel   "populaarimusiikki"@fi , "populärmusik"@sv .
 
 slm:s1411  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:b6782709-0e70-4e84-9866-fd4eeac4a8fc ;
+        rdfs:subClassOf  slm:s1516 ;
         skos:altLabel    "teckningar (konst)"@sv ;
         skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2017027231> ;
         skos:prefLabel   "piirustukset (taide)"@fi , "teckningar"@sv ;
@@ -4522,7 +4520,7 @@ slm:s900  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Används om berättelser, vars handling fortsätter från verk till verk."@sv , "Käytetään kertomuksista, joiden juoni jatkuu teoksesta toiseen."@fi .
 
 slm:s122  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:b6782709-0e70-4e84-9866-fd4eeac4a8fc , yso-update:uudetmuuttuneetSv ;
+        rdfs:subClassOf  slm:s1516 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tarkoittaa kirjanmuotoista taiteilijan tekemää taideteosta."@fi , "Avser bildkonstverk i bokform, skapade av konstnärer."@sv ;
         skos:inScheme    slm:s285 ;
@@ -6144,7 +6142,7 @@ slm:s767  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "koululaisromaanit"@fi , "skolromaner"@sv ;
-        skos:related     slm:2c57dfe8-47f0-4331-bc14-f2c1423285e2 ;
+        skos:related     slm:s1515 ;
         skos:scopeNote   "Används om barn- och ungdomslitteratur som beskriver skolvärlden."@sv , "Käytetään lasten- ja nuortenkirjallisuudesta, joka käsittelee koulumaailmaa."@fi .
 
 slm:s168  a              owl:Class , skos:Concept ;
@@ -8280,7 +8278,7 @@ slm:s981  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p18228> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "sagoromaner"@sv , "saturomaanit"@fi ;
-        skos:related     slm:s1165 , slm:2c57dfe8-47f0-4331-bc14-f2c1423285e2 , slm:s1140 .
+        skos:related     slm:s1515 , slm:s1165 , slm:s1140 .
 
 slm:s1331  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1416 , slm:s1209 ;
