@@ -3,7 +3,7 @@
 # python command that uses the virtual environment for finto-skos-to-marc converter
 FINTO_SKOS_TO_MARC_PYTHON = /usr/local/virtualenvs/finto-skos-to-marc/bin/python3
 
-all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/yso-fin.mrcx yso/yso-swe.mrcx yso-aika/yso-aika-fin.mrcx yso-aika/yso-aika-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
+all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/yso-fin.mrcx yso/yso-swe.mrcx yso-aika/yso-aika-fin.mrcx yso-aika/yso-aika-swe.mrcx yso-paikat/yso-paikat-fin.mrcx yso-paikat/yso-paikat-swe.mrcx yso-vb/yso-vb-fin.mrcx yso-vb/yso-vb-swe.mrcx slm/slm-fin.mrcx slm/slm-swe.mrcx
 
 %-skos.rdf: %-skos.ttl
 	rapper -i turtle -o rdfxml-abbrev $^ >$@ || rm $@
@@ -34,3 +34,16 @@ slm/slm-fin.mrcx: slm/slm-skos.ttl
 
 slm/slm-swe.mrcx: slm/slm-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="slm" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="slm/modified-slm-sv.pkl" 2>slm/slm-swe.log
+
+yso-vb/yso-vb-fin.mrcx: yso-vb/vbyso-skos.ttl
+        $(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-fi.pkl" 2>yso-vb/yso-vb-fin.log
+
+yso-vb/yso-vb-swe.mrcx: yso-vb/vbyso-skos.ttl
+        $(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-sv.pkl" 2>yso-vb/yso-vb-swe.log
+
+
+
+
+
+
+
