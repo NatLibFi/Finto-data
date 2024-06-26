@@ -1,0 +1,58 @@
+
+
+
+
+
+cd Finto-data/vocabularies/mesh
+
+unzip filename.zip
+riot --validate filename.nt
+./fix-data.sh filename.nt
+riot --validate filename.nt
+
+riot -out turtle filename1.nt filename2.nt filename2.nt > swemesh.ttl
+
+
+git clone https://github.com/rdfhdt/hdt-java.git
+cd hdt-java
+pom.xml
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                      <tarLongFileMode>posix</tarLongFileMode>
+                    </configuration>
+                </plugin>
+mvn install
+
+
+# Make sure the script knows what java it is using. Give it some juice, since you're going to process over 20 million triplets in the next two minutes!
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+export _JAVA_OPTIONS="-Xmx8g"
+
+
+export PATH=$PATH:{PATH_TO_HDT}/hdt-java-package/target/hdt-java-package-3.0.10-distribution/hdt-java-package-3.0.10/bin/
+
+rdf2hdt.sh swemesh.ttl swemesh.hdt
+
+echo "Kootaan MeSH-julkaisuversio fintoon"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/1-prefLabels.rq`" > mesh-skos.nt
+echo "1/6"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/2-altLabels.rq`" >> mesh-skos.nt
+echo "2/6"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/3-scopeNotes.rq`" >> mesh-skos.nt
+echo "3/6"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/4-dates.rq`" >> mesh-skos.nt
+echo "4/6"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/5-broaders.rq`" >> mesh-skos.nt
+echo "5/6"
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/6-relateds.rq`" >> mesh-skos.nt
+echo "6/6"
+sed -i -e 's|http://id.nlm.nih.gov/mesh/2024/|http://www.yso.fi/onto/mesh/|g' mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/7-exactMatches.rq`" >> mesh-skos.nt
+sed -i -e 's|http://www.yso.fi/onto/mesh/2024/|http://www.yso.fi/onto/mesh/|g' mesh-skos.nt
+sed -i -e 's|http://id.nlm.nih.gov/mesh/2024/|http://id.nlm.nih.gov/mesh/|g' mesh-skos.nt
+
+riot -formatted turtle mesh-pf.ttl mesh-skos.nt > mesh-skos.ttl
+tar -czvf mesh.tar.gz swemesh.hdt
