@@ -36,14 +36,7 @@ slm/slm-swe.mrcx: slm/slm-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="slm" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="slm/modified-slm-sv.pkl" 2>slm/slm-swe.log
 
 yso-vb/yso-vb-fin.mrcx: yso-vb/vbyso-skos.ttl
-        $(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-fi.pkl" 2>yso-vb/yso-vb-fin.log
+	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-fi.pkl" 2>yso-vb/yso-vb-fin.log
 
 yso-vb/yso-vb-swe.mrcx: yso-vb/vbyso-skos.ttl
-        $(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-sv.pkl" 2>yso-vb/yso-vb-swe.log
-
-
-
-
-
-
-
+	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso-vb" --config_section="yso-vb" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso-vb/modified-yso-vb-sv.pkl" 2>yso-vb/yso-vb-swe.log
