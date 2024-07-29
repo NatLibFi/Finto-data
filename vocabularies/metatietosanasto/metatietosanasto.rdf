@@ -14,6 +14,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns:yso="http://www.yso.fi/onto/yso/">
   <rdf:Description rdf:about="http://purl.org/dc/terms/Point">
     <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/Policy"/>
@@ -695,12 +696,8 @@ Katso myös [http://urn.fi/URN:NBN:fi:au:mts:m1592], [http://urn.fi/URN:NBN:fi:a
     <dc11:source xml:lang="fi">Kansallinen RDA-termi</dc11:source>
     <dc11:source xml:lang="sv">Nationell RDA-term</dc11:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:example xml:lang="fi">Ikäsuositus 16+.</skos:example>
-    <skos:example xml:lang="fi">Ikäsuositus 2+.</skos:example>
-    <skos:example xml:lang="fi">Ikäsuositus 8+.</skos:example>
-    <skos:example xml:lang="sv">Åldersrekommendation 16+.</skos:example>
-    <skos:example xml:lang="sv">Åldersrekommendation 2+.</skos:example>
-    <skos:example xml:lang="sv">Åldersrekommendation 8+.</skos:example>
+    <skos:example xml:lang="fi">Ikäsuositus: 3–7-vuotiaille.</skos:example>
+    <skos:example xml:lang="fi">Ikäsuositus: yli 10-vuotiaille.</skos:example>
     <skos:prefLabel xml:lang="fi">Ikäsuositus</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Åldersrekommendation</skos:prefLabel>
   </owl:Class>
@@ -1687,13 +1684,6 @@ Katso myös [http://urn.fi/URN:NBN:fi:au:mts:m1592], [http://urn.fi/URN:NBN:fi:a
     <skos:definition xml:lang="fi">Kaikki julkaisun peruskappaleesta painamalla tai muulla menetelmällä tuotetut kappaleet, jotka sama kustantaja, yhteisö tai henkilö on julkaissut. (Kuvailusäännöt) (Eng. edition)</skos:definition>
     <skos:prefLabel xml:lang="fi">painos</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">upplaga</skos:prefLabel>
-  </owl:Class>
-  <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1245">
-    <dc11:source xml:lang="fi">Kansallinen RDA-termi</dc11:source>
-    <dc11:source xml:lang="sv">Nationell RDA-term</dc11:source>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="sv">Rekommenderas från 12 år och uppåt.</skos:prefLabel>
-    <skos:prefLabel xml:lang="fi">Suositellaan yli 12-vuotiaille.</skos:prefLabel>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m1246">
     <dc11:source xml:lang="fi">Kansallinen RDA-termi</dc11:source>
@@ -4666,8 +4656,6 @@ Materiaali, jota tavallisesti käytetään mikrofilmin tai mikrokortin pohjamate
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <skos:altLabel xml:lang="sv">Källa för titel</skos:altLabel>
     <skos:altLabel xml:lang="fi">Nimekkeen tiedonlähde</skos:altLabel>
-    <skos:example xml:lang="sv">Källa för huvudtitel: A list of maps of America / P.L. Phillips, sid 502.</skos:example>
-    <skos:example xml:lang="fi">Päänimekkeen tiedonlähde: A list of maps of America / P.L. Phillips, sivu 502.</skos:example>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1033"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1072"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1098"/>
@@ -10027,12 +10015,11 @@ Luettelo on uudistettu versio Hakutietojen (1991) liiteosaston luettelosta Käyt
     <rdf:type rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
     <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1088"/>
-    <skos:member rdf:resource="http://urn.fi/URN:NBN:fi:au:mts:m1245"/>
     <skos:prefLabel xml:lang="en">Age</skos:prefLabel>
     <skos:prefLabel xml:lang="fi">Ikä</skos:prefLabel>
     <skos:prefLabel xml:lang="sv">Ålder</skos:prefLabel>
     <skos:scopeNote xml:lang="sv">Används för att bestämma termer som beskriver kronologisk ålder hos medlemmar av en grupp (t.ex. Åldersrekommendation 3+). Även termer ur ALLFO kan användas [http://www.yso.fi/onto/yso/p5591].</skos:scopeNote>
-    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten kronologista ikää kuvaavia termejä (esim. Ikäsuositus 3+) Voidaan käyttää myös YSOn termejä [http://www.yso.fi/onto/yso/p5591].</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Käytetään määrittämään ryhmän jäsenten kronologista ikää kuvaavia termejä (esim. Ikäsuositus: yli 3-vuotiaille). Voidaan käyttää myös YSOn termejä [http://www.yso.fi/onto/yso/p5591].</skos:scopeNote>
   </owl:Class>
   <owl:Class rdf:about="http://urn.fi/URN:NBN:fi:au:mts:m22">
     <dc11:source xml:lang="fi">Kansallinen RDA-termi</dc11:source>
