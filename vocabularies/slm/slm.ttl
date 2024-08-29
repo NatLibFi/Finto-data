@@ -117,11 +117,12 @@ slm:s892  a              owl:Class , skos:Concept ;
         skos:prefLabel   "oratoriot"@fi , "oratorier"@sv .
 
 slm:s552  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p11598> ;
         skos:inScheme    slm:s285 ;
         skos:note        "Historiateos jossa tapahtumia kuvaillaan aikajärjestyksessä, aikakirja(t). Kronikoita on laadittu jo antiikin ajalla ja erityisesti keskiajalla."@fi , "Historieverk, i vilket händelser skildras kronologiskt, tidebok. Krönikor har sammanställts redan under antiken och i synnerhet på medeltiden."@sv ;
-        skos:prefLabel   "kronikat"@fi , "krönikor"@sv .
+        skos:prefLabel   "krönikor"@sv , "kronikat (historialliset teokset)"@fi .
 
 slm:s426  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s19 , slm:s713 ;
@@ -211,6 +212,7 @@ slm:s279  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s963 , slm:s1507 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "lagsamlingar"@sv , "lagar (författningssamlingar)"@sv , "lakikokoelmat"@fi , "lagböcker"@sv , "lakikirjat"@fi , "lait (lakikokoelmat)"@fi ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026611> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "säädöskokoelmat"@fi , "författningssamlingar"@sv ;
         skos:related     slm:s1482 .
@@ -3565,6 +3567,11 @@ slm:s1308  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "isonuottiset nuottijulkaisut"@fi , "musikalier med stor notskrift"@sv .
 
+slm:b3f51812-8c2d-43c2-867c-26383d5f08ff
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1485 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "valtiosäännöt"@fi .
+
 slm:s304  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s435 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3646,13 +3653,14 @@ slm:s1302  a             owl:Class , skos:Concept ;
         skos:related     slm:s1116 .
 
 slm:s445  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p17377> ;
         skos:inScheme    slm:s285 ;
-        skos:note        "Romaani, jossa ajan ja miljöön kuvaus, tapahtumien kulku ja usein ainakin osa teoksen keskeisistä henkilöistä ovat historiallisiksi havaittavia."@fi , "Roman, i vilken handlingen är förlagd till historien."@sv ;
+        skos:note        "Roman, i vilken handlingen är förlagd till historien."@sv ;
         skos:prefLabel   "historialliset romaanit"@fi , "historiska romaner"@sv ;
-        skos:related     slm:s45 , slm:s1111 .
+        skos:related     slm:s45 , slm:s1111 ;
+        skos:scopeNote   "Käytetään romaaneista, jotka tekijä on sijoittanut historialliseen aikaan."@fi .
 
 slm:s150  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -3884,6 +3892,11 @@ slm:s923  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:note        "Kaunokirjallisuutta, joka käsittelee modernin miehen elämää kevyesti ja humoristisesti."@fi , "Skönlitteratur som behandlar den moderna mannens liv lättsamt och humoristiskt."@sv ;
         skos:prefLabel   "lad lit"@fi , "lad lit"@sv .
+
+slm:4432bc56-19b4-470f-b525-0864fdaa2ebb
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1507 ;
+        skos:prefLabel   "valtiosopimukset"@fi .
 
 slm:s832  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -4169,6 +4182,7 @@ slm:s210  a              owl:Class , skos:Concept ;
 slm:s341  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1507 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026611> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "direktiv"@sv , "direktiivit"@fi .
 
@@ -6267,14 +6281,14 @@ slm:s12  a               owl:Class , skos:Concept ;
         skos:prefLabel   "isänmaallinen musiikki"@fi , "fosterländsk musik"@sv .
 
 slm:s936  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s929 ;
+        rdfs:subClassOf  slm:s929 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "historiska skådespel"@sv , "historiska pjäser"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p14889> ;
         skos:inScheme    slm:s285 ;
-        skos:note        "Historiallisiin tapahtumiin perustuva näytelmä; kronikkanäytelmä."@fi ;
         skos:prefLabel   "historialliset näytelmät"@fi , "historiska dramer"@sv ;
-        skos:related     slm:s959 .
+        skos:related     slm:s959 ;
+        skos:scopeNote   "Käytetään näytelmistä, jotka tekijä on sijoittanut historialliseen aikaan."@fi .
 
 slm:s285  a             owl:Class , skos:ConceptScheme ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6395,6 +6409,13 @@ slm:s755  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p13352> ;
         skos:prefLabel   "romanttiset komediat"@fi , "romantiska komedier"@sv ;
         skos:related     slm:s926 , slm:s520 , slm:s488 , slm:s982 , slm:s267 .
+
+slm:ca0a1782-e743-482f-948c-3b2a0797262b
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1507 ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026611> ;
+        skos:prefLabel   "asetukset"@fi ;
+        skos:related     slm:s1482 .
 
 slm:s904  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s618 ;
@@ -6786,6 +6807,11 @@ slm:s38  a               owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p22965> ;
         skos:prefLabel   "taistelupelit"@fi , "kampspel"@sv .
 
+slm:c76f2e84-cddc-4a80-b0a7-7d53dab445f5
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1507 ;
+        skos:prefLabel   "peruskirjat (juridiset teokset)"@fi .
+
 slm:s499  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -7159,6 +7185,7 @@ slm:aafe974d-8c34-4540-a210-524d9e8856f9
         a                owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 , yso-update:uudetmuuttuneetSv ;
         skos:altLabel    "käsikirjoitukset (kuunnelmat)"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026499> ;
         skos:prefLabel   "kuunnelmakäsikirjoitukset"@fi ;
         skos:related     slm:s312 .
 
@@ -7877,7 +7904,7 @@ slm:s746  a              owl:Class , skos:Concept ;
 
 slm:s992  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "krönikor (kolumner)"@sv ;
+        skos:altLabel   "kronikat (kolumnit)"@fi , "krönikor (kolumner)"@sv ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "kolumner"@sv , "kolumnit"@fi .
 
@@ -8699,9 +8726,10 @@ slm:s823  a              owl:Class , skos:Concept ;
 
 slm:s1482  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1507 ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026611> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "lagar"@sv , "lait"@fi ;
-        skos:related     slm:s279 .
+        skos:related     slm:s279 , slm:ca0a1782-e743-482f-948c-3b2a0797262b .
 
 slm:s760  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 ;
