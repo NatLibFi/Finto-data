@@ -63,7 +63,7 @@ slm:s1333  a             owl:Class , skos:Concept ;
         skos:prefLabel   "pastoraalityöt"@fi , "pastoralarbeten"@sv .
 
 slm:s950  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1332 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1332 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tietyn alueen asioita käsitteleviä sanomalehtiä."@fi , "Dagstidningar som behandlar angelägenheter i ett särskilt område."@sv ;
         skos:inScheme    slm:s593 ;
@@ -485,7 +485,7 @@ slm:s22  a               owl:Class , skos:Concept ;
         skos:prefLabel   "korttipelit"@fi , "kortspel"@sv .
 
 slm:s658  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "vetenskapstidskrifter"@sv , "vetenskapstidningar"@sv , "tieteelliset lehdet"@fi , "vetenskapliga tidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -534,7 +534,7 @@ slm:s1472  a             owl:Class , skos:Concept ;
         skos:prefLabel   "synagogmusik"@sv , "synagogamusiikki"@fi .
 
 slm:s142  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "mattidskrifter"@sv , "recepttidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -718,7 +718,7 @@ slm:s1118  a             owl:Class , skos:Concept ;
         skos:scopeNote   "Används om filmer som är nyproduktioner av någon tidigare film och dess manus."@sv , "Käytetään elokuvista, jotka ovat jonkin aikaisemman elokuvan ja sen käsikirjoituksen uusintatuotantoja."@fi .
 
 slm:s75  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "fototidskrifter"@sv ;
         skos:definition  "Tidningar som behandlar fotografering, videofilmning och kameror."@sv , "Valokuvausta, videokuvausta ja kameroita käsitteleviä lehtiä."@fi ;
@@ -841,13 +841,14 @@ slm:s490  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "menuetit"@fi , "menuetter"@sv .
 
-slm:s487  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:altLabel   "valokuvakirjat"@fi , "planschverk"@sv ;
-        skos:inScheme   slm:s285 ;
-        skos:prefLabel  "kuvateokset"@fi , "bildverk"@sv ;
-        skos:related    slm:s739 ;
-        skos:scopeNote  "Lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin käytetään termiä [http://urn.fi/URN:NBN:fi:au:slm:s739]."@fi , "Om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text används termen [http://urn.fi/URN:NBN:fi:au:slm:s739]."@sv .
+slm:s487  a              owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "valokuvakirjat"@fi , "planschverk"@sv ;
+        skos:inScheme    slm:s285 ;
+        skos:prefLabel   "kuvateokset"@fi , "bildverk"@sv ;
+        skos:related     slm:s739 ;
+        skos:scopeNote   "Käytä termiä [http://urn.fi/URN:NBN:fi:au:slm:s739] lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin."@fi , "Om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text används termen [http://urn.fi/URN:NBN:fi:au:slm:s739]."@sv .
 
 slm:s1461  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1044 ;
@@ -1373,7 +1374,7 @@ slm:s105  a              owl:Class , skos:Concept ;
         skos:prefLabel   "medlemstidningar"@sv , "jäsenlehdet"@fi .
 
 slm:s264  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "inredningstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -1405,6 +1406,14 @@ slm:s1270  a            owl:Class , skos:Concept ;
         skos:altLabel   "opinnäytetyöt"@fi , "examensarbeten"@sv , "päättötyöt"@fi , "slutarbeten"@sv ;
         skos:inScheme   slm:s285 ;
         skos:prefLabel  "opinnäytteet"@fi , "lärdomsprov"@sv .
+
+slm:d5e2fdac-9aaa-4a76-a60f-8be1cd8a6b6c
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1218 , yso-update:uudetmuuttuneetSv ;
+        skos:definition  "Länsi-Afrikassa 1960-luvulla syntynyt musiikkityyli, jossa on vaikutteita funk-, soul- ja jazz-musiikista sekä varhaisemmista länsiafrikkalaisista musiikkityyleistä kuten highlifesta."@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026088> ;
+        skos:prefLabel   "afrobeat"@fi ;
+        skos:related     slm:s655 , slm:s444 , slm:s777 , slm:s1124 .
 
 slm:s1128  a             owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -1526,7 +1535,8 @@ slm:s655  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026823> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "funk"@fi , "funk"@sv .
+        skos:prefLabel   "funk"@fi , "funk"@sv ;
+        skos:related     slm:d5e2fdac-9aaa-4a76-a60f-8be1cd8a6b6c .
 
 slm:s573  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
@@ -2102,6 +2112,12 @@ slm:s1115  a             owl:Class , skos:Concept ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "studiehandböcker"@sv , "opinto-oppaat"@fi .
 
+slm:f2c48799-50ff-49ca-9842-a91b79636776
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s844 ;
+        skos:altLabel    "sienikirjat"@fi ;
+        skos:prefLabel   "sienioppaat"@fi .
+
 slm:s366  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -2557,7 +2573,7 @@ slm:s138  a              owl:Class , skos:Concept ;
         skos:prefLabel   "ammattilehdet"@fi , "facktidskrifter"@sv .
 
 slm:s419  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "tekniktidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -2636,7 +2652,7 @@ slm:s507  a              owl:Class , skos:Concept ;
         skos:related     slm:s1250 .
 
 slm:s666  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "idrottstidningar"@sv , "idrottstidskrifter"@sv , "sporttidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -2727,7 +2743,7 @@ slm:s1421  a             owl:Class , skos:Concept ;
         skos:prefLabel   "tärningsspel"@sv , "noppapelit"@fi .
 
 slm:s515  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "militärtidskrifter"@sv , "försvarstidningar"@sv , "försvarstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -2797,6 +2813,12 @@ slm:s359  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p22705> ;
         skos:prefLabel   "luontodokumentit"@fi , "naturdokumentärer"@sv ;
         skos:related     slm:s85 , slm:s1399 .
+
+slm:4d691ca6-0a77-4d98-b01b-7a7d0cc2fd07
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s844 ;
+        skos:altLabel    "lajinmääritysoppaat (linnut)"@fi ;
+        skos:prefLabel   "lintuoppaat"@fi .
 
 slm:s898  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1412 ;
@@ -3051,7 +3073,7 @@ slm:s245  a             owl:Class , skos:Concept ;
         skos:prefLabel  "psalmböcker"@sv , "virsikirjat"@fi .
 
 slm:s415  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "ekonomitidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -3071,7 +3093,7 @@ slm:s890  a              owl:Class , skos:Concept ;
         skos:prefLabel   "divertimentot"@fi , "divertimenton"@sv .
 
 slm:s39  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1332 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1332 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "lehdet"@fi , "päivälehdet"@fi ;
         skos:inScheme    slm:s593 ;
@@ -3246,6 +3268,14 @@ slm:s868  a              owl:Class , skos:Concept ;
         skos:prefLabel   "moraliteter"@sv , "moraliteetit"@fi ;
         skos:related     slm:s929 , slm:s802 , slm:s254 .
 
+slm:74c1a197-8561-4cc5-8971-11d7d48dc197
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s713 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "leu'ddit"@fi , "leuddit"@fi , "leeud'it"@fi , "leeudʹit"@fi ;
+        skos:definition  "Kolttasaamelaisten perinteeseen kuuluva laulu."@fi ;
+        skos:prefLabel   "leuʹddit"@fi ;
+        skos:related     slm:s502 .
+
 slm:s826  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1075 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -3417,7 +3447,7 @@ slm:s72  a              owl:Class , skos:Concept ;
         skos:scopeNote  "Används om verk som innehåller vulgärt språkbruk."@sv , "Käytetään teoksista, joissa käytetään esim. karkeaa kieltä."@fi .
 
 slm:s104  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "bröllopstidningar"@sv , "häälehdet"@fi .
@@ -3632,9 +3662,9 @@ slm:s150  a              owl:Class , skos:Concept ;
         skos:prefLabel   "cha-cha-cha"@sv , "cha-cha-chat"@fi .
 
 slm:s886  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "pornolehdet"@fi , "porrtidningar"@sv ;
+        skos:altLabel    "pornolehdet"@fi , "porrtidningar"@sv , "miestenlehdet (seksilehdet)"@fi ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "seksilehdet"@fi , "sextidningar"@sv .
 
@@ -3994,7 +4024,7 @@ slm:s503  a              owl:Class , skos:Concept ;
         skos:related     slm:s49 , slm:s338 , slm:s1134 .
 
 slm:s311  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "båttidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -4084,7 +4114,8 @@ slm:s444  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026858> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "highlife"@fi , "highlife"@sv .
+        skos:prefLabel   "highlife"@fi , "highlife"@sv ;
+        skos:related     slm:d5e2fdac-9aaa-4a76-a60f-8be1cd8a6b6c .
 
 slm:s385  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 ;
@@ -4102,7 +4133,7 @@ slm:s839  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään teoksista, joissa on käytetty kollaasitekniikkaa eli tekijä käyttää hyväkseen jo olemassa olevia tekstejä yhdistelemällä niitä toisiinsa tai omaan tekstiinsä"@fi , "Används om verk, i vilka collageteknik använts, d.v.s. författaren har utnyttjat redan existerande texter genom att kombinera dem med varandra eller med egen text."@sv .
 
 slm:s1025  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "vauvalehdet"@fi , "babytidningar"@sv .
@@ -4233,7 +4264,7 @@ slm:s148  a              owl:Class , skos:Concept ;
         skos:prefLabel   "resehandböcker"@sv , "matkaoppaat"@fi .
 
 slm:s1004  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "turisttidskrifter"@sv , "resetidningar"@sv , "resetidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -4276,7 +4307,7 @@ slm:s887  a              owl:Class , skos:Concept ;
         skos:prefLabel   "sarjat (musiikki)"@fi , "sviter"@sv .
 
 slm:s422  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "filmtidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -4347,7 +4378,7 @@ slm:s188  a              owl:Class , skos:Concept ;
         skos:prefLabel   "psykologiset elokuvat"@fi , "psykologiska filmer"@sv .
 
 slm:s1100  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tidningar som behandlar olika delområden för boende (byggande, underhåll av byggnad och renovering, inredning)."@sv , "Asumisen eri osa-alueita (rakentaminen, rakennuksen kunnossapito ja remontointi, sisustus) käsitteleviä lehtiä."@fi ;
         skos:inScheme    slm:s593 ;
@@ -4383,7 +4414,7 @@ slm:s968  a              owl:Class , skos:Concept ;
         skos:related     slm:s135 , slm:s387 , slm:s698 .
 
 slm:s125  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1332 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1332 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "partitidningar"@sv , "puoluelehdet"@fi .
@@ -4449,7 +4480,7 @@ slm:s690  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään teoksista, joissa kauhu syntyy yliluonnollisten voimien uhatessa normaalia elämää eläviä ihmisiä."@fi , "Används om verk som beskriver övernaturliga krafter och den skräck de skapar hos normalt levande människor."@sv .
 
 slm:s630  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "skogstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -4555,7 +4586,7 @@ slm:s421  a              owl:Class , skos:Concept ;
         skos:prefLabel   "viihdemusiikki"@fi , "underhållningsmusik"@sv .
 
 slm:s76  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "moottoripyörälehdet"@fi , "motorcykeltidningar"@sv .
@@ -4643,7 +4674,7 @@ slm:s893  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kielioppaat"@fi , "språkhandböcker"@sv .
 
 slm:s10  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "motionstidningar"@sv , "liikuntalehdet"@fi .
@@ -5027,7 +5058,7 @@ slm:s783  a              owl:Class , skos:Concept ;
         skos:prefLabel   "inventioner"@sv , "inventiot"@fi .
 
 slm:s1187  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "byggnadstidskrifter"@sv , "byggtidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -5129,7 +5160,7 @@ slm:s903  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään korealaisista manhwasarjakuvista."@fi , "Används om koreanska tecknade manhwaserier."@sv .
 
 slm:s460  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "teatertidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -5183,7 +5214,7 @@ slm:s1102  a             owl:Class , skos:Concept ;
         skos:related     slm:s819 , slm:s239 , slm:s80 .
 
 slm:s306  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "speltidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -5221,7 +5252,7 @@ slm:s920  a              owl:Class , skos:Concept ;
         skos:prefLabel   "foxtrotit"@fi , "foxtroter"@sv .
 
 slm:s384  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "lemmikkieläinlehdet"@fi , "lemmikkilehdet"@fi ;
         skos:inScheme    slm:s593 ;
@@ -5475,7 +5506,7 @@ slm:s1285  a             owl:Class , skos:Concept ;
         skos:prefLabel   "tutkimusraportit"@fi , "forskningsrapporter"@sv .
 
 slm:s1065  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "käsityölehdet"@fi , "handarbetstidningar"@sv .
@@ -5501,7 +5532,7 @@ slm:s1169  a             owl:Class , skos:Concept ;
         skos:related     slm:s1406 , slm:s1251 , slm:s1127 .
 
 slm:s6  a                owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "yleisaikakauslehdet"@fi , "allmänna tidskrifter"@sv .
@@ -5954,11 +5985,11 @@ slm:s293  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kamarimusiikki"@fi , "kammarmusik"@sv .
 
 slm:s477  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s844 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "kasvikirjat"@fi , "växtböcker"@sv ;
+        skos:altLabel    "kasviot"@fi , "kasvikirjat"@fi , "växtböcker"@sv ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "kasviot"@fi , "floror"@sv .
+        skos:prefLabel   "kasvioppaat"@fi , "floror"@sv .
 
 slm:s561  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
@@ -5974,7 +6005,7 @@ slm:s220  a              owl:Class , skos:Concept ;
         skos:prefLabel   "kotiseutukuvaukset"@fi , "hembygdsskildringar"@sv .
 
 slm:s1042  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "naturtidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -6104,7 +6135,7 @@ slm:s830  a              owl:Class , skos:Concept ;
         skos:prefLabel   "nonetter"@sv , "nonetot"@fi .
 
 slm:s916  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "hälsotidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -6118,14 +6149,14 @@ slm:s307  a              owl:Class , skos:Concept ;
         skos:related     slm:s1356 .
 
 slm:s809  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "trädgårdstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "puutarhalehdet"@fi , "trädgårdstidningar"@sv .
 
 slm:s613  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "autolehdet"@fi , "biltidningar"@sv .
@@ -6157,7 +6188,7 @@ slm:s168  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Används om verk avsedda för ungdomar."@sv , "Käytetään nuorille tarkoitetuista teoksista."@fi .
 
 slm:s599  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1332 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1332 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "arbetartidningar"@sv , "työväenlehdet"@fi .
@@ -6556,7 +6587,7 @@ slm:s13  a               owl:Class , skos:Concept ;
         skos:related     slm:s239 .
 
 slm:s1380  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         skos:altLabel    "festivaltidningar"@sv , "programtidningar"@sv , "festivaalilehdet"@fi ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "tapahtumalehdet"@fi , "evenemangstidningar"@sv .
@@ -6566,7 +6597,8 @@ slm:s502  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2017026024> ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "joiut"@fi , "jojkar"@sv .
+        skos:prefLabel   "joiut"@fi , "jojkar"@sv ;
+        skos:related     slm:74c1a197-8561-4cc5-8971-11d7d48dc197 .
 
 slm:s917  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
@@ -6879,7 +6911,7 @@ slm:s910  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään lastenkirjoista, joissa on pelkästään tai lähes pelkästään kuvia ja jotka on tarkoitettu lasten ensimmäisiksi kirjoiksi."@fi , "Används om barnböcker, som innehåller enbart bilder och som är avsedda att vara barnets första böcker."@sv .
 
 slm:s652  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "kriminaltidningar"@sv , "rikoslehdet"@fi .
@@ -7081,7 +7113,8 @@ slm:s777  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1186 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s861 ;
-        skos:prefLabel   "afrorock"@sv , "afro-rock"@fi .
+        skos:prefLabel   "afrorock"@sv , "afro-rock"@fi ;
+        skos:related     slm:d5e2fdac-9aaa-4a76-a60f-8be1cd8a6b6c .
 
 slm:s438  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s590 , slm:s312 ;
@@ -7121,6 +7154,13 @@ slm:s1137  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026935> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "mikrotonal musik"@sv , "mikrotonaalinen musiikki"@fi .
+
+slm:aafe974d-8c34-4540-a210-524d9e8856f9
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s929 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "käsikirjoitukset (kuunnelmat)"@fi ;
+        skos:prefLabel   "kuunnelmakäsikirjoitukset"@fi ;
+        skos:related     slm:s312 .
 
 slm:s1223  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -7407,17 +7447,18 @@ slm:s535  a              owl:Class , skos:Concept ;
         skos:related     slm:s1440 .
 
 slm:s1012  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1332 ;
+        rdfs:subClassOf  slm:s1442 , slm:s1332 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "skandaltidningar"@sv , "sensationstidningar"@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "sensaatiolehdet"@fi , "sensationspress"@sv .
 
 slm:s844  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s202 ;
+        rdfs:subClassOf  slm:s202 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "luonto-oppaat"@fi , "naturguider"@sv .
+        skos:prefLabel   "luonto-oppaat"@fi , "naturguider"@sv ;
+        skos:scopeNote   "Käytetään teoksista, jotka esittelevät luontoa ja siinä esiintyvää lajistoa laajasti, ja joiden avulla voidaan oppia tunnistamaan eri lajeja."@fi .
 
 slm:s1486  a              owl:Class , skos:Concept ;
         rdfs:subClassOf   slm:s1420 , slm:s432 ;
@@ -7601,7 +7642,7 @@ slm:s1340  a             owl:Class , skos:Concept ;
         skos:prefLabel   "pussel"@sv , "palapelit"@fi .
 
 slm:s89  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tidningar riktade till män. För tidningar med nakenbilder och övrigt sexuellt upphetsande innehåll används termen sextidningar."@sv , "Miehille suunnattuja lehtiä. Tarkoitettaessa aikuisviihdeaineistoa sisältäviä lehtiä käytetään termiä seksilehdet."@fi ;
         skos:inScheme    slm:s593 ;
@@ -7765,7 +7806,7 @@ slm:s118  a              owl:Class , skos:Concept ;
         skos:prefLabel   "mykkä sarjakuva"@fi , "pantomimserier (tecknade serier)"@sv .
 
 slm:s398  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "lantbrukstidskrifter"@sv , "jordbrukstidningar"@sv ;
         skos:definition  "Tidningar som behandlar jordbruk, produktionsdjur eller pälsnäring."@sv , "Maanviljelystä, tuotantoeläimiä tai turkistaloutta käsitteleviä lehtiä."@fi ;
@@ -7824,7 +7865,7 @@ slm:s312  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p15814> ;
         skos:prefLabel   "kuunnelmat"@fi , "hörspel"@sv ;
-        skos:related     slm:s929 , slm:s193 , slm:s181 .
+        skos:related     slm:s929 , slm:s193 , slm:s181 , slm:aafe974d-8c34-4540-a210-524d9e8856f9 .
 
 slm:s746  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s245 , slm:s409 ;
@@ -7949,7 +7990,7 @@ slm:s1124  a             owl:Class , skos:Concept ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026070> ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "juju"@sv , "juju"@fi ;
-        skos:related     slm:s1188 .
+        skos:related     slm:d5e2fdac-9aaa-4a76-a60f-8be1cd8a6b6c , slm:s1188 .
 
 slm:s91  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -7995,7 +8036,7 @@ slm:s1032  a             owl:Class , skos:Concept ;
         skos:prefLabel   "rymdoperor"@sv , "avaruusoopperat"@fi .
 
 slm:s213  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "opinionstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -8163,7 +8204,7 @@ slm:s414  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Används om verk med tecknade illustrationer som döljer figurer att leta fram."@sv , "Käytetään teoksista, joiden piirroskuvitukseen on piilotettu etsittäviä hahmoja."@fi .
 
 slm:s161  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tidningar riktade till kvinnor."@sv , "Naisille suunnattuja lehtiä."@fi ;
         skos:inScheme    slm:s593 ;
@@ -8190,7 +8231,7 @@ slm:s377  a              owl:Class , skos:Concept ;
         skos:prefLabel   "inredningsguider"@sv , "sisustusoppaat"@fi .
 
 slm:s789  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "it-tidningar"@sv , "it-tidskrifter"@sv , "datortidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -8204,7 +8245,7 @@ slm:s1415  a             owl:Class , skos:Concept ;
         skos:related     slm:s739 , slm:s1181 .
 
 slm:s1057  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "informationstidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -8588,7 +8629,7 @@ slm:s278  a              owl:Class , skos:Concept ;
         skos:prefLabel   "lastenpelit"@fi , "barnspel"@sv .
 
 slm:s496  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Tidningar som behandlar jakt, fiske och vildmarksliv."@sv , "Metsästystä, kalastusta ja eräretkeilyä käsitteleviä lehtiä."@fi ;
         skos:inScheme    slm:s593 ;
@@ -9708,7 +9749,7 @@ slm:s1087  a             owl:Class , skos:Concept ;
         skos:related     slm:s763 , slm:s1024 , slm:s607 , slm:s1119 , slm:s190 , slm:s1030 , slm:s612 , slm:s1022 , slm:s1131 , slm:s1071 , slm:s1028 , slm:s1161 .
 
 slm:s1003  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "modetidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -10082,9 +10123,9 @@ slm:s1161  a             owl:Class , skos:Concept ;
         skos:related     slm:s763 , slm:s1423 , slm:s1024 , slm:s607 , slm:s1119 , slm:s190 , slm:s612 , slm:s858 , slm:s1131 , slm:s1071 , slm:s1028 , slm:s397 , slm:s1087 .
 
 slm:s429  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:definition  "Tidningar som behandlar och marknadsför produkter från företag inom ett visst område eller en viss bransch. I en marknadsföringstidning kan vilket företag som helst annonsera, vilket skiljer den från en kundtidning. En kundtidning är alltid en produkt från ett företag eller samfund. En marknadsföringstidning ges ut av en särskild utgivare."@sv , "Lehtiä, jotka käsittelevät ja markkinoivat tietyn alueen tai keskittymän yritysten tuotteita. Eroavat asiakaslehdistä siinä, että lehdessä voi ilmoittaa mikä yritys tahansa. Asiakaslehti on aina yhden yrityksen tai muun yhteisän tuote; markkinointilehteä kustantaa erillinen kustantaja. YSA"@fi ;
+        skos:definition  "Lehtiä, jotka käsittelevät ja markkinoivat tietyn alueen tai keskittymän yritysten tuotteita. Eroavat asiakaslehdistä siinä, että lehdessä voi ilmoittaa mikä yritys tahansa. Asiakaslehti on aina yhden yrityksen tai muun yhteisän tuote; markkinointilehteä kustantaa erillinen kustantaja."@fi , "Tidningar som behandlar och marknadsför produkter från företag inom ett visst område eller en viss bransch. I en marknadsföringstidning kan vilket företag som helst annonsera, vilket skiljer den från en kundtidning. En kundtidning är alltid en produkt från ett företag eller samfund. En marknadsföringstidning ges ut av en särskild utgivare."@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "marknadsföringstidningar"@sv , "markkinointilehdet"@fi .
 
