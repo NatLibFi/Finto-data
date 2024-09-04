@@ -1,9 +1,11 @@
+# main.py
 import logging
 from sparql_decorator import sparql_query
 from rdflib import Graph, URIRef, Literal, Namespace, XSD
 
 logging.basicConfig(level=logging.DEBUG)
 
+# Namespaces
 skos = Namespace("http://www.w3.org/2004/02/skos/core#")
 yso = Namespace("http://www.yso.fi/onto/yso/")
 wd = Namespace("http://www.wikidata.org/entity/")
@@ -27,14 +29,14 @@ WHERE {
         FILTER regex(str(?s), "^http://www.yso.fi/onto/yso/")
         FILTER(STRSTARTS(STR(?o), "http://www.wikidata.org"))
     }
-} LIMIT 10000
+}
 """
 
 endpoint_finto = 'http://api.dev.finto.fi/sparql'
 params_finto = {'query': sparql_query_yso}
 headers = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-@sparql_query(endpoint=endpoint_finto, params=params_finto, headers=headers)
+@sparql_query(endpoint=endpoint_finto, params=params_finto, headers=headers, limit=1000)
 def process_yso_results(data):
     g_yso = Graph()
 
@@ -71,14 +73,14 @@ SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
     ?derivedFrom pr:P813 ?retrieved .
   }
   OPTIONAL { ?statement rdfs:label ?subjectNamedAs . }
-} LIMIT 9999
+}
 """
 
 endpoint_wikidata = 'https://query.wikidata.org/sparql'
 params_wikidata = {'query': sparql_query_wikidata}
 headers_wikidata = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-@sparql_query(endpoint=endpoint_wikidata, params=params_wikidata, headers=headers_wikidata)
+@sparql_query(endpoint=endpoint_wikidata, params=params_wikidata, headers=headers_wikidata, limit=1000)
 def process_wikidata_results(data):
     g_wikidata = Graph()
 
