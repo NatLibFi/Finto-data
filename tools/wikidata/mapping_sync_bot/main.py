@@ -35,8 +35,9 @@ params_finto = {'query': SPARQL_QUERY_YSO}
 headers = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
 @sparql_query(endpoint=ENDPOINT_FINTO, params=params_finto, headers=headers, limit=1000)
-def process_yso_results(data):
+def process_yso_results(*args):
     """
+    Note! def process_yso_results(*args, **kwargs): oli alkuperäinen
     Tee tähän docstring, kun homma vakiintuu
 
     Parameters:
@@ -44,6 +45,7 @@ def process_yso_results(data):
     Returns:
     
     """
+    data = args[0]
     g_yso = Graph()
 
     logging.debug(
@@ -99,9 +101,11 @@ ENDPOINT_WIKIDATA = 'https://query.wikidata.org/sparql'
 params_wikidata = {'query': SPARQL_QUERY_WIKIDATA}
 headers_wikidata = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-@sparql_query(endpoint=ENDPOINT_WIKIDATA, params=params_wikidata, headers=headers_wikidata, limit=1000)
-def process_wikidata_results(data):
+@sparql_query(endpoint=ENDPOINT_WIKIDATA, params=params_wikidata, \
+              headers=headers_wikidata, limit=1000)
+def process_wikidata_results(*args):
     """
+    Note! def process_wikidata_results(*args)(*args, **kwargs): oli alkuperäinen
     Tee tähän docstring, kun homma vakiintuu
 
     Parameters:
@@ -109,6 +113,7 @@ def process_wikidata_results(data):
     Returns:
     
     """
+    data = args[0]
     g_wikidata = Graph()
 
     logging.debug(

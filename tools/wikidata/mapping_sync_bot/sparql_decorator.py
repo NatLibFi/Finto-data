@@ -17,7 +17,6 @@ def sparql_query(endpoint, params=None, headers=None, limit=1000):
             local_headers = headers if headers is not None else \
                 {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-
             if params is None:
                 raise ValueError("Parametrien täytyy sisältää sparkkelin ja formaatin ..")
 
@@ -32,7 +31,8 @@ def sparql_query(endpoint, params=None, headers=None, limit=1000):
                 local_params['query'] = paginated_query
 
                 try:
-                    response = requests.get(endpoint, params=local_params, headers=local_headers, timeout=300)
+                    response = requests.get(endpoint, params=local_params, \
+                                            headers=local_headers, timeout=300)
                     response.raise_for_status()  # HTTP errors / 4xx ja 5xx
                     data = response.json()
 
