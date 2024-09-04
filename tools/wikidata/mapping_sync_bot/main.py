@@ -1,11 +1,9 @@
-# main.py
-import logging
-from sparql_decorator import sparql_query
+"""Kirjota tähän docstring, kun koodi on valmis"""
+import logging # Lokitusta varten
 from rdflib import Graph, URIRef, Literal, Namespace, XSD
-
+from sparql_decorator import sparql_query
 logging.basicConfig(level=logging.DEBUG)
 
-# Namespaces
 skos = Namespace("http://www.w3.org/2004/02/skos/core#")
 yso = Namespace("http://www.yso.fi/onto/yso/")
 wd = Namespace("http://www.wikidata.org/entity/")
@@ -17,7 +15,7 @@ wikibase = Namespace("http://wikiba.se/ontology#")
 pr = Namespace("http://www.wikidata.org/prop/reference/")
 
 # === YSO ===
-sparql_query_yso = """
+SPARQL_QUERY_YSO = """
 PREFIX yso: <http://www.yso.fi/onto/yso/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT ?s ?o ?label
@@ -32,15 +30,26 @@ WHERE {
 }
 """
 
-endpoint_finto = 'http://api.dev.finto.fi/sparql'
-params_finto = {'query': sparql_query_yso}
+ENDPOINT_FINTO = 'http://api.dev.finto.fi/sparql'
+params_finto = {'query': SPARQL_QUERY_YSO}
 headers = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-@sparql_query(endpoint=endpoint_finto, params=params_finto, headers=headers, limit=1000)
+@sparql_query(endpoint=ENDPOINT_FINTO, params=params_finto, headers=headers, limit=1000)
 def process_yso_results(data):
+    """
+    Tee tähän docstring, kun homma vakiintuu
+
+    Parameters:
+    
+    Returns:
+    
+    """
     g_yso = Graph()
 
-    logging.debug(f"YSOn tuloksia haettu kaikkiaan: {len(data['results']['bindings'])}")
+    logging.debug(
+        "YSOn tuloksia haettu kaikkiaan: %d",
+        len(data['results']['bindings'])
+    )
 
     for i, result in enumerate(data['results']['bindings']):
         try:
@@ -49,12 +58,22 @@ def process_yso_results(data):
             label_lang = result['label'].get('xml:lang', None)
             label = Literal(result['label']['value'], lang=label_lang)
 
-            logging.debug(f"YSO: Prosessoidaan kohdetta {i + 1}: YSO URI={yso_uri}, Wikidata URI={wikidata_uri}, Label={label}")
+            logging.debug(
+                "YSO: Prosessoidaan kohdetta %d: YSO URI=%s, Wikidata URI=%s, Label=%s",
+                i + 1, yso_uri, wikidata_uri, label)
 
             g_yso.add((yso_uri, skos.prefLabel, label))
             g_yso.add((yso_uri, skos.closeMatch, wikidata_uri))
-        except Exception as e:
-            logging.error(f"YSO: Virhe käsiteltäessä kohdetta {i + 1}: {e}")
+
+        except KeyError as e:
+            logging.error(
+                "YSO: Kohteelta %d: puuttuu avain %s",
+                i + 1, str(e))
+
+        except ValueError as e:
+            logging.error(
+                "YSO: Arvoon liittyvä ongelma kohteessa %d: %s",
+                i + 1, str(e))
 
     g_yso.serialize("yso_output.ttl", format="turtle")
     print("YSOn dataa tulostettu tiedostoon yso_output.ttl")
@@ -62,7 +81,7 @@ def process_yso_results(data):
 process_yso_results()
 
 # === Wikidata ===
-sparql_query_wikidata = """
+SPARQL_QUERY_WIKIDATA = """
 SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
   ?item p:P2347 ?statement .
   ?statement ps:P2347 ?yso ;
@@ -76,15 +95,25 @@ SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
 }
 """
 
-endpoint_wikidata = 'https://query.wikidata.org/sparql'
-params_wikidata = {'query': sparql_query_wikidata}
+ENDPOINT_WIKIDATA = 'https://query.wikidata.org/sparql'
+params_wikidata = {'query': SPARQL_QUERY_WIKIDATA}
 headers_wikidata = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
 
-@sparql_query(endpoint=endpoint_wikidata, params=params_wikidata, headers=headers_wikidata, limit=1000)
+@sparql_query(endpoint=ENDPOINT_WIKIDATA, params=params_wikidata, headers=headers_wikidata, limit=1000)
 def process_wikidata_results(data):
+    """
+    Tee tähän docstring, kun homma vakiintuu
+
+    Parameters:
+    
+    Returns:
+    
+    """
     g_wikidata = Graph()
 
-    logging.debug(f"Wikidata: Tuloksia haettu kaikkiaan: {len(data['results']['bindings'])}")
+    logging.debug(
+        "Wikidata: Tuloksia haettu kaikkiaan: %d",
+        len(data['results']['bindings']))
 
     for i, result in enumerate(data['results']['bindings']):
         try:
@@ -92,10 +121,15 @@ def process_wikidata_results(data):
             yso_uri = URIRef('http://www.yso.fi/onto/yso/p' + result['yso']['value'])
             rank = URIRef(result['rank']['value'])
             stated_in = URIRef(result['statedIn']['value']) if 'statedIn' in result else None
-            subject_named_as = Literal(result['subjectNamedAs']['value']) if 'subjectNamedAs' in result else None
-            retrieved_date = Literal(result['retrieved']['value'], datatype=XSD.dateTime) if 'retrieved' in result else None
+            subject_named_as = (Literal(result['subjectNamedAs']['value'])
+                                if 'subjectNamedAs' in result else None)
+            retrieved_date = (Literal(result['retrieved']['value'], datatype=XSD.dateTime)
+                              if 'retrieved' in result else None)
 
-            logging.debug(f"Wikidata: Prosessoidaan kohdetta {i + 1}: Item={item}, YSO URI={yso_uri}, Rank={rank}")
+            logging.debug(
+                "Wikidata: Prosessoidaan kohdetta %d: Item=%s, YSO URI=%s, Rank=%s",
+                i + 1, item, yso_uri, rank)
+
 
             g_wikidata.add((item, skos.exactMatch, yso_uri))
             g_wikidata.add((item, wikibase.rank, rank))
@@ -106,8 +140,15 @@ def process_wikidata_results(data):
             if retrieved_date:
                 g_wikidata.add((item, prov.generatedAtTime, retrieved_date))
 
-        except Exception as e:
-            logging.error(f"Wikidata: Virhe prosessoitaessa kohdetta {i + 1}: {e}")
+        except KeyError as e:
+            logging.error(
+                "Wikidata: Kohteelta %d: puuttuu avain %s",
+                i + 1, str(e))
+
+        except ValueError as e:
+            logging.error(
+                "Wikidata: Arvoon liittyvä ongelma kohteessa %d: %s",
+                i + 1, str(e))
 
     g_wikidata.serialize("wikidata_output.ttl", format="turtle")
     print("Wikidatan data tallennettu kohteeseen wikidata_output.ttl")
