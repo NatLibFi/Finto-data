@@ -1,7 +1,9 @@
 """Kirjota tähän docstring, kun koodi on valmis"""
 import logging # Lokitusta varten
+import pprint
 from rdflib import Graph, URIRef, Literal, Namespace, XSD
 from sparql_decorator import sparql_query
+
 logging.basicConfig(level=logging.DEBUG)
 
 skos = Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -14,7 +16,17 @@ rdfs = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 wikibase = Namespace("http://wikiba.se/ontology#")
 pr = Namespace("http://www.wikidata.org/prop/reference/")
 
-# === YSO ===
+g_yso_trans = Graph()
+
+lines = [
+    "<html>",
+    "<head><title>Deprekoitu Wikidatassa mutta on YSO:ssa</title></head>",
+    "<body>",
+    "<h1>Deprekoidut entiteetit</h1>"
+]
+
+
+# === YSO BIG DATA===
 SPARQL_QUERY_YSO = """
 PREFIX yso: <http://www.yso.fi/onto/yso/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -53,6 +65,9 @@ def process_yso_results(*args):
         len(data['results']['bindings'])
     )
 
+    # with open('raaka_yso_data.txt', 'w') as file:
+    #     file.write(pprint.pformat(data))
+
     for i, result in enumerate(data['results']['bindings']):
         try:
             yso_uri = URIRef(result['s']['value'])
@@ -80,9 +95,11 @@ def process_yso_results(*args):
     g_yso.serialize("yso_output.ttl", format="turtle")
     print("YSOn dataa tulostettu tiedostoon yso_output.ttl")
 
+    g_yso_trans = g_yso
+
 process_yso_results()
 
-# === Wikidata ===
+# === Wikidata BIG DATA ===
 SPARQL_QUERY_WIKIDATA = """
 SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
   ?item p:P2347 ?statement .
@@ -120,6 +137,9 @@ def process_wikidata_results(*args):
         "Wikidata: Tuloksia haettu kaikkiaan: %d",
         len(data['results']['bindings']))
 
+    # with open('raaka_wikidatan_data.txt', 'w') as file:
+    #     file.write(pprint.pformat(data))
+
     for i, result in enumerate(data['results']['bindings']):
         try:
             item = URIRef(result['item']['value'])
@@ -134,7 +154,6 @@ def process_wikidata_results(*args):
             logging.debug(
                 "Wikidata: Prosessoidaan kohdetta %d: Item=%s, YSO URI=%s, Rank=%s",
                 i + 1, item, yso_uri, rank)
-
 
             g_wikidata.add((item, skos.exactMatch, yso_uri))
             g_wikidata.add((item, wikibase.rank, rank))
@@ -157,5 +176,40 @@ def process_wikidata_results(*args):
 
     g_wikidata.serialize("wikidata_output.ttl", format="turtle")
     print("Wikidatan data tallennettu kohteeseen wikidata_output.ttl")
+
+    # Lopputulokset:
+
+    # On deprekoitu Wikidatassa:
+
+    deprecated_in_wikidata_query = """
+        SELECT ?entity ?predicate ?object
+        WHERE {
+            ?entity <http://wikiba.se/ontology#rank> <http://wikiba.se/ontology#DeprecatedRank> .
+            ?entity ?predicate ?object .
+        }
+    """
+
+    g_wikidata_interim_reports = Graph()
+
+    deprecated_in_wikidata_results = g_wikidata.query(deprecated_in_wikidata_query)
+
+    for row in deprecated_in_wikidata_results:
+        entity, predicate, object_ = row
+
+        g_wikidata_interim_reports.add((entity, predicate, object_))
+
+        if object_ and str(object_).startswith("http://www.yso.fi/onto/yso/"):
+            # print(f"Object {object_} starts with the desired YSO prefix")
+            lines.append(f'<p><a href="{object_}">{object_}</a> on deprekoitu Wikidatatan entityssä \
+                         <a href="{entity}">{entity}</a>, mutta suhde on edelleen YSOssa</p>')
+
+    lines.append("</body>")
+    lines.append("</html>")
+    with open('deprekoitu_wikidatassa_mutta_on_ysossa.html', 'w') as file:
+        file.write('\n'.join(lines))
+
+    g_wikidata_interim_reports.serialize("wikidata_interim_reports.ttl", format="turtle")
+    print("Deprekoituja entiteettejä tallennettu tiedostoon wikidata_interim_reports.ttl")
+
 
 process_wikidata_results()
