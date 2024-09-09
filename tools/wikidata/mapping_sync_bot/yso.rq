@@ -1,0 +1,12 @@
+PREFIX yso: <http://www.yso.fi/onto/yso/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?s ?o ?label
+WHERE {
+    GRAPH <http://www.yso.fi/onto/yso/> {
+        ?s skos:closeMatch ?o .
+        ?s skos:prefLabel ?label .
+        OPTIONAL {?s skos:exactMatch ?o .}
+        FILTER regex(str(?s), "^http://www.yso.fi/onto/yso/")
+        FILTER(STRSTARTS(STR(?o), "http://www.wikidata.org"))
+    }
+}

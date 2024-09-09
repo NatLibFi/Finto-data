@@ -1,6 +1,7 @@
 """Kirjota tähän docstring, kun koodi on valmis"""
 import logging # Lokitusta varten
 import pprint
+from collections import defaultdict
 from rdflib import Graph, URIRef, Literal, Namespace, XSD
 from sparql_decorator import sparql_query
 
@@ -25,7 +26,6 @@ lines = [
     "<h1>Deprekoidut entiteetit</h1>"
 ]
 
-
 # === YSO BIG DATA===
 SPARQL_QUERY_YSO = """
 PREFIX yso: <http://www.yso.fi/onto/yso/>
@@ -44,7 +44,7 @@ WHERE {
 
 ENDPOINT_FINTO = 'http://api.dev.finto.fi/sparql'
 params_finto = {'query': SPARQL_QUERY_YSO}
-headers = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
+headers = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings-under-dev/0.1.0'}
 
 @sparql_query(endpoint=ENDPOINT_FINTO, params=params_finto, headers=headers, limit=1000)
 def process_yso_results(*args):
@@ -101,6 +101,8 @@ process_yso_results()
 
 # === Wikidata BIG DATA ===
 SPARQL_QUERY_WIKIDATA = """
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX pr: <http://purl.org/ontology/prv/core#>
 SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
   ?item p:P2347 ?statement .
   ?statement ps:P2347 ?yso ;
@@ -110,13 +112,13 @@ SELECT ?item ?yso ?rank ?statedIn ?subjectNamedAs ?retrieved WHERE {
     ?derivedFrom pr:P248 ?statedIn .
     ?derivedFrom pr:P813 ?retrieved .
   }
-  OPTIONAL { ?statement rdfs:label ?subjectNamedAs . }
+  OPTIONAL { ?statement pq:P1810 ?subjectNamedAs . }
 }
 """
 
 ENDPOINT_WIKIDATA = 'https://query.wikidata.org/sparql'
 params_wikidata = {'query': SPARQL_QUERY_WIKIDATA}
-headers_wikidata = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings/0.1.0'}
+headers_wikidata = {'User-Agent': 'finto.fi-automation-to-get-yso-mappings-under-dev/0.1.0'}
 
 @sparql_query(endpoint=ENDPOINT_WIKIDATA, params=params_wikidata, \
               headers=headers_wikidata, limit=1000)
@@ -137,8 +139,10 @@ def process_wikidata_results(*args):
         "Wikidata: Tuloksia haettu kaikkiaan: %d",
         len(data['results']['bindings']))
 
-    # with open('raaka_wikidatan_data.txt', 'w') as file:
-    #     file.write(pprint.pformat(data))
+    with open('raaka_wikidatan_data.txt', 'w') as file:
+        file.write(pprint.pformat(data))
+
+    subject_named_as_dict = defaultdict(list)
 
     for i, result in enumerate(data['results']['bindings']):
         try:
@@ -146,10 +150,11 @@ def process_wikidata_results(*args):
             yso_uri = URIRef('http://www.yso.fi/onto/yso/p' + result['yso']['value'])
             rank = URIRef(result['rank']['value'])
             stated_in = URIRef(result['statedIn']['value']) if 'statedIn' in result else None
-            subject_named_as = (Literal(result['subjectNamedAs']['value'])
-                                if 'subjectNamedAs' in result else None)
             retrieved_date = (Literal(result['retrieved']['value'], datatype=XSD.dateTime)
-                              if 'retrieved' in result else None)
+                            if 'retrieved' in result else None)
+
+            if 'subjectNamedAs' in result:
+                subject_named_as_dict[item].append(Literal(result['subjectNamedAs']['value']))
 
             logging.debug(
                 "Wikidata: Prosessoidaan kohdetta %d: Item=%s, YSO URI=%s, Rank=%s",
@@ -157,10 +162,13 @@ def process_wikidata_results(*args):
 
             g_wikidata.add((item, skos.exactMatch, yso_uri))
             g_wikidata.add((item, wikibase.rank, rank))
+
             if stated_in:
                 g_wikidata.add((item, prov.wasDerivedFrom, stated_in))
-            if subject_named_as:
-                g_wikidata.add((item, skos.altLabel, subject_named_as))
+
+            for subject_named_as in subject_named_as_dict[item]:
+                g_wikidata.add((item, rdfs.label, subject_named_as))
+
             if retrieved_date:
                 g_wikidata.add((item, prov.generatedAtTime, retrieved_date))
 
