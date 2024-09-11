@@ -26,6 +26,11 @@
 ## * Removed status output (printing of . and s symbols)
 ## * Add output listing coined PURIs
 ## * Use assigned PURIs to determine next PURI to assign, not RDF data
+##
+## Modified 2024-09-11 by Osma Suominen <osma.suominen@helsinki.fi>
+## * Also check RDF data when determining next PURI to assign
+## * Save PURI mappings to TSV file before outputting modified RDF data
+## * Use print() for output instead of low-level sys.stderr.write()
 
 
 from optparse import OptionParser
@@ -50,7 +55,7 @@ def _getpuri(uri, nsto):
     puri = nsto + str(maxcounter)
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     puris[uri] = (puri, ts)
-    sys.stderr.write(f"Coined PURI {puri} for {uri}\n")
+    print(f"Coined PURI {puri} for {uri}", file=sys.stderr)
     maxcounter += 1
 
   return URIRef(puris[uri][0])
@@ -134,23 +139,36 @@ else:
 if (options.puri_counter_start_value is not None):
   maxcounter = int(options.puri_counter_start_value)
 else:
-  sys.stderr.write("Searching for PURI counter maximum...")
+  print("Searching for PURI counter maximum...", file=sys.stderr)
 
   maxcounter=-1
+  # 1. check the assigned PURIs from the tsv file
   for puri, _ in puris.values():
     if (puri.startswith(nsto) and
         puri[len(nsto):] != "" and
         puri[len(nsto):].isdigit()):
       if (int(maxcounter) < int(puri[len(nsto):])):
         maxcounter = int(puri[len(nsto):])
+  assigned_max = maxcounter
+  # 2. check the PURIs used as subjects in the RDF file, just in case
+  for uri, _, _ in m.triples((None, None, None)):
+    if (isinstance(uri, URIRef) and uri.startswith(nsto) and
+        uri[len(nsto):] != "" and
+        uri[len(nsto):].isdigit()):
+      if (int(maxcounter) < int(uri[len(nsto):])):
+        maxcounter = int(uri[len(nsto):])
+  if maxcounter > assigned_max:
+    print(f"Warning: Maximum PURI number increased to {maxcounter} due to PURIs used in RDF data.", file=sys.stderr)
+    print(f"Highest known assigned PURI number is {assigned_max}.", file=sys.stderr)
+
   maxcounter = maxcounter + 1
 
-sys.stderr.write("Set PURI counter to %s\n" % maxcounter)
+print(f"Set PURI counter to {maxcounter}.", file=sys.stderr)
 
 
 ## change each subject
 
-sys.stderr.write("Modifying the triples...\n")
+print("Modifying the triples...", file=sys.stderr)
 
 for s,p,o in list(m.triples((None, None, None))):
   s2 = None
@@ -180,10 +198,10 @@ for s,p,o in list(m.triples((None, None, None))):
     m.remove((s, p, o))
     m.add((s2, p2, o2))
 
-
-sys.stderr.write("\n")
-m.serialize(destination=sys.stdout.buffer, format=options.to_format)
-
 ## Write the (possibly) modified PURI database to the PURI file
 
 save_puris(purifile, puris)
+
+## Output the modified RDF file
+
+m.serialize(destination=sys.stdout.buffer, format=options.to_format)
