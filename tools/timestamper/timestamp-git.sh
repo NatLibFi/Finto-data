@@ -20,7 +20,7 @@ function load_from_git() {
 	commit_id=`git --git-dir "${gitdir}/.git" --work-tree "$gitdir" log --before="$date" -n 1 --format="%H" -- $gitdir/$vocabfile`
 	if [ "$commit_id" != "$last_commit_id" ]; then
 		echo "- commit $commit_id different from $last_commit_id, running timestamper"
-		git --git-dir "${gitdir}/.git" --work-tree "$gitdir" show $commit_id:$vocabfile | ./timestamper.py $tsfile $date >/dev/null
+		git --git-dir "${gitdir}/.git" --work-tree "$gitdir" show $commit_id:$vocabfile | ./timestamper.py --no-output $tsfile $date >/dev/null
 		last_commit_id=$commit_id
 	else
 		echo "- commit $commit_id unchanged, skipping timestamper"

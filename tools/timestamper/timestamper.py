@@ -33,19 +33,32 @@ import sys
 import datetime
 import hashlib
 import os.path
+import argparse
 
 SKOS = Namespace('http://www.w3.org/2004/02/skos/core#')
 DCT = Namespace('http://purl.org/dc/terms/')
 
-if len(sys.argv) != 2 and len(sys.argv) != 3:
-    print("Usage: %s <timestampfile> [date]" % sys.argv[0], file=sys.stderr)
-    sys.exit(1)
+# Create the parser
+parser = argparse.ArgumentParser(description="Create and maintain timestamps")
 
-tsfile = sys.argv[1]
-if len(sys.argv) > 2:
-    timestamp = sys.argv[2]
-else:
-    timestamp = datetime.date.today().isoformat()
+# Add the optional no-output switch
+parser.add_argument('-n', '--no-output', action='store_true',
+                    help='Suppress output')
+
+# Add the required timestamp file argument
+parser.add_argument('timestampfile', type=str, help='The file containing timestamps')
+
+# Add the optional date argument
+parser.add_argument('date', nargs='?', default=datetime.date.today().isoformat(),
+                    help='The date for which to process timestamps (default: today)')
+
+# Parse the arguments
+args = parser.parse_args()
+
+# Access the arguments
+tsfile = args.timestampfile
+timestamp = args.date
+no_output = args.no_output
 
 # load existing timestamps
 old_timestamps = {}
@@ -132,4 +145,5 @@ with open(tsfile, 'w') as f:
         hash, mtime, ctime = cdata
         print("\t".join((concept, hash, mtime, ctime)), file=f)
 
-g.serialize(destination=sys.stdout.buffer, format='turtle')
+if not no_output:
+    g.serialize(destination=sys.stdout.buffer, format='turtle')
