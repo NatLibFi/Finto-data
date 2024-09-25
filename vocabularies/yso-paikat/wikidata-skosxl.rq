@@ -1,0 +1,16 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX dc11: <http://purl.org/dc/elements/1.1/>
+
+CONSTRUCT {
+    ?concept skosxl:prefLabel ?xllabel .
+    ?xllabel a skosxl:Label ;
+	skosxl:literalForm ?label ;
+	dc11:source "Wikidata"@en .
+}
+WHERE
+{
+    ?concept skos:prefLabel ?label .
+    BIND(IRI(CONCAT(STR(?concept),'#en')) AS ?xllabel)
+    FILTER(STRSTARTS(STR(?concept), 'http://www.yso.fi/onto/yso/'))
+}

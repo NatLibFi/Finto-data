@@ -5,6 +5,9 @@ EXPANDURIS="../../tools/expand-note-uris/expand-note-uris.py"
 # fetch mappings from Wikidata and store them in a sorted NT file, so version control works
 rsparql --results NT --service https://query.wikidata.org/sparql --query wikidata-links.rq | sort >wikidata-links.nt
 
+# add SKOS XL labels indicating source of labels (Wikidata)
+sparql --results NT --data wikidata-links.nt --query wikidata-skosxl.rq > wikidata-skosxl.nt
+
 # convert wkt literals into wgs84 lat/long
 ./wkt2wgs84.py < wikidata-links.nt > wikidata-links-single-value-coordinates.ttl
 
@@ -17,7 +20,7 @@ grep -oP "(?<=rdf:resource=\"http://paikkatiedot.fi/so/1000772/).*(?=\")" yso-pa
 # expand URIs in notes and definitions
 $EXPANDURIS yso-paikat-vb-dump.rdf >yso-paikat-expanded.ttl 2>yso-paikat-expanded.log
 
-INFILES="place-types.ttl yso-paikat-expanded.ttl yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl yso-paikat-metadata.ttl"
+INFILES="place-types.ttl yso-paikat-expanded.ttl yso-paikat-pnr.ttl wikidata-links-single-value-coordinates.ttl wikidata-skosxl.nt yso-paikat-metadata.ttl"
 OUTFILE=yso-paikat-skos.ttl
 CFGFILE=yso-paikat-vb.cfg
 
