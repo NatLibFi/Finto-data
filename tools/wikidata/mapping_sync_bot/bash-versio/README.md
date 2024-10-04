@@ -21,5 +21,5 @@ rsparql --results NT --service https://query.wikidata.org/sparql --query 5all_as
 2
 python ./flatten_nt.py 5all_as_rdf.nt 5all_as_rdf_coverted_from_nt_and_grouped.ttl
 
-3
+3 (Tämä vaihe on mahdollisesti tarpeeton, tarkentuu hieman myöhemmin)
 python ./prepare_data_for_comparsion.py 5all_as_rdf_coverted_from_nt_and_grouped.ttl ready-for-yso-comparsions.ttl
