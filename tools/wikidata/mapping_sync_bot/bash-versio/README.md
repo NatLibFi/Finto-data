@@ -23,3 +23,29 @@ python ./flatten_nt.py 5all_as_rdf.nt 5all_as_rdf_coverted_from_nt_and_grouped.t
 
 3 (Tämä vaihe on mahdollisesti tarpeeton, tarkentuu hieman myöhemmin)
 python ./prepare_data_for_comparsion.py 5all_as_rdf_coverted_from_nt_and_grouped.ttl ready-for-yso-comparsions.ttl
+
+Tämänhetkinen kerätty data laajimmillaan eli esimerkki sisältäen kaikki Wikidatasta haetut tiedot, jotta voidaan alkaa kehittää vertailuautomatiikkaa ja päivitysbottia:
+
+Wikidatassa:
+https://www.wikidata.org/wiki/Q485537
+
+Sama YSO ID:n osalta (P2347) turtle-muodossa:
+
+```
+wd:Q485537 wikibase:rank wikibase:NormalRank ;
+    prov:wasDerivedFrom [ pr:P248 wd:Q89345680 ;
+            pr:P813 "2021-07-06T00:00:00+00:00"^^xsd:dateTime ],
+        [ pr:P248 wd:Q89345680 ;
+            pr:P813 "2021-07-06T00:00:00+00:00"^^xsd:dateTime ],
+        [ pr:P248 wd:Q89345680 ;
+            pr:P813 "2022-02-09T00:00:00+00:00"^^xsd:dateTime ],
+        [ pr:P248 wd:Q89345680 ;
+            pr:P813 "2022-02-09T00:00:00+00:00"^^xsd:dateTime ] ;
+    p:P2347 yso:5309,
+        yso:5310 ;
+    pq:P1810 "doft",
+        "haju",
+        "lukt",
+        "scent",
+        "tuoksu" .
+```
