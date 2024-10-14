@@ -1148,6 +1148,13 @@ slm:s925  a              owl:Class , skos:Concept ;
         skos:note        "Pseudodokumentti on televisio-ohjelma tai elokuva, jossa fiktiivinen tarina esitetään todellisista tapahtumista kertovien dokumenttien tyyliä jäljitellen tai parodioiden."@fi ;
         skos:prefLabel   "pseudodokumentit"@fi , "pseudodokumentärer"@sv .
 
+slm:364d1334-d6d2-465c-9cf3-b272d90543ec
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "julkiset kuulutukset"@fi , "kuulutukset (hallinto)"@fi , "viranomaiskuulutukset"@fi ;
+        skos:prefLabel   "viralliset kuulutukset"@fi ;
+        skos:related     slm:s1361 .
+
 slm:s1493  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         skos:altLabel    "pysselkort (aktivitetskort)"@sv ;
@@ -1543,13 +1550,14 @@ slm:s655  a              owl:Class , skos:Concept ;
         skos:related     slm:s1521 .
 
 slm:s573  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "opinionslitteratur"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p8211> ;
+        skos:definition  "Kantaaottava kirjallisuus."@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "debattlitteratur"@sv , "mielipidekirjallisuus"@fi ;
-        skos:related     slm:s1082 .
+        skos:related     slm:s729 , slm:s983 , slm:s1082 .
 
 slm:s459  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s2 , slm:s791 ;
@@ -1559,11 +1567,12 @@ slm:s459  a              owl:Class , skos:Concept ;
         skos:prefLabel   "brudvalser"@sv , "häävalssit"@fi .
 
 slm:s1280  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 ;
-        skos:altLabel    "PM"@sv , "memoranda"@sv , "memorandum"@sv , "pöytäkirjat"@fi , "protokoll"@sv ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1462 ;
+        skos:altLabel    "PM"@sv , "memoranda"@sv , "memorandum"@sv , "protokoll"@sv , "memorandumit"@fi ;
+        skos:definition  "Jonkin asian käsittelyn pohjaksi laadittu kirjallinen selvitys."@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "promemorior"@sv , "muistiot"@fi ;
-        skos:related     slm:s1286 , slm:s1499 .
+        skos:related     slm:s1286 .
 
 slm:s1079  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s241 ;
@@ -1896,7 +1905,7 @@ slm:s1419  a             owl:Class , skos:Concept ;
         skos:altLabel    "recept (mat)"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "ruokaohjeet"@fi , "matrecept"@sv ;
-        skos:related     slm:s392 .
+        skos:related     slm:s392 , slm:bd59ab2f-e6a3-4f99-82cb-42190015ac45 .
 
 slm:s330  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -2354,9 +2363,9 @@ slm:s1158  a             owl:Class , skos:Concept ;
         skos:prefLabel   "keskeislyriikka"@fi , "centrallyrik"@sv .
 
 slm:s383  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s633 ;
+        rdfs:subClassOf  slm:s633 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "läseböcker (skolböcker)"@sv ;
+        skos:altLabel    "läseböcker (skolböcker)"@sv , "lukemistot"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p1637> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "läseböcker"@sv , "lukukirjat"@fi .
@@ -2709,7 +2718,7 @@ slm:s1499  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         skos:altLabel    "ärendelistor"@sv , "agendor (möten)"@sv , "asialistat"@fi , "dagordningar (möten)"@sv ;
         skos:prefLabel   "esityslistat"@fi , "föredragningslistor"@sv ;
-        skos:related     slm:s1280 .
+        skos:related     slm:182e84a8-d6b1-4105-838f-8017e1e36bef .
 
 slm:s491  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -4236,6 +4245,13 @@ slm:s252  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "joululehdet"@fi , "jultidningar"@sv .
 
+slm:bd59ab2f-e6a3-4f99-82cb-42190015ac45
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1167 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "drinkkiohjeet"@fi , "juomaohjeet"@fi ;
+        skos:prefLabel   "juomareseptit"@fi ;
+        skos:related     slm:s1419 .
+
 slm:s533  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -4484,7 +4500,8 @@ slm:s729  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p8210> ;
         skos:definition  "Alkuaan häväistyskirjoitus, myös lentolehtinen tai lentokirjanen; nykyään arvostelevaan tai vastustavaan sävyyn laadittu lyhyehkö tutkielma ajankohtaisesta aiheesta."@fi ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "pamfletit"@fi , "pamfletter"@sv .
+        skos:prefLabel   "pamfletit"@fi , "pamfletter"@sv ;
+        skos:related     slm:s573 .
 
 slm:s994  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1131 , slm:s230 ;
@@ -4916,6 +4933,12 @@ slm:s974  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "teknorock"@fi , "technorock"@sv .
 
+slm:b1d739eb-0104-4750-bd60-2ea97b7c4ffd
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026054> ;
+        skos:prefLabel   "kirkkojärjestykset"@fi .
+
 slm:s371  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1177 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5175,6 +5198,15 @@ slm:s401  a              owl:Class , skos:Concept ;
         skos:inScheme    slm:s861 ;
         skos:prefLabel   "hillbilly"@sv , "hillbilly"@fi ;
         skos:related     slm:s586 , slm:s1263 , slm:s335 .
+
+slm:3c4c9ae0-d615-4b5d-8b26-2946f924db5b
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1150 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "sankarirunot"@fi ;
+        skos:definition  "Kertova runo, jossa yleensä kuvataan sankaritekoja ja seikkailuja."@fi ;
+        skos:prefLabel   "eeppiset runot"@fi ;
+        skos:related     slm:s821 ;
+        skos:scopeNote   "Hyvin laajoista eeppisistä runoista käytä termiä [http://urn.fi/URN:NBN:fi:au:slm:s821]."@fi .
 
 slm:s436  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1218 ;
@@ -6418,7 +6450,7 @@ slm:s983  a              owl:Class , skos:Concept ;
         skos:altLabel    "debattinlägg"@sv , "debattartiklar"@sv ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "mielipidekirjoitukset"@fi , "insändare"@sv ;
-        skos:related     slm:s1495 .
+        skos:related     slm:s1495 , slm:s573 .
 
 slm:s1052  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1081 ;
@@ -7020,7 +7052,8 @@ slm:s1214  a             owl:Class , skos:Concept ;
 slm:s1361  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
         skos:altLabel    "meddelanden (tillkännagivanden)"@sv , "tiedonannot"@fi ;
-        skos:prefLabel   "tiedotteet"@fi , "tillkännagivanden"@sv .
+        skos:prefLabel   "tiedotteet"@fi , "tillkännagivanden"@sv ;
+        skos:related     slm:364d1334-d6d2-465c-9cf3-b272d90543ec .
 
 slm:s1082  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
@@ -7738,7 +7771,8 @@ slm:s821  a              owl:Class , skos:Concept ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6478> ;
         skos:inScheme    slm:s285 ;
         skos:note        "Laaja, kertova, runomittainen sanataideteos, joka käsittelee suurta ja vakavaa, usein jumal- tai sankaritarustosta peräisin olevaa aihetta."@fi ;
-        skos:prefLabel   "eepokset"@fi , "epos"@sv .
+        skos:prefLabel   "eepokset"@fi , "epos"@sv ;
+        skos:related     slm:3c4c9ae0-d615-4b5d-8b26-2946f924db5b .
 
 slm:s238  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -8202,8 +8236,9 @@ slm:s329  a             owl:Class , skos:Concept ;
         skos:prefLabel  "amerikafinländsk litteratur"@sv , "amerikansuomalainen kirjallisuus"@fi .
 
 slm:s414  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1075 ;
+        rdfs:subClassOf  slm:s1075 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "etsi ja löydä -kirjat"@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "böcker med fixeringsbilder"@sv , "piilokuvakirjat"@fi ;
         skos:related     slm:s1181 ;
@@ -8242,6 +8277,13 @@ slm:s789  a              owl:Class , skos:Concept ;
         skos:altLabel    "it-tidningar"@sv , "it-tidskrifter"@sv , "datortidningar"@sv ;
         skos:inScheme    slm:s593 ;
         skos:prefLabel   "tietotekniikkalehdet"@fi , "datortidskrifter"@sv .
+
+slm:182e84a8-d6b1-4105-838f-8017e1e36bef
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "muistiot (pöytäkirjat)"@fi ;
+        skos:prefLabel   "pöytäkirjat"@fi ;
+        skos:related     slm:s1499 .
 
 slm:s1415  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1075 ;
@@ -8626,12 +8668,12 @@ slm:s934  a              owl:Class , skos:Concept ;
         skos:prefLabel   "viihdelukemistot"@fi , "nöjesläsning"@sv .
 
 slm:s166  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1150 ;
+        rdfs:subClassOf  slm:s1150 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "runoproosa"@fi , "diktprosa"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p5808> ;
+        skos:definition  "Proosaruno on säkeisiin jakamaton eli proosamuotoon kirjoitettu runo."@fi ;
         skos:inScheme    slm:s285 ;
-        skos:note        "Proosa-asuun painettu runo, jossa käytetään runolle ominaisia rytmisiä kadensseja ja figuuroja, soinnutusta, yllättäviä kuvia jne."@fi ;
         skos:prefLabel   "proosarunot"@fi , "prosadikter"@sv .
 
 slm:s278  a              owl:Class , skos:Concept ;
@@ -9914,10 +9956,10 @@ slm:s596  a              owl:Class , skos:Concept ;
         skos:prefLabel   "twist"@sv , "twistit"@fi .
 
 slm:s1023  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1150 ;
+        rdfs:subClassOf  slm:s1150 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "eeppiset runot"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p17090> ;
+        skos:definition  "Säemuotoon kirjoitettu juonitarinan sisältävä usein pitkähkö runo."@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "kertomarunot"@fi , "episka dikter"@sv ;
         skos:related     slm:s352 .
