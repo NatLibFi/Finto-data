@@ -6,7 +6,9 @@
    xmlns:grddl="http://www.w3.org/2003/g/data-view#"
    xmlns:iso-thes="http://purl.org/iso25964/skos-thes#"
    xmlns:luc="http://www.ontotext.com/owlim/lucene#"
-   xmlns:ns1="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile74424375329123088schemaorg-all-http.rdf#"
+   xmlns:ns1="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile877680604377386827schema.ttl#"
+   xmlns:ns2="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile74424375329123088schemaorg-all-http.rdf#"
+   xmlns:ns3="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile264699521807897410schema.ttl#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf4j="http://rdf4j.org/schema/rdf4j#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -38,6 +40,7 @@
     <skos:example xml:lang="en">A "bicycle wheel" for instance belongs uniquely to a "bicycle" while a "wheel" does not. A BTP/NTP relationship should not be established between "bicycles" and "wheels" because a wheel could be part of a motor car, a wheelbarrow or one of many other artefacts.</skos:example>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://schema.org/endDate">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
     <rdfs:label xml:lang="fi">Loppuaika</rdfs:label>
     <rdfs:label xml:lang="sv">Sluttid</rdfs:label>
@@ -46,6 +49,7 @@
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="http://schema.org/startDate">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
     <rdfs:label xml:lang="fi">Alkuaika</rdfs:label>
     <rdfs:label xml:lang="sv">Starttid</rdfs:label>
@@ -70,7 +74,7 @@
     <skos:prefLabel xml:lang="sv">Årtusende</skos:prefLabel>
   </owl:Class>
   <owl:Ontology rdf:about="http://www.yso.fi/onto/yso/">
-    <owl:imports rdf:resource="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile74424375329123088schemaorg-all-http.rdf"/>
+    <owl:imports rdf:resource="file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile877680604377386827schema.ttl"/>
   </owl:Ontology>
   <owl:Ontology rdf:about="http://www.yso.fi/onto/yso/aika">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
@@ -82,6 +86,11 @@
     <skos:hasTopConcept rdf:resource="http://www.yso.fi/onto/yso/p6100061999"/>
     <skos:hasTopConcept rdf:resource="http://www.yso.fi/onto/yso/p6200062999"/>
   </owl:Ontology>
+  <yso-meta:Decade rdf:about="http://www.yso.fi/onto/yso/p1000910001">
+    <skos:broader rdf:resource="http://www.yso.fi/onto/yso/p1009910001"/>
+    <skos:inScheme rdf:resource="http://www.yso.fi/onto/yso/aika"/>
+    <skos:prefLabel xml:lang="fi">ensimmäinen vuosikymmen eaa.</skos:prefLabel>
+  </yso-meta:Decade>
   <skos:Concept rdf:about="http://www.yso.fi/onto/yso/p1009910001">
     <iso-thes:broaderPartitive rdf:resource="http://www.yso.fi/onto/yso/p1099910001"/>
     <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">-0001-12-31</schema:endDate>
