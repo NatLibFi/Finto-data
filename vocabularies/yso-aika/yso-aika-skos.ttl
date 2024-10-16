@@ -23,6 +23,7 @@ isothes:narrowerPartitive a owl:ObjectProperty ;
 schema:endDate a owl:DatatypeProperty ;
     rdfs:label "Loppuaika"@fi,
         "Sluttid"@sv ;
+    rdfs:domain owl:Thing ;
     rdfs:isDefinedBy <http://schema.org> ;
     rdfs:range xsd:Date,
         xsd:DateTime ;
@@ -31,6 +32,7 @@ schema:endDate a owl:DatatypeProperty ;
 schema:startDate a owl:DatatypeProperty ;
     rdfs:label "Alkuaika"@fi,
         "Starttid"@sv ;
+    rdfs:domain owl:Thing ;
     rdfs:isDefinedBy <http://schema.org> ;
     rdfs:range xsd:Date,
         xsd:DateTime ;
@@ -38,7 +40,8 @@ schema:startDate a owl:DatatypeProperty ;
 
 <http://urn.fi/URN:NBN:fi:au:krono:> a owl:Ontology .
 
-yso: a owl:Ontology .
+yso: a owl:Ontology ;
+    owl:imports <file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile877680604377386827schema.ttl> .
 
 yso:p1439914300 a skos:Concept,
         yso-meta:Century ;
@@ -6078,7 +6081,7 @@ ALLFO-tid är till sin struktur en hierarkisk helhet som bygger på del-helhetsr
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2023-10-07T05:18:02+00:00"^^xsd:dateTime ;
+    dct:modified "2024-10-16T05:41:08+00:00"^^xsd:dateTime ;
     skos:hasTopConcept yso:p1099910001,
         yso:p1199911000,
         yso:p1299912000,
