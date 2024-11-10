@@ -20,23 +20,43 @@ isothes:narrowerPartitive a owl:ObjectProperty ;
     skos:definition "Definition: ISO 25964-1: NTP When the ISO 25964 standard is followed, the BTP/NTP relationship should qualify for a transitive closure."@en ;
     skos:example "A \"bicycle wheel\" for instance belongs uniquely to a \"bicycle\" while a \"wheel\" does not. A BTP/NTP relationship should not be established between \"bicycles\" and \"wheels\" because a wheel could be part of a motor car, a wheelbarrow or one of many other artefacts."@en .
 
-schema:endDate a owl:DatatypeProperty ;
-    rdfs:label "Loppuaika"@fi,
+schema:endDate a rdf:Property ;
+    rdfs:label "endDate",
+        "Loppuaika"@fi,
         "Sluttid"@sv ;
-    rdfs:domain owl:Thing ;
-    rdfs:isDefinedBy <http://schema.org> ;
-    rdfs:range xsd:Date,
-        xsd:DateTime ;
-    rdfs:subPropertyOf rdf:Property .
+    dct:modified "2024-11-09T16:30:13"^^xsd:dateTime ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:EducationalOccupationalProgram,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role,
+        schema:Schedule ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime ;
+    schema:source <https://github.com/schemaorg/schemaorg/issues/2486> ;
+    rdfs:comment "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))." ;
+    rdfs:range xsd:string .
 
-schema:startDate a owl:DatatypeProperty ;
-    rdfs:label "Alkuaika"@fi,
+schema:startDate a rdf:Property ;
+    rdfs:label "startDate",
+        "Alkuaika"@fi,
         "Starttid"@sv ;
-    rdfs:domain owl:Thing ;
-    rdfs:isDefinedBy <http://schema.org> ;
-    rdfs:range xsd:Date,
-        xsd:DateTime ;
-    rdfs:subPropertyOf rdf:Property .
+    dct:modified "2024-11-09T16:29:31"^^xsd:dateTime ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:EducationalOccupationalProgram,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role,
+        schema:Schedule ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime ;
+    schema:source <https://github.com/schemaorg/schemaorg/issues/2486> ;
+    rdfs:comment "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))." ;
+    rdfs:range xsd:string .
 
 <http://urn.fi/URN:NBN:fi:au:krono:> a owl:Ontology .
 
@@ -4734,6 +4754,7 @@ yso-meta:Millennium a owl:Class ;
 
 yso:p1099910001 a skos:Concept,
         yso-meta:Millennium ;
+    dct:modified "2024-11-09T16:29:10"^^xsd:dateTime ;
     isothes:narrowerPartitive yso:p1009910001,
         yso:p1019910100,
         yso:p1029910200,
@@ -6081,7 +6102,7 @@ ALLFO-tid är till sin struktur en hierarkisk helhet som bygger på del-helhetsr
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2024-10-16T05:41:08+00:00"^^xsd:dateTime ;
+    dct:modified "2024-11-10T06:38:31+00:00"^^xsd:dateTime ;
     skos:hasTopConcept yso:p1099910001,
         yso:p1199911000,
         yso:p1299912000,
