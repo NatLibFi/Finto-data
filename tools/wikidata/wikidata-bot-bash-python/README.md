@@ -20,6 +20,13 @@ Wikidata-botin tarkoitus on hakea Wikidatasta YSO ID:hen (P2347) liittyvät tied
 
 Dokumentaatio kuvaa kirjoittamishetken mukaista tilaa, ei valmista sovellusta. Esimerkiksi skriptien polut ja tiedostonimet pitää järkevöittää sekä kovakoodatut tiedostonimet ja inputit argumentoida ja/tai siirtää muuttujiin sekä muutenkin tarpeellisissa kohdissa refaktoroida koodia helpommin luettavaksi ja vähemmän toisteiseksi. Lisäksi kommentointia pitää yhtenäistää ja selkeyttää.
 
+### Skriptin ajo:
+```
+./6wikidata-bot.sh
+```
+Ensimmäisen automatisoidun YSOon lisäyksen jälkeen ajo nopeutunee merkittävästi, koska eroavaisuudet Wikidatan ja YSOn välillä ovat vähentyneet huomattavasti, mutta ensimmäiseen ajoon saataa mennä yli tuntikin. Skripti näyttää etenemisen, mutta ei progressiota suhtessa kaikkien vaiheiden valmistumisen määrään. Mittakaavasta: Esimerkiksi Wikidatasta tarkistettavien linkitysten kohdalla tietokantaan tallennettavia käyttäjänimiä on kirjoittamishetekellä 8888 kappaletta, joista jokainen on erikseen haettu Wikidatasta.
+
+
 ### Datan haku Wikidatasta
 ```
 $RSPARQL --results NT --service https://query.wikidata.org/sparql --query 6all_as_rdf.rq | sort > 6all_as_rdf.nt
