@@ -71,7 +71,7 @@ def add_vocab_data(wikidata_entity, yso_id, rank, reference, literals, stated_in
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python prepare_data_for_comparison.py <input_file.ttl> <output_file.ttl>")
+        print("Usage: python 6flatten_nt.py <input_file.ttl> <output_file.ttl>")
         sys.exit(1)
 
     input_file = sys.argv[1]
