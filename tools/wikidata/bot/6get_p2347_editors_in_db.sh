@@ -1,17 +1,13 @@
 #!/bin/bash
 
-DB="wikidata_bot.db"
+echo "...entering the script getting the usernames"
+DB=$1
 SOURCE_TABLE="wd_yso_links"
 TARGET_TABLE="p2347_editors_in_wd"
-DELAY=0.5
+# DELAY=0.1
+count=0
 
-sqlite3 "$DB" <<EOF
-DROP TABLE IF EXISTS $TARGET_TABLE;
-CREATE TABLE $TARGET_TABLE (
-    wd_entity_uri TEXT,
-    latest_p2347_editor TEXT
-);
-EOF
+echo "The database in use: $DB"
 
 echo "## Kerätään Wikidata-entityiden URIt tietokannasta"
 uris=$(sqlite3 "$DB" "SELECT wd_entity_uri FROM $SOURCE_TABLE;")
@@ -25,10 +21,10 @@ for wd_entity_uri in $uris; do
     echo "## Haetaan käyttäjänimi (P2347) Wikidatasta"
     while [ -z "$latest_editor" ]; do
         if [ -z "$rvcontinue" ]; then
-            response=$(curl -s -H "User-Agent: Finnish-National-Library-Finto-Team-Wikibot-testing" \
+            response=$(curl -s -H "User-Agent: National-Library-of-Finland-Finto-Team-Wikibot-testing" \
                 "https://www.wikidata.org/w/api.php?action=query&titles=$entity_id&prop=revisions&rvprop=user|timestamp|comment&rvlimit=500&rvdir=older&format=json")
         else
-            response=$(curl -s -H "User-Agent: Finnish-National-Library-Finto-Team-Wikibot-testing" \
+            response=$(curl -s -H "User-Agent: National-Library-of-Finland-Finto-Team-Wikibot-testing" \
                 "https://www.wikidata.org/w/api.php?action=query&titles=$entity_id&prop=revisions&rvprop=user|timestamp|comment&rvlimit=500&rvdir=older&format=json&rvcontinue=$rvcontinue")
         fi
 
@@ -50,13 +46,14 @@ for wd_entity_uri in $uris; do
             break
         fi
 
-        sleep $DELAY
+        # sleep $DELAY
     done
 
     if [ "$latest_editor" != "None" ]; then
+        count=$((count + 1))
         sqlite3 "$DB" <<EOF
 INSERT INTO $TARGET_TABLE (wd_entity_uri, latest_p2347_editor) VALUES ('$wd_entity_uri', '$latest_editor');
 EOF
-        echo "# Käyttäjänimi $latest_editor tallennettu tietokantaan"
+        echo "# $count Käyttäjänimi $latest_editor tallennettu tietokantaan"
     fi
 done

@@ -25,6 +25,11 @@ CREATE TABLE IF NOT EXISTS yso_main (
     yso_concept_uri TEXT UNIQUE,
     is_deprecated BOOLEAN
 );
+
+CREATE TABLE IF NOT EXISTS p2347_editors_in_wd (
+    wd_entity_uri TEXT,
+    latest_p2347_editor TEXT
+);
 EOF
 
 echo "Database and tables created successfully."
