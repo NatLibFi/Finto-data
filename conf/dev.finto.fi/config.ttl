@@ -999,6 +999,12 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos-uudistetut-suhteet.ttl> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mtswemi:> .
+:mtswemi skosmos:propertyOrder :mtswemipropertyOrder .
+:mtswemipropertyOrder a skosmos:PropertyOrder ;
+    rdf:value ( rdf:type dc:isReplacedBy owl:inverseOf skos:definition skos:broader
+                skos:narrower skos:related skos:altLabel skosmos:memberOf
+                skos:note skos:scopeNote skos:historyNote rdfs:comment
+                dct:source dc:source skos:prefLabel) .
 
 :musa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "MUSA - Musiikin asiasanasto"@fi,
