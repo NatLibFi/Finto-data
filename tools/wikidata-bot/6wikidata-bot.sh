@@ -1,10 +1,10 @@
 #!/bin/bash
 
-RSPARQL=/SPARQL/apache-jena-4.5.0/bin/rsparql
-RIOT=/SPARQL/apache-jena-4.5.0/bin/riot
-ARQ=/SPARQL/apache-jena-4.5.0/bin/arq
+RSPARQL=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/rsparql
+RIOT=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/riot
+ARQ=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/arq
 DB=6wikidata.db
-YSO_DEV=/Finto-data/vocabularies/yso/ysoKehitys.rdf
+YSO_DEV=/home/mijuahon/codes/Finto-data/vocabularies/yso/ysoKehitys.rdf
 
 echo "Fetching data from Wikidata"
 $RSPARQL --results NT --service https://query.wikidata.org/sparql --query 6all_as_rdf.rq | sort > 6all_as_rdf.nt
