@@ -144,5 +144,5 @@ WHERE w.wd_rank != 'DeprecatedRank'
         AND yl.wd_entity_uri = w.wd_entity_uri
   )
   AND p.latest_p2347_editor IN ('YSObot', 'Saarik', 'Tpalonen', 'Tuomas_Palonen', 'Nikotapiopartanen', 'Osmasuominen');
-" | awk -F'|' '{print "<"$2">" " <http://www.w3.org/2004/02/skos/core#closeMatch> " "<"$1">"}' > 6yso_link_in_wd_but_not_wd_link_in_yso.nt
+" | awk -F'|' '{print "<"$2">" " <http://www.w3.org/2004/02/skos/core#closeMatch> " "<"$1"> ."}' > 6yso_link_in_wd_but_not_wd_link_in_yso.nt
 
