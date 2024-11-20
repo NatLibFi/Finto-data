@@ -305,7 +305,7 @@ def main():
                 yt_str = 'Y-tunnus: {}'.format(yt)
                 g.add((uri, id_prop, Literal(yt_str)))
 
-            if 'z' in f and '2' in f and f['2'] == 'urn':
+            if 'z' in f and '2' in f and f['2'] in ('urn', 'finaf'):
                 urn = f['z'].replace(' ', '')
                 urn_uri = URIRef(urn)
                 g.add((urn_uri, DCT.isReplacedBy, uri))
