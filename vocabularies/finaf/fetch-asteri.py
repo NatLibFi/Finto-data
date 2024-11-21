@@ -38,7 +38,7 @@ def harvest(iterator):
       sys.stdout.buffer.write(etree.tostring(record))
       sys.stdout.buffer.write(b'\n')
   except HTTPError as e:
-    if e.response_status_code == 500 and retry_count < retry_error:
+    if e.response.status_code == 500 and retry_count < retry_error:
        retry_count += 1
        print('Server responded with error, trying again {}/{}'.format(retry_count, retry_error))
        sleep(retry_sleep)
