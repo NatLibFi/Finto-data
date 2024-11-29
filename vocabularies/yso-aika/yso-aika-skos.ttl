@@ -63,19 +63,7 @@ schema:startDate a rdf:Property ;
 yso: a owl:Ontology ;
     owl:imports <file:/opt/vocbench/semanticturkey-11.4.2/data/tmp/addFromLocalFile877680604377386827schema.ttl> .
 
-yso:c_0f3a1a3a a skos:Concept ;
-    dct:created "2024-11-27T17:16:11"^^xsd:dateTime ;
-    dct:modified "2024-11-27T17:21:34"^^xsd:dateTime ;
-    schema:endDate "-0010-12-31" ;
-    schema:startDate "-0019-01-01" ;
-    skos:altLabel "-0019--0010"@fi,
-        "10-luku eKr."@fi ;
-    skos:broader yso:p1009910001 ;
-    skos:inScheme yso:aika ;
-    skos:notation "-0019/-0010"@fi ;
-    skos:prefLabel "10-luku eaa."@fi .
-
-yso:c_45e0f85c a skos:Concept,
+yso:p1000910001 a skos:Concept,
         yso-meta:Decade ;
     dct:created "2024-11-21T14:48:11"^^xsd:dateTime ;
     dct:modified "2024-11-27T17:20:27"^^xsd:dateTime ;
@@ -88,6 +76,18 @@ yso:c_45e0f85c a skos:Concept,
     skos:inScheme yso:aika ;
     skos:notation "-0009/-0001" ;
     skos:prefLabel "ensimmäinen vuosikymmen eaa."@fi .
+
+yso:p1001910010 a skos:Concept ;
+    dct:created "2024-11-27T17:16:11"^^xsd:dateTime ;
+    dct:modified "2024-11-27T17:21:34"^^xsd:dateTime ;
+    schema:endDate "-0010-12-31" ;
+    schema:startDate "-0019-01-01" ;
+    skos:altLabel "-0019--0010"@fi,
+        "10-luku eKr."@fi ;
+    skos:broader yso:p1009910001 ;
+    skos:inScheme yso:aika ;
+    skos:notation "-0019/-0010"@fi ;
+    skos:prefLabel "10-luku eaa."@fi .
 
 yso:p1439914300 a skos:Concept,
         yso-meta:Century ;
@@ -4766,8 +4766,8 @@ yso:p1009910001 a skos:Concept,
         "århundradet f.Kr."@sv ;
     skos:broader yso:p1099910001 ;
     skos:inScheme yso:aika ;
-    skos:narrower yso:c_0f3a1a3a,
-        yso:c_45e0f85c ;
+    skos:narrower yso:p1000910001,
+        yso:p1001910010 ;
     skos:notation "-0099/-0001" ;
     skos:prefLabel "ensimmäinen vuosisata eaa."@fi,
         "första århundradet f.Kr."@sv .
@@ -6130,7 +6130,7 @@ ALLFO-tid är till sin struktur en hierarkisk helhet som bygger på del-helhetsr
     dct:language <http://lexvo.org/id/iso639-3/fin>,
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2024-11-28T02:17:14+00:00"^^xsd:dateTime ;
+    dct:modified "2024-11-29T10:55:15+00:00"^^xsd:dateTime ;
     skos:hasTopConcept yso:p1099910001,
         yso:p1199911000,
         yso:p1299912000,
