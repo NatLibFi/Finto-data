@@ -426,12 +426,6 @@ slm:s1226  a             owl:Class , skos:Concept ;
         skos:prefLabel   "son cubano"@fi , "son cubano"@sv ;
         skos:related     slm:s628 , slm:s1247 , slm:s372 .
 
-slm:s556  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s657 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:prefLabel   "dramatisoinnit"@fi , "dramatiseringar"@sv ;
-        skos:related     slm:s529 , slm:s1058 .
-
 slm:s1238  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1275 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -863,13 +857,14 @@ slm:s487  a             owl:Class , skos:Concept ;
         skos:scopeNote  "Käytä termiä [http://urn.fi/URN:NBN:fi:au:slm:s739] lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin."@fi , "Använd termen [http://urn.fi/URN:NBN:fi:au:slm:s739] om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text."@sv .
 
 slm:s1461  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1044 ;
-        skos:altLabel    "parallelltexter (flerspråkiga böcker)"@sv , "tvåspråkiga böcker"@sv , "kaksikieliset kirjat"@fi , "parallellöversättningar"@sv , "mångspråkiga böcker"@sv , "rinnakkaiskäännökset"@fi ;
+        rdfs:subClassOf  slm:s1044 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "parallelltexter (flerspråkiga böcker)"@sv , "tvåspråkiga böcker"@sv , "kaksikieliset kirjat (rinnakkaistekstit)"@fi , "parallellöversättningar"@sv , "mångspråkiga böcker"@sv , "rinnakkaiskäännökset"@fi ;
+        skos:definition  "Julkaisu, jossa on yleensä alkukielinen teksti ja yksi tai useampi käännös siitä asemoituna rinnakkain samalle sivulle tai aukeamalle."@fi ;
         skos:inScheme    slm:s285 ;
-        skos:prefLabel   "monikieliset kirjat (rinnakkaiskäännökset)"@fi , "flerspråkiga böcker (parallellöversättningar)"@sv .
+        skos:prefLabel   "monikieliset kirjat (rinnakkaistekstit)"@fi , "flerspråkiga böcker (parallellöversättningar)"@sv .
 
 slm:s695  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "musiktidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -1698,9 +1693,9 @@ slm:s219  a              owl:Class , skos:Concept ;
 slm:s529  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s657 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "elokuvasovitukset"@fi , "filmbearbetningar"@sv ;
+        skos:altLabel    "elokuvasovitukset"@fi , "dramatisoinnit (filmatisoinnit)"@fi , "filmbearbetningar"@sv ;
         skos:prefLabel   "filmatisoinnit"@fi , "filmatiseringar"@sv ;
-        skos:related     slm:s556 , slm:s1118 , slm:s1175 , slm:s1058 .
+        skos:related     slm:s1118 , slm:s1175 , slm:s1058 .
 
 slm:s1408  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
@@ -2791,7 +2786,7 @@ slm:s812  a             owl:Class , skos:Concept ;
         skos:scopeNote  "Då en institution är föremål för festskriften, används termen endast om det finns en tabula gratulatoria i publikationen. I annat fall används t.ex. [http://urn.fi/URN:NBN:fi:au:slm:s606], [http://urn.fi/URN:NBN:fi:au:slm:s14], [http://urn.fi/URN:NBN:fi:au:slm:s403] eller [http://urn.fi/URN:NBN:fi:au:slm:s255]."@sv , "Kun juhlajulkaisun kohteena on yhteisö, genretermi merkitään vain jos julkaisussa on tabula gratulatoria. Muussa tapauksessa käytä esimerkiksi [http://urn.fi/URN:NBN:fi:au:slm:s606], [http://urn.fi/URN:NBN:fi:au:slm:s14], [http://urn.fi/URN:NBN:fi:au:slm:s403] tai [http://urn.fi/URN:NBN:fi:au:slm:s255]."@fi .
 
 slm:s201  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "konsttidningar"@sv ;
         skos:inScheme    slm:s593 ;
@@ -5040,7 +5035,7 @@ slm:s1344  a             owl:Class , skos:Concept ;
         skos:related     slm:s1306 , slm:s163 , slm:s728 , slm:s1178 .
 
 slm:s693  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s298 ;
+        rdfs:subClassOf  slm:s1442 , slm:s298 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "danstidskrifter"@sv ;
         skos:inScheme    slm:s593 ;
@@ -5351,6 +5346,14 @@ slm:s1387  a             owl:Class , skos:Concept ;
         skos:prefLabel   "kuoropartituurit"@fi , "körpartitur"@sv ;
         skos:scopeNote   "Om instrumentalackompanjemanget är komplett utmärkt används termen partitur. Om verket ursprungligen är komponerat för en oackompanjerad kör används termen partitur."@sv , "Jos soitinsäestys on merkitty täydellisenä, käytetään termiä partituuri. Jos teos on alun perin sävelletty säestyksettömälle kuorolle, käytetään termiä partituuri."@fi .
 
+slm:ea11e9c5-b8b9-4db8-a737-658bd2271ef4
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s657 ;
+        skos:altLabel    "kuunnelmasovitukset"@fi , "dramatisoinnit (radiosovitukset)"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2011026484> ;
+        skos:prefLabel   "radiosovitukset"@fi ;
+        skos:related     slm:s1058 .
+
 slm:s483  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -5520,8 +5523,9 @@ slm:s1065  a             owl:Class , skos:Concept ;
         skos:prefLabel   "käsityölehdet"@fi , "handarbetstidningar"@sv .
 
 slm:s1522  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1507 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1507 ;
         skos:altLabel    "deklarationer (stadgor)"@sv ;
+        skos:definition  "Sopimus, jossa määritellään kansainvälisen hallitustenvälisen yhteisön tavoitteet ja toimintaperiaatteet."@fi ;
         skos:prefLabel   "stadgor (deklarationer)"@sv , "peruskirjat (juridiset teokset)"@fi .
 
 slm:s1498  a             owl:Class , skos:Concept ;
@@ -6792,7 +6796,7 @@ slm:s1058  a             owl:Class , skos:Concept ;
         skos:definition  "I ett parallellverk återges ett originalverks berättelse ur en i verket förekommande annan persons, t.ex. en bipersons synvinkel."@sv , "Rinnakkaisteoksessa alkuperäisen teoksen tarina kerrotaan siinä esiintyvän toisen henkilön, esimerkiksi sivuhenkilön näkökulmasta."@fi ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "rinnakkaisteokset"@fi , "parallellverk"@sv ;
-        skos:related     slm:s556 , slm:s529 , slm:s909 , slm:s813 , slm:s67 , slm:s657 , slm:s509 , slm:s379 .
+        skos:related     slm:s529 , slm:ea11e9c5-b8b9-4db8-a737-658bd2271ef4 , slm:s909 , slm:s813 , slm:s67 , slm:s657 , slm:s509 , slm:s379 .
 
 slm:s972  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -8715,6 +8719,7 @@ slm:s737  a              owl:Class , skos:Concept ;
 slm:s67  a               owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s356 , slm:s657 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2016026005> ;
         skos:inScheme    slm:s593 , slm:s285 ;
         skos:note        "T.ex. tecknad serie som skapats utgående från en film."@sv , "Esim. elokuvan pohjalta tehty sarjakuva."@fi ;
         skos:prefLabel   "bearbetningar till tecknade serier"@sv , "sarjakuvasovitukset"@fi ;
@@ -9618,7 +9623,8 @@ slm:s1401  a             owl:Class , skos:Concept ;
 slm:s509  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 , slm:s657 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "dramatiska bearbetningar"@sv ;
+        skos:altLabel    "dramatiska bearbetningar"@sv , "dramatisoinnit (näytelmäsovitukset)"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2016026007> ;
         skos:inScheme    slm:s285 ;
         skos:prefLabel   "näytelmäsovitukset"@fi , "bearbetningar till skådespel"@sv ;
         skos:related     slm:s1058 .
@@ -9757,6 +9763,7 @@ slm:s117  a              owl:Class , skos:Concept ;
 slm:s379  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s518 , slm:s657 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2017026042> ;
         skos:inScheme    slm:s285 ;
         skos:note        "Roman gjord baserat på t.ex. en film eller ett skådespel"@sv , "Esim. elokuvan tai näytelmän pohjalta tehty romaani."@fi ;
         skos:prefLabel   "bearbetningar till romaner"@sv , "romaanisovitukset"@fi ;
