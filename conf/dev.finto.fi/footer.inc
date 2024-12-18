@@ -64,8 +64,6 @@ function createConceptObject(conceptUri, conceptData) {
   // adding a css class for separating the yso concepts from the special domain ontology concepts
   if (vocab !== 'yso' && newNode.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
     newNode.a_attr['class'] = 'yso-concept';
-  if (vocab === 'mtswemi' && newNode.uri.indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    newNode.a_attr['class'] = 'replaced';
   // setting the flag manually if the concept is known to have narrowers, but they aren't included eg. included topconcepts
   if(conceptData.hasChildren === true) {
     newNode.children = true;
@@ -80,114 +78,6 @@ function createConceptObject(conceptUri, conceptData) {
   return newNode;
 }
 
-// begin mtswemi related changes block (all changes to this exact file in this commit to be reverted later on)
-function invokeGroupTree() {
-  var $treeObject = $('.group-hierarchy');
-  $treeObject.on('activate_node.jstree', function(event, node) {
-    $treeObject.jstree('open_node', node.node);
-  });
-
-  $treeObject.jstree({
-    'plugins' : ['sort'],
-    'sort' : function (a,b) { return naturalCompare(this.get_text(a).toLowerCase(), this.get_text(b).toLowerCase()); },
-    'core' : { 
-      'data' : 
-        function(node, cb) { 
-          var json_url = (node.id !== '#') ? (rest_base_url + vocab + '/groupMembers') : (rest_base_url + vocab + '/groups');
-          var params = (node.id !== '#') ? $.param({'uri' : node.a_attr['data-uri'], 'lang' : content_lang}): $.param({'lang' : content_lang});
-          $.ajax({
-            data: params,
-            url: json_url, 
-            req_kind: $.ajaxQ.requestKind.SIDEBAR_PRIVILEGED,
-            success: function (response) {
-              if (response.groups) { // the default hierarchy query that fires when a page loads.
-                return cb(buildGroupTree(response.groups));
-              } else {
-                var children = [];
-                for (var i in response.members) {
-                  var member = response.members[i];
-                  var child = {'text' : member.prefLabel,'parent' : node.a_attr['data-uri'], children : false, a_attr : { 'data-uri' : member.uri, "href" : getHrefForUri(member.uri, true) }};
-
-  if (vocab === 'mtswemi' && child.a_attr['data-uri'].indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    child.a_attr['class'] = 'replaced';
-                  if (member.hasMembers || member.isSuper) {
-                    child.children = true;
-                  }
-                  if (showNotation && member.notation) {
-                    child.text = '<span class="tree-notation">' + member.notation + '</span> ' + child.text;
-                  }
-                  children.push(JSON.parse(JSON.stringify(child)));
-                }
-                return cb(JSON.parse(JSON.stringify(children)));
-              }
-            }
-          });
-      },
-      'animation' : 0,
-      'themes' : { 'icons': false },
-      'strings' : { 'Loading ...' : jstree_loading }
-    } 
-  });
-}
-
-function createGroupNode(uri, groupObject) {
-  var node = {children : [], a_attr : {'data-uri' : uri, "href" : getHrefForUri(uri, true), "class" : "group" }};
-  node.text = groupObject.prefLabel;
-  if (groupObject.hasMembers || groupObject.isSuper)
-    node.children = true;
-  if (vocab === 'mtswemi' && groupObject.uri.indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    groupObject.a_attr['class'] = 'replaced';
-  if (showNotation && groupObject.notation)
-    node.text = '<span class="tree-notation">' + groupObject.notation + '</span> ' + node.text;
-  return node;
-}
-
-function buildGroupTree(response) {
-  var data = [];
-  var groups = {};
-  for (var i in response) {
-    var group = createGroupNode(response[i].uri, response[i]); 
-    groups[response[i].uri] = group;
-    if (response[i].uri === $('.uri-input-box').html()) {
-      group.state = { 'opened' : true };
-      group.a_attr.class = "jstree-clicked group";
-    }
-  }
-  // adding children to the groups
-  for (var i in response) {
-    var groupobj = groups[response[i].uri];
-    for (var j in response[i].childGroups) {
-      var childuri = response[i].childGroups[j];
-      if (groups[childuri]) {
-        var childobj = groups[childuri];
-        if (groupobj.children === true)
-          groupobj.children = [];
-        groupobj.children.push(childobj);
-        if (childobj.state)
-          groupobj.state = childobj.state;
-        childobj.is_child = true;
-      }
-    }
-  }
-  for (var uri in groups) {
-    var groupObj = groups[uri];
-    if (!groupObj.is_child) {
-      fixStates(groupObj);
-      data.push(groupObj);
-    }
-  }
-  return JSON.parse(JSON.stringify(data));
-}
-
-function fixStates(groupobj) {
-  for (var i in groupobj.children) {
-    fixStates(groupobj.children[i]);
-    if (groupobj.children[i].state) {
-      groupobj.state = groupobj.children[i].state;
-    }
-  }
-}
-// end mtswemi related changes block
 function createObjectsFromChildren(conceptData, conceptUri) {
   var childArray = [];
   for (var i = 0; i < conceptData.narrower.length; i++) {
@@ -202,8 +92,6 @@ function createObjectsFromChildren(conceptData, conceptUri) {
     };
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
       childObject.a_attr['class'] = 'yso-concept';
-  if (vocab === 'mtswemi' && childObject.uri.indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    childObject.a_attr['class'] = 'replaced';
     // if the childConcept hasn't got any children the state is not needed.
     if (conceptData.narrower[i].hasChildren) {
       childObject.children = true;
@@ -231,8 +119,6 @@ function vocabRoot(topConcepts) {
     };
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
       childObject.a_attr['class'] = 'yso-concept';
-  if (vocab === 'mtswemi' && childObject.uri.indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    childObject.a_attr['class'] = 'replaced';
     if (conceptData.hasChildren)
       childObject.children = true;
     setNode(childObject);
@@ -256,8 +142,6 @@ function createObjectsFromNarrowers(narrowerResponse) {
     };
     if (vocab !== 'yso' && childObject.uri.indexOf('www.yso.fi/onto/yso/') !== -1)
       childObject.a_attr['class'] = 'yso-concept';
-  if (vocab === 'mtswemi' && childObject.uri.indexOf('http://urn.fi/URN:NBN:fi:au:mts:rda_') !== -1)
-    childObject.a_attr['class'] = 'replaced';
     childObject.children = conceptObject.hasChildren ? true : false;
     setNode(childObject);
     childArray.push(childObject);
