@@ -9,7 +9,15 @@ PQ = Namespace("http://www.wikidata.org/prop/qualifier/")
 PR = Namespace("http://www.wikidata.org/prop/reference/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 WIKIBASE = Namespace("http://wikiba.se/ontology#")
-YSO = Namespace("http://www.yso.fi/onto/yso/p")
+YSO = Namespace("http://www.yso.fi/onto/yso/p") # Korjaa: Tämä hassuus pitää poistaa. Syntyi tilanteessa, 
+# jossa piti väliaikaisesti synkata outputia ja sen tuottavaa skriptiä keskenään - jäänyt vahingossa tällaiseksi
+
+# Yleistä: Syy miksi raakadata käsitellään alussa NT-tiedostona, mutta muunnetaan sitten turtleksi on se, 
+# että blank nodejen serialisointi suoraan Wikidatasta haettaessa turtle-muotoon vaikuttaa olevan melkoisen haasteellista. 
+# On helpompaa hakea data aluksi triple kerrallaan ja sitten alkaa muokata nippua ihmisluettavammaksi. Näin usein tehdään, selvittelin.
+# Ihmisluettavuuttahan ei periaatteessa tarvita, kun on raportit, mutta debuggauksen kannalta on parempi, että itse datakin on luettavaa. 
+# Wikidatan SPARQL endpointti on optimoitu suorituskykyä silmälläpitäen sekä JSON-LD:lle ja N-Tripleille eikä Turtlelle
+# Näillä perustelen tämän "inhimillistämisskriptin" olemassaolon.
 
 input_graph = Graph()
 output_graph = Graph()
@@ -33,6 +41,13 @@ def increment_counter():
 def process_statements():
     # Iteroidaan P2347 (YSO ID)
     for item in input_graph.subjects(predicate=P["P2347"]):
+        # Globaaliin input_graphiin sisemmästä skoupista viittaaminen ei "tunnu mukavalta",
+        # vaan funktionaalisen paradigman tapa, jossa kaikki funktion käsittelemä tieto passataan argumenttina 
+        # fuktiolle, on paljon turvallisempi ja helpommin debugattava tapa, josta ei muodostu mahdollisia ikäviä
+        # side effect -ongelmia. Tämä on kuitenkin lopulta kaikkia botin mahdollisesti käyttämiä Python-skriptejä 
+        # koskeva kysymys, joten ongelmaa ei kannata vielä tässä kohtaa, ennen kuin isompi kuva mocking-vaiheen 
+        # jälkeen on selvillä, yrittää ratkaista.
+        
         # Jos P2347 linkittyy blank nodeen, prosessoidaan se
         for statement in input_graph.objects(item, P["P2347"]):
             process_statement(item, statement)

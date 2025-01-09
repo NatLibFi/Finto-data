@@ -35,7 +35,7 @@ Lopullisessa toteutuksessa tietokannat versioidaan eli aina uuden ajon alkaessa 
 
 ## Mocking-vaiheen jälkeen
 1) "Isoon kuvaan" liittyvien teknisten valintojen tekeminen (ja sen suunnitelma mahdollisesti kommentoidaan suoraan koodiin)
-2) Skriptissä tarvittavien komentojen ja sovellusten parametrisoinnin ja käyttötapojen sekä kokonaisuuden yhdenmukaistaminen sekä lisäksi nimeämisten yhtenäistäminen.
+2) Skriptissä tarvittavien komentojen ja sovellusten parametrisoinnin ja käyttötapojen sekä kokonaisuuden yhdenmukaistaminen sekä lisäksi nimeämisten yhtenäistäminen esimerkiksi niin, että tiedostonimistä tulee ilmi, liittyykö tiedosto tiedonhakuun, tiedon muokkaamiseen vain tietokantaan lataamiseen tai raportointiin.
 3) Datan oikeellisuuden tarkistaminen (tarkistelua tehty jo mocking-vaiheessa).
 4) Raportti muokatuista WD-entiteeteistä ja käyttäjistä, jotka ovat tehneet Wikidataan muokkauksia, mutta joihin emme voi automatique luottaa (ehtona YSOn päivittämiselle, rajoitus on jo toteutettu).
 5) Toiminto, jolla muodostetaan NT-tiedosto, jonka dataan pohjautuen YSOsta puuttuvat mäppäykset lisätään osaksi YSOA automaattisesti.
