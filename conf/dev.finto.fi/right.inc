@@ -1,21 +1,9 @@
 <div class="right-box">
 
-{% if request.lang == 'sv' %}
+<h1>Ajankohtaista</h1>
 
-<img src="resource/finto-pics/finto-joulu.png" alt="Gog jul!" id="finto-joulu-img" style="width: 180px;">
+<p>Finto-palvelun asiakaswikistä löydät tarkempaa tietoa palvelusta, sen ylläpitämistä sanastoista ja ohjelmistoista sekä palvelun ajankohtaisista asioista.</p>
 
-<h1>Tack för det gångna året!</h1>
-
-<p>Finto-servicen önskar en god jul och ett gott nytt år!</p>
-
-{% else %}
-
-<img src="resource/finto-pics/finto-joulu.png" alt="Hyvää joulua!" id="finto-joulu-img" style="width: 180px;">
-
-<h1>Kiitos kuluneesta vuodesta</h1>
-
-<p>Finto-palvelu toivottaa hyvää joulua, leppoisaa vuodenvaihdetta ja iloista uutta vuotta!</p>
-
-{% endif %}
+<a href="https://www.kiwi.fi/display/Finto">Asiakaswiki</a>
 
 </div>
