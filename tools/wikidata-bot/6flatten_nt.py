@@ -19,6 +19,10 @@ YSO = Namespace("http://www.yso.fi/onto/yso/p") # Korjaa: Tämä hassuus pitää
 # Wikidatan SPARQL endpointti on optimoitu suorituskykyä silmälläpitäen sekä JSON-LD:lle ja N-Tripleille eikä Turtlelle
 # Näillä perustelen tämän "inhimillistämisskriptin" olemassaolon.
 
+# Tähelepanu! Wikidatasta haetaan joitain juuri tällä hetkellä tarpeettomiakin tietoja, mutta se on parempi lähestymistapa
+# kuin se, että tipottain laajennetaan queryä, koska datamäärä joka tapauksessa YSO-ID:n osalta suppea ja kaiken mahdollisesti
+# tarvittavan voi lähes yhtä helposti hakea kuin hakisi pienemmän erän.
+
 input_graph = Graph()
 output_graph = Graph()
 
@@ -38,8 +42,9 @@ def increment_counter():
     global counter
     counter += 1
 
-def process_statements():
+def process_statement_objects():
     # Iteroidaan P2347 (YSO ID)
+    # Käytännössä subjectit alla ovat Wikidatan entityjen ureja
     for subject in input_graph.subjects(predicate=P["P2347"]):
         # Globaaliin input_graphiin sisemmästä skoupista viittaaminen ei "tunnu mukavalta",
         # vaan funktionaalisen paradigman tapa, jossa kaikki funktion käsittelemä tieto passataan argumenttina 
@@ -49,16 +54,16 @@ def process_statements():
         # jälkeen on selvillä, yrittää ratkaista.
 
         # Jos P2347 linkittyy blank nodeen, prosessoidaan se
-        for statement in input_graph.objects(subject, P["P2347"]):
-            process_statement(subject, statement)
+        for statement_object in input_graph.objects(subject, P["P2347"]):
+            process_statement_object(subject, statement_object)
 
-def process_statement(subject, statement):
-    yso_id = input_graph.value(statement, PS["P2347"])
-    rank = input_graph.value(statement, WIKIBASE.rank)
-    reference = input_graph.value(statement, PROV.wasDerivedFrom)
+def process_statement_object(subject, statement_object):
+    yso_id = input_graph.value(statement_object, PS["P2347"])
+    rank = input_graph.value(statement_object, WIKIBASE.rank)
+    reference = input_graph.value(statement_object, PROV.wasDerivedFrom)
 
     # Qualifierit (jos on) / "subject named as" (P1810)
-    literal_values = list(input_graph.objects(statement, PQ["P1810"]))
+    literal_values = list(input_graph.objects(statement_object, PQ["P1810"]))
     
     if reference:
         stated_in = input_graph.value(reference, PR["P248"])
@@ -105,7 +110,7 @@ if __name__ == "__main__":
 
     input_graph.parse(input_file, format="turtle")
     
-    process_statements()
+    process_statement_objects()
 
     with open(output_file, "w") as f:
         f.write(output_graph.serialize(format="turtle"))
