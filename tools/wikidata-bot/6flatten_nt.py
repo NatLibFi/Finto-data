@@ -40,19 +40,19 @@ def increment_counter():
 
 def process_statements():
     # Iteroidaan P2347 (YSO ID)
-    for item in input_graph.subjects(predicate=P["P2347"]):
+    for subject in input_graph.subjects(predicate=P["P2347"]):
         # Globaaliin input_graphiin sisemmästä skoupista viittaaminen ei "tunnu mukavalta",
         # vaan funktionaalisen paradigman tapa, jossa kaikki funktion käsittelemä tieto passataan argumenttina 
         # fuktiolle, on paljon turvallisempi ja helpommin debugattava tapa, josta ei muodostu mahdollisia ikäviä
         # side effect -ongelmia. Tämä on kuitenkin lopulta kaikkia botin mahdollisesti käyttämiä Python-skriptejä 
         # koskeva kysymys, joten ongelmaa ei kannata vielä tässä kohtaa, ennen kuin isompi kuva mocking-vaiheen 
         # jälkeen on selvillä, yrittää ratkaista.
-        
-        # Jos P2347 linkittyy blank nodeen, prosessoidaan se
-        for statement in input_graph.objects(item, P["P2347"]):
-            process_statement(item, statement)
 
-def process_statement(item, statement):
+        # Jos P2347 linkittyy blank nodeen, prosessoidaan se
+        for statement in input_graph.objects(subject, P["P2347"]):
+            process_statement(subject, statement)
+
+def process_statement(subject, statement):
     yso_id = input_graph.value(statement, PS["P2347"])
     rank = input_graph.value(statement, WIKIBASE.rank)
     reference = input_graph.value(statement, PROV.wasDerivedFrom)
@@ -68,7 +68,7 @@ def process_statement(item, statement):
         retrieved_date = Literal("2000-01-01T00:00:00+00:00", datatype=XSD.dateTime)
     
     increment_counter()
-    add_vocab_data(item, yso_id, rank, reference, literal_values, stated_in, retrieved_date)   
+    add_vocab_data(subject, yso_id, rank, reference, literal_values, stated_in, retrieved_date)   
     
         
 def add_vocab_data(wikidata_entity, yso_id, rank, reference, literals, stated_in, retrieved_date):
