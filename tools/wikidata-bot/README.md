@@ -33,6 +33,10 @@ Lopullisessa toteutuksessa tietokannat versioidaan eli aina uuden ajon alkaessa 
 
 **Summa summarum**: _Sen sijaan, että kaikki datan käsittely on skriptissä, on järkevää kattavasti kerätä kaikki tarvittava ja mahdollisesti myös vähemmän tarvittava data harkittuun relaatiotietokannan skeemaan, johon voidaan myöhemmin viitata useilla eri halutuilla tavoilla._
 
+## Pohdintaa
+
+Wikidatassa käytetään paljon tarkenteita (qualifier) ja sen myötä blank nodeja, todennäköisesti ylläpidollisista syistä (vähemmän ureja, pienemmät tietokannat ja parempi skaalautuvuus - maybe). Käytetty reifikaatio-malli, jos sitä sellaisella nimellä halutaan kutsua, on toki tiivis ja älyllisesti stimuloiva, mutta semanttisesti köyhähkö, turhan implisiittinen ja työkaluille haastellinen pääteltävä. Periaatteessa olisi myös mahdollista luoda ihan oma tietomalli, jossa Wikidatan blank nodeilla toteutettu malli rikastetaankin ja eksplikoidaan luomalla tarvittavat uudet tyypit ja niille toteutukset, jolloin ei nää tarvitsisi viitata kokonaisiin predikaatti-objekti-pareihin, vaan qualifierit määrittäisivät sopivan tyyppisiä urillisia resursseja. Näin botin käyttämä tietomalli,olisi eksplisiittisempi, rikkaampi ja helpommin pääteltävissä sekä omat triplettikannan käyttö botin tietokantana olisi perustellumpaa. Lopulta kuitenkin, näin toimiminen tuntuisi turhalta ja tarpeettomalta akateemiselta kikkailulta ja ehkä jopa ajanhukalta. Parempi ratkaisu on elää reifikaatioiden ja blank nodejen kanssa, vaikka se tuo datan koneelliseen lukemiseen tiettyä hankaluutta.
+
 ## Mocking-vaiheen jälkeen
 1) "Isoon kuvaan" liittyvien teknisten valintojen tekeminen (ja sen suunnitelma mahdollisesti kommentoidaan suoraan koodiin)
 2) Skriptissä tarvittavien komentojen ja sovellusten parametrisoinnin ja käyttötapojen sekä kokonaisuuden yhdenmukaistaminen sekä lisäksi nimeämisten yhtenäistäminen esimerkiksi niin, että tiedostonimistä tulee ilmi, liittyykö tiedosto tiedonhakuun, tiedon muokkaamiseen vain tietokantaan lataamiseen tai raportointiin.
