@@ -104,21 +104,31 @@ def add_vocab_data(wikidata_entity, yso_uri_for_yso_id, rank, reference, literal
 
     # qualifierit (P1810)
     for literal in literals:
+        # subject named as
         output_graph.add((entity_uri, PQ["P1810"], Literal(literal)))
 
     # Referenssitiedot blank nodeilla
     if reference:
         reference_bnode = BNode()  
+        # Blank node ei ole mukavinta mahdollista luettavaa, mutta eksplisiittisemmän ja rikkaamman tietomallin
+        # rakentaminen tuntuisi sekin hieman liioitellulta. Jos Wikidata tykkää blank node -esitystavasta, niin
+        # mennään sillä.
         output_graph.add((entity_uri, PROV.wasDerivedFrom, reference_bnode))
 
+        # Näyttää Wikidatasivulla esim tältä:
+        # 1 reference
+        # stated in    YSO-Wikidata mapping project
+        # retrieved    8 March 2022
         if stated_in:
+            # Tämä tuntuu hieman ehkä liian toisteiselta tiedolta, mutta nyt alkuvaiheessa on hyvä kerätä kaikki tiedot
             output_graph.add((reference_bnode, PR["P248"], WD["Q89345680"]))  # YSO-Wikidata mapping project
         if retrieved_date:
             output_graph.add((reference_bnode, PR["P813"], Literal(retrieved_date, datatype=XSD.dateTime)))
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python 6flatten_nt.py <input_file.ttl> <output_file.ttl>")
+        # Esimerkki: python ./6flatten_nt.py 6all_as_rdf.nt 6all_as_rdf_coverted_from_nt_and_grouped.ttl
+        print("Käyttö: python 6flatten_nt.py <syöttötiedosto.ttl> <tulostus.ttl>")
         sys.exit(1)
 
     input_file = sys.argv[1]
@@ -131,5 +141,5 @@ if __name__ == "__main__":
     with open(output_file, "w") as f:
         f.write(output_graph.serialize(format="turtle"))
 
-    print(f"Vocabulary data has been written to {output_file}")
+    print(f"Wikidatasta haettu sanastodata on kirjoitettu tiedostoon {output_file}")
     print(counter)
