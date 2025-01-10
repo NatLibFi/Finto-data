@@ -59,7 +59,7 @@ def process_statement_objects():
             process_statement_object(subject, statement_object)
 
 def process_statement_object(subject, statement_object):
-    yso_id = input_graph.value(statement_object, PS["P2347"])
+    yso_uri_for_yso_id = input_graph.value(statement_object, PS["P2347"])
     rank = input_graph.value(statement_object, WIKIBASE.rank)
     reference = input_graph.value(statement_object, PROV.wasDerivedFrom)
 
@@ -90,15 +90,13 @@ def process_statement_object(subject, statement_object):
         retrieved_date = Literal("2000-01-01T00:00:00+00:00", datatype=XSD.dateTime)
     
     increment_counter()
-    add_vocab_data(subject, yso_id, rank, reference, literal_values, stated_in, retrieved_date)   
+    add_vocab_data(subject, yso_uri_for_yso_id, rank, reference, literal_values, stated_in, retrieved_date)   
     
-def add_vocab_data(wikidata_entity, yso_id, rank, reference, literals, stated_in, retrieved_date):
+def add_vocab_data(wikidata_entity, yso_uri_for_yso_id, rank, reference, literals, stated_in, retrieved_date):
     entity_uri = wikidata_entity
 
-    print(f' YSO IIIIIIDEEEEE on: {yso_id}')
-
-    if yso_id:
-        yso_uri = URIRef(f"http://www.yso.fi/onto/yso/p{yso_id}")
+    if yso_uri_for_yso_id:
+        yso_uri = URIRef(f"http://www.yso.fi/onto/yso/p{yso_uri_for_yso_id}")
         output_graph.add((entity_uri, P["P2347"], yso_uri))
 
     if rank:
