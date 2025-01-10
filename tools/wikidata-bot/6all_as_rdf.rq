@@ -11,13 +11,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 CONSTRUCT {
   # YSOon liittyvät
   ?item p:P2347 ?statement .
+  # Korjaa: tätä pitää muuttaa niin, että ?yso:lle lisätään jo tässä vaiheessa oikea yso-uri p-kirjaimen kanssa
+  # koska se helpottaa myöhempiä vaiheita, kun sitä ei tarvitse erikseen lisäillä.
   ?statement ps:P2347 ?yso .
   ?statement wikibase:rank ?rank .
   
   # Qualifierit
   ?statement pq:P1810 ?subjectNamedAs .
 
-  # Referenssit ja "ketjut"
+  # Referenssit ja "ketjut" eli bnode-hommelit
   ?statement prov:wasDerivedFrom ?reference .
   ?reference pr:P248 ?statedIn .
   ?reference pr:P813 ?retrieved .
@@ -36,7 +38,7 @@ CONSTRUCT {
   # Qualifierit optional tyyliin
   OPTIONAL { ?statement pq:P1810 ?subjectNamedAs . }
 
-  # Viittauket ja viittausketjut
+  # Viittauket ja "viittausketjut", bnodet
   OPTIONAL {
     ?statement prov:wasDerivedFrom ?reference .
     ?reference pr:P248 ?statedIn .
@@ -50,3 +52,4 @@ CONSTRUCT {
     }
   }
 }
+# LIMIT 10000

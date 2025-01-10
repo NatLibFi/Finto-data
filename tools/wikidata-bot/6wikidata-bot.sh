@@ -10,6 +10,7 @@ echo "Fetching data from Wikidata"
 $RSPARQL --results NT --service https://query.wikidata.org/sparql --query 6all_as_rdf.rq | sort > 6all_as_rdf.nt
 
 ./6dots.sh 5
+# grouped viittaa reifikaatiomalliin, jossa bnodeilla lisätään predikaatti-objekti-pareilla qualifiereita, tarkenteita
 python ./6flatten_nt.py 6all_as_rdf.nt 6all_as_rdf_coverted_from_nt_and_grouped.ttl
 
 ./6dots.sh 5

@@ -96,6 +96,8 @@ Tarve aikaleimoille on hieman epäselvä, mutta sillä oletukella, että tietoa 
 
 ### Parsitaan YSOon viittaavat linkit
 ```
+ZZZ Tässä vielä ysolla pelkkä numero ilman p:tä
+
 $ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_yso_links_from_wikidata.rq | sed 's/wd:/http:\/\/www.wikidata.org\/entity\//g' | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\/p/g' | awk -F 'p:P2347' '{
     gsub(/[<>[:space:]]+/, "", $1);
     entity = $1;
@@ -106,6 +108,8 @@ $ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_yso_links_
     }
 }' > 6yso_links_from_wikidata.txt
 ```
+ZZZ Tässä p-kirjaimet mukana
+
 
 Tiedot YSO-linkeistä ovat Wikidata-botin käytön kannalta kaikkein oleellisimpia, koska niihin perustuvat YSOon automaattisesti päivitettävät triplet. Myös muut tiedot ovat myös tärkeitä automaation onnistumisen kannalta, koska käytössä pitää olla myös tiedot muun muassa mahdollisista deprekoinneista, rankingeista ja editoijien käyttäjänimistä yms. 
 

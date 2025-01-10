@@ -85,7 +85,8 @@ def process_statement_object(subject, statement_object):
         # Placeholdereita tilanteisiin, jossa alkuperätietoja ei ole esitetty.
         # Tätä voisi parantaa niin, että outputia lukeva komponentti ehdollistaisi referenssitietojen
         # olemassaolon ja toimisi sen mukaan, mutta tässä vaiheessa, kunnes jatkokehittäminen on pidemmällä,
-        # mennään tällaisella ratkaisulla. Sama logiikka pitää rakentaa myös add_vocab_data-funktioon.
+        # mennään tällaisella ratkaisulla. 
+        # Korjaa: Sama logiikka pitää rakentaa myös add_vocab_data-funktioon.
         stated_in = URIRef("http://www.wikidata.org/entity/Q00000000")
         retrieved_date = Literal("2000-01-01T00:00:00+00:00", datatype=XSD.dateTime)
     
@@ -120,7 +121,7 @@ def add_vocab_data(wikidata_entity, yso_uri_for_yso_id, rank, reference, literal
         # stated in    YSO-Wikidata mapping project
         # retrieved    8 March 2022
         if stated_in:
-            # Tämä tuntuu hieman ehkä liian toisteiselta tiedolta, mutta nyt alkuvaiheessa on hyvä kerätä kaikki tiedot
+            # Korjaa: Tämä tuntuu hieman ehkä liian toisteiselta tiedolta, mutta nyt alkuvaiheessa on hyvä kerätä kaikki tiedot
             output_graph.add((reference_bnode, PR["P248"], WD["Q89345680"]))  # YSO-Wikidata mapping project
         if retrieved_date:
             output_graph.add((reference_bnode, PR["P813"], Literal(retrieved_date, datatype=XSD.dateTime)))
