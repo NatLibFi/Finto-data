@@ -10,7 +10,8 @@ PR = Namespace("http://www.wikidata.org/prop/reference/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 WIKIBASE = Namespace("http://wikiba.se/ontology#")
 YSO = Namespace("http://www.yso.fi/onto/yso/p") # Korjaa: Tämä hassuus pitää poistaa. Syntyi tilanteessa, 
-# jossa piti väliaikaisesti synkata outputia ja sen tuottavaa skriptiä keskenään - jäänyt vahingossa tällaiseksi
+# jossa piti väliaikaisesti synkata outputia ja sen tuottavaa skriptiä keskenään - jäänyt vahingossa tällaiseksi ja 
+# tuottaa tarpeetonta hankaluutta myöhemmissä vaiheissa.
 
 # Yleistä: Syy miksi raakadata käsitellään alussa NT-tiedostona, mutta muunnetaan sitten turtleksi on se, 
 # että blank nodejen serialisointi suoraan Wikidatasta haettaessa turtle-muotoon vaikuttaa olevan melkoisen haasteellista. 
@@ -63,21 +64,38 @@ def process_statement_object(subject, statement_object):
     reference = input_graph.value(statement_object, PROV.wasDerivedFrom)
 
     # Qualifierit (jos on) / "subject named as" (P1810)
+    # Käytännössä YSOn lähes vastaavan käsitteen erikieliset prefLabelit nyt työstettävän 
+    # Wikidata-entiteetin labelin vastineiksi
     literal_values = list(input_graph.objects(statement_object, PQ["P1810"]))
     
+    # >>> reference = input_graph.value(statement_object, PROV.wasDerivedFrom) <<<
+    # Referencestä: Wikidatan tapauksessa reference on PROV-ontologian (toteuttaa PROV-tietomallin) mukainen tapa
+    # tarjota tietoja kontribuoijasta eli käytännössä annettujen tietojen alkuperästä (PROV, provenance). 
+    # Esim:
+    # - stated in YSO-Wikidata mapping project
+    # - retrieved 27 December 2021
+    # Jos asia kiinnostaa ememmän:
+    # - PROV-ontologia: https://www.w3.org/TR/prov-o/
+    # - PROV-tietomalli: https://www.w3.org/TR/2013/REC-prov-dm-20130430/
+
     if reference:
         stated_in = input_graph.value(reference, PR["P248"])
         retrieved_date = input_graph.value(reference, PR["P813"])
     else:
+        # Placeholdereita tilanteisiin, jossa alkuperätietoja ei ole esitetty.
+        # Tätä voisi parantaa niin, että outputia lukeva komponentti ehdollistaisi referenssitietojen
+        # olemassaolon ja toimisi sen mukaan, mutta tässä vaiheessa, kunnes jatkokehittäminen on pidemmällä,
+        # mennään tällaisella ratkaisulla. Sama logiikka pitää rakentaa myös add_vocab_data-funktioon.
         stated_in = URIRef("http://www.wikidata.org/entity/Q00000000")
         retrieved_date = Literal("2000-01-01T00:00:00+00:00", datatype=XSD.dateTime)
     
     increment_counter()
     add_vocab_data(subject, yso_id, rank, reference, literal_values, stated_in, retrieved_date)   
     
-        
 def add_vocab_data(wikidata_entity, yso_id, rank, reference, literals, stated_in, retrieved_date):
     entity_uri = wikidata_entity
+
+    print(f' YSO IIIIIIDEEEEE on: {yso_id}')
 
     if yso_id:
         yso_uri = URIRef(f"http://www.yso.fi/onto/yso/p{yso_id}")
