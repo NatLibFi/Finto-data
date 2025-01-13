@@ -31,18 +31,18 @@ $ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_an
 
 ./6dots.sh 5
 echo "yso-links from wikidata"
-$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_yso_links_from_wikidata.rq | sed 's/wd:/http:\/\/www.wikidata.org\/entity\//g' | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\/p/g' | awk -F 'p:P2347' '{
-    gsub(/[<>[:space:]]+/, "", $1);
-    entity = $1;
-    split($2, yso_concepts, ",");
-    for (i in yso_concepts) {
-        gsub(/[<>[:space:]]+/, "", yso_concepts[i]);
-        print entity "|" yso_concepts[i]
-    }
-}' > 6yso_links_from_wikidata.txt
-
-./6dots.sh 3
-sed 's/\.$//' 6yso_links_from_wikidata.txt > 6yso_links_from_wikidata_clean.txt
+$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl \
+     --query=6get_yso_links_from_wikidata.rq | \
+awk '{
+    if ($0 !~ /^wd/) next;
+    gsub(/wd:/, "http://www.wikidata.org/entity/");
+    gsub(/wd:/, "http://www.wikidata.org/entity/");
+    gsub(/p:P[0-9]+/, "|");
+    gsub(/yso:/, "http://www.yso.fi/onto/yso/p");
+    gsub(/\.+$/, "");
+    gsub(/ /, "");
+    if (NF > 0) print
+}' > 6yso_links_from_wikidata_clean.txt
 
 ./6dots.sh 3
 sqlite3 6wikidata.db <<EOF

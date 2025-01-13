@@ -96,29 +96,23 @@ Tarve aikaleimoille on hieman epäselvä, mutta sillä oletukella, että tietoa 
 
 ### Parsitaan YSOon viittaavat linkit
 ```
-ZZZ Tässä vielä ysolla pelkkä numero ilman p:tä
-
-$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_yso_links_from_wikidata.rq | sed 's/wd:/http:\/\/www.wikidata.org\/entity\//g' | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\/p/g' | awk -F 'p:P2347' '{
-    gsub(/[<>[:space:]]+/, "", $1);
-    entity = $1;
-    split($2, yso_concepts, ",");
-    for (i in yso_concepts) {
-        gsub(/[<>[:space:]]+/, "", yso_concepts[i]);
-        print entity "|" yso_concepts[i]
-    }
-}' > 6yso_links_from_wikidata.txt
+echo "yso-links from wikidata"
+$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl \
+     --query=6get_yso_links_from_wikidata.rq | \
+awk '{
+    if ($0 !~ /^wd/) next;
+    gsub(/wd:/, "http://www.wikidata.org/entity/");
+    gsub(/wd:/, "http://www.wikidata.org/entity/");
+    gsub(/p:P[0-9]+/, "|");
+    gsub(/yso:/, "http://www.yso.fi/onto/yso/p");
+    gsub(/\.+$/, "");
+    gsub(/ /, "");
+    if (NF > 0) print
+}' > 6yso_links_from_wikidata_clean.txt
 ```
-ZZZ Tässä p-kirjaimet mukana
-
-
 Tiedot YSO-linkeistä ovat Wikidata-botin käytön kannalta kaikkein oleellisimpia, koska niihin perustuvat YSOon automaattisesti päivitettävät triplet. Myös muut tiedot ovat myös tärkeitä automaation onnistumisen kannalta, koska käytössä pitää olla myös tiedot muun muassa mahdollisista deprekoinneista, rankingeista ja editoijien käyttäjänimistä yms. 
 
 Selkeyden ja sujuvan tietokantaan siirtämisen vuoksi tieto esitetään listamaisessa muodossa.
-
-### Muokataan Wikidatan YSO-linkit sisältävä tiedosto helpommin tietokantaan siirrettävään muotoon
-```
-sed 's/\.$//' 6yso_links_from_wikidata.txt > 6yso_links_from_wikidata_clean.txt
-```
 
 ### Siiretään Wikidatan YSO-linkkien tiedot tietokannan tauluun wd_yso_links
 ```
