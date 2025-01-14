@@ -149,6 +149,7 @@ $ARQ --data=$YSO_DEV --query=6get_wikidata_links_from_yso.rq | awk '
     if (NF > 0) print;
 }' > 6wikidata_links_from_yso_clean.txt
 ```
+Wikidatasta haetut tiedot tulostetaan tiedostoon, joka sisältää sekä YSO-käsitteen urin että käsitteen sisältämän mäppäyksen Wikidataan. Lopuksi tiedot siirretään tietokantaan.
 ```
 sqlite3 6wikidata.db <<EOF
 .mode csv
@@ -156,8 +157,6 @@ sqlite3 6wikidata.db <<EOF
 .import 6wikidata_links_from_yso_clean.txt yso_wd_links
 EOF
 ```
-
-Wikidatasta haetut tiedot tulostetaan tiedostoon, joka sisältää sekä YSO-käsitteen urin että käsitteen sisältämän mäppäyksen Wikidataan. Sen jälkeen tiedostoa siivotaan, jotta sen tietokantaan importoiminen mahdollistuu ja lopuksi tiedot siirretään tietokantaan.
 
 ### Haetaan YSOn kehitystiedostosta tieto YSO-käsitteiden deprekoinnista
 ```
