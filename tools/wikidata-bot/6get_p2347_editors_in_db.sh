@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "...entering the script getting the usernames"
+echo "...haetaan käyttänimiä Wikidatasta"
 DB=$1
 SOURCE_TABLE="wd_yso_links"
 TARGET_TABLE="p2347_editors_in_wd"
 # DELAY=0.1
 count=0
 
-echo "The database in use: $DB"
+echo "Käytössä oleva tietokanta: $DB"
 
 echo "## Kerätään Wikidata-entityiden URIt tietokannasta"
 uris=$(sqlite3 "$DB" "SELECT wd_entity_uri FROM $SOURCE_TABLE;")
@@ -33,8 +33,8 @@ for wd_entity_uri in $uris; do
                 --arg property "P2347" \
                 '.query.pages[].revisions[]? | select(.comment | test("\\[\\[Property:" + $property + "\\]\\]|" + $property)) | .user' | head -n 1)
         else
-            echo "API response missing or malformed for entity $entity_id"
-            echo "Raw API response: $response"
+            echo "Vastausta ei löytynyt API:sta tai entity on korruptoitunut: $entity_id"
+            echo "Muokkaamaton response: $response"
             latest_editor="None"
             break
         fi
