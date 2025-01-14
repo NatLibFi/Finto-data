@@ -1,10 +1,10 @@
 #!/bin/bash
 
-RSPARQL=/Softs/SPARQL/apache-jena-4.5.0/bin/rsparql
-RIOT=/Softs/SPARQL/apache-jena-4.5.0/bin/riot
-ARQ=/Softs/SPARQL/apache-jena-4.5.0/bin/arq
+RSPARQL=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/rsparql
+RIOT=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/riot
+ARQ=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/arq
 DB=6wikidata.db
-YSO_DEV=/Finto-data/vocabularies/yso/ysoKehitys.rdf
+YSO_DEV=~/codes/Finto-data/vocabularies/yso/ysoKehitys.rdf
 
 echo "Fetching data from Wikidata"
 $RSPARQL --results NT --service https://query.wikidata.org/sparql --query 6all_as_rdf.rq | sort > 6all_as_rdf.nt
@@ -23,14 +23,25 @@ echo "Creating the database"
 
 ./6dots.sh 5
 echo "(Rankings in wd_main) Read the Wikidata source data and parse the entities and rankings and finally update the db)"
-$RIOT --output=N-TRIPLES 6all_as_rdf_coverted_from_nt_and_grouped.ttl | grep "<http://wikiba.se/ontology#rank>" | awk '{gsub(/[<>]/, "", $1); gsub(/.*#/, "", $3); gsub(/>/, "", $3); print $1, $3}' | while read uri rank; do     sqlite3 6wikidata.db "INSERT OR REPLACE INTO wd_main (wd_entity_uri, wd_rank) VALUES ('$uri', '$rank');"; done
+$RIOT --output=N-TRIPLES 6all_as_rdf_coverted_from_nt_and_grouped.ttl | \
+grep "<http://wikiba.se/ontology#rank>" | \
+awk '{
+    gsub(/[<>]/, "", $1); 
+    gsub(/.*#/, "", $3); 
+    gsub(/>/, "", $3); 
+    print $1, $3
+}' | \
+while read uri rank; do
+    sqlite3 6wikidata.db \
+        "INSERT OR REPLACE INTO wd_main (wd_entity_uri, wd_rank) VALUES ('$uri', '$rank');"
+done
 
 ./6dots.sh 5
 echo "The dates on the Wikidata side"
 $ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_and_dates.rq | sed 's/[|"]//g; s/^ *//; s/ *$//' | while read -r uri date; do sqlite3 6wikidata.db "INSERT INTO wd_dates_for_stated_in (wd_entity_uri, date) VALUES ('$uri', '$date');"; done
 
 ./6dots.sh 5
-echo "yso-links from wikidata"
+echo "Haetaan YSO-linkit Wikidatasta"
 $ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl \
      --query=6get_yso_links_from_wikidata.rq | \
 awk '{
@@ -52,18 +63,19 @@ sqlite3 6wikidata.db <<EOF
 EOF
 
 ./6dots.sh 3
-echo "wikidata mapping from yso"
-$ARQ --data=$YSO_DEV --query=6get_wikidata_links_from_yso.rq | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\//g' | sed 's/ skos:closeMatch /|/g' | sed 's/[<>]//g' | awk -F '|' '{ 
-    gsub(/[[:space:]]+$/, "", $1);    # Trailing spaces pois 
-    yso_uri = $1;                     # YSO-uri-talteen
-    split($2, objects, ",");          # Pilkkuerottelu
-    for (i in objects) {
-        gsub(/[[:space:]]+$/, "", objects[i]);    # Trailing spaces pois
-        print yso_uri "|" objects[i] ".";         # Printataan tulos oikeassa formaatissa
-    }
-}' > 6wikidata_links_from_yso.txt
-
-sed 's/|[[:space:]]*/|/g; s/[[:space:]]*\.\.$//; s/[[:space:]]*$//' 6wikidata_links_from_yso.txt > 6wikidata_links_from_yso_clean.txt
+echo "Haetaan Wikidata-mäppäykset YSOsta"
+$ARQ --data=$YSO_DEV --query=6get_wikidata_links_from_yso.rq | awk '
+{
+    if ($0 ~ /^[[:space:]]*@prefix/) next;
+    gsub(/yso:/, "http://www.yso.fi/onto/yso/");
+    gsub(/ skos:closeMatch /, "|");
+    gsub(/[<>]/, "");
+    gsub(/[[:space:]]*,[[:space:]]*/, ",");
+    gsub(/[[:space:]]*\.[[:space:]]*$/, "");
+    gsub(/[[:space:]]*\|[[:space:]]*/, "|");
+    gsub(/[[:space:]]+$/, "");
+    if (NF > 0) print;
+}' > 6wikidata_links_from_yso_clean.txt
 
 sqlite3 6wikidata.db <<EOF
 .mode csv

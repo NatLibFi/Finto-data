@@ -82,7 +82,18 @@ Toimitaan otsikon mukaisesti ja tulostetaan lopputulos turtle-tiedostoon myöhem
 
 ### Parsitaan Wikidatasta haetuista tiedoista ranking-tiedot
 ```
-$RIOT --output=N-TRIPLES 6all_as_rdf_coverted_from_nt_and_grouped.ttl | grep "<http://wikiba.se/ontology#rank>" | awk '{gsub(/[<>]/, "", $1); gsub(/.*#/, "", $3); gsub(/>/, "", $3); print $1, $3}' | while read uri rank; do     sqlite3 6wikidata.db "INSERT OR REPLACE INTO wd_main (wd_entity_uri, wd_rank) VALUES ('$uri', '$rank');"; done
+$RIOT --output=N-TRIPLES 6all_as_rdf_coverted_from_nt_and_grouped.ttl | \
+grep "<http://wikiba.se/ontology#rank>" | \
+awk '{
+    gsub(/[<>]/, "", $1); 
+    gsub(/.*#/, "", $3); 
+    gsub(/>/, "", $3); 
+    print $1, $3
+}' | \
+while read uri rank; do
+    sqlite3 6wikidata.db \
+        "INSERT OR REPLACE INTO wd_main (wd_entity_uri, wd_rank) VALUES ('$uri', '$rank');"
+done
 ```
 
 Ranking-tietoja käytetään sen selvittämiseen, onko Wikidatassa oleva P2347 deprekoitu. Tietoa hyödyntämällä voidaan tehdä vertailuja YSOn vastaaviin tietoihin käsitteissä. Tieto tallennetaan tietokannan tauluun _wd_main_.
@@ -123,23 +134,20 @@ sqlite3 6wikidata.db <<EOF
 EOF
 ```
 
-### Haetaan YSOsta Wikidata-mäppäykset
+### Haetaan Wikidata-mäppäykset YSOsta
 ```
-$ARQ --data=$YSO_DEV --query=6get_wikidata_links_from_yso.rq | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\//g' | sed 's/ skos:closeMatch /|/g' | sed 's/[<>]//g' | awk -F '|' '{ 
-    gsub(/[[:space:]]+$/, "", $1);    # Trailing spaces pois 
-    yso_uri = $1;                     # YSO-uri-talteen
-    split($2, objects, ",");          # Pilkkuerottelu
-    for (i in objects) {
-        gsub(/[[:space:]]+$/, "", objects[i]);    # Trailing spaces pois
-        print yso_uri "|" objects[i] ".";         # Printataan tulos oikeassa formaatissa
-    }
-}' > 6wikidata_links_from_yso.txt
-```
-
-(Siistitään YSOsta Wikidata-mäppäykset sisältävä tiedosto käyttöönsä sopivammaksi ja siirretään tiedot tietokantaan)
-
-```
-sed 's/|[[:space:]]*/|/g; s/[[:space:]]*\.\.$//; s/[[:space:]]*$//' 6wikidata_links_from_yso.txt > 6wikidata_links_from_yso_clean.txt
+$ARQ --data=$YSO_DEV --query=6get_wikidata_links_from_yso.rq | awk '
+{
+    if ($0 ~ /^[[:space:]]*@prefix/) next;
+    gsub(/yso:/, "http://www.yso.fi/onto/yso/");
+    gsub(/ skos:closeMatch /, "|");
+    gsub(/[<>]/, "");
+    gsub(/[[:space:]]*,[[:space:]]*/, ",");
+    gsub(/[[:space:]]*\.[[:space:]]*$/, "");
+    gsub(/[[:space:]]*\|[[:space:]]*/, "|");
+    gsub(/[[:space:]]+$/, "");
+    if (NF > 0) print;
+}' > 6wikidata_links_from_yso_clean.txt
 ```
 ```
 sqlite3 6wikidata.db <<EOF
