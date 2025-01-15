@@ -98,9 +98,20 @@ done
 
 Ranking-tietoja käytetään sen selvittämiseen, onko Wikidatassa oleva P2347 deprekoitu. Tietoa hyödyntämällä voidaan tehdä vertailuja YSOn vastaaviin tietoihin käsitteissä. Tieto tallennetaan tietokannan tauluun _wd_main_.
 
-### Parsitaan aikaleima per Wikidata-entity
+### Haetaan Wikidatasta päivityksiin liittyvät päivämäärät
 ```
-$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_and_dates.rq | sed 's/[|"]//g; s/^ *//; s/ *$//' | while read -r uri date; do sqlite3 6wikidata.db "INSERT INTO wd_dates_for_stated_in (wd_entity_uri, date) VALUES ('$uri', '$date');"; done
+$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_and_dates.rq | \
+awk '
+{
+    gsub(/[|"]/, "");
+    gsub(/^ */, "");
+    gsub(/ *$/, "");
+    if (NF == 2) {  # Varmistetaan, että yksi rivi sisältää tasan kaksi kenttää (uri | date)
+        print $1, $2;
+    }
+}' | while read -r uri date; do
+    sqlite3 6wikidata.db "INSERT INTO wd_dates_for_stated_in (wd_entity_uri, date) VALUES ('$uri', '$date');"
+done
 ```
 
 Tarve aikaleimoille on hieman epäselvä, mutta sillä oletukella, että tietoa saatetaan tarvita tulevaisuudessa, tieto on haetaan ja se tallennetaan tietokannan tauluun _wd_dates_for_stated_in_.

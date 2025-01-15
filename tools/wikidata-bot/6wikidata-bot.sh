@@ -37,8 +37,19 @@ while read uri rank; do
 done
 
 ./6dots.sh 5
-echo "The dates on the Wikidata side"
-$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_and_dates.rq | sed 's/[|"]//g; s/^ *//; s/ *$//' | while read -r uri date; do sqlite3 6wikidata.db "INSERT INTO wd_dates_for_stated_in (wd_entity_uri, date) VALUES ('$uri', '$date');"; done
+echo "Haetaan Wikidatasta päivityksiin liittyvät päivämäärät"
+$ARQ --data=6all_as_rdf_coverted_from_nt_and_grouped.ttl --query=6get_wd_uris_and_dates.rq | \
+awk '
+{
+    gsub(/[|"]/, "");
+    gsub(/^ */, "");
+    gsub(/ *$/, "");
+    if (NF == 2) {  # Varmistetaan, että yksi rivi sisältää tasan kaksi kenttää (uri | date)
+        print $1, $2;
+    }
+}' | while read -r uri date; do
+    sqlite3 6wikidata.db "INSERT INTO wd_dates_for_stated_in (wd_entity_uri, date) VALUES ('$uri', '$date');"
+done
 
 ./6dots.sh 5
 echo "Haetaan YSO-linkit Wikidatasta"
