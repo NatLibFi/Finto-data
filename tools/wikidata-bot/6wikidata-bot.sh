@@ -1,10 +1,10 @@
 #!/bin/bash
 
-RSPARQL=/Softs/SPARQL/apache-jena-4.5.0/bin/rsparql
-RIOT=/Softs/SPARQL/apache-jena-4.5.0/bin/riot
-ARQ=/Softs/SPARQL/apache-jena-4.5.0/bin/arq
+RSPARQL=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/rsparql
+RIOT=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/riot
+ARQ=/home/mijuahon/from-the-previous-machine/Softs/SPARQL/apache-jena-4.5.0/bin/arq
 DB=6wikidata.db
-YSO_DEV=/Finto-data/vocabularies/yso/ysoKehitys.rdf
+YSO_DEV=~/codes/Finto-data/vocabularies/yso/ysoKehitys.rdf
 
 echo "Fetching data from Wikidata"
 $RSPARQL --results NT --service https://query.wikidata.org/sparql --query 6all_as_rdf.rq | sort > 6all_as_rdf.nt
@@ -96,9 +96,24 @@ EOF
 
 ./6dots.sh 3
 echo "yso_main / deprecation status"
-$ARQ --data=$YSO_DEV --query=6get_yso_main.rq | sed 's/yso:/http:\/\/www.yso.fi\/onto\/yso\//g; s/ ex:deprecationStatus /|/g; s/[.]$//' | awk 'NF {gsub(/"/, "", $3); gsub(/[ \t]+$/, "", $0); print $1 "|" $3}' > 6yso_main.txt
-
-sed '/^@prefix/d' 6yso_main.txt > 6yso_main_clean.txt
+$ARQ --data=$YSO_DEV --query=6get_yso_main.rq | \
+awk '
+    BEGIN {
+        yso_prefix = "http://www.yso.fi/onto/yso/"
+    }
+    {
+        gsub(/yso:/, yso_prefix);
+        gsub(/ ex:deprecationStatus /, "|");
+        gsub(/[.]$/, "");
+        if ($0 !~ /^@prefix/) {
+            gsub(/"/, "", $3);
+            sub(/[ \t]+$/, "", $0)
+            if (NF > 0) {
+                print $1 "|" $3
+            }
+        }
+    }
+' > 6yso_main_clean.txt
 
 sqlite3 6wikidata.db <<EOF
 .mode csv
