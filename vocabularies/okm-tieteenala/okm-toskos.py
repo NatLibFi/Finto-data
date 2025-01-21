@@ -84,4 +84,4 @@ for rec in reader:
   g.add((curi, SKOS.prefLabel, Literal(rec['cen'].strip(), 'en')))
   g.add((curi, SKOS.prefLabel, Literal(rec['csv'].strip(), 'sv')))
 
-g.serialize(format='turtle', destination=sys.stdout)
+g.serialize(destination=sys.stdout.buffer, format='turtle')
