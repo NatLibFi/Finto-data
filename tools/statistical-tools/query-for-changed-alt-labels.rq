@@ -1,0 +1,13 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?subject ?altLabel
+WHERE {
+  GRAPH <http://example.org/graphA> {
+    ?subject skos:altLabel ?altLabel .
+  }
+  MINUS {
+    GRAPH <http://example.org/graphB> {
+      ?subject skos:altLabel ?altLabel .
+    }
+  }
+}
