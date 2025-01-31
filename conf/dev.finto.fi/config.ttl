@@ -1542,6 +1542,44 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:ykl:> .
 
+:ykl-test a skosmos:Vocabulary, void:Dataset ;
+	dc:title "YKL - Yleisten kirjastojen luokitusjärjestelmä -testi"@fi,
+            "KAB - Allmänna bibliotekens klassifikationssystem  -test"@sv,
+            "PLC - Finnish Public Libraries Classification System test"@en,
+            "YKL - Yleisten kirjastojen luokitusjärjestelmä  -test" ;
+	dc:description "Yleisten kirjastojen luokitusjärjestelmä YKL monikieliseen kirjaston kokoelmien luokitukseen ja ryhmittelyyn"@fi,
+		"De allmänna bibliotekens klassifikationssystem KAB för flerspråkig klassifikation och gruppindelning av bibliotekssamlingar"@sv,
+		"Finnish Public Libraries Classification System for multilingual classification and grouping of library collections"@en ;
+	skosmos:shortName "YKL";
+	dc:subject :cat_general ;
+	void:uriSpace "http://urn.fi/URN:NBN:fi:au:ykl:";
+	skosmos:language "fi", "en", "sv";
+	skosmos:defaultLanguage "fi";
+        skosmos:defaultSidebarView "hierarchy";
+	skosmos:showTopConcepts "true";
+	skosmos:sortByNotation "lexical" ;
+        skosmos:searchByNotation "true" ;
+	skosmos:feedbackRecipient "marjut.puominen@hel.fi" ;
+	skosmos:alphabeticalListQualifier skos:notation ;
+	skosmos:propertyLabelOverride
+    [ skosmos:property skos:prefLabel ;
+          rdfs:label "luokka"@fi, "klass"@sv, "class"@en ] ,
+    [ skosmos:property skos:notation ;
+          rdfs:label "luokkatunnus"@fi, "klassindex"@sv, "notation"@en ] ,
+    [ skosmos:property skos:altLabel ;
+          rdfs:label "Hakusanat"@fi, "nyckelord"@sv, "keywords"@en ; rdfs:comment "Luokan hakusanat."@fi, "Nyckelord för klassen."@sv, "Keywords for this class."@en ] ,
+    [ skosmos:property skos:broader ;
+          rdfs:label "yläluokka"@fi, "överordnad klass"@sv, "superclass"@en ; rdfs:comment "Merkitykseltään laajempi luokka."@fi, "Klass vars betydelse är vidare."@sv, "Superclass."@en ] ,
+    [ skosmos:property skos:narrower ;
+          rdfs:label "alaluokat"@fi, "underordnade klasser"@sv, "subclasses"@en ; rdfs:comment "Merkitykseltään rajatummat luokat."@fi, "Klasser vars betydelse är snävare."@sv, "Subclasses."@en ] ,
+    [ skosmos:property skos:related ;
+          rdfs:label "assosiatiiviset luokat"@fi, "relaterade klasser"@sv, "related classes"@en ; rdfs:comment "Läheisesti luokan aiheeseen liittyvät luokat."@fi, "Klasser som är nära relaterade till klassens ämne."@sv, "Classes related to this class."@en ] ,
+    [ skosmos:property skos:closeMatch ;
+          rdfs:label "lähes vastaavat luokat"@fi, "nästan motsvarande klasser"@sv, "closely matching classes"@en ] ;
+	void:dataDump <https://dev.finto.fi/download/ykl/ykl-test-skos.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/ykl/ykl-test-skos.rdf> ;
+	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
+	skosmos:sparqlGraph <http://www.yso.fi/onto/ykl-test/> .
 
 :ykl-demo a skosmos:Vocabulary, void:Dataset ;
         dc:title "YKL - kokeiluversio"@fi, "KAB - testversion"@sv, "PLC - test version"@en ;
