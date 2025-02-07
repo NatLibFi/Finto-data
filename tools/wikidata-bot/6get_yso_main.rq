@@ -1,0 +1,19 @@
+PREFIX ysometa: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.org/>
+
+CONSTRUCT {
+    ?concept ex:deprecationStatus ?isDeprecated .
+}
+WHERE {
+    {
+        ?concept a ysometa:DeprecatedConcept .
+        BIND("true" AS ?isDeprecated)
+    }
+    UNION
+    {
+        ?concept a ysometa:Concept .
+        FILTER NOT EXISTS { ?concept a ysometa:DeprecatedConcept }
+        BIND("false" AS ?isDeprecated)
+    }
+}
