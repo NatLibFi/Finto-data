@@ -7,12 +7,12 @@ query = """
     CONSTRUCT {
         ?wikidataItem <http://www.wikidata.org/prop/direct/P2347> ?ysoConcept .
         ?wikidataItem <http://www.w3.org/2000/01/rdf-schema#label> ?wikidataLabel .
-        ?ysoConcept <http://www.w3.org/2004/02/skos/core#prefLabel> ?ysoLabel .
+        ?ysoConcept <http://www.w3.org/2000/01/rdf-schema#label> ?ysoLabel .
     }
     WHERE {
         ?wikidataItem wdt:P2347 ?ysoConcept .
         OPTIONAL { ?wikidataItem rdfs:label ?wikidataLabel FILTER(LANG(?wikidataLabel) = "en") }
-        OPTIONAL { ?ysoConcept skos:prefLabel ?ysoLabel FILTER(LANG(?ysoLabel) = "fi") }
+        OPTIONAL { ?ysoConcept rdfs:label ?ysoLabel FILTER(LANG(?ysoLabel) = "fi") }
     }
 """
 
