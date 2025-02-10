@@ -3,6 +3,19 @@
 # HUOM!
 # Pääskriptiä on kovasti refaktoroitu ja toiminnallisuudet on siirretty funktioihin, mutta muutosta ei ole vielä dokumentoitu
 
+## Ihan aluksi query-tests-kansion sisällöstä ja käytöstä:
+
+Ymmärräthän, etteivät tässä kansiossa olevat skriptit ole tarkoitettu yso-botin käyttöön sellaisenaan, vaan niiden avulla voidaan hahmottaa dataa ja etsiä testimielessä parhaita tapoja käsitellä dataa.
+
+Skriptit eivät esimerkiksi puutu lainkaan siihen, kuka päivityksiä Wikidataan on tehnyt, koska käyttäjätiedot pitää hakea Wikidatan rajapinnasta
+
+Rq-tiedostojen nimistä saa suunnilleen kuvan, mitä kyselyllä yritetään saavuttaa
+
+Kun olet hakenut Wikidatasta tarvittavat asiat, niin voit käyttää tulostiedostoa sekä yson julkaisutiedostoa arq:lla tehtävässä haussa esim seuraavasti:
+
+```/SPARQL/apache-jena-4.5.0/bin/arq --data wikidata_ysomap.ttl --data /Finto-data/vocabularies/yso/yso-skos.ttl --query yso-references-wikidata-but-wikidata-does-not-reciprocate.rq```
+
+
 ## Taustaa ja tilanne 8. tammikuuta 2025
 
 Wikidata-botin on tarkoitus hakea Wikidatasta YSO ID:hen (P2347) liittyvät tiedot, joita verrataan "vastaaviin" YSOn puolella. Lisäksi botilla luodaan erilaisia raportteja. Toteutus siirtää Wikidatasta RDF-muotoiset tiedot relaatiotietokantaan (sqlite3), josta jo määriteltyjen, mutta myös mahdollisesti uudenlaisten raporttien muodostaminen ja laatiminen on luontevaa ja helppoa. Lisäksi Wikidatan rajapinnasta haetaan kunkin Wikidata-entityn reviisiohistoriasta P2347-propertyn viimeisin muokkaaja, jonka tekemä muokkaus joko hyväksytään mukaan listaukseen tai hyältään. Lopulta botilla on raporttien luomisen lisäksi tarkoitus automaattisesti päivittää sovituin ehdoin ja rajoituksin YSOa mäppäyssuhteiden osalta sekä myös Wikidataa P2347-propertyn osalta.

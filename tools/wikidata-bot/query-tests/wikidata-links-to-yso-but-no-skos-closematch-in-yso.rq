@@ -1,0 +1,12 @@
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?wikidataItem ?wikidataLabel ?ysoConcept ?ysoLabel WHERE {
+  ?wikidataItem wdt:P2347 ?ysoConcept .
+  OPTIONAL { ?wikidataItem rdfs:label ?wikidataLabel FILTER(LANG(?wikidataLabel) = "en") }
+  OPTIONAL { ?ysoConcept skos:prefLabel ?ysoLabel FILTER(LANG(?ysoLabel) = "fi") }
+  FILTER NOT EXISTS { ?ysoConcept skos:closeMatch ?wikidataItem }
+}
