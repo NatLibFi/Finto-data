@@ -7,7 +7,6 @@ query = """
     CONSTRUCT {
         ?wikidataItem <http://www.wikidata.org/prop/direct/P2347> ?ysoConcept .
         ?wikidataItem <http://www.w3.org/2000/01/rdf-schema#label> ?wikidataLabel .
-        ?ysoConcept <http://www.w3.org/2000/01/rdf-schema#label> ?ysoLabel .
     }
     WHERE {
         ?wikidataItem wdt:P2347 ?ysoConcept .
