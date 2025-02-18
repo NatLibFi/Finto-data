@@ -55,7 +55,7 @@ window.cookieconsent.initialise({
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://tilasto.lib.helsinki.fi/";
+    var u="https://tilasto.kansalliskirjasto.fi/";
     _paq.push(['setTrackerUrl', u+'piwik.php']);
     _paq.push(['setSiteId', '25']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
