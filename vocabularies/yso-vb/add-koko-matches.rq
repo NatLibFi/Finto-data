@@ -1,0 +1,10 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?yso skos:exactMatch ?koko .
+}
+WHERE { 
+  ?koko a <http://www.yso.fi/onto/yso-meta/Concept> .
+  ?koko skos:exactMatch ?yso .
+  FILTER regex(str(?yso), "^http://www.yso.fi/onto/yso/p")
+}
