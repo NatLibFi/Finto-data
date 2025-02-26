@@ -1,0 +1,44 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix lcsh: <http://id.loc.gov/authorities/subjects> .
+
+yso-meta:Concept
+    a owl:Class ;
+    rdfs:label "General concept"@en, "Yleiskäsite"@fi, "Allmänbegrepp"@sv, "Oktasašdoaba"@se ; 
+    rdfs:subClassOf skos:Concept .
+
+yso-meta:Hierarchy
+    a owl:Class ;
+    rdfs:label "Hierarchical concept"@en, "Hierarkisoiva käsite"@fi, "Hierarkiijadoaba"@se, "Hierarkiserande begrepp"@sv ;
+    rdfs:subClassOf skos:Concept .
+
+yso-meta:Individual
+    a owl:Class ;
+    rdfs:label "Individual concept"@en, "Yksilökäsite"@fi, "Individualbegrepp"@sv, "Individuála doaba"@se ; 
+    rdfs:subClassOf skos:Concept .
+
+yso-meta:singularPrefLabel a owl:DatatypeProperty ;
+    rdfs:subPropertyOf skos:hiddenLabel ;
+    rdfs:label "singular preferred term"@en, "käytettävän termin yksikkömuoto"@fi, "föredragen term i singular"@sv, "ávžžuhuvvon tearbma ovttaidlogus"@se ; 
+    rdfs:domain yso-meta:Concept .
+
+yso-meta:singularAltLabel a owl:DatatypeProperty ;
+    rdfs:subPropertyOf skos:hiddenLabel ;
+    rdfs:label "singular entry term"@en, "ohjaustermin yksikkömuoto"@fi, "hänvisningsterm i singular"@sv, "stivrentearbma ovttaidlogus"@se ;
+    rdfs:domain yso-meta:Concept .
+
+rdau:P60683 a rdf:Property ;
+    rdfs:label "edeltäjä"@fi, "företrädare"@sv, "has predecessor"@en, "ovdamanni"@se .
+
+rdau:P60686 a rdf:Property ;
+    rdfs:label "seuraaja"@fi, "efterträdare"@sv, "has successor"@en, "čuovvu"@se .
+
+lcsh: rdfs:label "Library of Congress Subject Headings"@en .
+
