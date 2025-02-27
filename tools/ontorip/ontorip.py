@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 from rdflib import Graph, Namespace, RDF, RDFS, URIRef, BNode
@@ -23,15 +23,7 @@ XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
 
-
-try: # rdflib 2.4.x
-  RDFNS = RDF.RDFNS
-  RDFSNS = RDFS.RDFSNS
-except: # rdflib 3.x
-  RDFNS = RDF.uri
-  RDFSNS = RDFS.uri
-
-# input graph  
+# input graph
 g = Graph()
 g.parse(args.input, format=guess_format(args.input))
 
@@ -45,8 +37,8 @@ for prefix, ns in g.namespaces():
 def is_domainont(res):
   """Tries to figure out whether a URIref is part of a domain ontology.
      Anything that is YSO, YSOMETA, XSD, RDF, RDFS, OWL, SKOS, DC, DCT is not."""
-  for non_domain_ns in (YSO, YSOMETA, XSD, RDFNS, RDFSNS, OWL, SKOS, DC, DCT):
-    if res.startswith(non_domain_ns):
+  for non_domain_ns in (YSO, YSOMETA, XSD, RDF, RDFS, OWL, SKOS, DC, DCT):
+    if str(res).startswith(str(non_domain_ns)):
       return False
   return True
 
@@ -59,11 +51,11 @@ for inst,cl in g.subject_objects(RDF.type):
   stats.setdefault(cl, 0)
   stats[cl] += 1
 
-stats = stats.items()
+stats = list(stats.items())
 #print >>sys.stderr, "stats:", stats
 stats.sort(key=lambda x:x[1], reverse=True)
 seedclass = stats[0][0]
-print >>sys.stderr, "Most common domain ontology class used as starting point:", seedclass
+print("Most common domain ontology class used as starting point:", seedclass, file=sys.stderr)
 
 # Determine the bounds of the domain-specific ontology by performing a
 # non-recursive breadth-first search (except a set is used instead of a FIFO
@@ -110,25 +102,24 @@ if args.old is not None:
   old = Graph()
   # copy namespace defs
   for prefix, ns in g.namespaces():
-    old.namespace_manager.bind(prefix, ns)
+    out.namespace_manager.bind(prefix, ns)
 
   # copy all triples from input graph that were not in out (i.e. YSO only)
-  for triple in g:
-    if triple not in out:
-      old.add(triple)
-  oldf = open(args.old, 'w')
-  old.serialize(destination=oldf, format=args.format)
-  oldf.close()
+    for triple in g:
+      if triple not in out:
+        old.add(triple)
+    with open(args.old, 'wb') as oldf:
+      old.serialize(destination=oldf, format=args.format)
 
 if args.new is not None:
   out.parse(args.new, format=guess_format(args.new))
 
 if 'xml' in args.format:
-  rdfxml = out.serialize(format=args.format)
+  rdfxml = out.serialize(format=args.format).decode('utf-8')
 
   # re-parse and re-serialize with lxml
   # to fix up namespaces stripped by rdflib serializer
-  rdftree = etree.fromstring(rdfxml)
+  rdftree = etree.fromstring(rdfxml.encode('utf-8'))
   nsmap = rdftree.nsmap
   for prefix,uri in out.namespaces():
     if prefix != '':
@@ -137,6 +128,6 @@ if 'xml' in args.format:
   for elem in rdftree:
     newrdfelem.append(elem)
   newrdftree = etree.ElementTree(newrdfelem)
-  newrdftree.write(sys.stdout, pretty_print=True)
+  newrdftree.write(sys.stdout.buffer, pretty_print=True)
 else:
-  out.serialize(destination=sys.stdout, format=args.format)
+  out.serialize(destination=sys.stdout.buffer, format=args.format)
