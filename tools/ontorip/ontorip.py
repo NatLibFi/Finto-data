@@ -102,7 +102,7 @@ if args.old is not None:
   old = Graph()
   # copy namespace defs
   for prefix, ns in g.namespaces():
-    out.namespace_manager.bind(prefix, ns)
+    old.namespace_manager.bind(prefix, ns)
 
   # copy all triples from input graph that were not in out (i.e. YSO only)
     for triple in g:
