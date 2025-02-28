@@ -751,10 +751,17 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skosmos:defaultSidebarView "groups";
 	skosmos:groupClass skos:Collection ;
 	skosmos:feedbackRecipient "met-sanasto@helsinki.fi";
-	void:dataDump <https://api.finto.fi/download/metatietosanasto/metatietosanasto-skos.ttl> ;
-	void:dataDump <https://api.finto.fi/download/metatietosanasto/metatietosanasto-skos.rdf> ;
+	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos-uudistetut-suhteet.ttl> ;
 	void:sparqlEndpoint <http://api.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mts:> .
+
+:mts skosmos:propertyOrder :mtswemipropertyOrder .
+
+:mtswemipropertyOrder a skosmos:PropertyOrder ;
+    rdf:value ( rdf:type dc:isReplacedBy owl:inverseOf skos:definition skos:broader
+                skos:narrower skos:related skos:altLabel skosmos:memberOf
+                skos:note skos:scopeNote skos:historyNote rdfs:comment
+                dct:source dc:source skos:prefLabel) .
 
 :musa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "MUSA/CILLA - Musiikin asiasanasto"@fi,
