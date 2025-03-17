@@ -13,11 +13,6 @@ _10:49:00 ERROR riot            :: [line: 82, col: 61] Bad character in IRI (spa
 
 - Korjattu, nyt ok
 
-_riot --output=rdfxml kkaa-skos.ttl > kkaa-skos.rdf_
-
-- ok
-
-
 ## Config.ttl:
 
 ```
@@ -37,8 +32,8 @@ _riot --output=rdfxml kkaa-skos.ttl > kkaa-skos.rdf_
         #skosmos:groupClass skos:Collection ;
         #skosmos:feedbackRecipient "met-sanasto@helsinki.fi";
         skosmos:sparqlDialect "Generic" ;
-        void:dataDump <https://dev.finto.fi/download/cn/kkaa-skos.ttl> ;
-        void:dataDump <https://dev.finto.fi/download/cn/kkaa-skos.rdf> ;
+        void:dataDump <https://dev.finto.fi/download/kkaa/kkaa-skos.ttl> ;
+        void:dataDump <https://dev.finto.fi/download/kkaa/kkaa-skos.rdf> ;
         # void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ; # dev
         void:sparqlEndpoint <http://localhost:3030/tests/sparql> ; # lokaali
         skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:kkaa:> ;
