@@ -678,6 +678,7 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
             """Ontologi för litteraturforskning KITO upprätthålls inte längre. Vid beskrivning av litteraturforskning kan användas den allmänna finländska ontologin ALLFO och KOKO ontologin."""@sv ;
       ] .
 
+
 :kkaa a skosmos:Vocabulary, void:Dataset ;
     dc:title "Topics for Collection Description (Collection Map)"@en,
         "Kokoelmien kuvailun aihealueet (Kokoelmakartta)"@fi,
@@ -690,8 +691,13 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
         skosmos:useModifiedDate "true";
         skosmos:showChangeList "false";
     	skosmos:showTopConcepts "true";
-        skosmos:defaultSidebarView "hierarchy";
+        skosmos:sortByNotation "lexical" ;
+        skosmos:searchByNotation true ;
         #skosmos:groupClass skos:Collection ;
+        skosmos:sortByNotation "lexical" ;
+        skosmos:alphabeticalListQualifier skos:notation ;
+        skosmos:fullAlphabeticalIndex "true";
+        skosmos:defaultSidebarView "hierarchy";
         #skosmos:feedbackRecipient "xyz@helsinki.fi";
         skosmos:sparqlDialect "Generic" ;
         void:dataDump <https://dev.finto.fi/download/kkaa/kkaa-skos.ttl> ;
