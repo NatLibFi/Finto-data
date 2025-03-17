@@ -678,7 +678,28 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
             """Ontologi för litteraturforskning KITO upprätthålls inte längre. Vid beskrivning av litteraturforskning kan användas den allmänna finländska ontologin ALLFO och KOKO ontologin."""@sv ;
       ] .
 
-
+:kkaa a skosmos:Vocabulary, void:Dataset ;
+    dc:title "Topics for Collection Description (Collection Map)"@en,
+        "Kokoelmien kuvailun aihealueet (Kokoelmakartta)"@fi,
+        "Kompkarta områden"@sv ;
+        skosmos:shortName "KKAA"@fi, "KO"@sv, "TCD"@en ;
+        dct:subject :cat_general ;
+        void:uriSpace "http://urn.fi/URN:NBN:fi:au:kkaa:";
+    skosmos:language "fi", "sv", "en";
+        skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
+        skosmos:showChangeList "false";
+    	skosmos:showTopConcepts "false";
+        skosmos:defaultSidebarView "hierarchy";
+        #skosmos:groupClass skos:Collection ;
+        #skosmos:feedbackRecipient "xyz@helsinki.fi";
+        skosmos:sparqlDialect "Generic" ;
+        void:dataDump <https://dev.finto.fi/download/cn/kkaa-skos.ttl> ;
+        void:dataDump <https://dev.finto.fi/download/cn/kkaa-skos.rdf> ;
+        void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ; # dev
+        # void:sparqlEndpoint <http://localhost:3030/tests/sparql> ; # lokaali
+        skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:kkaa:> ;
+        skosmos:mainConceptScheme <http://urn.fi/URN:NBN:fi:au:kkaa:> .
 
 :koko a skosmos:Vocabulary, void:Dataset ;
 	dc:title "KOKO-ontologia"@fi,
