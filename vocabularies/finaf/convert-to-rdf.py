@@ -11,6 +11,8 @@ import unicodedata
 import requests
 import pymarc.marcxml
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
+import validators
+from validators.utils import ValidationError
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 OWL=Namespace("http://www.w3.org/2002/07/owl#")
@@ -164,6 +166,13 @@ def format_timestamp(ts):
     else:
         return "%04d-%02d-%02d" % (year, mon, day)
 
+def valid_uriref(uri):
+    result = validators.url(uri)
+    if result:
+        return URIRef(uri)
+    else:
+        raise result
+
 @functools.lru_cache(maxsize=1000)
 def lookup_mts(label):
     logging.debug('looking up MTS label "%s"', label)
@@ -243,7 +252,13 @@ def main():
         for f in rec.get_fields('024'):
             if '2' in f and 'a' in f and f['2'] == 'finaf':
                 logging.info('using URN from 024 field')
-                uri = URIRef(f['a'])
+                try:
+                    uri = valid_uriref(f['a'])
+                except ValidationError:
+                    logging.warning(f'024 field has invalid URN {f["a"]}, skipping record {recid}')
+                    uri = None
+        if not uri:
+            continue
 
         # sanity check
         if '100' not in rec and '110' not in rec and '111' not in rec:
@@ -298,8 +313,11 @@ def main():
 
             if 'z' in f and '2' in f and f['2'] in ('urn', 'finaf'):
                 urn = f['z'].replace(' ', '')
-                urn_uri = URIRef(urn)
-                g.add((urn_uri, DCT.isReplacedBy, uri))
+                try:
+                    urn_uri = valid_uriref(urn)
+                    g.add((urn_uri, DCT.isReplacedBy, uri))
+                except ValidationError:
+                    logging.warning(f'024 $z has invalid URN {urn}, not creating isReplacedBy for {uri}')
 
             if '2' not in f or 'a' not in f:
                 continue
@@ -310,8 +328,11 @@ def main():
                 g.add((uri, id_prop, isni_uri))
             elif f['2'] == 'orcid':
                 orcid = f['a'].replace(' ', '')
-                orcid_uri = URIRef(orcid)
-                g.add((uri, id_prop, orcid_uri))
+                try:
+                    orcid_uri = valid_uriref(orcid)
+                    g.add((uri, id_prop, orcid_uri))
+                except ValidationError:
+                    logging.warning(f'024 has invalid ORCID "{orcid}", not creating link for {uri}')
             elif f['2'] == 'viaf':
                 viaf = f['a'].replace(' ', '')
                 viaf_uri = VIAF[viaf]
@@ -370,7 +391,10 @@ def main():
             obj = Literal(normalize(val), lang='fi') # by default, use a literal value
             if '0' in f:
                 # use a URI value given in subfield 0 (likely from MTS) instead
-                obj = URIRef(f['0'])
+                try:
+                    obj = valid_uriref(f['0'])
+                except ValidationError:
+                    logging.warning(f'368 $0 has invalid URI {f["0"]}, using literal instead {uri}')
             elif '2' in f and f['2'] == 'mts':
                 # see if we can find a URI value from MTS
                 mtsuri = lookup_mts(val)
@@ -421,7 +445,10 @@ def main():
         for f in rec.get_fields('372'):
             value = Literal(normalize(f.format_field()), lang='fi')
             if '0' in f:
-                value = URIRef(f['0'])
+                try:
+                    value = valid_uriref(f['0'])
+                except ValidationError:
+                    logging.warning(f'372 $0 has invalid URI {f["0"]}, using literal instead {uri}')
             elif '2' in f and f['2'] == 'yso':
                 ysouri = lookup_yso(f['a'])
                 if ysouri:
@@ -441,7 +468,10 @@ def main():
         for f in rec.get_fields('374'):
             value = Literal(normalize(f.format_field()), lang='fi')
             if '0' in f:
-                value = URIRef(f['0'])
+                try:
+                    value = valid_uriref(f['0'])
+                except ValidationError:
+                    logging.warning(f'374 $0 has invalid URI {f["0"]}, using literal instead {uri}')
             elif '2' in f and f['2'] == 'mts':
                 mtsuri = lookup_mts(f['a'])
                 if mtsuri:
@@ -571,7 +601,13 @@ def main():
 
         for f in rec.get_fields('856'):
             if 'u' in f:
-                g.add((uri, SKOS.closeMatch, URIRef(f['u'])))
+
+                try:
+                    value = valid_uriref(f['u'])
+                    g.add((uri, SKOS.closeMatch, value))
+                except ValidationError:
+                    logging.warning(f'856 $u has invalid URI {f["u"]}, not creating closeMatch link {uri}')
+
 
     # Pass 2: convert literal values to resources
     for prop in literal_to_resource:
