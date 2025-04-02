@@ -10,6 +10,7 @@
 @prefix rdakit: <http://metadataregistry.org/uri/profile/rdakit/> .
 @prefix rdam: <http://rdaregistry.info/Elements/m/> .
 @prefix rdan: <http://rdaregistry.info/Elements/n/> .
+@prefix rdap: <http://rdaregistry.info/Elements/p/> .
 @prefix rdau: <http://rdaregistry.info/Elements/u/> .
 @prefix rdaw: <http://rdaregistry.info/Elements/w/> .
 @prefix rdax: <http://rdaregistry.info/Elements/x/> .
@@ -6454,7 +6455,7 @@ rdaa:P51106 a rdf:Property ;
     rdfs:subPropertyOf rdaa:P50333 ;
     skos:definition "Relates a corporate body to an agent who initiates a corporate body."@en .
 
-<http://rdaregistry.info/Elements/p/P70001> a rdf:Property ;
+rdap:P70001 a rdf:Property ;
     rdfs:label "has name of place"@en,
         "paikannimi"@fi ;
     rdakit:hasElementType "3" ;
@@ -6463,125 +6464,125 @@ rdaa:P51106 a rdf:Property ;
         "Sana, merkki tai joukko sanoja ja/tai merkkejä, joilla paikka tunnetaan."@fi ;
     rdakit:toolkitLabel "name of place"@en,
         "paikannimi"@fi ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70002>,
-        <http://rdaregistry.info/Elements/p/P70003>,
+    reg:hasSubproperty rdap:P70002,
+        rdap:P70003,
         <http://rdaregistry.info/Elements/p/datatype/P70001>,
         <http://rdaregistry.info/Elements/p/object/P70001> ;
     reg:hasUnconstrained rdau:P60366 ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/nameOfPlace.en>,
-        <http://rdaregistry.info/Elements/p/paikannimi.fi> ;
+    reg:lexicalAlias rdap:nameOfPlace.en,
+        rdap:paikannimi.fi ;
     reg:name "nameOfPlace"@en,
         "paikannimi"@fi ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70019>,
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70019,
         rdax:P00019 ;
     skos:definition "Relates a place to an appellation of place in natural language and phrasing used in common discourse."@en,
         "Liittää paikan sanaan, merkkiin tai joukkoon sanoihin ja/tai merkkejä, joilla paikka tunnetaan."@fi .
 
-<http://rdaregistry.info/Elements/p/P70008> a rdf:Property ;
+rdap:P70008 a rdf:Property ;
     rdfs:label "has related agent of place"@en,
         "paikkaan liittyvä toimija"@fi ;
     rdakit:hasElementType "1" ;
     rdakit:toolkitDefinition "An agent who is associated with a place."@en ;
     rdakit:toolkitLabel "related agent of place"@en ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70009>,
-        <http://rdaregistry.info/Elements/p/P70014>,
+    reg:hasSubproperty rdap:P70009,
+        rdap:P70014,
         <http://rdaregistry.info/Elements/p/datatype/P70008> ;
     reg:hasUnconstrained rdau:P61011 ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/paikkaanLiittyvaToimija.fi>,
-        <http://rdaregistry.info/Elements/p/relatedAgentOfPlace.en> ;
+    reg:lexicalAlias rdap:paikkaanLiittyvaToimija.fi,
+        rdap:relatedAgentOfPlace.en ;
     reg:name "relatedAgentOfPlace"@en,
         "paikkaanLiittyvaToimija"@fi ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70013>,
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70013,
         rdax:P00006 ;
     skos:definition "Relates a place to an agent who is associated with a place."@en,
         "Liittää paikan toimijaan, johon kuvailun kohteena oleva paikka liittyy."@fi .
 
-<http://rdaregistry.info/Elements/p/P70009> a rdf:Property ;
+rdap:P70009 a rdf:Property ;
     rdfs:label "has related collective agent of place"@en,
         "paikkaan liittyvä yhteistoimija"@fi ;
     rdakit:hasElementType "1" ;
     rdakit:toolkitDefinition "A collective agent who is associated with a place."@en ;
     rdakit:toolkitLabel "related collective agent of place"@en ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70015>,
-        <http://rdaregistry.info/Elements/p/P70016>,
+    reg:hasSubproperty rdap:P70015,
+        rdap:P70016,
         <http://rdaregistry.info/Elements/p/datatype/P70009> ;
     reg:hasUnconstrained rdau:P61011 ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/paikkaanLiittyvaYhteistoimija.fi>,
-        <http://rdaregistry.info/Elements/p/relatedCollectiveAgentOfPlace.en> ;
+    reg:lexicalAlias rdap:paikkaanLiittyvaYhteistoimija.fi,
+        rdap:relatedCollectiveAgentOfPlace.en ;
     reg:name "relatedCollectiveAgentOfPlace"@en,
         "paikkaanLiittyvaYhteistoimija"@fi ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70008>,
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70008,
         rdax:P00012 ;
     skos:definition "Relates a place to a collective agent who is associated with a place."@en,
         "Liittää paikan yhteistoimijaan, johon kuvailun kohteena oleva paikka liittyy."@fi .
 
-<http://rdaregistry.info/Elements/p/P70010> a rdf:Property ;
+rdap:P70010 a rdf:Property ;
     rdfs:label "has related place of place"@en,
         "paikkaan liittyvä paikka"@fi ;
     rdakit:hasElementType "1" ;
     rdakit:toolkitDefinition "A place that is associated with a place."@en ;
     rdakit:toolkitLabel "related place of place"@en ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70032>,
-        <http://rdaregistry.info/Elements/p/P70033>,
+    reg:hasSubproperty rdap:P70032,
+        rdap:P70033,
         <http://rdaregistry.info/Elements/p/datatype/P70010> ;
     reg:hasUnconstrained rdau:P61016 ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/paikkaanLiittyvaPaikka.fi>,
-        <http://rdaregistry.info/Elements/p/relatedPlaceOfPlace.en> ;
+    reg:lexicalAlias rdap:paikkaanLiittyvaPaikka.fi,
+        rdap:relatedPlaceOfPlace.en ;
     reg:name "relatedPlaceOfPlace"@en,
         "paikkaanLiittyvaPaikka"@fi ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70013>,
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70013,
         rdax:P00010 ;
     skos:definition "Relates a place to a place that is associated with a place."@en,
         "Liittää paikan paikkaan, johon kuvailun kohteena oleva paikka liittyy."@fi .
 
-<http://rdaregistry.info/Elements/p/P70019> a rdf:Property ;
+rdap:P70019 a rdf:Property ;
     rdfs:label "has appellation of place"@en ;
     rdakit:hasElementType "3" ;
     rdakit:toolkitDefinition "A nomen used within a given scheme or context to refer to a place."@en ;
     rdakit:toolkitLabel "appellation of place"@en ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70001>,
-        <http://rdaregistry.info/Elements/p/P70018>,
-        <http://rdaregistry.info/Elements/p/P70020>,
+    reg:hasSubproperty rdap:P70001,
+        rdap:P70018,
+        rdap:P70020,
         <http://rdaregistry.info/Elements/p/datatype/P70019>,
         <http://rdaregistry.info/Elements/p/object/P70019> ;
     reg:hasUnconstrained rdau:P60909 ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/appellationOfPlace.en> ;
+    reg:lexicalAlias rdap:appellationOfPlace.en ;
     reg:name "appellationOfPlace"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70012>,
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70012,
         rdax:P00017 ;
     skos:definition "Relates a place to a nomen used within a given scheme or context to refer to a place."@en .
 
-<http://rdaregistry.info/Elements/p/P70023> a rdf:Property ;
+rdap:P70023 a rdf:Property ;
     rdfs:label "is coordinates of cartographic content of"@en ;
     rdakit:hasElementType "2" ;
     rdakit:toolkitDefinition "A work that is a cartographic work that has an area of coverage that is described using a mathematical system to identify its boundaries or location."@en ;
     rdakit:toolkitLabel "coordinates of cartographic content of"@en ;
-    reg:hasSubproperty <http://rdaregistry.info/Elements/p/P70034>,
-        <http://rdaregistry.info/Elements/p/P70036>,
-        <http://rdaregistry.info/Elements/p/P70037>,
+    reg:hasSubproperty rdap:P70034,
+        rdap:P70036,
+        rdap:P70037,
         <http://rdaregistry.info/Elements/p/datatype/P70023>,
         <http://rdaregistry.info/Elements/p/object/P70023> ;
-    reg:lexicalAlias <http://rdaregistry.info/Elements/p/coordinatesOfCartographicContentOf.en> ;
+    reg:lexicalAlias rdap:coordinatesOfCartographicContentOf.en ;
     reg:name "coordinatesOfCartographicContentOf"@en ;
     reg:status <http://metadataregistry.org/uri/RegStatus/1001> ;
     rdfs:domain rdac:C10009 ;
-    rdfs:isDefinedBy <http://rdaregistry.info/Elements/p/> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/p/P70004> ;
+    rdfs:isDefinedBy rdap: ;
+    rdfs:subPropertyOf rdap:P70004 ;
     skos:definition "Relates a place to a work that is a cartographic work that has an area of coverage that is described using a mathematical system to identify its boundaries or location."@en .
 
 rdau:P60141 a rdf:Property ;
@@ -12648,6 +12649,21 @@ finaf:000013430 a rdac:C10005,
     rdau:P61101 "Vuosisata turkulaista makeisteollisuutta / Juha Vahe. - Turku, 2000"@fi ;
     skos:inScheme finaf: ;
     skos:prefLabel "Hellas"@fi .
+
+finaf:000013706 a rdac:C10005,
+        skos:Concept ;
+    dct:created "1995-08-22"^^xsd:date ;
+    dct:modified "2020-11-05T20:06:39"^^xsd:dateTime ;
+    rdaa:P50006 <http://isni.org/isni/0000000474464713>,
+        "Asteri ID: 000013706" ;
+    rdaa:P50025 "Tulenkantajain seura"@fi ;
+    rdaa:P50237 "kirjailijaryhmä"@fi,
+        "seura"@fi ;
+    rdaa:P50393 "Nuoren voiman liiton kirjallisen piirin 1924 alkaneesta ja 1929 aikakauslehdeksi muuttuneesta albumista nimensä saanut kirjailijaryhmä (Lähde: Otavan iso tietosanakirja)"@fi ;
+    rdaa:P50407 "Tulenkantajat (kirjailijaryhmä)"@fi ;
+    skos:altLabel "Tulenkantajain seura"@fi ;
+    skos:inScheme finaf: ;
+    skos:prefLabel "Tulenkantajat (kirjailijaryhmä)"@fi .
 
 finaf:000013736 a rdac:C10005,
         skos:Concept ;
