@@ -11,7 +11,6 @@ import unicodedata
 import requests
 import pymarc.marcxml
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
-from SPARQLWrapper import SPARQLWrapper, JSON
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 OWL=Namespace("http://www.w3.org/2002/07/owl#")
@@ -91,7 +90,6 @@ nameOfPlace=RDAP.P70001
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
 FINTO_API_BASE="http://api.finto.fi/rest/v1/"
-FINTO_SPARQL_ENDPOINT="http://api.finto.fi/sparql"
 
 def normalize_relterm(term):
     return re.sub(r'[.,: ]*$', '', term.lower().strip())
@@ -113,6 +111,14 @@ def load_relations(filename):
             literal_to_resource.append(rdauri)
             rels[term] = rdauri
     return rels
+
+def load_languages(filename):
+    langs = {}
+    with open(filename) as langf:
+        reader = csv.DictReader(langf)
+        for row in reader:
+            langs[row['code']] = URIRef(row['lang'])
+    return langs
 
 def initialize_graph():
     g = Graph()
@@ -211,22 +217,6 @@ def lookup_yso_place(label):
 
     return URIRef(req.json()['result'][0]['uri'])
 
-@functools.lru_cache(maxsize=1000)
-def lookup_language(langcode):
-    logging.debug('looking up language code "%s"', langcode)
-    sparql = SPARQLWrapper(FINTO_SPARQL_ENDPOINT)
-    sparql.setQuery("""
-        SELECT ?lang
-        FROM <http://lexvo.org/id/iso639-3/>
-        WHERE { ?lang <http://lexvo.org/ontology#iso6392BCode> "%s" }
-    """ % langcode)
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
-    for result in results["results"]["bindings"]:
-        return URIRef(result["lang"]["value"])
-    logging.debug('Language code lookup for "%s" failed', langcode)
-    return None
-
 def main():
     logging.basicConfig(level=logging.DEBUG)
 
@@ -235,6 +225,7 @@ def main():
     label_to_uri = {}
     rel500i = load_relations('500i-to-rda.csv')
     rel510i = load_relations('510i-to-rda.csv')
+    marc_lang_to_lexvo = load_languages('marc-lang-to-lexvo.csv')
 
     # Pass 1: convert MARC data to basic RDF
     for lineidx, line in enumerate(sys.stdin):
@@ -460,8 +451,9 @@ def main():
 
         for f in rec.get_fields('377'):
             for lang in f.get_subfields('a'):
-                lang_uri = lookup_language(lang)
-                if not lang_uri:
+                if lang in marc_lang_to_lexvo:
+                    lang_uri = marc_lang_to_lexvo[lang]
+                else:
                     logging.warning("Unknown 377 language value '%s' for <%s>, skipping", lang, uri)
                     continue
 
