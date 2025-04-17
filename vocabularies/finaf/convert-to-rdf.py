@@ -173,6 +173,10 @@ def valid_uriref(uri):
     else:
         raise result
 
+def strip_qualifier(name):
+    """strip parenthetical qualifiers from names"""
+    return re.sub(r'\s*\(.*?\)', '', name)
+
 @functools.lru_cache(maxsize=1000)
 def lookup_mts(label):
     logging.debug('looking up MTS label "%s"', label)
@@ -285,8 +289,9 @@ def main():
         literal = Literal(label, lang='fi') # prefLabel is always Finnish
         g.add((uri, SKOS.prefLabel, literal))
         g.add((uri, labelprop, literal))
-        label_to_uri[label] = uri
+        label_to_uri[label] = uri # name which may contain parenthetical qualifier
         logging.debug("Preferred label: '%s'", label)
+        label_to_uri[strip_qualifier(label)] = uri # name without qualifier
 
         # created timestamp
         created = rec['008'].value()[:6]
