@@ -251,6 +251,21 @@ slm:s1063 a skos:Concept ;
     skos:prefLabel "käsinpiirretyt animaatioelokuvat"@fi,
         "handritade animerade filmer"@sv .
 
+slm:s1064 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "käsikirjoitukset (uniikkikappaleet)"@fi,
+        "käsin kirjoitetut aineistot"@fi,
+        "uniikkikäsikirjoitukset"@fi,
+        "handskrifter"@sv,
+        "manus"@sv ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p11009> ;
+    skos:inScheme slm:s285 ;
+    skos:note "Käsikirjoitus on joko käsin tai koneella kirjoitettu uniikki (ei painettu) teksti."@fi ;
+    skos:prefLabel "käsikirjoitukset (käsin kirjoitetut)"@fi,
+        "manuskript"@sv ;
+    skos:topConceptOf slm:s285 .
+
 slm:s1069 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     skos:altLabel "urheilukirjallisuus"@fi,
@@ -703,14 +718,15 @@ slm:s12 a skos:Concept ;
 
 slm:s120 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:altLabel "käsikirjoitukset (elokuvat)"@fi,
         "filmmanus"@sv,
         "manuskript (filmer)"@sv ;
-    skos:broader slm:s1064 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p24212> ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "elokuvakäsikirjoitukset"@fi,
-        "filmmanuskript"@sv .
+        "filmmanuskript"@sv ;
+    skos:topConceptOf slm:s285 .
 
 slm:s1202 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -737,8 +753,9 @@ slm:s1206 a skos:Concept ;
 
 slm:s1207 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2024-06-13"^^xsd:date ;
-    skos:altLabel "vykort"@sv ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "kortit (postikortit)"@fi,
+        "vykort"@sv ;
     skos:broader slm:s1492 ;
     skos:inScheme slm: ;
     skos:prefLabel "postikortit"@fi,
@@ -899,8 +916,9 @@ slm:s1234 a skos:Concept ;
 
 slm:s1235 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2021-05-19"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:broader slm:s474 ;
+    skos:definition "Puheäänelle ja soittimille sävelletty draamallinen musiikkiteos."@fi ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2016026051> ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "melodraamat (musiikki)"@fi,
@@ -1141,14 +1159,15 @@ slm:s1278 a skos:Concept ;
         "sjökort"@sv .
 
 slm:s1279 a skos:Concept ;
-    dct:modified "2023-10-20"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:broader slm:s1328 ;
     skos:definition "Konsertin yleisölle laadittu luettelo konsertissa esitettävästä ohjelmasta."@fi,
         "Lista för publiken över programmet som framförs under en konsert."@sv ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026065> ;
     skos:inScheme slm: ;
     skos:prefLabel "konserttiohjelmat (käsiohjelmat)"@fi,
-        "konsertprogram (programblad)"@sv .
+        "konsertprogram (programblad)"@sv ;
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia käsiohjelmia. Jos aineisto sisältää kuvia käsiohjelmista, käytetään soveltuvaa YSO-asiasanaa."@fi .
 
 slm:s128 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2284,12 +2303,13 @@ slm:s150 a skos:Concept ;
 
 slm:s1500 a skos:Concept ;
     dct:created "2023-10-20"^^xsd:date ;
-    dct:modified "2023-10-20"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:broader slm:s1328 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026193> ;
     skos:inScheme slm: ;
     skos:prefLabel "teatteriohjelmat (käsiohjelmat)"@fi,
-        "teaterprogram (programblad)"@sv .
+        "teaterprogram (programblad)"@sv ;
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia käsiohjelmia. Jos aineisto sisältää kuvia käsiohjelmista, käytetään soveltuvaa YSO-asiasanaa."@fi .
 
 slm:s1501 a skos:Concept ;
     dct:created "2023-10-20"^^xsd:date ;
@@ -2322,13 +2342,14 @@ slm:s1503 a skos:Concept ;
 
 slm:s1504 a skos:Concept ;
     dct:created "2023-10-20"^^xsd:date ;
-    dct:modified "2023-10-20"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:altLabel "elokuvaohjelmat (käsiohjelmat)"@fi,
         "bioprogram (programblad)"@sv ;
     skos:broader slm:s1328 ;
     skos:inScheme slm: ;
     skos:prefLabel "elokuvateatterien käsiohjelmat"@fi,
-        "biografprogram (programblad)"@sv .
+        "biografprogram (programblad)"@sv ;
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia käsiohjelmia. Jos aineisto sisältää kuvia käsiohjelmista, käytetään soveltuvaa YSO-asiasanaa."@fi .
 
 slm:s1505 a skos:Concept ;
     dct:created "2023-10-20"^^xsd:date ;
@@ -2461,6 +2482,39 @@ slm:s1539 a skos:Concept ;
     skos:inScheme slm: ;
     skos:prefLabel "paimenmuistot"@fi,
         "herdaminnen"@sv .
+
+slm:s1542 a skos:Concept ;
+    dct:created "2025-05-06"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:broader slm:s342 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "valtiokalenterit"@fi .
+
+slm:s1543 a skos:Concept ;
+    dct:created "2025-05-06"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "puuhakortit"@fi,
+        "toimintakortit"@fi ;
+    skos:broader slm:s1442 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "kortit"@fi .
+
+slm:s1544 a skos:Concept ;
+    dct:created "2025-05-06"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "puolustuspuheet (kristillinen kirjallisuus)"@fi ;
+    skos:broader slm:s1170 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2015026027> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "apologiat"@fi .
+
+slm:s1545 a skos:Concept ;
+    dct:created "2025-05-06"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:broader slm:s476 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026902> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "ländlerit"@fi .
 
 slm:s157 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2725,8 +2779,9 @@ slm:s219 a skos:Concept ;
 
 slm:s22 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-09-02"^^xsd:date ;
-    skos:altLabel "pelikortit"@fi,
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "kortit (pelikortit)"@fi,
+        "pelikortit"@fi,
         "spelkort"@sv ;
     skos:broader slm:s170 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p2221> ;
@@ -4807,15 +4862,16 @@ slm:s740 a skos:Concept ;
 
 slm:s742 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:altLabel "story board"@fi,
         "storyboard"@fi,
         "story board"@sv,
         "storyboard"@sv ;
-    skos:broader slm:s1064 ;
     skos:closeMatch <http://www.yso.fi/onto/yso/p21447> ;
     skos:inScheme slm:s285 ;
     skos:prefLabel "kuvakäsikirjoitukset"@fi,
-        "bildmanus"@sv .
+        "bildmanus"@sv ;
+    skos:topConceptOf slm:s285 .
 
 slm:s743 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -6336,17 +6392,6 @@ slm:s117 a skos:Concept ;
         "soukous"@sv ;
     skos:related slm:s1188 .
 
-slm:s1170 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2024-12-13"^^xsd:date ;
-    skos:altLabel "kristlig litteratur"@sv ;
-    skos:broader slm:s1532 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p26964> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s993 ;
-    skos:prefLabel "kristillinen kirjallisuus"@fi,
-        "kristen litteratur"@sv .
-
 slm:s1172 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2021-10-21"^^xsd:date ;
@@ -7312,10 +7357,14 @@ slm:s1452 a skos:Concept ;
 
 slm:s1455 a skos:Concept ;
     dct:created "2022-06-16"^^xsd:date ;
-    dct:modified "2025-03-13"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:altLabel "apostoliset kehotuskirjeet"@fi,
         "apostoliset kiertokirjeet"@fi,
+        "apostoliset kirjeet"@fi,
+        "apostoliset paimenkirjeet"@fi,
         "ensyklikat"@fi,
+        "paavilliset kiertokirjeet"@fi,
+        "paavin kiertokirjeet"@fi,
         "encyklikor"@sv,
         "påvens encyklikor"@sv,
         "påvliga rundskrivelser"@sv ;
@@ -7323,7 +7372,7 @@ slm:s1455 a skos:Concept ;
         slm:s63 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2015026081> ;
     skos:inScheme slm:s285 ;
-    skos:prefLabel "paavin kiertokirjeet"@fi,
+    skos:prefLabel "paavin kehotus- ja kiertokirjeet"@fi,
         "påvliga encyklikor"@sv .
 
 slm:s1456 a skos:Concept ;
@@ -7728,6 +7777,14 @@ slm:s1540 a skos:Concept ;
     skos:prefLabel "hagiografiat"@fi,
         "hagiografier"@sv ;
     skos:related slm:s935 .
+
+slm:s1541 a skos:Concept ;
+    dct:created "2025-05-06"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:broader slm:s1442 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "muistiinpanot"@fi ;
+    skos:related slm:s155 .
 
 slm:s161 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -8206,15 +8263,6 @@ slm:s339 a skos:Concept ;
     skos:prefLabel "haikut"@fi,
         "haikudikter"@sv ;
     skos:related slm:s331 .
-
-slm:s342 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2023-10-20"^^xsd:date ;
-    skos:broader slm:s1492 ;
-    skos:inScheme slm:s593 ;
-    skos:prefLabel "kalenterit"@fi,
-        "kalendrar"@sv ;
-    skos:related slm:s1317 .
 
 slm:s345 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -9023,19 +9071,6 @@ slm:s609 a skos:Concept ;
     skos:inScheme slm:s861 ;
     skos:prefLabel "intermediot"@fi,
         "intermedier"@sv .
-
-slm:s611 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2021-12-21"^^xsd:date ;
-    skos:altLabel "självbiografiska romaner"@sv ;
-    skos:broader slm:s975 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p25824> ;
-    skos:inScheme slm:s285 ;
-    skos:note "Autofiktio on fiktion laji, joka yhdistelee omaelämäkerran ja romaanin piirteitä."@fi,
-        "Fiktion som kombinerar drag ur självbiografin och romanen."@sv ;
-    skos:prefLabel "autofiktio"@fi,
-        "autofiktion"@sv ;
-    skos:related slm:s286 .
 
 slm:s613 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10163,18 +10198,6 @@ slm:s1053 a skos:Concept ;
     skos:related slm:s748,
         slm:s888 .
 
-slm:s1064 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    skos:altLabel "handskrifter"@sv,
-        "manus"@sv ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p11009> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s120,
-        slm:s742 ;
-    skos:prefLabel "käsikirjoitukset"@fi,
-        "manuskript"@sv ;
-    skos:topConceptOf slm:s285 .
-
 slm:s1067 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2023-06-06"^^xsd:date ;
@@ -10385,6 +10408,18 @@ slm:s1163 a skos:Concept ;
         "krigsspel"@sv ;
     skos:related slm:s371,
         slm:s38 .
+
+slm:s1170 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "kristlig litteratur"@sv ;
+    skos:broader slm:s1532 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p26964> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1544,
+        slm:s993 ;
+    skos:prefLabel "kristillinen kirjallisuus"@fi,
+        "kristen litteratur"@sv .
 
 slm:s1191 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -11038,6 +11073,16 @@ slm:s33 a skos:Concept ;
         "purpuri"@sv ;
     skos:related slm:s146 .
 
+slm:s342 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:broader slm:s1492 ;
+    skos:inScheme slm:s593 ;
+    skos:narrower slm:s1542 ;
+    skos:prefLabel "kalenterit"@fi,
+        "kalendrar"@sv ;
+    skos:related slm:s1317 .
+
 slm:s35 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2024-10-26"^^xsd:date ;
@@ -11429,6 +11474,20 @@ slm:s604 a skos:Concept ;
         "psykologiska romaner"@sv ;
     skos:related slm:s15,
         slm:s665 .
+
+slm:s611 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "självbiografiska romaner"@sv ;
+    skos:broader slm:s975 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p25824> ;
+    skos:inScheme slm:s285 ;
+    skos:note "Autofiktio on fiktion laji, joka yhdistelee omaelämäkerran ja romaanin piirteitä."@fi,
+        "Fiktion som kombinerar drag ur självbiografin och romanen."@sv ;
+    skos:prefLabel "autofiktio"@fi,
+        "autofiktion"@sv ;
+    skos:related slm:s286,
+        slm:s770 .
 
 slm:s619 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -12295,14 +12354,15 @@ slm:s1318 a skos:Concept ;
 
 slm:s1328 a skos:Concept ;
     dct:created "2019-06-11"^^xsd:date ;
-    dct:modified "2023-10-20"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:broader slm:s1492 ;
     skos:inScheme slm: ;
     skos:narrower slm:s1279,
         slm:s1500,
         slm:s1504 ;
     skos:prefLabel "käsiohjelmat"@fi,
-        "programblad"@sv .
+        "programblad"@sv ;
+    skos:scopeNote "Termillä kuvaillaan ainoastaan konkreettisia käsiohjelmia. Jos aineisto sisältää kuvia käsiohjelmista, käytetään soveltuvaa YSO-asiasanaa."@fi .
 
 slm:s1336 a skos:Concept ;
     dct:created "2019-09-04"^^xsd:date ;
@@ -12678,19 +12738,6 @@ slm:s359 a skos:Concept ;
         "naturdokumentärer"@sv ;
     skos:related slm:s1399,
         slm:s85 .
-
-slm:s365 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2024-06-13"^^xsd:date ;
-    skos:altLabel "tosipohjaiset teokset"@fi,
-        "dokumentära verk"@sv ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1353 ;
-    skos:prefLabel "todellisuuspohjaiset teokset"@fi,
-        "verklighetsbaserade verk"@sv ;
-    skos:related slm:s770,
-        slm:s906 ;
-    skos:topConceptOf slm:s285 .
 
 slm:s374 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -13216,23 +13263,6 @@ slm:s844 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka esittelevät luontoa ja siinä esiintyvää lajistoa laajasti, ja joiden avulla voidaan oppia tunnistamaan eri lajeja."@fi,
         "Används om verk som ger en bred presentation av naturen och de arter som förekommer där, samt fungerar som hjälp för artidentifiering."@sv .
 
-slm:s849 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2024-10-26"^^xsd:date ;
-    skos:altLabel "dokumenttidraamat"@fi,
-        "dokumentärdraman (verklighetsbaserade filmer)"@sv,
-        "dokumentärdramer (verklighetsbaserade filmer)"@sv ;
-    skos:broader slm:s1412 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p5666> ;
-    skos:inScheme slm: ;
-    skos:prefLabel "todellisuuspohjaiset elokuvat"@fi,
-        "verklighetsbaserade filmer"@sv ;
-    skos:related slm:s1078,
-        slm:s230,
-        slm:s928 ;
-    skos:scopeNote "Käytetään fiktiivisistä elokuvista, jotka pohjautuvat todellisiin tapahtumiin (esim. Tapaus Silkwood, Huuto vapaudelle, Isän nimeen, Siviilirohkeutta, Kuoleman kentät)."@fi,
-        "Används om fiktiva filmer som baserar sig på verkliga händelser (t.ex. Silkwood, Ett rop på frihet,  I faderns namn, A Civil Action, Dödens fält)."@sv .
-
 slm:s855 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2021-10-16"^^xsd:date ;
@@ -13641,26 +13671,6 @@ slm:s1368 a skos:Concept ;
     skos:related slm:s1216,
         slm:s1425 .
 
-slm:s1423 a skos:Concept ;
-    dct:created "2021-06-23"^^xsd:date ;
-    dct:modified "2022-03-24"^^xsd:date ;
-    skos:altLabel "todelliset rikostarinat"@fi,
-        "sanna brottshistorier"@sv,
-        "sanna kriminalhistorier"@sv,
-        "verkliga brottshistorier"@sv,
-        "verklighetsbaserade historier om brott"@sv ;
-    skos:broader slm:s1442 ;
-    skos:inScheme slm: ;
-    skos:narrowMatch <http://id.loc.gov/authorities/genreForms/gf2011026711>,
-        <http://id.loc.gov/authorities/genreForms/gf2014026203>,
-        <http://id.loc.gov/authorities/genreForms/gf2014026579> ;
-    skos:prefLabel "true crime"@fi,
-        "true crime"@sv ;
-    skos:related slm:s1161,
-        slm:s563,
-        slm:s858,
-        slm:s911 .
-
 slm:s1424 a skos:Concept ;
     dct:created "2021-06-23"^^xsd:date ;
     dct:modified "2021-06-25"^^xsd:date ;
@@ -14043,6 +14053,24 @@ slm:s784 a skos:Concept ;
         slm:s631,
         slm:s639 .
 
+slm:s849 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "dokumenttidraamat"@fi,
+        "dokumentärdraman (verklighetsbaserade filmer)"@sv,
+        "dokumentärdramer (verklighetsbaserade filmer)"@sv ;
+    skos:broader slm:s1412,
+        slm:s365 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p5666> ;
+    skos:inScheme slm: ;
+    skos:prefLabel "todellisuuspohjaiset elokuvat"@fi,
+        "verklighetsbaserade filmer"@sv ;
+    skos:related slm:s1078,
+        slm:s230,
+        slm:s928 ;
+    skos:scopeNote "Käytetään fiktiivisistä elokuvista, jotka pohjautuvat todellisiin tapahtumiin (esim. Tapaus Silkwood, Huuto vapaudelle, Isän nimeen, Siviilirohkeutta, Kuoleman kentät)."@fi,
+        "Används om fiktiva filmer som baserar sig på verkliga händelser (t.ex. Silkwood, Ett rop på frihet,  I faderns namn, A Civil Action, Dödens fält)."@sv .
+
 slm:s981 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2024-06-12"^^xsd:date ;
@@ -14125,6 +14153,27 @@ slm:s1139 a skos:Concept ;
     skos:prefLabel "hengellinen musiikki (kristinusko)"@fi,
         "andlig musik (kristendom)"@sv .
 
+slm:s1423 a skos:Concept ;
+    dct:created "2021-06-23"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "todelliset rikostarinat"@fi,
+        "sanna brottshistorier"@sv,
+        "sanna kriminalhistorier"@sv,
+        "verkliga brottshistorier"@sv,
+        "verklighetsbaserade historier om brott"@sv ;
+    skos:broader slm:s1442 ;
+    skos:inScheme slm: ;
+    skos:narrowMatch <http://id.loc.gov/authorities/genreForms/gf2011026711>,
+        <http://id.loc.gov/authorities/genreForms/gf2014026203>,
+        <http://id.loc.gov/authorities/genreForms/gf2014026579> ;
+    skos:prefLabel "true crime"@fi,
+        "true crime"@sv ;
+    skos:related slm:s1161,
+        slm:s365,
+        slm:s563,
+        slm:s858,
+        slm:s911 .
+
 slm:s1440 a skos:Concept ;
     dct:created "2022-02-01"^^xsd:date ;
     dct:modified "2022-05-18"^^xsd:date ;
@@ -14174,20 +14223,6 @@ slm:s1506 a skos:Concept ;
         slm:s82 ;
     skos:topConceptOf slm: .
 
-slm:s155 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2020-02-21"^^xsd:date ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p2717> ;
-    skos:inScheme slm:s285 ;
-    skos:narrower slm:s1359,
-        slm:s314 ;
-    skos:prefLabel "päiväkirjat"@fi,
-        "dagböcker"@sv ;
-    skos:related slm:s1006,
-        slm:s1086,
-        slm:s286 ;
-    skos:topConceptOf slm:s285 .
-
 slm:s274 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2023-11-30"^^xsd:date ;
@@ -14201,6 +14236,21 @@ slm:s274 a skos:Concept ;
         slm:s1506,
         slm:s680,
         slm:s731 .
+
+slm:s365 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "tosipohjaiset teokset"@fi,
+        "dokumentära verk"@sv ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1353,
+        slm:s849 ;
+    skos:prefLabel "todellisuuspohjaiset teokset"@fi,
+        "verklighetsbaserade verk"@sv ;
+    skos:related slm:s1423,
+        slm:s770,
+        slm:s906 ;
+    skos:topConceptOf slm:s285 .
 
 slm:s479 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -14349,25 +14399,6 @@ slm:s77 a skos:Concept ;
     skos:prefLabel "animaatioelokuvat"@fi,
         "animerade filmer"@sv ;
     skos:related slm:s526 .
-
-slm:s770 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-02-01"^^xsd:date ;
-    skos:altLabel "biofiktiot"@fi,
-        "biofiktioner"@sv,
-        "biografiska fiktioner"@sv ;
-    skos:broader slm:s518 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p17968> ;
-    skos:inScheme slm:s285 ;
-    skos:prefLabel "elämäkertaromaanit"@fi,
-        "biografiska romaner"@sv ;
-    skos:related slm:s1006,
-        slm:s286,
-        slm:s365,
-        slm:s566,
-        slm:s958 ;
-    skos:scopeNote "Käytetään romaaneista, jotka kertovat jostakin todellisesta historiallisesta henkilöstä ja jotka pohjautuvat ainakin osin todellisiin tapahtumiin."@fi,
-        "Används om romaner som handlar om någon verklig historisk person och som, åtminstone delvis, baserar sig på verkliga händelser."@sv .
 
 slm:s821 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -14651,6 +14682,21 @@ slm:s1513 a skos:Concept ;
         "härledda verk"@sv ;
     skos:topConceptOf slm: .
 
+slm:s155 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p2717> ;
+    skos:inScheme slm:s285 ;
+    skos:narrower slm:s1359,
+        slm:s314 ;
+    skos:prefLabel "päiväkirjat"@fi,
+        "dagböcker"@sv ;
+    skos:related slm:s1006,
+        slm:s1086,
+        slm:s1541,
+        slm:s286 ;
+    skos:topConceptOf slm:s285 .
+
 slm:s230 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2021-05-06"^^xsd:date ;
@@ -14745,6 +14791,26 @@ slm:s739 a skos:Concept ;
     skos:scopeNote "Käytetään lastenkirjoista ja tyyliltään lastenkirjaa muistuttavista kirjoista, jotka perustuvat yhtä paljon tai enemmän kuvaan kuin tekstiin. Muista runsaasti kuvia sisältävistä kirjoista käytetään termiä <a href='http://www.yso.fi/onto/yso/p2599'>kuvateokset</a>."@fi,
         "Används om barnböcker och böcker som stilmässigt påminner om barnböcker, som består lika mycket eller mer av bilder än av text. Om andra böcker som innehåller rikligt med bilder används termen <a href='http://www.yso.fi/onto/yso/p2599'>bildverk</a>."@sv ;
     skos:topConceptOf slm:s285 .
+
+slm:s770 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
+    skos:altLabel "biofiktiot"@fi,
+        "biofiktioner"@sv,
+        "biografiska fiktioner"@sv ;
+    skos:broader slm:s518 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p17968> ;
+    skos:inScheme slm:s285 ;
+    skos:prefLabel "elämäkertaromaanit"@fi,
+        "biografiska romaner"@sv ;
+    skos:related slm:s1006,
+        slm:s286,
+        slm:s365,
+        slm:s566,
+        slm:s611,
+        slm:s958 ;
+    skos:scopeNote "Käytetään romaaneista, jotka kertovat jostakin todellisesta historiallisesta henkilöstä ja jotka pohjautuvat ainakin osin todellisiin tapahtumiin."@fi,
+        "Används om romaner som handlar om någon verklig historisk person och som, åtminstone delvis, baserar sig på verkliga händelser."@sv .
 
 slm:s802 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -16508,7 +16574,7 @@ slm:s1150 a skos:Concept ;
 
 slm:s476 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-01-29"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:broader slm:s1377 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026753> ;
     skos:inScheme slm:s861 ;
@@ -16527,6 +16593,7 @@ slm:s476 a skos:Concept ;
         slm:s1469,
         slm:s150,
         slm:s1533,
+        slm:s1545,
         slm:s175,
         slm:s2,
         slm:s238,
@@ -17058,7 +17125,7 @@ slm:s1377 a skos:Concept ;
 
 slm:s1442 a skos:Concept ;
     dct:created "2022-03-24"^^xsd:date ;
-    dct:modified "2025-03-13"^^xsd:date ;
+    dct:modified "2025-05-06"^^xsd:date ;
     skos:altLabel "tietoaineistot"@fi,
         "icke-fiktivt material"@sv,
         "informationsmaterial"@sv,
@@ -17118,6 +17185,8 @@ slm:s1442 a skos:Concept ;
         slm:s1529,
         slm:s1530,
         slm:s1532,
+        slm:s1541,
+        slm:s1543,
         slm:s161,
         slm:s184,
         slm:s201,
@@ -17214,7 +17283,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2025-05-02T23:52:15+00:00"^^xsd:dateTime ;
+    dct:modified "2025-05-05T23:53:17+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
@@ -17276,6 +17345,7 @@ slm:s285 a skos:ConceptScheme ;
         slm:s1128,
         slm:s1162,
         slm:s1181,
+        slm:s120,
         slm:s1206,
         slm:s1210,
         slm:s1270,
@@ -17339,6 +17409,7 @@ slm:s285 a skos:ConceptScheme ;
         slm:s732,
         slm:s739,
         slm:s74,
+        slm:s742,
         slm:s775,
         slm:s812,
         slm:s817,
