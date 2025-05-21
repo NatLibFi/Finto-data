@@ -6,19 +6,25 @@ from unidecode import unidecode
 
 SKOS=Namespace("http://www.w3.org/2004/02/skos/core#")
 
+def get_preferred_label(graph, subject, lang):
+    for label in graph.objects(subject, SKOS.prefLabel):
+        if label.language == lang:
+            return label
+    return None
+
 graph = Graph()
 graph.parse(sys.argv[1], format='turtle')
 
-for s,p,o in graph.triples( (None, rdflib.RDF.type, SKOS.Concept) ):
-    result = graph.preferredLabel(s, lang='fi')
+for s,p,o in graph.triples( (None, RDF.type, SKOS.Concept) ):
+    result = get_preferred_label(graph, s, 'fi')
     if result:
-        label = result[-1][-1].value
+        label = result.value
         stripped = unidecode(label)
-        if label != stripped and 'ä'.decode('utf-8') not in label and 'ö'.decode('utf-8') not in label:
+        if label != stripped and 'ä' not in label and 'ö' not in label:
             graph.add((s, SKOS.altLabel, Literal(stripped, lang='fi')))
     for alt in graph.objects(s, SKOS.altLabel):
         stripped = unidecode(alt.value)
-        if stripped != alt.value and 'ä'.decode('utf-8') not in label and 'ö'.decode('utf-8') not in label:
+        if stripped != alt.value and 'ä' not in label and 'ö' not in label:
             graph.add((s, SKOS.hiddenLabel, Literal(stripped, lang='fi')))
 
-graph.serialize(format='turtle', destination=sys.stdout)
+graph.serialize(destination=sys.stdout.buffer, format='turtle')
