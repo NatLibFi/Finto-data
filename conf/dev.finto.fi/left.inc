@@ -12,6 +12,10 @@ href="https://api.finto.fi">avoimien rajapintojen</a> avulla.</p>
 <p><a href="https://ai.finto.fi">Finto AI</a>:sta löydät myös
 käyttöliittymän ja rajapinnat automaattiseen sisällönkuvailuun.</p>
 
+<p>Finto-palvelun asiakaswikistä löydät tarkempaa tietoa palvelusta, sen ylläpitämistä sanastoista ja ohjelmistoista sekä palvelun ajankohtaisista asioista.</p>
+
+<p><a href="https://www.kiwi.fi/display/Finto">Asiakaswiki</a></p>
+
 {% elseif request.lang == 'sv' %}
 
 <h1>Välkommen till Finto.fi!</h1>
