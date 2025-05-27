@@ -970,11 +970,11 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://www.yso.fi/onto/mesh/> .
 
-:mts a skosmos:Vocabulary, void:Dataset ;
-	dc:title "Metatietosanasto"@fi,
-          "Metatietosanasto"@en,
-          "Metadataordlista"@sv,
-          "Metatietosanasto" ;
+:mtsvanha a skosmos:Vocabulary, void:Dataset ;
+	dc:title "Metatietosanasto, vanha tietomalli"@fi,
+          "Metatietosanasto, vanha tietomalli"@en,
+          "Metadataordlista, gamla datamodellen"@sv,
+          "Metatietosanasto, vanha tietomalli" ;
 	dc:description "RDA-kuvailusääntöjen mukainen suomen- ja ruotsinkielinen avoimen linkitetyn datan sanasto kirjasto-, museo- ja arkistoaineistojen kuvailuun"@fi,
 		"En finsk- och svenskspråkig vokabulär med öppen länkad data för beskrivning av material i bibliotek, museer och arkiv, i enlighet med RDA-beskrivningsanvisningar"@sv,
 		"Linked open data vocabulary, based on RDA guidelines, in Finnish and Swedish for describing library, museum, and archive materials"@en,
@@ -991,10 +991,9 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skosmos:groupClass skos:Collection ;
 	skosmos:resultDistinguisher "^skos:member";
 	skosmos:feedbackRecipient "met-sanasto@helsinki.fi";
-	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos.ttl> ;
-	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos.rdf> ;
+	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos-vanhatietomalli.ttl> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mts:> .
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mtsold:> .
 
 :mts-03-23 a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Metatietosanasto 03/23"@fi,
@@ -1034,9 +1033,10 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	skosmos:groupClass skos:Collection ;
 	skosmos:resultDistinguisher "^skos:member";
 	skosmos:feedbackRecipient "met-sanasto@helsinki.fi";
-	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos-uudistetut-suhteet.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos.ttl> ;
+	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-skos.rdf> ;
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mtswemi:> .
+	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mts:> .
 :mtswemi skosmos:propertyOrder :mtswemipropertyOrder .
 :mtswemipropertyOrder a skosmos:PropertyOrder ;
     rdf:value ( rdf:type dc:isReplacedBy owl:inverseOf skos:definition skos:broader
