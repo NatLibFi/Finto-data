@@ -417,6 +417,22 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	void:sparqlEndpoint <http://api.dev.finto.fi/sparql> ;
 	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:hklj:> .
 
+:hklj skosmos:useParamPlugin :hkljMessage .
+:hkljMessage a skosmos:ParameterizedPlugin ;
+	skosmos:usePlugin "message";
+    skosmos:parameters [
+		a schema:PropertyValue ;
+        schema:propertyID "msg";
+        schema:value
+		"""Helsinki City Library Classification System is no longer being updated.
+For more information, please contact: ykl-kauno@kirjastot.fi"""@en,
+        """Helsingin kaupunginkirjaston luokitusjärjestelmää ei enää päivitetä.
+Lisätietoja voi kysyä osoitteesta: ykl-kauno@kirjastot.fi"""@fi,
+        """Helsingfors stadsbiblioteks klassifikationssystem uppdateras inte längre.
+Ytterligare information fås via e-post: ykl-kauno@kirjastot.fi"""@sv;
+	] .
+
+
 :ic a skosmos:Vocabulary, void:Dataset ;
 	dc:title "Iconclass"@fi,
       "Iconclass"@sv,
