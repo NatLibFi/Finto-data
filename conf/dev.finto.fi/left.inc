@@ -44,14 +44,14 @@ API for automated subject indexing.</p>
 
 {% elseif request.lang == 'se' %} 
 
-<h1>Buresboahtin Finto.fi:i!</h1> 
+<h1>Buresboahtin Finto.fi:i!</h1>
 
-<p>Finto.fi lea guovdilaston bálvalus sierra surggiid ovttasdoaibmi sátnerájuide, 
-ontologiijaide ja klassifikašuvnnaide. Sáhtát geavahit Finto.fi-siiddu sátnerájuid 
-bláđemii dahje integreret Finto sátnerájuid iežat vuogádahkii <a href="https://api.finto.fi">rabas rádjeolggožiid</a> bokte.</p> 
+<p>Finto.fi lea guovdilaston bálvalus sierra surggiid ovttasdoaibmi sátnerájuide,
+ontologiijaide ja klassifikašuvnnaide. Sáhtát geavahit Finto.fi-siiddu sátnerájuid
+bláđemii dahje integreret Finto sátnerájuid iežat vuogádahkii <a href="https://api.finto.fi">rabas rádjeolggožiid</a> bokte.</p>
 
-<p><a href="https://ai.finto.fi">Finto AI</a>:s gávnnat maiddái geavahanlavtta ja 
-rádjeolggožiid automáhtalaš sisdoalu govvideapmái.</p> 
+<p><a href="https://ai.finto.fi">Finto AI</a>:s gávnnat maiddái geavahanlavtta ja
+rádjeolggožiid automáhtalaš sisdoalu govvideapmái.</p>
 
 {% endif %}
 </div>
