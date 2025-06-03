@@ -12,9 +12,7 @@ href="https://api.finto.fi">avoimien rajapintojen</a> avulla.</p>
 <p><a href="https://ai.finto.fi">Finto AI</a>:sta löydät myös
 käyttöliittymän ja rajapinnat automaattiseen sisällönkuvailuun.</p>
 
-<p>Finto-palvelun asiakaswikistä löydät tarkempaa tietoa palvelusta, sen ylläpitämistä sanastoista ja ohjelmistoista sekä palvelun ajankohtaisista asioista.</p>
-
-<p><a href="https://www.kiwi.fi/display/Finto">Asiakaswiki</a></p>
+<p>Lisätietoa löydät Finto-palvelun <a href="https://www.kiwi.fi/display/Finto">asiakaswikistä</a>.</p>
 
 {% elseif request.lang == 'sv' %}
 
@@ -28,6 +26,8 @@ eget system genom <a href="https://api.finto.fi">öppna gränssnitt</a>.</p>
 <p>På <a href="https://ai.finto.fi">Finto AI</a> hittar du också ett
 användargränssnitt och ett API för automatisk innehållsbeskrivning.</p>
 
+<p>Mer information hittar du i Finto-tjänstens <a href="https://www.kiwi.fi/x/BogdCw">kundwiki</a>.</p>
+
 {% elseif request.lang == 'en' %}
 
 <h1>Welcome to Finto.fi!</h1>
@@ -39,7 +39,9 @@ the <a href="https://api.finto.fi">open APIs</a>.</p>
 
 <p><a href="https://ai.finto.fi">Finto AI</a> provides a user interface and
 API for automated subject indexing.</p>
-  
+
+<p>You can find more information in the Finto <a href="https://www.kiwi.fi/x/CogdCw">customer wiki</a>.</p>
+
 {% elseif request.lang == 'se' %} 
 
 <h1>Buresboahtin Finto.fi:i!</h1> 
