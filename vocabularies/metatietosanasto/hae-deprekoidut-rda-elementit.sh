@@ -17,4 +17,5 @@ rm -rf $ZIPFILE $TMP_FOLDER/
 elementCount=$(wc -l $OUTPUTFILE | awk '{print $1}')
 echo "Deprekoituja resursseja löytyi $elementCount kpl. Lista tulostettu $OUTPUTFILE"
 
-python list-deprecated.py
+python list-deprecated.py metatietosanasto-skos.ttl $OUTPUTFILE
+
