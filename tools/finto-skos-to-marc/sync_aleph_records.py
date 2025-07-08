@@ -22,11 +22,12 @@ def remove_extra_subfield_whitespaces(record):
     for field in record.get_fields():
         if hasattr(field, "subfields"):
             for idx, sf in enumerate(field.subfields):
-                value = sf.value
+                value = sf.value.strip()
                 if '  ' in value:
                     while '  ' in value:
                         value = value.replace('  ', ' ')
-                    field.subfields[idx] = Subfield(code=field.subfields[idx].code, value=value)
+                field.subfields[idx] = Subfield(code=field.subfields[idx].code, value=value)
+
     return record
 
 def trim_record(record):
@@ -47,6 +48,7 @@ def trim_record(record):
         for rf in removable_subfields:
             field.delete_subfield(rf)
     record_copy = unicodedata.normalize('NFD', str(record_copy))
+
     return record_copy
 
 def compare_records(args):
