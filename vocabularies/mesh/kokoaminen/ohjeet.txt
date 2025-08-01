@@ -1,17 +1,21 @@
 
-
-
-
-
 cd Finto-data/vocabularies/mesh
 
+
+# Lataukset löytyvät Karolinskan webbisivuilta, https://mesh.kib.ki.se/info/om-webbplatsen
+wget https://stingray.kib.ki.se/mesh/2024_export/linked_data_files/linked_data_format_part_1_of_2_2024_240610.zip
+wget https://stingray.kib.ki.se/mesh/2024_export/linked_data_files/linked_data_format_part_2_of_2_2024_240610.zip
+wget https://stingray.kib.ki.se/mesh/2024_export/text_files/Svensk_MeSH_textfiler_oktober_2024.zip
+
 unzip filename.zip
-riot --validate filename.nt
+
 ./fix-data.sh filename.nt
 riot --validate filename.nt
 
-riot -out turtle filename1.nt filename2.nt filename2.nt > swemesh.ttl
+./csv2ttl.sh synonyms.csv # tuota altLabelit csv-tiedostosta, sillä tiedot rdf-tiedostossa ovat puutteellisia
 
+
+riot -out turtle filename1.nt filename2.nt filename2.nt > swemesh.ttl
 
 git clone https://github.com/rdfhdt/hdt-java.git
 cd hdt-java
@@ -28,7 +32,7 @@ mvn install
 
 
 # Make sure the script knows what java it is using. Give it some juice, since you're going to process over 20 million triplets in the next two minutes!
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+export JAVA_HOME="/path/to/your/java"
 export _JAVA_OPTIONS="-Xmx8g"
 
 
@@ -56,3 +60,5 @@ sed -i -e 's|http://id.nlm.nih.gov/mesh/2024/|http://id.nlm.nih.gov/mesh/|g' mes
 
 riot -formatted turtle mesh-pf.ttl mesh-skos.nt > mesh-skos.ttl
 tar -czvf mesh.tar.gz swemesh.hdt
+
+./toskos.sh
