@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INFILES="mesh-metadata.ttl mesh-skos.nt finmesh.ttl swemesh.ttl"
+INFILES="mesh-metadata.ttl mesh-skos.nt finmesh.ttl swemesh.ttl altlabels.ttl"
 OUTFILE=mesh-skos.ttl
 SKOSIFYHOME="../../../Skosify"
 CONFFILE="../../conf/skosify/finnonto.cfg"
