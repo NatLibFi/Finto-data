@@ -166,6 +166,11 @@ def format_timestamp(ts):
     else:
         return "%04d-%02d-%02d" % (year, mon, day)
 
+def format_date(text):
+    """Convert YYYY-MM-DD or YYYY-MM dates to YYYY format."""
+    pattern = r'\b\d{4}(?:-\d{2})?(?:-\d{2})?\b'
+    return re.sub(pattern, lambda m: m.group()[0:4], text)
+
 def valid_uriref(uri):
     result = validators.url(uri)
     if result:
@@ -347,22 +352,22 @@ def main():
         if '046' in rec:
             fld = rec['046']
             if 'f' in fld:
-                g.add((uri, birthYear, Literal(str(fld['f'])[:4])))
+                g.add((uri, birthYear, Literal(format_date(fld['f']))))
             if 'g' in fld:
-                g.add((uri, deathYear, Literal(str(fld['g'])[:4])))
+                g.add((uri, deathYear, Literal(format_date(fld['g']))))
             if 'q' in fld:
-                g.add((uri, dateOfEstablishment, Literal(str(fld['q'])[:4])))
+                g.add((uri, dateOfEstablishment, Literal(format_date(fld['q']))))
             if 'r' in fld:
-                g.add((uri, dateOfTermination, Literal(str(fld['r'])[:4])))
+                g.add((uri, dateOfTermination, Literal(format_date(fld['r']))))
             if 's' in fld or 't' in fld:
                 # period of activity - encode as EDTF
                 if 's' in fld:
-                    start = str(fld['s'])[:4]
+                    start = format_date(fld['s'])
                 else:
                     start = '..'
 
                 if 't' in fld:
-                    end = str(fld['t'])[:4]
+                    end = format_date(fld['t'])
                 else:
                     end = '..'
 
