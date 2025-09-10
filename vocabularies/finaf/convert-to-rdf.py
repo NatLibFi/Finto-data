@@ -91,7 +91,7 @@ nameOfPlace=RDAP.P70001
 
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
-FINTO_API_BASE="http://api.finto.fi/rest/v1/"
+FINTO_API_BASE="https://api.finto.fi/rest/v1/"
 
 def normalize_relterm(term):
     return re.sub(r'[.,: ]*$', '', term.lower().strip())
