@@ -240,7 +240,8 @@ def main():
 
     g = initialize_graph()
 
-    label_to_uri = {}
+    label_to_uri_exact = {}
+    label_to_uri_stripped = {}
     rel500i = load_relations('500i-to-rda.csv')
     rel510i = load_relations('510i-to-rda.csv')
     marc_lang_to_lexvo = load_languages('marc-lang-to-lexvo.csv')
@@ -294,9 +295,9 @@ def main():
         literal = Literal(label, lang='fi') # prefLabel is always Finnish
         g.add((uri, SKOS.prefLabel, literal))
         g.add((uri, labelprop, literal))
-        label_to_uri[label] = uri # name which may contain parenthetical qualifier
+        label_to_uri_exact[label] = uri # name which may contain parenthetical qualifier
         logging.debug("Preferred label: '%s'", label)
-        label_to_uri[strip_qualifier(label)] = uri # name without qualifier
+        label_to_uri_stripped[strip_qualifier(label)] = uri # name without qualifier
 
         # created timestamp
         created = rec['008'].value()[:6]
@@ -624,7 +625,8 @@ def main():
         for s,o in g.subject_objects(prop):
             if not isinstance(o, Literal):
                 continue
-            resource = label_to_uri.get(str(o))
+            # first try exact; fall back to labels with stripped qualifier
+            resource = label_to_uri_exact.get(str(o)) or label_to_uri_stripped.get(str(o))
             if not resource:
                 logging.warning("no resource found for '%s' (subject <%s>)", str(o), s)
             else:
