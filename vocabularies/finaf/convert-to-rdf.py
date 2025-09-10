@@ -250,6 +250,18 @@ def lookup_yso_place(label):
 
     return URIRef(req.json()['result'][0]['uri'])
 
+def get_place_uri(place_name, place_uri, uri):
+    if place_uri:
+        try:
+            place = valid_uriref(place_uri)
+            logging.debug(f'Using place URI {place_uri} from 370 $0: {uri}')
+            return place
+        except ValidationError:
+            logging.warning(f'370 $0 has invalid URI {f["0"]}, using literal instead {uri}')
+            return lookup_yso_place(place_name)
+    else:
+        return lookup_yso_place(place_name)
+
 def main():
     logging.basicConfig(level=logging.DEBUG)
 
@@ -430,17 +442,18 @@ def main():
 
             g.add((uri, prop, obj))
 
+
         for f in rec.get_fields('370'):
             if 'a' in f:
-                place = lookup_yso_place(f['a'])
+                place = get_place_uri(f['a'], f.get('0'), uri)
                 g.add((uri, placeOfBirth, place))
 
             if 'b' in f:
-                place = lookup_yso_place(f['b'])
+                place = get_place_uri(f['b'], f.get('0'), uri)
                 g.add((uri, placeOfDeath, place))
 
             if 'c' in f:
-                place = lookup_yso_place(f['c'])
+                place = get_place_uri(f['c'], f.get('0'), uri)
                 
                 if is_person:
                     prop = countryAssociatedWithPerson
@@ -450,7 +463,7 @@ def main():
                 g.add((uri, prop, place))
 
             if 'e' in f:
-                place = lookup_yso_place(f['e'])
+                place = get_place_uri(f['e'], f.get('0'), uri)
 
                 if is_person:
                     prop = placeOfResidence
@@ -460,7 +473,7 @@ def main():
                 g.add((uri, prop, place))
 
             if 'f' in f:
-                place = lookup_yso_place(f['f'])
+                place = get_place_uri(f['f'], f.get('0'), uri)
 
                 if is_person:
                     prop = placeAssociatedWithPerson
