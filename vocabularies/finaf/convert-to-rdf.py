@@ -10,7 +10,7 @@ import unicodedata
 
 import requests
 import pymarc.marcxml
-from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS
+from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, OWL, XSD
 import validators
 from validators.utils import ValidationError
 
@@ -342,6 +342,7 @@ def main():
                 try:
                     urn_uri = valid_uriref(urn)
                     g.add((urn_uri, DCT.isReplacedBy, uri))
+                    g.add((urn_uri, OWL.deprecated, Literal("true", datatype=XSD.boolean)))
                 except ValidationError:
                     logging.warning(f'024 $z has invalid URN {urn}, not creating isReplacedBy for {uri}')
 
