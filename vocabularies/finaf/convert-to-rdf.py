@@ -115,12 +115,15 @@ def load_relations(filename):
     return rels
 
 def load_languages(filename):
-    langs = {}
+    lexvo_langs = {}
+    iso6391_langs = {}
     with open(filename) as langf:
         reader = csv.DictReader(langf)
         for row in reader:
-            langs[row['code']] = URIRef(row['lang'])
-    return langs
+            lexvo_langs[row['code']] = URIRef(row['lang'])
+            if row['iso6391code']:
+                iso6391_langs[row['code']] = row['iso6391code']
+    return lexvo_langs, iso6391_langs
 
 def initialize_graph():
     g = Graph()
@@ -181,6 +184,18 @@ def valid_uriref(uri):
 def strip_qualifier(name):
     """strip parenthetical qualifiers from names"""
     return re.sub(r'\s*\(.*?\)', '', name)
+
+def extract_language(text):
+    """
+    Extract language code from a string that starts with '(dploe)' or '(dpeloe)'
+    """
+    # Check if text matches our pattern
+    import re
+    pattern = r'^\(dpe?loe\)([a-z]+)$'
+    match = re.match(pattern, text)
+
+    # Return language code if match found, None otherwise
+    return match.group(1) if match else None
 
 @functools.lru_cache(maxsize=1000)
 def lookup_mts(label):
@@ -244,7 +259,7 @@ def main():
     label_to_uri_stripped = {}
     rel500i = load_relations('500i-to-rda.csv')
     rel510i = load_relations('510i-to-rda.csv')
-    marc_lang_to_lexvo = load_languages('marc-lang-to-lexvo.csv')
+    marc_lang_to_lexvo, marc_lang_to_iso6391 = load_languages('marc-lang-to-lexvo.csv')
 
     # Pass 1: convert MARC data to basic RDF
     for lineidx, line in enumerate(sys.stdin):
@@ -609,6 +624,36 @@ def main():
                 prop = noteOnCorporateBody
 
             g.add((uri, prop, Literal(normalize(f.format_field()), lang='fi')))
+
+        for f in rec.get_fields('700'):
+            other_name = format_label(f)
+            if other_name is None:
+                logging.warning("Empty 700 value for <%s>, skipping", uri)
+                continue
+            other_lang = marc_lang_to_iso6391.get(extract_language(f['7'] if '7' in f else ''))
+            if not other_lang:
+                logging.warning("Cannot extract 700$7 language for <%s>, skipping", uri)
+                continue
+            if f['7'].startswith('(dploe)'):
+                logging.warning("Invalid $7 data provenance code 'dploe', interpreted as 'dpeloe' in <%s>", uri)
+            other_lit = Literal(other_name, other_lang)
+            g.add((uri, SKOS.prefLabel, other_lit))
+            g.add((uri, authorizedAccessPointForPerson, other_lit))
+
+        for f in rec.get_fields('710') + rec.get_fields('711'):
+            other_name = format_label(f)
+            if other_name is None:
+                logging.warning("Empty 71X value for <%s>, skipping", uri)
+                continue
+            other_lang = marc_lang_to_iso6391.get(extract_language(f['7'] if '7' in f else ''))
+            if not other_lang:
+                logging.warning("Cannot extract 71X$7 language for <%s>, skipping", uri)
+                continue
+            if f['7'].startswith('(dploe)'):
+                logging.warning("Invalid $7 data provenance code 'dploe', interpreted as 'dpeloe' in <%s>", uri)
+            other_lit = Literal(other_name, other_lang)
+            g.add((uri, SKOS.prefLabel, other_lit))
+            g.add((uri, authorizedAccessPointForCorporateBody, other_lit))
 
         for f in rec.get_fields('856'):
             if 'u' in f:
