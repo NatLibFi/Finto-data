@@ -1375,7 +1375,28 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
 	void:dataDump <https://dev.finto.fi/download/seko/seko-skos.ttl> ;
 	void:dataDump <https://dev.finto.fi/download/seko/seko-skos.rdf> ;
 	void:sparqlEndpoint <https://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/urn:nbn:fi:au:seko:> .        
+	skosmos:sparqlGraph <http://urn.fi/urn:nbn:fi:au:seko:> .
+
+:skns a skosmos:Vocabulary, void:Dataset ;
+        dct:title "DEMO: Suomenkielisten kielten nimien sanasto"@fi ;
+        skosmos:shortName "DEMO: SKNS";
+        dct:subject :cat_lang ;
+        void:uriSpace "http://www.yso.fi/onto/skns/";
+    skosmos:propertyLabelOverride
+    [ skosmos:property dct:spatial ;
+          rdfs:label "Puhumavaltio"@fi, "Talat i"@sv, "Spoken in"@en ] ;
+        skosmos:language "fi", "sv", "en", "se";
+        skosmos:defaultLanguage "fi";
+        skosmos:useModifiedDate "true";
+        skosmos:showChangeList "false";
+        skosmos:showTopConcepts "true";
+        skosmos:defaultSidebarView "hierarchy";
+        #skosmos:propertyOrder :kotus-order ;
+		void:dataDump <https://dev.finto.fi/download/skns/skns-skos.ttl> ;
+		void:dataDump <https://dev.finto.fi/download/skns/skns-skos.rdf> ;
+        void:sparqlEndpoint <https://api.dev.finto.fi/sparql> ;
+        skosmos:sparqlGraph <http://www.yso.fi/onto/skns/> ;
+        skosmos:mainConceptScheme <http://www.yso.fi/onto/skns/> .
 
 :soto a skosmos:Vocabulary, void:Dataset ;
 	dc:title "SOTO - Sotatieteen ontologia"@fi,
