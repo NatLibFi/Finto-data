@@ -22,6 +22,8 @@ SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 XSD=Namespace("http://www.w3.org/2001/XMLSchema#")
 DC=Namespace("http://purl.org/dc/elements/1.1/")
 DCT=Namespace("http://purl.org/dc/terms/")
+ALLARS=Namespace("http://www.yso.fi/onto/allars/")
+YSA=Namespace("http://www.yso.fi/onto/ysa/")
 
 # input graph
 g = Graph()
@@ -37,7 +39,7 @@ for prefix, ns in g.namespaces():
 def is_domainont(res):
   """Tries to figure out whether a URIref is part of a domain ontology.
      Anything that is YSO, YSOMETA, XSD, RDF, RDFS, OWL, SKOS, DC, DCT is not."""
-  for non_domain_ns in (YSO, YSOMETA, XSD, RDF, RDFS, OWL, SKOS, DC, DCT):
+  for non_domain_ns in (YSO, YSA, ALLARS, YSOMETA, XSD, RDF, RDFS, OWL, SKOS, DC, DCT):
     if str(res).startswith(str(non_domain_ns)):
       return False
   return True
@@ -105,11 +107,11 @@ if args.old is not None:
     old.namespace_manager.bind(prefix, ns)
 
   # copy all triples from input graph that were not in out (i.e. YSO only)
-    for triple in g:
-      if triple not in out:
-        old.add(triple)
-    with open(args.old, 'wb') as oldf:
-      old.serialize(destination=oldf, format=args.format)
+  for triple in g:
+    if triple not in out:
+      old.add(triple)
+  with open(args.old, 'wb') as oldf:
+    old.serialize(destination=oldf, format=args.format)
 
 if args.new is not None:
   out.parse(args.new, format=guess_format(args.new))
