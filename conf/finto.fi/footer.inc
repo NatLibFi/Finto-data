@@ -1,53 +1,3 @@
-<!-- Cookie Consent -->
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
-<script>
-{% if request.lang == 'fi' %}
-cookieMessage = "Finto.fi-sivusto käyttää evästeitä käyttäjän kieliasetusten muistamiseen sekä käytön tilastointiin. Käyttämällä Finto.fi-sivustoa hyväksyt evästeiden käytön.";
-cookieDismiss = "Selvä!";
-cookieLink = "Lue lisää";
-cookieHref = "https://www.kiwi.fi/x/2zOOBQ";
-{% elseif request.lang == 'sv' %}
-cookieMessage = "Finto.fi-sidan använder cookies för att komma ihåg användares språkinställningar och för användningsstatistik. Genom att använda Finto.fi-sidan godkänner du användningen av cookies.";
-cookieDismiss = "Klart!";
-cookieLink = "Läs mer";
-cookieHref = "https://www.kiwi.fi/x/3jOOBQ";
-{% elseif request.lang == 'en' %}
-cookieMessage = "Finto.fi uses cookies to store language preferences and compile usage statistics. By using finto.fi you accept the use of cookies.";
-cookieDismiss = "Got it!";
-cookieLink = "Learn more";
-cookieHref = "https://www.kiwi.fi/x/4DOOBQ";
-{% elseif request.lang == 'se' %}
-cookieMessage = " Finto.fi-siidu geavaha gáhkožiid geavaheaddjiid giellaválljemiid muitima ja geavahanstatistihkaid várás. Go geavahat Finto.fi-siiddu, dohkkehat gáhkožiid geavaheami.";
-cookieDismiss = "Čielggas!";
-cookieLink = "Loga lasi";
-cookieHref = "https://www.kiwi.fi/x/2zOOBQ";
-{% endif %}
-
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#d4edeb",
-      "text": "#333333"
-    },
-    "button": {
-      "background": "#394554",
-      "text": "#ffffff"
-    }
-  },
-  "theme": "edgeless",
-  "content": {
-    "message": cookieMessage,
-    "dismiss": cookieDismiss,
-    "link": cookieLink,
-    "href": cookieHref
-  }
-})});
-</script>
-<!-- End Cookie consent -->
-
 <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -63,19 +13,6 @@ window.cookieconsent.initialise({
   })();
 </script>
 <!-- End Matomo Code -->
-
-<!-- Browser Update -->
-<script type="text/javascript">
-var $buoop = {vs:{i:10,f:-4,o:-4,s:7,c:-4},c:4}; 
-function $buo_f(){ 
- var e = document.createElement("script"); 
- e.src = "//browser-update.org/update.min.js"; 
- document.body.appendChild(e);
-};
-try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-catch(e){window.attachEvent("onload", $buo_f)}
-</script>
-<!-- End Browser Update -->
 
 <!-- YSO concepts with different color -->
 <script type="text/javascript">
