@@ -9,10 +9,10 @@ wget https://stingray.kib.ki.se/mesh/2024_export/text_files/Svensk_MeSH_textfile
 
 unzip filename.zip
 
+./fix-data.sh filename.nt
 riot --validate filename.nt
 
-# If the data contains incomplete triplets or problematic linechanges, use the following script
-./fix-data.sh filename.nt
+./csv2ttl.sh synonyms.csv # tuota altLabelit csv-tiedostosta, sillä tiedot rdf-tiedostossa ovat puutteellisia
 
 
 riot -out turtle filename1.nt filename2.nt filename2.nt > swemesh.ttl
