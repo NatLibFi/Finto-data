@@ -6,22 +6,23 @@ from urllib.parse import urlencode
 from rdflib import Graph, Namespace,RDF ,XSD, URIRef, plugin, Literal
 from github import Auth, Github
 
-ysans = "http://www.yso.fi/onto/ysa/"
+ysons = "http://www.yso.fi/onto/yso/"
 skosns = "http://www.w3.org/2004/02/skos/core#"
 newtriples = Graph()
 skos = Namespace("http://www.w3.org/2004/02/skos/core#")
 dct = Namespace('http://purl.org/dc/terms/')
 isothes = Namespace('http://purl.org/iso25964/skos-thes#')
 foaf = Namespace('http://xmlns.com/foaf/0.1/')
-ysa = Namespace('http://www.yso.fi/onto/ysa/')
+yso = Namespace('http://www.yso.fi/onto/yso/')
+yse = Namespace('http://www.yso.fi/onto/yse/')
 ysemeta = Namespace("http://www.yso.fi/onto/yse-meta/")
-ysameta = Namespace("http://www.yso.fi/onto/ysa-meta/")
 
 newtriples.bind('skos', skos)
 newtriples.bind('isothes', isothes)
 newtriples.bind('foaf', foaf)
-newtriples.bind('ysa', ysa)
-newtriples.bind('ysa-meta', ysameta)
+newtriples.bind('yso', yso)
+newtriples.bind('yse', yse)
+newtriples.bind('yse-meta', ysemeta)
 
 if len(sys.argv) < 2:
     print("Usage: %s GitHub-credentials-file" % sys.argv[0], file=sys.stderr)
@@ -72,10 +73,10 @@ def headingToProperty(block):
 def addPropertyValueTriples(prop, value, uri):
     if prop == 'type':
         if value == 'GEO':
-            newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysameta + 'GeographicalConcept')) )
+            newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysemeta + 'GeographicalConcept')) )
     elif prop == 'member':
         group_number = value[1:3]
-        group_uri = 'http://www.yso.fi/onto/ysa/ryhma_' + group_number
+        group_uri = 'http://www.yso.fi/onto/yse/ryhma_' + group_number
         newtriples.add( (rdflib.term.URIRef(group_uri), skos.member, rdflib.term.URIRef(uri)) )
     elif '](http://' not in value:
         if '@' in prop:
@@ -108,7 +109,7 @@ def parse_issue_body(body):
 
 # converts the github-issue markdown into skos triples
 def issueToTriple(issue):
-    uri = ysa + 'Y' + str(issue.number + 500000)
+    uri = yso + 'Y' + str(issue.number + 500000)
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(skos + 'Concept')) )
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysemeta + 'Concept')) )
     newtriples.add( (rdflib.term.URIRef(uri), foaf.homepage, rdflib.term.URIRef('https://github.com/Finto-ehdotus/YSE/issues/' + str(issue.number))) )
@@ -135,8 +136,8 @@ for issue in new_issues:
         issue.edit(body=newbody);
         issue.remove_from_labels(accept_lab)
 
-# looks up prefLabels for YSA uris from the finto api
-def getYsaLabel(uri):
+# looks up prefLabels for YSE uris from the finto api
+def getYseLabel(uri):
   if uri not in labels:
     params = urlencode({'uri': uri, 'format': 'application/json', 'lang': 'fi'})
     api = 'http://dev.finto.fi/rest/v1/ysa/label?'
