@@ -4,7 +4,7 @@ CONF=configs/YSO-deprecator-config.txt
 INPUT=../../vocabularies/yso/ysoKehitys.rdf
 OUTPUT=ysoKehitysDeprecated.rdf
 EMAILOUTPUT=email.txt
-LOG=deprecator.log
+LOG=deprecator-yso.log
 
 ARGS="$INPUT $CONF $OUTPUT $EMAILOUTPUT"
 
