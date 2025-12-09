@@ -11,10 +11,10 @@ all: $(patsubst %.ttl,%.rdf,$(wildcard */*-skos.ttl)) finaf/finaf-skos.rdf yso/y
 finaf/finaf-skos.ttl: $(shell find finaf/finaf-skos/ -type f | sort)
 	PYTHONIOENCODING=utf-8 python3 ../tools/split-join-turtle/join-turtle.py $^ >$@
 
-yso/yso-fin.mrcx: yso/yso-vb-skos.ttl
+yso/yso-fin.mrcx: yso/yso-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="fi" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-fi.pkl" 2>yso/yso-fin.log
 
-yso/yso-swe.mrcx: yso/yso-vb-skos.ttl
+yso/yso-swe.mrcx: yso/yso-skos.ttl
 	$(FINTO_SKOS_TO_MARC_PYTHON) ../tools/finto-skos-to-marc/finto-skos-to-marc.py --vocabulary_code="yso" --input=$^ --languages="sv" --output=$@ --config="../tools/finto-skos-to-marc/config.ini" --loc_directory="/var/cache/loc" --modification_dates="yso/modified-yso-sv.pkl" 2>yso/yso-swe.log
 
 yso-aika/yso-aika-fin.mrcx: yso-aika/yso-aika-skos.ttl
