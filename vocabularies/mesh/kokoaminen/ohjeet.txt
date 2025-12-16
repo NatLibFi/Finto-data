@@ -1,25 +1,35 @@
-
 cd Finto-data/vocabularies/mesh
+YEAR=2024
 
+mkdir ${YEAR} && cd ${YEAR}
 
 # Lataukset löytyvät Karolinskan webbisivuilta, https://mesh.kib.ki.se/info/om-webbplatsen
-wget https://stingray.kib.ki.se/mesh/2024_export/linked_data_files/linked_data_format_part_1_of_2_2024_240610.zip
-wget https://stingray.kib.ki.se/mesh/2024_export/linked_data_files/linked_data_format_part_2_of_2_2024_240610.zip
-wget https://stingray.kib.ki.se/mesh/2024_export/text_files/Svensk_MeSH_textfiler_oktober_2024.zip
+wget https://stingray.kib.ki.se/mesh/${YEAR}_export/linked_data_files/linked_data_format_part_1_of_2_2024_240610.zip
+wget https://stingray.kib.ki.se/mesh/${YEAR}_export/linked_data_files/linked_data_format_part_2_of_2_2024_240610.zip
+wget https://stingray.kib.ki.se/mesh/${YEAR}_export/linked_data_files/linked_data_only_unique_data_2024_240610.zip
 
-unzip filename.zip
+# Joissain puutteellisen datan tapauksissa labeleita on pitänyt kaivaa taulukoista
+wget https://stingray.kib.ki.se/mesh/${YEAR}_export/text_files/Svensk_MeSH_textfiler_oktober_2024.zip
+unzip Svensk_MeSH_textfiler_oktober_2024.zip
 
-./fix-data.sh filename.nt
-riot --validate filename.nt
+# CSV-tiedostosta saa ntriplejä esim. näin, mutta todennäköisesti lainausmerkkejä joutuu senkin jälkeen korjailemaan
+sed -E '1d; s/\r$//; s|^([^\t]+)\t(.*)$|<http://id.nlm.nih.gov/mesh/2024/\2> <http://www.w3.org/2004/02/skos/core#altLabel> "\1"@sv .|' 2024/synonyms.csv > sv-altLabels.nt
 
-./csv2ttl.sh synonyms.csv # tuota altLabelit csv-tiedostosta, sillä tiedot rdf-tiedostossa ovat puutteellisia
+unzip linked_data*${YEAR}*.zip
+
+for f in linked_data*${YEAR}*.nt; do echo "$f" && riot --validate "$f"; done
+
+# If the validation reveals incomplete triplets or problematic linechanges, use the following script
+../kokoaminen/fix-data.sh filename.nt
 
 
 riot -out turtle filename1.nt filename2.nt filename2.nt > swemesh.ttl
 
+cd paikka_jonne_haluat_hdt-javan_git_repon
+
 git clone https://github.com/rdfhdt/hdt-java.git
 cd hdt-java
-pom.xml
+pom.xml:
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -28,6 +38,7 @@ pom.xml
                       <tarLongFileMode>posix</tarLongFileMode>
                     </configuration>
                 </plugin>
+
 mvn install
 
 
@@ -35,30 +46,35 @@ mvn install
 export JAVA_HOME="/path/to/your/java"
 export _JAVA_OPTIONS="-Xmx8g"
 
+export PATH=$PATH:{PATH_TO_YOUR_HDT}/hdt-java-package/target/hdt-java-package-3.0.10-distribution/hdt-java-package-3.0.10/bin/
 
-export PATH=$PATH:{PATH_TO_HDT}/hdt-java-package/target/hdt-java-package-3.0.10-distribution/hdt-java-package-3.0.10/bin/
+
 
 rdf2hdt.sh swemesh.ttl swemesh.hdt
 
-echo "Kootaan MeSH-julkaisuversio fintoon"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/1-prefLabels.rq`" > mesh-skos.nt
+# Kootaan MeSH-julkaisuversio fintoon
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/1-prefLabels.rq`" > mesh-sv-en.nt
 echo "1/6"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/2-altLabels.rq`" >> mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/2-altLabels.rq`" >> mesh-sv-en.nt
+cat sv-altLabels.nt >> mesh-sv-en.nt
 echo "2/6"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/3-scopeNotes.rq`" >> mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/3-scopeNotes.rq`" >> mesh-sv-en.nt
 echo "3/6"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/4-dates.rq`" >> mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/4-dates.rq`" >> mesh-sv-en.nt
 echo "4/6"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/5-broaders.rq`" >> mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/5-broaders.rq`" >> mesh-sv-en.nt
 echo "5/6"
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/6-relateds.rq`" >> mesh-skos.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/6-relateds.rq`" >> mesh-sv-en.nt
 echo "6/6"
-sed -i -e 's|http://id.nlm.nih.gov/mesh/2024/|http://www.yso.fi/onto/mesh/|g' mesh-skos.nt
-hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/7-exactMatches.rq`" >> mesh-skos.nt
-sed -i -e 's|http://www.yso.fi/onto/mesh/2024/|http://www.yso.fi/onto/mesh/|g' mesh-skos.nt
-sed -i -e 's|http://id.nlm.nih.gov/mesh/2024/|http://id.nlm.nih.gov/mesh/|g' mesh-skos.nt
+sed -i -e 's|http://id.nlm.nih.gov/mesh/${YEAR}/|http://www.yso.fi/onto/mesh/|g' mesh-sv-en.nt
+hdtsparql.sh swemesh.hdt "`cat ../kokoaminen/7-exactMatches.rq`" >> mesh-sv-en.nt
+sed -i -e 's|http://www.yso.fi/onto/mesh/${YEAR}/|http://www.yso.fi/onto/mesh/|g' mesh-sv-en.nt
+sed -i -e 's|http://id.nlm.nih.gov/mesh/${YEAR}/|http://id.nlm.nih.gov/mesh/|g' mesh-sv-en.nt
 
-riot -formatted turtle mesh-pf.ttl mesh-skos.nt > mesh-skos.ttl
 tar -czvf mesh.tar.gz swemesh.hdt
 
-./toskos.sh
+source PATH_TO_YOUR_PYTHON_WITH_RDFLIB/bin/activate
+../kokoaminen/mesh-updater.py mesh-sv-en.ttl Master_MeSH_FinMeSH_updated_2025.txt > mesh-fi.ttl
+
+
+../kokoaminen/toskos.sh
