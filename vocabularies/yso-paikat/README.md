@@ -2,46 +2,68 @@
 
 Hae API-avain Maanmittauslaitoksen rajapintaan. Ohjeet sivulla https://www.maanmittauslaitos.fi/rajapinnat/api-avaimen-ohje.
 
-Aloita lataamalla tarvittava .gkpg-tiedosto paikkatyyppeineen esim. QGIS-ohjelmalla (pelkät koordinaattitiedot ilman paikkatyyppitietoja on saatu aiemmin osoitteesta http://www.nic.funet.fi/index/geodata/mml/paikannimet/)
+Aloita lataamalla tarvittava .gkpg-tiedosto paikkatyyppeineen esim. QGIS-ohjelmalla tai ogr2ogr-komentorivityökalulla (pelkät koordinaattitiedot ilman paikkatyyppitietoja on saatu aiemmin osoitteesta http://www.nic.funet.fi/index/geodata/mml/paikannimet/)
 
-### Avaa QGIS -ohjelma (saatavilla HY:n Software Centeristä)
+QGIS-ohjelman toiminnot ovat muuttuneet vuosien varrella eikä ogr2ogr-työkalulla lataaminen ole onnistunut. Jos alla olevat ohjeet eivät ole ajan tasalla, kannattaa ottaa vihjeitä tämän ohjeen versiohistoriasta ja em. MML:n API-ohjeista kohdasta "Vihjeitä Maanmittauslaitoksen Maastotietokannan OGC API Features -palvelun käyttäjille."
+
+### Ohjeet karttatiedoston lataamiseen QGIS 3.44 -ohjelmalla (saatavilla HY:n Software Centeristä)
 
 1) Selain / Browser -valikkoikkunasta "WFS / OGC API - Features"
 2) Uusi yhteys / New connection -> avaa ikkunan "Luo uusi WFS-yhteys" / "Create a new WFS Connection"
 3) Autentikointi / Authentication -> Yksinkertainen todennus / Basic -> Käyttäjänimen kohdalle API-avain
-4) URL: https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/
-5) Sivun koko / Page size: 1000
+4) Valitse Nimi / Name ja URL: https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/
+5) WFS-valinnat/options (huom! valinnat voivat olla osin näkymättömissä, vieritä ikkunaa oikealle): Sivun koko / Page size: 1000,
 6) Selain / Browser -valikkoikkunan kohdan "WFS / OGC API - Features" alta tuplaklikkaa PlaceName
 7) Tasot / Layers -ikkunassa PlaceName -> "Export..." > "Save features as"
-8) Valitse tallennusikkunasta Tiedostomuoto: GeoPackage ja anna tiedostonimi
-9) Valitse vietävät kentät ja niiden vientivalinnat / Select fields to export and their export options: poista kenttävalinnoista muut kuin placeId ja placeType
+8) Valitse tallennusikkunasta Tiedostomuoto: GeoJSON ja anna tiedostonimi. Valitse vietävät kentät ja niiden vientivalinnat / Select fields to export and their export options: poista kenttävalinnoista muut kuin placeId ja placeType. Valitse CRS-kentästä EPSG 4326 - wgs 84.
+
+### Ohjeet karttatiedoston lataamiseen ogr2ogr-komentorivityökalulla
+
+Tallenna placenames-kerros ogr2ogr-komentorivityökalulla GeoJSON-muodossa:
+```
+ogr2ogr -t_srs EPSG:4326 -f "GeoJSON" output.geojson OAPIF:"https://avoin-paikkatieto.maanmittauslaitos.fi/geographic-names/features/v1/" placenames -oo USERPWD=<API-avain>
+```
+
+### Koordinaattitietojen muuttaminen WGS84-muotoon ja tiedoston muuttaminen CSV-muotoon
 
 Huom. koordinaattitiedot on tallennettu oheisessa
 Maanmittauslaitoksen .gpkg-tiedostossa ESPG:3067 - ETRS89 / TM35FIN(E,N) -muodossa,
 nämä täytyy muuntaa WGS84-koordinaattitason mukaisiksi koordinaattipisteiksi.
-Tämä tapahtuu esimerkiksi QGIS-ohjelmalla seuraavasti:
+
+Koordinaattien muutos ogr2ogr-komentorivityökalulla viiden desimaalin tarkkuudella:
+```
+ogr2ogr -f "GeoJSON" rounded_wgs84.json output.geojson -t_srs "EPSG:4326" -lco SIGNIFICANT_FIGURES=7
+```
+
+GeoJSON-tiedoston muuttaminen CSV-tiedostoksi yso-paikat-hakemiston skriptillä:
+```
+python3 geojson2csv.py -="rounded_wgs84.json" -o="pnr-complete-paikkaid-wgs84-coordinates-table.csv"
+```
+
+### Vanhat ohjeet WGS84- ja CSV-muunnoksiin  QGIS-ohjelmalla
+
+Muunnoksen voi tehdä myös QGIS-ohjelmalla. Ylläolevien ohjeiden kohdassa 8 tiedosto pitää tallentaa kuitenkin GeoPackage- eikä GeoJSON-muodossa. Sen jälkeen:
 
 1) Avaa Database -> Database Manager
 2) GeoPackage -> New Connection
 3) Valitse lataamasi .gpkg-tiedosto
-4) Avaa edellinen GeoPackage-näkymästä
+4) Avaa GeoPackage-näkymästä tiedoston nimen alta kerros "PlaceName"
 5) Valitse "Export to File..."
 6) Aseta "Source SRID"-arvoksi 3067
 7) Aseta "Target SRID"-arvoksi 4326
-8) Tallenna WGS84-koordinaattitasoon muutettu .gpkg-tiedosto haluamaasi paikkaan.
+8) Tallenna WGS84-koordinaattitasoon muutettu .gpkg-tiedosto haluamaasi paikkaan (Huom! Jos QGIS antaa virheen 7, pelkkä tiedoston nimeäminen ei riitä, avaa tallennusikkuna ja valitse tiedostonimi).
 
-Voit nyt sulkea edellisen yhteyden ja avata WGS84-muotoisen tiedoston.
+Voit nyt sulkea edellisen yhteyden ja avata WGS84-muotoisen tiedoston (GeoPackage-näkymästä kerros "PlaceName", klikkaa hiiren oikealla ja "Add to canvas").
 Varmista, että QGIS-ohjelmassa sinulla on auki ja valittuna WGS84-muotoinen kerros
 Layers-paneelista (jos tämä ei ole näkyvissä, saat sen näkyviin valitsemalla
 View -> Panels -> Layers).
 Ohjelman tulisi piirtää Suomen muotoinen kartta koordinaattipisteistä.
 
-### Seuraavaksi tavoitteena on ekstrahoida vain haluamamme tiedot haluamassamme muodossa.
-Tämä tapahtuu seuraavasti:
+Seuraavaksi tavoitteena on ekstrahoida vain haluamamme tiedot haluamassamme muodossa. Tämä tapahtuu seuraavasti:
 
 1) Valitse WGS84-muotoinen kerros
 2) Edit -> Select -> Select All Features
-3) Valitse "Open Field Calculator" Attributes Toolbar -työkaluvalikosta
+3) Valitse "Open Field Calculator" Attributes Toolbar -työkaluvalikosta (helmitaulun näköinen kuvake)
 4) Varmista, että avautuvassa ikkunassa valittuja featureita on 800000+ kohdassa
 "Only update * selected features"
 5) Aseta ruksi edelliseen kohtaan ja kohtaan "Create a new field"
@@ -54,7 +76,7 @@ jossa on viiden desimaalin tarkkuudella määritetty itäinen WGS84-koordinaatti
 11) Toista edelliset kohdat käyttäen arvoja "WGS84_N" ja round($y, 5) luodaksesi
 pohjoisen WGS84-koordinaattisarakkeen.
 
-### Lopuksi haluamme tallentaa .csv-tiedostoon tarvitsemamme arvot. Tämä tapahtuu seuraavasti:
+Lopuksi haluamme tallentaa .csv-tiedostoon tarvitsemamme arvot. Tämä tapahtuu seuraavasti:
 
 1) Paina oikealla painikkeella WGS84-muotoista kerrosta -> Export -> Save Features As..
 2) Format: Comma Separated Value [CSV]
@@ -76,7 +98,7 @@ Voit poistaa duplikaatit tiedostosta, esimerkiksi Excelissä tämän voi tehdä 
 4) "Remove Duplicates...". Järjestelmä poistaa duplikaattiarvot.
 5) Voit tämän jälkeen tallentaa tämän duplikaatteja sisältämättömän taulukon.
 
-### Seuraavaksi voit vielä normalisoida kaikki arvot viiteen desimaaliin seuraavasti (ensimmäinen vaihe oli typistänyt päättyvät nollat):
+Seuraavaksi voit vielä normalisoida kaikki arvot viiteen desimaaliin seuraavasti (ensimmäinen vaihe oli typistänyt päättyvät nollat):
 
 1) Valitse edellinen taulukko ja sieltä B- ja C-sarakkeet (WGS84_N, WGS84_E) ja paina oikeaa nappia
 2) Valitse "Format Cells" avautuva ikkunasta
@@ -86,7 +108,7 @@ Voit poistaa duplikaatit tiedostosta, esimerkiksi Excelissä tämän voi tehdä 
 
 Nyt sinulla on valmis, kaikki PNR:n paikat/niiden koordinaatit sisältävä normalisoitu taulukko.
 Jos myöhemmin on tarvetta, voi taulukkoon ottaa myös muita sarakkeita.
-Huom! Moni skripti odottaa sarakkeiden olevan järjestyksessä 'placeID', 'placeType', 'WGS84_N', 'WGS84_E'.
+Huom! Moni skripti odottaa sarakkeiden olevan järjestyksessä 'paikkaID', 'WGS84_N', 'WGS84_E'.
 Huom2! Suurinta osaa PNR:n paikoista ei ole käytetty YSO-paikoissa. Tämä on otettu huomioon automaattisessa komentosarjassa (alla lyhyt kuvaus).
 
 
