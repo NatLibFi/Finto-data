@@ -1,0 +1,199 @@
+<select id="country"></select>
+<button id="btn">Hae</button>
+<div id="out"></div>
+
+<style>
+  table{border-collapse:collapse;margin-top:.5rem}
+  th,td{border:1px solid #ddd;padding:.35rem .5rem;vertical-align:top}
+  tbody tr:nth-child(even){background:#eaf4ff}
+  td{white-space:pre-line}
+</style>
+
+<script>
+const ENDPOINT = "https://api.dev.finto.fi/sparql";
+const PLACE_ENDPOINT = "https://api.finto.fi/sparql";
+const placeCache = new Map();
+
+const COLS = [
+  ["Suositus","Suositus"],
+  ["Puhumavaltiot","Puhumavaltiot"],
+  ["ISO6393koodi","ISO-639-3"],
+  ["Glottolog","Glottolog"],
+  ["Fintossa","Fintossa"]
+];
+
+const COUNTRIES_CSV = `uri;puhumavaltio
+http://www.yso.fi/onto/yso/p104968;Ranska
+http://www.yso.fi/onto/yso/p104984;Kiina
+http://www.yso.fi/onto/yso/p104989;Nigeria
+http://www.yso.fi/onto/yso/p105032;Meksiko
+http://www.yso.fi/onto/yso/p105078;Yhdysvallat
+http://www.yso.fi/onto/yso/p105098;Etelä-Afrikka
+http://www.yso.fi/onto/yso/p105116;Australia
+http://www.yso.fi/onto/yso/p105189;Filippiinit
+http://www.yso.fi/onto/yso/p105190;Alankomaat
+http://www.yso.fi/onto/yso/p105195;Irlanti
+http://www.yso.fi/onto/yso/p105234;Singapore
+http://www.yso.fi/onto/yso/p105235;Kenia
+http://www.yso.fi/onto/yso/p105269;Kuuba
+http://www.yso.fi/onto/yso/p105377;Kanada
+http://www.yso.fi/onto/yso/p105378;Peru
+http://www.yso.fi/onto/yso/p105510;El Salvador
+http://www.yso.fi/onto/yso/p105511;Nicaragua
+http://www.yso.fi/onto/yso/p105885;Zimbabwe
+http://www.yso.fi/onto/yso/p106015;Ghana
+http://www.yso.fi/onto/yso/p106044;Uganda
+http://www.yso.fi/onto/yso/p106419;Kolumbia
+http://www.yso.fi/onto/yso/p107068;Honduras
+http://www.yso.fi/onto/yso/p107069;Costa Rica
+http://www.yso.fi/onto/yso/p107112;Jamaika
+http://www.yso.fi/onto/yso/p107681;Venezuela
+http://www.yso.fi/onto/yso/p108007;Argentiina
+http://www.yso.fi/onto/yso/p108111;Chile
+http://www.yso.fi/onto/yso/p108180;Guinea
+http://www.yso.fi/onto/yso/p108325;Burkina Faso
+http://www.yso.fi/onto/yso/p108647;Bolivia
+http://www.yso.fi/onto/yso/p108648;Ecuador
+http://www.yso.fi/onto/yso/p108649;Paraguay
+http://www.yso.fi/onto/yso/p108650;Uruguay
+http://www.yso.fi/onto/yso/p108660;Bahama
+http://www.yso.fi/onto/yso/p109166;Madagaskar
+http://www.yso.fi/onto/yso/p109169;Mauritania
+http://www.yso.fi/onto/yso/p109174;Norsunluurannikko
+http://www.yso.fi/onto/yso/p109197;Saint Kitts ja Nevis
+http://www.yso.fi/onto/yso/p109198;Saint Lucia
+http://www.yso.fi/onto/yso/p109199;Saint Vincent ja Grenadiinit
+http://www.yso.fi/onto/yso/p109204;Sierra Leone
+http://www.yso.fi/onto/yso/p109210;Suriname
+http://www.yso.fi/onto/yso/p109211;Antigua ja Barbuda
+http://www.yso.fi/onto/yso/p109212;Togo
+http://www.yso.fi/onto/yso/p109214;Trinidad ja Tobago
+http://www.yso.fi/onto/yso/p109215;Tšad
+http://www.yso.fi/onto/yso/p109218;Barbados
+http://www.yso.fi/onto/yso/p109224;Belize
+http://www.yso.fi/onto/yso/p109225;Benin
+http://www.yso.fi/onto/yso/p109232;Dominica
+http://www.yso.fi/onto/yso/p109233;Dominikaaninen tasavalta
+http://www.yso.fi/onto/yso/p109289;Gabon
+http://www.yso.fi/onto/yso/p109290;Gambia
+http://www.yso.fi/onto/yso/p109291;Grenada
+http://www.yso.fi/onto/yso/p109292;Guinea-Bissau
+http://www.yso.fi/onto/yso/p109293;Guyana
+http://www.yso.fi/onto/yso/p109294;Haiti
+http://www.yso.fi/onto/yso/p110631;Kongon demokraattinen tasavalta
+http://www.yso.fi/onto/yso/p94407;Senegal
+http://www.yso.fi/onto/yso/p94439;Tanska
+http://www.yso.fi/onto/yso/p94479;Venäjä`;
+
+const parseCountries = csv => csv.trim().split("\n").slice(1).map(line => {
+  const i = line.indexOf(";");
+  return { uri: line.slice(0, i).trim(), label: line.slice(i + 1).trim() };
+});
+
+const countries = parseCountries(COUNTRIES_CSV).sort((a,b)=>a.label.localeCompare(b.label,"fi")); // suomen aakkostus
+const sel = document.getElementById("country");
+countries.forEach(c => {
+  const o = document.createElement("option");
+  o.value = c.uri;
+  o.textContent = c.label;
+  sel.appendChild(o);
+});
+
+const makeQuery = countryUri => `
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sknsmeta:<http://www.yso.fi/onto/sknsmeta/>
+
+SELECT DISTINCT
+  (?prefLabel AS ?Suositus)
+  (GROUP_CONCAT(DISTINCT STR(?sp); SEPARATOR="\\n") AS ?Puhumavaltiot)
+  (SAMPLE(?sil) AS ?ISO6393koodi)
+  (SAMPLE(?glotto) AS ?Glottolog)
+  (STR(?c) AS ?Fintossa)
+WHERE {
+  GRAPH <http://www.yso.fi/onto/skns/> {
+    ?c a skos:Concept ;
+       skos:prefLabel ?prefLabel ;
+       dct:spatial <${countryUri}> .
+
+    OPTIONAL { ?c dct:spatial ?sp . }
+    OPTIONAL { ?c sknsmeta:silCode ?sil . }
+    OPTIONAL { ?c sknsmeta:glottologCode ?glotto . }
+
+    BIND(STRAFTER(STR(?c), "http://www.yso.fi/onto/skns/") AS ?id)
+    FILTER(REGEX(?id, "^[\\\\p{L}]{3}$"))
+    FILTER(langMatches(lang(?prefLabel), "fi"))
+  }
+}
+GROUP BY ?c ?prefLabel
+ORDER BY LCASE(STR(?prefLabel))
+`;
+
+const makePlaceQuery = uri => `
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT (?l AS ?label)
+WHERE {
+  GRAPH <http://www.yso.fi/onto/yso-paikat/> {
+    <${uri}> skos:prefLabel ?l .
+    FILTER(langMatches(lang(?l), "fi"))
+  }
+}
+`;
+
+async function getPlaceLabel(uri) {
+  if (placeCache.has(uri)) return placeCache.get(uri);
+  const r = await fetch(PLACE_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      "Accept": "application/json"
+    },
+    body: new URLSearchParams({ query: makePlaceQuery(uri) })
+  });
+  const t = await r.text();
+  if (!r.ok) { placeCache.set(uri, uri); return uri; }
+  const j = JSON.parse(t);
+  const v = j.results.bindings?.[0]?.label?.value || uri;
+  placeCache.set(uri, v);
+  return v;
+}
+
+async function search() {
+  const countryUri = sel.value;
+  if (!countryUri) return;
+
+  const r = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      "Accept": "application/json"
+    },
+    body: new URLSearchParams({ query: makeQuery(countryUri) })
+  });
+
+  const t = await r.text();
+  if (!r.ok) return alert(`SPARQL-virhe: HTTP ${r.status}):\n${t}`);
+
+  const j = JSON.parse(t);
+  const rows = j.results.bindings;
+
+  const uris = [...new Set(rows.flatMap(b => (b.Puhumavaltiot?.value || "").split("\n").map(s => s.trim()).filter(Boolean)))];
+  await Promise.all(uris.map(u => getPlaceLabel(u)));
+
+  document.getElementById("out").innerHTML = [
+    "<table><thead><tr>",
+    ...COLS.map(([,label]) => `<th>${label}</th>`),
+    "</tr></thead><tbody>",
+    ...rows.map(b =>
+      "<tr>" + COLS.map(([key]) => `<td>${
+        key === "Puhumavaltiot"
+          ? (b.Puhumavaltiot?.value || "").split("\n").map(s => s.trim()).filter(Boolean).map(u => placeCache.get(u) || u).join("\n")
+          : (b[key]?.value || "")
+      }</td>`).join("") + "</tr>"
+    ),
+    "</tbody></table>"
+  ].join("");
+}
+
+document.getElementById("btn").onclick = search;
+</script>
