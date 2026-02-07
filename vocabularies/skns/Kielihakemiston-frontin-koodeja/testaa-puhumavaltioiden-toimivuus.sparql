@@ -1,0 +1,42 @@
+
+
+Vertaa hakutulosta ja Yasguissa ajettuja rajapintakyselyitä
+
+_____
+Chile
+
+
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sknsmeta:<http://www.yso.fi/onto/sknsmeta/>
+
+SELECT ?preffi
+	WHERE {
+  		GRAPH <http://www.yso.fi/onto/skns/> {
+    		?c dct:spatial <http://www.yso.fi/onto/yso/p108111> .
+			?c skos:prefLabel ?preffi ;
+    		BIND(STRAFTER(STR(?c), "http://www.yso.fi/onto/skns/") AS ?id)
+    		FILTER(REGEX(?id, "^[\\p{L}]{1,3}$"))
+  		}
+	}
+ORDER BY ?puhumavaltio
+
+____
+
+Belize
+
+
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sknsmeta:<http://www.yso.fi/onto/sknsmeta/>
+
+SELECT ?preffi
+	WHERE {
+  		GRAPH <http://www.yso.fi/onto/skns/> {
+    		?c dct:spatial <http://www.yso.fi/onto/yso/p109224> .
+			?c skos:prefLabel ?preffi ;
+    		BIND(STRAFTER(STR(?c), "http://www.yso.fi/onto/skns/") AS ?id)
+    		FILTER(REGEX(?id, "^[\\p{L}]{1,3}$"))
+  		}
+	}
+ORDER BY ?puhumavaltio
