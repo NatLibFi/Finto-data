@@ -85,8 +85,15 @@ http://www.yso.fi/onto/yso/p94407;Senegal
 http://www.yso.fi/onto/yso/p94439;Tanska
 http://www.yso.fi/onto/yso/p94479;Venäjä`;
 
+// Luodaan implisiittienen JavaScript-taulukko ja viipaloidaan header-rivi pois
 const parseCountries = csv => csv.trim().split("\n").slice(1).map(line => {
   const i = line.indexOf(";");
+/*  
+  [
+    { uri: "http://...p123123", label: "Joku maa" },
+    { uri: "http://...p123124", label: "Joku toinen maa" }
+  ]
+*/
   return { uri: line.slice(0, i).trim(), label: line.slice(i + 1).trim() };
 });
 

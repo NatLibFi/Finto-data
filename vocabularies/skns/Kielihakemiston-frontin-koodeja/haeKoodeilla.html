@@ -1,0 +1,136 @@
+<input id="q" minlength="3" placeholder="Haku (min 3 merkkiä)">
+<button id="btn">Hae</button>
+<div id="out"></div>
+
+<style>
+  table{border-collapse:collapse;margin-top:.5rem}
+  th,td{border:1px solid #ddd;padding:.35rem .5rem;vertical-align:top}
+  tbody tr:nth-child(even){background:#eaf4ff}
+  td{white-space:pre-line}
+</style>
+
+<script>
+const ENDPOINT = "https://api.dev.finto.fi/sparql";
+const PLACE_ENDPOINT = "https://api.finto.fi/sparql";
+const placeCache = new Map();
+
+// bindataan avaimet ja otsikot
+const COLS = [
+  ["Suositus","Suositus"],
+  ["Puhumavaltiot","Puhumavaltiot"],
+  ["ISO6393koodi","ISO-639-3"],
+  ["Glottolog","Glottolog"],
+  ["Fintossa","Fintossa"]
+];
+
+// estetään injektiot ja syntaksivirheet
+const escapeSparql = s => s.replace(/\\/g,"\\\\").replace(/"/g,'\\"');
+
+const makeQuery = term => `
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sknsmeta:<http://www.yso.fi/onto/sknsmeta/>
+
+SELECT DISTINCT
+  (?prefLabel AS ?Suositus)
+  # Concatenoidaan lista puhumavaltioiden ureja rivinvaihdoilla erotellen
+  (GROUP_CONCAT(DISTINCT STR(?sp); SEPARATOR="\\n") AS ?Puhumavaltiot)
+  (?sil AS ?ISO6393koodi)
+  (?glotto AS ?Glottolog)
+  (STR(?c) AS ?Fintossa)
+WHERE {
+  GRAPH <http://www.yso.fi/onto/skns/> {
+    ?c a skos:Concept ;
+       skos:prefLabel ?prefLabel ;
+       sknsmeta:silCode ?sil .
+
+    # Ei ehdoton hakuehto mutta tulee mukaan, jos löytyy match
+    OPTIONAL { ?c dct:spatial ?sp . }
+    OPTIONAL { ?c sknsmeta:glottologCode ?glotto . }
+
+    BIND(LCASE("${escapeSparql(term)}") AS ?q)
+
+    FILTER(
+      CONTAINS(LCASE(STR(?sil)), ?q) ||
+      (BOUND(?glotto) && CONTAINS(LCASE(STR(?glotto)), ?q))
+    )
+
+    BIND(STRAFTER(STR(?c), "http://www.yso.fi/onto/skns/") AS ?id)
+    # rajataan kieliryhmät ja -kunnat ulos urin id:n perusteella, myöhemmin muutetaan luokkien mukaiseksi
+    FILTER(REGEX(?id, "^[\\\\p{L}]{3}$")) # sallii minkä tahansa unicoden, vaikkei varmaa onko tarpeen
+    FILTER(langMatches(lang(?prefLabel), "fi"))
+  }
+}
+GROUP BY ?c ?prefLabel ?sil ?glotto
+ORDER BY LCASE(STR(?prefLabel))
+`;
+
+const makePlaceQuery = uri => `
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT (?l AS ?label)
+WHERE {
+  GRAPH <http://www.yso.fi/onto/yso-paikat/> {
+    <${uri}> skos:prefLabel ?l .
+    FILTER(langMatches(lang(?l), "fi"))
+  }
+}
+`;
+
+async function getPlaceLabel(uri) {
+  if (placeCache.has(uri)) return placeCache.get(uri);
+  const r = await fetch(PLACE_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      "Accept": "application/json"
+    },
+    body: new URLSearchParams({ query: makePlaceQuery(uri) })
+  });
+  const t = await r.text();
+  if (!r.ok) { placeCache.set(uri, uri); return uri; }
+  const j = JSON.parse(t);
+  const v = j.results.bindings?.[0]?.label?.value || uri;
+  placeCache.set(uri, v);
+  return v;
+}
+
+async function search() {
+  const term = document.getElementById("q").value.trim();
+  if (term.length < 3) return alert("Anna vähintään 3 merkkiä.");
+
+  const r = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", // sopii lähetettäväksi endpointillemme
+      "Accept": "application/json"
+    },
+    body: new URLSearchParams({ query: makeQuery(term) })
+  });
+
+  const t = await r.text();
+  if (!r.ok) return alert(`SPARQL-virhe: HTTP ${r.status}):\n${t}`);
+
+  const j = JSON.parse(t);
+  const rows = j.results.bindings;
+
+  const uris = [...new Set(rows.flatMap(b => (b.Puhumavaltiot?.value || "").split("\n").map(s => s.trim()).filter(Boolean)))];
+  await Promise.all(uris.map(u => getPlaceLabel(u)));
+
+  document.getElementById("out").innerHTML = [
+    "<table><thead><tr>",
+    ...COLS.map(([,label]) => `<th>${label}</th>`),
+    "</tr></thead><tbody>",
+    ...rows.map(b =>
+      "<tr>" + COLS.map(([key]) => `<td>${
+        key === "Puhumavaltiot"
+          ? (b.Puhumavaltiot?.value || "").split("\n").map(s => s.trim()).filter(Boolean).map(u => placeCache.get(u) || u).join("\n")
+          : (b[key]?.value || "")
+      }</td>`).join("") + "</tr>"
+    ),
+    "</tbody></table>"
+  ].join("");
+}
+
+document.getElementById("btn").onclick = search;
+document.getElementById("q").addEventListener("keydown", e => e.key === "Enter" && search());
+</script>
