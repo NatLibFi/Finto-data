@@ -164,6 +164,11 @@ slm:s175  a              owl:Class , skos:Concept ;
         skos:inScheme    slm: ;
         skos:prefLabel   "csardas"@sv , "csárdásit"@fi .
 
+slm:d0ebad28-6c57-4aa6-8df4-acdb9033812f
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1177 , yso-update:uudetmuuttuneetSv ;
+        skos:prefLabel   "retropelit (digitaaliset pelit)"@fi .
+
 slm:s1288  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s975 ;
         skos:altLabel    "regnbågslitteratur"@sv , "sateenkaarikirjallisuus"@fi , "queer-litteratur"@sv ;
@@ -1603,9 +1608,11 @@ slm:s1372  a             owl:Class , skos:Concept ;
         skos:prefLabel   "krautrock"@fi , "krautrock"@sv ;
         skos:related     slm:s885 , slm:s1363 , slm:s1262 .
 
-slm:s1299  a            owl:Class , skos:Concept ;
-        skos:altLabel   "oljudsmusik"@sv , "noise"@fi , "häly (musiikki)"@fi ;
-        skos:prefLabel  "noise"@sv , "hälymusiikki"@fi .
+slm:s1299  a             owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s1314 ;
+        skos:altLabel    "oljudsmusik"@sv , "noise"@fi , "häly (musiikki)"@fi ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026967> ;
+        skos:prefLabel   "noise"@sv , "hälymusiikki"@fi .
 
 ysometa:StructuringClass
         a                rdfs:Class ;
@@ -2354,8 +2361,9 @@ slm:s1159  a             owl:Class , skos:Concept ;
         skos:prefLabel   "neo-soul"@fi , "neo-soul"@sv .
 
 slm:s762  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s202 ;
+        rdfs:subClassOf  slm:s202 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "kirjoitusoppaat"@fi , "opinnäytteen laadinnan oppaat"@fi , "graduoppaat"@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "julkaisun laadinnan oppaat"@fi , "skrivhandböcker"@sv .
 
@@ -3273,6 +3281,13 @@ slm:s592  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm: ;
         skos:prefLabel   "kabareet"@fi , "kabaréer"@sv .
+
+slm:7d745b00-3fc1-4476-a17b-762d55ebc14e
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  slm:s205 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "ulkoilukartat"@fi ;
+        skos:prefLabel   "retkeilykartat"@fi ;
+        skos:related     slm:s1273 .
 
 slm:s979  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s202 ;
@@ -8579,7 +8594,7 @@ slm:s587  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään elokuvista, jotka kuvaavat opiskelijoiden elämää."@fi , "Används om filmer som skildrar studentlivet."@sv .
 
 slm:s1184  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s518 ;
+        rdfs:subClassOf  slm:s365 , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p9602> ;
         skos:inScheme    slm: ;
@@ -9039,8 +9054,8 @@ slm:s564  a              owl:Class , skos:Concept ;
         skos:prefLabel   "rakennusohjeet"@fi , "byggnadsinstruktioner"@sv .
 
 slm:s1554  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1553 ;
-        skos:altLabel    "flygfoton"@sv , "flygfotografier"@sv ;
+        rdfs:subClassOf  slm:s1553 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "flygfoton"@sv , "flygfotografier"@sv , "droonikuvat"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2011026032> ;
         skos:prefLabel   "ilmakuvat"@fi , "flygbilder"@sv .
 
@@ -9112,10 +9127,12 @@ slm:s787  a              owl:Class , skos:Concept ;
         skos:related     slm:s1181 ;
         skos:scopeNote   "Används om böcker som doftar."@sv , "Käytetään teoksista, jotka tuoksuvat."@fi .
 
-slm:s16  a              owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm: ;
-        skos:prefLabel  "kokousjulkaisut"@fi , "konferenspublikationer"@sv .
+slm:s16  a               owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "konferenssijulkaisut"@fi , "kongressijulkaisut"@fi ;
+        skos:inScheme    slm: ;
+        skos:prefLabel   "kokousjulkaisut"@fi , "konferenspublikationer"@sv .
 
 slm:s984  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1083 , slm:s418 , slm:s1066 , slm:s1026 , slm:s1310 ;
@@ -9743,7 +9760,8 @@ slm:s1273  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s205 ;
         skos:altLabel    "topografiset kartat"@fi , "topografiska kartor"@sv ;
         skos:inScheme    slm: ;
-        skos:prefLabel   "maastokartat"@fi , "terrängkartor"@sv .
+        skos:prefLabel   "maastokartat"@fi , "terrängkartor"@sv ;
+        skos:related     slm:7d745b00-3fc1-4476-a17b-762d55ebc14e .
 
 slm:s1401  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1398 ;
