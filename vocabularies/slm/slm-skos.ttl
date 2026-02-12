@@ -706,17 +706,6 @@ slm:s1183 a skos:Concept ;
     skos:prefLabel "rock and roll"@fi,
         "rock'n'roll"@sv .
 
-slm:s1184 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-05-28"^^xsd:date ;
-    skos:broader slm:s518 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p9602> ;
-    skos:inScheme slm: ;
-    skos:note "Romaani, jonka keskeisillä henkilöillä ja heidän yksityiselämäänsä liittyvillä tapahtumilla on selvästi tunnistettavia vastineita todellisuudessa."@fi,
-        "Roman, i vilken centrala personer och händelser i anslutning till deras privatliv har igenkännbara motsvarigheter i verkligheten."@sv ;
-    skos:prefLabel "avainromaanit"@fi,
-        "nyckelromaner"@sv .
-
 slm:s1185 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2025-05-28"^^xsd:date ;
@@ -1330,13 +1319,15 @@ slm:s1298 a skos:Concept ;
         "vägkartor"@sv .
 
 slm:s1299 a skos:Concept ;
+    dct:modified "2026-02-12"^^xsd:date ;
     skos:altLabel "häly (musiikki)"@fi,
         "noise"@fi,
         "oljudsmusik"@sv ;
+    skos:broader slm:s1314 ;
+    skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2014026967> ;
     skos:inScheme slm: ;
     skos:prefLabel "hälymusiikki"@fi,
-        "noise"@sv ;
-    skos:topConceptOf slm: .
+        "noise"@sv .
 
 slm:s1300 a skos:Concept ;
     dct:created "2019-02-23"^^xsd:date ;
@@ -2638,14 +2629,22 @@ slm:s1551 a skos:Concept ;
 
 slm:s1554 a skos:Concept ;
     dct:created "2025-11-27"^^xsd:date ;
-    dct:modified "2025-11-27"^^xsd:date ;
-    skos:altLabel "flygfotografier"@sv,
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "droonikuvat"@fi,
+        "flygfotografier"@sv,
         "flygfoton"@sv ;
     skos:broader slm:s1553 ;
     skos:exactMatch <http://id.loc.gov/authorities/genreForms/gf2011026032> ;
     skos:inScheme slm: ;
     skos:prefLabel "ilmakuvat"@fi,
         "flygbilder"@sv .
+
+slm:s1556 a skos:Concept ;
+    dct:created "2026-02-12"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:broader slm:s1177 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "retropelit (digitaaliset pelit)"@fi .
 
 slm:s157 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -2668,7 +2667,9 @@ slm:s159 a skos:Concept ;
 
 slm:s16 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-05-28"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "konferenssijulkaisut"@fi,
+        "kongressijulkaisut"@fi ;
     skos:inScheme slm: ;
     skos:prefLabel "kokousjulkaisut"@fi,
         "konferenspublikationer"@sv ;
@@ -5183,7 +5184,10 @@ slm:s759 a skos:Concept ;
 
 slm:s762 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-05-28"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "graduoppaat"@fi,
+        "kirjoitusoppaat"@fi,
+        "opinnäytteen laadinnan oppaat"@fi ;
     skos:broader slm:s202 ;
     skos:inScheme slm: ;
     skos:prefLabel "julkaisun laadinnan oppaat"@fi,
@@ -6754,6 +6758,18 @@ slm:s1179 a skos:Concept ;
     skos:scopeNote "Käytetään nuorille tarkoitetuista sarjakuvista."@fi,
         "Används om tecknade serier avsedda för ungdomar."@sv .
 
+slm:s1184 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:broader slm:s365,
+        slm:s518 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p9602> ;
+    skos:inScheme slm: ;
+    skos:note "Romaani, jonka keskeisillä henkilöillä ja heidän yksityiselämäänsä liittyvillä tapahtumilla on selvästi tunnistettavia vastineita todellisuudessa."@fi,
+        "Roman, i vilken centrala personer och händelser i anslutning till deras privatliv har igenkännbara motsvarigheter i verkligheten."@sv ;
+    skos:prefLabel "avainromaanit"@fi,
+        "nyckelromaner"@sv .
+
 slm:s1187 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2025-05-28"^^xsd:date ;
@@ -6968,16 +6984,6 @@ slm:s1267 a skos:Concept ;
     skos:prefLabel "osoiteluettelot"@fi,
         "adressförteckningar"@sv .
 
-slm:s1273 a skos:Concept ;
-    dct:modified "2025-05-28"^^xsd:date ;
-    skos:altLabel "topografiset kartat"@fi,
-        "topografiska kartor"@sv ;
-    skos:broader slm:s205 ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1346 ;
-    skos:prefLabel "maastokartat"@fi,
-        "terrängkartor"@sv .
-
 slm:s1276 a skos:Concept ;
     dct:modified "2025-05-28"^^xsd:date ;
     skos:altLabel "opettajan oppaat"@fi,
@@ -7124,19 +7130,6 @@ slm:s1313 a skos:Concept ;
     skos:inScheme slm: ;
     skos:prefLabel "hengellinen viihdemusiikki"@fi,
         "andlig underhållningsmusik"@sv .
-
-slm:s1314 a skos:Concept ;
-    dct:created "2019-03-22"^^xsd:date ;
-    dct:modified "2025-11-27"^^xsd:date ;
-    skos:altLabel "avantgarde (musiikki)"@fi,
-        "avantgardemusiikki"@fi,
-        "avantgardistinen musiikki"@fi,
-        "avantgardemusik"@sv ;
-    skos:broader slm:s1377 ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1551 ;
-    skos:prefLabel "kokeellinen musiikki"@fi,
-        "experimentell musik"@sv .
 
 slm:s1316 a skos:Concept ;
     dct:created "2019-06-11"^^xsd:date ;
@@ -8144,6 +8137,15 @@ slm:s1553 a skos:Concept ;
     skos:scopeNote "Termillä kuvaillaan ainoastaan yksittäisiä valokuvia tai valokuvakokoelmia. Valokuvia sisältävistä kuvateoksista käytetään SLM-termiä kuvateokset, kuvastot tms. ja sopivaa YSO-asiasanaa (esim. mustavalkoinen valokuvaus, mainoskuvat)."@fi,
         "Termen används endast för att beskriva enskilda fotografier eller fotografisamlingar. Om bildverk som innehåller fotografier används FGF-termen bildverk, illustrerade kataloger e.d. och ett lämpligt ALLFO-ämnesord (t.ex. svartvit fotografering, reklambilder)."@sv ;
     skos:topConceptOf slm: .
+
+slm:s1555 a skos:Concept ;
+    dct:created "2026-02-12"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "ulkoilukartat"@fi ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm: ;
+    skos:prefLabel "retkeilykartat"@fi ;
+    skos:related slm:s1273 .
 
 slm:s161 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -10922,6 +10924,17 @@ slm:s1258 a skos:Concept ;
     skos:related slm:s442,
         slm:s771 .
 
+slm:s1273 a skos:Concept ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "topografiset kartat"@fi,
+        "topografiska kartor"@sv ;
+    skos:broader slm:s205 ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1346 ;
+    skos:prefLabel "maastokartat"@fi,
+        "terrängkartor"@sv ;
+    skos:related slm:s1555 .
+
 slm:s1275 a skos:Concept ;
     dct:modified "2025-05-28"^^xsd:date ;
     skos:altLabel "musiikkiarviot"@fi,
@@ -10963,6 +10976,20 @@ slm:s1311 a skos:Concept ;
     skos:prefLabel "tietokannat"@fi,
         "databaser"@sv ;
     skos:topConceptOf slm: .
+
+slm:s1314 a skos:Concept ;
+    dct:created "2019-03-22"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "avantgarde (musiikki)"@fi,
+        "avantgardemusiikki"@fi,
+        "avantgardistinen musiikki"@fi,
+        "avantgardemusik"@sv ;
+    skos:broader slm:s1377 ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1299,
+        slm:s1551 ;
+    skos:prefLabel "kokeellinen musiikki"@fi,
+        "experimentell musik"@sv .
 
 slm:s1315 a skos:Concept ;
     dct:created "2019-03-22"^^xsd:date ;
@@ -14745,21 +14772,6 @@ slm:s286 a skos:Concept ;
         slm:s611,
         slm:s770 .
 
-slm:s365 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-05-28"^^xsd:date ;
-    skos:altLabel "tosipohjaiset teokset"@fi,
-        "dokumentära verk"@sv ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1353,
-        slm:s849 ;
-    skos:prefLabel "todellisuuspohjaiset teokset"@fi,
-        "verklighetsbaserade verk"@sv ;
-    skos:related slm:s1423,
-        slm:s770,
-        slm:s906 ;
-    skos:topConceptOf slm: .
-
 slm:s479 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2025-05-28"^^xsd:date ;
@@ -15203,6 +15215,22 @@ slm:s230 a skos:Concept ;
         slm:s849,
         slm:s869,
         slm:s928 .
+
+slm:s365 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "tosipohjaiset teokset"@fi,
+        "dokumentära verk"@sv ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1184,
+        slm:s1353,
+        slm:s849 ;
+    skos:prefLabel "todellisuuspohjaiset teokset"@fi,
+        "verklighetsbaserade verk"@sv ;
+    skos:related slm:s1423,
+        slm:s770,
+        slm:s906 ;
+    skos:topConceptOf slm: .
 
 slm:s421 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -15799,23 +15827,6 @@ slm:s194 a skos:Concept ;
     skos:scopeNote "Käytetään teoksista, jotka yleensä kuvaavat yksityisetsivän työtä ja joissa rikoksen selvittämiseen liittyy yleensä yhteiskuntakuvausta ja kritiikkiä."@fi,
         "Används om verk som vanligen beskriver en privatdetektivs arbete, och i vilka samhällskildring och kritik framkommer i samband med utredning av brotten."@sv .
 
-slm:s205 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2025-05-28"^^xsd:date ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1202,
-        slm:s1273,
-        slm:s1278,
-        slm:s1282,
-        slm:s1290,
-        slm:s1298,
-        slm:s1417,
-        slm:s1436,
-        slm:s998 ;
-    skos:prefLabel "kartat"@fi,
-        "kartor"@sv ;
-    skos:topConceptOf slm: .
-
 slm:s41 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:modified "2025-05-28"^^xsd:date ;
@@ -15914,6 +15925,24 @@ slm:s171 a skos:Concept ;
         slm:s926 ;
     skos:scopeNote "Käytetään teoksista, jotka kuvaavat oikeudenkäyntiä, jossa rikos selvitetään."@fi,
         "Används om verk som beskriver rättegångsförfarandet då ett brott utreds."@sv .
+
+slm:s205 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1202,
+        slm:s1273,
+        slm:s1278,
+        slm:s1282,
+        slm:s1290,
+        slm:s1298,
+        slm:s1417,
+        slm:s1436,
+        slm:s1555,
+        slm:s998 ;
+    skos:prefLabel "kartat"@fi,
+        "kartor"@sv ;
+    skos:topConceptOf slm: .
 
 slm:s641 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -16203,30 +16232,6 @@ slm:s1161 a skos:Concept ;
         slm:s763,
         slm:s858 .
 
-slm:s1177 a skos:Concept ;
-    dct:created "2018-05-16"^^xsd:date ;
-    dct:modified "2024-03-12"^^xsd:date ;
-    skos:altLabel "videopelit"@fi,
-        "videospel"@sv ;
-    skos:broader slm:s170 ;
-    skos:closeMatch <http://www.yso.fi/onto/yso/p22353> ;
-    skos:inScheme slm: ;
-    skos:narrower slm:s1015,
-        slm:s1134,
-        slm:s1509,
-        slm:s227,
-        slm:s338,
-        slm:s340,
-        slm:s371,
-        slm:s49,
-        slm:s492,
-        slm:s503,
-        slm:s588,
-        slm:s589,
-        slm:s772 ;
-    skos:prefLabel "digitaaliset pelit"@fi,
-        "digitala spel"@sv .
-
 slm:s1420 a skos:Concept ;
     dct:created "2021-05-20"^^xsd:date ;
     dct:modified "2023-03-29"^^xsd:date ;
@@ -16271,6 +16276,31 @@ slm:s1007 a skos:Concept ;
         "latinamerikansk populärmusik"@sv ;
     skos:related slm:s1188,
         slm:s1370 .
+
+slm:s1177 a skos:Concept ;
+    dct:created "2018-05-16"^^xsd:date ;
+    dct:modified "2026-02-12"^^xsd:date ;
+    skos:altLabel "videopelit"@fi,
+        "videospel"@sv ;
+    skos:broader slm:s170 ;
+    skos:closeMatch <http://www.yso.fi/onto/yso/p22353> ;
+    skos:inScheme slm: ;
+    skos:narrower slm:s1015,
+        slm:s1134,
+        slm:s1509,
+        slm:s1556,
+        slm:s227,
+        slm:s338,
+        slm:s340,
+        slm:s371,
+        slm:s49,
+        slm:s492,
+        slm:s503,
+        slm:s588,
+        slm:s589,
+        slm:s772 ;
+    skos:prefLabel "digitaaliset pelit"@fi,
+        "digitala spel"@sv .
 
 slm:s1188 a skos:Concept ;
     dct:created "2018-05-16"^^xsd:date ;
@@ -17778,7 +17808,7 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
     dc:title "Suomalainen lajityyppi- ja muotosanasto"@fi ;
     dct:created "2018-05-16"^^xsd:date ;
     dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2025-11-27T01:03:02+00:00"^^xsd:dateTime ;
+    dct:modified "2026-02-12T01:02:27+00:00"^^xsd:dateTime ;
     owl:imports dc:,
         <http://www.w3.org/2000/01/rdf-schema>,
         <http://www.w3.org/2004/02/skos/core> ;
@@ -17810,7 +17840,6 @@ Du kan föreslå nya termer och ändringar till vokabulären via ALLFO:s försla
         slm:s1270,
         slm:s1287,
         slm:s1296,
-        slm:s1299,
         slm:s1311,
         slm:s1330,
         slm:s1332,
