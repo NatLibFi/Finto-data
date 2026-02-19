@@ -1,10 +1,8 @@
 #!/bin/sh
 
-RAWFILE="ykl-test.rdf"
-
 SKOSIFYCMD="skosify"
 
-INFILES="ykl-metadata.ttl ykl-hklj.ttl"
+INFILES="ykl-test.rdf ykl-metadata.ttl ykl-hklj.ttl"
 OUTFILE=ykl-test-skos.ttl
 
 LOGFILE=skosify-test.log
