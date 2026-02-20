@@ -3,7 +3,7 @@
 EXPANDURIS="../../tools/expand-note-uris/expand-note-uris.py"
 
 # fetch mappings from Wikidata and store them in a sorted NT file, so version control works
-rsparql --results NT --service https://query.wikidata.org/sparql --query wikidata-links.rq | sort >wikidata-links.nt
+curl -S -X POST https://query.wikidata.org/sparql -H 'Accept: application/n-triples' -H 'Content-Type: application/sparql-query' --data-binary @wikidata-links.rq | sort >wikidata-links.nt
 
 # add SKOS XL labels indicating source of labels (Wikidata)
 sparql --results NT --data wikidata-links.nt --query wikidata-skosxl.rq > wikidata-skosxl.nt
