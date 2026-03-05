@@ -17,7 +17,7 @@
 
   --tooltip-bg: var(--dark-color);
   --tooltip-text: var(--secondary-light-color);
-  --tooltip-border: var(--secondary-medium-color);
+  --tooltip-border: var(--light-color);
 
   --topbar-bg-1: var(--dark-color); /*landing*/
   --topbar-bg-2: var(--dark-color);
@@ -79,4 +79,244 @@
 
   --footer-bg: var(--secondary-dark-color);
   --footer-text: var(--white-color);
+}
+
+/* --- Topbar --- */
+
+/* topbar custom template */
+#navi4 {
+  position: relative;
+  padding-left: 1rem;
+}
+
+#navi4 img {
+  width: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+}
+
+#skosmos-logo-top {
+  width: 270px;
+  margin-left: -35px;
+}
+
+#skosmos-logo-top.service-fi {
+  background-image: url("../pics/FI-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-sv {
+  background-image: url("../pics/SE-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-en {
+  background-image: url("../pics/EN-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-se {
+  background-image: url("../pics/SA-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo {
+  background: none;
+  height: 0;
+  width: 0;
+}
+
+/* --- Landing page --- */
+
+.frontpage-logo #headerbar {
+  height: 210px;
+  position: relative;
+  background-color: transparent !important;
+}
+
+.frontpage-logo #headerbar::before {
+  content: "";
+  position: absolute;
+  background-image: url("../pics/pexels-brett-sayles.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#vocabulary-list {
+  position: relative;
+}
+
+#vocabulary-list .list-group-item a {
+  font-weight: normal;
+}
+
+#vocabulary-list::before {
+  content: "";
+  position: absolute;
+  background-image: url("../pics/finto.svg");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  width: 1000px;
+  height: 300px;
+  top: -210px;
+  left: -230px;
+  pointer-events: none;
+}
+
+/* anchor logo to left side of screen on smaller screens */
+@media (max-width: 1600px) {
+  #vocabulary-list::before {
+    display: none;
+  }
+
+  .frontpage-logo #headerbar::after {
+    content: "";
+    position: absolute;
+    background-image: url("../pics/finto.svg");
+    background-repeat: no-repeat;
+    background-size: 30%;
+    width: 1000px;
+    height: 300px;
+    top: 0;
+    left: -85px;
+    pointer-events: none;
+  }
+}
+
+/* landing-end custom template */
+#welcome-box {
+  position: relative;
+  background-color: var(--secondary-dark-color);
+  z-index: 1;
+}
+
+/* only show triangle above lg breakpoint */
+@media (min-width: 992px) {
+  #welcome-box::after {
+    position: absolute;
+    content: '';
+    width: 46px;
+    height: 46px;
+    transform: rotate(45deg);
+    background-color: var(--secondary-dark-color);
+    z-index: -1;
+    left: -22px;
+    bottom: 50px;
+  }
+}
+
+#welcome-box h2 {
+  margin-bottom: 1rem;
+}
+
+#welcome-box a {
+  color: var(--white-color);
+}
+
+/* landing-end custom template */
+#news-box {
+  background-color: var(--light-color);
+}
+
+/* --- Vocab home/concept page --- */
+
+#sidebar-tabs .nav-item + .nav-item .nav-link {
+  position: relative;
+}
+
+/* Add a left border to all sidebar tab items except first */
+#sidebar-tabs .nav-item + .nav-item .nav-link::after {
+  content: "";
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  border-left: 1px solid var(--secondary-medium-color);
+}
+
+/* Remove border from active tab and the tab to its right */
+#sidebar-tabs .nav-link.active::after,
+#sidebar-tabs .nav-item:has(.nav-link.active) + .nav-item .nav-link::after {
+  display: none;
+}
+
+#alphabetical .nav-link.active {
+  background-color: var(--secondary-dark-color);
+}
+
+#sidebar .pagination, #sidebar .page-item, #sidebar .page-link, #sidebar .page-link:hover {
+  background-color: var(--secondary-dark-color);
+}
+
+#sidebar .hierarchy-button img {
+  filter: invert(100%);
+}
+
+#main-content .property-label h2, #search-results h1 {
+  padding-left: 10px;
+  border-left: solid 7px var(--accent-color);
+}
+
+#main-content .prop-download h2, #download-links.property-label h2, #concept-mappings .property-label h2 {
+  padding-left: 0;
+  border-left: none;
+}
+
+/* --- Global/vocab search page --- */
+
+/* --- About page --- */
+
+.about {
+  background-color: var(--white-color);
+  z-index: 1;
+  position: relative;
+}
+
+.about::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 130px;
+  top: 0;
+  background-color: var(--secondary-dark-color);
+  z-index: -1;
+}
+
+.about h1 {
+  color: var(--white-color);
+  padding-bottom: 6.5rem;
+  margin-bottom: 0 !important;
+}
+
+.about a {
+  font-weight: normal;
+}
+
+.about #version {
+  color: var(--secondary-dark-color);
+}
+
+/* --- Feedback page --- */
+
+.feedback {
+  position: relative;
+  z-index: 1;
+  color: var(--white-color);
+}
+
+.feedback::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 400px;
+  top: 0;
+  background-color: var(--secondary-dark-color);
+  z-index: -1;
+}
+
+.feedback #feedback-form {
+  color: var(--dark-color);
 }
