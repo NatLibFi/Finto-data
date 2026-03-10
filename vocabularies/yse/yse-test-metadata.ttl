@@ -1,0 +1,42 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ysa: <http://www.yso.fi/onto/ysa/> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yse: <http://www.yso.fi/onto/yse/> .
+@prefix ysemeta: <http://www.yso.fi/onto/yse-meta/> .
+
+yse: a skos:ConceptScheme ;
+    dc:creator "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:language <http://lexvo.org/id/iso639-3/fin>, <http://lexvo.org/id/iso639-3/swe> ;
+    dc:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:relation yso:, yso: ;
+    dc:title "YSO and SLM concept proposals"@en,
+        "YSOn ja SLMn käsite-ehdotukset"@fi,
+        "ALLFO:s och FGF:s begreppsförslag"@sv ;
+    foaf:homepage <https://github.com/Finto-ehdotus/YSE#readme> .
+
+ysemeta:GeographicalConcept a owl:Class ;
+    rdfs:label "Geographical location"@en,
+        "Maantieteellinen paikka"@fi,
+        "Geografisk plats"@sv ;
+    rdfs:subClassOf skos:Concept .
+
+ysemeta:GenreConcept a owl:Class ;
+    rdfs:label "Genre or form term"@en,
+        "Lajityyppi- tai muototermi"@fi,
+        "Genre- eller formterm"@sv ;
+    rdfs:subClassOf skos:Concept .
+
+ysemeta:Concept a owl:Class ;
+    rdfs:label "Proposed concept"@en,
+        "Käsite-ehdotus"@fi,
+        "Begreppsförslag"@sv ;
+    rdfs:subClassOf skos:Concept .
