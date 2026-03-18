@@ -187,10 +187,14 @@ def strip_qualifier(name):
     """strip parenthetical qualifiers from names"""
     return re.sub(r'\s*\(.*?\)', '', name)
 
-def extract_person_names(fld):
+def extract_person_names(fld, uri):
     """extract given name and surname from a 100 or 400 field; return as (givenName, surname); both can be None"""
     gname = None
     sname = None
+
+    if 'a' not in fld:
+        logging.warning("%s has no $a in <%s>, cannot extract given name or surname", fld.tag, uri)
+        return (None, None)
 
     if fld.indicators[0] == '0':
         gname = fld['a'].strip(', ')
@@ -339,7 +343,7 @@ def main():
         
         if '100' in rec: # person name
             g.add((uri, RDF.type, Person))
-            gname, sname = extract_person_names(rec['100'])
+            gname, sname = extract_person_names(rec['100'], uri)
             if gname:
                 g.add((uri, givenName, Literal(gname)))
             if sname:
@@ -583,7 +587,7 @@ def main():
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfPerson, varlit))
             # add hiddenLabel like "Firstname Lastname", if possible
-            gname, sname = extract_person_names(f)
+            gname, sname = extract_person_names(f, uri)
             if gname and sname:
                 g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}")))
 
