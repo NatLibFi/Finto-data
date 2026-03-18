@@ -34,6 +34,8 @@ authorizedAccessPointForPerson=RDAA.P50411
 authorizedAccessPointForCorporateBody=RDAA.P50407
 preferredNameOfPerson=RDAA.P50117
 variantNameOfPerson=RDAA.P50103
+surname=RDAA.P50291
+givenName=RDAA.P50292
 preferredNameOfCorporateBody=RDAA.P50041
 variantNameOfCorporateBody=RDAA.P50025
 fullerFormOfName=RDAA.P50115
@@ -185,6 +187,22 @@ def strip_qualifier(name):
     """strip parenthetical qualifiers from names"""
     return re.sub(r'\s*\(.*?\)', '', name)
 
+def extract_person_names(fld):
+    """extract given name and surname from a 100 or 400 field; return as (givenName, surname); both can be None"""
+    gname = None
+    sname = None
+
+    if fld.indicators[0] == '0':
+        gname = fld['a'].strip(', ')
+    elif fld.indicators[0] == '1':
+        if ',' in fld['a']:
+            sname, gname = fld['a'].split(',', maxsplit=1)
+            sname = sname.strip(', ')
+            gname = gname.strip(', ')
+        else:
+            gname = fld['a'].strip(', ')
+    return (gname, sname)
+
 def extract_language_2(text):
     """
     Extract language code from a subfield $2 value that starts with 'finaf/'
@@ -321,6 +339,14 @@ def main():
         
         if '100' in rec: # person name
             g.add((uri, RDF.type, Person))
+            gname, sname = extract_person_names(rec['100'])
+            if gname:
+                g.add((uri, givenName, Literal(gname)))
+            if sname:
+                g.add((uri, surname, Literal(sname)))
+            # add hiddenLabel like "Firstname Lastname", if possible
+            if gname and sname:
+                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}")))
             label = format_label(rec['100'])
             labelprop = authorizedAccessPointForPerson
             is_person = True
@@ -556,6 +582,10 @@ def main():
             varlit = Literal(varname, 'fi')
             g.add((uri, SKOS.altLabel, varlit))
             g.add((uri, variantNameOfPerson, varlit))
+            # add hiddenLabel like "Firstname Lastname", if possible
+            gname, sname = extract_person_names(f)
+            if gname and sname:
+                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}")))
 
         for f in rec.get_fields('410') + rec.get_fields('411'):
             varname = format_label(f)
