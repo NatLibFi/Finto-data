@@ -185,9 +185,21 @@ def strip_qualifier(name):
     """strip parenthetical qualifiers from names"""
     return re.sub(r'\s*\(.*?\)', '', name)
 
-def extract_language(text):
+def extract_language_2(text):
     """
-    Extract language code from a string that starts with '(dploe)' or '(dpeloe)'
+    Extract language code from a subfield $2 value that starts with 'finaf/'
+    """
+    # Check if text matches our pattern
+    import re
+    pattern = r'^finaf/([a-z]+)$'
+    match = re.match(pattern, text)
+
+    # Return language code if match found, None otherwise
+    return match.group(1) if match else None
+
+def extract_language_7(text):
+    """
+    Extract language code from a subfield 7 value that starts with '(dploe)' or '(dpeloe)'
     """
     # Check if text matches our pattern
     import re
@@ -644,11 +656,13 @@ def main():
             if other_name is None:
                 logging.warning("Empty 700 value for <%s>, skipping", uri)
                 continue
-            other_lang = marc_lang_to_iso6391.get(extract_language(f['7'] if '7' in f else ''))
+            other_lang = marc_lang_to_iso6391.get(extract_language_2(f['2'] if '2' in f else ''))
             if not other_lang:
-                logging.warning("Cannot extract 700$7 language for <%s>, skipping", uri)
+                other_lang = marc_lang_to_iso6391.get(extract_language_7(f['7'] if '7' in f else ''))
+            if not other_lang:
+                logging.warning("Cannot extract 700 language for <%s>, skipping", uri)
                 continue
-            if f['7'].startswith('(dploe)'):
+            if f.get('7', '').startswith('(dploe)'):
                 logging.warning("Invalid $7 data provenance code 'dploe', interpreted as 'dpeloe' in <%s>", uri)
             other_lit = Literal(other_name, other_lang)
             g.add((uri, SKOS.prefLabel, other_lit))
@@ -659,11 +673,13 @@ def main():
             if other_name is None:
                 logging.warning("Empty 71X value for <%s>, skipping", uri)
                 continue
-            other_lang = marc_lang_to_iso6391.get(extract_language(f['7'] if '7' in f else ''))
+            other_lang = marc_lang_to_iso6391.get(extract_language_2(f['2'] if '2' in f else ''))
             if not other_lang:
-                logging.warning("Cannot extract 71X$7 language for <%s>, skipping", uri)
+                other_lang = marc_lang_to_iso6391.get(extract_language_7(f['7'] if '7' in f else ''))
+            if not other_lang:
+                logging.warning("Cannot extract 71X language for <%s>, skipping", uri)
                 continue
-            if f['7'].startswith('(dploe)'):
+            if f.get('7', '').startswith('(dploe)'):
                 logging.warning("Invalid $7 data provenance code 'dploe', interpreted as 'dpeloe' in <%s>", uri)
             other_lit = Literal(other_name, other_lang)
             g.add((uri, SKOS.prefLabel, other_lit))
