@@ -350,7 +350,7 @@ def main():
                 g.add((uri, surname, Literal(sname)))
             # add hiddenLabel like "Firstname Lastname", if possible
             if gname and sname:
-                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}")))
+                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}", lang="fi")))
             label = format_label(rec['100'])
             labelprop = authorizedAccessPointForPerson
             is_person = True
@@ -589,7 +589,7 @@ def main():
             # add hiddenLabel like "Firstname Lastname", if possible
             gname, sname = extract_person_names(f, uri)
             if gname and sname:
-                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}")))
+                g.add((uri, SKOS.hiddenLabel, Literal(f"{gname} {sname}", lang="fi")))
 
         for f in rec.get_fields('410') + rec.get_fields('411'):
             varname = format_label(f)
