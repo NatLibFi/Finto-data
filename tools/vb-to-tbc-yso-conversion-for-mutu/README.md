@@ -1,38 +1,59 @@
-# VocBenchissä ylläpidetyn YSOn muuntaminen TBC:ssä käytettyyn kehitystietomalliin.
+# VocBenchissä ylläpidetyn YSOn kehitystietomallin mukaisen YSOn muuntaminen TBC:n vastaavaan.
 
-***VocBenchistä viedyn YSOn jäädyttäminen aiemmin TBC:ssä ylläpidetyn YSOn kehitystietomallia vastaavaksi edellyttää erillistä skriptiä.***
+***Tietomallimuunnoksen toteuttaminen edellyttää siihen tarkoitetun skriptin ajamista VocBenchistä ladatulle YSOlle.***
 
-Skriptillä muunnetaan VocBenchissä ylläpidetyn YSOn kehitystietomalli aiemmin TBC:ssä ylläpidetyn YSOn tietomallia vastaavaksi, mutta pitäen VocBenchissä lisätyt datat koskemattomina. Testitapauksena käytettiin Jungin tasalla olevaa JUHOa (raportti ja ohjeet jäljempänä). 
+Skriptille syötetään vanha YSO _(--old)_ eli viimeinen TBC:llä ylläpidetty versio kesäkuulta 2025. Se toimii tietomallina, johon VocBenchistä ladattu YSO _(--new)_ mukautetaan eli käytännössä uudemman YSOn datat talletetaan TBC:ssä käytetyn YSOn tietomalliin ja TBC-version datoja ei siirretä konvertoitavaan tiedostoon _(--out)_. Kaikissa tulevissa ajoissa täytyy käyttää mallina, vanhaa YSOa eli tiedostoa _old-yso-202506-tbc.ttl_.
 
-Lisätyötarve: Vaikka mutu-raportti näyttää JUHOa vasten uutta ja vanhaa YSOa vertailtaessa muutoksia, jotka ovat relevantteja ja raportti on testien osalta oikein, on vielä kuitenkin yksi haaste taklattavana. Nyt tiedämme asiantilan asioista, jotka ovat tiedossamme, mutta emme tiedä mitä emme tiedä eli tarkistelua ja varmistelua vielä tarvitaan. Käytännössä pitää löytää keino tutkia ja vertailla dataa niiltä osin, mikä ei päädy raporttiin -> jääkö jotain huomiotta? Onko asioita, joita mutu ei datasta johtuen tunnista?
+Skriptin tuottama konvertoitu YSO on testattu Jungin aikaisella erikoiontologia _juhon_ kehitystiedostolla (_juho-to-be-used-with-jung.ttl_) ja [_Jung_-YSOlla](https://raw.githubusercontent.com/NatLibFi/Finto-data/refs/heads/master/vocabularies/yso/releases/2024.6.Jung/ysoKehitys.ttl) sekä konversioskriptin tuottamalla uutta YSOa edustavalla tiedostolla _converted-yso.ttl_. Tämä sen takia, että _Jungin_ ja nykyisen YSOn välillä on riittävästi eroavaikuuksia mutu-raportin tuloksen myötä skriptin tuotoksen oikeellisuuden varmistamiseksi, mutta ei kuitenkaan niin paljoa, että muutosten määrä olisi yliampuva. Muutosriveistä löytyi kaikkia _mutun_ muutostyyppejä edustava rivi, joten skriptin tuotoksen testaaminen oli mahdollista
+ 
+## Tiedostoista
 
-## Tietomallimuunnosprosessi
+### Konversioskripti:
 
 YSOn kehitystietomallimuunnoksen (Vocbench -> TBC) suorittava skripti:<br>
 _convert_vb_yso_to_tbc_yso.py_
 
-Kesäkuulta 2025 oleva viimeinen TBC:ssä ylläpidetty YSO, jonka pitää olla aina mukana skriptin ajossa (tarvitaan TBC-ajan tietomallin mukailuun):<br>
+Kesäkuulta 2025 oleva viimeinen TBC:ssä ylläpidetty YSO, jonka pitää olla AINA mukana skriptin ajossa (tarvitaan TBC-ajan tietomallin mukailuun):<br>
 _old-yso-202506-tbc.ttl_
 
-VocBenchistä viety YSO (simuloi VB-versiosta luotavaa jäädytettyä ysoa mutta ei ole jäädytetty):<br>
+VocBenchistä helmikuussa 2026 ladattu YSO (simuloi mutu-testeissä jäädytetyn YSOn lähdetiedostoa):<br>
 _new-yso-202602-vb.ttl_
 
-Jäädytystä simuloiva VB:n dataan (mutta ei tietomalliin) perustuva YSO _mutun_ kanssa käytettäväksi:<br>
+Jäädytyksen pohjaksi sekä mututtamisen testaamiseen soveltuva konvertoitu ja valmis YSO:<br>
 _converted-yso.ttl_
-(ei oikeasti jäädytetty joten apuluokat vielä mukana)
+(ei oikeasti jäädytetty eli esim apuluokat vielä mukana)
 
-### Skriptin ajo:
+### Mutu:
+
+Testaamisessa käytetty Jungin aikainen _juhon_ kehitystiedosto:<br>
+_juho-to-be-used-with-jung.ttl_ 
+
+Jung-YSO:<br>
+_Finto-data/vocabularies/yso/releases/2024.6.Jung/ysoKehitys.rdf_
+
+Mututuksen lopputulos:<br>
+_MUTU-results-excel.xml_
+
+
+## Skriptien ajo:
+
+### Konvertointi YSO(VB)->YSO(TBC)
+
+- Älä koskaan muuta tai korvaa tiedostoa ./_old-yso-202506-tbc.ttl_, koska skripti saa tiedostosta oikean tietomallin.
+- Korvaa _./new-yso-202602-vb.ttl_ VB:stä lataamallasi YSOlla.
+- Nimeä _converted-yso.ttl_ haluamallasi tavalla mutu-käyttöön sopivaksi.
+
+Skripti tarvitsee Python3:n. Sen käyttämä kirjasto _rdflib_ voidaan ottaa käyttöön ajamalla ```pip install rdflib ```.
 
 ```
 python3 ./convert_vb_yso_to_tbc_yso.py --old ./old-yso-202506-tbc.ttl --new ./new-yso-202602-vb.ttl --out converted-yso.ttl
 ```
 
-### Mututus (testitapaus JUHO)
+### Mutu
 
-JUHOn TBC-kehitystiedosto jäädytetyn Jung-YSOn kanssa käytettäväksi:<br>
-_juho-to-be-used-with-jung.ttl_
+Huomaa, että _-newYso ./converted-yso.ttl_ on TBC:ssä käytetyn mallin mukaiseksi konvertoitu YSO, jonka loit aiemmin muunniskriptillä.
 
-***Ajo***
+Sopiva mutu-versio löytyy [täältä](https://github.com/NatLibFi/mutu/releases/tag/v1.1.0) (_mutu v1.1.0_).
 
 ```
 cd Finto-data/tools/vb-to-tbc-yso-conversion-for-mutu
@@ -42,7 +63,8 @@ java -jar [mutu folder]/mutu.jar -domainOnt ./juho-to-be-used-with-jung.ttl ../.
 
 ### Lopputulos
 
-***Tuotetut mutu-raportit uudelleennimettynä Excel- ja csv-muodossa:***
+Tuotettu mutu-raportti MUTU-results-excel.xml uudelleennimettynä, Excel- ja csv-muodossa:
+
 - mutu-report.xlsx
 - mutu-report.csv
 
