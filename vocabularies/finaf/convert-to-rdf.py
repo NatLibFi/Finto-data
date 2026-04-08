@@ -9,6 +9,8 @@ import csv
 import unicodedata
 
 import requests
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 import pymarc.marcxml
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, OWL, XSD
 import validators
@@ -94,6 +96,24 @@ nameOfPlace=RDAP.P70001
 EDTF=URIRef('http://id.loc.gov/datatypes/edtf')
 
 FINTO_API_BASE="https://api.finto.fi/rest/v1/"
+
+# Create a reusable session with retry logic
+session = requests.Session()
+
+# Define retry strategy (exponential backoff, only for network errors)
+retry_strategy = Retry(
+    total=10,  # max total retries
+    connect=10,  # max connection retries
+    backoff_factor=1,  # sleep: 1s, 2s, 4s, 8s ... (exponential)
+    status_forcelist=[500, 502, 503, 504],  # retry on server errors
+    allowed_methods=["GET"],  # only retry GETs
+    raise_on_status=False,
+)
+
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session.mount("https://", adapter)
+session.mount("http://", adapter)
+
 
 def normalize_relterm(term):
     return re.sub(r'[.,: ]*$', '', term.lower().strip())
@@ -235,24 +255,44 @@ def extract_language_7(text):
 def lookup_mts(label):
     logging.debug('looking up MTS label "%s"', label)
     payload = {'label': label, 'lang': 'fi'}
-    req = requests.get(FINTO_API_BASE + 'mts/lookup', params=payload)
-    if req.status_code != 200:
-        logging.debug('MTS lookup for "%s" failed', label)
+    try:
+        req = session.get(FINTO_API_BASE + 'mts/lookup', params=payload, timeout=10)
+    except Exception as e:
+        logging.debug('MTS lookup for "%s" failed (network error: %s)', label, e)
         return None
 
-    return URIRef(req.json()['result'][0]['uri'])
+    if req.status_code != 200:
+        logging.debug('MTS lookup for "%s" failed (status=%d)', label, req.status_code)
+        return None
+
+    result = req.json().get('result')
+    if not result:
+        logging.debug('MTS lookup for "%s" failed (no results)', label)
+        return None
+
+    return URIRef(result[0]['uri'])
 
 
 @functools.lru_cache(maxsize=1000)
 def lookup_yso(label):
     logging.debug('looking up YSO label "%s"', label)
     payload = {'label': label, 'lang': 'fi'}
-    req = requests.get(FINTO_API_BASE + 'yso/lookup', params=payload)
-    if req.status_code != 200:
-        logging.debug('YSO lookup for "%s" failed', label)
+    try:
+        req = session.get(FINTO_API_BASE + 'yso/lookup', params=payload, timeout=10)
+    except Exception as e:
+        logging.debug('YSO lookup for "%s" failed (network error: %s)', label, e)
         return None
 
-    return URIRef(req.json()['result'][0]['uri'])
+    if req.status_code != 200:
+        logging.debug('YSO lookup for "%s" failed (status=%d)', label, req.status_code)
+        return None
+
+    result = req.json().get('result')
+    if not result:
+        logging.debug('YSO lookup for "%s" failed (no results)', label)
+        return None
+
+    return URIRef(result[0]['uri'])
 
 
 @functools.lru_cache(maxsize=10000)
@@ -266,23 +306,38 @@ def lookup_yso_place(label):
             logging.debug('YSO place lookup for country "%s" failed', country)
             return Literal(label, 'fi')
         payload = {'query': place, 'parent': str(country_uri), 'lang': 'fi'}
-        req = requests.get(FINTO_API_BASE + 'yso-paikat/search', params=payload)
-        if req.status_code != 200:
-            logging.debug('YSO place lookup for place "%s" failed (error)', place)
+        try:
+            req = session.get(FINTO_API_BASE + 'yso-paikat/search', params=payload, timeout=10)
+        except Exception as e:
+            logging.debug('YSO place lookup for place "%s" failed (network error: %s)', place, e)
             return Literal(label, 'fi')
-        results = req.json()['results']
+
+        if req.status_code != 200:
+            logging.debug('YSO place lookup for place "%s" failed (status=%d)', place, req.status_code)
+            return Literal(label, 'fi')
+
+        results = req.json().get('results', [])
         if results:
             return URIRef(results[0]['uri'])
         logging.debug('YSO place lookup for place "%s" failed (no results)', place)
         return Literal(label, 'fi')
 
     payload = {'label': label, 'lang': 'fi'}
-    req = requests.get(FINTO_API_BASE + 'yso-paikat/lookup', params=payload)
-    if req.status_code != 200:
-        logging.debug('YSO place lookup for place "%s" failed', label)
+    try:
+        req = session.get(FINTO_API_BASE + 'yso-paikat/lookup', params=payload, timeout=10)
+    except Exception as e:
+        logging.debug('YSO place lookup for place "%s" failed (network error: %s)', label, e)
         return Literal(label, 'fi')
 
-    return URIRef(req.json()['result'][0]['uri'])
+    if req.status_code != 200:
+        logging.debug('YSO place lookup for place "%s" failed (status=%d)', label, req.status_code)
+        return Literal(label, 'fi')
+
+    result = req.json().get('result')
+    if result:
+        return URIRef(result[0]['uri'])
+    logging.debug('YSO place lookup for place "%s" failed (no results)', label)
+    return Literal(label, 'fi')
 
 def get_place_uri(place_name, place_uri, uri):
     if place_uri:
