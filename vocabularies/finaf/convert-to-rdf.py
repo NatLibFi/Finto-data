@@ -731,7 +731,7 @@ def main():
 
     # Pass 2: convert literal values to resources
     for prop in literal_to_resource:
-        for s,o in g.subject_objects(prop):
+        for s,o in sorted(g.subject_objects(prop)):
             if not isinstance(o, Literal):
                 continue
             # first try exact; fall back to labels with stripped qualifier
