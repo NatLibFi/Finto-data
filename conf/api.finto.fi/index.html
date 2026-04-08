@@ -6,7 +6,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <link href="fonts.css" media="screen, print" rel="stylesheet" type="text/css">
 <link href="api.css" rel="stylesheet">
-<link rel="icon" href="//finto.fi/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="https://test.dev.finto.fi/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <div class="container-fluid">
@@ -25,27 +25,27 @@
     <h2 class="mb-3">Vocabulary API (api.finto.fi)</h2>
     <p class="mb-4">
       Finto vocabulary API can be used to retrieve information on vocabulary concepts by queries using e.g. search words or URIs. 
-      It is a REST-style API. Swagger documentation is available at <a href="//api.finto.fi/doc">https://api.finto.fi/doc</a> while machine-readable JSON documentation is available at <a href="https://api.finto.fi/rest/v1/swagger.json">https://api.finto.fi/rest/v1/swagger.json</a>.
+      It is a REST-style API. Swagger documentation is available at <a href="https://api.finto.fi/doc">https://api.finto.fi/doc</a> while machine-readable JSON documentation is available at <a href="https://api.finto.fi/rest/v1/swagger.json">https://api.finto.fi/rest/v1/swagger.json</a>.
     </p>
     <h3 class="mb-3">Query examples</h3>
     <table class="table mb-5">
       <tbody>
         <tr>
-          <td class="bt">GET <a href="https://api.finto.fi/rest/v1/search?vocab=yso&query=histor*&lang=en">https://api.finto.fi/rest/v1/search?vocab=yso&query=histor*&lang=en</a></td>
+          <td class="bt">GET <code><a href="https://api.finto.fi/rest/v1/search?vocab=yso&query=histor*&lang=en">https://api.finto.fi/rest/v1/search?vocab=yso&query=histor*&lang=en</a></code></td>
           <td class="bt">
             Retrieve all concepts in a vocabulary in which the English preferred label starts with the string <i>histor</i>. Give results in JSON-LD format.<br>
             (The example query retrieves all such concepts in General Finnish Ontology YSO.)
           </td>
         </tr>
         <tr>
-          <td>GET <a href="https://api.finto.fi/rest/v1/data?uri=http://urn.fi/URN:NBN:fi:au:finaf:000149842&format=application/ld%2Bjson">https://api.finto.fi/rest/v1/data?uri=http://urn.fi/URN:NBN:fi:au:finaf:000149842&format=application/ld%2Bjson</a></td>
+          <td>GET <code><a href="https://api.finto.fi/rest/v1/data?uri=http://urn.fi/URN:NBN:fi:au:finaf:000149842&format=application/ld%2Bjson">https://api.finto.fi/rest/v1/data?uri=http://urn.fi/URN:NBN:fi:au:finaf:000149842&format=application/ld%2Bjson</a></code></td>
           <td>
             With the given identifier, retrieve all data of the corresponding concept. Give results in JSON-LD format.<br>
-            (The example query's identifier relates to Minna Canth, the Finnish writer <a href="urn.fi/URN:NBN:fi:au:finaf:000149842">urn.fi/URN:NBN:fi:au:finaf:000149842</a>.)
+            (The example query's identifier relates to Minna Canth, the Finnish writer <a href="https://urn.fi/URN:NBN:fi:au:finaf:000149842">urn.fi/URN:NBN:fi:au:finaf:000149842</a>.)
           </td>
         </tr>
         <tr>
-          <td>GET <a href="https://api.finto.fi/rest/v1/yso/data?format=text/turtle">https://api.finto.fi/rest/v1/yso/data?format=text/turtle</a></td>
+          <td>GET <code><a href="https://api.finto.fi/rest/v1/yso/data?format=text/turtle">https://api.finto.fi/rest/v1/yso/data?format=text/turtle</a></code></td>
           <td>Retrieve all data within General Finnish Ontology (YSO) in Turtle format.</td>
         </tr>
       </tbody>
@@ -58,25 +58,25 @@
       while machine-readable JSON documentation is available at <a href="https://ai.finto.fi/v1/openapi.json">https://ai.finto.fi/v1/openapi.json</a>. 
       The service offers different projects, which define the vocabulary from where the suggestions are drawn from and the language of 
       the input text. For example, "yso-en" project gives suggestions from General Finnish Ontology YSO and is intended for texts in 
-      English. Further information on Finto AI is available in Finnish at <a href="https://www.kiwi.fi/x/-oHbCQ">Finto AI, automaattisen sisällönkuvailun palvelu</a>.
+      English. Further information on Finto AI is available at <a href="https://www.kiwi.fi/x/DYDbCQ">Finto AI, a service for automated subject indexing</a>.
     </p>
     <h3 class="mb-3">Query examples</h3>
     <table class="table mb-5">
       <tbody>
         <tr>
-          <td class="bt">GET <a href="https://ai.finto.fi/v1/projects">https://ai.finto.fi/v1/projects</a></td>
+          <td class="bt">GET <code><a href="https://ai.finto.fi/v1/projects">https://ai.finto.fi/v1/projects</a></code></td>
           <td class="bt">Retrieve all projects available. Give results in JSON format.</td>
         </tr>
         <tr>
           <td>
-            POST <a href="https://ai.finto.fi/v1/projects/yso-en/suggest">https://ai.finto.fi/v1/projects/yso-en/suggest</a><br>
+            POST <code><a href="https://ai.finto.fi/v1/projects/yso-en/suggest">https://ai.finto.fi/v1/projects/yso-en/suggest</a></code><br>
             Request body: in "application/x-www-form-urlencoded" content-type a "text" field containing "National Library of Finland main building is located in Helsinki, next to the Helsinki Cathedral.".
           </td>
           <td>Give subject indexing suggestions for a text using the project "yso-en". Text content size can be at maximimum 5 MB. Give results in JSON format.</td>
         </tr>
         <tr>
           <td>
-            POST <a href="https://ai.finto.fi/v1/projects/yso-en/suggest-batch">https://ai.finto.fi/v1/projects/yso-en/suggest-batch</a><br>
+            POST <code><a href="https://ai.finto.fi/v1/projects/yso-en/suggest-batch">https://ai.finto.fi/v1/projects/yso-en/suggest-batch</a></code><br>
             Requst body: in "application/json" content-type<br>
   <pre>
   {
@@ -105,7 +105,7 @@
       downloading the vocabularies in question to examine them locally.
     </p>
     <p class="mb-5">
-      Finto vocabularies have an open license, usually either CC0 or CCBY depending on the vocabulary. Please find the license of the requested vocabulary on their 
+      Finto vocabularies have an open license, usually either CC0 or CC-BY depending on the vocabulary. Please find the license of the requested vocabulary on their 
       front page at <a href="https://finto.fi/">finto.fi</a>. See, for example, General Finnish ontology <a href="https://finto.fi/yso">front page</a> and KANTO vocabulary <a href="https://finto.fi/finaf">front page </a>.
     </p>
 
