@@ -1,0 +1,25 @@
+{% if request.vocabid == 'muso' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Musiikin ontologia MUSO on yhdistetty Yleiseen suomalaiseen ontologiaan YSOon. MUSOa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon ehdotusjärjestelmässä.
+
+{% elseif request.lang == 'sv' %}
+
+MUSO - Ontologi för musik har uppgått i den allmänna finländska ontologin ALLFO. MUSO upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via förslagssystemet.
+
+{% elseif request.lang == 'en' %}
+
+The Music Ontology MUSO has been merged into the General Finnish Ontology (YSO). MUSO is no longer maintained and its terms are no longer updated. YSO concepts are used for describing music literature. New music-related terms can be suggested via the YSO suggestion system.
+
+{% elseif request.lang == 'se' %}
+
+TODO
+
+{% endif %}
+
+</div>
+
+{% endif %}

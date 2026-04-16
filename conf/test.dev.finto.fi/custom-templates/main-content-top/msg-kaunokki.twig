@@ -1,0 +1,25 @@
+{% if request.vocabid == 'kaunokki' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Kaunokki/Bella -sanastoa ei enää päivitetä. Fiktiivisen aineiston kuvailussa käytetään <a href="https://finto.fi/kauno/fi/">KAUNO-ontologiaa</a> ja siihen sisältyvää YSO-ontologiaa. KAUNO-ontologian genretermejä ei käytetä kirjastojen kuvailussa Marc-kentässä 655 (Aineiston lajityyppi/muoto hakuterminä). Termit kenttään 655 valitaan <a href="https://finto.fi/slm/fi/">Suomalaisesta lajityyppi- ja muotosanastosta</a> (SLM).
+
+{% elseif request.lang == 'sv' %}
+
+Kaunokki/Bella-tesaurusen uppdateras inte längre. Vid indexering av fiktivt material används <a href="https://finto.fi/kauno/fi/">Kauno-ontologin</a> och de YSO-termer som ingår i den. I Marc-fältet 655 används inte Kauno-ontologins genretermer utan termer som ingår i <a href="https://finto.fi/slm/sv/">FGF (Finländsk genre- och formlista)</a>.
+
+{% elseif request.lang == 'en' %}
+
+TODO
+
+{% elseif request.lang == 'se' %}
+
+TODO
+
+{% endif %}
+
+</div>
+
+{% endif %}

@@ -1,0 +1,25 @@
+{% if request.vocabid == 'kito' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Kirjallisuudentutkimuksen ontologia KITOn ylläpito on päättynyt. KITOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi <a href="https://finto.fi/yso/fi/">YSO</a>sta ja <a href="https://finto.fi/koko/fi/">KOKO</a>sta.
+
+{% elseif request.lang == 'sv' %}
+
+Ontologi för litteraturforskning KITO upprätthålls inte längre. Vid beskrivning av litteraturforskning kan användas den allmänna finländska ontologin <a href="https://finto.fi/yso/sv/">ALLFO</a> och <a href="https://finto.fi/koko/sv/">KOKO</a> ontologin.
+
+{% elseif request.lang == 'en' %}
+
+The Finnish Ontology of Literature Research KITO is no longer maintained. KITO is not recommended for content description. Concepts and terms in this subject area can be found in the General Finnish Ontology <a href="https://finto.fi/yso/en/">YSO</a> and the <a href="https://finto.fi/koko/en/">KOKO</a> ontology.
+
+{% elseif request.lang == 'se' %}
+
+TODO
+
+{% endif %}
+
+</div>
+
+{% endif %}

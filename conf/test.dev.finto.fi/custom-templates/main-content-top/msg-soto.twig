@@ -1,0 +1,25 @@
+{% if request.vocabid == 'soto' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Sotatieteen ontologiaa (SOTO) ei enää päivitetä. SOTOa ei suositella enää käytettäväksi aineistojen kuvailussa. Aihealueen käsitteistöä löydät jatkossa esimerkiksi <a href='http://finto.fi/yso/fi/'>YSOsta</a> ja <a href='http://finto.fi/koko/fi/'>KOKOsta</a>.
+
+{% elseif request.lang == 'sv' %}
+
+Ontologin för krigsvetenskap (SOTO) uppdateras inte längre och den rekommenderas inte för beskrivning av material. Termer inom området kan hittas till exempel i <a href='http://finto.fi/yso/sv/'>ALLFO</a> (den allmänna finländska ontologin) och <a href='http://finto.fi/koko/sv/'>KOKO-ontologin</a>.
+
+{% elseif request.lang == 'en' %}
+
+The Ontology for Military Science (SOTO) is not updated anymore and it is not recommended to use it in describing resources. The domain specific terminology can be found, for example in <a href='http://finto.fi/yso/en/'>YSO - General Finnish ontology</a> and <a href='http://finto.fi/koko/en/'>KOKO Ontology</a>.
+
+{% elseif request.lang == 'se' %}
+
+TODO
+
+{% endif %}
+
+</div>
+
+{% endif %}
