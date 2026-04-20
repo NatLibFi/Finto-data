@@ -1,9 +1,15 @@
 #!/bin/sh
 
 EXPANDURIS="../../tools/expand-note-uris/expand-note-uris.py"
-
+SANCHECK="../../tools/sanity-check/skos-sanity-check.sh"
 # fetch mappings from Wikidata and store them in a sorted NT file, so version control works
-curl -S -X POST https://query.wikidata.org/sparql -H 'Accept: application/n-triples' -H 'Content-Type: application/sparql-query' --data-binary @wikidata-links.rq | sort >wikidata-links.nt
+curl -S -X POST https://query.wikidata.org/sparql -H 'Accept: application/n-triples' -H 'Content-Type: application/sparql-query' --data-binary @wikidata-links.rq | sort >wikidata-links-tmp.nt
+
+# check that Wikidata request has been successful by validating file with sanity-check script
+if $SANCHECK wikidata-links-tmp.nt 15000 0 ''; then
+  cp wikidata-links-tmp.nt wikidata-links.nt
+fi
+rm wikidata-links-tmp.nt
 
 # add SKOS XL labels indicating source of labels (Wikidata)
 sparql --results NT --data wikidata-links.nt --query wikidata-skosxl.rq > wikidata-skosxl.nt
