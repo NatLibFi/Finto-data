@@ -150,8 +150,9 @@ slm:s1177  a             owl:Class , skos:Concept ;
         skos:related     slm:s1015 , slm:s227 .
 
 slm:s1562  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
-        skos:prefLabel   "ompelukaavat"@fi ;
+        rdfs:subClassOf  slm:s1442 ;
+        skos:altLabel    "mönster (sömnad)"@sv , "sömnadsmönster"@sv ;
+        skos:prefLabel   "symönster"@sv , "ompelukaavat"@fi ;
         skos:related     slm:s68 .
 
 slm:s1179  a             owl:Class , skos:Concept ;
@@ -1026,7 +1027,7 @@ slm:s583  a              owl:Class , skos:Concept ;
 
 slm:s120  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "manuskript (filmer)"@sv , "käsikirjoitukset (elokuvat)"@fi , "filmmanus"@sv ;
+        skos:altLabel    "manuskript (filmer)"@sv , "manus (filmer)"@sv , "käsikirjoitukset (elokuvat)"@fi , "filmmanus"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p24212> ;
         skos:inScheme    slm: ;
         skos:prefLabel   "elokuvakäsikirjoitukset"@fi , "filmmanuskript"@sv ;
@@ -1097,9 +1098,9 @@ slm:s1477  a             owl:Class , skos:Concept ;
         skos:related     slm:s1474 .
 
 slm:s988  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1140 ;
+        rdfs:subClassOf  slm:s1140 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "romantasia"@fi ;
+        skos:altLabel    "romantasy"@sv , "romantasia"@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "romanttinen fantasiakirjallisuus"@fi , "romantisk fantasylitteratur"@sv .
 
@@ -2068,11 +2069,10 @@ slm:s277  a              owl:Class , skos:Concept ;
         skos:prefLabel   "soca"@sv , "soca"@fi ;
         skos:related     slm:s1371 , slm:s1188 .
 
-slm:s1559  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
-        skos:altLabel    "televisio-ohjelmien käsikirjoitukset"@fi , "käsikirjoitukset (televisio)"@fi , "tv-käsikirjoitukset"@fi ;
-        skos:prefLabel   "televisiokäsikirjoitukset"@fi ;
-        skos:related     slm:s120 .
+slm:s1559  a            owl:Class , skos:Concept ;
+        skos:altLabel   "televisio-ohjelmien käsikirjoitukset"@fi , "manuskript (tv)"@sv , "käsikirjoitukset (televisio)"@fi , "tv-manus"@sv , "tv-käsikirjoitukset"@fi , "manus (tv)"@sv ;
+        skos:prefLabel  "televisiokäsikirjoitukset"@fi , "tv-manuskript"@sv ;
+        skos:related    slm:s120 .
 
 slm:s985  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
@@ -2377,11 +2377,11 @@ slm:s762  a              owl:Class , skos:Concept ;
         skos:prefLabel   "julkaisun laadinnan oppaat"@fi , "skrivhandböcker"@sv .
 
 slm:s639  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 , yso-update:uudetmuuttuneetSv , slm:s518 ;
+        rdfs:subClassOf  slm:s356 , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "serieromaner"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p21268> ;
-        skos:definition  "Laajuudeltaan ja kerronnaltaan romaania muistuttava sarjakuva, joka on yksi yhtenäinen ja kokonainen tarina. Yksittäinen teos, jota ei ole aiemmin julkaistu lehti- tai sarjakirjamuodossa."@fi ;
+        skos:definition  "Laajuudeltaan ja kerronnaltaan romaania muistuttava sarjakuva, joka on yksi yhtenäinen ja kokonainen tarina. Yksittäinen teos, jota ei ole aiemmin julkaistu lehti- tai sarjakirjamuodossa."@fi , "Tecknad serie som till sin omfattning och berättarstil påminner om en roman, och som är en enhetlig och hel berättelse. Utgör ett enskilt verk, som tidigare inte utgivits i tidnings- eller seriebokform."@sv ;
         skos:inScheme    slm: ;
         skos:prefLabel   "grafiska romaner"@sv , "sarjakuvaromaanit"@fi ;
         skos:related     slm:s784 , slm:s185 , slm:s1088 , slm:s631 .
@@ -2556,12 +2556,12 @@ slm:s848  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Används om romaner som återger någon viss tidsepok och dess fenomen."@sv , "Käytetään teoksista, joissa kuvataan jotakin aikakautta ilmiöineen."@fi .
 
 slm:s1257  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 , yso-update:uudetmuuttuneetSv ;
+        rdfs:subClassOf  slm:s1377 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "gradualet (musiikki)"@fi ;
+        skos:altLabel    "graduale (musik)"@sv , "gradualet (musiikki)"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026841> ;
         skos:inScheme    slm: ;
-        skos:prefLabel   "gradualer"@sv , "graduaalit (musiikki)"@fi .
+        skos:prefLabel   "gradualer (musik)"@sv , "graduaalit (musiikki)"@fi .
 
 slm:s1303  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s436 ;
@@ -2842,9 +2842,10 @@ slm:s778  a              owl:Class , skos:Concept ;
         skos:related     slm:s1165 .
 
 slm:s1561  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1081 , yso-update:uudetmuuttuneetSv , slm:s474 ;
+        rdfs:subClassOf  slm:s1081 , slm:s474 ;
+        skos:altLabel    "frottolor"@sv , "frottola"@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2020026072> ;
-        skos:prefLabel   "frottolat"@fi ;
+        skos:prefLabel   "frottolat"@fi , "frottole"@sv ;
         skos:related     slm:s931 .
 
 slm:s812  a             owl:Class , skos:Concept ;
@@ -2936,10 +2937,10 @@ slm:s1373  a             owl:Class , skos:Concept ;
         skos:prefLabel   "tanssilaulut"@fi , "danssånger"@sv .
 
 slm:s1558  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 , yso-update:uudetmuuttuneetSv ;
-        skos:altLabel    "hyvän mielen kirjallisuus"@fi , "cozy-kirjallisuus"@fi ;
-        skos:note        "Kaunokirjallisuuden genre, jossa tunnelma on lämminhenkinen ja viihdyttävä, vaikka voidaan käsitellä myös vaikeita aiheita."@fi ;
-        skos:prefLabel   "feelgood-kirjallisuus"@fi ;
+        rdfs:subClassOf  slm:s975 ;
+        skos:altLabel    "feelgood (litteratur)"@sv , "cozylitteratur"@sv , "hyvän mielen kirjallisuus"@fi , "cosylitteratur"@sv , "cozy-kirjallisuus"@fi ;
+        skos:note        "Skönlitterär genre, i vilken stämningen är varm och underhållande, även om också svåra ämnen kan behandlas."@sv , "Kaunokirjallisuuden genre, jossa tunnelma on lämminhenkinen ja viihdyttävä, vaikka voidaan käsitellä myös vaikeita aiheita."@fi ;
+        skos:prefLabel   "feelgood-kirjallisuus"@fi , "feelgoodlitteratur"@sv ;
         skos:related     slm:s366 , slm:s691 , slm:s1214 .
 
 dct:RightsStatement  rdfs:subClassOf  dct:Standard .
@@ -3855,7 +3856,7 @@ slm:s999  a              owl:Class , skos:Concept ;
         skos:related     slm:s1409 .
 
 slm:s185  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s356 , yso-update:uudetmuuttuneetSv , slm:s27 ;
+        rdfs:subClassOf  slm:s356 , slm:s27 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "serienoveller"@sv , "novellisarjakuvat"@fi ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p26599> ;
@@ -5001,9 +5002,10 @@ slm:s876  a             owl:Class , skos:Concept ;
         skos:related    slm:s985 .
 
 slm:s1557  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1186 , yso-update:uudetmuuttuneetSv ;
+        rdfs:subClassOf  slm:s1186 ;
+        skos:altLabel    "post-punk"@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2019026030> ;
-        skos:prefLabel   "post-punk"@fi ;
+        skos:prefLabel   "post-punk"@fi , "postpunk"@sv ;
         skos:related     slm:s1222 , slm:s570 , slm:s169 , slm:s234 .
 
 slm:s914  a              owl:Class , skos:Concept ;
@@ -7205,16 +7207,16 @@ slm:s1251  a             owl:Class , skos:Concept ;
         skos:related     slm:s532 , slm:s1169 , slm:s538 , slm:s192 .
 
 slm:s1214  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s911 , yso-update:uudetmuuttuneetSv , slm:s518 ;
+        rdfs:subClassOf  slm:s911 , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "mysiga deckare"@sv , "mjukisdeckare"@sv , "cozy crime"@fi ;
+        skos:altLabel    "mysiga deckare"@sv , "cosy crime"@sv , "cozy crime"@sv , "mjukisdeckare"@sv , "cozy crime"@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "pehmodekkarit"@fi , "mysdeckare"@sv ;
         skos:related     slm:s287 , slm:s1558 .
 
 slm:s1361  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
-        skos:altLabel    "meddelanden (tillkännagivanden)"@sv , "kommunikeat"@fi , "tiedonannot"@fi , "julkilausumat"@fi ;
+        rdfs:subClassOf  slm:s1442 ;
+        skos:altLabel    "meddelanden (tillkännagivanden)"@sv , "kommunikeat"@fi , "tiedonannot"@fi , "julkilausumat"@fi , "kommunikéer"@sv ;
         skos:prefLabel   "tiedotteet"@fi , "tillkännagivanden"@sv ;
         skos:related     slm:s1529 .
 
@@ -7394,9 +7396,9 @@ slm:s86  a               owl:Class , skos:Concept ;
         skos:prefLabel   "doom metal"@sv , "doom metal"@fi .
 
 slm:s1001  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1148 , yso-update:uudetmuuttuneetSv , slm:s1532 ;
+        rdfs:subClassOf  slm:s1148 , slm:s1532 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "missaalit"@fi , "gradualet (messukirjat)"@fi , "missalet"@fi , "missalit"@fi , "graduaalit (messukirjat)"@fi ;
+        skos:altLabel    "missaalit"@fi , "missale (mässböcker)"@sv , "gradualet (messukirjat)"@fi , "gradualer (mässböcker)"@sv , "missalet"@fi , "missalit"@fi , "graduale (mässböcker)"@sv , "graduaalit (messukirjat)"@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026941> ;
         skos:inScheme    slm: ;
         skos:prefLabel   "mässböcker"@sv , "messukirjat"@fi ;
@@ -7937,9 +7939,9 @@ slm:s338  a              owl:Class , skos:Concept ;
         skos:related     slm:s49 , slm:s503 , slm:s1134 .
 
 slm:s821  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s352 ;
+        rdfs:subClassOf  slm:s352 ;
         dct:created      "2018-05-16"^^xsd:date ;
-        skos:altLabel    "runoromaanit (eepokset)"@fi ;
+        skos:altLabel    "runoromaanit (eepokset)"@fi , "versromaner (epos)"@sv ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p6478> ;
         skos:inScheme    slm: ;
         skos:note        "Laaja, kertova, runomittainen sanataideteos, joka käsittelee suurta ja vakavaa, usein jumal- tai sankaritarustosta peräisin olevaa aihetta."@fi , "Omfattande, berättande ordkonstverk skrivet på vers, som behandlar något stort och allvarligt ämne, ofta härrörande ur guda- eller hjälteberättelser."@sv ;
@@ -8034,9 +8036,9 @@ slm:s1089  a             owl:Class , skos:Concept ;
         skos:prefLabel   "gravinskrifter"@sv , "hautakirjoitukset"@fi .
 
 slm:s1564  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1081 , yso-update:uudetmuuttuneetSv , slm:s474 ;
+        rdfs:subClassOf  slm:s1081 , slm:s474 ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2015026089> ;
-        skos:prefLabel   "brunettet"@fi .
+        skos:prefLabel   "brunetter"@sv , "brunettet"@fi .
 
 slm:s764  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1377 ;
@@ -8134,8 +8136,8 @@ slm:s1019  a             owl:Class , skos:Concept ;
         skos:prefLabel   "covers"@sv , "cover-versiot"@fi .
 
 slm:s1563  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1442 , yso-update:uudetmuuttuneetSv ;
-        skos:prefLabel   "promootiojulkaisut"@fi .
+        rdfs:subClassOf  slm:s1442 ;
+        skos:prefLabel   "promootiojulkaisut"@fi , "promotionspublikationer"@sv .
 
 slm:s386  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s476 ;
@@ -8642,11 +8644,11 @@ slm:s587  a              owl:Class , skos:Concept ;
         skos:scopeNote   "Käytetään elokuvista, jotka kuvaavat opiskelijoiden elämää."@fi , "Används om filmer som skildrar studentlivet."@sv .
 
 slm:s1184  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s365 , yso-update:uudetmuuttuneetSv , slm:s518 ;
+        rdfs:subClassOf  slm:s365 , slm:s518 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:closeMatch  <http://www.yso.fi/onto/yso/p9602> ;
         skos:inScheme    slm: ;
-        skos:note        "Roman, i vilken centrala personer och händelser i anslutning till deras privatliv har igenkännbara motsvarigheter i verkligheten."@sv , "Romaani, jonka keskeisillä henkilöillä ja heidän yksityiselämäänsä liittyvillä tapahtumilla on selvästi tunnistettavia vastineita todellisuudessa. Nimet on kuitenkin yleensä muutettu."@fi ;
+        skos:note        "Romaani, jonka keskeisillä henkilöillä ja heidän yksityiselämäänsä liittyvillä tapahtumilla on selvästi tunnistettavia vastineita todellisuudessa. Nimet on kuitenkin yleensä muutettu."@fi , "Roman, i vilken centrala personer och händelser i anslutning till deras privatliv har igenkännbara motsvarigheter i verkligheten. Namnen har dock vanligen ändrats."@sv ;
         skos:prefLabel   "nyckelromaner"@sv , "avainromaanit"@fi .
 
 slm:s1400  a             owl:Class , skos:Concept ;
