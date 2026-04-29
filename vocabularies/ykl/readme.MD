@@ -1,3 +1,11 @@
+## YKL päivitysohje VocBenchistä
+
+- Sanastopalvelin käy hakemassa kerran tunnissa uusimman YKL-version jos päivitettävää on
+  - Tämä toimii samalla YKL:n varmuuskopiona
+- Tarvittaessa uuden YKL:n voi julkaista komentosarjalla ./toskos-vb.sh
+- Tarkista lopputulos paikallisesti. Jos lopputulos näyttää hyvältä, työnnä tiedostot ykl-vb-skos.ttl skosify-vb.log päähaaraan
+- Julkaistu versio on nähtävissä dev.finto.fi/ykl muutaman minuutin päästä, ja finto.fi/ykl seuraavana päivänä
+
 ### 22.1.2021 sanastopäivitys:
 
 Tehdyt tekniset työt:
