@@ -10,6 +10,12 @@ Skriptin tuottama konvertoitu YSO on testattu Jungin aikaisella erikoiontologia 
 
 ### Konversioskripti:
 
+Ajaa kaiken konversiossa tarvittavan kerralla:<br>
+_run-post-update.sh_
+
+Tekee muutamia korjauksia varsinaisen koversion lisäksi (purkkaa kiireen takia):<br>
+_post-update.py_
+
 YSOn kehitystietomallimuunnoksen (Vocbench -> TBC) suorittava skripti:<br>
 _convert_vb_yso_to_tbc_yso.py_
 
@@ -36,6 +42,9 @@ _MUTU-results-excel.xml_
 
 
 ## Skriptien ajo:
+
+Aja näin (ajaa kaiken konversioon liittyvän tarvittavan kerralla):
+```run-post-update.sh ysoKehitys.rdf```
 
 ### Konvertointi YSO(VB)->YSO(TBC)
 
