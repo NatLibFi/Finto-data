@@ -1,0 +1,20 @@
+PREFIX juho-meta: <http://www.yso.fi/onto/juho-meta/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ?s juho-meta:hasAsiasanalaji ?value .
+
+  juho-meta:hasAsiasanalaji a owl:DatatypeProperty ;
+                            rdfs:domain juho-meta:Concept ;
+                            rdfs:label "has Asiasanalaji"@fi .
+}
+WHERE {
+  {
+    ?s juho-meta:hasAsiasanalaji ?value .
+  }
+  UNION
+  {
+    juho-meta:hasAsiasanalaji ?p ?o .
+  }
+}
