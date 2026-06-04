@@ -1,35 +1,39 @@
 .toots {
-  max-width: 400px;
   list-style: none;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-}
-
-.toot {
-  border-bottom: 1px solid #ccc;
   padding: 1rem 0;
 }
 
-/* Posting user. */
-.toot .user {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  align-content: flex-start;
-  height: 46px;  /* Avatar height. */
+.toot {
+  background-color: var(--white-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 46px auto auto;
   column-gap: 0.5rem;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.toot .user {
+  grid-column: 1;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: inherit;
 }
 
 .toot .avatar {
   border-radius: 4px;
+  width: 46px;
+  height: 46px;
+  margin-right: 0.8rem;
 }
 
 .toot .display-name {
   font-weight: bold;
   display: block;
+  margin-right: 0.4rem;
+  color: var(--dark-color);
 }
 
 .toot .user:hover .display-name {
@@ -39,7 +43,7 @@
 .toot .username {
   display: block;
   margin-right: 1em;
-  color: #999;
+  color: var(--muted-color);
 }
 
 /* Boosting user is smaller and above the posting user. */
@@ -59,10 +63,13 @@
 }
 
 .toot .permalink {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  white-space: nowrap;
+  color: var(--muted-color);
   text-decoration: none;
-  display: block;
-  color: #999;
-  float: right;
 }
 
 .toot .permalink:hover {
@@ -70,12 +77,14 @@
 }
 
 .toot .body {
-  clear: both;
   margin-top: 1em;
+  grid-column: 1 / 3;
+  grid-row: 2;
 }
 
 .toot .body a {
   overflow-wrap: anywhere;
+  color: var(--medium-color);
 }
 
 /* Weird trick to keep the text in the page but not display it. */
@@ -93,14 +102,17 @@
 }
 
 .toot .attachment {
-  display: block;
-  width: 100%;
+  grid-column: 1 / 3;
+  grid-row: 3;  
   aspect-ratio: 16 / 9;
-  border-radius: 4px;
 }
 
 .toot .attachment img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.mastodon-follow {
+  color: var(--dark-color);
 }

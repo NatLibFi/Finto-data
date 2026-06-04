@@ -4,12 +4,12 @@ async function l(e,t,n,a,s){let o=new URL(e),f=t??await(async()=>{let c=/@(\w+)$
       <time datetime="${e.created_at}">${n}</time>
     </a>
     ${t&&r` <a class="user boost" href="${t.user_url}">
-      <img class="avatar" width="23" height="23" src="${t.avatar}" />
+      <img class="avatar" width="23" height="23" src="${t.avatar}" alt="" />
       <span class="display-name">${t.display_name}</span>
       <span class="username">@${t.username}</span>
     </a>`}
     <a class="user" href="${e.account.url}">
-      <img class="avatar" width="46" height="46" src="${e.account.avatar}" />
+      <img class="avatar" width="46" height="46" src="${e.account.avatar}" alt="" />
       <span class="display-name">${e.account.display_name}</span>
       <span class="username">@${e.account.username}</span>
     </a>
