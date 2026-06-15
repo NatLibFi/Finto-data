@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-UPDATE='apache-jena-5.6.0/bin/update'
+UPDATE='/home/mijuahon/Softs/apache-jena-5.6.0/bin/update'
 
 if [ "$#" -ne 3 ]; then
     echo "Käyttö: $0 <input.ttl> <update.rq> <output.ttl>"
