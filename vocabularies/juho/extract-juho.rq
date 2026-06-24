@@ -1,0 +1,11 @@
+CONSTRUCT {
+  ?s ?p ?o .
+}
+WHERE {
+  ?s ?p ?o .
+  FILTER (
+    STRSTARTS(STR(?s), "http://www.yso.fi/onto/juho/")
+    ||
+    STRSTARTS(STR(?s), "http://www.yso.fi/onto/juho-meta/")
+  )
+}
