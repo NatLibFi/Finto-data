@@ -7,9 +7,12 @@ set -e
 # pip install skosify
 . ~/codes/venvs/forthree/bin/activate
 
-# Tämä edellyttää, että olet ensin ajanut skriptin juho-vb-deprecator.sh (löytyy toolseista), joka tuottaa tiedoston juho-vb-deprecator-out.ttl.
+# Tämä vaihe eli yson irrottaminen (periaatteessa) edellyttää, että olet ensin ajanut skriptin juho-vb-deprecator.sh (löytyy toolseista), joka tuottaa tiedoston juho-vb-deprecator-out.ttl.
 # arq on Apache Jena -työkalu, muuta sen käynnistys työskentely-ympäristössäsi käyttämäsi tavan mukaiseksi.
-arq --data juho-vb-deprecator-out.ttl --query extract-juho.rq > juho-irrotettu.ttl
+# Huomaa, että juho-vb-deprecator-out.ttl on käytettävissä vain jos deprekointivaiheessa oli deprekoitava. Mikäli deprekoitavaa ei ollut,
+# tulee arq:n syötetiedostoksi määritellä juho-vb-dump.ttl.
+EXTRACTABLE="juho-vb-deprecator-out.ttl" # tai juho-vb-dump.ttl
+arq --data $EXTRACTABLE --query extract-juho.rq > juho-irrotettu.ttl
 
 INFILES="juho-metadata.ttl juho-singular.ttl juho-irrotettu.ttl ../yso/releases/2026.3.Maimonides/yso-skos.ttl"
 OUTFILE="./juho-skos-vb.ttl"
