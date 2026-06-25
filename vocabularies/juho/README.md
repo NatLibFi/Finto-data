@@ -11,7 +11,7 @@ JUHO
 
 - Kirjaudu Vocbenciin adminina
 - JUHO -> Global Data Management -> Export Data -> [x] juho, [x] yso -> Save To File -> Reformatter: RDF serializing exporter -> Export Format: RDF/XML -> Submit
-- Nimeä varmuuskopioiedosto päivämäärän kanssa ja pidä varmuuskopio tallessa siihen asti, kun päivitys voidaan todeta onnistuneeksi (palvelimen ajastus ottaa myös tunneittain varmuuskopion ja git:in commiteilla saa haettua aiempia sanastotiedostoja mutta kriisitilanteessa väliaikaisen työskentelynaikaisen varmuuskopion käyttö on nopeampaa).
+- Nimeä varmuuskopiotiedosto päivämäärän kanssa ja pidä varmuuskopio tallessa siihen asti, kunnes päivitys voidaan todeta onnistuneeksi (palvelimen ajastus ottaa myös tunneittain varmuuskopion ja git:in commiteilla saa haettua aiempia tiedostoversioita mutta "kriisitilanteessa" väliaikaisen työskentelynaikaisen varmuuskopion käyttö on nopeampaa).
 
 
 ### Tarvitset seuraavat:
