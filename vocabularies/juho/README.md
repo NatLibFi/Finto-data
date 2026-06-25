@@ -5,6 +5,15 @@ JUHO
 
 ## Miten päivitän juhon VocBench-aikakaudella
 
+### Aluksi
+
+***_Ihan aina, aivan joka kerta ennen päivitystä, ota juhosta ja siihen liitetystä YSOsta varmuuskopio seuraavasti_***
+
+- Kirjaudu Vocbenciin adminina
+- JUHO -> Global Data Management -> Export Data -> [x] juho, [x] yso -> Save To File -> Reformatter: RDF serializing exporter -> Export Format: RDF/XML -> Submit
+- Nimeä varmuuskopioiedosto päivämäärän kanssa ja pidä varmuuskopio tallessa siihen asti, kun päivitys voidaan todeta onnistuneeksi (palvelimen ajastus ottaa myös tunneittain varmuuskopion ja git:in commiteilla saa haettua aiempia sanastotiedostoja mutta kriisitilanteessa väliaikaisen työskentelynaikaisen varmuuskopion käyttö on nopeampaa).
+
+
 ### Tarvitset seuraavat:
 
 #### Deprekointi
