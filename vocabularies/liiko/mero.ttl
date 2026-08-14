@@ -10,6 +10,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/> .
 
+dc:source
+  rdf:type rdf:Property ;
+  rdfs:label "http://purl.org/dc/elements/1.1/source"^^xsd:string ;
+.
 mero-meta:Class
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Class ;
@@ -41,10 +45,6 @@ mero-meta:StructuringClass
 mero-meta:deprecatedConcepts
   rdf:type mero-meta:StructuringClass ;
   skos:prefLabel "deprekoidut Mero käsitteet"@fi ;
-.
-mero:
-  rdf:type owl:Ontology ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
 .
 mero:m10000
   rdf:type mero-meta:Concept ;
@@ -166,8 +166,11 @@ mero:m10013
 .
 mero:m10014
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10498 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8934> ;
+  rdfs:subClassOf mero:m10269 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c116> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "ajoneuvoliikenne"@fi ;
@@ -177,7 +180,7 @@ mero:m10015
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p21211> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -204,7 +207,7 @@ mero:m10018
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14428> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2152> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "paikkatiedot"@fi ;
@@ -303,8 +306,9 @@ mero:m10030
 .
 mero:m10031
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38219> ;
+  rdfs:subClassOf mero:m10413 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p183> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p415> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p10632> ;
   skos:prefLabel "haastattelututkimus"@fi ;
 .
@@ -312,7 +316,7 @@ mero:m10032
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1708> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liukkaudentorjunta-aineet"@fi ;
   skos:related <http://www.yso.fi/onto/yso/p12803> ;
@@ -416,9 +420,13 @@ mero:m10043
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10297 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1210> ;
+  skos:altLabel "tieliikenneväylät"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c55> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tiet"@fi ;
@@ -508,7 +516,7 @@ mero:m10053
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p962> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7466> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kuidut"@fi ;
@@ -603,9 +611,9 @@ mero:m10063
 mero:m10064
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf mero:m9786 ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13828> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "pysäköintialueet"@fi ;
 .
@@ -712,9 +720,10 @@ mero:m10078
 mero:m10079
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38219> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3971> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p6757> ;
-  skos:prefLabel "laboratoriotutkimus"@fi ;
+  skos:altLabel "laboratoriotutkimus"@fi ;
+  skos:prefLabel "laboratoriotutkimukset"@fi ;
 .
 mero:m10080
   rdf:type mero-meta:Concept ;
@@ -858,9 +867,13 @@ mero:m10095
 mero:m10096
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10014 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
+  skos:altLabel "polkupyöräliikenne"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c117> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "polkupyöräliikenne"@fi ;
+  skos:prefLabel "pyöräliikenne"@fi ;
 .
 mero:m10097
   rdf:type mero-meta:Concept ;
@@ -881,9 +894,12 @@ mero:m10098
 .
 mero:m10099
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9742 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12040> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c90> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "pihakadut"@fi ;
@@ -1120,8 +1136,9 @@ mero:m10126
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p3601> ;
+  skos:altLabel "suojaus"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "suojaus"@fi ;
+  skos:prefLabel "suojaus (tekniikka)"@fi ;
 .
 mero:m10127
   rdf:type mero-meta:Concept ;
@@ -1584,7 +1601,7 @@ mero:m10181
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6085> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6851> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p15894> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kemialliset analyysit"@fi ;
@@ -1602,10 +1619,11 @@ mero:m10182
 mero:m10183
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7054> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8651> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kiviaines"@fi ;
+  skos:related <http://www.yso.fi/onto/yso/p7054> ;
 .
 mero:m10184
   rdf:type mero-meta:Concept ;
@@ -1776,12 +1794,16 @@ mero:m10202
 mero:m10203
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   skos:altLabel "yleiset tiet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c55> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:note "Yleiset tiet on vanhentunut nimitys. Ks. Maantielaki 2005/503."@fi ;
   skos:prefLabel "maantiet"@fi ;
+  skos:related mero:m10498 ;
 .
 mero:m10204
   rdf:type mero-meta:Concept ;
@@ -1967,7 +1989,7 @@ mero:m10225
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2761> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p16608> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p9045> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikuntaesteiset"@fi ;
 .
@@ -2016,8 +2038,8 @@ mero:m10230
 .
 mero:m10231
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p3310> ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -2054,7 +2076,6 @@ mero:m10234
 mero:m10235
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10236 ;
-  skos:altLabel "junaliikenne"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "junaliikenteen määrä"@fi ;
@@ -2122,12 +2143,17 @@ mero:m10243
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10851 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p12819> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p21032> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c52> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tasoristeykset"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m10641 ;
 .
 mero:m10244
   rdf:type mero-meta:Concept ;
@@ -2325,15 +2351,15 @@ mero:m10266
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8649> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "maa-aines"@fi ;
 .
 mero:m10267
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6756> ;
+  rdfs:subClassOf mero:m10079 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "suorat leikkauskokeet"@fi ;
@@ -2348,10 +2374,13 @@ mero:m10268
 mero:m10269
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p250> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p3466> ;
   skos:altLabel "liikennemuodot"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c107> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikenne"@fi ;
@@ -2501,7 +2530,7 @@ mero:m10289
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p710> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "materiaalit"@fi ;
@@ -2563,18 +2592,25 @@ mero:m10295
 mero:m10296
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10297 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p25533> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c162> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "ajoradat"@fi ;
 .
 mero:m10297
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m8494 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4676> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2498> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikenneväylät"@fi ;
 .
@@ -2656,7 +2692,7 @@ mero:m10307
 mero:m10308
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "maalajitteet"@fi ;
@@ -2831,6 +2867,7 @@ mero:m10330
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2145> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8671> ;
+  skos:altLabel "maalit (maalaus)"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "maalit"@fi ;
 .
@@ -3112,7 +3149,7 @@ mero:m10366
 mero:m10367
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "kiintopisteet"@fi ;
@@ -3138,7 +3175,7 @@ mero:m10371
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3132> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6851> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "jännitysanalyysit"@fi ;
 .
@@ -3213,6 +3250,7 @@ mero:m10381
   rdfs:subClassOf mero:m10224 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p740> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p41206> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "painorajoitukset"@fi ;
 .
@@ -3228,11 +3266,16 @@ mero:m10382
 .
 mero:m10383
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10281 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  skos:altLabel "suojatiet"@fi ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p18854> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c80> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "suojatiet (tiemerkinnät)"@fi ;
+  skos:prefLabel "suojatiet"@fi ;
+  skos:related mero:m10088 ;
+  skos:related mero:m10281 ;
 .
 mero:m10384
   rdf:type mero-meta:Concept ;
@@ -3255,7 +3298,7 @@ mero:m10386
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1708> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "pölynsidonta-aineet"@fi ;
   skos:related <http://www.yso.fi/onto/yso/p1853> ;
@@ -3289,8 +3332,11 @@ mero:m10389
 mero:m10390
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10328 ;
+  rdfs:subClassOf mero:m12116 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p994> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-61> ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "viherrakenteet"@fi ;
 .
@@ -3315,7 +3361,7 @@ mero:m10393
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5268> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2181> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13211> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "uudelleenkäyttö"@fi ;
@@ -3357,8 +3403,8 @@ mero:m10397
 mero:m10398
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12107 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1360> ;
   skos:editorialNote "rata-yhteiset"@fi ;
@@ -3440,8 +3486,9 @@ mero:m10407
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2378> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8268> ;
+  skos:altLabel "kaavoitus"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "kaavoitus"@fi ;
+  skos:prefLabel "kaavoitus (maankäyttö)"@fi ;
 .
 mero:m10408
   rdf:type mero-meta:Concept ;
@@ -3471,9 +3518,12 @@ mero:m10410
 .
 mero:m10411
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9742 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p20214> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c91> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "kävelykadut"@fi ;
@@ -3563,12 +3613,16 @@ mero:m10421
 .
 mero:m10422
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p5569> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4675> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikenneverkot"@fi ;
+  skos:related mero:m9862 ;
 .
 mero:m10423
   rdf:type mero-meta:Concept ;
@@ -3599,10 +3653,13 @@ mero:m10425
 .
 mero:m10426
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p9784> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c168> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "pientareet"@fi ;
 .
@@ -3668,8 +3725,8 @@ mero:m10434
 mero:m10435
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p660> ;
+  rdfs:subClassOf mero:m9845 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1311> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7477> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tietullit"@fi ;
@@ -3876,8 +3933,8 @@ mero:m10460
 .
 mero:m10462
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "liikenteenohjaajat"@fi ;
@@ -3927,11 +3984,16 @@ mero:m10469
 .
 mero:m10470
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8090> ;
+  skos:altLabel "liikennejärjestelyt"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "liikennejärjestelyt"@fi ;
+  skos:prefLabel "liikennejärjestely"@fi ;
+  skos:related mero:m10269 ;
 .
 mero:m10471
   rdf:type mero-meta:Concept ;
@@ -3944,8 +4006,12 @@ mero:m10471
 .
 mero:m10472
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9667 ;
+  owl:equivalentClass <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c51> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c51> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "eritasoliittymät"@fi ;
 .
@@ -3969,9 +4035,9 @@ mero:m10474
 .
 mero:m10475
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kuormaajat"@fi ;
 .
@@ -4079,8 +4145,9 @@ mero:m10489
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7439> ;
+  skos:altLabel "lunastus"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "lunastus"@fi ;
+  skos:prefLabel "lunastus (omistus)"@fi ;
 .
 mero:m10490
   rdf:type mero-meta:Concept ;
@@ -4139,29 +4206,41 @@ mero:m10496
 .
 mero:m10497
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10498 ;
+  rdfs:subClassOf mero:m10269 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8934> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "jalankulkuliikenne"@fi ;
 .
 mero:m10498
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m12236 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p5551> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8934> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c111> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tieliikenne"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m9742 ;
 .
 mero:m10499
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m10043 ;
   rdfs:subClassOf mero:m10276 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p18108> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c69> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "moottoriliikennetiet"@fi ;
 .
@@ -4203,7 +4282,7 @@ mero:m10504
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1672> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "maalajit"@fi ;
@@ -4511,7 +4590,7 @@ mero:m10540
 mero:m10541
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14428> ;
   skos:altLabel "LAM"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
@@ -4552,9 +4631,10 @@ mero:m10545
 .
 mero:m10546
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10413 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38219> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p183> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p415> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p10631> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kyselytutkimus"@fi ;
@@ -4682,11 +4762,14 @@ mero:m10562
 .
 mero:m10563
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c64> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "seututiet"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m10564
   rdf:type mero-meta:Concept ;
@@ -4776,7 +4859,7 @@ mero:m10576
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12088> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tuhka"@fi ;
@@ -4826,12 +4909,15 @@ mero:m10581
 .
 mero:m10582
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p28219> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c62> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "valtatiet"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m10583
   rdf:type mero-meta:Concept ;
@@ -5168,8 +5254,8 @@ mero:m10627
 .
 mero:m10628
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6756> ;
+  rdfs:subClassOf mero:m10079 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "kolmiaksaalikokeet"@fi ;
@@ -5270,10 +5356,13 @@ mero:m10640
 .
 mero:m10641
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10297 ;
+  rdfs:subClassOf mero:m11299 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17061> ;
+  skos:altLabel "junille tarkoitetut radat"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c97> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "rautatiet"@fi ;
 .
@@ -5347,14 +5436,23 @@ mero:m10650
 .
 mero:m10651
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10281 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c79> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "pyörätien jatkeet"@fi ;
+  skos:related mero:m10281 ;
 .
 mero:m10652
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9667 ;
+  skos:altLabel "risteykset"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c50> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:prefLabel "tasoliittymät"@fi ;
 .
 mero:m10653
@@ -5416,7 +5514,6 @@ mero:m10660
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9787 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4220> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11461> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tunnistimet"@fi ;
@@ -5433,11 +5530,15 @@ mero:m10661
 mero:m10662
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11569> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c73> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "yksityistiet"@fi ;
+  skos:related mero:m10825 ;
 .
 mero:m10663
   rdf:type mero-meta:Concept ;
@@ -5532,7 +5633,7 @@ mero:m10674
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "päällystemassat"@fi ;
   skos:related mero:m9805 ;
@@ -5663,7 +5764,7 @@ mero:m10690
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p403> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p24745> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p20442> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "huoltoasemat"@fi ;
@@ -5827,8 +5928,11 @@ mero:m10709
 .
 mero:m10710
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9742 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c84> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "pääkadut"@fi ;
@@ -5919,12 +6023,15 @@ mero:m10720
 .
 mero:m10721
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p28511> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c63> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kantatiet"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m10722
   rdf:type mero-meta:Concept ;
@@ -6244,11 +6351,17 @@ mero:m10763
 .
 mero:m10764
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10297 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m9948 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2497> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c164> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "pyöräkaistat"@fi ;
+  skos:related mero:m10096 ;
+  skos:related mero:m10296 ;
+  skos:related mero:m12142 ;
 .
 mero:m10765
   rdf:type mero-meta:Concept ;
@@ -6276,10 +6389,14 @@ mero:m10767
 .
 mero:m10769
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m10043 ;
   rdfs:subClassOf mero:m10276 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p19143> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c70> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "moottoritiet"@fi ;
 .
@@ -6380,9 +6497,12 @@ mero:m10782
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10269 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1920> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c112> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -6439,8 +6559,8 @@ mero:m10788
 .
 mero:m10789
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6756> ;
+  rdfs:subClassOf mero:m10079 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "ödometrikokeet"@fi ;
@@ -6465,7 +6585,7 @@ mero:m10792
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "merkintämassat"@fi ;
   skos:related mero:m10281 ;
@@ -6548,6 +6668,7 @@ mero:m10802
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8155> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40278> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tiehöylät"@fi ;
 .
@@ -6713,8 +6834,11 @@ mero:m10824
 .
 mero:m10825
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p152> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c34> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "tieoikeus"@fi ;
@@ -6778,7 +6902,9 @@ mero:m10832
 .
 mero:m10833
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38219> ;
+  rdfs:subClassOf mero:m10413 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p183> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p415> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12328> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
@@ -6811,7 +6937,6 @@ mero:m10836
 mero:m10837
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26517> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p459> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p458> ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -7000,7 +7125,6 @@ mero:m10860
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1149> ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2344> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2699> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -7040,7 +7164,7 @@ mero:m10864
 mero:m10865
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf mero:m12107 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1359> ;
   skos:editorialNote "rata-yhteiset"@fi ;
@@ -7065,11 +7189,16 @@ mero:m10868
 .
 mero:m10869
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p11631> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c138> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tiekunnat"@fi ;
+  skos:related mero:m10662 ;
+  skos:related mero:m9976 ;
 .
 mero:m10870
   rdf:type mero-meta:Concept ;
@@ -7467,10 +7596,13 @@ mero:m10918
 mero:m10919
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p250> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p16489> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikennejärjestelmät"@fi ;
@@ -7479,12 +7611,16 @@ mero:m10920
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10269 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12212> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c120> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tavaraliikenne"@fi ;
+  skos:related mero:m10506 ;
 .
 mero:m10921
   rdf:type mero-meta:Concept ;
@@ -7550,7 +7686,7 @@ mero:m10928
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14428> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "häiriötieto"@fi ;
 .
@@ -7573,7 +7709,7 @@ mero:m10931
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf mero:m9786 ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17282> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "levähdysalueet"@fi ;
@@ -7587,8 +7723,11 @@ mero:m10932
 mero:m10933
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10338 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   skos:altLabel "kävely"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c130> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kävely (liikkuminen)"@fi ;
 .
@@ -7691,11 +7830,14 @@ mero:m10948
 .
 mero:m10950
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m10203 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c65> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "yhdystiet"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m10951
   rdf:type mero-meta:Concept ;
@@ -7807,12 +7949,15 @@ mero:m10966
 .
 mero:m10967
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c43> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
-  skos:prefLabel "suoja-alueet (maantiet)"@fi ;
-  skos:related mero:m10203 ;
+  skos:prefLabel "suoja-alueet (liikenneväylät)"@fi ;
+  skos:related mero:m11346 ;
 .
 mero:m10968
   rdf:type mero-meta:Concept ;
@@ -7890,18 +8035,25 @@ mero:m10977
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1150> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4513> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "standardit"@fi ;
 .
 mero:m10978
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40713> ;
+  skos:altLabel "lentokoneiden varalaskupaikat"@fi ;
+  skos:altLabel "varalentopaikat"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c60> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "varalaskupaikat"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m10979
   rdf:type mero-meta:Concept ;
@@ -8106,9 +8258,12 @@ mero:m11008
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10269 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13227> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c121> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "henkilöliikenne"@fi ;
@@ -8178,8 +8333,8 @@ mero:m11058
 mero:m11060
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaununhoitajat"@fi ;
 .
@@ -8358,8 +8513,8 @@ mero:m11082
 mero:m11083
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "junanlähettäjät"@fi ;
 .
@@ -8391,8 +8546,8 @@ mero:m11086
 mero:m11087
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "junasuorittajat"@fi ;
 .
@@ -8492,8 +8647,8 @@ mero:m11099
 mero:m11100
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:editorialNote "rata-käsitteet, lisätyt"@fi ;
   skos:prefLabel "varikkotyöntekijät"@fi ;
@@ -8728,8 +8883,8 @@ mero:m11127
 mero:m11128
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "koneapulaiset"@fi ;
 .
@@ -8812,6 +8967,7 @@ mero:m11138
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
   rdfs:subClassOf mero:m11646 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40299> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "baarivaunut"@fi ;
   skos:related mero:m11646 ;
@@ -8866,8 +9022,8 @@ mero:m11144
 mero:m11145
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "opastinmestarit"@fi ;
 .
@@ -9170,8 +9326,8 @@ mero:m11181
 mero:m11182
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asemanhoitajat"@fi ;
 .
@@ -9247,7 +9403,10 @@ mero:m11192
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
   rdfs:subClassOf mero:m11381 ;
+  rdfs:subClassOf mero:m12097 ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p24897> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c156> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "raiteet"@fi ;
 .
@@ -9303,8 +9462,8 @@ mero:m11198
 mero:m11199
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "veturimestarit"@fi ;
 .
@@ -9392,8 +9551,8 @@ mero:m11209
 mero:m11210
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "ratamestarit"@fi ;
 .
@@ -9435,8 +9594,8 @@ mero:m11214
 mero:m11215
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "laiturinvartijat"@fi ;
 .
@@ -9453,16 +9612,16 @@ mero:m11216
 mero:m11217
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaunumiehet"@fi ;
 .
 mero:m11218
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "semaforimiehet"@fi ;
 .
@@ -9485,8 +9644,8 @@ mero:m11220
 mero:m11221
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaununvoitelijat"@fi ;
 .
@@ -9630,8 +9789,8 @@ mero:m11239
 mero:m11240
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaakamestarit"@fi ;
 .
@@ -9769,12 +9928,14 @@ mero:m11256
 mero:m11257
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c159> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:editorialNote "rata-käsitteet, lisätyt"@fi ;
   skos:prefLabel "rautatieliikennepaikat"@fi ;
-  skos:related mero:m11439 ;
 .
 mero:m11258
   rdf:type mero-meta:Concept ;
@@ -9883,8 +10044,8 @@ mero:m11270
 mero:m11271
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "konepajatyöntekijät"@fi ;
 .
@@ -10115,10 +10276,14 @@ mero:m11298
 .
 mero:m11299
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10297 ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   skos:altLabel "radat"@fi ;
+  skos:altLabel "raideliikenteen väylät"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c96> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "radat (raideliikenne)"@fi ;
 .
@@ -10284,9 +10449,9 @@ mero:m11320
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p9864> ;
-  skos:altLabel "tärinä"@fi ;
+  skos:altLabel "tärinä (haitat)"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
-  skos:prefLabel "tärinä (haitat)"@fi ;
+  skos:prefLabel "tärinähaitat"@fi ;
 .
 mero:m11321
   rdf:type mero-meta:Concept ;
@@ -10494,8 +10659,11 @@ mero:m11345
 mero:m11346
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c24> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:editorialNote "rata-käsitteet, lisätyt"@fi ;
   skos:prefLabel "rautatiealueet"@fi ;
@@ -10519,8 +10687,8 @@ mero:m11348
 mero:m11349
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaihdemiehet"@fi ;
 .
@@ -10545,7 +10713,7 @@ mero:m11352
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "liikennepäälliköt"@fi ;
 .
@@ -10823,8 +10991,8 @@ mero:m11386
 mero:m11387
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaunumestarit"@fi ;
 .
@@ -10839,8 +11007,8 @@ mero:m11388
 mero:m11389
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "radanrakentajat"@fi ;
 .
@@ -11047,7 +11215,7 @@ mero:m11413
 mero:m11414
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf mero:m12107 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asema-alueet"@fi ;
@@ -11111,8 +11279,8 @@ mero:m11421
 mero:m11422
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "pysäkinhoitajat"@fi ;
 .
@@ -11184,8 +11352,8 @@ mero:m11430
 mero:m11431
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "rautatievirkailijat"@fi ;
 .
@@ -11200,8 +11368,8 @@ mero:m11432
 mero:m11433
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "järjestelymestarit"@fi ;
 .
@@ -11260,8 +11428,8 @@ mero:m11440
 mero:m11441
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "tarkastajat"@fi ;
 .
@@ -11587,8 +11755,8 @@ mero:m11481
 mero:m11482
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "ajomestarit"@fi ;
 .
@@ -11790,8 +11958,8 @@ mero:m11506
 mero:m11507
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "signaalivirkailijat"@fi ;
 .
@@ -11857,8 +12025,8 @@ mero:m11514
 mero:m11515
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "jarrumiehet"@fi ;
 .
@@ -11890,7 +12058,11 @@ mero:m11518
 mero:m11519
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m11299 ;
+  rdfs:subClassOf mero:m11192 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p24897> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c158> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:editorialNote "rata-käsitteet, lisätyt"@fi ;
   skos:prefLabel "sivuraiteet"@fi ;
@@ -12027,16 +12199,16 @@ mero:m11535
 mero:m11536
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asemapalvelijat"@fi ;
 .
 mero:m11537
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "makuuvaununhoitajat"@fi ;
 .
@@ -12164,8 +12336,8 @@ mero:m11552
 mero:m11553
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "ratatyöntekijät"@fi ;
 .
@@ -12228,8 +12400,8 @@ mero:m11560
 mero:m11562
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asemamiehet"@fi ;
 .
@@ -12302,6 +12474,7 @@ mero:m11571
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
   rdfs:subClassOf mero:m11646 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40299> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "lounasvaunut"@fi ;
   skos:related mero:m11646 ;
@@ -12353,8 +12526,8 @@ mero:m11576
 mero:m11577
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "kuormausmestarit"@fi ;
 .
@@ -12398,8 +12571,8 @@ mero:m11581
 mero:m11582
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "halkotyöläiset"@fi ;
 .
@@ -12652,8 +12825,8 @@ mero:m11612
 mero:m11613
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "liikenneoppilaat"@fi ;
 .
@@ -12699,8 +12872,8 @@ mero:m11618
 mero:m11619
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asetinlaitemiehet"@fi ;
 .
@@ -12914,13 +13087,14 @@ mero:m11645
 mero:m11646
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11195 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40299> ;
   skos:prefLabel "ravintolavaunut"@fi ;
 .
 mero:m11647
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "pakkamestarit"@fi ;
 .
@@ -13023,8 +13197,8 @@ mero:m11660
 mero:m11661
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "veturinpuhdistajat"@fi ;
 .
@@ -13308,8 +13482,8 @@ mero:m11696
 mero:m11697
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "liikennevirkailijat"@fi ;
 .
@@ -13415,8 +13589,8 @@ mero:m11710
 mero:m11712
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "matkaneuvojat"@fi ;
 .
@@ -13628,8 +13802,8 @@ mero:m11738
 mero:m11739
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "junamiehet"@fi ;
 .
@@ -13762,8 +13936,8 @@ mero:m11754
 mero:m11755
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "siltavahdit"@fi ;
 .
@@ -13775,8 +13949,8 @@ mero:m11756
 mero:m11757
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "asemamestarit"@fi ;
 .
@@ -13838,8 +14012,8 @@ mero:m11764
 mero:m11765
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "vaununpuhdistajat"@fi ;
 .
@@ -14300,8 +14474,8 @@ mero:m11826
 mero:m11827
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:editorialNote "rata-käsitteet, lisätyt"@fi ;
   skos:prefLabel "aikataulunsuunnittelijat"@fi ;
@@ -14392,8 +14566,8 @@ mero:m11840
 mero:m11842
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11064 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "rata-käsitteet"@fi ;
   skos:prefLabel "junapalvelijat"@fi ;
 .
@@ -14595,7 +14769,6 @@ mero:m11874
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8004 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3105> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p7081> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "meri-uudet 2021-22"@fi ;
   skos:prefLabel "uiskot"@fi ;
@@ -15405,6 +15578,7 @@ mero:m11979
   rdfs:subClassOf mero:m11909 ;
   rdfs:subClassOf mero:m11928 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p7491> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40187> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "meri-uudet 2021-22"@fi ;
   skos:prefLabel "soutuveneet"@fi ;
@@ -15482,7 +15656,7 @@ mero:m11987
 mero:m11988
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1619> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1786> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p523> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "meri-uudet 2021-22"@fi ;
@@ -15631,6 +15805,7 @@ mero:m12007
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8004 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3105> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p040841> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "meri-uudet 2021-22"@fi ;
   skos:prefLabel "ohjusveneet"@fi ;
@@ -15960,6 +16135,7 @@ mero:m12049
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8004 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3105> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p7081> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "meri-uudet 2021-22"@fi ;
   skos:prefLabel "maihinnousualukset"@fi ;
@@ -16299,6 +16475,1700 @@ mero:m12092
   skos:editorialNote "meri-uudet 2021-22"@fi ;
   skos:prefLabel "visiirit"@fi ;
 .
+mero:m12093
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10933 ;
+  rdfs:subClassOf mero:m12135 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p22347> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c131> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "jalankulku"@fi ;
+  skos:related mero:m12111 ;
+  skos:related mero:m12160 ;
+  skos:related mero:m12204 ;
+.
+mero:m12094
+  rdf:type mero-meta:StructuringClass ;
+  skos:prefLabel "MERO terms"@en ;
+  skos:prefLabel "MERO-kysymykset"@fi ;
+.
+mero:m12095
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11192 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p24897> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c157> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "pääraiteet"@fi ;
+  skos:related mero:m11519 ;
+.
+mero:m12096
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38218> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p16230> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "lentäminen"@fi ;
+  skos:related mero:m12160 ;
+.
+mero:m12097
+  rdf:type mero-meta:StructuringClass ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "LIIKENNEINFRA-yhteiset"@fi ;
+.
+mero:m12098
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-53> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "perenna-alueet"@fi ;
+  skos:related mero:m12124 ;
+.
+mero:m12099
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m8684 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p16363> ;
+  skos:altLabel "suunnittelunopeus"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c184> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "mitoitusnopeus"@fi ;
+  skos:related mero:m12100 ;
+  skos:related mero:m12193 ;
+.
+mero:m12100
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7432> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c181> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikennetila"@fi ;
+  skos:related mero:m10297 ;
+  skos:related mero:m12099 ;
+  skos:related mero:m12169 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12101
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12102 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6648> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-29> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "arvoniityt"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12102
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p264> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p6648> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-27> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "niityt"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12103
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p13830> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c94> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "pysäköintipaikat"@fi ;
+  skos:related mero:m10064 ;
+  skos:related mero:m12134 ;
+  skos:related mero:m12161 ;
+  skos:related mero:m12166 ;
+.
+mero:m12104
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9742 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c93> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "joukkoliikennekadut"@fi ;
+  skos:related mero:m12151 ;
+.
+mero:m12105
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c191> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:hiddenLabel "liittymärummut"@fi ;
+  skos:prefLabel "sivuojarummut"@fi ;
+  skos:related mero:m12114 ;
+.
+mero:m12106
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c17> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "hamnområde"@sv ;
+  skos:prefLabel "harbour area"@en ;
+  skos:prefLabel "satama-alueet"@fi ;
+.
+mero:m12107
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p3311> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c16> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikennealueet"@fi ;
+  skos:related mero:m10203 ;
+  skos:related mero:m10269 ;
+  skos:related mero:m10641 ;
+  skos:related mero:m12223 ;
+  skos:related mero:m9676 ;
+  skos:related mero:m9859 ;
+.
+mero:m12108
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kävelyn ja pyöräilyn väylät"@fi ;
+.
+mero:m12109
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "teräsputkirummut"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c201> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "teräsrummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12110
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10826 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3073> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c205> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rumpuputket"@fi ;
+  skos:related mero:m12109 ;
+  skos:related mero:m12133 ;
+  skos:related mero:m12178 ;
+  skos:related mero:m12190 ;
+  skos:related mero:m12219 ;
+  skos:related mero:m12225 ;
+.
+mero:m12111
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10338 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c129> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "mikroliikkuminen"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12160 ;
+  skos:related mero:m12209 ;
+.
+mero:m12112
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p25710> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c48> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikenneväylän toiminnalliset luokat"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m10099 ;
+  skos:related mero:m10203 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m10411 ;
+  skos:related mero:m10422 ;
+  skos:related mero:m10563 ;
+  skos:related mero:m10582 ;
+  skos:related mero:m10641 ;
+  skos:related mero:m10662 ;
+  skos:related mero:m10710 ;
+  skos:related mero:m10721 ;
+  skos:related mero:m10950 ;
+  skos:related mero:m12100 ;
+  skos:related mero:m12104 ;
+  skos:related mero:m12166 ;
+  skos:related mero:m12170 ;
+  skos:related mero:m12179 ;
+  skos:related mero:m12180 ;
+  skos:related mero:m9741 ;
+  skos:related mero:m9742 ;
+  skos:related mero:m9931 ;
+  mero-meta:deprecatedLabel "liikenneväylän liikenteellisen merkityksen mukainen luokka"@fi ;
+.
+mero:m12113
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10426 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p9784> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c169> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "sisäpientareet"@fi ;
+  skos:related mero:m12193 ;
+.
+mero:m12114
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9923 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7366> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuric175/> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "sivuojat"@fi ;
+  skos:related mero:m12105 ;
+  skos:related mero:m12120 ;
+  skos:related mero:m12150 ;
+  skos:related mero:m12212 ;
+  skos:related mero:m12232 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12115
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-8> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "rakennetut viheralueet"@fi ;
+.
+mero:m12116
+  rdf:type mero-meta:StructuringClass ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "VIHERALUE-käsitteet"@fi ;
+.
+mero:m12117
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-41> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "arvometsät"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12118
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-13> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "vaihettumisviheralueet"@fi ;
+.
+mero:m12119
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10328 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p994> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-62> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "kasvillisuusrakenteet"@fi ;
+.
+mero:m12120
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c180> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "ulkoluiskat"@fi ;
+  skos:related mero:m12114 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12121
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10328 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p994> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-60> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "ympäristörakenteet"@fi ;
+.
+mero:m12122
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12167 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-25> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "paahdealueet"@fi ;
+.
+mero:m12123
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9074 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c152> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kaupallinen matkustajaliikenne"@fi ;
+.
+mero:m12124
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-47> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "kasvillisuusalueet"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12125
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10517 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "maantien yleissuunnitelma"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c146> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maanteiden yleissuunnitelmat"@fi ;
+.
+mero:m12126
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p264> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p5454> ;
+  skos:altLabel "metsäalueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-35> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "metsät"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12127
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c32> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maantien liitännäisalueet"@fi ;
+.
+mero:m12128
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11008 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13227> ;
+  skos:altLabel "kollektivtrafik"@sv ;
+  skos:hiddenLabel "itsepalvelukyyti"@fi ;
+  skos:hiddenLabel "kyytipalvelu"@fi ;
+  skos:prefLabel "julkinen henkilöliikenne"@fi ;
+  skos:prefLabel "offentlig persontrafik"@sv ;
+  skos:prefLabel "public transport"@en ;
+  skos:related mero:m12151 ;
+.
+mero:m12129
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-43> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "lähimetsät"@fi ;
+.
+mero:m12130
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11346 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "rautatieliikenteen palvelualueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c25> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rautatien palvelualueet"@fi ;
+.
+mero:m12131
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p25710> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c47> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikenneväylän hallinnolliset luokat"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m10203 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m10641 ;
+  skos:related mero:m9742 ;
+  skos:related mero:m9810 ;
+  skos:related mero:m9859 ;
+.
+mero:m12132
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p6431> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-33> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "pellot"@fi ;
+  skos:related mero:m12167 ;
+.
+mero:m12133
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "muoviputkirummut"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c203> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "muovirummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12134
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c21> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maantien liikennealueet"@fi ;
+  skos:related mero:m10203 ;
+  skos:related mero:m10563 ;
+  skos:related mero:m10582 ;
+  skos:related mero:m10721 ;
+  skos:related mero:m10978 ;
+  skos:related mero:m12103 ;
+  skos:related mero:m12142 ;
+  skos:related mero:m12204 ;
+  skos:related mero:m12230 ;
+.
+mero:m12135
+  rdf:type mero-meta:StructuringClass ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "LIIKENNEINFRA-uudet"@fi ;
+.
+mero:m12136
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-17> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "suojaviheralueet"@fi ;
+.
+mero:m12137
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9948 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2497> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "raitiovaunukaistat"@fi ;
+.
+mero:m12138
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikenteen käyttöön osoitetut yleiset alueet"@fi ;
+.
+mero:m12139
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9611 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p838> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p24628> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-1> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "ekosysteemipalvelut"@fi ;
+.
+mero:m12140
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10920 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p12212> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c149> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rahtiliikenne"@fi ;
+.
+mero:m12141
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11008 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13227> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c124> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "yksilöliikenne"@fi ;
+.
+mero:m12142
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12108 ;
+  rdfs:subClassOf mero:m12135 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p10713> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c77> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:hiddenLabel "baana"@fi ;
+  skos:prefLabel "pyörätiet"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12134 ;
+  skos:related mero:m12189 ;
+  skos:related mero:m12192 ;
+  skos:related mero:m12196 ;
+  skos:related mero:m12204 ;
+  skos:related mero:m12209 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12143
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7413> ;
+  skos:altLabel "kuntoarviointi"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-68> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viheralueen kuntoarviointi"@fi ;
+.
+mero:m12144
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-56> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherkuviot"@fi ;
+  skos:related mero:m12124 ;
+.
+mero:m12145
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10328 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p994> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-65> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherkannet"@fi ;
+.
+mero:m12146
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3902> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-48> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viheromaisuus"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12147
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10224 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p740> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c140> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "yksityistien käyttörajoitukset"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12209 ;
+.
+mero:m12148
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10426 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p9784> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c170> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "ulkopientareet"@fi ;
+  skos:related mero:m12193 ;
+.
+mero:m12149
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c33> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "yksityisteiden tiealueet"@fi ;
+.
+mero:m12150
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2536> ;
+  skos:altLabel "kuivatusverkostot"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c186> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kuivatusjärjestelmät"@fi ;
+  skos:related mero:m10743 ;
+  skos:related mero:m12114 ;
+  skos:related mero:m12158 ;
+  skos:related mero:m12232 ;
+.
+mero:m12151
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11008 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13227> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p9912> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c123> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "joukkoliikenne"@fi ;
+  skos:related mero:m12104 ;
+  skos:related mero:m12128 ;
+  skos:related mero:m12157 ;
+.
+mero:m12152
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10517 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "rautatien yleissuunnitelma"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c147> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rautateiden yleissuunnitelmat"@fi ;
+  mero-meta:deprecatedLabel "radan yleissuunnitelma"@fi ;
+.
+mero:m12153
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11299 ;
+  rdfs:subClassOf mero:m12135 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p20048> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c100> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "raitiotiet"@fi ;
+  skos:related mero:m12131 ;
+  skos:related mero:m12234 ;
+.
+mero:m12154
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9761 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17539> ;
+  skos:altLabel "liikenteen infrastruktuuri"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c2> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikenneinfrastruktuuri"@fi ;
+  skos:related mero:m10269 ;
+  skos:related mero:m10422 ;
+  skos:related mero:m10919 ;
+  skos:related mero:m8486 ;
+.
+mero:m12155
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p25710> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-58> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "viheralueiden kunnossapitoluokat"@fi ;
+  skos:related mero:m8272 ;
+  skos:related mero:m9938 ;
+.
+mero:m12156
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-9> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "luonnontilaiset alueet"@fi ;
+.
+mero:m12157
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11008 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13227> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c127> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "yksityinen henkilöliikenne"@fi ;
+  skos:related mero:m12151 ;
+.
+mero:m12158
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9923 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7366> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c178> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "niskaojat"@fi ;
+  skos:related mero:m12150 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12159
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38218> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p11469> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "veneily"@fi ;
+  skos:related mero:m12160 ;
+.
+mero:m12160
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p29369> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p21218> ;
+  skos:altLabel "kulkutavat"@fi ;
+  skos:altLabel "liikkumismuodot"@fi ;
+  skos:altLabel "liikkumistavat"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c128> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kulkumuodot"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12096 ;
+  skos:related mero:m12111 ;
+  skos:related mero:m12159 ;
+  skos:related mero:m12194 ;
+  skos:related mero:m12209 ;
+.
+mero:m12161
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p19031> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p9378> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c72> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "torit"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12103 ;
+.
+mero:m12162
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m8486 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p22540> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c143> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "vesiväylänpito"@fi ;
+.
+mero:m12163
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c197> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "tulvarummut"@fi ;
+.
+mero:m12164
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c182> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "lumitilat"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m12192 ;
+  skos:related mero:m12215 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12165
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12102 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6648> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-31> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "käyttöniityt"@fi ;
+  skos:related mero:m12167 ;
+.
+mero:m12166
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m9742 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  skos:altLabel "cycle zone"@en ;
+  skos:prefLabel "cycle street"@en ;
+  skos:prefLabel "cykelgata"@sv ;
+  skos:prefLabel "pyöräkadut"@fi ;
+  skos:related mero:m12103 ;
+  skos:related mero:m12112 ;
+  skos:related mero:m12170 ;
+  skos:related mero:m12209 ;
+.
+mero:m12167
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-23> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "avoimet viheralueet"@fi ;
+.
+mero:m12168
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c27> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rautatien liitännäisalueet"@fi ;
+  skos:related mero:m12197 ;
+.
+mero:m12169
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c183> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "varustetilat"@fi ;
+  skos:related mero:m12100 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12170
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9742 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p12041> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c88> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "hidaskadut"@fi ;
+  skos:related mero:m10099 ;
+  skos:related mero:m10411 ;
+  skos:related mero:m12166 ;
+  skos:related mero:m9741 ;
+.
+mero:m12171
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9611 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p838> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p2062> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikennepalvelut"@fi ;
+  yso-meta:partOf mero:m10919 ;
+.
+mero:m12172
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c190> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "ratarummut"@fi ;
+.
+mero:m12173
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12110 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c210> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:note "Pieneläinputkea ei ole tarkoitettu veden johtamiseen."@fi ;
+  skos:prefLabel "pieneläinputket"@fi ;
+.
+mero:m12174
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-20> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "ulkoilua ja virkistystä varten tarkoitetut viheralueet"@fi ;
+.
+mero:m12175
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c194> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "pieneläinrummut"@fi ;
+.
+mero:m12176
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-44> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "tiealuemetsät"@fi ;
+.
+mero:m12177
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kanava-alueet"@fi ;
+.
+mero:m12178
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "alumiiniputkirummut"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c202> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "alumiinirummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12179
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10641 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17061> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c99> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "sivuradat"@fi ;
+  skos:related mero:m12112 ;
+  skos:related mero:m12180 ;
+.
+mero:m12180
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10641 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17061> ;
+  skos:hiddenLabel "stambana"@sv ;
+  skos:prefLabel "huvudbana"@sv ;
+  skos:prefLabel "main line"@en ;
+  skos:prefLabel "pääradat"@fi ;
+  skos:related mero:m12112 ;
+  skos:related mero:m12179 ;
+.
+mero:m12181
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p10397> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-67> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherinventointi"@fi ;
+.
+mero:m12182
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-6> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "luonnonmukaiset viheralueet"@fi ;
+.
+mero:m12183
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2536> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikenteen viestintäyhteydet"@fi ;
+  yso-meta:partOf mero:m10919 ;
+.
+mero:m12184
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  skos:altLabel "ulkoilu- ja virkistysmetsät"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-39> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "virkistysmetsät"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12185
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12110 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c209> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "tulvaputket"@fi ;
+.
+mero:m12186
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9948 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2497> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "taksikaistat"@fi ;
+.
+mero:m12187
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12205 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p16159> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-71> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "kestävä ympäristörakentaminen"@fi ;
+.
+mero:m12188
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c59> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rinnakkaistiet"@fi ;
+.
+mero:m12189
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12108 ;
+  rdfs:subClassOf mero:m12135 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p4125> ;
+  skos:altLabel "rinnakkainen pyörätie ja jalkakäytävä"@fi ;
+  skos:altLabel "yhdistetty pyörätie ja jalkakäytävä"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c78> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "jalankulku- ja pyörätiet"@fi ;
+  skos:related mero:m12142 ;
+  skos:related mero:m12204 ;
+  skos:related mero:m12209 ;
+  yso-meta:partOf mero:m10043 ;
+.
+mero:m12190
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "betoniputkirummut"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c200> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "betonirummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12191
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12201 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-12> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "katuviheralueet"@fi ;
+  skos:related mero:m9676 ;
+.
+mero:m12192
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c172> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "erotusalueet"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m10296 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m12164 ;
+  skos:related mero:m12204 ;
+  skos:related mero:m9676 ;
+  skos:related mero:m9948 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12193
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
+  skos:altLabel "tyyppipoikkileikkaukset"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c161> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:hiddenLabel "rakennepoikkileikkaus"@fi ;
+  skos:prefLabel "peruspoikkileikkaukset"@fi ;
+  skos:related mero:m12099 ;
+  skos:related mero:m12113 ;
+  skos:related mero:m12148 ;
+  skos:related mero:m12203 ;
+.
+mero:m12194
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38218> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p8319> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "autoilu"@fi ;
+  skos:related mero:m12160 ;
+.
+mero:m12195
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-52> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "pensasalueet"@fi ;
+  skos:related mero:m12124 ;
+.
+mero:m12196
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:altLabel "tien reuna"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c171> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "teiden reunat"@fi ;
+  skos:related mero:m12142 ;
+  skos:related mero:m12204 ;
+.
+mero:m12197
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m8486 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p17060> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c142> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "radanpito"@fi ;
+  skos:related mero:m12168 ;
+.
+mero:m12198
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12136 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-18> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "meluesteympäristöt"@fi ;
+.
+mero:m12199
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "solmupisteet"@fi ;
+  skos:related mero:m10297 ;
+  skos:related mero:m10472 ;
+  skos:related mero:m10652 ;
+  skos:related mero:m12107 ;
+.
+mero:m12200
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-15> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherhoitokuviot"@fi ;
+  skos:related mero:m12208 ;
+.
+mero:m12201
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-11> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "liikenneviheralueet"@fi ;
+  skos:related mero:m8512 ;
+.
+mero:m12202
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m8486 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c141> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kadunpito"@fi ;
+  skos:related mero:m9676 ;
+  skos:related mero:m9742 ;
+.
+mero:m12203
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12114 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "reunaojat"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c177> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "erotetut sivuojat"@fi ;
+  skos:related mero:m10297 ;
+  skos:related mero:m12193 ;
+  skos:related mero:m12212 ;
+.
+mero:m12204
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12108 ;
+  rdfs:subClassOf mero:m12135 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p12286> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c76> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "jalkakäytävät"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12189 ;
+  skos:related mero:m9676 ;
+  skos:related mero:m9742 ;
+  yso-meta:partOf mero:m10043 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12205
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9835 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3673> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p16159> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-69> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "ympäristörakentaminen"@fi ;
+.
+mero:m12206
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12107 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:altLabel "rautatieliikenteen alue"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c22> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "railway traffic area"@en ;
+  skos:prefLabel "rautatien liikennealueet"@fi ;
+  skos:prefLabel "trafikområde för järnväg"@sv ;
+  skos:related mero:m10641 ;
+  skos:related mero:m11346 ;
+  skos:related mero:m12227 ;
+.
+mero:m12207
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p9278> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p25837> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-64> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherkatot"@fi ;
+.
+mero:m12208
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-14> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherhoitoalueet"@fi ;
+  skos:related mero:m12201 ;
+.
+mero:m12209
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10338 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "pyöräily"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c132> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "pyöräily (liikkuminen)"@fi ;
+  skos:related mero:m12111 ;
+  skos:related mero:m12142 ;
+  skos:related mero:m12147 ;
+  skos:related mero:m12160 ;
+  skos:related mero:m12166 ;
+  skos:related mero:m12189 ;
+  skos:related mero:m12204 ;
+  skos:related mero:m12220 ;
+.
+mero:m12210
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14428> ;
+  skos:altLabel "vihertieto"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-57> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viheraluetieto"@fi ;
+  skos:related mero:m9938 ;
+.
+mero:m12211
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m12230 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c31> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maantien tieoikeusalueet"@fi ;
+.
+mero:m12212
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c179> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "sisäluiskat"@fi ;
+  skos:related mero:m12114 ;
+  skos:related mero:m12203 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12213
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c189> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "tierummut"@fi ;
+.
+mero:m12214
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:altLabel "nurmikkoalueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-51> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "nurmialueet"@fi ;
+  skos:related mero:m12124 ;
+.
+mero:m12215
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c173> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "reuna-alueet"@fi ;
+  skos:related mero:m12164 ;
+  skos:related mero:m9938 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12216
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2536> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "liikennettä ohjaavat järjestelmät"@fi ;
+  yso-meta:partOf mero:m10919 ;
+.
+mero:m12217
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c155> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "työmaatie"@fi ;
+.
+mero:m12218
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p489> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-55> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "kausikasvit"@fi ;
+.
+mero:m12219
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "komposiittiputkirummut"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c204> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "komposiittirummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12220
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p152> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c139> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "yksityistien käyttöoikeus"@fi ;
+  skos:related mero:m12093 ;
+  skos:related mero:m12209 ;
+.
+mero:m12221
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12102 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6648> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-32> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "maisemaniityt"@fi ;
+  skos:related mero:m12167 ;
+.
+mero:m12222
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p19196> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-37> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "talousmetsät"@fi ;
+.
+mero:m12223
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5569> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c10> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "väyläverkot"@fi ;
+  skos:related mero:m12107 ;
+.
+mero:m12224
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12126 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5454> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-38> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "suojametsät"@fi ;
+  skos:related mero:m12136 ;
+.
+mero:m12225
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10743 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c199> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "kivirummut"@fi ;
+  skos:related mero:m12110 ;
+.
+mero:m12226
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m12205 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p16159> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p10449> ;
+  skos:altLabel "maisemarakentaminen"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-70> ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viherrakentaminen"@fi ;
+.
+mero:m12227
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11346 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c26> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "rautatien käyttöoikeusalueet"@fi ;
+  skos:related mero:m12206 ;
+.
+mero:m12228
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p18896> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-54> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "dynaamiset istutukset"@fi ;
+.
+mero:m12229
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p25710> ;
+  owl:equivalentClass <https://iri.suomi.fi/terminology/b4064c65/c-58> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "viheralueen kunnossapitoluokat"@fi ;
+.
+mero:m12230
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:altLabel "maantiealueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c29> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maantien tiealueet"@fi ;
+  skos:related mero:m12134 ;
+  mero-meta:deprecatedLabel "yleisen tien tiealue"@fi ;
+.
+mero:m12231
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf mero:m9938 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-19> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "tuotantoalueet"@fi ;
+.
+mero:m12232
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9923 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p7366> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c176> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "laskuojat"@fi ;
+  skos:related mero:m12114 ;
+  skos:related mero:m12150 ;
+  yso-meta:partOf mero:m12193 ;
+.
+mero:m12233
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m9948 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2497> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "linja-autokaistat"@fi ;
+.
+mero:m12234
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m11299 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:altLabel "metro"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c101> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "metroradat"@fi ;
+  skos:related mero:m12131 ;
+  skos:related mero:m12153 ;
+.
+mero:m12235
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  skos:altLabel "E-tiet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c67> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "Eurooppatiet"@fi ;
+.
+mero:m12236
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10269 ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p5551> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c109> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "maaliikenne"@fi ;
+  skos:related mero:m10043 ;
+  skos:related mero:m11299 ;
+.
+mero:m12237
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12110 ;
+  rdfs:subClassOf mero:m12135 ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c208> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "päävirtausputket"@fi ;
+.
+mero:m12238
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12135 ;
+  rdfs:subClassOf mero:m8486 ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:prefLabel "lentopaikanpito"@fi ;
+.
+mero:m12239
+  rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10328 ;
+  rdfs:subClassOf mero:m12116 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p994> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-63> ;
+  skos:editorialNote "Lisätty ontologiaan sanastosta 2026"@fi ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
+  skos:prefLabel "hulevesirakenteet"@fi ;
+.
 mero:m7896
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
@@ -16404,8 +18274,8 @@ mero:m7911
 .
 mero:m7914
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12082> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "Toimii yliperämiehenä tai aluksen päällikkönä työkokemuksen mukaan, vastaa miehistöstä, lastista, aluksen merikelpoisuudesta sekä yhteydenpidosta viranomaisiin"@fi ;
@@ -16413,8 +18283,8 @@ mero:m7914
 .
 mero:m7916
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1684> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "YSA"@fi ;
@@ -16422,8 +18292,8 @@ mero:m7916
 .
 mero:m7918
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "konevahtimiehet"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "konemiehet"@fi ;
@@ -16432,7 +18302,7 @@ mero:m7918
 mero:m7921
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p25585> ;
   skos:altLabel "ciiffit"@fi ;
   skos:altLabel "siiffit"@fi ;
@@ -16443,8 +18313,8 @@ mero:m7921
 mero:m7922
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17054> ;
   skos:altLabel "vahtikonemestarit"@fi ;
   skos:altLabel "vaktmaskinmästare"@sv ;
@@ -16464,16 +18334,17 @@ mero:m7924
 .
 mero:m7925
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m7916 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1684> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40047> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "matroser"@sv ;
   skos:prefLabel "matruusit"@fi ;
 .
 mero:m7926
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "poosut"@fi ;
   skos:altLabel "puosut"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -16496,8 +18367,9 @@ mero:m7927
 .
 mero:m7929
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p17077> ;
   skos:altLabel "historiallinen termi"@fi ;
   skos:altLabel "huolehti aluksen korjaamiseen liittyvistä tehtävistä"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -16506,8 +18378,8 @@ mero:m7929
 .
 mero:m7932
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "förstit"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "förstit on slangisana"@fi ;
@@ -16516,8 +18388,8 @@ mero:m7932
 .
 mero:m7933
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11026> ;
   skos:altLabel "vahtiperämiehet"@fi ;
   skos:altLabel "vaktstyrmän"@sv ;
@@ -16547,6 +18419,7 @@ mero:m7936
 mero:m7937
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11868 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p17953> ;
   skos:altLabel "kauppa-alukset"@fi ;
   skos:altLabel "lastialukset"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -16556,6 +18429,7 @@ mero:m7937
 mero:m7939
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:altLabel "kuivalastialukset"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kuivarahtialukset"@fi ;
@@ -16569,6 +18443,7 @@ mero:m7941
 mero:m7942
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "lo-lo-alukset"@fi ;
 .
@@ -16582,6 +18457,7 @@ mero:m7943
 mero:m7944
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p26291> ;
   skos:altLabel "lautat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -16631,6 +18507,7 @@ mero:m7950
 mero:m7952
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:altLabel "kylmälastialukset"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "jäähdytysalukset"@fi ;
@@ -16660,6 +18537,7 @@ mero:m7959
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
   rdfs:subClassOf mero:m7975 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:altLabel "OBO-alukset"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "monitoimibulk-alukset"@fi ;
@@ -16705,18 +18583,21 @@ mero:m7975
 mero:m7977
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "raskaskuljetusalukset"@fi ;
 .
 mero:m7978
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "proomuemälaivat"@fi ;
 .
 mero:m7979
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p15216> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "proomut"@fi ;
@@ -17091,8 +18972,9 @@ mero:m8051
 mero:m8052
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9598 ;
+  skos:altLabel "kelluvuus"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
-  skos:prefLabel "kelluvuus"@fi ;
+  skos:prefLabel "kelluvuus (aluksen ominaisuudet)"@fi ;
 .
 mero:m8053
   rdf:type mero-meta:Concept ;
@@ -17281,7 +19163,7 @@ mero:m8081
 mero:m8082
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p962> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p19234> ;
   skos:prefLabel "komposiitit"@fi ;
   skos:related mero:m8078 ;
@@ -18320,8 +20202,9 @@ mero:m8274
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17359> ;
+  skos:altLabel "telakointi"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
-  skos:prefLabel "telakointi"@fi ;
+  skos:prefLabel "telakointi (vesikulkuneuvot)"@fi ;
 .
 mero:m8275
   rdf:type mero-meta:Concept ;
@@ -18376,7 +20259,7 @@ mero:m8280
 mero:m8281
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8737> ;
   skos:note "YSA"@fi ;
   skos:prefLabel "ruoste"@fi ;
@@ -18505,7 +20388,6 @@ mero:m8297
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9787 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4220> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11460> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:note "YSA"@fi ;
@@ -18692,6 +20574,7 @@ mero:m8324
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8322 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2204> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23987> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4235> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "YSA"@fi ;
@@ -18720,11 +20603,12 @@ mero:m8327
   rdfs:subClassOf mero:m12041 ;
   rdfs:subClassOf mero:m8325 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1550> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p1551> ;
   skos:altLabel "Meri-VHF-radiopuhelimet"@fi ;
   skos:altLabel "VHF-laitteet"@fi ;
-  skos:altLabel "VHF-puhelimet"@fi ;
+  skos:altLabel "meri-VHF-laitteet"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
-  skos:prefLabel "meri-VHF-laitteet"@fi ;
+  skos:prefLabel "VHF-puhelimet"@fi ;
 .
 mero:m8328
   rdf:type mero-meta:Concept ;
@@ -18754,11 +20638,11 @@ mero:m8331
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m8324 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4235> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p13154> ;
+  skos:altLabel "radiot"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:note "YSA"@fi ;
-  skos:prefLabel "radiot"@fi ;
+  skos:prefLabel "radiot (laitteet)"@fi ;
 .
 mero:m8332
   rdf:type mero-meta:Concept ;
@@ -18790,8 +20674,8 @@ mero:m8334
 .
 mero:m8335
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "kipinät"@fi ;
   skos:altLabel "telegrafistit"@fi ;
   skos:note "kipinät on slangisana"@fi ;
@@ -18927,7 +20811,7 @@ mero:m8356
 mero:m8357
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2106> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11654> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "morseaakkoset"@fi ;
@@ -19071,8 +20955,9 @@ mero:m8380
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17807> ;
+  skos:altLabel "merikirjallisuus"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
-  skos:prefLabel "merikirjallisuus"@fi ;
+  skos:prefLabel "merikirjallisuus (kaunokirjallisuus)"@fi ;
 .
 mero:m8381
   rdf:type mero-meta:Concept ;
@@ -19080,8 +20965,9 @@ mero:m8381
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p24639> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p5977> ;
+  skos:altLabel "matkakertomukset"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
-  skos:prefLabel "matkakertomukset"@fi ;
+  skos:prefLabel "matkakertomukset (tietokirjallisuus)"@fi ;
   skos:related mero:m8380 ;
 .
 mero:m8382
@@ -19102,7 +20988,7 @@ mero:m8383
 mero:m8384
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "leveys- ja pituuspiirien ruudukko maapallon pinnalla"@fi ;
   skos:prefLabel "asteverkko"@fi ;
@@ -19318,14 +21204,14 @@ mero:m8415
 mero:m8416
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "luotauspäälliköt"@fi ;
 .
 mero:m8417
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "merenmittaajat"@fi ;
   skos:related mero:m8419 ;
@@ -19333,7 +21219,7 @@ mero:m8417
 mero:m8418
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8417 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "merenmittauspäälliköt"@fi ;
 .
@@ -19534,7 +21420,9 @@ mero:m8445
 .
 mero:m8446
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m10192 ;
   rdfs:subClassOf mero:m9617 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p20083> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4794> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p10719> ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -19623,7 +21511,7 @@ mero:m8458
 mero:m8459
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "syvyyspisteet"@fi ;
 .
@@ -19765,15 +21653,15 @@ mero:m8479
 .
 mero:m8480
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "väylämestarit"@fi ;
 .
 mero:m8481
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "väylänhoitajat"@fi ;
 .
@@ -19800,8 +21688,11 @@ mero:m8485
 .
 mero:m8486
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c136> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "väylänpito"@fi ;
   skos:related <http://www.yso.fi/onto/yso/p9047> ;
@@ -19829,10 +21720,12 @@ mero:m8489
 .
 mero:m8490
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12094 ;
   rdfs:subClassOf mero:m8494 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4676> ;
+  skos:altLabel "väylät"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
-  skos:prefLabel "väylät"@fi ;
+  skos:prefLabel "väylät (vesiliikenne)"@fi ;
 .
 mero:m8491
   rdf:type mero-meta:Concept ;
@@ -19857,9 +21750,15 @@ mero:m8493
 .
 mero:m8494
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4676> ;
+  skos:altLabel "kulkutiet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c53> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:prefLabel "kulkuväylät"@fi ;
+  skos:related mero:m10043 ;
 .
 mero:m8495
   rdf:type mero-meta:Concept ;
@@ -19915,8 +21814,9 @@ mero:m8502
 mero:m8503
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3358> ;
   skos:prefLabel "runkoväylästö"@fi ;
+  skos:related mero:m10297 ;
 .
 mero:m8504
   rdf:type mero-meta:Concept ;
@@ -19971,10 +21871,15 @@ mero:m8511
 .
 mero:m8512
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p8978> ;
+  skos:altLabel "vesiväyläalueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c39> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "väyläalueet"@fi ;
+  skos:related mero:m9859 ;
 .
 mero:m8513
   rdf:type mero-meta:Concept ;
@@ -20060,7 +21965,7 @@ mero:m8524
 mero:m8525
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kanalchefer"@sv ;
   skos:prefLabel "kanavapäälliköt"@fi ;
@@ -20075,8 +21980,8 @@ mero:m8526
 .
 mero:m8527
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "historiallinen termi"@fi ;
   skos:prefLabel "kanaldrängar"@sv ;
@@ -20084,24 +21989,24 @@ mero:m8527
 .
 mero:m8528
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kanalvakter"@sv ;
   skos:prefLabel "kanavanvartijat"@fi ;
 .
 mero:m8529
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "slussmästare"@sv ;
   skos:prefLabel "sulkumestarit"@fi ;
 .
 mero:m8530
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "slussvakter"@sv ;
   skos:prefLabel "sulkuvartijat"@fi ;
@@ -20144,9 +22049,12 @@ mero:m8535
 mero:m8536
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9859 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p767> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p3448> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c103> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:prefLabel "kanavat"@fi ;
@@ -20467,9 +22375,11 @@ mero:m8583
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11921 ;
   rdfs:subClassOf mero:m11931 ;
-  skos:altLabel "fyrfartyg, fyrskepp"@sv ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p39737> ;
+  skos:altLabel "fyrskepp"@sv ;
   skos:altLabel "majakkalaivat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
+  skos:prefLabel "fyrfartyg"@sv ;
   skos:prefLabel "majakka-alukset"@fi ;
 .
 mero:m8584
@@ -20580,16 +22490,16 @@ mero:m8598
 .
 mero:m8599
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "loistonhoitajat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "loistonvartijat"@fi ;
 .
 mero:m8601
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p24874> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "majakanvartijat"@fi ;
@@ -20610,8 +22520,8 @@ mero:m8603
 .
 mero:m8604
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "majakkamestarit"@fi ;
 .
@@ -21117,7 +23027,7 @@ mero:m8686
 mero:m8687
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13270> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "historiallinen navigointi"@fi ;
@@ -21126,7 +23036,7 @@ mero:m8687
 mero:m8688
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p6847> ;
   skos:altLabel "leveyspiiri"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -21417,8 +23327,8 @@ mero:m8743
 .
 mero:m8744
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7787> ;
   skos:altLabel "pilotit"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -21526,7 +23436,7 @@ mero:m8758
 mero:m8759
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8744 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p7787> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "luotsipäälliköt"@fi ;
@@ -21646,8 +23556,8 @@ mero:m8782
 .
 mero:m8783
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "liikennepäivystäjät"@fi ;
 .
@@ -21675,7 +23585,7 @@ mero:m8786
 mero:m8787
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14428> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "eri valvontajärjestelmien ja viranomaisten tiedoista koottu merivalvonnan kannalta tärkeä informaatio"@fi ;
   skos:prefLabel "meritilannekuva"@fi ;
@@ -21732,7 +23642,7 @@ mero:m8793
 mero:m8794
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1201> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4035> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "avovesikausi"@fi ;
 .
@@ -21920,6 +23830,7 @@ mero:m8819
 mero:m8820
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8837 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p41098> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "merenkulun turvallisuus"@fi ;
 .
@@ -22018,6 +23929,7 @@ mero:m8833
 mero:m8834
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8837 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p41098> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "meriliikenteen turvallisuus"@fi ;
 .
@@ -22039,6 +23951,7 @@ mero:m8837
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9600 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p7349> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p41098> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "meriturvallisuus"@fi ;
 .
@@ -22590,6 +24503,7 @@ mero:m8913
 mero:m8914
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8909 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40736> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "turvavaljaat"@fi ;
 .
@@ -22779,6 +24693,7 @@ mero:m8941
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40053> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "Ruotsin vallan ajalta periytynyt luotsille myönnetty oikeus kruunun verotilaan luotsausvelvollisuutta vastaan (poistettiin asetuksella vuonna 1884)"@fi ;
   skos:note "hist.termi"@fi ;
@@ -22833,7 +24748,7 @@ mero:m8948
 mero:m8949
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p15212> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p21687> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "onnettomuustutkinta"@fi ;
@@ -23033,7 +24948,6 @@ mero:m8976
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p170> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p9791> ;
   skos:prefLabel "varkaudet"@fi ;
   skos:related mero:m8975 ;
 .
@@ -23047,9 +24961,9 @@ mero:m8977
 mero:m8978
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p125> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p14> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p24028> ;
-  skos:altLabel "piratismi"@fi ;
+  skos:altLabel "piratismi (merirosvous)"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "merirosvous"@fi ;
   skos:related mero:m8975 ;
@@ -23208,7 +25122,7 @@ mero:m9002
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p11027> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
@@ -23524,9 +25438,12 @@ mero:m9046
 .
 mero:m9047
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf mero:m10231 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3310> ;
   skos:altLabel "tulliterminaalit"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "liikenneterminaalit"@fi ;
   skos:related mero:m9039 ;
@@ -23718,8 +25635,11 @@ mero:m9073
 .
 mero:m9074
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
+  rdfs:subClassOf mero:m11008 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13227> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c151> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:prefLabel "matkustajaliikenne"@fi ;
 .
 mero:m9075
@@ -23774,8 +25694,8 @@ mero:m9081
 mero:m9082
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9081 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2248> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p39574> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2245> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:prefLabel "työehtosopimukset"@fi ;
@@ -23843,7 +25763,8 @@ mero:m9091
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p277> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p27715> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p10486> ;
-  skos:prefLabel "eroosio"@fi ;
+  skos:altLabel "eroosio"@fi ;
+  skos:prefLabel "eroosio (geologia)"@fi ;
   skos:related mero:m9088 ;
 .
 mero:m9092
@@ -24141,7 +26062,7 @@ mero:m9136
 mero:m9137
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p27190> ;
   skos:note "ahtauskerroin määrittää sen tilavuuden jonka yksi tonni kyseistä lastia vaatii"@fi ;
   skos:prefLabel "ahtauskerroin"@fi ;
   skos:related mero:m9333 ;
@@ -24675,6 +26596,7 @@ mero:m9230
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8011 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p20211> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40072> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kaljaasit"@fi ;
 .
@@ -24876,6 +26798,7 @@ mero:m9268
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p9195> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p40992> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "merimiespuvut"@fi ;
 .
@@ -24965,7 +26888,7 @@ mero:m9279
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2383> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12265> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:prefLabel "polttoaineet"@fi ;
@@ -25218,9 +27141,6 @@ mero:m9315
   skos:note """lyhenne: SSAS
 
 """@fi ;
-  skos:note """lyhenne: SSAS
-
-"""@fi ;
   skos:prefLabel "aluksen turvahälytysjärjestelmät"@fi ;
 .
 mero:m9316
@@ -25235,7 +27155,7 @@ mero:m9316
 mero:m9317
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "lyhenne: SSO"@fi ;
   skos:prefLabel "alusten turvapäälliköt"@fi ;
@@ -25253,7 +27173,7 @@ mero:m9319
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9606 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p13188> ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "lyhenne: PFSO"@fi ;
   skos:prefLabel "satamien turvapäälliköt"@fi ;
@@ -25317,8 +27237,8 @@ mero:m9329
 .
 mero:m9330
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "korjausmiehet"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "konekorjausmiehet"@fi ;
@@ -25361,6 +27281,7 @@ mero:m9334
 mero:m9335
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m7937 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p17953> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p20460> ;
   skos:altLabel "tankkerit"@fi ;
   skos:altLabel "tankkialukset"@fi ;
@@ -25682,6 +27603,7 @@ mero:m9390
 mero:m9391
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11931 ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p39545> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "perinnelaivat"@fi ;
   skos:prefLabel "traditionsfartyg"@sv ;
@@ -25726,7 +27648,7 @@ mero:m9400
 mero:m9401
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1009> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8452> ;
   skos:note "Laivalla sairaanhoitaja huolehtii laivahenkilökunnan terveydenhoidosta ja matkustajien ensiavusta."@fi ;
   skos:prefLabel "sairaanhoitajat"@fi ;
@@ -25764,8 +27686,8 @@ mero:m9405
 .
 mero:m9406
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p24279> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "matkustaja-aluksen talouspuolen työntekijä, esimies"@fi ;
@@ -25827,13 +27749,13 @@ mero:m9423
 mero:m9425
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:prefLabel "myymäläpäälliköt"@fi ;
 .
 mero:m9426
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p18989> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "keittiöpäälliköt"@fi ;
@@ -25841,30 +27763,30 @@ mero:m9426
 .
 mero:m9427
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "konevahtimiehet"@fi ;
 .
 mero:m9428
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "moottorimiehet"@fi ;
 .
 mero:m9429
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "ohjelmaemännät"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "risteilyemännät"@fi ;
 .
 mero:m9430
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "ohjelmaisännät"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "risteilyisännät"@fi ;
@@ -25872,8 +27794,8 @@ mero:m9430
 .
 mero:m9437
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kerrosapulaiset"@fi ;
   skos:related mero:m9490 ;
@@ -25926,13 +27848,13 @@ mero:m9449
 .
 mero:m9450
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p18918> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
+  skos:altLabel "emännät"@fi ;
   skos:altLabel "trissat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "trissat on slangisana"@fi ;
-  skos:prefLabel "emännät"@fi ;
+  skos:prefLabel "emännät (ammattinimikkeet)"@fi ;
 .
 mero:m9452
   rdf:type mero-meta:Concept ;
@@ -25946,22 +27868,22 @@ mero:m9452
 mero:m9454
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1009> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p5161> ;
   skos:prefLabel "tarjoilijat"@fi ;
 .
 mero:m9456
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p15888> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "baarimestarit"@fi ;
 .
 mero:m9457
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p16817> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "keittiöapulaiset"@fi ;
@@ -25977,16 +27899,16 @@ mero:m9458
 .
 mero:m9465
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p14596> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "keittiömestarit"@fi ;
 .
 mero:m9466
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p9601> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "Erityisesti rahtilaivoissa (miespuolinen)"@fi ;
@@ -25995,16 +27917,16 @@ mero:m9466
 .
 mero:m9470
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "miespuolinen talousesimies ja kokki, erityisesti rahtilaivoissa"@fi ;
   skos:prefLabel "kokkistuertit"@fi ;
 .
 mero:m9471
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p18544> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "naispuolinen kokki"@fi ;
@@ -26019,8 +27941,8 @@ mero:m9472
 .
 mero:m9478
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1339> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kokit"@fi ;
@@ -26046,8 +27968,8 @@ mero:m9480
 mero:m9481
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7878> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
@@ -26071,8 +27993,8 @@ mero:m9484
 .
 mero:m9485
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "matkustaja-aluksen talousesimies" ;
   skos:prefLabel "purserit"@fi ;
@@ -26127,8 +28049,8 @@ mero:m9494
 .
 mero:m9495
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "risteilypäälliköt"@fi ;
   skos:related mero:m9430 ;
@@ -26141,8 +28063,8 @@ mero:m9497
 .
 mero:m9498
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "purserin apulaiset"@fi ;
   skos:related mero:m9485 ;
@@ -26150,7 +28072,6 @@ mero:m9498
 mero:m9499
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1009> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p6130> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p996> ;
   skos:prefLabel "myyjät"@fi ;
@@ -26158,9 +28079,9 @@ mero:m9499
 mero:m9500
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p17056> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p39695> ;
   skos:altLabel "kassat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
@@ -26168,8 +28089,8 @@ mero:m9500
 .
 mero:m9501
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "emännöitsijä"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "vanhahtava nimitys naispuolisista talouspuolen esimiehistä, erityisesti höytylaivoissa"@fi ;
@@ -26178,8 +28099,8 @@ mero:m9501
 .
 mero:m9509
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "naispuolinen kokki-stuertti"@fi ;
   skos:prefLabel "emäntä-keittäjättäret"@fi ;
@@ -26187,16 +28108,16 @@ mero:m9509
 .
 mero:m9510
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "keittäjättäret"@fi ;
   skos:related mero:m9509 ;
 .
 mero:m9514
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "messipojat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "messilikat on slangisana"@fi ;
@@ -26205,8 +28126,8 @@ mero:m9514
 .
 mero:m9518
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "messitytöt on slangisana"@fi ;
   skos:prefLabel "messitytöt"@fi ;
@@ -26246,16 +28167,16 @@ mero:m9529
 .
 mero:m9531
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "laivahuoltajat"@fi ;
   skos:related mero:m9533 ;
 .
 mero:m9533
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "messikallet"@fi ;
   skos:altLabel "messipojat"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
@@ -26282,8 +28203,8 @@ mero:m9535
 .
 mero:m9536
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   skos:altLabel "laivaselvittäjät"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "huolehtivat aluksen satamakäyntiin liittyvistä asiapapereista"@fi ;
@@ -26299,7 +28220,7 @@ mero:m9537
 mero:m9538
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p642> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "tutkamerkintää"@fi ;
   skos:prefLabel "plottaus"@fi ;
@@ -26498,7 +28419,7 @@ mero:m9570
 mero:m9571
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9613 ;
-  skos:altLabel "käytävät"@fi ;
+  skos:altLabel "käytävät (alukset)"@fi ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "kongit"@fi ;
 .
@@ -26635,14 +28556,14 @@ mero:m9587
 mero:m9588
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "alusten päälliköt"@fi ;
 .
 mero:m9590
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p26193> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p23894> ;
   skos:altLabel "kapteenit"@fi ;
   skos:altLabel "kaput"@fi ;
   skos:altLabel "kipparit"@fi ;
@@ -26655,7 +28576,7 @@ mero:m9590
 mero:m9593
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p418> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1179> ;
   skos:prefLabel "ammatit"@fi ;
 .
@@ -26732,8 +28653,8 @@ mero:m9603
 .
 mero:m9604
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p22766> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:note "veneilyn ja navigoinnin peruskoulutuksen tarjoava tutkinto" ;
@@ -26748,8 +28669,8 @@ mero:m9605
 .
 mero:m9606
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13188> ;
   skos:editorialNote "meri-käsitteet"@fi ;
   skos:prefLabel "satamatyöntekijät"@fi ;
@@ -26889,8 +28810,8 @@ mero:m9624
 .
 mero:m9625
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6756> ;
+  rdfs:subClassOf mero:m10079 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "kartiokoe"@fi ;
@@ -27000,7 +28921,7 @@ mero:m9640
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m8468 ;
   rdfs:subClassOf mero:m9619 ;
-  skos:altLabel "rakennushankkeet"@fi ;
+  skos:altLabel "rakennushankkeet (väylähankkeet)"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "rakentamishankkeet"@fi ;
 .
@@ -27153,8 +29074,11 @@ mero:m9658
 .
 mero:m9659
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c38> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "rata-alueet"@fi ;
@@ -27223,12 +29147,16 @@ mero:m9666
 .
 mero:m9667
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   skos:altLabel "liittymät"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "liittymät (liikennealueet)"@fi ;
+  skos:prefLabel "liittymät (liikenne)"@fi ;
+  skos:related mero:m9943 ;
 .
 mero:m9668
   rdf:type mero-meta:Concept ;
@@ -27244,7 +29172,7 @@ mero:m9669
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p746> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p16465> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "sideaineet"@fi ;
@@ -27301,11 +29229,16 @@ mero:m9675
 .
 mero:m9676
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m12107 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c37> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "katualueet"@fi ;
+  skos:related mero:m12202 ;
+  skos:related mero:m9742 ;
 .
 mero:m9677
   rdf:type mero-meta:Concept ;
@@ -27603,12 +29536,17 @@ mero:m9711
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10269 ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p3466> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4262> ;
+  skos:altLabel "ilmailu"@fi ;
+  skos:altLabel "lentoliikenne"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c113> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "lentoliikenne"@fi ;
+  skos:prefLabel "ilmaliikenne"@fi ;
 .
 mero:m9712
   rdf:type mero-meta:Concept ;
@@ -27637,7 +29575,7 @@ mero:m9714
 mero:m9715
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p403> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3101> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p402> ;
   skos:altLabel "konsulttiyritykset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -27700,12 +29638,16 @@ mero:m9723
 .
 mero:m9724
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9725 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p10194> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13980> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "liikennesuunnittelu"@fi ;
+  skos:related mero:m10470 ;
   skos:related <http://www.yso.fi/onto/yso/p6755> ;
 .
 mero:m9725
@@ -27850,8 +29792,12 @@ mero:m9740
 .
 mero:m9741
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9742 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  owl:equivalentClass <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c86> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c86> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "tonttikadut"@fi ;
@@ -27859,9 +29805,12 @@ mero:m9741
 mero:m9742
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p8317> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c71> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kadut"@fi ;
 .
@@ -28026,10 +29975,13 @@ mero:m9760
 mero:m9761
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p250> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p17539> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "infrastruktuuri"@fi ;
@@ -28044,8 +29996,8 @@ mero:m9762
 .
 mero:m9763
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6756> ;
+  rdfs:subClassOf mero:m10079 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "hienorakenteisen maan yksiaksaalinen puristuskoe"@fi ;
@@ -28072,16 +30024,21 @@ mero:m9765
 mero:m9766
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10014 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p9421> ;
+  skos:altLabel "raskas liikenne"@fi ;
+  skos:altLabel "raskas tieliikenne"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c118> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "raskas liikenne"@fi ;
+  skos:prefLabel "raskas ajoneuvoliikenne"@fi ;
 .
 mero:m9767
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p746> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7835> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "pinnoitteet"@fi ;
@@ -28118,7 +30075,7 @@ mero:m9773
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p261> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p605> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1401> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "luokitukset"@fi ;
@@ -28195,7 +30152,7 @@ mero:m9782
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7757> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "kemikaalit"@fi ;
@@ -28219,18 +30176,21 @@ mero:m9784
 .
 mero:m9786
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m12230 ;
+  skos:altLabel "palvelualueet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c30> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
-  skos:prefLabel "palvelualueet"@fi ;
+  skos:prefLabel "maantien palvelualueet"@fi ;
+  skos:related mero:m10203 ;
 .
 mero:m9787
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9917 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2442> ;
-  owl:equivalentClass <http://www.yso.fi/onto/yso/p4220> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "ilmaisimet"@fi ;
 .
@@ -28264,9 +30224,9 @@ mero:m9790
 .
 mero:m9791
   rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9593 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p12103> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "konsultit"@fi ;
@@ -28321,9 +30281,9 @@ mero:m9796
 mero:m9797
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m11062 ;
-  rdfs:subClassOf mero:m9593 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1179> ;
+  rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p40210> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13749> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -28331,10 +30291,14 @@ mero:m9797
 .
 mero:m9798
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9868 ;
+  skos:altLabel "vihersillat"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-66> ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "vihersillat"@fi ;
+  skos:prefLabel "vihersillat (rakenteet)"@fi ;
 .
 mero:m9799
   rdf:type mero-meta:Concept ;
@@ -28428,13 +30392,17 @@ mero:m9809
 .
 mero:m9810
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m12236 ;
   rdfs:subClassOf mero:m9619 ;
-  rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p5551> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p6244> ;
   skos:altLabel "kiskoliikenne"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c110> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "raideliikenne"@fi ;
+  skos:related mero:m11299 ;
 .
 mero:m9811
   rdf:type mero-meta:Concept ;
@@ -28575,16 +30543,21 @@ mero:m9826
 mero:m9827
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10043 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1210> ;
+  owl:equivalentClass <http://www.yso.fi/onto/yso/p19170> ;
+  skos:altLabel "metsäautotiet"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c154> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "metsäautotiet"@fi ;
+  skos:prefLabel "metsätiet"@fi ;
 .
 mero:m9828
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1433> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2360> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "jätteet"@fi ;
@@ -28655,7 +30628,6 @@ mero:m9836
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p570> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p16922> ;
-  skos:altLabel "käyttöikä"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "elinkaari"@fi ;
 .
@@ -28680,6 +30652,7 @@ mero:m9839
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10828 ;
   rdfs:subClassOf mero:m9619 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4684> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4685> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4683> ;
   skos:altLabel "rattijuopumus"@fi ;
@@ -28698,21 +30671,27 @@ mero:m9840
 .
 mero:m9841
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p1751> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "liikenteenohjaussuunnitelmat"@fi ;
 .
 mero:m9843
-  rdf:type mero-meta:Concept ;
-  rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p347> ;
+  rdf:type mero-meta:DeprecatedConcept ;
+  rdfs:subClassOf mero-meta:deprecatedConcepts ;
+  owl:deprecated "true"^^xsd:boolean ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "lentokoneiden varalaskupaikat"@fi ;
-  skos:related mero:m10043 ;
-  skos:related mero:m9711 ;
+  yso-meta:comment "deprecated on 2026-06-29"^^xsd:string ;
+  yso-meta:deprecatedAssociativeRelation mero:m10043 ;
+  yso-meta:deprecatedAssociativeRelation mero:m9711 ;
+  yso-meta:deprecatedReplacedBy mero:m10978 ;
+  yso-meta:deprecatedSubClassOf <http://www.yso.fi/onto/yso/p347> ;
 .
 mero:m9844
   rdf:type mero-meta:Concept ;
@@ -28843,7 +30822,7 @@ mero:m9858
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p746> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4938> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "lisäaineet"@fi ;
@@ -28851,16 +30830,21 @@ mero:m9858
 mero:m9859
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10297 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p767> ;
+  skos:altLabel "vesiliikenneväylät"@fi ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c102> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
+  skos:hiddenLabel "kulkuväylät"@fi ;
   skos:prefLabel "vesiväylät"@fi ;
 .
 mero:m9860
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6080> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p41133> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p28446> ;
   skos:altLabel "YVA"@fi ;
   skos:altLabel "ympäristövaikutusarviointi"@fi ;
@@ -28880,10 +30864,13 @@ mero:m9861
 .
 mero:m9862
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m8494 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p4676> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4674> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c12> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "reitit"@fi ;
 .
@@ -29145,7 +31132,7 @@ mero:m9895
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9868 ;
   skos:editorialNote "tie-käsitteet"@fi ;
-  skos:prefLabel "kaarisillat"@fi ;
+  skos:prefLabel "kaarisillat (rakenteet)"@fi ;
 .
 mero:m9896
   rdf:type mero-meta:Concept ;
@@ -29230,8 +31217,8 @@ mero:m9906
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p1435> ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p396> ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p746> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p1741> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "rakennusaineet"@fi ;
@@ -29290,7 +31277,7 @@ mero:m9913
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3132> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p6851> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "vakavuusanalyysit"@fi ;
 .
@@ -29366,10 +31353,13 @@ mero:m9922
 .
 mero:m9923
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p7366> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c174> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "ojat"@fi ;
 .
@@ -29440,8 +31430,11 @@ mero:m9930
 .
 mero:m9931
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9742 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p8317> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c85> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "kokoojakadut"@fi ;
@@ -29501,10 +31494,13 @@ mero:m9937
 .
 mero:m9938
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12116 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p4058> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p4057> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/b4064c65/c-2> ;
+  skos:editorialNote "Väyläsanasto: viheralueet"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "viheralueet"@fi ;
 .
@@ -29513,7 +31509,7 @@ mero:m9939
   rdfs:subClassOf mero:m11062 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p5268> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p2181> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p13210> ;
   skos:editorialNote "rata-yhteiset"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
@@ -29551,9 +31547,12 @@ mero:m9942
 .
 mero:m9943
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p3311> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c36> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tiealueet"@fi ;
 .
@@ -29600,12 +31599,17 @@ mero:m9947
 mero:m9948
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m10297 ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p2498> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p2497> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c163> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "ajokaistat"@fi ;
-  skos:related mero:m10296 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m12193 ;
+  yso-meta:partOf mero:m10296 ;
 .
 mero:m9949
   rdf:type mero-meta:Concept ;
@@ -29698,7 +31702,7 @@ mero:m9960
   rdf:type mero-meta:Concept ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p25074> ;
+  rdfs:subClassOf <http://www.yso.fi/onto/yso/p13830> ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "pysäköintilaitokset"@fi ;
 .
@@ -29794,12 +31798,19 @@ mero:m9972
 .
 mero:m9973
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
   rdfs:subClassOf mero:m9623 ;
   rdfs:subClassOf <http://www.yso.fi/onto/yso/p880> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c41> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:editorialNote "työryhmän ehdotus"@fi ;
   skos:prefLabel "näkemäalueet"@fi ;
   skos:related mero:m10203 ;
+  skos:related mero:m10297 ;
+  skos:related mero:m10641 ;
+  skos:related mero:m10662 ;
+  skos:related mero:m9742 ;
 .
 mero:m9974
   rdf:type mero-meta:Concept ;
@@ -29821,12 +31832,18 @@ mero:m9975
 .
 mero:m9976
   rdf:type mero-meta:Concept ;
+  rdfs:subClassOf mero:m12097 ;
+  rdfs:subClassOf mero:m8486 ;
   rdfs:subClassOf mero:m9619 ;
   rdfs:subClassOf mero:m9623 ;
-  rdfs:subClassOf <http://www.yso.fi/onto/yso/p38217> ;
   owl:equivalentClass <http://www.yso.fi/onto/yso/p720> ;
+  skos:closeMatch <https://iri.suomi.fi/terminology/liikenneinfrastruktuuri/c137> ;
+  skos:editorialNote "Liikenneinfrastruktuurin sanasto"@fi ;
   skos:editorialNote "tie-käsitteet"@fi ;
   skos:prefLabel "tienpito"@fi ;
+  skos:related mero:m10203 ;
+  skos:related mero:m10498 ;
+  skos:related mero:m10662 ;
 .
 mero:m9977
   rdf:type mero-meta:Concept ;
