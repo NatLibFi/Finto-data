@@ -1,0 +1,134 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ekss: <http://ldf.fi/schema/ekso/> .
+@prefix ekso-meta: <http://www.yso.fi/onto/ekso-meta/> .
+@prefix ekso: <http://www.yso.fi/onto/ekso/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ekso-meta:ThematicGroup
+  rdf:type owl:Class ;
+.
+ekso-meta:hasThematicGroup
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ekso-meta:Concept ;
+  rdfs:label "kuuluu temaattiseen ryhmään"@en ;
+  rdfs:range ekso-meta:ThematicGroup ;
+.
+ekso-meta:AggregateConcept
+  rdf:type owl:Class ;
+  rdfs:subClassOf ekso-meta:Class ;
+.
+ekso-meta:Class
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Class ;
+.
+ekso-meta:Concept
+  rdf:type owl:Class ;
+  rdfs:subClassOf ekso-meta:Class ;
+.
+ekso-meta:Hierarchy
+  rdf:type owl:Class ;
+  rdfs:subClassOf ekso-meta:Class ;
+.
+ekso-meta:GroupConcept
+  rdf:type owl:Class ;
+  rdfs:subClassOf ekso-meta:Class ;
+.
+ekso-meta:StructuringClass
+  rdf:type owl:Class ;
+  rdfs:subClassOf ekso-meta:Class ;
+  rdfs:comment "Apuluokat, jota eivät kuulu itse ontologiaan."@fi ;
+.
+ekso-meta:status
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "status"@en, "tila"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:cu
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup ;
+  rdfs:label "cu"@en, "cu"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:type
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "type"@en, "type"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:dt
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "dt"@en, "dt"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:date
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "date"@en, "date"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:source
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "source"@en, "source"@fi ;
+  rdfs:range xsd:string ;
+.
+ekso-meta:svLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ekso-meta:Concept , ekso-meta:ThematicGroup;
+  rdfs:label "svLabel"@en ;
+  rdfs:range xsd:string ;
+  rdfs:comment "RIIKINRUOTSALAINEN VASTINE"@fi ;
+.
+
+dct:date
+    dct:description "Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF]."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#dateT-001> ;
+    dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+dct:modified
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#modified-003> ;
+    dct:issued "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "Date on which the resource was changed."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "Date Modified"@en ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date>, dct:date .
+
+dc:source
+    dct:description "The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#source-006> ;
+    dct:issued "1999-07-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "A related resource from which the described resource is derived."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+    rdfs:label "Source"@en ;
+    skos:note "A second property with the same name as this property has been declared in the dct: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en .
+
+dc:type
+    dct:description "Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#type-006> ;
+    dct:issued "1999-07-02"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a rdf:Property ;
+    rdfs:comment "The nature or genre of the resource."@en ;
+    rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+    rdfs:label "Type"@en ;
+    skos:note "A second property with the same name as this property has been declared in the dct: namespace (http://purl.org/dc/terms/).  See the Introduction to the document \"DCMI Metadata Terms\" (http://dublincore.org/documents/dcmi-terms/) for an explanation."@en .

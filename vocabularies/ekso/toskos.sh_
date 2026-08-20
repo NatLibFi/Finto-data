@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Skosify installed with "sudo pip3 install --upgrade skosify"
+
+INFILES="ekso_julkaisu.ttl ekso-meta.ttl ekso-meta_publish.ttl  ysoKehitys-2025.2-Kant_thematicGroupsRemoved.ttl"
+OUTFILE=ekso-skos.ttl
+
+CONFFILE="finnonto.cfg"
+LOGFILE=skosify.log
+
+#skosify -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+
+source /home/tskadmin/ontology/python3venv/bin/activate
+~/ontology/python3venv/bin/python3 ~/ontology/SKOSIFY/Skosify-master/skosify.py -D -c $CONFFILE $INFILES -o $OUTFILE 2>$LOGFILE
+deactivate

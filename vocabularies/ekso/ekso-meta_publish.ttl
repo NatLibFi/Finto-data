@@ -1,0 +1,78 @@
+@prefix ekso: <http://www.yso.fi/onto/ekso/> .
+@prefix ekso-meta: <http://www.yso.fi/onto/ekso-meta/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix yso: <http://www.yso.fi/onto/yso/> .
+@prefix yso-meta: <http://www.yso.fi/onto/yso-meta/> .
+
+ekso: a skos:ConceptScheme ;
+    dc:publisher "National Library of Finland"@en,
+        "Kansalliskirjasto"@fi,
+        "Nationalbiblioteket i Finland"@sv ;
+    dc:creator 
+		
+        "Eduskunnan kirjasto"@fi ,
+        "Riksdagsbiblioteket"@sv ,
+        "Library of Parliament"@en, 
+
+        "Sanastokeskus"@fi ,
+        "Terminologicentralen"@sv ,
+        "The Finnish Terminology Centre"@en ,
+
+        "Kansalliskirjasto"@fi ,
+        "Nationalbiblioteket i Finland"@sv ,
+        "National Library of Finland"@en ,
+
+        "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi,
+        "Forskningsgruppen för semantisk beräkning (SeCo)"@sv,
+        "Semantic Computing Research Group (SeCo)"@en
+        
+        ;
+
+    dc:title "EKSO – Eduskunnan kirjaston ontologia"@fi,
+        "EKSO – Riksdagsbibliotekets ontologi"@sv,
+        "EKSO – The Library of Parliament's ontology"@en ;
+
+    dc:description
+
+"""EKSO on eduskunnan kirjaston asiasanaston (EKS) pohjalta muodostettu erikoisontologia. Eduskunnan kirjaston asiasanasto on perustettu jo 1930-luvulla (aluksi asialuettelo) ja sitä on käytetty eduskunnan kirjaston aineiston sisällönkuvailussa. Asiasanasto sisältää asiasanoja eduskuntatiedon, oikeudellisen tiedon ja yhteiskuntatiedon aloilta.
+
+Eduskunnan kirjaston asiasanaston ontologisointi suoritettiin yhteistyössä eduskunnan kirjaston asiantuntijoiden ja Sanastokeskuksen kanssa vuosina 2025-2026.  Eduskunnan kirjaston ontologiassa on noin 4000 käsitettä, jotka on sijoitettu Yleisen suomalaisen ontologian (YSO) mukaiseen hierarkiaan.
+"""@fi ,
+
+"""EKSO är en specialontologi baserad på Riksdagsbibliotekets ämnesordslista (EKS). Riksdagsbibliotekets ämnesordslista etablerades redan på 1930-talet, från början som en ämneskatalog, och har använts för att beskriva innehållet i bibliotekets material. Ämnesordslistan innehåller ämnesord inom områdena parlamentarisk information, juridisk information och samhällsinformation.
+
+Ontologiseringen av Riksdagsbibliotekets ämnesordslista genomfördes i samarbete med experter från Riksdagsbiblioteket och Terminologicentralen under perioden 2025–2026. Riksdagsbibliotekets ontologi innehåller cirka 4 000 begrepp organiserade i en hierarki enligt den allmänna finska ontologin YSO.
+"""@sv ,
+
+"""EKSO is a special ontology based on the Library of Parliament's thesaurus (EKS). The Library of Parliament's thesaurus was established as early as the 1930s (initially as a subject catalogue) and has been used to describe the content of the Library of Parliament's collections. The thesaurus includes subject headings from the fields of parliamentary information, legal information and social information.
+
+The ontologization of the Library of Parliament's thesaurus was carried out in cooperation with experts from the Library of Parliament and the Finnish Terminology Centre in 2025–2026. The Library of Parliament's ontology contains approximately 4,000 concepts, which are organized in a hierarchy according to the General Finnish Ontology (YSO).
+"""@en ;
+
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:relation <http://www.yso.fi/onto/yso/> ;
+    foaf:homepage <https://www.eduskunta.fi/kirjasto/EKS/> .
+
+ekso-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "EKSO-käsite"@fi, 
+        "EKSO-begrepp"@sv, 
+        "EKSO Concept"@en .
+
+ekso-meta:Hierarchy a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Hierarchical EKSO concept"@en, 
+        "Hierarkisoiva EKSO-käsite"@fi, 
+        "Hierarkiserande EKSO-begrepp"@sv .
+
+yso-meta:Concept a owl:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "YSO-käsite"@fi,
+        "ALLFO-begrepp"@sv,
+        "YSO Concept"@en .
