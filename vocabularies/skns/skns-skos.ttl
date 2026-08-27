@@ -5,9 +5,8 @@
 @prefix skns: <http://www.yso.fi/onto/skns/> .
 @prefix sknsmeta: <http://www.yso.fi/onto/sknsmeta/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
-
-sknsmeta:NoteLabel  rdf:type  rdfs:Class .
 
 skns:p1010006  rdf:type    skos:Concept ;
         rdf:type           sknsmeta:Concept ;
@@ -432,15 +431,6 @@ sknsmeta:glottologSource
         rdf:type    rdf:Property ;
         rdfs:label  "Glottolog-koodin lähde"@fi .
 
-sknsmeta:literalForm  rdf:type  rdf:Property ;
-        rdfs:domain  sknsmeta:NoteLabel ;
-        rdfs:range   rdf:langString .
-
-sknsmeta:sensitiveLanguageNameNote
-        rdf:type     rdf:Property ;
-        rdfs:domain  skns:Concept ;
-        rdfs:range   sknsmeta:NoteLabel .
-
 sknsmeta:silCode  rdf:type  rdf:Property ;
         rdfs:label  "ISO 639-3 -koodi"@fi .
 
@@ -643,11 +633,16 @@ skns:afs  rdf:type                skos:Concept ;
         skos:hiddenLabel          "seminoli"@fi ;
         skos:note                 "Nimeen afroseminolilainen kreoli sisältyvällä sanalla seminole ~ seminoli on kielteinen merkitys, mutta vaihtoehtoa suomen kieleen ei ole, sillä määrite mascogo- on merkitykseltään liian suppea."@fi ;
         skos:prefLabel            "afroseminolilainen kreoli"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/afs#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "afro1254" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/afro1254> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "afs" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/afs> .
+
+<http://www.yso.fi/onto/skns/afs#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "afroseminolilainen kreoli"@fi .
 
 skns:aga  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -4310,11 +4305,16 @@ skns:cuy  rdf:type                skos:Concept ;
         skos:hiddenLabel          "kuitlateko"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "cuitlatek"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/cuy#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "cuit1236" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/cuit1236> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "cuy" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/cuy> .
+
+<http://www.yso.fi/onto/skns/cuy#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "cuitlatek"@fi .
 
 skns:cvn  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -11475,6 +11475,11 @@ skns:p1020171  rdf:type  skos:Concept ;
         skos:broader    skns:p1020166 ;
         skos:prefLabel  "joki-yumalaiset kielet"@fi .
 
+<http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "comecrudolaiset kielet"@fi .
+
 skns:p1020189  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
         skos:closeMatch             yso:p40653 ;
@@ -11483,8 +11488,23 @@ skns:p1020189  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "guaycurulaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "guyacurulainen kieli" .
+
+<http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "guaycurulaiset kielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "eteläguaycurulaiset kielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "witotolaiset kielet"@fi .
 
 skns:p1020217  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
@@ -12764,7 +12784,12 @@ skns:p1030954  rdf:type   skos:Concept ;
         skos:hiddenLabel  "Tamazight"@fi ;
         skos:hiddenLabel  "tamazightkielet"@fi ;
         skos:prefLabel    "berberikielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001> .
+
+<http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "berberikielet"@fi .
 
 skns:p1030968  rdf:type   skos:Concept ;
         rdf:type          sknsmeta:Concept ;
@@ -17652,11 +17677,16 @@ skns:tob  rdf:type                skos:Concept ;
         skos:hiddenLabel          "topa"@fi ;
         skos:note                 "Nimi toba saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole. Nimi on myös paikallisten kielenpuhujien käytössä."@fi ;
         skos:prefLabel            "toba"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/tob#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "toba1269" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/toba1269> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "tob" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/tob> .
+
+<http://www.yso.fi/onto/skns/tob#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "toba"@fi .
 
 skns:toc  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -19499,11 +19529,16 @@ skns:xcm  rdf:type                skos:Concept ;
         skos:hiddenLabel          "comecrudon kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "comecrudo"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/xcm#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "come1251" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/come1251> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "xcm" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/xcm> .
+
+<http://www.yso.fi/onto/skns/xcm#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "comecrudo"@fi .
 
 skns:xcn  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -24644,18 +24679,18 @@ skns:p1020176  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä comecrudolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "comecrudolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "comecrudolainen kieli" .
 
-skns:p1020190  rdf:type  skos:Concept ;
-        rdf:type        sknsmeta:Concept ;
-        skos:broader    skns:p1020189 ;
-        skos:narrower   skns:axb ;
-        skos:narrower   skns:kbc ;
-        skos:narrower   skns:p1020191 ;
-        skos:note       "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
-        skos:prefLabel  "eteläguaycurulaiset kielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+skns:p1020190  rdf:type   skos:Concept ;
+        rdf:type          sknsmeta:Concept ;
+        skos:broader      skns:p1020189 ;
+        skos:narrower     skns:axb ;
+        skos:narrower     skns:kbc ;
+        skos:narrower     skns:p1020191 ;
+        skos:note         "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
+        skos:prefLabel    "eteläguaycurulaiset kielet"@fi ;
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001> .
 
 skns:p1020191  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
@@ -24686,7 +24721,7 @@ skns:p1020209  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä witotolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "witotolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "witotolainen kieli" .
 
 skns:p1020260  rdf:type   skos:Concept ;
@@ -25811,10 +25846,6 @@ skns:p1031380  rdf:type   skos:Concept ;
         skos:narrower     skns:p1031538 ;
         skos:prefLabel    "oseanialaiset kielet"@fi .
 
-sknsmeta:SensitiveNameNoteLabel
-        rdf:type              sknsmeta:NoteLabel ;
-        sknsmeta:literalForm  "Ensisijainen termi saattaa olla loukkaava"@fi .
-
 skns:p1020478  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
         skos:broader    skns:p1020476 ;
@@ -26552,9 +26583,8 @@ sknsmeta:Concept  rdf:type  owl:Class ;
 @prefix skns: <http://www.yso.fi/onto/skns/> .
 @prefix sknsmeta: <http://www.yso.fi/onto/sknsmeta/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
-
-sknsmeta:NoteLabel  rdf:type  rdfs:Class .
 
 skns:p1010006  rdf:type    skos:Concept ;
         rdf:type           sknsmeta:Concept ;
@@ -26638,7 +26668,7 @@ skns:p1020176  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä comecrudolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "comecrudolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "comecrudolainen kieli" .
 
 skns:p1020181  rdf:type             skos:Concept ;
@@ -26670,7 +26700,7 @@ skns:p1020209  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä witotolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "witotolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "witotolainen kieli" .
 
 skns:p1020217  rdf:type             skos:Concept ;
@@ -27105,15 +27135,6 @@ sknsmeta:glottologSource
         rdf:type    rdf:Property ;
         rdfs:label  "Glottolog-koodin lähde"@fi .
 
-sknsmeta:literalForm  rdf:type  rdf:Property ;
-        rdfs:domain  sknsmeta:NoteLabel ;
-        rdfs:range   rdf:langString .
-
-sknsmeta:sensitiveLanguageNameNote
-        rdf:type     rdf:Property ;
-        rdfs:domain  skns:Concept ;
-        rdfs:range   sknsmeta:NoteLabel .
-
 sknsmeta:silCode  rdf:type  rdf:Property ;
         rdfs:label  "ISO 639-3 -koodi"@fi .
 
@@ -27363,11 +27384,16 @@ skns:apk  rdf:type                skos:Concept ;
         skos:hiddenLabel          "tasankoapacen kieli"@fi ;
         skos:note                 "Nimi apache saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole. Kansa käyttää nimeä itse."@fi ;
         skos:prefLabel            "tasankoapache"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/apk#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "kiow1264" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/kiow1264> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "apk" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/apk> .
+
+<http://www.yso.fi/onto/skns/apk#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "tasankoapache"@fi .
 
 skns:apl  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -27453,11 +27479,16 @@ skns:apw  rdf:type                skos:Concept ;
         skos:hiddenLabel          "ndee biyati"@fi ;
         skos:note                 "Nimi apache saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole. Kansa käyttää nimeä itse."@fi ;
         skos:prefLabel            "länsiapache"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/apw#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "west2615" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/west2615> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "apw" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/apw> .
+
+<http://www.yso.fi/onto/skns/apw#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "länsiapache"@fi .
 
 skns:aqp  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -31481,6 +31512,11 @@ skns:p1020168  rdf:type  skos:Concept ;
         skos:broader    skns:p1020166 ;
         skos:prefLabel  "kalifornianyumalaiset kielet"@fi .
 
+<http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "comecrudolaiset kielet"@fi .
+
 skns:p1020189  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
         skos:closeMatch             yso:p40653 ;
@@ -31489,13 +31525,28 @@ skns:p1020189  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "guaycurulaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "guyacurulainen kieli" .
+
+<http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "guaycurulaiset kielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "eteläguaycurulaiset kielet"@fi .
 
 skns:p1020191  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
         skos:broader    skns:p1020190 ;
         skos:prefLabel  "qomkielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "witotolaiset kielet"@fi .
 
 skns:p1020245  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
@@ -32979,7 +33030,12 @@ skns:p1030954  rdf:type   skos:Concept ;
         skos:hiddenLabel  "Tamazight"@fi ;
         skos:hiddenLabel  "tamazightkielet"@fi ;
         skos:prefLabel    "berberikielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001> .
+
+<http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "berberikielet"@fi .
 
 skns:p1030968  rdf:type   skos:Concept ;
         rdf:type          sknsmeta:Concept ;
@@ -34253,11 +34309,16 @@ skns:scs  rdf:type                skos:Concept ;
         skos:hiddenLabel          "slevi"@fi ;
         skos:note                 "Makrokieli on slevi. Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "pohjoisslevi"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/scs#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "nort2942" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/nort2942> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "scs" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/scs> .
+
+<http://www.yso.fi/onto/skns/scs#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "pohjoisslevi"@fi .
 
 skns:sec  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -35826,11 +35887,16 @@ skns:xsl  rdf:type                skos:Concept ;
         skos:hiddenLabel          "slevi"@fi ;
         skos:note                 "Makrokieli on slevi. Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "eteläslevi"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/xsl#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "sout2959" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/sout2959> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "xsl" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/xsl> .
+
+<http://www.yso.fi/onto/skns/xsl#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "eteläslevi"@fi .
 
 skns:xso  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -36004,11 +36070,16 @@ skns:yuk  rdf:type                skos:Concept ;
         skos:hiddenLabel          "yukin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "yuki"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/yuk#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "yuki1243" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/yuki1243> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "yuk" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/yuk> .
+
+<http://www.yso.fi/onto/skns/yuk#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "yuki"@fi .
 
 skns:yum  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -36252,13 +36323,13 @@ skns:p1020170  rdf:type  skos:Concept ;
         skos:narrower   skns:yuf ;
         skos:prefLabel  "paikielet"@fi .
 
-skns:p1020190  rdf:type  skos:Concept ;
-        rdf:type        sknsmeta:Concept ;
-        skos:broader    skns:p1020189 ;
-        skos:narrower   skns:p1020191 ;
-        skos:note       "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
-        skos:prefLabel  "eteläguaycurulaiset kielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+skns:p1020190  rdf:type   skos:Concept ;
+        rdf:type          sknsmeta:Concept ;
+        skos:broader      skns:p1020189 ;
+        skos:narrower     skns:p1020191 ;
+        skos:note         "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
+        skos:prefLabel    "eteläguaycurulaiset kielet"@fi ;
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001> .
 
 skns:p1020244  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
@@ -38571,10 +38642,6 @@ skns:p1010083  rdf:type  skos:Concept ;
         skos:narrower   skns:wyn ;
         skos:prefLabel  "pohjoiset irokeesikielet"@fi .
 
-sknsmeta:SensitiveNameNoteLabel
-        rdf:type              sknsmeta:NoteLabel ;
-        sknsmeta:literalForm  "Ensisijainen termi saattaa olla loukkaava"@fi .
-
 skns:p1010003  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
         skos:broader    skns:p1010001 ;
@@ -38838,9 +38905,8 @@ sknsmeta:Concept  rdf:type  owl:Class ;
 @prefix skns: <http://www.yso.fi/onto/skns/> .
 @prefix sknsmeta: <http://www.yso.fi/onto/sknsmeta/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
-
-sknsmeta:NoteLabel  rdf:type  rdfs:Class .
 
 skns:p1010006  rdf:type    skos:Concept ;
         rdf:type           sknsmeta:Concept ;
@@ -39025,7 +39091,7 @@ skns:p1020176  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä comecrudolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "comecrudolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "comecrudolainen kieli" .
 
 skns:p1020181  rdf:type             skos:Concept ;
@@ -39057,7 +39123,7 @@ skns:p1020209  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä witotolaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "witotolaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "witotolainen kieli" .
 
 skns:p1020217  rdf:type             skos:Concept ;
@@ -39212,15 +39278,6 @@ sknsmeta:glottologCode
 sknsmeta:glottologSource
         rdf:type    rdf:Property ;
         rdfs:label  "Glottolog-koodin lähde"@fi .
-
-sknsmeta:literalForm  rdf:type  rdf:Property ;
-        rdfs:domain  sknsmeta:NoteLabel ;
-        rdfs:range   rdf:langString .
-
-sknsmeta:sensitiveLanguageNameNote
-        rdf:type     rdf:Property ;
-        rdfs:domain  skns:Concept ;
-        rdfs:range   sknsmeta:NoteLabel .
 
 sknsmeta:silCode  rdf:type  rdf:Property ;
         rdfs:label  "ISO 639-3 -koodi"@fi .
@@ -40296,11 +40353,16 @@ skns:aib  rdf:type                skos:Concept ;
         skos:hiddenLabel          "šäyxil"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "ainu (Kiina, Taiwan)"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/aib#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "ainu1251" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/ainu1251> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "aib" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/aib> .
+
+<http://www.yso.fi/onto/skns/aib#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "ainu (Kiina, Taiwan)"@fi .
 
 skns:aih  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -42694,11 +42756,16 @@ skns:bei  rdf:type                skos:Concept ;
         skos:hiddenLabel          "riuk bekati"@fi ;
         skos:note                 "Nimi bakati tai bekati saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "bakati"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/bei#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "beka1241" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/beka1241> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "bei" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/bei> .
+
+<http://www.yso.fi/onto/skns/bei#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "bakati"@fi .
 
 skns:ben  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -43021,11 +43088,16 @@ skns:bgb  rdf:type                skos:Concept ;
         skos:hiddenLabel          "masama"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "bobongko"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/bgb#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "bobo1255" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/bobo1255> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "bgb" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/bgb> .
+
+<http://www.yso.fi/onto/skns/bgb#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "bobongko"@fi .
 
 skns:bgc  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -45448,11 +45520,16 @@ skns:bvt  rdf:type                skos:Concept ;
         skos:hiddenLabel          "indonesianbati"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "bati (Indonesia)"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/bvt#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "bati1253" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/bati1253> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "bvt" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/bvt> .
+
+<http://www.yso.fi/onto/skns/bvt#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "bati (Indonesia)"@fi .
 
 skns:bvu  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -45703,11 +45780,16 @@ skns:byd  rdf:type                skos:Concept ;
         skos:hiddenLabel          "benyadun kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "benyadu"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/byd#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "beny1237" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/beny1237> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "byd" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/byd> .
+
+<http://www.yso.fi/onto/skns/byd#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "benyadu"@fi .
 
 skns:byh  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -45962,11 +46044,16 @@ skns:cbk  rdf:type                skos:Concept ;
         skos:hiddenLabel          "chavacanon kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "chavacano"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/cbk#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "chav1241" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/chav1241> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "cbk" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/cbk> .
+
+<http://www.yso.fi/onto/skns/cbk#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "chavacano"@fi .
 
 skns:cbl  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -48930,11 +49017,16 @@ skns:dub  rdf:type                skos:Concept ;
         skos:hiddenLabel          "dublin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "dubli"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/dub#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "dubl1239" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/dubl1239> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "dub" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/dub> .
+
+<http://www.yso.fi/onto/skns/dub#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "dubli"@fi .
 
 skns:due  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -49345,11 +49437,16 @@ skns:ekl  rdf:type                skos:Concept ;
         skos:hiddenLabel          "kolin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "kol (Bangladesh, Intia)"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/ekl#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "kolb1241" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/kolb1241> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "ekl" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/ekl> .
+
+<http://www.yso.fi/onto/skns/ekl#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "kol (Bangladesh, Intia)"@fi .
 
 skns:eky  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -49558,11 +49655,16 @@ skns:eno  rdf:type                skos:Concept ;
         skos:hiddenLabel          "enkkano"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "enggano"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/eno#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "engg1245" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/engg1245> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "eno" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/eno> .
+
+<http://www.yso.fi/onto/skns/eno#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "enggano"@fi .
 
 skns:enr  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -55455,11 +55557,16 @@ skns:kft  rdf:type                skos:Concept ;
         skos:hiddenLabel          "kanjarin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "kanjari"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kft#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "kanj1259" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/kanj1259> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kft" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kft> .
+
+<http://www.yso.fi/onto/skns/kft#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "kanjari"@fi .
 
 skns:kfu  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -56544,11 +56651,16 @@ skns:kkg  rdf:type                skos:Concept ;
         skos:hiddenLabel          "pohjoiskalinga"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "mabakavalleynkalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kkg#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "maba1279" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/maba1279> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kkg" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kkg> .
+
+<http://www.yso.fi/onto/skns/kkg#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "mabakavalleynkalinga"@fi .
 
 skns:kkh  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -56853,11 +56965,16 @@ skns:kmd  rdf:type                skos:Concept ;
         skos:hiddenLabel          "majukayang kalingan kieli"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "majukayang kalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kmd#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "madu1248" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/madu1248> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kmd" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kmd> .
+
+<http://www.yso.fi/onto/skns/kmd#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "majukayang kalinga"@fi .
 
 skns:kmj  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -56892,11 +57009,16 @@ skns:kmk  rdf:type                skos:Concept ;
         skos:hiddenLabel          "limosinkalingan kieli"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "limosinkalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kmk#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "limo1248" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/limo1248> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kmk" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kmk> .
+
+<http://www.yso.fi/onto/skns/kmk#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "limosinkalinga"@fi .
 
 skns:kml  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -56911,11 +57033,16 @@ skns:kml  rdf:type                skos:Concept ;
         skos:hiddenLabel          "tanudaninkalingan kieli"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "tanudaninkalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kml#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "lowe1412" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/lowe1412> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kml" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kml> .
+
+<http://www.yso.fi/onto/skns/kml#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "tanudaninkalinga"@fi .
 
 skns:kmm  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -57008,11 +57135,16 @@ skns:knb  rdf:type                skos:Concept ;
         skos:hiddenLabel          "lubuakaninkalingan kieli"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "lubuaganinkalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/knb#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "lubu1243" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/lubu1243> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "knb" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/knb> .
+
+<http://www.yso.fi/onto/skns/knb#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "lubuaganinkalinga"@fi .
 
 skns:knd  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -58457,11 +58589,16 @@ skns:kyb  rdf:type                skos:Concept ;
         skos:hiddenLabel          "kalinga"@fi ;
         skos:note                 "Nimi kalinga saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "butbut kalinga"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kyb#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "butb1235" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/butb1235> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kyb" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kyb> .
+
+<http://www.yso.fi/onto/skns/kyb#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "butbut kalinga"@fi .
 
 skns:kyd  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -58694,11 +58831,16 @@ skns:kzf  rdf:type                skos:Concept ;
         skos:hiddenLabel          "länsikaili"@fi ;
         skos:note                 "Nimi daa saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "daa kaili"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/kzf#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "daak1235" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/daak1235> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "kzf" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/kzf> .
+
+<http://www.yso.fi/onto/skns/kzf#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "daa kaili"@fi .
 
 skns:kzg  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -59033,11 +59175,16 @@ skns:law  rdf:type                skos:Concept ;
         skos:hiddenLabel          "laujen kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "lauje"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/law#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "lauj1238" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/lauj1238> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "law" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/law> .
+
+<http://www.yso.fi/onto/skns/law#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "lauje"@fi .
 
 skns:lax  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -59497,11 +59644,16 @@ skns:lew  rdf:type                skos:Concept ;
         skos:hiddenLabel          "ledo kailin kieli"@fi ;
         skos:note                 "Nimi ledo saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "ledo kaili"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/lew#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "ledo1238" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/ledo1238> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "lew" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/lew> .
+
+<http://www.yso.fi/onto/skns/lew#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "ledo kaili"@fi .
 
 skns:lex  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -59840,11 +59992,16 @@ skns:liw  rdf:type                skos:Concept ;
         skos:hiddenLabel          "malaiji"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole. Makrokieli on malaiji."@fi ;
         skos:prefLabel            "col"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/liw#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "coll1240" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/coll1240> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "liw" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/liw> .
+
+<http://www.yso.fi/onto/skns/liw#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "col"@fi .
 
 skns:lix  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -60423,11 +60580,16 @@ skns:lra  rdf:type                skos:Concept ;
         skos:hiddenLabel          "rarabakatik"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "rara bakati"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/lra#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "rara1235" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/rara1235> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "lra" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/lra> .
+
+<http://www.yso.fi/onto/skns/lra#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "rara bakati"@fi .
 
 skns:lrc  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -61028,11 +61190,16 @@ skns:lyg  rdf:type                skos:Concept ;
         skos:hiddenLabel          "lyngngam"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "intianlyngam"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/lyg#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "lyng1241" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/lyng1241> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "lyg" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/lyg> .
+
+<http://www.yso.fi/onto/skns/lyg#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "intianlyngam"@fi .
 
 skns:lzh  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -63867,11 +64034,16 @@ skns:mxd  rdf:type                skos:Concept ;
         skos:hiddenLabel          "modangin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "modang"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/mxd#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "moda1244" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/moda1244> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "mxd" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/mxd> .
+
+<http://www.yso.fi/onto/skns/mxd#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "modang"@fi .
 
 skns:mxj  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -64258,11 +64430,16 @@ skns:nbq  rdf:type                skos:Concept ;
         skos:hiddenLabel          "nggemin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "nggem"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/nbq#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "ngge1241" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/ngge1241> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "nbq" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/nbq> .
+
+<http://www.yso.fi/onto/skns/nbq#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "nggem"@fi .
 
 skns:nbt  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -66937,11 +67114,16 @@ skns:osi  rdf:type                skos:Concept ;
         skos:hiddenLabel          "osingin kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "osing"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/osi#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "osin1237" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/osin1237> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "osi" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/osi> .
+
+<http://www.yso.fi/onto/skns/osi#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "osing"@fi .
 
 skns:osn  rdf:type          skos:Concept ;
         rdf:type            sknsmeta:Concept ;
@@ -67478,6 +67660,11 @@ skns:p1020171  rdf:type  skos:Concept ;
         skos:broader    skns:p1020166 ;
         skos:prefLabel  "joki-yumalaiset kielet"@fi .
 
+<http://www.yso.fi/onto/skns/p1020176#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "comecrudolaiset kielet"@fi .
+
 skns:p1020189  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
         skos:closeMatch             yso:p40653 ;
@@ -67486,13 +67673,28 @@ skns:p1020189  rdf:type             skos:Concept ;
         skos:note                   "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
         skos:prefLabel              "guaycurulaiset kielet"@fi ;
         skos:topConceptOf           skns: ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
+        skosxl:prefLabel            <http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001> ;
         sknsmeta:singularPrefLabel  "guyacurulainen kieli" .
+
+<http://www.yso.fi/onto/skns/p1020189#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "guaycurulaiset kielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "eteläguaycurulaiset kielet"@fi .
 
 skns:p1020191  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
         skos:broader    skns:p1020190 ;
         skos:prefLabel  "qomkielet"@fi .
+
+<http://www.yso.fi/onto/skns/p1020209#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "witotolaiset kielet"@fi .
 
 skns:p1020245  rdf:type  skos:Concept ;
         rdf:type        sknsmeta:Concept ;
@@ -68017,6 +68219,11 @@ skns:p1030852  rdf:type   skos:Concept ;
         skos:hiddenLabel  "West Morehead River"@fi ;
         skos:prefLabel    "tondalaiset kielet"@fi .
 
+<http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "berberikielet"@fi .
+
 skns:p1030968  rdf:type   skos:Concept ;
         rdf:type          sknsmeta:Concept ;
         skos:broader      skns:p1030967 ;
@@ -68430,11 +68637,16 @@ skns:pcb  rdf:type                skos:Concept ;
         skos:hiddenLabel          "samre"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "pear"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/pcb#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "pear1247" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/pear1247> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "pcb" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/pcb> .
+
+<http://www.yso.fi/onto/skns/pcb#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "pear"@fi .
 
 skns:pcc  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -68508,11 +68720,16 @@ skns:pcg  rdf:type                skos:Concept ;
         skos:hiddenLabel          "paniyan kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "paniya"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/pcg#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "pani1256" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/pani1256> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "pcg" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/pcg> .
+
+<http://www.yso.fi/onto/skns/pcg#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "paniya"@fi .
 
 skns:pch  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -68706,11 +68923,16 @@ skns:pee  rdf:type                skos:Concept ;
         skos:hiddenLabel          "tajen kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "taje"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/pee#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "taje1237" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/taje1237> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "pee" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/pee> .
+
+<http://www.yso.fi/onto/skns/pee#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "taje"@fi .
 
 skns:peg  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -70734,11 +70956,16 @@ skns:ral  rdf:type                skos:Concept ;
         skos:hiddenLabel          "ralten kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "ralte"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/ral#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "ralt1242" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/ralt1242> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "ral" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/ral> .
+
+<http://www.yso.fi/onto/skns/ral#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "ralte"@fi .
 
 skns:ran  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -71499,11 +71726,16 @@ skns:rob  rdf:type                skos:Concept ;
         skos:hiddenLabel          "toraja"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "tae"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/rob#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "taee1237" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/taee1237> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "rob" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/rob> .
+
+<http://www.yso.fi/onto/skns/rob#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "tae"@fi .
 
 skns:roc  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -73230,11 +73462,16 @@ skns:skn  rdf:type                skos:Concept ;
         skos:hiddenLabel          "subanon"@fi ;
         skos:note                 "Nimi kolibugan saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "kolibugan subanen"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/skn#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "koli1253" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/koli1253> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "skn" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/skn> .
+
+<http://www.yso.fi/onto/skns/skn#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "kolibugan subanen"@fi .
 
 skns:sko  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -74111,11 +74348,16 @@ skns:sre  rdf:type                skos:Concept ;
         skos:hiddenLabel          "sarabakatik"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "sara bakati"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/sre#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "sara1329" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/sara1329> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "sre" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/sre> .
+
+<http://www.yso.fi/onto/skns/sre#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "sara bakati"@fi .
 
 skns:srg  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -75171,11 +75413,16 @@ skns:tas  rdf:type                skos:Concept ;
         skos:hiddenLabel          "vietnamilainen pidginranska"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "tay boi"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/tas#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "tayb1240" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/tayb1240> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "tas" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/tas> .
+
+<http://www.yso.fi/onto/skns/tas#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "tay boi"@fi .
 
 skns:tat  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -75618,11 +75865,16 @@ skns:tdj  rdf:type                skos:Concept ;
         skos:hiddenLabel          "tajion kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "tajio"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/tdj#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "taji1246" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/taji1246> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "tdj" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/tdj> .
+
+<http://www.yso.fi/onto/skns/tdj#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "tajio"@fi .
 
 skns:tdn  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -78610,11 +78862,16 @@ skns:ums  rdf:type                skos:Concept ;
         skos:hiddenLabel          "pendaun kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "pendau"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/ums#xl_prefLabel_fi_100001> ;
         sknsmeta:glottologCode    "pend1242" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/pend1242> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "ums" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/ums> .
+
+<http://www.yso.fi/onto/skns/ums#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "pendau"@fi .
 
 skns:unr  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -79355,12 +79612,17 @@ skns:war  rdf:type                skos:Concept ;
         skos:hiddenLabel          "warayn kieli"@fi ;
         skos:note                 "Nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "waray"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/war#xl_prefLabel_fi_100001> ;
         sknsmeta:cldrCode         "war" ;
         sknsmeta:glottologCode    "wara1300" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/wara1300> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "war" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/war> .
+
+<http://www.yso.fi/onto/skns/war#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "waray"@fi .
 
 skns:wbb  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -84156,12 +84418,17 @@ skns:zza  rdf:type                skos:Concept ;
         skos:hiddenLabel          "zazan kieli"@fi ;
         skos:note                 "Makrokieli, jonka nimi saatetaan tulkita merkitykseltään kielteiseksi. Se on silti suositus suomen kieleen, koska toistaiseksi muuta vaihtoehtoa ei ole."@fi ;
         skos:prefLabel            "zaza"@fi ;
+        skosxl:prefLabel          <http://www.yso.fi/onto/skns/zza#xl_prefLabel_fi_100001> ;
         sknsmeta:cldrCode         "zza" ;
         sknsmeta:glottologCode    "zaza1246" ;
         sknsmeta:glottologSource  <https://glottolog.org/resource/languoid/id/zaza1246> ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel ;
         sknsmeta:silCode          "zza" ;
         sknsmeta:silSource        <https://iso639-3.sil.org/code/zza> .
+
+<http://www.yso.fi/onto/skns/zza#xl_prefLabel_fi_100001>
+        rdf:type            skosxl:Label ;
+        skos:note           "Termimuoto on havaittu vanhentuneeksi tai syrjiväksi, mutta käytettävissä ei ole toistaiseksi korvaavaa, vakiintunutta termiä."@fi ;
+        skosxl:literalForm  "zaza"@fi .
 
 skns:zzj  rdf:type                skos:Concept ;
         rdf:type                  sknsmeta:Concept ;
@@ -84302,13 +84569,13 @@ skns:p1020158  rdf:type             skos:Concept ;
         skos:topConceptOf           skns: ;
         sknsmeta:singularPrefLabel  "chonkieli" .
 
-skns:p1020190  rdf:type  skos:Concept ;
-        rdf:type        sknsmeta:Concept ;
-        skos:broader    skns:p1020189 ;
-        skos:narrower   skns:p1020191 ;
-        skos:note       "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
-        skos:prefLabel  "eteläguaycurulaiset kielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+skns:p1020190  rdf:type   skos:Concept ;
+        rdf:type          sknsmeta:Concept ;
+        skos:broader      skns:p1020189 ;
+        skos:narrower     skns:p1020191 ;
+        skos:note         "Nimitystä guaycurulaiset kielet pidetään halventavana, mutta se on vakiintunut käyttöön."@fi ;
+        skos:prefLabel    "eteläguaycurulaiset kielet"@fi ;
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1020190#xl_prefLabel_fi_100001> .
 
 skns:p1020244  rdf:type             skos:Concept ;
         rdf:type                    sknsmeta:Concept ;
@@ -84630,7 +84897,7 @@ skns:p1030954  rdf:type   skos:Concept ;
         skos:hiddenLabel  "tamazightkielet"@fi ;
         skos:narrower     skns:jbe ;
         skos:prefLabel    "berberikielet"@fi ;
-        sknsmeta:sensitiveLanguageNameNote  sknsmeta:SensitiveNameNoteLabel .
+        skosxl:prefLabel  <http://www.yso.fi/onto/skns/p1030954#xl_prefLabel_fi_100001> .
 
 skns:p1031101  rdf:type   skos:Concept ;
         rdf:type          sknsmeta:Concept ;
@@ -90074,10 +90341,6 @@ skns:p1020662  rdf:type    skos:Concept ;
         skos:narrower      skns:ysm ;
         skos:prefLabel     "viittomakielet"@fi ;
         skos:topConceptOf  skns: .
-
-sknsmeta:SensitiveNameNoteLabel
-        rdf:type              sknsmeta:NoteLabel ;
-        sknsmeta:literalForm  "Ensisijainen termi saattaa olla loukkaava"@fi .
 
 skns:p1031968  rdf:type   skos:Concept ;
         rdf:type          sknsmeta:Concept ;
