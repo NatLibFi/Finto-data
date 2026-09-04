@@ -1,6 +1,6 @@
 # SKNS-tietomalli (Suomenkielisten kielten nimien sanasto)
 
-Aineistona VocBenchistä 3.9.2026 exportattu SKNS (84 736 tripleä), laadittu 4.9.2026. Yhteystiedot: [mika.vaara@helsinki.fi](maito:mika.vaara@helsinki.fi)
+Aineistona [VocBenchistä 3.9.2026 exportattu SKNS](https://github.com/NatLibFi/Finto-data/blob/master/vocabularies/skns/skns-kehitystietomalli-vb-2026-09-05.ttl) (84 736 tripleä), laadittu 4.9.2026. Yhteystiedot: [mika.vaara@helsinki.fi](maito:mika.vaara@helsinki.fi)
 
 #### Sisältö:
 1. SKNS:n omat luokat
