@@ -1,0 +1,147 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skns: <http://www.yso.fi/onto/skns/>
+PREFIX sknsmeta: <http://www.yso.fi/onto/sknsmeta/>
+
+DELETE {
+    ?s ?p ?o .
+}
+WHERE {
+    VALUES ?s {
+        sknsmeta:DeprecatedConcept
+        skns:deprecatedconceptscheme
+        sknsmeta:deprecatedConcepts
+        sknsmeta:deprecatedSubClassOf
+        sknsmeta:deprecatedSuperClassOf
+        sknsmeta:deprecatedAssociativeRelation
+        sknsmeta:deprecatedReplacedBy
+        sknsmeta:deprecatedExactMatch
+        sknsmeta:deprecatedOn
+    }
+
+    ?s ?p ?o .
+};
+
+INSERT DATA {
+    GRAPH skns: {
+
+        sknsmeta:DeprecatedConcept
+            a owl:Class ;
+            rdfs:subClassOf sknsmeta:Concept ;
+            rdfs:label "Käytöstä poistettu käsite"@fi .
+
+        skns:deprecatedconceptscheme
+            a skos:ConceptScheme ;
+            skos:prefLabel "Käytöstä poistettujen käsitteiden skeema"@fi ;
+            skos:hasTopConcept sknsmeta:deprecatedConcepts .
+
+        sknsmeta:deprecatedConcepts
+            a skos:Concept ;
+            skos:prefLabel "Käytöstä poistetut käsitteet"@fi ;
+            skos:inScheme skns:deprecatedconceptscheme ;
+            skos:topConceptOf skns:deprecatedconceptscheme .
+
+        sknsmeta:deprecatedSubClassOf
+            a owl:ObjectProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range skos:Concept ;
+            rdfs:label "Deprekoidun käsitteen entinen yläkäsite"@fi .
+
+        sknsmeta:deprecatedSuperClassOf
+            a owl:ObjectProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range skos:Concept ;
+            rdfs:label "Deprekoidun käsitteen entinen alakäsite"@fi .
+
+        sknsmeta:deprecatedAssociativeRelation
+            a owl:ObjectProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range skos:Concept ;
+            rdfs:label "Deprekoituneeseen käsitteeseen kuulunut assosiatiivinen suhde"@fi .
+
+        sknsmeta:deprecatedReplacedBy
+            a owl:ObjectProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range skos:Concept ;
+            rdfs:label "Deprekoitu käsite korvattu käsitteellä"@fi .
+
+        sknsmeta:deprecatedExactMatch
+            a owl:ObjectProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range skos:Concept ;
+            rdfs:label "Deprekoidun käsitteen aiempi vastaavuussuhde"@fi .
+
+        sknsmeta:deprecatedOn
+            a owl:DatatypeProperty ;
+            rdfs:domain sknsmeta:DeprecatedConcept ;
+            rdfs:range xsd:date ;
+            rdfs:label "Deprekoitu päivämäärällä"@fi .
+    }
+}
+
+
+////
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skns: <http://www.yso.fi/onto/skns/>
+PREFIX sknsmeta: <http://www.yso.fi/onto/sknsmeta/>
+
+# Poistetaan mahdolliset aiemmin default graphiin menneet triplet
+DELETE {
+    ?s ?p ?o .
+}
+WHERE {
+    ?s ?p ?o .
+
+    FILTER (
+        ?s IN (
+            skns:p999999,
+            sknsmeta:deprecatedConcepts,
+            skns:deprecatedconceptscheme
+        )
+        ||
+        ?o IN (
+            skns:p999999,
+            sknsmeta:deprecatedConcepts,
+            skns:deprecatedconceptscheme
+        )
+    )
+};
+
+# Lisätään oikeaan SKNS-graafiin
+INSERT DATA {
+    GRAPH skns: {
+
+        skns:p999999
+            a skos:Concept ,
+              sknsmeta:Concept ,
+              sknsmeta:LangGroup ,
+              sknsmeta:DeprecatedConcept ;
+            owl:deprecated true ;
+            skos:prefLabel "Kielikunnan deprekointiesimerkki"@fi ;
+            skos:inScheme skns:deprecatedconceptscheme ;
+            skos:broader sknsmeta:deprecatedConcepts ;
+            sknsmeta:deprecatedSubClassOf skns:p1030953 ;
+            sknsmeta:deprecatedSuperClassOf skns:jbe ;
+            sknsmeta:deprecatedReplacedBy skns:p1030954 ;
+            sknsmeta:deprecatedOn "2026-09-03"^^xsd:date .
+
+        sknsmeta:deprecatedConcepts
+            a skos:Concept ;
+            skos:prefLabel "AAA - Käytöstä poistetut käsitteet"@fi ;
+            skos:inScheme skns:deprecatedconceptscheme ;
+            skos:topConceptOf skns:deprecatedconceptscheme ;
+            skos:narrower skns:p999999 .
+
+        skns:deprecatedconceptscheme
+            a skos:ConceptScheme ;
+            skos:prefLabel "Käytöstä poistettujen käsitteiden skeema"@fi ;
+            skos:hasTopConcept sknsmeta:deprecatedConcepts .
+    }
+}
