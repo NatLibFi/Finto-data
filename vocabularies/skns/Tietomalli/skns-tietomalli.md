@@ -169,16 +169,16 @@ Monet tietomallikuvauksessa käytetyt termit ovat hankalia suomentaa, koska niid
 
 Mikäli haluat muokata tätä tiedostoa ja tarvitset hierarkian kuvaamiseen erikoisia fi-näppäimistöstä puuttuvia ascii-merkkejä, tässä muutama:
 
-└ → Ctrl+Shift+U, 2514, Enter<br>
-─ → Ctrl+Shift+U, 2500, Enter<br>
-├ → Ctrl+Shift+U, 251C, Enter<br>
-│ → Ctrl+Shift+U, 2502, Enter<br>
-┬ → Ctrl+Shift+U, 252C, Enter<br>
-┐ → Ctrl+Shift+U, 2510, Enter<br>
-← → Ctrl+Shift+U, 2190, Enter<br>
-↑ → Ctrl+Shift+U, 2191, Enter<br>
-→ → Ctrl+Shift+U, 2192, Enter<br>
-↓ → Ctrl+Shift+U, 2193, Enter
+└ Ctrl+Shift+U, 2514, Enter<br>
+─ Ctrl+Shift+U, 2500, Enter<br>
+├ Ctrl+Shift+U, 251C, Enter<br>
+│ Ctrl+Shift+U, 2502, Enter<br>
+┬ Ctrl+Shift+U, 252C, Enter<br>
+┐ Ctrl+Shift+U, 2510, Enter<br>
+← Ctrl+Shift+U, 2190, Enter<br>
+↑ Ctrl+Shift+U, 2191, Enter<br>
+→ Ctrl+Shift+U, 2192, Enter<br>
+↓ Ctrl+Shift+U, 2193, Enter
 
 
 
