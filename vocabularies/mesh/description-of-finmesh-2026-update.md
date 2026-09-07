@@ -295,3 +295,25 @@ Nämä auttavat debuggauksessa tarvittaessa:
 
     mesh-skos.ttl
         Lopullinen Fintossa/Skosmoksessa julkaistava FinMeSH skossattu versio.
+
+## Korjauksia
+
+Kiireen takia edellä käytettyjen skriptien korjaaminen ei ole vaihtoehto, vaan tukeudutaan tylsään, mutta nopeampaan vaihtoehtoon, post-skripteihin eli lopputuloksen ongelmia paikkaaviin ratkaisuihin.
+
+### Ruotsinkielisten altLabelien korjaus
+
+Datasta löytyy 19 451 tapausta, jossa ruotsinkielisen altLabelin pitäisi olla "vastaavan" (vastaavuus päätelty mesh-käsitteiden ja nih.gov-ureilsta) mesh-käsitteen property. Esimerkiksi:
+
+    <http://id.nlm.nih.gov/mesh/2026/D000004>
+        skos:altLabel "Akronymer som ämne"@sv .
+
+pitäisi olla näin:
+
+    mesh:D000004
+    skos:altLabel
+        "Acronyms as Topic"@en,
+        "lyhenne"@fi,
+        "Akronymer som ämne"@sv . <<<---
+
+Tästä syystä käytetään erillistä korjausskriptiä `fix_mesh_sv_altlabels.py`. Se korjaa tilanteen normaaliksi eli lisää puuttuvat ruotsinkieliset altLabelit oikeisiin mesh-käsitteisiin, poistaa tarpettoman nih.gov-käsitteen altLabeleineen sekä raportoi resurssit, joille ei löytynyt vastaavaa YSO-MeSH-käsitettä.
+
