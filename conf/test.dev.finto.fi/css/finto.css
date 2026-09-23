@@ -291,6 +291,11 @@
   outline-color: var(--white-color) !important;
 }
 
+#hierarchy-list .list-group-item:focus-visible > .concept-label a,
+#groups-list .list-group-item:focus-visible > .concept-label a {
+  outline-color: var(--white-color) !important;
+}
+
 /* Warning messages for individual vocabularies */
 .vocab-alert {
   padding: 2rem 2.5rem;
@@ -332,6 +337,12 @@
   top: 0;
   background-color: var(--secondary-dark-color);
   z-index: -1;
+}
+
+@media (max-width: 768px) { /* lg breakpoint */
+  .about::before {
+    height: 125px;
+  }
 }
 
 .about h1 {
