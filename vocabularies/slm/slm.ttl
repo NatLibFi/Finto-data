@@ -3353,6 +3353,7 @@ slm:s479  a              owl:Class , skos:Concept ;
 slm:s1153  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1175 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026038> ;
         skos:prefLabel   "amatöörielokuvat"@fi , "amatörfilmer"@sv ;
         skos:scopeNote   "Käytetään harrastajien tekemistä elokuvista."@fi , "Används om filmer framställda av amatörer."@sv .
 
@@ -3974,6 +3975,12 @@ slm:s1433  a             owl:Class , skos:Concept ;
         skos:altLabel    "spel för sex personer"@sv ;
         skos:note        "Peli, joka soveltuu kuudelle pelaajalle. Termiä voi käyttää sekä peleistä, jotka on tarkoitettu nimenomaan kuudelle pelaajalle, että peleistä, joissa muutkin pelaajamäärät ovat mahdollisia."@fi , "Spel som är lämpligt för sex spelare. Termen kan användas både om spel som är specifikt avsedda för sex spelare och spel i vilka även andra spelarantal är möjliga."@sv ;
         skos:prefLabel   "spel för sex spelare"@sv , "kuusinpelit"@fi .
+
+slm:8babf2f3-4819-4878-9129-56d0a5f0f6ca
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:6e184a96-1ca9-43a4-9d1d-9743d6dd4cea ;
+        skos:definition  "Musiikkialbumi, joka sisältää eri lähteistä, kuten aiemmin julkaistuilta äänitteiltä koottuja kappaleita."@fi ;
+        skos:prefLabel   "kokoelma-albumit (äänitteet)"@fi .
 
 slm:s875  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s929 ;
@@ -4999,6 +5006,14 @@ slm:s1332  a            owl:Class , skos:Concept ;
         skos:altLabel   "periodiska publikationer"@sv ;
         skos:inScheme   slm: ;
         skos:prefLabel  "periodika"@sv , "kausijulkaisut"@fi .
+
+slm:8aab0aef-d65e-4a18-8dc3-690843307aa9
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1468 ;
+        skos:altLabel    "singlelevyt"@fi , "maxisinglet"@fi , "sinkut (äänitteet)"@fi ;
+        skos:definition  "Musiikkiäänite, joka tyypillisesti sisältää 1–3 kappaletta ja on kestoltaan enintään 30 minuuttia."@fi ;
+        skos:prefLabel   "singlet"@fi ;
+        skos:related     slm:3cc7b9de-ea1d-4d51-9112-1a6ad332955b , slm:6e184a96-1ca9-43a4-9d1d-9743d6dd4cea .
 
 slm:s1210  a            owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -6628,14 +6643,15 @@ slm:s221  a              owl:Class , skos:Concept ;
         skos:inScheme    slm: ;
         skos:prefLabel   "sångspel (dramer)"@sv , "laulunäytelmät"@fi .
 
-slm:s270  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1128 ;
-        dct:created      "2018-05-16"^^xsd:date ;
-        skos:inScheme    slm: ;
-        skos:note        "Humor som i grotesk stil behandlar frågor i anslutning till mänsklig ångest, lidande och död; galghumor."@sv , "Huumori, jossa käsitellään groteskiin tyyliin inhimilliseen ahdistukseen, kärsimykseen ja kuolemaan liittyviä kysymyksiä; hirtehishuumori."@fi ;
-        skos:prefLabel   "svart humor"@sv , "musta huumori"@fi ;
-        skos:related     slm:s1016 ;
-        skos:scopeNote   "Används om mycket cynisk humor"@sv .
+slm:s270  a               owl:Class , skos:Concept ;
+        rdfs:subClassOf   slm:s1128 ;
+        dct:created       "2018-05-16"^^xsd:date ;
+        skos:inScheme     slm: ;
+        skos:narrowMatch  <http://id.loc.gov/authorities/genreForms/gf2014026248> ;
+        skos:note         "Humor som i grotesk stil behandlar frågor i anslutning till mänsklig ångest, lidande och död; galghumor."@sv , "Huumori, jossa käsitellään groteskiin tyyliin inhimilliseen ahdistukseen, kärsimykseen ja kuolemaan liittyviä kysymyksiä; hirtehishuumori."@fi ;
+        skos:prefLabel    "svart humor"@sv , "musta huumori"@fi ;
+        skos:related      slm:s1016 ;
+        skos:scopeNote    "Används om mycket cynisk humor"@sv .
 
 slm:s224  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s950 ;
@@ -7030,10 +7046,11 @@ slm:s309  a              owl:Class , skos:Concept ;
         skos:inScheme    slm: ;
         skos:prefLabel   "impromptun"@sv , "impromptut"@fi .
 
-slm:s897  a             owl:Class , skos:Concept ;
-        dct:created     "2018-05-16"^^xsd:date ;
-        skos:inScheme   slm: ;
-        skos:prefLabel  "brev"@sv , "kirjeet"@fi .
+slm:s897  a              owl:Class , skos:Concept ;
+        dct:created      "2018-05-16"^^xsd:date ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026141> ;
+        skos:inScheme    slm: ;
+        skos:prefLabel   "brev"@sv , "kirjeet"@fi .
 
 slm:s286  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 ;
@@ -7163,6 +7180,14 @@ slm:s1241  a             owl:Class , skos:Concept ;
         skos:altLabel    "spelkritik (recensioner)"@sv , "peliarviot"@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "peliarvostelut"@fi , "spelrecensioner"@sv .
+
+slm:3cc7b9de-ea1d-4d51-9112-1a6ad332955b
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1468 ;
+        skos:altLabel    "eepeet"@fi , "EP-levyt"@fi ;
+        skos:definition  "Musiikkiäänite, joka tyypillisesti sisältää 4–6 kappaletta ja on kestoltaan enintään 30 minuuttia."@fi ;
+        skos:prefLabel   "EP:t"@fi ;
+        skos:related     slm:8aab0aef-d65e-4a18-8dc3-690843307aa9 , slm:6e184a96-1ca9-43a4-9d1d-9743d6dd4cea .
 
 slm:s714  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s721 ;
@@ -7771,6 +7796,7 @@ slm:s9  a                owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1566 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "hemvideor"@sv , "hemfilmer"@sv ;
+        skos:broadMatch  <http://id.loc.gov/authorities/genreForms/gf2011026038> ;
         skos:prefLabel   "kotivideot"@fi , "hemvideofilmer"@sv ;
         skos:related     slm:s1175 , slm:s1153 .
 
@@ -9227,6 +9253,14 @@ slm:s907  a             owl:Class , skos:Concept ;
         skos:inScheme   slm: ;
         skos:prefLabel  "kvickheter"@sv , "sutkaukset"@fi ;
         skos:related    slm:s622 , slm:s842 .
+
+slm:6e184a96-1ca9-43a4-9d1d-9743d6dd4cea
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1468 ;
+        skos:altLabel    "minialbumit"@fi , "musiikkialbumit"@fi , "verkkoalbumit"@fi , "studioalbumit"@fi , "LP-levyt"@fi , "pitkäsoittolevyt"@fi ;
+        skos:definition  "Musiikkiäänite, joka tyypillisesti sisältää yli 6 kappaletta tai on kestoltaan yli 30 minuuttia."@fi ;
+        skos:prefLabel   "albumit (äänitteet)"@fi ;
+        skos:related     slm:8aab0aef-d65e-4a18-8dc3-690843307aa9 , slm:3cc7b9de-ea1d-4d51-9112-1a6ad332955b .
 
 slm:s1313  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1139 , slm:s421 ;
