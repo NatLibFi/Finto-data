@@ -1120,6 +1120,8 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
           "Metadataordlista"@sv,
           "Metatietosanasto" ;
 	skosmos:shortName "Metatietosanasto";
+	skosmos:showTopConcepts "true";
+	skosmos:defaultSidebarView "hierarchy";
 	skosmos:marcSourceCode "mts";
 	dc:subject :cat_general ;
 	void:uriSpace "http://urn.fi/URN:NBN:fi:au:mts:";
@@ -1143,31 +1145,6 @@ For further information, please contact us: toimijakuvailu-posti @ helsinki.fi."
                 skos:narrower skos:related skos:altLabel skosmos:memberOf
                 skos:note skos:scopeNote skos:historyNote rdfs:comment
                 dct:source dc:source skos:prefLabel) .
-
-:mts-vb a skosmos:Vocabulary, void:Dataset ;
-	dc:title "Metatietosanasto, VB"@fi,
-          "Metatietosanasto, VB"@en,
-          "Metadataordlista, VB"@sv,
-          "Metatietosanasto, VB" ;
-	skosmos:shortName "Metatietosanasto-VB";
-	skosmos:showTopConcepts "true";
-	skosmos:defaultSidebarView "hierarchy";
-	skosmos:marcSourceCode "mts";
-	dc:subject :cat_general ;
-	void:uriSpace "http://urn.fi/URN:NBN:fi:au:mts:";
-	skosmos:language "fi", "sv", "en";
-        skosmos:useModifiedDate "true";
-	skosmos:showChangeList "true";
-	skosmos:defaultLanguage "fi";
-	skosmos:defaultSidebarView "groups";
-	skosmos:groupClass skos:Collection ;
-	skosmos:resultDistinguisher "^skos:member";
-	skosmos:feedbackRecipient "met-sanasto@helsinki.fi";
-	void:dataDump <https://dev.finto.fi/download/metatietosanasto/metatietosanasto-vb-skos.ttl> ;
-	void:sparqlEndpoint <https://api.dev.finto.fi/sparql> ;
-	skosmos:sparqlGraph <http://urn.fi/URN:NBN:fi:au:mts-vb:> .
-
-:mts-vb skosmos:propertyOrder :mtswemipropertyOrder .
 
 :musa a skosmos:Vocabulary, void:Dataset ;
 	dc:title "MUSA - Musiikin asiasanasto"@fi,
