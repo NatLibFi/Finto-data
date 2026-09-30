@@ -452,6 +452,8 @@ def main():
                     urn_uri = valid_uriref(urn)
                     g.add((urn_uri, DCT.isReplacedBy, uri))
                     g.add((urn_uri, OWL.deprecated, Literal("true", datatype=XSD.boolean)))
+                    if 'q' in f:
+                        g.add((urn_uri, SKOS.prefLabel, Literal(f['q'])))
                 except ValidationError:
                     logging.warning(f'024 $z has invalid URN {urn}, not creating isReplacedBy for {uri}')
 
