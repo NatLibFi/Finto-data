@@ -8160,18 +8160,6 @@ mts:m2125 a skos:Concept ;
     skos:prefLabel "korttipakka"@fi,
         "kortlek"@sv .
 
-mts:m2127 a skos:Concept ;
-    dc:source "Kansallinen RDA-termi"@fi,
-        "Nationell RDA-term"@sv ;
-    dct:created "2018-04-04"^^xsd:date ;
-    dct:modified "2024-10-10"^^xsd:date ;
-    skos:broader mts:m4332 ;
-    skos:inScheme mts: ;
-    skos:prefLabel "liitteenä aineistossa"@fi,
-        "bilaga till"@sv ;
-    skos:scopeNote "RDA-kuvailussa käytettävä termi."@fi,
-        "Termen används i RDA-beskrivning."@sv .
-
 mts:m2128 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -58047,15 +58035,14 @@ mts:m4323 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2020-04-17"^^xsd:date ;
-    dct:modified "2025-08-14"^^xsd:date ;
+    dct:modified "2026-09-29"^^xsd:date ;
     skos:altLabel "accompanying expression relationship"@en,
         "accompanying manifestation relationship"@en,
         "accompanying work relationship"@en,
-        "ilmestynyt yhdessä"@fi,
         "ilmestynyt yhdessä (manifestaatio)"@fi,
-        "mukana ilmestynyt manifestaatio"@fi,
+        "mukana ilmestynyt aineisto"@fi,
         "utgiven tillsammans (manifestation)"@sv,
-        "utkommen tillsammans med manifestationen"@sv ;
+        "utkommen tillsammans med materialet"@sv ;
     skos:broader mts:m5856 ;
     skos:definition "Manifestaatio, joka on osa samaa manifestaatiota kuin toinen manifestaation osa. (RDA Registry)"@fi,
         "Manifestation som är en del av samma manifestation som en annan del av en manifestation."@sv ;
@@ -58063,8 +58050,8 @@ mts:m4323 a skos:Concept ;
     skos:inScheme mts: ;
     skos:narrower mts:m4247 ;
     skos:prefLabel "accompanied by manifestation"@en,
-        "mukana ilmestynyt aineisto"@fi,
-        "utkommen tillsammans med materialet"@sv .
+        "mukana ilmestynyt manifestaatio"@fi,
+        "utkommen tillsammans med manifestationen"@sv .
 
 mts:m4324 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -58160,6 +58147,25 @@ mts:m4331 a skos:Concept ;
     skos:prefLabel "music for video expression"@en,
         "musiikki videoon"@fi,
         "musik till videon"@sv .
+
+mts:m4332 a skos:Concept ;
+    dc:source "RDA-termi"@fi,
+        "RDA-term"@sv ;
+    dct:created "2020-04-17"^^xsd:date ;
+    dct:modified "2025-07-05"^^xsd:date ;
+    owl:inverseOf mts:m2062 ;
+    skos:altLabel "liitteenä manifestaatiossa"@fi,
+        "bilaga till manifestationen"@sv ;
+    skos:broader mts:m608 ;
+    skos:definition "Manifestaatio, joka sisältää toisen manifestaation erillisenä liitteenä. (RDA Registry)"@fi,
+        "Manifestation som innehåller en annan manifestation som skild bilaga."@sv ;
+    skos:exactMatch rdam:P30025 ;
+    skos:inScheme mts: ;
+    skos:prefLabel "inserted in"@en,
+        "liitteenä aineistossa"@fi,
+        "bilaga till materialet"@sv ;
+    skos:scopeNote "Liite käsittää esim. kartan tai kuvitus- tai mainosliitteen, joka ei ole kiinteä osa muuta manifestaatiota. (RDA Registry)"@fi,
+        "Innefattar t.ex. en kart-, illustrations- eller reklambilaga, som inte är en fast del av den övriga manifestationen."@sv .
 
 mts:m4333 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -63512,26 +63518,6 @@ mts:m4266 a skos:Concept ;
         "näköispainos manifestaatiosta"@fi,
         "faksimil av manifestationen"@sv .
 
-mts:m4332 a skos:Concept ;
-    dc:source "RDA-termi"@fi,
-        "RDA-term"@sv ;
-    dct:created "2020-04-17"^^xsd:date ;
-    dct:modified "2025-07-05"^^xsd:date ;
-    owl:inverseOf mts:m2062 ;
-    skos:altLabel "liitteenä manifestaatiossa"@fi,
-        "bilaga till manifestationen"@sv ;
-    skos:broader mts:m608 ;
-    skos:definition "Manifestaatio, joka sisältää toisen manifestaation erillisenä liitteenä. (RDA Registry)"@fi,
-        "Manifestation som innehåller en annan manifestation som skild bilaga."@sv ;
-    skos:exactMatch rdam:P30025 ;
-    skos:inScheme mts: ;
-    skos:narrower mts:m2127 ;
-    skos:prefLabel "inserted in"@en,
-        "liitteenä aineistossa"@fi,
-        "bilaga till materialet"@sv ;
-    skos:scopeNote "Liite käsittää esim. kartan tai kuvitus- tai mainosliitteen, joka ei ole kiinteä osa muuta manifestaatiota. (RDA Registry)"@fi,
-        "Innefattar t.ex. en kart-, illustrations- eller reklambilaga, som inte är en fast del av den övriga manifestationen."@sv .
-
 mts:m434 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
@@ -65846,15 +65832,13 @@ mts:m175 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2025-11-18"^^xsd:date ;
+    dct:modified "2026-09-29"^^xsd:date ;
     owl:inverseOf mts:m608 ;
     skos:altLabel "container of (manifestation)"@en,
+        "aineiston osa"@fi,
         "manifestaatio sisältää"@fi,
-        "manifestaation osa"@fi,
-        "sisältää"@fi,
         "sisältää (manifestaatio)"@fi,
-        "innehåller"@sv,
-        "innehåller (manifestation)"@sv ;
+        "del av materialet"@sv ;
     skos:broader mts:m5856 ;
     skos:definition "Manifestaatio, joka on toisen manifestaation itsenäinen osa. (RDA Registry)"@fi,
         "Manifestation som är en självständig del av en annan manifestation."@sv ;
@@ -65864,8 +65848,8 @@ mts:m175 a skos:Concept ;
         mts:m4268,
         mts:m5393 ;
     skos:prefLabel "part manifestation"@en,
-        "aineiston osa"@fi,
-        "del av materialet"@sv .
+        "manifestaation osa"@fi,
+        "innehåller (manifestation)"@sv .
 
 mts:m1801 a skos:Concept ;
     dc:source "RDA-termi"@fi,
@@ -68035,12 +68019,12 @@ mts:m608 a skos:Concept ;
     dc:source "RDA-termi"@fi,
         "RDA-term"@sv ;
     dct:created "2016-01-08"^^xsd:date ;
-    dct:modified "2025-11-18"^^xsd:date ;
+    dct:modified "2026-09-29"^^xsd:date ;
     owl:inverseOf mts:m175 ;
     skos:altLabel "contained in (manifestation)"@en,
-        "osa manifestaatiota"@fi,
+        "osa aineistoa"@fi,
         "sisältyy manifestaatioon"@fi,
-        "del av manifestationen"@sv,
+        "del av materialet"@sv,
         "ingår i manifestation"@sv ;
     skos:broader mts:m5856 ;
     skos:definition "Manifestaatio, johon sisältyvä manifestaatio on itsenäinen osa toisesta manifestaatiosta. (RDA Registry)"@fi,
@@ -68052,8 +68036,8 @@ mts:m608 a skos:Concept ;
         mts:m4332,
         mts:m5269 ;
     skos:prefLabel "part of manifestation"@en,
-        "osa aineistoa"@fi,
-        "del av materialet"@sv .
+        "osa manifestaatiota"@fi,
+        "del av manifestationen"@sv .
 
 mts:m863 a skos:Concept ;
     dc:source "Kansallinen RDA-termi"@fi,
@@ -74960,7 +74944,7 @@ Förslag till nya termer kan skickas med responsformuläret i övre kanten av de
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/>,
         <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2026-09-28T12:33:08+00:00"^^xsd:dateTime ;
+    dct:modified "2026-09-30T00:10:35+00:00"^^xsd:dateTime ;
     owl:imports <file:///tmp/addFromLocalFile10507125519093409692metatietosanasto-metadata.ttl>,
         dc:,
         <http://www.w3.org/2004/02/skos/core> ;
