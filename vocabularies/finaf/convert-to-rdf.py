@@ -7,6 +7,8 @@ import functools
 import logging
 import csv
 import unicodedata
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import requests
 from urllib3.util.retry import Retry
@@ -186,8 +188,9 @@ def format_timestamp(ts):
         h = int(ts[6:8])
         m = int(ts[8:10])
         s = int(ts[10:12])
-        # TODO which time zone?
-        return "%04d-%02d-%02dT%02d:%02d:%02d" % (year, mon, day, h, m, s)
+        tz = ZoneInfo("Europe/Helsinki")
+        dt = datetime(year, mon, day, h, m, s, tzinfo=tz)
+        return dt.isoformat()  # e.g. "2024-01-15T14:30:00+02:00"
     else:
         return "%04d-%02d-%02d" % (year, mon, day)
 
