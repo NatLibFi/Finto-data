@@ -781,9 +781,9 @@ def main():
 
                 try:
                     value = valid_uriref(f['u'])
-                    g.add((uri, SKOS.closeMatch, value))
+                    g.add((uri, SKOS.exactMatch, value))
                 except ValidationError:
-                    logging.warning(f'856 $u has invalid URI {f["u"]}, not creating closeMatch link {uri}')
+                    logging.warning(f'856 $u has invalid URI {f["u"]}, not creating exactMatch link {uri}')
 
 
     # Pass 2: convert literal values to resources
