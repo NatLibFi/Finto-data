@@ -216,7 +216,10 @@
         skosmos:showStatistics "false";
 	skosmos:propertyOrder :finaf-order ;
 	skosmos:vocabularyPlugins ( "sks" "finaf" );
-        skosmos:sidebarViews ( "alphabetical" "changes" );
+        skosmos:sidebarViews ( "alphabetical" );
+        skosmos:propertyLabelOverride
+            [ skosmos:property skos:prefLabel ;
+              rdfs:label "Käytettävä nimenmuoto"@fi, "Auktoriserad sökingång"@sv, "Authorized access point"@en ] ;
 	skosmos:feedbackRecipient "toimijakuvailu-posti@helsinki.fi";
 	void:dataDump <https://dev.finto.fi/download/finaf/finaf-skos.ttl> ;
 	void:dataDump <https://dev.finto.fi/download/finaf/finaf-skos.rdf> ;
