@@ -5,18 +5,17 @@
 
 .toot {
   background-color: var(--white-color);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 46px auto auto;
-  column-gap: 0.5rem;
   padding: 1.2rem;
   margin-bottom: 1.2rem;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.toot h3 {
+  display: flex;
+  align-items: center;
+}
+
 .toot .user {
-  grid-column: 1;
-  grid-row: 1;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -44,6 +43,17 @@
   display: none;
 }
 
+.toot .permalink {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  color: var(--muted-color);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
 /* Boosting user is smaller and above the posting user. */
 .toot .boost {
   height: 23px;
@@ -60,14 +70,6 @@
   display: none;
 }
 
-.toot .permalink {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  align-self: center;
-  color: var(--muted-color);
-  text-decoration: none;
-}
 
 .toot .permalink:hover {
   text-decoration: underline;
