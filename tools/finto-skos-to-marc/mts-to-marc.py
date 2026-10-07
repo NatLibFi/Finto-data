@@ -22,9 +22,10 @@ from urllib.parse import urldefrag
 CREATOR_AGENCY = "FI-NL" # Tietueen luoja/omistaja & luetteloiva organisaatio, 003 & 040 kentat
 
 MTS=Namespace('http://urn.fi/URN:NBN:fi:au:mts:')
+MTSMETA=Namespace('http://urn.fi/URN:NBN:fi:au:mts-meta:')
 ISOTHES=Namespace('http://purl.org/iso25964/skos-thes#')
 
-GROUPINGCLASSES = [ISOTHES.ConceptGroup]
+GROUPINGCLASSES = [MTSMETA.Hierarchy]
 
 SORT_5XX_W_ORDER = {
     'g': '001',
@@ -63,6 +64,13 @@ LANGUAGES = {
 
 # tuple helpottamaan getValues-apufunktion arvojen käsittelyä
 ValueProp = namedtuple("ValueProp", ['value', 'prop'])
+
+
+def get_narrower_concepts(g, uri, uris):
+    narrower_concepts = g.objects(uri, SKOS.narrower)
+    for c in narrower_concepts:
+        uris.add(c)
+        get_narrower_concepts(g, c, uris)
 
 #haetaan ryhmäkäsitteiden alakäsitteet
 def get_member_groups(g, group, uris):
@@ -274,10 +282,10 @@ def convert(cs, language, g):
         uris[key] = set()
         for id in ids[key]:
             uris[key].add(MTS + id)
-    for group in g.subjects(RDF.type, ISOTHES.ConceptGroup):
+    for concept in g.subjects(RDF.type, SKOS.Concept):
         for key in uris:
-            if any(str(group).endswith(uri) for uri in uris[key]):
-                get_member_groups(g, group, uris[key])
+            if any(str(concept).endswith(uri) for uri in uris[key]):
+                get_narrower_concepts(g, concept, uris[key])
     for key in groups:
         for id in groups[key]:
             uris[key].add(URIRef(MTS + id))
@@ -295,6 +303,7 @@ def convert(cs, language, g):
 
     #luotujen käsitteiden tunnukset, joilla voidaan selvittää modification_dates-listan avulla poistetut käsitteet
     created_concepts = set()
+
     for concept in concs:
         if not any(concept in uris[key] for key in uris):
             continue
@@ -493,7 +502,6 @@ def convert(cs, language, g):
                         )
                     )
                     if helper_variables['keepModifiedLimit']:
-                        print(helper_variables['keepModifiedLimit'])
                         modified_dates[conc] = (date.today(), "")
                     writer_records_counter += 1
                     writer.write(rec)
