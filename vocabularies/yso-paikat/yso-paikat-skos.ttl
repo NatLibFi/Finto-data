@@ -44,6 +44,10 @@ yso-meta1:wikidataPlaceType a owl:ObjectProperty ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Zaire"@en .
 
+<http://www.yso.fi/onto/yso/p108324#en> a skosxl:Label ;
+    dc:source "Wikidata"@en ;
+    skosxl:literalForm "Republic of Upper Volta"@en .
+
 <http://www.yso.fi/onto/yso/p108374#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Rhodesia"@en .
@@ -53,6 +57,10 @@ yso:p109012 yso-meta1:wikidataPlaceType wd:Q6256 .
 <http://www.yso.fi/onto/yso/p109012#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Myanmar"@en .
+
+<http://www.yso.fi/onto/yso/p109222#en> a skosxl:Label ;
+    dc:source "Wikidata"@en ;
+    skosxl:literalForm "Siam"@en .
 
 <http://www.yso.fi/onto/yso/p109226#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
@@ -140,10 +148,6 @@ pnr:10430482 wgs84:lat "62.76113" ;
 
 pnr:10668713 wgs84:lat "60.37851" ;
     wgs84:long "23.59105" ;
-    yso-meta1:mmlPlaceType wd:Q103910177 .
-
-pnr:10813070 wgs84:lat "64.60715" ;
-    wgs84:long "25.20643" ;
     yso-meta1:mmlPlaceType wd:Q103910177 .
 
 wd:Q113965151 a yso-meta1:MMLPlaceType ;
@@ -4944,10 +4948,6 @@ yso:p107969 a skos:Concept ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Karhunoja"@en .
 
-<http://www.yso.fi/onto/yso/p108324#en> a skosxl:Label ;
-    dc:source "Wikidata"@en ;
-    skosxl:literalForm "Republic of Upper Volta"@en .
-
 <http://www.yso.fi/onto/yso/p108325#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Burkina Faso"@en .
@@ -5978,10 +5978,6 @@ yso:p108601 a skos:Concept ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Aitolahti"@en .
 
-<http://www.yso.fi/onto/yso/p109222#en> a skosxl:Label ;
-    dc:source "Wikidata"@en ;
-    skosxl:literalForm "Siam"@en .
-
 <http://www.yso.fi/onto/yso/p109223#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Geneva"@en .
@@ -6896,6 +6892,7 @@ yso:p110087 a skos:Concept ;
     dct:modified "2024-05-26"^^xsd:date ;
     skos:altLabel "Tyynen valtameren alue"@fi,
         "Stillahavsregionen"@sv ;
+    skos:closeMatch wd:Q9301187 ;
     skos:exactMatch allars:Y30338,
         ysa:Y110087 ;
     skos:inScheme yso:places ;
@@ -22877,6 +22874,13 @@ yso:p508253 a skos:Concept ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Röyttä"@en .
 
+yso:p509122 a skos:Concept ;
+    dct:created "2026-10-07T16:26:13"^^xsd:dateTime ;
+    skos:closeMatch wd:Q920468 ;
+    skos:inScheme yso:places ;
+    skos:prefLabel "Viipurin ja Savonlinnan lääni"@fi ;
+    skos:topConceptOf yso:places .
+
 <http://www.yso.fi/onto/yso/p94080#en> a skosxl:Label ;
     dc:source "Wikidata"@en ;
     skosxl:literalForm "Africa"@en .
@@ -33778,15 +33782,24 @@ yso:p107944 a skos:Concept ;
     yso-meta1:mmlPlaceType wd:Q104093746 .
 
 yso:p107948 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "1993-12-31"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T15:54:50"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94228 ;
+    wgs84:lat "63.63291" ;
+    wgs84:long "23.20281" ;
+    skos:altLabel "Jöusen (Kruunupyy)"@fi,
+        "Jöussen (Kruunupyy)"@fi ;
     skos:broader yso:p94228 ;
+    skos:closeMatch pnr:10831316 ;
     skos:exactMatch allars:Y32594,
         ysa:Y107948 ;
     skos:inScheme yso:places ;
     skos:prefLabel "Jeussen (Kruunupyy)"@fi,
-        "Jeussen (Kronoby)"@sv .
+        "Jeussen (Kronoby)"@sv ;
+    yso-meta1:mmlPlaceType wd:Q103910453 .
 
 yso:p107950 a skos:Concept ;
     dct:created "1993-12-31"^^xsd:date ;
@@ -36435,27 +36448,6 @@ yso:p108317 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p108317#en> ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
 
-yso:p108324 a skos:Concept ;
-    dc:source "Location information source: Wikidata."@en,
-        "Sijaintitietojen lähde: Wikidata."@fi,
-        "Källa för positionsinformation: Wikidata."@sv ;
-    dct:created "1994-07-08"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    rdau:P60686 yso:p108325 ;
-    wgs84:lat "12.1" ;
-    wgs84:long "-1.7" ;
-    skos:closeMatch wd:Q797422 ;
-    skos:exactMatch allars:Y35059,
-        ysa:Y108324 ;
-    skos:inScheme yso:places ;
-    skos:note "Maan nimi Burkina vuodesta 1984 lähtien"@fi,
-        "1960-84 namn på Burkina Faso"@sv ;
-    skos:prefLabel "Republic of Upper Volta"@en,
-        "Ylä-Volta"@fi,
-        "Övre Volta"@sv ;
-    skos:topConceptOf yso:places ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p108324#en> .
-
 yso:p108331 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kylä, kaupunginosa tai kulmakunta"@fi,
@@ -36935,19 +36927,19 @@ yso:p108425 a skos:Concept ;
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "1994-09-26"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T16:07:39"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94217 ;
     wgs84:lat "63.84055" ;
     wgs84:long "23.12846" ;
     skos:altLabel "Neristan (Karleby)"@fi,
-        "Neristan (Kokkola)"@fi ;
+        "Vanhakaupunki (Kokkola)"@fi ;
     skos:broader yso:p94217 ;
     skos:closeMatch pnr:12021353,
         wd:Q11884197 ;
     skos:exactMatch allars:Y32452,
         ysa:Y108425 ;
     skos:inScheme yso:places ;
-    skos:prefLabel "Vanhakaupunki (Kokkola)"@fi,
+    skos:prefLabel "Neristan (Kokkola)"@fi,
         "Neristan (Karleby)"@sv ;
     yso-meta1:mmlPlaceType wd:Q103910131 .
 
@@ -40979,27 +40971,6 @@ yso:p109209 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p109209#en> ;
     yso-meta1:wikidataPlaceType wd:Q515 .
 
-yso:p109222 a skos:Concept ;
-    dc:source "Location information source: Wikidata."@en,
-        "Sijaintitietojen lähde: Wikidata."@fi,
-        "Källa för positionsinformation: Wikidata."@sv ;
-    dct:created "1995-09-07"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    rdau:P60686 yso:p105243 ;
-    wgs84:lat "13.75" ;
-    wgs84:long "100.51667" ;
-    skos:closeMatch wd:Q1081620 ;
-    skos:exactMatch allars:Y34024,
-        ysa:Y109222 ;
-    skos:inScheme yso:places ;
-    skos:note "Maan nimi vuodesta 1950 lähtien Thaimaa"@fi,
-        "Före 1939 och 1945-49 namn på Thailand"@sv ;
-    skos:prefLabel "Siam"@en,
-        "Siam"@fi,
-        "Siam"@sv ;
-    skos:topConceptOf yso:places ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p109222#en> .
-
 yso:p109227 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
         "Sijaintitietojen lähde: Wikidata."@fi,
@@ -41721,18 +41692,28 @@ yso:p109392 a skos:Concept ;
     yso-meta1:wikidataPlaceType wd:Q515 .
 
 yso:p109401 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "1995-11-20"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T16:19:44"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94459 ;
+    wgs84:lat "69.74113" ;
+    wgs84:long "26.94681" ;
+    skos:altLabel "Skaidijärvi"@fi,
+        "Skáidejávri"@fi,
+        "Vuoskkojávri"@fi ;
     skos:broader yso:p94459 ;
-    skos:closeMatch wd:Q50368816 ;
+    skos:closeMatch pnr:10822671,
+        wd:Q50368816 ;
     skos:exactMatch allars:Y35005,
         ysa:Y109401 ;
     skos:inScheme yso:places ;
-    skos:note "Järvi Utsjoella Kevon luonnonpuistossa"@fi,
+    skos:note "Järvi Utsjoella Kevon luonnonpuistossa."@fi,
         "Sjö i Kevo i Utsjoki."@sv ;
     skos:prefLabel "Vuoskojärvi"@fi,
-        "Vuoskojärvi"@sv .
+        "Vuoskojärvi"@sv ;
+    yso-meta1:mmlPlaceType wd:Q104093746 .
 
 yso:p109403 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -44400,15 +44381,24 @@ yso:p109963 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p109963#en> .
 
 yso:p109973 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "1996-09-18"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T15:48:52"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94229 ;
+    wgs84:lat "64.32155" ;
+    wgs84:long "29.08560" ;
+    skos:altLabel "Vieksi (Ylä-Vieksi)"@fi ;
     skos:broader yso:p94229 ;
+    skos:closeMatch pnr:10209769,
+        wd:Q18663112 ;
     skos:exactMatch allars:Y47362,
         ysa:Y109973 ;
     skos:inScheme yso:places ;
-    skos:prefLabel "Vieksi (Kuhmo)"@fi,
-        "Vieksi (Kuhmo)"@sv .
+    skos:prefLabel "Ylä-Vieksi (Kuhmo)"@fi,
+        "Vieksi (Kuhmo)"@sv ;
+    yso-meta1:mmlPlaceType wd:Q103910453 .
 
 yso:p109975 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -49114,27 +49104,18 @@ yso:p110936 a skos:Concept ;
     skos:prefLabel "Aska (Puolanka)"@fi,
         "Aska (Puolanka)"@sv .
 
-yso:p110937 a skos:Concept ;
-    dct:created "1998-02-24"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p105231 ;
-    skos:broader yso:p105231 ;
-    skos:exactMatch allars:Y46819,
-        ysa:Y110937 ;
-    skos:inScheme yso:places ;
-    skos:prefLabel "Väisälä (Hirvensalmi)"@fi,
-        "Väisälä (Hirvensalmi)"@sv .
-
 yso:p110938 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Saari"@fi,
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "1998-02-24"^^xsd:date ;
-    dct:modified "2024-08-28"^^xsd:date ;
+    dct:modified "2026-10-07T15:53:37"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p105231 ;
     wgs84:lat "61.78044" ;
     wgs84:long "26.84797" ;
+    skos:altLabel "Väisälä (Hirvensalmi)"@fi,
+        "Väisälä (Hirvensalmi)"@sv ;
     skos:broader yso:p105231 ;
     skos:closeMatch pnr:10160160,
         wd:Q18682888 ;
@@ -60257,25 +60238,6 @@ yso:p115076 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p115076#en> ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
 
-yso:p115077 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Niemi"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "2001-09-11"^^xsd:date ;
-    dct:modified "2024-08-28"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94217 ;
-    wgs84:lat "63.79613" ;
-    wgs84:long "23.00877" ;
-    skos:broader yso:p94217 ;
-    skos:closeMatch pnr:10875681 ;
-    skos:exactMatch allars:Y32413,
-        ysa:Y115077 ;
-    skos:inScheme yso:places ;
-    skos:prefLabel "Laajalahti (Kokkola)"@fi,
-        "Sandskata (Karleby)"@sv ;
-    yso-meta1:mmlPlaceType wd:Q113965156 .
-
 yso:p115078 a skos:Concept ;
     dct:created "2001-09-11"^^xsd:date ;
     dct:modified "2024-05-26"^^xsd:date ;
@@ -61364,6 +61326,28 @@ yso:p115957 a skos:Concept ;
     skos:inScheme yso:places ;
     skos:prefLabel "Salo-Kosteala (Valkjärvi)"@fi,
         "Salo-Kosteala (Valkjärvi)"@sv .
+
+yso:p115958 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "2001-10-30"^^xsd:date ;
+    dct:modified "2026-10-07T16:01:58"^^xsd:dateTime ;
+    iso-thes:broaderPartitive yso:p94159 ;
+    wgs84:lat "62.10358" ;
+    wgs84:long "21.69510" ;
+    skos:altLabel "Nevoonjoki"@fi,
+        "Siironjoki"@fi ;
+    skos:broader yso:p94159 ;
+    skos:closeMatch pnr:10054797 ;
+    skos:exactMatch allars:Y34039,
+        ysa:Y115958 ;
+    skos:inScheme yso:places ;
+    skos:note "Joki Etelä-Pohjanmaalla."@fi,
+        "Älv i södra Österbotten, huvudsakligen inom kommunerna  Storå och Kristinestad"@sv ;
+    skos:prefLabel "Siiroonjoki"@fi,
+        "Siironjoki"@sv ;
+    yso-meta1:mmlPlaceType wd:Q355304 .
 
 yso:p115959 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -74506,19 +74490,26 @@ yso:p132013 a skos:Concept ;
     yso-meta1:mmlPlaceType wd:Q103910131 .
 
 yso:p132513 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "2004-08-12"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T15:48:17"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94334 ;
-    skos:altLabel "Niskamäki (Pieksämäen maalaiskunta)"@fi,
+    wgs84:lat "62.26804" ;
+    wgs84:long "26.94885" ;
+    skos:altLabel "Niskamäki (Pohjois-Niskamäki)"@fi,
+        "Pohjois-Niskamäki (Pieksämäen maalaiskunta)"@fi,
         "Niskamäki (Pieksämäki landskommun)"@sv ;
     skos:broader yso:p94334 ;
+    skos:closeMatch pnr:10861584 ;
     skos:exactMatch allars:Y47895,
         ysa:Y132513 ;
     skos:inScheme yso:places ;
-    skos:note "Pieksämäen maalaiskunta lakkautettu 1.1.2004. Muodosti yhdessä Jäppilän ja Virtasalmen kanssa Pieksänmaan kunnan. Pieksänmaa liitetty 1.1.2007 Pieksämäkeen"@fi,
-        "Pieksämäki landskommun upphörde 1.1.2004. Bildade tillsammans med Jäppilä och Virtasalmi Pieksänmaa kommun. Pieksänmaa sammanslogs med Pieksämäki 1.1.2007"@sv ;
-    skos:prefLabel "Niskamäki (Pieksämäki)"@fi,
-        "Niskamäki (Pieksämäki)"@sv .
+    skos:note "Pieksämäki landskommun upphörde 1.1.2004. Bildade tillsammans med Jäppilä och Virtasalmi Pieksänmaa kommun. Pieksänmaa sammanslogs med Pieksämäki 1.1.2007"@sv ;
+    skos:prefLabel "Pohjois-Niskamäki (Pieksämäki)"@fi,
+        "Niskamäki (Pieksämäki)"@sv ;
+    yso-meta1:mmlPlaceType wd:Q103910453 .
 
 yso:p132514 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -90297,39 +90288,19 @@ yso:p160695 a skos:Concept ;
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "2008-08-21"^^xsd:date ;
-    dct:modified "2026-10-02T10:22:46"^^xsd:dateTime ;
+    dct:modified "2026-10-07T15:03:00"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94228 ;
     wgs84:lat "63.74854" ;
     wgs84:long "23.00035" ;
-    skos:altLabel "Bråtöbyn (Kruunupyy)"@fi,
+    skos:altLabel "Bråtö (Kruunupyy)"@fi,
         "Bråtöbyn (Kronoby)"@sv ;
     skos:broader yso:p94228 ;
     skos:closeMatch pnr:10875798 ;
     skos:exactMatch allars:Y47347,
         ysa:Y160695 ;
     skos:inScheme yso:places ;
-    skos:prefLabel "Bråtö (Kruunupyy)"@fi,
+    skos:prefLabel "Bråtöbyn (Kruunupyy)"@fi,
         "Bråtö (Kronoby)"@sv ;
-    yso-meta1:mmlPlaceType wd:Q103910131 .
-
-yso:p160696 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kylä, kaupunginosa tai kulmakunta"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "2008-08-21"^^xsd:date ;
-    dct:modified "2024-08-28"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94228 ;
-    wgs84:lat "63.73115" ;
-    wgs84:long "23.02200" ;
-    skos:broader yso:p94228 ;
-    skos:closeMatch pnr:10875779,
-        wd:Q108614698 ;
-    skos:exactMatch allars:Y47348,
-        ysa:Y160696 ;
-    skos:inScheme yso:places ;
-    skos:prefLabel "Ytterbråtö (Kruunupyy)"@fi,
-        "Ytterbråtö (Kronoby)"@sv ;
     yso-meta1:mmlPlaceType wd:Q103910131 .
 
 yso:p160697 a skos:Concept ;
@@ -90434,19 +90405,6 @@ yso:p160703 a skos:Concept ;
         "Nuorgam (Utsjoki)"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p160703#en> ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
-
-yso:p160714 a skos:Concept ;
-    dct:created "2008-08-21"^^xsd:date ;
-    dct:modified "2025-12-17T08:53:21"^^xsd:dateTime ;
-    iso-thes:broaderPartitive yso:p94459 ;
-    skos:broader yso:p94459 ;
-    skos:exactMatch allars:Y44888,
-        ysa:Y160714 ;
-    skos:inScheme yso:places ;
-    skos:note "Järvi Utsjoen Nuorgamissa"@fi,
-        "Sjö i Nuorgam i Utsjoki."@sv ;
-    skos:prefLabel "Skaidijärvi"@fi,
-        "Skaidijärvi"@sv .
 
 yso:p160716 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -95212,21 +95170,31 @@ yso:p169885 a skos:Concept ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
 
 yso:p169888 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "2009-12-07"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
+    dct:modified "2026-10-07T16:16:30"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p105478 ;
-    skos:altLabel "Pehkola (Paavola)"@fi,
+    wgs84:lat "64.60715" ;
+    wgs84:long "25.20643" ;
+    skos:altLabel "Paavola (Ruukki)"@fi,
+        "Pehkola (Paavola)"@fi,
         "Pehkola (Ruukki)"@fi,
+        "Pehkola (Siikajoki)"@fi,
         "Pehkola (Paavola)"@sv,
         "Pehkola (Ruukki)"@sv ;
     skos:broader yso:p105478 ;
+    skos:closeMatch pnr:10813070,
+        wd:Q3365627 ;
     skos:exactMatch allars:Y48222,
         ysa:Y169888 ;
     skos:inScheme yso:places ;
-    skos:note "Paavola yhdistetty 1.1.1973 Revonlahden kanssa Ruukiksi. Ruukki liitetty 1.1.2007 Siikajokeen"@fi,
+    skos:note "Paavola yhdistetty 1.1.1973 Revonlahden kanssa Ruukiksi. Ruukki liitetty 1.1.2007 Siikajokeen."@fi,
         "Paavola sammanslogs med Revolax 1.1.1973 till Ruukki. Ruukki sammanslogs 1.1.2007 med Siikajoki."@sv ;
-    skos:prefLabel "Pehkola (Siikajoki)"@fi,
-        "Pehkola (Siikajoki)"@sv .
+    skos:prefLabel "Paavola (Siikajoki)"@fi,
+        "Pehkola (Siikajoki)"@sv ;
+    yso-meta1:mmlPlaceType wd:Q103910177 .
 
 yso:p169889 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -95253,10 +95221,11 @@ yso:p169891 a skos:Concept ;
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "2009-12-07"^^xsd:date ;
-    dct:modified "2024-08-28"^^xsd:date ;
+    dct:modified "2026-10-07T15:48:00"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94334 ;
     wgs84:lat "62.23376" ;
     wgs84:long "27.01002" ;
+    skos:altLabel "Niskamäki (Etelä-Niskamäki)"@fi ;
     skos:broader yso:p94334 ;
     skos:closeMatch pnr:10880796,
         wd:Q108613879 ;
@@ -98387,17 +98356,6 @@ yso:p178107 a skos:Concept ;
         "Telkkälä (Ranua)"@sv ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
 
-yso:p178108 a skos:Concept ;
-    dct:created "2011-03-10"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p105777 ;
-    skos:broader yso:p105777 ;
-    skos:exactMatch allars:Y48054,
-        ysa:Y178108 ;
-    skos:inScheme yso:places ;
-    skos:prefLabel "Haara-Hiltunen (Ranua)"@fi,
-        "Haara-Hiltunen (Ranua)"@sv .
-
 yso:p178118 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kylä, kaupunginosa tai kulmakunta"@fi,
@@ -101330,11 +101288,11 @@ yso:p184560 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "2012-02-29"^^xsd:date ;
-    dct:modified "2026-06-12T11:49:40"^^xsd:dateTime ;
+    dct:modified "2026-10-07T16:25:01"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94080 ;
     wgs84:lat "2" ;
     wgs84:long "21" ;
-    skos:altLabel "Keski-Afrikka (alue)"@fi,
+    skos:altLabel "Keski-Afrikka (Keskinen Afrikka)"@fi,
         "centrala Afrika (område)"@sv ;
     skos:broader yso:p94080 ;
     skos:closeMatch wd:Q27433 ;
@@ -108331,6 +108289,30 @@ yso:p196804 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p196804#en> ;
     yso-meta1:mmlPlaceType wd:Q107549321 .
 
+yso:p196807 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kylä, kaupunginosa tai kulmakunta"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "2014-01-16"^^xsd:date ;
+    dct:modified "2026-10-07T15:32:20"^^xsd:dateTime ;
+    iso-thes:broaderPartitive yso:p94181 ;
+    wgs84:lat "64.25202" ;
+    wgs84:long "27.69475" ;
+    skos:altLabel "Uusikylä (Paltamo)"@fi,
+        "Uusikylä (Paltamo)"@sv ;
+    skos:broader yso:p94181 ;
+    skos:closeMatch pnr:10266913,
+        wd:Q11883963 ;
+    skos:exactMatch allars:Y48935,
+        ysa:Y196807 ;
+    skos:inScheme yso:places ;
+    skos:note "Kylä kuului Uusikylä-nimisenä alun perin Paltamoon, kunnes se liitettiin Kajaanin maalaiskuntaan vuonna 1954. Kylän nimi vaihtui Nakertajaksi vuonna 1957. Kajaanin maalaiskunta liitetty 1.1.1977 Kajaanin kaupunkiin."@fi,
+        "By som ursprungligen hette Uusikylä och hörde till Paltamo, tills den anslöts till Kajana landskommun år 1954. Byns namn ändrades till Nakertaja år 1957. Kajana landskommun sammanslogs med Kajana stad 1.1.1977."@sv ;
+    skos:prefLabel "Nakertaja (Kajaani)"@fi,
+        "Nakertaja (Kajana)"@sv ;
+    yso-meta1:mmlPlaceType wd:Q103910131 .
+
 yso:p196809 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Kansalaisen karttapaikka"@fi,
@@ -113565,7 +113547,7 @@ yso:p205510 a skos:Concept ;
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
     dct:created "2015-10-13"^^xsd:date ;
-    dct:modified "2026-10-01T15:36:08"^^xsd:dateTime ;
+    dct:modified "2026-10-07T16:05:01"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p108400 ;
     wgs84:lat "67.49349" ;
     wgs84:long "27.42370" ;
@@ -113575,7 +113557,7 @@ yso:p205510 a skos:Concept ;
     skos:exactMatch allars:Y50065,
         ysa:Y205510 ;
     skos:inScheme yso:places ;
-    skos:prefLabel "Kiurujärvi (Savukoski)"@fi,
+    skos:prefLabel "Kiurujärvi (Savukoski : kylä)"@fi,
         "Kiurujärvi (Savukoski)"@sv ;
     yso-meta1:mmlPlaceType wd:Q103910453 .
 
@@ -150613,6 +150595,13 @@ yso:p94501 a skos:Concept ;
 yso:p99490 iso-thes:narrowerPartitive yso:p213356 ;
     skos:narrower yso:p213356 .
 
+wd:Q113965156 a yso-meta1:MMLPlaceType ;
+    rdfs:label "shore or waterside"@en,
+        "ranta-alue"@fi,
+        "strandområde"@sv ;
+    owl:sameAs wd:Q113965156 ;
+    skos:notation "1010130" .
+
 wd:Q113965173 a yso-meta1:MMLPlaceType ;
     rdfs:label "former dwelling place"@en,
         "hävinnyt asuinpaikka"@fi,
@@ -161761,16 +161750,17 @@ yso:p184559 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "2012-02-29"^^xsd:date ;
-    dct:modified "2025-12-15T16:18:33"^^xsd:dateTime ;
+    dct:modified "2026-10-07T14:56:00"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94080 ;
     wgs84:lat "-25.87911" ;
     wgs84:long "23.09758" ;
+    skos:altLabel "Etelä-Afrikka (Eteläinen Afrikka)"@fi ;
     skos:broader yso:p94080 ;
     skos:closeMatch wd:Q27394 ;
     skos:exactMatch allars:Y45468,
         ysa:Y184559 ;
     skos:inScheme yso:places ;
-    skos:note "Afrikan eteläiset osat käsittävä maantieteellinen alue"@fi,
+    skos:note "Afrikan eteläiset osat käsittävä maantieteellinen alue."@fi,
         "Geografiskt område som inbegriper de södra delarna av Afrika."@sv ;
     skos:prefLabel "Southern Africa"@en,
         "Eteläinen Afrikka"@fi,
@@ -162408,29 +162398,6 @@ yso:p196777 a skos:Concept ;
     skos:topConceptOf yso:places ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p196777#en> .
 
-yso:p196807 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kylä, kaupunginosa tai kulmakunta"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "2014-01-16"^^xsd:date ;
-    dct:modified "2024-08-28"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94181 ;
-    wgs84:lat "64.25202" ;
-    wgs84:long "27.69475" ;
-    skos:broader yso:p94181 ;
-    skos:closeMatch pnr:10266913,
-        wd:Q11883963 ;
-    skos:exactMatch allars:Y48935,
-        ysa:Y196807 ;
-    skos:inScheme yso:places ;
-    skos:note "Kylä kuului Uusikylä-nimisenä alun perin Paltamoon, kunnes se liitettiin Kajaanin maalaiskuntaan vuonna 1954. Kylän nimi vaihtui Nakertajaksi vuonna 1957. Kajaanin maalaiskunta liitetty 1.1.1977 Kajaanin kaupunkiin"@fi,
-        "By som ursprungligen hette Uusikylä och hörde till Paltamo, tills den anslöts till Kajana landskommun år 1954. Byns namn ändrades till Nakertaja år 1957. Kajana landskommun sammanslogs med Kajana stad 1.1.1977."@sv ;
-    skos:prefLabel "Nakertaja (Kajaani)"@fi,
-        "Nakertaja (Kajana)"@sv ;
-    skos:related yso:p208559 ;
-    yso-meta1:mmlPlaceType wd:Q103910131 .
-
 yso:p198497 a skos:Concept ;
     dc:source "Wikipedia: http://en.wikipedia.org/wiki/East-Central_Europe; http://de.wikipedia.org/wiki/Ostmitteleuropa"@fi ;
     dct:created "2014-05-15"^^xsd:date ;
@@ -162942,20 +162909,6 @@ yso:p207557 a skos:Concept ;
         "Norrland"@sv ;
     skos:related yso:p509080 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p207557#en> .
-
-yso:p208559 a skos:Concept ;
-    dct:created "2016-05-13"^^xsd:date ;
-    dct:modified "2024-05-26"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p105582 ;
-    skos:broader yso:p105582 ;
-    skos:exactMatch allars:Y50557,
-        ysa:Y208559 ;
-    skos:inScheme yso:places ;
-    skos:note "Kylä liitettiin Kajaanin maalaiskuntaan vuonna 1954. Kylän nimi vaihtui Nakertajaksi vuonna 1957. Kajaanin maalaiskunta liitetty 1.1.1977 Kajaanin kaupunkiin"@fi,
-        "Byn anslöts till Kajana landskommun år 1954. Namnet ändrades till Nakertaja år 1957. Kajana landskommun sammanslogs med Kajana stad 1.1.1977."@sv ;
-    skos:prefLabel "Uusikylä (Paltamo)"@fi,
-        "Uusikylä (Paltamo)"@sv ;
-    skos:related yso:p196807 .
 
 yso:p209155 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -167093,13 +167046,6 @@ yso:p94473 a skos:Concept ;
     skos:topConceptOf yso:places ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94473#en> .
 
-wd:Q113965156 a yso-meta1:MMLPlaceType ;
-    rdfs:label "shore or waterside"@en,
-        "ranta-alue"@fi,
-        "strandområde"@sv ;
-    owl:sameAs wd:Q113965156 ;
-    skos:notation "1010130" .
-
 wd:Q113965158 a yso-meta1:MMLPlaceType ;
     rdfs:label "depression"@en,
         "painanne"@fi,
@@ -169099,6 +169045,31 @@ yso:p108299 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p108299#en> ;
     yso-meta1:mmlPlaceType wd:Q113965178 .
 
+yso:p108325 a skos:Concept ;
+    dc:source "Location information source: Wikidata."@en,
+        "Sijaintitietojen lähde: Wikidata."@fi,
+        "Källa för positionsinformation: Wikidata."@sv ;
+    dct:created "1994-07-08"^^xsd:date ;
+    dct:modified "2026-10-07T15:27:00"^^xsd:dateTime ;
+    iso-thes:broaderPartitive yso:p94080 ;
+    iso-thes:narrowerPartitive yso:p508378 ;
+    wgs84:lat "12.26667" ;
+    wgs84:long "-2.06667" ;
+    skos:altLabel "Burkina"@fi,
+        "Ylä-Volta"@fi ;
+    skos:broader yso:p94080 ;
+    skos:closeMatch wd:Q965 ;
+    skos:exactMatch allars:Y30718,
+        ysa:Y108325 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p508378 ;
+    skos:note "Till 1985 Övre Volta, stat i Västafrika"@sv ;
+    skos:prefLabel "Burkina Faso"@en,
+        "Burkina Faso"@fi,
+        "Burkina Faso"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p108325#en> ;
+    yso-meta1:wikidataPlaceType wd:Q6256 .
+
 yso:p108406 a skos:Concept ;
     dct:created "1994-09-02"^^xsd:date ;
     dct:modified "2024-09-25"^^xsd:date ;
@@ -169487,11 +169458,13 @@ yso:p109173 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "1995-09-05"^^xsd:date ;
-    dct:modified "2025-12-16T12:06:01"^^xsd:dateTime ;
+    dct:modified "2026-10-07T14:54:00"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p105113 ;
     iso-thes:narrowerPartitive yso:p508346 ;
     wgs84:lat "-0.5275" ;
     wgs84:long "166.935" ;
+    skos:altLabel "Naoeron tasavalta"@fi,
+        "Nauru"@fi ;
     skos:broader yso:p105113 ;
     skos:closeMatch wd:Q697 ;
     skos:exactMatch allars:Y33259,
@@ -169500,7 +169473,7 @@ yso:p109173 a skos:Concept ;
     skos:narrower yso:p508346 ;
     skos:note "Stat i Stilla havet, mellan Mikronesien och Melanesien."@sv ;
     skos:prefLabel "Nauru"@en,
-        "Nauru"@fi,
+        "Naoero"@fi,
         "Nauru"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p109173#en> ;
     yso-meta1:wikidataPlaceType wd:Q6256 .
@@ -169717,11 +169690,12 @@ yso:p109200 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "1995-09-06"^^xsd:date ;
-    dct:modified "2025-12-16T11:59:59"^^xsd:dateTime ;
+    dct:modified "2026-10-07T14:51:14"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p107912 ;
     iso-thes:narrowerPartitive yso:p508349 ;
     wgs84:lat "-9.46667" ;
     wgs84:long "159.81667" ;
+    skos:altLabel "Salomonsaaret"@fi ;
     skos:broader yso:p107912 ;
     skos:closeMatch wd:Q685 ;
     skos:exactMatch allars:Y33965,
@@ -169730,7 +169704,7 @@ yso:p109200 a skos:Concept ;
     skos:narrower yso:p508349 ;
     skos:note "Ögrupp i Melanesien i västra Stilla havet"@sv ;
     skos:prefLabel "Solomon Islands"@en,
-        "Salomonsaaret"@fi,
+        "Salomoninsaaret"@fi,
         "Salomonöarna"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p109200#en> ;
     yso-meta1:wikidataPlaceType wd:Q6256 .
@@ -171551,22 +171525,6 @@ yso:p115082 a skos:Concept ;
     skos:prefLabel "Porkkalanselkä"@fi,
         "Porkalafjärden"@sv ;
     yso-meta1:mmlPlaceType wd:Q113965178 .
-
-yso:p115958 a skos:Concept ;
-    dc:source "Siironjoen ja Vesijärven nykytila ja kehittämismahdollisuudet"@fi ;
-    dct:created "2001-10-30"^^xsd:date ;
-    dct:modified "2025-12-16T15:43:53"^^xsd:dateTime ;
-    iso-thes:broaderPartitive yso:p94159,
-        yso:p94227 ;
-    skos:broader yso:p94159,
-        yso:p94227 ;
-    skos:exactMatch allars:Y34039,
-        ysa:Y115958 ;
-    skos:inScheme yso:places ;
-    skos:note "Joki Etelä-Pohjanmaalla, pääosin Isojoen ja Kristiinankaupungin kuntien alueella"@fi,
-        "Älv i södra Österbotten, huvudsakligen inom kommunerna  Storå och Kristinestad"@sv ;
-    skos:prefLabel "Siironjoki"@fi,
-        "Siironjoki"@sv .
 
 yso:p116332 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -178422,7 +178380,7 @@ yso:p105548 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "1991-03-13"^^xsd:date ;
-    dct:modified "2026-01-08T15:08:25"^^xsd:dateTime ;
+    dct:modified "2026-10-07T15:13:46"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p105179 ;
     iso-thes:narrowerPartitive yso:p508396 ;
     wgs84:lat "40" ;
@@ -178430,7 +178388,7 @@ yso:p105548 a skos:Concept ;
     skos:altLabel "People's Republic of Korea"@en,
         "Korea (Pohjois-Korea)"@fi,
         "Korean demokraattinen kansantasavalta"@fi,
-        "Pohjois-Korea"@fi,
+        "Korean kansantasavalta"@fi,
         "Demokratiska folkrepubliken Korea"@sv,
         "Nordkorea"@sv ;
     skos:broader yso:p105179 ;
@@ -178441,7 +178399,7 @@ yso:p105548 a skos:Concept ;
     skos:inScheme yso:places ;
     skos:narrower yso:p508396 ;
     skos:prefLabel "North Korea"@en,
-        "Korean kansantasavalta"@fi,
+        "Pohjois-Korea"@fi,
         "Folkrepubliken Korea"@sv ;
     skos:related yso:p109302 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105548#en> ;
@@ -179058,32 +179016,6 @@ yso:p108252 a skos:Concept ;
     skos:related yso:p141757 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p108252#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
-
-yso:p108325 a skos:Concept ;
-    dc:source "Location information source: Wikidata."@en,
-        "Sijaintitietojen lähde: Wikidata."@fi,
-        "Källa för positionsinformation: Wikidata."@sv ;
-    dct:created "1994-07-08"^^xsd:date ;
-    dct:modified "2025-12-16T09:56:47"^^xsd:dateTime ;
-    iso-thes:broaderPartitive yso:p94080 ;
-    iso-thes:narrowerPartitive yso:p508378 ;
-    rdau:P60683 yso:p108324 ;
-    wgs84:lat "12.26667" ;
-    wgs84:long "-2.06667" ;
-    skos:altLabel "Burkina"@fi ;
-    skos:broader yso:p94080 ;
-    skos:closeMatch wd:Q965 ;
-    skos:exactMatch allars:Y30718,
-        ysa:Y108325 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p508378 ;
-    skos:note "Maan nimi Burkina Faso vuodesta 1984 lähtien"@fi,
-        "Till 1985 Övre Volta, stat i Västafrika"@sv ;
-    skos:prefLabel "Burkina Faso"@en,
-        "Burkina Faso"@fi,
-        "Burkina Faso"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p108325#en> ;
-    yso-meta1:wikidataPlaceType wd:Q6256 .
 
 yso:p108418 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -184598,14 +184530,14 @@ yso:p105182 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "1990-08-28"^^xsd:date ;
-    dct:modified "2026-01-08T15:08:50"^^xsd:dateTime ;
+    dct:modified "2026-10-07T15:13:29"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p105179 ;
     iso-thes:narrowerPartitive yso:p113568,
         yso:p508876 ;
     wgs84:lat "36" ;
     wgs84:long "128" ;
-    skos:altLabel "Etelä-Korea"@fi,
-        "Korea (Etelä-Korea)"@fi,
+    skos:altLabel "Korea (Etelä-Korea)"@fi,
+        "Korean tasavalta"@fi,
         "Sydkorea"@sv ;
     skos:broader yso:p105179 ;
     skos:closeMatch wd:Q884 ;
@@ -184615,7 +184547,7 @@ yso:p105182 a skos:Concept ;
     skos:narrower yso:p113568,
         yso:p508876 ;
     skos:prefLabel "South Korea"@en,
-        "Korean tasavalta"@fi,
+        "Etelä-Korea"@fi,
         "Republiken Korea"@sv ;
     skos:related yso:p109302 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105182#en> ;
@@ -188332,6 +188264,36 @@ yso:p105202 a skos:Concept ;
         yso:p120572 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105202#en> .
 
+yso:p105243 a skos:Concept ;
+    dc:source "Location information source: Wikidata."@en,
+        "Sijaintitietojen lähde: Wikidata."@fi,
+        "Källa för positionsinformation: Wikidata."@sv ;
+    dct:created "1990-09-20"^^xsd:date ;
+    dct:modified "2026-10-07T15:22:55"^^xsd:dateTime ;
+    iso-thes:broaderPartitive yso:p105337 ;
+    iso-thes:narrowerPartitive yso:p112196,
+        yso:p112738,
+        yso:p152455,
+        yso:p195416 ;
+    wgs84:lat "14" ;
+    wgs84:long "101" ;
+    skos:altLabel "Siam"@fi ;
+    skos:broader yso:p105337 ;
+    skos:closeMatch wd:Q869 ;
+    skos:exactMatch allars:Y30558,
+        ysa:Y105243 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p112196,
+        yso:p112738,
+        yso:p152455,
+        yso:p195416 ;
+    skos:note "Stat på Sydöstasiatiska halvön ; före 1939 och 1945-49 Siam."@sv ;
+    skos:prefLabel "Thailand"@en,
+        "Thaimaa"@fi,
+        "Thailand"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105243#en> ;
+    yso-meta1:wikidataPlaceType wd:Q6256 .
+
 yso:p105251 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
         "Sijaintitietojen lähde: Wikidata."@fi,
@@ -189662,37 +189624,6 @@ yso:p105171 a skos:Concept ;
     skos:related yso:p145968 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105171#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
-
-yso:p105243 a skos:Concept ;
-    dc:source "Location information source: Wikidata."@en,
-        "Sijaintitietojen lähde: Wikidata."@fi,
-        "Källa för positionsinformation: Wikidata."@sv ;
-    dct:created "1990-09-20"^^xsd:date ;
-    dct:modified "2026-01-08T13:46:47"^^xsd:dateTime ;
-    iso-thes:broaderPartitive yso:p105337 ;
-    iso-thes:narrowerPartitive yso:p112196,
-        yso:p112738,
-        yso:p152455,
-        yso:p195416 ;
-    rdau:P60683 yso:p109222 ;
-    wgs84:lat "14" ;
-    wgs84:long "101" ;
-    skos:broader yso:p105337 ;
-    skos:closeMatch wd:Q869 ;
-    skos:exactMatch allars:Y30558,
-        ysa:Y105243 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p112196,
-        yso:p112738,
-        yso:p152455,
-        yso:p195416 ;
-    skos:note "Maan nimi vuodesta  1950 lähtien Thaimaa"@fi,
-        "Stat på Sydöstasiatiska halvön ; före 1939 och 1945-49 Siam."@sv ;
-    skos:prefLabel "Thailand"@en,
-        "Thaimaa"@fi,
-        "Thailand"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105243#en> ;
-    yso-meta1:wikidataPlaceType wd:Q6256 .
 
 yso:p105500 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
@@ -191675,6 +191606,40 @@ yso:p105204 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105204#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
+yso:p105231 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1990-09-19"^^xsd:date ;
+    dct:modified "2024-09-25"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p105096 ;
+    iso-thes:narrowerPartitive yso:p109459,
+        yso:p110938,
+        yso:p112652,
+        yso:p113345,
+        yso:p113346,
+        yso:p201233 ;
+    wgs84:lat "61.64328" ;
+    wgs84:long "26.77737" ;
+    skos:broader yso:p105096 ;
+    skos:closeMatch pnr:10158983,
+        wd:Q607778 ;
+    skos:exactMatch allars:Y31702,
+        ysa:Y105231 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p109459,
+        yso:p110938,
+        yso:p112652,
+        yso:p113345,
+        yso:p113346,
+        yso:p201233 ;
+    skos:prefLabel "Hirvensalmi"@en,
+        "Hirvensalmi"@fi,
+        "Hirvensalmi"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105231#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
+
 yso:p105235 a skos:Concept ;
     dc:source "Location information source: Wikidata."@en,
         "Sijaintitietojen lähde: Wikidata."@fi,
@@ -192745,42 +192710,6 @@ yso:p105206 a skos:Concept ;
         "Belgien"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105206#en> ;
     yso-meta1:wikidataPlaceType wd:Q6256 .
-
-yso:p105231 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1990-09-19"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p105096 ;
-    iso-thes:narrowerPartitive yso:p109459,
-        yso:p110937,
-        yso:p110938,
-        yso:p112652,
-        yso:p113345,
-        yso:p113346,
-        yso:p201233 ;
-    wgs84:lat "61.64328" ;
-    wgs84:long "26.77737" ;
-    skos:broader yso:p105096 ;
-    skos:closeMatch pnr:10158983,
-        wd:Q607778 ;
-    skos:exactMatch allars:Y31702,
-        ysa:Y105231 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p109459,
-        yso:p110937,
-        yso:p110938,
-        yso:p112652,
-        yso:p113345,
-        yso:p113346,
-        yso:p201233 ;
-    skos:prefLabel "Hirvensalmi"@en,
-        "Hirvensalmi"@fi,
-        "Hirvensalmi"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105231#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p105237 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -195566,6 +195495,47 @@ yso:p94328 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94328#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
+yso:p94459 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1994-01-13"^^xsd:date ;
+    dct:modified "2024-09-25"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p94256 ;
+    iso-thes:narrowerPartitive yso:p109401,
+        yso:p110014,
+        yso:p110676,
+        yso:p139448,
+        yso:p160703,
+        yso:p182188,
+        yso:p508473,
+        yso:p508500,
+        yso:p508502 ;
+    wgs84:lat "69.90783" ;
+    wgs84:long "27.02654" ;
+    skos:broader yso:p94256 ;
+    skos:closeMatch pnr:10825519,
+        wd:Q581920 ;
+    skos:exactMatch allars:Y34615,
+        ysa:Y94459 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p109401,
+        yso:p110014,
+        yso:p110676,
+        yso:p139448,
+        yso:p160703,
+        yso:p182188,
+        yso:p508473,
+        yso:p508500,
+        yso:p508502 ;
+    skos:prefLabel "Utsjoki"@en,
+        "Utsjoki"@fi,
+        "Utsjoki"@sv ;
+    skos:related yso:p138852 ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94459#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
+
 wd:Q113965164 a yso-meta1:MMLPlaceType ;
     rdfs:label "marsh or paludified area"@en,
         "suo tai soistuma"@fi,
@@ -195695,6 +195665,48 @@ yso:p105425 a skos:Concept ;
         "Askola"@fi,
         "Askola"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105425#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
+
+yso:p105777 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1991-09-17"^^xsd:date ;
+    dct:modified "2024-09-25"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p94256 ;
+    iso-thes:narrowerPartitive yso:p110667,
+        yso:p112885,
+        yso:p112887,
+        yso:p113349,
+        yso:p113350,
+        yso:p178107,
+        yso:p183987,
+        yso:p209346,
+        yso:p209656,
+        yso:p212073 ;
+    wgs84:lat "65.92751" ;
+    wgs84:long "26.51842" ;
+    skos:broader yso:p94256 ;
+    skos:closeMatch pnr:10472569,
+        wd:Q485776 ;
+    skos:exactMatch allars:Y33857,
+        ysa:Y105777 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p110667,
+        yso:p112885,
+        yso:p112887,
+        yso:p113349,
+        yso:p113350,
+        yso:p178107,
+        yso:p183987,
+        yso:p209346,
+        yso:p209656,
+        yso:p212073 ;
+    skos:prefLabel "Ranua"@en,
+        "Ranua"@fi,
+        "Ranua"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105777#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p94126 a skos:Concept ;
@@ -196216,49 +196228,6 @@ yso:p94458 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94458#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
-yso:p94459 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1994-01-13"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94256 ;
-    iso-thes:narrowerPartitive yso:p109401,
-        yso:p110014,
-        yso:p110676,
-        yso:p139448,
-        yso:p160703,
-        yso:p160714,
-        yso:p182188,
-        yso:p508473,
-        yso:p508500,
-        yso:p508502 ;
-    wgs84:lat "69.90783" ;
-    wgs84:long "27.02654" ;
-    skos:broader yso:p94256 ;
-    skos:closeMatch pnr:10825519,
-        wd:Q581920 ;
-    skos:exactMatch allars:Y34615,
-        ysa:Y94459 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p109401,
-        yso:p110014,
-        yso:p110676,
-        yso:p139448,
-        yso:p160703,
-        yso:p160714,
-        yso:p182188,
-        yso:p508473,
-        yso:p508500,
-        yso:p508502 ;
-    skos:prefLabel "Utsjoki"@en,
-        "Utsjoki"@fi,
-        "Utsjoki"@sv ;
-    skos:related yso:p138852 ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94459#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
-
 yso:p94480 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
@@ -196440,7 +196409,7 @@ yso:p105098 a skos:Concept ;
         "Sijaintitietojen lähde: Wikidata."@fi,
         "Källa för positionsinformation: Wikidata."@sv ;
     dct:created "1990-06-26"^^xsd:date ;
-    dct:modified "2025-12-16T09:59:14"^^xsd:dateTime ;
+    dct:modified "2026-10-07T15:00:45"^^xsd:dateTime ;
     iso-thes:broaderPartitive yso:p94080 ;
     iso-thes:narrowerPartitive yso:p109962,
         yso:p110955,
@@ -196455,6 +196424,7 @@ yso:p105098 a skos:Concept ;
     wgs84:lat "-29" ;
     wgs84:long "24" ;
     skos:altLabel "Etelä-Afrikan tasavalta"@fi,
+        "Etelä-Afrikka (valtio)"@fi,
         "Republiken Sydafrika"@sv ;
     skos:broader yso:p94080 ;
     skos:closeMatch wd:Q258 ;
@@ -196471,58 +196441,60 @@ yso:p105098 a skos:Concept ;
         yso:p193660,
         yso:p216909,
         yso:p509016 ;
-    skos:note "Tarkoittaa Etelä-Afrikan tasavaltaa. Tarkoitettaessa Afrikan eteläistä osaa käytä Eteläinen Afrikka"@fi,
+    skos:note "Tarkoittaa Etelä-Afrikan tasavaltaa."@fi,
         "Avser staten Sydafrika. Om södra delen av Afrika avses används termen Södra Afrika."@sv ;
     skos:prefLabel "South Africa"@en,
         "Etelä-Afrikka"@fi,
         "Sydafrika"@sv ;
     skos:related yso:p184559,
         yso:p201435 ;
+    skos:scopeNote "Tarkoitettaessa Afrikan eteläistä osaa käytetään käsitettä <a href='http://www.yso.fi/onto/yso/p184559'>Eteläinen Afrikka</a>."@fi ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105098#en> ;
     yso-meta1:wikidataPlaceType wd:Q6256 .
 
-yso:p105777 a skos:Concept ;
+yso:p105582 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
         "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
         "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1991-09-17"^^xsd:date ;
+    dct:created "1991-04-02"^^xsd:date ;
     dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94256 ;
-    iso-thes:narrowerPartitive yso:p110667,
-        yso:p112885,
-        yso:p112887,
-        yso:p113349,
-        yso:p113350,
-        yso:p178107,
-        yso:p178108,
-        yso:p183987,
-        yso:p209346,
-        yso:p209656,
-        yso:p212073 ;
-    wgs84:lat "65.92751" ;
-    wgs84:long "26.51842" ;
-    skos:broader yso:p94256 ;
-    skos:closeMatch pnr:10472569,
-        wd:Q485776 ;
-    skos:exactMatch allars:Y33857,
-        ysa:Y105777 ;
+    iso-thes:broaderPartitive yso:p94180 ;
+    iso-thes:narrowerPartitive yso:p108537,
+        yso:p109268,
+        yso:p110133,
+        yso:p111662,
+        yso:p139444,
+        yso:p152608,
+        yso:p154142,
+        yso:p191272,
+        yso:p202489,
+        yso:p202490,
+        yso:p202491 ;
+    wgs84:lat "64.40945" ;
+    wgs84:long "27.83216" ;
+    skos:altLabel "Paldamo"@sv ;
+    skos:broader yso:p94180 ;
+    skos:closeMatch pnr:10267438,
+        wd:Q985337 ;
+    skos:exactMatch allars:Y33463,
+        ysa:Y105582 ;
     skos:inScheme yso:places ;
-    skos:narrower yso:p110667,
-        yso:p112885,
-        yso:p112887,
-        yso:p113349,
-        yso:p113350,
-        yso:p178107,
-        yso:p178108,
-        yso:p183987,
-        yso:p209346,
-        yso:p209656,
-        yso:p212073 ;
-    skos:prefLabel "Ranua"@en,
-        "Ranua"@fi,
-        "Ranua"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105777#en> ;
+    skos:narrower yso:p108537,
+        yso:p109268,
+        yso:p110133,
+        yso:p111662,
+        yso:p139444,
+        yso:p152608,
+        yso:p154142,
+        yso:p191272,
+        yso:p202489,
+        yso:p202490,
+        yso:p202491 ;
+    skos:prefLabel "Paltamo"@en,
+        "Paltamo"@fi,
+        "Paltamo"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105582#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p106016 a skos:Concept ;
@@ -196788,6 +196760,53 @@ yso:p203499 a skos:Concept ;
         yso:p227001,
         yso:p227006 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p203499#en> .
+
+yso:p94227 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1991-10-03"^^xsd:date ;
+    dct:modified "2024-09-25"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p94344 ;
+    iso-thes:narrowerPartitive yso:p105397,
+        yso:p106670,
+        yso:p110030,
+        yso:p111846,
+        yso:p113527,
+        yso:p113541,
+        yso:p154152,
+        yso:p163364,
+        yso:p210165,
+        yso:p94258,
+        yso:p94409 ;
+    wgs84:lat "62.27474" ;
+    wgs84:long "21.37855" ;
+    skos:altLabel "Kristinestad"@fi ;
+    skos:broader yso:p94344 ;
+    skos:closeMatch pnr:10055193,
+        wd:Q659642 ;
+    skos:exactMatch allars:Y32583,
+        ysa:Y94227 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p105397,
+        yso:p106670,
+        yso:p110030,
+        yso:p111846,
+        yso:p113527,
+        yso:p113541,
+        yso:p154152,
+        yso:p163364,
+        yso:p210165,
+        yso:p94258,
+        yso:p94409 ;
+    skos:note "Lapväärtti, Siipyy ja Tiukka liitetty Kristiinankaupunkiin 1.1.1973"@fi,
+        "Lappfjärd, Sideby och Tjöck sammanslogs med Kristinestad 1.1.1973"@sv ;
+    skos:prefLabel "Kristinestad"@en,
+        "Kristiinankaupunki"@fi,
+        "Kristinestad"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94227#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p105253 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -197166,53 +197185,6 @@ yso:p105508 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105508#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
-yso:p105582 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1991-04-02"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94180 ;
-    iso-thes:narrowerPartitive yso:p108537,
-        yso:p109268,
-        yso:p110133,
-        yso:p111662,
-        yso:p139444,
-        yso:p152608,
-        yso:p154142,
-        yso:p191272,
-        yso:p202489,
-        yso:p202490,
-        yso:p202491,
-        yso:p208559 ;
-    wgs84:lat "64.40945" ;
-    wgs84:long "27.83216" ;
-    skos:altLabel "Paldamo"@sv ;
-    skos:broader yso:p94180 ;
-    skos:closeMatch pnr:10267438,
-        wd:Q985337 ;
-    skos:exactMatch allars:Y33463,
-        ysa:Y105582 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p108537,
-        yso:p109268,
-        yso:p110133,
-        yso:p111662,
-        yso:p139444,
-        yso:p152608,
-        yso:p154142,
-        yso:p191272,
-        yso:p202489,
-        yso:p202490,
-        yso:p202491,
-        yso:p208559 ;
-    skos:prefLabel "Paltamo"@en,
-        "Paltamo"@fi,
-        "Paltamo"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p105582#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
-
 yso:p106248 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
@@ -197351,55 +197323,6 @@ yso:p94128 a skos:Concept ;
         "Hartola"@fi,
         "Gustav Adolfs"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94128#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
-
-yso:p94227 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1991-10-03"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94344 ;
-    iso-thes:narrowerPartitive yso:p105397,
-        yso:p106670,
-        yso:p110030,
-        yso:p111846,
-        yso:p113527,
-        yso:p113541,
-        yso:p115958,
-        yso:p154152,
-        yso:p163364,
-        yso:p210165,
-        yso:p94258,
-        yso:p94409 ;
-    wgs84:lat "62.27474" ;
-    wgs84:long "21.37855" ;
-    skos:altLabel "Kristinestad"@fi ;
-    skos:broader yso:p94344 ;
-    skos:closeMatch pnr:10055193,
-        wd:Q659642 ;
-    skos:exactMatch allars:Y32583,
-        ysa:Y94227 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p105397,
-        yso:p106670,
-        yso:p110030,
-        yso:p111846,
-        yso:p113527,
-        yso:p113541,
-        yso:p115958,
-        yso:p154152,
-        yso:p163364,
-        yso:p210165,
-        yso:p94258,
-        yso:p94409 ;
-    skos:note "Lapväärtti, Siipyy ja Tiukka liitetty Kristiinankaupunkiin 1.1.1973"@fi,
-        "Lappfjärd, Sideby och Tjöck sammanslogs med Kristinestad 1.1.1973"@sv ;
-    skos:prefLabel "Kristinestad"@en,
-        "Kristiinankaupunki"@fi,
-        "Kristinestad"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94227#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p94324 a skos:Concept ;
@@ -198674,6 +198597,59 @@ yso:p94193 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94193#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
+yso:p94228 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1990-11-05"^^xsd:date ;
+    dct:modified "2024-09-25"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p94344 ;
+    iso-thes:narrowerPartitive yso:p105140,
+        yso:p105924,
+        yso:p107948,
+        yso:p108363,
+        yso:p109580,
+        yso:p110504,
+        yso:p119314,
+        yso:p123245,
+        yso:p123473,
+        yso:p158723,
+        yso:p160695,
+        yso:p167676,
+        yso:p212567,
+        yso:p94440 ;
+    wgs84:lat "63.72782" ;
+    wgs84:long "23.03377" ;
+    skos:altLabel "Kronoby"@fi ;
+    skos:broader yso:p94344 ;
+    skos:closeMatch pnr:10704005,
+        wd:Q1789963 ;
+    skos:exactMatch allars:Y30177,
+        ysa:Y94228 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p105140,
+        yso:p105924,
+        yso:p107948,
+        yso:p108363,
+        yso:p109580,
+        yso:p110504,
+        yso:p119314,
+        yso:p123245,
+        yso:p123473,
+        yso:p158723,
+        yso:p160695,
+        yso:p167676,
+        yso:p212567,
+        yso:p94440 ;
+    skos:note "Alaveteli liitetty 1.1.1969 Kruunupyyhyn. Teerijärvi liitetty 1.1.1969 Kruunupyyhyn."@fi,
+        "Nedervetil sammanslogs med Kronoby 1.1.1969. Terjärv sammanslogs med Kronoby 1.1.1969."@sv ;
+    skos:prefLabel "Kronoby"@en,
+        "Kruunupyy"@fi,
+        "Kronoby"@sv ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94228#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
+
 yso:p94273 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
@@ -199467,61 +199443,6 @@ yso:p94187 a skos:Concept ;
         "Kankaanpää"@fi,
         "Kankaanpää"@sv ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p94187#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
-
-yso:p94228 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, maaseutu"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1990-11-05"^^xsd:date ;
-    dct:modified "2024-09-25"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94344 ;
-    iso-thes:narrowerPartitive yso:p105140,
-        yso:p105924,
-        yso:p107948,
-        yso:p108363,
-        yso:p109580,
-        yso:p110504,
-        yso:p119314,
-        yso:p123245,
-        yso:p123473,
-        yso:p158723,
-        yso:p160695,
-        yso:p160696,
-        yso:p167676,
-        yso:p212567,
-        yso:p94440 ;
-    wgs84:lat "63.72782" ;
-    wgs84:long "23.03377" ;
-    skos:altLabel "Kronoby"@fi ;
-    skos:broader yso:p94344 ;
-    skos:closeMatch pnr:10704005,
-        wd:Q1789963 ;
-    skos:exactMatch allars:Y30177,
-        ysa:Y94228 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p105140,
-        yso:p105924,
-        yso:p107948,
-        yso:p108363,
-        yso:p109580,
-        yso:p110504,
-        yso:p119314,
-        yso:p123245,
-        yso:p123473,
-        yso:p158723,
-        yso:p160695,
-        yso:p160696,
-        yso:p167676,
-        yso:p212567,
-        yso:p94440 ;
-    skos:note "Alaveteli liitetty 1.1.1969 Kruunupyyhyn. Teerijärvi liitetty 1.1.1969 Kruunupyyhyn."@fi,
-        "Nedervetil sammanslogs med Kronoby 1.1.1969. Terjärv sammanslogs med Kronoby 1.1.1969."@sv ;
-    skos:prefLabel "Kronoby"@en,
-        "Kruunupyy"@fi,
-        "Kronoby"@sv ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94228#en> ;
     yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p94308 a skos:Concept ;
@@ -207894,6 +207815,105 @@ yso:p111261 a skos:Concept ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p111261#en> ;
     yso-meta1:mmlPlaceType wd:Q113965203 .
 
+yso:p94217 a skos:Concept ;
+    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
+        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
+        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
+        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
+    dct:created "1990-11-20"^^xsd:date ;
+    dct:modified "2024-10-22"^^xsd:date ;
+    iso-thes:broaderPartitive yso:p94206 ;
+    iso-thes:narrowerPartitive yso:p105916,
+        yso:p106473,
+        yso:p108166,
+        yso:p108425,
+        yso:p108570,
+        yso:p109510,
+        yso:p113446,
+        yso:p133721,
+        yso:p133722,
+        yso:p134597,
+        yso:p135828,
+        yso:p137290,
+        yso:p139883,
+        yso:p139888,
+        yso:p139897,
+        yso:p139898,
+        yso:p162371,
+        yso:p165171,
+        yso:p168108,
+        yso:p182205,
+        yso:p200630,
+        yso:p209754,
+        yso:p212071,
+        yso:p215187,
+        yso:p216066,
+        yso:p218853,
+        yso:p218854,
+        yso:p239423,
+        yso:p507385,
+        yso:p508962,
+        yso:p508976,
+        yso:p509052,
+        yso:p94244,
+        yso:p94272,
+        yso:p94455 ;
+    wgs84:lat "63.83758" ;
+    wgs84:long "23.13196" ;
+    skos:altLabel "Gamlakarleby"@fi,
+        "Kaarlepyy"@fi,
+        "Karleby"@fi ;
+    skos:broader yso:p94206 ;
+    skos:closeMatch pnr:10876071,
+        wd:Q207891 ;
+    skos:exactMatch allars:Y32163,
+        ysa:Y94217 ;
+    skos:inScheme yso:places ;
+    skos:narrower yso:p105916,
+        yso:p106473,
+        yso:p108166,
+        yso:p108425,
+        yso:p108570,
+        yso:p109510,
+        yso:p113446,
+        yso:p133721,
+        yso:p133722,
+        yso:p134597,
+        yso:p135828,
+        yso:p137290,
+        yso:p139883,
+        yso:p139888,
+        yso:p139897,
+        yso:p139898,
+        yso:p162371,
+        yso:p165171,
+        yso:p168108,
+        yso:p182205,
+        yso:p200630,
+        yso:p209754,
+        yso:p212071,
+        yso:p215187,
+        yso:p216066,
+        yso:p218853,
+        yso:p218854,
+        yso:p239423,
+        yso:p507385,
+        yso:p508962,
+        yso:p508976,
+        yso:p509052,
+        yso:p94244,
+        yso:p94272,
+        yso:p94455 ;
+    skos:note "Kokkolan ruotsinkielinen nimi vuoteen 1977 Gamlakarleby, nykyisin Karleby. Kaarlela (johon on liitetty Öja 1.1.1969) liitetty 1.1.1977 Kokkolaan. Kälviä, Lohtaja ja Ullava liitetty 1.1.2009 Kokkolaan"@fi,
+        "Öja sammanslogs med Karleby 1.1.1969. Karleby landskommun sammanslogs med Gamlakarleby och namnet Gamlakarleby ändrades till Karleby 1.1.1977."@sv ;
+    skos:prefLabel "Kokkola"@en,
+        "Kokkola"@fi,
+        "Karleby"@sv ;
+    skos:related yso:p109512,
+        yso:p94456 ;
+    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94217#en> ;
+    yso-meta1:mmlPlaceType wd:Q113965206 .
+
 yso:p94250 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
         "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
@@ -208085,107 +208105,6 @@ yso:p105209 a skos:Concept ;
     skos:related yso:p234759 ;
     skosxl:prefLabel <http://www.yso.fi/onto/yso/p105209#en> ;
     yso-meta1:wikidataPlaceType wd:Q6256 .
-
-yso:p94217 a skos:Concept ;
-    dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
-        "Maanmittauslaitoksen paikannimirekisteri; tyyppitieto: Kunta, kaupunki"@fi,
-        "Sijaintitietojen lähde: Maanmittauslaitoksen paikannimirekisteri."@fi,
-        "Källa för positionsinformation: Lantmäteriverkets ortnamnsregister."@sv ;
-    dct:created "1990-11-20"^^xsd:date ;
-    dct:modified "2024-10-22"^^xsd:date ;
-    iso-thes:broaderPartitive yso:p94206 ;
-    iso-thes:narrowerPartitive yso:p105916,
-        yso:p106473,
-        yso:p108166,
-        yso:p108425,
-        yso:p108570,
-        yso:p109510,
-        yso:p113446,
-        yso:p115077,
-        yso:p133721,
-        yso:p133722,
-        yso:p134597,
-        yso:p135828,
-        yso:p137290,
-        yso:p139883,
-        yso:p139888,
-        yso:p139897,
-        yso:p139898,
-        yso:p162371,
-        yso:p165171,
-        yso:p168108,
-        yso:p182205,
-        yso:p200630,
-        yso:p209754,
-        yso:p212071,
-        yso:p215187,
-        yso:p216066,
-        yso:p218853,
-        yso:p218854,
-        yso:p239423,
-        yso:p507385,
-        yso:p508962,
-        yso:p508976,
-        yso:p509052,
-        yso:p94244,
-        yso:p94272,
-        yso:p94455 ;
-    wgs84:lat "63.83758" ;
-    wgs84:long "23.13196" ;
-    skos:altLabel "Gamlakarleby"@fi,
-        "Kaarlepyy"@fi,
-        "Karleby"@fi ;
-    skos:broader yso:p94206 ;
-    skos:closeMatch pnr:10876071,
-        wd:Q207891 ;
-    skos:exactMatch allars:Y32163,
-        ysa:Y94217 ;
-    skos:inScheme yso:places ;
-    skos:narrower yso:p105916,
-        yso:p106473,
-        yso:p108166,
-        yso:p108425,
-        yso:p108570,
-        yso:p109510,
-        yso:p113446,
-        yso:p115077,
-        yso:p133721,
-        yso:p133722,
-        yso:p134597,
-        yso:p135828,
-        yso:p137290,
-        yso:p139883,
-        yso:p139888,
-        yso:p139897,
-        yso:p139898,
-        yso:p162371,
-        yso:p165171,
-        yso:p168108,
-        yso:p182205,
-        yso:p200630,
-        yso:p209754,
-        yso:p212071,
-        yso:p215187,
-        yso:p216066,
-        yso:p218853,
-        yso:p218854,
-        yso:p239423,
-        yso:p507385,
-        yso:p508962,
-        yso:p508976,
-        yso:p509052,
-        yso:p94244,
-        yso:p94272,
-        yso:p94455 ;
-    skos:note "Kokkolan ruotsinkielinen nimi vuoteen 1977 Gamlakarleby, nykyisin Karleby. Kaarlela (johon on liitetty Öja 1.1.1969) liitetty 1.1.1977 Kokkolaan. Kälviä, Lohtaja ja Ullava liitetty 1.1.2009 Kokkolaan"@fi,
-        "Öja sammanslogs med Karleby 1.1.1969. Karleby landskommun sammanslogs med Gamlakarleby och namnet Gamlakarleby ändrades till Karleby 1.1.1977."@sv ;
-    skos:prefLabel "Kokkola"@en,
-        "Kokkola"@fi,
-        "Karleby"@sv ;
-    skos:related yso:p109512,
-        yso:p94456 ;
-    skosxl:prefLabel <http://www.yso.fi/onto/yso/p94217#en> ;
-    yso-meta1:mmlPlaceType wd:Q113965206 .
 
 yso:p94463 a skos:Concept ;
     dc:source "Location information source: Place Name Register of the National Land Survey of Finland."@en,
@@ -216433,7 +216352,7 @@ Du kan föreslå nya begrepp till ALLFO-orter med förslagsblanketten längst ne
         <http://lexvo.org/id/iso639-3/swe> ;
     dct:license <http://creativecommons.org/licenses/by/4.0/>,
         <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2026-10-07T00:21:55+00:00"^^xsd:dateTime ;
+    dct:modified "2026-10-08T00:23:00+00:00"^^xsd:dateTime ;
     dct:relation allars:,
         ysa: ;
     dct:subject yso:p2152 ;
@@ -216496,7 +216415,6 @@ Du kan föreslå nya begrepp till ALLFO-orter med förslagsblanketten längst ne
         yso:p108006,
         yso:p108100,
         yso:p108184,
-        yso:p108324,
         yso:p108368,
         yso:p108404,
         yso:p108417,
@@ -216507,7 +216425,6 @@ Du kan föreslå nya begrepp till ALLFO-orter med förslagsblanketten längst ne
         yso:p108780,
         yso:p108882,
         yso:p109093,
-        yso:p109222,
         yso:p109227,
         yso:p109302,
         yso:p109313,
@@ -216686,6 +216603,7 @@ Du kan föreslå nya begrepp till ALLFO-orter med förslagsblanketten längst ne
         yso:p508858,
         yso:p508979,
         yso:p509037,
+        yso:p509122,
         yso:p94080,
         yso:p94111,
         yso:p94133,
