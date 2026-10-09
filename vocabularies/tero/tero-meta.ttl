@@ -1,0 +1,111 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix termedProp: <http://purl.org/termed/properties/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tero-meta: <http://www.yso.fi/onto/tero-meta/> .
+
+dc:source
+  rdf:type rdf:Property ;
+  rdfs:label "Source"^^xsd:string ;
+.
+tero-meta:Class
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Class ;
+.
+tero-meta:Concept
+  rdf:type owl:Class ;
+  rdfs:subClassOf tero-meta:Class ;
+.
+tero-meta:DeprecatedAggregateConcept
+  rdf:type owl:Class ;
+  rdfs:subClassOf tero-meta:DeprecatedClass ;
+  skos:prefLabel "deprecated aggregate concept"@en ;
+  skos:prefLabel "käytöstä poistettu koostekäsite"@fi ;
+.
+tero-meta:DeprecatedClass
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:DeprecatedClass ;
+.
+tero-meta:DeprecatedConcept
+  rdf:type owl:Class ;
+  rdfs:comment "Käytöstä poistettujen käsitteiden luokka"@fi ;
+  rdfs:comment "Käytöstä poistettujen käsitteiden yläluokka"@fi ;
+  rdfs:subClassOf tero-meta:DeprecatedClass ;
+  skos:note "Käytöstä poistettujen käsitteiden luokka"@fi ;
+  skos:note "Käytöstä poistettujen käsitteiden yläluokka"@fi ;
+  skos:prefLabel "deprecated concept"@fi ;
+  skos:prefLabel "käytöstä poistettu käsite"@fi ;
+.
+tero-meta:DeprecatedGroupConcept
+  rdf:type owl:Class ;
+  rdfs:subClassOf tero-meta:DeprecatedClass ;
+  skos:prefLabel "deprecated group concept"@en ;
+  skos:prefLabel "käytöstä poistettu ryhmittelevä käsite"@fi ;
+.
+tero-meta:GroupConcept
+  rdf:type owl:Class ;
+  rdfs:subClassOf tero-meta:Class ;
+.
+tero-meta:StructuringClass
+  rdf:type owl:Class ;
+  rdfs:subClassOf tero-meta:Class ;
+.
+tero-meta:associativeRelation
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:SymmetricProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          tero-meta:Concept
+        ) ;
+    ] ;
+  rdfs:range tero-meta:Concept ;
+  owl:inverseOf tero-meta:associativeRelation ;
+.
+tero-meta:deprecatedHasPart
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:DeprecatedConcept ;
+.
+tero-meta:deprecatedLabel
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tero-meta:Concept ;
+  rdfs:label "deprecatedLabel"@en ;
+  rdfs:range xsd:string ;
+.
+tero-meta:deprecatedPartOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:DeprecatedConcept ;
+.
+tero-meta:deprecatedReplacedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:DeprecatedConcept ;
+  rdfs:range tero-meta:Concept ;
+.
+tero-meta:deprecatedSubClassOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:DeprecatedConcept ;
+.
+tero-meta:deprecatedSuperClassOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:DeprecatedConcept ;
+.
+tero-meta:description
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          owl:Thing
+          tero-meta:Concept
+        ) ;
+    ] ;
+  rdfs:range xsd:string ;
+.
+tero-meta:partOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain tero-meta:Concept ;
+  rdfs:range tero-meta:Concept ;
+.
