@@ -18,15 +18,21 @@ yse: a skos:ConceptScheme ;
         "Kansalliskirjasto"@fi,
         "Nationalbiblioteket i Finland"@sv ;
     dc:relation yso:, yso: ;
-    dc:title "YSO ja YSO-paikat concept proposals"@en,
-        "YSO ja YSO-paikat käsite-ehdotukset"@fi,
-        "ALLFO och ALLFO platser begreppsförslag"@sv ;
+    dc:title "YSO and SLM concept proposals"@en,
+        "YSOn ja SLMn käsite-ehdotukset"@fi,
+        "ALLFO:s och FGF:s begreppsförslag"@sv ;
     foaf:homepage <https://github.com/Finto-ehdotus/YSE#readme> .
 
 ysemeta:GeographicalConcept a owl:Class ;
     rdfs:label "Geographical location"@en,
         "Maantieteellinen paikka"@fi,
-        "Geographisk plats"@sv ;
+        "Geografisk plats"@sv ;
+    rdfs:subClassOf skos:Concept .
+
+ysemeta:GenreConcept a owl:Class ;
+    rdfs:label "Genre or form term"@en,
+        "Lajityyppi- tai muototermi"@fi,
+        "Genre- eller formterm"@sv ;
     rdfs:subClassOf skos:Concept .
 
 ysemeta:Concept a owl:Class ;

@@ -1,10 +1,11 @@
 #!/bin/sh
 
-INFILES="yse-metadata.ttl yse.ttl"
+SKOSIFYCMD="skosify"
+INFILES="yse-metadata.ttl yse-new.ttl"
 OUTFILE=yse-skos.ttl
 
 SKOSIFYHOME="../../tools/skosify/"
 LOGFILE=skosify.log
-OPTS="--no-mark-top-concepts --no-enrich-mappings --no-aggregates"
+OPTS="--no-mark-top-concepts --no-enrich-mappings --no-aggregates -F turtle"
 
-python $SKOSIFYHOME/skosify.py $OPTS -o $OUTFILE $INFILES 2>$LOGFILE
+$SKOSIFYCMD $OPTS $INFILES >$OUTFILE 2>$LOGFILE
