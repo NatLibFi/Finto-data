@@ -1,0 +1,25 @@
+{% if request.vocabid == 'musa' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Huom! Musiikin asiasanasto MUSA on poistunut käytöstä itsenäisenä sanastona. Sanastoa ei enää ylläpidetä eikä sen termejä päivitetä. Musiikkikirjallisuuden kuvailussa käytetään YSOn käsitteitä. Uusia musiikkialan termejä voi ehdottaa YSOon ehdotusjärjestelmällä.
+
+{% elseif request.lang == 'sv' %}
+
+Obs! CILLA - Specialtesaurus för musik har upphört som en självständig vokabulär. Tesauren upprätthålls inte längre och termerna i den uppdateras inte. Vid beskrivning av musiklitteratur används ALLFO-begrepp. Nya termer gällande musik föreslås till ALLFO via förslagssystemet.
+
+{% elseif request.lang == 'en' %}
+
+NB! The music vocabulary MUSA has been discontinued as an independent vocabulary. Terminology is no longer maintained and its terms are not updated. The concepts of YSO are used in describing music literature. New terms in the field of music can be proposed to YSO with a proposal system.
+
+{% elseif request.lang == 'se' %}
+
+Musihka áššesátnerádju MUSA ii leat šat geavahusas iehčanas sátnerádjun. Sátnerádju ii šat beaiváduvvo. 
+
+{% endif %}
+
+</div>
+
+{% endif %}

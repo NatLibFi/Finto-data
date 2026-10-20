@@ -1,0 +1,119 @@
+.toots {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.toot {
+  background-color: var(--white-color);
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toot h3 {
+  display: flex;
+  align-items: center;
+}
+
+.toot .user {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.toot .avatar {
+  border-radius: 4px;
+  width: 46px;
+  height: 46px;
+  margin-right: 0.8rem;
+}
+
+.toot .display-name {
+  font-weight: bold;
+  display: block;
+  margin-right: 0.4rem;
+  color: var(--dark-color);
+}
+
+.toot .user:hover .display-name {
+  text-decoration: underline;
+}
+
+.toot .username {
+  display: none;
+}
+
+.toot .permalink {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  color: var(--muted-color);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
+/* Boosting user is smaller and above the posting user. */
+.toot .boost {
+  height: 23px;
+  margin-bottom: 0.25rem;
+  column-gap: 0.25rem;
+}
+
+.toot .boost:before {
+  content: "♺";
+  font-size: 140%;
+}
+
+.toot .boost .username {
+  display: none;
+}
+
+
+.toot .permalink:hover {
+  text-decoration: underline;
+}
+
+.toot .body {
+  margin-top: 1em;
+  grid-column: 1 / 3;
+  grid-row: 2;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.toot .body a {
+  overflow-wrap: anywhere;
+  color: var(--medium-color);
+}
+
+/* Weird trick to keep the text in the page but not display it. */
+.toot .body .invisible {
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toot .body .ellipsis::after {
+  content: "…";
+}
+
+.toot .attachment {
+  grid-column: 1 / 3;
+  grid-row: 3;  
+  aspect-ratio: 16 / 9;
+}
+
+.toot .attachment img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mastodon-follow {
+  color: var(--dark-color);
+}

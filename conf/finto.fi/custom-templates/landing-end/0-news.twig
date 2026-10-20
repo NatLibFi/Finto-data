@@ -1,0 +1,35 @@
+<div class="bg-medium px-4 py-4 mt-3" id="news-box">
+
+<link rel="stylesheet" type="text/css"
+      href="resource/css/toots.css">
+
+{% if request.lang == 'fi' %}
+<h2 class="fs-3">Ajankohtaista</h2>
+{% elseif request.lang == 'sv' %}
+<h2 class="fs-3">Aktuellt</h2>
+{% elseif request.lang == 'en' %}
+<h2 class="fs-3">News</h2>
+{% elseif request.lang == 'se' %}
+<h2 class="fs-3">Ođđasat</h2>
+{% endif %}
+
+<a class="mastodon-feed"
+   href="https://some.kansalliskirjasto.fi/@Finto"
+   rel="me"
+   data-toot-limit="3"
+   data-exclude-replies="true"
+   data-exclude-reblogs="true">@Finto@some.kansalliskirjasto.fi</a>
+
+{% if request.lang == 'fi' %}
+<p><a class="mastodon-follow" href="https://some.kansalliskirjasto.fi/@Finto">Seuraa Fintoa Mastodonissa</a></p>
+{% elseif request.lang == 'sv' %}
+<p><a class="mastodon-follow" href="https://some.kansalliskirjasto.fi/@Finto">Följ Finto på Mastodon</a></p>
+{% elseif request.lang == 'en' %}
+<p><a class="mastodon-follow" href="https://some.kansalliskirjasto.fi/@Finto">Follow Finto on Mastodon</a></p>
+{% elseif request.lang == 'se' %}
+<p><a class="mastodon-follow" href="https://some.kansalliskirjasto.fi/@Finto">Čuovvu Finto Mastodonas</a></p>
+{% endif %}
+
+<script type="module" src="resource/js/emfed-wrapper.mjs"></script>
+
+</div>

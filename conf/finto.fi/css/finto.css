@@ -1,0 +1,480 @@
+:root {
+  --dark-color: #002855;
+  --muted-color: #6C778A;
+  --secondary-dark-color: #5d7999;
+  --medium-color: #1776A6;
+  --secondary-medium-color: #b8c9db;
+  --tertiary-medium-color: #9ba6bb;
+  --light-color: #dfe5ed;
+  --secondary-light-color: #f2f5f7;
+  --alert-color: #a0270a;
+  --accent-color: #fae196;
+  --white-color: #ffffff;
+  --focus-color: #0d2fc4;
+
+  --body-text: var(--dark-color);
+
+  --scrollbar-thumb: var(--secondary-dark-color);
+  --scrollbar-track: var(--secondary-light-color);
+
+  --tooltip-bg: var(--dark-color);
+  --tooltip-text: var(--secondary-light-color);
+  --tooltip-border: var(--light-color);
+
+  --topbar-bg-1: var(--dark-color); /*landing*/
+  --topbar-bg-2: var(--dark-color);
+  --topbar-text-1: var(--white-color); /*landing*/
+  --topbar-text-2: var(--white-color);
+
+  --headerbar-bg-1: var(--white-color); /*landing*/
+  --headerbar-bg-2: var(--white-color);
+  --headerbar-text: var(--dark-color);
+
+  --search-autocomplete-result-link: var(--medium-color);
+  --search-border: var(--light-color);
+  --search-keyboard-nav-border: var(--dark-color);
+  --search-button-bg: var(--dark-color);
+  --search-button-text: var(--white-color);
+  --search-dropdown-bg: var(--secondary-light-color);
+  --search-dropdown-selected-bg: var(--dark-color);
+  --search-dropdown-hover-bg: var(--dark-color);
+  --search-dropdown-hover-text: var(--white-color);
+  --search-dropdown-selected-text: var(--white-color);
+  --search-field-bg: var(--white-color);
+  --search-hover-bg: var(--light-color);
+  --global-search-vocab-selector-check: var(--white-color);
+
+  --main-bg-1: var(--white-color); /*landing*/
+  --main-bg-2: var(--secondary-medium-color); /*vocab, concept, search, error*/
+  --main-bg-3: var(--light-color); /*about, feedback*/
+
+  --landing-vocabulary-list-bg: var(--dark-color);
+  --landing-vocabulary-list-text: var(--accent-color);
+  --landing-vocabulary-list-heading: var(--white-color);
+  --landing-vocabulary-list-link: var(--white-color);
+  --landing-vocabulary-list-link-underline: var(--tertiary-medium-color);
+
+  --sidebar-tab-inactive-bg: var(--light-color);
+  --sidebar-tab-inactive-text: var(--dark-color);
+  --sidebar-tab-active-bg: var(--dark-color);
+  --sidebar-tab-active-text: var(--white-color);
+  --sidebar-scrollbar-thumb: var(--accent-color);
+  --sidebar-scrollbar-track: var(--secondary-dark-color);
+  --sidebar-bg: var(--dark-color);
+  --sidebar-text: var(--white-color);
+  --sidebar-link: var(--white-color);
+  --sidebar-selected: var(--accent-color);
+  --sidebar-alphabetical-entry-term: var(--secondary-medium-color);
+  --sidebar-hierarchy-line: var(--white-color);
+  --sidebar-notation: var(--white-color);
+
+  --main-content-bg: var(--white-color);
+  --main-content-text: var(--dark-color);
+  --main-content-link: var(--medium-color);
+  --main-content-border: var(--light-color);
+
+  --about-text: var(--dark-color);
+  --about-link: var(--dark-color);
+
+  --feedback-bg: var(--white-color);
+  --feedback-text: var(--dark-color);
+  --feedback-field-bg: var(--secondary-light-color);
+  --feedback-submit-bg: var(--dark-color);
+
+  --footer-bg: var(--secondary-dark-color);
+  --footer-text: var(--white-color);
+}
+
+/* --- Topbar --- */
+
+/* topbar custom template */
+#navi4 {
+  position: relative;
+  padding-left: 1rem;
+}
+
+#navi4 img {
+  width: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+}
+
+#skosmos-logo-top {
+  width: 270px;
+  margin-left: -35px;
+}
+
+#skosmos-logo-top.service-fi {
+  background-image: url("../finto-pics/FI-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-sv {
+  background-image: url("../finto-pics/SE-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-en {
+  background-image: url("../finto-pics/EN-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo-top.service-se {
+  background-image: url("../finto-pics/SA-finto-vaaka-WHITE.svg");
+}
+
+#skosmos-logo {
+  background: none;
+  height: 0;
+  width: 0;
+}
+
+/* --- Landing page --- */
+
+@media (min-width: 992px) {
+  #landing-main {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    grid-auto-rows: min-content 1fr;
+    column-gap: 2rem;
+  }
+
+  #vocabulary-list {
+    grid-row: 1 / 3;
+    grid-column: 1;
+  }
+
+  #landing-start-slot {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  #landing-end-slot {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+
+.frontpage-logo #headerbar {
+  height: 210px;
+  position: relative;
+  background-color: transparent !important;
+}
+
+.frontpage-logo #headerbar::before {
+  content: "";
+  position: absolute;
+  background-image: url("../finto-pics/pexels-brett-sayles.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#vocabulary-list {
+  position: relative;
+}
+
+#vocabulary-list .list-group-item a {
+  font-weight: normal;
+}
+
+#vocabulary-list::before {
+  content: "";
+  position: absolute;
+  background-image: url("../finto-pics/finto.svg");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  width: 1000px;
+  height: 300px;
+  top: -210px;
+  left: -230px;
+  pointer-events: none;
+}
+
+#vocabulary-list :focus-visible, #welcome-box :focus-visible {
+  outline-color: var(--white-color) !important;
+}
+
+/* anchor logo to left side of screen on smaller screens */
+@media (max-width: 1600px) {
+  #vocabulary-list::before {
+    display: none;
+  }
+
+  .frontpage-logo #headerbar::after {
+    content: "";
+    position: absolute;
+    background-image: url("../finto-pics/finto.svg");
+    background-repeat: no-repeat;
+    background-size: 30%;
+    width: 1000px;
+    height: 300px;
+    top: 0;
+    left: -85px;
+    pointer-events: none;
+  }
+}
+
+/* landing-end custom template */
+#welcome-box {
+  position: relative;
+  background-color: var(--secondary-dark-color);
+  z-index: 1;
+  color: var(--white-color);
+}
+
+/* only show triangle above lg breakpoint */
+@media (min-width: 992px) {
+  #welcome-box::after {
+    position: absolute;
+    content: '';
+    width: 46px;
+    height: 46px;
+    transform: rotate(45deg);
+    background-color: var(--secondary-dark-color);
+    z-index: -1;
+    left: -22px;
+    bottom: 50px;
+  }
+}
+
+#welcome-box h2 {
+  margin-bottom: 1rem;
+}
+
+#welcome-box a {
+  color: var(--white-color);
+}
+
+/* landing-end custom template */
+#news-box {
+  background-color: var(--light-color);
+}
+
+#news-box h3 {
+  font-size: 1rem;
+}
+
+/* --- Vocab home/concept page --- */
+
+#sidebar-tabs .nav-item + .nav-item .nav-link {
+  position: relative;
+}
+
+/* Add a left border to all sidebar tab items except first */
+#sidebar-tabs .nav-item + .nav-item .nav-link::after {
+  content: "";
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  border-left: 1px solid var(--secondary-medium-color);
+}
+
+/* Remove border from active tab and the tab to its right */
+#sidebar-tabs .nav-link.active::after,
+#sidebar-tabs .nav-item:has(.nav-link.active) + .nav-item .nav-link::after {
+  display: none;
+}
+
+#alphabetical .nav-link.active {
+  background-color: var(--secondary-dark-color);
+}
+
+#sidebar .letters, #sidebar .form-check, #sidebar .form-check-label {
+  background-color: var(--secondary-dark-color);
+}
+
+#sidebar .hierarchy-button img {
+  filter: invert(100%);
+}
+
+.sidebar-list :focus-visible {
+  outline-color: var(--white-color) !important;
+}
+
+#hierarchy-list .list-group-item:focus-visible > .concept-label a,
+#groups-list .list-group-item:focus-visible > .concept-label a {
+  outline-color: var(--white-color) !important;
+}
+
+/* Warning messages for individual vocabularies */
+.vocab-alert {
+  padding: 2rem 2.5rem;
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.vocab-alert p:last-of-type {
+  margin-bottom: 0;
+}
+
+#main-content .property-label h3, #search-results h2 {
+  padding-left: 10px;
+  border-left: solid 7px var(--accent-color);
+}
+
+#main-content .prop-download h3, #download-links.property-label h3, #concept-mappings .property-label h3 {
+  padding-left: 0;
+  border-left: none;
+}
+
+/* --- Global/vocab search page --- */
+
+/* --- About page --- */
+
+.about {
+  background-color: var(--white-color);
+  z-index: 1;
+  position: relative;
+}
+
+.about::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 130px;
+  top: 0;
+  background-color: var(--secondary-dark-color);
+  z-index: -1;
+}
+
+@media (max-width: 768px) { /* lg breakpoint */
+  .about::before {
+    height: 125px;
+  }
+}
+
+.about h1 {
+  color: var(--white-color);
+  padding-bottom: 6.5rem;
+  margin-bottom: 0 !important;
+}
+
+.about a {
+  font-weight: normal;
+}
+
+.about #version {
+  color: var(--secondary-dark-color);
+}
+
+/* --- Feedback page --- */
+
+.feedback {
+  position: relative;
+  z-index: 1;
+  color: var(--white-color);
+}
+
+.feedback::before {
+  width: 100%;
+  content: "";
+  position: absolute;
+  height: 400px;
+  top: 0;
+  background-color: var(--secondary-dark-color);
+  z-index: -1;
+}
+
+.feedback:has(#suggestion-link)::before {
+  height: 475px;
+}
+
+.feedback a {
+  color: var(--white-color);
+}
+
+.feedback #feedback-form {
+  color: var(--dark-color);
+}
+
+/* --- Footer --- */
+
+footer .container img {
+  width: 135px;
+  margin-bottom: 2rem;
+}
+
+footer h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+footer h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+footer .list-group-item {
+  background-color: transparent;
+  border: none;
+  color: var(--white-color);
+  padding: 0 0 1rem 0;
+}
+
+footer a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+footer a:hover span {
+  text-decoration: underline;
+}
+
+footer .fa-brands {
+  font-size: 1.2rem;
+}
+
+footer .container-fluid {
+  background-color: var(--dark-color);
+}
+
+footer .container-fluid img {
+  width: 75px;
+}
+
+footer .container-fluid div span {
+  font-family: var(--font-family-heading);
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+footer .container-fluid a {
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+footer .container-fluid i {
+  position: relative;
+  bottom: 7px;
+  font-size: 0.8rem;
+  margin-left: 3px;
+}
+
+footer :focus-visible {
+  outline-color: var(--white-color) !important;
+}
+
+/* --- KANTO / finaf specific styles --- */
+
+.vocab-finaf .literal h3 {
+  font-size: 1.2rem;
+}
+
+.vocab-finaf .prop-rdaa_P50025 span, .vocab-finaf .prop-rdaa_P50103 span {
+  /* variant names should be shown in italic */
+  font-style: italic;
+}
+
+.vocab-finaf .prop-rdaa_P50291, .vocab-finaf .prop-rdaa_P50292 {
+  /* given names and last names should not be shown */
+  display: none;
+}

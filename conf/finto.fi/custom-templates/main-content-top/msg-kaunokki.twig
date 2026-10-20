@@ -1,0 +1,25 @@
+{% if request.vocabid == 'kaunokki' %}
+
+<div class="main-content-section alert vocab-alert" role="alert">
+
+{% if request.lang == 'fi' %}
+
+Kaunokki/Bella -sanastoa ei enää päivitetä. Fiktiivisen aineiston kuvailussa käytetään <a href="https://finto.fi/kauno/fi/">KAUNO-ontologiaa</a> ja siihen sisältyvää YSO-ontologiaa. KAUNO-ontologian genretermejä ei käytetä kirjastojen kuvailussa Marc-kentässä 655 (Aineiston lajityyppi/muoto hakuterminä). Termit kenttään 655 valitaan <a href="https://finto.fi/slm/fi/">Suomalaisesta lajityyppi- ja muotosanastosta</a> (SLM).
+
+{% elseif request.lang == 'sv' %}
+
+Kaunokki/Bella-tesaurusen uppdateras inte längre. Vid indexering av fiktivt material används <a href="https://finto.fi/kauno/fi/">Kauno-ontologin</a> och de YSO-termer som ingår i den. I Marc-fältet 655 används inte Kauno-ontologins genretermer utan termer som ingår i <a href="https://finto.fi/slm/sv/">FGF (Finländsk genre- och formlista)</a>.
+
+{% elseif request.lang == 'en' %}
+
+The Kaunokki/Bella vocabulary will no longer be updated. The description of fictional material is done using the <a href="https://finto.fi/kauno/">KAUNO ontology</a> and related YSO ontology. The genres of KAUNO ontology are not used in the description of libraries in the Marc field 655 (the genre/shape of the object as a search term). The terms in field 655 are selected from the <a href="https://finto.fi/slm/">Finnish genre and form vocabulary</a> (SLM).
+
+{% elseif request.lang == 'se' %}
+
+Kaunokki/Bella -sátnerádju ii šat beaiváduvvo. Fiktiivvalaš materiálaid govvideamis geavahuvvo KAUNO-ontologiija ja dasa gullevaš YSO-ontologiija. KAUNO-ontologiija genretearpmat eai geavahuvvo girjerájuid govvideamis Marc-giettis 655. Tearpmat gieddái 655 válljejuvvojit Suopmelaš šládjatiipa- ja hápmesátnerájus <a href="https://finto.fi/slm/">(SLM)</a>.
+
+{% endif %}
+
+</div>
+
+{% endif %}

@@ -1,0 +1,61 @@
+{% if request.lang == 'fi' %}
+
+<p id="suggestion-link">
+{% if request.vocabid == 'yso' %}
+  Voit ehdottaa uusia käsitteitä YSOon <a href="yso/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta YSOn käsitteeseen, muutosehdotuslomake löytyy YSO-käsitteiden tietojen yhteydestä.
+{% elseif request.vocabid == 'yso-paikat'  %}
+  Voit ehdottaa uusia käsitteitä YSO-paikkoihin <a href="yso-paikat/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta YSO-paikkojen käsitteeseen, muutosehdotuslomake löytyy YSO-paikat-käsitteiden tietojen yhteydestä.
+{% elseif request.vocabid == 'slm' %}
+  Voit ehdottaa uusia käsitteitä SLM:ään <a href="slm/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta SLM:n käsitteeseen, muutosehdotuslomake löytyy SLM-käsitteiden tietojen yhteydestä.
+{% endif %}
+</p>
+
+{% elseif request.lang == 'sv' %}
+
+<p id="suggestion-link">
+{% if request.vocabid == 'yso' %}
+  Du kan föreslå nya begrepp till ALLFO med hjälp av <a href="yso/{{request.lang}}/#suggestion" target="_blank">förslagsformuläret</a>.
+  Ändringar av ALLFO-begrepp föreslås via formuläret i begreppets uppgifter.
+{% elseif request.vocabid == 'yso-paikat'  %}
+  Du kan föreslå nya begrepp till ALLFO-orter med hjälp av <a href="yso-paikat/{{request.lang}}/#suggestion" target="_blank">förslagsformuläret</a>.
+  Ändringar av ALLFO-orter föreslås via formuläret i begreppets uppgifter.
+{% elseif request.vocabid == 'slm' %}
+  Du kan föreslå nya begrepp till FGF med hjälp av <a href="slm/{{request.lang}}/#suggestion" target="_blank">förslagsformuläret</a>.
+  Ändringar av FGF-begrepp föreslås via formuläret i begreppets uppgifter.
+{% endif %}
+</p>
+
+{% elseif request.lang == 'en' %}
+
+<p id="suggestion-link">
+{% if request.vocabid == 'yso' %}
+  You can suggest new concepts to YSO using <a href="yso/{{request.lang}}/#suggestion" target="_blank">the suggestion form</a>.
+  If you wish to suggest a change to a concept in YSO, the form can be found among the information of the YSO concept.
+{% elseif request.vocabid == 'yso-paikat'  %}
+  You can suggest new concepts to YSO places using <a href="yso/{{request.lang}}/#suggestion" target="_blank">the suggestion form</a>.
+  If you wish to suggest a change to a concept in YSO places, the form can be found among the information of the YSO places concept.
+{% elseif request.vocabid == 'slm' %}
+  You can suggest new concepts to SLM using <a href="yso/{{request.lang}}/#suggestion" target="_blank">the suggestion form</a>.
+  If you wish to suggest a change to a concept in SLM, the form can be found among the information of the SLM concept.
+{% endif %}
+</p>
+
+{% elseif request.lang == 'se' %} 
+
+<p id="suggestion-link">
+{% if request.vocabid == 'yso' %}
+  Voit ehdottaa uusia käsitteitä YSOon <a href="yso/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta YSOn käsitteeseen, muutosehdotuslomake löytyy YSO-käsitteiden tietojen yhteydestä.
+{% elseif request.vocabid == 'yso-paikat'  %}
+  Voit ehdottaa uusia käsitteitä YSO-paikkoihin <a href="yso-paikat/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta YSO-paikkojen käsitteeseen, muutosehdotuslomake löytyy YSO-paikat-käsitteiden tietojen yhteydestä.
+{% elseif request.vocabid == 'slm' %}
+  Voit ehdottaa uusia käsitteitä SLM:ään <a href="slm/{{request.lang}}/#suggestion" target="_blank">lomakkeella</a>.
+  Jos haluat ehdottaa muutosta SLM:n käsitteeseen, muutosehdotuslomake löytyy SLM-käsitteiden tietojen yhteydestä.
+{% endif %}
+</p>
+
+{% endif %}
