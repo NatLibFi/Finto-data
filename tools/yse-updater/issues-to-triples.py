@@ -118,7 +118,7 @@ def parse_issue_body(body):
 
 # converts the github-issue markdown into skos triples
 def issueToTriple(issue):
-    uri = yso + 'Y' + str(issue.number + 100000)
+    uri = yso + 'Y' + str(issue.number + 500000)
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(skos + 'Concept')) )
     newtriples.add( (rdflib.term.URIRef(uri), RDF.type, rdflib.term.URIRef(ysemeta + 'Concept')) )
     newtriples.add( (rdflib.term.URIRef(uri), foaf.homepage, rdflib.term.URIRef('https://github.com/Finto-ehdotus/YSE/issues/' + str(issue.number))) )
@@ -131,9 +131,9 @@ def issueToTriple(issue):
 
 # iterating through the new issues that have been marked with the "vastaanotettu" label
 for issue in new_issues:
-    uri = 'http://finto.fi/yse/fi/page/Y' + str(issue.number + 100000)
-    #if newlab not in issue.labels or issue.number < 4500: # early issues have been handled separately
-        #continue
+    uri = 'http://finto.fi/yse/fi/page/Y' + str(issue.number + 500000)
+    if newlab not in issue.labels or issue.number < 4500: # early issues have been handled separately
+        continue
     # skipping suggestions that have already been added to YSE
     if yse_skos.value(subject=rdflib.term.URIRef(uri), predicate=RDF.type):
         continue
