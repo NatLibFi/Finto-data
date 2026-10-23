@@ -8,6 +8,12 @@
 @prefix ysemeta: <http://www.yso.fi/onto/yse-meta/> .
 @prefix yso: <http://www.yso.fi/onto/yso/> .
 
+ysemeta:GenreConcept a owl:Class ;
+    rdfs:label "Genre or form term"@en,
+        "Lajityyppi- tai muototermi"@fi,
+        "Genre- eller formterm"@sv ;
+    rdfs:subClassOf skos:Concept .
+
 yse:ryhma_00 a <http://purl.org/iso25964/skos-thes#ConceptGroup> ;
     skos:member yso:Y313830,
         yso:Y313903,
@@ -11421,20 +11427,6 @@ yso:Y514949 a skos:Concept,
         "meloksikaami"@fi,
         "meloxikam"@sv ;
     foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/14949> .
-
-yso:Y515010 a skos:Concept,
-        ysemeta:Concept,
-        ysemeta:GenreConcept ;
-    dct:created "2026-10-21"^^xsd:date ;
-    skos:inScheme yse: ;
-    skos:prefLabel "päivitystesti"@fi ;
-    foaf:homepage <https://github.com/Finto-ehdotus/YSE/issues/15010> .
-
-ysemeta:GenreConcept a owl:Class ;
-    rdfs:label "Genre or form term"@en,
-        "Lajityyppi- tai muototermi"@fi,
-        "Genre- eller formterm"@sv ;
-    rdfs:subClassOf skos:Concept .
 
 yso:Y108419 skos:related yso:Y314081 .
 
