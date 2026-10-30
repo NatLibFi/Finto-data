@@ -329,8 +329,9 @@ slm:s1121  a             owl:Class , skos:Concept ;
         skos:scopeNote   "Används om verk, vars berättelser två eller flera författare skriver efter varandra"@sv , "Käytetään teoksista, joiden tarinaa kaksi tai useampi kirjoittajaa tekevät peräkkäin."@fi .
 
 slm:s34  a               owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s606 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s606 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:altLabel    "rakennushistoriikit"@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "byggnadshistoriker"@sv , "talohistoriikit"@fi .
 
@@ -373,6 +374,13 @@ slm:s1424  a            owl:Class , skos:Concept ;
         skos:inScheme   slm: ;
         skos:prefLabel  "urban fantasy"@sv , "urbaani fantasia"@fi ;
         skos:related    slm:s504 , slm:s758 , slm:s1041 , slm:s1140 , slm:s130 .
+
+slm:a7bcd886-f618-4ca6-b347-80c52fdbc482
+        a                owl:Class , skos:Concept ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1565 ;
+        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2023026066> ;
+        skos:prefLabel   "arkkikirjallisuus"@fi ;
+        skos:related     slm:s443 .
 
 slm:s473  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s532 ;
@@ -1026,7 +1034,7 @@ slm:s583  a              owl:Class , skos:Concept ;
 slm:s120  a              owl:Class , skos:Concept ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "manuskript (filmer)"@sv , "manus (filmer)"@sv , "käsikirjoitukset (elokuvat)"@fi , "filmmanus"@sv ;
-        skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026533> ;
+        skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2014026533> ;
         skos:inScheme    slm: ;
         skos:prefLabel   "elokuvakäsikirjoitukset"@fi , "filmmanuskript"@sv ;
         skos:related     slm:s1559 .
@@ -1236,13 +1244,14 @@ slm:s115  a              owl:Class , skos:Concept ;
         skos:prefLabel   "dogmaelokuvat"@fi , "dogmafilmer"@sv .
 
 slm:s686  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1565 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s855 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "LL-böcker (handikappanpassade)"@sv , "lättlästa böcker (handikappanpassade)"@sv , "böcker med lätt språk"@sv , "lättlästa böcker med förenklat språk"@sv ;
-        skos:definition  "Tarkoittaa selkokielellä kirjoitettuja kirjoja."@fi , "Avser böcker skrivna på förenklat språk."@sv ;
+        skos:definition  "Avser böcker skrivna på förenklat språk."@sv , "Tarkoittaa teoksia, joille on myönnetty selkotunnus merkkinä siitä, että selkokielisyys on tarkistettu."@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "böcker på lätt språk"@sv , "selkokirjat"@fi ;
-        skos:related     slm:s478 , slm:s855 .
+        skos:related     slm:s478 , slm:s855 ;
+        skos:scopeNote   "Käytetään myös ruotsalaisen LL-förlagetin, Viljan ja Nyponin kustantamista kirjoista, jotka vastaavat kotimaisen selkoruotsin määritelmää, vaikka niissä ei olisi selkotunnusta. Tarkastamattomista kirjoista, jotka sisältävän selkokielisiä ominaisuuksia, käytetään termiä [http://urn.fi/URN:NBN:fi:au:slm:s855]."@fi .
 
 slm:s756  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s560 ;
@@ -1260,7 +1269,8 @@ slm:s1083  a             owl:Class , skos:Concept ;
         skos:prefLabel   "science fiction-serier (tecknade serier)"@sv , "tieteissarjakuvat"@fi .
 
 slm:s1442  a             owl:Class , skos:Concept ;
-        skos:altLabel    "informationsmaterial"@sv , "tietoaineistot"@fi , "informativa verk"@sv , "icke-fiktivt material"@sv ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "informationsmaterial"@sv , "tietoaineistot"@fi , "informativa verk"@sv , "icke-fiktivt material"@sv , "tietokirjallisuus"@fi ;
         skos:definition  "Verk, vars huvudsakliga syfte är att lagra och förmedla information."@sv , "Teokset, joiden päätarkoitus on tallentaa ja välittää tietoa."@fi ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2014026113> ;
         skos:prefLabel   "icke-fiktiva material"@sv , "ei-fiktiiviset aineistot"@fi .
@@ -1275,11 +1285,11 @@ slm:s362  a              owl:Class , skos:Concept ;
         skos:related     slm:s489 .
 
 slm:s453  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s975 ;
+        rdfs:subClassOf  slm:s975 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "saaristolaisromaanit"@fi , "skärgårdslitteratur"@sv ;
         skos:inScheme    slm: ;
-        skos:prefLabel   "skärgårdsromaner"@sv , "saaristolaiskirjallisuus"@fi ;
+        skos:prefLabel   "skärgårdsromaner"@sv , "saaristolaiskirjallisuus (kaunokirjallisuus)"@fi ;
         skos:related     slm:s761 , slm:s801 , slm:s498 ;
         skos:scopeNote   "Käytetään teoksista, joissa käsitellään saaristolaisten elämää."@fi , "Används om verk, i vilka skärgårdslivet skildras."@sv .
 
@@ -2047,11 +2057,11 @@ slm:s277  a              owl:Class , skos:Concept ;
         skos:prefLabel   "soca"@sv , "soca"@fi ;
         skos:related     slm:s1371 , slm:s1188 .
 
-slm:s1559  a              owl:Class , skos:Concept ;
-        skos:altLabel     "televisio-ohjelmien käsikirjoitukset"@fi , "manuskript (tv)"@sv , "käsikirjoitukset (televisio)"@fi , "tv-manus"@sv , "tv-käsikirjoitukset"@fi , "manus (tv)"@sv ;
-        skos:narrowMatch  <http://id.loc.gov/authorities/genreForms/gf2014026568> ;
-        skos:prefLabel    "televisiokäsikirjoitukset"@fi , "tv-manuskript"@sv ;
-        skos:related      slm:s120 .
+slm:s1559  a             owl:Class , skos:Concept ;
+        skos:altLabel    "televisio-ohjelmien käsikirjoitukset"@fi , "manuskript (tv)"@sv , "käsikirjoitukset (televisio)"@fi , "tv-manus"@sv , "tv-käsikirjoitukset"@fi , "manus (tv)"@sv ;
+        skos:closeMatch  <http://id.loc.gov/authorities/genreForms/gf2014026568> ;
+        skos:prefLabel   "televisiokäsikirjoitukset"@fi , "tv-manuskript"@sv ;
+        skos:related     slm:s120 .
 
 slm:s985  a             owl:Class , skos:Concept ;
         dct:created     "2018-05-16"^^xsd:date ;
@@ -4572,12 +4582,13 @@ slm:s289  a              owl:Class , skos:Concept ;
         skos:prefLabel   "antologiat"@fi , "antologier"@sv .
 
 slm:s825  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1565 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1565 ;
         dct:created      "2018-05-16"^^xsd:date ;
+        skos:definition  "Tarkoittaa ensisijaisesti n. 18-25-vuotiaille suunnattuja teoksia."@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "nuorten aikuisten kirjat"@fi , "böcker för unga vuxna"@sv ;
         skos:related     slm:s168 ;
-        skos:scopeNote   "Käytetään teoksista, jotka on tarkoitettu aikuistuville nuorille."@fi , "Används om böcker avsedda för ungdomar som närmar sig vuxenålder."@sv .
+        skos:scopeNote   "Används om böcker avsedda för ungdomar som närmar sig vuxenålder."@sv .
 
 slm:s109  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1420 , slm:s930 ;
@@ -4629,7 +4640,8 @@ slm:s1300  a             owl:Class , skos:Concept ;
         skos:prefLabel   "metsästyssignaalit"@fi , "jaktsignaler"@sv .
 
 slm:s1567  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1569 ;
+        rdfs:subClassOf  slm:s1569 , yso-update:uudetmuuttuneetSv ;
+        skos:altLabel    "kokoelmalevyt"@fi ;
         skos:definition  "Musiikkialbumi, joka sisältää eri lähteistä, kuten aiemmin julkaistuilta äänitteiltä koottuja kappaleita."@fi , "Musikalbum som innehåller musikstycken samlade ur olika källor, såsom tidigare utgivna ljudupptagningar."@sv ;
         skos:prefLabel   "samlingsalbum (ljudupptagningar)"@sv , "kokoelma-albumit (äänitteet)"@fi .
 
@@ -5146,13 +5158,13 @@ slm:s1033  a             owl:Class , skos:Concept ;
         skos:prefLabel   "latinsk kyrkosång"@sv , "latinalainen kirkkolaulu"@fi .
 
 slm:s162  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1181 , slm:s168 ;
+        rdfs:subClassOf  slm:s1181 , slm:s168 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "tjejböcker"@sv ;
         skos:inScheme    slm: ;
         skos:prefLabel   "tyttökirjat"@fi , "flickböcker"@sv ;
         skos:related     slm:s364 ;
-        skos:scopeNote   "Käytetään nuortenkirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi , "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
+        skos:scopeNote   "Käytetään lasten- ja nuorten kaunokirjallisuudesta, joka käsittelee tyttöjä ja heidän maailmaansa."@fi , "Används om ungdomsböcker, som beskriver flickor och deras värld."@sv .
 
 slm:s191  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1051 ;
@@ -5231,9 +5243,10 @@ slm:s1542  a             owl:Class , skos:Concept ;
         skos:prefLabel   "statskalendrar"@sv , "valtiokalenterit"@fi .
 
 slm:s1181  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1565 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1565 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "barnböcker"@sv , "lastenkirjat"@fi ;
+        skos:definition  "Tarkoittaa ensisijaisesti alle 13-vuotiaille suunnattuja teoksia."@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "barnlitteratur"@sv , "lastenkirjallisuus"@fi ;
         skos:related     slm:s1090 , slm:s670 , slm:s495 , slm:s317 , slm:s273 , slm:s1165 , slm:s864 , slm:s434 , slm:s1075 , slm:s965 , slm:s739 , slm:s501 , slm:s1074 , slm:s1552 , slm:s826 , slm:s875 , slm:s862 , slm:s697 , slm:s975 , slm:s546 , slm:s162 , slm:s548 , slm:s168 , slm:s782 , slm:s910 , slm:s394 , slm:s1405 , slm:s933 , slm:s881 , slm:s228 , slm:s414 , slm:s1415 , slm:s787 , slm:s29 .
@@ -6281,13 +6294,14 @@ slm:s1519  a             owl:Class , skos:Concept ;
         skos:prefLabel   "valtiosäännöt"@fi , "statsförfattningar"@sv .
 
 slm:s168  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1565 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1565 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "ungdomsromaner"@sv , "tonårsromaner"@sv , "nuortenromaanit"@fi , "ungdomsböcker"@sv , "teiniromaanit"@fi , "nuorisoromaanit"@fi , "nuorisokirjallisuus"@fi , "nuortenkirjat"@fi ;
+        skos:definition  "Tarkoittaa ensisijaisesti 12-18-vuotiaille suunnattuja teoksia."@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "ungdomslitteratur"@sv , "nuortenkirjallisuus"@fi ;
         skos:related     slm:s43 , slm:s975 , slm:s825 , slm:s162 , slm:s1181 ;
-        skos:scopeNote   "Används om verk avsedda för ungdomar."@sv , "Käytetään nuorille tarkoitetuista teoksista."@fi .
+        skos:scopeNote   "Används om verk avsedda för ungdomar."@sv .
 
 slm:s599  a              owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s1442 , slm:s1332 ;
@@ -6548,12 +6562,12 @@ slm:s202  a              owl:Class , skos:Concept ;
         skos:prefLabel   "guider"@sv , "oppaat"@fi .
 
 slm:s364  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1181 , slm:s168 ;
+        rdfs:subClassOf  slm:s1181 , slm:s168 , yso-update:uudetmuuttuneetSv ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:inScheme    slm: ;
         skos:prefLabel   "pojkböcker"@sv , "poikakirjat"@fi ;
         skos:related     slm:s162 ;
-        skos:scopeNote   "Används om ungdomsböcker som handlar om pojkar och deras värld."@sv , "Käytetään nuortenkirjallisuudesta, joka käsittelee poikia ja heidän maailmaansa."@fi .
+        skos:scopeNote   "Används om ungdomsböcker som handlar om pojkar och deras värld."@sv , "Käytetään lasten- ja nuorten kaunokirjallisuudesta, joka käsittelee poikia ja heidän maailmaansa."@fi .
 
 slm:s1358  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s474 ;
@@ -7301,9 +7315,9 @@ slm:s1001  a             owl:Class , skos:Concept ;
         skos:related     slm:s741 .
 
 slm:s1405  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s168 ;
+        rdfs:subClassOf  slm:s1181 , slm:s168 , yso-update:uudetmuuttuneetSv ;
         skos:altLabel    "varhaisnuorten kirjallisuus"@fi , "mellanålderslitteratur"@sv ;
-        skos:definition  "Tarkoittaa n. 9-12-vuotiaille suunnattuja kirjoja."@fi , "Avser böcker riktade till barn i åldern ca 9-12."@sv ;
+        skos:definition  "Tarkoittaa ensisijaisesti n. 9-12-vuotiaille suunnattuja kirjoja."@fi , "Avser böcker riktade till barn i åldern ca 9-12."@sv ;
         skos:inScheme    slm: ;
         skos:prefLabel   "mellanåldersböcker"@sv , "varhaisnuorten kirjat"@fi ;
         skos:related     slm:s1181 .
@@ -7727,12 +7741,12 @@ slm:s837  a              owl:Class , skos:Concept ;
         skos:prefLabel   "rudimentit"@fi , "rudiment"@sv .
 
 slm:s443  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1377 ;
+        rdfs:subClassOf  slm:s1081 , slm:s1150 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:definition  "Alkuaan irtoarkille tai vihkoseen painettu kaupiteltavaksi tarkoitettu lauluruno; arkkiviisu, arkkivirsi, arkkiruno."@fi ;
         skos:inScheme    slm: ;
         skos:prefLabel   "arkkiveisut"@fi , "skillingtryck"@sv ;
-        skos:related     slm:s241 .
+        skos:related     slm:a7bcd886-f618-4ca6-b347-80c52fdbc482 , slm:s241 .
 
 slm:s1340  a             owl:Class , skos:Concept ;
         rdfs:subClassOf  slm:s170 ;
@@ -8579,11 +8593,11 @@ slm:s957  a              owl:Class , skos:Concept ;
         skos:prefLabel   "Chicago-jazz"@fi , "Chicagojazz"@sv .
 
 slm:s855  a              owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s1565 ;
+        rdfs:subClassOf  yso-update:uudetmuuttuneetSv , slm:s1565 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "LL-böcker (allmänna)"@sv , "lukemistot"@fi , "lättlästa böcker (läsinlärning)"@sv ;
         skos:inScheme    slm: ;
-        skos:note        "Kirjoja, jotka on tarkoitettu lukemaan oppimisen ja lukuharrastuksen tai kielten opiskelun tueksi. Tekstit ovat helposti luettavia."@fi , "Böcker som är avsedda som stöd för läsinlärning och läsintresse eller språkstudier. Texterna är lätta att läsa."@sv ;
+        skos:note        "Kirjoja, jotka on tarkoitettu lukemaan oppimisen ja lukuharrastuksen tai kielten opiskelun tueksi. Tekstit ovat helposti luettavia. Käytetään myös erityisryhmille suunnatuista kirjoista, joissa ei ole selkotunnusta."@fi , "Böcker som är avsedda som stöd för läsinlärning och läsintresse eller språkstudier. Texterna är lätta att läsa."@sv ;
         skos:prefLabel   "lättlästa böcker"@sv , "helppolukuiset kirjat"@fi ;
         skos:related     slm:s478 , slm:s686 , slm:s813 .
 
@@ -9614,7 +9628,7 @@ slm:s1168  a             owl:Class , skos:Concept ;
         skos:related     slm:s748 , slm:s158 , slm:s274 .
 
 slm:s1160  a             owl:Class , skos:Concept ;
-        rdfs:subClassOf  slm:s435 ;
+        rdfs:subClassOf  slm:s266 ;
         dct:created      "2018-05-16"^^xsd:date ;
         skos:altLabel    "elokuvaluettelot"@fi , "filmförteckningar"@sv ;
         skos:exactMatch  <http://id.loc.gov/authorities/genreForms/gf2019026014> ;
