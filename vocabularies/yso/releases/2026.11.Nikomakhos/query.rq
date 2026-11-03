@@ -1,0 +1,13 @@
+PREFIX yso-meta: <http://www.yso.fi/onto/yso-meta/2007-03-02/>
+PREFIX yso-translate: <http://www.yso.fi/onto/yso-translate/>
+PREFIX yso-update: <http://www.yso.fi/onto/yso-update/>
+
+CONSTRUCT { ?s ?p ?o . } 
+WHERE {
+  ?s ?p ?o .
+  FILTER(!STRSTARTS(STR(?s),STR(yso-update:))) .
+  FILTER(!STRSTARTS(STR(?o),STR(yso-update:))) .
+  FILTER(!STRSTARTS(STR(?s),STR(yso-translate:))) .
+  FILTER(!STRSTARTS(STR(?o),STR(yso-translate:))) .
+  FILTER(!STRSTARTS(STR(?p),STR(yso-meta:developmentComment))) .
+}
