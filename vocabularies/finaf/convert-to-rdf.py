@@ -349,7 +349,7 @@ def get_place_uri(place_name, place_uri, uri):
             logging.debug(f'Using place URI {place_uri} from 370 $0: {uri}')
             return place
         except ValidationError:
-            logging.warning(f'370 $0 has invalid URI {f["0"]}, using literal instead {uri}')
+            logging.warning(f'370 $0 has invalid URI {place_uri}, using literal instead {uri}')
             return lookup_yso_place(place_name)
     else:
         return lookup_yso_place(place_name)
