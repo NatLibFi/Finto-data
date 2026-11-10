@@ -76,6 +76,9 @@
     skosmos:feedbackHoneypotEnabled true ;
     # default time a user must wait before submitting a form
     skosmos:feedbackHoneypotTime 5 ;
+    # how many days to look back for changes on the Changes tab; 0 disables the cutoff
+    # can also be set per vocabulary on a skosmos:Vocabulary node
+    skosmos:changeListCutoffDays 365 ;
     # global plugins
     skosmos:globalPlugins ( ) .
 
@@ -137,6 +140,7 @@
 	skosmos:defaultLanguage "fi";
 	skosmos:mainConceptScheme <http://www.yso.fi/onto/yso/aika> ;
         skosmos:sidebarViews ( "alphabetical" "hierarchy" "changes" );
+        skosmos:changeListCutoffDays 0 ;
 	void:dataDump <https://dev.finto.fi/download/yso-aika/yso-aika-skos.ttl> ;
 	void:dataDump <https://dev.finto.fi/download/yso-aika/yso-aika-skos.rdf> ;
 	void:dataDump <https://dev.finto.fi/download/yso-aika/yso-aika-fin.mrcx> ;
@@ -220,7 +224,7 @@
         skosmos:showStatistics "false";
 	skosmos:propertyOrder :finaf-order ;
 	skosmos:vocabularyPlugins ( "sks" "finaf" );
-        skosmos:sidebarViews ( "alphabetical" );
+        skosmos:sidebarViews ( "alphabetical" "changes" );
         skosmos:propertyLabelOverride
             [ skosmos:property skos:prefLabel ;
               rdfs:label "Käytettävä nimenmuoto"@fi, "Auktoriserad sökingång"@sv, "Authorized access point"@en ] ,
@@ -649,6 +653,7 @@
 	skosmos:showTopConcepts "true";
 	skosmos:arrayClass isothes:ThesaurusArray ;
         skosmos:sidebarViews ( "alphabetical" "hierarchy" "changes" );
+        skosmos:changeListCutoffDays 1095 ;
 	skosmos:vocabularyPlugins ( "yso-links" );
 	void:dataDump <https://dev.finto.fi/download/maotao/maotao-skos.ttl> ;
 	void:dataDump <https://dev.finto.fi/download/maotao/maotao-skos.rdf> ;
@@ -968,6 +973,7 @@
         skosmos:useModifiedDate "true";
 	skosmos:defaultLanguage "fi";
         skosmos:sidebarViews ( "alphabetical" "hierarchy" "changes" );
+	skosmos:changeListCutOffDays 0 ;
 	void:dataDump <https://dev.finto.fi/download/seko/seko-skos.ttl> ;
 	void:dataDump <https://dev.finto.fi/download/seko/seko-skos.rdf> ;
 	void:sparqlEndpoint <https://api.dev.finto.fi/sparql> ;
