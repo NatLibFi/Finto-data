@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -116413,7 +116414,28 @@ sknsmeta:LangFamily a owl:Class ;
     rdfs:subClassOf sknsmeta:Concept .
 
 skns: a skos:ConceptScheme ;
-    rdfs:label "Suomenkielisten kielten nimien sanasto (CSV:stä)"@fi .
+    rdfs:label "Suomenkielisten kielten nimien sanasto "@fi ;
+    dc:description """Suomenkielisten kielten nimien sanasto on Kotimaisten kielten keskuksen, Kansalliskirjaston Finto.fi-palvelun ja Kotoistuspalvelun laatima sanasto suomen kielen ja suomenkielisen kielentutkimuksen tarpeisiin. Sanastossa tarjotaan suositus suomenkieliseksi nimeksi niistä kielistä, joilla on kolmikirjaintunnus kansainvälisessä kielten nimien standardissa ISO 639-3. Kustakin kielestä esitetään vähintään yksi nimisuositus. Toissijaisesti rinnalla voi olla myös toinen nimi, joka käy sekin suomen kieleen. 
+ 
+Sanaston suositukset on annettu Kotimaisten kielten keskuksen ja Kansalliskirjaston yhteisprojektissa 2023–2026. Uusia suosituksia suomen kieleen on luotu runsaasti. Tarkistuksia jatketaan vielä projektin jälkeen, ja Oseanian ja Afrikan alueiden kielten nimiä lisätään 2027–2029. Siksi joitakin kielten nimiä puuttuu vielä joistakin kieliryhmistä. Lähteinä on käytetty sekä kansallisia että kansainvälisiä suosituksia kieltennimistä sekä tutkimuksia ja tietokirjallisuutta. Myös kielten asiantuntijat ovat auttaneet tarkistustyössä. Kotoistamis- ja esittämistapalinjaukset sekä lähteet esitetään tarkemmin Kotimaisten kielten keskuksen verkkosivuilla Kielihakemisto-nimisessä julkaisussa, josta on kytkös rajapinnan kautta sanastoon. Sisällön ylläpidosta vastaa Kotimaisten kielten keskus. Sanaston suosituksia päivitetään tarvittaessa, esimerkiksi jos aineistolähteenä olevaan standardiin tulee lisäyksiä, poistoja tai muutoksia. 
+
+SFS- ja ISO-standarditietojen esittämiseen on SFS Suomen standardien (aiemmin Suomen standardisoimisliitto SFS ry:n) ja SIL Globalin lupa. Standarditiedoissa käyttäjän on viitattava suoraan kyseiseen standardiin, esimerkiksi kolmikirjaintunnuksissa standardiin ISO 639(-3). Glottolog-tietokannan kielikoodin esittämiseen on Glottologin lupa, ja Unicoden ylläpitämän, kansainvälisen kotoistamistietokannan CLDR:n lisenssi sallii sen kirjainkoodien esittämisen osana hakutuloksia. Koodeihin ja YSO-tietoihin viitatessa kannattaa mainita niiden ylläpitäjät, mutta muuten Suomenkielisten kielten nimien sanaston tietoja saa käyttää sellaisenaan, jos käytön yhteydessä mainitaan lähteenä Suomenkielisten kielten nimien sanasto.  
+ 
+Alla on eritelty sanaston sisältämät käsitteet. Päätermit ja oheistermit ovat kielten nimiä. Käsitteiden kokonaislukumäärään sisältyvät kuitenkin myös yläkäsitteet, joita ovat kielikuntien ja kieliryhmien nimet. Myös kielikuntiin rinnastuvat ryhmät, kuten isolaattikielet ja luokittelemattomat kielet ovat yläkäsitteitä. Suomenkielisten kielten nimien sanasto on linkitetty kielikuntien osalta Yleiseen suomalaiseen ontologiaan (YSO), jossa kielikunnille esitetään lisäksi ruotsin-, pohjoissaamen ja englanninkieliset rinnakkaisnimet, mikäli ne ovat jo vakiintuneet käyttöön. Suomenkielisten kielten nimien sanastoon sisältyy myös muita oheistietoja. Kommenteissa on tarvittaessa lisätietoja, esimerkiksi onko kyseessä makrokieli tai miten nimi äännetään.  Puhumavaltiotiedot on poimittu kansainvälisistä tietokannoista Glottolog, Ethnologue, The World Atlas of Language Structures (WALS) ja The UNESCO World Atlas of Languages, ja ne on linkitetty YSO-paikkoihin. Oheistietoja, kuten puhumavaltioita ja yläkäsitteitä, ei pidetä jatkuvasti ajantasaisina. Niitä koskevat palautteet käsitellään viiveellä resurssien mukaan. 
+
+Piilotetuissa ohjaustermeissä on erikielisiä rinnakkaisnimiä (varsinkin suomen- ja englanninkielisiä rinnakkaisnimiä sekä kielen puhumavaltion virallisten kielten ja lähtökielen mukaisia nimiä) ja muita tarpeellisia hakuasuja, joita on poimittu tarkistuslähteistä muun muassa tutkijoiden ja toimittajien avuksi. Suositettu nimi löytyy siis myös esimerkiksi nimen jälkiosalla (arabia > egyptinarabia), ilman erikoismerkkiä (ketsua > ketšua), genetiivimuodolla (sapoteekin kieli > sapoteekki) tai vanhentuneella nimellä. Hakutulokseksi voi tulla myös sellainen kieli, jonka suomen kieleen suositetussa nimessä ei näy haettua nimeä tai nimenosaa. Esimerkiksi haulla ranska tulee myös guadeloupenkreoli, koska se on ranskaan perustuva kreolikieli. Puhumavaltiotietojen, koodien ja kielikuntatietojen avulla voi varmistaa, että etsitty kieli on oikea. 
+
+Huom! Termin sisältämät välilyönnit ja yhdysmerkit vaikuttavat hakutulokseen. Jos siis haettavassa nimessä on välilyönti tai yhdysmerkki ja nimeä etsitään sen keski- tai jälkiosalla, pitää käyttää asteriskia (*). Esimerkiksi haulla *viittominen löytyy nimi kansainvälinen viittominen ja haulla *chunk löytyy nimi ho-chunk. Myös esimerkiksi haulla *franca* löytyy nimi lingua franca nova. Ks. https://www.kiwi.fi/x/HQD4Iw. Jos haluaa hakutuloksiin kaikki sellaiset kielten ja kieliryhmien nimet, jotka sisältävät tietyn merkkijonon joko päätermissä, ohjaustermissä tai piilotetussa ohjaustermissä, kannattaa käyttää hakua, jossa haettavan merkkijonon ympärillä on asteriskit (*). Esimerkiksi kieliryhmän itätšadilaiset kielet saa näkyviin haulla *tšad*. 
+ """@fi ;
+    # foaf:homepage <https://www.kiwi.fi/x/SocdCw> ;
+    dc:publisher "Kotimaisten kielten keskus, Opetushallitus"@fi ;
+    dc:creator "Kansalliskirjasto"@fi ,
+        "Kotimaisten kielten keskus, Opetushallitus"@fi ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/deed.fi> ;
+    dct:rights "Huom! ISO 639(-3):lla on erillinen lisenssi, samoin hakutuloksissa näkyvillä YSO-, Glottolog- ja CLDR-tiedoilla."@fi ;
+    dct:language <http://lexvo.org/id/iso639-3/fin> ;
+    skos:scopeNote "Huom! Piilotetuissa ohjaustermeissä on erikielisiä rinnakkaisnimiä. Näiden sitaattilainojen ja muiden piilotettujen ohjaustermien kielenä on käytännön syistä suomi."@fi ;
+    dct:relation yso: .
 
 sknsmeta:LangGroup a owl:Class ;
     rdfs:label "Kieliryhmä"@fi ;
